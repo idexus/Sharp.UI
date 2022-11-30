@@ -84,7 +84,7 @@ new Label("This is a test")
 ```
 
 ### Property value
-You can set the property value depending on the device idiom, platform or app theme
+You can set the property value depending on the device idiom, platform, or app theme
 
 ```cs
 new Label("Hello")
@@ -328,7 +328,7 @@ new ResourceDictionary
 ```
 
 ## Definition templates
-With `Def<T>` you can create templates depending on device idiom, platform or app theme
+With `Def<T>` you can create templates depending on device idiom, platform, or app theme
 
 ```cs
 new Def<VStack>(e => e
