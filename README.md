@@ -1,4 +1,4 @@
-#Overview
+# Overview
 Sharp.UI allows you to build a cross-platform .NET application interface (.NET MAUI) declaratively using fluent methods. It is a wrapper library, mostly auto-generated.
 
 ### Before you start
@@ -15,10 +15,10 @@ global using SearchBar = Sharp.UI.SearchBar;
 global using Slider = Sharp.UI.Slider;
 ...
 ```
-#Examples
+# Examples
 Here are some simple examples showing how to use the Sharp.UI library
 
-##Hello, World!
+## Hello, World!
 
 
 ```cs
