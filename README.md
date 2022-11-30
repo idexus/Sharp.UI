@@ -27,29 +27,29 @@ public class HelloWorldPage : ContentPage
     int count = 0;
 
     public HelloWorldPage()
-	{
-		Content = new VStack
-		{
-			new Image("dotnet_bot.png")
-				.HeightRequest(200)
-				.HorizontalOptions(LayoutOptions.Center),
+    {
+        Content = new VStack
+        {
+            new Image("dotnet_bot.png")
+                .HeightRequest(200)
+                .HorizontalOptions(LayoutOptions.Center),
 
-			new Label("Hello, World!")
-				.FontSize(32)
-				.HorizontalOptions(LayoutOptions.Center),
+            new Label("Hello, World!")
+                .FontSize(32)
+                .HorizontalOptions(LayoutOptions.Center),
 
-			new Label("Welcome to .NET Multi-platform App UI")
-				.FontSize(18)
-				.HorizontalOptions(LayoutOptions.Center),
+            new Label("Welcome to .NET Multi-platform App UI")
+                .FontSize(18)
+                .HorizontalOptions(LayoutOptions.Center),
 
-			new Button("Click me")
-				.HorizontalOptions(LayoutOptions.Center)
-				.OnClicked(OnCounterClicked)
-		}
-		.Spacing(25)
-		.Padding(new Thickness(30, 0))
-		.VerticalOptions(LayoutOptions.Center);
-	}
+            new Button("Click me")
+                .HorizontalOptions(LayoutOptions.Center)
+                .OnClicked(OnCounterClicked)
+        }
+        .Spacing(25)
+        .Padding(new Thickness(30, 0))
+        .VerticalOptions(LayoutOptions.Center);
+    }
 
     private void OnCounterClicked(Button sender)
     {
@@ -86,7 +86,7 @@ There are two ways to assign objects. Using the `Assign` method
 
 ```cs
 new Label()
-	.Assign(out label1)
+    .Assign(out label1)
 ```
 
 or using a constructor parameter
@@ -104,10 +104,10 @@ Objects such as `ScrollView`, `Border`, `ContentView` etc. can contain only one 
 ```cs
 new Scrollview
 {
-	new VStack
-	{
-		...
-	}
+    new VStack
+    {
+        ...
+    }
 }
 ```
 
@@ -131,7 +131,7 @@ Sharp.UI allows you to create bindings using a property method parameter and flu
 
 ```cs
 new Label()
-	.Text(e => e.BindTo("Author"))
+    .Text(e => e.BindTo("Author"))
     .TextColor(e => e.BindTo("TextColor").Source(myColors))
 ``` 
 
@@ -143,19 +143,19 @@ public class HelloWorldPage : ContentPage
 {
     int count = 0;
     public HelloWorldPage()
-	{
-		Content = new VStack
-		{
-			...
-			new Button("Click me")
-				.OnClicked(OnCounterClicked)
-		};
-	}
+    {
+        Content = new VStack
+        {
+            ...
+            new Button("Click me")
+                .OnClicked(OnCounterClicked)
+        };
+    }
 
     private void OnCounterClicked(Button sender)
     {
         count++;
-		...
+        ...
     }
 }
 ``` 
@@ -163,12 +163,12 @@ or do it inline
 
 ```cs
 new Button("Click me")
-	.OnClicked(button =>
-	{
-    	count++;
-		if (count == 1)
-        	button.Text = $"Clicked {count} time";
-		else
+    .OnClicked(button =>
+    {
+        count++;
+        if (count == 1)
+            button.Text = $"Clicked {count} time";
+        else
             button.Text = $"Clicked {count} times";
     })
 ``` 
@@ -180,9 +180,9 @@ Using the `Row()`, `Column()` and `Span()` methods, you can set the row, column 
 
 ```cs
 new Label("Column 0, Row 2, Span 2 columns")
-	.Column(0)
-	.Row(2)
-	.Span(column: 2)
+    .Column(0)
+    .Row(2)
+    .Span(column: 2)
 ```
 
 #### Row and column definition
@@ -191,7 +191,7 @@ Using folowing fluent methods you can define the number and sizes of rows and co
 ```cs
 new Grid(out grid)
 {
-	...
+    ...
 }
 .RowDefinitions(e => e.Star(2).Star())
 .ColumnDefinitions(e => e.Absolute(100).Star());
@@ -240,7 +240,7 @@ new Style<Button>
     Button.BackgroundColorProperty.Set().Light(AppColors.Primary).Dark(Colors.White),
     Button.FontSizeProperty.Set(14).OnDesktop(20),
     Button.CornerRadiusProperty.Set(8).OniOS(15),
-	...
+    ...
 }
 ```
 
@@ -249,7 +249,7 @@ you can also define visual states of objects
 ```cs
 new Style<Button>
 {
-  	...
+    ...
     new VisualState(VisualState.VisualElement.Normal)
     {
         Button.TextColorProperty.Set().Light(Colors.White).Dark(AppColors.Primary),
@@ -327,7 +327,7 @@ public partial class App : Application
                 },
 
                 new ShellContent<GridPage>().Title("Grid"),
-				...
+                ...
             }
         }
         .Resources(AppResources.Default);
@@ -335,6 +335,6 @@ public partial class App : Application
 }
 ```
 
-#License 
+# License 
 
 MIT License, Copyright 2022 Pawel Krzywdzinski
