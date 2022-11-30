@@ -68,8 +68,8 @@ The properties of the MAUI classes are matched with their fluent helper methods
 
 ```cs
 new Label()
-	.Text("This is a test")
-	.Padding(20)
+    .Text("This is a test")
+    .Padding(20)
     .FontSize(30)
     .HorizontalOptions(LayoutOptions.Center)
     .VerticalOptions(LayoutOptions.Center)
