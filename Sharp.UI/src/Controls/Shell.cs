@@ -40,6 +40,10 @@ namespace Sharp.UI
         where T : Page
     {
         public ShellContent() : base(typeof(T)) { }
+        public ShellContent(string title) : base(typeof(T))
+        {
+            this.Title = title;
+        }
     }
 }
 

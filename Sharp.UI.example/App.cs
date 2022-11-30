@@ -12,32 +12,32 @@ public partial class App : Application
             {
                 new Tab("Main")
                 {
-                    new ShellContent<HelloWorldPage>().Title("Hello Page"),
-                    new ShellContent<ExamplePage>().Title("ExamplePage"),
+                    new ShellContent<HelloWorldPage>("Hello Page"),
+                    new ShellContent<ExamplePage>("ExamplePage"),
                 },
 
                 new Tab("Lists")
                 {
-                    new ShellContent<TableViewPage>().Title("TableView"),
-                    new ShellContent<ListViewPage>().Title("ListView"),
-                    new ShellContent<CollectionPage>().Title("Collection"),
+                    new ShellContent<TableViewPage>("TableView"),
+                    new ShellContent<ListViewPage>("ListView"),
+                    new ShellContent<CollectionPage>("Collection"),
                 },
 
-                new ShellContent<GridPage>().Title("Grid"),
-                new ShellContent<StyleTestPage>().Title("Style"),
+                new ShellContent<GridPage>("Grid"),
+                new ShellContent<StyleTestPage>("Style"),
 
                 new Tab("Bindings")
                 {
-                    new ShellContent<ViewModelPage>().Title("View Model"),
-                    new ShellContent<TestBindingsPage>().Title("Bindings"),
+                    new ShellContent<ViewModelPage>("View Model"),
+                    new ShellContent<TestBindingsPage>("Bindings"),
                 },
 
                 new Tab("Other")
                 {
-                    new ShellContent<TestPage>().Title("Test Page"),
-                    new ShellContent<PathPage>().Title("Path"),
-                    new ShellContent<SwipeViewPage>().Title("Swipe"),
-                    new ShellContent<DefExamplePage>().Title("Platform Def")
+                    new ShellContent<TestPage>("Test Page"),
+                    new ShellContent<PathPage>("Path"),
+                    new ShellContent<SwipeViewPage>("Swipe"),
+                    new ShellContent<DefExamplePage>("Platform Def")
                 }
             }
         }
