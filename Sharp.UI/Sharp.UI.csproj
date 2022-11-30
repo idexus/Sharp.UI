@@ -1,0 +1,54 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net7.0;net7.0-android;net7.0-ios16.0;net7.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net7.0-windows10.0.19041.0</TargetFrameworks>
+		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
+		<!-- <TargetFrameworks>$(TargetFrameworks);net7.0-tizen</TargetFrameworks> -->
+		<UseMaui>true</UseMaui>
+		<SingleProject>true</SingleProject>
+		<ImplicitUsings>enable</ImplicitUsings>
+
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">14.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
+		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
+	  <CreatePackage>false</CreatePackage>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+		<CompilerGeneratedFilesOutputPath>Generated</CompilerGeneratedFilesOutputPath>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios16.0|AnyCPU'">
+	  <CreatePackage>false</CreatePackage>
+	</PropertyGroup>
+		<ItemGroup>
+		<ProjectReference Include="..\MauiWrapperGenerator\MauiWrapperGenerator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+		<Compile Remove="$(CompilerGeneratedFilesOutputPath)/**/*.cs" />
+	    <None Include="$(CompilerGeneratedFilesOutputPath)/MauiWrapperGenerator/**/*.cs" />
+	</ItemGroup>
+		<ItemGroup>
+		  <None Remove="src\" />
+		  <None Remove="src\Attributes\" />
+		  <None Remove="src\Helpers\" />
+		  <None Remove="src\Controls\" />
+		  <None Remove="src\Extensions\" />
+		  <None Remove="src\Grid\" />
+		  <None Remove="src\PropertyDefinitions\" />
+		</ItemGroup>
+		<ItemGroup>
+		  <Folder Include="src\" />
+		  <Folder Include="src\Attributes\" />
+		  <Folder Include="src\Helpers\" />
+		  <Folder Include="src\Controls\" />
+		  <Folder Include="src\Extensions\" />
+		  <Folder Include="src\Grid\" />
+		  <Folder Include="src\PropertyDefinitions\" />
+		</ItemGroup>
+</Project>

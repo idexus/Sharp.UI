@@ -1,0 +1,87 @@
+﻿using System;
+using Microsoft.Maui.Controls;
+
+namespace Sharp.UI
+{
+    [MauiWrapper(typeof(Microsoft.Maui.Controls.VisualStateGroupList))]
+    public partial class VisualStateGroupList { }
+
+    [MauiWrapper(typeof(Microsoft.Maui.Controls.VisualStateGroup),
+        containerOfType:typeof(Microsoft.Maui.Controls.VisualState),
+        containerPopertyName:"States",
+        generateAdditionalConstructors: false)]
+    public partial class VisualStateGroup
+    {
+        public VisualStateGroup(string name = VisualStateGroup.CommonStates)
+            : this(new Microsoft.Maui.Controls.VisualStateGroup())
+        {
+            if (string.IsNullOrEmpty(name)) name = Guid.NewGuid().ToString();
+            this.Name = name;
+        }
+
+        public const string CommonStates = "CommonStates";
+    }
+
+    [MauiWrapper(typeof(Microsoft.Maui.Controls.VisualState),
+        containerOfType: typeof(Microsoft.Maui.Controls.Setter),
+        containerPopertyName: "Setters")]
+    public partial class VisualState
+    {
+        public VisualState(string name = null) : this()
+        {
+            if (string.IsNullOrEmpty(name)) name = Guid.NewGuid().ToString();
+            this.Name = name;
+        }
+
+        //------ consts -------
+
+        public class VisualElement
+        {
+            public const string Normal = "Normal";
+            public const string Disabled = "Disabled";
+            public const string Focused = "Focused";
+            public const string PointerOver = "PointerOver";
+        }
+
+        public class Switch : VisualElement
+        {
+            public const string On = "On";
+            public const string Off = "Off";
+        }
+
+        public class RadioButton : VisualElement
+        {
+            public const string Checked = "Checked";
+            public const string Unchecked = "Unchecked";
+        }
+
+        public class ImageButton : VisualElement
+        {
+            public const string Pressed = "Pressed";
+        }
+
+        public class CollectionView : VisualElement
+        {
+            public const string Selected = "Selected";
+        }
+
+        public class CheckBox : VisualElement
+        {
+            public const string IsChecked = "IsChecked";
+        }
+
+        public class CarouselView : VisualElement
+        {
+            public const string DefaultItem = "DefaultItem";
+            public const string CurrentItem = "CurrentItem";
+            public const string PreviousItem = "PreviousItem";
+            public const string NextItem = "NextItem";
+        }
+
+        public class Button : VisualElement
+        {
+            public const string Pressed = "Pressed";
+        }
+    }
+}
+

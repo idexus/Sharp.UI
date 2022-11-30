@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 17.0.31611.283
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiWrapperGenerator", "MauiWrapperGenerator\MauiWrapperGenerator.csproj", "{1A973A64-2921-4FE7-87A7-D8317CC603A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharp.UI", "Sharp.UI\Sharp.UI.csproj", "{FB396864-6EFC-4A20-A9A7-30CF1B0245CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharp.UI.example", "Sharp.UI.example\Sharp.UI.example.csproj", "{E521168D-96C1-452D-80DC-866FB4716DDD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1A973A64-2921-4FE7-87A7-D8317CC603A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A973A64-2921-4FE7-87A7-D8317CC603A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A973A64-2921-4FE7-87A7-D8317CC603A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A973A64-2921-4FE7-87A7-D8317CC603A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB396864-6EFC-4A20-A9A7-30CF1B0245CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB396864-6EFC-4A20-A9A7-30CF1B0245CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB396864-6EFC-4A20-A9A7-30CF1B0245CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB396864-6EFC-4A20-A9A7-30CF1B0245CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E521168D-96C1-452D-80DC-866FB4716DDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E521168D-96C1-452D-80DC-866FB4716DDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E521168D-96C1-452D-80DC-866FB4716DDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E521168D-96C1-452D-80DC-866FB4716DDD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
+	EndGlobalSection
+EndGlobal

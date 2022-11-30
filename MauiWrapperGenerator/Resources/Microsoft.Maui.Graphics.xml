@@ -1,0 +1,175 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Maui.Graphics</name>
+    </assembly>
+    <members>
+        <member name="M:Microsoft.Maui.Graphics.CanvasExtensions.FillArc(Microsoft.Maui.Graphics.ICanvas,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,Microsoft.Maui.Graphics.Paint,System.Boolean)">
+            <summary>
+            Fills the arc with the specified paint.  This is a helper method for when filling
+            an arc with a gradient, so that you don't need to worry about calculating the gradient
+            handle locations based on the rectangle size and location.
+            </summary>
+            <param name="canvas">canvas</param>
+            <param name="x">The x coordinate.</param>
+            <param name="y">The y coordinate.</param>
+            <param name="width">The rectangle width.</param>
+            <param name="height">The rectangle height</param>
+            <param name="startAngle">The start angle</param>
+            <param name="endAngle">The end angle</param>
+            <param name="paint">The paint</param>
+            <param name="clockwise">The direction to draw the arc</param>
+        </member>
+        <member name="M:Microsoft.Maui.Graphics.CanvasExtensions.DrawArc(Microsoft.Maui.Graphics.ICanvas,Microsoft.Maui.Graphics.RectF,System.Single,System.Single,System.Boolean,System.Boolean)">
+            <summary>
+            Draws the arc.  This is a helper method to draw an arc when you have a rectangle already defined
+            for the ellipse bounds.
+            </summary>
+            <param name="canvas">canvas</param>
+            <param name="bounds">The ellipse bounds.</param>
+            <param name="startAngle">The start angle</param>
+            <param name="endAngle">The end angle</param>
+            <param name="clockwise">The direction to draw the arc</param>
+            <param name="closed">If the arc is closed or not</param>
+        </member>
+        <member name="M:Microsoft.Maui.Graphics.CanvasExtensions.DrawArc(Microsoft.Maui.Graphics.ICanvas,Microsoft.Maui.Graphics.Rect,System.Single,System.Single,System.Boolean,System.Boolean)">
+            <summary>
+            Draws the arc.  This is a helper method to draw an arc when you have a rectangle already defined
+            for the ellipse bounds.
+            </summary>
+            <param name="canvas">canvas</param>
+            <param name="bounds">The ellipse bounds.</param>
+            <param name="startAngle">The start angle</param>
+            <param name="endAngle">The end angle</param>
+            <param name="clockwise">The direction to draw the arc</param>
+            <param name="closed">If the arc is closed or not</param>
+        </member>
+        <member name="M:Microsoft.Maui.Graphics.CanvasExtensions.FillArc(Microsoft.Maui.Graphics.ICanvas,Microsoft.Maui.Graphics.RectF,System.Single,System.Single,System.Boolean)">
+            <summary>
+            Fills the arc.  This is a helper method to fill an arc when you have a rectangle already defined
+            for the ellipse bounds.
+            </summary>
+            <param name="canvas">canvas</param>
+            <param name="bounds">The ellipse bounds.</param>
+            <param name="startAngle">The start angle</param>
+            <param name="endAngle">The end angle</param>
+            <param name="clockwise">The direction to draw the arc</param>
+        </member>
+        <member name="M:Microsoft.Maui.Graphics.CanvasExtensions.FillArc(Microsoft.Maui.Graphics.ICanvas,Microsoft.Maui.Graphics.Rect,System.Single,System.Single,System.Boolean)">
+            <summary>
+            Fills the arc.  This is a helper method to fill an arc when you have a rectangle already defined
+            for the ellipse bounds.
+            </summary>
+            <param name="canvas">canvas</param>
+            <param name="bounds">The ellipse bounds.</param>
+            <param name="startAngle">The start angle</param>
+            <param name="endAngle">The end angle</param>
+            <param name="clockwise">The direction to draw the arc</param>
+        </member>
+        <member name="M:Microsoft.Maui.Graphics.CanvasExtensions.EnableDefaultShadow(Microsoft.Maui.Graphics.ICanvas,System.Single)">
+            <summary>
+            Enables the default shadow.
+            </summary>
+            <param name="canvas">canvas</param>
+            <param name="zoom">Zoom.</param>
+        </member>
+        <member name="M:Microsoft.Maui.Graphics.CanvasExtensions.ResetStroke(Microsoft.Maui.Graphics.ICanvas)">
+            <summary>
+            Resets the stroke to the default settings:
+             - Stroke Size: 1
+             - Stroke Dash Pattern: None
+             - Stroke Location: Center
+             - Stroke Line Join: Miter
+             - Stroke Line Cap: Butt
+             - Stroke Brush: None
+             - Stroke Color: Black
+            </summary>
+            <param name="canvas">Canvas.</param>
+        </member>
+        <member name="M:Microsoft.Maui.Graphics.GeometryUtil.EllipseAngleToPoint(System.Single,System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Gets the point on an ellipse that corresponds to the given angle.
+            </summary>
+            <returns>The point.</returns>
+            <param name="x">The x position of the bounding rectangle.</param>
+            <param name="y">The y position of the bounding rectangle.</param>
+            <param name="width">The width of the bounding rectangle.</param>
+            <param name="height">The height of the bounding rectangle.</param>
+            <param name="angleInDegrees">Angle in degrees.</param>
+        </member>
+        <member name="M:Microsoft.Maui.Graphics.GeometryUtil.IsBetween(System.Single,System.Single,System.Single)">
+            Return true if c is between a and b.
+        </member>
+        <member name="M:Microsoft.Maui.Graphics.GeometryUtil.SameSide(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)">
+             Check if two points are on the same side of a given line.
+             Algorithm from Sedgewick page 350.
+            
+             @param x0, y0, x1, y1  The line.
+             @param px0, py0        First point.
+             @param px1, py1        Second point.
+             @return                &lt;0 if points on opposite sides.
+                                    =0 if one of the points is exactly on the line
+                                    &gt;0 if points on same side.
+        </member>
+        <member name="M:Microsoft.Maui.Graphics.GeometryUtil.IsLineIntersectingLine(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)">
+             Check if two line segments intersects. Integer domain.
+            
+             @param x0, y0, x1, y1  End points of first line to check.
+             @param x2, yy, x3, y3  End points of second line to check.
+             @return                True if the two lines intersects.
+        </member>
+        <member name="P:Microsoft.Maui.Graphics.Insets.Horizontal">
+            <summary>
+            The sum of the left and right insets.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Maui.Graphics.Insets.Vertical">
+            <summary>
+            The sum of the top and bottom insets.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Maui.Graphics.InsetsF.Horizontal">
+            <summary>
+            The sum of the left and right insets.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Maui.Graphics.InsetsF.Vertical">
+            <summary>
+            The sum of the top and bottom insets.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Maui.Graphics.Matrix3x2Extensions.CreateMatrix3x2(System.Numerics.Vector2,System.Single,System.Numerics.Vector2)">
+            <summary>
+            Creates a matrix from an SRT.
+            </summary>
+            <param name="scale">The scale</param>
+            <param name="rotation">The rotation, in radians</param>
+            <param name="translation">the translation</param>
+            <returns>A Matrix3x2</returns>
+            <remarks>
+            This is equivalent to:<br/>
+            <c>
+            m = Matrix3x2.CreateScale(scale)<br/>
+            m *= Matri3x2.CreateRotation(rotation)<br/>
+            m *= Matri3x2.CreateTranslation(translation)<br/>
+            </c>		
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Maui.Graphics.PathArcExtensions.ComputeSvgArc(System.Single,System.Single,System.Single,System.Boolean,System.Boolean,System.Single,System.Single,System.Single,System.Single)">
+             Converts a svg arc specification to a Degrafa arc.
+            
+        </member>
+        <member name="M:Microsoft.Maui.Graphics.PathArcExtensions.DrawArc(Microsoft.Maui.Graphics.PathF,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)">
+             Draws an arc of type "open" only. Accepts an optional x axis rotation value
+            
+        </member>
+        <member name="M:Microsoft.Maui.Graphics.Platform.PlatformCanvas.FillWithGradient(System.Func{System.Boolean})">
+             <summary>
+             Fills the with gradient.
+            
+             The function should return whether or not this method should handle clipping.
+             </summary>
+             <param name="action">Action.</param>
+        </member>
+    </members>
+</doc>
