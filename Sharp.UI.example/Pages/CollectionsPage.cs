@@ -37,7 +37,8 @@ namespace Sharp.UI.Example
                                     .Text(e => e.BindTo("Name").StringFormat("Name: {0} "))
                                     .FontSize(30)
                             })),
-            };
+            }
+            .Margin(new Thickness(0, 30, 0, 0));
         }
     }
 }

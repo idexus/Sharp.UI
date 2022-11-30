@@ -71,7 +71,8 @@ namespace Sharp.UI.Example
                             .Data(new RectangleGeometry(30,10,170,100)),
                     }
                 }
-            };
+            }
+            .Margin(new Thickness(0, 30, 0, 0));
         }
     }
 }

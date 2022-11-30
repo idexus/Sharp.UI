@@ -32,7 +32,8 @@ public class DefExamplePage : ContentPage
         },
         new Style<VStack>
         {
-            VStack.HorizontalOptionsProperty.Set(LayoutOptions.Center)
+            VStack.HorizontalOptionsProperty.Set(LayoutOptions.Center),
+            VStack.MarginProperty.Set(new Thickness(0,30,0,0))
         }
     };
 

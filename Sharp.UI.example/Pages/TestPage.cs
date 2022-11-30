@@ -63,15 +63,15 @@ namespace Sharp.UI.Example
                             .Fill(Colors.Red)
                     },
 
-new VStack
-{
-    new Label("Hello,")
-        .FontSize(40),
-    new Label("World!"),
-    new Ellipse()
-        .WidthRequest(100)
-        .HeightRequest(40)
-},
+                    new VStack
+                    {
+                        new Label("Hello,")
+                            .FontSize(40),
+                        new Label("World!"),
+                        new Ellipse()
+                            .WidthRequest(100)
+                            .HeightRequest(40)
+                    },
 
                     new Entry("Enter text", out var entry),
 
@@ -222,7 +222,8 @@ new VStack
                     new WebView("https://learn.microsoft.com/dotnet/maui").SizeRequest(500, 500)
                             
                 }
-            };
+            }
+            .Margin(new Thickness(0, 30, 0, 0));
         }
 
         private void OnSearch(SearchBar sender, TextChangedEventArgs args)

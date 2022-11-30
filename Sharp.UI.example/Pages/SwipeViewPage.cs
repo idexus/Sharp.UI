@@ -63,6 +63,7 @@ public class SwipeViewPage : ContentPage
 					.BackgroundColor(Colors.DarkBlue)
 				}
             }),
-        };
+        }
+        .Margin(new Thickness(0, 30, 0, 0));
 	}
 }

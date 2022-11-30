@@ -26,6 +26,8 @@ public class TestBindingsPage : ContentPage
 					else
 						rect.MauiObject.RotateTo(0, 2000);
 				})
-		};
+		}
+        .HorizontalOptions(LayoutOptions.Center)
+        .VerticalOptions(LayoutOptions.Center);
 	}
 }

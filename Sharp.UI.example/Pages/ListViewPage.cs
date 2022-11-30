@@ -74,6 +74,7 @@ public class ListViewPage : ContentPage
                             }
                         })
             }
-        };
+        }
+        .Margin(new Thickness(0,30,0,0));
     }
 }

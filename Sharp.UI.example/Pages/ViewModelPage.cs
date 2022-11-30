@@ -37,8 +37,9 @@ public class ViewModelPage : ContentPage
         },
         new Style<VStack>
         {
-            VStack.HorizontalOptionsProperty.Set(LayoutOptions.Center)
-        }
+            VStack.HorizontalOptionsProperty.Set(LayoutOptions.Center),
+            VStack.VerticalOptionsProperty.Set(LayoutOptions.Center)
+        },
     };
 
     public ViewModelPage()
@@ -57,8 +58,16 @@ public class ViewModelPage : ContentPage
                     new Label("author:"),
                     new Label()
                         .Text(e => e.BindTo("Author"))
-                        .FontSize(e => e.OnMacCatalyst(60).OniOS(70))
+                        .FontSize(e => e.OnMacCatalyst(60).OniOS(70)),
                 }),
+
+            new HStack
+            {
+                new Label("title:"),
+                new Label()
+                    .Text(e => e.BindTo("Title"))
+            }
+            .HorizontalOptions(LayoutOptions.Center),
 
             new Button("Test")
                 .Command(viewModel.SetAuhorCommand)
