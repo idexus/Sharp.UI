@@ -83,6 +83,15 @@ To speed up defining the interface, some common properties are placed directly a
 new Label("This is a test")
 ```
 
+### Property value
+You can set the property value depending on the device idiom, platform or app theme
+
+```cs
+new Label("Hello")
+    .FontSize(e => e.Default(50).OnDesktop(80).OnPhone(30))
+    .TextColor(e => e.Light(Colors.Black).Dark(Colors.Teal))
+```
+
 ## Assign
 There are two ways to assign objects. Using the `Assign` method 
 
@@ -263,7 +272,7 @@ new Style<Button>
 }
 ```
 
-If you want to use different values depending on your app's theme, device idiom, or platform, you can combine following methods.
+If you want to use different values depending on your app theme, device idiom, or platform, you can combine following methods.
 
 ```cs
 new Style<Button>
@@ -319,7 +328,7 @@ new ResourceDictionary
 ```
 
 ## Definition templates
-With `Def<T>` you can create templates depending on device idiom, platform or app's theme
+With `Def<T>` you can create templates depending on device idiom, platform or app theme
 
 ```cs
 new Def<VStack>(e => e
