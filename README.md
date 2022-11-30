@@ -322,11 +322,11 @@ public partial class App : Application
             {
                 new Tab("Main")
                 {
-                    new ShellContent<HelloWorldPage>().Title("Hello Page"),
-                    new ShellContent<ExamplePage>().Title("ExamplePage"),
+                    new ShellContent<HelloWorldPage>("Hello Page"),
+                    new ShellContent<ExamplePage>("ExamplePage"),
                 },
 
-                new ShellContent<GridPage>().Title("Grid"),
+                new ShellContent<GridPage>("Grid"),
                 ...
             }
         }
