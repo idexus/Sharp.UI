@@ -231,7 +231,7 @@ new Style<Button>
 }
 ```
 
-If you want to use different values depending on your app's theme, platform, device idiom, or platform, you can combine following methods.
+If you want to use different values depending on your app's theme, device idiom, or platform, you can combine following methods.
 
 ```cs
 new Style<Button>
@@ -287,7 +287,7 @@ new ResourceDictionary
 ```
 
 ## Definition templates
-With `Def<T>` you can create templates depending on device idiom, platform or application color theme
+With `Def<T>` you can create templates depending on device idiom, platform or app's theme
 
 ```cs
 new Def<VStack>(e => e
