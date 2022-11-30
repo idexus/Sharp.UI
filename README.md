@@ -22,6 +22,8 @@ Here are some simple examples showing how to use the Sharp.UI library
 
 
 ```cs
+using Sharp.UI;
+
 public class HelloWorldPage : ContentPage
 {
     int count = 0;
@@ -134,11 +136,41 @@ new Label()
     .Text(e => e.BindTo("Author"))
     .TextColor(e => e.BindTo("TextColor").Source(myColors))
 ``` 
+Example of bindings between objects
+
+```cs
+using Sharp.UI;
+
+public class SimpleBindings : ContentPage
+{
+    public SimpleBindings()
+    {
+        this.Content = new VStack
+        {
+            new Slider(out var slider)
+                .Minimum(1)
+                .Maximum(20),
+
+            new Label()
+                .Text(e => e
+                    .BindTo("Value")
+                    .Source(slider)
+                    .StringFormat("Slider value: {0}")
+                )
+                .FontSize(28)
+                .TextColor(Colors.Blue)
+        }
+        .VerticalOptions(LayoutOptions.Center);
+    }
+}
+```
 
 ## Event handlers
 To handle events like `OnClicked`, you can write a method handler
 
 ```cs
+using Sharp.UI;
+
 public class HelloWorldPage : ContentPage
 {
     int count = 0;
@@ -312,6 +344,8 @@ new Def<VStack>(e => e
 Defining your application's shell
 
 ```cs
+using Sharp.UI;
+
 public partial class App : Application
 {
     public App()
