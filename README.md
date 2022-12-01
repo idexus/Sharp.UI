@@ -387,7 +387,7 @@ new VStack
 ```cs
 new EventTrigger("TextChanged")
 {
-	new NumericValidationTriggerAction()
+    new NumericValidationTriggerAction()
 }
 ```
 
