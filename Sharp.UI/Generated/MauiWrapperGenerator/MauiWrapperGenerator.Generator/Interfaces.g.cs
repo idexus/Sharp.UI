@@ -113,6 +113,8 @@ public interface ITableSectionBase : IBindableObject { }
 public interface IColumnDefinition : IBindableObject { }
 public interface IRowDefinition : IBindableObject { }
 public interface IStyle { }
+public interface ITrigger : ITriggerBase { }
+public interface ITriggerBase : IBindableObject { }
 public interface IVisualStateGroupList { }
 public interface IVisualStateGroup { }
 public interface IVisualState { }

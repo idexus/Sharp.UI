@@ -22,9 +22,12 @@ public partial class App : Application
                     new ShellContent<ListViewPage>("ListView"),
                     new ShellContent<CollectionPage>("Collection"),
                 },
-
                 new ShellContent<GridPage>("Grid"),
-                new ShellContent<StyleTestPage>("Style"),
+                new Tab("Style")
+                {
+                    new ShellContent<TriggersPage>("Triggers"),
+                    new ShellContent<StyleTestPage>("Style"),
+                },
 
                 new Tab("Bindings")
                 {

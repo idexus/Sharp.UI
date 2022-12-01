@@ -78,11 +78,6 @@ public class MauiSymbolBuilder
         notGenerateList.Add("LogicalChildren");
         notGenerateList.Add("BindingContext");
 
-        //if (typeConformance != null)
-        //    this.typeConformanceName = typeConformance.ToDisplayString();
-        //else
-        //    this.typeConformanceName = mauiType.IsSealed ? sharpUIType.ToDisplayString() : mauiType.ToDisplayString();
-
         // ------- content attribute -------
 
         var mauiContentAtribute = mauiType.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains("ContentProperty"));
