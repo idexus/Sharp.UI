@@ -16,5 +16,7 @@
         public static Setter OnAndroid(this Setter setter, object value) { if (DeviceInfo.Platform == DevicePlatform.Android) setter.Value = value; return setter; }
         public static Setter OnWinUI(this Setter setter, object value) { if (DeviceInfo.Platform == DevicePlatform.WinUI) setter.Value = value; return setter; }
         public static Setter OnTizen(this Setter setter, object value) { if (DeviceInfo.Platform == DevicePlatform.Tizen) setter.Value = value; return setter; }
+
+        public static Setter TargetName(this Setter setter, string targetName) { setter.TargetName = targetName; return setter; }
     }
 }

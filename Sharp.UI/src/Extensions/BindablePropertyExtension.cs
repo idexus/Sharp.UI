@@ -4,12 +4,12 @@
     {
         public static Setter Set(this BindableProperty property, object value)
         {
-            return new Setter(property, value);
+            return new Setter { Property = property, Value = value };
         }
 
         public static Setter Set(this BindableProperty property)
         {
-            return new Setter(property);
+            return new Setter { Property = property };
         }
     }
 }

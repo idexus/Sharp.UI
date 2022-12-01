@@ -112,7 +112,6 @@ public interface ITableSectionBaseCell : ITableSectionBase { }
 public interface ITableSectionBase : IBindableObject { }
 public interface IColumnDefinition : IBindableObject { }
 public interface IRowDefinition : IBindableObject { }
-public interface ISetter { }
 public interface IStyle { }
 public interface IVisualStateGroupList { }
 public interface IVisualStateGroup { }

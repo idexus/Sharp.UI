@@ -49,13 +49,13 @@
                 {
                     new VisualState(VisualState.RadioButton.Checked)
                     {
-                        new Setter(VisualElement.BackgroundColorProperty, Colors.Red),
-                        new Setter(Ellipse.FillProperty, Colors.Red).TargetName("Check")
+                        VisualElement.BackgroundColorProperty.Set(Colors.Red),
+                        Ellipse.FillProperty.Set(Colors.Red).TargetName("Check")
                     },
                     new VisualState(VisualState.RadioButton.Unchecked)
                     {
-                        new Setter(VisualElement.BackgroundColorProperty, Colors.Blue),
-                        new Setter(Ellipse.FillProperty, Colors.Yellow).TargetName("Check")
+                        VisualElement.BackgroundColorProperty.Set(Colors.Blue),
+                        Ellipse.FillProperty.Set(Colors.Yellow).TargetName("Check")
                     }
                 }
             });

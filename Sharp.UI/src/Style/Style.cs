@@ -35,7 +35,7 @@ namespace Sharp.UI
             if (groupList == null)
             {
                 groupList = new VisualStateGroupList();
-                var setter = new Setter(VisualStateManager.VisualStateGroupsProperty, groupList);
+                var setter = new Setter { Property = VisualStateManager.VisualStateGroupsProperty, Value = groupList };
                 this.Setters.Add(setter);
             }
             return groupList;
@@ -52,11 +52,11 @@ namespace Sharp.UI
             return visualStateGroup;
         }
 
-        public void Add(Setter item) => this.MauiObject.Setters.Add(item);
+        //public void Add(Setter item) => this.MauiObject.Setters.Add(item);
         public void Add(Trigger trigger) => this.MauiObject.Triggers.Add(trigger);
         public void Add(VisualStateGroupList groupList)
         {
-            var setter = new Setter(VisualStateManager.VisualStateGroupsProperty, groupList);
+            var setter = new Setter { Property = VisualStateManager.VisualStateGroupsProperty, Value = groupList };
             this.Setters.Add(setter);
         }
 
