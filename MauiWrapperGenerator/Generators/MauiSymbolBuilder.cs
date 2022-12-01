@@ -125,10 +125,6 @@ public class MauiSymbolBuilder
         }
 
         this.typeConformanceName = $"Sharp.UI.{WrapBuilder.GetInterfaceName(mauiType)}";
-
-        //var tail = mauiType.IsGenericType ? $"{mauiType.TypeArguments.FirstOrDefault().Name}" : "";
-        //this.shortTypeConformanceName = typeConformanceName.Split(new[] { '<' }).First().Split(new[] { '.' }).Last();
-        //if (typeConformanceName.Contains("Compatibility")) shortTypeConformanceName = $"Compatibility{shortTypeConformanceName}{tail}";
     }
 
     //----------------------------------------
@@ -257,7 +253,7 @@ namespace Sharp.UI
         if (containerOfTypeName != null && singleItemContainer == true) builder.AppendLine($@"
         // ----- single item container -----
 
-        public IEnumerator GetEnumerator() {{ throw new NotImplementedException(); }}
+        public IEnumerator GetEnumerator() {{ yield return this.{containerPropertyName}; }}
 
         public void Add({containerOfTypeName} {containerPropertyName.ToLower()}) => this.{containerPropertyName} = {containerPropertyName.ToLower()};");
     }

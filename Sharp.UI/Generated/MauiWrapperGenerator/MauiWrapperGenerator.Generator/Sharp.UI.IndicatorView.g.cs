@@ -39,7 +39,7 @@ namespace Sharp.UI
 
         // ----- single item container -----
 
-        public IEnumerator GetEnumerator() { throw new NotImplementedException(); }
+        public IEnumerator GetEnumerator() { yield return this.IndicatorLayout; }
 
         public void Add(Microsoft.Maui.Controls.IBindableLayout indicatorlayout) => this.IndicatorLayout = indicatorlayout;
 

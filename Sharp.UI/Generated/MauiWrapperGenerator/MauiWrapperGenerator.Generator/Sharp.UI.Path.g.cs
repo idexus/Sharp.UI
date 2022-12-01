@@ -58,7 +58,7 @@ namespace Sharp.UI
 
         // ----- single item container -----
 
-        public IEnumerator GetEnumerator() { throw new NotImplementedException(); }
+        public IEnumerator GetEnumerator() { yield return this.Data; }
 
         public void Add(Microsoft.Maui.Controls.Shapes.Geometry data) => this.Data = data;
 
