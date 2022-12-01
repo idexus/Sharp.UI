@@ -336,6 +336,7 @@ using Sharp.UI;
 
 public class PropertyTriggerPage : ContentPage
 {
+<<<<<<< HEAD
     public PropertyTriggerPage()
 	{
 		Resources = new ResourceDictionary
@@ -352,16 +353,33 @@ public class PropertyTriggerPage : ContentPage
 				},
 			}
 		};
+=======
+    public TriggersPage()
+    {
+        Resources = new ResourceDictionary
+        {
+            new Style<Entry>
+            {
+                Entry.BackgroundColorProperty.Set(Colors.Black),
+                Entry.TextColorProperty.Set(Colors.White),
+                new Trigger(Entry.IsFocusedProperty, true)
+                {
+                    Entry.BackgroundColorProperty.Set(Colors.Yellow),
+                    Entry.TextColorProperty.Set(Colors.Black)
+                }
+            }
+        };
+>>>>>>> f470a2d5c8db01e00fe8d7345940da383be99cf2
 
-		Content = new VStack
-		{
-			new Entry("Enter name"),
-			new Entry("Enter password"),
-			new Entry("Enter address")
-		}
-		.WidthRequest(300)
+        Content = new VStack
+        {
+            new Entry("Enter name"),
+            new Entry("Enter password"),
+            new Entry("Enter address")
+        }
+        .WidthRequest(300)
         .VerticalOptions(LayoutOptions.Center);
-	}
+    }
 }
 ```
 
