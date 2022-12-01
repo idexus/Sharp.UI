@@ -338,20 +338,20 @@ public class PropertyTriggerPage : ContentPage
 {
     public PropertyTriggerPage()
     {
-	    Resources = new ResourceDictionary
-	    {
-		    new Style<Entry>
-		    {
-			    Entry.BackgroundColorProperty.Set(Colors.Black),
-			    Entry.TextColorProperty.Set(Colors.White),
+        Resources = new ResourceDictionary
+        {
+            new Style<Entry>
+            {
+                Entry.BackgroundColorProperty.Set(Colors.Black),
+                Entry.TextColorProperty.Set(Colors.White),
 
-			    new Trigger(Entry.IsFocusedProperty, true)
-			    {
-				    Entry.BackgroundColorProperty.Set(Colors.Yellow),
-				    Entry.TextColorProperty.Set(Colors.Black)
-			    },
-		    }
-	    };
+                new Trigger(Entry.IsFocusedProperty, true)
+                {
+                    Entry.BackgroundColorProperty.Set(Colors.Yellow),
+                    Entry.TextColorProperty.Set(Colors.Black)
+                },
+            }
+        };
 
         Content = new VStack
         {
@@ -374,19 +374,19 @@ public class DataTriggerPage : ContentPage
 {
     public DataTriggerPage()
     {
-	    Content = new VStack
-	    {
-		    new Entry("Enter text...", out var entry).Text(""),
-		    new Button("Save")
+        Content = new VStack
+        {
+            new Entry("Enter text...", out var entry).Text(""),
+            new Button("Save")
                 .Triggers(new List<TriggerBase>
-			    {
-				    new DataTrigger<Button>(e => e.Path("Text.Length").Source(entry), 0)
-				    {
-					    Entry.IsEnabledProperty.Set(false)
-				    }
+                {
+                    new DataTrigger<Button>(e => e.Path("Text.Length").Source(entry), 0)
+                    {
+                        Entry.IsEnabledProperty.Set(false)
+                    }
                 })
-	    }
-	    .VerticalOptions(LayoutOptions.Center);
+        }
+        .VerticalOptions(LayoutOptions.Center);
     }
 }
 ```
