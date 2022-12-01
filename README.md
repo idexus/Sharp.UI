@@ -329,7 +329,7 @@ new ResourceDictionary
 
 ## Triggers
 
-Property triggers example
+#### Property triggers
 
 ```cs
 using Sharp.UI;
@@ -365,7 +365,7 @@ public class PropertyTriggerPage : ContentPage
 }
 ```
 
-Data triggers example
+#### Data triggers
 
 ```cs
 using Sharp.UI;
@@ -387,6 +387,29 @@ public class DataTriggerPage : ContentPage
                 })
         }
         .VerticalOptions(LayoutOptions.Center);
+    }
+}
+```
+
+#### Event triggers
+
+```cs
+new EventTrigger("TextChanged")
+{
+	new NumericValidationTriggerAction()
+}
+```
+
+Action
+
+```cs
+public class NumericValidationTriggerAction : TriggerAction<Entry>
+{
+    protected override void Invoke(Entry entry)
+    {
+        double result;
+        bool isValid = Double.TryParse(entry.Text, out result);
+        entry.TextColor = isValid ? Colors.Black : Colors.Red;
     }
 }
 ```

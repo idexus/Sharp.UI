@@ -1,18 +1,28 @@
 ﻿namespace Sharp.UI.Example;
 
-public class DataTriggerPage : ContentPage
+
+public class NumericValidationTriggerAction : TriggerAction<Entry>
 {
-	public DataTriggerPage()
+    protected override void Invoke(Entry entry)
+    {
+        double result;
+        bool isValid = Double.TryParse(entry.Text, out result);
+        entry.TextColor = isValid ? Colors.Green : Colors.Red;
+    }
+}
+
+public class EventTriggerPage : ContentPage
+{
+	public EventTriggerPage()
 	{
 		Content = new VStack
 		{
-			new Entry("Enter text...", out var entry).Text(""),
-			new Button("Save")
+			new Entry("Enter text...", out var entry).Text("")
                 .Triggers(new List<TriggerBase>
 				{
-					new DataTrigger<Button>(e => e.Path("Text.Length").Source(entry), 0)
+					new EventTrigger("TextChanged")
 					{
-						Entry.IsEnabledProperty.Set(false)
+						new NumericValidationTriggerAction()
 					}
                 })
 		}

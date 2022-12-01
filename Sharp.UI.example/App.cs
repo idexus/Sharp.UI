@@ -23,11 +23,12 @@ public partial class App : Application
                     new ShellContent<CollectionPage>("Collection"),
                 },
                 new ShellContent<GridPage>("Grid"),
-                new Tab("Style")
+                new ShellContent<StyleTestPage>("Style"),
+                new Tab("Triggers")
                 {
+                    new ShellContent<EventTriggerPage>("Event trigger"),
                     new ShellContent<DataTriggerPage>("Data trigger"),
                     new ShellContent<PropertyTriggerPage>("Triggers"),
-                    new ShellContent<StyleTestPage>("Style"),
                 },
 
                 new Tab("Bindings")

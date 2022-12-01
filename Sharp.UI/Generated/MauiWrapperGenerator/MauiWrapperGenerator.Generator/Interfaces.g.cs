@@ -114,10 +114,11 @@ public partial interface IColumnDefinition : IBindableObject { }
 public partial interface IRowDefinition : IBindableObject { }
 public partial interface IBinding : IBindingBase { }
 public partial interface IBindingBase { }
-public partial interface IDataTrigger : ITriggerBase { }
-public partial interface ITriggerBase : IBindableObject { }
 public partial interface IStyle { }
-public partial interface ITrigger : ITriggerBase { }
 public partial interface IVisualStateGroupList { }
 public partial interface IVisualStateGroup { }
 public partial interface IVisualState { }
+public partial interface IEventTrigger : ITriggerBase { }
+public partial interface ITriggerBase : IBindableObject { }
+public partial interface IDataTrigger : ITriggerBase { }
+public partial interface ITrigger : ITriggerBase { }

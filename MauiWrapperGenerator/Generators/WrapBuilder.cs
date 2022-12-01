@@ -30,6 +30,7 @@ public class WrapBuilder
         var camelCaseName = $"{str.Substring(0, 1).ToLower()}{str.Substring(1)}";
         camelCaseName = camelCaseName.Equals("class") ? "@class" : camelCaseName;
         camelCaseName = camelCaseName.Equals("switch") ? "@switch" : camelCaseName;
+        camelCaseName = camelCaseName.Equals("event") ? "@event" : camelCaseName;
         return camelCaseName;
     }
 
