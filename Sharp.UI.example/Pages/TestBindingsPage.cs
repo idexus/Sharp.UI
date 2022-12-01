@@ -16,8 +16,8 @@ public class TestBindingsPage : ContentPage
 		Content = new VStack
 		{
 			new Rectangle(500, 500, out var rect).Stroke(Colors.Blue).StrokeThickness(10),
-			new Label(out var label).Text(e => e.BindTo("Rotation")).BindingContext(rect),
-			new Ellipse().SizeRequest(300,100).Rotation(e => e.BindTo("Rotation").Source(rect)).Stroke(Colors.Blue),
+			new Label(out var label).Text(e => e.Path("Rotation")).BindingContext(rect),
+			new Ellipse().SizeRequest(300,100).Rotation(e => e.Path("Rotation").Source(rect)).Stroke(Colors.Blue),
 			new Button("Test it")
 				.OnClicked(e =>
 				{

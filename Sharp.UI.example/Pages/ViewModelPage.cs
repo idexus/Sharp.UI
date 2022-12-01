@@ -57,7 +57,7 @@ public class ViewModelPage : ContentPage
                 {
                     new Label("author:"),
                     new Label()
-                        .Text(e => e.BindTo("Author"))
+                        .Text(e => e.Path("Author"))
                         .FontSize(e => e.OnMacCatalyst(60).OniOS(70)),
                 }),
 
@@ -65,7 +65,7 @@ public class ViewModelPage : ContentPage
             {
                 new Label("title:"),
                 new Label()
-                    .Text(e => e.BindTo("Title"))
+                    .Text(e => e.Path("Title"))
             }
             .HorizontalOptions(LayoutOptions.Center),
 

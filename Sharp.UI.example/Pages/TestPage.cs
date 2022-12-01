@@ -86,7 +86,7 @@ namespace Sharp.UI.Example
                     .Margin(20)
                     .SizeRequest(400,100),
 
-                    new Label().Text(e => e.BindTo("Text").Source(entry)),
+                    new Label().Text(e => e.Path("Text").Source(entry)),
 
                     new GraphicsView(new GraphicsDrawable())
                         .HeightRequest(100)
@@ -208,7 +208,7 @@ namespace Sharp.UI.Example
                     {                            
                         new Stepper(minimum: 10, maximum: 20, increment: 1).Assign(out var stepper),
                         new Label()
-                            .Text(e => e.BindTo("Value").Source(stepper))
+                            .Text(e => e.Path("Value").Source(stepper))
                             .FontSize(30)
                     }
                     .BackgroundColor(AppColors.Gray900)

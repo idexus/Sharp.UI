@@ -52,8 +52,8 @@ namespace Sharp.UI
             return visualStateGroup;
         }
 
-        //public void Add(Setter item) => this.MauiObject.Setters.Add(item);
         public void Add(Trigger trigger) => this.MauiObject.Triggers.Add(trigger);
+        public void Add(DataTrigger trigger) => this.MauiObject.Triggers.Add(trigger);
         public void Add(VisualStateGroupList groupList)
         {
             var setter = new Setter { Property = VisualStateManager.VisualStateGroupsProperty, Value = groupList };

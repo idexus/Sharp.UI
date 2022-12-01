@@ -7,7 +7,7 @@ public class FlyoutContent : ContentView
 		Content = new Grid
 		{
 			new Image()
-				.Source(e => e.BindTo("Icon"))
+				.Source(e => e.Path("Icon"))
 				.VerticalOptions(LayoutOptions.Center)
 				.HorizontalOptions(LayoutOptions.Center)
 				.HeightRequest(new OnPlatform<double>(Default: 24, iOS: 22, WinUI: 16))
@@ -15,7 +15,7 @@ public class FlyoutContent : ContentView
 
 			new Label()
 				.Column(1)
-				.Text(e => e.BindTo("Title"))
+				.Text(e => e.Path("Title"))
 				.FontSize(14)
 				.FontAttributes(new OnTheme<FontAttributes>(light:FontAttributes.Bold))
 				.HorizontalOptions(new OnPlatform<LayoutOptions>(Default: LayoutOptions.Center, WinUI: LayoutOptions.Start))

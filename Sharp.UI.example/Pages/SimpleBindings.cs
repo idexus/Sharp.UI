@@ -12,7 +12,7 @@ public class SimpleBindings : ContentPage
 
             new Label()
                 .Text(e => e
-                    .BindTo("Value")
+                    .Path("Value")
                     .Source(slider)
                     .StringFormat("Slider value: {0}")
                 )

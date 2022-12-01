@@ -16,8 +16,8 @@ public class ListViewPage : ContentPage
                 new ListView(DataModel.SimpleData)
                     .ItemTemplate(() =>
                         new TextCell()
-                            .Text(e => e.BindTo(nameof(DataModel.Name)))
-                            .Detail(e => e.BindTo(nameof(DataModel.Id)).StringFormat("id: {0}"))
+                            .Text(e => e.Path(nameof(DataModel.Name)))
+                            .Detail(e => e.Path(nameof(DataModel.Id)).StringFormat("id: {0}"))
                     ),
 
                 new Label("ImageCell")
@@ -28,8 +28,8 @@ public class ListViewPage : ContentPage
                     .ItemTemplate(() =>
                         new ImageCell()
                             .ImageSource("dotnet_bot.png")
-                            .Text(e => e.BindTo(nameof(DataModel.Name)))
-                            .Detail(e => e.BindTo(nameof(DataModel.Id)).StringFormat("id: {0}"))
+                            .Text(e => e.Path(nameof(DataModel.Name)))
+                            .Detail(e => e.Path(nameof(DataModel.Id)).StringFormat("id: {0}"))
                     ),
 
                 new Label("SwitchCell")
@@ -39,8 +39,8 @@ public class ListViewPage : ContentPage
                 new ListView(DataModel.SimpleData)
                     .ItemTemplate(() =>
                         new SwitchCell()
-                            .Text(e => e.BindTo(nameof(DataModel.Name)))
-                            .On(e => e.BindTo(nameof(DataModel.Admin)))
+                            .Text(e => e.Path(nameof(DataModel.Name)))
+                            .On(e => e.Path(nameof(DataModel.Admin)))
                     ),
 
                 new Label("EntryCell")
@@ -50,7 +50,7 @@ public class ListViewPage : ContentPage
                 new ListView(DataModel.SimpleData)
                     .ItemTemplate(() =>
                         new EntryCell()
-                            .Text(e => e.BindTo(nameof(DataModel.Name)))
+                            .Text(e => e.Path(nameof(DataModel.Name)))
                     ),
 
                 new Label("ViewCell")
@@ -65,11 +65,11 @@ public class ListViewPage : ContentPage
                             new HStack
                             {
                                 new Label()
-                                    .Text(e => e.BindTo("Id").StringFormat("Id: {0}, "))
+                                    .Text(e => e.Path("Id").StringFormat("Id: {0}, "))
                                     .FontSize(30)
                                     .TextColor(Colors.Blue),
                                 new Label()
-                                    .Text(e => e.BindTo("Name").StringFormat("Name: {0} "))
+                                    .Text(e => e.Path("Name").StringFormat("Name: {0} "))
                                     .FontSize(30)
                             }
                         })

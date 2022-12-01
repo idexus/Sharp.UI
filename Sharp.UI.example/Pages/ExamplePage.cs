@@ -33,9 +33,9 @@ public class ExamplePage : ContentPage
                 .HorizontalOptions(LayoutOptions.Center),
 
                 new Label()
-                    .FontSize(e => e.BindTo(nameof(Slider.Value)))
+                    .FontSize(e => e.Path(nameof(Slider.Value)))
                     .Assign(out var label2)
-                    .Text(e => e.BindTo(nameof(Slider.Value)).StringFormat("Slider Value : {0}")),
+                    .Text(e => e.Path(nameof(Slider.Value)).StringFormat("Slider Value : {0}")),
 
                 new Button("Test it")
                     .HorizontalOptions(LayoutOptions.Center)

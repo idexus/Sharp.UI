@@ -41,7 +41,7 @@
 
         //--- bindable ---
 
-        public BindableDef<T> BindTo(string path) { this.path = path; return this; }
+        public BindableDef<T> Path(string path) { this.path = path; return this; }
         public BindableDef<T> StringFormat(string stringFormat) { this.stringFormat = stringFormat; return this; }
         public BindableDef<T> BindingMode(BindingMode bindingMode) { this.bindingMode = bindingMode; return this; }
         public BindableDef<T> Converter(IValueConverter converter) { this.converter = converter; return this; }
@@ -71,7 +71,7 @@
             {
                 obj.SetBinding(
                     targetProperty: property,
-                    binding: new Binding(
+                    binding: new Microsoft.Maui.Controls.Binding(
                         path: path,
                         mode: bindingMode,
                         converter: converter,

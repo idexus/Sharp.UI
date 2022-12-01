@@ -132,7 +132,7 @@ public class WrapBuilder
     {
         var parentInterfaceName = GetInterfaceName(type.BaseType);
         var parentString = parentInterfaceName.Equals("IObject") ? "" : $" : {parentInterfaceName}"; 
-        builder.AppendLine($@"public interface {GetInterfaceName(type)}{parentString} {{ }}");
+        builder.AppendLine($@"public partial interface {GetInterfaceName(type)}{parentString} {{ }}");
     }
 
     void GenerateExtensions(IEnumerable<ISymbol> symbols)

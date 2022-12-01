@@ -142,8 +142,8 @@ Sharp.UI allows you to create bindings using a property method parameter and flu
 
 ```cs
 new Label()
-    .Text(e => e.BindTo("Author"))
-    .TextColor(e => e.BindTo("TextColor").Source(myColors))
+    .Text(e => e.Path("Author"))
+    .TextColor(e => e.Path("TextColor").Source(myColors))
 ``` 
 Example of bindings between objects
 
@@ -162,7 +162,7 @@ public class SimpleBindings : ContentPage
 
             new Label()
                 .Text(e => e
-                    .BindTo("Value")
+                    .Path("Value")
                     .Source(slider)
                     .StringFormat("Slider value: {0}")
                 )
@@ -334,21 +334,22 @@ Property triggers example
 ```cs
 using Sharp.UI;
 
-public class TriggersPage : ContentPage
+public class PropertyTriggerPage : ContentPage
 {
-	public TriggersPage()
+    public PropertyTriggerPage()
 	{
 		Resources = new ResourceDictionary
 		{
 			new Style<Entry>
 			{
-                Entry.BackgroundColorProperty.Set(Colors.Black),
+				Entry.BackgroundColorProperty.Set(Colors.Black),
 				Entry.TextColorProperty.Set(Colors.White),
-                new Trigger(Entry.IsFocusedProperty, true)
+
+				new Trigger(Entry.IsFocusedProperty, true)
 				{
 					Entry.BackgroundColorProperty.Set(Colors.Yellow),
 					Entry.TextColorProperty.Set(Colors.Black)
-				}
+				},
 			}
 		};
 
@@ -361,6 +362,32 @@ public class TriggersPage : ContentPage
 		.WidthRequest(300)
         .VerticalOptions(LayoutOptions.Center);
 	}
+}
+```
+
+Data triggers example
+
+```cs
+using Sharp.UI;
+
+public class DataTriggerPage : ContentPage
+{
+    public DataTriggerPage()
+    {
+	    Content = new VStack
+	    {
+		    new Entry("Enter text...", out var entry).Text(""),
+		    new Button("Save")
+                .Triggers(new List<TriggerBase>
+			    {
+				    new DataTrigger<Button>(e => e.Path("Text.Length").Source(entry), 0)
+				    {
+					    Entry.IsEnabledProperty.Set(false)
+				    }
+                })
+	    }
+	    .VerticalOptions(LayoutOptions.Center);
+    }
 }
 ```
 

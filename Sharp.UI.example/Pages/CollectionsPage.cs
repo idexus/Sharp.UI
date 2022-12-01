@@ -30,11 +30,11 @@ namespace Sharp.UI.Example
                                     .HeightRequest(50),
 
                                 new Label()
-                                    .Text(e => e.BindTo("Id").StringFormat("Id: {0}, "))
+                                    .Text(e => e.Path("Id").StringFormat("Id: {0}, "))
                                     .FontSize(30).TextColor(Colors.Blue),
 
                                 new Label()
-                                    .Text(e => e.BindTo("Name").StringFormat("Name: {0} "))
+                                    .Text(e => e.Path("Name").StringFormat("Name: {0} "))
                                     .FontSize(30)
                             })),
             }

@@ -2,9 +2,9 @@
 
 using Sharp.UI;
 
-public class TriggersPage : ContentPage
+public class PropertyTriggerPage : ContentPage
 {
-    public TriggersPage()
+    public PropertyTriggerPage()
 	{
 		Resources = new ResourceDictionary
 		{

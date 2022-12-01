@@ -17,7 +17,7 @@ namespace Sharp.UI
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.BindableObject>(obj);
             mauiObject.SetBinding(
                 targetProperty: property,
-                binding: new Binding(
+                binding: new Microsoft.Maui.Controls.Binding(
                     path: sourcePath,
                     mode: mode,
                     converter: converter,
@@ -38,7 +38,7 @@ namespace Sharp.UI
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.BindableObject>(obj);
             mauiObject.SetBinding(
                 targetProperty: property,
-                binding: new Binding(
+                binding: new Microsoft.Maui.Controls.Binding(
                     path: sourcePath,
                     mode: mode,
                     converter: converter,
