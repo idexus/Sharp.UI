@@ -118,7 +118,7 @@ public partial interface IStyle { }
 public partial interface IVisualStateGroupList { }
 public partial interface IVisualStateGroup { }
 public partial interface IVisualState { }
-public partial interface IEventTrigger : ITriggerBase { }
+public partial interface ITrigger : ITriggerBase { }
 public partial interface ITriggerBase : IBindableObject { }
 public partial interface IDataTrigger : ITriggerBase { }
-public partial interface ITrigger : ITriggerBase { }
+public partial interface IEventTrigger : ITriggerBase { }
