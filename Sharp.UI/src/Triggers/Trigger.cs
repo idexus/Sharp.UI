@@ -71,4 +71,30 @@
         generateNoParamConstructor: true)]
     public partial class StateTrigger { }
 
+    [MauiWrapper(typeof(Microsoft.Maui.Controls.AdaptiveTrigger),
+    generateAdditionalConstructors: false,
+    generateNoParamConstructor: true)]
+    public partial class AdaptiveTrigger { }
+
+    [MauiWrapper(typeof(Microsoft.Maui.Controls.CompareStateTrigger),
+        generateAdditionalConstructors: false,
+        generateNoParamConstructor: false)]
+    public partial class CompareStateTrigger
+    {
+        public CompareStateTrigger(Func<Binding, Binding> bindingBuilder, object value) : this(new Microsoft.Maui.Controls.CompareStateTrigger())
+        {
+            Property = bindingBuilder(new Binding());
+            Value = value;
+        }
+    }
+
+    [MauiWrapper(typeof(Microsoft.Maui.Controls.DeviceStateTrigger),
+        generateAdditionalConstructors: false,
+        generateNoParamConstructor: true)]
+    public partial class DeviceStateTrigger { }
+
+    [MauiWrapper(typeof(Microsoft.Maui.Controls.OrientationStateTrigger),
+    generateAdditionalConstructors: false,
+    generateNoParamConstructor: true)]
+    public partial class OrientationStateTrigger { }
 }

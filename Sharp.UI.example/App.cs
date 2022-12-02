@@ -32,6 +32,7 @@ public partial class App : Application
                     new ShellContent<MultiTriggerPage>("Multi trigger"),
                     new ShellContent<EnterExitActionsPage>("Enter/exit"),
                     new ShellContent<StateTriggerPage>("State trigger"),
+                    new ShellContent<OrientationTriggerPage>("Orientation")
                 },
 
                 new Tab("Bindings")

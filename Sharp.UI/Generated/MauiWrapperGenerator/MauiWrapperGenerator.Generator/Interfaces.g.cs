@@ -128,3 +128,7 @@ public partial interface ICondition { }
 public partial interface IPropertyCondition : ICondition { }
 public partial interface IStateTrigger : IStateTriggerBase { }
 public partial interface IStateTriggerBase : IBindableObject { }
+public partial interface IAdaptiveTrigger : IStateTriggerBase { }
+public partial interface ICompareStateTrigger : IStateTriggerBase { }
+public partial interface IDeviceStateTrigger : IStateTriggerBase { }
+public partial interface IOrientationStateTrigger : IStateTriggerBase { }
