@@ -20,7 +20,6 @@ public class PanGesturePage : ContentPage
 
     private void OnUpdated(PanGestureRecognizer sender, PanUpdatedEventArgs args)
     {
-        
         switch (args.StatusType)
         {
             case GestureStatus.Running:
