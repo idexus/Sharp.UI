@@ -20,14 +20,6 @@ namespace Sharp.UI
             mauiObject.SetValue(VisualStateManager.VisualStateGroupsProperty, visualStateGroups);
             return obj;
         }
-
-        public static T Triggers<T>(this T obj, List<TriggerBase> triggers)
-            where T : IVisualElement
-        {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
-            foreach (var trigger in triggers) mauiObject.Triggers.Add(trigger);
-            return obj;
-        }
     }
 }
 

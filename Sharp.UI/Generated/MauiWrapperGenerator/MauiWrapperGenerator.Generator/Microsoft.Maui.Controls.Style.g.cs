@@ -102,6 +102,29 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T Behaviors<T>(this T obj,
+            System.Collections.Generic.IList<Microsoft.Maui.Controls.Behavior> behaviors)
+            where T : Sharp.UI.IStyle
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Style>(obj);
+            foreach (var item in behaviors) mauiObject.Behaviors.Add(item);
+            return obj;
+        }
+
+        public static T Behaviors<T>(this T obj,
+            Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Behavior>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Behavior>>> definition)
+            where T : Sharp.UI.IStyle
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Style>(obj);
+            var def = definition(new Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Behavior>>());
+            if (def.ValueIsSet())
+            {
+                var items = def.GetValue();
+                foreach (var item in items) mauiObject.Behaviors.Add(item);
+            }
+            return obj;
+        }
+        
         public static T CanCascade<T>(this T obj,
             bool? canCascade)
             where T : Sharp.UI.IStyle
@@ -161,6 +184,52 @@ namespace Sharp.UI
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Style>(obj);
             var def = definition(new ValueDef<string>());
             if (def.ValueIsSet()) mauiObject.Class = def.GetValue();
+            return obj;
+        }
+        
+        public static T Setters<T>(this T obj,
+            System.Collections.Generic.IList<Microsoft.Maui.Controls.Setter> setters)
+            where T : Sharp.UI.IStyle
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Style>(obj);
+            foreach (var item in setters) mauiObject.Setters.Add(item);
+            return obj;
+        }
+
+        public static T Setters<T>(this T obj,
+            Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Setter>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Setter>>> definition)
+            where T : Sharp.UI.IStyle
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Style>(obj);
+            var def = definition(new Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Setter>>());
+            if (def.ValueIsSet())
+            {
+                var items = def.GetValue();
+                foreach (var item in items) mauiObject.Setters.Add(item);
+            }
+            return obj;
+        }
+        
+        public static T Triggers<T>(this T obj,
+            System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerBase> triggers)
+            where T : Sharp.UI.IStyle
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Style>(obj);
+            foreach (var item in triggers) mauiObject.Triggers.Add(item);
+            return obj;
+        }
+
+        public static T Triggers<T>(this T obj,
+            Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerBase>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerBase>>> definition)
+            where T : Sharp.UI.IStyle
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Style>(obj);
+            var def = definition(new Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerBase>>());
+            if (def.ValueIsSet())
+            {
+                var items = def.GetValue();
+                foreach (var item in items) mauiObject.Triggers.Add(item);
+            }
             return obj;
         }
         

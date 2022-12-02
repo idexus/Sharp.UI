@@ -141,9 +141,6 @@ namespace Sharp.UI
         GenerateClass();
         builder.Append($@"
     }}
-    ");
-        GenerateExtensionCollectionMethod();
-        builder.Append($@"
 }}");
     }
 
@@ -253,28 +250,14 @@ namespace Sharp.UI
         public void Add({containerOfTypeName} {containerPropertyName.ToLower()}) => this.{containerPropertyName} = {containerPropertyName.ToLower()};");
     }
 
-    // ----- collection -----
-
-    bool IsIList(INamedTypeSymbol symbol)
-    {
-        var isIList = false;
-        var type = symbol;
-        do
-        {
-            foreach (var inter in type.Interfaces)
-                if (inter.Name.Contains("IList")) isIList = true;
-            type = type.BaseType;
-        }
-        while (!type.Name.Equals("Object") && !isIList);
-        return isIList;
-    }
+    // ----- collection -----    
 
     void GenerateCollectionDeclaration()
     {
         var prefix = $"this.{containerPropertyName}";
         if (mauiType.IsSealed) prefix = containerPropertyName.Equals("this") ? "this.MauiObject" : $"this.MauiObject.{containerPropertyName}";
 
-        if (containerOfTypeName != null && singleItemContainer == false && (mauiType.IsSealed || !IsIList(mauiType)))
+        if (containerOfTypeName != null && singleItemContainer == false && (mauiType.IsSealed || !WrapBuilder.IsIList(mauiType)))
         {
             notGenerateList.Add("Count");
 
@@ -519,39 +502,4 @@ namespace Sharp.UI
 
     #endregion
 
-
-    void GenerateExtensionCollectionMethod()
-    {
-        if (containerOfTypeName != null && singleItemContainer == false && !containerPropertyName.Equals("this"))
-        {
-            var tail = mauiType.IsGenericType ? $"{mauiType.TypeArguments.FirstOrDefault().Name}" : "";
-            var startWith = mauiType.ContainingNamespace.Name.Contains("Compatibility") ? "Compatibility" : "";
-
-            builder.AppendLine($@"
-    public static class I{startWith}{mauiType.Name}{tail}GeneratedContainerExtension
-    {{
-        // ----- collection container extension -----
-        public static T {containerPropertyName}<T>(this T obj, params {containerOfTypeName}[] {WrapBuilder.CamelCase(containerPropertyName)}) where T : {typeConformanceName}
-        {{
-            var mauiObject = MauiWrapper.GetObject<{mauiType.ToDisplayString()}>(obj);
-            foreach (var item in {WrapBuilder.CamelCase(containerPropertyName)}) mauiObject.{containerPropertyName}.Add(item);
-            return obj;
-        }}
-
-        public static T {containerPropertyName}<T>(this T obj,
-            Func<CollectionDef<{containerOfTypeName}>, CollectionDef<{containerOfTypeName}>> definition)
-            where T : {typeConformanceName}
-        {{
-            var mauiObject = MauiWrapper.GetObject<{mauiType.ToDisplayString()}>(obj);
-            var def = definition(new CollectionDef<{containerOfTypeName}>());
-            if (def.ValueIsSet())
-            {{
-                var items = def.GetValue();
-                foreach (var item in items) mauiObject.{containerPropertyName}.Add(item);
-            }}
-            return obj;
-        }}
-    }}");
-        }
-    }
 }

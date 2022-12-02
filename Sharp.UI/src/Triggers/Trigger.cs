@@ -32,4 +32,16 @@
     {
         public EventTrigger(string @event) : this(new Microsoft.Maui.Controls.EventTrigger { Event = @event }) { }
     }
+
+    [MauiWrapper(typeof(Microsoft.Maui.Controls.MultiTrigger),
+    generateAdditionalConstructors: false,
+    generateNoParamConstructor: false)]
+    public partial class MultiTrigger { }
+
+    public class MultiTrigger<T> : MultiTrigger
+    {
+        public MultiTrigger(Func<Binding, Binding> bindingBuilder, object value) : base(new Microsoft.Maui.Controls.MultiTrigger(typeof(T)))
+        {
+        }
+    }
 }

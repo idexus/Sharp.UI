@@ -75,6 +75,29 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T Effects<T>(this T obj,
+            System.Collections.Generic.IList<Microsoft.Maui.Controls.Effect> effects)
+            where T : Sharp.UI.IElement
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Element>(obj);
+            foreach (var item in effects) mauiObject.Effects.Add(item);
+            return obj;
+        }
+
+        public static T Effects<T>(this T obj,
+            Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Effect>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Effect>>> definition)
+            where T : Sharp.UI.IElement
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Element>(obj);
+            var def = definition(new Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Effect>>());
+            if (def.ValueIsSet())
+            {
+                var items = def.GetValue();
+                foreach (var item in items) mauiObject.Effects.Add(item);
+            }
+            return obj;
+        }
+        
         public static T StyleId<T>(this T obj,
             string? styleId)
             where T : Sharp.UI.IElement

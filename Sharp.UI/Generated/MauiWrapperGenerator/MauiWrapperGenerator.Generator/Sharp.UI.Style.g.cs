@@ -65,32 +65,6 @@ namespace Sharp.UI
         public System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerBase> Triggers { get => MauiObject.Triggers; }
         public System.Type TargetType { get => MauiObject.TargetType; }
     }
-    
-    public static class IStyleGeneratedContainerExtension
-    {
-        // ----- collection container extension -----
-        public static T Setters<T>(this T obj, params Microsoft.Maui.Controls.Setter[] setters) where T : Sharp.UI.IStyle
-        {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Style>(obj);
-            foreach (var item in setters) mauiObject.Setters.Add(item);
-            return obj;
-        }
-
-        public static T Setters<T>(this T obj,
-            Func<CollectionDef<Microsoft.Maui.Controls.Setter>, CollectionDef<Microsoft.Maui.Controls.Setter>> definition)
-            where T : Sharp.UI.IStyle
-        {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Style>(obj);
-            var def = definition(new CollectionDef<Microsoft.Maui.Controls.Setter>());
-            if (def.ValueIsSet())
-            {
-                var items = def.GetValue();
-                foreach (var item in items) mauiObject.Setters.Add(item);
-            }
-            return obj;
-        }
-    }
-
 }
 
 #pragma warning restore CS0108

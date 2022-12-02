@@ -40,8 +40,8 @@ public class DefExamplePage : ContentPage
     public DefExamplePage()
 	{
         Resources = pageResources;
-		Content = new VStack
-		{
+        Content = new VStack
+        {
             new Def<VStack>(e => e
                     .BackgroundColor(Colors.Red)
                     .Padding(20)
@@ -65,7 +65,7 @@ public class DefExamplePage : ContentPage
                     .Children(e => e
                         .OnDesktop(() => new View[]
                         {
-                            new Label("ellipse:"),                            
+                            new Label("ellipse:"),
                             new Ellipse(100,30).Fill(Colors.Pink)
                         })
                         .OniOS(() => new View[]

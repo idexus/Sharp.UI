@@ -92,8 +92,6 @@ namespace Sharp.UI
 
     // ----- methods/events methods -----
 
-
-
     class PropertyInfo
     {
         public INamedTypeSymbol mauiType;
@@ -138,27 +136,71 @@ namespace Sharp.UI
 
         if (!existInBases && !notGenerateList.Contains(info.propertyName))
         {
-            if (info.propertySymbol.SetMethod != null &&
-                info.propertySymbol.SetMethod.DeclaredAccessibility == Accessibility.Public &&
-                !info.propertyName.Equals("this[]"))
+            if (!info.propertyName.Equals("this[]"))
             {
-
-                GenerateExtensionMethod_OnlyValue(info);
-                if (bindablePropertiesNames.Contains(info.propertyName))
+                if (info.propertySymbol.SetMethod != null && info.propertySymbol.SetMethod.DeclaredAccessibility == Accessibility.Public)
                 {
-                    GenerateExtensionMethod_ValueAndBindableDef(info);
-                    GenerateExtensionMethod_OnlyBindableDef(info);
+                    GenerateExtensionMethod_OnlyValue(info);
+                    if (bindablePropertiesNames.Contains(info.propertyName))
+                    {
+                        GenerateExtensionMethod_ValueAndBindableDef(info);
+                        GenerateExtensionMethod_OnlyBindableDef(info);
+                    }
+                    else
+                    {
+                        GenerateExtensionMethod_ValueAndDef(info);
+                        GenerateExtensionMethod_OnlyDef(info);
+                    }
+
+                    if (info.propertySymbol.Type.Name.Equals("DataTemplate"))
+                        GenerateExtensionMethod_DataTemplate(info);
                 }
                 else
                 {
-                    GenerateExtensionMethod_ValueAndDef(info);
-                    GenerateExtensionMethod_OnlyDef(info);
-                }
+                    if (info.propertySymbol.Name.Contains("Triggers"))
+                    {
 
-                if (info.propertySymbol.Type.Name.Equals("DataTemplate"))
-                    GenerateExtensionMethod_DataTemplate(info);
+                    }
+                    if (info.propertySymbol.Type is INamedTypeSymbol)
+                    {
+                        var propertyType = (INamedTypeSymbol)info.propertySymbol.Type;
+                        if (info.propertySymbol.GetMethod != null && info.propertySymbol.GetMethod.DeclaredAccessibility == Accessibility.Public &&
+                           (WrapBuilder.IsIList(propertyType) && propertyType.TypeArguments.Count() == 1))
+                        {
+                            GenerateExtensionMethod_List(info);
+                        }
+                    }
+                }
             }
         }
+    }
+
+    void GenerateExtensionMethod_List(PropertyInfo info)
+    {
+        builder.Append($@"
+        public static T {info.propertyName}<T>(this T obj,
+            {info.propertyTypeName} {info.camelCaseName})
+            where T : {typeConformanceName}
+        {{
+            var mauiObject = MauiWrapper.GetObject<{mauiType.ToDisplayString()}>(obj);
+            foreach (var item in {info.camelCaseName}) {info.accessedWith}.{info.propertyName}.Add(item);
+            return obj;
+        }}
+
+        public static T {info.propertyName}<T>(this T obj,
+            Func<Def<{info.propertyTypeName}>, Def<{info.propertyTypeName}>> definition)
+            where T : {typeConformanceName}
+        {{
+            var mauiObject = MauiWrapper.GetObject<{mauiType.ToDisplayString()}>(obj);
+            var def = definition(new Def<{info.propertyTypeName}>());
+            if (def.ValueIsSet())
+            {{
+                var items = def.GetValue();
+                foreach (var item in items) {info.accessedWith}.{info.propertyName}.Add(item);
+            }}
+            return obj;
+        }}
+        ");
     }
 
     void GenerateExtensionMethod_OnlyValue(PropertyInfo info)

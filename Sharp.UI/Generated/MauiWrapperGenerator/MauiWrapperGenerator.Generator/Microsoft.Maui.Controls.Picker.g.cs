@@ -141,6 +141,29 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T Items<T>(this T obj,
+            System.Collections.Generic.IList<string> items)
+            where T : Sharp.UI.IPicker
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
+            foreach (var item in items) mauiObject.Items.Add(item);
+            return obj;
+        }
+
+        public static T Items<T>(this T obj,
+            Func<Def<System.Collections.Generic.IList<string>>, Def<System.Collections.Generic.IList<string>>> definition)
+            where T : Sharp.UI.IPicker
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
+            var def = definition(new Def<System.Collections.Generic.IList<string>>());
+            if (def.ValueIsSet())
+            {
+                var items = def.GetValue();
+                foreach (var item in items) mauiObject.Items.Add(item);
+            }
+            return obj;
+        }
+        
         public static T ItemsSource<T>(this T obj,
             System.Collections.IList? itemsSource)
             where T : Sharp.UI.IPicker

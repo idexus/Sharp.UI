@@ -9,6 +9,29 @@ namespace Sharp.UI
 {
     public static class ILayoutGeneratedExtension
     {
+        public static T Children<T>(this T obj,
+            System.Collections.Generic.IList<Microsoft.Maui.IView> children)
+            where T : Sharp.UI.ILayout
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Layout>(obj);
+            foreach (var item in children) mauiObject.Children.Add(item);
+            return obj;
+        }
+
+        public static T Children<T>(this T obj,
+            Func<Def<System.Collections.Generic.IList<Microsoft.Maui.IView>>, Def<System.Collections.Generic.IList<Microsoft.Maui.IView>>> definition)
+            where T : Sharp.UI.ILayout
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Layout>(obj);
+            var def = definition(new Def<System.Collections.Generic.IList<Microsoft.Maui.IView>>());
+            if (def.ValueIsSet())
+            {
+                var items = def.GetValue();
+                foreach (var item in items) mauiObject.Children.Add(item);
+            }
+            return obj;
+        }
+        
         public static T IsClippedToBounds<T>(this T obj,
             bool? isClippedToBounds)
             where T : Sharp.UI.ILayout

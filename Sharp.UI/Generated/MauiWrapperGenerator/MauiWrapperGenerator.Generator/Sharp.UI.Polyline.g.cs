@@ -240,32 +240,6 @@ namespace Sharp.UI
         
 
     }
-    
-    public static class IPolylineGeneratedContainerExtension
-    {
-        // ----- collection container extension -----
-        public static T Points<T>(this T obj, params Microsoft.Maui.Graphics.Point[] points) where T : Sharp.UI.IPolyline
-        {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Polyline>(obj);
-            foreach (var item in points) mauiObject.Points.Add(item);
-            return obj;
-        }
-
-        public static T Points<T>(this T obj,
-            Func<CollectionDef<Microsoft.Maui.Graphics.Point>, CollectionDef<Microsoft.Maui.Graphics.Point>> definition)
-            where T : Sharp.UI.IPolyline
-        {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Polyline>(obj);
-            var def = definition(new CollectionDef<Microsoft.Maui.Graphics.Point>());
-            if (def.ValueIsSet())
-            {
-                var items = def.GetValue();
-                foreach (var item in items) mauiObject.Points.Add(item);
-            }
-            return obj;
-        }
-    }
-
 }
 
 #pragma warning restore CS0108

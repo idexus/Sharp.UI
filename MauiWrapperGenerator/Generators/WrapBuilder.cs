@@ -34,6 +34,21 @@ public class WrapBuilder
         return camelCaseName;
     }
 
+    public static bool IsIList(INamedTypeSymbol symbol)
+    {
+        var isIList = false;
+        var type = symbol;
+        do
+        {
+            if (type.Name.Contains("IList")) isIList = true;
+            foreach (var inter in type.Interfaces)
+                if (inter.Name.Contains("IList")) isIList = true;
+            type = type.BaseType;
+        }
+        while (!isIList && type != null && !type.Name.Equals("Object"));
+        return isIList;
+    }
+
     //------
 
     private AttributeData GetAttributeData(INamedTypeSymbol symbol)

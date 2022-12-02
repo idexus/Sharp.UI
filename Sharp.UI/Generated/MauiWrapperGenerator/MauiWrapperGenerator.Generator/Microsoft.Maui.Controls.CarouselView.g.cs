@@ -75,6 +75,29 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T VisibleViews<T>(this T obj,
+            System.Collections.ObjectModel.ObservableCollection<Microsoft.Maui.Controls.View> visibleViews)
+            where T : Sharp.UI.ICarouselView
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
+            foreach (var item in visibleViews) mauiObject.VisibleViews.Add(item);
+            return obj;
+        }
+
+        public static T VisibleViews<T>(this T obj,
+            Func<Def<System.Collections.ObjectModel.ObservableCollection<Microsoft.Maui.Controls.View>>, Def<System.Collections.ObjectModel.ObservableCollection<Microsoft.Maui.Controls.View>>> definition)
+            where T : Sharp.UI.ICarouselView
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
+            var def = definition(new Def<System.Collections.ObjectModel.ObservableCollection<Microsoft.Maui.Controls.View>>());
+            if (def.ValueIsSet())
+            {
+                var items = def.GetValue();
+                foreach (var item in items) mauiObject.VisibleViews.Add(item);
+            }
+            return obj;
+        }
+        
         public static T IsBounceEnabled<T>(this T obj,
             bool? isBounceEnabled)
             where T : Sharp.UI.ICarouselView

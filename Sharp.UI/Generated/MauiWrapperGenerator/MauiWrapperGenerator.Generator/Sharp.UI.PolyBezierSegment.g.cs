@@ -78,7 +78,6 @@ namespace Sharp.UI
         
 
     }
-    
 }
 
 #pragma warning restore CS0108

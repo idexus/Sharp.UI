@@ -67,32 +67,6 @@ namespace Sharp.UI
         
 
     }
-    
-    public static class ITabGeneratedContainerExtension
-    {
-        // ----- collection container extension -----
-        public static T Items<T>(this T obj, params Microsoft.Maui.Controls.ShellContent[] items) where T : Sharp.UI.ITab
-        {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Tab>(obj);
-            foreach (var item in items) mauiObject.Items.Add(item);
-            return obj;
-        }
-
-        public static T Items<T>(this T obj,
-            Func<CollectionDef<Microsoft.Maui.Controls.ShellContent>, CollectionDef<Microsoft.Maui.Controls.ShellContent>> definition)
-            where T : Sharp.UI.ITab
-        {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Tab>(obj);
-            var def = definition(new CollectionDef<Microsoft.Maui.Controls.ShellContent>());
-            if (def.ValueIsSet())
-            {
-                var items = def.GetValue();
-                foreach (var item in items) mauiObject.Items.Add(item);
-            }
-            return obj;
-        }
-    }
-
 }
 
 #pragma warning restore CS0108

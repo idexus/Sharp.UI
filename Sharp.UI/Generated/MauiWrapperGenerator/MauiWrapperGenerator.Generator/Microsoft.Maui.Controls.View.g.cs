@@ -9,6 +9,29 @@ namespace Sharp.UI
 {
     public static class IViewGeneratedExtension
     {
+        public static T GestureRecognizers<T>(this T obj,
+            System.Collections.Generic.IList<Microsoft.Maui.Controls.IGestureRecognizer> gestureRecognizers)
+            where T : Sharp.UI.IView
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.View>(obj);
+            foreach (var item in gestureRecognizers) mauiObject.GestureRecognizers.Add(item);
+            return obj;
+        }
+
+        public static T GestureRecognizers<T>(this T obj,
+            Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.IGestureRecognizer>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.IGestureRecognizer>>> definition)
+            where T : Sharp.UI.IView
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.View>(obj);
+            var def = definition(new Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.IGestureRecognizer>>());
+            if (def.ValueIsSet())
+            {
+                var items = def.GetValue();
+                foreach (var item in items) mauiObject.GestureRecognizers.Add(item);
+            }
+            return obj;
+        }
+        
         public static T HorizontalOptions<T>(this T obj,
             Microsoft.Maui.Controls.LayoutOptions? horizontalOptions)
             where T : Sharp.UI.IView

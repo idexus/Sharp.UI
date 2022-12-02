@@ -40,6 +40,52 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T Setters<T>(this T obj,
+            System.Collections.Generic.IList<Microsoft.Maui.Controls.Setter> setters)
+            where T : Sharp.UI.IVisualState
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualState>(obj);
+            foreach (var item in setters) mauiObject.Setters.Add(item);
+            return obj;
+        }
+
+        public static T Setters<T>(this T obj,
+            Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Setter>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Setter>>> definition)
+            where T : Sharp.UI.IVisualState
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualState>(obj);
+            var def = definition(new Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Setter>>());
+            if (def.ValueIsSet())
+            {
+                var items = def.GetValue();
+                foreach (var item in items) mauiObject.Setters.Add(item);
+            }
+            return obj;
+        }
+        
+        public static T StateTriggers<T>(this T obj,
+            System.Collections.Generic.IList<Microsoft.Maui.Controls.StateTriggerBase> stateTriggers)
+            where T : Sharp.UI.IVisualState
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualState>(obj);
+            foreach (var item in stateTriggers) mauiObject.StateTriggers.Add(item);
+            return obj;
+        }
+
+        public static T StateTriggers<T>(this T obj,
+            Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.StateTriggerBase>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.StateTriggerBase>>> definition)
+            where T : Sharp.UI.IVisualState
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualState>(obj);
+            var def = definition(new Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.StateTriggerBase>>());
+            if (def.ValueIsSet())
+            {
+                var items = def.GetValue();
+                foreach (var item in items) mauiObject.StateTriggers.Add(item);
+            }
+            return obj;
+        }
+        
         public static T TargetType<T>(this T obj,
             System.Type? targetType)
             where T : Sharp.UI.IVisualState

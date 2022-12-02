@@ -65,32 +65,6 @@ namespace Sharp.UI
         
 
     }
-    
-    public static class ITableViewGeneratedContainerExtension
-    {
-        // ----- collection container extension -----
-        public static T Root<T>(this T obj, params Microsoft.Maui.Controls.TableSection[] root) where T : Sharp.UI.ITableView
-        {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.TableView>(obj);
-            foreach (var item in root) mauiObject.Root.Add(item);
-            return obj;
-        }
-
-        public static T Root<T>(this T obj,
-            Func<CollectionDef<Microsoft.Maui.Controls.TableSection>, CollectionDef<Microsoft.Maui.Controls.TableSection>> definition)
-            where T : Sharp.UI.ITableView
-        {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.TableView>(obj);
-            var def = definition(new CollectionDef<Microsoft.Maui.Controls.TableSection>());
-            if (def.ValueIsSet())
-            {
-                var items = def.GetValue();
-                foreach (var item in items) mauiObject.Root.Add(item);
-            }
-            return obj;
-        }
-    }
-
 }
 
 #pragma warning restore CS0108

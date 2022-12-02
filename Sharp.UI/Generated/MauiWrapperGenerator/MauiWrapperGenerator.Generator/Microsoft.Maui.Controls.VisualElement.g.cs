@@ -304,6 +304,29 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T Behaviors<T>(this T obj,
+            System.Collections.Generic.IList<Microsoft.Maui.Controls.Behavior> behaviors)
+            where T : Sharp.UI.IVisualElement
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
+            foreach (var item in behaviors) mauiObject.Behaviors.Add(item);
+            return obj;
+        }
+
+        public static T Behaviors<T>(this T obj,
+            Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Behavior>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Behavior>>> definition)
+            where T : Sharp.UI.IVisualElement
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
+            var def = definition(new Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Behavior>>());
+            if (def.ValueIsSet())
+            {
+                var items = def.GetValue();
+                foreach (var item in items) mauiObject.Behaviors.Add(item);
+            }
+            return obj;
+        }
+        
         public static T HeightRequest<T>(this T obj,
             double? heightRequest)
             where T : Sharp.UI.IVisualElement
@@ -862,6 +885,29 @@ namespace Sharp.UI
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.VisualElement.TranslationYProperty));
             if (def.ValueIsSet()) mauiObject.TranslationY = def.GetValue();
             def.BindProperty();
+            return obj;
+        }
+        
+        public static T Triggers<T>(this T obj,
+            System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerBase> triggers)
+            where T : Sharp.UI.IVisualElement
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
+            foreach (var item in triggers) mauiObject.Triggers.Add(item);
+            return obj;
+        }
+
+        public static T Triggers<T>(this T obj,
+            Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerBase>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerBase>>> definition)
+            where T : Sharp.UI.IVisualElement
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
+            var def = definition(new Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerBase>>());
+            if (def.ValueIsSet())
+            {
+                var items = def.GetValue();
+                foreach (var item in items) mauiObject.Triggers.Add(item);
+            }
             return obj;
         }
         

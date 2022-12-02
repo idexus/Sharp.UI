@@ -100,32 +100,6 @@ namespace Sharp.UI
         
 
     }
-    
-    public static class IPathGeometryGeneratedContainerExtension
-    {
-        // ----- collection container extension -----
-        public static T Figures<T>(this T obj, params Microsoft.Maui.Controls.Shapes.PathFigure[] figures) where T : Sharp.UI.IPathGeometry
-        {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.PathGeometry>(obj);
-            foreach (var item in figures) mauiObject.Figures.Add(item);
-            return obj;
-        }
-
-        public static T Figures<T>(this T obj,
-            Func<CollectionDef<Microsoft.Maui.Controls.Shapes.PathFigure>, CollectionDef<Microsoft.Maui.Controls.Shapes.PathFigure>> definition)
-            where T : Sharp.UI.IPathGeometry
-        {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.PathGeometry>(obj);
-            var def = definition(new CollectionDef<Microsoft.Maui.Controls.Shapes.PathFigure>());
-            if (def.ValueIsSet())
-            {
-                var items = def.GetValue();
-                foreach (var item in items) mauiObject.Figures.Add(item);
-            }
-            return obj;
-        }
-    }
-
 }
 
 #pragma warning restore CS0108

@@ -122,3 +122,4 @@ public partial interface ITrigger : ITriggerBase { }
 public partial interface ITriggerBase : IBindableObject { }
 public partial interface IDataTrigger : ITriggerBase { }
 public partial interface IEventTrigger : ITriggerBase { }
+public partial interface IMultiTrigger : ITriggerBase { }

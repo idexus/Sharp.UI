@@ -13,26 +13,26 @@ using System.Collections.ObjectModel;
 
 namespace Sharp.UI
 {
-    public partial class DataTrigger : Sharp.UI.IDataTrigger, ISealedMauiWrapper, IList<Microsoft.Maui.Controls.Setter>, IWrappedBindableObject
+    public partial class MultiTrigger : Sharp.UI.IMultiTrigger, ISealedMauiWrapper, IList<Microsoft.Maui.Controls.Setter>, IWrappedBindableObject
     {
         // ----- maui object -----
 
         public object _maui_RawObject { get; set; }
 
-        public Microsoft.Maui.Controls.DataTrigger MauiObject { get => (Microsoft.Maui.Controls.DataTrigger)_maui_RawObject; set => _maui_RawObject = value; }
+        public Microsoft.Maui.Controls.MultiTrigger MauiObject { get => (Microsoft.Maui.Controls.MultiTrigger)_maui_RawObject; set => _maui_RawObject = value; }
 
         // ----- constructors -----
         
 
-        public DataTrigger(Microsoft.Maui.Controls.DataTrigger dataTrigger)
+        public MultiTrigger(Microsoft.Maui.Controls.MultiTrigger multiTrigger)
         {
-            MauiObject = dataTrigger;
+            MauiObject = multiTrigger;
         }
 
         // ----- operators -----
 
-        public static implicit operator DataTrigger(Microsoft.Maui.Controls.DataTrigger mauiObject) => new DataTrigger(mauiObject);
-        public static implicit operator Microsoft.Maui.Controls.DataTrigger(DataTrigger obj) => obj.MauiObject;
+        public static implicit operator MultiTrigger(Microsoft.Maui.Controls.MultiTrigger mauiObject) => new MultiTrigger(mauiObject);
+        public static implicit operator Microsoft.Maui.Controls.MultiTrigger(MultiTrigger obj) => obj.MauiObject;
 
         // ----- collection container -----
 
@@ -56,9 +56,8 @@ namespace Sharp.UI
 
         // ----- properties / events -----
 
-        public Microsoft.Maui.Controls.BindingBase Binding { get => MauiObject.Binding; set => MauiObject.Binding = value; }
+        public System.Collections.Generic.IList<Microsoft.Maui.Controls.Condition> Conditions { get => MauiObject.Conditions; }
         public System.Collections.Generic.IList<Microsoft.Maui.Controls.Setter> Setters { get => MauiObject.Setters; }
-        public object Value { get => MauiObject.Value; set => MauiObject.Value = value; }
         public System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerAction> EnterActions { get => MauiObject.EnterActions; }
         public System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerAction> ExitActions { get => MauiObject.ExitActions; }
         public bool IsSealed { get => MauiObject.IsSealed; }

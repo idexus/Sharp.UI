@@ -9,6 +9,29 @@ namespace Sharp.UI
 {
     public static class ICellGeneratedExtension
     {
+        public static T ContextActions<T>(this T obj,
+            System.Collections.Generic.IList<Microsoft.Maui.Controls.MenuItem> contextActions)
+            where T : Sharp.UI.ICell
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Cell>(obj);
+            foreach (var item in contextActions) mauiObject.ContextActions.Add(item);
+            return obj;
+        }
+
+        public static T ContextActions<T>(this T obj,
+            Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.MenuItem>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.MenuItem>>> definition)
+            where T : Sharp.UI.ICell
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Cell>(obj);
+            var def = definition(new Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.MenuItem>>());
+            if (def.ValueIsSet())
+            {
+                var items = def.GetValue();
+                foreach (var item in items) mauiObject.ContextActions.Add(item);
+            }
+            return obj;
+        }
+        
         public static T IsContextActionsLegacyModeEnabled<T>(this T obj,
             bool? isContextActionsLegacyModeEnabled)
             where T : Sharp.UI.ICell

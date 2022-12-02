@@ -42,6 +42,29 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T Items<T>(this T obj,
+            System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellContent> items)
+            where T : Sharp.UI.IShellSection
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ShellSection>(obj);
+            foreach (var item in items) mauiObject.Items.Add(item);
+            return obj;
+        }
+
+        public static T Items<T>(this T obj,
+            Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellContent>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellContent>>> definition)
+            where T : Sharp.UI.IShellSection
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ShellSection>(obj);
+            var def = definition(new Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellContent>>());
+            if (def.ValueIsSet())
+            {
+                var items = def.GetValue();
+                foreach (var item in items) mauiObject.Items.Add(item);
+            }
+            return obj;
+        }
+        
     }
 }
 

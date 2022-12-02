@@ -67,32 +67,6 @@ namespace Sharp.UI
         
 
     }
-    
-    public static class ITabbedPageGeneratedContainerExtension
-    {
-        // ----- collection container extension -----
-        public static T Children<T>(this T obj, params Microsoft.Maui.Controls.Page[] children) where T : Sharp.UI.ITabbedPage
-        {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.TabbedPage>(obj);
-            foreach (var item in children) mauiObject.Children.Add(item);
-            return obj;
-        }
-
-        public static T Children<T>(this T obj,
-            Func<CollectionDef<Microsoft.Maui.Controls.Page>, CollectionDef<Microsoft.Maui.Controls.Page>> definition)
-            where T : Sharp.UI.ITabbedPage
-        {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.TabbedPage>(obj);
-            var def = definition(new CollectionDef<Microsoft.Maui.Controls.Page>());
-            if (def.ValueIsSet())
-            {
-                var items = def.GetValue();
-                foreach (var item in items) mauiObject.Children.Add(item);
-            }
-            return obj;
-        }
-    }
-
 }
 
 #pragma warning restore CS0108

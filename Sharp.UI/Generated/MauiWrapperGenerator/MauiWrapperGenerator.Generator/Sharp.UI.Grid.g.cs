@@ -51,32 +51,6 @@ namespace Sharp.UI
         
 
     }
-    
-    public static class IGridGeneratedContainerExtension
-    {
-        // ----- collection container extension -----
-        public static T Children<T>(this T obj, params Microsoft.Maui.IView[] children) where T : Sharp.UI.IGrid
-        {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Grid>(obj);
-            foreach (var item in children) mauiObject.Children.Add(item);
-            return obj;
-        }
-
-        public static T Children<T>(this T obj,
-            Func<CollectionDef<Microsoft.Maui.IView>, CollectionDef<Microsoft.Maui.IView>> definition)
-            where T : Sharp.UI.IGrid
-        {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Grid>(obj);
-            var def = definition(new CollectionDef<Microsoft.Maui.IView>());
-            if (def.ValueIsSet())
-            {
-                var items = def.GetValue();
-                foreach (var item in items) mauiObject.Children.Add(item);
-            }
-            return obj;
-        }
-    }
-
 }
 
 #pragma warning restore CS0108

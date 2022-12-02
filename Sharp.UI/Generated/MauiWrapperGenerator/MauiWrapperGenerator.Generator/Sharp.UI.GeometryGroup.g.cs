@@ -67,32 +67,6 @@ namespace Sharp.UI
         
 
     }
-    
-    public static class IGeometryGroupGeneratedContainerExtension
-    {
-        // ----- collection container extension -----
-        public static T Children<T>(this T obj, params Microsoft.Maui.Controls.Shapes.Geometry[] children) where T : Sharp.UI.IGeometryGroup
-        {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.GeometryGroup>(obj);
-            foreach (var item in children) mauiObject.Children.Add(item);
-            return obj;
-        }
-
-        public static T Children<T>(this T obj,
-            Func<CollectionDef<Microsoft.Maui.Controls.Shapes.Geometry>, CollectionDef<Microsoft.Maui.Controls.Shapes.Geometry>> definition)
-            where T : Sharp.UI.IGeometryGroup
-        {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.GeometryGroup>(obj);
-            var def = definition(new CollectionDef<Microsoft.Maui.Controls.Shapes.Geometry>());
-            if (def.ValueIsSet())
-            {
-                var items = def.GetValue();
-                foreach (var item in items) mauiObject.Children.Add(item);
-            }
-            return obj;
-        }
-    }
-
 }
 
 #pragma warning restore CS0108

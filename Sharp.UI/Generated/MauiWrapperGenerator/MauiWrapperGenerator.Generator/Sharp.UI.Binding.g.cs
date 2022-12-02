@@ -50,7 +50,6 @@ namespace Sharp.UI
         public object TargetNullValue { get => MauiObject.TargetNullValue; set => MauiObject.TargetNullValue = value; }
         public object FallbackValue { get => MauiObject.FallbackValue; set => MauiObject.FallbackValue = value; }
     }
-    
 }
 
 #pragma warning restore CS0108
