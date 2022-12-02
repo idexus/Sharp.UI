@@ -385,10 +385,14 @@ new VStack
 #### Event triggers
 
 ```cs
-new EventTrigger("TextChanged")
-{
-    new NumericValidationTriggerAction()
-}
+new Entry("Enter text...", out var entry).Text("")
+    .Triggers(new List<TriggerBase>
+    {
+        new EventTrigger("TextChanged")
+        {
+            new NumericValidationTriggerAction()
+        }
+    })
 ```
 
 Action
