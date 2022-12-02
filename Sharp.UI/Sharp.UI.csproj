@@ -41,7 +41,6 @@
 		  <None Remove="src\Extensions\" />
 		  <None Remove="src\Grid\" />
 		  <None Remove="src\PropertyDefinitions\" />
-		  <None Remove="src\Triggers\" />
 		</ItemGroup>
 		<ItemGroup>
 		  <Folder Include="src\" />
@@ -51,6 +50,5 @@
 		  <Folder Include="src\Extensions\" />
 		  <Folder Include="src\Grid\" />
 		  <Folder Include="src\PropertyDefinitions\" />
-		  <Folder Include="src\Triggers\" />
 		</ItemGroup>
 </Project>

@@ -110,14 +110,13 @@ public partial interface ISwipeItemView : IContentView { }
 public partial interface ITableSection : ITableSectionBaseCell { }
 public partial interface ITableSectionBaseCell : ITableSectionBase { }
 public partial interface ITableSectionBase : IBindableObject { }
+public partial interface IPanGestureRecognizer : IGestureRecognizer { }
+public partial interface IGestureRecognizer : IElement { }
 public partial interface IColumnDefinition : IBindableObject { }
 public partial interface IRowDefinition : IBindableObject { }
 public partial interface IBinding : IBindingBase { }
 public partial interface IBindingBase { }
 public partial interface IStyle { }
-public partial interface IVisualStateGroupList { }
-public partial interface IVisualStateGroup { }
-public partial interface IVisualState { }
 public partial interface ITrigger : ITriggerBase { }
 public partial interface ITriggerBase : IBindableObject { }
 public partial interface IDataTrigger : ITriggerBase { }
@@ -132,3 +131,6 @@ public partial interface IAdaptiveTrigger : IStateTriggerBase { }
 public partial interface ICompareStateTrigger : IStateTriggerBase { }
 public partial interface IDeviceStateTrigger : IStateTriggerBase { }
 public partial interface IOrientationStateTrigger : IStateTriggerBase { }
+public partial interface IVisualStateGroupList { }
+public partial interface IVisualStateGroup { }
+public partial interface IVisualState { }
