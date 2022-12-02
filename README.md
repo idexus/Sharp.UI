@@ -329,7 +329,7 @@ new ResourceDictionary
 
 ## Triggers
 
-#### Property triggers
+### Property triggers
 
 ```cs
 using Sharp.UI;
@@ -365,7 +365,7 @@ public class PropertyTriggerPage : ContentPage
 }
 ```
 
-#### Data triggers
+### Data triggers
 
 ```cs
 new VStack
@@ -382,7 +382,7 @@ new VStack
 }
 ```
 
-#### Event triggers
+### Event triggers
 
 ```cs
 new Entry("Enter text...", out var entry).Text("")
