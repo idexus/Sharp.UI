@@ -270,14 +270,14 @@ public class PanGesturePage : ContentPage
     double x, y;
 
     public PanGesturePage()
-	{
-		Content = new Grid
-		{
-			new Image("dotnet_bot.png", out var image)
-				.SizeRequest(100,100)
-				.GestureRecognizers(new GestureRecognizer[]
-				{
-					new PanGestureRecognizer().OnPanUpdated((e, args) =>
+    {
+        Content = new Grid
+        {
+            new Image("dotnet_bot.png", out var image)
+                .SizeRequest(100,100)
+                .GestureRecognizers(new GestureRecognizer[]
+                {
+                    new PanGestureRecognizer().OnPanUpdated((e, args) =>
                     {
                         switch (args.StatusType)
                         {
@@ -292,9 +292,9 @@ public class PanGesturePage : ContentPage
                                 break;
                         }
                     })
-				})
-		};
-	}
+                })
+        };
+    }
 }
 ```
 
