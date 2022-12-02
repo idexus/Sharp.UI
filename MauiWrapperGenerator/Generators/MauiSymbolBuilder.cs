@@ -322,6 +322,7 @@ namespace Sharp.UI
         {
             builder.AppendLine($@"
         // ----- properties / events -----");
+            List<string> doneList = new List<string>();
 
             var type = mauiType;
             do
@@ -334,8 +335,22 @@ namespace Sharp.UI
                     .GetMembers()
                     .Where(e => e.Kind == SymbolKind.Event && e.DeclaredAccessibility == Accessibility.Public);
 
-                foreach (var prop in properties) GenerateProperty(prop);
-                foreach (var @event in events) GenerateEvent(@event);
+                foreach (var prop in properties)
+                {
+                    if (!doneList.Contains(prop.Name))
+                    {
+                        GenerateProperty(prop);
+                        doneList.Add(prop.Name);
+                    }
+                }
+                foreach (var @event in events)
+                {
+                    if (!doneList.Contains(@event.Name))
+                    {
+                        GenerateEvent(@event);
+                        doneList.Add(@event.Name);
+                    }
+                }
 
                 type = type.BaseType;
             }
@@ -391,7 +406,7 @@ namespace Sharp.UI
         if (mauiType.IsSealed)
         {
             builder.AppendLine($@"
-        public {sharpUIType.Name}({mauiType.ToDisplayString()} {WrapBuilder.CamelCase(sharpUIType.Name)})
+        internal {sharpUIType.Name}({mauiType.ToDisplayString()} {WrapBuilder.CamelCase(sharpUIType.Name)})
         {{
             MauiObject = {WrapBuilder.CamelCase(sharpUIType.Name)};
         }}");

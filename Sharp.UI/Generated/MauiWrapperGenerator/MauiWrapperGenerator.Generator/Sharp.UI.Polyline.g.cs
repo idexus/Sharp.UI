@@ -24,7 +24,7 @@ namespace Sharp.UI
         // ----- constructors -----
         
 
-        public Polyline(Microsoft.Maui.Controls.Shapes.Polyline polyline)
+        internal Polyline(Microsoft.Maui.Controls.Shapes.Polyline polyline)
         {
             MauiObject = polyline;
         }

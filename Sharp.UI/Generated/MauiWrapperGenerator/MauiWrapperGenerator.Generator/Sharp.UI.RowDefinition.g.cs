@@ -20,7 +20,7 @@ namespace Sharp.UI
         // ----- constructors -----
         
 
-        public RowDefinition(Microsoft.Maui.Controls.RowDefinition rowDefinition)
+        internal RowDefinition(Microsoft.Maui.Controls.RowDefinition rowDefinition)
         {
             MauiObject = rowDefinition;
         }

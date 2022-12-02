@@ -26,9 +26,12 @@ public partial class App : Application
                 new ShellContent<StyleTestPage>("Style"),
                 new Tab("Triggers")
                 {
+                    new ShellContent<PropertyTriggerPage>("Property trigger"),
                     new ShellContent<EventTriggerPage>("Event trigger"),
                     new ShellContent<DataTriggerPage>("Data trigger"),
-                    new ShellContent<PropertyTriggerPage>("Triggers"),
+                    new ShellContent<MultiTriggerPage>("Multi trigger"),
+                    new ShellContent<EnterExitActionsPage>("Enter/exit"),
+                    new ShellContent<StateTriggerPage>("State trigger"),
                 },
 
                 new Tab("Bindings")

@@ -24,7 +24,7 @@ namespace Sharp.UI
         // ----- constructors -----
         
 
-        public Polygon(Microsoft.Maui.Controls.Shapes.Polygon polygon)
+        internal Polygon(Microsoft.Maui.Controls.Shapes.Polygon polygon)
         {
             MauiObject = polygon;
         }

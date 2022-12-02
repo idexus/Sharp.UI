@@ -125,3 +125,6 @@ public partial interface IEventTrigger : ITriggerBase { }
 public partial interface IMultiTrigger : ITriggerBase { }
 public partial interface IBindingCondition : ICondition { }
 public partial interface ICondition { }
+public partial interface IPropertyCondition : ICondition { }
+public partial interface IStateTrigger : IStateTriggerBase { }
+public partial interface IStateTriggerBase : IBindableObject { }

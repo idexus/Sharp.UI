@@ -20,7 +20,7 @@ namespace Sharp.UI
         // ----- constructors -----
         
 
-        public BindingCondition(Microsoft.Maui.Controls.BindingCondition bindingCondition)
+        internal BindingCondition(Microsoft.Maui.Controls.BindingCondition bindingCondition)
         {
             MauiObject = bindingCondition;
         }

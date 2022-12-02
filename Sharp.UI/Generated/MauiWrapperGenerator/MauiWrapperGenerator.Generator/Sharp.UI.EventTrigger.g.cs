@@ -24,7 +24,7 @@ namespace Sharp.UI
         // ----- constructors -----
         
 
-        public EventTrigger(Microsoft.Maui.Controls.EventTrigger eventTrigger)
+        internal EventTrigger(Microsoft.Maui.Controls.EventTrigger eventTrigger)
         {
             MauiObject = eventTrigger;
         }

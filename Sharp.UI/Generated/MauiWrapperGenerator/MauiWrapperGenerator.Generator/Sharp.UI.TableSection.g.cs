@@ -24,7 +24,7 @@ namespace Sharp.UI
         // ----- constructors -----
         
 
-        public TableSection(Microsoft.Maui.Controls.TableSection tableSection)
+        internal TableSection(Microsoft.Maui.Controls.TableSection tableSection)
         {
             MauiObject = tableSection;
         }

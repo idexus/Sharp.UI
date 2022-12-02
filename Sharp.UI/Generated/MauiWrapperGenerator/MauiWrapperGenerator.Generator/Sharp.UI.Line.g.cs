@@ -20,7 +20,7 @@ namespace Sharp.UI
         // ----- constructors -----
         
 
-        public Line(Microsoft.Maui.Controls.Shapes.Line line)
+        internal Line(Microsoft.Maui.Controls.Shapes.Line line)
         {
             MauiObject = line;
         }

@@ -24,7 +24,7 @@ namespace Sharp.UI
         // ----- constructors -----
         
 
-        public VisualStateGroup(Microsoft.Maui.Controls.VisualStateGroup visualStateGroup)
+        internal VisualStateGroup(Microsoft.Maui.Controls.VisualStateGroup visualStateGroup)
         {
             MauiObject = visualStateGroup;
         }

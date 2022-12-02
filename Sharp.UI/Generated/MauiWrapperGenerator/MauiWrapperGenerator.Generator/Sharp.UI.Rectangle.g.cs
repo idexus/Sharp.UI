@@ -20,7 +20,7 @@ namespace Sharp.UI
         // ----- constructors -----
         
 
-        public Rectangle(Microsoft.Maui.Controls.Shapes.Rectangle rectangle)
+        internal Rectangle(Microsoft.Maui.Controls.Shapes.Rectangle rectangle)
         {
             MauiObject = rectangle;
         }

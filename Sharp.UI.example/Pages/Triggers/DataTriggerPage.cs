@@ -8,7 +8,7 @@ public class DataTriggerPage : ContentPage
 		{
 			new Entry("Enter text...", out var entry).Text(""),
 			new Button("Save")
-                .Triggers(new List<TriggerBase>
+                .Triggers(new TriggerBase[]
 				{
 					new DataTrigger<Button>(e => e.Path("Text.Length").Source(entry), 0)
 					{

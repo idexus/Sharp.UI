@@ -18,7 +18,7 @@ public class EventTriggerPage : ContentPage
 		Content = new VStack
 		{
 			new Entry("Enter text...", out var entry).Text("")
-                .Triggers(new List<TriggerBase>
+                .Triggers(new TriggerBase[]
 				{
 					new EventTrigger("TextChanged")
 					{

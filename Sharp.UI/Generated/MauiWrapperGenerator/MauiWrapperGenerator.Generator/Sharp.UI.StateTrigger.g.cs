@@ -9,57 +9,42 @@
 
 namespace Sharp.UI
 {
-    public partial class PolyBezierSegment : Sharp.UI.IPolyBezierSegment, ISealedMauiWrapper, IWrappedBindableObject
+    public partial class StateTrigger : Sharp.UI.IStateTrigger, ISealedMauiWrapper, IWrappedBindableObject
     {
         // ----- maui object -----
 
         public object _maui_RawObject { get; set; }
 
-        public Microsoft.Maui.Controls.Shapes.PolyBezierSegment MauiObject { get => (Microsoft.Maui.Controls.Shapes.PolyBezierSegment)_maui_RawObject; set => _maui_RawObject = value; }
+        public Microsoft.Maui.Controls.StateTrigger MauiObject { get => (Microsoft.Maui.Controls.StateTrigger)_maui_RawObject; set => _maui_RawObject = value; }
 
         // ----- constructors -----
         
 
-        internal PolyBezierSegment(Microsoft.Maui.Controls.Shapes.PolyBezierSegment polyBezierSegment)
+        internal StateTrigger(Microsoft.Maui.Controls.StateTrigger stateTrigger)
         {
-            MauiObject = polyBezierSegment;
+            MauiObject = stateTrigger;
         }
 
-        public PolyBezierSegment()
+        public StateTrigger()
         {
-            MauiObject = new Microsoft.Maui.Controls.Shapes.PolyBezierSegment();
-        }
-
-
-        public PolyBezierSegment(out PolyBezierSegment polyBezierSegment) : this()
-        {
-            polyBezierSegment = this;
-        }
-
-        public PolyBezierSegment(Action<PolyBezierSegment> configure) : this()
-        {
-            configure(this);
-        }
-
-        public PolyBezierSegment(out PolyBezierSegment polyBezierSegment, Action<PolyBezierSegment> configure) : this()
-        {
-            polyBezierSegment = this;
-            configure(this);
+            MauiObject = new Microsoft.Maui.Controls.StateTrigger();
         }
 
         // ----- operators -----
 
-        public static implicit operator PolyBezierSegment(Microsoft.Maui.Controls.Shapes.PolyBezierSegment mauiObject) => new PolyBezierSegment(mauiObject);
-        public static implicit operator Microsoft.Maui.Controls.Shapes.PolyBezierSegment(PolyBezierSegment obj) => obj.MauiObject;
+        public static implicit operator StateTrigger(Microsoft.Maui.Controls.StateTrigger mauiObject) => new StateTrigger(mauiObject);
+        public static implicit operator Microsoft.Maui.Controls.StateTrigger(StateTrigger obj) => obj.MauiObject;
 
         // ----- bindable properties -----
 
-        public static Microsoft.Maui.Controls.BindableProperty PointsProperty => Microsoft.Maui.Controls.Shapes.PolyBezierSegment.PointsProperty;
+        public static Microsoft.Maui.Controls.BindableProperty IsActiveProperty => Microsoft.Maui.Controls.StateTrigger.IsActiveProperty;
         public static Microsoft.Maui.Controls.BindableProperty BindingContextProperty => Microsoft.Maui.Controls.BindableObject.BindingContextProperty;
 
         // ----- properties / events -----
 
-        public Microsoft.Maui.Controls.PointCollection Points { get => MauiObject.Points; set => MauiObject.Points = value; }
+        public bool IsActive { get => MauiObject.IsActive; set => MauiObject.IsActive = value; }
+        public bool IsAttached { get => MauiObject.IsAttached; }
+        public event System.EventHandler IsActiveChanged { add => MauiObject.IsActiveChanged += value; remove => MauiObject.IsActiveChanged -= value; }
         public Microsoft.Maui.Dispatching.IDispatcher Dispatcher { get => MauiObject.Dispatcher; }
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged { add => MauiObject.PropertyChanged += value; remove => MauiObject.PropertyChanged -= value; }
         public event Microsoft.Maui.Controls.PropertyChangingEventHandler PropertyChanging { add => MauiObject.PropertyChanging += value; remove => MauiObject.PropertyChanging -= value; }

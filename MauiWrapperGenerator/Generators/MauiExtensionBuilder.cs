@@ -115,30 +115,37 @@ namespace Sharp.UI
         }
     }
 
-    void GenerateExtensionMethod(ISymbol property)
+    bool ExistInBaseClasses(string propertyName, bool getterAndSetter)
     {
-        var info = new PropertyInfo(mauiType, (IPropertySymbol)property);
-
-        var existInBases = false;
+        var existInBaseClasses = false;
         var type = mauiType.BaseType;
-        while (!existInBases && !type.Name.Equals("Object"))
+        while (!existInBaseClasses && !type.Name.Equals("Object"))
         {
-            existInBases = (type
+            existInBaseClasses = (type
                         .GetMembers()
                         .FirstOrDefault(e =>
                             e.Kind == SymbolKind.Property &&
                             e.DeclaredAccessibility == Accessibility.Public &&
-                            e.Name.Equals(property.Name)) != null);
+                            (((IPropertySymbol)e).SetMethod != null || !getterAndSetter) &&
+                            e.Name.Equals(propertyName)) != null);
 
             type = type.BaseType;
         }
-        
 
-        if (!existInBases && !notGenerateList.Contains(info.propertyName))
+        return existInBaseClasses;
+    }
+
+    void GenerateExtensionMethod(ISymbol property)
+    {
+        var info = new PropertyInfo(mauiType, (IPropertySymbol)property);
+
+        if (!notGenerateList.Contains(info.propertyName))
         {
             if (!info.propertyName.Equals("this[]"))
             {
-                if (info.propertySymbol.SetMethod != null && info.propertySymbol.SetMethod.DeclaredAccessibility == Accessibility.Public)
+                if (info.propertySymbol.SetMethod != null &&
+                    info.propertySymbol.SetMethod.DeclaredAccessibility == Accessibility.Public &&
+                    !ExistInBaseClasses(info.propertyName, getterAndSetter: true))
                 {
                     GenerateExtensionMethod_OnlyValue(info);
                     if (bindablePropertiesNames.Contains(info.propertyName))
@@ -157,15 +164,13 @@ namespace Sharp.UI
                 }
                 else
                 {
-                    if (info.propertySymbol.Name.Contains("Triggers"))
-                    {
-
-                    }
                     if (info.propertySymbol.Type is INamedTypeSymbol)
                     {
                         var propertyType = (INamedTypeSymbol)info.propertySymbol.Type;
-                        if (info.propertySymbol.GetMethod != null && info.propertySymbol.GetMethod.DeclaredAccessibility == Accessibility.Public &&
-                           (WrapBuilder.IsIList(propertyType) && propertyType.TypeArguments.Count() == 1))
+                        if (info.propertySymbol.GetMethod != null &&
+                            info.propertySymbol.GetMethod.DeclaredAccessibility == Accessibility.Public &&
+                            WrapBuilder.IsIList(propertyType) && propertyType.TypeArguments.Count() == 1 &&
+                            !ExistInBaseClasses(info.propertyName, getterAndSetter: false))
                         {
                             GenerateExtensionMethod_List(info);
                         }
@@ -303,7 +308,21 @@ namespace Sharp.UI
         var eventHandler = eventSymbol.AddMethod.Parameters.First();
         var methodArgTypeName = ((INamedTypeSymbol)eventHandler.Type).DelegateInvokeMethod.Parameters.Last().ToDisplayString();
 
-        if (!notGenerateList.Contains(eventSymbol.Name))
+        var existInBases = false;
+        var type = mauiType.BaseType;
+        while (!existInBases && !type.Name.Equals("Object"))
+        {
+            existInBases = (type
+                        .GetMembers()
+                        .FirstOrDefault(e =>
+                            e.Kind == SymbolKind.Event &&
+                            e.DeclaredAccessibility == Accessibility.Public &&
+                            e.Name.Equals(eventSymbol.Name)) != null);
+
+            type = type.BaseType;
+        }
+
+        if (!existInBases && !notGenerateList.Contains(eventSymbol.Name))
         {
             if (methodArgTypeName.Equals("System.EventArgs"))
                 GenerateEventMethodNoArgs(eventSymbol);

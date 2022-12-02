@@ -24,10 +24,11 @@ namespace Sharp.UI
 
     [MauiWrapper(typeof(Microsoft.Maui.Controls.VisualState),
         containerOfType: typeof(Microsoft.Maui.Controls.Setter),
-        containerPopertyName: "Setters")]
+        containerPopertyName: "Setters",
+        generateNoParamConstructor: false)]
     public partial class VisualState
     {
-        public VisualState(string name = null) : this()
+        public VisualState(string name = null) : this(new Microsoft.Maui.Controls.VisualState())
         {
             if (string.IsNullOrEmpty(name)) name = Guid.NewGuid().ToString();
             this.Name = name;

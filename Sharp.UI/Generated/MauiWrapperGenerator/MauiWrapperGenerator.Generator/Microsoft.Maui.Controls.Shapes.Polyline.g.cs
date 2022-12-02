@@ -75,163 +75,34 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T OnLoaded<T>(this T obj, OnEventAction<T> action)
+        public static T @class<T>(this T obj,
+            System.Collections.Generic.IList<string>? @class)
             where T : Sharp.UI.IPolyline
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Polyline>(obj);
-            mauiObject.Loaded += (o, arg) => action(obj);
+            if (@class != null) mauiObject.@class = (System.Collections.Generic.IList<string>)@class;
             return obj;
         }
         
-        public static T OnUnloaded<T>(this T obj, OnEventAction<T> action)
+        public static T @class<T>(this T obj,
+            System.Collections.Generic.IList<string>? @class,
+            Func<ValueDef<System.Collections.Generic.IList<string>>, ValueDef<System.Collections.Generic.IList<string>>> definition)
             where T : Sharp.UI.IPolyline
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Polyline>(obj);
-            mauiObject.Unloaded += (o, arg) => action(obj);
+            if (@class != null) mauiObject.@class = (System.Collections.Generic.IList<string>)@class;
+            var def = definition(new ValueDef<System.Collections.Generic.IList<string>>());
+            if (def.ValueIsSet()) mauiObject.@class = def.GetValue();
             return obj;
         }
         
-        public static T OnChildrenReordered<T>(this T obj, OnEventAction<T> action)
+        public static T @class<T>(this T obj,
+            Func<ValueDef<System.Collections.Generic.IList<string>>, ValueDef<System.Collections.Generic.IList<string>>> definition)
             where T : Sharp.UI.IPolyline
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Polyline>(obj);
-            mauiObject.ChildrenReordered += (o, arg) => action(obj);
-            return obj;
-        }
-        
-        public static T OnFocused<T>(this T obj, OnEventAction<T, Microsoft.Maui.Controls.FocusEventArgs> action)
-            where T : Sharp.UI.IPolyline
-        {            
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Polyline>(obj);
-            mauiObject.Focused += (o, arg) => action(obj, arg);
-            return obj;
-        }
-        
-        public static T OnMeasureInvalidated<T>(this T obj, OnEventAction<T> action)
-            where T : Sharp.UI.IPolyline
-        {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Polyline>(obj);
-            mauiObject.MeasureInvalidated += (o, arg) => action(obj);
-            return obj;
-        }
-        
-        public static T OnSizeChanged<T>(this T obj, OnEventAction<T> action)
-            where T : Sharp.UI.IPolyline
-        {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Polyline>(obj);
-            mauiObject.SizeChanged += (o, arg) => action(obj);
-            return obj;
-        }
-        
-        public static T OnUnfocused<T>(this T obj, OnEventAction<T, Microsoft.Maui.Controls.FocusEventArgs> action)
-            where T : Sharp.UI.IPolyline
-        {            
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Polyline>(obj);
-            mauiObject.Unfocused += (o, arg) => action(obj, arg);
-            return obj;
-        }
-        
-        public static T OnBatchCommitted<T>(this T obj, OnEventAction<T, Microsoft.Maui.Controls.Internals.EventArg<Microsoft.Maui.Controls.VisualElement>> action)
-            where T : Sharp.UI.IPolyline
-        {            
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Polyline>(obj);
-            mauiObject.BatchCommitted += (o, arg) => action(obj, arg);
-            return obj;
-        }
-        
-        public static T OnFocusChangeRequested<T>(this T obj, OnEventAction<T, Microsoft.Maui.Controls.VisualElement.FocusRequestArgs> action)
-            where T : Sharp.UI.IPolyline
-        {            
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Polyline>(obj);
-            mauiObject.FocusChangeRequested += (o, arg) => action(obj, arg);
-            return obj;
-        }
-        
-        public static T OnChildAdded<T>(this T obj, OnEventAction<T, Microsoft.Maui.Controls.ElementEventArgs> action)
-            where T : Sharp.UI.IPolyline
-        {            
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Polyline>(obj);
-            mauiObject.ChildAdded += (o, arg) => action(obj, arg);
-            return obj;
-        }
-        
-        public static T OnChildRemoved<T>(this T obj, OnEventAction<T, Microsoft.Maui.Controls.ElementEventArgs> action)
-            where T : Sharp.UI.IPolyline
-        {            
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Polyline>(obj);
-            mauiObject.ChildRemoved += (o, arg) => action(obj, arg);
-            return obj;
-        }
-        
-        public static T OnDescendantAdded<T>(this T obj, OnEventAction<T, Microsoft.Maui.Controls.ElementEventArgs> action)
-            where T : Sharp.UI.IPolyline
-        {            
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Polyline>(obj);
-            mauiObject.DescendantAdded += (o, arg) => action(obj, arg);
-            return obj;
-        }
-        
-        public static T OnDescendantRemoved<T>(this T obj, OnEventAction<T, Microsoft.Maui.Controls.ElementEventArgs> action)
-            where T : Sharp.UI.IPolyline
-        {            
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Polyline>(obj);
-            mauiObject.DescendantRemoved += (o, arg) => action(obj, arg);
-            return obj;
-        }
-        
-        public static T OnParentChanging<T>(this T obj, OnEventAction<T, Microsoft.Maui.Controls.ParentChangingEventArgs> action)
-            where T : Sharp.UI.IPolyline
-        {            
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Polyline>(obj);
-            mauiObject.ParentChanging += (o, arg) => action(obj, arg);
-            return obj;
-        }
-        
-        public static T OnParentChanged<T>(this T obj, OnEventAction<T> action)
-            where T : Sharp.UI.IPolyline
-        {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Polyline>(obj);
-            mauiObject.ParentChanged += (o, arg) => action(obj);
-            return obj;
-        }
-        
-        public static T OnHandlerChanging<T>(this T obj, OnEventAction<T, Microsoft.Maui.Controls.HandlerChangingEventArgs> action)
-            where T : Sharp.UI.IPolyline
-        {            
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Polyline>(obj);
-            mauiObject.HandlerChanging += (o, arg) => action(obj, arg);
-            return obj;
-        }
-        
-        public static T OnHandlerChanged<T>(this T obj, OnEventAction<T> action)
-            where T : Sharp.UI.IPolyline
-        {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Polyline>(obj);
-            mauiObject.HandlerChanged += (o, arg) => action(obj);
-            return obj;
-        }
-        
-        public static T OnPropertyChanged<T>(this T obj, OnEventAction<T, System.ComponentModel.PropertyChangedEventArgs> action)
-            where T : Sharp.UI.IPolyline
-        {            
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Polyline>(obj);
-            mauiObject.PropertyChanged += (o, arg) => action(obj, arg);
-            return obj;
-        }
-        
-        public static T OnPropertyChanging<T>(this T obj, OnEventAction<T, Microsoft.Maui.Controls.PropertyChangingEventArgs> action)
-            where T : Sharp.UI.IPolyline
-        {            
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Polyline>(obj);
-            mauiObject.PropertyChanging += (o, arg) => action(obj, arg);
-            return obj;
-        }
-        
-        public static T OnBindingContextChanged<T>(this T obj, OnEventAction<T> action)
-            where T : Sharp.UI.IPolyline
-        {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Polyline>(obj);
-            mauiObject.BindingContextChanged += (o, arg) => action(obj);
+            var def = definition(new ValueDef<System.Collections.Generic.IList<string>>());
+            if (def.ValueIsSet()) mauiObject.@class = def.GetValue();
             return obj;
         }
         

@@ -34,8 +34,8 @@
     }
 
     [MauiWrapper(typeof(Microsoft.Maui.Controls.MultiTrigger),
-    generateAdditionalConstructors: false,
-    generateNoParamConstructor: false)]
+        generateAdditionalConstructors: false,
+        generateNoParamConstructor: false)]
     public partial class MultiTrigger { }
 
     public class MultiTrigger<T> : MultiTrigger
@@ -44,8 +44,8 @@
     }
 
     [MauiWrapper(typeof(Microsoft.Maui.Controls.BindingCondition),
-    generateAdditionalConstructors: false,
-    generateNoParamConstructor: false)]
+        generateAdditionalConstructors: false,
+        generateNoParamConstructor: false)]
     public partial class BindingCondition
     {
         public BindingCondition(Func<Binding, Binding> bindingBuilder, object value) : this(new Microsoft.Maui.Controls.BindingCondition())
@@ -54,4 +54,21 @@
             Value = value;
         }
     }
+
+    [MauiWrapper(typeof(Microsoft.Maui.Controls.PropertyCondition),
+        generateAdditionalConstructors: false,
+        generateNoParamConstructor: false)]
+    public partial class PropertyCondition
+    {
+        public PropertyCondition(BindableProperty property, object value) : this(new Microsoft.Maui.Controls.PropertyCondition())
+        {
+            Property = property; Value = value;
+        }
+    }
+
+    [MauiWrapper(typeof(Microsoft.Maui.Controls.StateTrigger),
+        generateAdditionalConstructors: false,
+        generateNoParamConstructor: true)]
+    public partial class StateTrigger { }
+
 }

@@ -20,7 +20,7 @@ namespace Sharp.UI
         // ----- constructors -----
         
 
-        public ColumnDefinition(Microsoft.Maui.Controls.ColumnDefinition columnDefinition)
+        internal ColumnDefinition(Microsoft.Maui.Controls.ColumnDefinition columnDefinition)
         {
             MauiObject = columnDefinition;
         }

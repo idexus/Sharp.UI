@@ -94,30 +94,6 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T OnPropertyChanged<T>(this T obj, OnEventAction<T, System.ComponentModel.PropertyChangedEventArgs> action)
-            where T : Sharp.UI.IDataTrigger
-        {            
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DataTrigger>(obj);
-            mauiObject.PropertyChanged += (o, arg) => action(obj, arg);
-            return obj;
-        }
-        
-        public static T OnPropertyChanging<T>(this T obj, OnEventAction<T, Microsoft.Maui.Controls.PropertyChangingEventArgs> action)
-            where T : Sharp.UI.IDataTrigger
-        {            
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DataTrigger>(obj);
-            mauiObject.PropertyChanging += (o, arg) => action(obj, arg);
-            return obj;
-        }
-        
-        public static T OnBindingContextChanged<T>(this T obj, OnEventAction<T> action)
-            where T : Sharp.UI.IDataTrigger
-        {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DataTrigger>(obj);
-            mauiObject.BindingContextChanged += (o, arg) => action(obj);
-            return obj;
-        }
-        
     }
 }
 

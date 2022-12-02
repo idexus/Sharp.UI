@@ -24,7 +24,7 @@ namespace Sharp.UI
         // ----- constructors -----
         
 
-        public MultiTrigger(Microsoft.Maui.Controls.MultiTrigger multiTrigger)
+        internal MultiTrigger(Microsoft.Maui.Controls.MultiTrigger multiTrigger)
         {
             MauiObject = multiTrigger;
         }
