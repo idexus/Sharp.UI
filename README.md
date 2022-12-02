@@ -260,6 +260,44 @@ new Grid(out grid)
 .ColumnDefinitions(e => e.Absolute(200).Star());
 ```
 
+## Gesture recognizers
+
+This is an example of the pan gesture recognizer
+
+```cs
+public class PanGesturePage : ContentPage
+{
+    double x, y;
+
+    public PanGesturePage()
+	{
+		Content = new Grid
+		{
+			new Image("dotnet_bot.png", out var image)
+				.SizeRequest(100,100)
+				.GestureRecognizers(new GestureRecognizer[]
+				{
+					new PanGestureRecognizer().OnPanUpdated((e, args) =>
+                    {
+                        switch (args.StatusType)
+                        {
+                            case GestureStatus.Running:
+                                image.TranslationX = x + args.TotalX;
+                                image.TranslationY = y + args.TotalY;
+                                break;
+
+                            case GestureStatus.Completed:
+                                x = image.TranslationX;
+                                y = image.TranslationY;
+                                break;
+                        }
+                    })
+				})
+		};
+	}
+}
+```
+
 ## Style
 Using the `Style<T>` class and the `Set()` extension method of the `BindableProperty` you can define the style of the elements
 
