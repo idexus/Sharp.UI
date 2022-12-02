@@ -261,6 +261,24 @@ new Grid(out grid)
 
 ## Gesture recognizers
 
+Simple usage of the tap gesture recognizer
+
+```cs
+new VStack
+{
+    new Label("Tap 2 times on the image", out var label),
+    new Image("dotnet_bot.png", out var image)
+        .SizeRequest(100,100)
+        .GestureRecognizers(new GestureRecognizer[]
+        {
+            new TapGestureRecognizer().NumberOfTapsRequired(2).OnTapped((e, args) =>
+            {
+                label.Text = "You tapped 2 times";
+            })
+        })
+}
+```
+
 This is an example of the pan gesture recognizer
 
 ```cs

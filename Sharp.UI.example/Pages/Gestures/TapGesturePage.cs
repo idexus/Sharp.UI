@@ -1,33 +1,23 @@
 ﻿namespace Sharp.UI.Example;
 
-//public class PanGesturePage : ContentPage
-//{
-//    double x, y;
-
-//    public TapGestureRecognizer()
-//	{
-//		Content = new Grid
-//		{
-//			new Image("dotnet_bot.png", out var image)
-//				.SizeRequest(100,100)
-//				.GestureRecognizers(new GestureRecognizer[]
-//				{
-//					new PanGestureRecognizer().OnPanUpdated((e, args) =>
-//                    {
-//                        switch (args.StatusType)
-//                        {
-//                            case GestureStatus.Running:
-//                                image.TranslationX = x + args.TotalX;
-//                                image.TranslationY = y + args.TotalY;
-//                                break;
-
-//                            case GestureStatus.Completed:
-//                                x = image.TranslationX;
-//                                y = image.TranslationY;
-//                                break;
-//                        }
-//                    })
-//				})
-//		};
-//	}
-//}
+public class TapGesturePage : ContentPage
+{
+    public TapGesturePage()
+    {
+        Content = new VStack
+        {
+            new Label("Tap 2 times on the image", out var label).FontSize(20),
+            new Image("dotnet_bot.png", out var image)
+                .SizeRequest(100,100)
+                .GestureRecognizers(new GestureRecognizer[]
+                {
+                    new TapGestureRecognizer().NumberOfTapsRequired(2).OnTapped((e, args) =>
+                    {
+                        label.Text = "You tapped 2 times";
+                    })
+                })
+        }
+        .HorizontalOptions(LayoutOptions.Center)
+        .VerticalOptions(LayoutOptions.Center);
+    }
+}

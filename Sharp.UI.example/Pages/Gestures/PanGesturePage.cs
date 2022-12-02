@@ -26,7 +26,7 @@ public class PanGesturePage : ContentPage
                                 y = image.TranslationY;
                                 break;
                         }
-                    })
+                    }),
 				})
 		};
 	}
