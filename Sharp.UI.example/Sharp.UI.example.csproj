@@ -84,6 +84,7 @@
 	  <None Remove="DataModels\" />
 	  <None Remove="Pages\Templates\" />
 	  <None Remove="FlyoutPage\" />
+	  <None Remove="Pages\Gestures\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <ProjectReference Include="..\Sharp.UI\Sharp.UI.csproj" />
@@ -96,5 +97,6 @@
 	  <Folder Include="DataModels\" />
 	  <Folder Include="Pages\Templates\" />
 	  <Folder Include="FlyoutPage\" />
+	  <Folder Include="Pages\Gestures\" />
 	</ItemGroup>
 </Project>
