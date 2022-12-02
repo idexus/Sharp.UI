@@ -1,25 +1,7 @@
 # Overview
 Sharp.UI allows you to build a .NET Multi-platform App User Interface (.NET MAUI) declaratively in code using fluent methods. It is a wrapper library, mostly auto-generated.
 
-### Before you start
-If you want to use this library, you must copy the `GlobalUsings.cs` file, which replaces the standard MAUI classes, into your project.
-
-```cs
-...
-global using Label = Sharp.UI.Label;
-global using ListView = Sharp.UI.ListView;
-....
-....
-global using ScrollView = Sharp.UI.ScrollView;
-global using SearchBar = Sharp.UI.SearchBar;
-global using Slider = Sharp.UI.Slider;
-...
-```
-# Examples
-Here are some simple examples showing how to use the Sharp.UI library
-
 ## Hello, World!
-
 
 ```cs
 using Sharp.UI;
@@ -64,6 +46,23 @@ public class HelloWorldPage : ContentPage
     }
 }
 ```
+
+## Before you start
+If you want to use this library, you must copy the `GlobalUsings.cs` file, which replaces the standard MAUI classes, into your project.
+
+```cs
+...
+global using Label = Sharp.UI.Label;
+global using ListView = Sharp.UI.ListView;
+....
+....
+global using ScrollView = Sharp.UI.ScrollView;
+global using SearchBar = Sharp.UI.SearchBar;
+global using Slider = Sharp.UI.Slider;
+...
+```
+# Examples
+Here are some simple examples showing how to use the Sharp.UI library
 
 ## Properties
 The properties of the MAUI classes are matched with their fluent helper methods
