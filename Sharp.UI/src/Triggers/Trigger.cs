@@ -40,8 +40,18 @@
 
     public class MultiTrigger<T> : MultiTrigger
     {
-        public MultiTrigger(Func<Binding, Binding> bindingBuilder, object value) : base(new Microsoft.Maui.Controls.MultiTrigger(typeof(T)))
+        public MultiTrigger() : base(new Microsoft.Maui.Controls.MultiTrigger(typeof(T))) { }
+    }
+
+    [MauiWrapper(typeof(Microsoft.Maui.Controls.BindingCondition),
+    generateAdditionalConstructors: false,
+    generateNoParamConstructor: false)]
+    public partial class BindingCondition
+    {
+        public BindingCondition(Func<Binding, Binding> bindingBuilder, object value) : this(new Microsoft.Maui.Controls.BindingCondition())
         {
+            Binding = bindingBuilder(new Binding());
+            Value = value;
         }
     }
 }

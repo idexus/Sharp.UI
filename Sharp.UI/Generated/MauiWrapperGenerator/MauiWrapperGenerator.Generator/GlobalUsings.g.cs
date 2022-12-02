@@ -92,6 +92,7 @@ global using Trigger = Sharp.UI.Trigger; // sealed
 global using DataTrigger = Sharp.UI.DataTrigger; // sealed
 global using EventTrigger = Sharp.UI.EventTrigger; // sealed
 global using MultiTrigger = Sharp.UI.MultiTrigger; // sealed
+global using BindingCondition = Sharp.UI.BindingCondition; // sealed
 
 global using ITextCell = Sharp.UI.ITextCell;
 global using ICell = Sharp.UI.ICell;
@@ -211,3 +212,5 @@ global using ITriggerBase = Sharp.UI.ITriggerBase;
 global using IDataTrigger = Sharp.UI.IDataTrigger;
 global using IEventTrigger = Sharp.UI.IEventTrigger;
 global using IMultiTrigger = Sharp.UI.IMultiTrigger;
+global using IBindingCondition = Sharp.UI.IBindingCondition;
+global using ICondition = Sharp.UI.ICondition;
