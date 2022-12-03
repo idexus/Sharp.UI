@@ -1,8 +1,34 @@
 ﻿namespace Sharp.UI.Example;
 
 
-public class NumericValidationBehavior : Behavior<Entry>
+public class NumericValidationStyleBehavior : Behavior<Entry>
 {
+    public static readonly BindableProperty AttachBehaviorProperty =
+    BindableProperty.CreateAttached("AttachBehavior", typeof(bool), typeof(NumericValidationStyleBehavior), false, propertyChanged: OnAttachBehaviorChanged);
+
+    static void OnAttachBehaviorChanged(BindableObject view, object oldValue, object newValue)
+    {
+        Entry entry = view as Entry;
+        if (entry == null)
+        {
+            return;
+        }
+
+        bool attachBehavior = (bool)newValue;
+        if (attachBehavior)
+        {
+            entry.Behaviors.Add(new NumericValidationStyleBehavior());
+        }
+        else
+        {
+            Behavior toRemove = entry.Behaviors.FirstOrDefault(b => b is NumericValidationStyleBehavior);
+            if (toRemove != null)
+            {
+                entry.Behaviors.Remove(toRemove);
+            }
+        }
+    }
+
     protected override void OnAttachedTo(Entry entry)
     {
         entry.TextChanged += OnEntryTextChanged;
@@ -23,17 +49,21 @@ public class NumericValidationBehavior : Behavior<Entry>
     }
 }
 
-public class BehaviorTestPage : ContentPage
+public class AttachedBehaviorPage : ContentPage
 {
-	public BehaviorTestPage()
+	public AttachedBehaviorPage()
 	{
+        Resources = new ResourceDictionary
+        {
+            new Style<Entry>
+            {
+                NumericValidationStyleBehavior.AttachBehaviorProperty.Set(true)
+            }
+        };
+
 		Content = new VStack
 		{
 			new Entry("Enter text...", out var entry).Text("")
-                .Behaviors(new Behavior[]
-                {
-                    new NumericValidationBehavior()
-                })
 		}
 		.VerticalOptions(LayoutOptions.Center);
 	}

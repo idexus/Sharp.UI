@@ -27,17 +27,13 @@ public class BehaviorTestPage : ContentPage
 {
 	public BehaviorTestPage()
 	{
-        Resources = new ResourceDictionary
-        {
-            new Style<Entry>
-            {
-                Entry.BehaviorsProperty.Set(new Behavior[] {new NumericValidationBehavior()})
-            }
-        };
-
 		Content = new VStack
 		{
 			new Entry("Enter text...", out var entry).Text("")
+                .Behaviors(new Behavior[]
+                {
+                    new NumericValidationBehavior()
+                })
 		}
 		.VerticalOptions(LayoutOptions.Center);
 	}

@@ -52,6 +52,8 @@ public partial class App : Application
 
                 new Tab("Other")
                 {
+                    new ShellContent<BehaviorTestPage>("Behaviours"),
+                    new ShellContent<AttachedBehaviorPage>("Attached behaviours"),
                     new ShellContent<TestPage>("Test Page"),
                     new ShellContent<PathPage>("Path"),
                     new ShellContent<SwipeViewPage>("Swipe"),

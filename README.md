@@ -501,6 +501,27 @@ public class NumericValidationTriggerAction : TriggerAction<Entry>
 }
 ```
 
+## Behaviours
+You can add functionality to user interface controls without having to subclass them with behaviours.
+
+```cs
+public class BehaviorTestPage : ContentPage
+{
+	public BehaviorTestPage()
+	{
+		Content = new VStack
+		{
+			new Entry("Enter text...", out var entry).Text("")
+                .Behaviors(new Behavior[]
+                {
+                    new NumericValidationBehavior()
+                })
+		}
+		.VerticalOptions(LayoutOptions.Center);
+	}
+}
+```
+
 ## Definition templates
 With `Def<T>` you can create templates depending on device idiom, platform, or app theme
 

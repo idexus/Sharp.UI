@@ -85,6 +85,7 @@
 	  <None Remove="Pages\Templates\" />
 	  <None Remove="FlyoutPage\" />
 	  <None Remove="Pages\Gestures\" />
+	  <None Remove="Pages\Behaviors\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <ProjectReference Include="..\Sharp.UI\Sharp.UI.csproj" />
@@ -98,5 +99,6 @@
 	  <Folder Include="Pages\Templates\" />
 	  <Folder Include="FlyoutPage\" />
 	  <Folder Include="Pages\Gestures\" />
+	  <Folder Include="Pages\Behaviors\" />
 	</ItemGroup>
 </Project>
