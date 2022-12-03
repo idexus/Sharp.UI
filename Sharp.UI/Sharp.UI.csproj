@@ -40,7 +40,6 @@
 		  <None Remove="src\Controls\" />
 		  <None Remove="src\Extensions\" />
 		  <None Remove="src\Grid\" />
-		  <None Remove="src\PropertyDefinitions\" />
 		  <None Remove="src\Core\" />
 		</ItemGroup>
 		<ItemGroup>
@@ -50,7 +49,6 @@
 		  <Folder Include="src\Controls\" />
 		  <Folder Include="src\Extensions\" />
 		  <Folder Include="src\Grid\" />
-		  <Folder Include="src\PropertyDefinitions\" />
 		  <Folder Include="src\Core\" />
 		</ItemGroup>
 </Project>
