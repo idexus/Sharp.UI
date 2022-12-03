@@ -41,6 +41,8 @@
 		  <None Remove="src\Extensions\" />
 		  <None Remove="src\Grid\" />
 		  <None Remove="src\Core\" />
+		  <None Remove="src\Extensions\Maui\" />
+		  <None Remove="src\Extensions\SharpUI\" />
 		</ItemGroup>
 		<ItemGroup>
 		  <Folder Include="src\" />
@@ -50,5 +52,7 @@
 		  <Folder Include="src\Extensions\" />
 		  <Folder Include="src\Grid\" />
 		  <Folder Include="src\Core\" />
+		  <Folder Include="src\Extensions\Maui\" />
+		  <Folder Include="src\Extensions\SharpUI\" />
 		</ItemGroup>
 </Project>

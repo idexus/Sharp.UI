@@ -5,6 +5,8 @@ namespace Sharp.UI
 {
     public static class IBindableTExtension
 	{
+
+
         public static T Bind<T>(this T obj,
             BindableProperty property,
             string sourcePath,
