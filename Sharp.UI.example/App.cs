@@ -35,6 +35,11 @@ public partial class App : Application
                     new ShellContent<OrientationTriggerPage>("Orientation")
                 },
 
+                new Tab("Menus")
+                {
+                    new ShellContent<ContextMenuPage>("Context menu")
+                },
+
                 new Tab("Gestures")
                 {
                     new ShellContent<PanGesturePage>("Pan"),

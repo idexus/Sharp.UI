@@ -49,6 +49,11 @@ public partial interface IStackLayout : IStackBase { }
 public partial interface IVerticalStackLayout : IStackBase { }
 public partial interface IContentPresenter : ICompatibilityLayout { }
 public partial interface ICompatibilityLayout : IView { }
+public partial interface IMenuFlyout : IFlyoutBase { }
+public partial interface IFlyoutBase : IElement { }
+public partial interface IMenuFlyoutItem : IMenuItem { }
+public partial interface IMenuItem : IBaseMenuItem { }
+public partial interface IBaseMenuItem : IElement { }
 public partial interface IContentPage : ITemplatedPage { }
 public partial interface ITemplatedPage : IPage { }
 public partial interface IPage : IVisualElement { }
@@ -112,8 +117,6 @@ public partial interface ITableView : IView { }
 public partial interface ITimePicker : IView { }
 public partial interface IWebView : IView { }
 public partial interface ISwipeItem : IMenuItem { }
-public partial interface IMenuItem : IBaseMenuItem { }
-public partial interface IBaseMenuItem : IElement { }
 public partial interface ISwipeItemView : IContentView { }
 public partial interface ITableSection : ITableSectionBaseCell { }
 public partial interface ITableSectionBaseCell : ITableSectionBase { }
