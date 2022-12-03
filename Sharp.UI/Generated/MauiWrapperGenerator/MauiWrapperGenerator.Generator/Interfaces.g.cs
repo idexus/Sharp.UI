@@ -54,6 +54,7 @@ public partial interface IFlyoutBase : IElement { }
 public partial interface IMenuFlyoutItem : IMenuItem { }
 public partial interface IMenuItem : IBaseMenuItem { }
 public partial interface IBaseMenuItem : IElement { }
+public partial interface IMenuFlyoutSubItem : IMenuFlyoutItem { }
 public partial interface IContentPage : ITemplatedPage { }
 public partial interface ITemplatedPage : IPage { }
 public partial interface IPage : IVisualElement { }
