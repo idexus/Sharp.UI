@@ -184,6 +184,15 @@ namespace Sharp.UI
         }
 
         public static T ToolbarItems<T>(this T obj,
+            params Microsoft.Maui.Controls.ToolbarItem[] toolbarItems)
+            where T : Sharp.UI.IPage
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Page>(obj);
+            foreach (var item in toolbarItems) mauiObject.ToolbarItems.Add(item);
+            return obj;
+        }
+
+        public static T ToolbarItems<T>(this T obj,
             Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.ToolbarItem>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.ToolbarItem>>> definition)
             where T : Sharp.UI.IPage
         {
@@ -199,6 +208,15 @@ namespace Sharp.UI
         
         public static T MenuBarItems<T>(this T obj,
             System.Collections.Generic.IList<Microsoft.Maui.Controls.MenuBarItem> menuBarItems)
+            where T : Sharp.UI.IPage
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Page>(obj);
+            foreach (var item in menuBarItems) mauiObject.MenuBarItems.Add(item);
+            return obj;
+        }
+
+        public static T MenuBarItems<T>(this T obj,
+            params Microsoft.Maui.Controls.MenuBarItem[] menuBarItems)
             where T : Sharp.UI.IPage
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Page>(obj);
@@ -279,29 +297,6 @@ namespace Sharp.UI
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Page>(obj);
             var def = definition(new ValueDef<bool>());
             if (def.ValueIsSet()) mauiObject.IgnoresContainerArea = def.GetValue();
-            return obj;
-        }
-        
-        public static T InternalChildren<T>(this T obj,
-            System.Collections.ObjectModel.ObservableCollection<Microsoft.Maui.Controls.Element> internalChildren)
-            where T : Sharp.UI.IPage
-        {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Page>(obj);
-            foreach (var item in internalChildren) mauiObject.InternalChildren.Add(item);
-            return obj;
-        }
-
-        public static T InternalChildren<T>(this T obj,
-            Func<Def<System.Collections.ObjectModel.ObservableCollection<Microsoft.Maui.Controls.Element>>, Def<System.Collections.ObjectModel.ObservableCollection<Microsoft.Maui.Controls.Element>>> definition)
-            where T : Sharp.UI.IPage
-        {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Page>(obj);
-            var def = definition(new Def<System.Collections.ObjectModel.ObservableCollection<Microsoft.Maui.Controls.Element>>());
-            if (def.ValueIsSet())
-            {
-                var items = def.GetValue();
-                foreach (var item in items) mauiObject.InternalChildren.Add(item);
-            }
             return obj;
         }
         

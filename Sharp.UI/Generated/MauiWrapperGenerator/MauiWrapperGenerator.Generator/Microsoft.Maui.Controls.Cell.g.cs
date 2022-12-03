@@ -19,6 +19,15 @@ namespace Sharp.UI
         }
 
         public static T ContextActions<T>(this T obj,
+            params Microsoft.Maui.Controls.MenuItem[] contextActions)
+            where T : Sharp.UI.ICell
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Cell>(obj);
+            foreach (var item in contextActions) mauiObject.ContextActions.Add(item);
+            return obj;
+        }
+
+        public static T ContextActions<T>(this T obj,
             Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.MenuItem>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.MenuItem>>> definition)
             where T : Sharp.UI.ICell
         {

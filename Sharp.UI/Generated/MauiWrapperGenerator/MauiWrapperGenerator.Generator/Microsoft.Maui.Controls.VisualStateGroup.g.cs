@@ -81,6 +81,15 @@ namespace Sharp.UI
         }
 
         public static T States<T>(this T obj,
+            params Microsoft.Maui.Controls.VisualState[] states)
+            where T : Sharp.UI.IVisualStateGroup
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualStateGroup>(obj);
+            foreach (var item in states) mauiObject.States.Add(item);
+            return obj;
+        }
+
+        public static T States<T>(this T obj,
             Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.VisualState>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.VisualState>>> definition)
             where T : Sharp.UI.IVisualStateGroup
         {

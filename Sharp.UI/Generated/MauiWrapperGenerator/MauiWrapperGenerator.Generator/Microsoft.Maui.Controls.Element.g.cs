@@ -85,6 +85,15 @@ namespace Sharp.UI
         }
 
         public static T Effects<T>(this T obj,
+            params Microsoft.Maui.Controls.Effect[] effects)
+            where T : Sharp.UI.IElement
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Element>(obj);
+            foreach (var item in effects) mauiObject.Effects.Add(item);
+            return obj;
+        }
+
+        public static T Effects<T>(this T obj,
             Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Effect>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Effect>>> definition)
             where T : Sharp.UI.IElement
         {

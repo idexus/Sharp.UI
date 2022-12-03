@@ -50,6 +50,15 @@ namespace Sharp.UI
         }
 
         public static T Setters<T>(this T obj,
+            params Microsoft.Maui.Controls.Setter[] setters)
+            where T : Sharp.UI.IDataTrigger
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DataTrigger>(obj);
+            foreach (var item in setters) mauiObject.Setters.Add(item);
+            return obj;
+        }
+
+        public static T Setters<T>(this T obj,
             Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Setter>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Setter>>> definition)
             where T : Sharp.UI.IDataTrigger
         {

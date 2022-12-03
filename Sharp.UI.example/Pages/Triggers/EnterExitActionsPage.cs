@@ -30,18 +30,10 @@ public class EnterExitActionsPage : ContentPage
             new Entry("Enter text...", out var entry)
                 .Text("")
                 .BackgroundColor(Colors.White)
-                .Triggers(new TriggerBase[]
-                {
+                .Triggers(
                     new Trigger(Entry.IsFocusedProperty, true)
-                        .EnterActions(new TriggerAction[]
-                        {
-                            new FadeTriggerAction(startsFrom: 0)
-                        })
-                        .ExitActions(new TriggerAction[]
-                        {
-                            new FadeTriggerAction(startsFrom: 1)
-                        })
-                })
+                        .EnterActions(new FadeTriggerAction(startsFrom: 0))
+                        .ExitActions(new FadeTriggerAction(startsFrom: 1)))
         }
         .VerticalOptions(LayoutOptions.Center);
     }

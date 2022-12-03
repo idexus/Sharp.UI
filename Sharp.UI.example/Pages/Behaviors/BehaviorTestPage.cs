@@ -30,10 +30,7 @@ public class BehaviorTestPage : ContentPage
 		Content = new VStack
 		{
 			new Entry("Enter text...", out var entry).Text("")
-                .Behaviors(new Behavior[]
-                {
-                    new NumericValidationBehavior()
-                })
+                .Behaviors(new NumericValidationBehavior())
 		}
 		.VerticalOptions(LayoutOptions.Center);
 	}

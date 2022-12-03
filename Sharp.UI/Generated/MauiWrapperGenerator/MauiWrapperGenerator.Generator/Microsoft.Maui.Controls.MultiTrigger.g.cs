@@ -19,6 +19,15 @@ namespace Sharp.UI
         }
 
         public static T Conditions<T>(this T obj,
+            params Microsoft.Maui.Controls.Condition[] conditions)
+            where T : Sharp.UI.IMultiTrigger
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.MultiTrigger>(obj);
+            foreach (var item in conditions) mauiObject.Conditions.Add(item);
+            return obj;
+        }
+
+        public static T Conditions<T>(this T obj,
             Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Condition>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Condition>>> definition)
             where T : Sharp.UI.IMultiTrigger
         {
@@ -34,6 +43,15 @@ namespace Sharp.UI
         
         public static T Setters<T>(this T obj,
             System.Collections.Generic.IList<Microsoft.Maui.Controls.Setter> setters)
+            where T : Sharp.UI.IMultiTrigger
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.MultiTrigger>(obj);
+            foreach (var item in setters) mauiObject.Setters.Add(item);
+            return obj;
+        }
+
+        public static T Setters<T>(this T obj,
+            params Microsoft.Maui.Controls.Setter[] setters)
             where T : Sharp.UI.IMultiTrigger
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.MultiTrigger>(obj);

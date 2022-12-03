@@ -314,6 +314,15 @@ namespace Sharp.UI
         }
 
         public static T Behaviors<T>(this T obj,
+            params Microsoft.Maui.Controls.Behavior[] behaviors)
+            where T : Sharp.UI.IVisualElement
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
+            foreach (var item in behaviors) mauiObject.Behaviors.Add(item);
+            return obj;
+        }
+
+        public static T Behaviors<T>(this T obj,
             Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Behavior>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Behavior>>> definition)
             where T : Sharp.UI.IVisualElement
         {
@@ -890,6 +899,15 @@ namespace Sharp.UI
         
         public static T Triggers<T>(this T obj,
             System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerBase> triggers)
+            where T : Sharp.UI.IVisualElement
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
+            foreach (var item in triggers) mauiObject.Triggers.Add(item);
+            return obj;
+        }
+
+        public static T Triggers<T>(this T obj,
+            params Microsoft.Maui.Controls.TriggerBase[] triggers)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);

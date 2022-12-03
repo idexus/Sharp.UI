@@ -19,6 +19,15 @@ namespace Sharp.UI
         }
 
         public static T Actions<T>(this T obj,
+            params Microsoft.Maui.Controls.TriggerAction[] actions)
+            where T : Sharp.UI.IEventTrigger
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.EventTrigger>(obj);
+            foreach (var item in actions) mauiObject.Actions.Add(item);
+            return obj;
+        }
+
+        public static T Actions<T>(this T obj,
             Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerAction>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerAction>>> definition)
             where T : Sharp.UI.IEventTrigger
         {

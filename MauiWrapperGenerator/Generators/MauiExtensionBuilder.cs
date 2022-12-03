@@ -167,12 +167,14 @@ namespace Sharp.UI
                     if (info.propertySymbol.Type is INamedTypeSymbol)
                     {
                         var propertyType = (INamedTypeSymbol)info.propertySymbol.Type;
+                        var isGenericIList = WrapBuilder.IsGenericIList(propertyType, out var typeName);
+
                         if (info.propertySymbol.GetMethod != null &&
                             info.propertySymbol.GetMethod.DeclaredAccessibility == Accessibility.Public &&
-                            WrapBuilder.IsIList(propertyType) && propertyType.TypeArguments.Count() == 1 &&
+                            isGenericIList &&
                             !ExistInBaseClasses(info.propertyName, getterAndSetter: false))
                         {
-                            GenerateExtensionMethod_List(info);
+                            GenerateExtensionMethod_List(info, typeName);
                         }
                     }
                 }
@@ -180,11 +182,20 @@ namespace Sharp.UI
         }
     }
 
-    void GenerateExtensionMethod_List(PropertyInfo info)
+    void GenerateExtensionMethod_List(PropertyInfo info, string typeName)
     {
         builder.Append($@"
         public static T {info.propertyName}<T>(this T obj,
             {info.propertyTypeName} {info.camelCaseName})
+            where T : {typeConformanceName}
+        {{
+            var mauiObject = MauiWrapper.GetObject<{mauiType.ToDisplayString()}>(obj);
+            foreach (var item in {info.camelCaseName}) {info.accessedWith}.{info.propertyName}.Add(item);
+            return obj;
+        }}
+
+        public static T {info.propertyName}<T>(this T obj,
+            params {typeName}[] {info.camelCaseName})
             where T : {typeConformanceName}
         {{
             var mauiObject = MauiWrapper.GetObject<{mauiType.ToDisplayString()}>(obj);

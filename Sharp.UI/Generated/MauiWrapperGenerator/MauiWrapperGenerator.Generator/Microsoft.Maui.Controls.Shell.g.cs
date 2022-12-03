@@ -594,6 +594,15 @@ namespace Sharp.UI
         }
 
         public static T Items<T>(this T obj,
+            params Microsoft.Maui.Controls.ShellItem[] items)
+            where T : Sharp.UI.IShell
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
+            foreach (var item in items) mauiObject.Items.Add(item);
+            return obj;
+        }
+
+        public static T Items<T>(this T obj,
             Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellItem>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellItem>>> definition)
             where T : Sharp.UI.IShell
         {

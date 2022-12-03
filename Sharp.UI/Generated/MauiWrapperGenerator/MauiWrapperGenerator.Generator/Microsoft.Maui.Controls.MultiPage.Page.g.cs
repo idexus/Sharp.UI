@@ -156,6 +156,15 @@ namespace Sharp.UI
         }
 
         public static T Children<T>(this T obj,
+            params Microsoft.Maui.Controls.Page[] children)
+            where T : Sharp.UI.IMultiPagePage
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>>(obj);
+            foreach (var item in children) mauiObject.Children.Add(item);
+            return obj;
+        }
+
+        public static T Children<T>(this T obj,
             Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Page>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Page>>> definition)
             where T : Sharp.UI.IMultiPagePage
         {

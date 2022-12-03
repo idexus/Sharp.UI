@@ -37,16 +37,34 @@ public class WrapBuilder
     public static bool IsIList(INamedTypeSymbol symbol)
     {
         var isIList = false;
+        if (isIList) return isIList;
         var type = symbol;
         do
         {
-            if (type.Name.Contains("IList")) isIList = true;
             foreach (var inter in type.Interfaces)
                 if (inter.Name.Contains("IList")) isIList = true;
             type = type.BaseType;
         }
         while (!isIList && type != null && !type.Name.Equals("Object"));
         return isIList;
+    }
+
+    public static bool IsGenericIList(INamedTypeSymbol symbol, out string typeName)
+    {
+        typeName = null;
+        var isGenericIList = false;
+        var type = symbol;
+        do
+        {
+            if (type.Name.Contains("IList") && type.IsGenericType)
+            {
+                typeName = type.TypeArguments.First().ToDisplayString();
+                isGenericIList = true;
+            }
+            type = type.BaseType;
+        }
+        while (!isGenericIList && type != null && !type.Name.Equals("Object"));
+        return isGenericIList;
     }
 
     //------

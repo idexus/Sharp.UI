@@ -19,6 +19,15 @@ namespace Sharp.UI
         }
 
         public static T GestureRecognizers<T>(this T obj,
+            params Microsoft.Maui.Controls.IGestureRecognizer[] gestureRecognizers)
+            where T : Sharp.UI.IView
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.View>(obj);
+            foreach (var item in gestureRecognizers) mauiObject.GestureRecognizers.Add(item);
+            return obj;
+        }
+
+        public static T GestureRecognizers<T>(this T obj,
             Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.IGestureRecognizer>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.IGestureRecognizer>>> definition)
             where T : Sharp.UI.IView
         {

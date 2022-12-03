@@ -19,6 +19,15 @@ namespace Sharp.UI
         }
 
         public static T Children<T>(this T obj,
+            params Microsoft.Maui.IView[] children)
+            where T : Sharp.UI.ILayout
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Layout>(obj);
+            foreach (var item in children) mauiObject.Children.Add(item);
+            return obj;
+        }
+
+        public static T Children<T>(this T obj,
             Func<Def<System.Collections.Generic.IList<Microsoft.Maui.IView>>, Def<System.Collections.Generic.IList<Microsoft.Maui.IView>>> definition)
             where T : Sharp.UI.ILayout
         {

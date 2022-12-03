@@ -19,6 +19,15 @@ namespace Sharp.UI
         }
 
         public static T EnterActions<T>(this T obj,
+            params Microsoft.Maui.Controls.TriggerAction[] enterActions)
+            where T : Sharp.UI.ITriggerBase
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.TriggerBase>(obj);
+            foreach (var item in enterActions) mauiObject.EnterActions.Add(item);
+            return obj;
+        }
+
+        public static T EnterActions<T>(this T obj,
             Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerAction>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerAction>>> definition)
             where T : Sharp.UI.ITriggerBase
         {
@@ -34,6 +43,15 @@ namespace Sharp.UI
         
         public static T ExitActions<T>(this T obj,
             System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerAction> exitActions)
+            where T : Sharp.UI.ITriggerBase
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.TriggerBase>(obj);
+            foreach (var item in exitActions) mauiObject.ExitActions.Add(item);
+            return obj;
+        }
+
+        public static T ExitActions<T>(this T obj,
+            params Microsoft.Maui.Controls.TriggerAction[] exitActions)
             where T : Sharp.UI.ITriggerBase
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.TriggerBase>(obj);

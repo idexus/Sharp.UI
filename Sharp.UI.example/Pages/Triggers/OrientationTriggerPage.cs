@@ -16,19 +16,13 @@ public class OrientationTriggerPage : ContentPage
             {
                 StackLayout.BackgroundColorProperty.Set(Colors.Blue)
             }
-            .StateTriggers(new StateTriggerBase[]
-            {
-                new OrientationStateTrigger().Orientation(DisplayOrientation.Portrait)
-            }),
+            .StateTriggers(new OrientationStateTrigger().Orientation(DisplayOrientation.Portrait)),
 
             new VisualState()
             {
                 StackLayout.BackgroundColorProperty.Set(Colors.Red)
             }
-            .StateTriggers(new StateTriggerBase[]
-            {
-                new OrientationStateTrigger().Orientation(DisplayOrientation.Landscape)
-            }),
+            .StateTriggers(new OrientationStateTrigger().Orientation(DisplayOrientation.Landscape)),
         });
     }
 }
