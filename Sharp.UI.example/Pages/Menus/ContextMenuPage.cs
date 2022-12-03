@@ -21,6 +21,15 @@ public class ContextMenuPage : ContentPage
                             .OnClicked(e => grid.BackgroundColor = Colors.Red),
                         new MenuFlyoutItem("Black")
                             .OnClicked(e => grid.BackgroundColor = Colors.Black)
+                    },
+                    new MenuFlyoutSubItem("Player")
+                    {
+                        new MenuFlyoutItem("Pause")
+                            .IconImageSource(new FontImageSource("&#x23F8;", "Arial"))
+                            .OnClicked(e => Console.WriteLine("Pause")),
+                        new MenuFlyoutItem("Stop")
+                            .IconImageSource(new FontImageSource("&#x23F9;", "Arial"))
+                            .OnClicked(e => Console.WriteLine("Stop")),
                     }
                 })
         };
