@@ -25,13 +25,13 @@ public class NumericValidationBehavior : Behavior<Entry>
 
 public class BehaviorTestPage : ContentPage
 {
-	public BehaviorTestPage()
-	{
-		Content = new VStack
-		{
+    public BehaviorTestPage()
+    {
+        Content = new VStack
+        {
             new Entry("Enter text...", out var entry).Text("")
                 .Behaviors(new NumericValidationBehavior())
-		}
-		.VerticalOptions(LayoutOptions.Center);
-	}
+        }
+	    .VerticalOptions(LayoutOptions.Center);
+    }
 }
