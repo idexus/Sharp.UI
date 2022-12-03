@@ -113,6 +113,8 @@ public partial interface ITableSectionBase : IBindableObject { }
 public partial interface IPanGestureRecognizer : IGestureRecognizer { }
 public partial interface IGestureRecognizer : IElement { }
 public partial interface ITapGestureRecognizer : IGestureRecognizer { }
+public partial interface IPinchGestureRecognizer : IGestureRecognizer { }
+public partial interface IPointerGestureRecognizer : IGestureRecognizer { }
 public partial interface IColumnDefinition : IBindableObject { }
 public partial interface IRowDefinition : IBindableObject { }
 public partial interface IBinding : IBindingBase { }

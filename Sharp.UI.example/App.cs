@@ -39,6 +39,7 @@ public partial class App : Application
                 {
                     new ShellContent<PanGesturePage>("Pan"),
                     new ShellContent<TapGesturePage>("Tap"),
+                    new ShellContent<PointerGesturePage>("Pointer"),
                 },
 
                 new Tab("Bindings")
