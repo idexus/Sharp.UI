@@ -259,6 +259,22 @@ new Grid(out grid)
 .ColumnDefinitions(e => e.Absolute(200).Star());
 ```
 
+## Menus
+
+### Context menu
+
+```cs
+new Image("dotnet_bot.png")
+    .SizeRequest(300, 300)
+    .ContextFlyout(new MenuFlyout
+    {
+        new MenuFlyoutItem("Copy")
+            .OnClicked(e => Console.WriteLine("Copy")),
+        new MenuFlyoutItem("Paste")
+            .OnClicked(e => Console.WriteLine("Paste"))
+    })
+```
+
 ## Gesture recognizers
 
 Simple usage of the tap gesture recognizer
