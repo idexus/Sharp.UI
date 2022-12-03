@@ -265,13 +265,21 @@ new Grid(out grid)
 
 ```cs
 new Image("dotnet_bot.png")
-    .SizeRequest(300, 300)
     .ContextFlyout(new MenuFlyout
     {
         new MenuFlyoutItem("Copy")
             .OnClicked(e => Console.WriteLine("Copy")),
         new MenuFlyoutItem("Paste")
-            .OnClicked(e => Console.WriteLine("Paste"))
+            .OnClicked(e => Console.WriteLine("Paste")),
+        new MenuFlyoutSubItem("Background color")
+        {
+            new MenuFlyoutItem("Blue")
+                .OnClicked(e => grid.BackgroundColor = Colors.Blue),
+            new MenuFlyoutItem("Red")
+                .OnClicked(e => grid.BackgroundColor = Colors.Red),
+            new MenuFlyoutItem("Black")
+                .OnClicked(e => grid.BackgroundColor = Colors.Black)
+        }
     })
 ```
 
