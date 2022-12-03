@@ -507,18 +507,18 @@ You can add functionality to user interface controls without having to subclass 
 ```cs
 public class BehaviorTestPage : ContentPage
 {
-	public BehaviorTestPage()
-	{
-		Content = new VStack
-		{
-			new Entry("Enter text...", out var entry).Text("")
+    public BehaviorTestPage()
+    {
+        Content = new VStack
+        {
+            new Entry("Enter text...", out var entry).Text("")
                 .Behaviors(new Behavior[]
                 {
                     new NumericValidationBehavior()
                 })
-		}
-		.VerticalOptions(LayoutOptions.Center);
-	}
+        }
+        .VerticalOptions(LayoutOptions.Center);
+    }
 }
 ```
 
