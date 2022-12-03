@@ -5,7 +5,15 @@ namespace Sharp.UI
 {
     public static class IBindableTExtension
 	{
-
+        public static T SetProperty<T>(this T obj,
+            BindableProperty property,
+            object value)
+            where T : IBindableObject
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.BindableObject>(obj);
+            mauiObject.SetValue(property, value);
+            return obj;
+        }
 
         public static T Bind<T>(this T obj,
             BindableProperty property,
