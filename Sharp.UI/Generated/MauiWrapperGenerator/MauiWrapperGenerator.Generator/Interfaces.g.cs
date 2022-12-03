@@ -34,6 +34,8 @@ public partial interface ITapGestureRecognizer : IGestureRecognizer { }
 public partial interface IPinchGestureRecognizer : IGestureRecognizer { }
 public partial interface IPointerGestureRecognizer : IGestureRecognizer { }
 public partial interface ISwipeGestureRecognizer : IGestureRecognizer { }
+public partial interface IDragGestureRecognizer : IGestureRecognizer { }
+public partial interface IDropGestureRecognizer : IGestureRecognizer { }
 public partial interface IAbsoluteLayout : ILayout { }
 public partial interface ILayout : IView { }
 public partial interface IView : IVisualElement { }
