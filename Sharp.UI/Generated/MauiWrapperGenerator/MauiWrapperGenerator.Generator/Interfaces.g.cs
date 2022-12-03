@@ -28,6 +28,12 @@ public partial interface IPolyBezierSegment : IPathSegment { }
 public partial interface IPolyLineSegment : IPathSegment { }
 public partial interface IPolyQuadraticBezierSegment : IPathSegment { }
 public partial interface IQuadraticBezierSegment : IPathSegment { }
+public partial interface IPanGestureRecognizer : IGestureRecognizer { }
+public partial interface IGestureRecognizer : IElement { }
+public partial interface ITapGestureRecognizer : IGestureRecognizer { }
+public partial interface IPinchGestureRecognizer : IGestureRecognizer { }
+public partial interface IPointerGestureRecognizer : IGestureRecognizer { }
+public partial interface ISwipeGestureRecognizer : IGestureRecognizer { }
 public partial interface IAbsoluteLayout : ILayout { }
 public partial interface ILayout : IView { }
 public partial interface IView : IVisualElement { }
@@ -110,11 +116,6 @@ public partial interface ISwipeItemView : IContentView { }
 public partial interface ITableSection : ITableSectionBaseCell { }
 public partial interface ITableSectionBaseCell : ITableSectionBase { }
 public partial interface ITableSectionBase : IBindableObject { }
-public partial interface IPanGestureRecognizer : IGestureRecognizer { }
-public partial interface IGestureRecognizer : IElement { }
-public partial interface ITapGestureRecognizer : IGestureRecognizer { }
-public partial interface IPinchGestureRecognizer : IGestureRecognizer { }
-public partial interface IPointerGestureRecognizer : IGestureRecognizer { }
 public partial interface IColumnDefinition : IBindableObject { }
 public partial interface IRowDefinition : IBindableObject { }
 public partial interface IBinding : IBindingBase { }
