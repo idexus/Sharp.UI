@@ -7,9 +7,13 @@
 #pragma warning disable CS8669
 
 
+using System.Collections;
+using System.Collections.ObjectModel;
+
+
 namespace Sharp.UI
 {
-    public partial class StackLayout : Microsoft.Maui.Controls.StackLayout, Sharp.UI.IStackLayout, IWrappedBindableObject
+    public partial class StackLayout : Microsoft.Maui.Controls.StackLayout, Sharp.UI.IStackLayout, IList<Microsoft.Maui.IView>, IWrappedBindableObject
     {
         // ----- constructors -----
         

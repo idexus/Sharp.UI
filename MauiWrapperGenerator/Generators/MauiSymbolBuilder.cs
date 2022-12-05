@@ -80,7 +80,8 @@ public class MauiSymbolBuilder
 
         // ------- content attribute -------
 
-        var mauiContentAtribute = mauiType.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains("ContentProperty"));
+        AttributeData mauiContentAtribute = FindContentPropertyAttribute();
+     
         if (mauiContentAtribute != null && string.IsNullOrEmpty(this.containerPropertyName))
             this.containerPropertyName = mauiContentAtribute.ConstructorArguments[0].Value.ToString();
 
@@ -92,23 +93,14 @@ public class MauiSymbolBuilder
             }
             else
             {
-                var type = mauiType;
-                IPropertySymbol propertySymbol = null;
+                IPropertySymbol propertySymbol = FindPropertySymbolWithName(this.containerPropertyName);
 
-                do
-                {
-                    var ps = (IPropertySymbol)(type.GetMembers(this.containerPropertyName).FirstOrDefault());
-                    if (ps != null) propertySymbol = ps;
-                    type = type.BaseType;
-                }
-                while (propertySymbol == null && !type.Name.Equals("Object"));
-
-                if (propertySymbol == null) throw new Exception($"No content property for: {mauiType.Name} down to: {type.Name}");
+                if (propertySymbol == null) throw new Exception($"No content property for: {mauiType.Name}");
 
                 var mauiContainerType = (INamedTypeSymbol)((propertySymbol).Type);
-                if (mauiContainerType.IsGenericType)
+                if (WrapBuilder.IsGenericIList(mauiContainerType, out var ofTypeName))
                 {
-                    this.containerOfTypeName = mauiContainerType.TypeArguments.FirstOrDefault().ToDisplayString();
+                    this.containerOfTypeName = ofTypeName;// mauiContainerType.TypeArguments.FirstOrDefault().ToDisplayString();
                     this.singleItemContainer = false;
                 }
                 else
@@ -120,6 +112,32 @@ public class MauiSymbolBuilder
         }
 
         this.typeConformanceName = $"Sharp.UI.{WrapBuilder.GetInterfaceName(mauiType)}";
+    }
+
+    AttributeData FindContentPropertyAttribute()
+    {
+        AttributeData attributeData = null;
+        var type = mauiType;
+        do
+        {
+            attributeData = type.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains("ContentProperty"));
+            type = type.BaseType;
+        }
+        while (attributeData == null && !type.Name.Equals("Object"));
+        return attributeData;
+    }
+
+    IPropertySymbol FindPropertySymbolWithName(string propertyName)
+    {
+        IPropertySymbol propertySymbol = null;
+        var type = mauiType;
+        do
+        {
+            propertySymbol = (IPropertySymbol)(type.GetMembers(this.containerPropertyName).FirstOrDefault());
+            type = type.BaseType;
+        }
+        while (propertySymbol == null && !type.Name.Equals("Object"));
+        return propertySymbol;
     }
 
     //----------------------------------------

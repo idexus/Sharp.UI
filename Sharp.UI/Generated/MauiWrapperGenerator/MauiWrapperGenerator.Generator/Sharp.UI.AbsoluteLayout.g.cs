@@ -7,9 +7,13 @@
 #pragma warning disable CS8669
 
 
+using System.Collections;
+using System.Collections.ObjectModel;
+
+
 namespace Sharp.UI
 {
-    public partial class AbsoluteLayout : Microsoft.Maui.Controls.AbsoluteLayout, Sharp.UI.IAbsoluteLayout, IWrappedBindableObject
+    public partial class AbsoluteLayout : Microsoft.Maui.Controls.AbsoluteLayout, Sharp.UI.IAbsoluteLayout, IList<Microsoft.Maui.IView>, IWrappedBindableObject
     {
         // ----- constructors -----
         

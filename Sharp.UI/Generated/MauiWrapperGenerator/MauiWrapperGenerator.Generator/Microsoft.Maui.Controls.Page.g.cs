@@ -300,6 +300,38 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T InternalChildren<T>(this T obj,
+            System.Collections.ObjectModel.ObservableCollection<Microsoft.Maui.Controls.Element> internalChildren)
+            where T : Sharp.UI.IPage
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Page>(obj);
+            foreach (var item in internalChildren) mauiObject.InternalChildren.Add(item);
+            return obj;
+        }
+
+        public static T InternalChildren<T>(this T obj,
+            params Microsoft.Maui.Controls.Element[] internalChildren)
+            where T : Sharp.UI.IPage
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Page>(obj);
+            foreach (var item in internalChildren) mauiObject.InternalChildren.Add(item);
+            return obj;
+        }
+
+        public static T InternalChildren<T>(this T obj,
+            Func<Def<System.Collections.ObjectModel.ObservableCollection<Microsoft.Maui.Controls.Element>>, Def<System.Collections.ObjectModel.ObservableCollection<Microsoft.Maui.Controls.Element>>> definition)
+            where T : Sharp.UI.IPage
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Page>(obj);
+            var def = definition(new Def<System.Collections.ObjectModel.ObservableCollection<Microsoft.Maui.Controls.Element>>());
+            if (def.ValueIsSet())
+            {
+                var items = def.GetValue();
+                foreach (var item in items) mauiObject.InternalChildren.Add(item);
+            }
+            return obj;
+        }
+        
         public static T OnNavigatedTo<T>(this T obj, OnEventAction<T, Microsoft.Maui.Controls.NavigatedToEventArgs> action)
             where T : Sharp.UI.IPage
         {            

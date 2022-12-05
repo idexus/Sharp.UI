@@ -56,7 +56,7 @@ public class WrapBuilder
         var type = symbol;
         do
         {
-            if (type.Name.Contains("IList") && type.IsGenericType)
+            if ((type.Name.Contains("IList") || type.Name.Contains("ObservableCollection")) && type.IsGenericType)
             {
                 typeName = type.TypeArguments.First().ToDisplayString();
                 isGenericIList = true;

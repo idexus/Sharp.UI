@@ -14,16 +14,14 @@ public partial class App : Application
                 {
                     new ShellContent<HelloWorldPage>("Hello Page"),
                     new ShellContent<ExamplePage>("ExamplePage"),
+                    new ShellContent<GridPage>("Grid"),
                 },
-
-                new Tab("Lists")
+                new Tab("Containers")
                 {
                     new ShellContent<TableViewPage>("TableView"),
                     new ShellContent<ListViewPage>("ListView"),
                     new ShellContent<CollectionPage>("Collection"),
                 },
-                new ShellContent<GridPage>("Grid"),
-                new ShellContent<StyleTestPage>("Style"),
                 new Tab("Triggers")
                 {
                     new ShellContent<PropertyTriggerPage>("Property trigger"),
@@ -34,7 +32,6 @@ public partial class App : Application
                     new ShellContent<StateTriggerPage>("State trigger"),
                     new ShellContent<OrientationTriggerPage>("Orientation")
                 },
-
                 new Tab("Menus")
                 {
                     new ShellContent<ContextMenuPage>("Context menu"),
@@ -58,6 +55,7 @@ public partial class App : Application
 
                 new Tab("Other")
                 {
+                    new ShellContent<StyleTestPage>("Style"),
                     new ShellContent<BehaviorTestPage>("Behaviours"),
                     new ShellContent<AttachedBehaviorPage>("Attached behaviours"),
                     new ShellContent<TestPage>("Test Page"),
