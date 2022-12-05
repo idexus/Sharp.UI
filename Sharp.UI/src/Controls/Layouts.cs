@@ -1,6 +1,4 @@
-﻿using System.Collections;
-
-namespace Sharp.UI
+﻿namespace Sharp.UI
 {
     [MauiWrapper(typeof(Microsoft.Maui.Controls.AbsoluteLayout))]
     public partial class AbsoluteLayout

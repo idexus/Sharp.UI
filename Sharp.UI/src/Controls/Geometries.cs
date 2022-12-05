@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-namespace Sharp.UI
+﻿namespace Sharp.UI
 {
     [MauiWrapper(typeof(Microsoft.Maui.Controls.Shapes.Geometry))] 
     public abstract partial class Geometry { }

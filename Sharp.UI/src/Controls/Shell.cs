@@ -1,5 +1,4 @@
-﻿using System;
-namespace Sharp.UI
+﻿namespace Sharp.UI
 {
     [MauiWrapper(typeof(Microsoft.Maui.Controls.Shell))]
     public partial class Shell { }

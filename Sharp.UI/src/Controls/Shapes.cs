@@ -1,7 +1,4 @@
-﻿using System;
-using System.ComponentModel;
-
-namespace Sharp.UI
+﻿namespace Sharp.UI
 {
     //------ shapes (sealed) -------
 
