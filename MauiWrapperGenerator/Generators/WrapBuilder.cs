@@ -116,7 +116,7 @@ public class WrapBuilder
         foreach (var symbol in symbols)
         {
             var mauiType = GetMauiType((INamedTypeSymbol)symbol);
-            var sealedStr = mauiType.IsSealed ? "// sealed" : "";
+            var sealedStr = mauiType.IsSealed ? "// wrapper from sealed" : "";
             builder.AppendLine($@"global using {symbol.Name} = Sharp.UI.{symbol.Name}; {sealedStr}");
         }
 
