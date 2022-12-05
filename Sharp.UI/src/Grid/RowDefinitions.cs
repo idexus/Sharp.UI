@@ -3,7 +3,7 @@
 namespace Sharp.UI
 {
     [MauiWrapper(typeof(Microsoft.Maui.Controls.RowDefinition),
-    generateAdditionalConstructors: false)]
+        generateAdditionalConstructors: false)]
     public partial class RowDefinition
     {
         public static RowDefinition Auto = new RowDefinition(0, GridUnitType.Auto);

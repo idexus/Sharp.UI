@@ -16,7 +16,7 @@
     public partial class FontImageSource { }
 
     [MauiWrapper(typeof(Microsoft.Maui.Controls.MenuBarItem),
-    constructorWithProperties: new[] { "Text" })]
+        constructorWithProperties: new[] { "Text" })]
     public partial class MenuBarItem { }
 }
 

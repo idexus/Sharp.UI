@@ -7,8 +7,6 @@ namespace Sharp.UI
     public partial class VisualStateGroupList { }
 
     [MauiWrapper(typeof(Microsoft.Maui.Controls.VisualStateGroup),
-        containerOfType:typeof(Microsoft.Maui.Controls.VisualState),
-        containerPopertyName:"States",
         generateAdditionalConstructors: false)]
     public partial class VisualStateGroup
     {
@@ -23,7 +21,6 @@ namespace Sharp.UI
     }
 
     [MauiWrapper(typeof(Microsoft.Maui.Controls.VisualState),
-        containerOfType: typeof(Microsoft.Maui.Controls.Setter),
         containerPopertyName: "Setters",
         generateNoParamConstructor: false)]
     public partial class VisualState

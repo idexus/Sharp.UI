@@ -13,12 +13,12 @@ using System.Collections.ObjectModel;
 
 namespace Sharp.UI
 {
-    public partial class LinearGradientBrush : Microsoft.Maui.Controls.LinearGradientBrush, Sharp.UI.ILinearGradientBrush, IList<Microsoft.Maui.Controls.GradientStop>, IWrappedBindableObject
+    public partial class RadialGradientBrush : Microsoft.Maui.Controls.RadialGradientBrush, Sharp.UI.IRadialGradientBrush, IList<Microsoft.Maui.Controls.GradientStop>, IWrappedBindableObject
     {
         // ----- constructors -----
         
 
-        public LinearGradientBrush() { }
+        public RadialGradientBrush() { }
 
         // ----- collection container -----
 

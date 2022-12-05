@@ -14,30 +14,30 @@ namespace Sharp.UI
         public void Add(View view) => this.Children.Add(view);
     }
 
-    [MauiWrapper(typeof(Microsoft.Maui.Controls.Grid))] //OK
+    [MauiWrapper(typeof(Microsoft.Maui.Controls.Grid))] 
     public partial class Grid
     {
         public void Add(View view) => this.Children.Add(view);
     }
 
-    [MauiWrapper(typeof(Microsoft.Maui.Controls.HorizontalStackLayout))] //OK
+    [MauiWrapper(typeof(Microsoft.Maui.Controls.HorizontalStackLayout))] 
     public partial class HStack
     {
         public void Add(View view) => this.Children.Add(view);
     }
 
-    [MauiWrapper(typeof(Microsoft.Maui.Controls.StackLayout))] //OK
+    [MauiWrapper(typeof(Microsoft.Maui.Controls.StackLayout))] 
     public partial class StackLayout
     {
         public void Add(View view) => this.Children.Add(view);
     }
 
-    [MauiWrapper(typeof(Microsoft.Maui.Controls.VerticalStackLayout))] //OK
+    [MauiWrapper(typeof(Microsoft.Maui.Controls.VerticalStackLayout))] 
     public partial class VStack
     {
         public void Add(View view) => this.Children.Add(view);
     }
 
-    [MauiWrapper(typeof(Microsoft.Maui.Controls.ContentPresenter))] //OK
+    [MauiWrapper(typeof(Microsoft.Maui.Controls.ContentPresenter))] 
     public partial class ContentPresenter { }
 }

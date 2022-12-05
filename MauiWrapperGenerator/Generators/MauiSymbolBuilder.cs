@@ -11,24 +11,20 @@ namespace MauiWrapperGenerator;
 public class MauiSymbolBuilder
 {
     private readonly StringBuilder builder;
-
     private readonly INamedTypeSymbol sharpUIType;
 
     //------ attribute parameters ------
     private readonly INamedTypeSymbol mauiType;
     private readonly List<string> notGenerateList;
     private readonly List<string> constructorWithProperties;
-    //private readonly bool wrapSealedType;
-    private readonly INamedTypeSymbol containerOfType = null;
-    private readonly bool singleItemContainer = false;
-    private readonly INamedTypeSymbol typeConformance; 
+    private readonly string containerPropertyName = null;
     private readonly bool generateAdditionalConstructors = false;
     private readonly bool generateNoParamConstructor = false;
 
-    private readonly string containerPropertyName = null;
+    //--- find out
+    private readonly bool singleItemContainer = false;
     private readonly string containerOfTypeName = null;
     private readonly string typeConformanceName;
-    //private readonly string shortTypeConformanceName;
 
     private List<string> bindablePropertiesNames = new List<string>();
 
@@ -57,19 +53,12 @@ public class MauiSymbolBuilder
         else
             this.constructorWithProperties = new List<string>();
 
-
-        // [3] containerOfType
-        this.containerOfType = (INamedTypeSymbol)wrapperAttribute.ConstructorArguments[3].Value;
-        // [4] singleItemContainer
-        this.singleItemContainer = (bool)(wrapperAttribute.ConstructorArguments[4].Value);
-        // [5] containerPropertyName
-        this.containerPropertyName = (string)(wrapperAttribute.ConstructorArguments[5].Value);
-        // [6] typeConformance
-        this.typeConformance = (INamedTypeSymbol)wrapperAttribute.ConstructorArguments[6].Value;
-        // [7] generateConstructor
-        this.generateAdditionalConstructors = (bool)(wrapperAttribute.ConstructorArguments[7].Value);
-        // [8] generateNoParamConstructor
-        this.generateNoParamConstructor = (bool)(wrapperAttribute.ConstructorArguments[8].Value);
+        // [3] containerPropertyName
+        this.containerPropertyName = (string)(wrapperAttribute.ConstructorArguments[3].Value);
+        // [4] generateConstructor
+        this.generateAdditionalConstructors = (bool)(wrapperAttribute.ConstructorArguments[4].Value);
+        // [5] generateNoParamConstructor
+        this.generateNoParamConstructor = (bool)(wrapperAttribute.ConstructorArguments[5].Value);
 
         //----------------------------------
 
@@ -80,18 +69,24 @@ public class MauiSymbolBuilder
 
         // ------- content attribute -------
 
-        AttributeData mauiContentAtribute = FindContentPropertyAttribute();
-     
-        if (mauiContentAtribute != null && string.IsNullOrEmpty(this.containerPropertyName))
-            this.containerPropertyName = mauiContentAtribute.ConstructorArguments[0].Value.ToString();
-
-        if (!string.IsNullOrEmpty(this.containerPropertyName))
+        var isContainerThis = WrapBuilder.IsGenericIList(mauiType, out var containerType);
+        if (isContainerThis && mauiType.IsSealed)
         {
-            if (containerOfType != null)
+            this.containerOfTypeName = containerType;
+            this.containerPropertyName = "this";
+            this.singleItemContainer = false;
+        }
+        else if (!isContainerThis)
+        {
+            // if is null try to find
+            if (string.IsNullOrEmpty(this.containerPropertyName))
             {
-                this.containerOfTypeName = containerOfType.ToDisplayString();
+                AttributeData mauiContentAtribute = FindContentPropertyAttribute();
+                if (mauiContentAtribute != null && string.IsNullOrEmpty(this.containerPropertyName))
+                    this.containerPropertyName = mauiContentAtribute.ConstructorArguments[0].Value.ToString();
             }
-            else
+
+            if (!string.IsNullOrEmpty(this.containerPropertyName))
             {
                 IPropertySymbol propertySymbol = FindPropertySymbolWithName(this.containerPropertyName);
 
@@ -100,7 +95,7 @@ public class MauiSymbolBuilder
                 var mauiContainerType = (INamedTypeSymbol)((propertySymbol).Type);
                 if (WrapBuilder.IsGenericIList(mauiContainerType, out var ofTypeName))
                 {
-                    this.containerOfTypeName = ofTypeName;// mauiContainerType.TypeArguments.FirstOrDefault().ToDisplayString();
+                    this.containerOfTypeName = ofTypeName;
                     this.singleItemContainer = false;
                 }
                 else

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -56,7 +57,10 @@ public class WrapBuilder
         var type = symbol;
         do
         {
-            if ((type.Name.Contains("IList") || type.Name.Contains("ObservableCollection")) && type.IsGenericType)
+            bool isIList = type.Name.Equals("IList");
+            foreach (var inter in type.Interfaces)
+                if (inter.Name.Equals("IList")) isIList = true;
+            if (type.IsGenericType && type.TypeArguments.Count() == 1 && isIList)
             {
                 typeName = type.TypeArguments.First().ToDisplayString();
                 isGenericIList = true;

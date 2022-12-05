@@ -4,9 +4,7 @@ namespace Sharp.UI
     [MauiWrapper(typeof(Microsoft.Maui.Controls.Shell))]
     public partial class Shell { }
 
-    [MauiWrapper(typeof(Microsoft.Maui.Controls.FlyoutItem),
-        containerOfType:typeof(Microsoft.Maui.Controls.ShellSection),
-        containerPopertyName:"Items")]
+    [MauiWrapper(typeof(Microsoft.Maui.Controls.FlyoutItem))]
     public partial class FlyoutItem
     {
         public FlyoutItem(FlyoutDisplayOptions displayOptions)
@@ -15,9 +13,7 @@ namespace Sharp.UI
         }
     }
 
-    [MauiWrapper(typeof(Microsoft.Maui.Controls.Tab),
-        containerOfType:typeof(Microsoft.Maui.Controls.ShellContent),
-        containerPopertyName:"Items")]
+    [MauiWrapper(typeof(Microsoft.Maui.Controls.Tab))]
     public partial class Tab
     {
         public Tab(string title, ImageSource icon = null)

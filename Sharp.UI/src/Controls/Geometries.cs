@@ -2,16 +2,16 @@
 using System.Collections;
 namespace Sharp.UI
 {
-    [MauiWrapper(typeof(Microsoft.Maui.Controls.Shapes.Geometry))] //OK
+    [MauiWrapper(typeof(Microsoft.Maui.Controls.Shapes.Geometry))] 
     public abstract partial class Geometry { }
 
-    [MauiWrapper(typeof(Microsoft.Maui.Controls.Shapes.EllipseGeometry))] //OK
+    [MauiWrapper(typeof(Microsoft.Maui.Controls.Shapes.EllipseGeometry))] 
     public partial class EllipseGeometry { }
 
-    [MauiWrapper(typeof(Microsoft.Maui.Controls.Shapes.LineGeometry))] //OK
+    [MauiWrapper(typeof(Microsoft.Maui.Controls.Shapes.LineGeometry))] 
     public partial class LineGeometry { }
 
-    [MauiWrapper(typeof(Microsoft.Maui.Controls.Shapes.RectangleGeometry))] //OK
+    [MauiWrapper(typeof(Microsoft.Maui.Controls.Shapes.RectangleGeometry))] 
     public partial class RectangleGeometry
     {
         public RectangleGeometry(double x, double y, double width, double height) : this()
@@ -20,23 +20,13 @@ namespace Sharp.UI
         }
     }
 
-    // geometry group
-
-    [MauiWrapper(typeof(Microsoft.Maui.Controls.Shapes.GeometryGroup), //OK
-        containerOfType: typeof(Microsoft.Maui.Controls.Shapes.Geometry),
-        singleItemContainer: false)] 
+    [MauiWrapper(typeof(Microsoft.Maui.Controls.Shapes.GeometryGroup))] 
     public partial class GeometryGroup { }
 
-    // path geometry
-
-    [MauiWrapper(typeof(Microsoft.Maui.Controls.Shapes.PathGeometry), //OK
-        containerOfType: typeof(Microsoft.Maui.Controls.Shapes.PathFigure),
-        singleItemContainer: false)]
+    [MauiWrapper(typeof(Microsoft.Maui.Controls.Shapes.PathGeometry))] 
     public partial class PathGeometry { }
 
-    [MauiWrapper(typeof(Microsoft.Maui.Controls.Shapes.PathFigure), //OK
-        containerOfType: typeof(Microsoft.Maui.Controls.Shapes.PathSegment),
-        singleItemContainer: false)]
+    [MauiWrapper(typeof(Microsoft.Maui.Controls.Shapes.PathFigure))]
     public partial class PathFigure
     {
         public PathFigure(double x, double y) : this()
@@ -45,15 +35,13 @@ namespace Sharp.UI
         }
     }
 
-    // path segments
-
     [MauiWrapper(typeof(Microsoft.Maui.Controls.Shapes.ArcSegment))]
     public partial class ArcSegment { }
 
     [MauiWrapper(typeof(Microsoft.Maui.Controls.Shapes.BezierSegment))]
     public partial class BezierSegment { }
 
-    [MauiWrapper(typeof(Microsoft.Maui.Controls.Shapes.LineSegment))] //OK
+    [MauiWrapper(typeof(Microsoft.Maui.Controls.Shapes.LineSegment))] 
     public partial class LineSegment
     {
         public LineSegment(double x, double y) : this()

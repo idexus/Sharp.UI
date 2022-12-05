@@ -130,6 +130,7 @@ public partial interface IRowDefinition : IBindableObject { }
 public partial interface ILinearGradientBrush : IGradientBrush { }
 public partial interface IGradientBrush : IBrush { }
 public partial interface IBrush : IElement { }
+public partial interface IRadialGradientBrush : IGradientBrush { }
 public partial interface IGradientStop : IElement { }
 public partial interface IBinding : IBindingBase { }
 public partial interface IBindingBase { }
