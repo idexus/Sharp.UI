@@ -270,7 +270,7 @@ namespace Sharp.UI
         var prefix = $"this.{containerPropertyName}";
         if (mauiType.IsSealed) prefix = containerPropertyName.Equals("this") ? "this.MauiObject" : $"this.MauiObject.{containerPropertyName}";
 
-        if (containerOfTypeName != null && singleItemContainer == false && (mauiType.IsSealed || !WrapBuilder.IsIList(mauiType)))
+        if (containerOfTypeName != null && singleItemContainer == false)
         {
             notGenerateList.Add("Count");
 

@@ -9,6 +9,38 @@ namespace Sharp.UI
 {
     public static class IShellContentGeneratedExtension
     {
+        public static T MenuItems<T>(this T obj,
+            Microsoft.Maui.Controls.MenuItemCollection menuItems)
+            where T : Sharp.UI.IShellContent
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ShellContent>(obj);
+            foreach (var item in menuItems) mauiObject.MenuItems.Add(item);
+            return obj;
+        }
+
+        public static T MenuItems<T>(this T obj,
+            params Microsoft.Maui.Controls.MenuItem[] menuItems)
+            where T : Sharp.UI.IShellContent
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ShellContent>(obj);
+            foreach (var item in menuItems) mauiObject.MenuItems.Add(item);
+            return obj;
+        }
+
+        public static T MenuItems<T>(this T obj,
+            Func<Def<Microsoft.Maui.Controls.MenuItemCollection>, Def<Microsoft.Maui.Controls.MenuItemCollection>> definition)
+            where T : Sharp.UI.IShellContent
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ShellContent>(obj);
+            var def = definition(new Def<Microsoft.Maui.Controls.MenuItemCollection>());
+            if (def.ValueIsSet())
+            {
+                var items = def.GetValue();
+                foreach (var item in items) mauiObject.MenuItems.Add(item);
+            }
+            return obj;
+        }
+        
         public static T Content<T>(this T obj,
             object? content)
             where T : Sharp.UI.IShellContent
