@@ -9,7 +9,8 @@
             string containerPopertyName = "",
             bool generateAdditionalConstructors = true,
             bool generateNoParamConstructor = true,
-            string[] attachedProperties = null)
+            string[] attachedProperties = null,
+            Type[] attachedPropertiesTypes = null)
         {
             
         }

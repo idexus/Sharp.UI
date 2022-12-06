@@ -4,7 +4,8 @@
     public partial class Shell { }
 
     [MauiWrapper(typeof(Microsoft.Maui.Controls.FlyoutItem),
-        attachedProperties: new[] { "Shell.ItemTemplate" })]
+        attachedProperties: new[] { "Shell.ItemTemplate" },
+        attachedPropertiesTypes: new[] { typeof(DataTemplate) })]
     public partial class FlyoutItem
     {
         public FlyoutItem(FlyoutDisplayOptions displayOptions)
@@ -14,7 +15,8 @@
     }
 
     [MauiWrapper(typeof(Microsoft.Maui.Controls.Tab),
-        attachedProperties: new[] { "Shell.ItemTemplate" })]
+        attachedProperties: new[] { "Shell.ItemTemplate" },
+        attachedPropertiesTypes: new[] { typeof(DataTemplate) })]
     public partial class Tab
     {
         public Tab(string title, ImageSource icon = null)
@@ -25,7 +27,8 @@
     }
 
     [MauiWrapper(typeof(Microsoft.Maui.Controls.ShellContent),
-        attachedProperties: new[] { "Shell.ItemTemplate" })]
+        attachedProperties: new[] { "Shell.ItemTemplate" },
+        attachedPropertiesTypes: new[] { typeof(DataTemplate) })]
     public partial class ShellContent
     {
         public ShellContent(Type page)

@@ -86,35 +86,24 @@ public class WrapBuilder
 
     //------------- generate -----------------
 
+    List<INamedTypeSymbol> doneExtensions;
+
     public void Generate()
 	{
+        doneExtensions = new List<INamedTypeSymbol>();
 
         var wrappedSymbols = context.Compilation.GetSymbolsWithName((s) => true, filter: SymbolFilter.Type)
-            .Where(e => e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains("MauiWrapper")) != null);
+            .Where(e => !e.IsStatic && e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains("MauiWrapper")) != null);
 
-        CreateSymbolDictionary(wrappedSymbols);
+        var wrappedStaticSymbols = context.Compilation.GetSymbolsWithName((s) => true, filter: SymbolFilter.Type)
+            .Where(e => e.IsStatic && e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains("MauiWrapper")) != null);
+
+        GenerateExtensions(wrappedStaticSymbols);
+
         GenerateSymbols(wrappedSymbols);
         GenerateExtensions(wrappedSymbols);
         GenerateInterfaces(wrappedSymbols);
         GenerateGlobalUsings(wrappedSymbols);
-    }
-
-    //------------- symbol dictionary -----------------
-
-    void CreateSymbolDictionary(IEnumerable<ISymbol> symbols)
-    {
-        foreach (var symbol in symbols)
-        {
-            var mauiType = GetMauiType((INamedTypeSymbol)symbol);
-
-            var type = mauiType;
-            while (!type.Name.Equals("Object"))
-            {
-                var name = GetTypeName(type);
-                mauiTypes[name] = type;
-                type = type.BaseType;
-            }
-        }
     }
 
     //------------- generate symbols -----------------
@@ -156,7 +145,6 @@ public class WrapBuilder
 
     void GenerateExtensions(IEnumerable<ISymbol> symbols)
     {
-        List<INamedTypeSymbol> doneExtensions = new List<INamedTypeSymbol>();
         foreach (var symbol in symbols)
         {
             var wrapperAttribute = GetAttributeData((INamedTypeSymbol)symbol);
@@ -193,7 +181,7 @@ public class WrapBuilder
         builder.AppendLine("#pragma warning disable CS8669");
         builder.AppendLine();
 
-        var extBuilder = new MauiExtensionBuilder(symbol, builder, wrapperAttribute, mauiTypes);
+        var extBuilder = new MauiExtensionBuilder(symbol, builder, wrapperAttribute);
         extBuilder.Build();
 
         if (extBuilder.IsMethodsGenerated)

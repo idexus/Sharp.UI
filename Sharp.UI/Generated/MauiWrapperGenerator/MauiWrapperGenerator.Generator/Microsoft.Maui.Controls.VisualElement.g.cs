@@ -1222,6 +1222,39 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T VisualStateGroups<T>(this T obj,
+            Microsoft.Maui.Controls.VisualStateGroupList? visualStateGroups)
+            where T : Sharp.UI.IVisualElement
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
+            if (visualStateGroups != null) mauiObject.SetValue(VisualStateManager.VisualStateGroupsProperty, (Microsoft.Maui.Controls.VisualStateGroupList)visualStateGroups);
+            return obj;
+        }
+        
+        public static T VisualStateGroups<T>(this T obj,
+            Microsoft.Maui.Controls.VisualStateGroupList? visualStateGroups,
+            Func<BindableDef<Microsoft.Maui.Controls.VisualStateGroupList>, BindableDef<Microsoft.Maui.Controls.VisualStateGroupList>> definition)
+            where T : Sharp.UI.IVisualElement
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
+            if (visualStateGroups != null) mauiObject.SetValue(VisualStateManager.VisualStateGroupsProperty, (Microsoft.Maui.Controls.VisualStateGroupList)visualStateGroups);
+            var def = definition(new BindableDef<Microsoft.Maui.Controls.VisualStateGroupList>(mauiObject, VisualStateManager.VisualStateGroupsProperty));
+            if (def.ValueIsSet()) mauiObject.SetValue(VisualStateManager.VisualStateGroupsProperty, def.GetValue());
+            def.BindProperty();
+            return obj;
+        }
+        
+        public static T VisualStateGroups<T>(this T obj,
+            Func<BindableDef<Microsoft.Maui.Controls.VisualStateGroupList>, BindableDef<Microsoft.Maui.Controls.VisualStateGroupList>> definition)
+            where T : Sharp.UI.IVisualElement
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
+            var def = definition(new BindableDef<Microsoft.Maui.Controls.VisualStateGroupList>(mauiObject, VisualStateManager.VisualStateGroupsProperty));
+            if (def.ValueIsSet()) mauiObject.SetValue(VisualStateManager.VisualStateGroupsProperty, def.GetValue());
+            def.BindProperty();
+            return obj;
+        }
+        
     }
 }
 

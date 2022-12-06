@@ -264,6 +264,39 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T ContextFlyout<T>(this T obj,
+            Microsoft.Maui.Controls.MenuFlyout? contextFlyout)
+            where T : Sharp.UI.IElement
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Element>(obj);
+            if (contextFlyout != null) mauiObject.SetValue(FlyoutBase.ContextFlyoutProperty, (Microsoft.Maui.Controls.MenuFlyout)contextFlyout);
+            return obj;
+        }
+        
+        public static T ContextFlyout<T>(this T obj,
+            Microsoft.Maui.Controls.MenuFlyout? contextFlyout,
+            Func<BindableDef<Microsoft.Maui.Controls.MenuFlyout>, BindableDef<Microsoft.Maui.Controls.MenuFlyout>> definition)
+            where T : Sharp.UI.IElement
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Element>(obj);
+            if (contextFlyout != null) mauiObject.SetValue(FlyoutBase.ContextFlyoutProperty, (Microsoft.Maui.Controls.MenuFlyout)contextFlyout);
+            var def = definition(new BindableDef<Microsoft.Maui.Controls.MenuFlyout>(mauiObject, FlyoutBase.ContextFlyoutProperty));
+            if (def.ValueIsSet()) mauiObject.SetValue(FlyoutBase.ContextFlyoutProperty, def.GetValue());
+            def.BindProperty();
+            return obj;
+        }
+        
+        public static T ContextFlyout<T>(this T obj,
+            Func<BindableDef<Microsoft.Maui.Controls.MenuFlyout>, BindableDef<Microsoft.Maui.Controls.MenuFlyout>> definition)
+            where T : Sharp.UI.IElement
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Element>(obj);
+            var def = definition(new BindableDef<Microsoft.Maui.Controls.MenuFlyout>(mauiObject, FlyoutBase.ContextFlyoutProperty));
+            if (def.ValueIsSet()) mauiObject.SetValue(FlyoutBase.ContextFlyoutProperty, def.GetValue());
+            def.BindProperty();
+            return obj;
+        }
+        
     }
 }
 

@@ -14,7 +14,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IFlyoutItem
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.FlyoutItem>(obj);
-            if (itemTemplate != null) mauiObject.SetValue(Microsoft.Maui.Controls.Shell.ItemTemplateProperty, (Microsoft.Maui.Controls.DataTemplate)itemTemplate);
+            if (itemTemplate != null) mauiObject.SetValue(Shell.ItemTemplateProperty, (Microsoft.Maui.Controls.DataTemplate)itemTemplate);
             return obj;
         }
         
@@ -24,9 +24,9 @@ namespace Sharp.UI
             where T : Sharp.UI.IFlyoutItem
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.FlyoutItem>(obj);
-            if (itemTemplate != null) mauiObject.SetValue(Microsoft.Maui.Controls.Shell.ItemTemplateProperty, (Microsoft.Maui.Controls.DataTemplate)itemTemplate);
-            var def = definition(new BindableDef<Microsoft.Maui.Controls.DataTemplate>(mauiObject, Microsoft.Maui.Controls.Shell.ItemTemplateProperty));
-            if (def.ValueIsSet()) mauiObject.SetValue(Microsoft.Maui.Controls.Shell.ItemTemplateProperty, def.GetValue());
+            if (itemTemplate != null) mauiObject.SetValue(Shell.ItemTemplateProperty, (Microsoft.Maui.Controls.DataTemplate)itemTemplate);
+            var def = definition(new BindableDef<Microsoft.Maui.Controls.DataTemplate>(mauiObject, Shell.ItemTemplateProperty));
+            if (def.ValueIsSet()) mauiObject.SetValue(Shell.ItemTemplateProperty, def.GetValue());
             def.BindProperty();
             return obj;
         }
@@ -36,8 +36,8 @@ namespace Sharp.UI
             where T : Sharp.UI.IFlyoutItem
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.FlyoutItem>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Controls.DataTemplate>(mauiObject, Microsoft.Maui.Controls.Shell.ItemTemplateProperty));
-            if (def.ValueIsSet()) mauiObject.SetValue(Microsoft.Maui.Controls.Shell.ItemTemplateProperty, def.GetValue());
+            var def = definition(new BindableDef<Microsoft.Maui.Controls.DataTemplate>(mauiObject, Shell.ItemTemplateProperty));
+            if (def.ValueIsSet()) mauiObject.SetValue(Shell.ItemTemplateProperty, def.GetValue());
             def.BindProperty();
             return obj;
         }
@@ -45,7 +45,7 @@ namespace Sharp.UI
         public static T ItemTemplate<T>(this T obj, Func<object> loadTemplate) where T : Sharp.UI.IFlyoutItem
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.FlyoutItem>(obj);
-            mauiObject.SetValue(Microsoft.Maui.Controls.Shell.ItemTemplateProperty, new Microsoft.Maui.Controls.DataTemplate(loadTemplate));
+            mauiObject.SetValue(Shell.ItemTemplateProperty, new Microsoft.Maui.Controls.DataTemplate(loadTemplate));
             return obj;
         }
         
