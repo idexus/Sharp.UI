@@ -81,6 +81,13 @@ namespace Sharp.UI
             mauiObject.FooterTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
             return obj;
         }
+
+        public static T FooterTemplate<T>(this T obj, Type type) where T : Sharp.UI.IListView
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
+            mauiObject.FooterTemplate = new Microsoft.Maui.Controls.DataTemplate(type);
+            return obj;
+        }
         
         public static T GroupDisplayBinding<T>(this T obj,
             Microsoft.Maui.Controls.BindingBase? groupDisplayBinding)
@@ -150,6 +157,13 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
             mauiObject.GroupHeaderTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
+            return obj;
+        }
+
+        public static T GroupHeaderTemplate<T>(this T obj, Type type) where T : Sharp.UI.IListView
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
+            mauiObject.GroupHeaderTemplate = new Microsoft.Maui.Controls.DataTemplate(type);
             return obj;
         }
         
@@ -287,6 +301,13 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
             mauiObject.HeaderTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
+            return obj;
+        }
+
+        public static T HeaderTemplate<T>(this T obj, Type type) where T : Sharp.UI.IListView
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
+            mauiObject.HeaderTemplate = new Microsoft.Maui.Controls.DataTemplate(type);
             return obj;
         }
         

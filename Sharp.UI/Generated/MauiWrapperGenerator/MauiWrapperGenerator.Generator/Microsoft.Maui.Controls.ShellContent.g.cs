@@ -113,6 +113,13 @@ namespace Sharp.UI
             mauiObject.ContentTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
             return obj;
         }
+
+        public static T ContentTemplate<T>(this T obj, Type type) where T : Sharp.UI.IShellContent
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ShellContent>(obj);
+            mauiObject.ContentTemplate = new Microsoft.Maui.Controls.DataTemplate(type);
+            return obj;
+        }
         
     }
 }

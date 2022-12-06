@@ -318,6 +318,13 @@ namespace Sharp.UI
             mauiObject.{info.propertyName} = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
             return obj;
         }}
+
+        public static T {info.propertyName}<T>(this T obj, Type type) where T : {typeConformanceName}
+        {{
+            var mauiObject = MauiWrapper.GetObject<{mauiType.ToDisplayString()}>(obj);
+            mauiObject.{info.propertyName} = new Microsoft.Maui.Controls.DataTemplate(type);
+            return obj;
+        }}
         ");
     }
 
