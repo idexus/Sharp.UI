@@ -285,8 +285,8 @@ new Grid(out var grid)
 ```cs
 public class MenuPage : ContentPage
 {
-	public MenuPage()
-	{
+    public MenuPage()
+    {
         this.MenuBarItems(new MenuBarItem[]
         {
             new MenuBarItem("File")
