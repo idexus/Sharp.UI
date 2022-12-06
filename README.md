@@ -117,7 +117,7 @@ new Scrollview
 ```
 
 #### Multi item containers
-Objects such as `VStack`, `HStack`, `Grid` etc. can contain many elements.
+Objects such as `Grid`, `VStack` (short name for VerticalStackLayout), `HStack` (short name for HorizontalStackLayout) etc. can contain many elements.
 
 ```cs
 new VStack
