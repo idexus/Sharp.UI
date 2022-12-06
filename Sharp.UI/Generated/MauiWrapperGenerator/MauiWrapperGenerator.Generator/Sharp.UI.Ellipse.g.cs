@@ -18,7 +18,7 @@ namespace Sharp.UI
         // ----- constructors -----
         
 
-        internal Ellipse(Microsoft.Maui.Controls.Shapes.Ellipse ellipse)
+        protected Ellipse(Microsoft.Maui.Controls.Shapes.Ellipse ellipse)
         {
             MauiObject = ellipse;
         }

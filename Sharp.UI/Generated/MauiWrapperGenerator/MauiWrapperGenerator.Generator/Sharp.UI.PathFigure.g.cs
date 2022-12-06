@@ -22,7 +22,7 @@ namespace Sharp.UI
         // ----- constructors -----
         
 
-        internal PathFigure(Microsoft.Maui.Controls.Shapes.PathFigure pathFigure)
+        protected PathFigure(Microsoft.Maui.Controls.Shapes.PathFigure pathFigure)
         {
             MauiObject = pathFigure;
         }

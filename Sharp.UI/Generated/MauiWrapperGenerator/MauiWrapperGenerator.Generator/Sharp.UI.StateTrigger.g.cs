@@ -18,7 +18,7 @@ namespace Sharp.UI
         // ----- constructors -----
         
 
-        internal StateTrigger(Microsoft.Maui.Controls.StateTrigger stateTrigger)
+        protected StateTrigger(Microsoft.Maui.Controls.StateTrigger stateTrigger)
         {
             MauiObject = stateTrigger;
         }

@@ -22,7 +22,7 @@ namespace Sharp.UI
         // ----- constructors -----
         
 
-        internal Style(Microsoft.Maui.Controls.Style style)
+        protected Style(Microsoft.Maui.Controls.Style style)
         {
             MauiObject = style;
         }

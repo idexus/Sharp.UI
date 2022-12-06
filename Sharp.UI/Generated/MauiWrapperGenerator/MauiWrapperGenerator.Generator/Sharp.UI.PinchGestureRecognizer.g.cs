@@ -18,7 +18,7 @@ namespace Sharp.UI
         // ----- constructors -----
         
 
-        internal PinchGestureRecognizer(Microsoft.Maui.Controls.PinchGestureRecognizer pinchGestureRecognizer)
+        protected PinchGestureRecognizer(Microsoft.Maui.Controls.PinchGestureRecognizer pinchGestureRecognizer)
         {
             MauiObject = pinchGestureRecognizer;
         }

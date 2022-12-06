@@ -419,7 +419,7 @@ namespace Sharp.UI
         if (mauiType.IsSealed)
         {
             builder.AppendLine($@"
-        internal {sharpUIType.Name}({mauiType.ToDisplayString()} {WrapBuilder.CamelCase(sharpUIType.Name)})
+        protected {sharpUIType.Name}({mauiType.ToDisplayString()} {WrapBuilder.CamelCase(sharpUIType.Name)})
         {{
             MauiObject = {WrapBuilder.CamelCase(sharpUIType.Name)};
         }}");

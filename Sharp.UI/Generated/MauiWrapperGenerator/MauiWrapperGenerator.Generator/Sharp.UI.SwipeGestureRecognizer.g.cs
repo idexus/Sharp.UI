@@ -18,7 +18,7 @@ namespace Sharp.UI
         // ----- constructors -----
         
 
-        internal SwipeGestureRecognizer(Microsoft.Maui.Controls.SwipeGestureRecognizer swipeGestureRecognizer)
+        protected SwipeGestureRecognizer(Microsoft.Maui.Controls.SwipeGestureRecognizer swipeGestureRecognizer)
         {
             MauiObject = swipeGestureRecognizer;
         }

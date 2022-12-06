@@ -18,7 +18,7 @@ namespace Sharp.UI
         // ----- constructors -----
         
 
-        internal AdaptiveTrigger(Microsoft.Maui.Controls.AdaptiveTrigger adaptiveTrigger)
+        protected AdaptiveTrigger(Microsoft.Maui.Controls.AdaptiveTrigger adaptiveTrigger)
         {
             MauiObject = adaptiveTrigger;
         }

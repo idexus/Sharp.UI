@@ -18,7 +18,7 @@ namespace Sharp.UI
         // ----- constructors -----
         
 
-        internal Binding(Microsoft.Maui.Controls.Binding binding)
+        protected Binding(Microsoft.Maui.Controls.Binding binding)
         {
             MauiObject = binding;
         }

@@ -22,7 +22,7 @@ namespace Sharp.UI
         // ----- constructors -----
         
 
-        internal Trigger(Microsoft.Maui.Controls.Trigger trigger)
+        protected Trigger(Microsoft.Maui.Controls.Trigger trigger)
         {
             MauiObject = trigger;
         }

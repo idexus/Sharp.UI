@@ -18,7 +18,7 @@ namespace Sharp.UI
         // ----- constructors -----
         
 
-        internal Line(Microsoft.Maui.Controls.Shapes.Line line)
+        protected Line(Microsoft.Maui.Controls.Shapes.Line line)
         {
             MauiObject = line;
         }

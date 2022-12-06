@@ -18,7 +18,7 @@ namespace Sharp.UI
         // ----- constructors -----
         
 
-        internal OrientationStateTrigger(Microsoft.Maui.Controls.OrientationStateTrigger orientationStateTrigger)
+        protected OrientationStateTrigger(Microsoft.Maui.Controls.OrientationStateTrigger orientationStateTrigger)
         {
             MauiObject = orientationStateTrigger;
         }

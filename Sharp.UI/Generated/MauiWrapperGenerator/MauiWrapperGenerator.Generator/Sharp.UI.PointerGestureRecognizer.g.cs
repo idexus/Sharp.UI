@@ -18,7 +18,7 @@ namespace Sharp.UI
         // ----- constructors -----
         
 
-        internal PointerGestureRecognizer(Microsoft.Maui.Controls.PointerGestureRecognizer pointerGestureRecognizer)
+        protected PointerGestureRecognizer(Microsoft.Maui.Controls.PointerGestureRecognizer pointerGestureRecognizer)
         {
             MauiObject = pointerGestureRecognizer;
         }

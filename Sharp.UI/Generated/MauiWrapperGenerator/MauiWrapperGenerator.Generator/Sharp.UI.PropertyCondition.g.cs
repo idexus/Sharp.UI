@@ -18,7 +18,7 @@ namespace Sharp.UI
         // ----- constructors -----
         
 
-        internal PropertyCondition(Microsoft.Maui.Controls.PropertyCondition propertyCondition)
+        protected PropertyCondition(Microsoft.Maui.Controls.PropertyCondition propertyCondition)
         {
             MauiObject = propertyCondition;
         }

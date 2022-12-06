@@ -18,7 +18,7 @@ namespace Sharp.UI
         // ----- constructors -----
         
 
-        internal TapGestureRecognizer(Microsoft.Maui.Controls.TapGestureRecognizer tapGestureRecognizer)
+        protected TapGestureRecognizer(Microsoft.Maui.Controls.TapGestureRecognizer tapGestureRecognizer)
         {
             MauiObject = tapGestureRecognizer;
         }

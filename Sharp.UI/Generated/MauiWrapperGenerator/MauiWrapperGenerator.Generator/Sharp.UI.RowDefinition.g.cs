@@ -18,7 +18,7 @@ namespace Sharp.UI
         // ----- constructors -----
         
 
-        internal RowDefinition(Microsoft.Maui.Controls.RowDefinition rowDefinition)
+        protected RowDefinition(Microsoft.Maui.Controls.RowDefinition rowDefinition)
         {
             MauiObject = rowDefinition;
         }

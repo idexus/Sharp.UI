@@ -18,7 +18,7 @@ namespace Sharp.UI
         // ----- constructors -----
         
 
-        internal CompareStateTrigger(Microsoft.Maui.Controls.CompareStateTrigger compareStateTrigger)
+        protected CompareStateTrigger(Microsoft.Maui.Controls.CompareStateTrigger compareStateTrigger)
         {
             MauiObject = compareStateTrigger;
         }

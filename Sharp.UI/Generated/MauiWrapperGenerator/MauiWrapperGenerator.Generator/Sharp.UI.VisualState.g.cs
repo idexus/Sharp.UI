@@ -22,7 +22,7 @@ namespace Sharp.UI
         // ----- constructors -----
         
 
-        internal VisualState(Microsoft.Maui.Controls.VisualState visualState)
+        protected VisualState(Microsoft.Maui.Controls.VisualState visualState)
         {
             MauiObject = visualState;
         }

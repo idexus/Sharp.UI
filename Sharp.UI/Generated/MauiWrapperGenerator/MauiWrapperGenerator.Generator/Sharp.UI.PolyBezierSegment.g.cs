@@ -18,7 +18,7 @@ namespace Sharp.UI
         // ----- constructors -----
         
 
-        internal PolyBezierSegment(Microsoft.Maui.Controls.Shapes.PolyBezierSegment polyBezierSegment)
+        protected PolyBezierSegment(Microsoft.Maui.Controls.Shapes.PolyBezierSegment polyBezierSegment)
         {
             MauiObject = polyBezierSegment;
         }

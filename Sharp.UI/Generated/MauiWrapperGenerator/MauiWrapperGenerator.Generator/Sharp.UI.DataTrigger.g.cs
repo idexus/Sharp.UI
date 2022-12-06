@@ -22,7 +22,7 @@ namespace Sharp.UI
         // ----- constructors -----
         
 
-        internal DataTrigger(Microsoft.Maui.Controls.DataTrigger dataTrigger)
+        protected DataTrigger(Microsoft.Maui.Controls.DataTrigger dataTrigger)
         {
             MauiObject = dataTrigger;
         }
