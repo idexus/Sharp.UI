@@ -53,7 +53,7 @@ public class ViewModelPage : ContentPage
         {
             new HStack()
                 .HorizontalOptions(LayoutOptions.Center)
-                .Children(new[]
+                .Children(new View[]
                 {
                     new Label("author:"),
                     new Label()

@@ -25,24 +25,12 @@ public class HelloWorldPage : ContentPage
 				.OnClicked(button =>
 				{
                     count++;
-					if (count == 1)
-                        button.Text = $"Clicked {count} time";
-					else
-                        button.Text = $"Clicked {count} times";
+					button.Text = $"Clicked {count} ";
+                    button.Text += count == 1 ? "time" : "times";
                 })
 		}
 		.Spacing(25)
 		.Padding(new Thickness(30, 0))
 		.VerticalOptions(LayoutOptions.Center);
 	}
-
-    private void OnCounterClicked(Button sender)
-    {
-        count++;
-
-        if (count == 1)
-            sender.Text = $"Clicked {count} time";
-        else
-            sender.Text = $"Clicked {count} times";
-    }
 }
