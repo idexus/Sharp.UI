@@ -194,15 +194,18 @@ public class WrapBuilder
         builder.AppendLine("#pragma warning disable CS8669");
         builder.AppendLine();
 
-        new MauiExtensionBuilder(symbol, builder).Buid();
+        var extBuilder = new MauiExtensionBuilder(symbol, builder);
+        extBuilder.Build();
 
-        builder.AppendLine();
-        builder.AppendLine();
-        builder.AppendLine("#pragma warning restore CS8669");
+        if (extBuilder.IsMethodsGenerated)
+        {
+            builder.AppendLine();
+            builder.AppendLine();
+            builder.AppendLine("#pragma warning restore CS8669");
 
-
-        var tail = symbol.IsGenericType ? $".{symbol.TypeArguments.FirstOrDefault().Name}" : "";
-        context.AddSource($"{symbol.ContainingNamespace}.{symbol.Name}{tail}.g.cs", builder.ToString());
+            var tail = symbol.IsGenericType ? $".{symbol.TypeArguments.FirstOrDefault().Name}" : "";
+            context.AddSource($"{symbol.ContainingNamespace}.{symbol.Name}{tail}.g.cs", builder.ToString());
+        }
     }
 
     void Generate(INamedTypeSymbol symbol, AttributeData wrapperAttribute)
@@ -215,7 +218,7 @@ public class WrapBuilder
         builder.AppendLine("#pragma warning disable CS8669");
         builder.AppendLine();
 
-        new MauiSymbolBuilder(symbol, wrapperAttribute, builder).Buid();
+        new MauiSymbolBuilder(symbol, wrapperAttribute, builder).Build();
 
         builder.AppendLine();
         builder.AppendLine();

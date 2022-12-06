@@ -18,11 +18,14 @@ public class MauiExtensionBuilder
 
     private readonly string typeConformanceName;
 
+    public bool IsMethodsGenerated { get; private set; }
+
     public MauiExtensionBuilder(INamedTypeSymbol symbol, StringBuilder builder)
     {
         this.builder = builder;
         this.mauiType = symbol;
         this.typeConformanceName = $"Sharp.UI.{WrapBuilder.GetInterfaceName(symbol)}";
+        this.IsMethodsGenerated = false;
 
         notGenerateList.Add("this[]");
         notGenerateList.Add("Handler");
@@ -34,7 +37,7 @@ public class MauiExtensionBuilder
     #region namespace buider
     //----------------------------------------
 
-    public void Buid()
+    public void Build()
     {
         var tail = mauiType.IsGenericType ? $"{mauiType.TypeArguments.FirstOrDefault().Name}" : "";
         var startWith = mauiType.ContainingNamespace.Name.Contains("Compatibility") ? "Compatibility" : "";
@@ -184,6 +187,7 @@ namespace Sharp.UI
 
     void GenerateExtensionMethod_List(PropertyInfo info, string typeName)
     {
+        IsMethodsGenerated = true;
         builder.Append($@"
         public static T {info.propertyName}<T>(this T obj,
             {info.propertyTypeName} {info.camelCaseName})
@@ -221,6 +225,7 @@ namespace Sharp.UI
 
     void GenerateExtensionMethod_OnlyValue(PropertyInfo info)
     {
+        IsMethodsGenerated = true;
         builder.Append($@"
         public static T {info.propertyName}<T>(this T obj,
             {info.propertyTypeName}{info.typeTail} {info.camelCaseName})
@@ -235,6 +240,7 @@ namespace Sharp.UI
 
     void GenerateExtensionMethod_ValueAndBindableDef(PropertyInfo info)
     {
+        IsMethodsGenerated = true;
         builder.Append($@"
         public static T {info.propertyName}<T>(this T obj,
             {info.propertyTypeName}{info.typeTail} {info.camelCaseName},
@@ -253,6 +259,7 @@ namespace Sharp.UI
 
     void GenerateExtensionMethod_OnlyBindableDef(PropertyInfo info)
     {
+        IsMethodsGenerated = true;
         builder.Append($@"
         public static T {info.propertyName}<T>(this T obj,
             Func<BindableDef<{info.propertyTypeName}>, BindableDef<{info.propertyTypeName}>> definition)
@@ -269,6 +276,7 @@ namespace Sharp.UI
 
     void GenerateExtensionMethod_ValueAndDef(PropertyInfo info)
     {
+        IsMethodsGenerated = true;
         builder.Append($@"
         public static T {info.propertyName}<T>(this T obj,
             {info.propertyTypeName}{info.typeTail} {info.camelCaseName},
@@ -286,6 +294,7 @@ namespace Sharp.UI
 
     void GenerateExtensionMethod_OnlyDef(PropertyInfo info)
     {
+        IsMethodsGenerated = true;
         builder.Append($@"
         public static T {info.propertyName}<T>(this T obj,
             Func<ValueDef<{info.propertyTypeName}>, ValueDef<{info.propertyTypeName}>> definition)
@@ -301,6 +310,7 @@ namespace Sharp.UI
 
     void GenerateExtensionMethod_DataTemplate(PropertyInfo info)
     {
+        IsMethodsGenerated = true;
         builder.Append($@"
         public static T {info.propertyName}<T>(this T obj, Func<object> loadTemplate) where T : {typeConformanceName}
         {{
@@ -344,6 +354,7 @@ namespace Sharp.UI
 
     void GenerateEventMethodNoArgs(IEventSymbol eventSymbol)
     {
+        IsMethodsGenerated = true;
         builder.Append($@"
         public static T On{eventSymbol.Name}<T>(this T obj, OnEventAction<T> action)
             where T : {typeConformanceName}
@@ -357,6 +368,7 @@ namespace Sharp.UI
 
     void GenerateEventMethodWithArgs(IEventSymbol eventSymbol, string methodArgTypeName)
     {
+        IsMethodsGenerated = true;
         builder.Append($@"
         public static T On{eventSymbol.Name}<T>(this T obj, OnEventAction<T, {methodArgTypeName}> action)
             where T : {typeConformanceName}

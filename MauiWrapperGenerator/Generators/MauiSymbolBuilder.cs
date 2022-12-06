@@ -139,7 +139,7 @@ public class MauiSymbolBuilder
     #region namespace buider
     //----------------------------------------
 
-    public void Buid()
+    public void Build()
     {
         if (containerOfTypeName != null)
             builder.AppendLine($@"
