@@ -87,6 +87,8 @@
 	  <None Remove="Pages\Gestures\" />
 	  <None Remove="Pages\Behaviors\" />
 	  <None Remove="Pages\Menus\" />
+	  <None Remove="Pages\TableAndLists\" />
+	  <None Remove="Pages\Bindings\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <ProjectReference Include="..\Sharp.UI\Sharp.UI.csproj" />
@@ -102,5 +104,7 @@
 	  <Folder Include="Pages\Gestures\" />
 	  <Folder Include="Pages\Behaviors\" />
 	  <Folder Include="Pages\Menus\" />
+	  <Folder Include="Pages\TableAndLists\" />
+	  <Folder Include="Pages\Bindings\" />
 	</ItemGroup>
 </Project>

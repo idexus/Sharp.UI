@@ -16,7 +16,7 @@ public partial class App : Application
                     new ShellContent<ExamplePage>("ExamplePage"),
                     new ShellContent<GridPage>("Grid"),
                 },
-                new Tab("Containers")
+                new Tab("Table/List")
                 {
                     new ShellContent<TableViewPage>("TableView"),
                     new ShellContent<ListViewPage>("ListView"),
