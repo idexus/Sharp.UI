@@ -8,9 +8,10 @@
             string[] constructorWithProperties = null,
             string containerPopertyName = "",
             bool generateAdditionalConstructors = true,
-            bool generateNoParamConstructor = true)
+            bool generateNoParamConstructor = true,
+            string[] attachedProperties = null)
         {
-
+            
         }
     }
 }

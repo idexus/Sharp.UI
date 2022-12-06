@@ -81,13 +81,6 @@ namespace Sharp.UI
             mauiObject.EmptyViewTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
             return obj;
         }
-
-        public static T EmptyViewTemplate<T>(this T obj, Type type) where T : Sharp.UI.IItemsView
-        {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ItemsView>(obj);
-            mauiObject.EmptyViewTemplate = new Microsoft.Maui.Controls.DataTemplate(type);
-            return obj;
-        }
         
         public static T ItemsSource<T>(this T obj,
             System.Collections.IEnumerable? itemsSource)
@@ -324,13 +317,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ItemsView>(obj);
             mauiObject.ItemTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
-            return obj;
-        }
-
-        public static T ItemTemplate<T>(this T obj, Type type) where T : Sharp.UI.IItemsView
-        {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ItemsView>(obj);
-            mauiObject.ItemTemplate = new Microsoft.Maui.Controls.DataTemplate(type);
             return obj;
         }
         

@@ -81,13 +81,6 @@ namespace Sharp.UI
             mauiObject.HeaderTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
             return obj;
         }
-
-        public static T HeaderTemplate<T>(this T obj, Type type) where T : Sharp.UI.IStructuredItemsView
-        {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StructuredItemsView>(obj);
-            mauiObject.HeaderTemplate = new Microsoft.Maui.Controls.DataTemplate(type);
-            return obj;
-        }
         
         public static T Footer<T>(this T obj,
             object? footer)
@@ -159,13 +152,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StructuredItemsView>(obj);
             mauiObject.FooterTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
-            return obj;
-        }
-
-        public static T FooterTemplate<T>(this T obj, Type type) where T : Sharp.UI.IStructuredItemsView
-        {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StructuredItemsView>(obj);
-            mauiObject.FooterTemplate = new Microsoft.Maui.Controls.DataTemplate(type);
             return obj;
         }
         

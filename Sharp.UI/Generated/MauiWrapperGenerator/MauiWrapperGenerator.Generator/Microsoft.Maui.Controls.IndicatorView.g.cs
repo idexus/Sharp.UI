@@ -211,13 +211,6 @@ namespace Sharp.UI
             mauiObject.IndicatorTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
             return obj;
         }
-
-        public static T IndicatorTemplate<T>(this T obj, Type type) where T : Sharp.UI.IIndicatorView
-        {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
-            mauiObject.IndicatorTemplate = new Microsoft.Maui.Controls.DataTemplate(type);
-            return obj;
-        }
         
         public static T HideSingle<T>(this T obj,
             bool? hideSingle)

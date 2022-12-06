@@ -13,19 +13,39 @@ public class MauiExtensionBuilder
 
     private readonly INamedTypeSymbol mauiType;
 
+    private readonly Dictionary<string, INamedTypeSymbol> mauiTypes;
     private readonly List<string> notGenerateList = new List<string>();
+    private readonly List<string> attachedProperties = new List<string>();
     private readonly List<string> bindablePropertiesNames = new List<string>();
 
     private readonly string typeConformanceName;
 
     public bool IsMethodsGenerated { get; private set; }
 
-    public MauiExtensionBuilder(INamedTypeSymbol symbol, StringBuilder builder)
+    public MauiExtensionBuilder(INamedTypeSymbol symbol, StringBuilder builder, AttributeData wrapperAttribute, Dictionary<string, INamedTypeSymbol> mauiTypes)
     {
         this.builder = builder;
         this.mauiType = symbol;
+        this.mauiTypes = mauiTypes;
         this.typeConformanceName = $"Sharp.UI.{WrapBuilder.GetInterfaceName(symbol)}";
         this.IsMethodsGenerated = false;
+
+        if (wrapperAttribute != null)
+        {
+            // [1] doNotGenerate
+            var notGenerateValues = wrapperAttribute.ConstructorArguments[1].Values;
+            if (!notGenerateValues.IsDefaultOrEmpty)
+                this.notGenerateList = notGenerateValues.Select(e => (string)e.Value).ToList();
+            else
+                this.notGenerateList = new List<string>();
+
+            // [6] attachedProperties
+            var attachedPropertiesValues = wrapperAttribute.ConstructorArguments[6].Values;
+            if (!attachedPropertiesValues.IsDefaultOrEmpty)
+                this.attachedProperties = attachedPropertiesValues.Select(e => (string)e.Value).ToList();
+            else
+                this.attachedProperties = new List<string>();
+        }
 
         notGenerateList.Add("this[]");
         notGenerateList.Add("Handler");
@@ -61,7 +81,6 @@ namespace Sharp.UI
 
     void GenerateClassExtensionBody()
     {
-
         var type = mauiType;
         do
         {
@@ -91,6 +110,10 @@ namespace Sharp.UI
             type = type.BaseType;
         }
         while (!type.Name.Equals("Object"));
+
+        // generate attached
+        foreach (var prop in attachedProperties)
+            GenerateExtensionMethod(prop);
     }
 
     // ----- methods/events methods -----
@@ -100,10 +123,14 @@ namespace Sharp.UI
         public INamedTypeSymbol mauiType;
         public IPropertySymbol propertySymbol;
         public readonly string propertyName;
+        public readonly string bindablePropertyName;
         public readonly string accessedWith;
         public readonly string propertyTypeName;
         public readonly string camelCaseName;
         public readonly string typeTail;
+        public readonly string assignmentString;
+        public readonly string assignmentDefString;
+        public readonly string assignmentDataTemplateString;
 
         public PropertyInfo(INamedTypeSymbol mauiType, IPropertySymbol propertySymbol)
         {
@@ -115,6 +142,38 @@ namespace Sharp.UI
             propertyTypeName = propertySymbol.Type.ToDisplayString();
             camelCaseName = WrapBuilder.CamelCase(propertyName);
             typeTail = propertyTypeName.Contains("?") ? "" : "?";
+            assignmentString = $"{accessedWith}.{propertyName} = ({propertyTypeName}){camelCaseName}";
+            assignmentDefString = $"mauiObject.{propertyName} = def.GetValue()";
+            assignmentDataTemplateString = $"mauiObject.{propertyName} = new Microsoft.Maui.Controls.DataTemplate(loadTemplate)";
+            bindablePropertyName = $"{mauiType.ToDisplayString()}.{propertyName}Property";
+        }
+
+        public PropertyInfo(INamedTypeSymbol mauiType, Dictionary<string, INamedTypeSymbol> mauiTypes, string attachedProperty)
+        {
+            this.mauiType = mauiType;
+            this.propertySymbol = null;
+            propertyName = attachedProperty.Split(new[] { '.' }).Last();
+            accessedWith = "mauiObject";
+            var attachedTypeName = attachedProperty.Split(new[] { '.' }).First();
+            var attachedType = mauiTypes[attachedTypeName];
+            var bindableProperty = attachedType
+                            .GetMembers()
+                            .Where(e => e.IsStatic && e.DeclaredAccessibility == Accessibility.Public && e.Name.Equals($"{propertyName}Property"))
+                            .FirstOrDefault();
+
+            var property = (IPropertySymbol)attachedType
+                            .GetMembers()
+                            .Where(e => e.Kind == SymbolKind.Property && e.DeclaredAccessibility == Accessibility.Public && e.Name.Equals(propertyName))
+
+                            .FirstOrDefault();
+            if (bindableProperty == null || property == null) throw new ArgumentException($"No attached property {attachedProperty}");
+            propertyTypeName = property.Type.ToDisplayString();
+            camelCaseName = WrapBuilder.CamelCase(propertyName);
+            typeTail = "?";
+            bindablePropertyName = $"{attachedType.ToDisplayString()}.{propertyName}Property";
+            assignmentString = $"mauiObject.SetValue({bindablePropertyName}, ({propertyTypeName}){camelCaseName})";
+            assignmentDefString = $"mauiObject.SetValue({bindablePropertyName}, def.GetValue())";
+            assignmentDataTemplateString = $"mauiObject.SetValue({bindablePropertyName}, new Microsoft.Maui.Controls.DataTemplate(loadTemplate))";
         }
     }
 
@@ -138,47 +197,57 @@ namespace Sharp.UI
         return existInBaseClasses;
     }
 
+    void GenerateExtensionMethod(string attachedProperty)
+    {
+        var info = new PropertyInfo(mauiType, mauiTypes, attachedProperty);
+        if (!notGenerateList.Contains(info.propertyName))
+        {
+            GenerateExtensionMethod_OnlyValue(info);
+            GenerateExtensionMethod_ValueAndBindableDef(info);
+            GenerateExtensionMethod_OnlyBindableDef(info);
+
+            if (info.propertyTypeName.Contains("DataTemplate"))
+                GenerateExtensionMethod_DataTemplate(info);
+        }
+    }
+
     void GenerateExtensionMethod(ISymbol property)
     {
         var info = new PropertyInfo(mauiType, (IPropertySymbol)property);
-
         if (!notGenerateList.Contains(info.propertyName))
         {
-            if (!info.propertyName.Equals("this[]"))
+            if (info.propertySymbol.SetMethod != null &&
+                info.propertySymbol.SetMethod.DeclaredAccessibility == Accessibility.Public &&
+                !ExistInBaseClasses(info.propertyName, getterAndSetter: true))
             {
-                if (info.propertySymbol.SetMethod != null &&
-                    info.propertySymbol.SetMethod.DeclaredAccessibility == Accessibility.Public &&
-                    !ExistInBaseClasses(info.propertyName, getterAndSetter: true))
+                GenerateExtensionMethod_OnlyValue(info);
+                if (bindablePropertiesNames.Contains(info.propertyName))
                 {
-                    GenerateExtensionMethod_OnlyValue(info);
-                    if (bindablePropertiesNames.Contains(info.propertyName))
-                    {
-                        GenerateExtensionMethod_ValueAndBindableDef(info);
-                        GenerateExtensionMethod_OnlyBindableDef(info);
-                    }
-                    else
-                    {
-                        GenerateExtensionMethod_ValueAndDef(info);
-                        GenerateExtensionMethod_OnlyDef(info);
-                    }
-
-                    if (info.propertySymbol.Type.Name.Equals("DataTemplate"))
-                        GenerateExtensionMethod_DataTemplate(info);
+                    GenerateExtensionMethod_ValueAndBindableDef(info);
+                    GenerateExtensionMethod_OnlyBindableDef(info);
                 }
                 else
                 {
-                    if (info.propertySymbol.Type is INamedTypeSymbol)
-                    {
-                        var propertyType = (INamedTypeSymbol)info.propertySymbol.Type;
-                        var isGenericIList = WrapBuilder.IsGenericIList(propertyType, out var typeName);
+                    GenerateExtensionMethod_ValueAndDef(info);
+                    GenerateExtensionMethod_OnlyDef(info);
+                }
 
-                        if (info.propertySymbol.GetMethod != null &&
-                            info.propertySymbol.GetMethod.DeclaredAccessibility == Accessibility.Public &&
-                            isGenericIList &&
-                            !ExistInBaseClasses(info.propertyName, getterAndSetter: false))
-                        {
-                            GenerateExtensionMethod_List(info, typeName);
-                        }
+                if (info.propertySymbol.Type.Name.Equals("DataTemplate"))
+                    GenerateExtensionMethod_DataTemplate(info);
+            }
+            else
+            {
+                if (info.propertySymbol.Type is INamedTypeSymbol)
+                {
+                    var propertyType = (INamedTypeSymbol)info.propertySymbol.Type;
+                    var isGenericIList = WrapBuilder.IsGenericIList(propertyType, out var typeName);
+
+                    if (info.propertySymbol.GetMethod != null &&
+                        info.propertySymbol.GetMethod.DeclaredAccessibility == Accessibility.Public &&
+                        isGenericIList &&
+                        !ExistInBaseClasses(info.propertyName, getterAndSetter: false))
+                    {
+                        GenerateExtensionMethod_List(info, typeName);
                     }
                 }
             }
@@ -232,7 +301,7 @@ namespace Sharp.UI
             where T : {typeConformanceName}
         {{
             var mauiObject = MauiWrapper.GetObject<{mauiType.ToDisplayString()}>(obj);
-            if ({info.camelCaseName} != null) {info.accessedWith}.{info.propertyName} = ({info.propertyTypeName}){info.camelCaseName};
+            if ({info.camelCaseName} != null) {info.assignmentString};
             return obj;
         }}
         ");
@@ -248,9 +317,9 @@ namespace Sharp.UI
             where T : {typeConformanceName}
         {{
             var mauiObject = MauiWrapper.GetObject<{mauiType.ToDisplayString()}>(obj);
-            if ({info.camelCaseName} != null) {info.accessedWith}.{info.propertyName} = ({info.propertyTypeName}){info.camelCaseName};
-            var def = definition(new BindableDef<{info.propertyTypeName}>(mauiObject, {info.mauiType.ToDisplayString()}.{info.propertyName}Property));
-            if (def.ValueIsSet()) mauiObject.{info.propertyName} = def.GetValue();
+            if ({info.camelCaseName} != null) {info.assignmentString};
+            var def = definition(new BindableDef<{info.propertyTypeName}>(mauiObject, {info.bindablePropertyName}));
+            if (def.ValueIsSet()) {info.assignmentDefString};
             def.BindProperty();
             return obj;
         }}
@@ -266,8 +335,8 @@ namespace Sharp.UI
             where T : {typeConformanceName}
         {{
             var mauiObject = MauiWrapper.GetObject<{mauiType.ToDisplayString()}>(obj);
-            var def = definition(new BindableDef<{info.propertyTypeName}>(mauiObject, {mauiType.ToDisplayString()}.{info.propertyName}Property));
-            if (def.ValueIsSet()) mauiObject.{info.propertyName} = def.GetValue();
+            var def = definition(new BindableDef<{info.propertyTypeName}>(mauiObject, {info.bindablePropertyName}));
+            if (def.ValueIsSet()) {info.assignmentDefString};
             def.BindProperty();
             return obj;
         }}
@@ -284,7 +353,7 @@ namespace Sharp.UI
             where T : {typeConformanceName}
         {{
             var mauiObject = MauiWrapper.GetObject<{mauiType.ToDisplayString()}>(obj);
-            if ({info.camelCaseName} != null) {info.accessedWith}.{info.propertyName} = ({info.propertyTypeName}){info.camelCaseName};
+            if ({info.camelCaseName} != null) {info.assignmentString};
             var def = definition(new ValueDef<{info.propertyTypeName}>());
             if (def.ValueIsSet()) mauiObject.{info.propertyName} = def.GetValue();
             return obj;
@@ -315,14 +384,7 @@ namespace Sharp.UI
         public static T {info.propertyName}<T>(this T obj, Func<object> loadTemplate) where T : {typeConformanceName}
         {{
             var mauiObject = MauiWrapper.GetObject<{mauiType.ToDisplayString()}>(obj);
-            mauiObject.{info.propertyName} = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
-            return obj;
-        }}
-
-        public static T {info.propertyName}<T>(this T obj, Type type) where T : {typeConformanceName}
-        {{
-            var mauiObject = MauiWrapper.GetObject<{mauiType.ToDisplayString()}>(obj);
-            mauiObject.{info.propertyName} = new Microsoft.Maui.Controls.DataTemplate(type);
+            {info.assignmentDataTemplateString};
             return obj;
         }}
         ");

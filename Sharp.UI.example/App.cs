@@ -65,7 +65,7 @@ public partial class App : Application
                 }
             }
         }
-        .ItemTemplate(typeof(ShellItemTemplate))
+        .ItemTemplate(() => new ShellItemTemplate())
         .Resources(AppResources.Default)
         .FlyoutBackgroundColor(AppColors.Gray950);
     }

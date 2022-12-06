@@ -510,13 +510,6 @@ namespace Sharp.UI
             mauiObject.FlyoutHeaderTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
             return obj;
         }
-
-        public static T FlyoutHeaderTemplate<T>(this T obj, Type type) where T : Sharp.UI.IShell
-        {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
-            mauiObject.FlyoutHeaderTemplate = new Microsoft.Maui.Controls.DataTemplate(type);
-            return obj;
-        }
         
         public static T FlyoutFooterTemplate<T>(this T obj,
             Microsoft.Maui.Controls.DataTemplate? flyoutFooterTemplate)
@@ -555,13 +548,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
             mauiObject.FlyoutFooterTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
-            return obj;
-        }
-
-        public static T FlyoutFooterTemplate<T>(this T obj, Type type) where T : Sharp.UI.IShell
-        {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
-            mauiObject.FlyoutFooterTemplate = new Microsoft.Maui.Controls.DataTemplate(type);
             return obj;
         }
         
@@ -669,13 +655,6 @@ namespace Sharp.UI
             mauiObject.ItemTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
             return obj;
         }
-
-        public static T ItemTemplate<T>(this T obj, Type type) where T : Sharp.UI.IShell
-        {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
-            mauiObject.ItemTemplate = new Microsoft.Maui.Controls.DataTemplate(type);
-            return obj;
-        }
         
         public static T MenuItemTemplate<T>(this T obj,
             Microsoft.Maui.Controls.DataTemplate? menuItemTemplate)
@@ -714,13 +693,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
             mauiObject.MenuItemTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
-            return obj;
-        }
-
-        public static T MenuItemTemplate<T>(this T obj, Type type) where T : Sharp.UI.IShell
-        {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
-            mauiObject.MenuItemTemplate = new Microsoft.Maui.Controls.DataTemplate(type);
             return obj;
         }
         
@@ -794,13 +766,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
             mauiObject.FlyoutContentTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
-            return obj;
-        }
-
-        public static T FlyoutContentTemplate<T>(this T obj, Type type) where T : Sharp.UI.IShell
-        {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
-            mauiObject.FlyoutContentTemplate = new Microsoft.Maui.Controls.DataTemplate(type);
             return obj;
         }
         

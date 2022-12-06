@@ -81,13 +81,6 @@ namespace Sharp.UI
             mauiObject.ItemTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
             return obj;
         }
-
-        public static T ItemTemplate<T>(this T obj, Type type) where T : Sharp.UI.IItemsViewCell
-        {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>>(obj);
-            mauiObject.ItemTemplate = new Microsoft.Maui.Controls.DataTemplate(type);
-            return obj;
-        }
         
     }
 }
