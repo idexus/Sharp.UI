@@ -20,7 +20,7 @@
 		<Version>0.1.0-beta</Version>
 		<Authors>Pawel Krzywdzinski</Authors>
 		<Copyright>Pawel Krzywdzinski</Copyright>
-		<PackageDescription>An auto-generated wrapper library that allows you to use .NET MAUI only in code using fluent methods, without the need for XAML</PackageDescription>
+		<PackageDescription>An auto-generated wrapper library that allows you to use .NET MAUI only in C# code using fluent methods, without the need for XAML</PackageDescription>
 		<Company></Company>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageReadmeFile>README.md</PackageReadmeFile>

@@ -1,4 +1,4 @@
-### Overview
+## Overview
 An auto-generated wrapper library that allows you to use .NET MAUI only in code using fluent methods, without the need for XAML.
 
 ## Hello, World!
@@ -43,7 +43,7 @@ public class HelloWorldPage : ContentPage
 }
 ```
 
-### Before you start
+## Before you start
 If you want to use this library, you have to include the `using Sharp.UI` inside your app namespace, which replaces the standard MAUI classes.
 
 ```cs
