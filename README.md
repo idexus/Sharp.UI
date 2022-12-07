@@ -208,7 +208,7 @@ new Button("Click me")
 
 ## Attached properties
 
-You can set the attached `Shell.NavBarIsVisible` property on a `ContentPage` using `ShellNavBarIsVisible()` method.
+For example, you can set the `Shell.NavBarIsVisible` attached property on the `ContentPage` using the `ShellNavBarIsVisible()` method.
 
 ```cs
 public class GridPage : ContentPage
