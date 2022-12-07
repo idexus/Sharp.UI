@@ -264,7 +264,7 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T ContextFlyout<T>(this T obj,
+        public static T FlyoutBaseContextFlyout<T>(this T obj,
             Microsoft.Maui.Controls.MenuFlyout? contextFlyout)
             where T : Sharp.UI.IElement
         {
@@ -273,7 +273,7 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T ContextFlyout<T>(this T obj,
+        public static T FlyoutBaseContextFlyout<T>(this T obj,
             Microsoft.Maui.Controls.MenuFlyout? contextFlyout,
             Func<BindableDef<Microsoft.Maui.Controls.MenuFlyout>, BindableDef<Microsoft.Maui.Controls.MenuFlyout>> definition)
             where T : Sharp.UI.IElement
@@ -286,7 +286,7 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T ContextFlyout<T>(this T obj,
+        public static T FlyoutBaseContextFlyout<T>(this T obj,
             Func<BindableDef<Microsoft.Maui.Controls.MenuFlyout>, BindableDef<Microsoft.Maui.Controls.MenuFlyout>> definition)
             where T : Sharp.UI.IElement
         {

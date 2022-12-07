@@ -3,6 +3,8 @@
     [MauiWrapper(typeof(Microsoft.Maui.Controls.Shell))]
     public partial class Shell { }
 
+    [MauiWrapper(typeof(Microsoft.Maui.Controls.TabBar))]
+    public partial class TabBar { }
 
     [MauiWrapper(typeof(Microsoft.Maui.Controls.FlyoutItem))]
     public partial class FlyoutItem
@@ -26,9 +28,15 @@
     [MauiWrapper(typeof(Microsoft.Maui.Controls.ShellContent))]
     public partial class ShellContent
     {
-        public ShellContent(Type page)
+        protected ShellContent(Type page)
         {
             this.ContentTemplate = new DataTemplate(page);
+        }
+
+        public ShellContent(Page page, string title = "")
+        {
+            this.Content = page;
+            this.Title = title;
         }
     }
 

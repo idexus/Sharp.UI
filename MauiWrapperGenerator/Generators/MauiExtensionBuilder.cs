@@ -160,10 +160,10 @@ namespace Sharp.UI
 
         public PropertyInfo(string attachedProperty, INamedTypeSymbol attachedPropertyType)
         {
-            propertyName = attachedProperty.Split(new[] { '.' }).Last();
+            propertyName = attachedProperty.Replace(".", "");
             accessedWith = "mauiObject";
             propertyTypeName = attachedPropertyType.ToDisplayString();
-            camelCaseName = WrapBuilder.CamelCase(propertyName);
+            camelCaseName = WrapBuilder.CamelCase(attachedProperty.Split(new[] { '.' }).Last());
             typeTail = "?";
             bindablePropertyName = $"{attachedProperty}Property";
             assignmentString = $"mauiObject.SetValue({bindablePropertyName}, ({propertyTypeName}){camelCaseName})";

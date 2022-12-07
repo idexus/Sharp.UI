@@ -14,7 +14,7 @@ public class FlyoutContent : ContentView
 				.Margin(new OnPlatform<Thickness>(WinUI: new Thickness(12,0,12,0))),
 
 			new Label()
-				.Column(1)
+				.GridColumn(1)
 				.Text(e => e.Path("Title"))
 				.FontSize(14)
 				.FontAttributes(new OnTheme<FontAttributes>(light:FontAttributes.Bold))

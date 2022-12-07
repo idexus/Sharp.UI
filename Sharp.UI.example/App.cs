@@ -12,13 +12,13 @@ public partial class App : Application
             {
                 new Tab("Main")
                 {
-                    new ShellContent<HelloWorldPage>("Hello Page"),
-                    new ShellContent<ExamplePage>("ExamplePage"),
+                    new ShellContent(new HelloWorldPage(), "Hello Page"), // load at app startup
+                    new ShellContent<ExamplePage>("ExamplePage"), 
                     new ShellContent<GridPage>("Grid"),
                 },
                 new Tab("Table/List")
                 {
-                    new ShellContent<TableViewPage>("TableView"),
+                    new ShellContent<TableViewPage>("TableView"), // load on demand
                     new ShellContent<ListViewPage>("ListView"),
                     new ShellContent<CollectionPage>("Collection"),
                 },

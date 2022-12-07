@@ -7,7 +7,7 @@ public class ContextMenuPage : ContentPage
         Content = new Grid(out var grid)
         {
             new Image("dotnet_bot.png")
-                .ContextFlyout(new MenuFlyout
+                .FlyoutBaseContextFlyout(new MenuFlyout
                 {
                     new MenuFlyoutItem("Copy")
                         .OnClicked(e => Console.WriteLine("Copy")),

@@ -140,7 +140,7 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T Column<T>(this T obj,
+        public static T GridColumn<T>(this T obj,
             int? column)
             where T : Sharp.UI.IView
         {
@@ -149,7 +149,7 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T Column<T>(this T obj,
+        public static T GridColumn<T>(this T obj,
             int? column,
             Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.IView
@@ -162,7 +162,7 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T Column<T>(this T obj,
+        public static T GridColumn<T>(this T obj,
             Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.IView
         {
@@ -173,7 +173,7 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T Row<T>(this T obj,
+        public static T GridRow<T>(this T obj,
             int? row)
             where T : Sharp.UI.IView
         {
@@ -182,7 +182,7 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T Row<T>(this T obj,
+        public static T GridRow<T>(this T obj,
             int? row,
             Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.IView
@@ -195,7 +195,7 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T Row<T>(this T obj,
+        public static T GridRow<T>(this T obj,
             Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.IView
         {

@@ -1222,7 +1222,7 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T VisualStateGroups<T>(this T obj,
+        public static T VisualStateManagerVisualStateGroups<T>(this T obj,
             Microsoft.Maui.Controls.VisualStateGroupList? visualStateGroups)
             where T : Sharp.UI.IVisualElement
         {
@@ -1231,7 +1231,7 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T VisualStateGroups<T>(this T obj,
+        public static T VisualStateManagerVisualStateGroups<T>(this T obj,
             Microsoft.Maui.Controls.VisualStateGroupList? visualStateGroups,
             Func<BindableDef<Microsoft.Maui.Controls.VisualStateGroupList>, BindableDef<Microsoft.Maui.Controls.VisualStateGroupList>> definition)
             where T : Sharp.UI.IVisualElement
@@ -1244,7 +1244,7 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T VisualStateGroups<T>(this T obj,
+        public static T VisualStateManagerVisualStateGroups<T>(this T obj,
             Func<BindableDef<Microsoft.Maui.Controls.VisualStateGroupList>, BindableDef<Microsoft.Maui.Controls.VisualStateGroupList>> definition)
             where T : Sharp.UI.IVisualElement
         {

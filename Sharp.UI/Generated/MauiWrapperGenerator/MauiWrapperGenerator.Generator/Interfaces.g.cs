@@ -74,10 +74,11 @@ public partial interface IPolygon : IShape { }
 public partial interface IRectangle : IShape { }
 public partial interface IRoundRectangle : IShape { }
 public partial interface IShell : IPage { }
-public partial interface IFlyoutItem : IShellItem { }
+public partial interface ITabBar : IShellItem { }
 public partial interface IShellItem : IShellGroupItem { }
 public partial interface IShellGroupItem : IBaseShellItem { }
 public partial interface IBaseShellItem : INavigableElement { }
+public partial interface IFlyoutItem : IShellItem { }
 public partial interface ITab : IShellSection { }
 public partial interface IShellSection : IShellGroupItem { }
 public partial interface IShellContent : IBaseShellItem { }

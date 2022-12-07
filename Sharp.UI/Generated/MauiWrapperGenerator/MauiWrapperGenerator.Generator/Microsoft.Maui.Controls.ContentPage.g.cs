@@ -42,6 +42,39 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T ShellPresentationMode<T>(this T obj,
+            Microsoft.Maui.Controls.PresentationMode? presentationMode)
+            where T : Sharp.UI.IContentPage
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ContentPage>(obj);
+            if (presentationMode != null) mauiObject.SetValue(Shell.PresentationModeProperty, (Microsoft.Maui.Controls.PresentationMode)presentationMode);
+            return obj;
+        }
+        
+        public static T ShellPresentationMode<T>(this T obj,
+            Microsoft.Maui.Controls.PresentationMode? presentationMode,
+            Func<BindableDef<Microsoft.Maui.Controls.PresentationMode>, BindableDef<Microsoft.Maui.Controls.PresentationMode>> definition)
+            where T : Sharp.UI.IContentPage
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ContentPage>(obj);
+            if (presentationMode != null) mauiObject.SetValue(Shell.PresentationModeProperty, (Microsoft.Maui.Controls.PresentationMode)presentationMode);
+            var def = definition(new BindableDef<Microsoft.Maui.Controls.PresentationMode>(mauiObject, Shell.PresentationModeProperty));
+            if (def.ValueIsSet()) mauiObject.SetValue(Shell.PresentationModeProperty, def.GetValue());
+            def.BindProperty();
+            return obj;
+        }
+        
+        public static T ShellPresentationMode<T>(this T obj,
+            Func<BindableDef<Microsoft.Maui.Controls.PresentationMode>, BindableDef<Microsoft.Maui.Controls.PresentationMode>> definition)
+            where T : Sharp.UI.IContentPage
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ContentPage>(obj);
+            var def = definition(new BindableDef<Microsoft.Maui.Controls.PresentationMode>(mauiObject, Shell.PresentationModeProperty));
+            if (def.ValueIsSet()) mauiObject.SetValue(Shell.PresentationModeProperty, def.GetValue());
+            def.BindProperty();
+            return obj;
+        }
+        
     }
 }
 

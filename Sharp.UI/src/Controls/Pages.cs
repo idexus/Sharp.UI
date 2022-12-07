@@ -3,7 +3,9 @@
 namespace Sharp.UI
 {
     [MauiWrapper(typeof(Microsoft.Maui.Controls.ContentPage),
-        constructorWithProperties: new[] { "Title" })] 
+        constructorWithProperties: new[] { "Title" },
+        attachedProperties: new[] { "Shell.PresentationMode" },
+        attachedPropertiesTypes: new[] {typeof(PresentationMode) })] 
     public partial class ContentPage { }
 
     [MauiWrapper(typeof(Microsoft.Maui.Controls.FlyoutPage))] 
