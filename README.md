@@ -43,6 +43,20 @@ public class HelloWorldPage : ContentPage
 }
 ```
 
+# Nuget Package
+
+#### .NET CLI
+
+```
+dotnet add package Sharp.UI --version 0.1.0-beta
+```
+
+#### Package manager
+
+```
+NuGet\Install-Package Sharp.UI -Version 0.1.0-beta
+```
+
 ## Before you start
 If you want to use this library, you have to include the `using Sharp.UI` inside your app namespace, which replaces the standard MAUI classes.
 
