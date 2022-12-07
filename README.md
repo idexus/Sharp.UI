@@ -208,7 +208,7 @@ new Button("Click me")
 
 ## Grid
 
-#### Rows, columns
+#### Rows, columns (attached properties)
 Using the `GridRow()`, `GridColumn()`, `GridColumnSpan()`, `GridRowSpan()` and `GridSpan()` methods, you can set the row, column and span within the grid definition.
 
 ```cs
