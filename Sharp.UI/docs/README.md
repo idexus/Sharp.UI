@@ -1,5 +1,5 @@
 ## Overview
-An auto-generated wrapper library that allows you to use .NET MAUI only in code using fluent methods, without the need for XAML.
+An auto-generated wrapper library that allows you to use .NET MAUI only in C# code using fluent methods, without the need for XAML.
 
 ## Hello, World!
 

@@ -1,5 +1,5 @@
 # Overview
-Sharp.UI allows you to build a .NET Multi-platform App User Interface (.NET MAUI) declaratively in code using fluent methods. It is a wrapper library, mostly auto-generated.
+Sharp.UI allows you to build a .NET Multi-platform App User Interface (.NET MAUI) declaratively in C# code using fluent methods. It is a wrapper library, mostly auto-generated.
 
 ## Hello, World!
 
