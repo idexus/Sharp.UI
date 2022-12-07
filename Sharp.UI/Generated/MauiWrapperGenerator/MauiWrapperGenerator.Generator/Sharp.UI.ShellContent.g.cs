@@ -35,6 +35,34 @@ namespace Sharp.UI
             configure(this);
         }
 
+        public ShellContent(string title, object content) 
+        {  
+            this.Title = title;
+            this.Content = content;
+        }
+
+        public ShellContent(string title, object content, out ShellContent shellContent) 
+        {  
+            this.Title = title;
+            this.Content = content;;
+            shellContent = this;
+        }
+
+        public ShellContent(string title, object content, Action<ShellContent> configure) 
+        {  
+            this.Title = title;
+            this.Content = content;
+            configure(this);
+        }
+
+        public ShellContent(string title, object content, out ShellContent shellContent, Action<ShellContent> configure) 
+        {  
+            this.Title = title;
+            this.Content = content;
+            shellContent = this;
+            configure(this);
+        }
+
         // ----- single item container -----
 
         public IEnumerator GetEnumerator() { yield return this.Content; }

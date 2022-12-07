@@ -35,6 +35,30 @@ namespace Sharp.UI
             configure(this);
         }
 
+        public Tab(string title) 
+        {  
+            this.Title = title;
+        }
+
+        public Tab(string title, out Tab tab) 
+        {  
+            this.Title = title;;
+            tab = this;
+        }
+
+        public Tab(string title, Action<Tab> configure) 
+        {  
+            this.Title = title;
+            configure(this);
+        }
+
+        public Tab(string title, out Tab tab, Action<Tab> configure) 
+        {  
+            this.Title = title;
+            tab = this;
+            configure(this);
+        }
+
         // ----- collection container -----
 
         public int Count => this.Items.Count;

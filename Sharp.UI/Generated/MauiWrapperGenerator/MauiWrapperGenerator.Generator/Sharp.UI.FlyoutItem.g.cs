@@ -35,6 +35,30 @@ namespace Sharp.UI
             configure(this);
         }
 
+        public FlyoutItem(Microsoft.Maui.Controls.FlyoutDisplayOptions flyoutdisplayoptions) 
+        {  
+            this.FlyoutDisplayOptions = flyoutdisplayoptions;
+        }
+
+        public FlyoutItem(Microsoft.Maui.Controls.FlyoutDisplayOptions flyoutdisplayoptions, out FlyoutItem flyoutItem) 
+        {  
+            this.FlyoutDisplayOptions = flyoutdisplayoptions;;
+            flyoutItem = this;
+        }
+
+        public FlyoutItem(Microsoft.Maui.Controls.FlyoutDisplayOptions flyoutdisplayoptions, Action<FlyoutItem> configure) 
+        {  
+            this.FlyoutDisplayOptions = flyoutdisplayoptions;
+            configure(this);
+        }
+
+        public FlyoutItem(Microsoft.Maui.Controls.FlyoutDisplayOptions flyoutdisplayoptions, out FlyoutItem flyoutItem, Action<FlyoutItem> configure) 
+        {  
+            this.FlyoutDisplayOptions = flyoutdisplayoptions;
+            flyoutItem = this;
+            configure(this);
+        }
+
         // ----- collection container -----
 
         public int Count => this.Items.Count;

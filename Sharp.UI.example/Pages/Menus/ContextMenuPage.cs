@@ -9,10 +9,14 @@ public class ContextMenuPage : ContentPage
             new Image("dotnet_bot.png")
                 .FlyoutBaseContextFlyout(new MenuFlyout
                 {
+                    new MenuFlyoutItem("Go to Grid Page")
+                        .OnClicked(async e => await Shell.Current.GoToAsync("//top/main/grid")),
+
                     new MenuFlyoutItem("Copy")
                         .OnClicked(e => Console.WriteLine("Copy")),
                     new MenuFlyoutItem("Paste")
                         .OnClicked(e => Console.WriteLine("Paste")),
+
                     new MenuFlyoutSubItem("Background color")
                     {
                         new MenuFlyoutItem("Blue")

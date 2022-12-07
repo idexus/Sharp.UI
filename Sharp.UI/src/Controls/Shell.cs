@@ -6,37 +6,21 @@
     [MauiWrapper(typeof(Microsoft.Maui.Controls.TabBar))]
     public partial class TabBar { }
 
-    [MauiWrapper(typeof(Microsoft.Maui.Controls.FlyoutItem))]
-    public partial class FlyoutItem
-    {
-        public FlyoutItem(FlyoutDisplayOptions displayOptions)
-        {
-            this.FlyoutDisplayOptions = displayOptions;
-        }
-    }
+    [MauiWrapper(typeof(Microsoft.Maui.Controls.FlyoutItem),
+        constructorWithProperties: new[] { "FlyoutDisplayOptions" })]
+    public partial class FlyoutItem { }
 
-    [MauiWrapper(typeof(Microsoft.Maui.Controls.Tab))]
-    public partial class Tab
-    {
-        public Tab(string title, ImageSource icon = null)
-        {
-            this.Title = title;
-            this.Icon = icon;
-        }
-    }
+    [MauiWrapper(typeof(Microsoft.Maui.Controls.Tab),
+        constructorWithProperties: new[] { "Title" })]
+    public partial class Tab { }
 
-    [MauiWrapper(typeof(Microsoft.Maui.Controls.ShellContent))]
+    [MauiWrapper(typeof(Microsoft.Maui.Controls.ShellContent),
+        constructorWithProperties: new[] { "Title", "Content" })]
     public partial class ShellContent
     {
         protected ShellContent(Type page)
         {
             this.ContentTemplate = new DataTemplate(page);
-        }
-
-        public ShellContent(Page page, string title = "")
-        {
-            this.Content = page;
-            this.Title = title;
         }
     }
 
@@ -50,4 +34,3 @@
         }
     }
 }
-
