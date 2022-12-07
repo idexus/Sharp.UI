@@ -642,7 +642,7 @@ public class BehaviorTestPage : ContentPage
 }
 ```
 
-## Definition templates
+## Templates definition
 With `Def<T>` you can create templates depending on device idiom, platform, or app theme
 
 ```cs
