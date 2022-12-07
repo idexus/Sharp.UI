@@ -35,7 +35,7 @@
             .RowDefinitions(e => e.Star(2).Star().Absolute(100).Absolute(100))
             .ColumnDefinitions(e => e.Star().Star(2));
 
-            this.ShellPresentationMode(PresentationMode.NotAnimated);
+            this.ShellNavBarIsVisible(false);
         }
     }
 }

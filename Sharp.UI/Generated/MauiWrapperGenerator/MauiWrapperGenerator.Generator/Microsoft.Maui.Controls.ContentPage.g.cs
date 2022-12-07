@@ -75,6 +75,270 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T ShellBackgroundColor<T>(this T obj,
+            Microsoft.Maui.Graphics.Color? backgroundColor)
+            where T : Sharp.UI.IContentPage
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ContentPage>(obj);
+            if (backgroundColor != null) mauiObject.SetValue(Shell.BackgroundColorProperty, (Microsoft.Maui.Graphics.Color)backgroundColor);
+            return obj;
+        }
+        
+        public static T ShellBackgroundColor<T>(this T obj,
+            Microsoft.Maui.Graphics.Color? backgroundColor,
+            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            where T : Sharp.UI.IContentPage
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ContentPage>(obj);
+            if (backgroundColor != null) mauiObject.SetValue(Shell.BackgroundColorProperty, (Microsoft.Maui.Graphics.Color)backgroundColor);
+            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Shell.BackgroundColorProperty));
+            if (def.ValueIsSet()) mauiObject.SetValue(Shell.BackgroundColorProperty, def.GetValue());
+            def.BindProperty();
+            return obj;
+        }
+        
+        public static T ShellBackgroundColor<T>(this T obj,
+            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            where T : Sharp.UI.IContentPage
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ContentPage>(obj);
+            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Shell.BackgroundColorProperty));
+            if (def.ValueIsSet()) mauiObject.SetValue(Shell.BackgroundColorProperty, def.GetValue());
+            def.BindProperty();
+            return obj;
+        }
+        
+        public static T ShellForegroundColor<T>(this T obj,
+            Microsoft.Maui.Graphics.Color? foregroundColor)
+            where T : Sharp.UI.IContentPage
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ContentPage>(obj);
+            if (foregroundColor != null) mauiObject.SetValue(Shell.ForegroundColorProperty, (Microsoft.Maui.Graphics.Color)foregroundColor);
+            return obj;
+        }
+        
+        public static T ShellForegroundColor<T>(this T obj,
+            Microsoft.Maui.Graphics.Color? foregroundColor,
+            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            where T : Sharp.UI.IContentPage
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ContentPage>(obj);
+            if (foregroundColor != null) mauiObject.SetValue(Shell.ForegroundColorProperty, (Microsoft.Maui.Graphics.Color)foregroundColor);
+            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Shell.ForegroundColorProperty));
+            if (def.ValueIsSet()) mauiObject.SetValue(Shell.ForegroundColorProperty, def.GetValue());
+            def.BindProperty();
+            return obj;
+        }
+        
+        public static T ShellForegroundColor<T>(this T obj,
+            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            where T : Sharp.UI.IContentPage
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ContentPage>(obj);
+            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Shell.ForegroundColorProperty));
+            if (def.ValueIsSet()) mauiObject.SetValue(Shell.ForegroundColorProperty, def.GetValue());
+            def.BindProperty();
+            return obj;
+        }
+        
+        public static T ShellTitleColor<T>(this T obj,
+            Microsoft.Maui.Graphics.Color? titleColor)
+            where T : Sharp.UI.IContentPage
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ContentPage>(obj);
+            if (titleColor != null) mauiObject.SetValue(Shell.TitleColorProperty, (Microsoft.Maui.Graphics.Color)titleColor);
+            return obj;
+        }
+        
+        public static T ShellTitleColor<T>(this T obj,
+            Microsoft.Maui.Graphics.Color? titleColor,
+            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            where T : Sharp.UI.IContentPage
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ContentPage>(obj);
+            if (titleColor != null) mauiObject.SetValue(Shell.TitleColorProperty, (Microsoft.Maui.Graphics.Color)titleColor);
+            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Shell.TitleColorProperty));
+            if (def.ValueIsSet()) mauiObject.SetValue(Shell.TitleColorProperty, def.GetValue());
+            def.BindProperty();
+            return obj;
+        }
+        
+        public static T ShellTitleColor<T>(this T obj,
+            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            where T : Sharp.UI.IContentPage
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ContentPage>(obj);
+            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Shell.TitleColorProperty));
+            if (def.ValueIsSet()) mauiObject.SetValue(Shell.TitleColorProperty, def.GetValue());
+            def.BindProperty();
+            return obj;
+        }
+        
+        public static T ShellDisabledColor<T>(this T obj,
+            Microsoft.Maui.Graphics.Color? disabledColor)
+            where T : Sharp.UI.IContentPage
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ContentPage>(obj);
+            if (disabledColor != null) mauiObject.SetValue(Shell.DisabledColorProperty, (Microsoft.Maui.Graphics.Color)disabledColor);
+            return obj;
+        }
+        
+        public static T ShellDisabledColor<T>(this T obj,
+            Microsoft.Maui.Graphics.Color? disabledColor,
+            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            where T : Sharp.UI.IContentPage
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ContentPage>(obj);
+            if (disabledColor != null) mauiObject.SetValue(Shell.DisabledColorProperty, (Microsoft.Maui.Graphics.Color)disabledColor);
+            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Shell.DisabledColorProperty));
+            if (def.ValueIsSet()) mauiObject.SetValue(Shell.DisabledColorProperty, def.GetValue());
+            def.BindProperty();
+            return obj;
+        }
+        
+        public static T ShellDisabledColor<T>(this T obj,
+            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            where T : Sharp.UI.IContentPage
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ContentPage>(obj);
+            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Shell.DisabledColorProperty));
+            if (def.ValueIsSet()) mauiObject.SetValue(Shell.DisabledColorProperty, def.GetValue());
+            def.BindProperty();
+            return obj;
+        }
+        
+        public static T ShellUnselectedColor<T>(this T obj,
+            Microsoft.Maui.Graphics.Color? unselectedColor)
+            where T : Sharp.UI.IContentPage
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ContentPage>(obj);
+            if (unselectedColor != null) mauiObject.SetValue(Shell.UnselectedColorProperty, (Microsoft.Maui.Graphics.Color)unselectedColor);
+            return obj;
+        }
+        
+        public static T ShellUnselectedColor<T>(this T obj,
+            Microsoft.Maui.Graphics.Color? unselectedColor,
+            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            where T : Sharp.UI.IContentPage
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ContentPage>(obj);
+            if (unselectedColor != null) mauiObject.SetValue(Shell.UnselectedColorProperty, (Microsoft.Maui.Graphics.Color)unselectedColor);
+            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Shell.UnselectedColorProperty));
+            if (def.ValueIsSet()) mauiObject.SetValue(Shell.UnselectedColorProperty, def.GetValue());
+            def.BindProperty();
+            return obj;
+        }
+        
+        public static T ShellUnselectedColor<T>(this T obj,
+            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            where T : Sharp.UI.IContentPage
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ContentPage>(obj);
+            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Shell.UnselectedColorProperty));
+            if (def.ValueIsSet()) mauiObject.SetValue(Shell.UnselectedColorProperty, def.GetValue());
+            def.BindProperty();
+            return obj;
+        }
+        
+        public static T ShellNavBarHasShadow<T>(this T obj,
+            bool? navBarHasShadow)
+            where T : Sharp.UI.IContentPage
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ContentPage>(obj);
+            if (navBarHasShadow != null) mauiObject.SetValue(Shell.NavBarHasShadowProperty, (bool)navBarHasShadow);
+            return obj;
+        }
+        
+        public static T ShellNavBarHasShadow<T>(this T obj,
+            bool? navBarHasShadow,
+            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            where T : Sharp.UI.IContentPage
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ContentPage>(obj);
+            if (navBarHasShadow != null) mauiObject.SetValue(Shell.NavBarHasShadowProperty, (bool)navBarHasShadow);
+            var def = definition(new BindableDef<bool>(mauiObject, Shell.NavBarHasShadowProperty));
+            if (def.ValueIsSet()) mauiObject.SetValue(Shell.NavBarHasShadowProperty, def.GetValue());
+            def.BindProperty();
+            return obj;
+        }
+        
+        public static T ShellNavBarHasShadow<T>(this T obj,
+            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            where T : Sharp.UI.IContentPage
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ContentPage>(obj);
+            var def = definition(new BindableDef<bool>(mauiObject, Shell.NavBarHasShadowProperty));
+            if (def.ValueIsSet()) mauiObject.SetValue(Shell.NavBarHasShadowProperty, def.GetValue());
+            def.BindProperty();
+            return obj;
+        }
+        
+        public static T ShellNavBarIsVisible<T>(this T obj,
+            bool? navBarIsVisible)
+            where T : Sharp.UI.IContentPage
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ContentPage>(obj);
+            if (navBarIsVisible != null) mauiObject.SetValue(Shell.NavBarIsVisibleProperty, (bool)navBarIsVisible);
+            return obj;
+        }
+        
+        public static T ShellNavBarIsVisible<T>(this T obj,
+            bool? navBarIsVisible,
+            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            where T : Sharp.UI.IContentPage
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ContentPage>(obj);
+            if (navBarIsVisible != null) mauiObject.SetValue(Shell.NavBarIsVisibleProperty, (bool)navBarIsVisible);
+            var def = definition(new BindableDef<bool>(mauiObject, Shell.NavBarIsVisibleProperty));
+            if (def.ValueIsSet()) mauiObject.SetValue(Shell.NavBarIsVisibleProperty, def.GetValue());
+            def.BindProperty();
+            return obj;
+        }
+        
+        public static T ShellNavBarIsVisible<T>(this T obj,
+            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            where T : Sharp.UI.IContentPage
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ContentPage>(obj);
+            var def = definition(new BindableDef<bool>(mauiObject, Shell.NavBarIsVisibleProperty));
+            if (def.ValueIsSet()) mauiObject.SetValue(Shell.NavBarIsVisibleProperty, def.GetValue());
+            def.BindProperty();
+            return obj;
+        }
+        
+        public static T ShellTitleView<T>(this T obj,
+            Microsoft.Maui.Controls.View? titleView)
+            where T : Sharp.UI.IContentPage
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ContentPage>(obj);
+            if (titleView != null) mauiObject.SetValue(Shell.TitleViewProperty, (Microsoft.Maui.Controls.View)titleView);
+            return obj;
+        }
+        
+        public static T ShellTitleView<T>(this T obj,
+            Microsoft.Maui.Controls.View? titleView,
+            Func<BindableDef<Microsoft.Maui.Controls.View>, BindableDef<Microsoft.Maui.Controls.View>> definition)
+            where T : Sharp.UI.IContentPage
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ContentPage>(obj);
+            if (titleView != null) mauiObject.SetValue(Shell.TitleViewProperty, (Microsoft.Maui.Controls.View)titleView);
+            var def = definition(new BindableDef<Microsoft.Maui.Controls.View>(mauiObject, Shell.TitleViewProperty));
+            if (def.ValueIsSet()) mauiObject.SetValue(Shell.TitleViewProperty, def.GetValue());
+            def.BindProperty();
+            return obj;
+        }
+        
+        public static T ShellTitleView<T>(this T obj,
+            Func<BindableDef<Microsoft.Maui.Controls.View>, BindableDef<Microsoft.Maui.Controls.View>> definition)
+            where T : Sharp.UI.IContentPage
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ContentPage>(obj);
+            var def = definition(new BindableDef<Microsoft.Maui.Controls.View>(mauiObject, Shell.TitleViewProperty));
+            if (def.ValueIsSet()) mauiObject.SetValue(Shell.TitleViewProperty, def.GetValue());
+            def.BindProperty();
+            return obj;
+        }
+        
     }
 }
 
