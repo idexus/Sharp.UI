@@ -3,9 +3,8 @@
     [MauiWrapper(typeof(Microsoft.Maui.Controls.Shell))]
     public partial class Shell { }
 
-    [MauiWrapper(typeof(Microsoft.Maui.Controls.FlyoutItem),
-        attachedProperties: new[] { "Shell.ItemTemplate" },
-        attachedPropertiesTypes: new[] { typeof(DataTemplate) })]
+
+    [MauiWrapper(typeof(Microsoft.Maui.Controls.FlyoutItem))]
     public partial class FlyoutItem
     {
         public FlyoutItem(FlyoutDisplayOptions displayOptions)
@@ -14,9 +13,7 @@
         }
     }
 
-    [MauiWrapper(typeof(Microsoft.Maui.Controls.Tab),
-        attachedProperties: new[] { "Shell.ItemTemplate" },
-        attachedPropertiesTypes: new[] { typeof(DataTemplate) })]
+    [MauiWrapper(typeof(Microsoft.Maui.Controls.Tab))]
     public partial class Tab
     {
         public Tab(string title, ImageSource icon = null)
@@ -26,9 +23,7 @@
         }
     }
 
-    [MauiWrapper(typeof(Microsoft.Maui.Controls.ShellContent),
-        attachedProperties: new[] { "Shell.ItemTemplate" },
-        attachedPropertiesTypes: new[] { typeof(DataTemplate) })]
+    [MauiWrapper(typeof(Microsoft.Maui.Controls.ShellContent))]
     public partial class ShellContent
     {
         public ShellContent(Type page)
