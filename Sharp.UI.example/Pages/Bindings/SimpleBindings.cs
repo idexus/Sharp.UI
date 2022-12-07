@@ -1,4 +1,6 @@
-﻿using Sharp.UI;
+﻿namespace Sharp.UI.Example;
+
+using Sharp.UI;
 
 public class SimpleBindings : ContentPage
 {

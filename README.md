@@ -4,6 +4,7 @@ Sharp.UI allows you to build a .NET Multi-platform App User Interface (.NET MAUI
 ## Hello, World!
 
 ```cs
+namespace ExampleApp;
 using Sharp.UI;
 
 public class HelloWorldPage : ContentPage
@@ -43,19 +44,21 @@ public class HelloWorldPage : ContentPage
 ```
 
 ## Before you start
-If you want to use this library, you must copy the `GlobalUsings.cs` file, which replaces the standard MAUI classes, into your project.
+If you want to use this library, you have to include the `using Sharp.UI` inside your app namespace, which replaces the standard MAUI classes.
 
 ```cs
-...
-global using Label = Sharp.UI.Label;
-global using ListView = Sharp.UI.ListView;
-....
-....
-global using ScrollView = Sharp.UI.ScrollView;
-global using SearchBar = Sharp.UI.SearchBar;
-global using Slider = Sharp.UI.Slider;
-...
+namespace ExampleApp;
+using Sharp.UI;
 ```
+
+```cs
+namespace ExampleApp
+{
+    using Sharp.UI;
+    ...
+}
+```
+
 # Examples
 Here are some simple examples showing how to use the Sharp.UI library
 

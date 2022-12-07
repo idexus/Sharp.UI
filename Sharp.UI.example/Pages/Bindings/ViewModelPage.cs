@@ -1,8 +1,9 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿namespace Sharp.UI.Example;
+
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Sharp.UI;
 
-namespace Sharp.UI.Example;
 
 public partial class SecondPageViewModel : ObservableObject
 {

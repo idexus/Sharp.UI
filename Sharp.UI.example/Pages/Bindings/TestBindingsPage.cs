@@ -1,4 +1,6 @@
-﻿namespace Sharp.UI;
+﻿namespace Sharp.UI.Example;
+
+using Sharp.UI;
 
 public class TestBindingsPage : ContentPage
 {

@@ -15,6 +15,14 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+
+		<PackageId>Sharp.UI</PackageId>
+		<Version>0.1.0-beta</Version>
+		<Authors>Pawel Krzywdzinski</Authors>
+		<Copyright>Pawel Krzywdzinski</Copyright>
+		<Company></Company>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
@@ -32,6 +40,7 @@
 		<ProjectReference Include="..\MauiWrapperGenerator\MauiWrapperGenerator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
 		<Compile Remove="$(CompilerGeneratedFilesOutputPath)/**/*.cs" />
 	    <None Include="$(CompilerGeneratedFilesOutputPath)/MauiWrapperGenerator/**/*.cs" />
+		<None Include="docs\README.md" Pack="true" PackagePath="\"/>
 	</ItemGroup>
 		<ItemGroup>
 		  <None Remove="src\" />
@@ -44,6 +53,7 @@
 		  <None Remove="src\Extensions\Maui\" />
 		  <None Remove="src\Extensions\SharpUI\" />
 		  <None Remove="src\Others\" />
+		  <None Remove="docs\" />
 		</ItemGroup>
 		<ItemGroup>
 		  <Folder Include="src\" />
@@ -56,5 +66,6 @@
 		  <Folder Include="src\Extensions\Maui\" />
 		  <Folder Include="src\Extensions\SharpUI\" />
 		  <Folder Include="src\Others\" />
+		  <Folder Include="docs\" />
 		</ItemGroup>
 </Project>
