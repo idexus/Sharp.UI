@@ -263,10 +263,10 @@ new Grid(out grid)
     new BoxView().Color(Colors.Blue).GridColumn(1).GridRow(0),
     new Label("Column 1, Row 0").GridColumn(1).GridRow(0),
 
-    new BoxView().Color(Colors.Teal).Column(0).GridRow(1),
+    new BoxView().Color(Colors.Teal).GridColumn(0).GridRow(1),
     new Label("Column 0, Row 1").GridColumn(0).GridRow(1),
 
-    new BoxView().Color(Colors.Purple).Column(1).GridRow(1),
+    new BoxView().Color(Colors.Purple).GridColumn(1).GridRow(1),
     new Label("Column 1, Row 1").GridColumn(1).GridRow(1),
 }
 .RowDefinitions(e => e.Star(2).Star())
