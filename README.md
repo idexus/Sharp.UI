@@ -232,7 +232,7 @@ public class GridPage : ContentPage
 {
     public GridPage()
     {
-        Content = new Grid(out var grid)
+        Content = new Grid
         {
             ...
         }
@@ -260,7 +260,7 @@ Methods like `GridRow()`, `GridColumn()`, `GridColumnSpan()`, `GridRowSpan()` ma
 Using folowing fluent methods you can define the number and sizes of rows and columns.
 
 ```cs
-new Grid(out grid)
+new Grid
 {
     ...
 }
@@ -272,7 +272,7 @@ new Grid(out grid)
 #### Example grid definition
 
 ```cs
-new Grid(out grid)
+new Grid
 {
     new BoxView().Color(Colors.Green),
     new Label("Column 0, Row 0"),
