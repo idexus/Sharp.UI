@@ -3,7 +3,8 @@
     [MauiWrapper(typeof(Microsoft.Maui.Controls.Shapes.Geometry))] 
     public abstract partial class Geometry { }
 
-    [MauiWrapper(typeof(Microsoft.Maui.Controls.Shapes.EllipseGeometry))] 
+    [MauiWrapper(typeof(Microsoft.Maui.Controls.Shapes.EllipseGeometry),
+        constructorWithProperties: new[] { "RadiusX", "RadiusY", "Center" })] 
     public partial class EllipseGeometry { }
 
     [MauiWrapper(typeof(Microsoft.Maui.Controls.Shapes.LineGeometry))] 

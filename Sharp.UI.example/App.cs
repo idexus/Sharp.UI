@@ -15,6 +15,7 @@ public partial class App : Application
                     new ShellContent("Hello Page", new HelloWorldPage()), // load at app startup
                     new ShellContent<ExamplePage>("ExamplePage"), 
                     new ShellContent<GridPage>("Grid").Route("grid"),
+                    new ShellContent<ShapesPage>("Shapes")
                 },
 
                 new Tab("Table/List")

@@ -31,6 +31,38 @@ namespace Sharp.UI
             configure(this);
         }
 
+        public EllipseGeometry(double radiusx, double radiusy, Microsoft.Maui.Graphics.Point center) 
+        {  
+            this.RadiusX = radiusx;
+            this.RadiusY = radiusy;
+            this.Center = center;
+        }
+
+        public EllipseGeometry(double radiusx, double radiusy, Microsoft.Maui.Graphics.Point center, out EllipseGeometry ellipseGeometry) 
+        {  
+            this.RadiusX = radiusx;
+            this.RadiusY = radiusy;
+            this.Center = center;;
+            ellipseGeometry = this;
+        }
+
+        public EllipseGeometry(double radiusx, double radiusy, Microsoft.Maui.Graphics.Point center, Action<EllipseGeometry> configure) 
+        {  
+            this.RadiusX = radiusx;
+            this.RadiusY = radiusy;
+            this.Center = center;
+            configure(this);
+        }
+
+        public EllipseGeometry(double radiusx, double radiusy, Microsoft.Maui.Graphics.Point center, out EllipseGeometry ellipseGeometry, Action<EllipseGeometry> configure) 
+        {  
+            this.RadiusX = radiusx;
+            this.RadiusY = radiusy;
+            this.Center = center;
+            ellipseGeometry = this;
+            configure(this);
+        }
+
         // ----- binding context -----
 
         public new object BindingContext
