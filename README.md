@@ -209,16 +209,16 @@ new Button("Click me")
 ## Grid
 
 #### Rows, columns
-Using the `GridRow()`, `GridColumn()` and `GridSpan()` methods, you can set the row, column and span within the grid definition.
+Using the `GridRow()`, `GridColumn()`, `GridColumnSpan()`, `GridRowSpan()` and `GridSpan()` methods, you can set the row, column and span within the grid definition.
 
 ```cs
 new Label("Column 0, Row 2, Span 2 columns")
     .GridColumn(0)
     .GridRow(2)
-    .GridSpan(column: 2)
+    .GridColumnSpan(2)
 ```
 
-Methods like `GridRow()`, `GridColumn()`, `GridRowSpan()` etc. matches attached MAUI properties `Grid.Row`, `Grid.Column`, `Grid.RowSpan` etc.
+Methods like `GridRow()`, `GridColumn()`, `GridColumnSpan()`, `GridRowSpan()` matches attached MAUI properties `Grid.Row`, `Grid.Column`, `Grid.ColumnSpan` and `Grid.RowSpan`.
 
 #### Row and column definition
 Using folowing fluent methods you can define the number and sizes of rows and columns.

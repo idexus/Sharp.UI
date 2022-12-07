@@ -206,6 +206,72 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T GridColumnSpan<T>(this T obj,
+            int? columnSpan)
+            where T : Sharp.UI.IView
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.View>(obj);
+            if (columnSpan != null) mauiObject.SetValue(Grid.ColumnSpanProperty, (int)columnSpan);
+            return obj;
+        }
+        
+        public static T GridColumnSpan<T>(this T obj,
+            int? columnSpan,
+            Func<BindableDef<int>, BindableDef<int>> definition)
+            where T : Sharp.UI.IView
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.View>(obj);
+            if (columnSpan != null) mauiObject.SetValue(Grid.ColumnSpanProperty, (int)columnSpan);
+            var def = definition(new BindableDef<int>(mauiObject, Grid.ColumnSpanProperty));
+            if (def.ValueIsSet()) mauiObject.SetValue(Grid.ColumnSpanProperty, def.GetValue());
+            def.BindProperty();
+            return obj;
+        }
+        
+        public static T GridColumnSpan<T>(this T obj,
+            Func<BindableDef<int>, BindableDef<int>> definition)
+            where T : Sharp.UI.IView
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.View>(obj);
+            var def = definition(new BindableDef<int>(mauiObject, Grid.ColumnSpanProperty));
+            if (def.ValueIsSet()) mauiObject.SetValue(Grid.ColumnSpanProperty, def.GetValue());
+            def.BindProperty();
+            return obj;
+        }
+        
+        public static T GridRowSpan<T>(this T obj,
+            int? rowSpan)
+            where T : Sharp.UI.IView
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.View>(obj);
+            if (rowSpan != null) mauiObject.SetValue(Grid.RowSpanProperty, (int)rowSpan);
+            return obj;
+        }
+        
+        public static T GridRowSpan<T>(this T obj,
+            int? rowSpan,
+            Func<BindableDef<int>, BindableDef<int>> definition)
+            where T : Sharp.UI.IView
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.View>(obj);
+            if (rowSpan != null) mauiObject.SetValue(Grid.RowSpanProperty, (int)rowSpan);
+            var def = definition(new BindableDef<int>(mauiObject, Grid.RowSpanProperty));
+            if (def.ValueIsSet()) mauiObject.SetValue(Grid.RowSpanProperty, def.GetValue());
+            def.BindProperty();
+            return obj;
+        }
+        
+        public static T GridRowSpan<T>(this T obj,
+            Func<BindableDef<int>, BindableDef<int>> definition)
+            where T : Sharp.UI.IView
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.View>(obj);
+            var def = definition(new BindableDef<int>(mauiObject, Grid.RowSpanProperty));
+            if (def.ValueIsSet()) mauiObject.SetValue(Grid.RowSpanProperty, def.GetValue());
+            def.BindProperty();
+            return obj;
+        }
+        
     }
 }
 
