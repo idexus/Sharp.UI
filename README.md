@@ -90,8 +90,7 @@ new Label("Hello")
 There are two ways to assign objects. Using the `Assign` method 
 
 ```cs
-new Label()
-    .Assign(out label1)
+new Label().Assign(out label1)
 ```
 
 or using a constructor parameter
@@ -210,14 +209,16 @@ new Button("Click me")
 ## Grid
 
 #### Rows, columns
-Using the `Row()`, `Column()` and `Span()` methods, you can set the row, column and span within the grid definition.
+Using the `GridRow()`, `GridColumn()` and `GridSpan()` methods, you can set the row, column and span within the grid definition.
 
 ```cs
 new Label("Column 0, Row 2, Span 2 columns")
-    .Column(0)
-    .Row(2)
-    .Span(column: 2)
+    .GridColumn(0)
+    .GridRow(2)
+    .GridSpan(column: 2)
 ```
+
+Methods like `GridRow()`, `GridColumn()`, `GridRowSpan()` etc. matches attached MAUI properties `Grid.Row`, `Grid.Column`, `Grid.RowSpan` etc.
 
 #### Row and column definition
 Using folowing fluent methods you can define the number and sizes of rows and columns.
@@ -240,14 +241,14 @@ new Grid(out grid)
     new BoxView().Color(Colors.Green),
     new Label("Column 0, Row 0"),
 
-    new BoxView().Color(Colors.Blue).Column(1).Row(0),
-    new Label("Column 1, Row 0").Column(1).Row(0),
+    new BoxView().Color(Colors.Blue).GridColumn(1).GridRow(0),
+    new Label("Column 1, Row 0").GridColumn(1).GridRow(0),
 
-    new BoxView().Color(Colors.Teal).Column(0).Row(1),
-    new Label("Column 0, Row 1").Column(0).Row(1),
+    new BoxView().Color(Colors.Teal).Column(0).GridRow(1),
+    new Label("Column 0, Row 1").GridColumn(0).GridRow(1),
 
-    new BoxView().Color(Colors.Purple).Column(1).Row(1),
-    new Label("Column 1, Row 1").Column(1).Row(1),
+    new BoxView().Color(Colors.Purple).Column(1).GridRow(1),
+    new Label("Column 1, Row 1").GridColumn(1).GridRow(1),
 }
 .RowDefinitions(e => e.Star(2).Star())
 .ColumnDefinitions(e => e.Absolute(200).Star());
@@ -672,7 +673,7 @@ public class ShellItemTemplate : ContentView
                 .HeightRequest(45),
 
             new Label()
-                .Column(1)
+                .GridColumn(1)
                 .Text(e => e.Path("Title"))
                 .FontSize(20)
                 .FontAttributes(FontAttributes.Italic)
