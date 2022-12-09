@@ -227,7 +227,7 @@ new Button("Click me")
 
 #### Example
 
-`Shell.NavBarIsVisible` is an attached property, and you can set it on the `ContentPage` using the `ShellNavBarIsVisible()` method.
+`Shell.NavBarIsVisible` is an attached property. In this example you can set it on the `ContentPage` using the `ShellNavBarIsVisible()` method.
 
 ```cs
 public class GridPage : ContentPage
