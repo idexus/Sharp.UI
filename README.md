@@ -727,7 +727,7 @@ public class ShellItemTemplate : ContentView
 
 ## Auto-generated Bindable Properties
 
-Sharp.UI automatically generates bindable properties and helper methods for classes with interfaces with the `Bindable` attribute.
+Sharp.UI automatically generates bindable properties and helper methods for wrapped classes with interfaces with the `Bindable` attribute.
 
 ```cs
 [Bindable]
