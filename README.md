@@ -225,7 +225,9 @@ new Button("Click me")
 
 ## Attached properties
 
-For example, you can set the `Shell.NavBarIsVisible` attached property on the `ContentPage` using the `ShellNavBarIsVisible()` method.
+#### Example
+
+`Shell.NavBarIsVisible` is an attached property, and you can set it on the `ContentPage` using the `ShellNavBarIsVisible()` method.
 
 ```cs
 public class GridPage : ContentPage
@@ -394,10 +396,12 @@ new VStack
         .SizeRequest(100,100)
         .GestureRecognizers(new GestureRecognizer[]
         {
-            new TapGestureRecognizer().NumberOfTapsRequired(2).OnTapped((e, args) =>
-            {
-                label.Text = "You tapped 2 times";
-            })
+            new TapGestureRecognizer()
+                .NumberOfTapsRequired(2)
+                .OnTapped((e, args) =>
+                {
+                    label.Text = "You tapped 2 times";
+                })
         })
 }
 ```
@@ -417,21 +421,22 @@ public class PanGesturePage : ContentPage
                 .SizeRequest(100,100)
                 .GestureRecognizers(new GestureRecognizer[]
                 {
-                    new PanGestureRecognizer().OnPanUpdated((e, args) =>
-                    {
-                        switch (args.StatusType)
+                    new PanGestureRecognizer()
+                        .OnPanUpdated((e, args) =>
                         {
-                            case GestureStatus.Running:
-                                image.TranslationX = x + args.TotalX;
-                                image.TranslationY = y + args.TotalY;
-                                break;
+                            switch (args.StatusType)
+                            {
+                                case GestureStatus.Running:
+                                    image.TranslationX = x + args.TotalX;
+                                    image.TranslationY = y + args.TotalY;
+                                    break;
 
-                            case GestureStatus.Completed:
-                                x = image.TranslationX;
-                                y = image.TranslationY;
-                                break;
-                        }
-                    })
+                                case GestureStatus.Completed:
+                                    x = image.TranslationX;
+                                    y = image.TranslationY;
+                                    break;
+                            }
+                        })
                 })
         };
     }
