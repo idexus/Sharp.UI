@@ -3,7 +3,7 @@
 using Sharp.UI;
 
 [Bindable]
-public interface ICardViewProperties
+public interface ITemplatedCardViewProperties
 {
     string CardTitle { get; set; }
     string CardDescription { get; set; }
@@ -12,7 +12,7 @@ public interface ICardViewProperties
 }
 
 [MauiWrapper]
-public partial class CardView : ContentView, ICardViewProperties
+public partial class TemplatedCardView : ContentView, ITemplatedCardViewProperties
 {
 }
 
@@ -44,19 +44,25 @@ public class TemplatedParentPage : ContentPage
 
         this.Content = new VStack
         {
-            new CardView()
-                .CardTitle("Title 1")
+            new Slider(1,100, out var slider),
+
+            new TemplatedCardView()
+                .CardTitle(e => e
+                    .Path("Value")
+                    .Source(slider)
+                    .StringFormat("Value {0:F2}"))
                 .CardDescription("Do you like it")
                 .CardColor(Colors.Blue)
                 .BorderColor(Colors.Red)
                 .ControlTemplate(template),
 
-            new CardView()
+            new TemplatedCardView()
                 .CardTitle("Title 2")
                 .CardDescription("Yes I do")
                 .CardColor(Colors.Red)
                 .BorderColor(Colors.Blue)
-                .ControlTemplate(template)
+                .ControlTemplate(template),
+
         }
         .VerticalOptions(LayoutOptions.Center);
     }

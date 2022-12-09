@@ -7,29 +7,31 @@
 
 namespace Sharp.UI.Example
 {
-    public partial class CardView
+    public partial class TemplatedCardView
     {
         // ----- constructors -----
         
 
+        public TemplatedCardView() { }
 
-        public CardView(out CardView cardView) : this()
+
+        public TemplatedCardView(out TemplatedCardView templatedCardView) 
         {
-            cardView = this;
+            templatedCardView = this;
         }
 
-        public CardView(Action<CardView> configure) : this()
+        public TemplatedCardView(Action<TemplatedCardView> configure) 
         {
             configure(this);
         }
 
-        public CardView(out CardView cardView, Action<CardView> configure) : this()
+        public TemplatedCardView(out TemplatedCardView templatedCardView, Action<TemplatedCardView> configure) 
         {
-            cardView = this;
+            templatedCardView = this;
             configure(this);
         }
 
-        public static readonly BindableProperty CardTitleProperty = BindableProperty.Create(nameof(CardTitle), typeof(String), typeof(Sharp.UI.Example.CardView), default(String));
+        public static readonly BindableProperty CardTitleProperty = BindableProperty.Create(nameof(CardTitle), typeof(String), typeof(Sharp.UI.Example.TemplatedCardView), default(String));
 
         public String CardTitle
         {
@@ -37,7 +39,7 @@ namespace Sharp.UI.Example
             set => SetValue(CardTitleProperty, value);
         }
         
-        public static readonly BindableProperty CardDescriptionProperty = BindableProperty.Create(nameof(CardDescription), typeof(String), typeof(Sharp.UI.Example.CardView), default(String));
+        public static readonly BindableProperty CardDescriptionProperty = BindableProperty.Create(nameof(CardDescription), typeof(String), typeof(Sharp.UI.Example.TemplatedCardView), default(String));
 
         public String CardDescription
         {
@@ -45,7 +47,7 @@ namespace Sharp.UI.Example
             set => SetValue(CardDescriptionProperty, value);
         }
         
-        public static readonly BindableProperty CardColorProperty = BindableProperty.Create(nameof(CardColor), typeof(Color), typeof(Sharp.UI.Example.CardView), default(Color));
+        public static readonly BindableProperty CardColorProperty = BindableProperty.Create(nameof(CardColor), typeof(Color), typeof(Sharp.UI.Example.TemplatedCardView), default(Color));
 
         public Color CardColor
         {
@@ -53,7 +55,7 @@ namespace Sharp.UI.Example
             set => SetValue(CardColorProperty, value);
         }
         
-        public static readonly BindableProperty BorderColorProperty = BindableProperty.Create(nameof(BorderColor), typeof(Color), typeof(Sharp.UI.Example.CardView), default(Color));
+        public static readonly BindableProperty BorderColorProperty = BindableProperty.Create(nameof(BorderColor), typeof(Color), typeof(Sharp.UI.Example.TemplatedCardView), default(Color));
 
         public Color BorderColor
         {

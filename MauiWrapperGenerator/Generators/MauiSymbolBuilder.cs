@@ -59,6 +59,8 @@ public class MauiSymbolBuilder
         // [5] generateNoParamConstructor
         this.generateNoParamConstructor = (bool)(wrapperAttribute.ConstructorArguments[5].Value);
 
+        if (sharpUIType.Constructors.FirstOrDefault(e => e.Parameters.Count() == 0 && !e.IsImplicitlyDeclared) != null)
+            this.generateNoParamConstructor = false;
 
         if (mauiType == null)
         {
