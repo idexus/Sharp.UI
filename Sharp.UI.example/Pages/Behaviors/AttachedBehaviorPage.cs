@@ -1,34 +1,7 @@
 ﻿namespace Sharp.UI.Example;
 
-
-public class NumericValidationStyleBehavior : Behavior<Entry>
+public class NumericValidationStyleBehavior : AttachedBehavior<Entry, NumericValidationStyleBehavior>
 {
-    public static readonly BindableProperty AttachBehaviorProperty =
-    BindableProperty.CreateAttached("AttachBehavior", typeof(bool), typeof(NumericValidationStyleBehavior), false, propertyChanged: OnAttachBehaviorChanged);
-
-    static void OnAttachBehaviorChanged(BindableObject view, object oldValue, object newValue)
-    {
-        Entry entry = view as Entry;
-        if (entry == null)
-        {
-            return;
-        }
-
-        bool attachBehavior = (bool)newValue;
-        if (attachBehavior)
-        {
-            entry.Behaviors.Add(new NumericValidationStyleBehavior());
-        }
-        else
-        {
-            Behavior toRemove = entry.Behaviors.FirstOrDefault(b => b is NumericValidationStyleBehavior);
-            if (toRemove != null)
-            {
-                entry.Behaviors.Remove(toRemove);
-            }
-        }
-    }
-
     protected override void OnAttachedTo(Entry entry)
     {
         entry.TextChanged += OnEntryTextChanged;
@@ -57,7 +30,7 @@ public class AttachedBehaviorPage : ContentPage
         {
             new Style<Entry>
             {
-                NumericValidationStyleBehavior.AttachBehaviorProperty.Set(true)
+                NumericValidationStyleBehavior.AttachedProperty.Set(true)
             }
         };
 

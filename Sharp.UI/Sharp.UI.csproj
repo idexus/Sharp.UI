@@ -24,6 +24,7 @@
 		<Company></Company>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
@@ -41,7 +42,7 @@
 		<ProjectReference Include="..\MauiWrapperGenerator\MauiWrapperGenerator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
 		<Compile Remove="$(CompilerGeneratedFilesOutputPath)/**/*.cs" />
 	    <None Include="$(CompilerGeneratedFilesOutputPath)/MauiWrapperGenerator/**/*.cs" />
-		<None Include="docs\README.md" Pack="true" PackagePath="\"/>
+		<None Include="docs\README.md" Pack="true" PackagePath="\" />
 	</ItemGroup>
 		<ItemGroup>
 		  <None Remove="src\" />
