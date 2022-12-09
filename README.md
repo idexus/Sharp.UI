@@ -629,7 +629,7 @@ public class NumericValidationTriggerAction : TriggerAction<Entry>
 }
 ```
 
-## Behaviours
+## Behaviors
 You can add functionality to user interface controls without having to subclass them with behaviours.
 
 ```cs
