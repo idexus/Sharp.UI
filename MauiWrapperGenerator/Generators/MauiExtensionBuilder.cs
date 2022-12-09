@@ -23,6 +23,8 @@ public class MauiExtensionBuilder
 
     public bool IsMethodsGenerated { get; private set; }
 
+    private bool noMauiType = false;
+
     public MauiExtensionBuilder(INamedTypeSymbol symbol, StringBuilder builder, AttributeData wrapperAttribute)
     {
         this.builder = builder;
@@ -32,6 +34,13 @@ public class MauiExtensionBuilder
 
         if (wrapperAttribute != null)
         {
+            // only extension methods wrapper
+            if (wrapperAttribute.ConstructorArguments[0].Value == null)
+            {
+                noMauiType = true;
+                this.typeConformanceName = symbol.ToDisplayString();
+            }
+
             // [1] doNotGenerate
             var notGenerateValues = wrapperAttribute.ConstructorArguments[1].Values;
             if (!notGenerateValues.IsDefaultOrEmpty)
@@ -72,6 +81,15 @@ public class MauiExtensionBuilder
         var tail = mauiType.IsGenericType ? $"{mauiType.TypeArguments.FirstOrDefault().Name}" : "";
         var startWith = mauiType.ContainingNamespace.Name.Contains("Compatibility") ? "Compatibility" : "";
 
+        if (noMauiType)
+            builder.Append($@"
+namespace {mauiType.ContainingNamespace}
+{{
+    using Sharp.UI;
+
+    public static class {mauiType.Name}GeneratedExtension
+    {{");
+        else
         builder.Append($@"
 namespace Sharp.UI
 {{
@@ -123,7 +141,26 @@ namespace Sharp.UI
 
         // generate attached
         for (int i = 0; i < attachedProperties.Count(); i++)
-            GenerateExtensionMethod(attachedProperties[i], attachedPropertiesTypes[i]);
+            GenerateExtensionMethod(attachedProperties[i], attachedPropertiesTypes[i].ToDisplayString(), null);
+
+        // generate using bindable interface
+        var bindableInterfaces = mauiType
+            .Interfaces
+            .Where(e => e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains("Bindable")) != null);
+
+        foreach (var inter in bindableInterfaces)
+        {
+            var properties = inter
+                .GetMembers()
+                .Where(e => e.Kind == SymbolKind.Property);
+
+            foreach (var prop in properties)
+            {
+                var bindPropName = $"{mauiType.ToDisplayString()}.{prop.Name}";
+                var typeName = ((IPropertySymbol)prop).Type.ToDisplayString();
+                GenerateExtensionMethod(bindPropName, typeName, prop.Name);
+            }
+        }
     }
 
     // ----- methods/events methods -----
@@ -158,14 +195,14 @@ namespace Sharp.UI
             bindablePropertyName = $"{mauiType.ToDisplayString()}.{propertyName}Property";
         }
 
-        public PropertyInfo(string attachedProperty, INamedTypeSymbol attachedPropertyType)
+        public PropertyInfo(string property, string propertyType, string symbolName)
         {
-            propertyName = attachedProperty.Replace(".", "");
+            propertyName = string.IsNullOrEmpty(symbolName) ? property.Replace(".", "") : symbolName;
             accessedWith = "mauiObject";
-            propertyTypeName = attachedPropertyType.ToDisplayString();
-            camelCaseName = WrapBuilder.CamelCase(attachedProperty.Split(new[] { '.' }).Last());
+            propertyTypeName = propertyType;
+            camelCaseName = WrapBuilder.CamelCase(property.Split(new[] { '.' }).Last());
             typeTail = "?";
-            bindablePropertyName = $"{attachedProperty}Property";
+            bindablePropertyName = $"{property}Property";
             assignmentString = $"mauiObject.SetValue({bindablePropertyName}, ({propertyTypeName}){camelCaseName})";
             assignmentDefString = $"mauiObject.SetValue({bindablePropertyName}, def.GetValue())";
             assignmentDataTemplateString = $"mauiObject.SetValue({bindablePropertyName}, new Microsoft.Maui.Controls.DataTemplate(loadTemplate))";
@@ -192,9 +229,9 @@ namespace Sharp.UI
         return existInBaseClasses;
     }
 
-    void GenerateExtensionMethod(string attachedProperty, INamedTypeSymbol attachedPropertyType)
+    void GenerateExtensionMethod(string propertyName, string PropertyType, string symbolName)
     {
-        var info = new PropertyInfo(attachedProperty, attachedPropertyType);
+        var info = new PropertyInfo(propertyName, PropertyType, symbolName);
         if (!notGenerateList.Contains(info.propertyName))
         {
             GenerateExtensionMethod_OnlyValue(info);

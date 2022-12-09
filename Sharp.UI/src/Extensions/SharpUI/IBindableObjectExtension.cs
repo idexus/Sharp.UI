@@ -37,7 +37,7 @@ namespace Sharp.UI
             return obj;
         }
 
-        public static T BindParent<T>(this T obj,
+        public static T BindTemplatedParent<T>(this T obj,
             BindableProperty property,
             string sourcePath,
             BindingMode mode = BindingMode.Default,

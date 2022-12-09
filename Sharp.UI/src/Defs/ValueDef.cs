@@ -32,8 +32,8 @@ namespace Sharp.UI
         public ValueDef<T> OnWinUI(T value) { if (DeviceInfo.Platform == DevicePlatform.WinUI) { this.newValue = value; this.newValueIsSet = true; } return this; }
         public ValueDef<T> OnTizen(T value) { if (DeviceInfo.Platform == DevicePlatform.Tizen) { this.newValue = value; this.newValueIsSet = true; } return this; }
 
-        internal bool ValueIsSet() => defaultIsSet || newValueIsSet;
-        internal T GetValue()
+        public bool ValueIsSet() => defaultIsSet || newValueIsSet;
+        public T GetValue()
         {
             if (newValueIsSet) return newValue;
             return @default;
@@ -42,4 +42,3 @@ namespace Sharp.UI
         public static implicit operator T(ValueDef<T> def) => def.GetValue();
     }
 }
-

@@ -103,7 +103,6 @@ public class WrapBuilder
         GenerateSymbols(wrappedSymbols);
         GenerateExtensions(wrappedSymbols);
         GenerateInterfaces(wrappedSymbols);
-        GenerateGlobalUsings(wrappedSymbols);
     }
 
     //------------- generate symbols -----------------
@@ -115,7 +114,6 @@ public class WrapBuilder
             var typeSymbol = (INamedTypeSymbol)symbol;
             var wrapperAttribute = GetAttributeData(typeSymbol);
             var mauiType = GetMauiType(wrapperAttribute);
-
             this.GenerateSymbol(typeSymbol, wrapperAttribute);
         }
     }
@@ -145,28 +143,43 @@ public class WrapBuilder
 
     void GenerateExtensions(IEnumerable<ISymbol> symbols)
     {
+
         foreach (var symbol in symbols)
         {
             var wrapperAttribute = GetAttributeData((INamedTypeSymbol)symbol);
-            var mauiType = GetMauiType(wrapperAttribute);
+            var typeValue = wrapperAttribute.ConstructorArguments[0].Value;
+            if (typeValue == null)
+            {
+                this.GenerateExtension((INamedTypeSymbol)symbol, wrapperAttribute);
+                doneExtensions.Add((INamedTypeSymbol)symbol);
+            }
+            else
+            {
+                var mauiType = GetMauiType(wrapperAttribute);
 
-            this.GenerateExtension(mauiType, wrapperAttribute);
-            doneExtensions.Add(mauiType);
+                this.GenerateExtension(mauiType, wrapperAttribute);
+                doneExtensions.Add(mauiType);
+            }
         }
 
         foreach (var symbol in symbols)
         {
-            var mauiType = GetMauiType((INamedTypeSymbol)symbol);
-
-            var type = mauiType.BaseType;
-            while (!type.Name.Equals("Object"))
+            var wrapperAttribute = GetAttributeData((INamedTypeSymbol)symbol);
+            var typeValue = wrapperAttribute.ConstructorArguments[0].Value;
+            if (typeValue != null)
             {
-                if (!doneExtensions.Contains(type))
+                var mauiType = GetMauiType(wrapperAttribute);
+
+                var type = mauiType.BaseType;
+                while (!type.Name.Equals("Object"))
                 {
-                    this.GenerateExtension(type, null);
-                    doneExtensions.Add(type);
+                    if (!doneExtensions.Contains(type))
+                    {
+                        this.GenerateExtension(type, null);
+                        doneExtensions.Add(type);
+                    }
+                    type = type.BaseType;
                 }
-                type = type.BaseType;
             }
         }
     }
@@ -191,7 +204,8 @@ public class WrapBuilder
             builder.AppendLine("#pragma warning restore CS8669");
 
             var tail = symbol.IsGenericType ? $".{symbol.TypeArguments.FirstOrDefault().Name}" : "";
-            context.AddSource($"{symbol.ContainingNamespace}.{symbol.Name}{tail}.g.cs", builder.ToString());
+            var extension = wrapperAttribute != null && wrapperAttribute.ConstructorArguments[0].Value == null ? ".extension" : "";
+            context.AddSource($"{symbol.ContainingNamespace}.{symbol.Name}{tail}{extension}.g.cs", builder.ToString());
         }
     }
 
@@ -210,20 +224,27 @@ public class WrapBuilder
 
         foreach (var symbol in symbols)
         {
-            var mauiType = GetMauiType((INamedTypeSymbol)symbol);
-            var type = mauiType;
-            while (!type.Name.Equals("Object"))
+            var wrapperAttribute = GetAttributeData((INamedTypeSymbol)symbol);
+            var typeValue = wrapperAttribute.ConstructorArguments[0].Value;
+            if (typeValue != null)
             {
-                var interfaceName = GetInterfaceName(type);
-                if (!interfaceNameList.Contains(interfaceName))
+                var mauiType = GetMauiType(wrapperAttribute);
+                var type = mauiType;
+                while (!type.Name.Equals("Object"))
                 {
-                    AddInterface(builder, type);
-                    interfaceNameList.Add(interfaceName);
+                    var interfaceName = GetInterfaceName(type);
+                    if (!interfaceNameList.Contains(interfaceName))
+                    {
+                        AddInterface(builder, type);
+                        interfaceNameList.Add(interfaceName);
+                    }
+                    type = type.BaseType;
                 }
-                type = type.BaseType;
             }
         }
-        context.AddSource($"Interfaces.g.cs", builder.ToString());
+
+        if (interfaceNameList.Count() > 0)
+            context.AddSource($"Interfaces.g.cs", builder.ToString());
     }
 
     void AddInterface(StringBuilder builder, INamedTypeSymbol type)
@@ -231,36 +252,5 @@ public class WrapBuilder
         var parentInterfaceName = GetInterfaceName(type.BaseType);
         var parentString = parentInterfaceName.Equals("IObject") ? "" : $" : {parentInterfaceName}";
         builder.AppendLine($@"public partial interface {GetInterfaceName(type)}{parentString} {{ }}");
-    }
-
-
-    //------------- global usings -----------------
-
-    void GenerateGlobalUsings(IEnumerable<ISymbol> symbols)
-    {
-        var builder = new StringBuilder();
-        builder.AppendLine("//");
-        builder.AppendLine("// <auto-generated>");
-        builder.AppendLine("//");
-        builder.AppendLine();
-        builder.AppendLine("global using Sharp.UI;");
-        builder.AppendLine();
-        builder.AppendLine("global using VerticalStackLayout = Sharp.UI.VStack;");
-        builder.AppendLine("global using HorizontalStackLayout = Sharp.UI.HStack;");
-        builder.AppendLine();
-
-        foreach (var symbol in symbols)
-        {
-            var mauiType = GetMauiType((INamedTypeSymbol)symbol);
-            var sealedStr = mauiType.IsSealed ? "// sealed class wrapper" : "";
-            builder.AppendLine($@"global using {symbol.Name} = Sharp.UI.{symbol.Name}; {sealedStr}");
-        }
-
-        builder.AppendLine();
-
-        foreach (var interfaceName in interfaceNameList)
-            builder.AppendLine($@"global using {interfaceName} = Sharp.UI.{interfaceName};");
-
-        context.AddSource($"GlobalUsings.g.cs", builder.ToString());
     }
 }

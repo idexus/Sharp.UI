@@ -5,6 +5,16 @@
     <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
     <OutputType>Library</OutputType>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+
+    <PackageId>Sharp.UI.Generator</PackageId>
+		<Version>0.1.0-beta</Version>
+		<Authors>Pawel Krzywdzinski</Authors>
+		<Copyright>Pawel Krzywdzinski</Copyright>
+		<PackageDescription>Sharp.UI generator</PackageDescription>
+		<Company></Company>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -19,5 +29,17 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="docs\" />
+  </ItemGroup>
+  <ItemGroup>
+      <None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+    </ItemGroup>
+  <ItemGroup>
+		<None Include="docs\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="docs\" />
   </ItemGroup>
 </Project>

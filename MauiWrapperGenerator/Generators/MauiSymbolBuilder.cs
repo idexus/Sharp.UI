@@ -24,9 +24,10 @@ public class MauiSymbolBuilder
     //--- find out
     private readonly bool singleItemContainer = false;
     private readonly string containerOfTypeName = null;
-    private readonly string typeConformanceName;
 
     private List<string> bindablePropertiesNames = new List<string>();
+
+    private bool noMauiType = false;
 
     public MauiSymbolBuilder(INamedTypeSymbol symbol, AttributeData wrapperAttribute, StringBuilder builder)
     {
@@ -37,7 +38,7 @@ public class MauiSymbolBuilder
         // ------- constructor arguments ------
 
         // [0] mauiType
-        this.mauiType = (INamedTypeSymbol)wrapperAttribute.ConstructorArguments[0].Value;
+        this.mauiType = wrapperAttribute.ConstructorArguments[0].Value as INamedTypeSymbol;
 
         // [1] doNotGenerate
         var notGenerateValues = wrapperAttribute.ConstructorArguments[1].Values;
@@ -53,60 +54,67 @@ public class MauiSymbolBuilder
         else
             this.constructorWithProperties = new List<string>();
 
-        // [3] containerPropertyName
-        this.containerPropertyName = (string)(wrapperAttribute.ConstructorArguments[3].Value);
         // [4] generateConstructor
         this.generateAdditionalConstructors = (bool)(wrapperAttribute.ConstructorArguments[4].Value);
         // [5] generateNoParamConstructor
         this.generateNoParamConstructor = (bool)(wrapperAttribute.ConstructorArguments[5].Value);
 
-        //----------------------------------
 
-        notGenerateList.Add("this[]");
-        notGenerateList.Add("Handler");
-        notGenerateList.Add("LogicalChildren");
-        notGenerateList.Add("BindingContext");
-
-        // ------- content attribute -------
-
-        var isContainerThis = WrapBuilder.IsGenericIList(mauiType, out var containerType);
-        if (isContainerThis && mauiType.IsSealed)
+        if (mauiType == null)
         {
-            this.containerOfTypeName = containerType;
-            this.containerPropertyName = "this";
-            this.singleItemContainer = false;
+            mauiType = symbol;
+            noMauiType = true;
         }
-        else if (!isContainerThis)
+        else
         {
-            // if is null try to find
-            if (string.IsNullOrEmpty(this.containerPropertyName))
+            // [3] containerPropertyName
+            this.containerPropertyName = (string)(wrapperAttribute.ConstructorArguments[3].Value);
+            //----------------------------------
+
+            notGenerateList.Add("this[]");
+            notGenerateList.Add("Handler");
+            notGenerateList.Add("LogicalChildren");
+            notGenerateList.Add("BindingContext");
+
+            // ------- content attribute -------
+
+            var isContainerThis = WrapBuilder.IsGenericIList(mauiType, out var containerType);
+            if (isContainerThis && mauiType.IsSealed)
             {
-                AttributeData mauiContentAtribute = FindContentPropertyAttribute();
-                if (mauiContentAtribute != null && string.IsNullOrEmpty(this.containerPropertyName))
-                    this.containerPropertyName = mauiContentAtribute.ConstructorArguments[0].Value.ToString();
+                this.containerOfTypeName = containerType;
+                this.containerPropertyName = "this";
+                this.singleItemContainer = false;
             }
-
-            if (!string.IsNullOrEmpty(this.containerPropertyName))
+            else if (!isContainerThis)
             {
-                IPropertySymbol propertySymbol = FindPropertySymbolWithName(this.containerPropertyName);
-
-                if (propertySymbol == null) throw new Exception($"No content property for: {mauiType.Name}");
-
-                var mauiContainerType = (INamedTypeSymbol)((propertySymbol).Type);
-                if (WrapBuilder.IsGenericIList(mauiContainerType, out var ofTypeName))
+                // if is null try to find
+                if (string.IsNullOrEmpty(this.containerPropertyName))
                 {
-                    this.containerOfTypeName = ofTypeName;
-                    this.singleItemContainer = false;
+                    AttributeData mauiContentAtribute = FindContentPropertyAttribute();
+                    if (mauiContentAtribute != null && string.IsNullOrEmpty(this.containerPropertyName))
+                        this.containerPropertyName = mauiContentAtribute.ConstructorArguments[0].Value.ToString();
                 }
-                else
+
+                if (!string.IsNullOrEmpty(this.containerPropertyName))
                 {
-                    this.containerOfTypeName = mauiContainerType.ToDisplayString();
-                    this.singleItemContainer = true;
+                    IPropertySymbol propertySymbol = FindPropertySymbolWithName(this.containerPropertyName);
+
+                    if (propertySymbol == null) throw new Exception($"No content property for: {mauiType.Name}");
+
+                    var mauiContainerType = (INamedTypeSymbol)((propertySymbol).Type);
+                    if (WrapBuilder.IsGenericIList(mauiContainerType, out var ofTypeName))
+                    {
+                        this.containerOfTypeName = ofTypeName;
+                        this.singleItemContainer = false;
+                    }
+                    else
+                    {
+                        this.containerOfTypeName = mauiContainerType.ToDisplayString();
+                        this.singleItemContainer = true;
+                    }
                 }
             }
         }
-
-        this.typeConformanceName = $"Sharp.UI.{WrapBuilder.GetInterfaceName(mauiType)}";
     }
 
     AttributeData FindContentPropertyAttribute()
@@ -146,6 +154,13 @@ public class MauiSymbolBuilder
 using System.Collections;
 using System.Collections.ObjectModel;
 ");
+        if (noMauiType)
+            builder.Append($@"
+namespace {mauiType.ContainingNamespace}
+{{
+    public partial class {mauiType.Name}
+    {{");
+        else
         builder.Append($@"
 namespace Sharp.UI
 {{
@@ -192,10 +207,10 @@ namespace Sharp.UI
     #endregion
 
     //----------------------------------------
-    #region bindable class generator
+    #region parent bindable class generator
     //----------------------------------------
 
-    void GenerateBindable()
+    void GenerateSealedParentBindable()
     {
         if (mauiType.IsSealed)
         {
@@ -244,9 +259,10 @@ namespace Sharp.UI
         GenerateConstructor();
         GenerateConstructorWithProperty();
         GenerateOperators();
+        GenerateBindable();
         GenerateSingleItemContainer();
         GenerateCollectionDeclaration();
-        GenerateBindable();
+        GenerateSealedParentBindable();
         GeneratePropertiesAndEvents();
         GenerateBindingContext();
     }
@@ -325,6 +341,41 @@ namespace Sharp.UI
         public object _maui_RawObject {{ get; set; }}
 
         public {mauiType.ToDisplayString()} MauiObject {{ get => ({mauiType.ToDisplayString()})_maui_RawObject; set => _maui_RawObject = value; }}");
+    }
+
+    // ------ generate bindable properties
+
+    void GenerateBindable()
+    {
+        var bindableInterfaces = sharpUIType
+            .Interfaces
+            .Where(e => e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains("Bindable")) != null);
+
+        foreach (var inter in bindableInterfaces)
+        {
+            var properties = inter
+                .GetMembers()
+                .Where(e => e.Kind == SymbolKind.Property);
+
+            foreach (var prop in properties)
+                GeneratePropertyForField((IPropertySymbol)prop);
+        }
+    }
+
+    void GeneratePropertyForField(IPropertySymbol symbol)
+    {
+        var name = symbol.Name;
+        var typeName = symbol.Type.Name;
+
+        builder.Append($@"
+        public static readonly BindableProperty {name}Property = BindableProperty.Create(nameof({name}), typeof({typeName}), typeof({sharpUIType.ToDisplayString()}), default({typeName}));
+
+        public {typeName} {name}
+        {{
+            get => ({typeName})GetValue({name}Property);
+            set => SetValue({name}Property, value);
+        }}
+        ");
     }
 
     // ------ generate properties and events in class

@@ -38,8 +38,8 @@
         public Def<T> OnWinUI(Func<T> load) { if (DeviceInfo.Platform == DevicePlatform.WinUI) this.loadValue = load; return this; }
         public Def<T> OnTizen(Func<T> load) { if (DeviceInfo.Platform == DevicePlatform.Tizen) this.loadValue = load; return this; }
 
-        internal bool ValueIsSet() => loadValue != null || loadDefault != null;
-        internal T GetValue()
+        public bool ValueIsSet() => loadValue != null || loadDefault != null;
+        public T GetValue()
         {
             T value = default(T);
             bool isData = false;

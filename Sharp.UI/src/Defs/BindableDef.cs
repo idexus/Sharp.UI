@@ -30,8 +30,8 @@
         public BindableDef<T> OnWinUI(T value) { if (DeviceInfo.Platform == DevicePlatform.WinUI) { this.newValue = value; this.newValueIsSet = true; } return this; }
         public BindableDef<T> OnTizen(T value) { if (DeviceInfo.Platform == DevicePlatform.Tizen) { this.newValue = value; this.newValueIsSet = true; } return this; }
 
-        internal bool ValueIsSet() => defaultIsSet || newValueIsSet;
-        internal T GetValue()
+        public bool ValueIsSet() => defaultIsSet || newValueIsSet;
+        public T GetValue()
         {
             if (newValueIsSet) return newValue;
             return @default;
@@ -42,6 +42,7 @@
         //--- bindable ---
 
         public BindableDef<T> Path(string path) { this.path = path; return this; }
+        public BindableDef<T> TemplatedPath(string path) { this.path = path; isTemplated = true; return this; }
         public BindableDef<T> StringFormat(string stringFormat) { this.stringFormat = stringFormat; return this; }
         public BindableDef<T> BindingMode(BindingMode bindingMode) { this.bindingMode = bindingMode; return this; }
         public BindableDef<T> Converter(IValueConverter converter) { this.converter = converter; return this; }
@@ -54,6 +55,7 @@
         private string converterParameter = null;
         private string stringFormat = null;
         private object source = null;
+        private bool isTemplated = false;
 
         private BindableObject obj;
         private BindableProperty property;
@@ -64,7 +66,7 @@
             this.property = property;
         }
 
-        internal void BindProperty()
+        public void BindProperty()
         {
             var mauiSource = MauiWrapper.GetObject<object>(source);
             if (path != null)
@@ -77,7 +79,7 @@
                         converter: converter,
                         converterParameter: converterParameter,
                         stringFormat: stringFormat,
-                        source: mauiSource));
+                        source: isTemplated ? RelativeBindingSource.TemplatedParent : mauiSource));
             }
         }
     }

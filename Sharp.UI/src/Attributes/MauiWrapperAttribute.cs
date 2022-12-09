@@ -3,7 +3,7 @@
     public class MauiWrapperAttribute : Attribute
     {
         public MauiWrapperAttribute(
-            Type mauiType,
+            Type mauiType = null,
             string[] doNotGenerateList = null,
             string[] constructorWithProperties = null,
             string containerPopertyName = "",
@@ -13,6 +13,14 @@
             Type[] attachedPropertiesTypes = null)
         {
             
+        }
+    }
+
+    public class BindableAttribute : Attribute
+    {
+        public BindableAttribute()
+        {
+
         }
     }
 }
