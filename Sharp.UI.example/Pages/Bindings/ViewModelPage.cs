@@ -1,17 +1,19 @@
 ﻿namespace Sharp.UI.Example;
 
-using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
 using Sharp.UI;
 
-
-public partial class SecondPageViewModel : ObservableObject
+[Bindable]
+public interface ISecondPageViewModelProperties
 {
-    [ObservableProperty] string _title = "No title";
-    [ObservableProperty] string _author = "No author";
+    public string Title { get; set; }
+    public string Author { get; set; }
+}
 
-    [RelayCommand]
-    void SetAuhor()
+
+[MauiWrapper]
+public partial class SecondPageViewModel : BindableObject, ISecondPageViewModelProperties
+{
+    public void SetAuthor(Button button)
     {
         this.Title = "Tosca";
         this.Author = "Puccini";
@@ -71,7 +73,7 @@ public class ViewModelPage : ContentPage
             .HorizontalOptions(LayoutOptions.Center),
 
             new Button("Test")
-                .Command(viewModel.SetAuhorCommand)
+                .OnClicked(viewModel.SetAuthor)
                 .FontSize(100)
                 .BackgroundColor(Colors.Red)
         };

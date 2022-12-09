@@ -1,28 +1,43 @@
 ﻿using System.Collections.ObjectModel;
-using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace Sharp.UI.Example
 {
-    public partial class DataModel : ObservableObject
+    [Bindable]
+    public interface IDataModelProperties
     {
-        [ObservableProperty] public int _id;
-        [ObservableProperty] public string _name;
-        [ObservableProperty] public bool _admin;
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public bool Admin { get; set; }
+    }
 
+    [MauiWrapper]
+    public partial class DataModel : BindableObject, IDataModelProperties
+    {
         public DataModel(int id, string name, bool admin)
         {
-            Id = id;
-            Name = name;
-            Admin = admin;
+            this.Id = id;
+            this.Name = name;
+            this.Admin = admin;
         }
 
-        public static ObservableCollection<DataModel> SimpleData = new ObservableCollection<DataModel>
+        static List<DataModel> _simpleData;
+        public static List<DataModel> SimpleData
         {
-            new DataModel(1, "paul", true),
-            new DataModel(2, "julian", false),
-            new DataModel(3, "luciano", false),
-            new DataModel(4, "john", false),
-            new DataModel(5, "alice", false),
-        };
+            get
+            {
+                if (_simpleData == null)
+                {
+                    _simpleData = new List<DataModel>
+                    {
+                        new DataModel(1, "paul", true),
+                        new DataModel(2, "julian", false),
+                        new DataModel(3, "luciano", false),
+                        new DataModel(4, "john", false),
+                        new DataModel(5, "alice", false),
+                    };
+                }
+                return _simpleData;
+            }
+}
     }
 }

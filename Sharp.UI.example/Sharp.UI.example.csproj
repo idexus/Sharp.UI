@@ -28,7 +28,14 @@
 		<AssemblyName>Sharp.UI.Example</AssemblyName>
 		<TargetFrameworks>net7.0-maccatalyst15.4;net7.0-ios16.0</TargetFrameworks>
 	</PropertyGroup>
-
+	<PropertyGroup>
+		<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+		<CompilerGeneratedFilesOutputPath>Generated</CompilerGeneratedFilesOutputPath>
+    </PropertyGroup>
+	<ItemGroup>
+		<Compile Remove="$(CompilerGeneratedFilesOutputPath)/**/*.cs" />
+	    <None Include="$(CompilerGeneratedFilesOutputPath)/MauiWrapperGenerator/**/*.cs" />
+    </ItemGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-ios|AnyCPU'">
 	  <CreatePackage>false</CreatePackage>
 	</PropertyGroup>
@@ -92,9 +99,10 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <ProjectReference Include="..\Sharp.UI\Sharp.UI.csproj" />
+	  <ProjectReference Include="..\MauiWrapperGenerator\MauiWrapperGenerator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
 	</ItemGroup>
 	<ItemGroup>
-	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
+	  <!--<PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />-->
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Pages\" />

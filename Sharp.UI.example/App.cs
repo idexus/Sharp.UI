@@ -52,7 +52,8 @@ public partial class App : Application
                 {
                     new ShellContent<ViewModelPage>("View Model"),
                     new ShellContent<TestBindingsPage>("Bindings"),
-                    new ShellContent<SimpleBindings>("Simple bindings")
+                    new ShellContent<SimpleBindings>("Simple bindings"),
+                    new ShellContent<TemplatedParentPage>("Templated parent")
                 },
 
                 new Tab("Other")
