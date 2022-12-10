@@ -45,6 +45,8 @@ public class HelloWorldPage : ContentPage
 
 # Nuget Package
 
+Last nuget version
+
 #### .NET CLI
 
 ```
