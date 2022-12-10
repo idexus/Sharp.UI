@@ -3,7 +3,7 @@
 using Sharp.UI;
 
 [Bindable]
-public interface ITemplatedCardViewProperties
+public interface IEmptyCardViewProperties
 {
     string CardTitle { get; set; }
     string CardDescription { get; set; }
@@ -12,41 +12,47 @@ public interface ITemplatedCardViewProperties
 }
 
 [MauiWrapper]
-public partial class TemplatedCardView : ContentView, ITemplatedCardViewProperties
+public partial class EmptyCardView : ContentView, IEmptyCardViewProperties
 {
+}
+
+public class CardViewTemplateView : ContentView
+{
+    public CardViewTemplateView()
+    {
+        Content = new Border
+        {
+            new VStack
+            {
+                new Label()
+                    .Text(e => e.TemplatedPath("CardTitle"))
+                    .FontSize(44)
+                    .TextColor(Colors.White),
+
+                new Label()
+                    .Text(e => e.TemplatedPath("CardDescription"))
+            }
+        }
+        .StrokeShape(new RoundRectangle().CornerRadius(10))
+        .Stroke(e => e.TemplatedPath("BorderColor"))
+        .BackgroundColor(e => e.TemplatedPath("CardColor"))
+        .SizeRequest(200, 300)
+        .Margin(50)
+        .Padding(20);
+    }
 }
 
 public class TemplatedParentPage : ContentPage
 {    
     public TemplatedParentPage()
     {
-        var template = new ControlTemplate(() =>
-            new Border
-            {
-                new VStack
-                {
-                    new Label()
-                        .Text(e => e.TemplatedPath("CardTitle"))
-                        .FontSize(44)
-                        .TextColor(Colors.White),
-
-                    new Label()
-                        .Text(e => e.TemplatedPath("CardDescription"))
-                }
-            }
-            .StrokeShape(new RoundRectangle().CornerRadius(10))
-            .Stroke(e => e.TemplatedPath("BorderColor"))
-            .BackgroundColor(e => e.TemplatedPath("CardColor"))
-            .SizeRequest(200, 300)
-            .Margin(50)
-            .Padding(20)
-        );
+        var controlTemplate = new ControlTemplate(typeof(CardViewTemplateView));
 
         this.Content = new VStack
         {
             new Slider(1,100, out var slider),
 
-            new TemplatedCardView()
+            new EmptyCardView()
                 .CardTitle(e => e
                     .Path("Value")
                     .Source(slider)
@@ -54,14 +60,14 @@ public class TemplatedParentPage : ContentPage
                 .CardDescription("Do you like it")
                 .CardColor(Colors.Blue)
                 .BorderColor(Colors.Red)
-                .ControlTemplate(template),
+                .ControlTemplate(controlTemplate),
 
-            new TemplatedCardView()
+            new EmptyCardView()
                 .CardTitle("Title 2")
                 .CardDescription("Yes I do")
                 .CardColor(Colors.Red)
                 .BorderColor(Colors.Blue)
-                .ControlTemplate(template),
+                .ControlTemplate(controlTemplate),
 
         }
         .VerticalOptions(LayoutOptions.Center);
