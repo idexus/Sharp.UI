@@ -36,8 +36,8 @@ public partial class App : Application
                 },
                 new Tab("Menus")
                 {
+                    new ShellContent<MenuPage>("Menubar"),
                     new ShellContent<ContextMenuPage>("Context menu"),
-                    new ShellContent<MenuPage>("Menubar")
                 },
 
                 new Tab("Gestures")

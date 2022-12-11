@@ -34,7 +34,7 @@ public class MenuPage : ContentPage
     {
         this.MenuBarItems(new MenuBarItem[]
         {
-            new MenuBarItem("File")
+            new MenuBarItem("My Menu")
             {
                 new MenuFlyoutItem("Exit")
                     .OnClicked(e => Application.Current.Quit()),
