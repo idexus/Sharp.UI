@@ -1,5 +1,10 @@
-## Event handlers
-To handle events like `OnClicked`, you can write a method handler
+# Event handlers
+
+`Sharp.UI` matches event handlers `ExampleHandler` with `OnExampleHandler` fluent methods.
+
+### Example
+
+To handle events like `Clicked` yoy can use the `OnClicked` fluent method.
 
 ```cs
 using Sharp.UI;
@@ -25,7 +30,7 @@ public class HelloWorldPage : ContentPage
     }
 }
 ``` 
-or do it inline
+another way
 
 ```cs
 new Button("Click me")

@@ -1,7 +1,6 @@
-## Grid
+# Grid Definition
 
-#### Rows, columns
-Using the `GridRow()`, `GridColumn()`, `GridColumnSpan()`, `GridRowSpan()` and `GridSpan()` methods, you can set the row, column and span within the grid definition.
+Using the `GridRow()`, `GridColumn()`, `GridColumnSpan()`, `GridRowSpan()` and `GridSpan()`, you can set the row, column and span within the grid definition.
 
 ```cs
 new Label("Column 0, Row 2, Span 2 columns")
@@ -23,6 +22,10 @@ new Grid
 .RowDefinitions(e => e.Star(2).Star().Star(3))
 .ColumnDefinitions(e => e.Absolute(100).Star());
 ``` 
+
+In this example you define
+- 3 rows - `Star(2)`, `Star()`, `Star(3)`) 
+- 2 columns - `Absolute(100)`, `Star()`
 
 
 #### Example grid definition

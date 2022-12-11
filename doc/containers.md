@@ -1,5 +1,5 @@
-## Containers
-Sharp.UI allows you to create single and multi-element containers using braces.
+# Object Containers
+Sharp.UI allows you to create single and multi-element containers using curly braces.
 
 #### Single item containers
 Objects such as `ScrollView`, `Border`, `ContentView` etc. can contain only one element.
@@ -15,7 +15,7 @@ new Scrollview
 ```
 
 #### Multi item containers
-Objects such as `Grid`, `VStack` (short name for VerticalStackLayout), `HStack` (short name for HorizontalStackLayout) etc. can contain many elements.
+Objects such as `Grid`, `VStack` (short name for Maui `VerticalStackLayout`), `HStack` (short name for Maui `HorizontalStackLayout`) etc. can contain many elements.
 
 ```cs
 new VStack

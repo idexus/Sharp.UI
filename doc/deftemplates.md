@@ -1,5 +1,5 @@
-## `Def<T>` Templates
-With `Def<T>` you can create templates depending on device idiom, platform, or app theme
+# Templates
+Using `Def<T>` class you can create templates depending on device idiom, platform, or app theme
 
 ```cs
 new Def<VStack>(e => e

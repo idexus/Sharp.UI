@@ -1,5 +1,5 @@
-## Bindings
-Sharp.UI allows you to create bindings using a property method parameter and fluent methods.
+# Property Bindings
+Sharp.UI allows you to create bindings inside the property fluent methods.
 
 ```cs
 new Label()

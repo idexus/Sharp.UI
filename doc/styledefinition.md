@@ -1,5 +1,7 @@
-## Style
-Using the `Style<T>` class and the `Set()` extension method of the `BindableProperty` you can define the style of the elements
+# Application styling
+
+### `Style<T>`
+Using the `Style<T>` class you can define the style of the elements
 
 ```cs
 new Style<Button>
@@ -9,6 +11,10 @@ new Style<Button>
     ...
 }
 ```
+
+You define setter values using `BindableProperty` `Set()` extension method.
+
+### Theme, device idiom and platform
 
 If you want to use different values depending on your app theme, device idiom, or platform, you can combine following methods.
 
@@ -23,8 +29,7 @@ new Style<Button>
 }
 ```
 
-you can also define visual states of objects
-
+### Visual states
 ```cs
 new Style<Button>
 {
@@ -42,6 +47,8 @@ new Style<Button>
     ...
 },
 ```
+### Resource dictionary
+
 All defined styles can be placed in `ResourceDictionary`
 
 ```cs

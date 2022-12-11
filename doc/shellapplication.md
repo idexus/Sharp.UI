@@ -1,5 +1,6 @@
-## Shell
-Defining your application's shell
+# Shell Application
+
+An example of the application shell
 
 ```cs
 using Sharp.UI;
@@ -28,7 +29,7 @@ public partial class App : Application
 }
 ```
 
-### Define FlyoutItem appearance
+### FlyoutItem appearance
 
 An example of defining `FlyoutItem` appearance
 

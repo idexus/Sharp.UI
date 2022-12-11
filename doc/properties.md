@@ -1,4 +1,4 @@
-## Properties
+# Properties and fluent methods
 The properties of the MAUI classes are matched with their fluent helper methods
 
 ```cs
@@ -16,7 +16,6 @@ To speed up defining the interface, some common properties are placed directly a
 new Label("This is a test")
 ```
 
-### Property value
 You can set the property value depending on the device idiom, platform, or app theme
 
 ```cs

@@ -1,4 +1,4 @@
-## Auto-generated Bindable Properties
+# Bindable Properties
 
 Sharp.UI automatically generates bindable properties and helper methods for wrapped classes with interfaces with the `Bindable` attribute.
 
@@ -48,7 +48,7 @@ public class CardViewTemplateView : ContentView
 }
 ```
 
-And a usage example
+### Usage example
 
 ```cs
 public class TemplatedParentPage : ContentPage

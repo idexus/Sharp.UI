@@ -1,6 +1,6 @@
-## Custom ContentView
+# Custom ContentView
 
-You can create custom control view without control template. All interface bindable properties will be generated automatically.
+In `Sharp.UI` you can create custom control views and all interface bindable properties will be generated automatically.
 
 ```cs
 [Bindable]
@@ -40,7 +40,7 @@ public partial class CardView : ContentView, ICardViewProperties
     }
 }
 ```
-And a usage example
+#### Usage example
 
 ```cs
 new CardView()

@@ -1,4 +1,4 @@
-## Gesture recognizers
+# Gesture recognizers
 
 #### Tap gesture recognizer
 

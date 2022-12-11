@@ -1,4 +1,4 @@
-## Triggers
+# Triggers
 
 ### Property triggers
 

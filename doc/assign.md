@@ -1,13 +1,15 @@
 
-## Assign
-There are two ways to assign objects. Using the `Assign` method 
+# How to assign object references
+There are two main ways to assign objects in `Sharp.UI`. 
+
+Using the `Assign` method 
 
 ```cs
-new Label().Assign(out label1)
+new Label().Assign(out label)
 ```
 
 or using a constructor parameter
 
 ```cs
-new Label(out label1)
+new Label(out label)
 ```
