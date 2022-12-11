@@ -4,7 +4,7 @@
 
 ### Example
 
-To handle events like `Clicked` yoy can use the `OnClicked` fluent method.
+To handle event like `Clicked` yoy can use the `OnClicked` fluent method.
 
 ```cs
 using Sharp.UI;
