@@ -3,7 +3,7 @@ Sharp.UI allows you to build a .NET Multi-platform App User Interface (.NET MAUI
 
 ## Hello, World!
 
-With Sharp.UI you can do this
+With `Sharp.UI` you can do this
 
 ```cs
 namespace ExampleApp;
