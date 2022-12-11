@@ -66,7 +66,6 @@ Instead of that
 
             <Label
                 Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
                 FontSize="32"
                 HorizontalOptions="Center" />
 
