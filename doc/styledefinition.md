@@ -49,7 +49,7 @@ new Style<Button>
 ```
 ### Resource dictionary
 
-All defined styles can be placed in `ResourceDictionary`
+All defined styles can be placed in the `ResourceDictionary`
 
 ```cs
 new ResourceDictionary
