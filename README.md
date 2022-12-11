@@ -3,8 +3,6 @@ Sharp.UI allows you to build a .NET Multi-platform App User Interface (.NET MAUI
 
 ## Hello, World!
 
-With `Sharp.UI` you can do this
-
 ```cs
 namespace ExampleApp;
 using Sharp.UI;
@@ -41,70 +39,6 @@ public class HelloWorldPage : ContentPage
         .Spacing(25)
         .Padding(new Thickness(30, 0))
         .VerticalOptions(LayoutOptions.Center);
-    }
-}
-```
-
-Instead of that
-
-```xml
-<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ExampleApp.HelloWorldPage">
-
-    <ScrollView>
-        <VerticalStackLayout
-            Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Center">
-
-            <Image
-                Source="dotnet_bot.png"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
-
-            <Label
-                Text="Hello, World!"
-                FontSize="32"
-                HorizontalOptions="Center" />
-
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                FontSize="18"
-                HorizontalOptions="Center" />
-
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
-
-        </VerticalStackLayout>
-    </ScrollView>
-</ContentPage>
-```
-
-```cs
-namespace ExampleApp;
-
-public partial class HelloWorldPage : ContentPage
-{
-    int count = 0;
-
-    public HelloWorldPage()
-    {
-        InitializeComponent();
-    }
-
-    private void OnCounterClicked(object sender, EventArgs e)
-    {
-        count++;
-
-        if (count == 1)
-            CounterBtn.Text = $"Clicked {count} time";
-        else
-            CounterBtn.Text = $"Clicked {count} times";
     }
 }
 ```
