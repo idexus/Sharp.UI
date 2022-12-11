@@ -63,7 +63,7 @@ Here are some simple examples showing how to use the Sharp.UI library
 - [Application styling](./doc/styledefinition.md)
 - [Triggers](./doc/triggers.md)
 - [Behaviors](./doc/behaviors.md)
-- [Theme, device idiom and platform templates](./doc/deftemplates.md)
+- [App theme, device idiom and platform templates](./doc/deftemplates.md)
 - [Application shell](./doc/shellapplication.md)
 - [Auto-generated Bindable Properties](./doc/autogenbindableproperties.md)
 - [Custom ContentView](./doc/customcontentview.md)
