@@ -1,6 +1,6 @@
 # Gradients
 
-An example of a linear gradient brush
+An example of the linear gradient brush
 
 ```cs
 new Border
