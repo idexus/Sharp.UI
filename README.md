@@ -1,7 +1,7 @@
 # Overview
 Sharp.UI allows you to build a .NET Multi-platform App User Interface (.NET MAUI) declaratively in C# code using fluent methods, without the need for XAML. It is a wrapper library, mostly auto-generated.
 
-### Hello, World!
+## Hello, World!
 
 With Sharp.UI you can do this
 
@@ -112,7 +112,7 @@ public partial class HelloWorldPage : ContentPage
 }
 ```
 
-# How to start
+## How to start
 
 - [How to start](./doc/howtostart.md)
 
