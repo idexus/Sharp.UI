@@ -1,7 +1,9 @@
 # Overview
-Sharp.UI allows you to build a .NET Multi-platform App User Interface (.NET MAUI) declaratively in C# code using fluent methods. It is a wrapper library, mostly auto-generated.
+Sharp.UI allows you to build a .NET Multi-platform App User Interface (.NET MAUI) declaratively in C# code using fluent methods, without the need for XAML. It is a wrapper library, mostly auto-generated.
 
-## Hello, World!
+### Hello, World!
+
+With Sharp.UI you can do this
 
 ```cs
 namespace ExampleApp;
@@ -43,53 +45,106 @@ public class HelloWorldPage : ContentPage
 }
 ```
 
-# Nuget Package
+Instead of that
 
+<<<<<<< Updated upstream
 Last nuget version
 
 #### .NET CLI
+=======
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestApp.HelloWorldPage">
+>>>>>>> Stashed changes
 
-```
-dotnet add package Sharp.UI --version 0.1.1-beta
-```
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
 
-#### Package manager
+            <Image
+                Source="dotnet_bot.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
 
-```
-dotnet add package Sharp.UI --version 0.1.1-beta
-```
+            <Label
+                Text="Hello, World!"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
 
-## Before you start
-If you want to use this library, you must include the `using Sharp.UI` inside your app namespace, which replaces the standard MAUI classes.
+            <Label
+                Text="Welcome to .NET Multi-platform App UI"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <Button
+                x:Name="CounterBtn"
+                Text="Click me"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
+```
 
 ```cs
-namespace ExampleApp;
-using Sharp.UI;
-```
-
-```cs
-namespace ExampleApp
+public partial class HelloWorldPage : ContentPage
 {
-    using Sharp.UI;
-    ...
+    int count = 0;
+
+    public HelloWorldPage()
+    {
+        InitializeComponent();
+    }
+
+    private void OnCounterClicked(object sender, EventArgs e)
+    {
+        count++;
+
+        if (count == 1)
+            CounterBtn.Text = $"Clicked {count} time";
+        else
+            CounterBtn.Text = $"Clicked {count} times";
+    }
 }
 ```
+
+# How to start
+
+- [How to start](./doc/howtostart.md)
 
 # Examples
 Here are some simple examples showing how to use the Sharp.UI library
 
-## Properties
-The properties of the MAUI classes are matched with their fluent helper methods
+- [Properties and fluent methods](./doc/properties.md)
+- [How to assign object references](./doc/assign.md)
+- [Object containers](./doc/containers.md)
+- [Property bindings](./doc/propertybindings)
+- [Attached properties](./doc/attachedproperties.md)
+- [Event handlers](./doc/eventhandlers.md)
+- [Grid definition](./doc/griddefinition.md)
+- [Menu definition](./doc/menudefinition.md)
+- [Gradient example](./doc/gradients.md)
+- [Gesture recognizers](./doc/gesturerecognizers.md)
+- [Style definition](./doc/styledefinition.md)
+- [Triggers](./doc/triggers.md)
+- [Behaviors](./doc/behaviors.md)
+- [`Def<T>` Templates](./doc/deftemplates.md)
+- [Shell application](./doc/shellapplication.md)
+- [Auto-generated Bindable Properties](./doc/autogenbindableproperties.md)
+- [Custom ContentView](./doc/customcontentview.md)
 
-```cs
-new Label()
-    .Text("This is a test")
-    .Padding(20)
-    .FontSize(30)
-    .HorizontalOptions(LayoutOptions.Center)
-    .VerticalOptions(LayoutOptions.Center)
-```
 
+<<<<<<< Updated upstream
 To speed up defining the interface, some common properties are placed directly as constructor arguments
 
 ```cs
@@ -864,6 +919,8 @@ new CardView()
     .BorderColor(Colors.Blue)
 ```
 
+=======
+>>>>>>> Stashed changes
 # License 
 
-MIT License, Copyright 2022 Pawel Krzywdzinski
+[MIT License](License.txt), Copyright 2022 Pawel Krzywdzinski
