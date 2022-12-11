@@ -1,6 +1,6 @@
 # Event handlers
 
-`Sharp.UI` matches event handlers (e.g. `ExampleHandler`) with `OnExampleHandler` fluent methods.
+`Sharp.UI` matches event handlers (e.g. `ExampleHandler`) with event handler fluid methods (e.g. `OnExampleHandler`)
 
 ### Example
 
