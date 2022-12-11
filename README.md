@@ -51,7 +51,7 @@ Instead of that
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TestApp.HelloWorldPage">
+             x:Class="ExampleApp.HelloWorldPage">
 
     <ScrollView>
         <VerticalStackLayout
@@ -87,6 +87,8 @@ Instead of that
 ```
 
 ```cs
+namespace ExampleApp;
+
 public partial class HelloWorldPage : ContentPage
 {
     int count = 0;
