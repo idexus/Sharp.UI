@@ -11,7 +11,7 @@ new Label("Column 0, Row 2, Span 2 columns")
 
 Methods like `GridRow()`, `GridColumn()`, `GridColumnSpan()`, `GridRowSpan()` matches attached properties: `Grid.Row`, `Grid.Column`, `Grid.ColumnSpan` and `Grid.RowSpan`.
 
-#### Row and column definition
+### Row and column definition
 Using folowing fluent methods you can define the number and sizes of rows and columns.
 
 ```cs
@@ -28,7 +28,7 @@ In this example you define
 - 2 columns - `Absolute(100)`, `Star()`
 
 
-#### Example grid definition
+### Example grid definition
 
 ```cs
 new Grid
