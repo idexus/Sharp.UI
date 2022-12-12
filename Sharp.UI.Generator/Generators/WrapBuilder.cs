@@ -155,7 +155,7 @@ public class WrapBuilder
 
         foreach (var symbol in symbols)
         {
-            this.GenerateExtension((INamedTypeSymbol)symbol, wrappedSymbol: true);
+            this.GenerateExtension((INamedTypeSymbol)symbol, isWrappedSymbol: true);
 
             var baseType = GetMauiType((INamedTypeSymbol)symbol);
             if (baseType != null)
@@ -174,7 +174,7 @@ public class WrapBuilder
                 {
                     if (!doneExtensions.Contains(type))
                     {
-                        this.GenerateExtension(type, wrappedSymbol: false);
+                        this.GenerateExtension(type, isWrappedSymbol: false);
                         doneExtensions.Add(type);
                     }
                     type = type.BaseType;
@@ -183,7 +183,7 @@ public class WrapBuilder
         }
     }
 
-    void GenerateExtension(INamedTypeSymbol symbol, bool wrappedSymbol)
+    void GenerateExtension(INamedTypeSymbol symbol, bool isWrappedSymbol)
     {
         var builder = new StringBuilder();
         builder.AppendLine("//");
@@ -193,7 +193,7 @@ public class WrapBuilder
         builder.AppendLine("#pragma warning disable CS8669");
         builder.AppendLine();
 
-        var extBuilder = new MauiExtensionBuilder(symbol, builder, wrappedSymbol);
+        var extBuilder = new MauiExtensionBuilder(symbol, builder, isWrappedSymbol);
         extBuilder.Build();
 
         if (extBuilder.IsMethodsGenerated)
