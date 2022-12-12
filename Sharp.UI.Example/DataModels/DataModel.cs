@@ -38,6 +38,6 @@ namespace Sharp.UI.Example
                 }
                 return _simpleData;
             }
-}
+        }
     }
 }
