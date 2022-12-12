@@ -7,7 +7,6 @@
             string[] constructorWithProperties = null,
             string containerPopertyName = "")
         {
-            
         }
     }
 
@@ -15,7 +14,6 @@
     {
         public AttachedInterfacesAttribute(Type[] attachedInterfaces = null)
         {
-
         }
     }
 
@@ -23,7 +21,6 @@
     {
         public BindableAttribute()
         {
-
         }
     }
 
@@ -31,7 +28,6 @@
     {
         public AttachedPropertiesAttribute(Type attachedType)
         {
-
         }
     }
 }
