@@ -3,7 +3,7 @@ using Microsoft.Maui.Controls.Internals;
 
 namespace Sharp.UI
 {
-    public static class IBindableObjectExtension
+    public static class BindableObjectExtension
     {
         public static T SetProperty<T>(this T obj,
             BindableProperty property,

@@ -256,7 +256,8 @@ namespace Sharp.UI
         GenerateConstructor();
         GenerateConstructorWithProperty();
         GenerateOperators();
-        GenerateBindable();
+        GenerateBindableProperties();
+        GenerateAttachedProperties();
         GenerateSingleItemContainer();
         GenerateCollectionDeclaration();
         GenerateSealedParentBindable();
@@ -342,7 +343,7 @@ namespace Sharp.UI
 
     // ------ generate bindable properties
 
-    void GenerateBindable()
+    void GenerateBindableProperties()
     {
         var bindableInterfaces = mainType
             .Interfaces
@@ -374,6 +375,48 @@ namespace Sharp.UI
         {{
             get => ({typeName})GetValue({name}Property);
             set => SetValue({name}Property, value);
+        }}
+        ");
+    }
+
+    // ------ generate attached properties
+
+    void GenerateAttachedProperties()
+    {
+        var bindableInterfaces = mainType
+            .Interfaces
+            .Where(e => e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains("AttachedProperties")) != null);
+
+        if (bindableInterfaces.Count() > 0) builder.AppendLine($@"
+        // ----- attached properties -----");
+
+        foreach (var inter in bindableInterfaces)
+        {
+            var attribute = inter.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains("AttachedProperties"));
+            if (attribute != null)
+            {
+                var attachedType = attribute.ConstructorArguments[0].Value as INamedTypeSymbol;
+
+                var properties = inter
+                .GetMembers()
+                .Where(e => e.Kind == SymbolKind.Property);
+
+                foreach (var prop in properties)
+                    GenerateAttachedPropertyForField(attachedType, (IPropertySymbol)prop);
+            }
+        }
+    }
+
+    void GenerateAttachedPropertyForField(INamedTypeSymbol attachedType, IPropertySymbol symbol)
+    {
+        var attachedPropName = symbol.Name.Replace(attachedType.Name, "");
+        var typeName = symbol.Type.Name;
+
+        builder.Append($@"
+        public {typeName} {symbol.Name}
+        {{
+            get => ({typeName})GetValue({attachedType.ToDisplayString()}.{attachedPropName}Property);
+            set => SetValue({attachedType.ToDisplayString()}.{attachedPropName}Property, value);
         }}
         ");
     }

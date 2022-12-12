@@ -2,33 +2,23 @@
 
 namespace Sharp.UI
 {
+    [AttachedProperties(typeof(Microsoft.Maui.Controls.Shell))]
+    public interface IContentPageShellAttachedProperties
+    {
+        PresentationMode ShellPresentationMode { get; set; }
+        Color ShellBackgroundColor { get; set; }
+        Color ShellForegroundColor { get; set; }
+        Color ShellTitleColor { get; set; }
+        Color ShellDisabledColor { get; set; }
+        Color ShellUnselectedColor { get; set; }
+        bool ShellNavBarHasShadow { get; set; }
+        bool ShellNavBarIsVisible { get; set; }
+        Microsoft.Maui.Controls.View ShellTitleView { get; set; }
+    }
+
     [MauiWrapper(typeof(Microsoft.Maui.Controls.ContentPage),
-        constructorWithProperties: new[] { "Title" },
-        attachedProperties: new[]
-        {
-            "Shell.PresentationMode",
-            "Shell.BackgroundColor",
-            "Shell.ForegroundColor",
-            "Shell.TitleColor",
-            "Shell.DisabledColor",
-            "Shell.UnselectedColor",
-            "Shell.NavBarHasShadow",
-            "Shell.NavBarIsVisible",
-            "Shell.TitleView"
-        },
-        attachedPropertiesTypes: new[]
-        {
-            typeof(PresentationMode),
-            typeof(Color),
-            typeof(Color),
-            typeof(Color),
-            typeof(Color),
-            typeof(Color),
-            typeof(bool),
-            typeof(bool),
-            typeof(Microsoft.Maui.Controls.View)
-        })] 
-    public partial class ContentPage { }
+        constructorWithProperties: new[] { "Title" })] 
+    public partial class ContentPage : IContentPageShellAttachedProperties { }
 
     [MauiWrapper(typeof(Microsoft.Maui.Controls.FlyoutPage))] 
     public partial class FlyoutPage { }

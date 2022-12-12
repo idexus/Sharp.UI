@@ -68,20 +68,29 @@ public class WrapBuilder
         return false;
     }
 
-    public static AttributeData GetAttributeData(INamedTypeSymbol symbol)
+    public static AttributeData GetMauiWrapperAttributeData(INamedTypeSymbol symbol)
     {
         var attributes = symbol.GetAttributes();
         return attributes.FirstOrDefault(e => e.AttributeClass.Name.Contains("MauiWrapper"));
     }
 
+    public static AttributeData GetAttachedInterfacesAttributeData(INamedTypeSymbol symbol)
+    {
+        var attributes = symbol.GetAttributes();
+        return attributes.FirstOrDefault(e => e.AttributeClass.Name.Contains("AttachedInterfaces"));
+    }
+
     public static INamedTypeSymbol GetMauiType(AttributeData wrapperAttribute)
     {
-        return (INamedTypeSymbol)wrapperAttribute.ConstructorArguments[0].Value;
+        if (wrapperAttribute != null)
+            return (INamedTypeSymbol)wrapperAttribute.ConstructorArguments[0].Value;
+        else
+            return null;
     }
 
     public static INamedTypeSymbol GetMauiType(INamedTypeSymbol symbol)
     {
-        return GetMauiType(GetAttributeData(symbol));
+        return GetMauiType(GetMauiWrapperAttributeData(symbol));
     }
 
     //------------- generate -----------------
@@ -97,7 +106,7 @@ public class WrapBuilder
 
         var wrappedStaticSymbols = context.Compilation.GetSymbolsWithName((s) => true, filter: SymbolFilter.Type)
             .Where(e => e.IsStatic && e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains("MauiWrapper")) != null);
-
+        
         GenerateExtensions(wrappedStaticSymbols);
 
         GenerateSymbols(wrappedSymbols);
@@ -112,7 +121,7 @@ public class WrapBuilder
         foreach (var symbol in symbols)
         {
             var typeSymbol = (INamedTypeSymbol)symbol;
-            var wrapperAttribute = GetAttributeData(typeSymbol);
+            var wrapperAttribute = GetMauiWrapperAttributeData(typeSymbol);
             var mauiType = GetMauiType(wrapperAttribute);
             this.GenerateSymbol(typeSymbol, wrapperAttribute);
         }
@@ -146,36 +155,26 @@ public class WrapBuilder
 
         foreach (var symbol in symbols)
         {
-            var wrapperAttribute = GetAttributeData((INamedTypeSymbol)symbol);
-            var typeValue = wrapperAttribute.ConstructorArguments[0].Value;
-            if (typeValue == null)
-            {
-                this.GenerateExtension((INamedTypeSymbol)symbol, wrapperAttribute);
-                doneExtensions.Add((INamedTypeSymbol)symbol);
-            }
-            else
-            {
-                var mauiType = GetMauiType(wrapperAttribute);
+            this.GenerateExtension((INamedTypeSymbol)symbol, wrappedSymbol: true);
 
-                this.GenerateExtension(mauiType, wrapperAttribute);
-                doneExtensions.Add(mauiType);
-            }
+            var baseType = GetMauiType((INamedTypeSymbol)symbol);
+            if (baseType != null)
+                doneExtensions.Add(baseType);
+            else
+                doneExtensions.Add((INamedTypeSymbol)symbol);
         }
 
         foreach (var symbol in symbols)
         {
-            var wrapperAttribute = GetAttributeData((INamedTypeSymbol)symbol);
-            var typeValue = wrapperAttribute.ConstructorArguments[0].Value;
-            if (typeValue != null)
+            var baseType = GetMauiType((INamedTypeSymbol)symbol);
+            if (baseType != null)
             {
-                var mauiType = GetMauiType(wrapperAttribute);
-
-                var type = mauiType.BaseType;
+                var type = baseType.BaseType;
                 while (!type.Name.Equals("Object"))
                 {
                     if (!doneExtensions.Contains(type))
                     {
-                        this.GenerateExtension(type, null);
+                        this.GenerateExtension(type, wrappedSymbol: false);
                         doneExtensions.Add(type);
                     }
                     type = type.BaseType;
@@ -184,7 +183,7 @@ public class WrapBuilder
         }
     }
 
-    void GenerateExtension(INamedTypeSymbol symbol, AttributeData wrapperAttribute)
+    void GenerateExtension(INamedTypeSymbol symbol, bool wrappedSymbol)
     {
         var builder = new StringBuilder();
         builder.AppendLine("//");
@@ -194,7 +193,7 @@ public class WrapBuilder
         builder.AppendLine("#pragma warning disable CS8669");
         builder.AppendLine();
 
-        var extBuilder = new MauiExtensionBuilder(symbol, builder, wrapperAttribute);
+        var extBuilder = new MauiExtensionBuilder(symbol, builder, wrappedSymbol);
         extBuilder.Build();
 
         if (extBuilder.IsMethodsGenerated)
@@ -203,9 +202,13 @@ public class WrapBuilder
             builder.AppendLine();
             builder.AppendLine("#pragma warning restore CS8669");
 
-            var tail = symbol.IsGenericType ? $".{symbol.TypeArguments.FirstOrDefault().Name}" : "";
+            var wrapperAttribute = GetMauiWrapperAttributeData(symbol);
+            var baseType = GetMauiType(symbol);
+            if (baseType == null) baseType = symbol;
+
+            var tail = baseType.IsGenericType ? $".{baseType.TypeArguments.FirstOrDefault().Name}" : "";
             var extension = wrapperAttribute != null && wrapperAttribute.ConstructorArguments[0].Value == null ? ".extension" : "";
-            context.AddSource($"{symbol.ContainingNamespace}.{symbol.Name}{tail}{extension}.g.cs", builder.ToString());
+            context.AddSource($"{baseType.ContainingNamespace}.{baseType.Name}{tail}{extension}.g.cs", builder.ToString());
         }
     }
 
@@ -224,7 +227,7 @@ public class WrapBuilder
 
         foreach (var symbol in symbols)
         {
-            var wrapperAttribute = GetAttributeData((INamedTypeSymbol)symbol);
+            var wrapperAttribute = GetMauiWrapperAttributeData((INamedTypeSymbol)symbol);
             var typeValue = wrapperAttribute.ConstructorArguments[0].Value;
             if (typeValue != null)
             {

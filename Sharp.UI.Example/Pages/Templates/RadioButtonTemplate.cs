@@ -43,7 +43,7 @@
             .Padding(0)
             .Margin(5);
 
-            this.VisualStateManagerVisualStateGroups(new VisualStateGroupList
+            this.VisualStateGroups(new VisualStateGroupList
             {
                 new VisualStateGroup(VisualStateGroup.CommonStates)
                 {

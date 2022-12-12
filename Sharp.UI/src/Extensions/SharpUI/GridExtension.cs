@@ -3,7 +3,7 @@
 namespace Sharp.UI
 {
 
-    public static class IGridExtension
+    public static class GridExtension
     {
         public static T RowDefinitions<T>(this T obj, RowDefinitions rowDefs) where T : IGrid
         {

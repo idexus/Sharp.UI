@@ -5,17 +5,31 @@
         public MauiWrapperAttribute(
             Type baseType = null,
             string[] constructorWithProperties = null,
-            string containerPopertyName = "",
-            string[] attachedProperties = null,
-            Type[] attachedPropertiesTypes = null)
+            string containerPopertyName = "")
         {
             
+        }
+    }
+
+    public class AttachedInterfacesAttribute : Attribute
+    {
+        public AttachedInterfacesAttribute(Type[] attachedInterfaces = null)
+        {
+
         }
     }
 
     public class BindableAttribute : Attribute
     {
         public BindableAttribute()
+        {
+
+        }
+    }
+
+    public class AttachedPropertiesAttribute : Attribute
+    {
+        public AttachedPropertiesAttribute(Type attachedType)
         {
 
         }

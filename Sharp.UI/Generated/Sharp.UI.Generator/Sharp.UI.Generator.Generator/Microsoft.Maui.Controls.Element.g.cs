@@ -269,7 +269,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Element>(obj);
-            if (contextFlyout != null) mauiObject.SetValue(FlyoutBase.ContextFlyoutProperty, (Microsoft.Maui.Controls.MenuFlyout)contextFlyout);
+            if (contextFlyout != null) mauiObject.SetValue(Microsoft.Maui.Controls.FlyoutBase.ContextFlyoutProperty, (Microsoft.Maui.Controls.MenuFlyout)contextFlyout);
             return obj;
         }
         
@@ -279,9 +279,9 @@ namespace Sharp.UI
             where T : Sharp.UI.IElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Element>(obj);
-            if (contextFlyout != null) mauiObject.SetValue(FlyoutBase.ContextFlyoutProperty, (Microsoft.Maui.Controls.MenuFlyout)contextFlyout);
-            var def = definition(new BindableDef<Microsoft.Maui.Controls.MenuFlyout>(mauiObject, FlyoutBase.ContextFlyoutProperty));
-            if (def.ValueIsSet()) mauiObject.SetValue(FlyoutBase.ContextFlyoutProperty, def.GetValue());
+            if (contextFlyout != null) mauiObject.SetValue(Microsoft.Maui.Controls.FlyoutBase.ContextFlyoutProperty, (Microsoft.Maui.Controls.MenuFlyout)contextFlyout);
+            var def = definition(new BindableDef<Microsoft.Maui.Controls.MenuFlyout>(mauiObject, Microsoft.Maui.Controls.FlyoutBase.ContextFlyoutProperty));
+            if (def.ValueIsSet()) mauiObject.SetValue(Microsoft.Maui.Controls.FlyoutBase.ContextFlyoutProperty, def.GetValue());
             def.BindProperty();
             return obj;
         }
@@ -291,8 +291,8 @@ namespace Sharp.UI
             where T : Sharp.UI.IElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Element>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Controls.MenuFlyout>(mauiObject, FlyoutBase.ContextFlyoutProperty));
-            if (def.ValueIsSet()) mauiObject.SetValue(FlyoutBase.ContextFlyoutProperty, def.GetValue());
+            var def = definition(new BindableDef<Microsoft.Maui.Controls.MenuFlyout>(mauiObject, Microsoft.Maui.Controls.FlyoutBase.ContextFlyoutProperty));
+            if (def.ValueIsSet()) mauiObject.SetValue(Microsoft.Maui.Controls.FlyoutBase.ContextFlyoutProperty, def.GetValue());
             def.BindProperty();
             return obj;
         }

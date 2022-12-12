@@ -1,6 +1,6 @@
 ﻿namespace Sharp.UI
 {
-    public static class IBorderExtension
+    public static class BorderExtension
     {
 #nullable enable
         public static T StrokeShape<T>(this T obj,

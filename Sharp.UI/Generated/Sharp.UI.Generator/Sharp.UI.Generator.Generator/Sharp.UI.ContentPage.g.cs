@@ -57,6 +57,62 @@ namespace Sharp.UI
             configure(this);
         }
 
+        // ----- attached properties -----
+
+        public PresentationMode ShellPresentationMode
+        {
+            get => (PresentationMode)GetValue(Microsoft.Maui.Controls.Shell.PresentationModeProperty);
+            set => SetValue(Microsoft.Maui.Controls.Shell.PresentationModeProperty, value);
+        }
+        
+        public Color ShellBackgroundColor
+        {
+            get => (Color)GetValue(Microsoft.Maui.Controls.Shell.BackgroundColorProperty);
+            set => SetValue(Microsoft.Maui.Controls.Shell.BackgroundColorProperty, value);
+        }
+        
+        public Color ShellForegroundColor
+        {
+            get => (Color)GetValue(Microsoft.Maui.Controls.Shell.ForegroundColorProperty);
+            set => SetValue(Microsoft.Maui.Controls.Shell.ForegroundColorProperty, value);
+        }
+        
+        public Color ShellTitleColor
+        {
+            get => (Color)GetValue(Microsoft.Maui.Controls.Shell.TitleColorProperty);
+            set => SetValue(Microsoft.Maui.Controls.Shell.TitleColorProperty, value);
+        }
+        
+        public Color ShellDisabledColor
+        {
+            get => (Color)GetValue(Microsoft.Maui.Controls.Shell.DisabledColorProperty);
+            set => SetValue(Microsoft.Maui.Controls.Shell.DisabledColorProperty, value);
+        }
+        
+        public Color ShellUnselectedColor
+        {
+            get => (Color)GetValue(Microsoft.Maui.Controls.Shell.UnselectedColorProperty);
+            set => SetValue(Microsoft.Maui.Controls.Shell.UnselectedColorProperty, value);
+        }
+        
+        public Boolean ShellNavBarHasShadow
+        {
+            get => (Boolean)GetValue(Microsoft.Maui.Controls.Shell.NavBarHasShadowProperty);
+            set => SetValue(Microsoft.Maui.Controls.Shell.NavBarHasShadowProperty, value);
+        }
+        
+        public Boolean ShellNavBarIsVisible
+        {
+            get => (Boolean)GetValue(Microsoft.Maui.Controls.Shell.NavBarIsVisibleProperty);
+            set => SetValue(Microsoft.Maui.Controls.Shell.NavBarIsVisibleProperty, value);
+        }
+        
+        public View ShellTitleView
+        {
+            get => (View)GetValue(Microsoft.Maui.Controls.Shell.TitleViewProperty);
+            set => SetValue(Microsoft.Maui.Controls.Shell.TitleViewProperty, value);
+        }
+        
         // ----- single item container -----
 
         public IEnumerator GetEnumerator() { yield return this.Content; }

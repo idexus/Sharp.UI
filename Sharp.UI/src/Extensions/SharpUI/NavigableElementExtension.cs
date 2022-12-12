@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Sharp.UI
 {
-	public static class INavigableElementExtension
+	public static class NavigableElementExtension
 	{
         public static T StyleClass<T>(this T obj,
            params string[] styleClasses)

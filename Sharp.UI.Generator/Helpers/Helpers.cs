@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace MauiWrapperGenerator;
+namespace Sharp.UI.Generator;
 
 public class Helpers
 {
