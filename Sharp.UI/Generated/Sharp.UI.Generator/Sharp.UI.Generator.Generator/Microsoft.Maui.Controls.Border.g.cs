@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IBorderGeneratedExtension
+    public static class BorderGeneratedExtension
     {
         public static T Content<T>(this T obj,
             Microsoft.Maui.Controls.View? content)

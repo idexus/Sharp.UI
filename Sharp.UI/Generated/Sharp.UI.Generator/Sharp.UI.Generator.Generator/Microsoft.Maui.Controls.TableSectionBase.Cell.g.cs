@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class ITableSectionBaseCellGeneratedExtension
+    public static class TableSectionBaseCellGeneratedExtension
     {
         public static T OnCollectionChanged<T>(this T obj, OnEventAction<T, System.Collections.Specialized.NotifyCollectionChangedEventArgs> action)
             where T : Sharp.UI.ITableSectionBaseCell

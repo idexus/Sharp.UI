@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IElementGeneratedExtension
+    public static class ElementGeneratedExtension
     {
         public static T AutomationId<T>(this T obj,
             string? automationId)

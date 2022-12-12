@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IGradientStopGeneratedExtension
+    public static class GradientStopGeneratedExtension
     {
         public static T Color<T>(this T obj,
             Microsoft.Maui.Graphics.Color? color)

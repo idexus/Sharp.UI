@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class ICompatibilityLayoutGeneratedExtension
+    public static class CompatibilityLayoutGeneratedExtension
     {
         public static T IsClippedToBounds<T>(this T obj,
             bool? isClippedToBounds)

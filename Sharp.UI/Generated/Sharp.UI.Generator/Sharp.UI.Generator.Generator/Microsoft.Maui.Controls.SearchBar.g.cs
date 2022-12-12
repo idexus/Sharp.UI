@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class ISearchBarGeneratedExtension
+    public static class SearchBarGeneratedExtension
     {
         public static T CancelButtonColor<T>(this T obj,
             Microsoft.Maui.Graphics.Color? cancelButtonColor)

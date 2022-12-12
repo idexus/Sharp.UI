@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IPointerGestureRecognizerGeneratedExtension
+    public static class PointerGestureRecognizerGeneratedExtension
     {
         public static T PointerEnteredCommand<T>(this T obj,
             System.Windows.Input.ICommand? pointerEnteredCommand)

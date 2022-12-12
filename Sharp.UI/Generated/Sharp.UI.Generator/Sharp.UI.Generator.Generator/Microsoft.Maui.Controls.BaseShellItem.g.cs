@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IBaseShellItemGeneratedExtension
+    public static class BaseShellItemGeneratedExtension
     {
         public static T FlyoutIcon<T>(this T obj,
             Microsoft.Maui.Controls.ImageSource? flyoutIcon)

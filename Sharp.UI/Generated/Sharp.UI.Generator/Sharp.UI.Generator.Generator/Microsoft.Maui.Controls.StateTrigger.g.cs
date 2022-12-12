@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IStateTriggerGeneratedExtension
+    public static class StateTriggerGeneratedExtension
     {
         public static T IsActive<T>(this T obj,
             bool? isActive)

@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class ILabelGeneratedExtension
+    public static class LabelGeneratedExtension
     {
         public static T TextTransform<T>(this T obj,
             Microsoft.Maui.TextTransform? textTransform)

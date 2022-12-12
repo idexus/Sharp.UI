@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IRowDefinitionGeneratedExtension
+    public static class RowDefinitionGeneratedExtension
     {
         public static T Height<T>(this T obj,
             Microsoft.Maui.GridLength? height)

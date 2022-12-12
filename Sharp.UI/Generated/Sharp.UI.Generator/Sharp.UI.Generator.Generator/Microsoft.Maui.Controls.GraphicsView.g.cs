@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IGraphicsViewGeneratedExtension
+    public static class GraphicsViewGeneratedExtension
     {
         public static T Drawable<T>(this T obj,
             Microsoft.Maui.Graphics.IDrawable? drawable)

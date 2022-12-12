@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IImageGeneratedExtension
+    public static class ImageGeneratedExtension
     {
         public static T Aspect<T>(this T obj,
             Microsoft.Maui.Aspect? aspect)

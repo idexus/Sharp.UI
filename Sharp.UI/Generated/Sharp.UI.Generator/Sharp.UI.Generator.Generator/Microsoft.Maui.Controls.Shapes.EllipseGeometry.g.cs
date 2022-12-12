@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IEllipseGeometryGeneratedExtension
+    public static class EllipseGeometryGeneratedExtension
     {
         public static T Center<T>(this T obj,
             Microsoft.Maui.Graphics.Point? center)

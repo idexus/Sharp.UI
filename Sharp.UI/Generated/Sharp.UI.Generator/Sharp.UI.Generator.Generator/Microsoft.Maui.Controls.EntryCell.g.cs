@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IEntryCellGeneratedExtension
+    public static class EntryCellGeneratedExtension
     {
         public static T HorizontalTextAlignment<T>(this T obj,
             Microsoft.Maui.TextAlignment? horizontalTextAlignment)

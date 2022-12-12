@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IEllipseGeneratedExtension
+    public static class EllipseGeneratedExtension
     {
         public static T @class<T>(this T obj,
             System.Collections.Generic.IList<string>? @class)

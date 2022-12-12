@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class ICompareStateTriggerGeneratedExtension
+    public static class CompareStateTriggerGeneratedExtension
     {
         public static T Property<T>(this T obj,
             object? property)

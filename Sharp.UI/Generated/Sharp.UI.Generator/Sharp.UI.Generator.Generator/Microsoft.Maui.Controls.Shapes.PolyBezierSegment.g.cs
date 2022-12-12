@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IPolyBezierSegmentGeneratedExtension
+    public static class PolyBezierSegmentGeneratedExtension
     {
         public static T Points<T>(this T obj,
             Microsoft.Maui.Controls.PointCollection? points)

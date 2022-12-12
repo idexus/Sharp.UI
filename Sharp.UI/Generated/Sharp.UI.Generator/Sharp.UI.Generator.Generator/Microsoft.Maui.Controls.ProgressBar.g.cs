@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IProgressBarGeneratedExtension
+    public static class ProgressBarGeneratedExtension
     {
         public static T ProgressColor<T>(this T obj,
             Microsoft.Maui.Graphics.Color? progressColor)

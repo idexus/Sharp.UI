@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IInputViewGeneratedExtension
+    public static class InputViewGeneratedExtension
     {
         public static T MaxLength<T>(this T obj,
             int? maxLength)

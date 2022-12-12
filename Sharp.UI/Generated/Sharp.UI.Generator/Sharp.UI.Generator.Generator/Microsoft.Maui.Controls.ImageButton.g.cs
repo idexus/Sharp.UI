@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IImageButtonGeneratedExtension
+    public static class ImageButtonGeneratedExtension
     {
         public static T BorderColor<T>(this T obj,
             Microsoft.Maui.Graphics.Color? borderColor)

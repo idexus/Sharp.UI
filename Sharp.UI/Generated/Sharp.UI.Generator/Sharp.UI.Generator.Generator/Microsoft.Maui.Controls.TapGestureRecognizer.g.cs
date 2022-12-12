@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class ITapGestureRecognizerGeneratedExtension
+    public static class TapGestureRecognizerGeneratedExtension
     {
         public static T Command<T>(this T obj,
             System.Windows.Input.ICommand? command)

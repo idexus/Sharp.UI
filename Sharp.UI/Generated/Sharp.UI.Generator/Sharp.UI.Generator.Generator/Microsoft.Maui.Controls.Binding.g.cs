@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IBindingGeneratedExtension
+    public static class BindingGeneratedExtension
     {
         public static T Converter<T>(this T obj,
             Microsoft.Maui.Controls.IValueConverter? converter)

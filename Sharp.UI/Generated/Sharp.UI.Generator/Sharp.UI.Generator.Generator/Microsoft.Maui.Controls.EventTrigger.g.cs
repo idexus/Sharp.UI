@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IEventTriggerGeneratedExtension
+    public static class EventTriggerGeneratedExtension
     {
         public static T Actions<T>(this T obj,
             System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerAction> actions)

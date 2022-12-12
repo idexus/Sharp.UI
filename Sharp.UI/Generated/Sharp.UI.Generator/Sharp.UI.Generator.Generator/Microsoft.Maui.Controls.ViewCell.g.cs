@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IViewCellGeneratedExtension
+    public static class ViewCellGeneratedExtension
     {
         public static T View<T>(this T obj,
             Microsoft.Maui.Controls.View? view)

@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IStackLayoutGeneratedExtension
+    public static class StackLayoutGeneratedExtension
     {
         public static T Orientation<T>(this T obj,
             Microsoft.Maui.Controls.StackOrientation? orientation)

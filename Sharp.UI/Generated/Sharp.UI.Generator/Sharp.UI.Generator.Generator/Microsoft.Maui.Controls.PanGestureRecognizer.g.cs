@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IPanGestureRecognizerGeneratedExtension
+    public static class PanGestureRecognizerGeneratedExtension
     {
         public static T TouchPoints<T>(this T obj,
             int? touchPoints)

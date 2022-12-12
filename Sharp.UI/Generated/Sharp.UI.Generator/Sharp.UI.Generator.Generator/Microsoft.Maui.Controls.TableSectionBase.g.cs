@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class ITableSectionBaseGeneratedExtension
+    public static class TableSectionBaseGeneratedExtension
     {
         public static T Title<T>(this T obj,
             string? title)

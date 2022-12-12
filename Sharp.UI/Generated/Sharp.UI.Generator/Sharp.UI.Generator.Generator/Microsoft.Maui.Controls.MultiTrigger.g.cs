@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IMultiTriggerGeneratedExtension
+    public static class MultiTriggerGeneratedExtension
     {
         public static T Conditions<T>(this T obj,
             System.Collections.Generic.IList<Microsoft.Maui.Controls.Condition> conditions)

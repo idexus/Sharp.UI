@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IDeviceStateTriggerGeneratedExtension
+    public static class DeviceStateTriggerGeneratedExtension
     {
         public static T Device<T>(this T obj,
             string? device)

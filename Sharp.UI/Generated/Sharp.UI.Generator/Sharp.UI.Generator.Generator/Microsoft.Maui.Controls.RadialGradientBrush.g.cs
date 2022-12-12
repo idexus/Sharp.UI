@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IRadialGradientBrushGeneratedExtension
+    public static class RadialGradientBrushGeneratedExtension
     {
         public static T Center<T>(this T obj,
             Microsoft.Maui.Graphics.Point? center)

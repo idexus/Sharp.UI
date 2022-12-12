@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IViewGeneratedExtension
+    public static class ViewGeneratedExtension
     {
         public static T GestureRecognizers<T>(this T obj,
             System.Collections.Generic.IList<Microsoft.Maui.Controls.IGestureRecognizer> gestureRecognizers)

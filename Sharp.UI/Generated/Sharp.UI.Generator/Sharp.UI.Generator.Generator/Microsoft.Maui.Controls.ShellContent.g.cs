@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IShellContentGeneratedExtension
+    public static class ShellContentGeneratedExtension
     {
         public static T MenuItems<T>(this T obj,
             Microsoft.Maui.Controls.MenuItemCollection menuItems)

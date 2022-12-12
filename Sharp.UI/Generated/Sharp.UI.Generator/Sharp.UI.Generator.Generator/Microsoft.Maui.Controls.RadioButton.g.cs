@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IRadioButtonGeneratedExtension
+    public static class RadioButtonGeneratedExtension
     {
         public static T Content<T>(this T obj,
             object? content)

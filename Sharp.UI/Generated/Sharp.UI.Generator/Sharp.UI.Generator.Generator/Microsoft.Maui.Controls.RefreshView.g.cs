@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IRefreshViewGeneratedExtension
+    public static class RefreshViewGeneratedExtension
     {
         public static T IsRefreshing<T>(this T obj,
             bool? isRefreshing)

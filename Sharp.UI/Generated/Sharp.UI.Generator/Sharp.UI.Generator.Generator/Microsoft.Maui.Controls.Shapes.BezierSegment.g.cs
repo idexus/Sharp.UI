@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IBezierSegmentGeneratedExtension
+    public static class BezierSegmentGeneratedExtension
     {
         public static T Point1<T>(this T obj,
             Microsoft.Maui.Graphics.Point? point1)

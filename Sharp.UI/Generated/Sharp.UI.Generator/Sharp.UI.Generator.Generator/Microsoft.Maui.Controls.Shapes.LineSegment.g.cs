@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class ILineSegmentGeneratedExtension
+    public static class LineSegmentGeneratedExtension
     {
         public static T Point<T>(this T obj,
             Microsoft.Maui.Graphics.Point? point)

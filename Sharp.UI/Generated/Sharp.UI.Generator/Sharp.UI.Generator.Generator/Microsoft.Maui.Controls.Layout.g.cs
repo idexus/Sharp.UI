@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class ILayoutGeneratedExtension
+    public static class LayoutGeneratedExtension
     {
         public static T Children<T>(this T obj,
             System.Collections.Generic.IList<Microsoft.Maui.IView> children)

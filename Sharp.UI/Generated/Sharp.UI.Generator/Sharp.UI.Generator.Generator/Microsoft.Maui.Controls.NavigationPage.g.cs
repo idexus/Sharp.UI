@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class INavigationPageGeneratedExtension
+    public static class NavigationPageGeneratedExtension
     {
         public static T BarBackgroundColor<T>(this T obj,
             Microsoft.Maui.Graphics.Color? barBackgroundColor)

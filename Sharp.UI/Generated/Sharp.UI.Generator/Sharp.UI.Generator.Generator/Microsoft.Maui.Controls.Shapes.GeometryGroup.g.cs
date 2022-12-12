@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IGeometryGroupGeneratedExtension
+    public static class GeometryGroupGeneratedExtension
     {
         public static T Children<T>(this T obj,
             Microsoft.Maui.Controls.Shapes.GeometryCollection? children)

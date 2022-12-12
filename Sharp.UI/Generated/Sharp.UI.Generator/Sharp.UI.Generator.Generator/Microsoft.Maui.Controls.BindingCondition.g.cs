@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IBindingConditionGeneratedExtension
+    public static class BindingConditionGeneratedExtension
     {
         public static T Binding<T>(this T obj,
             Microsoft.Maui.Controls.BindingBase? binding)

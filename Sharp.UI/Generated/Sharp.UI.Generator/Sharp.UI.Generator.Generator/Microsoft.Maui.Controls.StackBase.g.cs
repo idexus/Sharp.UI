@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IStackBaseGeneratedExtension
+    public static class StackBaseGeneratedExtension
     {
         public static T Spacing<T>(this T obj,
             double? spacing)

@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IShellItemGeneratedExtension
+    public static class ShellItemGeneratedExtension
     {
         public static T CurrentItem<T>(this T obj,
             Microsoft.Maui.Controls.ShellSection? currentItem)

@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class ITemplatedViewGeneratedExtension
+    public static class TemplatedViewGeneratedExtension
     {
         public static T ControlTemplate<T>(this T obj,
             Microsoft.Maui.Controls.ControlTemplate? controlTemplate)

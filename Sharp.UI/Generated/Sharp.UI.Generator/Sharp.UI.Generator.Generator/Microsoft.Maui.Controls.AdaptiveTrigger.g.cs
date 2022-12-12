@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IAdaptiveTriggerGeneratedExtension
+    public static class AdaptiveTriggerGeneratedExtension
     {
         public static T MinWindowHeight<T>(this T obj,
             double? minWindowHeight)

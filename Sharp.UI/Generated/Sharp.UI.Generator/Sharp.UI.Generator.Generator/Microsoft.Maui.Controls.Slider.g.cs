@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class ISliderGeneratedExtension
+    public static class SliderGeneratedExtension
     {
         public static T MinimumTrackColor<T>(this T obj,
             Microsoft.Maui.Graphics.Color? minimumTrackColor)

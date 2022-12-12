@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IShellGeneratedExtension
+    public static class ShellGeneratedExtension
     {
         public static T FlyoutVerticalScrollMode<T>(this T obj,
             Microsoft.Maui.Controls.ScrollMode? flyoutVerticalScrollMode)

@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IContentPresenterGeneratedExtension
+    public static class ContentPresenterGeneratedExtension
     {
         public static T Content<T>(this T obj,
             Microsoft.Maui.Controls.View? content)

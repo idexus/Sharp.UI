@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class ITableViewGeneratedExtension
+    public static class TableViewGeneratedExtension
     {
         public static T HasUnevenRows<T>(this T obj,
             bool? hasUnevenRows)

@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IPolyLineSegmentGeneratedExtension
+    public static class PolyLineSegmentGeneratedExtension
     {
         public static T Points<T>(this T obj,
             Microsoft.Maui.Controls.PointCollection? points)

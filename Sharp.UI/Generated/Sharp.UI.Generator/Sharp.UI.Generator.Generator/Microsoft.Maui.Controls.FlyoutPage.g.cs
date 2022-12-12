@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IFlyoutPageGeneratedExtension
+    public static class FlyoutPageGeneratedExtension
     {
         public static T Detail<T>(this T obj,
             Microsoft.Maui.Controls.Page? detail)

@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class ICellGeneratedExtension
+    public static class CellGeneratedExtension
     {
         public static T ContextActions<T>(this T obj,
             System.Collections.Generic.IList<Microsoft.Maui.Controls.MenuItem> contextActions)

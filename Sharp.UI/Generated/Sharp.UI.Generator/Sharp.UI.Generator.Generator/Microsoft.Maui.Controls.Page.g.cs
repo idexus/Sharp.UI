@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IPageGeneratedExtension
+    public static class PageGeneratedExtension
     {
         public static T BackgroundImageSource<T>(this T obj,
             Microsoft.Maui.Controls.ImageSource? backgroundImageSource)

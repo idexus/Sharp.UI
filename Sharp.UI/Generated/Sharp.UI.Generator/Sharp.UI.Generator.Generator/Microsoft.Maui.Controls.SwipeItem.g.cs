@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class ISwipeItemGeneratedExtension
+    public static class SwipeItemGeneratedExtension
     {
         public static T BackgroundColor<T>(this T obj,
             Microsoft.Maui.Graphics.Color? backgroundColor)

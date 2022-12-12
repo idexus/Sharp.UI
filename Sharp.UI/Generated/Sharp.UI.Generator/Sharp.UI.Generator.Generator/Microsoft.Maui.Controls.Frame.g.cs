@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IFrameGeneratedExtension
+    public static class FrameGeneratedExtension
     {
         public static T HasShadow<T>(this T obj,
             bool? hasShadow)

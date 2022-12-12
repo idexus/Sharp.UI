@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IVisualElementGeneratedExtension
+    public static class VisualElementGeneratedExtension
     {
         public static T Frame<T>(this T obj,
             Microsoft.Maui.Graphics.Rect? frame)

@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class ISelectableItemsViewGeneratedExtension
+    public static class SelectableItemsViewGeneratedExtension
     {
         public static T SelectedItem<T>(this T obj,
             object? selectedItem)

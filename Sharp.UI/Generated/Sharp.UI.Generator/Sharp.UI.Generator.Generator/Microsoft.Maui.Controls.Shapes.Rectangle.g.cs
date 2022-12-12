@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IRectangleGeneratedExtension
+    public static class RectangleGeneratedExtension
     {
         public static T RadiusX<T>(this T obj,
             double? radiusX)

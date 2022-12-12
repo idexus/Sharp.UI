@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IReorderableItemsViewGeneratedExtension
+    public static class ReorderableItemsViewGeneratedExtension
     {
         public static T CanMixGroups<T>(this T obj,
             bool? canMixGroups)

@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IColumnDefinitionGeneratedExtension
+    public static class ColumnDefinitionGeneratedExtension
     {
         public static T Width<T>(this T obj,
             Microsoft.Maui.GridLength? width)

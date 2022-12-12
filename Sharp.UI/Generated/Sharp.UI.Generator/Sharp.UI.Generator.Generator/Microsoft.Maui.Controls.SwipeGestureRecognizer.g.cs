@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class ISwipeGestureRecognizerGeneratedExtension
+    public static class SwipeGestureRecognizerGeneratedExtension
     {
         public static T Command<T>(this T obj,
             System.Windows.Input.ICommand? command)

@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IScrollViewGeneratedExtension
+    public static class ScrollViewGeneratedExtension
     {
         public static T LayoutAreaOverride<T>(this T obj,
             Microsoft.Maui.Graphics.Rect? layoutAreaOverride)

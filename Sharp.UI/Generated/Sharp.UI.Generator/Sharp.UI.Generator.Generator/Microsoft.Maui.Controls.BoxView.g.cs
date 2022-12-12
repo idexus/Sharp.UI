@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IBoxViewGeneratedExtension
+    public static class BoxViewGeneratedExtension
     {
         public static T Color<T>(this T obj,
             Microsoft.Maui.Graphics.Color? color)

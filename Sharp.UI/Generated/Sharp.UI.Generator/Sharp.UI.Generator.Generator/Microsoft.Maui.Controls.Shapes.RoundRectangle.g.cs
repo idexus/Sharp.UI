@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IRoundRectangleGeneratedExtension
+    public static class RoundRectangleGeneratedExtension
     {
         public static T CornerRadius<T>(this T obj,
             Microsoft.Maui.CornerRadius? cornerRadius)

@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IStepperGeneratedExtension
+    public static class StepperGeneratedExtension
     {
         public static T Increment<T>(this T obj,
             double? increment)

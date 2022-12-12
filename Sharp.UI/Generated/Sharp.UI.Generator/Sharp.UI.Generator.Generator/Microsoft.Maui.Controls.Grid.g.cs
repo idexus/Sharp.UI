@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IGridGeneratedExtension
+    public static class GridGeneratedExtension
     {
         public static T ColumnDefinitions<T>(this T obj,
             Microsoft.Maui.Controls.ColumnDefinitionCollection? columnDefinitions)

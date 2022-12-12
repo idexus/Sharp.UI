@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IShapeGeneratedExtension
+    public static class ShapeGeneratedExtension
     {
         public static T Fill<T>(this T obj,
             Microsoft.Maui.Controls.Brush? fill)

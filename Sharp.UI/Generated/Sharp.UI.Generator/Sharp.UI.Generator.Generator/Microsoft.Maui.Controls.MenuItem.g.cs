@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IMenuItemGeneratedExtension
+    public static class MenuItemGeneratedExtension
     {
         public static T Command<T>(this T obj,
             System.Windows.Input.ICommand? command)

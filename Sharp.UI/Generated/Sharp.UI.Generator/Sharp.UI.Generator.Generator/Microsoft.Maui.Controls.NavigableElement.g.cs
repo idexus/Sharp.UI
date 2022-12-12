@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class INavigableElementGeneratedExtension
+    public static class NavigableElementGeneratedExtension
     {
         public static T Style<T>(this T obj,
             Microsoft.Maui.Controls.Style? style)

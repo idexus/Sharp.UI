@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IStructuredItemsViewGeneratedExtension
+    public static class StructuredItemsViewGeneratedExtension
     {
         public static T Header<T>(this T obj,
             object? header)

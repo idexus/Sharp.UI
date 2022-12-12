@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IFlexLayoutGeneratedExtension
+    public static class FlexLayoutGeneratedExtension
     {
         public static T Direction<T>(this T obj,
             Microsoft.Maui.Layouts.FlexDirection? direction)

@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IPinchGestureRecognizerGeneratedExtension
+    public static class PinchGestureRecognizerGeneratedExtension
     {
         public static T OnPinchUpdated<T>(this T obj, OnEventAction<T, Microsoft.Maui.Controls.PinchGestureUpdatedEventArgs> action)
             where T : Sharp.UI.IPinchGestureRecognizer

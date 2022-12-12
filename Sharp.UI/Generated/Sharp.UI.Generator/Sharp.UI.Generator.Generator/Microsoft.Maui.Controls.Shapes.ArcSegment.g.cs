@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IArcSegmentGeneratedExtension
+    public static class ArcSegmentGeneratedExtension
     {
         public static T Point<T>(this T obj,
             Microsoft.Maui.Graphics.Point? point)

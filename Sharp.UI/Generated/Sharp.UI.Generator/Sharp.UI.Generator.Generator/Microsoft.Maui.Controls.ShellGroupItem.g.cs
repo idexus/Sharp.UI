@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IShellGroupItemGeneratedExtension
+    public static class ShellGroupItemGeneratedExtension
     {
         public static T FlyoutDisplayOptions<T>(this T obj,
             Microsoft.Maui.Controls.FlyoutDisplayOptions? flyoutDisplayOptions)

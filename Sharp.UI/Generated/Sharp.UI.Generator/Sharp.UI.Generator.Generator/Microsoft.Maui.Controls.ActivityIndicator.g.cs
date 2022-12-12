@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IActivityIndicatorGeneratedExtension
+    public static class ActivityIndicatorGeneratedExtension
     {
         public static T Color<T>(this T obj,
             Microsoft.Maui.Graphics.Color? color)

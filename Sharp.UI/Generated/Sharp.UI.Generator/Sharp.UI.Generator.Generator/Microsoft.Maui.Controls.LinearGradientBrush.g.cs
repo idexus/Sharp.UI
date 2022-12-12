@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class ILinearGradientBrushGeneratedExtension
+    public static class LinearGradientBrushGeneratedExtension
     {
         public static T StartPoint<T>(this T obj,
             Microsoft.Maui.Graphics.Point? startPoint)

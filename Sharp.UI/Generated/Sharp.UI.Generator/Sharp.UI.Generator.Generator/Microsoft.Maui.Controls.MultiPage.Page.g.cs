@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IMultiPagePageGeneratedExtension
+    public static class MultiPagePageGeneratedExtension
     {
         public static T ItemsSource<T>(this T obj,
             System.Collections.IEnumerable? itemsSource)

@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IItemsViewGeneratedExtension
+    public static class ItemsViewGeneratedExtension
     {
         public static T EmptyView<T>(this T obj,
             object? emptyView)

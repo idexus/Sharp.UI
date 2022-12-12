@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IVisualStateGroupGeneratedExtension
+    public static class VisualStateGroupGeneratedExtension
     {
         public static T TargetType<T>(this T obj,
             System.Type? targetType)

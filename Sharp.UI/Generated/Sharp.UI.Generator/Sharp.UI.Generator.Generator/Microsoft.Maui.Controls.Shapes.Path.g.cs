@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IPathGeneratedExtension
+    public static class PathGeneratedExtension
     {
         public static T Data<T>(this T obj,
             Microsoft.Maui.Controls.Shapes.Geometry? data)

@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IEditorGeneratedExtension
+    public static class EditorGeneratedExtension
     {
         public static T AutoSize<T>(this T obj,
             Microsoft.Maui.Controls.EditorAutoSizeOption? autoSize)

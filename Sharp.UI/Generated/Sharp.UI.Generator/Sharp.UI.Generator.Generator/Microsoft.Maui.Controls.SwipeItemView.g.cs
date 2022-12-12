@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class ISwipeItemViewGeneratedExtension
+    public static class SwipeItemViewGeneratedExtension
     {
         public static T Command<T>(this T obj,
             System.Windows.Input.ICommand? command)

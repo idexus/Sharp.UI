@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class ICheckBoxGeneratedExtension
+    public static class CheckBoxGeneratedExtension
     {
         public static T Color<T>(this T obj,
             Microsoft.Maui.Graphics.Color? color)

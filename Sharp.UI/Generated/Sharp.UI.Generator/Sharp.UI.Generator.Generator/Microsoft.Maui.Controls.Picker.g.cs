@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IPickerGeneratedExtension
+    public static class PickerGeneratedExtension
     {
         public static T FontAttributes<T>(this T obj,
             Microsoft.Maui.Controls.FontAttributes? fontAttributes)

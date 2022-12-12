@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IDropGestureRecognizerGeneratedExtension
+    public static class DropGestureRecognizerGeneratedExtension
     {
         public static T AllowDrop<T>(this T obj,
             bool? allowDrop)

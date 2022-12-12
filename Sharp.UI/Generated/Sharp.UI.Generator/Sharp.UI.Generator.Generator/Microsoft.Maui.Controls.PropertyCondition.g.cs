@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IPropertyConditionGeneratedExtension
+    public static class PropertyConditionGeneratedExtension
     {
         public static T Property<T>(this T obj,
             Microsoft.Maui.Controls.BindableProperty? property)

@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IVisualStateGeneratedExtension
+    public static class VisualStateGeneratedExtension
     {
         public static T Name<T>(this T obj,
             string? name)

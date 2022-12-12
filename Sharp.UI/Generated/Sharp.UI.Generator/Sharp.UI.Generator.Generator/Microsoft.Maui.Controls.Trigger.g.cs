@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class ITriggerGeneratedExtension
+    public static class TriggerGeneratedExtension
     {
         public static T Property<T>(this T obj,
             Microsoft.Maui.Controls.BindableProperty? property)

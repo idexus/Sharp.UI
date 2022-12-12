@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IDatePickerGeneratedExtension
+    public static class DatePickerGeneratedExtension
     {
         public static T Date<T>(this T obj,
             System.DateTime? date)

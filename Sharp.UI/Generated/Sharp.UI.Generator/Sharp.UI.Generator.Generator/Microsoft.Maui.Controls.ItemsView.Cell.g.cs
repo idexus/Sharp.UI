@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IItemsViewCellGeneratedExtension
+    public static class ItemsViewCellGeneratedExtension
     {
         public static T ItemsSource<T>(this T obj,
             System.Collections.IEnumerable? itemsSource)

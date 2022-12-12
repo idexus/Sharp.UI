@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class ISwipeViewGeneratedExtension
+    public static class SwipeViewGeneratedExtension
     {
         public static T Threshold<T>(this T obj,
             double? threshold)

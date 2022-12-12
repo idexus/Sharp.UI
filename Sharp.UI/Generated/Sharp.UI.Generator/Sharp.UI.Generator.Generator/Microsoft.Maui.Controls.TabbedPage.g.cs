@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class ITabbedPageGeneratedExtension
+    public static class TabbedPageGeneratedExtension
     {
         public static T BarBackgroundColor<T>(this T obj,
             Microsoft.Maui.Graphics.Color? barBackgroundColor)

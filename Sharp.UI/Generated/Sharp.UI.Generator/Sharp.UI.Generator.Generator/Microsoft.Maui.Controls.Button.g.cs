@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IButtonGeneratedExtension
+    public static class ButtonGeneratedExtension
     {
         public static T Padding<T>(this T obj,
             Microsoft.Maui.Thickness? padding)

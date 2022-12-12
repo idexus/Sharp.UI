@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IPathGeometryGeneratedExtension
+    public static class PathGeometryGeneratedExtension
     {
         public static T Figures<T>(this T obj,
             Microsoft.Maui.Controls.Shapes.PathFigureCollection? figures)

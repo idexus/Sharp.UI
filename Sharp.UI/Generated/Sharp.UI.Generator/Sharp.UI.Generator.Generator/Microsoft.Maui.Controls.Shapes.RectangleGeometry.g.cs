@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IRectangleGeometryGeneratedExtension
+    public static class RectangleGeometryGeneratedExtension
     {
         public static T Rect<T>(this T obj,
             Microsoft.Maui.Graphics.Rect? rect)

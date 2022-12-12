@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IListViewGeneratedExtension
+    public static class ListViewGeneratedExtension
     {
         public static T Footer<T>(this T obj,
             object? footer)

@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IPathFigureGeneratedExtension
+    public static class PathFigureGeneratedExtension
     {
         public static T Segments<T>(this T obj,
             Microsoft.Maui.Controls.Shapes.PathSegmentCollection? segments)

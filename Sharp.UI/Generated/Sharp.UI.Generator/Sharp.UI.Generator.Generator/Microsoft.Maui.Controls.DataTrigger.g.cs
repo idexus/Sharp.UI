@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IDataTriggerGeneratedExtension
+    public static class DataTriggerGeneratedExtension
     {
         public static T Binding<T>(this T obj,
             Microsoft.Maui.Controls.BindingBase? binding)

@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class ITimePickerGeneratedExtension
+    public static class TimePickerGeneratedExtension
     {
         public static T Format<T>(this T obj,
             string? format)

@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class ILineGeneratedExtension
+    public static class LineGeneratedExtension
     {
         public static T X1<T>(this T obj,
             double? x1)

@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IGradientBrushGeneratedExtension
+    public static class GradientBrushGeneratedExtension
     {
         public static T GradientStops<T>(this T obj,
             Microsoft.Maui.Controls.GradientStopCollection? gradientStops)

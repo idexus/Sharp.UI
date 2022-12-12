@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IMenuBarItemGeneratedExtension
+    public static class MenuBarItemGeneratedExtension
     {
         public static T Priority<T>(this T obj,
             int? priority)

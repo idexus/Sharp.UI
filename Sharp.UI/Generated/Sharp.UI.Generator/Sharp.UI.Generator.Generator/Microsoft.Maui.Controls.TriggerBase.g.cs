@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class ITriggerBaseGeneratedExtension
+    public static class TriggerBaseGeneratedExtension
     {
         public static T EnterActions<T>(this T obj,
             System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerAction> enterActions)

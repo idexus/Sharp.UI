@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IWebViewGeneratedExtension
+    public static class WebViewGeneratedExtension
     {
         public static T Cookies<T>(this T obj,
             System.Net.CookieContainer? cookies)

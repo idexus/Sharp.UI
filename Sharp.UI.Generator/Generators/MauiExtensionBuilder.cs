@@ -73,7 +73,7 @@ namespace {baseType.ContainingNamespace}
         builder.Append($@"
 namespace Sharp.UI
 {{
-    public static class I{WrapBuilder.GetTypeName(baseType)}GeneratedExtension
+    public static class {WrapBuilder.GetTypeName(baseType)}GeneratedExtension
     {{");
         GenerateClassExtensionBody();
         builder.AppendLine($@"

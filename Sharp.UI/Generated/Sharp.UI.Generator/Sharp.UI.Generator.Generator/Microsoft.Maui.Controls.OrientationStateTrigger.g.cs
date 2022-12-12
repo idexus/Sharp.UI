@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IOrientationStateTriggerGeneratedExtension
+    public static class OrientationStateTriggerGeneratedExtension
     {
         public static T Orientation<T>(this T obj,
             Microsoft.Maui.Devices.DisplayOrientation? orientation)

@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IStyleGeneratedExtension
+    public static class StyleGeneratedExtension
     {
         public static T ApplyToDerivedTypes<T>(this T obj,
             bool? applyToDerivedTypes)

@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IGroupableItemsViewGeneratedExtension
+    public static class GroupableItemsViewGeneratedExtension
     {
         public static T IsGrouped<T>(this T obj,
             bool? isGrouped)

@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IIndicatorViewGeneratedExtension
+    public static class IndicatorViewGeneratedExtension
     {
         public static T IndicatorsShape<T>(this T obj,
             Microsoft.Maui.Controls.IndicatorShape? indicatorsShape)

@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class ISwitchCellGeneratedExtension
+    public static class SwitchCellGeneratedExtension
     {
         public static T OnColor<T>(this T obj,
             Microsoft.Maui.Graphics.Color? onColor)

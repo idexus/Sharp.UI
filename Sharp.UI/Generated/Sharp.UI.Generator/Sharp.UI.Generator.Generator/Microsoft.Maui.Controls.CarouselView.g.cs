@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class ICarouselViewGeneratedExtension
+    public static class CarouselViewGeneratedExtension
     {
         public static T Loop<T>(this T obj,
             bool? loop)

@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IPolygonGeneratedExtension
+    public static class PolygonGeneratedExtension
     {
         public static T Points<T>(this T obj,
             Microsoft.Maui.Controls.PointCollection? points)

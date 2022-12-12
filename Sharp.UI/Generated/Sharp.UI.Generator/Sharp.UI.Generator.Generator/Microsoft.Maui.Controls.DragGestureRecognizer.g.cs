@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IDragGestureRecognizerGeneratedExtension
+    public static class DragGestureRecognizerGeneratedExtension
     {
         public static T CanDrag<T>(this T obj,
             bool? canDrag)

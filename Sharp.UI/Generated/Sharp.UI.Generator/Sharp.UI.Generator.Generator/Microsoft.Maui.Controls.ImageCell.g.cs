@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public static class IImageCellGeneratedExtension
+    public static class ImageCellGeneratedExtension
     {
         public static T ImageSource<T>(this T obj,
             Microsoft.Maui.Controls.ImageSource? imageSource)
