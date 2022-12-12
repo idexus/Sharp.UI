@@ -9,25 +9,4 @@
         {
         }
     }
-
-    public class AttachedInterfacesAttribute : Attribute
-    {
-        public AttachedInterfacesAttribute(Type[] attachedInterfaces = null)
-        {
-        }
-    }
-
-    public class BindableAttribute : Attribute
-    {
-        public BindableAttribute()
-        {
-        }
-    }
-
-    public class AttachedPropertiesAttribute : Attribute
-    {
-        public AttachedPropertiesAttribute(Type attachedType)
-        {
-        }
-    }
 }
