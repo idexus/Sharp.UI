@@ -128,7 +128,7 @@ public class WrapBuilder
         builder.AppendLine("#pragma warning disable CS8669");
         builder.AppendLine();
 
-        new MauiSymbolBuilder(symbol, wrapperAttribute, builder).Build();
+        new MauiClassBuilder(symbol, wrapperAttribute, builder).Build();
 
         builder.AppendLine();
         builder.AppendLine();
