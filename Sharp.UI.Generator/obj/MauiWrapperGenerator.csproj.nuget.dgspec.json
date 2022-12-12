@@ -1,0 +1,77 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/pawel/Projects/Sharp.UI/MauiWrapperGenerator/MauiWrapperGenerator.csproj": {}
+  },
+  "projects": {
+    "/Users/pawel/Projects/Sharp.UI/MauiWrapperGenerator/MauiWrapperGenerator.csproj": {
+      "version": "0.1.0-beta",
+      "restore": {
+        "projectUniqueName": "/Users/pawel/Projects/Sharp.UI/MauiWrapperGenerator/MauiWrapperGenerator.csproj",
+        "projectName": "Sharp.UI.Generator",
+        "projectPath": "/Users/pawel/Projects/Sharp.UI/MauiWrapperGenerator/MauiWrapperGenerator.csproj",
+        "packagesPath": "/Users/pawel/.nuget/packages/",
+        "outputPath": "/Users/pawel/Projects/Sharp.UI/MauiWrapperGenerator/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/pawel/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "/Users/pawel/Projects/Sharp.UI/Sharp.UI/bin/Debug": {},
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "Microsoft.CodeAnalysis.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.3.3, )"
+            },
+            "Microsoft.CodeAnalysis.CSharp": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[4.4.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

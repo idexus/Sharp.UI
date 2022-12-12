@@ -5,7 +5,7 @@ using System.Text;
 using System.Xml.Linq;
 using Microsoft.CodeAnalysis;
 
-namespace MauiWrapperGenerator;
+namespace Sharp.UI.Generator;
 
 public class MauiExtensionBuilder
 {

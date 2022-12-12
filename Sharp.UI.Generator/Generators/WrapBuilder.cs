@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.CodeAnalysis;
 
-namespace MauiWrapperGenerator;
+namespace Sharp.UI.Generator;
 
 public class WrapBuilder
 {

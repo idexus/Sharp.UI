@@ -31,7 +31,7 @@
 	  <CreatePackage>false</CreatePackage>
 	</PropertyGroup>
 	<ItemGroup>
-      <None Include="..\MauiWrapperGenerator\bin\$(Configuration)\netstandard2.0\MauiWrapperGenerator.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+      <None Include="..\Sharp.UI.Generator\bin\$(Configuration)\netstandard2.0\Sharp.UI.Generator.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
     </ItemGroup>
 	<PropertyGroup>
 		<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
@@ -41,9 +41,9 @@
 	  <CreatePackage>false</CreatePackage>
 	</PropertyGroup>
 		<ItemGroup>
-		<ProjectReference Include="..\MauiWrapperGenerator\MauiWrapperGenerator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+		<ProjectReference Include="..\Sharp.UI.Generator\Sharp.UI.Generator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
 		<Compile Remove="$(CompilerGeneratedFilesOutputPath)/**/*.cs" />
-	    <None Include="$(CompilerGeneratedFilesOutputPath)/MauiWrapperGenerator/**/*.cs" />
+	    <None Include="$(CompilerGeneratedFilesOutputPath)/Sharp.UI.Generator/**/*.cs" />
 		<None Include="docs\README.md" Pack="true" PackagePath="\" />
 	</ItemGroup>
 		<ItemGroup>

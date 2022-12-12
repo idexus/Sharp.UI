@@ -1,0 +1,10 @@
+/Users/pawel/Projects/Sharp.UI/Sharp.UI.Generator/bin/Debug/netstandard2.0/Sharp.UI.Generator.deps.json
+/Users/pawel/Projects/Sharp.UI/Sharp.UI.Generator/bin/Debug/netstandard2.0/Sharp.UI.Generator.dll
+/Users/pawel/Projects/Sharp.UI/Sharp.UI.Generator/bin/Debug/netstandard2.0/Sharp.UI.Generator.pdb
+/Users/pawel/Projects/Sharp.UI/Sharp.UI.Generator/obj/Debug/netstandard2.0/Sharp.UI.Generator.csproj.AssemblyReference.cache
+/Users/pawel/Projects/Sharp.UI/Sharp.UI.Generator/obj/Debug/netstandard2.0/Sharp.UI.Generator.GeneratedMSBuildEditorConfig.editorconfig
+/Users/pawel/Projects/Sharp.UI/Sharp.UI.Generator/obj/Debug/netstandard2.0/Sharp.UI.Generator.AssemblyInfoInputs.cache
+/Users/pawel/Projects/Sharp.UI/Sharp.UI.Generator/obj/Debug/netstandard2.0/Sharp.UI.Generator.AssemblyInfo.cs
+/Users/pawel/Projects/Sharp.UI/Sharp.UI.Generator/obj/Debug/netstandard2.0/Sharp.UI.Generator.csproj.CoreCompileInputs.cache
+/Users/pawel/Projects/Sharp.UI/Sharp.UI.Generator/obj/Debug/netstandard2.0/Sharp.UI.Generator.dll
+/Users/pawel/Projects/Sharp.UI/Sharp.UI.Generator/obj/Debug/netstandard2.0/Sharp.UI.Generator.pdb
