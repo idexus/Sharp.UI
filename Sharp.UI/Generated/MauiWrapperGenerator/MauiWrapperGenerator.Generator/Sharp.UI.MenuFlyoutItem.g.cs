@@ -10,10 +10,8 @@ namespace Sharp.UI
     public partial class MenuFlyoutItem : Microsoft.Maui.Controls.MenuFlyoutItem, Sharp.UI.IMenuFlyoutItem, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public MenuFlyoutItem() { }
-
 
         public MenuFlyoutItem(out MenuFlyoutItem menuFlyoutItem) 
         {

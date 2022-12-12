@@ -10,10 +10,8 @@ namespace Sharp.UI
     public partial class ListView : Microsoft.Maui.Controls.ListView, Sharp.UI.IListView, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public ListView() { }
-
 
         public ListView(out ListView listView) 
         {

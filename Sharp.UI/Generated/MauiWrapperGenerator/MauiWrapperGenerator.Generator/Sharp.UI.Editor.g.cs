@@ -10,10 +10,8 @@ namespace Sharp.UI
     public partial class Editor : Microsoft.Maui.Controls.Editor, Sharp.UI.IEditor, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public Editor() { }
-
 
         public Editor(out Editor editor) 
         {

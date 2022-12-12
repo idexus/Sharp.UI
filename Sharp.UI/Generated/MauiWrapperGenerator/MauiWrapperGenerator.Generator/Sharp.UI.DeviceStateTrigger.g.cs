@@ -16,7 +16,6 @@ namespace Sharp.UI
         public Microsoft.Maui.Controls.DeviceStateTrigger MauiObject { get => (Microsoft.Maui.Controls.DeviceStateTrigger)_maui_RawObject; set => _maui_RawObject = value; }
 
         // ----- constructors -----
-        
 
         protected DeviceStateTrigger(Microsoft.Maui.Controls.DeviceStateTrigger deviceStateTrigger)
         {
@@ -26,6 +25,22 @@ namespace Sharp.UI
         public DeviceStateTrigger()
         {
             MauiObject = new Microsoft.Maui.Controls.DeviceStateTrigger();
+        }
+
+        public DeviceStateTrigger(out DeviceStateTrigger deviceStateTrigger) : this()
+        {
+            deviceStateTrigger = this;
+        }
+
+        public DeviceStateTrigger(Action<DeviceStateTrigger> configure) : this()
+        {
+            configure(this);
+        }
+
+        public DeviceStateTrigger(out DeviceStateTrigger deviceStateTrigger, Action<DeviceStateTrigger> configure) : this()
+        {
+            deviceStateTrigger = this;
+            configure(this);
         }
 
         // ----- operators -----

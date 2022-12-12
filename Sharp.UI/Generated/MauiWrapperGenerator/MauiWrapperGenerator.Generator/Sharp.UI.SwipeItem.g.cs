@@ -10,10 +10,8 @@ namespace Sharp.UI
     public partial class SwipeItem : Microsoft.Maui.Controls.SwipeItem, Sharp.UI.ISwipeItem, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public SwipeItem() { }
-
 
         public SwipeItem(out SwipeItem swipeItem) 
         {

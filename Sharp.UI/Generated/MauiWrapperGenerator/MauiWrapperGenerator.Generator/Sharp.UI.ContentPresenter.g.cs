@@ -10,10 +10,8 @@ namespace Sharp.UI
     public partial class ContentPresenter : Microsoft.Maui.Controls.ContentPresenter, Sharp.UI.IContentPresenter, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public ContentPresenter() { }
-
 
         public ContentPresenter(out ContentPresenter contentPresenter) 
         {

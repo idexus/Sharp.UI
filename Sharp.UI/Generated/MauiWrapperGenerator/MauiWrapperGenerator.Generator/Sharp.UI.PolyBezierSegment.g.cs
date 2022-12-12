@@ -16,7 +16,6 @@ namespace Sharp.UI
         public Microsoft.Maui.Controls.Shapes.PolyBezierSegment MauiObject { get => (Microsoft.Maui.Controls.Shapes.PolyBezierSegment)_maui_RawObject; set => _maui_RawObject = value; }
 
         // ----- constructors -----
-        
 
         protected PolyBezierSegment(Microsoft.Maui.Controls.Shapes.PolyBezierSegment polyBezierSegment)
         {
@@ -27,7 +26,6 @@ namespace Sharp.UI
         {
             MauiObject = new Microsoft.Maui.Controls.Shapes.PolyBezierSegment();
         }
-
 
         public PolyBezierSegment(out PolyBezierSegment polyBezierSegment) : this()
         {

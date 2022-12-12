@@ -16,7 +16,6 @@ namespace Sharp.UI
         public Microsoft.Maui.Controls.ColumnDefinition MauiObject { get => (Microsoft.Maui.Controls.ColumnDefinition)_maui_RawObject; set => _maui_RawObject = value; }
 
         // ----- constructors -----
-        
 
         protected ColumnDefinition(Microsoft.Maui.Controls.ColumnDefinition columnDefinition)
         {
@@ -26,6 +25,22 @@ namespace Sharp.UI
         public ColumnDefinition()
         {
             MauiObject = new Microsoft.Maui.Controls.ColumnDefinition();
+        }
+
+        public ColumnDefinition(out ColumnDefinition columnDefinition) : this()
+        {
+            columnDefinition = this;
+        }
+
+        public ColumnDefinition(Action<ColumnDefinition> configure) : this()
+        {
+            configure(this);
+        }
+
+        public ColumnDefinition(out ColumnDefinition columnDefinition, Action<ColumnDefinition> configure) : this()
+        {
+            columnDefinition = this;
+            configure(this);
         }
 
         // ----- operators -----

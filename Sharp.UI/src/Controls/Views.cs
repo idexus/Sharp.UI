@@ -99,8 +99,7 @@
     [MauiWrapper(typeof(Microsoft.Maui.Controls.Switch))] 
     public partial class Switch { }
 
-    [MauiWrapper(typeof(Microsoft.Maui.Controls.TableView), 
-        generateNoParamConstructor: false)]
+    [MauiWrapper(typeof(Microsoft.Maui.Controls.TableView))] 
     public partial class TableView
     {
         public TableView()

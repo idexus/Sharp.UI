@@ -14,10 +14,8 @@ namespace Sharp.UI
     public partial class FlyoutPage : Microsoft.Maui.Controls.FlyoutPage, Sharp.UI.IFlyoutPage, IEnumerable, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public FlyoutPage() { }
-
 
         public FlyoutPage(out FlyoutPage flyoutPage) 
         {

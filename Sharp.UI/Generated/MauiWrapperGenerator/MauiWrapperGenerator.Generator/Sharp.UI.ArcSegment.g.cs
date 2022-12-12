@@ -10,10 +10,8 @@ namespace Sharp.UI
     public partial class ArcSegment : Microsoft.Maui.Controls.Shapes.ArcSegment, Sharp.UI.IArcSegment, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public ArcSegment() { }
-
 
         public ArcSegment(out ArcSegment arcSegment) 
         {

@@ -10,10 +10,8 @@ namespace Sharp.UI
     public partial class DatePicker : Microsoft.Maui.Controls.DatePicker, Sharp.UI.IDatePicker, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public DatePicker() { }
-
 
         public DatePicker(out DatePicker datePicker) 
         {

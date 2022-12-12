@@ -11,34 +11,34 @@ namespace MauiWrapperGenerator;
 public class MauiSymbolBuilder
 {
     private readonly StringBuilder builder;
-    private readonly INamedTypeSymbol sharpUIType;
+    private readonly INamedTypeSymbol mainType;
 
     //------ attribute parameters ------
-    private readonly INamedTypeSymbol mauiType;
+    private readonly INamedTypeSymbol baseType;
     private readonly List<string> notGenerateList;
     private readonly List<string> constructorWithProperties;
     private readonly string containerPropertyName = null;
     private readonly bool generateAdditionalConstructors = false;
-    private readonly bool generateNoParamConstructor = false;
 
     //--- find out
+    private readonly bool generateNoParamConstructor = false;
     private readonly bool singleItemContainer = false;
     private readonly string containerOfTypeName = null;
 
     private List<string> bindablePropertiesNames = new List<string>();
 
-    private bool noMauiType = false;
+    private bool noBaseType = false;
 
     public MauiSymbolBuilder(INamedTypeSymbol symbol, AttributeData wrapperAttribute, StringBuilder builder)
     {
         this.builder = builder;
 
-        this.sharpUIType = symbol;
+        this.mainType = symbol;
 
         // ------- constructor arguments ------
 
-        // [0] mauiType
-        this.mauiType = wrapperAttribute.ConstructorArguments[0].Value as INamedTypeSymbol;
+        // [0] baseType
+        this.baseType = wrapperAttribute.ConstructorArguments[0].Value as INamedTypeSymbol;
 
         // [1] doNotGenerate
         var notGenerateValues = wrapperAttribute.ConstructorArguments[1].Values;
@@ -54,21 +54,24 @@ public class MauiSymbolBuilder
         else
             this.constructorWithProperties = new List<string>();
 
-        // [4] generateConstructor
-        this.generateAdditionalConstructors = (bool)(wrapperAttribute.ConstructorArguments[4].Value);
-        // [5] generateNoParamConstructor
-        this.generateNoParamConstructor = (bool)(wrapperAttribute.ConstructorArguments[5].Value);
+        // [4] generateAdditionalConstructors
+        this.generateAdditionalConstructors = true;// (bool)(wrapperAttribute.ConstructorArguments[4].Value);
 
-        if (sharpUIType.Constructors.FirstOrDefault(e => e.Parameters.Count() == 0 && !e.IsImplicitlyDeclared) != null)
+        this.generateNoParamConstructor = true;
+
+        if (mainType.Constructors.FirstOrDefault(e => e.Parameters.Count() == 0 && !e.IsImplicitlyDeclared) != null)
             this.generateNoParamConstructor = false;
 
-        if (mauiType == null)
+        if (baseType == null)
         {
-            mauiType = symbol;
-            noMauiType = true;
+            baseType = symbol;
+            noBaseType = true;
         }
         else
         {
+            if (baseType.Constructors.FirstOrDefault(e => e.Parameters.Count() == 0) == null)
+                this.generateNoParamConstructor = false;
+
             // [3] containerPropertyName
             this.containerPropertyName = (string)(wrapperAttribute.ConstructorArguments[3].Value);
             //----------------------------------
@@ -80,8 +83,8 @@ public class MauiSymbolBuilder
 
             // ------- content attribute -------
 
-            var isContainerThis = WrapBuilder.IsGenericIList(mauiType, out var containerType);
-            if (isContainerThis && mauiType.IsSealed)
+            var isContainerThis = WrapBuilder.IsGenericIList(baseType, out var containerType);
+            if (isContainerThis && baseType.IsSealed)
             {
                 this.containerOfTypeName = containerType;
                 this.containerPropertyName = "this";
@@ -101,7 +104,7 @@ public class MauiSymbolBuilder
                 {
                     IPropertySymbol propertySymbol = FindPropertySymbolWithName(this.containerPropertyName);
 
-                    if (propertySymbol == null) throw new Exception($"No content property for: {mauiType.Name}");
+                    if (propertySymbol == null) throw new Exception($"No content property for: {baseType.Name}");
 
                     var mauiContainerType = (INamedTypeSymbol)((propertySymbol).Type);
                     if (WrapBuilder.IsGenericIList(mauiContainerType, out var ofTypeName))
@@ -116,13 +119,17 @@ public class MauiSymbolBuilder
                     }
                 }
             }
+
+            this.generateAdditionalConstructors =
+                mainType.Constructors.FirstOrDefault(e => e.Parameters.Count() == 0 && !e.IsImplicitlyDeclared) != null ||
+                this.generateNoParamConstructor;
         }
     }
 
     AttributeData FindContentPropertyAttribute()
     {
         AttributeData attributeData = null;
-        var type = mauiType;
+        var type = baseType;
         do
         {
             attributeData = type.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains("ContentProperty"));
@@ -135,7 +142,7 @@ public class MauiSymbolBuilder
     IPropertySymbol FindPropertySymbolWithName(string propertyName)
     {
         IPropertySymbol propertySymbol = null;
-        var type = mauiType;
+        var type = baseType;
         do
         {
             propertySymbol = (IPropertySymbol)(type.GetMembers(this.containerPropertyName).FirstOrDefault());
@@ -156,17 +163,17 @@ public class MauiSymbolBuilder
 using System.Collections;
 using System.Collections.ObjectModel;
 ");
-        if (noMauiType)
+        if (noBaseType)
             builder.Append($@"
-namespace {mauiType.ContainingNamespace}
+namespace {baseType.ContainingNamespace}
 {{
-    public partial class {mauiType.Name}
+    public partial class {baseType.Name}
     {{");
         else
         builder.Append($@"
 namespace Sharp.UI
 {{
-    public partial class {sharpUIType.Name} {BaseString()}
+    public partial class {mainType.Name} {BaseString()}
     {{");
         GenerateClass();
         builder.Append($@"
@@ -179,7 +186,7 @@ namespace Sharp.UI
     bool IsBindable()
     {
         var isBindable = false;
-        var type = mauiType;
+        var type = baseType;
 
         do
         {
@@ -194,12 +201,12 @@ namespace Sharp.UI
     string BaseString()
     {
         string baseString;
-        if (mauiType.IsSealed)
-            baseString = $": Sharp.UI.{WrapBuilder.GetInterfaceName(mauiType)}";
+        if (baseType.IsSealed)
+            baseString = $": Sharp.UI.{WrapBuilder.GetInterfaceName(baseType)}";
         else
-            baseString = $": {mauiType.ToDisplayString()}, Sharp.UI.{WrapBuilder.GetInterfaceName(mauiType)}";
+            baseString = $": {baseType.ToDisplayString()}, Sharp.UI.{WrapBuilder.GetInterfaceName(baseType)}";
 
-        if (mauiType.IsSealed) baseString += $", ISealedMauiWrapper";
+        if (baseType.IsSealed) baseString += $", ISealedMauiWrapper";
         if (containerOfTypeName != null && singleItemContainer) baseString += $", IEnumerable";
         if (containerOfTypeName != null && !singleItemContainer) baseString += $", IList<{containerOfTypeName}>";
         if (IsBindable()) baseString += ", IWrappedBindableObject";
@@ -214,12 +221,12 @@ namespace Sharp.UI
 
     void GenerateSealedParentBindable()
     {
-        if (mauiType.IsSealed)
+        if (baseType.IsSealed)
         {
             builder.AppendLine($@"
         // ----- bindable properties -----");
 
-            var type = mauiType;
+            var type = baseType;
             do
             {
                 var properties = type
@@ -286,7 +293,7 @@ namespace Sharp.UI
     void GenerateCollectionDeclaration()
     {
         var prefix = $"this.{containerPropertyName}";
-        if (mauiType.IsSealed) prefix = containerPropertyName.Equals("this") ? "this.MauiObject" : $"this.MauiObject.{containerPropertyName}";
+        if (baseType.IsSealed) prefix = containerPropertyName.Equals("this") ? "this.MauiObject" : $"this.MauiObject.{containerPropertyName}";
 
         if (containerOfTypeName != null && singleItemContainer == false)
         {
@@ -315,8 +322,8 @@ namespace Sharp.UI
     {
         if (IsBindable())
         {
-            var newKeyword = mauiType.IsSealed ? " " : " new ";
-            var accessedWith = mauiType.IsSealed ? "MauiObject" : "base";
+            var newKeyword = baseType.IsSealed ? " " : " new ";
+            var accessedWith = baseType.IsSealed ? "MauiObject" : "base";
             builder.AppendLine($@"
         // ----- binding context -----
 
@@ -337,21 +344,24 @@ namespace Sharp.UI
 
     void GenerateMauiObjectProperty()
     {
-        if (mauiType.IsSealed) builder.AppendLine($@"
+        if (baseType.IsSealed) builder.AppendLine($@"
         // ----- maui object -----
 
         public object _maui_RawObject {{ get; set; }}
 
-        public {mauiType.ToDisplayString()} MauiObject {{ get => ({mauiType.ToDisplayString()})_maui_RawObject; set => _maui_RawObject = value; }}");
+        public {baseType.ToDisplayString()} MauiObject {{ get => ({baseType.ToDisplayString()})_maui_RawObject; set => _maui_RawObject = value; }}");
     }
 
     // ------ generate bindable properties
 
     void GenerateBindable()
     {
-        var bindableInterfaces = sharpUIType
+        var bindableInterfaces = mainType
             .Interfaces
             .Where(e => e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains("Bindable")) != null);
+
+        if (bindableInterfaces.Count() > 0) builder.AppendLine($@"
+        // ----- bindable properties -----");
 
         foreach (var inter in bindableInterfaces)
         {
@@ -370,7 +380,7 @@ namespace Sharp.UI
         var typeName = symbol.Type.Name;
 
         builder.Append($@"
-        public static readonly BindableProperty {name}Property = BindableProperty.Create(nameof({name}), typeof({typeName}), typeof({sharpUIType.ToDisplayString()}), default({typeName}));
+        public static readonly BindableProperty {name}Property = BindableProperty.Create(nameof({name}), typeof({typeName}), typeof({mainType.ToDisplayString()}), default({typeName}));
 
         public {typeName} {name}
         {{
@@ -384,13 +394,13 @@ namespace Sharp.UI
 
     void GeneratePropertiesAndEvents()
     {
-        if (mauiType.IsSealed)
+        if (baseType.IsSealed)
         {
             builder.AppendLine($@"
         // ----- properties / events -----");
             List<string> doneList = new List<string>();
 
-            var type = mauiType;
+            var type = baseType;
             do
             {
                 var properties = type
@@ -432,7 +442,7 @@ namespace Sharp.UI
         var propertyName = property.Name.Split(new[] { "." }, StringSplitOptions.None).Last();
         propertyName = propertyName.Equals("class") ? "@class" : propertyName;
 
-        var accessedWith = propertySymbol.IsStatic ? mauiType.ToDisplayString() : "MauiObject";
+        var accessedWith = propertySymbol.IsStatic ? baseType.ToDisplayString() : "MauiObject";
 
         if (!notGenerateList.Contains(propertyName))
         {
@@ -462,51 +472,49 @@ namespace Sharp.UI
 
     void GenerateConstructor()
     {
-        if (mauiType.IsSealed || generateNoParamConstructor || generateAdditionalConstructors)
+        if (baseType.IsSealed || generateNoParamConstructor || generateAdditionalConstructors)
             builder.AppendLine($@"
-        // ----- constructors -----
-        ");
+        // ----- constructors -----");
 
         // generate base constructors
 
-        if (mauiType.IsSealed)
+        if (baseType.IsSealed)
         {
             builder.AppendLine($@"
-        protected {sharpUIType.Name}({mauiType.ToDisplayString()} {WrapBuilder.CamelCase(sharpUIType.Name)})
+        protected {mainType.Name}({baseType.ToDisplayString()} {WrapBuilder.CamelCase(mainType.Name)})
         {{
-            MauiObject = {WrapBuilder.CamelCase(sharpUIType.Name)};
+            MauiObject = {WrapBuilder.CamelCase(mainType.Name)};
         }}");
             if (generateNoParamConstructor)
             {
                 builder.AppendLine($@"
-        public {sharpUIType.Name}()
+        public {mainType.Name}()
         {{
-            MauiObject = new {mauiType.ToDisplayString()}();
+            MauiObject = new {baseType.ToDisplayString()}();
         }}");
             }
         }
         else if (generateNoParamConstructor)
             builder.AppendLine($@"
-        public {sharpUIType.Name}() {{ }}");
+        public {mainType.Name}() {{ }}");
 
         // generate additional constructors (out/action)
 
-        var thisTail = mauiType.IsSealed || !generateNoParamConstructor ? ": this()" : "";
+        var thisTail = baseType.IsSealed || !generateNoParamConstructor ? ": this()" : "";
         if (generateAdditionalConstructors) builder.AppendLine($@"
-
-        public {sharpUIType.Name}(out {sharpUIType.Name} {WrapBuilder.CamelCase(sharpUIType.Name)}) {thisTail}
+        public {mainType.Name}(out {mainType.Name} {WrapBuilder.CamelCase(mainType.Name)}) {thisTail}
         {{
-            {WrapBuilder.CamelCase(sharpUIType.Name)} = this;
+            {WrapBuilder.CamelCase(mainType.Name)} = this;
         }}
 
-        public {sharpUIType.Name}(Action<{sharpUIType.Name}> configure) {thisTail}
+        public {mainType.Name}(Action<{mainType.Name}> configure) {thisTail}
         {{
             configure(this);
         }}
 
-        public {sharpUIType.Name}(out {sharpUIType.Name} {WrapBuilder.CamelCase(sharpUIType.Name)}, Action<{sharpUIType.Name}> configure) {thisTail}
+        public {mainType.Name}(out {mainType.Name} {WrapBuilder.CamelCase(mainType.Name)}, Action<{mainType.Name}> configure) {thisTail}
         {{
-            {WrapBuilder.CamelCase(sharpUIType.Name)} = this;
+            {WrapBuilder.CamelCase(mainType.Name)} = this;
             configure(this);
         }}");
     }
@@ -524,7 +532,7 @@ namespace Sharp.UI
                 count++;
                 ISymbol property = null;
 
-                var type = mauiType;
+                var type = baseType;
                 do
                 {
                     property = type
@@ -535,7 +543,7 @@ namespace Sharp.UI
                 }
                 while (property == null && !type.BaseType.Name.Equals("Object"));
 
-                if (property == null) throw new ArgumentException($"No property name : {constructorWithProperty}, type: {sharpUIType.Name}");
+                if (property == null) throw new ArgumentException($"No property name : {constructorWithProperty}, type: {mainType.Name}");
                 var propertyTypeName = ((IPropertySymbol)property).Type.ToDisplayString();
 
                 definitionString += $"{propertyTypeName} {constructorWithProperty.ToLower()}";
@@ -545,26 +553,26 @@ namespace Sharp.UI
             this.{constructorWithProperty} = {constructorWithProperty.ToLower()};";
             }
 
-            var thisTail = mauiType.IsSealed ? ": this()" : "";
+            var thisTail = baseType.IsSealed ? ": this()" : "";
 
             builder.AppendLine($@"
-        public {sharpUIType.Name}({definitionString}) {thisTail}
+        public {mainType.Name}({definitionString}) {thisTail}
         {{  {assignmentString}
         }}
 
-        public {sharpUIType.Name}({definitionString}, out {sharpUIType.Name} {WrapBuilder.CamelCase(sharpUIType.Name)}) {thisTail}
+        public {mainType.Name}({definitionString}, out {mainType.Name} {WrapBuilder.CamelCase(mainType.Name)}) {thisTail}
         {{  {assignmentString};
-            {WrapBuilder.CamelCase(sharpUIType.Name)} = this;
+            {WrapBuilder.CamelCase(mainType.Name)} = this;
         }}
 
-        public {sharpUIType.Name}({definitionString}, Action<{sharpUIType.Name}> configure) {thisTail}
+        public {mainType.Name}({definitionString}, Action<{mainType.Name}> configure) {thisTail}
         {{  {assignmentString}
             configure(this);
         }}
 
-        public {sharpUIType.Name}({definitionString}, out {sharpUIType.Name} {WrapBuilder.CamelCase(sharpUIType.Name)}, Action<{sharpUIType.Name}> configure) {thisTail}
+        public {mainType.Name}({definitionString}, out {mainType.Name} {WrapBuilder.CamelCase(mainType.Name)}, Action<{mainType.Name}> configure) {thisTail}
         {{  {assignmentString}
-            {WrapBuilder.CamelCase(sharpUIType.Name)} = this;
+            {WrapBuilder.CamelCase(mainType.Name)} = this;
             configure(this);
         }}");
         }
@@ -574,11 +582,11 @@ namespace Sharp.UI
 
     void GenerateOperators()
     {
-        if (mauiType.IsSealed) builder.AppendLine($@"
+        if (baseType.IsSealed) builder.AppendLine($@"
         // ----- operators -----
 
-        public static implicit operator {sharpUIType.Name}({mauiType.ToDisplayString()} mauiObject) => new {sharpUIType.Name}(mauiObject);
-        public static implicit operator {mauiType.ToDisplayString()}({sharpUIType.Name} obj) => obj.MauiObject;");
+        public static implicit operator {mainType.Name}({baseType.ToDisplayString()} mauiObject) => new {mainType.Name}(mauiObject);
+        public static implicit operator {baseType.ToDisplayString()}({mainType.Name} obj) => obj.MauiObject;");
     }
 
     #endregion

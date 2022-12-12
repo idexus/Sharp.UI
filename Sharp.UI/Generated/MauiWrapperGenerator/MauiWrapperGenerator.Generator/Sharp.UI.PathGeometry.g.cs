@@ -20,7 +20,6 @@ namespace Sharp.UI
         public Microsoft.Maui.Controls.Shapes.PathGeometry MauiObject { get => (Microsoft.Maui.Controls.Shapes.PathGeometry)_maui_RawObject; set => _maui_RawObject = value; }
 
         // ----- constructors -----
-        
 
         protected PathGeometry(Microsoft.Maui.Controls.Shapes.PathGeometry pathGeometry)
         {
@@ -31,7 +30,6 @@ namespace Sharp.UI
         {
             MauiObject = new Microsoft.Maui.Controls.Shapes.PathGeometry();
         }
-
 
         public PathGeometry(out PathGeometry pathGeometry) : this()
         {

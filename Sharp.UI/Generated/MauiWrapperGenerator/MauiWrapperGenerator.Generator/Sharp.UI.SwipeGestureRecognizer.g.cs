@@ -16,7 +16,6 @@ namespace Sharp.UI
         public Microsoft.Maui.Controls.SwipeGestureRecognizer MauiObject { get => (Microsoft.Maui.Controls.SwipeGestureRecognizer)_maui_RawObject; set => _maui_RawObject = value; }
 
         // ----- constructors -----
-        
 
         protected SwipeGestureRecognizer(Microsoft.Maui.Controls.SwipeGestureRecognizer swipeGestureRecognizer)
         {
@@ -27,7 +26,6 @@ namespace Sharp.UI
         {
             MauiObject = new Microsoft.Maui.Controls.SwipeGestureRecognizer();
         }
-
 
         public SwipeGestureRecognizer(out SwipeGestureRecognizer swipeGestureRecognizer) : this()
         {

@@ -14,10 +14,8 @@ namespace Sharp.UI
     public partial class RefreshView : Microsoft.Maui.Controls.RefreshView, Sharp.UI.IRefreshView, IEnumerable, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public RefreshView() { }
-
 
         public RefreshView(out RefreshView refreshView) 
         {

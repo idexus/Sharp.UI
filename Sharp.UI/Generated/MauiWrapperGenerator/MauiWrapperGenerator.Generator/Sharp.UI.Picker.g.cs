@@ -10,10 +10,8 @@ namespace Sharp.UI
     public partial class Picker : Microsoft.Maui.Controls.Picker, Sharp.UI.IPicker, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public Picker() { }
-
 
         public Picker(out Picker picker) 
         {

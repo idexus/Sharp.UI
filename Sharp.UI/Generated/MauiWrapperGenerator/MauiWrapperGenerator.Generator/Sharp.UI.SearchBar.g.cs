@@ -10,10 +10,8 @@ namespace Sharp.UI
     public partial class SearchBar : Microsoft.Maui.Controls.SearchBar, Sharp.UI.ISearchBar, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public SearchBar() { }
-
 
         public SearchBar(out SearchBar searchBar) 
         {

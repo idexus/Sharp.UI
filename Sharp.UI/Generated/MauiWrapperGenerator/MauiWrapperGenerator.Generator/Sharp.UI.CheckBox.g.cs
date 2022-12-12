@@ -10,10 +10,8 @@ namespace Sharp.UI
     public partial class CheckBox : Microsoft.Maui.Controls.CheckBox, Sharp.UI.ICheckBox, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public CheckBox() { }
-
 
         public CheckBox(out CheckBox checkBox) 
         {

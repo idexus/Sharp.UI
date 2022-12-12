@@ -20,11 +20,31 @@ namespace Sharp.UI
         public Microsoft.Maui.Controls.EventTrigger MauiObject { get => (Microsoft.Maui.Controls.EventTrigger)_maui_RawObject; set => _maui_RawObject = value; }
 
         // ----- constructors -----
-        
 
         protected EventTrigger(Microsoft.Maui.Controls.EventTrigger eventTrigger)
         {
             MauiObject = eventTrigger;
+        }
+
+        public EventTrigger()
+        {
+            MauiObject = new Microsoft.Maui.Controls.EventTrigger();
+        }
+
+        public EventTrigger(out EventTrigger eventTrigger) : this()
+        {
+            eventTrigger = this;
+        }
+
+        public EventTrigger(Action<EventTrigger> configure) : this()
+        {
+            configure(this);
+        }
+
+        public EventTrigger(out EventTrigger eventTrigger, Action<EventTrigger> configure) : this()
+        {
+            eventTrigger = this;
+            configure(this);
         }
 
         // ----- operators -----

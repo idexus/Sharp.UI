@@ -16,7 +16,6 @@ namespace Sharp.UI
         public Microsoft.Maui.Controls.OrientationStateTrigger MauiObject { get => (Microsoft.Maui.Controls.OrientationStateTrigger)_maui_RawObject; set => _maui_RawObject = value; }
 
         // ----- constructors -----
-        
 
         protected OrientationStateTrigger(Microsoft.Maui.Controls.OrientationStateTrigger orientationStateTrigger)
         {
@@ -26,6 +25,22 @@ namespace Sharp.UI
         public OrientationStateTrigger()
         {
             MauiObject = new Microsoft.Maui.Controls.OrientationStateTrigger();
+        }
+
+        public OrientationStateTrigger(out OrientationStateTrigger orientationStateTrigger) : this()
+        {
+            orientationStateTrigger = this;
+        }
+
+        public OrientationStateTrigger(Action<OrientationStateTrigger> configure) : this()
+        {
+            configure(this);
+        }
+
+        public OrientationStateTrigger(out OrientationStateTrigger orientationStateTrigger, Action<OrientationStateTrigger> configure) : this()
+        {
+            orientationStateTrigger = this;
+            configure(this);
         }
 
         // ----- operators -----

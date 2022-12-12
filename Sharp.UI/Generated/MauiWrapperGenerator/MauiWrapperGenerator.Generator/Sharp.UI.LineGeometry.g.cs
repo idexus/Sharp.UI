@@ -10,10 +10,8 @@ namespace Sharp.UI
     public partial class LineGeometry : Microsoft.Maui.Controls.Shapes.LineGeometry, Sharp.UI.ILineGeometry, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public LineGeometry() { }
-
 
         public LineGeometry(out LineGeometry lineGeometry) 
         {

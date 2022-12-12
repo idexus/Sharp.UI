@@ -14,10 +14,8 @@ namespace Sharp.UI
     public partial class Border : Microsoft.Maui.Controls.Border, Sharp.UI.IBorder, IEnumerable, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public Border() { }
-
 
         public Border(out Border border) 
         {

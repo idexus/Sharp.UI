@@ -10,10 +10,8 @@ namespace Sharp.UI
     public partial class HStack : Microsoft.Maui.Controls.HorizontalStackLayout, Sharp.UI.IHorizontalStackLayout, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public HStack() { }
-
 
         public HStack(out HStack hStack) 
         {

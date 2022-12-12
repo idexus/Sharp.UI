@@ -10,10 +10,8 @@ namespace Sharp.UI
     public partial class PolyLineSegment : Microsoft.Maui.Controls.Shapes.PolyLineSegment, Sharp.UI.IPolyLineSegment, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public PolyLineSegment() { }
-
 
         public PolyLineSegment(out PolyLineSegment polyLineSegment) 
         {

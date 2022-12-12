@@ -14,10 +14,8 @@ namespace Sharp.UI
     public partial class Shell : Microsoft.Maui.Controls.Shell, Sharp.UI.IShell, IList<Microsoft.Maui.Controls.ShellItem>, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public Shell() { }
-
 
         public Shell(out Shell shell) 
         {

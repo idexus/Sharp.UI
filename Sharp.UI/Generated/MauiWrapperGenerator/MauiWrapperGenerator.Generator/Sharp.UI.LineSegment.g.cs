@@ -10,10 +10,8 @@ namespace Sharp.UI
     public partial class LineSegment : Microsoft.Maui.Controls.Shapes.LineSegment, Sharp.UI.ILineSegment, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public LineSegment() { }
-
 
         public LineSegment(out LineSegment lineSegment) 
         {

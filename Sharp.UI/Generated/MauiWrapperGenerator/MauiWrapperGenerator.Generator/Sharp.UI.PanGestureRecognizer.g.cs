@@ -10,10 +10,8 @@ namespace Sharp.UI
     public partial class PanGestureRecognizer : Microsoft.Maui.Controls.PanGestureRecognizer, Sharp.UI.IPanGestureRecognizer, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public PanGestureRecognizer() { }
-
 
         public PanGestureRecognizer(out PanGestureRecognizer panGestureRecognizer) 
         {

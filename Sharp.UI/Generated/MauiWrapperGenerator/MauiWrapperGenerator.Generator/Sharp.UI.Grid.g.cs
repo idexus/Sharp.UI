@@ -10,10 +10,8 @@ namespace Sharp.UI
     public partial class Grid : Microsoft.Maui.Controls.Grid, Sharp.UI.IGrid, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public Grid() { }
-
 
         public Grid(out Grid grid) 
         {

@@ -16,7 +16,6 @@ namespace Sharp.UI
         public Microsoft.Maui.Controls.Shapes.Ellipse MauiObject { get => (Microsoft.Maui.Controls.Shapes.Ellipse)_maui_RawObject; set => _maui_RawObject = value; }
 
         // ----- constructors -----
-        
 
         protected Ellipse(Microsoft.Maui.Controls.Shapes.Ellipse ellipse)
         {
@@ -27,7 +26,6 @@ namespace Sharp.UI
         {
             MauiObject = new Microsoft.Maui.Controls.Shapes.Ellipse();
         }
-
 
         public Ellipse(out Ellipse ellipse) : this()
         {

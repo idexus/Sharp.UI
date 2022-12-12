@@ -9,6 +9,26 @@ namespace Sharp.UI
 {
     public partial class GradientStop : Microsoft.Maui.Controls.GradientStop, Sharp.UI.IGradientStop, IWrappedBindableObject
     {
+        // ----- constructors -----
+
+        public GradientStop() { }
+
+        public GradientStop(out GradientStop gradientStop) 
+        {
+            gradientStop = this;
+        }
+
+        public GradientStop(Action<GradientStop> configure) 
+        {
+            configure(this);
+        }
+
+        public GradientStop(out GradientStop gradientStop, Action<GradientStop> configure) 
+        {
+            gradientStop = this;
+            configure(this);
+        }
+
         // ----- binding context -----
 
         public new object BindingContext

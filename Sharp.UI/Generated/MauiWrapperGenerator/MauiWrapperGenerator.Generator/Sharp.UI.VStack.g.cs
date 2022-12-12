@@ -10,10 +10,8 @@ namespace Sharp.UI
     public partial class VStack : Microsoft.Maui.Controls.VerticalStackLayout, Sharp.UI.IVerticalStackLayout, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public VStack() { }
-
 
         public VStack(out VStack vStack) 
         {

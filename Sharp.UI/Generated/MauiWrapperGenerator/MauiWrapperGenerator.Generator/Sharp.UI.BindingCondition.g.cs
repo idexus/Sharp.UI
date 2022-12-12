@@ -16,11 +16,31 @@ namespace Sharp.UI
         public Microsoft.Maui.Controls.BindingCondition MauiObject { get => (Microsoft.Maui.Controls.BindingCondition)_maui_RawObject; set => _maui_RawObject = value; }
 
         // ----- constructors -----
-        
 
         protected BindingCondition(Microsoft.Maui.Controls.BindingCondition bindingCondition)
         {
             MauiObject = bindingCondition;
+        }
+
+        public BindingCondition()
+        {
+            MauiObject = new Microsoft.Maui.Controls.BindingCondition();
+        }
+
+        public BindingCondition(out BindingCondition bindingCondition) : this()
+        {
+            bindingCondition = this;
+        }
+
+        public BindingCondition(Action<BindingCondition> configure) : this()
+        {
+            configure(this);
+        }
+
+        public BindingCondition(out BindingCondition bindingCondition, Action<BindingCondition> configure) : this()
+        {
+            bindingCondition = this;
+            configure(this);
         }
 
         // ----- operators -----

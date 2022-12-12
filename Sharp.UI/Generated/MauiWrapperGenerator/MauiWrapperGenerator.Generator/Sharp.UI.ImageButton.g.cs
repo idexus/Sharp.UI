@@ -10,10 +10,8 @@ namespace Sharp.UI
     public partial class ImageButton : Microsoft.Maui.Controls.ImageButton, Sharp.UI.IImageButton, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public ImageButton() { }
-
 
         public ImageButton(out ImageButton imageButton) 
         {

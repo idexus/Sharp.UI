@@ -10,10 +10,8 @@ namespace Sharp.UI
     public partial class FlexLayout : Microsoft.Maui.Controls.FlexLayout, Sharp.UI.IFlexLayout, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public FlexLayout() { }
-
 
         public FlexLayout(out FlexLayout flexLayout) 
         {

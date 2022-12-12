@@ -16,7 +16,6 @@ namespace Sharp.UI
         public Microsoft.Maui.Controls.Shapes.Line MauiObject { get => (Microsoft.Maui.Controls.Shapes.Line)_maui_RawObject; set => _maui_RawObject = value; }
 
         // ----- constructors -----
-        
 
         protected Line(Microsoft.Maui.Controls.Shapes.Line line)
         {
@@ -27,7 +26,6 @@ namespace Sharp.UI
         {
             MauiObject = new Microsoft.Maui.Controls.Shapes.Line();
         }
-
 
         public Line(out Line line) : this()
         {

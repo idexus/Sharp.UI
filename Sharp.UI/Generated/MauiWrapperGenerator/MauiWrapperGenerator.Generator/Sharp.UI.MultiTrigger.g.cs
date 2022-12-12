@@ -20,7 +20,6 @@ namespace Sharp.UI
         public Microsoft.Maui.Controls.MultiTrigger MauiObject { get => (Microsoft.Maui.Controls.MultiTrigger)_maui_RawObject; set => _maui_RawObject = value; }
 
         // ----- constructors -----
-        
 
         protected MultiTrigger(Microsoft.Maui.Controls.MultiTrigger multiTrigger)
         {

@@ -16,7 +16,6 @@ namespace Sharp.UI
         public Microsoft.Maui.Controls.TapGestureRecognizer MauiObject { get => (Microsoft.Maui.Controls.TapGestureRecognizer)_maui_RawObject; set => _maui_RawObject = value; }
 
         // ----- constructors -----
-        
 
         protected TapGestureRecognizer(Microsoft.Maui.Controls.TapGestureRecognizer tapGestureRecognizer)
         {
@@ -27,7 +26,6 @@ namespace Sharp.UI
         {
             MauiObject = new Microsoft.Maui.Controls.TapGestureRecognizer();
         }
-
 
         public TapGestureRecognizer(out TapGestureRecognizer tapGestureRecognizer) : this()
         {

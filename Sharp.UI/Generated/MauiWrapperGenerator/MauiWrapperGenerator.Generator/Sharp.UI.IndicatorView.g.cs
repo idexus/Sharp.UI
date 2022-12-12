@@ -14,10 +14,8 @@ namespace Sharp.UI
     public partial class IndicatorView : Microsoft.Maui.Controls.IndicatorView, Sharp.UI.IIndicatorView, IEnumerable, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public IndicatorView() { }
-
 
         public IndicatorView(out IndicatorView indicatorView) 
         {

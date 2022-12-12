@@ -14,10 +14,8 @@ namespace Sharp.UI
     public partial class Frame : Microsoft.Maui.Controls.Frame, Sharp.UI.IFrame, IEnumerable, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public Frame() { }
-
 
         public Frame(out Frame frame) 
         {

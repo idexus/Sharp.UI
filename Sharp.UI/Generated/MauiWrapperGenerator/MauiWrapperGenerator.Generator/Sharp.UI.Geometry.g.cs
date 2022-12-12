@@ -10,10 +10,8 @@ namespace Sharp.UI
     public partial class Geometry : Microsoft.Maui.Controls.Shapes.Geometry, Sharp.UI.IGeometry, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public Geometry() { }
-
 
         public Geometry(out Geometry geometry) 
         {

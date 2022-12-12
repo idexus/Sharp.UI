@@ -20,7 +20,6 @@ namespace Sharp.UI
         public Microsoft.Maui.Controls.TableSection MauiObject { get => (Microsoft.Maui.Controls.TableSection)_maui_RawObject; set => _maui_RawObject = value; }
 
         // ----- constructors -----
-        
 
         protected TableSection(Microsoft.Maui.Controls.TableSection tableSection)
         {
@@ -31,7 +30,6 @@ namespace Sharp.UI
         {
             MauiObject = new Microsoft.Maui.Controls.TableSection();
         }
-
 
         public TableSection(out TableSection tableSection) : this()
         {

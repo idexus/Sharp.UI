@@ -16,11 +16,31 @@ namespace Sharp.UI
         public Microsoft.Maui.Controls.CompareStateTrigger MauiObject { get => (Microsoft.Maui.Controls.CompareStateTrigger)_maui_RawObject; set => _maui_RawObject = value; }
 
         // ----- constructors -----
-        
 
         protected CompareStateTrigger(Microsoft.Maui.Controls.CompareStateTrigger compareStateTrigger)
         {
             MauiObject = compareStateTrigger;
+        }
+
+        public CompareStateTrigger()
+        {
+            MauiObject = new Microsoft.Maui.Controls.CompareStateTrigger();
+        }
+
+        public CompareStateTrigger(out CompareStateTrigger compareStateTrigger) : this()
+        {
+            compareStateTrigger = this;
+        }
+
+        public CompareStateTrigger(Action<CompareStateTrigger> configure) : this()
+        {
+            configure(this);
+        }
+
+        public CompareStateTrigger(out CompareStateTrigger compareStateTrigger, Action<CompareStateTrigger> configure) : this()
+        {
+            compareStateTrigger = this;
+            configure(this);
         }
 
         // ----- operators -----

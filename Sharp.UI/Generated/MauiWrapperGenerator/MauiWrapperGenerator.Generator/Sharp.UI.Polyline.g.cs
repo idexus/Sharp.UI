@@ -20,7 +20,6 @@ namespace Sharp.UI
         public Microsoft.Maui.Controls.Shapes.Polyline MauiObject { get => (Microsoft.Maui.Controls.Shapes.Polyline)_maui_RawObject; set => _maui_RawObject = value; }
 
         // ----- constructors -----
-        
 
         protected Polyline(Microsoft.Maui.Controls.Shapes.Polyline polyline)
         {
@@ -31,7 +30,6 @@ namespace Sharp.UI
         {
             MauiObject = new Microsoft.Maui.Controls.Shapes.Polyline();
         }
-
 
         public Polyline(out Polyline polyline) : this()
         {

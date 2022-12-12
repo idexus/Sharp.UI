@@ -10,10 +10,8 @@ namespace Sharp.UI
     public partial class Stepper : Microsoft.Maui.Controls.Stepper, Sharp.UI.IStepper, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public Stepper() { }
-
 
         public Stepper(out Stepper stepper) 
         {

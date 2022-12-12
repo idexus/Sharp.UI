@@ -10,10 +10,8 @@ namespace Sharp.UI
     public partial class EntryCell : Microsoft.Maui.Controls.EntryCell, Sharp.UI.IEntryCell, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public EntryCell() { }
-
 
         public EntryCell(out EntryCell entryCell) 
         {

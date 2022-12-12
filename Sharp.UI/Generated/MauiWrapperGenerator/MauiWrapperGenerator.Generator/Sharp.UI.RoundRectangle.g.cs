@@ -16,7 +16,6 @@ namespace Sharp.UI
         public Microsoft.Maui.Controls.Shapes.RoundRectangle MauiObject { get => (Microsoft.Maui.Controls.Shapes.RoundRectangle)_maui_RawObject; set => _maui_RawObject = value; }
 
         // ----- constructors -----
-        
 
         protected RoundRectangle(Microsoft.Maui.Controls.Shapes.RoundRectangle roundRectangle)
         {
@@ -27,7 +26,6 @@ namespace Sharp.UI
         {
             MauiObject = new Microsoft.Maui.Controls.Shapes.RoundRectangle();
         }
-
 
         public RoundRectangle(out RoundRectangle roundRectangle) : this()
         {

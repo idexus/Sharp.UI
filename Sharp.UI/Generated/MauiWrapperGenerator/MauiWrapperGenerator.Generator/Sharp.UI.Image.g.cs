@@ -10,10 +10,8 @@ namespace Sharp.UI
     public partial class Image : Microsoft.Maui.Controls.Image, Sharp.UI.IImage, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public Image() { }
-
 
         public Image(out Image image) 
         {

@@ -10,10 +10,8 @@ namespace Sharp.UI
     public partial class VisualStateGroupList : Microsoft.Maui.Controls.VisualStateGroupList, Sharp.UI.IVisualStateGroupList
     {
         // ----- constructors -----
-        
 
         public VisualStateGroupList() { }
-
 
         public VisualStateGroupList(out VisualStateGroupList visualStateGroupList) 
         {

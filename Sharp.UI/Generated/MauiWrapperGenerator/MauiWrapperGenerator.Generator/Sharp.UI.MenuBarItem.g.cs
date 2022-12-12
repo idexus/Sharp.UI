@@ -10,10 +10,8 @@ namespace Sharp.UI
     public partial class MenuBarItem : Microsoft.Maui.Controls.MenuBarItem, Sharp.UI.IMenuBarItem, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public MenuBarItem() { }
-
 
         public MenuBarItem(out MenuBarItem menuBarItem) 
         {

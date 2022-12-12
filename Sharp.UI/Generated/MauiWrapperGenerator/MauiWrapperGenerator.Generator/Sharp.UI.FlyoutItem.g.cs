@@ -14,10 +14,8 @@ namespace Sharp.UI
     public partial class FlyoutItem : Microsoft.Maui.Controls.FlyoutItem, Sharp.UI.IFlyoutItem, IList<Microsoft.Maui.Controls.ShellSection>, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public FlyoutItem() { }
-
 
         public FlyoutItem(out FlyoutItem flyoutItem) 
         {

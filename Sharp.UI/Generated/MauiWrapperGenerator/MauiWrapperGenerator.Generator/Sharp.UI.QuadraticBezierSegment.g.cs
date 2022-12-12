@@ -10,10 +10,8 @@ namespace Sharp.UI
     public partial class QuadraticBezierSegment : Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment, Sharp.UI.IQuadraticBezierSegment, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public QuadraticBezierSegment() { }
-
 
         public QuadraticBezierSegment(out QuadraticBezierSegment quadraticBezierSegment) 
         {

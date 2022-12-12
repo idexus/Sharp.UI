@@ -10,10 +10,8 @@ namespace Sharp.UI
     public partial class ProgressBar : Microsoft.Maui.Controls.ProgressBar, Sharp.UI.IProgressBar, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public ProgressBar() { }
-
 
         public ProgressBar(out ProgressBar progressBar) 
         {

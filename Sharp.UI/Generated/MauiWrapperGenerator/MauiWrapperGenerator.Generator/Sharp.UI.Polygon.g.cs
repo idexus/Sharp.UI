@@ -20,7 +20,6 @@ namespace Sharp.UI
         public Microsoft.Maui.Controls.Shapes.Polygon MauiObject { get => (Microsoft.Maui.Controls.Shapes.Polygon)_maui_RawObject; set => _maui_RawObject = value; }
 
         // ----- constructors -----
-        
 
         protected Polygon(Microsoft.Maui.Controls.Shapes.Polygon polygon)
         {
@@ -31,7 +30,6 @@ namespace Sharp.UI
         {
             MauiObject = new Microsoft.Maui.Controls.Shapes.Polygon();
         }
-
 
         public Polygon(out Polygon polygon) : this()
         {

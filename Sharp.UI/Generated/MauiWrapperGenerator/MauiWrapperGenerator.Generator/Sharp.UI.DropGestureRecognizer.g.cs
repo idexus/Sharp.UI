@@ -10,10 +10,8 @@ namespace Sharp.UI
     public partial class DropGestureRecognizer : Microsoft.Maui.Controls.DropGestureRecognizer, Sharp.UI.IDropGestureRecognizer, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public DropGestureRecognizer() { }
-
 
         public DropGestureRecognizer(out DropGestureRecognizer dropGestureRecognizer) 
         {

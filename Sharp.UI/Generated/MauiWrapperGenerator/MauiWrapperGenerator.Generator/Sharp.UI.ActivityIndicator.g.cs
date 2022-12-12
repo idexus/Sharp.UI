@@ -10,10 +10,8 @@ namespace Sharp.UI
     public partial class ActivityIndicator : Microsoft.Maui.Controls.ActivityIndicator, Sharp.UI.IActivityIndicator, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public ActivityIndicator() { }
-
 
         public ActivityIndicator(out ActivityIndicator activityIndicator) 
         {

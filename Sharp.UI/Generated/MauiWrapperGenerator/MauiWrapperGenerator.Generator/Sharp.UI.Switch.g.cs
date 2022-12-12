@@ -10,10 +10,8 @@ namespace Sharp.UI
     public partial class Switch : Microsoft.Maui.Controls.Switch, Sharp.UI.ISwitch, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public Switch() { }
-
 
         public Switch(out Switch @switch) 
         {

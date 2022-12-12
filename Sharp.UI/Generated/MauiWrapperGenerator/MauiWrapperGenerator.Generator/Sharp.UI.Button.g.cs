@@ -10,10 +10,8 @@ namespace Sharp.UI
     public partial class Button : Microsoft.Maui.Controls.Button, Sharp.UI.IButton, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public Button() { }
-
 
         public Button(out Button button) 
         {

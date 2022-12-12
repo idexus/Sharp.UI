@@ -16,7 +16,6 @@ namespace Sharp.UI
         public Microsoft.Maui.Controls.Binding MauiObject { get => (Microsoft.Maui.Controls.Binding)_maui_RawObject; set => _maui_RawObject = value; }
 
         // ----- constructors -----
-        
 
         protected Binding(Microsoft.Maui.Controls.Binding binding)
         {
@@ -26,6 +25,22 @@ namespace Sharp.UI
         public Binding()
         {
             MauiObject = new Microsoft.Maui.Controls.Binding();
+        }
+
+        public Binding(out Binding binding) : this()
+        {
+            binding = this;
+        }
+
+        public Binding(Action<Binding> configure) : this()
+        {
+            configure(this);
+        }
+
+        public Binding(out Binding binding, Action<Binding> configure) : this()
+        {
+            binding = this;
+            configure(this);
         }
 
         // ----- operators -----

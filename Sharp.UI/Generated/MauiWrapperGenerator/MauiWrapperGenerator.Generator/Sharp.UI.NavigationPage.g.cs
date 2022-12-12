@@ -10,10 +10,8 @@ namespace Sharp.UI
     public partial class NavigationPage : Microsoft.Maui.Controls.NavigationPage, Sharp.UI.INavigationPage, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public NavigationPage() { }
-
 
         public NavigationPage(out NavigationPage navigationPage) 
         {

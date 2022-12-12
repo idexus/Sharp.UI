@@ -14,10 +14,8 @@ namespace Sharp.UI
     public partial class TabbedPage : Microsoft.Maui.Controls.TabbedPage, Sharp.UI.ITabbedPage, IList<Microsoft.Maui.Controls.Page>, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public TabbedPage() { }
-
 
         public TabbedPage(out TabbedPage tabbedPage) 
         {

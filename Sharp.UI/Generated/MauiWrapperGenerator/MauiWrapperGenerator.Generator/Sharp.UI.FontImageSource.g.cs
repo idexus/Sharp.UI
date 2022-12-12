@@ -10,10 +10,8 @@ namespace Sharp.UI
     public partial class FontImageSource : Microsoft.Maui.Controls.FontImageSource, Sharp.UI.IFontImageSource, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public FontImageSource() { }
-
 
         public FontImageSource(out FontImageSource fontImageSource) 
         {

@@ -10,10 +10,8 @@ namespace Sharp.UI
     public partial class WebView : Microsoft.Maui.Controls.WebView, Sharp.UI.IWebView, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public WebView() { }
-
 
         public WebView(out WebView webView) 
         {

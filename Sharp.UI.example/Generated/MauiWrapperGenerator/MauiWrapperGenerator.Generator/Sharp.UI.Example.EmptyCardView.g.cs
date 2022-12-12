@@ -10,10 +10,8 @@ namespace Sharp.UI.Example
     public partial class EmptyCardView
     {
         // ----- constructors -----
-        
 
         public EmptyCardView() { }
-
 
         public EmptyCardView(out EmptyCardView emptyCardView) 
         {
@@ -30,6 +28,8 @@ namespace Sharp.UI.Example
             emptyCardView = this;
             configure(this);
         }
+
+        // ----- bindable properties -----
 
         public static readonly BindableProperty CardTitleProperty = BindableProperty.Create(nameof(CardTitle), typeof(String), typeof(Sharp.UI.Example.EmptyCardView), default(String));
 

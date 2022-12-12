@@ -10,10 +10,8 @@ namespace Sharp.UI
     public partial class Entry : Microsoft.Maui.Controls.Entry, Sharp.UI.IEntry, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public Entry() { }
-
 
         public Entry(out Entry entry) 
         {

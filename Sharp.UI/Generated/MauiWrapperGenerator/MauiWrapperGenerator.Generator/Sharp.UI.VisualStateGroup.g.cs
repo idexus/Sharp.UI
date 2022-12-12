@@ -20,7 +20,6 @@ namespace Sharp.UI
         public Microsoft.Maui.Controls.VisualStateGroup MauiObject { get => (Microsoft.Maui.Controls.VisualStateGroup)_maui_RawObject; set => _maui_RawObject = value; }
 
         // ----- constructors -----
-        
 
         protected VisualStateGroup(Microsoft.Maui.Controls.VisualStateGroup visualStateGroup)
         {
@@ -30,6 +29,22 @@ namespace Sharp.UI
         public VisualStateGroup()
         {
             MauiObject = new Microsoft.Maui.Controls.VisualStateGroup();
+        }
+
+        public VisualStateGroup(out VisualStateGroup visualStateGroup) : this()
+        {
+            visualStateGroup = this;
+        }
+
+        public VisualStateGroup(Action<VisualStateGroup> configure) : this()
+        {
+            configure(this);
+        }
+
+        public VisualStateGroup(out VisualStateGroup visualStateGroup, Action<VisualStateGroup> configure) : this()
+        {
+            visualStateGroup = this;
+            configure(this);
         }
 
         // ----- operators -----

@@ -10,10 +10,8 @@ namespace Sharp.UI
     public partial class CollectionView : Microsoft.Maui.Controls.CollectionView, Sharp.UI.ICollectionView, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public CollectionView() { }
-
 
         public CollectionView(out CollectionView collectionView) 
         {

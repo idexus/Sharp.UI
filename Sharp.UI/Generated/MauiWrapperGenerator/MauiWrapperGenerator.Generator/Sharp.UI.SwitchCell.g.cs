@@ -10,10 +10,8 @@ namespace Sharp.UI
     public partial class SwitchCell : Microsoft.Maui.Controls.SwitchCell, Sharp.UI.ISwitchCell, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public SwitchCell() { }
-
 
         public SwitchCell(out SwitchCell switchCell) 
         {

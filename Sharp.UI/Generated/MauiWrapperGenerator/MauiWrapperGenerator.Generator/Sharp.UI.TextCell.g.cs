@@ -10,10 +10,8 @@ namespace Sharp.UI
     public partial class TextCell : Microsoft.Maui.Controls.TextCell, Sharp.UI.ITextCell, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public TextCell() { }
-
 
         public TextCell(out TextCell textCell) 
         {

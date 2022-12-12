@@ -10,10 +10,8 @@ namespace Sharp.UI
     public partial class CarouselView : Microsoft.Maui.Controls.CarouselView, Sharp.UI.ICarouselView, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public CarouselView() { }
-
 
         public CarouselView(out CarouselView carouselView) 
         {

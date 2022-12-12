@@ -14,10 +14,8 @@ namespace Sharp.UI
     public partial class ShellContent : Microsoft.Maui.Controls.ShellContent, Sharp.UI.IShellContent, IEnumerable, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public ShellContent() { }
-
 
         public ShellContent(out ShellContent shellContent) 
         {

@@ -16,7 +16,6 @@ namespace Sharp.UI
         public Microsoft.Maui.Controls.RowDefinition MauiObject { get => (Microsoft.Maui.Controls.RowDefinition)_maui_RawObject; set => _maui_RawObject = value; }
 
         // ----- constructors -----
-        
 
         protected RowDefinition(Microsoft.Maui.Controls.RowDefinition rowDefinition)
         {
@@ -26,6 +25,22 @@ namespace Sharp.UI
         public RowDefinition()
         {
             MauiObject = new Microsoft.Maui.Controls.RowDefinition();
+        }
+
+        public RowDefinition(out RowDefinition rowDefinition) : this()
+        {
+            rowDefinition = this;
+        }
+
+        public RowDefinition(Action<RowDefinition> configure) : this()
+        {
+            configure(this);
+        }
+
+        public RowDefinition(out RowDefinition rowDefinition, Action<RowDefinition> configure) : this()
+        {
+            rowDefinition = this;
+            configure(this);
         }
 
         // ----- operators -----

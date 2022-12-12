@@ -14,10 +14,8 @@ namespace Sharp.UI
     public partial class ContentPage : Microsoft.Maui.Controls.ContentPage, Sharp.UI.IContentPage, IEnumerable, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public ContentPage() { }
-
 
         public ContentPage(out ContentPage contentPage) 
         {

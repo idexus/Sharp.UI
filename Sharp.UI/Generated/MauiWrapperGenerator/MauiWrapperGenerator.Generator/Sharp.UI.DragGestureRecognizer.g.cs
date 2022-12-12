@@ -10,10 +10,8 @@ namespace Sharp.UI
     public partial class DragGestureRecognizer : Microsoft.Maui.Controls.DragGestureRecognizer, Sharp.UI.IDragGestureRecognizer, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public DragGestureRecognizer() { }
-
 
         public DragGestureRecognizer(out DragGestureRecognizer dragGestureRecognizer) 
         {

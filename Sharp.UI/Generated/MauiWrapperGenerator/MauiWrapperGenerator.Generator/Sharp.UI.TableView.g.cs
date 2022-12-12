@@ -14,8 +14,6 @@ namespace Sharp.UI
     public partial class TableView : Microsoft.Maui.Controls.TableView, Sharp.UI.ITableView, IList<Microsoft.Maui.Controls.TableSection>, IWrappedBindableObject
     {
         // ----- constructors -----
-        
-
 
         public TableView(out TableView tableView) : this()
         {

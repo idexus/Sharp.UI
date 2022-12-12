@@ -10,10 +10,8 @@ namespace Sharp.UI.Example
     public partial class SecondPageViewModel
     {
         // ----- constructors -----
-        
 
         public SecondPageViewModel() { }
-
 
         public SecondPageViewModel(out SecondPageViewModel secondPageViewModel) 
         {
@@ -30,6 +28,8 @@ namespace Sharp.UI.Example
             secondPageViewModel = this;
             configure(this);
         }
+
+        // ----- bindable properties -----
 
         public static readonly BindableProperty TitleProperty = BindableProperty.Create(nameof(Title), typeof(String), typeof(Sharp.UI.Example.SecondPageViewModel), default(String));
 

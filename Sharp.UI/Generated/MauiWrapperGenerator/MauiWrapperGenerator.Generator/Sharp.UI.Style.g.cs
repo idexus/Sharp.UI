@@ -20,7 +20,6 @@ namespace Sharp.UI
         public Microsoft.Maui.Controls.Style MauiObject { get => (Microsoft.Maui.Controls.Style)_maui_RawObject; set => _maui_RawObject = value; }
 
         // ----- constructors -----
-        
 
         protected Style(Microsoft.Maui.Controls.Style style)
         {

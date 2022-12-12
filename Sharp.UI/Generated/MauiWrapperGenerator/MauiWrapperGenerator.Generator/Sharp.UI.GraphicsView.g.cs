@@ -10,10 +10,8 @@ namespace Sharp.UI
     public partial class GraphicsView : Microsoft.Maui.Controls.GraphicsView, Sharp.UI.IGraphicsView, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public GraphicsView() { }
-
 
         public GraphicsView(out GraphicsView graphicsView) 
         {

@@ -14,10 +14,8 @@ namespace Sharp.UI
     public partial class Label : Microsoft.Maui.Controls.Label, Sharp.UI.ILabel, IEnumerable, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public Label() { }
-
 
         public Label(out Label label) 
         {

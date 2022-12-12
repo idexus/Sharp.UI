@@ -20,13 +20,16 @@ namespace Sharp.UI
         public Microsoft.Maui.Controls.VisualState MauiObject { get => (Microsoft.Maui.Controls.VisualState)_maui_RawObject; set => _maui_RawObject = value; }
 
         // ----- constructors -----
-        
 
         protected VisualState(Microsoft.Maui.Controls.VisualState visualState)
         {
             MauiObject = visualState;
         }
 
+        public VisualState()
+        {
+            MauiObject = new Microsoft.Maui.Controls.VisualState();
+        }
 
         public VisualState(out VisualState visualState) : this()
         {

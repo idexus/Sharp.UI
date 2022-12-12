@@ -16,7 +16,6 @@ namespace Sharp.UI
         public Microsoft.Maui.Controls.AdaptiveTrigger MauiObject { get => (Microsoft.Maui.Controls.AdaptiveTrigger)_maui_RawObject; set => _maui_RawObject = value; }
 
         // ----- constructors -----
-        
 
         protected AdaptiveTrigger(Microsoft.Maui.Controls.AdaptiveTrigger adaptiveTrigger)
         {
@@ -26,6 +25,22 @@ namespace Sharp.UI
         public AdaptiveTrigger()
         {
             MauiObject = new Microsoft.Maui.Controls.AdaptiveTrigger();
+        }
+
+        public AdaptiveTrigger(out AdaptiveTrigger adaptiveTrigger) : this()
+        {
+            adaptiveTrigger = this;
+        }
+
+        public AdaptiveTrigger(Action<AdaptiveTrigger> configure) : this()
+        {
+            configure(this);
+        }
+
+        public AdaptiveTrigger(out AdaptiveTrigger adaptiveTrigger, Action<AdaptiveTrigger> configure) : this()
+        {
+            adaptiveTrigger = this;
+            configure(this);
         }
 
         // ----- operators -----

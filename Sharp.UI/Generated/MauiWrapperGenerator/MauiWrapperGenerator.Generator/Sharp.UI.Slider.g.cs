@@ -10,10 +10,8 @@ namespace Sharp.UI
     public partial class Slider : Microsoft.Maui.Controls.Slider, Sharp.UI.ISlider, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public Slider() { }
-
 
         public Slider(out Slider slider) 
         {

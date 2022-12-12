@@ -14,10 +14,8 @@ namespace Sharp.UI
     public partial class ScrollView : Microsoft.Maui.Controls.ScrollView, Sharp.UI.IScrollView, IEnumerable, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public ScrollView() { }
-
 
         public ScrollView(out ScrollView scrollView) 
         {

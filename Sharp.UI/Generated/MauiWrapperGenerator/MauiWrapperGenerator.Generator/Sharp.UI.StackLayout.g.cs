@@ -10,10 +10,8 @@ namespace Sharp.UI
     public partial class StackLayout : Microsoft.Maui.Controls.StackLayout, Sharp.UI.IStackLayout, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public StackLayout() { }
-
 
         public StackLayout(out StackLayout stackLayout) 
         {

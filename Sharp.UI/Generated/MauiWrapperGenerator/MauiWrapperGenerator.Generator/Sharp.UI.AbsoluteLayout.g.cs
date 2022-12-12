@@ -10,10 +10,8 @@ namespace Sharp.UI
     public partial class AbsoluteLayout : Microsoft.Maui.Controls.AbsoluteLayout, Sharp.UI.IAbsoluteLayout, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public AbsoluteLayout() { }
-
 
         public AbsoluteLayout(out AbsoluteLayout absoluteLayout) 
         {

@@ -14,10 +14,8 @@ namespace Sharp.UI
     public partial class ViewCell : Microsoft.Maui.Controls.ViewCell, Sharp.UI.IViewCell, IEnumerable, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public ViewCell() { }
-
 
         public ViewCell(out ViewCell viewCell) 
         {

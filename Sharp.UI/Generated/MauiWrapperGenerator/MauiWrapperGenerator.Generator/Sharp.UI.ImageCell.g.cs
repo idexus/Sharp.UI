@@ -10,10 +10,8 @@ namespace Sharp.UI
     public partial class ImageCell : Microsoft.Maui.Controls.ImageCell, Sharp.UI.IImageCell, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public ImageCell() { }
-
 
         public ImageCell(out ImageCell imageCell) 
         {

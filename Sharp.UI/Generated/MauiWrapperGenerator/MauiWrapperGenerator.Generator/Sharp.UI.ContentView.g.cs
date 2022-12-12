@@ -14,10 +14,8 @@ namespace Sharp.UI
     public partial class ContentView : Microsoft.Maui.Controls.ContentView, Sharp.UI.IContentView, IEnumerable, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public ContentView() { }
-
 
         public ContentView(out ContentView contentView) 
         {

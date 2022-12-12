@@ -16,7 +16,6 @@ namespace Sharp.UI
         public Microsoft.Maui.Controls.StateTrigger MauiObject { get => (Microsoft.Maui.Controls.StateTrigger)_maui_RawObject; set => _maui_RawObject = value; }
 
         // ----- constructors -----
-        
 
         protected StateTrigger(Microsoft.Maui.Controls.StateTrigger stateTrigger)
         {
@@ -26,6 +25,22 @@ namespace Sharp.UI
         public StateTrigger()
         {
             MauiObject = new Microsoft.Maui.Controls.StateTrigger();
+        }
+
+        public StateTrigger(out StateTrigger stateTrigger) : this()
+        {
+            stateTrigger = this;
+        }
+
+        public StateTrigger(Action<StateTrigger> configure) : this()
+        {
+            configure(this);
+        }
+
+        public StateTrigger(out StateTrigger stateTrigger, Action<StateTrigger> configure) : this()
+        {
+            stateTrigger = this;
+            configure(this);
         }
 
         // ----- operators -----

@@ -16,7 +16,6 @@ namespace Sharp.UI
         public Microsoft.Maui.Controls.PinchGestureRecognizer MauiObject { get => (Microsoft.Maui.Controls.PinchGestureRecognizer)_maui_RawObject; set => _maui_RawObject = value; }
 
         // ----- constructors -----
-        
 
         protected PinchGestureRecognizer(Microsoft.Maui.Controls.PinchGestureRecognizer pinchGestureRecognizer)
         {
@@ -27,7 +26,6 @@ namespace Sharp.UI
         {
             MauiObject = new Microsoft.Maui.Controls.PinchGestureRecognizer();
         }
-
 
         public PinchGestureRecognizer(out PinchGestureRecognizer pinchGestureRecognizer) : this()
         {

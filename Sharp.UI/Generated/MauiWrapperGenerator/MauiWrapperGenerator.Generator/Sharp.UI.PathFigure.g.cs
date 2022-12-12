@@ -20,7 +20,6 @@ namespace Sharp.UI
         public Microsoft.Maui.Controls.Shapes.PathFigure MauiObject { get => (Microsoft.Maui.Controls.Shapes.PathFigure)_maui_RawObject; set => _maui_RawObject = value; }
 
         // ----- constructors -----
-        
 
         protected PathFigure(Microsoft.Maui.Controls.Shapes.PathFigure pathFigure)
         {
@@ -31,7 +30,6 @@ namespace Sharp.UI
         {
             MauiObject = new Microsoft.Maui.Controls.Shapes.PathFigure();
         }
-
 
         public PathFigure(out PathFigure pathFigure) : this()
         {

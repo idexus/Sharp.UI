@@ -10,10 +10,8 @@ namespace Sharp.UI
     public partial class BoxView : Microsoft.Maui.Controls.BoxView, Sharp.UI.IBoxView, IWrappedBindableObject
     {
         // ----- constructors -----
-        
 
         public BoxView() { }
-
 
         public BoxView(out BoxView boxView) 
         {

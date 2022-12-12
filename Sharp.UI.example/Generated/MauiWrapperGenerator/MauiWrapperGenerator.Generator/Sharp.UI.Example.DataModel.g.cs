@@ -10,10 +10,8 @@ namespace Sharp.UI.Example
     public partial class DataModel
     {
         // ----- constructors -----
-        
 
         public DataModel() { }
-
 
         public DataModel(out DataModel dataModel) 
         {
@@ -30,6 +28,8 @@ namespace Sharp.UI.Example
             dataModel = this;
             configure(this);
         }
+
+        // ----- bindable properties -----
 
         public static readonly BindableProperty IdProperty = BindableProperty.Create(nameof(Id), typeof(Int32), typeof(Sharp.UI.Example.DataModel), default(Int32));
 

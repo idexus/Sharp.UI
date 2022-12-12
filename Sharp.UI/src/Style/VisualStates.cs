@@ -6,8 +6,7 @@ namespace Sharp.UI
     [MauiWrapper(typeof(Microsoft.Maui.Controls.VisualStateGroupList))]
     public partial class VisualStateGroupList { }
 
-    [MauiWrapper(typeof(Microsoft.Maui.Controls.VisualStateGroup),
-        generateAdditionalConstructors: false)]
+    [MauiWrapper(typeof(Microsoft.Maui.Controls.VisualStateGroup))]
     public partial class VisualStateGroup
     {
         public VisualStateGroup(string name = VisualStateGroup.CommonStates)
@@ -21,8 +20,7 @@ namespace Sharp.UI
     }
 
     [MauiWrapper(typeof(Microsoft.Maui.Controls.VisualState),
-        containerPopertyName: "Setters",
-        generateNoParamConstructor: false)]
+        containerPopertyName: "Setters")]
     public partial class VisualState
     {
         public VisualState(string name = null) : this(new Microsoft.Maui.Controls.VisualState())
