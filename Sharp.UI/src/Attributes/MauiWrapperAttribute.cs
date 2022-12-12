@@ -4,7 +4,6 @@
     {
         public MauiWrapperAttribute(
             Type baseType = null,
-            string[] doNotGenerateList = null,
             string[] constructorWithProperties = null,
             string containerPopertyName = "",
             string[] attachedProperties = null,

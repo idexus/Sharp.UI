@@ -23,9 +23,10 @@ namespace Sharp.UI
         containerPopertyName: "Setters")]
     public partial class VisualState
     {
-        public VisualState(string name = null) : this(new Microsoft.Maui.Controls.VisualState())
+        public VisualState() : this(Guid.NewGuid().ToString()) { }
+
+        public VisualState(string name) : this(new Microsoft.Maui.Controls.VisualState())
         {
-            if (string.IsNullOrEmpty(name)) name = Guid.NewGuid().ToString();
             this.Name = name;
         }
 

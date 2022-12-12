@@ -32,6 +32,12 @@ public class MauiExtensionBuilder
         this.typeConformanceName = $"Sharp.UI.{WrapBuilder.GetInterfaceName(symbol)}";
         this.IsMethodsGenerated = false;
 
+        this.notGenerateList = new List<string>();
+        notGenerateList.Add("this[]");
+        notGenerateList.Add("Handler");
+        notGenerateList.Add("LogicalChildren");
+        notGenerateList.Add("BindingContext");
+
         if (wrapperAttribute != null)
         {
             // only extension methods wrapper
@@ -41,22 +47,15 @@ public class MauiExtensionBuilder
                 this.typeConformanceName = symbol.ToDisplayString();
             }
 
-            // [1] doNotGenerate
-            var notGenerateValues = wrapperAttribute.ConstructorArguments[1].Values;
-            if (!notGenerateValues.IsDefaultOrEmpty)
-                this.notGenerateList = notGenerateValues.Select(e => (string)e.Value).ToList();
-            else
-                this.notGenerateList = new List<string>();
-
-            // [4] attachedProperties
-            var attachedPropertiesValues = wrapperAttribute.ConstructorArguments[4].Values;
+            // [3] attachedProperties
+            var attachedPropertiesValues = wrapperAttribute.ConstructorArguments[3].Values;
             if (!attachedPropertiesValues.IsDefaultOrEmpty)
                 this.attachedProperties = attachedPropertiesValues.Select(e => (string)e.Value).ToList();
             else
                 this.attachedProperties = new List<string>();
 
-            // [5] attachedPropertiesTypes
-            var attachedPropertiesTypesValues = wrapperAttribute.ConstructorArguments[5].Values;
+            // [4] attachedPropertiesTypes
+            var attachedPropertiesTypesValues = wrapperAttribute.ConstructorArguments[4].Values;
             if (!attachedPropertiesTypesValues.IsDefaultOrEmpty)
                 this.attachedPropertiesTypes = attachedPropertiesTypesValues.Select(e => (INamedTypeSymbol)e.Value).ToList();
             else
@@ -65,11 +64,6 @@ public class MauiExtensionBuilder
             if (attachedProperties.Count() != attachedPropertiesTypes.Count())
                 throw new ArgumentException($"Attached properties count and types count must be equal for {symbol.Name}");
         }
-
-        notGenerateList.Add("this[]");
-        notGenerateList.Add("Handler");
-        notGenerateList.Add("LogicalChildren");
-        notGenerateList.Add("BindingContext");
     }
 
     //----------------------------------------

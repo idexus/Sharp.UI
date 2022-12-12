@@ -26,11 +26,6 @@ namespace Sharp.UI
             MauiObject = visualState;
         }
 
-        public VisualState()
-        {
-            MauiObject = new Microsoft.Maui.Controls.VisualState();
-        }
-
         public VisualState(out VisualState visualState) : this()
         {
             visualState = this;

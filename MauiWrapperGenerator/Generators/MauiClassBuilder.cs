@@ -8,7 +8,7 @@ using Microsoft.CodeAnalysis;
 
 namespace MauiWrapperGenerator;
 
-public class MauiSymbolBuilder
+public class MauiClassBuilder
 {
     private readonly StringBuilder builder;
     private readonly INamedTypeSymbol mainType;
@@ -18,9 +18,9 @@ public class MauiSymbolBuilder
     private readonly List<string> notGenerateList;
     private readonly List<string> constructorWithProperties;
     private readonly string containerPropertyName = null;
-    private readonly bool generateAdditionalConstructors = false;
 
     //--- find out
+    private readonly bool generateAdditionalConstructors = false;
     private readonly bool generateNoParamConstructor = false;
     private readonly bool singleItemContainer = false;
     private readonly string containerOfTypeName = null;
@@ -29,36 +29,30 @@ public class MauiSymbolBuilder
 
     private bool noBaseType = false;
 
-    public MauiSymbolBuilder(INamedTypeSymbol symbol, AttributeData wrapperAttribute, StringBuilder builder)
+    public MauiClassBuilder(INamedTypeSymbol symbol, AttributeData wrapperAttribute, StringBuilder builder)
     {
         this.builder = builder;
-
         this.mainType = symbol;
+
+        this.notGenerateList = new List<string>();
+        notGenerateList.Add("this[]");
+        notGenerateList.Add("Handler");
+        notGenerateList.Add("LogicalChildren");
+        notGenerateList.Add("BindingContext");
 
         // ------- constructor arguments ------
 
         // [0] baseType
         this.baseType = wrapperAttribute.ConstructorArguments[0].Value as INamedTypeSymbol;
 
-        // [1] doNotGenerate
-        var notGenerateValues = wrapperAttribute.ConstructorArguments[1].Values;
-        if (!notGenerateValues.IsDefaultOrEmpty)
-            this.notGenerateList = notGenerateValues.Select(e => (string)e.Value).ToList();
-        else
-            this.notGenerateList = new List<string>();
-
-        // [2] constructorWithProperty
-        var constructorWithPropertiesValues = wrapperAttribute.ConstructorArguments[2].Values;
+        // [1] constructorWithProperty
+        var constructorWithPropertiesValues = wrapperAttribute.ConstructorArguments[1].Values;
         if (!constructorWithPropertiesValues.IsDefaultOrEmpty)
             this.constructorWithProperties = constructorWithPropertiesValues.Select(e => (string)e.Value).ToList();
         else
             this.constructorWithProperties = new List<string>();
 
-        // [4] generateAdditionalConstructors
-        this.generateAdditionalConstructors = true;// (bool)(wrapperAttribute.ConstructorArguments[4].Value);
-
         this.generateNoParamConstructor = true;
-
         if (mainType.Constructors.FirstOrDefault(e => e.Parameters.Count() == 0 && !e.IsImplicitlyDeclared) != null)
             this.generateNoParamConstructor = false;
 
@@ -72,14 +66,8 @@ public class MauiSymbolBuilder
             if (baseType.Constructors.FirstOrDefault(e => e.Parameters.Count() == 0) == null)
                 this.generateNoParamConstructor = false;
 
-            // [3] containerPropertyName
-            this.containerPropertyName = (string)(wrapperAttribute.ConstructorArguments[3].Value);
-            //----------------------------------
-
-            notGenerateList.Add("this[]");
-            notGenerateList.Add("Handler");
-            notGenerateList.Add("LogicalChildren");
-            notGenerateList.Add("BindingContext");
+            // [2] containerPropertyName
+            this.containerPropertyName = (string)(wrapperAttribute.ConstructorArguments[2].Value);
 
             // ------- content attribute -------
 
@@ -119,11 +107,11 @@ public class MauiSymbolBuilder
                     }
                 }
             }
+        }
 
-            this.generateAdditionalConstructors =
+        this.generateAdditionalConstructors =
                 mainType.Constructors.FirstOrDefault(e => e.Parameters.Count() == 0 && !e.IsImplicitlyDeclared) != null ||
                 this.generateNoParamConstructor;
-        }
     }
 
     AttributeData FindContentPropertyAttribute()
