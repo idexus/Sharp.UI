@@ -88,7 +88,7 @@ public class WrapBuilder
             return null;
     }
 
-    public static INamedTypeSymbol GetMauiType(INamedTypeSymbol symbol)
+    public static INamedTypeSymbol GetBaseType(INamedTypeSymbol symbol)
     {
         return GetMauiType(GetMauiWrapperAttributeData(symbol));
     }
@@ -157,7 +157,7 @@ public class WrapBuilder
         {
             this.GenerateExtension((INamedTypeSymbol)symbol, isWrappedSymbol: true);
 
-            var baseType = GetMauiType((INamedTypeSymbol)symbol);
+            var baseType = GetBaseType((INamedTypeSymbol)symbol);
             if (baseType != null)
                 doneExtensions.Add(baseType);
             else
@@ -166,7 +166,7 @@ public class WrapBuilder
 
         foreach (var symbol in symbols)
         {
-            var baseType = GetMauiType((INamedTypeSymbol)symbol);
+            var baseType = GetBaseType((INamedTypeSymbol)symbol);
             if (baseType != null)
             {
                 var type = baseType.BaseType;
@@ -203,12 +203,12 @@ public class WrapBuilder
             builder.AppendLine("#pragma warning restore CS8669");
 
             var wrapperAttribute = GetMauiWrapperAttributeData(symbol);
-            var baseType = GetMauiType(symbol);
-            if (baseType == null) baseType = symbol;
+            var type = GetBaseType(symbol);
+            if (type == null) type = symbol;
 
-            var tail = baseType.IsGenericType ? $".{baseType.TypeArguments.FirstOrDefault().Name}" : "";
+            var tail = type.IsGenericType ? $".{type.TypeArguments.FirstOrDefault().Name}" : "";
             var extension = wrapperAttribute != null && wrapperAttribute.ConstructorArguments[0].Value == null ? ".extension" : "";
-            context.AddSource($"{baseType.ContainingNamespace}.{baseType.Name}{tail}{extension}.g.cs", builder.ToString());
+            context.AddSource($"{type.ContainingNamespace}.{type.Name}{tail}{extension}.g.cs", builder.ToString());
         }
     }
 

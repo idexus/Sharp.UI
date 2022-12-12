@@ -30,7 +30,7 @@ public class MauiExtensionBuilder
         this.isWrappedSymbol = isWrappedSymbol;
 
         this.mainType = symbol;
-        this.baseType = WrapBuilder.GetMauiType(symbol);
+        this.baseType = WrapBuilder.GetBaseType(symbol);
         if (baseType == null)
         {
             // only extension methods wrapper
