@@ -11,7 +11,7 @@ using Microsoft.CodeAnalysis;
 
 namespace Sharp.UI.Generator
 {
-	public partial class MauiSymbol
+	public partial class SharpSymbol
 	{
         public void BuildClass(StringBuilder builder)
         {
@@ -285,7 +285,7 @@ namespace {nameSpaceString}
         {
             var bindableInterfaces = mainSymbol
                 .Interfaces
-                .Where(e => e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains(BindableAttributeString)) != null);
+                .Where(e => e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains(BindablePropertiesAttributeString)) != null);
 
             if (bindableInterfaces.Count() > 0) builder.AppendLine($@"
         // ----- bindable properties -----");

@@ -12,11 +12,11 @@ using Microsoft.CodeAnalysis;
 
 namespace Sharp.UI.Generator;
 
-public class WrapBuilder
+public class SharpBuilder
 {
     GeneratorExecutionContext context;
 
-    public WrapBuilder(GeneratorExecutionContext context)
+    public SharpBuilder(GeneratorExecutionContext context)
     {
         this.context = context;
     }
@@ -30,10 +30,10 @@ public class WrapBuilder
         doneExtensions = new List<String>();
 
         var wrappedSymbols = context.Compilation.GetSymbolsWithName((s) => true, filter: SymbolFilter.Type)
-            .Where(e => !e.IsStatic && e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains("MauiWrapper")) != null);
+            .Where(e => !e.IsStatic && e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains(SharpSymbol.SharpObjectAttributeString)) != null);
 
         var wrappedStaticSymbols = context.Compilation.GetSymbolsWithName((s) => true, filter: SymbolFilter.Type)
-            .Where(e => e.IsStatic && e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains("MauiWrapper")) != null);
+            .Where(e => e.IsStatic && e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains(SharpSymbol.SharpObjectAttributeString)) != null);
         
         GenerateExtensions(wrappedStaticSymbols);
 
@@ -49,12 +49,12 @@ public class WrapBuilder
         foreach (var symbol in symbols)
         {
             var typeSymbol = (INamedTypeSymbol)symbol;
-            var mauiSymbol = new MauiSymbol(typeSymbol);
-            this.GenerateSymbol(mauiSymbol);
+            var sharpSymbol = new SharpSymbol(typeSymbol);
+            this.GenerateSymbol(sharpSymbol);
         }
     }
 
-    void GenerateSymbol(MauiSymbol mauiSymbol)
+    void GenerateSymbol(SharpSymbol sharpSymbol)
     {
         var builder = new StringBuilder();
         builder.AppendLine("//");
@@ -64,13 +64,13 @@ public class WrapBuilder
         builder.AppendLine("#pragma warning disable CS8669");
         builder.AppendLine();
 
-        mauiSymbol.BuildClass(builder);
+        sharpSymbol.BuildClass(builder);
 
         builder.AppendLine();
         builder.AppendLine();
         builder.AppendLine("#pragma warning restore CS8669");
 
-        context.AddSource(mauiSymbol.ClassBuilderSymbolFileNeme(), builder.ToString());
+        context.AddSource(sharpSymbol.ClassBuilderSymbolFileNeme(), builder.ToString());
     }
 
     //------------- generate extensions -----------------
@@ -80,23 +80,23 @@ public class WrapBuilder
 
         foreach (var symbol in symbols)
         {
-            var mauiSymbol = new MauiSymbol(symbol as INamedTypeSymbol);
-            this.GenerateExtension(mauiSymbol);
-            doneExtensions.Add(mauiSymbol.GetNormalizedName());
+            var sharpSymbol = new SharpSymbol(symbol as INamedTypeSymbol);
+            this.GenerateExtension(sharpSymbol);
+            doneExtensions.Add(sharpSymbol.GetNormalizedName());
         }
 
         foreach (var symbol in symbols)
         {
-            var mauiSymbol = new MauiSymbol(symbol as INamedTypeSymbol);
-            if (mauiSymbol.IsWrappedType)
+            var sharpSymbol = new SharpSymbol(symbol as INamedTypeSymbol);
+            if (sharpSymbol.IsWrappedType)
             {
-                Helpers.LoopDownToObject(mauiSymbol.WrappedType, type =>
+                Helpers.LoopDownToObject(sharpSymbol.WrappedType, type =>
                 {
-                    var baseMauiSymbol = new MauiSymbol(type);
-                    var normalizedName = baseMauiSymbol.GetNormalizedName();
+                    var baseSharpSymbol = new SharpSymbol(type);
+                    var normalizedName = baseSharpSymbol.GetNormalizedName();
                     if (!doneExtensions.Contains(normalizedName))
                     {
-                        this.GenerateExtension(baseMauiSymbol);
+                        this.GenerateExtension(baseSharpSymbol);
                         doneExtensions.Add(normalizedName);
                     }
                     return false;
@@ -105,7 +105,7 @@ public class WrapBuilder
         }
     }
 
-    void GenerateExtension(MauiSymbol mauiSymbol)
+    void GenerateExtension(SharpSymbol sharpSymbol)
     {
         var builder = new StringBuilder();
         builder.AppendLine("//");
@@ -115,20 +115,20 @@ public class WrapBuilder
         builder.AppendLine("#pragma warning disable CS8669");
         builder.AppendLine();
 
-        if (mauiSymbol.GetNormalizedName().Equals("ActivityIndicator"))
+        if (sharpSymbol.GetNormalizedName().Equals("ActivityIndicator"))
         {
 
         }
 
-        mauiSymbol.BuildExtension(builder);
+        sharpSymbol.BuildExtension(builder);
 
-        if (mauiSymbol.IsExtensionMethodsGenerated)
+        if (sharpSymbol.IsExtensionMethodsGenerated)
         {
             builder.AppendLine();
             builder.AppendLine();
             builder.AppendLine("#pragma warning restore CS8669");
 
-            context.AddSource(mauiSymbol.ExtensionBuilderFileName(), builder.ToString());
+            context.AddSource(sharpSymbol.ExtensionBuilderFileName(), builder.ToString());
         }
     }
 
@@ -152,12 +152,12 @@ public class WrapBuilder
 
         foreach (var symbol in symbols)
         {
-            var mauiSymbol = new MauiSymbol(symbol as INamedTypeSymbol);
-            if (mauiSymbol.IsWrappedType)
+            var sharpSymbol = new SharpSymbol(symbol as INamedTypeSymbol);
+            if (sharpSymbol.IsWrappedType)
             {
-                Helpers.LoopDownToObject(mauiSymbol.WrappedType, type =>
+                Helpers.LoopDownToObject(sharpSymbol.WrappedType, type =>
                 {
-                    var interfaceName = $"I{MauiSymbol.GetNormalizedName(type)}";
+                    var interfaceName = $"I{SharpSymbol.GetNormalizedName(type)}";
                     if (!interfaceNameList.Contains(interfaceName))
                     {
                         AddInterface(builder, type);
@@ -174,8 +174,8 @@ public class WrapBuilder
 
     void AddInterface(StringBuilder builder, INamedTypeSymbol type)
     {
-        var parentInterfaceName = $"I{MauiSymbol.GetNormalizedName(type.BaseType)}";
+        var parentInterfaceName = $"I{SharpSymbol.GetNormalizedName(type.BaseType)}";
         var parentString = parentInterfaceName.Equals("IObject") ? "" : $" : {parentInterfaceName}";
-        builder.AppendLine($@"public partial interface I{MauiSymbol.GetNormalizedName(type)}{parentString} {{ }}");
+        builder.AppendLine($@"public partial interface I{SharpSymbol.GetNormalizedName(type)}{parentString} {{ }}");
     }
 }

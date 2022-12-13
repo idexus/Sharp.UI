@@ -11,7 +11,7 @@ using Microsoft.CodeAnalysis;
 
 namespace Sharp.UI.Generator
 {
-	public partial class MauiSymbol
+	public partial class SharpSymbol
 	{
         public bool IsExtensionMethodsGenerated { get; private set; }
 
@@ -118,7 +118,7 @@ namespace {mainSymbol.ContainingNamespace}
             // generate using bindable interface
             var interfaces = extensionType
                 .Interfaces
-                .Where(e => e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains(BindableAttributeString)) != null);
+                .Where(e => e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains(BindablePropertiesAttributeString)) != null);
 
             foreach (var inter in interfaces)
             {
@@ -137,7 +137,7 @@ namespace {mainSymbol.ContainingNamespace}
 
         void GenerateAttachedPropertiesExtension()
         {
-            if (mauiWrapperAttribute != null)
+            if (sharpAttribute != null)
             {
                 List<INamedTypeSymbol> interfaces = new List<INamedTypeSymbol>();
 
@@ -438,18 +438,17 @@ namespace {mainSymbol.ContainingNamespace}
             var methodArgTypeName = ((INamedTypeSymbol)eventHandler.Type).DelegateInvokeMethod.Parameters.Last().ToDisplayString();
 
             var existInBases = false;
-            var type = extensionType.BaseType;
-            while (!existInBases && !type.Name.Equals("Object"))
+            Helpers.LoopDownToObject(extensionType.BaseType, type =>
             {
                 existInBases = (type
-                            .GetMembers()
-                            .FirstOrDefault(e =>
-                                e.Kind == SymbolKind.Event &&
-                                e.DeclaredAccessibility == Accessibility.Public &&
-                                e.Name.Equals(eventSymbol.Name)) != null);
+                    .GetMembers()
+                    .FirstOrDefault(e =>
+                        e.Kind == SymbolKind.Event &&
+                        e.DeclaredAccessibility == Accessibility.Public &&
+                        e.Name.Equals(eventSymbol.Name)) != null);
 
-                type = type.BaseType;
-            }
+                return existInBases;
+            });
 
             if (!existInBases && !notGenerateList.Contains(eventSymbol.Name))
             {

@@ -8,7 +8,7 @@ namespace Sharp.UI
         Microsoft.Maui.Controls.VisualStateGroupList VisualStateGroups { get; set; }
     }
 
-    [MauiWrapper(typeof(Microsoft.Maui.Controls.VisualElement))]
+    [SharpObject(typeof(Microsoft.Maui.Controls.VisualElement))]
     [AttachedInterfaces(new[] {typeof(IVisualElementVisualStateGroupsAttachedProperties) })]
 	public static class VisualElementExtension
     {

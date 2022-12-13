@@ -12,7 +12,7 @@ public class ShellItemTemplate : ContentView
 				.HeightRequest(45),
 
 			new Label()
-				.GridColumn(1)
+				.Column(1)
 				.Text(e => e.Path("Title"))
 				.FontSize(20)
 				.FontAttributes(FontAttributes.Italic)

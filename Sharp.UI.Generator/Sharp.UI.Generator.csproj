@@ -7,7 +7,7 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
 
     <PackageId>Sharp.UI.Generator</PackageId>
-		<Version>0.1.0-beta</Version>
+		<Version>0.2.0-beta</Version>
 		<Authors>Pawel Krzywdzinski</Authors>
 		<Copyright>Pawel Krzywdzinski</Copyright>
 		<PackageDescription>Sharp.UI generator</PackageDescription>

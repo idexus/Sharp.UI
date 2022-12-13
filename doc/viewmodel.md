@@ -2,17 +2,17 @@
 
 ### View-Model
 
-Using `[Bindable]` and `[MauiWrapper]` attributes you can define a bindable viewmodel. All bindable properties declared in the interface will be generated automatically.
+By using the `[BindableProperties]` attribute on the interface and the `[SharpObject]` attribute on the class, you can define a bindable viewmodel. All bindable properties declared in the interface will be generated automatically.
 
 ```cs
-[Bindable]
+[BindableProperties]
 public interface IViewModelProperties
 {
     public string Title { get; set; }
     public string Author { get; set; }
 }
 
-[MauiWrapper]
+[SharpObject]
 public partial class ViewModel : BindableObject, IViewModelProperties
 {
     public void SetAuthor(Button button)

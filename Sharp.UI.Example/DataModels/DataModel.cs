@@ -2,7 +2,7 @@
 
 namespace Sharp.UI.Example
 {
-    [Bindable]
+    [BindableProperties]
     public interface IDataModelProperties
     {
         public int Id { get; set; }
@@ -10,7 +10,7 @@ namespace Sharp.UI.Example
         public bool Admin { get; set; }
     }
 
-    [MauiWrapper]
+    [SharpObject]
     public partial class DataModel : BindableObject, IDataModelProperties
     {
         public DataModel(int id, string name, bool admin)

@@ -1,20 +1,20 @@
 ﻿namespace Sharp.UI
 {
-    [MauiWrapper(typeof(Microsoft.Maui.Controls.Shell))]
+    [SharpObject(typeof(Microsoft.Maui.Controls.Shell))]
     public partial class Shell { }
 
-    [MauiWrapper(typeof(Microsoft.Maui.Controls.TabBar))]
+    [SharpObject(typeof(Microsoft.Maui.Controls.TabBar))]
     public partial class TabBar { }
 
-    [MauiWrapper(typeof(Microsoft.Maui.Controls.FlyoutItem),
+    [SharpObject(typeof(Microsoft.Maui.Controls.FlyoutItem),
         constructorWithProperties: new[] { "FlyoutDisplayOptions" })]
     public partial class FlyoutItem { }
 
-    [MauiWrapper(typeof(Microsoft.Maui.Controls.Tab),
+    [SharpObject(typeof(Microsoft.Maui.Controls.Tab),
         constructorWithProperties: new[] { "Title" })]
     public partial class Tab { }
 
-    [MauiWrapper(typeof(Microsoft.Maui.Controls.ShellContent),
+    [SharpObject(typeof(Microsoft.Maui.Controls.ShellContent),
         constructorWithProperties: new[] { "Title", "Content" })]
     public partial class ShellContent
     {

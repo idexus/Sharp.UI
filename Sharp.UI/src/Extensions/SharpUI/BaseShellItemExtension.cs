@@ -6,7 +6,7 @@
         DataTemplate ShellItemTemplate { get; set; }
     }
 
-    [MauiWrapper(typeof(Microsoft.Maui.Controls.BaseShellItem))]
+    [SharpObject(typeof(Microsoft.Maui.Controls.BaseShellItem))]
     [AttachedInterfaces(new[] {typeof(IBaseShellItemShellAttachedProperties) })]
     public static class BaseShellItemExtension
     {

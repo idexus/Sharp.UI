@@ -11,7 +11,7 @@ namespace Sharp.UI
         }
     }    
 
-    [MauiWrapper(typeof(Microsoft.Maui.Controls.Style))]
+    [SharpObject(typeof(Microsoft.Maui.Controls.Style))]
     public partial class Style
     {
         public Style(Type type, bool applyToDerivedTypes = false, bool canCascade = false, string styleClass = null)

@@ -2,7 +2,7 @@
 
 using Sharp.UI;
 
-[Bindable]
+[BindableProperties]
 public interface ISecondPageViewModelProperties
 {
     public string Title { get; set; }
@@ -10,7 +10,7 @@ public interface ISecondPageViewModelProperties
 }
 
 
-[MauiWrapper]
+[SharpObject]
 public partial class SecondPageViewModel : BindableObject, ISecondPageViewModelProperties
 {
     public void SetAuthor(Button button)

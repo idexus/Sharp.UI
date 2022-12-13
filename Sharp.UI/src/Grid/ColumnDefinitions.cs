@@ -2,7 +2,7 @@
 
 namespace Sharp.UI
 {
-    [MauiWrapper(typeof(Microsoft.Maui.Controls.ColumnDefinition))]
+    [SharpObject(typeof(Microsoft.Maui.Controls.ColumnDefinition))]
     public partial class ColumnDefinition
     {
         public static ColumnDefinition Auto = new ColumnDefinition(0, GridUnitType.Auto);

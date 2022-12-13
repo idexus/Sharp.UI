@@ -3,10 +3,10 @@ using Microsoft.Maui.Controls;
 
 namespace Sharp.UI
 {
-    [MauiWrapper(typeof(Microsoft.Maui.Controls.VisualStateGroupList))]
+    [SharpObject(typeof(Microsoft.Maui.Controls.VisualStateGroupList))]
     public partial class VisualStateGroupList { }
 
-    [MauiWrapper(typeof(Microsoft.Maui.Controls.VisualStateGroup))]
+    [SharpObject(typeof(Microsoft.Maui.Controls.VisualStateGroup))]
     public partial class VisualStateGroup
     {
         public VisualStateGroup(string name = VisualStateGroup.CommonStates)
@@ -19,7 +19,7 @@ namespace Sharp.UI
         public const string CommonStates = "CommonStates";
     }
 
-    [MauiWrapper(typeof(Microsoft.Maui.Controls.VisualState),
+    [SharpObject(typeof(Microsoft.Maui.Controls.VisualState),
         containerPopertyName: "Setters")]
     public partial class VisualState
     {

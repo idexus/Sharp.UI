@@ -2,7 +2,7 @@
 
 using Sharp.UI;
 
-[Bindable]
+[BindableProperties]
 public interface ICardViewProperties
 {
     string CardTitle { get; set; }
@@ -11,7 +11,7 @@ public interface ICardViewProperties
     Color BorderColor { get; set; }
 }
 
-[MauiWrapper]
+[SharpObject]
 public partial class CardView : ContentView, ICardViewProperties
 {
     public CardView()

@@ -1,9 +1,9 @@
 # Bindable Properties
 
-Sharp.UI automatically generates bindable properties and helper methods for wrapped classes with interfaces with the `Bindable` attribute.
+Sharp.UI automatically generates bindable properties and helper methods for `[SharpObject]` classes with interfaces with the `[BindableProperties]` attribute.
 
 ```cs
-[Bindable]
+[BindableProperties]
 public interface ICardViewProperties
 {
     string CardTitle { get; set; }
@@ -12,7 +12,7 @@ public interface ICardViewProperties
     Color BorderColor { get; set; }
 }
 
-[MauiWrapper]
+[SharpObject]
 public partial class CardView : ContentView, ICardViewProperties
 {
 }

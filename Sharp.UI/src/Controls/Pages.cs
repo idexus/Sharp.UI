@@ -16,20 +16,20 @@ namespace Sharp.UI
         Microsoft.Maui.Controls.View ShellTitleView { get; set; }
     }
 
-    [MauiWrapper(typeof(Microsoft.Maui.Controls.ContentPage),
+    [SharpObject(typeof(Microsoft.Maui.Controls.ContentPage),
         constructorWithProperties: new[] { "Title" })] 
     public partial class ContentPage : IContentPageShellAttachedProperties { }
 
-    [MauiWrapper(typeof(Microsoft.Maui.Controls.FlyoutPage))] 
+    [SharpObject(typeof(Microsoft.Maui.Controls.FlyoutPage))] 
     public partial class FlyoutPage { }
 
-    [MauiWrapper(typeof(Microsoft.Maui.Controls.NavigationPage))] 
+    [SharpObject(typeof(Microsoft.Maui.Controls.NavigationPage))] 
     public partial class NavigationPage : IEnumerable
     {
         public IEnumerator GetEnumerator() => throw new NotImplementedException();
         public void Add(Microsoft.Maui.Controls.Page page) => this.PushAsync(page);
     }
 
-    [MauiWrapper(typeof(Microsoft.Maui.Controls.TabbedPage))]
+    [SharpObject(typeof(Microsoft.Maui.Controls.TabbedPage))]
     public partial class TabbedPage { }
 }

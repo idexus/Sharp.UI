@@ -1,8 +1,8 @@
 ﻿namespace Sharp.UI
 {
-    public class MauiWrapperAttribute : Attribute
+    public class SharpObjectAttribute : Attribute
     {
-        public MauiWrapperAttribute(
+        public SharpObjectAttribute(
             Type baseType = null,
             string[] constructorWithProperties = null,
             string containerPopertyName = "")

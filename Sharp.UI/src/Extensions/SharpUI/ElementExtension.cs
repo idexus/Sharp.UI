@@ -6,7 +6,7 @@
         Microsoft.Maui.Controls.MenuFlyout FlyoutBaseContextFlyout { get; set; }
     }
 
-    [MauiWrapper(typeof(Microsoft.Maui.Controls.Element))]
+    [SharpObject(typeof(Microsoft.Maui.Controls.Element))]
     [AttachedInterfaces(new[] { typeof(IElementFlyoutBaseAttachedProperties) })]
     public static class ElementExtension
     {

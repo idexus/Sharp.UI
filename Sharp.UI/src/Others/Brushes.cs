@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Sharp.UI
 {
-    [MauiWrapper(typeof(Microsoft.Maui.Controls.LinearGradientBrush))]
+    [SharpObject(typeof(Microsoft.Maui.Controls.LinearGradientBrush))]
     public partial class LinearGradientBrush
     {
         public LinearGradientBrush(Point startPoint, Point endPoint) : this()
@@ -11,7 +11,7 @@ namespace Sharp.UI
     }
 
 
-    [MauiWrapper(typeof(Microsoft.Maui.Controls.RadialGradientBrush))]
+    [SharpObject(typeof(Microsoft.Maui.Controls.RadialGradientBrush))]
     public partial class RadialGradientBrush
     {
         public RadialGradientBrush(Point center) : this()
@@ -20,7 +20,7 @@ namespace Sharp.UI
         }
     }
 
-    [MauiWrapper(typeof(Microsoft.Maui.Controls.GradientStop))]
+    [SharpObject(typeof(Microsoft.Maui.Controls.GradientStop))]
     public partial class GradientStop
     {
         public GradientStop(Color color, double offset)

@@ -3,13 +3,13 @@
     [AttachedProperties(typeof(Microsoft.Maui.Controls.Grid))]
     public interface IViewGridAttachedProperties
     {
-        int GridColumn { get; set; }
-        int GridRow { get; set; }
-        int GridColumnSpan { get; set; }
-        int GridRowSpan { get; set; }
+        int Column { get; set; }
+        int Row { get; set; }
+        int ColumnSpan { get; set; }
+        int RowSpan { get; set; }
     }
 
-    [MauiWrapper(typeof(Microsoft.Maui.Controls.View))]
+    [SharpObject(typeof(Microsoft.Maui.Controls.View))]
     [AttachedInterfaces(new[] {typeof(IViewGridAttachedProperties) })]
     public static class ViewExtension
     {

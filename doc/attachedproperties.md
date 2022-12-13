@@ -20,3 +20,5 @@ public class GridPage : ContentPage
     }
 }
 ```
+### Attention
+Some attached properties like `Grid.Row`, `Grid.Column`, `Grid.ColumnSpan` and `Grid.RowSpan` have shorter method names: `Row()`, `Column()`, `ColumnSpan()`, `RowSpan()`.

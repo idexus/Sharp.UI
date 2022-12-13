@@ -3,7 +3,7 @@
 In `Sharp.UI` you can create custom control views and all interface bindable properties will be generated automatically.
 
 ```cs
-[Bindable]
+[BindableProperties]
 public interface ICardViewProperties
 {
     string CardTitle { get; set; }
@@ -12,7 +12,7 @@ public interface ICardViewProperties
     Color BorderColor { get; set; }
 }
 
-[MauiWrapper]
+[SharpObject]
 public partial class CardView : ContentView, ICardViewProperties
 {
     public CardView()

@@ -34,7 +34,7 @@ namespace Sharp.UI.Example
 					.StrokeThickness(5)
 				},
 
-				new ContentView(e => e.GridColumn(1))
+				new ContentView(e => e.Column(1))
 				{
 					new Polygon
 					{
@@ -54,7 +54,7 @@ namespace Sharp.UI.Example
 					.StrokeThickness(3)
 				},
 
-				new ContentView(e => e.GridColumn(2))
+				new ContentView(e => e.Column(2))
 				{
 					new Polyline
 						{
@@ -72,7 +72,7 @@ namespace Sharp.UI.Example
 						.Stroke(Colors.Red),
 				},
 
-				new ContentView(e => e.GridRow(1))
+				new ContentView(e => e.Row(1))
 				{
 					new Ellipse(100,80)
 						.Fill(Colors.Yellow)
@@ -80,7 +80,7 @@ namespace Sharp.UI.Example
 						.StrokeThickness(4)
 				},
 
-				new ContentView(e => e.GridRow(1).GridColumn(1))
+				new ContentView(e => e.Row(1).Column(1))
 				{
 					new Path
 					{
@@ -98,7 +98,7 @@ namespace Sharp.UI.Example
 					.HorizontalOptions(LayoutOptions.Start)
 				},
 
-                new ContentView(e => e.GridRow(1).GridColumn(2))
+                new ContentView(e => e.Row(1).Column(2))
 				{
 					new Path
 					{

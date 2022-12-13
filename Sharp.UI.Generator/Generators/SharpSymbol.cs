@@ -11,17 +11,17 @@ using Microsoft.CodeAnalysis;
 
 namespace Sharp.UI.Generator
 {
-	public partial class MauiSymbol
+	public partial class SharpSymbol
 	{
-        public const string MauiWrapperAttributeString = "MauiWrapper";
-        public const string BindableAttributeString = "Bindable";
+        public const string SharpObjectAttributeString = "SharpObject";
+        public const string BindablePropertiesAttributeString = "BindableProperties";
         public const string AttachedPropertiesAttributeString = "AttachedProperties";
         public const string AttachedInterfacesAttributeString = "AttachedInterfaces";
         public const string ContentPropertyAttributeString = "ContentProperty";
 
         public const string CompatibilityString = "Compatibility";
 
-        class MauiWrapperParams
+        class SharpObjectAttribParams
         {
             public const int WrappedType = 0;
             public const int ConstructorWithProperties = 1;
@@ -33,17 +33,17 @@ namespace Sharp.UI.Generator
         INamedTypeSymbol mainSymbol { get; set; }
 
         // attributes
-        AttributeData mauiWrapperAttribute;
+        AttributeData sharpAttribute;
         AttributeData attachedInterfacesAttribute;
 
-        // [MauiWrapper] parameters
+        // [SharpObject] parameters
         public INamedTypeSymbol WrappedType { get; private set; }
         List<string> constructorWithProperties = null;
         string containerPropertyName = null;
 
         // helpers
         public bool IsWrappedType => WrappedType != null;
-        public bool IsUserDefiniedType => mauiWrapperAttribute != null && !IsWrappedType;
+        public bool IsUserDefiniedType => sharpAttribute != null && !IsWrappedType;
 
         // not generate list
         List<string> notGenerateList = null;
@@ -59,15 +59,15 @@ namespace Sharp.UI.Generator
         private string typeConformanceName;
         private INamedTypeSymbol extensionType => IsWrappedType ? WrappedType : mainSymbol;
 
-        public MauiSymbol(INamedTypeSymbol symbol)
+        public SharpSymbol(INamedTypeSymbol symbol)
 		{
             mainSymbol = symbol;
 
             // get attributes
-            mauiWrapperAttribute = GetMauiWrapperAttributeData(mainSymbol);
+            sharpAttribute = GetSharpAttributeData(mainSymbol);
             attachedInterfacesAttribute = GetAttachedInterfacesAttributeData();
 
-            WrappedType = GetWrappedType(mauiWrapperAttribute);
+            WrappedType = GetWrappedType(sharpAttribute);
 
             nameSpaceString = IsUserDefiniedType ? mainSymbol.ContainingNamespace.ToDisplayString() : "Sharp.UI";
             typeConformanceName = IsUserDefiniedType ? symbol.ToDisplayString() : $"Sharp.UI.I{GetNormalizedName()}";
@@ -86,7 +86,7 @@ namespace Sharp.UI.Generator
         {
             if (IsWrappedType)
             {
-                this.containerPropertyName = (string)(mauiWrapperAttribute.ConstructorArguments[MauiWrapperParams.ContainerPopertyName].Value);
+                this.containerPropertyName = (string)(sharpAttribute.ConstructorArguments[SharpObjectAttribParams.ContainerPopertyName].Value);
 
                 var isContainerThis = Helpers.IsGenericIList(WrappedType, out var containerType);
                 if (isContainerThis && WrappedType.IsSealed)
@@ -129,9 +129,9 @@ namespace Sharp.UI.Generator
 
         void SetupConstructorsGeneration()
         {
-            if (mauiWrapperAttribute != null)
+            if (sharpAttribute != null)
             {
-                var constructorWithPropertiesValues = mauiWrapperAttribute.ConstructorArguments[MauiWrapperParams.ConstructorWithProperties].Values;
+                var constructorWithPropertiesValues = sharpAttribute.ConstructorArguments[SharpObjectAttribParams.ConstructorWithProperties].Values;
                 if (!constructorWithPropertiesValues.IsDefaultOrEmpty)
                     this.constructorWithProperties = constructorWithPropertiesValues.Select(e => (string)e.Value).ToList();
                 else
@@ -170,16 +170,16 @@ namespace Sharp.UI.Generator
 
         // ------ helpers ------
 
-        public static AttributeData GetMauiWrapperAttributeData(INamedTypeSymbol symbol)
+        public static AttributeData GetSharpAttributeData(INamedTypeSymbol symbol)
         {
             var attributes = symbol.GetAttributes();
-            return attributes.FirstOrDefault(e => e.AttributeClass.Name.Contains(MauiWrapperAttributeString));
+            return attributes.FirstOrDefault(e => e.AttributeClass.Name.Contains(SharpObjectAttributeString));
         }
 
         public static INamedTypeSymbol GetWrappedType(AttributeData attributeData)
         {
             if (attributeData == null) return null;
-            return attributeData.ConstructorArguments[MauiWrapperParams.WrappedType].Value as INamedTypeSymbol;
+            return attributeData.ConstructorArguments[SharpObjectAttribParams.WrappedType].Value as INamedTypeSymbol;
         }
 
         AttributeData GetAttachedInterfacesAttributeData()
