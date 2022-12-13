@@ -17,8 +17,10 @@ namespace Sharp.UI.Generator
         {
             this.builder = builder;
 
-            this.GenerateContainerUsingsIfNeeded();
-            this.GenerateNameSpace();
+            if (IsUserDefiniedType)
+                this.GenerateUserDefinedNameSpace();
+            else
+                this.GenerateSharpUINameSpace();
         }
 
         void GenerateContainerUsingsIfNeeded()
@@ -30,12 +32,28 @@ using System.Collections.ObjectModel;
 ");
         }
 
-        void GenerateNameSpace()
+        void GenerateSharpUINameSpace()
         {
+            this.GenerateContainerUsingsIfNeeded();
             builder.Append($@"
 namespace {nameSpaceString}
 {{
     public partial class {mainSymbol.Name}{BaseString()}
+    {{");
+            GenerateClass();
+            builder.Append($@"
+    }}
+}}");
+        }
+
+        void GenerateUserDefinedNameSpace()
+        {
+            builder.Append($@"
+namespace {nameSpaceString}
+{{
+    using Sharp.UI;
+
+    public partial class {mainSymbol.Name}
     {{");
             GenerateClass();
             builder.Append($@"

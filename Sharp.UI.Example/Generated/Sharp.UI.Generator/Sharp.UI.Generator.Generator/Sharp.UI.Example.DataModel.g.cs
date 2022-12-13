@@ -7,6 +7,8 @@
 
 namespace Sharp.UI.Example
 {
+    using Sharp.UI;
+
     public partial class DataModel
     {
         // ----- constructors -----
