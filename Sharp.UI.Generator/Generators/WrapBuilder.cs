@@ -1,4 +1,9 @@
-﻿using System;
+﻿//
+// MIT License
+// Copyright Pawel Krzywdzinski
+//
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,87 +21,13 @@ public class WrapBuilder
         this.context = context;
     }
 
-    //------------- helpers -----------------
-
-    public static string GetTypeName(INamedTypeSymbol type)
-    {
-        var tail = type.IsGenericType ? $"{type.TypeArguments.FirstOrDefault().Name}" : "";
-        var prefix = type.ContainingNamespace.ToDisplayString().Contains("Compatibility") ? "Compatibility" : "";
-        return $"{prefix}{type.Name}{tail}";
-    }
-
-    public static string GetInterfaceName(INamedTypeSymbol type)
-    {
-        return $"I{GetTypeName(type)}";
-    }
-
-    public static string CamelCase(string str)
-    {
-        var camelCaseName = $"{str.Substring(0, 1).ToLower()}{str.Substring(1)}";
-        camelCaseName = camelCaseName.Equals("class") ? "@class" : camelCaseName;
-        camelCaseName = camelCaseName.Equals("switch") ? "@switch" : camelCaseName;
-        camelCaseName = camelCaseName.Equals("event") ? "@event" : camelCaseName;
-        return camelCaseName;
-    }
-
-    public static bool IsGenericIList(INamedTypeSymbol symbol, out string typeName)
-    {
-        if (symbol.Name.Equals("IList") && symbol.IsGenericType)
-        {
-            typeName = symbol.TypeArguments.First().ToDisplayString();
-            return true;
-        }
-
-        var type = symbol;
-        do
-        {
-            foreach (var inter in type.Interfaces)
-                if (inter.Name.Equals("IList") && inter.IsGenericType)
-                {
-                    typeName = inter.TypeArguments.First().ToDisplayString();
-                    return true;
-                }
-
-            type = type.BaseType;
-        }
-        while (type != null && !type.Name.Equals("Object"));
-
-        typeName = null;
-        return false;
-    }
-
-    public static AttributeData GetMauiWrapperAttributeData(INamedTypeSymbol symbol)
-    {
-        var attributes = symbol.GetAttributes();
-        return attributes.FirstOrDefault(e => e.AttributeClass.Name.Contains("MauiWrapper"));
-    }
-
-    public static AttributeData GetAttachedInterfacesAttributeData(INamedTypeSymbol symbol)
-    {
-        var attributes = symbol.GetAttributes();
-        return attributes.FirstOrDefault(e => e.AttributeClass.Name.Contains("AttachedInterfaces"));
-    }
-
-    public static INamedTypeSymbol GetMauiType(AttributeData wrapperAttribute)
-    {
-        if (wrapperAttribute != null)
-            return (INamedTypeSymbol)wrapperAttribute.ConstructorArguments[0].Value;
-        else
-            return null;
-    }
-
-    public static INamedTypeSymbol GetBaseType(INamedTypeSymbol symbol)
-    {
-        return GetMauiType(GetMauiWrapperAttributeData(symbol));
-    }
-
     //------------- generate -----------------
 
-    List<INamedTypeSymbol> doneExtensions;
+    List<String> doneExtensions;
 
     public void Generate()
 	{
-        doneExtensions = new List<INamedTypeSymbol>();
+        doneExtensions = new List<String>();
 
         var wrappedSymbols = context.Compilation.GetSymbolsWithName((s) => true, filter: SymbolFilter.Type)
             .Where(e => !e.IsStatic && e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains("MauiWrapper")) != null);
@@ -149,35 +80,32 @@ public class WrapBuilder
 
         foreach (var symbol in symbols)
         {
-            this.GenerateExtension((INamedTypeSymbol)symbol, isWrappedSymbol: true);
-
-            var baseType = GetBaseType((INamedTypeSymbol)symbol);
-            if (baseType != null)
-                doneExtensions.Add(baseType);
-            else
-                doneExtensions.Add((INamedTypeSymbol)symbol);
+            var mauiSymbol = new MauiSymbol(symbol as INamedTypeSymbol);
+            this.GenerateExtension(mauiSymbol);
+            doneExtensions.Add(mauiSymbol.GetNormalizedName());
         }
 
         foreach (var symbol in symbols)
         {
-            var baseType = GetBaseType((INamedTypeSymbol)symbol);
-            if (baseType != null)
+            var mauiSymbol = new MauiSymbol(symbol as INamedTypeSymbol);
+            if (mauiSymbol.IsWrappedType)
             {
-                var type = baseType.BaseType;
-                while (!type.Name.Equals("Object"))
+                Helpers.LoopDownToObject(mauiSymbol.WrappedType, type =>
                 {
-                    if (!doneExtensions.Contains(type))
+                    var baseMauiSymbol = new MauiSymbol(type);
+                    var normalizedName = baseMauiSymbol.GetNormalizedName();
+                    if (!doneExtensions.Contains(normalizedName))
                     {
-                        this.GenerateExtension(type, isWrappedSymbol: false);
-                        doneExtensions.Add(type);
+                        this.GenerateExtension(baseMauiSymbol);
+                        doneExtensions.Add(normalizedName);
                     }
-                    type = type.BaseType;
-                }
+                    return false;
+                });
             }
         }
     }
 
-    void GenerateExtension(INamedTypeSymbol symbol, bool isWrappedSymbol)
+    void GenerateExtension(MauiSymbol mauiSymbol)
     {
         var builder = new StringBuilder();
         builder.AppendLine("//");
@@ -187,22 +115,20 @@ public class WrapBuilder
         builder.AppendLine("#pragma warning disable CS8669");
         builder.AppendLine();
 
-        var extBuilder = new MauiExtensionBuilder(symbol, builder, isWrappedSymbol);
-        extBuilder.Build();
+        if (mauiSymbol.GetNormalizedName().Equals("ActivityIndicator"))
+        {
 
-        if (extBuilder.IsMethodsGenerated)
+        }
+
+        mauiSymbol.BuildExtension(builder);
+
+        if (mauiSymbol.IsExtensionMethodsGenerated)
         {
             builder.AppendLine();
             builder.AppendLine();
             builder.AppendLine("#pragma warning restore CS8669");
 
-            var wrapperAttribute = GetMauiWrapperAttributeData(symbol);
-            var type = GetBaseType(symbol);
-            if (type == null) type = symbol;
-
-            var tail = type.IsGenericType ? $".{type.TypeArguments.FirstOrDefault().Name}" : "";
-            var extension = wrapperAttribute != null && wrapperAttribute.ConstructorArguments[0].Value == null ? ".extension" : "";
-            context.AddSource($"{type.ContainingNamespace}.{type.Name}{tail}{extension}.g.cs", builder.ToString());
+            context.AddSource(mauiSymbol.ExtensionBuilderFileName(), builder.ToString());
         }
     }
 
@@ -226,22 +152,19 @@ public class WrapBuilder
 
         foreach (var symbol in symbols)
         {
-            var wrapperAttribute = GetMauiWrapperAttributeData((INamedTypeSymbol)symbol);
-            var typeValue = wrapperAttribute.ConstructorArguments[0].Value;
-            if (typeValue != null)
+            var mauiSymbol = new MauiSymbol(symbol as INamedTypeSymbol);
+            if (mauiSymbol.IsWrappedType)
             {
-                var mauiType = GetMauiType(wrapperAttribute);
-                var type = mauiType;
-                while (!type.Name.Equals("Object"))
+                Helpers.LoopDownToObject(mauiSymbol.WrappedType, type =>
                 {
-                    var interfaceName = GetInterfaceName(type);
+                    var interfaceName = $"I{MauiSymbol.GetNormalizedName(type)}";
                     if (!interfaceNameList.Contains(interfaceName))
                     {
                         AddInterface(builder, type);
                         interfaceNameList.Add(interfaceName);
                     }
-                    type = type.BaseType;
-                }
+                    return false;
+                });
             }
         }
 
@@ -251,8 +174,8 @@ public class WrapBuilder
 
     void AddInterface(StringBuilder builder, INamedTypeSymbol type)
     {
-        var parentInterfaceName = GetInterfaceName(type.BaseType);
+        var parentInterfaceName = $"I{MauiSymbol.GetNormalizedName(type.BaseType)}";
         var parentString = parentInterfaceName.Equals("IObject") ? "" : $" : {parentInterfaceName}";
-        builder.AppendLine($@"public partial interface {GetInterfaceName(type)}{parentString} {{ }}");
+        builder.AppendLine($@"public partial interface I{MauiSymbol.GetNormalizedName(type)}{parentString} {{ }}");
     }
 }

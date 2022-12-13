@@ -1,4 +1,9 @@
-﻿using System;
+﻿//
+// MIT License
+// Copyright Pawel Krzywdzinski
+//
+
+using System;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,8 +20,6 @@ namespace Sharp.UI.Generator
 
         public void Execute(GeneratorExecutionContext context)
         {
-            // to stop and wait for the debugger
-
             //Helpers.WaitForDebugger(context.CancellationToken);
 
             new WrapBuilder(context).Generate();

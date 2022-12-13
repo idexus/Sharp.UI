@@ -1,4 +1,9 @@
-﻿using System;
+﻿//
+// MIT License
+// Copyright Pawel Krzywdzinski
+//
+
+using System;
 using Microsoft.CodeAnalysis;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,18 +29,6 @@ namespace Sharp.UI.Generator
             camelCaseName = camelCaseName.Equals("switch") ? "@switch" : camelCaseName;
             camelCaseName = camelCaseName.Equals("event") ? "@event" : camelCaseName;
             return camelCaseName;
-        }
-
-        public static string GetTypeName(INamedTypeSymbol type)
-        {
-            var tail = type.IsGenericType ? $"{type.TypeArguments.FirstOrDefault().Name}" : "";
-            var prefix = type.ContainingNamespace.ToDisplayString().Contains("Compatibility") ? "Compatibility" : "";
-            return $"{prefix}{type.Name}{tail}";
-        }
-
-        public static string GetInterfaceName(INamedTypeSymbol type)
-        {
-            return $"I{GetTypeName(type)}";
         }
 
         public static bool IsGenericIList(INamedTypeSymbol symbol, out string typeName)

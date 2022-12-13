@@ -1,4 +1,9 @@
-﻿using System;
+﻿//
+// MIT License
+// Copyright Pawel Krzywdzinski
+//
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,39 +25,47 @@ namespace Sharp.UI.Generator
 
         private StringBuilder builder;
 
-        INamedTypeSymbol mainSymbol;
+        INamedTypeSymbol mainSymbol { get; set; }
 
         // attributes
         AttributeData mauiWrapperAttribute;
         AttributeData attachedInterfacesAttribute;
 
         // [MauiWrapper] parameters
-        INamedTypeSymbol wrappedType = null;
+        public INamedTypeSymbol WrappedType { get; private set; }
         List<string> constructorWithProperties = null;
         string containerPropertyName = null;
 
-        bool isWrappedType => wrappedType != null;
+        // helpers
+        public bool IsWrappedType => WrappedType != null;
+        public bool IsUserDefiniedType => mauiWrapperAttribute != null && !IsWrappedType;
 
-        // additional generation data
+        // not generate list
+        List<string> notGenerateList = null;
+
+        // class generation
         bool generateAdditionalConstructors = false;
         bool generateNoParamConstructor = false;
         bool singleItemContainer = false;
         string containerOfTypeName = null;
+        string nameSpaceString;
 
-        List<string> notGenerateList = null;
-        string nameSpaceName;
+        // extensions
+        private string typeConformanceName;
+        private INamedTypeSymbol extensionType => IsWrappedType ? WrappedType : mainSymbol;
 
         public MauiSymbol(INamedTypeSymbol symbol)
 		{
             mainSymbol = symbol;
 
             // get attributes
-            mauiWrapperAttribute = GetMauiWrapperAttributeData();
+            mauiWrapperAttribute = GetMauiWrapperAttributeData(mainSymbol);
             attachedInterfacesAttribute = GetAttachedInterfacesAttributeData();
 
-            wrappedType = mauiWrapperAttribute.ConstructorArguments[MauiWrapperParams.WrappedType].Value as INamedTypeSymbol;
+            WrappedType = GetWrappedType(mauiWrapperAttribute);
 
-            nameSpaceName = isWrappedType ? "Sharp.UI" : mainSymbol.ContainingNamespace.ToDisplayString();
+            nameSpaceString = IsUserDefiniedType ? mainSymbol.ContainingNamespace.ToDisplayString() : "Sharp.UI";
+            typeConformanceName = IsUserDefiniedType ? symbol.ToDisplayString() : $"Sharp.UI.I{GetNormalizedName()}";
 
             SetupContainerIfNeeded();
             SetupConstructorsGeneration();
@@ -66,12 +79,12 @@ namespace Sharp.UI.Generator
 
         void SetupContainerIfNeeded()
         {
-            if (isWrappedType)
+            if (IsWrappedType)
             {
                 this.containerPropertyName = (string)(mauiWrapperAttribute.ConstructorArguments[MauiWrapperParams.ContainerPopertyName].Value);
 
-                var isContainerThis = WrapBuilder.IsGenericIList(wrappedType, out var containerType);
-                if (isContainerThis && wrappedType.IsSealed)
+                var isContainerThis = Helpers.IsGenericIList(WrappedType, out var containerType);
+                if (isContainerThis && WrappedType.IsSealed)
                 {
                     this.containerOfTypeName = containerType;
                     this.containerPropertyName = "this";
@@ -91,10 +104,10 @@ namespace Sharp.UI.Generator
                     {
                         IPropertySymbol propertySymbol = FindPropertySymbolWithName(this.containerPropertyName);
 
-                        if (propertySymbol == null) throw new Exception($"No content property for: {wrappedType.Name}");
+                        if (propertySymbol == null) throw new Exception($"No content property for: {WrappedType.Name}");
 
                         var mauiContainerType = (INamedTypeSymbol)((propertySymbol).Type);
-                        if (WrapBuilder.IsGenericIList(mauiContainerType, out var ofTypeName))
+                        if (Helpers.IsGenericIList(mauiContainerType, out var ofTypeName))
                         {
                             this.containerOfTypeName = ofTypeName;
                             this.singleItemContainer = false;
@@ -111,20 +124,22 @@ namespace Sharp.UI.Generator
 
         void SetupConstructorsGeneration()
         {
-            // [1] constructorWithProperties
-            var constructorWithPropertiesValues = mauiWrapperAttribute.ConstructorArguments[MauiWrapperParams.ConstructorWithProperties].Values;
-            if (!constructorWithPropertiesValues.IsDefaultOrEmpty)
-                this.constructorWithProperties = constructorWithPropertiesValues.Select(e => (string)e.Value).ToList();
-            else
-                this.constructorWithProperties = new List<string>();
+            if (mauiWrapperAttribute != null)
+            {
+                var constructorWithPropertiesValues = mauiWrapperAttribute.ConstructorArguments[MauiWrapperParams.ConstructorWithProperties].Values;
+                if (!constructorWithPropertiesValues.IsDefaultOrEmpty)
+                    this.constructorWithProperties = constructorWithPropertiesValues.Select(e => (string)e.Value).ToList();
+                else
+                    this.constructorWithProperties = new List<string>();
+            }
 
             this.generateNoParamConstructor = true;
             if (mainSymbol.Constructors.FirstOrDefault(e => e.Parameters.Count() == 0 && !e.IsImplicitlyDeclared) != null)
                 this.generateNoParamConstructor = false;
 
-            if (isWrappedType)
+            if (IsWrappedType)
             {
-                if (wrappedType.Constructors.FirstOrDefault(e => e.Parameters.Count() == 0) == null)
+                if (WrappedType.Constructors.FirstOrDefault(e => e.Parameters.Count() == 0) == null)
                     this.generateNoParamConstructor = false;
             }
 
@@ -133,12 +148,33 @@ namespace Sharp.UI.Generator
                     this.generateNoParamConstructor;
         }
 
+        // ------ normalized name ------
+
+        public static string GetNormalizedName(INamedTypeSymbol type)
+        {
+            var tail = type.IsGenericType ? $"{type.TypeArguments.FirstOrDefault().Name}" : "";
+            var prefix = type.ContainingNamespace.ToDisplayString().Contains("Compatibility") ? "Compatibility" : "";
+            return $"{prefix}{type.Name}{tail}";
+        }
+
+        public string GetNormalizedName()
+        {
+            var type = IsWrappedType ? WrappedType : mainSymbol;
+            return GetNormalizedName(type);
+        }
+
         // ------ helpers ------
 
-        AttributeData GetMauiWrapperAttributeData()
+        public static AttributeData GetMauiWrapperAttributeData(INamedTypeSymbol symbol)
         {
-            var attributes = mainSymbol.GetAttributes();
+            var attributes = symbol.GetAttributes();
             return attributes.FirstOrDefault(e => e.AttributeClass.Name.Contains(MauiWrapperAttributeString));
+        }
+
+        public static INamedTypeSymbol GetWrappedType(AttributeData attributeData)
+        {
+            if (attributeData == null) return null;
+            return attributeData.ConstructorArguments[MauiWrapperParams.WrappedType].Value as INamedTypeSymbol;
         }
 
         AttributeData GetAttachedInterfacesAttributeData()
@@ -150,7 +186,7 @@ namespace Sharp.UI.Generator
         string FindContentPropertyName()
         {
             AttributeData attributeData = null;
-            Helpers.LoopDownToObject(this.wrappedType, type =>
+            Helpers.LoopDownToObject(this.WrappedType, type =>
             {
                 attributeData = type.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains("ContentProperty"));
                 return attributeData != null;
@@ -165,7 +201,7 @@ namespace Sharp.UI.Generator
         IPropertySymbol FindPropertySymbolWithName(string propertyName)
         {
             IPropertySymbol propertySymbol = null;
-            Helpers.LoopDownToObject(this.wrappedType, type =>
+            Helpers.LoopDownToObject(this.WrappedType, type =>
             {
                 propertySymbol = (IPropertySymbol)(type.GetMembers(propertyName).FirstOrDefault());
                 return propertySymbol != null;

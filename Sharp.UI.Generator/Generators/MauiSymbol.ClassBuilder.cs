@@ -1,4 +1,9 @@
-﻿using System;
+﻿//
+// MIT License
+// Copyright Pawel Krzywdzinski
+//
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +13,6 @@ namespace Sharp.UI.Generator
 {
 	public partial class MauiSymbol
 	{
-        private List<string> bindablePropertiesNames = new List<string>();
-
         public void BuildClass(StringBuilder builder)
         {
             this.builder = builder;
@@ -30,7 +33,7 @@ using System.Collections.ObjectModel;
         void GenerateNameSpace()
         {
             builder.Append($@"
-namespace {nameSpaceName}
+namespace {nameSpaceString}
 {{
     public partial class {mainSymbol.Name}{BaseString()}
     {{");
@@ -54,7 +57,7 @@ namespace {nameSpaceName}
         {
             var isBindable = false;
 
-            Helpers.LoopDownToObject(isWrappedType ? wrappedType : mainSymbol, type =>
+            Helpers.LoopDownToObject(IsWrappedType ? WrappedType : mainSymbol, type =>
             {
                 if (type.Name.Equals("BindableObject")) isBindable = true;
                 return isBindable;
@@ -67,14 +70,14 @@ namespace {nameSpaceName}
 
         string BaseString()
         {
-            if (!isWrappedType) return "";
+            if (!IsWrappedType) return "";
             string baseString;
-            if (wrappedType.IsSealed)
-                baseString = $" : Sharp.UI.{WrapBuilder.GetInterfaceName(wrappedType)}";
+            if (WrappedType.IsSealed)
+                baseString = $" : Sharp.UI.I{GetNormalizedName(WrappedType)}";
             else
-                baseString = $" : {wrappedType.ToDisplayString()}, Sharp.UI.{WrapBuilder.GetInterfaceName(wrappedType)}";
+                baseString = $" : {WrappedType.ToDisplayString()}, Sharp.UI.I{GetNormalizedName(WrappedType)}";
 
-            if (wrappedType.IsSealed) baseString += $", ISealedMauiWrapper";
+            if (WrappedType.IsSealed) baseString += $", ISealedMauiWrapper";
             if (containerOfTypeName != null && singleItemContainer) baseString += $", IEnumerable";
             if (containerOfTypeName != null && !singleItemContainer) baseString += $", IList<{containerOfTypeName}>";
             if (IsBindable()) baseString += ", IWrappedBindableObject";
@@ -88,9 +91,9 @@ namespace {nameSpaceName}
 
         void GenerateClass()
         {
-            if (isWrappedType)
+            if (IsWrappedType)
             {
-                GenerateMauiObjectProperty();
+                GenerateMauiObjectPropertyForSealedType();
                 GenerateConstructors();
                 GenerateConstructorWithProperties();
                 GenerateOperatorsForSealedType();
@@ -98,7 +101,7 @@ namespace {nameSpaceName}
                 GenerateAttachedProperties();
                 GenerateSingleItemContainer();
                 GenerateCollectionContainer();
-                GenerateSealedParentBindable();
+                GenerateParentBindablePropertiesForSealedType();
                 GeneratePropertiesAndEventsForSealedType();
                 GenerateBindingContext();
             }
@@ -116,14 +119,14 @@ namespace {nameSpaceName}
         // ----- maui object ------
         // ------------------------
 
-        void GenerateMauiObjectProperty()
+        void GenerateMauiObjectPropertyForSealedType()
         {
-            if (wrappedType.IsSealed) builder.AppendLine($@"
+            if (WrappedType.IsSealed) builder.AppendLine($@"
         // ----- maui object -----
 
         public object _maui_RawObject {{ get; set; }}
 
-        public {wrappedType.ToDisplayString()} MauiObject {{ get => ({wrappedType.ToDisplayString()})_maui_RawObject; set => _maui_RawObject = value; }}");
+        public {WrappedType.ToDisplayString()} MauiObject {{ get => ({WrappedType.ToDisplayString()})_maui_RawObject; set => _maui_RawObject = value; }}");
         }
 
         // ------------------------
@@ -134,7 +137,7 @@ namespace {nameSpaceName}
         {
             this.GenerateConstructorsHeader();
 
-            if (isWrappedType && wrappedType.IsSealed) GenerateConstructorForSealedType();
+            if (IsWrappedType && WrappedType.IsSealed) GenerateConstructorForSealedType();
             if (generateNoParamConstructor) GenerateNoParamConstructor();
             if (generateAdditionalConstructors) GenerateAdditionalConstructors();
         }
@@ -143,7 +146,7 @@ namespace {nameSpaceName}
 
         void GenerateConstructorsHeader()
         {
-            if (isWrappedType && wrappedType.IsSealed || generateNoParamConstructor || generateAdditionalConstructors)
+            if (IsWrappedType && WrappedType.IsSealed || generateNoParamConstructor || generateAdditionalConstructors)
                 builder.AppendLine($@"
         // ----- constructors -----");
         }
@@ -153,9 +156,9 @@ namespace {nameSpaceName}
         void GenerateConstructorForSealedType()
         {
             builder.AppendLine($@"
-        protected {mainSymbol.Name}({wrappedType.ToDisplayString()} {WrapBuilder.CamelCase(mainSymbol.Name)})
+        protected {mainSymbol.Name}({WrappedType.ToDisplayString()} {Helpers.CamelCase(mainSymbol.Name)})
         {{
-            MauiObject = {WrapBuilder.CamelCase(mainSymbol.Name)};
+            MauiObject = {Helpers.CamelCase(mainSymbol.Name)};
         }}");            
         }
 
@@ -163,12 +166,12 @@ namespace {nameSpaceName}
 
         void GenerateNoParamConstructor()
         {
-            if (isWrappedType && wrappedType.IsSealed)
+            if (IsWrappedType && WrappedType.IsSealed)
             {
                 builder.AppendLine($@"
         public {mainSymbol.Name}()
         {{
-            MauiObject = new {wrappedType.ToDisplayString()}();
+            MauiObject = new {WrappedType.ToDisplayString()}();
         }}");
             }
             else
@@ -182,11 +185,11 @@ namespace {nameSpaceName}
 
         void GenerateAdditionalConstructors()
         {
-            var thisTail = isWrappedType && wrappedType.IsSealed || !generateNoParamConstructor ? ": this()" : "";
+            var thisTail = IsWrappedType && WrappedType.IsSealed || !generateNoParamConstructor ? ": this()" : "";
             builder.AppendLine($@"
-        public {mainSymbol.Name}(out {mainSymbol.Name} {WrapBuilder.CamelCase(mainSymbol.Name)}) {thisTail}
+        public {mainSymbol.Name}(out {mainSymbol.Name} {Helpers.CamelCase(mainSymbol.Name)}) {thisTail}
         {{
-            {WrapBuilder.CamelCase(mainSymbol.Name)} = this;
+            {Helpers.CamelCase(mainSymbol.Name)} = this;
         }}
 
         public {mainSymbol.Name}(Action<{mainSymbol.Name}> configure) {thisTail}
@@ -194,9 +197,9 @@ namespace {nameSpaceName}
             configure(this);
         }}
 
-        public {mainSymbol.Name}(out {mainSymbol.Name} {WrapBuilder.CamelCase(mainSymbol.Name)}, Action<{mainSymbol.Name}> configure) {thisTail}
+        public {mainSymbol.Name}(out {mainSymbol.Name} {Helpers.CamelCase(mainSymbol.Name)}, Action<{mainSymbol.Name}> configure) {thisTail}
         {{
-            {WrapBuilder.CamelCase(mainSymbol.Name)} = this;
+            {Helpers.CamelCase(mainSymbol.Name)} = this;
             configure(this);
         }}");
         }
@@ -217,7 +220,7 @@ namespace {nameSpaceName}
                     count++;
                     ISymbol property = null;
 
-                    Helpers.LoopDownToObject(isWrappedType ? wrappedType : mainSymbol, type =>
+                    Helpers.LoopDownToObject(IsWrappedType ? WrappedType : mainSymbol, type =>
                     {
                         property = type
                             .GetMembers()
@@ -236,16 +239,16 @@ namespace {nameSpaceName}
             this.{constructorWithProperty} = {constructorWithProperty.ToLower()};";
                 }
 
-                var thisTail = isWrappedType && wrappedType.IsSealed ? ": this()" : "";
+                var thisTail = IsWrappedType && WrappedType.IsSealed ? ": this()" : "";
 
                 builder.AppendLine($@"
         public {mainSymbol.Name}({definitionString}) {thisTail}
         {{  {assignmentString}
         }}
 
-        public {mainSymbol.Name}({definitionString}, out {mainSymbol.Name} {WrapBuilder.CamelCase(mainSymbol.Name)}) {thisTail}
+        public {mainSymbol.Name}({definitionString}, out {mainSymbol.Name} {Helpers.CamelCase(mainSymbol.Name)}) {thisTail}
         {{  {assignmentString};
-            {WrapBuilder.CamelCase(mainSymbol.Name)} = this;
+            {Helpers.CamelCase(mainSymbol.Name)} = this;
         }}
 
         public {mainSymbol.Name}({definitionString}, Action<{mainSymbol.Name}> configure) {thisTail}
@@ -253,9 +256,9 @@ namespace {nameSpaceName}
             configure(this);
         }}
 
-        public {mainSymbol.Name}({definitionString}, out {mainSymbol.Name} {WrapBuilder.CamelCase(mainSymbol.Name)}, Action<{mainSymbol.Name}> configure) {thisTail}
+        public {mainSymbol.Name}({definitionString}, out {mainSymbol.Name} {Helpers.CamelCase(mainSymbol.Name)}, Action<{mainSymbol.Name}> configure) {thisTail}
         {{  {assignmentString}
-            {WrapBuilder.CamelCase(mainSymbol.Name)} = this;
+            {Helpers.CamelCase(mainSymbol.Name)} = this;
             configure(this);
         }}");
             }
@@ -267,11 +270,11 @@ namespace {nameSpaceName}
 
         void GenerateOperatorsForSealedType()
         {
-            if (wrappedType.IsSealed) builder.AppendLine($@"
+            if (WrappedType.IsSealed) builder.AppendLine($@"
         // ----- operators -----
 
-        public static implicit operator {mainSymbol.Name}({wrappedType.ToDisplayString()} mauiObject) => new {mainSymbol.Name}(mauiObject);
-        public static implicit operator {wrappedType.ToDisplayString()}({mainSymbol.Name} obj) => obj.MauiObject;");
+        public static implicit operator {mainSymbol.Name}({WrappedType.ToDisplayString()} mauiObject) => new {mainSymbol.Name}(mauiObject);
+        public static implicit operator {WrappedType.ToDisplayString()}({mainSymbol.Name} obj) => obj.MauiObject;");
         }
 
         // --------------------------------------
@@ -379,7 +382,7 @@ namespace {nameSpaceName}
         void GenerateCollectionContainer()
         {
             var prefix = $"this.{containerPropertyName}";
-            if (wrappedType.IsSealed) prefix = containerPropertyName.Equals("this") ? "this.MauiObject" : $"this.MauiObject.{containerPropertyName}";
+            if (WrappedType.IsSealed) prefix = containerPropertyName.Equals("this") ? "this.MauiObject" : $"this.MauiObject.{containerPropertyName}";
 
             if (containerOfTypeName != null && singleItemContainer == false)
             {
@@ -408,14 +411,16 @@ namespace {nameSpaceName}
         // ----- sealed type bindable properties -----    
         // -------------------------------------------
 
-        void GenerateSealedParentBindable()
+        private List<string> sealedBindablePropertiesNames = new List<string>();
+
+        void GenerateParentBindablePropertiesForSealedType()
         {
-            if (wrappedType.IsSealed)
+            if (WrappedType.IsSealed)
             {
                 builder.AppendLine($@"
         // ----- bindable properties -----");
 
-                Helpers.LoopDownToObject(wrappedType, type =>
+                Helpers.LoopDownToObject(WrappedType, type =>
                 {
                     var properties = type
                         .GetMembers()
@@ -435,9 +440,9 @@ namespace {nameSpaceName}
         void GenerateBindableProperty(ISymbol property)
         {
             var name = property.Name.Substring(0, property.Name.Length - "Property".Length);
-            if (!notGenerateList.Contains(property.Name) && !bindablePropertiesNames.Contains(property.Name))
+            if (!notGenerateList.Contains(property.Name) && !sealedBindablePropertiesNames.Contains(property.Name))
             {
-                bindablePropertiesNames.Add(property.Name);
+                sealedBindablePropertiesNames.Add(property.Name);
                 builder.Append($@"
         public static Microsoft.Maui.Controls.BindableProperty {property.Name} => {property.ToDisplayString()};");
             }
@@ -449,14 +454,14 @@ namespace {nameSpaceName}
 
         void GeneratePropertiesAndEventsForSealedType()
         {
-            if (wrappedType.IsSealed)
+            if (WrappedType.IsSealed)
             {
                 builder.AppendLine($@"
         // ----- properties / events -----");
 
                 List<string> doneList = new List<string>();
 
-                Helpers.LoopDownToObject(wrappedType, type =>
+                Helpers.LoopDownToObject(WrappedType, type =>
                 {
                     var properties = type
                         .GetMembers()
@@ -495,7 +500,7 @@ namespace {nameSpaceName}
             var propertyName = property.Name.Split(new[] { "." }, StringSplitOptions.None).Last();
             propertyName = propertyName.Equals("class") ? "@class" : propertyName;
 
-            var accessedWith = propertySymbol.IsStatic ? wrappedType.ToDisplayString() : "MauiObject";
+            var accessedWith = propertySymbol.IsStatic ? WrappedType.ToDisplayString() : "MauiObject";
 
             if (!notGenerateList.Contains(propertyName))
             {
@@ -529,8 +534,8 @@ namespace {nameSpaceName}
         {
             if (IsBindable())
             {
-                var newKeyword = isWrappedType && wrappedType.IsSealed ? " " : " new ";
-                var accessedWith = isWrappedType && wrappedType.IsSealed ? "MauiObject" : "base";
+                var newKeyword = IsWrappedType && WrappedType.IsSealed ? " " : " new ";
+                var accessedWith = IsWrappedType && WrappedType.IsSealed ? "MauiObject" : "base";
                 builder.AppendLine($@"
         // ----- binding context -----
 
