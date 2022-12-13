@@ -10,9 +10,6 @@ namespace Sharp.UI.Generator;
 public class WrapBuilder
 {
     GeneratorExecutionContext context;
-    List<string> interfaceNameList = new List<string>();
-
-    Dictionary<string, INamedTypeSymbol> mauiTypes = new Dictionary<string, INamedTypeSymbol>();
 
     public WrapBuilder(GeneratorExecutionContext context)
     {
@@ -121,13 +118,12 @@ public class WrapBuilder
         foreach (var symbol in symbols)
         {
             var typeSymbol = (INamedTypeSymbol)symbol;
-            var wrapperAttribute = GetMauiWrapperAttributeData(typeSymbol);
-            var mauiType = GetMauiType(wrapperAttribute);
-            this.GenerateSymbol(typeSymbol, wrapperAttribute);
+            var mauiSymbol = new MauiSymbol(typeSymbol);
+            this.GenerateSymbol(mauiSymbol);
         }
     }
 
-    void GenerateSymbol(INamedTypeSymbol symbol, AttributeData wrapperAttribute)
+    void GenerateSymbol(MauiSymbol mauiSymbol)
     {
         var builder = new StringBuilder();
         builder.AppendLine("//");
@@ -137,15 +133,13 @@ public class WrapBuilder
         builder.AppendLine("#pragma warning disable CS8669");
         builder.AppendLine();
 
-        new MauiClassBuilder(symbol, wrapperAttribute, builder).Build();
+        mauiSymbol.BuildClass(builder);
 
         builder.AppendLine();
         builder.AppendLine();
         builder.AppendLine("#pragma warning restore CS8669");
 
-        var tail = symbol.IsGenericType ? $".{symbol.TypeArguments.FirstOrDefault().Name}" : "";
-
-        context.AddSource($"{symbol.ContainingNamespace}.{symbol.Name}{tail}.g.cs", builder.ToString());
+        context.AddSource(mauiSymbol.ClassBuilderSymbolFileNeme(), builder.ToString());
     }
 
     //------------- generate extensions -----------------
@@ -212,7 +206,12 @@ public class WrapBuilder
         }
     }
 
+    //---------------------------------------------------
     //-------------- generate interfaces ----------------
+    //---------------------------------------------------
+
+    List<string> interfaceNameList = new List<string>();
+
 
     void GenerateInterfaces(IEnumerable<ISymbol> symbols)
     {
