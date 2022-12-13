@@ -21,7 +21,6 @@ namespace Sharp.UI.Generator
         public void Execute(GeneratorExecutionContext context)
         {
             //Helpers.WaitForDebugger(context.CancellationToken);
-
             new WrapBuilder(context).Generate();
         }
     }
