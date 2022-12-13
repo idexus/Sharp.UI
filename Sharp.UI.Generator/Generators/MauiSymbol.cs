@@ -14,7 +14,12 @@ namespace Sharp.UI.Generator
 	public partial class MauiSymbol
 	{
         public const string MauiWrapperAttributeString = "MauiWrapper";
+        public const string BindableAttributeString = "Bindable";
+        public const string AttachedPropertiesAttributeString = "AttachedProperties";
         public const string AttachedInterfacesAttributeString = "AttachedInterfaces";
+        public const string ContentPropertyAttributeString = "ContentProperty";
+
+        public const string CompatibilityString = "Compatibility";
 
         class MauiWrapperParams
         {
@@ -153,7 +158,7 @@ namespace Sharp.UI.Generator
         public static string GetNormalizedName(INamedTypeSymbol type)
         {
             var tail = type.IsGenericType ? $"{type.TypeArguments.FirstOrDefault().Name}" : "";
-            var prefix = type.ContainingNamespace.ToDisplayString().Contains("Compatibility") ? "Compatibility" : "";
+            var prefix = type.ContainingNamespace.ToDisplayString().Contains(CompatibilityString) ? CompatibilityString : "";
             return $"{prefix}{type.Name}{tail}";
         }
 
@@ -180,7 +185,7 @@ namespace Sharp.UI.Generator
         AttributeData GetAttachedInterfacesAttributeData()
         {
             var attributes = mainSymbol.GetAttributes();
-            return attributes.FirstOrDefault(e => e.AttributeClass.Name.Contains("AttachedInterfaces"));
+            return attributes.FirstOrDefault(e => e.AttributeClass.Name.Contains(AttachedInterfacesAttributeString));
         }
 
         string FindContentPropertyName()
@@ -188,7 +193,7 @@ namespace Sharp.UI.Generator
             AttributeData attributeData = null;
             Helpers.LoopDownToObject(this.WrappedType, type =>
             {
-                attributeData = type.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains("ContentProperty"));
+                attributeData = type.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains(ContentPropertyAttributeString));
                 return attributeData != null;
             });
             if (attributeData != null)

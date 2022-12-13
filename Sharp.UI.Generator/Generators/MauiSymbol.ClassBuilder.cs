@@ -285,7 +285,7 @@ namespace {nameSpaceString}
         {
             var bindableInterfaces = mainSymbol
                 .Interfaces
-                .Where(e => e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains("Bindable")) != null);
+                .Where(e => e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains(BindableAttributeString)) != null);
 
             if (bindableInterfaces.Count() > 0) builder.AppendLine($@"
         // ----- bindable properties -----");
@@ -325,14 +325,14 @@ namespace {nameSpaceString}
         {
             var bindableInterfaces = mainSymbol
                 .Interfaces
-                .Where(e => e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains("AttachedProperties")) != null);
+                .Where(e => e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains(AttachedPropertiesAttributeString)) != null);
 
             if (bindableInterfaces.Count() > 0) builder.AppendLine($@"
         // ----- attached properties -----");
 
             foreach (var inter in bindableInterfaces)
             {
-                var attribute = inter.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains("AttachedProperties"));
+                var attribute = inter.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains(AttachedPropertiesAttributeString));
                 if (attribute != null)
                 {
                     var attachedType = attribute.ConstructorArguments[0].Value as INamedTypeSymbol;

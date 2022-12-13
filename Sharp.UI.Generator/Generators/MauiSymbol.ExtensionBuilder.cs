@@ -118,7 +118,7 @@ namespace {mainSymbol.ContainingNamespace}
             // generate using bindable interface
             var interfaces = extensionType
                 .Interfaces
-                .Where(e => e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains("Bindable")) != null);
+                .Where(e => e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains(BindableAttributeString)) != null);
 
             foreach (var inter in interfaces)
             {
@@ -149,11 +149,11 @@ namespace {mainSymbol.ContainingNamespace}
                 interfaces.AddRange(
                     mainSymbol
                         .Interfaces
-                        .Where(e => e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains("AttachedProperties")) != null));
+                        .Where(e => e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains(AttachedPropertiesAttributeString)) != null));
 
                 foreach (var inter in interfaces)
                 {
-                    var attribute = inter.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains("AttachedProperties"));
+                    var attribute = inter.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains(AttachedPropertiesAttributeString));
                     if (attribute != null)
                     {
                         var attachedType = attribute.ConstructorArguments[0].Value as INamedTypeSymbol;
