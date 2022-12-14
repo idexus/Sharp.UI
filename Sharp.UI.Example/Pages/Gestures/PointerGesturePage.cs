@@ -12,9 +12,7 @@ public class PointerGesturePage : ContentPage
             new Label(out var enterExitLabel).FontSize(20).TextColor(Colors.Blue),
             new Image("dotnet_bot.png", out var image)
                 .SizeRequest(300,300)
-                .GestureRecognizers(new GestureRecognizer[]
-                {
-                    new PointerGestureRecognizer()
+                .GestureRecognizers(new PointerGestureRecognizer()
                         .OnPointerEntered((e, args) =>
                         {
                             enterExitLabel.Text = "Entered";
@@ -28,7 +26,7 @@ public class PointerGesturePage : ContentPage
                             var pos = args.GetPosition(relativeTo: image).Value;
                             label.Text = $"point: {pos.X}, {pos.Y}";
                         })
-                })
+                )
         }
         .HorizontalOptions(LayoutOptions.Center)
         .VerticalOptions(LayoutOptions.Center);
