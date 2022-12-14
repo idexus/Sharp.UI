@@ -20,11 +20,11 @@ namespace ExampleApp
 ##### .NET CLI
 
 ```
-dotnet add package Sharp.UI --version 0.2.0-beta
+dotnet add package Sharp.UI --version 0.2.1-beta
 ```
 
 ##### Package manager
 
 ```
-NuGet\Install-Package Sharp.UI -Version 0.2.0-beta
+NuGet\Install-Package Sharp.UI -Version 0.2.1-beta
 ```
