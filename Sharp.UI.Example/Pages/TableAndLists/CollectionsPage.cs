@@ -3,6 +3,7 @@ using System.Collections.ObjectModel;
 
 namespace Sharp.UI.Example
 {
+    using Sharp.UI;
 
     public class CollectionPage : ContentPage
     {

@@ -4,6 +4,8 @@ using Microsoft.Maui.Controls.Shapes;
 
 namespace Sharp.UI.Example
 {
+    using Sharp.UI;
+
     public class TestPage : ContentPage
     {
         public class GraphicsDrawable : IDrawable

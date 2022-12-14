@@ -1,5 +1,7 @@
 ﻿namespace Sharp.UI.Example;
 
+using Sharp.UI;
+
 public class ContextMenuPage : ContentPage
 {
 	public ContextMenuPage()

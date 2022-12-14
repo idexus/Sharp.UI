@@ -1,5 +1,7 @@
 ﻿namespace Sharp.UI.Example;
 
+using Sharp.UI;
+
 public class OrientationTriggerPage : ContentPage
 {
 	public OrientationTriggerPage()

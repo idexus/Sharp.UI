@@ -1,5 +1,6 @@
 ﻿namespace Sharp.UI.Example;
 
+using Sharp.UI;
 
 public class NumericValidationBehavior : Behavior<Entry>
 {

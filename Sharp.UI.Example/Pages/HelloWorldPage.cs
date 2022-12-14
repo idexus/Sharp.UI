@@ -1,5 +1,7 @@
 ﻿namespace Sharp.UI.Example;
 
+using Sharp.UI;
+
 public class HelloWorldPage : ContentPage
 {
     int count = 0;

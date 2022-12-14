@@ -1,5 +1,7 @@
 ﻿namespace Sharp.UI.Example;
 
+using Sharp.UI;
+
 public class NumericValidationStyleBehavior : AttachedBehavior<Entry, NumericValidationStyleBehavior>
 {
     protected override void OnAttachedTo(Entry entry)

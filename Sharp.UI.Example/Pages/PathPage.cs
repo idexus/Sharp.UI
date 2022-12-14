@@ -1,6 +1,8 @@
 ﻿
 namespace Sharp.UI.Example
 {
+    using Sharp.UI;
+
     public class PathPage : ContentPage
     {
         public PathPage()

@@ -2,6 +2,8 @@
 
 namespace Sharp.UI.Example;
 
+using Sharp.UI;
+
 public class ListViewPage : ContentPage
 {
 	public ListViewPage()

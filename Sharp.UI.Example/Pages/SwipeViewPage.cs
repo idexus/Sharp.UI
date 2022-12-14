@@ -1,5 +1,7 @@
 ﻿namespace Sharp.UI;
 
+using Sharp.UI;
+
 public class SwipeViewPage : ContentPage
 {
 	public SwipeViewPage()

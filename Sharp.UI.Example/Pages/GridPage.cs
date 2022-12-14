@@ -1,5 +1,8 @@
-﻿namespace Sharp.UI.Example
+﻿
+namespace Sharp.UI.Example
 {
+    using Sharp.UI;
+
     public class GridPage : ContentPage
     {
         public GridPage()

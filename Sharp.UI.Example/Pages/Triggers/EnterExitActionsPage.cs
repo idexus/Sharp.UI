@@ -1,5 +1,7 @@
 ﻿namespace Sharp.UI.Example;
 
+using Sharp.UI;
+
 public class FadeTriggerAction : TriggerAction<VisualElement>
 {
     public int StartsFrom { get; set; }

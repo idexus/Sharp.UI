@@ -3,6 +3,8 @@ using System.Runtime.CompilerServices;
 
 namespace Sharp.UI.Example;
 
+using Sharp.UI;
+
 public class ExamplePage : ContentPage
 {
     private int counter;
