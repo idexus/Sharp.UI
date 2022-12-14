@@ -17,6 +17,8 @@ namespace ExampleApp
 
 ## Nuget Package
 
+Last relases
+
 ##### .NET CLI
 
 ```
@@ -28,3 +30,13 @@ dotnet add package Sharp.UI --version 0.2.1-beta
 ```
 NuGet\Install-Package Sharp.UI -Version 0.2.1-beta
 ```
+
+## VS Project Reference
+
+If you want to use the `Sharp.UI` library by project reference
+
+```xml
+<ItemGroup>
+    <ProjectReference Include="..\Sharp.UI\Sharp.UI.csproj" />
+    <ProjectReference Include="..\Sharp.UI.Generator\Sharp.UI.Generator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+</ItemGroup>
