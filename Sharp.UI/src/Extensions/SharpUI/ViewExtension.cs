@@ -28,7 +28,7 @@
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.View>(obj);
             foreach (var item in gestureRecognizers)
             {
-                var mauiItem = MauiWrapper.GetObject<Microsoft.Maui.Controls.GestureRecognizer>(item);
+                var mauiItem = MauiWrapper.GetObject<Microsoft.Maui.Controls.IGestureRecognizer>(item);
                 mauiObject.GestureRecognizers.Add(mauiItem);
             }
             return obj;
@@ -41,7 +41,7 @@
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.View>(obj);
             foreach (var item in gestureRecognizers)
             {
-                var mauiItem = MauiWrapper.GetObject<Microsoft.Maui.Controls.GestureRecognizer>(item);
+                var mauiItem = MauiWrapper.GetObject<Microsoft.Maui.Controls.IGestureRecognizer>(item);
                 mauiObject.GestureRecognizers.Add(mauiItem);
             }
             return obj;
@@ -58,7 +58,7 @@
                 var items = def.GetValue();
                 foreach (var item in items)
                 {
-                    var mauiItem = MauiWrapper.GetObject<Microsoft.Maui.Controls.GestureRecognizer>(item);
+                    var mauiItem = MauiWrapper.GetObject<Microsoft.Maui.Controls.IGestureRecognizer>(item);
                     mauiObject.GestureRecognizers.Add(mauiItem);
                 }
             }
