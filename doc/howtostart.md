@@ -1,4 +1,4 @@
-# How to start
+# Before you start
 
 If you want to use this library, you must include the `using Sharp.UI` inside your app namespace, which replaces the standard MAUI classes.
 
