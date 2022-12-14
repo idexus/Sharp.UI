@@ -22,12 +22,12 @@ namespace Sharp.UI
             radioButton = this;
         }
 
-        public RadioButton(Action<RadioButton> configure) 
+        public RadioButton(System.Action<RadioButton> configure) 
         {
             configure(this);
         }
 
-        public RadioButton(out RadioButton radioButton, Action<RadioButton> configure) 
+        public RadioButton(out RadioButton radioButton, System.Action<RadioButton> configure) 
         {
             radioButton = this;
             configure(this);
@@ -44,13 +44,13 @@ namespace Sharp.UI
             radioButton = this;
         }
 
-        public RadioButton(object content, Action<RadioButton> configure) 
+        public RadioButton(object content, System.Action<RadioButton> configure) 
         {  
             this.Content = content;
             configure(this);
         }
 
-        public RadioButton(object content, out RadioButton radioButton, Action<RadioButton> configure) 
+        public RadioButton(object content, out RadioButton radioButton, System.Action<RadioButton> configure) 
         {  
             this.Content = content;
             radioButton = this;

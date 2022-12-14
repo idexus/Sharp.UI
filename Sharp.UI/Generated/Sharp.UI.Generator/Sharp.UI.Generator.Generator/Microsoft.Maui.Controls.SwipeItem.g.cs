@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T BackgroundColor<T>(this T obj,
             Microsoft.Maui.Graphics.Color? backgroundColor,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.ISwipeItem
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwipeItem>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T BackgroundColor<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.ISwipeItem
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwipeItem>(obj);
@@ -53,7 +53,7 @@ namespace Sharp.UI
         
         public static T IsVisible<T>(this T obj,
             bool? isVisible,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.ISwipeItem
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwipeItem>(obj);
@@ -65,7 +65,7 @@ namespace Sharp.UI
         }
         
         public static T IsVisible<T>(this T obj,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.ISwipeItem
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwipeItem>(obj);

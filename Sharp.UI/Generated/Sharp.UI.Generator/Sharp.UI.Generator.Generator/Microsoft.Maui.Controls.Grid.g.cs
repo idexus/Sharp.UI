@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T ColumnDefinitions<T>(this T obj,
             Microsoft.Maui.Controls.ColumnDefinitionCollection? columnDefinitions,
-            Func<BindableDef<Microsoft.Maui.Controls.ColumnDefinitionCollection>, BindableDef<Microsoft.Maui.Controls.ColumnDefinitionCollection>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.ColumnDefinitionCollection>, BindableDef<Microsoft.Maui.Controls.ColumnDefinitionCollection>> definition)
             where T : Sharp.UI.IGrid
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Grid>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T ColumnDefinitions<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.ColumnDefinitionCollection>, BindableDef<Microsoft.Maui.Controls.ColumnDefinitionCollection>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.ColumnDefinitionCollection>, BindableDef<Microsoft.Maui.Controls.ColumnDefinitionCollection>> definition)
             where T : Sharp.UI.IGrid
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Grid>(obj);
@@ -53,7 +53,7 @@ namespace Sharp.UI
         
         public static T RowDefinitions<T>(this T obj,
             Microsoft.Maui.Controls.RowDefinitionCollection? rowDefinitions,
-            Func<BindableDef<Microsoft.Maui.Controls.RowDefinitionCollection>, BindableDef<Microsoft.Maui.Controls.RowDefinitionCollection>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.RowDefinitionCollection>, BindableDef<Microsoft.Maui.Controls.RowDefinitionCollection>> definition)
             where T : Sharp.UI.IGrid
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Grid>(obj);
@@ -65,7 +65,7 @@ namespace Sharp.UI
         }
         
         public static T RowDefinitions<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.RowDefinitionCollection>, BindableDef<Microsoft.Maui.Controls.RowDefinitionCollection>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.RowDefinitionCollection>, BindableDef<Microsoft.Maui.Controls.RowDefinitionCollection>> definition)
             where T : Sharp.UI.IGrid
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Grid>(obj);
@@ -86,7 +86,7 @@ namespace Sharp.UI
         
         public static T RowSpacing<T>(this T obj,
             double? rowSpacing,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IGrid
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Grid>(obj);
@@ -98,7 +98,7 @@ namespace Sharp.UI
         }
         
         public static T RowSpacing<T>(this T obj,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IGrid
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Grid>(obj);
@@ -119,7 +119,7 @@ namespace Sharp.UI
         
         public static T ColumnSpacing<T>(this T obj,
             double? columnSpacing,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IGrid
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Grid>(obj);
@@ -131,7 +131,7 @@ namespace Sharp.UI
         }
         
         public static T ColumnSpacing<T>(this T obj,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IGrid
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Grid>(obj);

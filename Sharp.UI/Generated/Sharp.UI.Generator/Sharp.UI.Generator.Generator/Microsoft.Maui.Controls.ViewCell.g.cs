@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T View<T>(this T obj,
             Microsoft.Maui.Controls.View? view,
-            Func<ValueDef<Microsoft.Maui.Controls.View>, ValueDef<Microsoft.Maui.Controls.View>> definition)
+            System.Func<ValueDef<Microsoft.Maui.Controls.View>, ValueDef<Microsoft.Maui.Controls.View>> definition)
             where T : Sharp.UI.IViewCell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ViewCell>(obj);
@@ -31,7 +31,7 @@ namespace Sharp.UI
         }
         
         public static T View<T>(this T obj,
-            Func<ValueDef<Microsoft.Maui.Controls.View>, ValueDef<Microsoft.Maui.Controls.View>> definition)
+            System.Func<ValueDef<Microsoft.Maui.Controls.View>, ValueDef<Microsoft.Maui.Controls.View>> definition)
             where T : Sharp.UI.IViewCell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ViewCell>(obj);

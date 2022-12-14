@@ -36,12 +36,12 @@ namespace Sharp.UI
             pathGeometry = this;
         }
 
-        public PathGeometry(Action<PathGeometry> configure) : this()
+        public PathGeometry(System.Action<PathGeometry> configure) : this()
         {
             configure(this);
         }
 
-        public PathGeometry(out PathGeometry pathGeometry, Action<PathGeometry> configure) : this()
+        public PathGeometry(out PathGeometry pathGeometry, System.Action<PathGeometry> configure) : this()
         {
             pathGeometry = this;
             configure(this);

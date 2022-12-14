@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T Point<T>(this T obj,
             Microsoft.Maui.Graphics.Point? point,
-            Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
             where T : Sharp.UI.IArcSegment
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.ArcSegment>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T Point<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
             where T : Sharp.UI.IArcSegment
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.ArcSegment>(obj);
@@ -53,7 +53,7 @@ namespace Sharp.UI
         
         public static T Size<T>(this T obj,
             Microsoft.Maui.Graphics.Size? size,
-            Func<BindableDef<Microsoft.Maui.Graphics.Size>, BindableDef<Microsoft.Maui.Graphics.Size>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Size>, BindableDef<Microsoft.Maui.Graphics.Size>> definition)
             where T : Sharp.UI.IArcSegment
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.ArcSegment>(obj);
@@ -65,7 +65,7 @@ namespace Sharp.UI
         }
         
         public static T Size<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Graphics.Size>, BindableDef<Microsoft.Maui.Graphics.Size>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Size>, BindableDef<Microsoft.Maui.Graphics.Size>> definition)
             where T : Sharp.UI.IArcSegment
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.ArcSegment>(obj);
@@ -86,7 +86,7 @@ namespace Sharp.UI
         
         public static T RotationAngle<T>(this T obj,
             double? rotationAngle,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IArcSegment
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.ArcSegment>(obj);
@@ -98,7 +98,7 @@ namespace Sharp.UI
         }
         
         public static T RotationAngle<T>(this T obj,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IArcSegment
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.ArcSegment>(obj);
@@ -119,7 +119,7 @@ namespace Sharp.UI
         
         public static T SweepDirection<T>(this T obj,
             Microsoft.Maui.Controls.SweepDirection? sweepDirection,
-            Func<BindableDef<Microsoft.Maui.Controls.SweepDirection>, BindableDef<Microsoft.Maui.Controls.SweepDirection>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.SweepDirection>, BindableDef<Microsoft.Maui.Controls.SweepDirection>> definition)
             where T : Sharp.UI.IArcSegment
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.ArcSegment>(obj);
@@ -131,7 +131,7 @@ namespace Sharp.UI
         }
         
         public static T SweepDirection<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.SweepDirection>, BindableDef<Microsoft.Maui.Controls.SweepDirection>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.SweepDirection>, BindableDef<Microsoft.Maui.Controls.SweepDirection>> definition)
             where T : Sharp.UI.IArcSegment
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.ArcSegment>(obj);
@@ -152,7 +152,7 @@ namespace Sharp.UI
         
         public static T IsLargeArc<T>(this T obj,
             bool? isLargeArc,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IArcSegment
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.ArcSegment>(obj);
@@ -164,7 +164,7 @@ namespace Sharp.UI
         }
         
         public static T IsLargeArc<T>(this T obj,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IArcSegment
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.ArcSegment>(obj);

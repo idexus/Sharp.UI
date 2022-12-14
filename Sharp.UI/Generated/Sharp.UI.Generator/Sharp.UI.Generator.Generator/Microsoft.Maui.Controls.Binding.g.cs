@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T Converter<T>(this T obj,
             Microsoft.Maui.Controls.IValueConverter? converter,
-            Func<ValueDef<Microsoft.Maui.Controls.IValueConverter>, ValueDef<Microsoft.Maui.Controls.IValueConverter>> definition)
+            System.Func<ValueDef<Microsoft.Maui.Controls.IValueConverter>, ValueDef<Microsoft.Maui.Controls.IValueConverter>> definition)
             where T : Sharp.UI.IBinding
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Binding>(obj);
@@ -31,7 +31,7 @@ namespace Sharp.UI
         }
         
         public static T Converter<T>(this T obj,
-            Func<ValueDef<Microsoft.Maui.Controls.IValueConverter>, ValueDef<Microsoft.Maui.Controls.IValueConverter>> definition)
+            System.Func<ValueDef<Microsoft.Maui.Controls.IValueConverter>, ValueDef<Microsoft.Maui.Controls.IValueConverter>> definition)
             where T : Sharp.UI.IBinding
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Binding>(obj);
@@ -51,7 +51,7 @@ namespace Sharp.UI
         
         public static T ConverterParameter<T>(this T obj,
             object? converterParameter,
-            Func<ValueDef<object>, ValueDef<object>> definition)
+            System.Func<ValueDef<object>, ValueDef<object>> definition)
             where T : Sharp.UI.IBinding
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Binding>(obj);
@@ -62,7 +62,7 @@ namespace Sharp.UI
         }
         
         public static T ConverterParameter<T>(this T obj,
-            Func<ValueDef<object>, ValueDef<object>> definition)
+            System.Func<ValueDef<object>, ValueDef<object>> definition)
             where T : Sharp.UI.IBinding
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Binding>(obj);
@@ -82,7 +82,7 @@ namespace Sharp.UI
         
         public static T Path<T>(this T obj,
             string? path,
-            Func<ValueDef<string>, ValueDef<string>> definition)
+            System.Func<ValueDef<string>, ValueDef<string>> definition)
             where T : Sharp.UI.IBinding
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Binding>(obj);
@@ -93,7 +93,7 @@ namespace Sharp.UI
         }
         
         public static T Path<T>(this T obj,
-            Func<ValueDef<string>, ValueDef<string>> definition)
+            System.Func<ValueDef<string>, ValueDef<string>> definition)
             where T : Sharp.UI.IBinding
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Binding>(obj);
@@ -113,7 +113,7 @@ namespace Sharp.UI
         
         public static T Source<T>(this T obj,
             object? source,
-            Func<ValueDef<object>, ValueDef<object>> definition)
+            System.Func<ValueDef<object>, ValueDef<object>> definition)
             where T : Sharp.UI.IBinding
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Binding>(obj);
@@ -124,7 +124,7 @@ namespace Sharp.UI
         }
         
         public static T Source<T>(this T obj,
-            Func<ValueDef<object>, ValueDef<object>> definition)
+            System.Func<ValueDef<object>, ValueDef<object>> definition)
             where T : Sharp.UI.IBinding
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Binding>(obj);
@@ -144,7 +144,7 @@ namespace Sharp.UI
         
         public static T UpdateSourceEventName<T>(this T obj,
             string? updateSourceEventName,
-            Func<ValueDef<string>, ValueDef<string>> definition)
+            System.Func<ValueDef<string>, ValueDef<string>> definition)
             where T : Sharp.UI.IBinding
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Binding>(obj);
@@ -155,7 +155,7 @@ namespace Sharp.UI
         }
         
         public static T UpdateSourceEventName<T>(this T obj,
-            Func<ValueDef<string>, ValueDef<string>> definition)
+            System.Func<ValueDef<string>, ValueDef<string>> definition)
             where T : Sharp.UI.IBinding
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Binding>(obj);

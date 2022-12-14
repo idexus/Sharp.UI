@@ -18,12 +18,12 @@ namespace Sharp.UI
             navigationPage = this;
         }
 
-        public NavigationPage(Action<NavigationPage> configure) 
+        public NavigationPage(System.Action<NavigationPage> configure) 
         {
             configure(this);
         }
 
-        public NavigationPage(out NavigationPage navigationPage, Action<NavigationPage> configure) 
+        public NavigationPage(out NavigationPage navigationPage, System.Action<NavigationPage> configure) 
         {
             navigationPage = this;
             configure(this);

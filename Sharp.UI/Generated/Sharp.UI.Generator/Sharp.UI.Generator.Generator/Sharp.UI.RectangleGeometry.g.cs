@@ -18,12 +18,12 @@ namespace Sharp.UI
             rectangleGeometry = this;
         }
 
-        public RectangleGeometry(Action<RectangleGeometry> configure) 
+        public RectangleGeometry(System.Action<RectangleGeometry> configure) 
         {
             configure(this);
         }
 
-        public RectangleGeometry(out RectangleGeometry rectangleGeometry, Action<RectangleGeometry> configure) 
+        public RectangleGeometry(out RectangleGeometry rectangleGeometry, System.Action<RectangleGeometry> configure) 
         {
             rectangleGeometry = this;
             configure(this);

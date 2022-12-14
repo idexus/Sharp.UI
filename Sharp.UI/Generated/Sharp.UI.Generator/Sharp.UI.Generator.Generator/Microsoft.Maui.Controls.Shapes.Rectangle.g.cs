@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T RadiusX<T>(this T obj,
             double? radiusX,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IRectangle
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Rectangle>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T RadiusX<T>(this T obj,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IRectangle
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Rectangle>(obj);
@@ -53,7 +53,7 @@ namespace Sharp.UI
         
         public static T RadiusY<T>(this T obj,
             double? radiusY,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IRectangle
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Rectangle>(obj);
@@ -65,7 +65,7 @@ namespace Sharp.UI
         }
         
         public static T RadiusY<T>(this T obj,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IRectangle
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Rectangle>(obj);
@@ -86,7 +86,7 @@ namespace Sharp.UI
         
         public static T @class<T>(this T obj,
             System.Collections.Generic.IList<string>? @class,
-            Func<ValueDef<System.Collections.Generic.IList<string>>, ValueDef<System.Collections.Generic.IList<string>>> definition)
+            System.Func<ValueDef<System.Collections.Generic.IList<string>>, ValueDef<System.Collections.Generic.IList<string>>> definition)
             where T : Sharp.UI.IRectangle
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Rectangle>(obj);
@@ -97,7 +97,7 @@ namespace Sharp.UI
         }
         
         public static T @class<T>(this T obj,
-            Func<ValueDef<System.Collections.Generic.IList<string>>, ValueDef<System.Collections.Generic.IList<string>>> definition)
+            System.Func<ValueDef<System.Collections.Generic.IList<string>>, ValueDef<System.Collections.Generic.IList<string>>> definition)
             where T : Sharp.UI.IRectangle
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Rectangle>(obj);

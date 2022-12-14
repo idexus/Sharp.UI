@@ -18,12 +18,12 @@ namespace Sharp.UI
             @switch = this;
         }
 
-        public Switch(Action<Switch> configure) 
+        public Switch(System.Action<Switch> configure) 
         {
             configure(this);
         }
 
-        public Switch(out Switch @switch, Action<Switch> configure) 
+        public Switch(out Switch @switch, System.Action<Switch> configure) 
         {
             @switch = this;
             configure(this);

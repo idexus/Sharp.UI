@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T Command<T>(this T obj,
             System.Windows.Input.ICommand? command,
-            Func<BindableDef<System.Windows.Input.ICommand?>, BindableDef<System.Windows.Input.ICommand?>> definition)
+            System.Func<BindableDef<System.Windows.Input.ICommand?>, BindableDef<System.Windows.Input.ICommand?>> definition)
             where T : Sharp.UI.ITapGestureRecognizer
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.TapGestureRecognizer>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T Command<T>(this T obj,
-            Func<BindableDef<System.Windows.Input.ICommand?>, BindableDef<System.Windows.Input.ICommand?>> definition)
+            System.Func<BindableDef<System.Windows.Input.ICommand?>, BindableDef<System.Windows.Input.ICommand?>> definition)
             where T : Sharp.UI.ITapGestureRecognizer
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.TapGestureRecognizer>(obj);
@@ -53,7 +53,7 @@ namespace Sharp.UI
         
         public static T CommandParameter<T>(this T obj,
             object? commandParameter,
-            Func<BindableDef<object?>, BindableDef<object?>> definition)
+            System.Func<BindableDef<object?>, BindableDef<object?>> definition)
             where T : Sharp.UI.ITapGestureRecognizer
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.TapGestureRecognizer>(obj);
@@ -65,7 +65,7 @@ namespace Sharp.UI
         }
         
         public static T CommandParameter<T>(this T obj,
-            Func<BindableDef<object?>, BindableDef<object?>> definition)
+            System.Func<BindableDef<object?>, BindableDef<object?>> definition)
             where T : Sharp.UI.ITapGestureRecognizer
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.TapGestureRecognizer>(obj);
@@ -86,7 +86,7 @@ namespace Sharp.UI
         
         public static T NumberOfTapsRequired<T>(this T obj,
             int? numberOfTapsRequired,
-            Func<BindableDef<int>, BindableDef<int>> definition)
+            System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.ITapGestureRecognizer
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.TapGestureRecognizer>(obj);
@@ -98,7 +98,7 @@ namespace Sharp.UI
         }
         
         public static T NumberOfTapsRequired<T>(this T obj,
-            Func<BindableDef<int>, BindableDef<int>> definition)
+            System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.ITapGestureRecognizer
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.TapGestureRecognizer>(obj);
@@ -119,7 +119,7 @@ namespace Sharp.UI
         
         public static T Buttons<T>(this T obj,
             Microsoft.Maui.Controls.ButtonsMask? buttons,
-            Func<BindableDef<Microsoft.Maui.Controls.ButtonsMask>, BindableDef<Microsoft.Maui.Controls.ButtonsMask>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.ButtonsMask>, BindableDef<Microsoft.Maui.Controls.ButtonsMask>> definition)
             where T : Sharp.UI.ITapGestureRecognizer
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.TapGestureRecognizer>(obj);
@@ -131,7 +131,7 @@ namespace Sharp.UI
         }
         
         public static T Buttons<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.ButtonsMask>, BindableDef<Microsoft.Maui.Controls.ButtonsMask>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.ButtonsMask>, BindableDef<Microsoft.Maui.Controls.ButtonsMask>> definition)
             where T : Sharp.UI.ITapGestureRecognizer
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.TapGestureRecognizer>(obj);

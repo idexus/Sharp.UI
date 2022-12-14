@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T IndicatorsShape<T>(this T obj,
             Microsoft.Maui.Controls.IndicatorShape? indicatorsShape,
-            Func<BindableDef<Microsoft.Maui.Controls.IndicatorShape>, BindableDef<Microsoft.Maui.Controls.IndicatorShape>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.IndicatorShape>, BindableDef<Microsoft.Maui.Controls.IndicatorShape>> definition)
             where T : Sharp.UI.IIndicatorView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T IndicatorsShape<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.IndicatorShape>, BindableDef<Microsoft.Maui.Controls.IndicatorShape>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.IndicatorShape>, BindableDef<Microsoft.Maui.Controls.IndicatorShape>> definition)
             where T : Sharp.UI.IIndicatorView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
@@ -53,7 +53,7 @@ namespace Sharp.UI
         
         public static T IndicatorLayout<T>(this T obj,
             Microsoft.Maui.Controls.IBindableLayout? indicatorLayout,
-            Func<ValueDef<Microsoft.Maui.Controls.IBindableLayout>, ValueDef<Microsoft.Maui.Controls.IBindableLayout>> definition)
+            System.Func<ValueDef<Microsoft.Maui.Controls.IBindableLayout>, ValueDef<Microsoft.Maui.Controls.IBindableLayout>> definition)
             where T : Sharp.UI.IIndicatorView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
@@ -64,7 +64,7 @@ namespace Sharp.UI
         }
         
         public static T IndicatorLayout<T>(this T obj,
-            Func<ValueDef<Microsoft.Maui.Controls.IBindableLayout>, ValueDef<Microsoft.Maui.Controls.IBindableLayout>> definition)
+            System.Func<ValueDef<Microsoft.Maui.Controls.IBindableLayout>, ValueDef<Microsoft.Maui.Controls.IBindableLayout>> definition)
             where T : Sharp.UI.IIndicatorView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
@@ -84,7 +84,7 @@ namespace Sharp.UI
         
         public static T Position<T>(this T obj,
             int? position,
-            Func<BindableDef<int>, BindableDef<int>> definition)
+            System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.IIndicatorView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
@@ -96,7 +96,7 @@ namespace Sharp.UI
         }
         
         public static T Position<T>(this T obj,
-            Func<BindableDef<int>, BindableDef<int>> definition)
+            System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.IIndicatorView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
@@ -117,7 +117,7 @@ namespace Sharp.UI
         
         public static T Count<T>(this T obj,
             int? count,
-            Func<BindableDef<int>, BindableDef<int>> definition)
+            System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.IIndicatorView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
@@ -129,7 +129,7 @@ namespace Sharp.UI
         }
         
         public static T Count<T>(this T obj,
-            Func<BindableDef<int>, BindableDef<int>> definition)
+            System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.IIndicatorView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
@@ -150,7 +150,7 @@ namespace Sharp.UI
         
         public static T MaximumVisible<T>(this T obj,
             int? maximumVisible,
-            Func<BindableDef<int>, BindableDef<int>> definition)
+            System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.IIndicatorView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
@@ -162,7 +162,7 @@ namespace Sharp.UI
         }
         
         public static T MaximumVisible<T>(this T obj,
-            Func<BindableDef<int>, BindableDef<int>> definition)
+            System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.IIndicatorView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
@@ -183,7 +183,7 @@ namespace Sharp.UI
         
         public static T IndicatorTemplate<T>(this T obj,
             Microsoft.Maui.Controls.DataTemplate? indicatorTemplate,
-            Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
             where T : Sharp.UI.IIndicatorView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
@@ -195,7 +195,7 @@ namespace Sharp.UI
         }
         
         public static T IndicatorTemplate<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
             where T : Sharp.UI.IIndicatorView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
@@ -205,7 +205,7 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T IndicatorTemplate<T>(this T obj, Func<object> loadTemplate) where T : Sharp.UI.IIndicatorView
+        public static T IndicatorTemplate<T>(this T obj, System.Func<object> loadTemplate) where T : Sharp.UI.IIndicatorView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
             mauiObject.IndicatorTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
@@ -223,7 +223,7 @@ namespace Sharp.UI
         
         public static T HideSingle<T>(this T obj,
             bool? hideSingle,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IIndicatorView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
@@ -235,7 +235,7 @@ namespace Sharp.UI
         }
         
         public static T HideSingle<T>(this T obj,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IIndicatorView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
@@ -256,7 +256,7 @@ namespace Sharp.UI
         
         public static T IndicatorColor<T>(this T obj,
             Microsoft.Maui.Graphics.Color? indicatorColor,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IIndicatorView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
@@ -268,7 +268,7 @@ namespace Sharp.UI
         }
         
         public static T IndicatorColor<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IIndicatorView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
@@ -289,7 +289,7 @@ namespace Sharp.UI
         
         public static T SelectedIndicatorColor<T>(this T obj,
             Microsoft.Maui.Graphics.Color? selectedIndicatorColor,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IIndicatorView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
@@ -301,7 +301,7 @@ namespace Sharp.UI
         }
         
         public static T SelectedIndicatorColor<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IIndicatorView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
@@ -322,7 +322,7 @@ namespace Sharp.UI
         
         public static T IndicatorSize<T>(this T obj,
             double? indicatorSize,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IIndicatorView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
@@ -334,7 +334,7 @@ namespace Sharp.UI
         }
         
         public static T IndicatorSize<T>(this T obj,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IIndicatorView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
@@ -355,7 +355,7 @@ namespace Sharp.UI
         
         public static T ItemsSource<T>(this T obj,
             System.Collections.IEnumerable? itemsSource,
-            Func<BindableDef<System.Collections.IEnumerable>, BindableDef<System.Collections.IEnumerable>> definition)
+            System.Func<BindableDef<System.Collections.IEnumerable>, BindableDef<System.Collections.IEnumerable>> definition)
             where T : Sharp.UI.IIndicatorView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
@@ -367,7 +367,7 @@ namespace Sharp.UI
         }
         
         public static T ItemsSource<T>(this T obj,
-            Func<BindableDef<System.Collections.IEnumerable>, BindableDef<System.Collections.IEnumerable>> definition)
+            System.Func<BindableDef<System.Collections.IEnumerable>, BindableDef<System.Collections.IEnumerable>> definition)
             where T : Sharp.UI.IIndicatorView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);

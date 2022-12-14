@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T Property<T>(this T obj,
             object? property,
-            Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.ICompareStateTrigger
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CompareStateTrigger>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T Property<T>(this T obj,
-            Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.ICompareStateTrigger
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CompareStateTrigger>(obj);
@@ -53,7 +53,7 @@ namespace Sharp.UI
         
         public static T Value<T>(this T obj,
             object? value,
-            Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.ICompareStateTrigger
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CompareStateTrigger>(obj);
@@ -65,7 +65,7 @@ namespace Sharp.UI
         }
         
         public static T Value<T>(this T obj,
-            Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.ICompareStateTrigger
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CompareStateTrigger>(obj);

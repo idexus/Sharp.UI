@@ -32,12 +32,12 @@ namespace Sharp.UI
             ellipse = this;
         }
 
-        public Ellipse(Action<Ellipse> configure) : this()
+        public Ellipse(System.Action<Ellipse> configure) : this()
         {
             configure(this);
         }
 
-        public Ellipse(out Ellipse ellipse, Action<Ellipse> configure) : this()
+        public Ellipse(out Ellipse ellipse, System.Action<Ellipse> configure) : this()
         {
             ellipse = this;
             configure(this);
@@ -56,14 +56,14 @@ namespace Sharp.UI
             ellipse = this;
         }
 
-        public Ellipse(double widthrequest, double heightrequest, Action<Ellipse> configure) : this()
+        public Ellipse(double widthrequest, double heightrequest, System.Action<Ellipse> configure) : this()
         {  
             this.WidthRequest = widthrequest;
             this.HeightRequest = heightrequest;
             configure(this);
         }
 
-        public Ellipse(double widthrequest, double heightrequest, out Ellipse ellipse, Action<Ellipse> configure) : this()
+        public Ellipse(double widthrequest, double heightrequest, out Ellipse ellipse, System.Action<Ellipse> configure) : this()
         {  
             this.WidthRequest = widthrequest;
             this.HeightRequest = heightrequest;

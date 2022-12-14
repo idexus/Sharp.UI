@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T @class<T>(this T obj,
             System.Collections.Generic.IList<string>? @class,
-            Func<ValueDef<System.Collections.Generic.IList<string>>, ValueDef<System.Collections.Generic.IList<string>>> definition)
+            System.Func<ValueDef<System.Collections.Generic.IList<string>>, ValueDef<System.Collections.Generic.IList<string>>> definition)
             where T : Sharp.UI.IEllipse
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Ellipse>(obj);
@@ -31,7 +31,7 @@ namespace Sharp.UI
         }
         
         public static T @class<T>(this T obj,
-            Func<ValueDef<System.Collections.Generic.IList<string>>, ValueDef<System.Collections.Generic.IList<string>>> definition)
+            System.Func<ValueDef<System.Collections.Generic.IList<string>>, ValueDef<System.Collections.Generic.IList<string>>> definition)
             where T : Sharp.UI.IEllipse
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Ellipse>(obj);

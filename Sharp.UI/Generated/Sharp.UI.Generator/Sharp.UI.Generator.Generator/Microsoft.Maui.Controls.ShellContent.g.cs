@@ -28,7 +28,7 @@ namespace Sharp.UI
         }
 
         public static T MenuItems<T>(this T obj,
-            Func<Def<Microsoft.Maui.Controls.MenuItemCollection>, Def<Microsoft.Maui.Controls.MenuItemCollection>> definition)
+            System.Func<Def<Microsoft.Maui.Controls.MenuItemCollection>, Def<Microsoft.Maui.Controls.MenuItemCollection>> definition)
             where T : Sharp.UI.IShellContent
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ShellContent>(obj);
@@ -52,7 +52,7 @@ namespace Sharp.UI
         
         public static T Content<T>(this T obj,
             object? content,
-            Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IShellContent
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ShellContent>(obj);
@@ -64,7 +64,7 @@ namespace Sharp.UI
         }
         
         public static T Content<T>(this T obj,
-            Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IShellContent
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ShellContent>(obj);
@@ -85,7 +85,7 @@ namespace Sharp.UI
         
         public static T ContentTemplate<T>(this T obj,
             Microsoft.Maui.Controls.DataTemplate? contentTemplate,
-            Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
             where T : Sharp.UI.IShellContent
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ShellContent>(obj);
@@ -97,7 +97,7 @@ namespace Sharp.UI
         }
         
         public static T ContentTemplate<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
             where T : Sharp.UI.IShellContent
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ShellContent>(obj);
@@ -107,7 +107,7 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T ContentTemplate<T>(this T obj, Func<object> loadTemplate) where T : Sharp.UI.IShellContent
+        public static T ContentTemplate<T>(this T obj, System.Func<object> loadTemplate) where T : Sharp.UI.IShellContent
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ShellContent>(obj);
             mauiObject.ContentTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);

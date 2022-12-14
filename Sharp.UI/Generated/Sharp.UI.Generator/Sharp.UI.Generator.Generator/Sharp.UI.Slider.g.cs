@@ -18,12 +18,12 @@ namespace Sharp.UI
             slider = this;
         }
 
-        public Slider(Action<Slider> configure) 
+        public Slider(System.Action<Slider> configure) 
         {
             configure(this);
         }
 
-        public Slider(out Slider slider, Action<Slider> configure) 
+        public Slider(out Slider slider, System.Action<Slider> configure) 
         {
             slider = this;
             configure(this);
@@ -42,14 +42,14 @@ namespace Sharp.UI
             slider = this;
         }
 
-        public Slider(double minimum, double maximum, Action<Slider> configure) 
+        public Slider(double minimum, double maximum, System.Action<Slider> configure) 
         {  
             this.Minimum = minimum;
             this.Maximum = maximum;
             configure(this);
         }
 
-        public Slider(double minimum, double maximum, out Slider slider, Action<Slider> configure) 
+        public Slider(double minimum, double maximum, out Slider slider, System.Action<Slider> configure) 
         {  
             this.Minimum = minimum;
             this.Maximum = maximum;

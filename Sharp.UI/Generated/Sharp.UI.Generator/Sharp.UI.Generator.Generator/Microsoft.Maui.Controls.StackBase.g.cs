@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T Spacing<T>(this T obj,
             double? spacing,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IStackBase
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StackBase>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T Spacing<T>(this T obj,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IStackBase
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StackBase>(obj);

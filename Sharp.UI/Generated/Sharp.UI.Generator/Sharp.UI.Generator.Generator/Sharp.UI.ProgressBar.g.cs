@@ -18,12 +18,12 @@ namespace Sharp.UI
             progressBar = this;
         }
 
-        public ProgressBar(Action<ProgressBar> configure) 
+        public ProgressBar(System.Action<ProgressBar> configure) 
         {
             configure(this);
         }
 
-        public ProgressBar(out ProgressBar progressBar, Action<ProgressBar> configure) 
+        public ProgressBar(out ProgressBar progressBar, System.Action<ProgressBar> configure) 
         {
             progressBar = this;
             configure(this);
@@ -40,13 +40,13 @@ namespace Sharp.UI
             progressBar = this;
         }
 
-        public ProgressBar(double progress, Action<ProgressBar> configure) 
+        public ProgressBar(double progress, System.Action<ProgressBar> configure) 
         {  
             this.Progress = progress;
             configure(this);
         }
 
-        public ProgressBar(double progress, out ProgressBar progressBar, Action<ProgressBar> configure) 
+        public ProgressBar(double progress, out ProgressBar progressBar, System.Action<ProgressBar> configure) 
         {  
             this.Progress = progress;
             progressBar = this;

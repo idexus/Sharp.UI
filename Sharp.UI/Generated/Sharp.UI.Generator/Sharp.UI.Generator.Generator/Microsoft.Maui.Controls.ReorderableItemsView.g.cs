@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T CanMixGroups<T>(this T obj,
             bool? canMixGroups,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IReorderableItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ReorderableItemsView>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T CanMixGroups<T>(this T obj,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IReorderableItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ReorderableItemsView>(obj);
@@ -53,7 +53,7 @@ namespace Sharp.UI
         
         public static T CanReorderItems<T>(this T obj,
             bool? canReorderItems,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IReorderableItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ReorderableItemsView>(obj);
@@ -65,7 +65,7 @@ namespace Sharp.UI
         }
         
         public static T CanReorderItems<T>(this T obj,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IReorderableItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ReorderableItemsView>(obj);

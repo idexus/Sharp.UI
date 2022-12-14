@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T Command<T>(this T obj,
             System.Windows.Input.ICommand? command,
-            Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.ITextCell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.TextCell>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T Command<T>(this T obj,
-            Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.ITextCell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.TextCell>(obj);
@@ -53,7 +53,7 @@ namespace Sharp.UI
         
         public static T CommandParameter<T>(this T obj,
             object? commandParameter,
-            Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.ITextCell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.TextCell>(obj);
@@ -65,7 +65,7 @@ namespace Sharp.UI
         }
         
         public static T CommandParameter<T>(this T obj,
-            Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.ITextCell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.TextCell>(obj);
@@ -86,7 +86,7 @@ namespace Sharp.UI
         
         public static T Detail<T>(this T obj,
             string? detail,
-            Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.ITextCell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.TextCell>(obj);
@@ -98,7 +98,7 @@ namespace Sharp.UI
         }
         
         public static T Detail<T>(this T obj,
-            Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.ITextCell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.TextCell>(obj);
@@ -119,7 +119,7 @@ namespace Sharp.UI
         
         public static T DetailColor<T>(this T obj,
             Microsoft.Maui.Graphics.Color? detailColor,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.ITextCell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.TextCell>(obj);
@@ -131,7 +131,7 @@ namespace Sharp.UI
         }
         
         public static T DetailColor<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.ITextCell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.TextCell>(obj);
@@ -152,7 +152,7 @@ namespace Sharp.UI
         
         public static T Text<T>(this T obj,
             string? text,
-            Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.ITextCell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.TextCell>(obj);
@@ -164,7 +164,7 @@ namespace Sharp.UI
         }
         
         public static T Text<T>(this T obj,
-            Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.ITextCell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.TextCell>(obj);
@@ -185,7 +185,7 @@ namespace Sharp.UI
         
         public static T TextColor<T>(this T obj,
             Microsoft.Maui.Graphics.Color? textColor,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.ITextCell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.TextCell>(obj);
@@ -197,7 +197,7 @@ namespace Sharp.UI
         }
         
         public static T TextColor<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.ITextCell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.TextCell>(obj);

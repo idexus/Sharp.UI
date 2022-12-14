@@ -18,12 +18,12 @@ namespace Sharp.UI
             hStack = this;
         }
 
-        public HStack(Action<HStack> configure) 
+        public HStack(System.Action<HStack> configure) 
         {
             configure(this);
         }
 
-        public HStack(out HStack hStack, Action<HStack> configure) 
+        public HStack(out HStack hStack, System.Action<HStack> configure) 
         {
             hStack = this;
             configure(this);

@@ -18,12 +18,12 @@ namespace Sharp.UI
             checkBox = this;
         }
 
-        public CheckBox(Action<CheckBox> configure) 
+        public CheckBox(System.Action<CheckBox> configure) 
         {
             configure(this);
         }
 
-        public CheckBox(out CheckBox checkBox, Action<CheckBox> configure) 
+        public CheckBox(out CheckBox checkBox, System.Action<CheckBox> configure) 
         {
             checkBox = this;
             configure(this);

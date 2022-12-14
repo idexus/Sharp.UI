@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T Frame<T>(this T obj,
             Microsoft.Maui.Graphics.Rect? frame,
-            Func<ValueDef<Microsoft.Maui.Graphics.Rect>, ValueDef<Microsoft.Maui.Graphics.Rect>> definition)
+            System.Func<ValueDef<Microsoft.Maui.Graphics.Rect>, ValueDef<Microsoft.Maui.Graphics.Rect>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -31,7 +31,7 @@ namespace Sharp.UI
         }
         
         public static T Frame<T>(this T obj,
-            Func<ValueDef<Microsoft.Maui.Graphics.Rect>, ValueDef<Microsoft.Maui.Graphics.Rect>> definition)
+            System.Func<ValueDef<Microsoft.Maui.Graphics.Rect>, ValueDef<Microsoft.Maui.Graphics.Rect>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -51,7 +51,7 @@ namespace Sharp.UI
         
         public static T Shadow<T>(this T obj,
             Microsoft.Maui.Controls.Shadow? shadow,
-            Func<BindableDef<Microsoft.Maui.Controls.Shadow>, BindableDef<Microsoft.Maui.Controls.Shadow>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.Shadow>, BindableDef<Microsoft.Maui.Controls.Shadow>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -63,7 +63,7 @@ namespace Sharp.UI
         }
         
         public static T Shadow<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.Shadow>, BindableDef<Microsoft.Maui.Controls.Shadow>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.Shadow>, BindableDef<Microsoft.Maui.Controls.Shadow>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -84,7 +84,7 @@ namespace Sharp.UI
         
         public static T ZIndex<T>(this T obj,
             int? zIndex,
-            Func<BindableDef<int>, BindableDef<int>> definition)
+            System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -96,7 +96,7 @@ namespace Sharp.UI
         }
         
         public static T ZIndex<T>(this T obj,
-            Func<BindableDef<int>, BindableDef<int>> definition)
+            System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -117,7 +117,7 @@ namespace Sharp.UI
         
         public static T Visual<T>(this T obj,
             Microsoft.Maui.Controls.IVisual? visual,
-            Func<BindableDef<Microsoft.Maui.Controls.IVisual>, BindableDef<Microsoft.Maui.Controls.IVisual>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.IVisual>, BindableDef<Microsoft.Maui.Controls.IVisual>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -129,7 +129,7 @@ namespace Sharp.UI
         }
         
         public static T Visual<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.IVisual>, BindableDef<Microsoft.Maui.Controls.IVisual>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.IVisual>, BindableDef<Microsoft.Maui.Controls.IVisual>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -150,7 +150,7 @@ namespace Sharp.UI
         
         public static T FlowDirection<T>(this T obj,
             Microsoft.Maui.FlowDirection? flowDirection,
-            Func<BindableDef<Microsoft.Maui.FlowDirection>, BindableDef<Microsoft.Maui.FlowDirection>> definition)
+            System.Func<BindableDef<Microsoft.Maui.FlowDirection>, BindableDef<Microsoft.Maui.FlowDirection>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -162,7 +162,7 @@ namespace Sharp.UI
         }
         
         public static T FlowDirection<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.FlowDirection>, BindableDef<Microsoft.Maui.FlowDirection>> definition)
+            System.Func<BindableDef<Microsoft.Maui.FlowDirection>, BindableDef<Microsoft.Maui.FlowDirection>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -183,7 +183,7 @@ namespace Sharp.UI
         
         public static T AnchorX<T>(this T obj,
             double? anchorX,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -195,7 +195,7 @@ namespace Sharp.UI
         }
         
         public static T AnchorX<T>(this T obj,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -216,7 +216,7 @@ namespace Sharp.UI
         
         public static T AnchorY<T>(this T obj,
             double? anchorY,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -228,7 +228,7 @@ namespace Sharp.UI
         }
         
         public static T AnchorY<T>(this T obj,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -249,7 +249,7 @@ namespace Sharp.UI
         
         public static T BackgroundColor<T>(this T obj,
             Microsoft.Maui.Graphics.Color? backgroundColor,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -261,7 +261,7 @@ namespace Sharp.UI
         }
         
         public static T BackgroundColor<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -282,7 +282,7 @@ namespace Sharp.UI
         
         public static T Background<T>(this T obj,
             Microsoft.Maui.Controls.Brush? background,
-            Func<BindableDef<Microsoft.Maui.Controls.Brush>, BindableDef<Microsoft.Maui.Controls.Brush>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.Brush>, BindableDef<Microsoft.Maui.Controls.Brush>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -294,7 +294,7 @@ namespace Sharp.UI
         }
         
         public static T Background<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.Brush>, BindableDef<Microsoft.Maui.Controls.Brush>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.Brush>, BindableDef<Microsoft.Maui.Controls.Brush>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -323,7 +323,7 @@ namespace Sharp.UI
         }
 
         public static T Behaviors<T>(this T obj,
-            Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Behavior>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Behavior>>> definition)
+            System.Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Behavior>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Behavior>>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -347,7 +347,7 @@ namespace Sharp.UI
         
         public static T HeightRequest<T>(this T obj,
             double? heightRequest,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -359,7 +359,7 @@ namespace Sharp.UI
         }
         
         public static T HeightRequest<T>(this T obj,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -380,7 +380,7 @@ namespace Sharp.UI
         
         public static T InputTransparent<T>(this T obj,
             bool? inputTransparent,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -392,7 +392,7 @@ namespace Sharp.UI
         }
         
         public static T InputTransparent<T>(this T obj,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -413,7 +413,7 @@ namespace Sharp.UI
         
         public static T IsEnabled<T>(this T obj,
             bool? isEnabled,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -425,7 +425,7 @@ namespace Sharp.UI
         }
         
         public static T IsEnabled<T>(this T obj,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -446,7 +446,7 @@ namespace Sharp.UI
         
         public static T IsVisible<T>(this T obj,
             bool? isVisible,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -458,7 +458,7 @@ namespace Sharp.UI
         }
         
         public static T IsVisible<T>(this T obj,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -479,7 +479,7 @@ namespace Sharp.UI
         
         public static T MinimumHeightRequest<T>(this T obj,
             double? minimumHeightRequest,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -491,7 +491,7 @@ namespace Sharp.UI
         }
         
         public static T MinimumHeightRequest<T>(this T obj,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -512,7 +512,7 @@ namespace Sharp.UI
         
         public static T MinimumWidthRequest<T>(this T obj,
             double? minimumWidthRequest,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -524,7 +524,7 @@ namespace Sharp.UI
         }
         
         public static T MinimumWidthRequest<T>(this T obj,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -545,7 +545,7 @@ namespace Sharp.UI
         
         public static T MaximumHeightRequest<T>(this T obj,
             double? maximumHeightRequest,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -557,7 +557,7 @@ namespace Sharp.UI
         }
         
         public static T MaximumHeightRequest<T>(this T obj,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -578,7 +578,7 @@ namespace Sharp.UI
         
         public static T MaximumWidthRequest<T>(this T obj,
             double? maximumWidthRequest,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -590,7 +590,7 @@ namespace Sharp.UI
         }
         
         public static T MaximumWidthRequest<T>(this T obj,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -611,7 +611,7 @@ namespace Sharp.UI
         
         public static T Opacity<T>(this T obj,
             double? opacity,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -623,7 +623,7 @@ namespace Sharp.UI
         }
         
         public static T Opacity<T>(this T obj,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -644,7 +644,7 @@ namespace Sharp.UI
         
         public static T Rotation<T>(this T obj,
             double? rotation,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -656,7 +656,7 @@ namespace Sharp.UI
         }
         
         public static T Rotation<T>(this T obj,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -677,7 +677,7 @@ namespace Sharp.UI
         
         public static T RotationX<T>(this T obj,
             double? rotationX,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -689,7 +689,7 @@ namespace Sharp.UI
         }
         
         public static T RotationX<T>(this T obj,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -710,7 +710,7 @@ namespace Sharp.UI
         
         public static T RotationY<T>(this T obj,
             double? rotationY,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -722,7 +722,7 @@ namespace Sharp.UI
         }
         
         public static T RotationY<T>(this T obj,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -743,7 +743,7 @@ namespace Sharp.UI
         
         public static T Scale<T>(this T obj,
             double? scale,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -755,7 +755,7 @@ namespace Sharp.UI
         }
         
         public static T Scale<T>(this T obj,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -776,7 +776,7 @@ namespace Sharp.UI
         
         public static T ScaleX<T>(this T obj,
             double? scaleX,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -788,7 +788,7 @@ namespace Sharp.UI
         }
         
         public static T ScaleX<T>(this T obj,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -809,7 +809,7 @@ namespace Sharp.UI
         
         public static T ScaleY<T>(this T obj,
             double? scaleY,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -821,7 +821,7 @@ namespace Sharp.UI
         }
         
         public static T ScaleY<T>(this T obj,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -842,7 +842,7 @@ namespace Sharp.UI
         
         public static T TranslationX<T>(this T obj,
             double? translationX,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -854,7 +854,7 @@ namespace Sharp.UI
         }
         
         public static T TranslationX<T>(this T obj,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -875,7 +875,7 @@ namespace Sharp.UI
         
         public static T TranslationY<T>(this T obj,
             double? translationY,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -887,7 +887,7 @@ namespace Sharp.UI
         }
         
         public static T TranslationY<T>(this T obj,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -916,7 +916,7 @@ namespace Sharp.UI
         }
 
         public static T Triggers<T>(this T obj,
-            Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerBase>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerBase>>> definition)
+            System.Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerBase>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerBase>>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -940,7 +940,7 @@ namespace Sharp.UI
         
         public static T WidthRequest<T>(this T obj,
             double? widthRequest,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -952,7 +952,7 @@ namespace Sharp.UI
         }
         
         public static T WidthRequest<T>(this T obj,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -973,7 +973,7 @@ namespace Sharp.UI
         
         public static T Clip<T>(this T obj,
             Microsoft.Maui.Controls.Shapes.Geometry? clip,
-            Func<BindableDef<Microsoft.Maui.Controls.Shapes.Geometry>, BindableDef<Microsoft.Maui.Controls.Shapes.Geometry>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.Shapes.Geometry>, BindableDef<Microsoft.Maui.Controls.Shapes.Geometry>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -985,7 +985,7 @@ namespace Sharp.UI
         }
         
         public static T Clip<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.Shapes.Geometry>, BindableDef<Microsoft.Maui.Controls.Shapes.Geometry>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.Shapes.Geometry>, BindableDef<Microsoft.Maui.Controls.Shapes.Geometry>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -1006,7 +1006,7 @@ namespace Sharp.UI
         
         public static T DisableLayout<T>(this T obj,
             bool? disableLayout,
-            Func<ValueDef<bool>, ValueDef<bool>> definition)
+            System.Func<ValueDef<bool>, ValueDef<bool>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -1017,7 +1017,7 @@ namespace Sharp.UI
         }
         
         public static T DisableLayout<T>(this T obj,
-            Func<ValueDef<bool>, ValueDef<bool>> definition)
+            System.Func<ValueDef<bool>, ValueDef<bool>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -1037,7 +1037,7 @@ namespace Sharp.UI
         
         public static T IsInPlatformLayout<T>(this T obj,
             bool? isInPlatformLayout,
-            Func<ValueDef<bool>, ValueDef<bool>> definition)
+            System.Func<ValueDef<bool>, ValueDef<bool>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -1048,7 +1048,7 @@ namespace Sharp.UI
         }
         
         public static T IsInPlatformLayout<T>(this T obj,
-            Func<ValueDef<bool>, ValueDef<bool>> definition)
+            System.Func<ValueDef<bool>, ValueDef<bool>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -1068,7 +1068,7 @@ namespace Sharp.UI
         
         public static T IsPlatformStateConsistent<T>(this T obj,
             bool? isPlatformStateConsistent,
-            Func<ValueDef<bool>, ValueDef<bool>> definition)
+            System.Func<ValueDef<bool>, ValueDef<bool>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -1079,7 +1079,7 @@ namespace Sharp.UI
         }
         
         public static T IsPlatformStateConsistent<T>(this T obj,
-            Func<ValueDef<bool>, ValueDef<bool>> definition)
+            System.Func<ValueDef<bool>, ValueDef<bool>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -1099,7 +1099,7 @@ namespace Sharp.UI
         
         public static T IsPlatformEnabled<T>(this T obj,
             bool? isPlatformEnabled,
-            Func<ValueDef<bool>, ValueDef<bool>> definition)
+            System.Func<ValueDef<bool>, ValueDef<bool>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -1110,7 +1110,7 @@ namespace Sharp.UI
         }
         
         public static T IsPlatformEnabled<T>(this T obj,
-            Func<ValueDef<bool>, ValueDef<bool>> definition)
+            System.Func<ValueDef<bool>, ValueDef<bool>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -1130,7 +1130,7 @@ namespace Sharp.UI
         
         public static T Resources<T>(this T obj,
             Microsoft.Maui.Controls.ResourceDictionary? resources,
-            Func<ValueDef<Microsoft.Maui.Controls.ResourceDictionary>, ValueDef<Microsoft.Maui.Controls.ResourceDictionary>> definition)
+            System.Func<ValueDef<Microsoft.Maui.Controls.ResourceDictionary>, ValueDef<Microsoft.Maui.Controls.ResourceDictionary>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -1141,7 +1141,7 @@ namespace Sharp.UI
         }
         
         public static T Resources<T>(this T obj,
-            Func<ValueDef<Microsoft.Maui.Controls.ResourceDictionary>, ValueDef<Microsoft.Maui.Controls.ResourceDictionary>> definition)
+            System.Func<ValueDef<Microsoft.Maui.Controls.ResourceDictionary>, ValueDef<Microsoft.Maui.Controls.ResourceDictionary>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -1233,7 +1233,7 @@ namespace Sharp.UI
         
         public static T VisualStateGroups<T>(this T obj,
             Microsoft.Maui.Controls.VisualStateGroupList? visualStateGroups,
-            Func<BindableDef<Microsoft.Maui.Controls.VisualStateGroupList>, BindableDef<Microsoft.Maui.Controls.VisualStateGroupList>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.VisualStateGroupList>, BindableDef<Microsoft.Maui.Controls.VisualStateGroupList>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);
@@ -1245,7 +1245,7 @@ namespace Sharp.UI
         }
         
         public static T VisualStateGroups<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.VisualStateGroupList>, BindableDef<Microsoft.Maui.Controls.VisualStateGroupList>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.VisualStateGroupList>, BindableDef<Microsoft.Maui.Controls.VisualStateGroupList>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualElement>(obj);

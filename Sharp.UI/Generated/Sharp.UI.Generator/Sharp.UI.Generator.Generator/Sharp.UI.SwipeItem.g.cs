@@ -18,12 +18,12 @@ namespace Sharp.UI
             swipeItem = this;
         }
 
-        public SwipeItem(Action<SwipeItem> configure) 
+        public SwipeItem(System.Action<SwipeItem> configure) 
         {
             configure(this);
         }
 
-        public SwipeItem(out SwipeItem swipeItem, Action<SwipeItem> configure) 
+        public SwipeItem(out SwipeItem swipeItem, System.Action<SwipeItem> configure) 
         {
             swipeItem = this;
             configure(this);
@@ -40,13 +40,13 @@ namespace Sharp.UI
             swipeItem = this;
         }
 
-        public SwipeItem(string text, Action<SwipeItem> configure) 
+        public SwipeItem(string text, System.Action<SwipeItem> configure) 
         {  
             this.Text = text;
             configure(this);
         }
 
-        public SwipeItem(string text, out SwipeItem swipeItem, Action<SwipeItem> configure) 
+        public SwipeItem(string text, out SwipeItem swipeItem, System.Action<SwipeItem> configure) 
         {  
             this.Text = text;
             swipeItem = this;

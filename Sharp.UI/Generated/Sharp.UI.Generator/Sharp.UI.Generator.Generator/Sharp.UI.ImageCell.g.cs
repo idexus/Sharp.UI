@@ -18,12 +18,12 @@ namespace Sharp.UI
             imageCell = this;
         }
 
-        public ImageCell(Action<ImageCell> configure) 
+        public ImageCell(System.Action<ImageCell> configure) 
         {
             configure(this);
         }
 
-        public ImageCell(out ImageCell imageCell, Action<ImageCell> configure) 
+        public ImageCell(out ImageCell imageCell, System.Action<ImageCell> configure) 
         {
             imageCell = this;
             configure(this);

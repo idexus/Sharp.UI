@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T Threshold<T>(this T obj,
             double? threshold,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.ISwipeView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwipeView>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T Threshold<T>(this T obj,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.ISwipeView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwipeView>(obj);
@@ -53,7 +53,7 @@ namespace Sharp.UI
         
         public static T LeftItems<T>(this T obj,
             Microsoft.Maui.Controls.SwipeItems? leftItems,
-            Func<BindableDef<Microsoft.Maui.Controls.SwipeItems>, BindableDef<Microsoft.Maui.Controls.SwipeItems>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.SwipeItems>, BindableDef<Microsoft.Maui.Controls.SwipeItems>> definition)
             where T : Sharp.UI.ISwipeView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwipeView>(obj);
@@ -65,7 +65,7 @@ namespace Sharp.UI
         }
         
         public static T LeftItems<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.SwipeItems>, BindableDef<Microsoft.Maui.Controls.SwipeItems>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.SwipeItems>, BindableDef<Microsoft.Maui.Controls.SwipeItems>> definition)
             where T : Sharp.UI.ISwipeView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwipeView>(obj);
@@ -86,7 +86,7 @@ namespace Sharp.UI
         
         public static T RightItems<T>(this T obj,
             Microsoft.Maui.Controls.SwipeItems? rightItems,
-            Func<BindableDef<Microsoft.Maui.Controls.SwipeItems>, BindableDef<Microsoft.Maui.Controls.SwipeItems>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.SwipeItems>, BindableDef<Microsoft.Maui.Controls.SwipeItems>> definition)
             where T : Sharp.UI.ISwipeView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwipeView>(obj);
@@ -98,7 +98,7 @@ namespace Sharp.UI
         }
         
         public static T RightItems<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.SwipeItems>, BindableDef<Microsoft.Maui.Controls.SwipeItems>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.SwipeItems>, BindableDef<Microsoft.Maui.Controls.SwipeItems>> definition)
             where T : Sharp.UI.ISwipeView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwipeView>(obj);
@@ -119,7 +119,7 @@ namespace Sharp.UI
         
         public static T TopItems<T>(this T obj,
             Microsoft.Maui.Controls.SwipeItems? topItems,
-            Func<BindableDef<Microsoft.Maui.Controls.SwipeItems>, BindableDef<Microsoft.Maui.Controls.SwipeItems>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.SwipeItems>, BindableDef<Microsoft.Maui.Controls.SwipeItems>> definition)
             where T : Sharp.UI.ISwipeView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwipeView>(obj);
@@ -131,7 +131,7 @@ namespace Sharp.UI
         }
         
         public static T TopItems<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.SwipeItems>, BindableDef<Microsoft.Maui.Controls.SwipeItems>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.SwipeItems>, BindableDef<Microsoft.Maui.Controls.SwipeItems>> definition)
             where T : Sharp.UI.ISwipeView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwipeView>(obj);
@@ -152,7 +152,7 @@ namespace Sharp.UI
         
         public static T BottomItems<T>(this T obj,
             Microsoft.Maui.Controls.SwipeItems? bottomItems,
-            Func<BindableDef<Microsoft.Maui.Controls.SwipeItems>, BindableDef<Microsoft.Maui.Controls.SwipeItems>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.SwipeItems>, BindableDef<Microsoft.Maui.Controls.SwipeItems>> definition)
             where T : Sharp.UI.ISwipeView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwipeView>(obj);
@@ -164,7 +164,7 @@ namespace Sharp.UI
         }
         
         public static T BottomItems<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.SwipeItems>, BindableDef<Microsoft.Maui.Controls.SwipeItems>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.SwipeItems>, BindableDef<Microsoft.Maui.Controls.SwipeItems>> definition)
             where T : Sharp.UI.ISwipeView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwipeView>(obj);

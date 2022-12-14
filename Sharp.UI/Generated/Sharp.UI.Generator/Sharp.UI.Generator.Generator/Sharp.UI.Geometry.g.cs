@@ -18,12 +18,12 @@ namespace Sharp.UI
             geometry = this;
         }
 
-        public Geometry(Action<Geometry> configure) 
+        public Geometry(System.Action<Geometry> configure) 
         {
             configure(this);
         }
 
-        public Geometry(out Geometry geometry, Action<Geometry> configure) 
+        public Geometry(out Geometry geometry, System.Action<Geometry> configure) 
         {
             geometry = this;
             configure(this);

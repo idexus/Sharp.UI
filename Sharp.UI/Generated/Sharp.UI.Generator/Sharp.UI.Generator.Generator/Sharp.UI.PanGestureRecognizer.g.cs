@@ -18,12 +18,12 @@ namespace Sharp.UI
             panGestureRecognizer = this;
         }
 
-        public PanGestureRecognizer(Action<PanGestureRecognizer> configure) 
+        public PanGestureRecognizer(System.Action<PanGestureRecognizer> configure) 
         {
             configure(this);
         }
 
-        public PanGestureRecognizer(out PanGestureRecognizer panGestureRecognizer, Action<PanGestureRecognizer> configure) 
+        public PanGestureRecognizer(out PanGestureRecognizer panGestureRecognizer, System.Action<PanGestureRecognizer> configure) 
         {
             panGestureRecognizer = this;
             configure(this);

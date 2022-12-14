@@ -18,12 +18,12 @@ namespace Sharp.UI
             dropGestureRecognizer = this;
         }
 
-        public DropGestureRecognizer(Action<DropGestureRecognizer> configure) 
+        public DropGestureRecognizer(System.Action<DropGestureRecognizer> configure) 
         {
             configure(this);
         }
 
-        public DropGestureRecognizer(out DropGestureRecognizer dropGestureRecognizer, Action<DropGestureRecognizer> configure) 
+        public DropGestureRecognizer(out DropGestureRecognizer dropGestureRecognizer, System.Action<DropGestureRecognizer> configure) 
         {
             dropGestureRecognizer = this;
             configure(this);

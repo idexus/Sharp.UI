@@ -22,12 +22,12 @@ namespace Sharp.UI
             flyoutPage = this;
         }
 
-        public FlyoutPage(Action<FlyoutPage> configure) 
+        public FlyoutPage(System.Action<FlyoutPage> configure) 
         {
             configure(this);
         }
 
-        public FlyoutPage(out FlyoutPage flyoutPage, Action<FlyoutPage> configure) 
+        public FlyoutPage(out FlyoutPage flyoutPage, System.Action<FlyoutPage> configure) 
         {
             flyoutPage = this;
             configure(this);

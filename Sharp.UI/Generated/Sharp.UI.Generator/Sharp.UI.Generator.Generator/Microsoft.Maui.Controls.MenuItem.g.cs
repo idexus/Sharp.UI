@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T Command<T>(this T obj,
             System.Windows.Input.ICommand? command,
-            Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.IMenuItem
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.MenuItem>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T Command<T>(this T obj,
-            Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.IMenuItem
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.MenuItem>(obj);
@@ -53,7 +53,7 @@ namespace Sharp.UI
         
         public static T CommandParameter<T>(this T obj,
             object? commandParameter,
-            Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IMenuItem
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.MenuItem>(obj);
@@ -65,7 +65,7 @@ namespace Sharp.UI
         }
         
         public static T CommandParameter<T>(this T obj,
-            Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IMenuItem
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.MenuItem>(obj);
@@ -86,7 +86,7 @@ namespace Sharp.UI
         
         public static T IconImageSource<T>(this T obj,
             Microsoft.Maui.Controls.ImageSource? iconImageSource,
-            Func<BindableDef<Microsoft.Maui.Controls.ImageSource>, BindableDef<Microsoft.Maui.Controls.ImageSource>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.ImageSource>, BindableDef<Microsoft.Maui.Controls.ImageSource>> definition)
             where T : Sharp.UI.IMenuItem
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.MenuItem>(obj);
@@ -98,7 +98,7 @@ namespace Sharp.UI
         }
         
         public static T IconImageSource<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.ImageSource>, BindableDef<Microsoft.Maui.Controls.ImageSource>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.ImageSource>, BindableDef<Microsoft.Maui.Controls.ImageSource>> definition)
             where T : Sharp.UI.IMenuItem
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.MenuItem>(obj);
@@ -119,7 +119,7 @@ namespace Sharp.UI
         
         public static T IsDestructive<T>(this T obj,
             bool? isDestructive,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IMenuItem
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.MenuItem>(obj);
@@ -131,7 +131,7 @@ namespace Sharp.UI
         }
         
         public static T IsDestructive<T>(this T obj,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IMenuItem
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.MenuItem>(obj);
@@ -152,7 +152,7 @@ namespace Sharp.UI
         
         public static T Text<T>(this T obj,
             string? text,
-            Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.IMenuItem
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.MenuItem>(obj);
@@ -164,7 +164,7 @@ namespace Sharp.UI
         }
         
         public static T Text<T>(this T obj,
-            Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.IMenuItem
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.MenuItem>(obj);
@@ -185,7 +185,7 @@ namespace Sharp.UI
         
         public static T IsEnabled<T>(this T obj,
             bool? isEnabled,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IMenuItem
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.MenuItem>(obj);
@@ -197,7 +197,7 @@ namespace Sharp.UI
         }
         
         public static T IsEnabled<T>(this T obj,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IMenuItem
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.MenuItem>(obj);
@@ -218,7 +218,7 @@ namespace Sharp.UI
         
         public static T StyleClass<T>(this T obj,
             System.Collections.Generic.IList<string>? styleClass,
-            Func<ValueDef<System.Collections.Generic.IList<string>>, ValueDef<System.Collections.Generic.IList<string>>> definition)
+            System.Func<ValueDef<System.Collections.Generic.IList<string>>, ValueDef<System.Collections.Generic.IList<string>>> definition)
             where T : Sharp.UI.IMenuItem
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.MenuItem>(obj);
@@ -229,7 +229,7 @@ namespace Sharp.UI
         }
         
         public static T StyleClass<T>(this T obj,
-            Func<ValueDef<System.Collections.Generic.IList<string>>, ValueDef<System.Collections.Generic.IList<string>>> definition)
+            System.Func<ValueDef<System.Collections.Generic.IList<string>>, ValueDef<System.Collections.Generic.IList<string>>> definition)
             where T : Sharp.UI.IMenuItem
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.MenuItem>(obj);
@@ -249,7 +249,7 @@ namespace Sharp.UI
         
         public static T @class<T>(this T obj,
             System.Collections.Generic.IList<string>? @class,
-            Func<ValueDef<System.Collections.Generic.IList<string>>, ValueDef<System.Collections.Generic.IList<string>>> definition)
+            System.Func<ValueDef<System.Collections.Generic.IList<string>>, ValueDef<System.Collections.Generic.IList<string>>> definition)
             where T : Sharp.UI.IMenuItem
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.MenuItem>(obj);
@@ -260,7 +260,7 @@ namespace Sharp.UI
         }
         
         public static T @class<T>(this T obj,
-            Func<ValueDef<System.Collections.Generic.IList<string>>, ValueDef<System.Collections.Generic.IList<string>>> definition)
+            System.Func<ValueDef<System.Collections.Generic.IList<string>>, ValueDef<System.Collections.Generic.IList<string>>> definition)
             where T : Sharp.UI.IMenuItem
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.MenuItem>(obj);

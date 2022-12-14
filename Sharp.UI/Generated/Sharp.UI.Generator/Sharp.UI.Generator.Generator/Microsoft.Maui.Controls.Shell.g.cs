@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T FlyoutVerticalScrollMode<T>(this T obj,
             Microsoft.Maui.Controls.ScrollMode? flyoutVerticalScrollMode,
-            Func<BindableDef<Microsoft.Maui.Controls.ScrollMode>, BindableDef<Microsoft.Maui.Controls.ScrollMode>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.ScrollMode>, BindableDef<Microsoft.Maui.Controls.ScrollMode>> definition)
             where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T FlyoutVerticalScrollMode<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.ScrollMode>, BindableDef<Microsoft.Maui.Controls.ScrollMode>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.ScrollMode>, BindableDef<Microsoft.Maui.Controls.ScrollMode>> definition)
             where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
@@ -53,7 +53,7 @@ namespace Sharp.UI
         
         public static T FlyoutIcon<T>(this T obj,
             Microsoft.Maui.Controls.ImageSource? flyoutIcon,
-            Func<BindableDef<Microsoft.Maui.Controls.ImageSource>, BindableDef<Microsoft.Maui.Controls.ImageSource>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.ImageSource>, BindableDef<Microsoft.Maui.Controls.ImageSource>> definition)
             where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
@@ -65,7 +65,7 @@ namespace Sharp.UI
         }
         
         public static T FlyoutIcon<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.ImageSource>, BindableDef<Microsoft.Maui.Controls.ImageSource>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.ImageSource>, BindableDef<Microsoft.Maui.Controls.ImageSource>> definition)
             where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
@@ -86,7 +86,7 @@ namespace Sharp.UI
         
         public static T CurrentItem<T>(this T obj,
             Microsoft.Maui.Controls.ShellItem? currentItem,
-            Func<BindableDef<Microsoft.Maui.Controls.ShellItem>, BindableDef<Microsoft.Maui.Controls.ShellItem>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.ShellItem>, BindableDef<Microsoft.Maui.Controls.ShellItem>> definition)
             where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
@@ -98,7 +98,7 @@ namespace Sharp.UI
         }
         
         public static T CurrentItem<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.ShellItem>, BindableDef<Microsoft.Maui.Controls.ShellItem>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.ShellItem>, BindableDef<Microsoft.Maui.Controls.ShellItem>> definition)
             where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
@@ -119,7 +119,7 @@ namespace Sharp.UI
         
         public static T FlyoutBackgroundImage<T>(this T obj,
             Microsoft.Maui.Controls.ImageSource? flyoutBackgroundImage,
-            Func<BindableDef<Microsoft.Maui.Controls.ImageSource>, BindableDef<Microsoft.Maui.Controls.ImageSource>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.ImageSource>, BindableDef<Microsoft.Maui.Controls.ImageSource>> definition)
             where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
@@ -131,7 +131,7 @@ namespace Sharp.UI
         }
         
         public static T FlyoutBackgroundImage<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.ImageSource>, BindableDef<Microsoft.Maui.Controls.ImageSource>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.ImageSource>, BindableDef<Microsoft.Maui.Controls.ImageSource>> definition)
             where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
@@ -152,7 +152,7 @@ namespace Sharp.UI
         
         public static T FlyoutBackgroundImageAspect<T>(this T obj,
             Microsoft.Maui.Aspect? flyoutBackgroundImageAspect,
-            Func<BindableDef<Microsoft.Maui.Aspect>, BindableDef<Microsoft.Maui.Aspect>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Aspect>, BindableDef<Microsoft.Maui.Aspect>> definition)
             where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
@@ -164,7 +164,7 @@ namespace Sharp.UI
         }
         
         public static T FlyoutBackgroundImageAspect<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Aspect>, BindableDef<Microsoft.Maui.Aspect>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Aspect>, BindableDef<Microsoft.Maui.Aspect>> definition)
             where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
@@ -185,7 +185,7 @@ namespace Sharp.UI
         
         public static T FlyoutBackgroundColor<T>(this T obj,
             Microsoft.Maui.Graphics.Color? flyoutBackgroundColor,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
@@ -197,7 +197,7 @@ namespace Sharp.UI
         }
         
         public static T FlyoutBackgroundColor<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
@@ -218,7 +218,7 @@ namespace Sharp.UI
         
         public static T FlyoutBackground<T>(this T obj,
             Microsoft.Maui.Controls.Brush? flyoutBackground,
-            Func<BindableDef<Microsoft.Maui.Controls.Brush>, BindableDef<Microsoft.Maui.Controls.Brush>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.Brush>, BindableDef<Microsoft.Maui.Controls.Brush>> definition)
             where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
@@ -230,7 +230,7 @@ namespace Sharp.UI
         }
         
         public static T FlyoutBackground<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.Brush>, BindableDef<Microsoft.Maui.Controls.Brush>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.Brush>, BindableDef<Microsoft.Maui.Controls.Brush>> definition)
             where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
@@ -251,7 +251,7 @@ namespace Sharp.UI
         
         public static T FlyoutBackdrop<T>(this T obj,
             Microsoft.Maui.Controls.Brush? flyoutBackdrop,
-            Func<BindableDef<Microsoft.Maui.Controls.Brush>, BindableDef<Microsoft.Maui.Controls.Brush>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.Brush>, BindableDef<Microsoft.Maui.Controls.Brush>> definition)
             where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
@@ -263,7 +263,7 @@ namespace Sharp.UI
         }
         
         public static T FlyoutBackdrop<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.Brush>, BindableDef<Microsoft.Maui.Controls.Brush>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.Brush>, BindableDef<Microsoft.Maui.Controls.Brush>> definition)
             where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
@@ -284,7 +284,7 @@ namespace Sharp.UI
         
         public static T FlyoutWidth<T>(this T obj,
             double? flyoutWidth,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
@@ -296,7 +296,7 @@ namespace Sharp.UI
         }
         
         public static T FlyoutWidth<T>(this T obj,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
@@ -317,7 +317,7 @@ namespace Sharp.UI
         
         public static T FlyoutHeight<T>(this T obj,
             double? flyoutHeight,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
@@ -329,7 +329,7 @@ namespace Sharp.UI
         }
         
         public static T FlyoutHeight<T>(this T obj,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
@@ -350,7 +350,7 @@ namespace Sharp.UI
         
         public static T FlyoutBehavior<T>(this T obj,
             Microsoft.Maui.FlyoutBehavior? flyoutBehavior,
-            Func<BindableDef<Microsoft.Maui.FlyoutBehavior>, BindableDef<Microsoft.Maui.FlyoutBehavior>> definition)
+            System.Func<BindableDef<Microsoft.Maui.FlyoutBehavior>, BindableDef<Microsoft.Maui.FlyoutBehavior>> definition)
             where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
@@ -362,7 +362,7 @@ namespace Sharp.UI
         }
         
         public static T FlyoutBehavior<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.FlyoutBehavior>, BindableDef<Microsoft.Maui.FlyoutBehavior>> definition)
+            System.Func<BindableDef<Microsoft.Maui.FlyoutBehavior>, BindableDef<Microsoft.Maui.FlyoutBehavior>> definition)
             where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
@@ -383,7 +383,7 @@ namespace Sharp.UI
         
         public static T FlyoutHeader<T>(this T obj,
             object? flyoutHeader,
-            Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
@@ -395,7 +395,7 @@ namespace Sharp.UI
         }
         
         public static T FlyoutHeader<T>(this T obj,
-            Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
@@ -416,7 +416,7 @@ namespace Sharp.UI
         
         public static T FlyoutFooter<T>(this T obj,
             object? flyoutFooter,
-            Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
@@ -428,7 +428,7 @@ namespace Sharp.UI
         }
         
         public static T FlyoutFooter<T>(this T obj,
-            Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
@@ -449,7 +449,7 @@ namespace Sharp.UI
         
         public static T FlyoutHeaderBehavior<T>(this T obj,
             Microsoft.Maui.Controls.FlyoutHeaderBehavior? flyoutHeaderBehavior,
-            Func<BindableDef<Microsoft.Maui.Controls.FlyoutHeaderBehavior>, BindableDef<Microsoft.Maui.Controls.FlyoutHeaderBehavior>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.FlyoutHeaderBehavior>, BindableDef<Microsoft.Maui.Controls.FlyoutHeaderBehavior>> definition)
             where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
@@ -461,7 +461,7 @@ namespace Sharp.UI
         }
         
         public static T FlyoutHeaderBehavior<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.FlyoutHeaderBehavior>, BindableDef<Microsoft.Maui.Controls.FlyoutHeaderBehavior>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.FlyoutHeaderBehavior>, BindableDef<Microsoft.Maui.Controls.FlyoutHeaderBehavior>> definition)
             where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
@@ -482,7 +482,7 @@ namespace Sharp.UI
         
         public static T FlyoutHeaderTemplate<T>(this T obj,
             Microsoft.Maui.Controls.DataTemplate? flyoutHeaderTemplate,
-            Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
             where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
@@ -494,7 +494,7 @@ namespace Sharp.UI
         }
         
         public static T FlyoutHeaderTemplate<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
             where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
@@ -504,7 +504,7 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T FlyoutHeaderTemplate<T>(this T obj, Func<object> loadTemplate) where T : Sharp.UI.IShell
+        public static T FlyoutHeaderTemplate<T>(this T obj, System.Func<object> loadTemplate) where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
             mauiObject.FlyoutHeaderTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
@@ -522,7 +522,7 @@ namespace Sharp.UI
         
         public static T FlyoutFooterTemplate<T>(this T obj,
             Microsoft.Maui.Controls.DataTemplate? flyoutFooterTemplate,
-            Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
             where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
@@ -534,7 +534,7 @@ namespace Sharp.UI
         }
         
         public static T FlyoutFooterTemplate<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
             where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
@@ -544,7 +544,7 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T FlyoutFooterTemplate<T>(this T obj, Func<object> loadTemplate) where T : Sharp.UI.IShell
+        public static T FlyoutFooterTemplate<T>(this T obj, System.Func<object> loadTemplate) where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
             mauiObject.FlyoutFooterTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
@@ -562,7 +562,7 @@ namespace Sharp.UI
         
         public static T FlyoutIsPresented<T>(this T obj,
             bool? flyoutIsPresented,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
@@ -574,7 +574,7 @@ namespace Sharp.UI
         }
         
         public static T FlyoutIsPresented<T>(this T obj,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
@@ -603,7 +603,7 @@ namespace Sharp.UI
         }
 
         public static T Items<T>(this T obj,
-            Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellItem>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellItem>>> definition)
+            System.Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellItem>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellItem>>> definition)
             where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
@@ -627,7 +627,7 @@ namespace Sharp.UI
         
         public static T ItemTemplate<T>(this T obj,
             Microsoft.Maui.Controls.DataTemplate? itemTemplate,
-            Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
             where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
@@ -639,7 +639,7 @@ namespace Sharp.UI
         }
         
         public static T ItemTemplate<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
             where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
@@ -649,7 +649,7 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T ItemTemplate<T>(this T obj, Func<object> loadTemplate) where T : Sharp.UI.IShell
+        public static T ItemTemplate<T>(this T obj, System.Func<object> loadTemplate) where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
             mauiObject.ItemTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
@@ -667,7 +667,7 @@ namespace Sharp.UI
         
         public static T MenuItemTemplate<T>(this T obj,
             Microsoft.Maui.Controls.DataTemplate? menuItemTemplate,
-            Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
             where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
@@ -679,7 +679,7 @@ namespace Sharp.UI
         }
         
         public static T MenuItemTemplate<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
             where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
@@ -689,7 +689,7 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T MenuItemTemplate<T>(this T obj, Func<object> loadTemplate) where T : Sharp.UI.IShell
+        public static T MenuItemTemplate<T>(this T obj, System.Func<object> loadTemplate) where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
             mauiObject.MenuItemTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
@@ -707,7 +707,7 @@ namespace Sharp.UI
         
         public static T FlyoutContent<T>(this T obj,
             object? flyoutContent,
-            Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
@@ -719,7 +719,7 @@ namespace Sharp.UI
         }
         
         public static T FlyoutContent<T>(this T obj,
-            Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
@@ -740,7 +740,7 @@ namespace Sharp.UI
         
         public static T FlyoutContentTemplate<T>(this T obj,
             Microsoft.Maui.Controls.DataTemplate? flyoutContentTemplate,
-            Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
             where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
@@ -752,7 +752,7 @@ namespace Sharp.UI
         }
         
         public static T FlyoutContentTemplate<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
             where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
@@ -762,7 +762,7 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T FlyoutContentTemplate<T>(this T obj, Func<object> loadTemplate) where T : Sharp.UI.IShell
+        public static T FlyoutContentTemplate<T>(this T obj, System.Func<object> loadTemplate) where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shell>(obj);
             mauiObject.FlyoutContentTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);

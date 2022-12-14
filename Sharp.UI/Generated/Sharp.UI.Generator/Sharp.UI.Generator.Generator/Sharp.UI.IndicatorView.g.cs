@@ -22,12 +22,12 @@ namespace Sharp.UI
             indicatorView = this;
         }
 
-        public IndicatorView(Action<IndicatorView> configure) 
+        public IndicatorView(System.Action<IndicatorView> configure) 
         {
             configure(this);
         }
 
-        public IndicatorView(out IndicatorView indicatorView, Action<IndicatorView> configure) 
+        public IndicatorView(out IndicatorView indicatorView, System.Action<IndicatorView> configure) 
         {
             indicatorView = this;
             configure(this);

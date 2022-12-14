@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T ItemsSource<T>(this T obj,
             System.Collections.IEnumerable? itemsSource,
-            Func<BindableDef<System.Collections.IEnumerable>, BindableDef<System.Collections.IEnumerable>> definition)
+            System.Func<BindableDef<System.Collections.IEnumerable>, BindableDef<System.Collections.IEnumerable>> definition)
             where T : Sharp.UI.IItemsViewCell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T ItemsSource<T>(this T obj,
-            Func<BindableDef<System.Collections.IEnumerable>, BindableDef<System.Collections.IEnumerable>> definition)
+            System.Func<BindableDef<System.Collections.IEnumerable>, BindableDef<System.Collections.IEnumerable>> definition)
             where T : Sharp.UI.IItemsViewCell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>>(obj);
@@ -53,7 +53,7 @@ namespace Sharp.UI
         
         public static T ItemTemplate<T>(this T obj,
             Microsoft.Maui.Controls.DataTemplate? itemTemplate,
-            Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
             where T : Sharp.UI.IItemsViewCell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>>(obj);
@@ -65,7 +65,7 @@ namespace Sharp.UI
         }
         
         public static T ItemTemplate<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
             where T : Sharp.UI.IItemsViewCell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>>(obj);
@@ -75,7 +75,7 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T ItemTemplate<T>(this T obj, Func<object> loadTemplate) where T : Sharp.UI.IItemsViewCell
+        public static T ItemTemplate<T>(this T obj, System.Func<object> loadTemplate) where T : Sharp.UI.IItemsViewCell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>>(obj);
             mauiObject.ItemTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);

@@ -18,12 +18,12 @@ namespace Sharp.UI
             arcSegment = this;
         }
 
-        public ArcSegment(Action<ArcSegment> configure) 
+        public ArcSegment(System.Action<ArcSegment> configure) 
         {
             configure(this);
         }
 
-        public ArcSegment(out ArcSegment arcSegment, Action<ArcSegment> configure) 
+        public ArcSegment(out ArcSegment arcSegment, System.Action<ArcSegment> configure) 
         {
             arcSegment = this;
             configure(this);

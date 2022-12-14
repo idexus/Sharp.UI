@@ -18,12 +18,12 @@ namespace Sharp.UI
             datePicker = this;
         }
 
-        public DatePicker(Action<DatePicker> configure) 
+        public DatePicker(System.Action<DatePicker> configure) 
         {
             configure(this);
         }
 
-        public DatePicker(out DatePicker datePicker, Action<DatePicker> configure) 
+        public DatePicker(out DatePicker datePicker, System.Action<DatePicker> configure) 
         {
             datePicker = this;
             configure(this);

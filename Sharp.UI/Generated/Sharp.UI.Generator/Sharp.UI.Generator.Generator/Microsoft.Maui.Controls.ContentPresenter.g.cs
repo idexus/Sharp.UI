@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T Content<T>(this T obj,
             Microsoft.Maui.Controls.View? content,
-            Func<BindableDef<Microsoft.Maui.Controls.View>, BindableDef<Microsoft.Maui.Controls.View>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.View>, BindableDef<Microsoft.Maui.Controls.View>> definition)
             where T : Sharp.UI.IContentPresenter
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ContentPresenter>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T Content<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.View>, BindableDef<Microsoft.Maui.Controls.View>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.View>, BindableDef<Microsoft.Maui.Controls.View>> definition)
             where T : Sharp.UI.IContentPresenter
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ContentPresenter>(obj);

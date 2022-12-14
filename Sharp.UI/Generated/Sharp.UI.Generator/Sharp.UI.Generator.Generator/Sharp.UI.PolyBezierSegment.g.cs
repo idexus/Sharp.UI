@@ -32,12 +32,12 @@ namespace Sharp.UI
             polyBezierSegment = this;
         }
 
-        public PolyBezierSegment(Action<PolyBezierSegment> configure) : this()
+        public PolyBezierSegment(System.Action<PolyBezierSegment> configure) : this()
         {
             configure(this);
         }
 
-        public PolyBezierSegment(out PolyBezierSegment polyBezierSegment, Action<PolyBezierSegment> configure) : this()
+        public PolyBezierSegment(out PolyBezierSegment polyBezierSegment, System.Action<PolyBezierSegment> configure) : this()
         {
             polyBezierSegment = this;
             configure(this);

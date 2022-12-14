@@ -18,12 +18,12 @@ namespace Sharp.UI
             carouselView = this;
         }
 
-        public CarouselView(Action<CarouselView> configure) 
+        public CarouselView(System.Action<CarouselView> configure) 
         {
             configure(this);
         }
 
-        public CarouselView(out CarouselView carouselView, Action<CarouselView> configure) 
+        public CarouselView(out CarouselView carouselView, System.Action<CarouselView> configure) 
         {
             carouselView = this;
             configure(this);

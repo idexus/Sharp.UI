@@ -32,12 +32,12 @@ namespace Sharp.UI
             rowDefinition = this;
         }
 
-        public RowDefinition(Action<RowDefinition> configure) : this()
+        public RowDefinition(System.Action<RowDefinition> configure) : this()
         {
             configure(this);
         }
 
-        public RowDefinition(out RowDefinition rowDefinition, Action<RowDefinition> configure) : this()
+        public RowDefinition(out RowDefinition rowDefinition, System.Action<RowDefinition> configure) : this()
         {
             rowDefinition = this;
             configure(this);

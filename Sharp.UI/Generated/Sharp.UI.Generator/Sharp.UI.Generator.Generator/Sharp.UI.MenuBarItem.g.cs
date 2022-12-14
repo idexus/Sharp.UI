@@ -18,12 +18,12 @@ namespace Sharp.UI
             menuBarItem = this;
         }
 
-        public MenuBarItem(Action<MenuBarItem> configure) 
+        public MenuBarItem(System.Action<MenuBarItem> configure) 
         {
             configure(this);
         }
 
-        public MenuBarItem(out MenuBarItem menuBarItem, Action<MenuBarItem> configure) 
+        public MenuBarItem(out MenuBarItem menuBarItem, System.Action<MenuBarItem> configure) 
         {
             menuBarItem = this;
             configure(this);
@@ -40,13 +40,13 @@ namespace Sharp.UI
             menuBarItem = this;
         }
 
-        public MenuBarItem(string text, Action<MenuBarItem> configure) 
+        public MenuBarItem(string text, System.Action<MenuBarItem> configure) 
         {  
             this.Text = text;
             configure(this);
         }
 
-        public MenuBarItem(string text, out MenuBarItem menuBarItem, Action<MenuBarItem> configure) 
+        public MenuBarItem(string text, out MenuBarItem menuBarItem, System.Action<MenuBarItem> configure) 
         {  
             this.Text = text;
             menuBarItem = this;

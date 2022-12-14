@@ -36,12 +36,12 @@ namespace Sharp.UI
             path = this;
         }
 
-        public Path(Action<Path> configure) : this()
+        public Path(System.Action<Path> configure) : this()
         {
             configure(this);
         }
 
-        public Path(out Path path, Action<Path> configure) : this()
+        public Path(out Path path, System.Action<Path> configure) : this()
         {
             path = this;
             configure(this);

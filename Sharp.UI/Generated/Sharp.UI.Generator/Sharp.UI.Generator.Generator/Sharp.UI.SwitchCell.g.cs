@@ -18,12 +18,12 @@ namespace Sharp.UI
             switchCell = this;
         }
 
-        public SwitchCell(Action<SwitchCell> configure) 
+        public SwitchCell(System.Action<SwitchCell> configure) 
         {
             configure(this);
         }
 
-        public SwitchCell(out SwitchCell switchCell, Action<SwitchCell> configure) 
+        public SwitchCell(out SwitchCell switchCell, System.Action<SwitchCell> configure) 
         {
             switchCell = this;
             configure(this);

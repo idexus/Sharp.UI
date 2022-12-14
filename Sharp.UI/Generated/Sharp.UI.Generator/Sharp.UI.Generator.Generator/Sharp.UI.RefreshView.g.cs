@@ -22,12 +22,12 @@ namespace Sharp.UI
             refreshView = this;
         }
 
-        public RefreshView(Action<RefreshView> configure) 
+        public RefreshView(System.Action<RefreshView> configure) 
         {
             configure(this);
         }
 
-        public RefreshView(out RefreshView refreshView, Action<RefreshView> configure) 
+        public RefreshView(out RefreshView refreshView, System.Action<RefreshView> configure) 
         {
             refreshView = this;
             configure(this);

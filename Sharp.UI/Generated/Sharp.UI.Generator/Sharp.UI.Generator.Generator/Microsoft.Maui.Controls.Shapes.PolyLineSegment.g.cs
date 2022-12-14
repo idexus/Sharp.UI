@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T Points<T>(this T obj,
             Microsoft.Maui.Controls.PointCollection? points,
-            Func<BindableDef<Microsoft.Maui.Controls.PointCollection>, BindableDef<Microsoft.Maui.Controls.PointCollection>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.PointCollection>, BindableDef<Microsoft.Maui.Controls.PointCollection>> definition)
             where T : Sharp.UI.IPolyLineSegment
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.PolyLineSegment>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T Points<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.PointCollection>, BindableDef<Microsoft.Maui.Controls.PointCollection>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.PointCollection>, BindableDef<Microsoft.Maui.Controls.PointCollection>> definition)
             where T : Sharp.UI.IPolyLineSegment
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.PolyLineSegment>(obj);

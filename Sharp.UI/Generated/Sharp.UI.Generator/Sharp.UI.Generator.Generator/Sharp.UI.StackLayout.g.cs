@@ -18,12 +18,12 @@ namespace Sharp.UI
             stackLayout = this;
         }
 
-        public StackLayout(Action<StackLayout> configure) 
+        public StackLayout(System.Action<StackLayout> configure) 
         {
             configure(this);
         }
 
-        public StackLayout(out StackLayout stackLayout, Action<StackLayout> configure) 
+        public StackLayout(out StackLayout stackLayout, System.Action<StackLayout> configure) 
         {
             stackLayout = this;
             configure(this);

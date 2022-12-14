@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T Point<T>(this T obj,
             Microsoft.Maui.Graphics.Point? point,
-            Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
             where T : Sharp.UI.ILineSegment
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.LineSegment>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T Point<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
             where T : Sharp.UI.ILineSegment
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.LineSegment>(obj);

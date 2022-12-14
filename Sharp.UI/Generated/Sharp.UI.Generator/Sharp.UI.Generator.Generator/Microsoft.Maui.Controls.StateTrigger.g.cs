@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T IsActive<T>(this T obj,
             bool? isActive,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IStateTrigger
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StateTrigger>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T IsActive<T>(this T obj,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IStateTrigger
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StateTrigger>(obj);

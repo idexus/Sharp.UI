@@ -18,12 +18,12 @@ namespace Sharp.UI
             boxView = this;
         }
 
-        public BoxView(Action<BoxView> configure) 
+        public BoxView(System.Action<BoxView> configure) 
         {
             configure(this);
         }
 
-        public BoxView(out BoxView boxView, Action<BoxView> configure) 
+        public BoxView(out BoxView boxView, System.Action<BoxView> configure) 
         {
             boxView = this;
             configure(this);

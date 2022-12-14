@@ -18,12 +18,12 @@ namespace Sharp.UI
             collectionView = this;
         }
 
-        public CollectionView(Action<CollectionView> configure) 
+        public CollectionView(System.Action<CollectionView> configure) 
         {
             configure(this);
         }
 
-        public CollectionView(out CollectionView collectionView, Action<CollectionView> configure) 
+        public CollectionView(out CollectionView collectionView, System.Action<CollectionView> configure) 
         {
             collectionView = this;
             configure(this);

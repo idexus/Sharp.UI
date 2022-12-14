@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T Command<T>(this T obj,
             System.Windows.Input.ICommand? command,
-            Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.ISwipeItemView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwipeItemView>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T Command<T>(this T obj,
-            Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.ISwipeItemView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwipeItemView>(obj);
@@ -53,7 +53,7 @@ namespace Sharp.UI
         
         public static T CommandParameter<T>(this T obj,
             object? commandParameter,
-            Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.ISwipeItemView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwipeItemView>(obj);
@@ -65,7 +65,7 @@ namespace Sharp.UI
         }
         
         public static T CommandParameter<T>(this T obj,
-            Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.ISwipeItemView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwipeItemView>(obj);

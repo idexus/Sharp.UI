@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T ControlTemplate<T>(this T obj,
             Microsoft.Maui.Controls.ControlTemplate? controlTemplate,
-            Func<BindableDef<Microsoft.Maui.Controls.ControlTemplate>, BindableDef<Microsoft.Maui.Controls.ControlTemplate>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.ControlTemplate>, BindableDef<Microsoft.Maui.Controls.ControlTemplate>> definition)
             where T : Sharp.UI.ITemplatedPage
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.TemplatedPage>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T ControlTemplate<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.ControlTemplate>, BindableDef<Microsoft.Maui.Controls.ControlTemplate>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.ControlTemplate>, BindableDef<Microsoft.Maui.Controls.ControlTemplate>> definition)
             where T : Sharp.UI.ITemplatedPage
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.TemplatedPage>(obj);

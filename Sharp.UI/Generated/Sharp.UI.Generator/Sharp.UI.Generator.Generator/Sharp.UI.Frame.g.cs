@@ -22,12 +22,12 @@ namespace Sharp.UI
             frame = this;
         }
 
-        public Frame(Action<Frame> configure) 
+        public Frame(System.Action<Frame> configure) 
         {
             configure(this);
         }
 
-        public Frame(out Frame frame, Action<Frame> configure) 
+        public Frame(out Frame frame, System.Action<Frame> configure) 
         {
             frame = this;
             configure(this);

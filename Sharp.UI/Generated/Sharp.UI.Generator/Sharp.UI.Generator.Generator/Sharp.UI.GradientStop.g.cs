@@ -18,12 +18,12 @@ namespace Sharp.UI
             gradientStop = this;
         }
 
-        public GradientStop(Action<GradientStop> configure) 
+        public GradientStop(System.Action<GradientStop> configure) 
         {
             configure(this);
         }
 
-        public GradientStop(out GradientStop gradientStop, Action<GradientStop> configure) 
+        public GradientStop(out GradientStop gradientStop, System.Action<GradientStop> configure) 
         {
             gradientStop = this;
             configure(this);

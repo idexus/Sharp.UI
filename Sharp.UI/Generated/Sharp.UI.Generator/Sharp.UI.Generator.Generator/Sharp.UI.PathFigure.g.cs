@@ -36,12 +36,12 @@ namespace Sharp.UI
             pathFigure = this;
         }
 
-        public PathFigure(Action<PathFigure> configure) : this()
+        public PathFigure(System.Action<PathFigure> configure) : this()
         {
             configure(this);
         }
 
-        public PathFigure(out PathFigure pathFigure, Action<PathFigure> configure) : this()
+        public PathFigure(out PathFigure pathFigure, System.Action<PathFigure> configure) : this()
         {
             pathFigure = this;
             configure(this);

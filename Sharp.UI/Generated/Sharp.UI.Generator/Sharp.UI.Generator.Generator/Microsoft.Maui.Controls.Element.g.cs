@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T AutomationId<T>(this T obj,
             string? automationId,
-            Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.IElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Element>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T AutomationId<T>(this T obj,
-            Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.IElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Element>(obj);
@@ -53,7 +53,7 @@ namespace Sharp.UI
         
         public static T ClassId<T>(this T obj,
             string? classId,
-            Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.IElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Element>(obj);
@@ -65,7 +65,7 @@ namespace Sharp.UI
         }
         
         public static T ClassId<T>(this T obj,
-            Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.IElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Element>(obj);
@@ -94,7 +94,7 @@ namespace Sharp.UI
         }
 
         public static T Effects<T>(this T obj,
-            Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Effect>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Effect>>> definition)
+            System.Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Effect>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Effect>>> definition)
             where T : Sharp.UI.IElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Element>(obj);
@@ -118,7 +118,7 @@ namespace Sharp.UI
         
         public static T StyleId<T>(this T obj,
             string? styleId,
-            Func<ValueDef<string>, ValueDef<string>> definition)
+            System.Func<ValueDef<string>, ValueDef<string>> definition)
             where T : Sharp.UI.IElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Element>(obj);
@@ -129,7 +129,7 @@ namespace Sharp.UI
         }
         
         public static T StyleId<T>(this T obj,
-            Func<ValueDef<string>, ValueDef<string>> definition)
+            System.Func<ValueDef<string>, ValueDef<string>> definition)
             where T : Sharp.UI.IElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Element>(obj);
@@ -149,7 +149,7 @@ namespace Sharp.UI
         
         public static T Parent<T>(this T obj,
             Microsoft.Maui.Controls.Element? parent,
-            Func<ValueDef<Microsoft.Maui.Controls.Element>, ValueDef<Microsoft.Maui.Controls.Element>> definition)
+            System.Func<ValueDef<Microsoft.Maui.Controls.Element>, ValueDef<Microsoft.Maui.Controls.Element>> definition)
             where T : Sharp.UI.IElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Element>(obj);
@@ -160,7 +160,7 @@ namespace Sharp.UI
         }
         
         public static T Parent<T>(this T obj,
-            Func<ValueDef<Microsoft.Maui.Controls.Element>, ValueDef<Microsoft.Maui.Controls.Element>> definition)
+            System.Func<ValueDef<Microsoft.Maui.Controls.Element>, ValueDef<Microsoft.Maui.Controls.Element>> definition)
             where T : Sharp.UI.IElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Element>(obj);
@@ -180,7 +180,7 @@ namespace Sharp.UI
         
         public static T EffectControlProvider<T>(this T obj,
             Microsoft.Maui.Controls.IEffectControlProvider? effectControlProvider,
-            Func<ValueDef<Microsoft.Maui.Controls.IEffectControlProvider>, ValueDef<Microsoft.Maui.Controls.IEffectControlProvider>> definition)
+            System.Func<ValueDef<Microsoft.Maui.Controls.IEffectControlProvider>, ValueDef<Microsoft.Maui.Controls.IEffectControlProvider>> definition)
             where T : Sharp.UI.IElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Element>(obj);
@@ -191,7 +191,7 @@ namespace Sharp.UI
         }
         
         public static T EffectControlProvider<T>(this T obj,
-            Func<ValueDef<Microsoft.Maui.Controls.IEffectControlProvider>, ValueDef<Microsoft.Maui.Controls.IEffectControlProvider>> definition)
+            System.Func<ValueDef<Microsoft.Maui.Controls.IEffectControlProvider>, ValueDef<Microsoft.Maui.Controls.IEffectControlProvider>> definition)
             where T : Sharp.UI.IElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Element>(obj);
@@ -275,7 +275,7 @@ namespace Sharp.UI
         
         public static T FlyoutBaseContextFlyout<T>(this T obj,
             Microsoft.Maui.Controls.MenuFlyout? contextFlyout,
-            Func<BindableDef<Microsoft.Maui.Controls.MenuFlyout>, BindableDef<Microsoft.Maui.Controls.MenuFlyout>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.MenuFlyout>, BindableDef<Microsoft.Maui.Controls.MenuFlyout>> definition)
             where T : Sharp.UI.IElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Element>(obj);
@@ -287,7 +287,7 @@ namespace Sharp.UI
         }
         
         public static T FlyoutBaseContextFlyout<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.MenuFlyout>, BindableDef<Microsoft.Maui.Controls.MenuFlyout>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.MenuFlyout>, BindableDef<Microsoft.Maui.Controls.MenuFlyout>> definition)
             where T : Sharp.UI.IElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Element>(obj);

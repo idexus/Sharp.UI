@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T Property<T>(this T obj,
             Microsoft.Maui.Controls.BindableProperty? property,
-            Func<ValueDef<Microsoft.Maui.Controls.BindableProperty>, ValueDef<Microsoft.Maui.Controls.BindableProperty>> definition)
+            System.Func<ValueDef<Microsoft.Maui.Controls.BindableProperty>, ValueDef<Microsoft.Maui.Controls.BindableProperty>> definition)
             where T : Sharp.UI.ITrigger
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Trigger>(obj);
@@ -31,7 +31,7 @@ namespace Sharp.UI
         }
         
         public static T Property<T>(this T obj,
-            Func<ValueDef<Microsoft.Maui.Controls.BindableProperty>, ValueDef<Microsoft.Maui.Controls.BindableProperty>> definition)
+            System.Func<ValueDef<Microsoft.Maui.Controls.BindableProperty>, ValueDef<Microsoft.Maui.Controls.BindableProperty>> definition)
             where T : Sharp.UI.ITrigger
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Trigger>(obj);
@@ -59,7 +59,7 @@ namespace Sharp.UI
         }
 
         public static T Setters<T>(this T obj,
-            Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Setter>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Setter>>> definition)
+            System.Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Setter>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Setter>>> definition)
             where T : Sharp.UI.ITrigger
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Trigger>(obj);
@@ -83,7 +83,7 @@ namespace Sharp.UI
         
         public static T Value<T>(this T obj,
             object? value,
-            Func<ValueDef<object>, ValueDef<object>> definition)
+            System.Func<ValueDef<object>, ValueDef<object>> definition)
             where T : Sharp.UI.ITrigger
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Trigger>(obj);
@@ -94,7 +94,7 @@ namespace Sharp.UI
         }
         
         public static T Value<T>(this T obj,
-            Func<ValueDef<object>, ValueDef<object>> definition)
+            System.Func<ValueDef<object>, ValueDef<object>> definition)
             where T : Sharp.UI.ITrigger
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Trigger>(obj);

@@ -18,12 +18,12 @@ namespace Sharp.UI
             ellipseGeometry = this;
         }
 
-        public EllipseGeometry(Action<EllipseGeometry> configure) 
+        public EllipseGeometry(System.Action<EllipseGeometry> configure) 
         {
             configure(this);
         }
 
-        public EllipseGeometry(out EllipseGeometry ellipseGeometry, Action<EllipseGeometry> configure) 
+        public EllipseGeometry(out EllipseGeometry ellipseGeometry, System.Action<EllipseGeometry> configure) 
         {
             ellipseGeometry = this;
             configure(this);
@@ -44,7 +44,7 @@ namespace Sharp.UI
             ellipseGeometry = this;
         }
 
-        public EllipseGeometry(double radiusx, double radiusy, Microsoft.Maui.Graphics.Point center, Action<EllipseGeometry> configure) 
+        public EllipseGeometry(double radiusx, double radiusy, Microsoft.Maui.Graphics.Point center, System.Action<EllipseGeometry> configure) 
         {  
             this.RadiusX = radiusx;
             this.RadiusY = radiusy;
@@ -52,7 +52,7 @@ namespace Sharp.UI
             configure(this);
         }
 
-        public EllipseGeometry(double radiusx, double radiusy, Microsoft.Maui.Graphics.Point center, out EllipseGeometry ellipseGeometry, Action<EllipseGeometry> configure) 
+        public EllipseGeometry(double radiusx, double radiusy, Microsoft.Maui.Graphics.Point center, out EllipseGeometry ellipseGeometry, System.Action<EllipseGeometry> configure) 
         {  
             this.RadiusX = radiusx;
             this.RadiusY = radiusy;

@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T Increment<T>(this T obj,
             double? increment,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IStepper
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Stepper>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T Increment<T>(this T obj,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IStepper
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Stepper>(obj);
@@ -53,7 +53,7 @@ namespace Sharp.UI
         
         public static T Maximum<T>(this T obj,
             double? maximum,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IStepper
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Stepper>(obj);
@@ -65,7 +65,7 @@ namespace Sharp.UI
         }
         
         public static T Maximum<T>(this T obj,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IStepper
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Stepper>(obj);
@@ -86,7 +86,7 @@ namespace Sharp.UI
         
         public static T Minimum<T>(this T obj,
             double? minimum,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IStepper
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Stepper>(obj);
@@ -98,7 +98,7 @@ namespace Sharp.UI
         }
         
         public static T Minimum<T>(this T obj,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IStepper
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Stepper>(obj);
@@ -119,7 +119,7 @@ namespace Sharp.UI
         
         public static T Value<T>(this T obj,
             double? value,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IStepper
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Stepper>(obj);
@@ -131,7 +131,7 @@ namespace Sharp.UI
         }
         
         public static T Value<T>(this T obj,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IStepper
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Stepper>(obj);

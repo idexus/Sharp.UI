@@ -30,7 +30,7 @@ namespace Sharp.UI.Example
         }
 
         public static T SimpleData<T>(this T obj,
-            Func<Def<System.Collections.Generic.List<Sharp.UI.Example.DataModel>>, Def<System.Collections.Generic.List<Sharp.UI.Example.DataModel>>> definition)
+            System.Func<Def<System.Collections.Generic.List<Sharp.UI.Example.DataModel>>, Def<System.Collections.Generic.List<Sharp.UI.Example.DataModel>>> definition)
             where T : Sharp.UI.Example.DataModel
         {
             var mauiObject = MauiWrapper.GetObject<Sharp.UI.Example.DataModel>(obj);
@@ -54,7 +54,7 @@ namespace Sharp.UI.Example
         
         public static T Id<T>(this T obj,
             int? id,
-            Func<BindableDef<int>, BindableDef<int>> definition)
+            System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.Example.DataModel
         {
             var mauiObject = MauiWrapper.GetObject<Sharp.UI.Example.DataModel>(obj);
@@ -66,7 +66,7 @@ namespace Sharp.UI.Example
         }
         
         public static T Id<T>(this T obj,
-            Func<BindableDef<int>, BindableDef<int>> definition)
+            System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.Example.DataModel
         {
             var mauiObject = MauiWrapper.GetObject<Sharp.UI.Example.DataModel>(obj);
@@ -87,7 +87,7 @@ namespace Sharp.UI.Example
         
         public static T Name<T>(this T obj,
             string? name,
-            Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.Example.DataModel
         {
             var mauiObject = MauiWrapper.GetObject<Sharp.UI.Example.DataModel>(obj);
@@ -99,7 +99,7 @@ namespace Sharp.UI.Example
         }
         
         public static T Name<T>(this T obj,
-            Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.Example.DataModel
         {
             var mauiObject = MauiWrapper.GetObject<Sharp.UI.Example.DataModel>(obj);
@@ -120,7 +120,7 @@ namespace Sharp.UI.Example
         
         public static T Admin<T>(this T obj,
             bool? admin,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.Example.DataModel
         {
             var mauiObject = MauiWrapper.GetObject<Sharp.UI.Example.DataModel>(obj);
@@ -132,7 +132,7 @@ namespace Sharp.UI.Example
         }
         
         public static T Admin<T>(this T obj,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.Example.DataModel
         {
             var mauiObject = MauiWrapper.GetObject<Sharp.UI.Example.DataModel>(obj);

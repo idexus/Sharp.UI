@@ -18,12 +18,12 @@ namespace Sharp.UI
             fontImageSource = this;
         }
 
-        public FontImageSource(Action<FontImageSource> configure) 
+        public FontImageSource(System.Action<FontImageSource> configure) 
         {
             configure(this);
         }
 
-        public FontImageSource(out FontImageSource fontImageSource, Action<FontImageSource> configure) 
+        public FontImageSource(out FontImageSource fontImageSource, System.Action<FontImageSource> configure) 
         {
             fontImageSource = this;
             configure(this);
@@ -42,14 +42,14 @@ namespace Sharp.UI
             fontImageSource = this;
         }
 
-        public FontImageSource(string glyph, string fontfamily, Action<FontImageSource> configure) 
+        public FontImageSource(string glyph, string fontfamily, System.Action<FontImageSource> configure) 
         {  
             this.Glyph = glyph;
             this.FontFamily = fontfamily;
             configure(this);
         }
 
-        public FontImageSource(string glyph, string fontfamily, out FontImageSource fontImageSource, Action<FontImageSource> configure) 
+        public FontImageSource(string glyph, string fontfamily, out FontImageSource fontImageSource, System.Action<FontImageSource> configure) 
         {  
             this.Glyph = glyph;
             this.FontFamily = fontfamily;

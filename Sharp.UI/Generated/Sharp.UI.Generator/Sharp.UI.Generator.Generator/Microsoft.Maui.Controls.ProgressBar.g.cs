@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T ProgressColor<T>(this T obj,
             Microsoft.Maui.Graphics.Color? progressColor,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IProgressBar
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ProgressBar>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T ProgressColor<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IProgressBar
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ProgressBar>(obj);
@@ -53,7 +53,7 @@ namespace Sharp.UI
         
         public static T Progress<T>(this T obj,
             double? progress,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IProgressBar
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ProgressBar>(obj);
@@ -65,7 +65,7 @@ namespace Sharp.UI
         }
         
         public static T Progress<T>(this T obj,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IProgressBar
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ProgressBar>(obj);

@@ -32,12 +32,12 @@ namespace Sharp.UI
             orientationStateTrigger = this;
         }
 
-        public OrientationStateTrigger(Action<OrientationStateTrigger> configure) : this()
+        public OrientationStateTrigger(System.Action<OrientationStateTrigger> configure) : this()
         {
             configure(this);
         }
 
-        public OrientationStateTrigger(out OrientationStateTrigger orientationStateTrigger, Action<OrientationStateTrigger> configure) : this()
+        public OrientationStateTrigger(out OrientationStateTrigger orientationStateTrigger, System.Action<OrientationStateTrigger> configure) : this()
         {
             orientationStateTrigger = this;
             configure(this);

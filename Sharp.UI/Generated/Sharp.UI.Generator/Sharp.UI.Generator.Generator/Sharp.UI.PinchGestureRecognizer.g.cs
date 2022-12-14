@@ -32,12 +32,12 @@ namespace Sharp.UI
             pinchGestureRecognizer = this;
         }
 
-        public PinchGestureRecognizer(Action<PinchGestureRecognizer> configure) : this()
+        public PinchGestureRecognizer(System.Action<PinchGestureRecognizer> configure) : this()
         {
             configure(this);
         }
 
-        public PinchGestureRecognizer(out PinchGestureRecognizer pinchGestureRecognizer, Action<PinchGestureRecognizer> configure) : this()
+        public PinchGestureRecognizer(out PinchGestureRecognizer pinchGestureRecognizer, System.Action<PinchGestureRecognizer> configure) : this()
         {
             pinchGestureRecognizer = this;
             configure(this);

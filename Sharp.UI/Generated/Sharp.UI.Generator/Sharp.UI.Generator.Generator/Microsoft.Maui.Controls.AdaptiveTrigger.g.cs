@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T MinWindowHeight<T>(this T obj,
             double? minWindowHeight,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IAdaptiveTrigger
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.AdaptiveTrigger>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T MinWindowHeight<T>(this T obj,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IAdaptiveTrigger
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.AdaptiveTrigger>(obj);
@@ -53,7 +53,7 @@ namespace Sharp.UI
         
         public static T MinWindowWidth<T>(this T obj,
             double? minWindowWidth,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IAdaptiveTrigger
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.AdaptiveTrigger>(obj);
@@ -65,7 +65,7 @@ namespace Sharp.UI
         }
         
         public static T MinWindowWidth<T>(this T obj,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IAdaptiveTrigger
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.AdaptiveTrigger>(obj);

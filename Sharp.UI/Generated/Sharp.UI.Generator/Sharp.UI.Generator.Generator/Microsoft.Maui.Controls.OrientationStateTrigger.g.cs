@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T Orientation<T>(this T obj,
             Microsoft.Maui.Devices.DisplayOrientation? orientation,
-            Func<BindableDef<Microsoft.Maui.Devices.DisplayOrientation>, BindableDef<Microsoft.Maui.Devices.DisplayOrientation>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Devices.DisplayOrientation>, BindableDef<Microsoft.Maui.Devices.DisplayOrientation>> definition)
             where T : Sharp.UI.IOrientationStateTrigger
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.OrientationStateTrigger>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T Orientation<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Devices.DisplayOrientation>, BindableDef<Microsoft.Maui.Devices.DisplayOrientation>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Devices.DisplayOrientation>, BindableDef<Microsoft.Maui.Devices.DisplayOrientation>> definition)
             where T : Sharp.UI.IOrientationStateTrigger
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.OrientationStateTrigger>(obj);

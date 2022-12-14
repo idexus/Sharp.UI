@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T Fill<T>(this T obj,
             Microsoft.Maui.Controls.Brush? fill,
-            Func<BindableDef<Microsoft.Maui.Controls.Brush>, BindableDef<Microsoft.Maui.Controls.Brush>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.Brush>, BindableDef<Microsoft.Maui.Controls.Brush>> definition)
             where T : Sharp.UI.IShape
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Shape>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T Fill<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.Brush>, BindableDef<Microsoft.Maui.Controls.Brush>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.Brush>, BindableDef<Microsoft.Maui.Controls.Brush>> definition)
             where T : Sharp.UI.IShape
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Shape>(obj);
@@ -53,7 +53,7 @@ namespace Sharp.UI
         
         public static T Stroke<T>(this T obj,
             Microsoft.Maui.Controls.Brush? stroke,
-            Func<BindableDef<Microsoft.Maui.Controls.Brush>, BindableDef<Microsoft.Maui.Controls.Brush>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.Brush>, BindableDef<Microsoft.Maui.Controls.Brush>> definition)
             where T : Sharp.UI.IShape
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Shape>(obj);
@@ -65,7 +65,7 @@ namespace Sharp.UI
         }
         
         public static T Stroke<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.Brush>, BindableDef<Microsoft.Maui.Controls.Brush>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.Brush>, BindableDef<Microsoft.Maui.Controls.Brush>> definition)
             where T : Sharp.UI.IShape
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Shape>(obj);
@@ -86,7 +86,7 @@ namespace Sharp.UI
         
         public static T StrokeThickness<T>(this T obj,
             double? strokeThickness,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IShape
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Shape>(obj);
@@ -98,7 +98,7 @@ namespace Sharp.UI
         }
         
         public static T StrokeThickness<T>(this T obj,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IShape
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Shape>(obj);
@@ -119,7 +119,7 @@ namespace Sharp.UI
         
         public static T StrokeDashArray<T>(this T obj,
             Microsoft.Maui.Controls.DoubleCollection? strokeDashArray,
-            Func<BindableDef<Microsoft.Maui.Controls.DoubleCollection>, BindableDef<Microsoft.Maui.Controls.DoubleCollection>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.DoubleCollection>, BindableDef<Microsoft.Maui.Controls.DoubleCollection>> definition)
             where T : Sharp.UI.IShape
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Shape>(obj);
@@ -131,7 +131,7 @@ namespace Sharp.UI
         }
         
         public static T StrokeDashArray<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.DoubleCollection>, BindableDef<Microsoft.Maui.Controls.DoubleCollection>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.DoubleCollection>, BindableDef<Microsoft.Maui.Controls.DoubleCollection>> definition)
             where T : Sharp.UI.IShape
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Shape>(obj);
@@ -152,7 +152,7 @@ namespace Sharp.UI
         
         public static T StrokeDashOffset<T>(this T obj,
             double? strokeDashOffset,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IShape
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Shape>(obj);
@@ -164,7 +164,7 @@ namespace Sharp.UI
         }
         
         public static T StrokeDashOffset<T>(this T obj,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IShape
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Shape>(obj);
@@ -185,7 +185,7 @@ namespace Sharp.UI
         
         public static T StrokeLineCap<T>(this T obj,
             Microsoft.Maui.Controls.Shapes.PenLineCap? strokeLineCap,
-            Func<BindableDef<Microsoft.Maui.Controls.Shapes.PenLineCap>, BindableDef<Microsoft.Maui.Controls.Shapes.PenLineCap>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.Shapes.PenLineCap>, BindableDef<Microsoft.Maui.Controls.Shapes.PenLineCap>> definition)
             where T : Sharp.UI.IShape
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Shape>(obj);
@@ -197,7 +197,7 @@ namespace Sharp.UI
         }
         
         public static T StrokeLineCap<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.Shapes.PenLineCap>, BindableDef<Microsoft.Maui.Controls.Shapes.PenLineCap>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.Shapes.PenLineCap>, BindableDef<Microsoft.Maui.Controls.Shapes.PenLineCap>> definition)
             where T : Sharp.UI.IShape
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Shape>(obj);
@@ -218,7 +218,7 @@ namespace Sharp.UI
         
         public static T StrokeLineJoin<T>(this T obj,
             Microsoft.Maui.Controls.Shapes.PenLineJoin? strokeLineJoin,
-            Func<BindableDef<Microsoft.Maui.Controls.Shapes.PenLineJoin>, BindableDef<Microsoft.Maui.Controls.Shapes.PenLineJoin>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.Shapes.PenLineJoin>, BindableDef<Microsoft.Maui.Controls.Shapes.PenLineJoin>> definition)
             where T : Sharp.UI.IShape
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Shape>(obj);
@@ -230,7 +230,7 @@ namespace Sharp.UI
         }
         
         public static T StrokeLineJoin<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.Shapes.PenLineJoin>, BindableDef<Microsoft.Maui.Controls.Shapes.PenLineJoin>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.Shapes.PenLineJoin>, BindableDef<Microsoft.Maui.Controls.Shapes.PenLineJoin>> definition)
             where T : Sharp.UI.IShape
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Shape>(obj);
@@ -251,7 +251,7 @@ namespace Sharp.UI
         
         public static T StrokeMiterLimit<T>(this T obj,
             double? strokeMiterLimit,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IShape
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Shape>(obj);
@@ -263,7 +263,7 @@ namespace Sharp.UI
         }
         
         public static T StrokeMiterLimit<T>(this T obj,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IShape
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Shape>(obj);
@@ -284,7 +284,7 @@ namespace Sharp.UI
         
         public static T Aspect<T>(this T obj,
             Microsoft.Maui.Controls.Stretch? aspect,
-            Func<BindableDef<Microsoft.Maui.Controls.Stretch>, BindableDef<Microsoft.Maui.Controls.Stretch>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.Stretch>, BindableDef<Microsoft.Maui.Controls.Stretch>> definition)
             where T : Sharp.UI.IShape
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Shape>(obj);
@@ -296,7 +296,7 @@ namespace Sharp.UI
         }
         
         public static T Aspect<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.Stretch>, BindableDef<Microsoft.Maui.Controls.Stretch>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.Stretch>, BindableDef<Microsoft.Maui.Controls.Stretch>> definition)
             where T : Sharp.UI.IShape
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Shape>(obj);

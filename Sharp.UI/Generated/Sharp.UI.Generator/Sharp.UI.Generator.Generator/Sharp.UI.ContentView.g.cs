@@ -22,12 +22,12 @@ namespace Sharp.UI
             contentView = this;
         }
 
-        public ContentView(Action<ContentView> configure) 
+        public ContentView(System.Action<ContentView> configure) 
         {
             configure(this);
         }
 
-        public ContentView(out ContentView contentView, Action<ContentView> configure) 
+        public ContentView(out ContentView contentView, System.Action<ContentView> configure) 
         {
             contentView = this;
             configure(this);

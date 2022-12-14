@@ -18,12 +18,12 @@ namespace Sharp.UI
             bezierSegment = this;
         }
 
-        public BezierSegment(Action<BezierSegment> configure) 
+        public BezierSegment(System.Action<BezierSegment> configure) 
         {
             configure(this);
         }
 
-        public BezierSegment(out BezierSegment bezierSegment, Action<BezierSegment> configure) 
+        public BezierSegment(out BezierSegment bezierSegment, System.Action<BezierSegment> configure) 
         {
             bezierSegment = this;
             configure(this);

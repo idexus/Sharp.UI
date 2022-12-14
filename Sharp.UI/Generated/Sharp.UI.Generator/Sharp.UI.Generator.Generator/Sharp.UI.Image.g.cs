@@ -18,12 +18,12 @@ namespace Sharp.UI
             image = this;
         }
 
-        public Image(Action<Image> configure) 
+        public Image(System.Action<Image> configure) 
         {
             configure(this);
         }
 
-        public Image(out Image image, Action<Image> configure) 
+        public Image(out Image image, System.Action<Image> configure) 
         {
             image = this;
             configure(this);
@@ -40,13 +40,13 @@ namespace Sharp.UI
             image = this;
         }
 
-        public Image(Microsoft.Maui.Controls.ImageSource source, Action<Image> configure) 
+        public Image(Microsoft.Maui.Controls.ImageSource source, System.Action<Image> configure) 
         {  
             this.Source = source;
             configure(this);
         }
 
-        public Image(Microsoft.Maui.Controls.ImageSource source, out Image image, Action<Image> configure) 
+        public Image(Microsoft.Maui.Controls.ImageSource source, out Image image, System.Action<Image> configure) 
         {  
             this.Source = source;
             image = this;

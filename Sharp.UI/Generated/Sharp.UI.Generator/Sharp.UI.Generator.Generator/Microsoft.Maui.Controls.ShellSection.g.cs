@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T CurrentItem<T>(this T obj,
             Microsoft.Maui.Controls.ShellContent? currentItem,
-            Func<BindableDef<Microsoft.Maui.Controls.ShellContent>, BindableDef<Microsoft.Maui.Controls.ShellContent>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.ShellContent>, BindableDef<Microsoft.Maui.Controls.ShellContent>> definition)
             where T : Sharp.UI.IShellSection
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ShellSection>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T CurrentItem<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.ShellContent>, BindableDef<Microsoft.Maui.Controls.ShellContent>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.ShellContent>, BindableDef<Microsoft.Maui.Controls.ShellContent>> definition)
             where T : Sharp.UI.IShellSection
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ShellSection>(obj);
@@ -61,7 +61,7 @@ namespace Sharp.UI
         }
 
         public static T Items<T>(this T obj,
-            Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellContent>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellContent>>> definition)
+            System.Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellContent>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellContent>>> definition)
             where T : Sharp.UI.IShellSection
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ShellSection>(obj);

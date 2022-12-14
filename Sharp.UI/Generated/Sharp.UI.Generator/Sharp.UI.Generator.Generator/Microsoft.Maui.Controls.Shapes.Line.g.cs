@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T X1<T>(this T obj,
             double? x1,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.ILine
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Line>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T X1<T>(this T obj,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.ILine
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Line>(obj);
@@ -53,7 +53,7 @@ namespace Sharp.UI
         
         public static T Y1<T>(this T obj,
             double? y1,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.ILine
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Line>(obj);
@@ -65,7 +65,7 @@ namespace Sharp.UI
         }
         
         public static T Y1<T>(this T obj,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.ILine
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Line>(obj);
@@ -86,7 +86,7 @@ namespace Sharp.UI
         
         public static T X2<T>(this T obj,
             double? x2,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.ILine
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Line>(obj);
@@ -98,7 +98,7 @@ namespace Sharp.UI
         }
         
         public static T X2<T>(this T obj,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.ILine
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Line>(obj);
@@ -119,7 +119,7 @@ namespace Sharp.UI
         
         public static T Y2<T>(this T obj,
             double? y2,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.ILine
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Line>(obj);
@@ -131,7 +131,7 @@ namespace Sharp.UI
         }
         
         public static T Y2<T>(this T obj,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.ILine
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Line>(obj);
@@ -152,7 +152,7 @@ namespace Sharp.UI
         
         public static T @class<T>(this T obj,
             System.Collections.Generic.IList<string>? @class,
-            Func<ValueDef<System.Collections.Generic.IList<string>>, ValueDef<System.Collections.Generic.IList<string>>> definition)
+            System.Func<ValueDef<System.Collections.Generic.IList<string>>, ValueDef<System.Collections.Generic.IList<string>>> definition)
             where T : Sharp.UI.ILine
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Line>(obj);
@@ -163,7 +163,7 @@ namespace Sharp.UI
         }
         
         public static T @class<T>(this T obj,
-            Func<ValueDef<System.Collections.Generic.IList<string>>, ValueDef<System.Collections.Generic.IList<string>>> definition)
+            System.Func<ValueDef<System.Collections.Generic.IList<string>>, ValueDef<System.Collections.Generic.IList<string>>> definition)
             where T : Sharp.UI.ILine
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Line>(obj);

@@ -28,7 +28,7 @@ namespace Sharp.UI
         }
 
         public static T Children<T>(this T obj,
-            Func<Def<System.Collections.Generic.IList<Microsoft.Maui.IView>>, Def<System.Collections.Generic.IList<Microsoft.Maui.IView>>> definition)
+            System.Func<Def<System.Collections.Generic.IList<Microsoft.Maui.IView>>, Def<System.Collections.Generic.IList<Microsoft.Maui.IView>>> definition)
             where T : Sharp.UI.ILayout
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Layout>(obj);
@@ -52,7 +52,7 @@ namespace Sharp.UI
         
         public static T IsClippedToBounds<T>(this T obj,
             bool? isClippedToBounds,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.ILayout
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Layout>(obj);
@@ -64,7 +64,7 @@ namespace Sharp.UI
         }
         
         public static T IsClippedToBounds<T>(this T obj,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.ILayout
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Layout>(obj);
@@ -85,7 +85,7 @@ namespace Sharp.UI
         
         public static T Padding<T>(this T obj,
             Microsoft.Maui.Thickness? padding,
-            Func<BindableDef<Microsoft.Maui.Thickness>, BindableDef<Microsoft.Maui.Thickness>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Thickness>, BindableDef<Microsoft.Maui.Thickness>> definition)
             where T : Sharp.UI.ILayout
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Layout>(obj);
@@ -97,7 +97,7 @@ namespace Sharp.UI
         }
         
         public static T Padding<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Thickness>, BindableDef<Microsoft.Maui.Thickness>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Thickness>, BindableDef<Microsoft.Maui.Thickness>> definition)
             where T : Sharp.UI.ILayout
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Layout>(obj);
@@ -118,7 +118,7 @@ namespace Sharp.UI
         
         public static T IgnoreSafeArea<T>(this T obj,
             bool? ignoreSafeArea,
-            Func<ValueDef<bool>, ValueDef<bool>> definition)
+            System.Func<ValueDef<bool>, ValueDef<bool>> definition)
             where T : Sharp.UI.ILayout
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Layout>(obj);
@@ -129,7 +129,7 @@ namespace Sharp.UI
         }
         
         public static T IgnoreSafeArea<T>(this T obj,
-            Func<ValueDef<bool>, ValueDef<bool>> definition)
+            System.Func<ValueDef<bool>, ValueDef<bool>> definition)
             where T : Sharp.UI.ILayout
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Layout>(obj);
@@ -149,7 +149,7 @@ namespace Sharp.UI
         
         public static T CascadeInputTransparent<T>(this T obj,
             bool? cascadeInputTransparent,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.ILayout
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Layout>(obj);
@@ -161,7 +161,7 @@ namespace Sharp.UI
         }
         
         public static T CascadeInputTransparent<T>(this T obj,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.ILayout
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Layout>(obj);

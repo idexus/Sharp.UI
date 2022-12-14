@@ -18,12 +18,12 @@ namespace Sharp.UI
             listView = this;
         }
 
-        public ListView(Action<ListView> configure) 
+        public ListView(System.Action<ListView> configure) 
         {
             configure(this);
         }
 
-        public ListView(out ListView listView, Action<ListView> configure) 
+        public ListView(out ListView listView, System.Action<ListView> configure) 
         {
             listView = this;
             configure(this);
@@ -40,13 +40,13 @@ namespace Sharp.UI
             listView = this;
         }
 
-        public ListView(System.Collections.IEnumerable itemssource, Action<ListView> configure) 
+        public ListView(System.Collections.IEnumerable itemssource, System.Action<ListView> configure) 
         {  
             this.ItemsSource = itemssource;
             configure(this);
         }
 
-        public ListView(System.Collections.IEnumerable itemssource, out ListView listView, Action<ListView> configure) 
+        public ListView(System.Collections.IEnumerable itemssource, out ListView listView, System.Action<ListView> configure) 
         {  
             this.ItemsSource = itemssource;
             listView = this;

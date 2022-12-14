@@ -28,7 +28,7 @@ namespace Sharp.UI
         }
 
         public static T Actions<T>(this T obj,
-            Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerAction>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerAction>>> definition)
+            System.Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerAction>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerAction>>> definition)
             where T : Sharp.UI.IEventTrigger
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.EventTrigger>(obj);
@@ -52,7 +52,7 @@ namespace Sharp.UI
         
         public static T Event<T>(this T obj,
             string? @event,
-            Func<ValueDef<string>, ValueDef<string>> definition)
+            System.Func<ValueDef<string>, ValueDef<string>> definition)
             where T : Sharp.UI.IEventTrigger
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.EventTrigger>(obj);
@@ -63,7 +63,7 @@ namespace Sharp.UI
         }
         
         public static T Event<T>(this T obj,
-            Func<ValueDef<string>, ValueDef<string>> definition)
+            System.Func<ValueDef<string>, ValueDef<string>> definition)
             where T : Sharp.UI.IEventTrigger
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.EventTrigger>(obj);

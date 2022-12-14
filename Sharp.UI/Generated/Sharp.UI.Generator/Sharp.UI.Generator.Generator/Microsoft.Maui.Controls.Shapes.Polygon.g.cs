@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T Points<T>(this T obj,
             Microsoft.Maui.Controls.PointCollection? points,
-            Func<BindableDef<Microsoft.Maui.Controls.PointCollection>, BindableDef<Microsoft.Maui.Controls.PointCollection>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.PointCollection>, BindableDef<Microsoft.Maui.Controls.PointCollection>> definition)
             where T : Sharp.UI.IPolygon
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Polygon>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T Points<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.PointCollection>, BindableDef<Microsoft.Maui.Controls.PointCollection>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.PointCollection>, BindableDef<Microsoft.Maui.Controls.PointCollection>> definition)
             where T : Sharp.UI.IPolygon
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Polygon>(obj);
@@ -53,7 +53,7 @@ namespace Sharp.UI
         
         public static T FillRule<T>(this T obj,
             Microsoft.Maui.Controls.Shapes.FillRule? fillRule,
-            Func<BindableDef<Microsoft.Maui.Controls.Shapes.FillRule>, BindableDef<Microsoft.Maui.Controls.Shapes.FillRule>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.Shapes.FillRule>, BindableDef<Microsoft.Maui.Controls.Shapes.FillRule>> definition)
             where T : Sharp.UI.IPolygon
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Polygon>(obj);
@@ -65,7 +65,7 @@ namespace Sharp.UI
         }
         
         public static T FillRule<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.Shapes.FillRule>, BindableDef<Microsoft.Maui.Controls.Shapes.FillRule>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.Shapes.FillRule>, BindableDef<Microsoft.Maui.Controls.Shapes.FillRule>> definition)
             where T : Sharp.UI.IPolygon
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Polygon>(obj);
@@ -86,7 +86,7 @@ namespace Sharp.UI
         
         public static T @class<T>(this T obj,
             System.Collections.Generic.IList<string>? @class,
-            Func<ValueDef<System.Collections.Generic.IList<string>>, ValueDef<System.Collections.Generic.IList<string>>> definition)
+            System.Func<ValueDef<System.Collections.Generic.IList<string>>, ValueDef<System.Collections.Generic.IList<string>>> definition)
             where T : Sharp.UI.IPolygon
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Polygon>(obj);
@@ -97,7 +97,7 @@ namespace Sharp.UI
         }
         
         public static T @class<T>(this T obj,
-            Func<ValueDef<System.Collections.Generic.IList<string>>, ValueDef<System.Collections.Generic.IList<string>>> definition)
+            System.Func<ValueDef<System.Collections.Generic.IList<string>>, ValueDef<System.Collections.Generic.IList<string>>> definition)
             where T : Sharp.UI.IPolygon
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Polygon>(obj);

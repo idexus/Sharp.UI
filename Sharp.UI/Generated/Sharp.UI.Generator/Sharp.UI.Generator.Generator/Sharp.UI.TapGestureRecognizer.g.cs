@@ -32,12 +32,12 @@ namespace Sharp.UI
             tapGestureRecognizer = this;
         }
 
-        public TapGestureRecognizer(Action<TapGestureRecognizer> configure) : this()
+        public TapGestureRecognizer(System.Action<TapGestureRecognizer> configure) : this()
         {
             configure(this);
         }
 
-        public TapGestureRecognizer(out TapGestureRecognizer tapGestureRecognizer, Action<TapGestureRecognizer> configure) : this()
+        public TapGestureRecognizer(out TapGestureRecognizer tapGestureRecognizer, System.Action<TapGestureRecognizer> configure) : this()
         {
             tapGestureRecognizer = this;
             configure(this);

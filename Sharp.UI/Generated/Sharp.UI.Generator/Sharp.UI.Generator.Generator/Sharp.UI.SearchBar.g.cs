@@ -18,12 +18,12 @@ namespace Sharp.UI
             searchBar = this;
         }
 
-        public SearchBar(Action<SearchBar> configure) 
+        public SearchBar(System.Action<SearchBar> configure) 
         {
             configure(this);
         }
 
-        public SearchBar(out SearchBar searchBar, Action<SearchBar> configure) 
+        public SearchBar(out SearchBar searchBar, System.Action<SearchBar> configure) 
         {
             searchBar = this;
             configure(this);
@@ -40,13 +40,13 @@ namespace Sharp.UI
             searchBar = this;
         }
 
-        public SearchBar(string placeholder, Action<SearchBar> configure) 
+        public SearchBar(string placeholder, System.Action<SearchBar> configure) 
         {  
             this.Placeholder = placeholder;
             configure(this);
         }
 
-        public SearchBar(string placeholder, out SearchBar searchBar, Action<SearchBar> configure) 
+        public SearchBar(string placeholder, out SearchBar searchBar, System.Action<SearchBar> configure) 
         {  
             this.Placeholder = placeholder;
             searchBar = this;

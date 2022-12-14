@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T TouchPoints<T>(this T obj,
             int? touchPoints,
-            Func<BindableDef<int>, BindableDef<int>> definition)
+            System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.IPanGestureRecognizer
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.PanGestureRecognizer>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T TouchPoints<T>(this T obj,
-            Func<BindableDef<int>, BindableDef<int>> definition)
+            System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.IPanGestureRecognizer
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.PanGestureRecognizer>(obj);

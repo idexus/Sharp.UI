@@ -18,12 +18,12 @@ namespace Sharp.UI
             imageButton = this;
         }
 
-        public ImageButton(Action<ImageButton> configure) 
+        public ImageButton(System.Action<ImageButton> configure) 
         {
             configure(this);
         }
 
-        public ImageButton(out ImageButton imageButton, Action<ImageButton> configure) 
+        public ImageButton(out ImageButton imageButton, System.Action<ImageButton> configure) 
         {
             imageButton = this;
             configure(this);
@@ -40,13 +40,13 @@ namespace Sharp.UI
             imageButton = this;
         }
 
-        public ImageButton(Microsoft.Maui.Controls.ImageSource source, Action<ImageButton> configure) 
+        public ImageButton(Microsoft.Maui.Controls.ImageSource source, System.Action<ImageButton> configure) 
         {  
             this.Source = source;
             configure(this);
         }
 
-        public ImageButton(Microsoft.Maui.Controls.ImageSource source, out ImageButton imageButton, Action<ImageButton> configure) 
+        public ImageButton(Microsoft.Maui.Controls.ImageSource source, out ImageButton imageButton, System.Action<ImageButton> configure) 
         {  
             this.Source = source;
             imageButton = this;

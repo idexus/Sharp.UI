@@ -32,12 +32,12 @@ namespace Sharp.UI
             deviceStateTrigger = this;
         }
 
-        public DeviceStateTrigger(Action<DeviceStateTrigger> configure) : this()
+        public DeviceStateTrigger(System.Action<DeviceStateTrigger> configure) : this()
         {
             configure(this);
         }
 
-        public DeviceStateTrigger(out DeviceStateTrigger deviceStateTrigger, Action<DeviceStateTrigger> configure) : this()
+        public DeviceStateTrigger(out DeviceStateTrigger deviceStateTrigger, System.Action<DeviceStateTrigger> configure) : this()
         {
             deviceStateTrigger = this;
             configure(this);

@@ -22,12 +22,12 @@ namespace Sharp.UI
             tabbedPage = this;
         }
 
-        public TabbedPage(Action<TabbedPage> configure) 
+        public TabbedPage(System.Action<TabbedPage> configure) 
         {
             configure(this);
         }
 
-        public TabbedPage(out TabbedPage tabbedPage, Action<TabbedPage> configure) 
+        public TabbedPage(out TabbedPage tabbedPage, System.Action<TabbedPage> configure) 
         {
             tabbedPage = this;
             configure(this);

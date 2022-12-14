@@ -36,12 +36,12 @@ namespace Sharp.UI
             polygon = this;
         }
 
-        public Polygon(Action<Polygon> configure) : this()
+        public Polygon(System.Action<Polygon> configure) : this()
         {
             configure(this);
         }
 
-        public Polygon(out Polygon polygon, Action<Polygon> configure) : this()
+        public Polygon(out Polygon polygon, System.Action<Polygon> configure) : this()
         {
             polygon = this;
             configure(this);

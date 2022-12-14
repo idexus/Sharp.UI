@@ -20,12 +20,12 @@ namespace Sharp.UI.Example
             dataModel = this;
         }
 
-        public DataModel(Action<DataModel> configure) 
+        public DataModel(System.Action<DataModel> configure) 
         {
             configure(this);
         }
 
-        public DataModel(out DataModel dataModel, Action<DataModel> configure) 
+        public DataModel(out DataModel dataModel, System.Action<DataModel> configure) 
         {
             dataModel = this;
             configure(this);
@@ -33,27 +33,42 @@ namespace Sharp.UI.Example
 
         // ----- bindable properties -----
 
-        public static readonly BindableProperty IdProperty = BindableProperty.Create(nameof(Id), typeof(Int32), typeof(Sharp.UI.Example.DataModel), default(Int32));
+        public static readonly Microsoft.Maui.Controls.BindableProperty IdProperty =
+            BindableProperty.Create(
+                nameof(Id),
+                typeof(int),
+                typeof(Sharp.UI.Example.DataModel),
+                default(int));
 
-        public Int32 Id
+        public int Id
         {
-            get => (Int32)GetValue(IdProperty);
+            get => (int)GetValue(IdProperty);
             set => SetValue(IdProperty, value);
         }
         
-        public static readonly BindableProperty NameProperty = BindableProperty.Create(nameof(Name), typeof(String), typeof(Sharp.UI.Example.DataModel), default(String));
+        public static readonly Microsoft.Maui.Controls.BindableProperty NameProperty =
+            BindableProperty.Create(
+                nameof(Name),
+                typeof(string),
+                typeof(Sharp.UI.Example.DataModel),
+                default(string));
 
-        public String Name
+        public string Name
         {
-            get => (String)GetValue(NameProperty);
+            get => (string)GetValue(NameProperty);
             set => SetValue(NameProperty, value);
         }
         
-        public static readonly BindableProperty AdminProperty = BindableProperty.Create(nameof(Admin), typeof(Boolean), typeof(Sharp.UI.Example.DataModel), default(Boolean));
+        public static readonly Microsoft.Maui.Controls.BindableProperty AdminProperty =
+            BindableProperty.Create(
+                nameof(Admin),
+                typeof(bool),
+                typeof(Sharp.UI.Example.DataModel),
+                default(bool));
 
-        public Boolean Admin
+        public bool Admin
         {
-            get => (Boolean)GetValue(AdminProperty);
+            get => (bool)GetValue(AdminProperty);
             set => SetValue(AdminProperty, value);
         }
         

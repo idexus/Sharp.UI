@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T Color<T>(this T obj,
             Microsoft.Maui.Graphics.Color? color,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IBoxView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.BoxView>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T Color<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IBoxView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.BoxView>(obj);
@@ -53,7 +53,7 @@ namespace Sharp.UI
         
         public static T CornerRadius<T>(this T obj,
             Microsoft.Maui.CornerRadius? cornerRadius,
-            Func<BindableDef<Microsoft.Maui.CornerRadius>, BindableDef<Microsoft.Maui.CornerRadius>> definition)
+            System.Func<BindableDef<Microsoft.Maui.CornerRadius>, BindableDef<Microsoft.Maui.CornerRadius>> definition)
             where T : Sharp.UI.IBoxView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.BoxView>(obj);
@@ -65,7 +65,7 @@ namespace Sharp.UI
         }
         
         public static T CornerRadius<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.CornerRadius>, BindableDef<Microsoft.Maui.CornerRadius>> definition)
+            System.Func<BindableDef<Microsoft.Maui.CornerRadius>, BindableDef<Microsoft.Maui.CornerRadius>> definition)
             where T : Sharp.UI.IBoxView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.BoxView>(obj);

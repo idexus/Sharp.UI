@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T Footer<T>(this T obj,
             object? footer,
-            Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IListView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T Footer<T>(this T obj,
-            Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IListView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
@@ -53,7 +53,7 @@ namespace Sharp.UI
         
         public static T FooterTemplate<T>(this T obj,
             Microsoft.Maui.Controls.DataTemplate? footerTemplate,
-            Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
             where T : Sharp.UI.IListView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
@@ -65,7 +65,7 @@ namespace Sharp.UI
         }
         
         public static T FooterTemplate<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
             where T : Sharp.UI.IListView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
@@ -75,7 +75,7 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T FooterTemplate<T>(this T obj, Func<object> loadTemplate) where T : Sharp.UI.IListView
+        public static T FooterTemplate<T>(this T obj, System.Func<object> loadTemplate) where T : Sharp.UI.IListView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
             mauiObject.FooterTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
@@ -93,7 +93,7 @@ namespace Sharp.UI
         
         public static T GroupDisplayBinding<T>(this T obj,
             Microsoft.Maui.Controls.BindingBase? groupDisplayBinding,
-            Func<ValueDef<Microsoft.Maui.Controls.BindingBase>, ValueDef<Microsoft.Maui.Controls.BindingBase>> definition)
+            System.Func<ValueDef<Microsoft.Maui.Controls.BindingBase>, ValueDef<Microsoft.Maui.Controls.BindingBase>> definition)
             where T : Sharp.UI.IListView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
@@ -104,7 +104,7 @@ namespace Sharp.UI
         }
         
         public static T GroupDisplayBinding<T>(this T obj,
-            Func<ValueDef<Microsoft.Maui.Controls.BindingBase>, ValueDef<Microsoft.Maui.Controls.BindingBase>> definition)
+            System.Func<ValueDef<Microsoft.Maui.Controls.BindingBase>, ValueDef<Microsoft.Maui.Controls.BindingBase>> definition)
             where T : Sharp.UI.IListView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
@@ -124,7 +124,7 @@ namespace Sharp.UI
         
         public static T GroupHeaderTemplate<T>(this T obj,
             Microsoft.Maui.Controls.DataTemplate? groupHeaderTemplate,
-            Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
             where T : Sharp.UI.IListView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
@@ -136,7 +136,7 @@ namespace Sharp.UI
         }
         
         public static T GroupHeaderTemplate<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
             where T : Sharp.UI.IListView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
@@ -146,7 +146,7 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T GroupHeaderTemplate<T>(this T obj, Func<object> loadTemplate) where T : Sharp.UI.IListView
+        public static T GroupHeaderTemplate<T>(this T obj, System.Func<object> loadTemplate) where T : Sharp.UI.IListView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
             mauiObject.GroupHeaderTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
@@ -164,7 +164,7 @@ namespace Sharp.UI
         
         public static T GroupShortNameBinding<T>(this T obj,
             Microsoft.Maui.Controls.BindingBase? groupShortNameBinding,
-            Func<ValueDef<Microsoft.Maui.Controls.BindingBase>, ValueDef<Microsoft.Maui.Controls.BindingBase>> definition)
+            System.Func<ValueDef<Microsoft.Maui.Controls.BindingBase>, ValueDef<Microsoft.Maui.Controls.BindingBase>> definition)
             where T : Sharp.UI.IListView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
@@ -175,7 +175,7 @@ namespace Sharp.UI
         }
         
         public static T GroupShortNameBinding<T>(this T obj,
-            Func<ValueDef<Microsoft.Maui.Controls.BindingBase>, ValueDef<Microsoft.Maui.Controls.BindingBase>> definition)
+            System.Func<ValueDef<Microsoft.Maui.Controls.BindingBase>, ValueDef<Microsoft.Maui.Controls.BindingBase>> definition)
             where T : Sharp.UI.IListView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
@@ -195,7 +195,7 @@ namespace Sharp.UI
         
         public static T HasUnevenRows<T>(this T obj,
             bool? hasUnevenRows,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IListView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
@@ -207,7 +207,7 @@ namespace Sharp.UI
         }
         
         public static T HasUnevenRows<T>(this T obj,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IListView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
@@ -228,7 +228,7 @@ namespace Sharp.UI
         
         public static T Header<T>(this T obj,
             object? header,
-            Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IListView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
@@ -240,7 +240,7 @@ namespace Sharp.UI
         }
         
         public static T Header<T>(this T obj,
-            Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IListView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
@@ -261,7 +261,7 @@ namespace Sharp.UI
         
         public static T HeaderTemplate<T>(this T obj,
             Microsoft.Maui.Controls.DataTemplate? headerTemplate,
-            Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
             where T : Sharp.UI.IListView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
@@ -273,7 +273,7 @@ namespace Sharp.UI
         }
         
         public static T HeaderTemplate<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
             where T : Sharp.UI.IListView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
@@ -283,7 +283,7 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T HeaderTemplate<T>(this T obj, Func<object> loadTemplate) where T : Sharp.UI.IListView
+        public static T HeaderTemplate<T>(this T obj, System.Func<object> loadTemplate) where T : Sharp.UI.IListView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
             mauiObject.HeaderTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
@@ -301,7 +301,7 @@ namespace Sharp.UI
         
         public static T IsGroupingEnabled<T>(this T obj,
             bool? isGroupingEnabled,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IListView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
@@ -313,7 +313,7 @@ namespace Sharp.UI
         }
         
         public static T IsGroupingEnabled<T>(this T obj,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IListView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
@@ -334,7 +334,7 @@ namespace Sharp.UI
         
         public static T IsPullToRefreshEnabled<T>(this T obj,
             bool? isPullToRefreshEnabled,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IListView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
@@ -346,7 +346,7 @@ namespace Sharp.UI
         }
         
         public static T IsPullToRefreshEnabled<T>(this T obj,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IListView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
@@ -367,7 +367,7 @@ namespace Sharp.UI
         
         public static T IsRefreshing<T>(this T obj,
             bool? isRefreshing,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IListView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
@@ -379,7 +379,7 @@ namespace Sharp.UI
         }
         
         public static T IsRefreshing<T>(this T obj,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IListView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
@@ -400,7 +400,7 @@ namespace Sharp.UI
         
         public static T RefreshCommand<T>(this T obj,
             System.Windows.Input.ICommand? refreshCommand,
-            Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.IListView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
@@ -412,7 +412,7 @@ namespace Sharp.UI
         }
         
         public static T RefreshCommand<T>(this T obj,
-            Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.IListView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
@@ -433,7 +433,7 @@ namespace Sharp.UI
         
         public static T RowHeight<T>(this T obj,
             int? rowHeight,
-            Func<BindableDef<int>, BindableDef<int>> definition)
+            System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.IListView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
@@ -445,7 +445,7 @@ namespace Sharp.UI
         }
         
         public static T RowHeight<T>(this T obj,
-            Func<BindableDef<int>, BindableDef<int>> definition)
+            System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.IListView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
@@ -466,7 +466,7 @@ namespace Sharp.UI
         
         public static T SelectedItem<T>(this T obj,
             object? selectedItem,
-            Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IListView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
@@ -478,7 +478,7 @@ namespace Sharp.UI
         }
         
         public static T SelectedItem<T>(this T obj,
-            Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IListView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
@@ -499,7 +499,7 @@ namespace Sharp.UI
         
         public static T SelectionMode<T>(this T obj,
             Microsoft.Maui.Controls.ListViewSelectionMode? selectionMode,
-            Func<BindableDef<Microsoft.Maui.Controls.ListViewSelectionMode>, BindableDef<Microsoft.Maui.Controls.ListViewSelectionMode>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.ListViewSelectionMode>, BindableDef<Microsoft.Maui.Controls.ListViewSelectionMode>> definition)
             where T : Sharp.UI.IListView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
@@ -511,7 +511,7 @@ namespace Sharp.UI
         }
         
         public static T SelectionMode<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.ListViewSelectionMode>, BindableDef<Microsoft.Maui.Controls.ListViewSelectionMode>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.ListViewSelectionMode>, BindableDef<Microsoft.Maui.Controls.ListViewSelectionMode>> definition)
             where T : Sharp.UI.IListView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
@@ -532,7 +532,7 @@ namespace Sharp.UI
         
         public static T SeparatorColor<T>(this T obj,
             Microsoft.Maui.Graphics.Color? separatorColor,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IListView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
@@ -544,7 +544,7 @@ namespace Sharp.UI
         }
         
         public static T SeparatorColor<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IListView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
@@ -565,7 +565,7 @@ namespace Sharp.UI
         
         public static T RefreshControlColor<T>(this T obj,
             Microsoft.Maui.Graphics.Color? refreshControlColor,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IListView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
@@ -577,7 +577,7 @@ namespace Sharp.UI
         }
         
         public static T RefreshControlColor<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IListView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
@@ -598,7 +598,7 @@ namespace Sharp.UI
         
         public static T SeparatorVisibility<T>(this T obj,
             Microsoft.Maui.Controls.SeparatorVisibility? separatorVisibility,
-            Func<BindableDef<Microsoft.Maui.Controls.SeparatorVisibility>, BindableDef<Microsoft.Maui.Controls.SeparatorVisibility>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.SeparatorVisibility>, BindableDef<Microsoft.Maui.Controls.SeparatorVisibility>> definition)
             where T : Sharp.UI.IListView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
@@ -610,7 +610,7 @@ namespace Sharp.UI
         }
         
         public static T SeparatorVisibility<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.SeparatorVisibility>, BindableDef<Microsoft.Maui.Controls.SeparatorVisibility>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.SeparatorVisibility>, BindableDef<Microsoft.Maui.Controls.SeparatorVisibility>> definition)
             where T : Sharp.UI.IListView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
@@ -631,7 +631,7 @@ namespace Sharp.UI
         
         public static T HorizontalScrollBarVisibility<T>(this T obj,
             Microsoft.Maui.ScrollBarVisibility? horizontalScrollBarVisibility,
-            Func<BindableDef<Microsoft.Maui.ScrollBarVisibility>, BindableDef<Microsoft.Maui.ScrollBarVisibility>> definition)
+            System.Func<BindableDef<Microsoft.Maui.ScrollBarVisibility>, BindableDef<Microsoft.Maui.ScrollBarVisibility>> definition)
             where T : Sharp.UI.IListView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
@@ -643,7 +643,7 @@ namespace Sharp.UI
         }
         
         public static T HorizontalScrollBarVisibility<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.ScrollBarVisibility>, BindableDef<Microsoft.Maui.ScrollBarVisibility>> definition)
+            System.Func<BindableDef<Microsoft.Maui.ScrollBarVisibility>, BindableDef<Microsoft.Maui.ScrollBarVisibility>> definition)
             where T : Sharp.UI.IListView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
@@ -664,7 +664,7 @@ namespace Sharp.UI
         
         public static T VerticalScrollBarVisibility<T>(this T obj,
             Microsoft.Maui.ScrollBarVisibility? verticalScrollBarVisibility,
-            Func<BindableDef<Microsoft.Maui.ScrollBarVisibility>, BindableDef<Microsoft.Maui.ScrollBarVisibility>> definition)
+            System.Func<BindableDef<Microsoft.Maui.ScrollBarVisibility>, BindableDef<Microsoft.Maui.ScrollBarVisibility>> definition)
             where T : Sharp.UI.IListView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
@@ -676,7 +676,7 @@ namespace Sharp.UI
         }
         
         public static T VerticalScrollBarVisibility<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.ScrollBarVisibility>, BindableDef<Microsoft.Maui.ScrollBarVisibility>> definition)
+            System.Func<BindableDef<Microsoft.Maui.ScrollBarVisibility>, BindableDef<Microsoft.Maui.ScrollBarVisibility>> definition)
             where T : Sharp.UI.IListView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
@@ -697,7 +697,7 @@ namespace Sharp.UI
         
         public static T RefreshAllowed<T>(this T obj,
             bool? refreshAllowed,
-            Func<ValueDef<bool>, ValueDef<bool>> definition)
+            System.Func<ValueDef<bool>, ValueDef<bool>> definition)
             where T : Sharp.UI.IListView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
@@ -708,7 +708,7 @@ namespace Sharp.UI
         }
         
         public static T RefreshAllowed<T>(this T obj,
-            Func<ValueDef<bool>, ValueDef<bool>> definition)
+            System.Func<ValueDef<bool>, ValueDef<bool>> definition)
             where T : Sharp.UI.IListView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);

@@ -22,12 +22,12 @@ namespace Sharp.UI
             flyoutItem = this;
         }
 
-        public FlyoutItem(Action<FlyoutItem> configure) 
+        public FlyoutItem(System.Action<FlyoutItem> configure) 
         {
             configure(this);
         }
 
-        public FlyoutItem(out FlyoutItem flyoutItem, Action<FlyoutItem> configure) 
+        public FlyoutItem(out FlyoutItem flyoutItem, System.Action<FlyoutItem> configure) 
         {
             flyoutItem = this;
             configure(this);
@@ -44,13 +44,13 @@ namespace Sharp.UI
             flyoutItem = this;
         }
 
-        public FlyoutItem(Microsoft.Maui.Controls.FlyoutDisplayOptions flyoutdisplayoptions, Action<FlyoutItem> configure) 
+        public FlyoutItem(Microsoft.Maui.Controls.FlyoutDisplayOptions flyoutdisplayoptions, System.Action<FlyoutItem> configure) 
         {  
             this.FlyoutDisplayOptions = flyoutdisplayoptions;
             configure(this);
         }
 
-        public FlyoutItem(Microsoft.Maui.Controls.FlyoutDisplayOptions flyoutdisplayoptions, out FlyoutItem flyoutItem, Action<FlyoutItem> configure) 
+        public FlyoutItem(Microsoft.Maui.Controls.FlyoutDisplayOptions flyoutdisplayoptions, out FlyoutItem flyoutItem, System.Action<FlyoutItem> configure) 
         {  
             this.FlyoutDisplayOptions = flyoutdisplayoptions;
             flyoutItem = this;

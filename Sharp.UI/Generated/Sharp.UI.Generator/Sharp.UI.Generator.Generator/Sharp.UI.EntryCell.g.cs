@@ -18,12 +18,12 @@ namespace Sharp.UI
             entryCell = this;
         }
 
-        public EntryCell(Action<EntryCell> configure) 
+        public EntryCell(System.Action<EntryCell> configure) 
         {
             configure(this);
         }
 
-        public EntryCell(out EntryCell entryCell, Action<EntryCell> configure) 
+        public EntryCell(out EntryCell entryCell, System.Action<EntryCell> configure) 
         {
             entryCell = this;
             configure(this);
@@ -40,13 +40,13 @@ namespace Sharp.UI
             entryCell = this;
         }
 
-        public EntryCell(string placeholder, Action<EntryCell> configure) 
+        public EntryCell(string placeholder, System.Action<EntryCell> configure) 
         {  
             this.Placeholder = placeholder;
             configure(this);
         }
 
-        public EntryCell(string placeholder, out EntryCell entryCell, Action<EntryCell> configure) 
+        public EntryCell(string placeholder, out EntryCell entryCell, System.Action<EntryCell> configure) 
         {  
             this.Placeholder = placeholder;
             entryCell = this;

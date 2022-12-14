@@ -210,12 +210,12 @@ namespace {nameSpaceString}
             {Helpers.CamelCase(mainSymbol.Name)} = this;
         }}
 
-        public {mainSymbol.Name}(Action<{mainSymbol.Name}> configure) {thisTail}
+        public {mainSymbol.Name}(System.Action<{mainSymbol.Name}> configure) {thisTail}
         {{
             configure(this);
         }}
 
-        public {mainSymbol.Name}(out {mainSymbol.Name} {Helpers.CamelCase(mainSymbol.Name)}, Action<{mainSymbol.Name}> configure) {thisTail}
+        public {mainSymbol.Name}(out {mainSymbol.Name} {Helpers.CamelCase(mainSymbol.Name)}, System.Action<{mainSymbol.Name}> configure) {thisTail}
         {{
             {Helpers.CamelCase(mainSymbol.Name)} = this;
             configure(this);
@@ -269,12 +269,12 @@ namespace {nameSpaceString}
             {Helpers.CamelCase(mainSymbol.Name)} = this;
         }}
 
-        public {mainSymbol.Name}({definitionString}, Action<{mainSymbol.Name}> configure) {thisTail}
+        public {mainSymbol.Name}({definitionString}, System.Action<{mainSymbol.Name}> configure) {thisTail}
         {{  {assignmentString}
             configure(this);
         }}
 
-        public {mainSymbol.Name}({definitionString}, out {mainSymbol.Name} {Helpers.CamelCase(mainSymbol.Name)}, Action<{mainSymbol.Name}> configure) {thisTail}
+        public {mainSymbol.Name}({definitionString}, out {mainSymbol.Name} {Helpers.CamelCase(mainSymbol.Name)}, System.Action<{mainSymbol.Name}> configure) {thisTail}
         {{  {assignmentString}
             {Helpers.CamelCase(mainSymbol.Name)} = this;
             configure(this);
@@ -322,10 +322,15 @@ namespace {nameSpaceString}
         void GeneratePropertyForField(IPropertySymbol symbol)
         {
             var name = symbol.Name;
-            var typeName = symbol.Type.Name;
+            var typeName = symbol.Type.ToDisplayString();
 
             builder.Append($@"
-        public static readonly BindableProperty {name}Property = BindableProperty.Create(nameof({name}), typeof({typeName}), typeof({mainSymbol.ToDisplayString()}), default({typeName}));
+        public static readonly Microsoft.Maui.Controls.BindableProperty {name}Property =
+            BindableProperty.Create(
+                nameof({name}),
+                typeof({typeName}),
+                typeof({mainSymbol.ToDisplayString()}),
+                default({typeName}));
 
         public {typeName} {name}
         {{

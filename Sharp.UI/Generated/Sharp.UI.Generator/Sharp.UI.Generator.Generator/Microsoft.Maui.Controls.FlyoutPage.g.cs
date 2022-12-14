@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T Detail<T>(this T obj,
             Microsoft.Maui.Controls.Page? detail,
-            Func<ValueDef<Microsoft.Maui.Controls.Page>, ValueDef<Microsoft.Maui.Controls.Page>> definition)
+            System.Func<ValueDef<Microsoft.Maui.Controls.Page>, ValueDef<Microsoft.Maui.Controls.Page>> definition)
             where T : Sharp.UI.IFlyoutPage
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.FlyoutPage>(obj);
@@ -31,7 +31,7 @@ namespace Sharp.UI
         }
         
         public static T Detail<T>(this T obj,
-            Func<ValueDef<Microsoft.Maui.Controls.Page>, ValueDef<Microsoft.Maui.Controls.Page>> definition)
+            System.Func<ValueDef<Microsoft.Maui.Controls.Page>, ValueDef<Microsoft.Maui.Controls.Page>> definition)
             where T : Sharp.UI.IFlyoutPage
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.FlyoutPage>(obj);
@@ -51,7 +51,7 @@ namespace Sharp.UI
         
         public static T IsGestureEnabled<T>(this T obj,
             bool? isGestureEnabled,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IFlyoutPage
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.FlyoutPage>(obj);
@@ -63,7 +63,7 @@ namespace Sharp.UI
         }
         
         public static T IsGestureEnabled<T>(this T obj,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IFlyoutPage
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.FlyoutPage>(obj);
@@ -84,7 +84,7 @@ namespace Sharp.UI
         
         public static T IsPresented<T>(this T obj,
             bool? isPresented,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IFlyoutPage
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.FlyoutPage>(obj);
@@ -96,7 +96,7 @@ namespace Sharp.UI
         }
         
         public static T IsPresented<T>(this T obj,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IFlyoutPage
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.FlyoutPage>(obj);
@@ -117,7 +117,7 @@ namespace Sharp.UI
         
         public static T Flyout<T>(this T obj,
             Microsoft.Maui.Controls.Page? flyout,
-            Func<ValueDef<Microsoft.Maui.Controls.Page>, ValueDef<Microsoft.Maui.Controls.Page>> definition)
+            System.Func<ValueDef<Microsoft.Maui.Controls.Page>, ValueDef<Microsoft.Maui.Controls.Page>> definition)
             where T : Sharp.UI.IFlyoutPage
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.FlyoutPage>(obj);
@@ -128,7 +128,7 @@ namespace Sharp.UI
         }
         
         public static T Flyout<T>(this T obj,
-            Func<ValueDef<Microsoft.Maui.Controls.Page>, ValueDef<Microsoft.Maui.Controls.Page>> definition)
+            System.Func<ValueDef<Microsoft.Maui.Controls.Page>, ValueDef<Microsoft.Maui.Controls.Page>> definition)
             where T : Sharp.UI.IFlyoutPage
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.FlyoutPage>(obj);
@@ -148,7 +148,7 @@ namespace Sharp.UI
         
         public static T FlyoutLayoutBehavior<T>(this T obj,
             Microsoft.Maui.Controls.FlyoutLayoutBehavior? flyoutLayoutBehavior,
-            Func<BindableDef<Microsoft.Maui.Controls.FlyoutLayoutBehavior>, BindableDef<Microsoft.Maui.Controls.FlyoutLayoutBehavior>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.FlyoutLayoutBehavior>, BindableDef<Microsoft.Maui.Controls.FlyoutLayoutBehavior>> definition)
             where T : Sharp.UI.IFlyoutPage
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.FlyoutPage>(obj);
@@ -160,7 +160,7 @@ namespace Sharp.UI
         }
         
         public static T FlyoutLayoutBehavior<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.FlyoutLayoutBehavior>, BindableDef<Microsoft.Maui.Controls.FlyoutLayoutBehavior>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.FlyoutLayoutBehavior>, BindableDef<Microsoft.Maui.Controls.FlyoutLayoutBehavior>> definition)
             where T : Sharp.UI.IFlyoutPage
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.FlyoutPage>(obj);

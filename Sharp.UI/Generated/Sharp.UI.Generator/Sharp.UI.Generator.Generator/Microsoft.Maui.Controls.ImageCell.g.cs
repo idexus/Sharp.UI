@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T ImageSource<T>(this T obj,
             Microsoft.Maui.Controls.ImageSource? imageSource,
-            Func<BindableDef<Microsoft.Maui.Controls.ImageSource>, BindableDef<Microsoft.Maui.Controls.ImageSource>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.ImageSource>, BindableDef<Microsoft.Maui.Controls.ImageSource>> definition)
             where T : Sharp.UI.IImageCell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ImageCell>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T ImageSource<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.ImageSource>, BindableDef<Microsoft.Maui.Controls.ImageSource>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.ImageSource>, BindableDef<Microsoft.Maui.Controls.ImageSource>> definition)
             where T : Sharp.UI.IImageCell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ImageCell>(obj);

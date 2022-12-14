@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T HasUnevenRows<T>(this T obj,
             bool? hasUnevenRows,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.ITableView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.TableView>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T HasUnevenRows<T>(this T obj,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.ITableView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.TableView>(obj);
@@ -53,7 +53,7 @@ namespace Sharp.UI
         
         public static T Intent<T>(this T obj,
             Microsoft.Maui.Controls.TableIntent? intent,
-            Func<ValueDef<Microsoft.Maui.Controls.TableIntent>, ValueDef<Microsoft.Maui.Controls.TableIntent>> definition)
+            System.Func<ValueDef<Microsoft.Maui.Controls.TableIntent>, ValueDef<Microsoft.Maui.Controls.TableIntent>> definition)
             where T : Sharp.UI.ITableView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.TableView>(obj);
@@ -64,7 +64,7 @@ namespace Sharp.UI
         }
         
         public static T Intent<T>(this T obj,
-            Func<ValueDef<Microsoft.Maui.Controls.TableIntent>, ValueDef<Microsoft.Maui.Controls.TableIntent>> definition)
+            System.Func<ValueDef<Microsoft.Maui.Controls.TableIntent>, ValueDef<Microsoft.Maui.Controls.TableIntent>> definition)
             where T : Sharp.UI.ITableView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.TableView>(obj);
@@ -84,7 +84,7 @@ namespace Sharp.UI
         
         public static T Root<T>(this T obj,
             Microsoft.Maui.Controls.TableRoot? root,
-            Func<ValueDef<Microsoft.Maui.Controls.TableRoot>, ValueDef<Microsoft.Maui.Controls.TableRoot>> definition)
+            System.Func<ValueDef<Microsoft.Maui.Controls.TableRoot>, ValueDef<Microsoft.Maui.Controls.TableRoot>> definition)
             where T : Sharp.UI.ITableView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.TableView>(obj);
@@ -95,7 +95,7 @@ namespace Sharp.UI
         }
         
         public static T Root<T>(this T obj,
-            Func<ValueDef<Microsoft.Maui.Controls.TableRoot>, ValueDef<Microsoft.Maui.Controls.TableRoot>> definition)
+            System.Func<ValueDef<Microsoft.Maui.Controls.TableRoot>, ValueDef<Microsoft.Maui.Controls.TableRoot>> definition)
             where T : Sharp.UI.ITableView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.TableView>(obj);
@@ -115,7 +115,7 @@ namespace Sharp.UI
         
         public static T RowHeight<T>(this T obj,
             int? rowHeight,
-            Func<BindableDef<int>, BindableDef<int>> definition)
+            System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.ITableView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.TableView>(obj);
@@ -127,7 +127,7 @@ namespace Sharp.UI
         }
         
         public static T RowHeight<T>(this T obj,
-            Func<BindableDef<int>, BindableDef<int>> definition)
+            System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.ITableView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.TableView>(obj);
@@ -148,7 +148,7 @@ namespace Sharp.UI
         
         public static T Model<T>(this T obj,
             Microsoft.Maui.Controls.Internals.TableModel? model,
-            Func<ValueDef<Microsoft.Maui.Controls.Internals.TableModel>, ValueDef<Microsoft.Maui.Controls.Internals.TableModel>> definition)
+            System.Func<ValueDef<Microsoft.Maui.Controls.Internals.TableModel>, ValueDef<Microsoft.Maui.Controls.Internals.TableModel>> definition)
             where T : Sharp.UI.ITableView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.TableView>(obj);
@@ -159,7 +159,7 @@ namespace Sharp.UI
         }
         
         public static T Model<T>(this T obj,
-            Func<ValueDef<Microsoft.Maui.Controls.Internals.TableModel>, ValueDef<Microsoft.Maui.Controls.Internals.TableModel>> definition)
+            System.Func<ValueDef<Microsoft.Maui.Controls.Internals.TableModel>, ValueDef<Microsoft.Maui.Controls.Internals.TableModel>> definition)
             where T : Sharp.UI.ITableView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.TableView>(obj);

@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T Priority<T>(this T obj,
             int? priority,
-            Func<ValueDef<int>, ValueDef<int>> definition)
+            System.Func<ValueDef<int>, ValueDef<int>> definition)
             where T : Sharp.UI.IMenuBarItem
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.MenuBarItem>(obj);
@@ -31,7 +31,7 @@ namespace Sharp.UI
         }
         
         public static T Priority<T>(this T obj,
-            Func<ValueDef<int>, ValueDef<int>> definition)
+            System.Func<ValueDef<int>, ValueDef<int>> definition)
             where T : Sharp.UI.IMenuBarItem
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.MenuBarItem>(obj);
@@ -51,7 +51,7 @@ namespace Sharp.UI
         
         public static T IsEnabled<T>(this T obj,
             bool? isEnabled,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IMenuBarItem
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.MenuBarItem>(obj);
@@ -63,7 +63,7 @@ namespace Sharp.UI
         }
         
         public static T IsEnabled<T>(this T obj,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IMenuBarItem
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.MenuBarItem>(obj);
@@ -84,7 +84,7 @@ namespace Sharp.UI
         
         public static T Text<T>(this T obj,
             string? text,
-            Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.IMenuBarItem
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.MenuBarItem>(obj);
@@ -96,7 +96,7 @@ namespace Sharp.UI
         }
         
         public static T Text<T>(this T obj,
-            Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.IMenuBarItem
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.MenuBarItem>(obj);

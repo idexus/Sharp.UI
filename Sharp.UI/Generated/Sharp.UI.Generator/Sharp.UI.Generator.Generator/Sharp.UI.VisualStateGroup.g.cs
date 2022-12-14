@@ -36,12 +36,12 @@ namespace Sharp.UI
             visualStateGroup = this;
         }
 
-        public VisualStateGroup(Action<VisualStateGroup> configure) : this()
+        public VisualStateGroup(System.Action<VisualStateGroup> configure) : this()
         {
             configure(this);
         }
 
-        public VisualStateGroup(out VisualStateGroup visualStateGroup, Action<VisualStateGroup> configure) : this()
+        public VisualStateGroup(out VisualStateGroup visualStateGroup, System.Action<VisualStateGroup> configure) : this()
         {
             visualStateGroup = this;
             configure(this);

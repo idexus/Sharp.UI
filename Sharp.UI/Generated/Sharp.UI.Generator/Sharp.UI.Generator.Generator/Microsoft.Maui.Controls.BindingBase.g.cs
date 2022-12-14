@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T Mode<T>(this T obj,
             Microsoft.Maui.Controls.BindingMode? mode,
-            Func<ValueDef<Microsoft.Maui.Controls.BindingMode>, ValueDef<Microsoft.Maui.Controls.BindingMode>> definition)
+            System.Func<ValueDef<Microsoft.Maui.Controls.BindingMode>, ValueDef<Microsoft.Maui.Controls.BindingMode>> definition)
             where T : Sharp.UI.IBindingBase
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.BindingBase>(obj);
@@ -31,7 +31,7 @@ namespace Sharp.UI
         }
         
         public static T Mode<T>(this T obj,
-            Func<ValueDef<Microsoft.Maui.Controls.BindingMode>, ValueDef<Microsoft.Maui.Controls.BindingMode>> definition)
+            System.Func<ValueDef<Microsoft.Maui.Controls.BindingMode>, ValueDef<Microsoft.Maui.Controls.BindingMode>> definition)
             where T : Sharp.UI.IBindingBase
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.BindingBase>(obj);
@@ -51,7 +51,7 @@ namespace Sharp.UI
         
         public static T StringFormat<T>(this T obj,
             string? stringFormat,
-            Func<ValueDef<string>, ValueDef<string>> definition)
+            System.Func<ValueDef<string>, ValueDef<string>> definition)
             where T : Sharp.UI.IBindingBase
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.BindingBase>(obj);
@@ -62,7 +62,7 @@ namespace Sharp.UI
         }
         
         public static T StringFormat<T>(this T obj,
-            Func<ValueDef<string>, ValueDef<string>> definition)
+            System.Func<ValueDef<string>, ValueDef<string>> definition)
             where T : Sharp.UI.IBindingBase
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.BindingBase>(obj);
@@ -82,7 +82,7 @@ namespace Sharp.UI
         
         public static T TargetNullValue<T>(this T obj,
             object? targetNullValue,
-            Func<ValueDef<object>, ValueDef<object>> definition)
+            System.Func<ValueDef<object>, ValueDef<object>> definition)
             where T : Sharp.UI.IBindingBase
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.BindingBase>(obj);
@@ -93,7 +93,7 @@ namespace Sharp.UI
         }
         
         public static T TargetNullValue<T>(this T obj,
-            Func<ValueDef<object>, ValueDef<object>> definition)
+            System.Func<ValueDef<object>, ValueDef<object>> definition)
             where T : Sharp.UI.IBindingBase
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.BindingBase>(obj);
@@ -113,7 +113,7 @@ namespace Sharp.UI
         
         public static T FallbackValue<T>(this T obj,
             object? fallbackValue,
-            Func<ValueDef<object>, ValueDef<object>> definition)
+            System.Func<ValueDef<object>, ValueDef<object>> definition)
             where T : Sharp.UI.IBindingBase
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.BindingBase>(obj);
@@ -124,7 +124,7 @@ namespace Sharp.UI
         }
         
         public static T FallbackValue<T>(this T obj,
-            Func<ValueDef<object>, ValueDef<object>> definition)
+            System.Func<ValueDef<object>, ValueDef<object>> definition)
             where T : Sharp.UI.IBindingBase
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.BindingBase>(obj);

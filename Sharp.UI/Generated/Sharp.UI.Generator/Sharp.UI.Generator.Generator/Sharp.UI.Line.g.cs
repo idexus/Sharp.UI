@@ -32,12 +32,12 @@ namespace Sharp.UI
             line = this;
         }
 
-        public Line(Action<Line> configure) : this()
+        public Line(System.Action<Line> configure) : this()
         {
             configure(this);
         }
 
-        public Line(out Line line, Action<Line> configure) : this()
+        public Line(out Line line, System.Action<Line> configure) : this()
         {
             line = this;
             configure(this);
@@ -60,7 +60,7 @@ namespace Sharp.UI
             line = this;
         }
 
-        public Line(double x1, double y1, double x2, double y2, Action<Line> configure) : this()
+        public Line(double x1, double y1, double x2, double y2, System.Action<Line> configure) : this()
         {  
             this.X1 = x1;
             this.Y1 = y1;
@@ -69,7 +69,7 @@ namespace Sharp.UI
             configure(this);
         }
 
-        public Line(double x1, double y1, double x2, double y2, out Line line, Action<Line> configure) : this()
+        public Line(double x1, double y1, double x2, double y2, out Line line, System.Action<Line> configure) : this()
         {  
             this.X1 = x1;
             this.Y1 = y1;

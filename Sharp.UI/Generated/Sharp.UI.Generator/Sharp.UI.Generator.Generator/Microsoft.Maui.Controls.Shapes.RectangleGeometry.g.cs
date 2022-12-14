@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T Rect<T>(this T obj,
             Microsoft.Maui.Graphics.Rect? rect,
-            Func<BindableDef<Microsoft.Maui.Graphics.Rect>, BindableDef<Microsoft.Maui.Graphics.Rect>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Rect>, BindableDef<Microsoft.Maui.Graphics.Rect>> definition)
             where T : Sharp.UI.IRectangleGeometry
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.RectangleGeometry>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T Rect<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Graphics.Rect>, BindableDef<Microsoft.Maui.Graphics.Rect>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Rect>, BindableDef<Microsoft.Maui.Graphics.Rect>> definition)
             where T : Sharp.UI.IRectangleGeometry
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.RectangleGeometry>(obj);

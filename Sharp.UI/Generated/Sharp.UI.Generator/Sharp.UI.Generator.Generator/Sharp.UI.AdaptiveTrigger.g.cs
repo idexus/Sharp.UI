@@ -32,12 +32,12 @@ namespace Sharp.UI
             adaptiveTrigger = this;
         }
 
-        public AdaptiveTrigger(Action<AdaptiveTrigger> configure) : this()
+        public AdaptiveTrigger(System.Action<AdaptiveTrigger> configure) : this()
         {
             configure(this);
         }
 
-        public AdaptiveTrigger(out AdaptiveTrigger adaptiveTrigger, Action<AdaptiveTrigger> configure) : this()
+        public AdaptiveTrigger(out AdaptiveTrigger adaptiveTrigger, System.Action<AdaptiveTrigger> configure) : this()
         {
             adaptiveTrigger = this;
             configure(this);

@@ -22,12 +22,12 @@ namespace Sharp.UI
             radialGradientBrush = this;
         }
 
-        public RadialGradientBrush(Action<RadialGradientBrush> configure) 
+        public RadialGradientBrush(System.Action<RadialGradientBrush> configure) 
         {
             configure(this);
         }
 
-        public RadialGradientBrush(out RadialGradientBrush radialGradientBrush, Action<RadialGradientBrush> configure) 
+        public RadialGradientBrush(out RadialGradientBrush radialGradientBrush, System.Action<RadialGradientBrush> configure) 
         {
             radialGradientBrush = this;
             configure(this);

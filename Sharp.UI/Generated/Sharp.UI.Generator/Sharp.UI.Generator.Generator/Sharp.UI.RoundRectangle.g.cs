@@ -32,12 +32,12 @@ namespace Sharp.UI
             roundRectangle = this;
         }
 
-        public RoundRectangle(Action<RoundRectangle> configure) : this()
+        public RoundRectangle(System.Action<RoundRectangle> configure) : this()
         {
             configure(this);
         }
 
-        public RoundRectangle(out RoundRectangle roundRectangle, Action<RoundRectangle> configure) : this()
+        public RoundRectangle(out RoundRectangle roundRectangle, System.Action<RoundRectangle> configure) : this()
         {
             roundRectangle = this;
             configure(this);
@@ -58,7 +58,7 @@ namespace Sharp.UI
             roundRectangle = this;
         }
 
-        public RoundRectangle(double widthrequest, double heightrequest, Microsoft.Maui.CornerRadius cornerradius, Action<RoundRectangle> configure) : this()
+        public RoundRectangle(double widthrequest, double heightrequest, Microsoft.Maui.CornerRadius cornerradius, System.Action<RoundRectangle> configure) : this()
         {  
             this.WidthRequest = widthrequest;
             this.HeightRequest = heightrequest;
@@ -66,7 +66,7 @@ namespace Sharp.UI
             configure(this);
         }
 
-        public RoundRectangle(double widthrequest, double heightrequest, Microsoft.Maui.CornerRadius cornerradius, out RoundRectangle roundRectangle, Action<RoundRectangle> configure) : this()
+        public RoundRectangle(double widthrequest, double heightrequest, Microsoft.Maui.CornerRadius cornerradius, out RoundRectangle roundRectangle, System.Action<RoundRectangle> configure) : this()
         {  
             this.WidthRequest = widthrequest;
             this.HeightRequest = heightrequest;

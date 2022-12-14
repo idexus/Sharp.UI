@@ -22,12 +22,12 @@ namespace Sharp.UI
             linearGradientBrush = this;
         }
 
-        public LinearGradientBrush(Action<LinearGradientBrush> configure) 
+        public LinearGradientBrush(System.Action<LinearGradientBrush> configure) 
         {
             configure(this);
         }
 
-        public LinearGradientBrush(out LinearGradientBrush linearGradientBrush, Action<LinearGradientBrush> configure) 
+        public LinearGradientBrush(out LinearGradientBrush linearGradientBrush, System.Action<LinearGradientBrush> configure) 
         {
             linearGradientBrush = this;
             configure(this);

@@ -36,12 +36,12 @@ namespace Sharp.UI
             eventTrigger = this;
         }
 
-        public EventTrigger(Action<EventTrigger> configure) : this()
+        public EventTrigger(System.Action<EventTrigger> configure) : this()
         {
             configure(this);
         }
 
-        public EventTrigger(out EventTrigger eventTrigger, Action<EventTrigger> configure) : this()
+        public EventTrigger(out EventTrigger eventTrigger, System.Action<EventTrigger> configure) : this()
         {
             eventTrigger = this;
             configure(this);

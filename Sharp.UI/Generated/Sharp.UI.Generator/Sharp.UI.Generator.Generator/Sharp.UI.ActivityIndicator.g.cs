@@ -18,12 +18,12 @@ namespace Sharp.UI
             activityIndicator = this;
         }
 
-        public ActivityIndicator(Action<ActivityIndicator> configure) 
+        public ActivityIndicator(System.Action<ActivityIndicator> configure) 
         {
             configure(this);
         }
 
-        public ActivityIndicator(out ActivityIndicator activityIndicator, Action<ActivityIndicator> configure) 
+        public ActivityIndicator(out ActivityIndicator activityIndicator, System.Action<ActivityIndicator> configure) 
         {
             activityIndicator = this;
             configure(this);

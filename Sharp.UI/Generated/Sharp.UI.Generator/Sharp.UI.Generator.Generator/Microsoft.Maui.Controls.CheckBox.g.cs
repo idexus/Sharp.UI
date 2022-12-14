@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T Color<T>(this T obj,
             Microsoft.Maui.Graphics.Color? color,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.ICheckBox
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CheckBox>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T Color<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.ICheckBox
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CheckBox>(obj);
@@ -53,7 +53,7 @@ namespace Sharp.UI
         
         public static T IsChecked<T>(this T obj,
             bool? isChecked,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.ICheckBox
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CheckBox>(obj);
@@ -65,7 +65,7 @@ namespace Sharp.UI
         }
         
         public static T IsChecked<T>(this T obj,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.ICheckBox
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CheckBox>(obj);

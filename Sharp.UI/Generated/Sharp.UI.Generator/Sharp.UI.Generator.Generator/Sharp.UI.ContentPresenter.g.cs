@@ -18,12 +18,12 @@ namespace Sharp.UI
             contentPresenter = this;
         }
 
-        public ContentPresenter(Action<ContentPresenter> configure) 
+        public ContentPresenter(System.Action<ContentPresenter> configure) 
         {
             configure(this);
         }
 
-        public ContentPresenter(out ContentPresenter contentPresenter, Action<ContentPresenter> configure) 
+        public ContentPresenter(out ContentPresenter contentPresenter, System.Action<ContentPresenter> configure) 
         {
             contentPresenter = this;
             configure(this);

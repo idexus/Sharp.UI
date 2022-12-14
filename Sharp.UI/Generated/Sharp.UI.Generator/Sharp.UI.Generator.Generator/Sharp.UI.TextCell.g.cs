@@ -18,12 +18,12 @@ namespace Sharp.UI
             textCell = this;
         }
 
-        public TextCell(Action<TextCell> configure) 
+        public TextCell(System.Action<TextCell> configure) 
         {
             configure(this);
         }
 
-        public TextCell(out TextCell textCell, Action<TextCell> configure) 
+        public TextCell(out TextCell textCell, System.Action<TextCell> configure) 
         {
             textCell = this;
             configure(this);
@@ -40,13 +40,13 @@ namespace Sharp.UI
             textCell = this;
         }
 
-        public TextCell(string text, Action<TextCell> configure) 
+        public TextCell(string text, System.Action<TextCell> configure) 
         {  
             this.Text = text;
             configure(this);
         }
 
-        public TextCell(string text, out TextCell textCell, Action<TextCell> configure) 
+        public TextCell(string text, out TextCell textCell, System.Action<TextCell> configure) 
         {  
             this.Text = text;
             textCell = this;

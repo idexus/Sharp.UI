@@ -32,12 +32,12 @@ namespace Sharp.UI
             binding = this;
         }
 
-        public Binding(Action<Binding> configure) : this()
+        public Binding(System.Action<Binding> configure) : this()
         {
             configure(this);
         }
 
-        public Binding(out Binding binding, Action<Binding> configure) : this()
+        public Binding(out Binding binding, System.Action<Binding> configure) : this()
         {
             binding = this;
             configure(this);

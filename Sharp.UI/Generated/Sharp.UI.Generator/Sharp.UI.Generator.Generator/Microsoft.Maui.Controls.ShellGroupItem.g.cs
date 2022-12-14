@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T FlyoutDisplayOptions<T>(this T obj,
             Microsoft.Maui.Controls.FlyoutDisplayOptions? flyoutDisplayOptions,
-            Func<BindableDef<Microsoft.Maui.Controls.FlyoutDisplayOptions>, BindableDef<Microsoft.Maui.Controls.FlyoutDisplayOptions>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.FlyoutDisplayOptions>, BindableDef<Microsoft.Maui.Controls.FlyoutDisplayOptions>> definition)
             where T : Sharp.UI.IShellGroupItem
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ShellGroupItem>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T FlyoutDisplayOptions<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.FlyoutDisplayOptions>, BindableDef<Microsoft.Maui.Controls.FlyoutDisplayOptions>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.FlyoutDisplayOptions>, BindableDef<Microsoft.Maui.Controls.FlyoutDisplayOptions>> definition)
             where T : Sharp.UI.IShellGroupItem
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ShellGroupItem>(obj);

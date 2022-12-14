@@ -18,12 +18,12 @@ namespace Sharp.UI
             button = this;
         }
 
-        public Button(Action<Button> configure) 
+        public Button(System.Action<Button> configure) 
         {
             configure(this);
         }
 
-        public Button(out Button button, Action<Button> configure) 
+        public Button(out Button button, System.Action<Button> configure) 
         {
             button = this;
             configure(this);
@@ -40,13 +40,13 @@ namespace Sharp.UI
             button = this;
         }
 
-        public Button(string text, Action<Button> configure) 
+        public Button(string text, System.Action<Button> configure) 
         {  
             this.Text = text;
             configure(this);
         }
 
-        public Button(string text, out Button button, Action<Button> configure) 
+        public Button(string text, out Button button, System.Action<Button> configure) 
         {  
             this.Text = text;
             button = this;

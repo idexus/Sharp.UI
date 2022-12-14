@@ -18,12 +18,12 @@ namespace Sharp.UI
             editor = this;
         }
 
-        public Editor(Action<Editor> configure) 
+        public Editor(System.Action<Editor> configure) 
         {
             configure(this);
         }
 
-        public Editor(out Editor editor, Action<Editor> configure) 
+        public Editor(out Editor editor, System.Action<Editor> configure) 
         {
             editor = this;
             configure(this);
@@ -40,13 +40,13 @@ namespace Sharp.UI
             editor = this;
         }
 
-        public Editor(string placeholder, Action<Editor> configure) 
+        public Editor(string placeholder, System.Action<Editor> configure) 
         {  
             this.Placeholder = placeholder;
             configure(this);
         }
 
-        public Editor(string placeholder, out Editor editor, Action<Editor> configure) 
+        public Editor(string placeholder, out Editor editor, System.Action<Editor> configure) 
         {  
             this.Placeholder = placeholder;
             editor = this;

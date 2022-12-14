@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T Color<T>(this T obj,
             Microsoft.Maui.Graphics.Color? color,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IFontImageSource
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.FontImageSource>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T Color<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IFontImageSource
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.FontImageSource>(obj);
@@ -53,7 +53,7 @@ namespace Sharp.UI
         
         public static T FontFamily<T>(this T obj,
             string? fontFamily,
-            Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.IFontImageSource
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.FontImageSource>(obj);
@@ -65,7 +65,7 @@ namespace Sharp.UI
         }
         
         public static T FontFamily<T>(this T obj,
-            Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.IFontImageSource
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.FontImageSource>(obj);
@@ -86,7 +86,7 @@ namespace Sharp.UI
         
         public static T Glyph<T>(this T obj,
             string? glyph,
-            Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.IFontImageSource
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.FontImageSource>(obj);
@@ -98,7 +98,7 @@ namespace Sharp.UI
         }
         
         public static T Glyph<T>(this T obj,
-            Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.IFontImageSource
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.FontImageSource>(obj);
@@ -119,7 +119,7 @@ namespace Sharp.UI
         
         public static T Size<T>(this T obj,
             double? size,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IFontImageSource
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.FontImageSource>(obj);
@@ -131,7 +131,7 @@ namespace Sharp.UI
         }
         
         public static T Size<T>(this T obj,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IFontImageSource
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.FontImageSource>(obj);
@@ -152,7 +152,7 @@ namespace Sharp.UI
         
         public static T FontAutoScalingEnabled<T>(this T obj,
             bool? fontAutoScalingEnabled,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IFontImageSource
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.FontImageSource>(obj);
@@ -164,7 +164,7 @@ namespace Sharp.UI
         }
         
         public static T FontAutoScalingEnabled<T>(this T obj,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IFontImageSource
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.FontImageSource>(obj);

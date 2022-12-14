@@ -22,12 +22,12 @@ namespace Sharp.UI
             tabBar = this;
         }
 
-        public TabBar(Action<TabBar> configure) 
+        public TabBar(System.Action<TabBar> configure) 
         {
             configure(this);
         }
 
-        public TabBar(out TabBar tabBar, Action<TabBar> configure) 
+        public TabBar(out TabBar tabBar, System.Action<TabBar> configure) 
         {
             tabBar = this;
             configure(this);

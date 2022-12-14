@@ -22,12 +22,12 @@ namespace Sharp.UI
             tab = this;
         }
 
-        public Tab(Action<Tab> configure) 
+        public Tab(System.Action<Tab> configure) 
         {
             configure(this);
         }
 
-        public Tab(out Tab tab, Action<Tab> configure) 
+        public Tab(out Tab tab, System.Action<Tab> configure) 
         {
             tab = this;
             configure(this);
@@ -44,13 +44,13 @@ namespace Sharp.UI
             tab = this;
         }
 
-        public Tab(string title, Action<Tab> configure) 
+        public Tab(string title, System.Action<Tab> configure) 
         {  
             this.Title = title;
             configure(this);
         }
 
-        public Tab(string title, out Tab tab, Action<Tab> configure) 
+        public Tab(string title, out Tab tab, System.Action<Tab> configure) 
         {  
             this.Title = title;
             tab = this;

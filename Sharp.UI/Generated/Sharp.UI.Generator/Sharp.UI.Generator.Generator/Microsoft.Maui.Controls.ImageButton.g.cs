@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T BorderColor<T>(this T obj,
             Microsoft.Maui.Graphics.Color? borderColor,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IImageButton
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ImageButton>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T BorderColor<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IImageButton
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ImageButton>(obj);
@@ -53,7 +53,7 @@ namespace Sharp.UI
         
         public static T CornerRadius<T>(this T obj,
             int? cornerRadius,
-            Func<BindableDef<int>, BindableDef<int>> definition)
+            System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.IImageButton
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ImageButton>(obj);
@@ -65,7 +65,7 @@ namespace Sharp.UI
         }
         
         public static T CornerRadius<T>(this T obj,
-            Func<BindableDef<int>, BindableDef<int>> definition)
+            System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.IImageButton
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ImageButton>(obj);
@@ -86,7 +86,7 @@ namespace Sharp.UI
         
         public static T BorderWidth<T>(this T obj,
             double? borderWidth,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IImageButton
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ImageButton>(obj);
@@ -98,7 +98,7 @@ namespace Sharp.UI
         }
         
         public static T BorderWidth<T>(this T obj,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IImageButton
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ImageButton>(obj);
@@ -119,7 +119,7 @@ namespace Sharp.UI
         
         public static T Aspect<T>(this T obj,
             Microsoft.Maui.Aspect? aspect,
-            Func<BindableDef<Microsoft.Maui.Aspect>, BindableDef<Microsoft.Maui.Aspect>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Aspect>, BindableDef<Microsoft.Maui.Aspect>> definition)
             where T : Sharp.UI.IImageButton
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ImageButton>(obj);
@@ -131,7 +131,7 @@ namespace Sharp.UI
         }
         
         public static T Aspect<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Aspect>, BindableDef<Microsoft.Maui.Aspect>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Aspect>, BindableDef<Microsoft.Maui.Aspect>> definition)
             where T : Sharp.UI.IImageButton
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ImageButton>(obj);
@@ -152,7 +152,7 @@ namespace Sharp.UI
         
         public static T IsOpaque<T>(this T obj,
             bool? isOpaque,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IImageButton
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ImageButton>(obj);
@@ -164,7 +164,7 @@ namespace Sharp.UI
         }
         
         public static T IsOpaque<T>(this T obj,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IImageButton
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ImageButton>(obj);
@@ -185,7 +185,7 @@ namespace Sharp.UI
         
         public static T Command<T>(this T obj,
             System.Windows.Input.ICommand? command,
-            Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.IImageButton
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ImageButton>(obj);
@@ -197,7 +197,7 @@ namespace Sharp.UI
         }
         
         public static T Command<T>(this T obj,
-            Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.IImageButton
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ImageButton>(obj);
@@ -218,7 +218,7 @@ namespace Sharp.UI
         
         public static T CommandParameter<T>(this T obj,
             object? commandParameter,
-            Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IImageButton
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ImageButton>(obj);
@@ -230,7 +230,7 @@ namespace Sharp.UI
         }
         
         public static T CommandParameter<T>(this T obj,
-            Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IImageButton
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ImageButton>(obj);
@@ -251,7 +251,7 @@ namespace Sharp.UI
         
         public static T Source<T>(this T obj,
             Microsoft.Maui.Controls.ImageSource? source,
-            Func<BindableDef<Microsoft.Maui.Controls.ImageSource>, BindableDef<Microsoft.Maui.Controls.ImageSource>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.ImageSource>, BindableDef<Microsoft.Maui.Controls.ImageSource>> definition)
             where T : Sharp.UI.IImageButton
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ImageButton>(obj);
@@ -263,7 +263,7 @@ namespace Sharp.UI
         }
         
         public static T Source<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.ImageSource>, BindableDef<Microsoft.Maui.Controls.ImageSource>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.ImageSource>, BindableDef<Microsoft.Maui.Controls.ImageSource>> definition)
             where T : Sharp.UI.IImageButton
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ImageButton>(obj);
@@ -284,7 +284,7 @@ namespace Sharp.UI
         
         public static T Padding<T>(this T obj,
             Microsoft.Maui.Thickness? padding,
-            Func<BindableDef<Microsoft.Maui.Thickness>, BindableDef<Microsoft.Maui.Thickness>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Thickness>, BindableDef<Microsoft.Maui.Thickness>> definition)
             where T : Sharp.UI.IImageButton
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ImageButton>(obj);
@@ -296,7 +296,7 @@ namespace Sharp.UI
         }
         
         public static T Padding<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Thickness>, BindableDef<Microsoft.Maui.Thickness>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Thickness>, BindableDef<Microsoft.Maui.Thickness>> definition)
             where T : Sharp.UI.IImageButton
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ImageButton>(obj);

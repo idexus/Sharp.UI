@@ -32,12 +32,12 @@ namespace Sharp.UI
             compareStateTrigger = this;
         }
 
-        public CompareStateTrigger(Action<CompareStateTrigger> configure) : this()
+        public CompareStateTrigger(System.Action<CompareStateTrigger> configure) : this()
         {
             configure(this);
         }
 
-        public CompareStateTrigger(out CompareStateTrigger compareStateTrigger, Action<CompareStateTrigger> configure) : this()
+        public CompareStateTrigger(out CompareStateTrigger compareStateTrigger, System.Action<CompareStateTrigger> configure) : this()
         {
             compareStateTrigger = this;
             configure(this);

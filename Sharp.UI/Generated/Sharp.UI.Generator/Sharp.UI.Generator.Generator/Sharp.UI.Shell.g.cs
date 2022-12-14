@@ -22,12 +22,12 @@ namespace Sharp.UI
             shell = this;
         }
 
-        public Shell(Action<Shell> configure) 
+        public Shell(System.Action<Shell> configure) 
         {
             configure(this);
         }
 
-        public Shell(out Shell shell, Action<Shell> configure) 
+        public Shell(out Shell shell, System.Action<Shell> configure) 
         {
             shell = this;
             configure(this);

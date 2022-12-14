@@ -22,12 +22,12 @@ namespace Sharp.UI
             contentPage = this;
         }
 
-        public ContentPage(Action<ContentPage> configure) 
+        public ContentPage(System.Action<ContentPage> configure) 
         {
             configure(this);
         }
 
-        public ContentPage(out ContentPage contentPage, Action<ContentPage> configure) 
+        public ContentPage(out ContentPage contentPage, System.Action<ContentPage> configure) 
         {
             contentPage = this;
             configure(this);
@@ -44,13 +44,13 @@ namespace Sharp.UI
             contentPage = this;
         }
 
-        public ContentPage(string title, Action<ContentPage> configure) 
+        public ContentPage(string title, System.Action<ContentPage> configure) 
         {  
             this.Title = title;
             configure(this);
         }
 
-        public ContentPage(string title, out ContentPage contentPage, Action<ContentPage> configure) 
+        public ContentPage(string title, out ContentPage contentPage, System.Action<ContentPage> configure) 
         {  
             this.Title = title;
             contentPage = this;

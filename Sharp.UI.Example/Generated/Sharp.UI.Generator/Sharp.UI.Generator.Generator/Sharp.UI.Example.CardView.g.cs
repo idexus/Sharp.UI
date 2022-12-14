@@ -18,12 +18,12 @@ namespace Sharp.UI.Example
             cardView = this;
         }
 
-        public CardView(Action<CardView> configure) : this()
+        public CardView(System.Action<CardView> configure) : this()
         {
             configure(this);
         }
 
-        public CardView(out CardView cardView, Action<CardView> configure) : this()
+        public CardView(out CardView cardView, System.Action<CardView> configure) : this()
         {
             cardView = this;
             configure(this);
@@ -31,35 +31,55 @@ namespace Sharp.UI.Example
 
         // ----- bindable properties -----
 
-        public static readonly BindableProperty CardTitleProperty = BindableProperty.Create(nameof(CardTitle), typeof(String), typeof(Sharp.UI.Example.CardView), default(String));
+        public static readonly Microsoft.Maui.Controls.BindableProperty CardTitleProperty =
+            BindableProperty.Create(
+                nameof(CardTitle),
+                typeof(string),
+                typeof(Sharp.UI.Example.CardView),
+                default(string));
 
-        public String CardTitle
+        public string CardTitle
         {
-            get => (String)GetValue(CardTitleProperty);
+            get => (string)GetValue(CardTitleProperty);
             set => SetValue(CardTitleProperty, value);
         }
         
-        public static readonly BindableProperty CardDescriptionProperty = BindableProperty.Create(nameof(CardDescription), typeof(String), typeof(Sharp.UI.Example.CardView), default(String));
+        public static readonly Microsoft.Maui.Controls.BindableProperty CardDescriptionProperty =
+            BindableProperty.Create(
+                nameof(CardDescription),
+                typeof(string),
+                typeof(Sharp.UI.Example.CardView),
+                default(string));
 
-        public String CardDescription
+        public string CardDescription
         {
-            get => (String)GetValue(CardDescriptionProperty);
+            get => (string)GetValue(CardDescriptionProperty);
             set => SetValue(CardDescriptionProperty, value);
         }
         
-        public static readonly BindableProperty CardColorProperty = BindableProperty.Create(nameof(CardColor), typeof(Color), typeof(Sharp.UI.Example.CardView), default(Color));
+        public static readonly Microsoft.Maui.Controls.BindableProperty CardColorProperty =
+            BindableProperty.Create(
+                nameof(CardColor),
+                typeof(Microsoft.Maui.Graphics.Color),
+                typeof(Sharp.UI.Example.CardView),
+                default(Microsoft.Maui.Graphics.Color));
 
-        public Color CardColor
+        public Microsoft.Maui.Graphics.Color CardColor
         {
-            get => (Color)GetValue(CardColorProperty);
+            get => (Microsoft.Maui.Graphics.Color)GetValue(CardColorProperty);
             set => SetValue(CardColorProperty, value);
         }
         
-        public static readonly BindableProperty BorderColorProperty = BindableProperty.Create(nameof(BorderColor), typeof(Color), typeof(Sharp.UI.Example.CardView), default(Color));
+        public static readonly Microsoft.Maui.Controls.BindableProperty BorderColorProperty =
+            BindableProperty.Create(
+                nameof(BorderColor),
+                typeof(Microsoft.Maui.Graphics.Color),
+                typeof(Sharp.UI.Example.CardView),
+                default(Microsoft.Maui.Graphics.Color));
 
-        public Color BorderColor
+        public Microsoft.Maui.Graphics.Color BorderColor
         {
-            get => (Color)GetValue(BorderColorProperty);
+            get => (Microsoft.Maui.Graphics.Color)GetValue(BorderColorProperty);
             set => SetValue(BorderColorProperty, value);
         }
         

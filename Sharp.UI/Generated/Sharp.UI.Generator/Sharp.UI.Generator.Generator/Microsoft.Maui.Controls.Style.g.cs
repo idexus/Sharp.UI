@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T ApplyToDerivedTypes<T>(this T obj,
             bool? applyToDerivedTypes,
-            Func<ValueDef<bool>, ValueDef<bool>> definition)
+            System.Func<ValueDef<bool>, ValueDef<bool>> definition)
             where T : Sharp.UI.IStyle
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Style>(obj);
@@ -31,7 +31,7 @@ namespace Sharp.UI
         }
         
         public static T ApplyToDerivedTypes<T>(this T obj,
-            Func<ValueDef<bool>, ValueDef<bool>> definition)
+            System.Func<ValueDef<bool>, ValueDef<bool>> definition)
             where T : Sharp.UI.IStyle
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Style>(obj);
@@ -51,7 +51,7 @@ namespace Sharp.UI
         
         public static T BasedOn<T>(this T obj,
             Microsoft.Maui.Controls.Style? basedOn,
-            Func<ValueDef<Microsoft.Maui.Controls.Style>, ValueDef<Microsoft.Maui.Controls.Style>> definition)
+            System.Func<ValueDef<Microsoft.Maui.Controls.Style>, ValueDef<Microsoft.Maui.Controls.Style>> definition)
             where T : Sharp.UI.IStyle
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Style>(obj);
@@ -62,7 +62,7 @@ namespace Sharp.UI
         }
         
         public static T BasedOn<T>(this T obj,
-            Func<ValueDef<Microsoft.Maui.Controls.Style>, ValueDef<Microsoft.Maui.Controls.Style>> definition)
+            System.Func<ValueDef<Microsoft.Maui.Controls.Style>, ValueDef<Microsoft.Maui.Controls.Style>> definition)
             where T : Sharp.UI.IStyle
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Style>(obj);
@@ -82,7 +82,7 @@ namespace Sharp.UI
         
         public static T BaseResourceKey<T>(this T obj,
             string? baseResourceKey,
-            Func<ValueDef<string>, ValueDef<string>> definition)
+            System.Func<ValueDef<string>, ValueDef<string>> definition)
             where T : Sharp.UI.IStyle
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Style>(obj);
@@ -93,7 +93,7 @@ namespace Sharp.UI
         }
         
         public static T BaseResourceKey<T>(this T obj,
-            Func<ValueDef<string>, ValueDef<string>> definition)
+            System.Func<ValueDef<string>, ValueDef<string>> definition)
             where T : Sharp.UI.IStyle
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Style>(obj);
@@ -121,7 +121,7 @@ namespace Sharp.UI
         }
 
         public static T Behaviors<T>(this T obj,
-            Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Behavior>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Behavior>>> definition)
+            System.Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Behavior>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Behavior>>> definition)
             where T : Sharp.UI.IStyle
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Style>(obj);
@@ -145,7 +145,7 @@ namespace Sharp.UI
         
         public static T CanCascade<T>(this T obj,
             bool? canCascade,
-            Func<ValueDef<bool>, ValueDef<bool>> definition)
+            System.Func<ValueDef<bool>, ValueDef<bool>> definition)
             where T : Sharp.UI.IStyle
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Style>(obj);
@@ -156,7 +156,7 @@ namespace Sharp.UI
         }
         
         public static T CanCascade<T>(this T obj,
-            Func<ValueDef<bool>, ValueDef<bool>> definition)
+            System.Func<ValueDef<bool>, ValueDef<bool>> definition)
             where T : Sharp.UI.IStyle
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Style>(obj);
@@ -176,7 +176,7 @@ namespace Sharp.UI
         
         public static T Class<T>(this T obj,
             string? @class,
-            Func<ValueDef<string>, ValueDef<string>> definition)
+            System.Func<ValueDef<string>, ValueDef<string>> definition)
             where T : Sharp.UI.IStyle
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Style>(obj);
@@ -187,7 +187,7 @@ namespace Sharp.UI
         }
         
         public static T Class<T>(this T obj,
-            Func<ValueDef<string>, ValueDef<string>> definition)
+            System.Func<ValueDef<string>, ValueDef<string>> definition)
             where T : Sharp.UI.IStyle
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Style>(obj);
@@ -215,7 +215,7 @@ namespace Sharp.UI
         }
 
         public static T Setters<T>(this T obj,
-            Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Setter>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Setter>>> definition)
+            System.Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Setter>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Setter>>> definition)
             where T : Sharp.UI.IStyle
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Style>(obj);
@@ -247,7 +247,7 @@ namespace Sharp.UI
         }
 
         public static T Triggers<T>(this T obj,
-            Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerBase>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerBase>>> definition)
+            System.Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerBase>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerBase>>> definition)
             where T : Sharp.UI.IStyle
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Style>(obj);

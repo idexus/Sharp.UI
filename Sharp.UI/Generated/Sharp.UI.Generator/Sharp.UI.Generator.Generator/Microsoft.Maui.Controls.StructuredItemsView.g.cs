@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T Header<T>(this T obj,
             object? header,
-            Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IStructuredItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StructuredItemsView>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T Header<T>(this T obj,
-            Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IStructuredItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StructuredItemsView>(obj);
@@ -53,7 +53,7 @@ namespace Sharp.UI
         
         public static T HeaderTemplate<T>(this T obj,
             Microsoft.Maui.Controls.DataTemplate? headerTemplate,
-            Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
             where T : Sharp.UI.IStructuredItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StructuredItemsView>(obj);
@@ -65,7 +65,7 @@ namespace Sharp.UI
         }
         
         public static T HeaderTemplate<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
             where T : Sharp.UI.IStructuredItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StructuredItemsView>(obj);
@@ -75,7 +75,7 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T HeaderTemplate<T>(this T obj, Func<object> loadTemplate) where T : Sharp.UI.IStructuredItemsView
+        public static T HeaderTemplate<T>(this T obj, System.Func<object> loadTemplate) where T : Sharp.UI.IStructuredItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StructuredItemsView>(obj);
             mauiObject.HeaderTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
@@ -93,7 +93,7 @@ namespace Sharp.UI
         
         public static T Footer<T>(this T obj,
             object? footer,
-            Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IStructuredItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StructuredItemsView>(obj);
@@ -105,7 +105,7 @@ namespace Sharp.UI
         }
         
         public static T Footer<T>(this T obj,
-            Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IStructuredItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StructuredItemsView>(obj);
@@ -126,7 +126,7 @@ namespace Sharp.UI
         
         public static T FooterTemplate<T>(this T obj,
             Microsoft.Maui.Controls.DataTemplate? footerTemplate,
-            Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
             where T : Sharp.UI.IStructuredItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StructuredItemsView>(obj);
@@ -138,7 +138,7 @@ namespace Sharp.UI
         }
         
         public static T FooterTemplate<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
             where T : Sharp.UI.IStructuredItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StructuredItemsView>(obj);
@@ -148,7 +148,7 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T FooterTemplate<T>(this T obj, Func<object> loadTemplate) where T : Sharp.UI.IStructuredItemsView
+        public static T FooterTemplate<T>(this T obj, System.Func<object> loadTemplate) where T : Sharp.UI.IStructuredItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StructuredItemsView>(obj);
             mauiObject.FooterTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
@@ -166,7 +166,7 @@ namespace Sharp.UI
         
         public static T ItemsLayout<T>(this T obj,
             Microsoft.Maui.Controls.IItemsLayout? itemsLayout,
-            Func<BindableDef<Microsoft.Maui.Controls.IItemsLayout>, BindableDef<Microsoft.Maui.Controls.IItemsLayout>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.IItemsLayout>, BindableDef<Microsoft.Maui.Controls.IItemsLayout>> definition)
             where T : Sharp.UI.IStructuredItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StructuredItemsView>(obj);
@@ -178,7 +178,7 @@ namespace Sharp.UI
         }
         
         public static T ItemsLayout<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.IItemsLayout>, BindableDef<Microsoft.Maui.Controls.IItemsLayout>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.IItemsLayout>, BindableDef<Microsoft.Maui.Controls.IItemsLayout>> definition)
             where T : Sharp.UI.IStructuredItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StructuredItemsView>(obj);
@@ -199,7 +199,7 @@ namespace Sharp.UI
         
         public static T ItemSizingStrategy<T>(this T obj,
             Microsoft.Maui.Controls.ItemSizingStrategy? itemSizingStrategy,
-            Func<BindableDef<Microsoft.Maui.Controls.ItemSizingStrategy>, BindableDef<Microsoft.Maui.Controls.ItemSizingStrategy>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.ItemSizingStrategy>, BindableDef<Microsoft.Maui.Controls.ItemSizingStrategy>> definition)
             where T : Sharp.UI.IStructuredItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StructuredItemsView>(obj);
@@ -211,7 +211,7 @@ namespace Sharp.UI
         }
         
         public static T ItemSizingStrategy<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.ItemSizingStrategy>, BindableDef<Microsoft.Maui.Controls.ItemSizingStrategy>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.ItemSizingStrategy>, BindableDef<Microsoft.Maui.Controls.ItemSizingStrategy>> definition)
             where T : Sharp.UI.IStructuredItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StructuredItemsView>(obj);

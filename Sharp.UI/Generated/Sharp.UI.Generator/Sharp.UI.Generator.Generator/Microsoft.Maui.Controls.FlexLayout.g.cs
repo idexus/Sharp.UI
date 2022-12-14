@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T Direction<T>(this T obj,
             Microsoft.Maui.Layouts.FlexDirection? direction,
-            Func<BindableDef<Microsoft.Maui.Layouts.FlexDirection>, BindableDef<Microsoft.Maui.Layouts.FlexDirection>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Layouts.FlexDirection>, BindableDef<Microsoft.Maui.Layouts.FlexDirection>> definition)
             where T : Sharp.UI.IFlexLayout
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.FlexLayout>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T Direction<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Layouts.FlexDirection>, BindableDef<Microsoft.Maui.Layouts.FlexDirection>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Layouts.FlexDirection>, BindableDef<Microsoft.Maui.Layouts.FlexDirection>> definition)
             where T : Sharp.UI.IFlexLayout
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.FlexLayout>(obj);
@@ -53,7 +53,7 @@ namespace Sharp.UI
         
         public static T JustifyContent<T>(this T obj,
             Microsoft.Maui.Layouts.FlexJustify? justifyContent,
-            Func<BindableDef<Microsoft.Maui.Layouts.FlexJustify>, BindableDef<Microsoft.Maui.Layouts.FlexJustify>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Layouts.FlexJustify>, BindableDef<Microsoft.Maui.Layouts.FlexJustify>> definition)
             where T : Sharp.UI.IFlexLayout
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.FlexLayout>(obj);
@@ -65,7 +65,7 @@ namespace Sharp.UI
         }
         
         public static T JustifyContent<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Layouts.FlexJustify>, BindableDef<Microsoft.Maui.Layouts.FlexJustify>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Layouts.FlexJustify>, BindableDef<Microsoft.Maui.Layouts.FlexJustify>> definition)
             where T : Sharp.UI.IFlexLayout
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.FlexLayout>(obj);
@@ -86,7 +86,7 @@ namespace Sharp.UI
         
         public static T AlignContent<T>(this T obj,
             Microsoft.Maui.Layouts.FlexAlignContent? alignContent,
-            Func<BindableDef<Microsoft.Maui.Layouts.FlexAlignContent>, BindableDef<Microsoft.Maui.Layouts.FlexAlignContent>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Layouts.FlexAlignContent>, BindableDef<Microsoft.Maui.Layouts.FlexAlignContent>> definition)
             where T : Sharp.UI.IFlexLayout
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.FlexLayout>(obj);
@@ -98,7 +98,7 @@ namespace Sharp.UI
         }
         
         public static T AlignContent<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Layouts.FlexAlignContent>, BindableDef<Microsoft.Maui.Layouts.FlexAlignContent>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Layouts.FlexAlignContent>, BindableDef<Microsoft.Maui.Layouts.FlexAlignContent>> definition)
             where T : Sharp.UI.IFlexLayout
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.FlexLayout>(obj);
@@ -119,7 +119,7 @@ namespace Sharp.UI
         
         public static T AlignItems<T>(this T obj,
             Microsoft.Maui.Layouts.FlexAlignItems? alignItems,
-            Func<BindableDef<Microsoft.Maui.Layouts.FlexAlignItems>, BindableDef<Microsoft.Maui.Layouts.FlexAlignItems>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Layouts.FlexAlignItems>, BindableDef<Microsoft.Maui.Layouts.FlexAlignItems>> definition)
             where T : Sharp.UI.IFlexLayout
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.FlexLayout>(obj);
@@ -131,7 +131,7 @@ namespace Sharp.UI
         }
         
         public static T AlignItems<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Layouts.FlexAlignItems>, BindableDef<Microsoft.Maui.Layouts.FlexAlignItems>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Layouts.FlexAlignItems>, BindableDef<Microsoft.Maui.Layouts.FlexAlignItems>> definition)
             where T : Sharp.UI.IFlexLayout
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.FlexLayout>(obj);
@@ -152,7 +152,7 @@ namespace Sharp.UI
         
         public static T Position<T>(this T obj,
             Microsoft.Maui.Layouts.FlexPosition? position,
-            Func<BindableDef<Microsoft.Maui.Layouts.FlexPosition>, BindableDef<Microsoft.Maui.Layouts.FlexPosition>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Layouts.FlexPosition>, BindableDef<Microsoft.Maui.Layouts.FlexPosition>> definition)
             where T : Sharp.UI.IFlexLayout
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.FlexLayout>(obj);
@@ -164,7 +164,7 @@ namespace Sharp.UI
         }
         
         public static T Position<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Layouts.FlexPosition>, BindableDef<Microsoft.Maui.Layouts.FlexPosition>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Layouts.FlexPosition>, BindableDef<Microsoft.Maui.Layouts.FlexPosition>> definition)
             where T : Sharp.UI.IFlexLayout
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.FlexLayout>(obj);
@@ -185,7 +185,7 @@ namespace Sharp.UI
         
         public static T Wrap<T>(this T obj,
             Microsoft.Maui.Layouts.FlexWrap? wrap,
-            Func<BindableDef<Microsoft.Maui.Layouts.FlexWrap>, BindableDef<Microsoft.Maui.Layouts.FlexWrap>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Layouts.FlexWrap>, BindableDef<Microsoft.Maui.Layouts.FlexWrap>> definition)
             where T : Sharp.UI.IFlexLayout
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.FlexLayout>(obj);
@@ -197,7 +197,7 @@ namespace Sharp.UI
         }
         
         public static T Wrap<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Layouts.FlexWrap>, BindableDef<Microsoft.Maui.Layouts.FlexWrap>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Layouts.FlexWrap>, BindableDef<Microsoft.Maui.Layouts.FlexWrap>> definition)
             where T : Sharp.UI.IFlexLayout
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.FlexLayout>(obj);

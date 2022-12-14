@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T GradientStops<T>(this T obj,
             Microsoft.Maui.Controls.GradientStopCollection? gradientStops,
-            Func<BindableDef<Microsoft.Maui.Controls.GradientStopCollection>, BindableDef<Microsoft.Maui.Controls.GradientStopCollection>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.GradientStopCollection>, BindableDef<Microsoft.Maui.Controls.GradientStopCollection>> definition)
             where T : Sharp.UI.IGradientBrush
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.GradientBrush>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T GradientStops<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.GradientStopCollection>, BindableDef<Microsoft.Maui.Controls.GradientStopCollection>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.GradientStopCollection>, BindableDef<Microsoft.Maui.Controls.GradientStopCollection>> definition)
             where T : Sharp.UI.IGradientBrush
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.GradientBrush>(obj);

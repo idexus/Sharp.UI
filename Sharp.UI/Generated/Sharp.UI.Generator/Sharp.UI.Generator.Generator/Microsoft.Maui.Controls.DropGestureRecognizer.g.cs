@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T AllowDrop<T>(this T obj,
             bool? allowDrop,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IDropGestureRecognizer
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DropGestureRecognizer>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T AllowDrop<T>(this T obj,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IDropGestureRecognizer
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DropGestureRecognizer>(obj);
@@ -53,7 +53,7 @@ namespace Sharp.UI
         
         public static T DragOverCommand<T>(this T obj,
             System.Windows.Input.ICommand? dragOverCommand,
-            Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.IDropGestureRecognizer
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DropGestureRecognizer>(obj);
@@ -65,7 +65,7 @@ namespace Sharp.UI
         }
         
         public static T DragOverCommand<T>(this T obj,
-            Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.IDropGestureRecognizer
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DropGestureRecognizer>(obj);
@@ -86,7 +86,7 @@ namespace Sharp.UI
         
         public static T DragOverCommandParameter<T>(this T obj,
             object? dragOverCommandParameter,
-            Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IDropGestureRecognizer
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DropGestureRecognizer>(obj);
@@ -98,7 +98,7 @@ namespace Sharp.UI
         }
         
         public static T DragOverCommandParameter<T>(this T obj,
-            Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IDropGestureRecognizer
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DropGestureRecognizer>(obj);
@@ -119,7 +119,7 @@ namespace Sharp.UI
         
         public static T DragLeaveCommand<T>(this T obj,
             System.Windows.Input.ICommand? dragLeaveCommand,
-            Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.IDropGestureRecognizer
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DropGestureRecognizer>(obj);
@@ -131,7 +131,7 @@ namespace Sharp.UI
         }
         
         public static T DragLeaveCommand<T>(this T obj,
-            Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.IDropGestureRecognizer
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DropGestureRecognizer>(obj);
@@ -152,7 +152,7 @@ namespace Sharp.UI
         
         public static T DragLeaveCommandParameter<T>(this T obj,
             object? dragLeaveCommandParameter,
-            Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IDropGestureRecognizer
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DropGestureRecognizer>(obj);
@@ -164,7 +164,7 @@ namespace Sharp.UI
         }
         
         public static T DragLeaveCommandParameter<T>(this T obj,
-            Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IDropGestureRecognizer
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DropGestureRecognizer>(obj);
@@ -185,7 +185,7 @@ namespace Sharp.UI
         
         public static T DropCommand<T>(this T obj,
             System.Windows.Input.ICommand? dropCommand,
-            Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.IDropGestureRecognizer
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DropGestureRecognizer>(obj);
@@ -197,7 +197,7 @@ namespace Sharp.UI
         }
         
         public static T DropCommand<T>(this T obj,
-            Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.IDropGestureRecognizer
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DropGestureRecognizer>(obj);
@@ -218,7 +218,7 @@ namespace Sharp.UI
         
         public static T DropCommandParameter<T>(this T obj,
             object? dropCommandParameter,
-            Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IDropGestureRecognizer
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DropGestureRecognizer>(obj);
@@ -230,7 +230,7 @@ namespace Sharp.UI
         }
         
         public static T DropCommandParameter<T>(this T obj,
-            Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IDropGestureRecognizer
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DropGestureRecognizer>(obj);

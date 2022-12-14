@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T PointerEnteredCommand<T>(this T obj,
             System.Windows.Input.ICommand? pointerEnteredCommand,
-            Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.IPointerGestureRecognizer
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T PointerEnteredCommand<T>(this T obj,
-            Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.IPointerGestureRecognizer
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
@@ -53,7 +53,7 @@ namespace Sharp.UI
         
         public static T PointerEnteredCommandParameter<T>(this T obj,
             System.Windows.Input.ICommand? pointerEnteredCommandParameter,
-            Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.IPointerGestureRecognizer
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
@@ -65,7 +65,7 @@ namespace Sharp.UI
         }
         
         public static T PointerEnteredCommandParameter<T>(this T obj,
-            Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.IPointerGestureRecognizer
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
@@ -86,7 +86,7 @@ namespace Sharp.UI
         
         public static T PointerExitedCommand<T>(this T obj,
             System.Windows.Input.ICommand? pointerExitedCommand,
-            Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.IPointerGestureRecognizer
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
@@ -98,7 +98,7 @@ namespace Sharp.UI
         }
         
         public static T PointerExitedCommand<T>(this T obj,
-            Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.IPointerGestureRecognizer
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
@@ -119,7 +119,7 @@ namespace Sharp.UI
         
         public static T PointerExitedCommandParameter<T>(this T obj,
             System.Windows.Input.ICommand? pointerExitedCommandParameter,
-            Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.IPointerGestureRecognizer
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
@@ -131,7 +131,7 @@ namespace Sharp.UI
         }
         
         public static T PointerExitedCommandParameter<T>(this T obj,
-            Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.IPointerGestureRecognizer
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
@@ -152,7 +152,7 @@ namespace Sharp.UI
         
         public static T PointerMovedCommand<T>(this T obj,
             System.Windows.Input.ICommand? pointerMovedCommand,
-            Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.IPointerGestureRecognizer
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
@@ -164,7 +164,7 @@ namespace Sharp.UI
         }
         
         public static T PointerMovedCommand<T>(this T obj,
-            Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.IPointerGestureRecognizer
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
@@ -185,7 +185,7 @@ namespace Sharp.UI
         
         public static T PointerMovedCommandParameter<T>(this T obj,
             System.Windows.Input.ICommand? pointerMovedCommandParameter,
-            Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.IPointerGestureRecognizer
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
@@ -197,7 +197,7 @@ namespace Sharp.UI
         }
         
         public static T PointerMovedCommandParameter<T>(this T obj,
-            Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.IPointerGestureRecognizer
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);

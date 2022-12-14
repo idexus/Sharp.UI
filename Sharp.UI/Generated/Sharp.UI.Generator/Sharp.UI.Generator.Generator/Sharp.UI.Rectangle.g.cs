@@ -32,12 +32,12 @@ namespace Sharp.UI
             rectangle = this;
         }
 
-        public Rectangle(Action<Rectangle> configure) : this()
+        public Rectangle(System.Action<Rectangle> configure) : this()
         {
             configure(this);
         }
 
-        public Rectangle(out Rectangle rectangle, Action<Rectangle> configure) : this()
+        public Rectangle(out Rectangle rectangle, System.Action<Rectangle> configure) : this()
         {
             rectangle = this;
             configure(this);
@@ -56,14 +56,14 @@ namespace Sharp.UI
             rectangle = this;
         }
 
-        public Rectangle(double widthrequest, double heightrequest, Action<Rectangle> configure) : this()
+        public Rectangle(double widthrequest, double heightrequest, System.Action<Rectangle> configure) : this()
         {  
             this.WidthRequest = widthrequest;
             this.HeightRequest = heightrequest;
             configure(this);
         }
 
-        public Rectangle(double widthrequest, double heightrequest, out Rectangle rectangle, Action<Rectangle> configure) : this()
+        public Rectangle(double widthrequest, double heightrequest, out Rectangle rectangle, System.Action<Rectangle> configure) : this()
         {  
             this.WidthRequest = widthrequest;
             this.HeightRequest = heightrequest;

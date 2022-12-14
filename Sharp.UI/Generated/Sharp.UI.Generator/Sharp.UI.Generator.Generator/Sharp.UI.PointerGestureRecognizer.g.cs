@@ -32,12 +32,12 @@ namespace Sharp.UI
             pointerGestureRecognizer = this;
         }
 
-        public PointerGestureRecognizer(Action<PointerGestureRecognizer> configure) : this()
+        public PointerGestureRecognizer(System.Action<PointerGestureRecognizer> configure) : this()
         {
             configure(this);
         }
 
-        public PointerGestureRecognizer(out PointerGestureRecognizer pointerGestureRecognizer, Action<PointerGestureRecognizer> configure) : this()
+        public PointerGestureRecognizer(out PointerGestureRecognizer pointerGestureRecognizer, System.Action<PointerGestureRecognizer> configure) : this()
         {
             pointerGestureRecognizer = this;
             configure(this);

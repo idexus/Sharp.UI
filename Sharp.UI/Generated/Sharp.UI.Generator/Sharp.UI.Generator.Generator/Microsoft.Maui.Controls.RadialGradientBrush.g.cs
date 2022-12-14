@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T Center<T>(this T obj,
             Microsoft.Maui.Graphics.Point? center,
-            Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
             where T : Sharp.UI.IRadialGradientBrush
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.RadialGradientBrush>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T Center<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
             where T : Sharp.UI.IRadialGradientBrush
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.RadialGradientBrush>(obj);
@@ -53,7 +53,7 @@ namespace Sharp.UI
         
         public static T Radius<T>(this T obj,
             double? radius,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IRadialGradientBrush
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.RadialGradientBrush>(obj);
@@ -65,7 +65,7 @@ namespace Sharp.UI
         }
         
         public static T Radius<T>(this T obj,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IRadialGradientBrush
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.RadialGradientBrush>(obj);

@@ -18,12 +18,12 @@ namespace Sharp.UI
             polyQuadraticBezierSegment = this;
         }
 
-        public PolyQuadraticBezierSegment(Action<PolyQuadraticBezierSegment> configure) 
+        public PolyQuadraticBezierSegment(System.Action<PolyQuadraticBezierSegment> configure) 
         {
             configure(this);
         }
 
-        public PolyQuadraticBezierSegment(out PolyQuadraticBezierSegment polyQuadraticBezierSegment, Action<PolyQuadraticBezierSegment> configure) 
+        public PolyQuadraticBezierSegment(out PolyQuadraticBezierSegment polyQuadraticBezierSegment, System.Action<PolyQuadraticBezierSegment> configure) 
         {
             polyQuadraticBezierSegment = this;
             configure(this);

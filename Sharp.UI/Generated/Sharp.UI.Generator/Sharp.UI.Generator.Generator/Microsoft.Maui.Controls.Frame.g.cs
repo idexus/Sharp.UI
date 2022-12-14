@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T HasShadow<T>(this T obj,
             bool? hasShadow,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IFrame
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Frame>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T HasShadow<T>(this T obj,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IFrame
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Frame>(obj);
@@ -53,7 +53,7 @@ namespace Sharp.UI
         
         public static T BorderColor<T>(this T obj,
             Microsoft.Maui.Graphics.Color? borderColor,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IFrame
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Frame>(obj);
@@ -65,7 +65,7 @@ namespace Sharp.UI
         }
         
         public static T BorderColor<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IFrame
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Frame>(obj);
@@ -86,7 +86,7 @@ namespace Sharp.UI
         
         public static T CornerRadius<T>(this T obj,
             float? cornerRadius,
-            Func<BindableDef<float>, BindableDef<float>> definition)
+            System.Func<BindableDef<float>, BindableDef<float>> definition)
             where T : Sharp.UI.IFrame
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Frame>(obj);
@@ -98,7 +98,7 @@ namespace Sharp.UI
         }
         
         public static T CornerRadius<T>(this T obj,
-            Func<BindableDef<float>, BindableDef<float>> definition)
+            System.Func<BindableDef<float>, BindableDef<float>> definition)
             where T : Sharp.UI.IFrame
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Frame>(obj);

@@ -18,12 +18,12 @@ namespace Sharp.UI
             timePicker = this;
         }
 
-        public TimePicker(Action<TimePicker> configure) 
+        public TimePicker(System.Action<TimePicker> configure) 
         {
             configure(this);
         }
 
-        public TimePicker(out TimePicker timePicker, Action<TimePicker> configure) 
+        public TimePicker(out TimePicker timePicker, System.Action<TimePicker> configure) 
         {
             timePicker = this;
             configure(this);

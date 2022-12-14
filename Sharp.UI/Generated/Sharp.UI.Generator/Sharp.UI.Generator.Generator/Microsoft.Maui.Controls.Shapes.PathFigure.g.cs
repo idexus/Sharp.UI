@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T Segments<T>(this T obj,
             Microsoft.Maui.Controls.Shapes.PathSegmentCollection? segments,
-            Func<BindableDef<Microsoft.Maui.Controls.Shapes.PathSegmentCollection>, BindableDef<Microsoft.Maui.Controls.Shapes.PathSegmentCollection>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.Shapes.PathSegmentCollection>, BindableDef<Microsoft.Maui.Controls.Shapes.PathSegmentCollection>> definition)
             where T : Sharp.UI.IPathFigure
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.PathFigure>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T Segments<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.Shapes.PathSegmentCollection>, BindableDef<Microsoft.Maui.Controls.Shapes.PathSegmentCollection>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.Shapes.PathSegmentCollection>, BindableDef<Microsoft.Maui.Controls.Shapes.PathSegmentCollection>> definition)
             where T : Sharp.UI.IPathFigure
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.PathFigure>(obj);
@@ -53,7 +53,7 @@ namespace Sharp.UI
         
         public static T StartPoint<T>(this T obj,
             Microsoft.Maui.Graphics.Point? startPoint,
-            Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
             where T : Sharp.UI.IPathFigure
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.PathFigure>(obj);
@@ -65,7 +65,7 @@ namespace Sharp.UI
         }
         
         public static T StartPoint<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
             where T : Sharp.UI.IPathFigure
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.PathFigure>(obj);
@@ -86,7 +86,7 @@ namespace Sharp.UI
         
         public static T IsClosed<T>(this T obj,
             bool? isClosed,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IPathFigure
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.PathFigure>(obj);
@@ -98,7 +98,7 @@ namespace Sharp.UI
         }
         
         public static T IsClosed<T>(this T obj,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IPathFigure
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.PathFigure>(obj);
@@ -119,7 +119,7 @@ namespace Sharp.UI
         
         public static T IsFilled<T>(this T obj,
             bool? isFilled,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IPathFigure
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.PathFigure>(obj);
@@ -131,7 +131,7 @@ namespace Sharp.UI
         }
         
         public static T IsFilled<T>(this T obj,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IPathFigure
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.PathFigure>(obj);

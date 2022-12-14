@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T Orientation<T>(this T obj,
             Microsoft.Maui.Controls.StackOrientation? orientation,
-            Func<BindableDef<Microsoft.Maui.Controls.StackOrientation>, BindableDef<Microsoft.Maui.Controls.StackOrientation>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.StackOrientation>, BindableDef<Microsoft.Maui.Controls.StackOrientation>> definition)
             where T : Sharp.UI.IStackLayout
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StackLayout>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T Orientation<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.StackOrientation>, BindableDef<Microsoft.Maui.Controls.StackOrientation>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.StackOrientation>, BindableDef<Microsoft.Maui.Controls.StackOrientation>> definition)
             where T : Sharp.UI.IStackLayout
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StackLayout>(obj);

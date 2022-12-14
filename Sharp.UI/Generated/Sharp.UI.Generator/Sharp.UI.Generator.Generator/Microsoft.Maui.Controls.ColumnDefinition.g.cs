@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T Width<T>(this T obj,
             Microsoft.Maui.GridLength? width,
-            Func<BindableDef<Microsoft.Maui.GridLength>, BindableDef<Microsoft.Maui.GridLength>> definition)
+            System.Func<BindableDef<Microsoft.Maui.GridLength>, BindableDef<Microsoft.Maui.GridLength>> definition)
             where T : Sharp.UI.IColumnDefinition
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ColumnDefinition>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T Width<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.GridLength>, BindableDef<Microsoft.Maui.GridLength>> definition)
+            System.Func<BindableDef<Microsoft.Maui.GridLength>, BindableDef<Microsoft.Maui.GridLength>> definition)
             where T : Sharp.UI.IColumnDefinition
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ColumnDefinition>(obj);

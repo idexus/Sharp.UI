@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T EmptyView<T>(this T obj,
             object? emptyView,
-            Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ItemsView>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T EmptyView<T>(this T obj,
-            Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ItemsView>(obj);
@@ -53,7 +53,7 @@ namespace Sharp.UI
         
         public static T EmptyViewTemplate<T>(this T obj,
             Microsoft.Maui.Controls.DataTemplate? emptyViewTemplate,
-            Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
             where T : Sharp.UI.IItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ItemsView>(obj);
@@ -65,7 +65,7 @@ namespace Sharp.UI
         }
         
         public static T EmptyViewTemplate<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
             where T : Sharp.UI.IItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ItemsView>(obj);
@@ -75,7 +75,7 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T EmptyViewTemplate<T>(this T obj, Func<object> loadTemplate) where T : Sharp.UI.IItemsView
+        public static T EmptyViewTemplate<T>(this T obj, System.Func<object> loadTemplate) where T : Sharp.UI.IItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ItemsView>(obj);
             mauiObject.EmptyViewTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
@@ -93,7 +93,7 @@ namespace Sharp.UI
         
         public static T ItemsSource<T>(this T obj,
             System.Collections.IEnumerable? itemsSource,
-            Func<BindableDef<System.Collections.IEnumerable>, BindableDef<System.Collections.IEnumerable>> definition)
+            System.Func<BindableDef<System.Collections.IEnumerable>, BindableDef<System.Collections.IEnumerable>> definition)
             where T : Sharp.UI.IItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ItemsView>(obj);
@@ -105,7 +105,7 @@ namespace Sharp.UI
         }
         
         public static T ItemsSource<T>(this T obj,
-            Func<BindableDef<System.Collections.IEnumerable>, BindableDef<System.Collections.IEnumerable>> definition)
+            System.Func<BindableDef<System.Collections.IEnumerable>, BindableDef<System.Collections.IEnumerable>> definition)
             where T : Sharp.UI.IItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ItemsView>(obj);
@@ -126,7 +126,7 @@ namespace Sharp.UI
         
         public static T RemainingItemsThresholdReachedCommand<T>(this T obj,
             System.Windows.Input.ICommand? remainingItemsThresholdReachedCommand,
-            Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.IItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ItemsView>(obj);
@@ -138,7 +138,7 @@ namespace Sharp.UI
         }
         
         public static T RemainingItemsThresholdReachedCommand<T>(this T obj,
-            Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.IItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ItemsView>(obj);
@@ -159,7 +159,7 @@ namespace Sharp.UI
         
         public static T RemainingItemsThresholdReachedCommandParameter<T>(this T obj,
             object? remainingItemsThresholdReachedCommandParameter,
-            Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ItemsView>(obj);
@@ -171,7 +171,7 @@ namespace Sharp.UI
         }
         
         public static T RemainingItemsThresholdReachedCommandParameter<T>(this T obj,
-            Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ItemsView>(obj);
@@ -192,7 +192,7 @@ namespace Sharp.UI
         
         public static T HorizontalScrollBarVisibility<T>(this T obj,
             Microsoft.Maui.ScrollBarVisibility? horizontalScrollBarVisibility,
-            Func<BindableDef<Microsoft.Maui.ScrollBarVisibility>, BindableDef<Microsoft.Maui.ScrollBarVisibility>> definition)
+            System.Func<BindableDef<Microsoft.Maui.ScrollBarVisibility>, BindableDef<Microsoft.Maui.ScrollBarVisibility>> definition)
             where T : Sharp.UI.IItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ItemsView>(obj);
@@ -204,7 +204,7 @@ namespace Sharp.UI
         }
         
         public static T HorizontalScrollBarVisibility<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.ScrollBarVisibility>, BindableDef<Microsoft.Maui.ScrollBarVisibility>> definition)
+            System.Func<BindableDef<Microsoft.Maui.ScrollBarVisibility>, BindableDef<Microsoft.Maui.ScrollBarVisibility>> definition)
             where T : Sharp.UI.IItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ItemsView>(obj);
@@ -225,7 +225,7 @@ namespace Sharp.UI
         
         public static T VerticalScrollBarVisibility<T>(this T obj,
             Microsoft.Maui.ScrollBarVisibility? verticalScrollBarVisibility,
-            Func<BindableDef<Microsoft.Maui.ScrollBarVisibility>, BindableDef<Microsoft.Maui.ScrollBarVisibility>> definition)
+            System.Func<BindableDef<Microsoft.Maui.ScrollBarVisibility>, BindableDef<Microsoft.Maui.ScrollBarVisibility>> definition)
             where T : Sharp.UI.IItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ItemsView>(obj);
@@ -237,7 +237,7 @@ namespace Sharp.UI
         }
         
         public static T VerticalScrollBarVisibility<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.ScrollBarVisibility>, BindableDef<Microsoft.Maui.ScrollBarVisibility>> definition)
+            System.Func<BindableDef<Microsoft.Maui.ScrollBarVisibility>, BindableDef<Microsoft.Maui.ScrollBarVisibility>> definition)
             where T : Sharp.UI.IItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ItemsView>(obj);
@@ -258,7 +258,7 @@ namespace Sharp.UI
         
         public static T RemainingItemsThreshold<T>(this T obj,
             int? remainingItemsThreshold,
-            Func<BindableDef<int>, BindableDef<int>> definition)
+            System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.IItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ItemsView>(obj);
@@ -270,7 +270,7 @@ namespace Sharp.UI
         }
         
         public static T RemainingItemsThreshold<T>(this T obj,
-            Func<BindableDef<int>, BindableDef<int>> definition)
+            System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.IItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ItemsView>(obj);
@@ -291,7 +291,7 @@ namespace Sharp.UI
         
         public static T ItemTemplate<T>(this T obj,
             Microsoft.Maui.Controls.DataTemplate? itemTemplate,
-            Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
             where T : Sharp.UI.IItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ItemsView>(obj);
@@ -303,7 +303,7 @@ namespace Sharp.UI
         }
         
         public static T ItemTemplate<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
             where T : Sharp.UI.IItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ItemsView>(obj);
@@ -313,7 +313,7 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T ItemTemplate<T>(this T obj, Func<object> loadTemplate) where T : Sharp.UI.IItemsView
+        public static T ItemTemplate<T>(this T obj, System.Func<object> loadTemplate) where T : Sharp.UI.IItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ItemsView>(obj);
             mauiObject.ItemTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
@@ -331,7 +331,7 @@ namespace Sharp.UI
         
         public static T ItemsUpdatingScrollMode<T>(this T obj,
             Microsoft.Maui.Controls.ItemsUpdatingScrollMode? itemsUpdatingScrollMode,
-            Func<BindableDef<Microsoft.Maui.Controls.ItemsUpdatingScrollMode>, BindableDef<Microsoft.Maui.Controls.ItemsUpdatingScrollMode>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.ItemsUpdatingScrollMode>, BindableDef<Microsoft.Maui.Controls.ItemsUpdatingScrollMode>> definition)
             where T : Sharp.UI.IItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ItemsView>(obj);
@@ -343,7 +343,7 @@ namespace Sharp.UI
         }
         
         public static T ItemsUpdatingScrollMode<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.ItemsUpdatingScrollMode>, BindableDef<Microsoft.Maui.Controls.ItemsUpdatingScrollMode>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.ItemsUpdatingScrollMode>, BindableDef<Microsoft.Maui.Controls.ItemsUpdatingScrollMode>> definition)
             where T : Sharp.UI.IItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ItemsView>(obj);

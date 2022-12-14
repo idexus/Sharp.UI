@@ -18,12 +18,12 @@ namespace Sharp.UI
             polyLineSegment = this;
         }
 
-        public PolyLineSegment(Action<PolyLineSegment> configure) 
+        public PolyLineSegment(System.Action<PolyLineSegment> configure) 
         {
             configure(this);
         }
 
-        public PolyLineSegment(out PolyLineSegment polyLineSegment, Action<PolyLineSegment> configure) 
+        public PolyLineSegment(out PolyLineSegment polyLineSegment, System.Action<PolyLineSegment> configure) 
         {
             polyLineSegment = this;
             configure(this);

@@ -28,7 +28,7 @@ namespace Sharp.UI
         }
 
         public static T ContextActions<T>(this T obj,
-            Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.MenuItem>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.MenuItem>>> definition)
+            System.Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.MenuItem>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.MenuItem>>> definition)
             where T : Sharp.UI.ICell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Cell>(obj);
@@ -52,7 +52,7 @@ namespace Sharp.UI
         
         public static T IsContextActionsLegacyModeEnabled<T>(this T obj,
             bool? isContextActionsLegacyModeEnabled,
-            Func<ValueDef<bool>, ValueDef<bool>> definition)
+            System.Func<ValueDef<bool>, ValueDef<bool>> definition)
             where T : Sharp.UI.ICell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Cell>(obj);
@@ -63,7 +63,7 @@ namespace Sharp.UI
         }
         
         public static T IsContextActionsLegacyModeEnabled<T>(this T obj,
-            Func<ValueDef<bool>, ValueDef<bool>> definition)
+            System.Func<ValueDef<bool>, ValueDef<bool>> definition)
             where T : Sharp.UI.ICell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Cell>(obj);
@@ -83,7 +83,7 @@ namespace Sharp.UI
         
         public static T Height<T>(this T obj,
             double? height,
-            Func<ValueDef<double>, ValueDef<double>> definition)
+            System.Func<ValueDef<double>, ValueDef<double>> definition)
             where T : Sharp.UI.ICell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Cell>(obj);
@@ -94,7 +94,7 @@ namespace Sharp.UI
         }
         
         public static T Height<T>(this T obj,
-            Func<ValueDef<double>, ValueDef<double>> definition)
+            System.Func<ValueDef<double>, ValueDef<double>> definition)
             where T : Sharp.UI.ICell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Cell>(obj);
@@ -114,7 +114,7 @@ namespace Sharp.UI
         
         public static T IsEnabled<T>(this T obj,
             bool? isEnabled,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.ICell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Cell>(obj);
@@ -126,7 +126,7 @@ namespace Sharp.UI
         }
         
         public static T IsEnabled<T>(this T obj,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.ICell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Cell>(obj);

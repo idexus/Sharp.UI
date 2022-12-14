@@ -20,12 +20,12 @@ namespace Sharp.UI.Example
             secondPageViewModel = this;
         }
 
-        public SecondPageViewModel(Action<SecondPageViewModel> configure) 
+        public SecondPageViewModel(System.Action<SecondPageViewModel> configure) 
         {
             configure(this);
         }
 
-        public SecondPageViewModel(out SecondPageViewModel secondPageViewModel, Action<SecondPageViewModel> configure) 
+        public SecondPageViewModel(out SecondPageViewModel secondPageViewModel, System.Action<SecondPageViewModel> configure) 
         {
             secondPageViewModel = this;
             configure(this);
@@ -33,19 +33,29 @@ namespace Sharp.UI.Example
 
         // ----- bindable properties -----
 
-        public static readonly BindableProperty TitleProperty = BindableProperty.Create(nameof(Title), typeof(String), typeof(Sharp.UI.Example.SecondPageViewModel), default(String));
+        public static readonly Microsoft.Maui.Controls.BindableProperty TitleProperty =
+            BindableProperty.Create(
+                nameof(Title),
+                typeof(string),
+                typeof(Sharp.UI.Example.SecondPageViewModel),
+                default(string));
 
-        public String Title
+        public string Title
         {
-            get => (String)GetValue(TitleProperty);
+            get => (string)GetValue(TitleProperty);
             set => SetValue(TitleProperty, value);
         }
         
-        public static readonly BindableProperty AuthorProperty = BindableProperty.Create(nameof(Author), typeof(String), typeof(Sharp.UI.Example.SecondPageViewModel), default(String));
+        public static readonly Microsoft.Maui.Controls.BindableProperty AuthorProperty =
+            BindableProperty.Create(
+                nameof(Author),
+                typeof(string),
+                typeof(Sharp.UI.Example.SecondPageViewModel),
+                default(string));
 
-        public String Author
+        public string Author
         {
-            get => (String)GetValue(AuthorProperty);
+            get => (string)GetValue(AuthorProperty);
             set => SetValue(AuthorProperty, value);
         }
         

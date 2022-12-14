@@ -18,12 +18,12 @@ namespace Sharp.UI
             dragGestureRecognizer = this;
         }
 
-        public DragGestureRecognizer(Action<DragGestureRecognizer> configure) 
+        public DragGestureRecognizer(System.Action<DragGestureRecognizer> configure) 
         {
             configure(this);
         }
 
-        public DragGestureRecognizer(out DragGestureRecognizer dragGestureRecognizer, Action<DragGestureRecognizer> configure) 
+        public DragGestureRecognizer(out DragGestureRecognizer dragGestureRecognizer, System.Action<DragGestureRecognizer> configure) 
         {
             dragGestureRecognizer = this;
             configure(this);

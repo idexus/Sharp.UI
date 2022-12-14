@@ -32,12 +32,12 @@ namespace Sharp.UI
             columnDefinition = this;
         }
 
-        public ColumnDefinition(Action<ColumnDefinition> configure) : this()
+        public ColumnDefinition(System.Action<ColumnDefinition> configure) : this()
         {
             configure(this);
         }
 
-        public ColumnDefinition(out ColumnDefinition columnDefinition, Action<ColumnDefinition> configure) : this()
+        public ColumnDefinition(out ColumnDefinition columnDefinition, System.Action<ColumnDefinition> configure) : this()
         {
             columnDefinition = this;
             configure(this);

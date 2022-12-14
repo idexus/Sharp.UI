@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T OnColor<T>(this T obj,
             Microsoft.Maui.Graphics.Color? onColor,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.ISwitch
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Switch>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T OnColor<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.ISwitch
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Switch>(obj);
@@ -53,7 +53,7 @@ namespace Sharp.UI
         
         public static T ThumbColor<T>(this T obj,
             Microsoft.Maui.Graphics.Color? thumbColor,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.ISwitch
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Switch>(obj);
@@ -65,7 +65,7 @@ namespace Sharp.UI
         }
         
         public static T ThumbColor<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.ISwitch
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Switch>(obj);
@@ -86,7 +86,7 @@ namespace Sharp.UI
         
         public static T IsToggled<T>(this T obj,
             bool? isToggled,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.ISwitch
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Switch>(obj);
@@ -98,7 +98,7 @@ namespace Sharp.UI
         }
         
         public static T IsToggled<T>(this T obj,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.ISwitch
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Switch>(obj);

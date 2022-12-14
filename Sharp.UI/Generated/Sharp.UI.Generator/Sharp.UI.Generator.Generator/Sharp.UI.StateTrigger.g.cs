@@ -32,12 +32,12 @@ namespace Sharp.UI
             stateTrigger = this;
         }
 
-        public StateTrigger(Action<StateTrigger> configure) : this()
+        public StateTrigger(System.Action<StateTrigger> configure) : this()
         {
             configure(this);
         }
 
-        public StateTrigger(out StateTrigger stateTrigger, Action<StateTrigger> configure) : this()
+        public StateTrigger(out StateTrigger stateTrigger, System.Action<StateTrigger> configure) : this()
         {
             stateTrigger = this;
             configure(this);

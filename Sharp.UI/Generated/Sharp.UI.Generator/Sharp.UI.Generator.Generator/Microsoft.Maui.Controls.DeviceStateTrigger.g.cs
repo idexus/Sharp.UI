@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T Device<T>(this T obj,
             string? device,
-            Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.IDeviceStateTrigger
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DeviceStateTrigger>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T Device<T>(this T obj,
-            Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.IDeviceStateTrigger
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DeviceStateTrigger>(obj);

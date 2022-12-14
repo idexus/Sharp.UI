@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T MinimumTrackColor<T>(this T obj,
             Microsoft.Maui.Graphics.Color? minimumTrackColor,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.ISlider
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Slider>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T MinimumTrackColor<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.ISlider
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Slider>(obj);
@@ -53,7 +53,7 @@ namespace Sharp.UI
         
         public static T MaximumTrackColor<T>(this T obj,
             Microsoft.Maui.Graphics.Color? maximumTrackColor,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.ISlider
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Slider>(obj);
@@ -65,7 +65,7 @@ namespace Sharp.UI
         }
         
         public static T MaximumTrackColor<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.ISlider
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Slider>(obj);
@@ -86,7 +86,7 @@ namespace Sharp.UI
         
         public static T ThumbColor<T>(this T obj,
             Microsoft.Maui.Graphics.Color? thumbColor,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.ISlider
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Slider>(obj);
@@ -98,7 +98,7 @@ namespace Sharp.UI
         }
         
         public static T ThumbColor<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.ISlider
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Slider>(obj);
@@ -119,7 +119,7 @@ namespace Sharp.UI
         
         public static T ThumbImageSource<T>(this T obj,
             Microsoft.Maui.Controls.ImageSource? thumbImageSource,
-            Func<BindableDef<Microsoft.Maui.Controls.ImageSource>, BindableDef<Microsoft.Maui.Controls.ImageSource>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.ImageSource>, BindableDef<Microsoft.Maui.Controls.ImageSource>> definition)
             where T : Sharp.UI.ISlider
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Slider>(obj);
@@ -131,7 +131,7 @@ namespace Sharp.UI
         }
         
         public static T ThumbImageSource<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.ImageSource>, BindableDef<Microsoft.Maui.Controls.ImageSource>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.ImageSource>, BindableDef<Microsoft.Maui.Controls.ImageSource>> definition)
             where T : Sharp.UI.ISlider
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Slider>(obj);
@@ -152,7 +152,7 @@ namespace Sharp.UI
         
         public static T DragStartedCommand<T>(this T obj,
             System.Windows.Input.ICommand? dragStartedCommand,
-            Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.ISlider
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Slider>(obj);
@@ -164,7 +164,7 @@ namespace Sharp.UI
         }
         
         public static T DragStartedCommand<T>(this T obj,
-            Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.ISlider
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Slider>(obj);
@@ -185,7 +185,7 @@ namespace Sharp.UI
         
         public static T DragCompletedCommand<T>(this T obj,
             System.Windows.Input.ICommand? dragCompletedCommand,
-            Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.ISlider
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Slider>(obj);
@@ -197,7 +197,7 @@ namespace Sharp.UI
         }
         
         public static T DragCompletedCommand<T>(this T obj,
-            Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.ISlider
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Slider>(obj);
@@ -218,7 +218,7 @@ namespace Sharp.UI
         
         public static T Maximum<T>(this T obj,
             double? maximum,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.ISlider
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Slider>(obj);
@@ -230,7 +230,7 @@ namespace Sharp.UI
         }
         
         public static T Maximum<T>(this T obj,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.ISlider
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Slider>(obj);
@@ -251,7 +251,7 @@ namespace Sharp.UI
         
         public static T Minimum<T>(this T obj,
             double? minimum,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.ISlider
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Slider>(obj);
@@ -263,7 +263,7 @@ namespace Sharp.UI
         }
         
         public static T Minimum<T>(this T obj,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.ISlider
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Slider>(obj);
@@ -284,7 +284,7 @@ namespace Sharp.UI
         
         public static T Value<T>(this T obj,
             double? value,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.ISlider
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Slider>(obj);
@@ -296,7 +296,7 @@ namespace Sharp.UI
         }
         
         public static T Value<T>(this T obj,
-            Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.ISlider
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Slider>(obj);

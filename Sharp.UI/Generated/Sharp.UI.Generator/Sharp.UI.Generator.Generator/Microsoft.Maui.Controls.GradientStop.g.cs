@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T Color<T>(this T obj,
             Microsoft.Maui.Graphics.Color? color,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IGradientStop
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.GradientStop>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T Color<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IGradientStop
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.GradientStop>(obj);
@@ -53,7 +53,7 @@ namespace Sharp.UI
         
         public static T Offset<T>(this T obj,
             float? offset,
-            Func<BindableDef<float>, BindableDef<float>> definition)
+            System.Func<BindableDef<float>, BindableDef<float>> definition)
             where T : Sharp.UI.IGradientStop
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.GradientStop>(obj);
@@ -65,7 +65,7 @@ namespace Sharp.UI
         }
         
         public static T Offset<T>(this T obj,
-            Func<BindableDef<float>, BindableDef<float>> definition)
+            System.Func<BindableDef<float>, BindableDef<float>> definition)
             where T : Sharp.UI.IGradientStop
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.GradientStop>(obj);

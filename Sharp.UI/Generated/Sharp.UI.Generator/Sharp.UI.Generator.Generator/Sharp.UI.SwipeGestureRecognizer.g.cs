@@ -32,12 +32,12 @@ namespace Sharp.UI
             swipeGestureRecognizer = this;
         }
 
-        public SwipeGestureRecognizer(Action<SwipeGestureRecognizer> configure) : this()
+        public SwipeGestureRecognizer(System.Action<SwipeGestureRecognizer> configure) : this()
         {
             configure(this);
         }
 
-        public SwipeGestureRecognizer(out SwipeGestureRecognizer swipeGestureRecognizer, Action<SwipeGestureRecognizer> configure) : this()
+        public SwipeGestureRecognizer(out SwipeGestureRecognizer swipeGestureRecognizer, System.Action<SwipeGestureRecognizer> configure) : this()
         {
             swipeGestureRecognizer = this;
             configure(this);
@@ -54,13 +54,13 @@ namespace Sharp.UI
             swipeGestureRecognizer = this;
         }
 
-        public SwipeGestureRecognizer(Microsoft.Maui.SwipeDirection direction, Action<SwipeGestureRecognizer> configure) : this()
+        public SwipeGestureRecognizer(Microsoft.Maui.SwipeDirection direction, System.Action<SwipeGestureRecognizer> configure) : this()
         {  
             this.Direction = direction;
             configure(this);
         }
 
-        public SwipeGestureRecognizer(Microsoft.Maui.SwipeDirection direction, out SwipeGestureRecognizer swipeGestureRecognizer, Action<SwipeGestureRecognizer> configure) : this()
+        public SwipeGestureRecognizer(Microsoft.Maui.SwipeDirection direction, out SwipeGestureRecognizer swipeGestureRecognizer, System.Action<SwipeGestureRecognizer> configure) : this()
         {  
             this.Direction = direction;
             swipeGestureRecognizer = this;

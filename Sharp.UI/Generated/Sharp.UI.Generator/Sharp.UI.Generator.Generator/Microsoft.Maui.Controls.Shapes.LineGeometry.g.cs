@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T StartPoint<T>(this T obj,
             Microsoft.Maui.Graphics.Point? startPoint,
-            Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
             where T : Sharp.UI.ILineGeometry
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.LineGeometry>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T StartPoint<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
             where T : Sharp.UI.ILineGeometry
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.LineGeometry>(obj);
@@ -53,7 +53,7 @@ namespace Sharp.UI
         
         public static T EndPoint<T>(this T obj,
             Microsoft.Maui.Graphics.Point? endPoint,
-            Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
             where T : Sharp.UI.ILineGeometry
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.LineGeometry>(obj);
@@ -65,7 +65,7 @@ namespace Sharp.UI
         }
         
         public static T EndPoint<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
             where T : Sharp.UI.ILineGeometry
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.LineGeometry>(obj);

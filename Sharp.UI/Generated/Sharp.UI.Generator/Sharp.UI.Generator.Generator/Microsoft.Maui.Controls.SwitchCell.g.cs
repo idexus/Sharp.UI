@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T OnColor<T>(this T obj,
             Microsoft.Maui.Graphics.Color? onColor,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.ISwitchCell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwitchCell>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T OnColor<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.ISwitchCell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwitchCell>(obj);
@@ -53,7 +53,7 @@ namespace Sharp.UI
         
         public static T On<T>(this T obj,
             bool? on,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.ISwitchCell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwitchCell>(obj);
@@ -65,7 +65,7 @@ namespace Sharp.UI
         }
         
         public static T On<T>(this T obj,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.ISwitchCell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwitchCell>(obj);
@@ -86,7 +86,7 @@ namespace Sharp.UI
         
         public static T Text<T>(this T obj,
             string? text,
-            Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.ISwitchCell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwitchCell>(obj);
@@ -98,7 +98,7 @@ namespace Sharp.UI
         }
         
         public static T Text<T>(this T obj,
-            Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.ISwitchCell
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwitchCell>(obj);

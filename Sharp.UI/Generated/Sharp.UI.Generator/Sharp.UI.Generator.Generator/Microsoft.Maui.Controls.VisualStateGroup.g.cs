@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T TargetType<T>(this T obj,
             System.Type? targetType,
-            Func<ValueDef<System.Type>, ValueDef<System.Type>> definition)
+            System.Func<ValueDef<System.Type>, ValueDef<System.Type>> definition)
             where T : Sharp.UI.IVisualStateGroup
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualStateGroup>(obj);
@@ -31,7 +31,7 @@ namespace Sharp.UI
         }
         
         public static T TargetType<T>(this T obj,
-            Func<ValueDef<System.Type>, ValueDef<System.Type>> definition)
+            System.Func<ValueDef<System.Type>, ValueDef<System.Type>> definition)
             where T : Sharp.UI.IVisualStateGroup
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualStateGroup>(obj);
@@ -51,7 +51,7 @@ namespace Sharp.UI
         
         public static T Name<T>(this T obj,
             string? name,
-            Func<ValueDef<string>, ValueDef<string>> definition)
+            System.Func<ValueDef<string>, ValueDef<string>> definition)
             where T : Sharp.UI.IVisualStateGroup
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualStateGroup>(obj);
@@ -62,7 +62,7 @@ namespace Sharp.UI
         }
         
         public static T Name<T>(this T obj,
-            Func<ValueDef<string>, ValueDef<string>> definition)
+            System.Func<ValueDef<string>, ValueDef<string>> definition)
             where T : Sharp.UI.IVisualStateGroup
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualStateGroup>(obj);
@@ -90,7 +90,7 @@ namespace Sharp.UI
         }
 
         public static T States<T>(this T obj,
-            Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.VisualState>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.VisualState>>> definition)
+            System.Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.VisualState>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.VisualState>>> definition)
             where T : Sharp.UI.IVisualStateGroup
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualStateGroup>(obj);

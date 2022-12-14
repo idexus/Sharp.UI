@@ -36,12 +36,12 @@ namespace Sharp.UI
             polyline = this;
         }
 
-        public Polyline(Action<Polyline> configure) : this()
+        public Polyline(System.Action<Polyline> configure) : this()
         {
             configure(this);
         }
 
-        public Polyline(out Polyline polyline, Action<Polyline> configure) : this()
+        public Polyline(out Polyline polyline, System.Action<Polyline> configure) : this()
         {
             polyline = this;
             configure(this);

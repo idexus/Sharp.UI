@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T Title<T>(this T obj,
             string? title,
-            Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.ITableSectionBase
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.TableSectionBase>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T Title<T>(this T obj,
-            Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.ITableSectionBase
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.TableSectionBase>(obj);
@@ -53,7 +53,7 @@ namespace Sharp.UI
         
         public static T TextColor<T>(this T obj,
             Microsoft.Maui.Graphics.Color? textColor,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.ITableSectionBase
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.TableSectionBase>(obj);
@@ -65,7 +65,7 @@ namespace Sharp.UI
         }
         
         public static T TextColor<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.ITableSectionBase
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.TableSectionBase>(obj);

@@ -22,7 +22,7 @@ namespace Sharp.UI.Example
         
         public static T Title<T>(this T obj,
             string? title,
-            Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.Example.SecondPageViewModel
         {
             var mauiObject = MauiWrapper.GetObject<Sharp.UI.Example.SecondPageViewModel>(obj);
@@ -34,7 +34,7 @@ namespace Sharp.UI.Example
         }
         
         public static T Title<T>(this T obj,
-            Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.Example.SecondPageViewModel
         {
             var mauiObject = MauiWrapper.GetObject<Sharp.UI.Example.SecondPageViewModel>(obj);
@@ -55,7 +55,7 @@ namespace Sharp.UI.Example
         
         public static T Author<T>(this T obj,
             string? author,
-            Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.Example.SecondPageViewModel
         {
             var mauiObject = MauiWrapper.GetObject<Sharp.UI.Example.SecondPageViewModel>(obj);
@@ -67,7 +67,7 @@ namespace Sharp.UI.Example
         }
         
         public static T Author<T>(this T obj,
-            Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.Example.SecondPageViewModel
         {
             var mauiObject = MauiWrapper.GetObject<Sharp.UI.Example.SecondPageViewModel>(obj);

@@ -18,12 +18,12 @@ namespace Sharp.UI
             picker = this;
         }
 
-        public Picker(Action<Picker> configure) 
+        public Picker(System.Action<Picker> configure) 
         {
             configure(this);
         }
 
-        public Picker(out Picker picker, Action<Picker> configure) 
+        public Picker(out Picker picker, System.Action<Picker> configure) 
         {
             picker = this;
             configure(this);
@@ -40,13 +40,13 @@ namespace Sharp.UI
             picker = this;
         }
 
-        public Picker(string title, Action<Picker> configure) 
+        public Picker(string title, System.Action<Picker> configure) 
         {  
             this.Title = title;
             configure(this);
         }
 
-        public Picker(string title, out Picker picker, Action<Picker> configure) 
+        public Picker(string title, out Picker picker, System.Action<Picker> configure) 
         {  
             this.Title = title;
             picker = this;

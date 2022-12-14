@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T Name<T>(this T obj,
             string? name,
-            Func<ValueDef<string>, ValueDef<string>> definition)
+            System.Func<ValueDef<string>, ValueDef<string>> definition)
             where T : Sharp.UI.IVisualState
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualState>(obj);
@@ -31,7 +31,7 @@ namespace Sharp.UI
         }
         
         public static T Name<T>(this T obj,
-            Func<ValueDef<string>, ValueDef<string>> definition)
+            System.Func<ValueDef<string>, ValueDef<string>> definition)
             where T : Sharp.UI.IVisualState
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualState>(obj);
@@ -59,7 +59,7 @@ namespace Sharp.UI
         }
 
         public static T Setters<T>(this T obj,
-            Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Setter>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Setter>>> definition)
+            System.Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Setter>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Setter>>> definition)
             where T : Sharp.UI.IVisualState
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualState>(obj);
@@ -91,7 +91,7 @@ namespace Sharp.UI
         }
 
         public static T StateTriggers<T>(this T obj,
-            Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.StateTriggerBase>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.StateTriggerBase>>> definition)
+            System.Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.StateTriggerBase>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.StateTriggerBase>>> definition)
             where T : Sharp.UI.IVisualState
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualState>(obj);
@@ -115,7 +115,7 @@ namespace Sharp.UI
         
         public static T TargetType<T>(this T obj,
             System.Type? targetType,
-            Func<ValueDef<System.Type>, ValueDef<System.Type>> definition)
+            System.Func<ValueDef<System.Type>, ValueDef<System.Type>> definition)
             where T : Sharp.UI.IVisualState
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualState>(obj);
@@ -126,7 +126,7 @@ namespace Sharp.UI
         }
         
         public static T TargetType<T>(this T obj,
-            Func<ValueDef<System.Type>, ValueDef<System.Type>> definition)
+            System.Func<ValueDef<System.Type>, ValueDef<System.Type>> definition)
             where T : Sharp.UI.IVisualState
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.VisualState>(obj);

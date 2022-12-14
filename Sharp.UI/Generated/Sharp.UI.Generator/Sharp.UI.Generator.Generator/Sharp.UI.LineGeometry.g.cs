@@ -18,12 +18,12 @@ namespace Sharp.UI
             lineGeometry = this;
         }
 
-        public LineGeometry(Action<LineGeometry> configure) 
+        public LineGeometry(System.Action<LineGeometry> configure) 
         {
             configure(this);
         }
 
-        public LineGeometry(out LineGeometry lineGeometry, Action<LineGeometry> configure) 
+        public LineGeometry(out LineGeometry lineGeometry, System.Action<LineGeometry> configure) 
         {
             lineGeometry = this;
             configure(this);

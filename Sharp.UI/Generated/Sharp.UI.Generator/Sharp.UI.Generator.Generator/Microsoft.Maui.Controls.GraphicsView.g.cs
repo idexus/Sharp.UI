@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T Drawable<T>(this T obj,
             Microsoft.Maui.Graphics.IDrawable? drawable,
-            Func<BindableDef<Microsoft.Maui.Graphics.IDrawable>, BindableDef<Microsoft.Maui.Graphics.IDrawable>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.IDrawable>, BindableDef<Microsoft.Maui.Graphics.IDrawable>> definition)
             where T : Sharp.UI.IGraphicsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.GraphicsView>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T Drawable<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Graphics.IDrawable>, BindableDef<Microsoft.Maui.Graphics.IDrawable>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.IDrawable>, BindableDef<Microsoft.Maui.Graphics.IDrawable>> definition)
             where T : Sharp.UI.IGraphicsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.GraphicsView>(obj);

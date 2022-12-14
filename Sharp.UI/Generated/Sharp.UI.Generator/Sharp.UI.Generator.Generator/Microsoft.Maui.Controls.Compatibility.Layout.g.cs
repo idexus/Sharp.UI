@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T IsClippedToBounds<T>(this T obj,
             bool? isClippedToBounds,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.ICompatibilityLayout
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Compatibility.Layout>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T IsClippedToBounds<T>(this T obj,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.ICompatibilityLayout
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Compatibility.Layout>(obj);
@@ -53,7 +53,7 @@ namespace Sharp.UI
         
         public static T Padding<T>(this T obj,
             Microsoft.Maui.Thickness? padding,
-            Func<BindableDef<Microsoft.Maui.Thickness>, BindableDef<Microsoft.Maui.Thickness>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Thickness>, BindableDef<Microsoft.Maui.Thickness>> definition)
             where T : Sharp.UI.ICompatibilityLayout
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Compatibility.Layout>(obj);
@@ -65,7 +65,7 @@ namespace Sharp.UI
         }
         
         public static T Padding<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Thickness>, BindableDef<Microsoft.Maui.Thickness>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Thickness>, BindableDef<Microsoft.Maui.Thickness>> definition)
             where T : Sharp.UI.ICompatibilityLayout
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Compatibility.Layout>(obj);
@@ -86,7 +86,7 @@ namespace Sharp.UI
         
         public static T CascadeInputTransparent<T>(this T obj,
             bool? cascadeInputTransparent,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.ICompatibilityLayout
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Compatibility.Layout>(obj);
@@ -98,7 +98,7 @@ namespace Sharp.UI
         }
         
         public static T CascadeInputTransparent<T>(this T obj,
-            Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.ICompatibilityLayout
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Compatibility.Layout>(obj);

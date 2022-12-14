@@ -31,12 +31,12 @@ namespace Sharp.UI
             visualState = this;
         }
 
-        public VisualState(Action<VisualState> configure) : this()
+        public VisualState(System.Action<VisualState> configure) : this()
         {
             configure(this);
         }
 
-        public VisualState(out VisualState visualState, Action<VisualState> configure) : this()
+        public VisualState(out VisualState visualState, System.Action<VisualState> configure) : this()
         {
             visualState = this;
             configure(this);

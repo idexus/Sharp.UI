@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T SelectedItem<T>(this T obj,
             object? selectedItem,
-            Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.ISelectableItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SelectableItemsView>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T SelectedItem<T>(this T obj,
-            Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.ISelectableItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SelectableItemsView>(obj);
@@ -53,7 +53,7 @@ namespace Sharp.UI
         
         public static T SelectedItems<T>(this T obj,
             System.Collections.Generic.IList<object>? selectedItems,
-            Func<BindableDef<System.Collections.Generic.IList<object>>, BindableDef<System.Collections.Generic.IList<object>>> definition)
+            System.Func<BindableDef<System.Collections.Generic.IList<object>>, BindableDef<System.Collections.Generic.IList<object>>> definition)
             where T : Sharp.UI.ISelectableItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SelectableItemsView>(obj);
@@ -65,7 +65,7 @@ namespace Sharp.UI
         }
         
         public static T SelectedItems<T>(this T obj,
-            Func<BindableDef<System.Collections.Generic.IList<object>>, BindableDef<System.Collections.Generic.IList<object>>> definition)
+            System.Func<BindableDef<System.Collections.Generic.IList<object>>, BindableDef<System.Collections.Generic.IList<object>>> definition)
             where T : Sharp.UI.ISelectableItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SelectableItemsView>(obj);
@@ -86,7 +86,7 @@ namespace Sharp.UI
         
         public static T SelectionChangedCommand<T>(this T obj,
             System.Windows.Input.ICommand? selectionChangedCommand,
-            Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.ISelectableItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SelectableItemsView>(obj);
@@ -98,7 +98,7 @@ namespace Sharp.UI
         }
         
         public static T SelectionChangedCommand<T>(this T obj,
-            Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.ISelectableItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SelectableItemsView>(obj);
@@ -119,7 +119,7 @@ namespace Sharp.UI
         
         public static T SelectionChangedCommandParameter<T>(this T obj,
             object? selectionChangedCommandParameter,
-            Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.ISelectableItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SelectableItemsView>(obj);
@@ -131,7 +131,7 @@ namespace Sharp.UI
         }
         
         public static T SelectionChangedCommandParameter<T>(this T obj,
-            Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.ISelectableItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SelectableItemsView>(obj);
@@ -152,7 +152,7 @@ namespace Sharp.UI
         
         public static T SelectionMode<T>(this T obj,
             Microsoft.Maui.Controls.SelectionMode? selectionMode,
-            Func<BindableDef<Microsoft.Maui.Controls.SelectionMode>, BindableDef<Microsoft.Maui.Controls.SelectionMode>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.SelectionMode>, BindableDef<Microsoft.Maui.Controls.SelectionMode>> definition)
             where T : Sharp.UI.ISelectableItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SelectableItemsView>(obj);
@@ -164,7 +164,7 @@ namespace Sharp.UI
         }
         
         public static T SelectionMode<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.SelectionMode>, BindableDef<Microsoft.Maui.Controls.SelectionMode>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.SelectionMode>, BindableDef<Microsoft.Maui.Controls.SelectionMode>> definition)
             where T : Sharp.UI.ISelectableItemsView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SelectableItemsView>(obj);

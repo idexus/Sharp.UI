@@ -22,7 +22,7 @@ namespace Sharp.UI.Example
         
         public static T CardTitle<T>(this T obj,
             string? cardTitle,
-            Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.Example.CardView
         {
             var mauiObject = MauiWrapper.GetObject<Sharp.UI.Example.CardView>(obj);
@@ -34,7 +34,7 @@ namespace Sharp.UI.Example
         }
         
         public static T CardTitle<T>(this T obj,
-            Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.Example.CardView
         {
             var mauiObject = MauiWrapper.GetObject<Sharp.UI.Example.CardView>(obj);
@@ -55,7 +55,7 @@ namespace Sharp.UI.Example
         
         public static T CardDescription<T>(this T obj,
             string? cardDescription,
-            Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.Example.CardView
         {
             var mauiObject = MauiWrapper.GetObject<Sharp.UI.Example.CardView>(obj);
@@ -67,7 +67,7 @@ namespace Sharp.UI.Example
         }
         
         public static T CardDescription<T>(this T obj,
-            Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.Example.CardView
         {
             var mauiObject = MauiWrapper.GetObject<Sharp.UI.Example.CardView>(obj);
@@ -88,7 +88,7 @@ namespace Sharp.UI.Example
         
         public static T CardColor<T>(this T obj,
             Microsoft.Maui.Graphics.Color? cardColor,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.Example.CardView
         {
             var mauiObject = MauiWrapper.GetObject<Sharp.UI.Example.CardView>(obj);
@@ -100,7 +100,7 @@ namespace Sharp.UI.Example
         }
         
         public static T CardColor<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.Example.CardView
         {
             var mauiObject = MauiWrapper.GetObject<Sharp.UI.Example.CardView>(obj);
@@ -121,7 +121,7 @@ namespace Sharp.UI.Example
         
         public static T BorderColor<T>(this T obj,
             Microsoft.Maui.Graphics.Color? borderColor,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.Example.CardView
         {
             var mauiObject = MauiWrapper.GetObject<Sharp.UI.Example.CardView>(obj);
@@ -133,7 +133,7 @@ namespace Sharp.UI.Example
         }
         
         public static T BorderColor<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.Example.CardView
         {
             var mauiObject = MauiWrapper.GetObject<Sharp.UI.Example.CardView>(obj);

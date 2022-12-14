@@ -316,7 +316,7 @@ namespace {mainSymbol.ContainingNamespace}
         }}
 
         public static T {info.propertyName}<T>(this T obj,
-            Func<Def<{info.propertyTypeName}>, Def<{info.propertyTypeName}>> definition)
+            System.Func<Def<{info.propertyTypeName}>, Def<{info.propertyTypeName}>> definition)
             where T : {typeConformanceName}
         {{
             var mauiObject = MauiWrapper.GetObject<{extensionType.ToDisplayString()}>(obj);
@@ -352,7 +352,7 @@ namespace {mainSymbol.ContainingNamespace}
             builder.Append($@"
         public static T {info.propertyName}<T>(this T obj,
             {info.propertyTypeName}{info.typeTail} {info.camelCaseName},
-            Func<BindableDef<{info.propertyTypeName}>, BindableDef<{info.propertyTypeName}>> definition)
+            System.Func<BindableDef<{info.propertyTypeName}>, BindableDef<{info.propertyTypeName}>> definition)
             where T : {typeConformanceName}
         {{
             var mauiObject = MauiWrapper.GetObject<{extensionType.ToDisplayString()}>(obj);
@@ -370,7 +370,7 @@ namespace {mainSymbol.ContainingNamespace}
             IsExtensionMethodsGenerated = true;
             builder.Append($@"
         public static T {info.propertyName}<T>(this T obj,
-            Func<BindableDef<{info.propertyTypeName}>, BindableDef<{info.propertyTypeName}>> definition)
+            System.Func<BindableDef<{info.propertyTypeName}>, BindableDef<{info.propertyTypeName}>> definition)
             where T : {typeConformanceName}
         {{
             var mauiObject = MauiWrapper.GetObject<{extensionType.ToDisplayString()}>(obj);
@@ -388,7 +388,7 @@ namespace {mainSymbol.ContainingNamespace}
             builder.Append($@"
         public static T {info.propertyName}<T>(this T obj,
             {info.propertyTypeName}{info.typeTail} {info.camelCaseName},
-            Func<ValueDef<{info.propertyTypeName}>, ValueDef<{info.propertyTypeName}>> definition)
+            System.Func<ValueDef<{info.propertyTypeName}>, ValueDef<{info.propertyTypeName}>> definition)
             where T : {typeConformanceName}
         {{
             var mauiObject = MauiWrapper.GetObject<{extensionType.ToDisplayString()}>(obj);
@@ -405,7 +405,7 @@ namespace {mainSymbol.ContainingNamespace}
             IsExtensionMethodsGenerated = true;
             builder.Append($@"
         public static T {info.propertyName}<T>(this T obj,
-            Func<ValueDef<{info.propertyTypeName}>, ValueDef<{info.propertyTypeName}>> definition)
+            System.Func<ValueDef<{info.propertyTypeName}>, ValueDef<{info.propertyTypeName}>> definition)
             where T : {typeConformanceName}
         {{
             var mauiObject = MauiWrapper.GetObject<{extensionType.ToDisplayString()}>(obj);
@@ -420,7 +420,7 @@ namespace {mainSymbol.ContainingNamespace}
         {
             IsExtensionMethodsGenerated = true;
             builder.Append($@"
-        public static T {info.propertyName}<T>(this T obj, Func<object> loadTemplate) where T : {typeConformanceName}
+        public static T {info.propertyName}<T>(this T obj, System.Func<object> loadTemplate) where T : {typeConformanceName}
         {{
             var mauiObject = MauiWrapper.GetObject<{extensionType.ToDisplayString()}>(obj);
             {info.assignmentDataTemplateString};

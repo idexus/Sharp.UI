@@ -18,12 +18,12 @@ namespace Sharp.UI
             absoluteLayout = this;
         }
 
-        public AbsoluteLayout(Action<AbsoluteLayout> configure) 
+        public AbsoluteLayout(System.Action<AbsoluteLayout> configure) 
         {
             configure(this);
         }
 
-        public AbsoluteLayout(out AbsoluteLayout absoluteLayout, Action<AbsoluteLayout> configure) 
+        public AbsoluteLayout(out AbsoluteLayout absoluteLayout, System.Action<AbsoluteLayout> configure) 
         {
             absoluteLayout = this;
             configure(this);

@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T Cookies<T>(this T obj,
             System.Net.CookieContainer? cookies,
-            Func<BindableDef<System.Net.CookieContainer>, BindableDef<System.Net.CookieContainer>> definition)
+            System.Func<BindableDef<System.Net.CookieContainer>, BindableDef<System.Net.CookieContainer>> definition)
             where T : Sharp.UI.IWebView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.WebView>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T Cookies<T>(this T obj,
-            Func<BindableDef<System.Net.CookieContainer>, BindableDef<System.Net.CookieContainer>> definition)
+            System.Func<BindableDef<System.Net.CookieContainer>, BindableDef<System.Net.CookieContainer>> definition)
             where T : Sharp.UI.IWebView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.WebView>(obj);
@@ -53,7 +53,7 @@ namespace Sharp.UI
         
         public static T Source<T>(this T obj,
             Microsoft.Maui.Controls.WebViewSource? source,
-            Func<BindableDef<Microsoft.Maui.Controls.WebViewSource>, BindableDef<Microsoft.Maui.Controls.WebViewSource>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.WebViewSource>, BindableDef<Microsoft.Maui.Controls.WebViewSource>> definition)
             where T : Sharp.UI.IWebView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.WebView>(obj);
@@ -65,7 +65,7 @@ namespace Sharp.UI
         }
         
         public static T Source<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.WebViewSource>, BindableDef<Microsoft.Maui.Controls.WebViewSource>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.WebViewSource>, BindableDef<Microsoft.Maui.Controls.WebViewSource>> definition)
             where T : Sharp.UI.IWebView
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.WebView>(obj);

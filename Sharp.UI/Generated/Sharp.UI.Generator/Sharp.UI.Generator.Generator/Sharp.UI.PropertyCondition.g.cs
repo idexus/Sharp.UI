@@ -32,12 +32,12 @@ namespace Sharp.UI
             propertyCondition = this;
         }
 
-        public PropertyCondition(Action<PropertyCondition> configure) : this()
+        public PropertyCondition(System.Action<PropertyCondition> configure) : this()
         {
             configure(this);
         }
 
-        public PropertyCondition(out PropertyCondition propertyCondition, Action<PropertyCondition> configure) : this()
+        public PropertyCondition(out PropertyCondition propertyCondition, System.Action<PropertyCondition> configure) : this()
         {
             propertyCondition = this;
             configure(this);

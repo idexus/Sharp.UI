@@ -20,7 +20,7 @@ namespace Sharp.UI
         
         public static T Style<T>(this T obj,
             Microsoft.Maui.Controls.Style? style,
-            Func<BindableDef<Microsoft.Maui.Controls.Style>, BindableDef<Microsoft.Maui.Controls.Style>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.Style>, BindableDef<Microsoft.Maui.Controls.Style>> definition)
             where T : Sharp.UI.INavigableElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.NavigableElement>(obj);
@@ -32,7 +32,7 @@ namespace Sharp.UI
         }
         
         public static T Style<T>(this T obj,
-            Func<BindableDef<Microsoft.Maui.Controls.Style>, BindableDef<Microsoft.Maui.Controls.Style>> definition)
+            System.Func<BindableDef<Microsoft.Maui.Controls.Style>, BindableDef<Microsoft.Maui.Controls.Style>> definition)
             where T : Sharp.UI.INavigableElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.NavigableElement>(obj);
@@ -53,7 +53,7 @@ namespace Sharp.UI
         
         public static T StyleClass<T>(this T obj,
             System.Collections.Generic.IList<string>? styleClass,
-            Func<ValueDef<System.Collections.Generic.IList<string>>, ValueDef<System.Collections.Generic.IList<string>>> definition)
+            System.Func<ValueDef<System.Collections.Generic.IList<string>>, ValueDef<System.Collections.Generic.IList<string>>> definition)
             where T : Sharp.UI.INavigableElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.NavigableElement>(obj);
@@ -64,7 +64,7 @@ namespace Sharp.UI
         }
         
         public static T StyleClass<T>(this T obj,
-            Func<ValueDef<System.Collections.Generic.IList<string>>, ValueDef<System.Collections.Generic.IList<string>>> definition)
+            System.Func<ValueDef<System.Collections.Generic.IList<string>>, ValueDef<System.Collections.Generic.IList<string>>> definition)
             where T : Sharp.UI.INavigableElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.NavigableElement>(obj);
@@ -84,7 +84,7 @@ namespace Sharp.UI
         
         public static T @class<T>(this T obj,
             System.Collections.Generic.IList<string>? @class,
-            Func<ValueDef<System.Collections.Generic.IList<string>>, ValueDef<System.Collections.Generic.IList<string>>> definition)
+            System.Func<ValueDef<System.Collections.Generic.IList<string>>, ValueDef<System.Collections.Generic.IList<string>>> definition)
             where T : Sharp.UI.INavigableElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.NavigableElement>(obj);
@@ -95,7 +95,7 @@ namespace Sharp.UI
         }
         
         public static T @class<T>(this T obj,
-            Func<ValueDef<System.Collections.Generic.IList<string>>, ValueDef<System.Collections.Generic.IList<string>>> definition)
+            System.Func<ValueDef<System.Collections.Generic.IList<string>>, ValueDef<System.Collections.Generic.IList<string>>> definition)
             where T : Sharp.UI.INavigableElement
         {
             var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.NavigableElement>(obj);

@@ -18,12 +18,12 @@ namespace Sharp.UI
             entry = this;
         }
 
-        public Entry(Action<Entry> configure) 
+        public Entry(System.Action<Entry> configure) 
         {
             configure(this);
         }
 
-        public Entry(out Entry entry, Action<Entry> configure) 
+        public Entry(out Entry entry, System.Action<Entry> configure) 
         {
             entry = this;
             configure(this);
@@ -40,13 +40,13 @@ namespace Sharp.UI
             entry = this;
         }
 
-        public Entry(string placeholder, Action<Entry> configure) 
+        public Entry(string placeholder, System.Action<Entry> configure) 
         {  
             this.Placeholder = placeholder;
             configure(this);
         }
 
-        public Entry(string placeholder, out Entry entry, Action<Entry> configure) 
+        public Entry(string placeholder, out Entry entry, System.Action<Entry> configure) 
         {  
             this.Placeholder = placeholder;
             entry = this;

@@ -18,12 +18,12 @@ namespace Sharp.UI
             lineSegment = this;
         }
 
-        public LineSegment(Action<LineSegment> configure) 
+        public LineSegment(System.Action<LineSegment> configure) 
         {
             configure(this);
         }
 
-        public LineSegment(out LineSegment lineSegment, Action<LineSegment> configure) 
+        public LineSegment(out LineSegment lineSegment, System.Action<LineSegment> configure) 
         {
             lineSegment = this;
             configure(this);
