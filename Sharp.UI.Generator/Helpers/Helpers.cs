@@ -45,6 +45,7 @@ namespace Sharp.UI.Generator
                 foreach (var inter in type.Interfaces)
                     if (inter.Name.Equals("IList") && inter.IsGenericType)
                     {
+
                         typeName = inter.TypeArguments.First().ToDisplayString();
                         return true;
                     }

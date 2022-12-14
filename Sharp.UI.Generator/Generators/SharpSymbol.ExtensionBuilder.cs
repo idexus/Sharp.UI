@@ -287,6 +287,10 @@ namespace {mainSymbol.ContainingNamespace}
                             !ExistInBaseClasses(info.propertyName, getterAndSetter: false))
                         {
                             GenerateExtensionMethod_List(info, typeName);
+
+                            var shortTypeName = typeName.Split('.').Last();
+                            if (SharpBuilder.InterfaceNameList.Contains(shortTypeName))
+                                GenerateExtensionMethod_ListOfSharpInterfaces(info, typeName, $"Sharp.UI.{shortTypeName}");
                         }
                     }
                 }
@@ -325,6 +329,40 @@ namespace {mainSymbol.ContainingNamespace}
             {{
                 var items = def.GetValue();
                 foreach (var item in items) {info.accessedWith}.{info.propertyName}.Add(item);
+            }}
+            return obj;
+        }}
+        ");
+        }
+
+        void GenerateExtensionMethod_ListOfSharpInterfaces(PropertyInfo info, string typeName, string typeOfSharpInterfaceName)
+        {
+            IsExtensionMethodsGenerated = true;
+            builder.Append($@"
+        public static T {info.propertyName}<T, TItem>(this T obj,
+            System.Collections.Generic.IList<TItem> {info.camelCaseName})
+            where T : {typeConformanceName}
+            where TItem : {typeOfSharpInterfaceName}
+        {{
+            var mauiObject = MauiWrapper.GetObject<{extensionType.ToDisplayString()}>(obj);
+            foreach (var item in {info.camelCaseName})
+            {{
+                var mauiItem = MauiWrapper.GetObject<{typeName}>(item);
+                {info.accessedWith}.{info.propertyName}.Add(mauiItem);
+            }}
+            return obj;
+        }}
+
+        public static T {info.propertyName}<T, TItem>(this T obj,
+            params TItem[] {info.camelCaseName})
+            where T : {typeConformanceName}
+            where TItem : {typeOfSharpInterfaceName}
+        {{
+            var mauiObject = MauiWrapper.GetObject<{extensionType.ToDisplayString()}>(obj);
+            foreach (var item in {info.camelCaseName})
+            {{
+                var mauiItem = MauiWrapper.GetObject<{typeName}>(item);
+                {info.accessedWith}.{info.propertyName}.Add(mauiItem);
             }}
             return obj;
         }}

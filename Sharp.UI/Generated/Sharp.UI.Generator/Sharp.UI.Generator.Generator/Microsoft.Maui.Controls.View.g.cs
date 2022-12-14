@@ -41,6 +41,34 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T GestureRecognizers<T, TItem>(this T obj,
+            System.Collections.Generic.IList<TItem> gestureRecognizers)
+            where T : Sharp.UI.IView
+            where TItem : Sharp.UI.IGestureRecognizer
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.View>(obj);
+            foreach (var item in gestureRecognizers)
+            {
+                var mauiItem = MauiWrapper.GetObject<Microsoft.Maui.Controls.IGestureRecognizer>(item);
+                mauiObject.GestureRecognizers.Add(mauiItem);
+            }
+            return obj;
+        }
+
+        public static T GestureRecognizers<T, TItem>(this T obj,
+            params TItem[] gestureRecognizers)
+            where T : Sharp.UI.IView
+            where TItem : Sharp.UI.IGestureRecognizer
+        {
+            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.View>(obj);
+            foreach (var item in gestureRecognizers)
+            {
+                var mauiItem = MauiWrapper.GetObject<Microsoft.Maui.Controls.IGestureRecognizer>(item);
+                mauiObject.GestureRecognizers.Add(mauiItem);
+            }
+            return obj;
+        }
+        
         public static T HorizontalOptions<T>(this T obj,
             Microsoft.Maui.Controls.LayoutOptions? horizontalOptions)
             where T : Sharp.UI.IView

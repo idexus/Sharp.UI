@@ -20,49 +20,5 @@
             mauiObject.SetValue(Grid.RowSpanProperty, row);
             return obj;
         }
-
-        public static T GestureRecognizers<T>(this T obj,
-                    System.Collections.Generic.IList<Sharp.UI.IGestureRecognizer> gestureRecognizers)
-                    where T : Sharp.UI.IView
-        {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.View>(obj);
-            foreach (var item in gestureRecognizers)
-            {
-                var mauiItem = MauiWrapper.GetObject<Microsoft.Maui.Controls.IGestureRecognizer>(item);
-                mauiObject.GestureRecognizers.Add(mauiItem);
-            }
-            return obj;
-        }
-
-        public static T GestureRecognizers<T>(this T obj,
-            params Sharp.UI.IGestureRecognizer[] gestureRecognizers)
-            where T : Sharp.UI.IView
-        {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.View>(obj);
-            foreach (var item in gestureRecognizers)
-            {
-                var mauiItem = MauiWrapper.GetObject<Microsoft.Maui.Controls.IGestureRecognizer>(item);
-                mauiObject.GestureRecognizers.Add(mauiItem);
-            }
-            return obj;
-        }
-
-        public static T GestureRecognizers<T>(this T obj,
-            System.Func<Def<System.Collections.Generic.IList<Sharp.UI.IGestureRecognizer>>, Def<System.Collections.Generic.IList<Sharp.UI.IGestureRecognizer>>> definition)
-            where T : Sharp.UI.IView
-        {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.View>(obj);
-            var def = definition(new Def<System.Collections.Generic.IList<Sharp.UI.IGestureRecognizer>>());
-            if (def.ValueIsSet())
-            {
-                var items = def.GetValue();
-                foreach (var item in items)
-                {
-                    var mauiItem = MauiWrapper.GetObject<Microsoft.Maui.Controls.IGestureRecognizer>(item);
-                    mauiObject.GestureRecognizers.Add(mauiItem);
-                }
-            }
-            return obj;
-        }
     }
 }

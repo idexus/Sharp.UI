@@ -12,24 +12,23 @@ public class PanGesturePage : ContentPage
 		{
 			new Image("dotnet_bot.png", out var image)
 				.SizeRequest(100,100)
-				.GestureRecognizers(new GestureRecognizer[]
-				{
-					new PanGestureRecognizer().OnPanUpdated((e, args) =>
-                    {
-                        switch (args.StatusType)
+				.GestureRecognizers(
+                    new PanGestureRecognizer()
+                        .OnPanUpdated((e, args) =>
                         {
-                            case GestureStatus.Running:
-                                image.TranslationX = x + args.TotalX;
-                                image.TranslationY = y + args.TotalY;
-                                break;
+                            switch (args.StatusType)
+                            {
+                                case GestureStatus.Running:
+                                    image.TranslationX = x + args.TotalX;
+                                    image.TranslationY = y + args.TotalY;
+                                    break;
 
-                            case GestureStatus.Completed:
-                                x = image.TranslationX;
-                                y = image.TranslationY;
-                                break;
-                        }
-                    }),
-				})
+                                case GestureStatus.Completed:
+                                    x = image.TranslationX;
+                                    y = image.TranslationY;
+                                    break;
+                            }
+                        }))
 		};
 	}
 }
