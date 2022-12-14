@@ -11,7 +11,7 @@ public class TapGesturePage : ContentPage
             new Label("Tap 2 times on the image", out var label).FontSize(20),
             new Image("dotnet_bot.png", out var image)
                 .SizeRequest(100,100)
-                .GestureRecognizers(new IGestureRecognizer[]
+                .GestureRecognizers(new GestureRecognizer[]
                 {
                     new TapGestureRecognizer().NumberOfTapsRequired(2).OnTapped((e, args) =>
                     {
