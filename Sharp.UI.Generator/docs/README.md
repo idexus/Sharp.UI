@@ -1,6 +1,6 @@
 # Sharp.UI.Generator
 
-# License
+# License 
 
-MIT License, Copyright Pawel Krzywdzinski
+[MIT License](../../License.txt), Copyright 2022 Pawel Krzywdzinski
 
