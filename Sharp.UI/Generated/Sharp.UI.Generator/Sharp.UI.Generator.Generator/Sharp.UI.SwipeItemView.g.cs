@@ -13,6 +13,10 @@ namespace Sharp.UI
 {
     public partial class SwipeItemView : Microsoft.Maui.Controls.SwipeItemView, Sharp.UI.ISwipeItemView, IEnumerable, IWrappedBindableObject
     {
+        // ----- maui object -----
+
+        public Sharp.UI.SwipeItemView MauiObject { get => this; }
+
         // ----- constructors -----
 
         public SwipeItemView() { }
@@ -37,18 +41,14 @@ namespace Sharp.UI
 
         public IEnumerator GetEnumerator() { yield return this.Content; }
 
-        public void Add(Microsoft.Maui.Controls.View content) => this.Content = content;
+        public void Add(Microsoft.Maui.Controls.View content) => this.Content = MauiWrapper.Value<Microsoft.Maui.Controls.View>(content);
 
         // ----- binding context -----
 
         public new object BindingContext
         {
             get => base.BindingContext;
-            set
-            {
-                var mauiObject = MauiWrapper.Value<object>(value);
-                base.BindingContext = mauiObject;
-            }
+            set => base.BindingContext = MauiWrapper.Value<object>(value);           
         }
         
 

@@ -11,6 +11,7 @@ namespace Sharp.UI
     {
         public static T Value<T>(object obj)
         {
+            if (typeof(T) is ISealedMauiWrapper) return (T)obj;
             if (obj is ISealedMauiWrapper)
                 return (T)((obj as ISealedMauiWrapper)._maui_RawObject);
             else

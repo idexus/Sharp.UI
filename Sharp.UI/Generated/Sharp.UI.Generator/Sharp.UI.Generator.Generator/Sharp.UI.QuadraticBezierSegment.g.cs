@@ -9,6 +9,10 @@ namespace Sharp.UI
 {
     public partial class QuadraticBezierSegment : Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment, Sharp.UI.IQuadraticBezierSegment, IWrappedBindableObject
     {
+        // ----- maui object -----
+
+        public Sharp.UI.QuadraticBezierSegment MauiObject { get => this; }
+
         // ----- constructors -----
 
         public QuadraticBezierSegment() { }
@@ -34,11 +38,7 @@ namespace Sharp.UI
         public new object BindingContext
         {
             get => base.BindingContext;
-            set
-            {
-                var mauiObject = MauiWrapper.Value<object>(value);
-                base.BindingContext = mauiObject;
-            }
+            set => base.BindingContext = MauiWrapper.Value<object>(value);           
         }
         
 

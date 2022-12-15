@@ -9,6 +9,10 @@ namespace Sharp.UI
 {
     public partial class VisualStateGroupList : Microsoft.Maui.Controls.VisualStateGroupList, Sharp.UI.IVisualStateGroupList
     {
+        // ----- maui object -----
+
+        public Sharp.UI.VisualStateGroupList MauiObject { get => this; }
+
         // ----- constructors -----
 
         public VisualStateGroupList() { }

@@ -13,6 +13,10 @@ namespace Sharp.UI
 {
     public partial class ShellContent : Microsoft.Maui.Controls.ShellContent, Sharp.UI.IShellContent, IEnumerable, IWrappedBindableObject
     {
+        // ----- maui object -----
+
+        public Sharp.UI.ShellContent MauiObject { get => this; }
+
         // ----- constructors -----
 
         public ShellContent() { }
@@ -65,18 +69,14 @@ namespace Sharp.UI
 
         public IEnumerator GetEnumerator() { yield return this.Content; }
 
-        public void Add(object content) => this.Content = content;
+        public void Add(object content) => this.Content = MauiWrapper.Value<object>(content);
 
         // ----- binding context -----
 
         public new object BindingContext
         {
             get => base.BindingContext;
-            set
-            {
-                var mauiObject = MauiWrapper.Value<object>(value);
-                base.BindingContext = mauiObject;
-            }
+            set => base.BindingContext = MauiWrapper.Value<object>(value);           
         }
         
 

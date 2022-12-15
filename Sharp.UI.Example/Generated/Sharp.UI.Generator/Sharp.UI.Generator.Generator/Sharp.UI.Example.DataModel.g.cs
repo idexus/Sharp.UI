@@ -43,7 +43,11 @@ namespace Sharp.UI.Example
         public int Id
         {
             get => (int)GetValue(IdProperty);
-            set => SetValue(IdProperty, value);
+            set
+            {
+                var mauiValue = MauiWrapper.Value<int>(value);
+                SetValue(IdProperty, mauiValue);
+            }
         }
         
         public static readonly Microsoft.Maui.Controls.BindableProperty NameProperty =
@@ -56,7 +60,11 @@ namespace Sharp.UI.Example
         public string Name
         {
             get => (string)GetValue(NameProperty);
-            set => SetValue(NameProperty, value);
+            set
+            {
+                var mauiValue = MauiWrapper.Value<string>(value);
+                SetValue(NameProperty, mauiValue);
+            }
         }
         
         public static readonly Microsoft.Maui.Controls.BindableProperty AdminProperty =
@@ -69,7 +77,11 @@ namespace Sharp.UI.Example
         public bool Admin
         {
             get => (bool)GetValue(AdminProperty);
-            set => SetValue(AdminProperty, value);
+            set
+            {
+                var mauiValue = MauiWrapper.Value<bool>(value);
+                SetValue(AdminProperty, mauiValue);
+            }
         }
         
         // ----- binding context -----
@@ -77,11 +89,7 @@ namespace Sharp.UI.Example
         public new object BindingContext
         {
             get => base.BindingContext;
-            set
-            {
-                var mauiObject = MauiWrapper.Value<object>(value);
-                base.BindingContext = mauiObject;
-            }
+            set => base.BindingContext = MauiWrapper.Value<object>(value);           
         }
         
 

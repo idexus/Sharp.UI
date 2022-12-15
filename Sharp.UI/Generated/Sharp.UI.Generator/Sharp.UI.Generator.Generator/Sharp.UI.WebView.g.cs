@@ -9,6 +9,10 @@ namespace Sharp.UI
 {
     public partial class WebView : Microsoft.Maui.Controls.WebView, Sharp.UI.IWebView, IWrappedBindableObject
     {
+        // ----- maui object -----
+
+        public Sharp.UI.WebView MauiObject { get => this; }
+
         // ----- constructors -----
 
         public WebView() { }
@@ -58,11 +62,7 @@ namespace Sharp.UI
         public new object BindingContext
         {
             get => base.BindingContext;
-            set
-            {
-                var mauiObject = MauiWrapper.Value<object>(value);
-                base.BindingContext = mauiObject;
-            }
+            set => base.BindingContext = MauiWrapper.Value<object>(value);           
         }
         
 

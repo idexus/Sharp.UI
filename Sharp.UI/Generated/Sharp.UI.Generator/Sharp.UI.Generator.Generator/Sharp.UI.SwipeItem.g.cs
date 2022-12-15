@@ -9,6 +9,10 @@ namespace Sharp.UI
 {
     public partial class SwipeItem : Microsoft.Maui.Controls.SwipeItem, Sharp.UI.ISwipeItem, IWrappedBindableObject
     {
+        // ----- maui object -----
+
+        public Sharp.UI.SwipeItem MauiObject { get => this; }
+
         // ----- constructors -----
 
         public SwipeItem() { }
@@ -58,11 +62,7 @@ namespace Sharp.UI
         public new object BindingContext
         {
             get => base.BindingContext;
-            set
-            {
-                var mauiObject = MauiWrapper.Value<object>(value);
-                base.BindingContext = mauiObject;
-            }
+            set => base.BindingContext = MauiWrapper.Value<object>(value);           
         }
         
 

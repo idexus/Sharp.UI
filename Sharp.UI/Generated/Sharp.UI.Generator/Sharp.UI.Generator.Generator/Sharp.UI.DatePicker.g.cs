@@ -9,6 +9,10 @@ namespace Sharp.UI
 {
     public partial class DatePicker : Microsoft.Maui.Controls.DatePicker, Sharp.UI.IDatePicker, IWrappedBindableObject
     {
+        // ----- maui object -----
+
+        public Sharp.UI.DatePicker MauiObject { get => this; }
+
         // ----- constructors -----
 
         public DatePicker() { }
@@ -34,11 +38,7 @@ namespace Sharp.UI
         public new object BindingContext
         {
             get => base.BindingContext;
-            set
-            {
-                var mauiObject = MauiWrapper.Value<object>(value);
-                base.BindingContext = mauiObject;
-            }
+            set => base.BindingContext = MauiWrapper.Value<object>(value);           
         }
         
 

@@ -13,6 +13,10 @@ namespace Sharp.UI
 {
     public partial class IndicatorView : Microsoft.Maui.Controls.IndicatorView, Sharp.UI.IIndicatorView, IEnumerable, IWrappedBindableObject
     {
+        // ----- maui object -----
+
+        public Sharp.UI.IndicatorView MauiObject { get => this; }
+
         // ----- constructors -----
 
         public IndicatorView() { }
@@ -37,18 +41,14 @@ namespace Sharp.UI
 
         public IEnumerator GetEnumerator() { yield return this.IndicatorLayout; }
 
-        public void Add(Microsoft.Maui.Controls.IBindableLayout indicatorlayout) => this.IndicatorLayout = indicatorlayout;
+        public void Add(Microsoft.Maui.Controls.IBindableLayout indicatorlayout) => this.IndicatorLayout = MauiWrapper.Value<Microsoft.Maui.Controls.IBindableLayout>(indicatorlayout);
 
         // ----- binding context -----
 
         public new object BindingContext
         {
             get => base.BindingContext;
-            set
-            {
-                var mauiObject = MauiWrapper.Value<object>(value);
-                base.BindingContext = mauiObject;
-            }
+            set => base.BindingContext = MauiWrapper.Value<object>(value);           
         }
         
 

@@ -13,6 +13,10 @@ namespace Sharp.UI
 {
     public partial class GeometryGroup : Microsoft.Maui.Controls.Shapes.GeometryGroup, Sharp.UI.IGeometryGroup, IList<Microsoft.Maui.Controls.Shapes.Geometry>, IWrappedBindableObject
     {
+        // ----- maui object -----
+
+        public Sharp.UI.GeometryGroup MauiObject { get => this; }
+
         // ----- constructors -----
 
         public GeometryGroup() { }
@@ -36,16 +40,16 @@ namespace Sharp.UI
         // ----- collection container -----
 
         public int Count => this.Children.Count;
-        public Microsoft.Maui.Controls.Shapes.Geometry this[int index] { get => this.Children[index]; set => this.Children[index] = value; }
+        public Microsoft.Maui.Controls.Shapes.Geometry this[int index] { get => this.Children[index]; set => this.Children[index] = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Geometry>(value); }
         public bool IsReadOnly => false;
-        public void Add(Microsoft.Maui.Controls.Shapes.Geometry item) => this.Children.Add(item);
+        public void Add(Microsoft.Maui.Controls.Shapes.Geometry item) => this.Children.Add(MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Geometry>(item));
         public void Clear() => this.Children.Clear();
-        public bool Contains(Microsoft.Maui.Controls.Shapes.Geometry item) => this.Children.Contains(item);
+        public bool Contains(Microsoft.Maui.Controls.Shapes.Geometry item) => this.Children.Contains(MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Geometry>(item));
         public void CopyTo(Microsoft.Maui.Controls.Shapes.Geometry[] array, int arrayIndex) => this.Children.CopyTo(array, arrayIndex);
         public IEnumerator<Microsoft.Maui.Controls.Shapes.Geometry> GetEnumerator() => this.Children.GetEnumerator();
-        public int IndexOf(Microsoft.Maui.Controls.Shapes.Geometry item) => this.Children.IndexOf(item);
-        public void Insert(int index, Microsoft.Maui.Controls.Shapes.Geometry item) => this.Children.Insert(index, item);
-        public bool Remove(Microsoft.Maui.Controls.Shapes.Geometry item) => this.Children.Remove(item);
+        public int IndexOf(Microsoft.Maui.Controls.Shapes.Geometry item) => this.Children.IndexOf(MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Geometry>(item));
+        public void Insert(int index, Microsoft.Maui.Controls.Shapes.Geometry item) => this.Children.Insert(index, MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Geometry>(item));
+        public bool Remove(Microsoft.Maui.Controls.Shapes.Geometry item) => this.Children.Remove(MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Geometry>(item));
         public void RemoveAt(int index) => this.Children.RemoveAt(index);
         IEnumerator IEnumerable.GetEnumerator() => this.Children.GetEnumerator();
 
@@ -54,11 +58,7 @@ namespace Sharp.UI
         public new object BindingContext
         {
             get => base.BindingContext;
-            set
-            {
-                var mauiObject = MauiWrapper.Value<object>(value);
-                base.BindingContext = mauiObject;
-            }
+            set => base.BindingContext = MauiWrapper.Value<object>(value);           
         }
         
 

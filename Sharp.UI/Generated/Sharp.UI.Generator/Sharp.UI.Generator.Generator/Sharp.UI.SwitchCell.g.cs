@@ -9,6 +9,10 @@ namespace Sharp.UI
 {
     public partial class SwitchCell : Microsoft.Maui.Controls.SwitchCell, Sharp.UI.ISwitchCell, IWrappedBindableObject
     {
+        // ----- maui object -----
+
+        public Sharp.UI.SwitchCell MauiObject { get => this; }
+
         // ----- constructors -----
 
         public SwitchCell() { }
@@ -34,11 +38,7 @@ namespace Sharp.UI
         public new object BindingContext
         {
             get => base.BindingContext;
-            set
-            {
-                var mauiObject = MauiWrapper.Value<object>(value);
-                base.BindingContext = mauiObject;
-            }
+            set => base.BindingContext = MauiWrapper.Value<object>(value);           
         }
         
 

@@ -139,12 +139,18 @@ namespace {nameSpaceString}
 
         void GenerateMauiObjectPropertyForSealedType()
         {
-            if (WrappedType.IsSealed) builder.AppendLine($@"
+            if (WrappedType.IsSealed)
+                builder.AppendLine($@"
         // ----- maui object -----
 
         public object _maui_RawObject {{ get; set; }}
 
-        public {WrappedType.ToDisplayString()} MauiObject {{ get => ({WrappedType.ToDisplayString()})_maui_RawObject; set => _maui_RawObject = value; }}");
+        public {WrappedType.ToDisplayString()} MauiObject {{ get => ({WrappedType.ToDisplayString()})_maui_RawObject; protected set => _maui_RawObject = value; }}");
+            else
+                builder.AppendLine($@"
+        // ----- maui object -----
+
+        public {mainSymbol.ToDisplayString()} MauiObject {{ get => this; }}");
         }
 
         // ------------------------
@@ -335,7 +341,11 @@ namespace {nameSpaceString}
         public {typeName} {name}
         {{
             get => ({typeName})GetValue({name}Property);
-            set => SetValue({name}Property, value);
+            set
+            {{
+                var mauiValue = MauiWrapper.Value<{typeName}>(value);
+                SetValue({name}Property, mauiValue);
+            }}
         }}
         ");
         }
@@ -379,7 +389,11 @@ namespace {nameSpaceString}
         public {typeName} {symbol.Name}
         {{
             get => ({typeName})GetValue({attachedType.ToDisplayString()}.{attachedPropName}Property);
-            set => SetValue({attachedType.ToDisplayString()}.{attachedPropName}Property, value);
+            set
+            {{
+                var mauiValue = MauiWrapper.Value<{typeName}>(value);
+                SetValue({attachedType.ToDisplayString()}.{attachedPropName}Property, mauiValue);
+            }}
         }}
         ");
         }
@@ -395,7 +409,7 @@ namespace {nameSpaceString}
 
         public IEnumerator GetEnumerator() {{ yield return this.{containerPropertyName}; }}
 
-        public void Add({containerOfTypeName} {containerPropertyName.ToLower()}) => this.{containerPropertyName} = {containerPropertyName.ToLower()};");
+        public void Add({containerOfTypeName} {containerPropertyName.ToLower()}) => this.{containerPropertyName} = MauiWrapper.Value<{containerOfTypeName}>({containerPropertyName.ToLower()});");                
         }
 
         // --------------------------------
@@ -415,16 +429,16 @@ namespace {nameSpaceString}
         // ----- collection container -----
 
         public int Count => {prefix}.Count;
-        public {containerOfTypeName} this[int index] {{ get => {prefix}[index]; set => {prefix}[index] = value; }}
+        public {containerOfTypeName} this[int index] {{ get => {prefix}[index]; set => {prefix}[index] = MauiWrapper.Value<{containerOfTypeName}>(value); }}
         public bool IsReadOnly => false;
-        public void Add({containerOfTypeName} item) => {prefix}.Add(item);
+        public void Add({containerOfTypeName} item) => {prefix}.Add(MauiWrapper.Value<{containerOfTypeName}>(item));
         public void Clear() => {prefix}.Clear();
-        public bool Contains({containerOfTypeName} item) => {prefix}.Contains(item);
+        public bool Contains({containerOfTypeName} item) => {prefix}.Contains(MauiWrapper.Value<{containerOfTypeName}>(item));
         public void CopyTo({containerOfTypeName}[] array, int arrayIndex) => {prefix}.CopyTo(array, arrayIndex);
         public IEnumerator<{containerOfTypeName}> GetEnumerator() => {prefix}.GetEnumerator();
-        public int IndexOf({containerOfTypeName} item) => {prefix}.IndexOf(item);
-        public void Insert(int index, {containerOfTypeName} item) => {prefix}.Insert(index, item);
-        public bool Remove({containerOfTypeName} item) => {prefix}.Remove(item);
+        public int IndexOf({containerOfTypeName} item) => {prefix}.IndexOf(MauiWrapper.Value<{containerOfTypeName}>(item));
+        public void Insert(int index, {containerOfTypeName} item) => {prefix}.Insert(index, MauiWrapper.Value<{containerOfTypeName}>(item));
+        public bool Remove({containerOfTypeName} item) => {prefix}.Remove(MauiWrapper.Value<{containerOfTypeName}>(item));
         public void RemoveAt(int index) => {prefix}.RemoveAt(index);
         IEnumerator IEnumerable.GetEnumerator() => {prefix}.GetEnumerator();");
             }
@@ -565,11 +579,7 @@ namespace {nameSpaceString}
         public{newKeyword}object BindingContext
         {{
             get => {accessedWith}.BindingContext;
-            set
-            {{
-                var mauiObject = MauiWrapper.Value<object>(value);
-                {accessedWith}.BindingContext = mauiObject;
-            }}
+            set => {accessedWith}.BindingContext = MauiWrapper.Value<object>(value);           
         }}
         ");
             }

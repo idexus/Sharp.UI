@@ -9,6 +9,10 @@ namespace Sharp.UI
 {
     public partial class LineGeometry : Microsoft.Maui.Controls.Shapes.LineGeometry, Sharp.UI.ILineGeometry, IWrappedBindableObject
     {
+        // ----- maui object -----
+
+        public Sharp.UI.LineGeometry MauiObject { get => this; }
+
         // ----- constructors -----
 
         public LineGeometry() { }
@@ -34,11 +38,7 @@ namespace Sharp.UI
         public new object BindingContext
         {
             get => base.BindingContext;
-            set
-            {
-                var mauiObject = MauiWrapper.Value<object>(value);
-                base.BindingContext = mauiObject;
-            }
+            set => base.BindingContext = MauiWrapper.Value<object>(value);           
         }
         
 

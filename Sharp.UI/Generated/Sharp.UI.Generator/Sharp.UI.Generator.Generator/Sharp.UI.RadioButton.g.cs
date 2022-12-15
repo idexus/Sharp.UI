@@ -13,6 +13,10 @@ namespace Sharp.UI
 {
     public partial class RadioButton : Microsoft.Maui.Controls.RadioButton, Sharp.UI.IRadioButton, IEnumerable, IWrappedBindableObject
     {
+        // ----- maui object -----
+
+        public Sharp.UI.RadioButton MauiObject { get => this; }
+
         // ----- constructors -----
 
         public RadioButton() { }
@@ -61,18 +65,14 @@ namespace Sharp.UI
 
         public IEnumerator GetEnumerator() { yield return this.Content; }
 
-        public void Add(object content) => this.Content = content;
+        public void Add(object content) => this.Content = MauiWrapper.Value<object>(content);
 
         // ----- binding context -----
 
         public new object BindingContext
         {
             get => base.BindingContext;
-            set
-            {
-                var mauiObject = MauiWrapper.Value<object>(value);
-                base.BindingContext = mauiObject;
-            }
+            set => base.BindingContext = MauiWrapper.Value<object>(value);           
         }
         
 

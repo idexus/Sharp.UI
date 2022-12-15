@@ -9,6 +9,10 @@ namespace Sharp.UI
 {
     public partial class Slider : Microsoft.Maui.Controls.Slider, Sharp.UI.ISlider, IWrappedBindableObject
     {
+        // ----- maui object -----
+
+        public Sharp.UI.Slider MauiObject { get => this; }
+
         // ----- constructors -----
 
         public Slider() { }
@@ -62,11 +66,7 @@ namespace Sharp.UI
         public new object BindingContext
         {
             get => base.BindingContext;
-            set
-            {
-                var mauiObject = MauiWrapper.Value<object>(value);
-                base.BindingContext = mauiObject;
-            }
+            set => base.BindingContext = MauiWrapper.Value<object>(value);           
         }
         
 

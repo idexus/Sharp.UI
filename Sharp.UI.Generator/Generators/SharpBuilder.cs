@@ -177,8 +177,10 @@ public class SharpBuilder
 
     void AddInterface(StringBuilder builder, INamedTypeSymbol type)
     {
+        var iListStr = Helpers.IsGenericIList(type, out var typeName) ? $", IList of {typeName}" : "";
+        var sealedString = type.IsSealed ? $" // from sealed{iListStr}" : "";
         var parentInterfaceName = $"I{SharpSymbol.GetNormalizedName(type.BaseType)}";
         var parentString = parentInterfaceName.Equals("IObject") ? "" : $" : {parentInterfaceName}";
-        builder.AppendLine($@"public partial interface I{SharpSymbol.GetNormalizedName(type)}{parentString} {{ }}");
+        builder.AppendLine($@"public partial interface I{SharpSymbol.GetNormalizedName(type)}{parentString} {{ }}{sealedString}");
     }
 }

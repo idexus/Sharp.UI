@@ -9,6 +9,10 @@ namespace Sharp.UI
 {
     public partial class MenuFlyoutItem : Microsoft.Maui.Controls.MenuFlyoutItem, Sharp.UI.IMenuFlyoutItem, IWrappedBindableObject
     {
+        // ----- maui object -----
+
+        public Sharp.UI.MenuFlyoutItem MauiObject { get => this; }
+
         // ----- constructors -----
 
         public MenuFlyoutItem() { }
@@ -58,11 +62,7 @@ namespace Sharp.UI
         public new object BindingContext
         {
             get => base.BindingContext;
-            set
-            {
-                var mauiObject = MauiWrapper.Value<object>(value);
-                base.BindingContext = mauiObject;
-            }
+            set => base.BindingContext = MauiWrapper.Value<object>(value);           
         }
         
 

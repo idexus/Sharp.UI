@@ -17,7 +17,7 @@ namespace Sharp.UI
 
         public object _maui_RawObject { get; set; }
 
-        public Microsoft.Maui.Controls.Shapes.Polygon MauiObject { get => (Microsoft.Maui.Controls.Shapes.Polygon)_maui_RawObject; set => _maui_RawObject = value; }
+        public Microsoft.Maui.Controls.Shapes.Polygon MauiObject { get => (Microsoft.Maui.Controls.Shapes.Polygon)_maui_RawObject; protected set => _maui_RawObject = value; }
 
         // ----- constructors -----
 
@@ -55,16 +55,16 @@ namespace Sharp.UI
         // ----- collection container -----
 
         public int Count => this.MauiObject.Points.Count;
-        public Microsoft.Maui.Graphics.Point this[int index] { get => this.MauiObject.Points[index]; set => this.MauiObject.Points[index] = value; }
+        public Microsoft.Maui.Graphics.Point this[int index] { get => this.MauiObject.Points[index]; set => this.MauiObject.Points[index] = MauiWrapper.Value<Microsoft.Maui.Graphics.Point>(value); }
         public bool IsReadOnly => false;
-        public void Add(Microsoft.Maui.Graphics.Point item) => this.MauiObject.Points.Add(item);
+        public void Add(Microsoft.Maui.Graphics.Point item) => this.MauiObject.Points.Add(MauiWrapper.Value<Microsoft.Maui.Graphics.Point>(item));
         public void Clear() => this.MauiObject.Points.Clear();
-        public bool Contains(Microsoft.Maui.Graphics.Point item) => this.MauiObject.Points.Contains(item);
+        public bool Contains(Microsoft.Maui.Graphics.Point item) => this.MauiObject.Points.Contains(MauiWrapper.Value<Microsoft.Maui.Graphics.Point>(item));
         public void CopyTo(Microsoft.Maui.Graphics.Point[] array, int arrayIndex) => this.MauiObject.Points.CopyTo(array, arrayIndex);
         public IEnumerator<Microsoft.Maui.Graphics.Point> GetEnumerator() => this.MauiObject.Points.GetEnumerator();
-        public int IndexOf(Microsoft.Maui.Graphics.Point item) => this.MauiObject.Points.IndexOf(item);
-        public void Insert(int index, Microsoft.Maui.Graphics.Point item) => this.MauiObject.Points.Insert(index, item);
-        public bool Remove(Microsoft.Maui.Graphics.Point item) => this.MauiObject.Points.Remove(item);
+        public int IndexOf(Microsoft.Maui.Graphics.Point item) => this.MauiObject.Points.IndexOf(MauiWrapper.Value<Microsoft.Maui.Graphics.Point>(item));
+        public void Insert(int index, Microsoft.Maui.Graphics.Point item) => this.MauiObject.Points.Insert(index, MauiWrapper.Value<Microsoft.Maui.Graphics.Point>(item));
+        public bool Remove(Microsoft.Maui.Graphics.Point item) => this.MauiObject.Points.Remove(MauiWrapper.Value<Microsoft.Maui.Graphics.Point>(item));
         public void RemoveAt(int index) => this.MauiObject.Points.RemoveAt(index);
         IEnumerator IEnumerable.GetEnumerator() => this.MauiObject.Points.GetEnumerator();
 
@@ -227,11 +227,7 @@ namespace Sharp.UI
         public object BindingContext
         {
             get => MauiObject.BindingContext;
-            set
-            {
-                var mauiObject = MauiWrapper.Value<object>(value);
-                MauiObject.BindingContext = mauiObject;
-            }
+            set => MauiObject.BindingContext = MauiWrapper.Value<object>(value);           
         }
         
 

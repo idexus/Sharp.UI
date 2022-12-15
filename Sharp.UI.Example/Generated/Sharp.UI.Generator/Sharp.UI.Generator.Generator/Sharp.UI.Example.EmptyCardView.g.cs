@@ -43,7 +43,11 @@ namespace Sharp.UI.Example
         public string CardTitle
         {
             get => (string)GetValue(CardTitleProperty);
-            set => SetValue(CardTitleProperty, value);
+            set
+            {
+                var mauiValue = MauiWrapper.Value<string>(value);
+                SetValue(CardTitleProperty, mauiValue);
+            }
         }
         
         public static readonly Microsoft.Maui.Controls.BindableProperty CardDescriptionProperty =
@@ -56,7 +60,11 @@ namespace Sharp.UI.Example
         public string CardDescription
         {
             get => (string)GetValue(CardDescriptionProperty);
-            set => SetValue(CardDescriptionProperty, value);
+            set
+            {
+                var mauiValue = MauiWrapper.Value<string>(value);
+                SetValue(CardDescriptionProperty, mauiValue);
+            }
         }
         
         public static readonly Microsoft.Maui.Controls.BindableProperty CardColorProperty =
@@ -69,7 +77,11 @@ namespace Sharp.UI.Example
         public Microsoft.Maui.Graphics.Color CardColor
         {
             get => (Microsoft.Maui.Graphics.Color)GetValue(CardColorProperty);
-            set => SetValue(CardColorProperty, value);
+            set
+            {
+                var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(value);
+                SetValue(CardColorProperty, mauiValue);
+            }
         }
         
         public static readonly Microsoft.Maui.Controls.BindableProperty BorderColorProperty =
@@ -82,7 +94,11 @@ namespace Sharp.UI.Example
         public Microsoft.Maui.Graphics.Color BorderColor
         {
             get => (Microsoft.Maui.Graphics.Color)GetValue(BorderColorProperty);
-            set => SetValue(BorderColorProperty, value);
+            set
+            {
+                var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(value);
+                SetValue(BorderColorProperty, mauiValue);
+            }
         }
         
         // ----- binding context -----
@@ -90,11 +106,7 @@ namespace Sharp.UI.Example
         public new object BindingContext
         {
             get => base.BindingContext;
-            set
-            {
-                var mauiObject = MauiWrapper.Value<object>(value);
-                base.BindingContext = mauiObject;
-            }
+            set => base.BindingContext = MauiWrapper.Value<object>(value);           
         }
         
 

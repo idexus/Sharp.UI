@@ -17,7 +17,7 @@ namespace Sharp.UI
 
         public object _maui_RawObject { get; set; }
 
-        public Microsoft.Maui.Controls.Shapes.PathFigure MauiObject { get => (Microsoft.Maui.Controls.Shapes.PathFigure)_maui_RawObject; set => _maui_RawObject = value; }
+        public Microsoft.Maui.Controls.Shapes.PathFigure MauiObject { get => (Microsoft.Maui.Controls.Shapes.PathFigure)_maui_RawObject; protected set => _maui_RawObject = value; }
 
         // ----- constructors -----
 
@@ -55,16 +55,16 @@ namespace Sharp.UI
         // ----- collection container -----
 
         public int Count => this.MauiObject.Segments.Count;
-        public Microsoft.Maui.Controls.Shapes.PathSegment this[int index] { get => this.MauiObject.Segments[index]; set => this.MauiObject.Segments[index] = value; }
+        public Microsoft.Maui.Controls.Shapes.PathSegment this[int index] { get => this.MauiObject.Segments[index]; set => this.MauiObject.Segments[index] = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.PathSegment>(value); }
         public bool IsReadOnly => false;
-        public void Add(Microsoft.Maui.Controls.Shapes.PathSegment item) => this.MauiObject.Segments.Add(item);
+        public void Add(Microsoft.Maui.Controls.Shapes.PathSegment item) => this.MauiObject.Segments.Add(MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.PathSegment>(item));
         public void Clear() => this.MauiObject.Segments.Clear();
-        public bool Contains(Microsoft.Maui.Controls.Shapes.PathSegment item) => this.MauiObject.Segments.Contains(item);
+        public bool Contains(Microsoft.Maui.Controls.Shapes.PathSegment item) => this.MauiObject.Segments.Contains(MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.PathSegment>(item));
         public void CopyTo(Microsoft.Maui.Controls.Shapes.PathSegment[] array, int arrayIndex) => this.MauiObject.Segments.CopyTo(array, arrayIndex);
         public IEnumerator<Microsoft.Maui.Controls.Shapes.PathSegment> GetEnumerator() => this.MauiObject.Segments.GetEnumerator();
-        public int IndexOf(Microsoft.Maui.Controls.Shapes.PathSegment item) => this.MauiObject.Segments.IndexOf(item);
-        public void Insert(int index, Microsoft.Maui.Controls.Shapes.PathSegment item) => this.MauiObject.Segments.Insert(index, item);
-        public bool Remove(Microsoft.Maui.Controls.Shapes.PathSegment item) => this.MauiObject.Segments.Remove(item);
+        public int IndexOf(Microsoft.Maui.Controls.Shapes.PathSegment item) => this.MauiObject.Segments.IndexOf(MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.PathSegment>(item));
+        public void Insert(int index, Microsoft.Maui.Controls.Shapes.PathSegment item) => this.MauiObject.Segments.Insert(index, MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.PathSegment>(item));
+        public bool Remove(Microsoft.Maui.Controls.Shapes.PathSegment item) => this.MauiObject.Segments.Remove(MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.PathSegment>(item));
         public void RemoveAt(int index) => this.MauiObject.Segments.RemoveAt(index);
         IEnumerator IEnumerable.GetEnumerator() => this.MauiObject.Segments.GetEnumerator();
 
@@ -91,11 +91,7 @@ namespace Sharp.UI
         public object BindingContext
         {
             get => MauiObject.BindingContext;
-            set
-            {
-                var mauiObject = MauiWrapper.Value<object>(value);
-                MauiObject.BindingContext = mauiObject;
-            }
+            set => MauiObject.BindingContext = MauiWrapper.Value<object>(value);           
         }
         
 

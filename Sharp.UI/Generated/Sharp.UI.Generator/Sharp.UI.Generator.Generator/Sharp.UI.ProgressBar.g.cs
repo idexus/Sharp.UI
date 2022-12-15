@@ -9,6 +9,10 @@ namespace Sharp.UI
 {
     public partial class ProgressBar : Microsoft.Maui.Controls.ProgressBar, Sharp.UI.IProgressBar, IWrappedBindableObject
     {
+        // ----- maui object -----
+
+        public Sharp.UI.ProgressBar MauiObject { get => this; }
+
         // ----- constructors -----
 
         public ProgressBar() { }
@@ -58,11 +62,7 @@ namespace Sharp.UI
         public new object BindingContext
         {
             get => base.BindingContext;
-            set
-            {
-                var mauiObject = MauiWrapper.Value<object>(value);
-                base.BindingContext = mauiObject;
-            }
+            set => base.BindingContext = MauiWrapper.Value<object>(value);           
         }
         
 

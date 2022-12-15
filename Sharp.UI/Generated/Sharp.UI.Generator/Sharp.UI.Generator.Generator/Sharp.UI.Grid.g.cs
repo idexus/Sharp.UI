@@ -9,6 +9,10 @@ namespace Sharp.UI
 {
     public partial class Grid : Microsoft.Maui.Controls.Grid, Sharp.UI.IGrid, IWrappedBindableObject
     {
+        // ----- maui object -----
+
+        public Sharp.UI.Grid MauiObject { get => this; }
+
         // ----- constructors -----
 
         public Grid() { }
@@ -34,11 +38,7 @@ namespace Sharp.UI
         public new object BindingContext
         {
             get => base.BindingContext;
-            set
-            {
-                var mauiObject = MauiWrapper.Value<object>(value);
-                base.BindingContext = mauiObject;
-            }
+            set => base.BindingContext = MauiWrapper.Value<object>(value);           
         }
         
 

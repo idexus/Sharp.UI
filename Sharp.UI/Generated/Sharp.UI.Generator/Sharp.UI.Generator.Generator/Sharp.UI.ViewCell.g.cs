@@ -13,6 +13,10 @@ namespace Sharp.UI
 {
     public partial class ViewCell : Microsoft.Maui.Controls.ViewCell, Sharp.UI.IViewCell, IEnumerable, IWrappedBindableObject
     {
+        // ----- maui object -----
+
+        public Sharp.UI.ViewCell MauiObject { get => this; }
+
         // ----- constructors -----
 
         public ViewCell() { }
@@ -37,18 +41,14 @@ namespace Sharp.UI
 
         public IEnumerator GetEnumerator() { yield return this.View; }
 
-        public void Add(Microsoft.Maui.Controls.View view) => this.View = view;
+        public void Add(Microsoft.Maui.Controls.View view) => this.View = MauiWrapper.Value<Microsoft.Maui.Controls.View>(view);
 
         // ----- binding context -----
 
         public new object BindingContext
         {
             get => base.BindingContext;
-            set
-            {
-                var mauiObject = MauiWrapper.Value<object>(value);
-                base.BindingContext = mauiObject;
-            }
+            set => base.BindingContext = MauiWrapper.Value<object>(value);           
         }
         
 

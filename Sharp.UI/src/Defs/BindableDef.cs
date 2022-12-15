@@ -33,7 +33,7 @@
         public bool ValueIsSet() => defaultIsSet || newValueIsSet;
         public T GetValue()
         {
-            if (newValueIsSet) return newValue;
+            if (newValueIsSet) return MauiWrapper.Value<T>(newValue);
             return @default;
         }
 
@@ -69,6 +69,7 @@
         public void BindProperty()
         {
             var mauiSource = MauiWrapper.Value<object>(source);
+            var mauiConverter = MauiWrapper.Value<IValueConverter>(converter);
             if (path != null)
             {
                 obj.SetBinding(
@@ -76,7 +77,7 @@
                     binding: new Microsoft.Maui.Controls.Binding(
                         path: path,
                         mode: bindingMode,
-                        converter: converter,
+                        converter: mauiConverter,
                         converterParameter: converterParameter,
                         stringFormat: stringFormat,
                         source: isTemplated ? RelativeBindingSource.TemplatedParent : mauiSource));

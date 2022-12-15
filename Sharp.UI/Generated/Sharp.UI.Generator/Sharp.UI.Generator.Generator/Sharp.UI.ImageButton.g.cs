@@ -9,6 +9,10 @@ namespace Sharp.UI
 {
     public partial class ImageButton : Microsoft.Maui.Controls.ImageButton, Sharp.UI.IImageButton, IWrappedBindableObject
     {
+        // ----- maui object -----
+
+        public Sharp.UI.ImageButton MauiObject { get => this; }
+
         // ----- constructors -----
 
         public ImageButton() { }
@@ -58,11 +62,7 @@ namespace Sharp.UI
         public new object BindingContext
         {
             get => base.BindingContext;
-            set
-            {
-                var mauiObject = MauiWrapper.Value<object>(value);
-                base.BindingContext = mauiObject;
-            }
+            set => base.BindingContext = MauiWrapper.Value<object>(value);           
         }
         
 

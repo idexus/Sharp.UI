@@ -9,6 +9,10 @@ namespace Sharp.UI
 {
     public partial class GraphicsView : Microsoft.Maui.Controls.GraphicsView, Sharp.UI.IGraphicsView, IWrappedBindableObject
     {
+        // ----- maui object -----
+
+        public Sharp.UI.GraphicsView MauiObject { get => this; }
+
         // ----- constructors -----
 
         public GraphicsView() { }
@@ -58,11 +62,7 @@ namespace Sharp.UI
         public new object BindingContext
         {
             get => base.BindingContext;
-            set
-            {
-                var mauiObject = MauiWrapper.Value<object>(value);
-                base.BindingContext = mauiObject;
-            }
+            set => base.BindingContext = MauiWrapper.Value<object>(value);           
         }
         
 

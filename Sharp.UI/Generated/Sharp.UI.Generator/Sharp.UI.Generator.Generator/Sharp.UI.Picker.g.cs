@@ -9,6 +9,10 @@ namespace Sharp.UI
 {
     public partial class Picker : Microsoft.Maui.Controls.Picker, Sharp.UI.IPicker, IWrappedBindableObject
     {
+        // ----- maui object -----
+
+        public Sharp.UI.Picker MauiObject { get => this; }
+
         // ----- constructors -----
 
         public Picker() { }
@@ -58,11 +62,7 @@ namespace Sharp.UI
         public new object BindingContext
         {
             get => base.BindingContext;
-            set
-            {
-                var mauiObject = MauiWrapper.Value<object>(value);
-                base.BindingContext = mauiObject;
-            }
+            set => base.BindingContext = MauiWrapper.Value<object>(value);           
         }
         
 

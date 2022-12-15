@@ -9,6 +9,10 @@ namespace Sharp.UI
 {
     public partial class FontImageSource : Microsoft.Maui.Controls.FontImageSource, Sharp.UI.IFontImageSource, IWrappedBindableObject
     {
+        // ----- maui object -----
+
+        public Sharp.UI.FontImageSource MauiObject { get => this; }
+
         // ----- constructors -----
 
         public FontImageSource() { }
@@ -62,11 +66,7 @@ namespace Sharp.UI
         public new object BindingContext
         {
             get => base.BindingContext;
-            set
-            {
-                var mauiObject = MauiWrapper.Value<object>(value);
-                base.BindingContext = mauiObject;
-            }
+            set => base.BindingContext = MauiWrapper.Value<object>(value);           
         }
         
 

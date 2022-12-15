@@ -13,6 +13,10 @@ namespace Sharp.UI
 {
     public partial class ContentPage : Microsoft.Maui.Controls.ContentPage, Sharp.UI.IContentPage, IEnumerable, IWrappedBindableObject
     {
+        // ----- maui object -----
+
+        public Sharp.UI.ContentPage MauiObject { get => this; }
+
         // ----- constructors -----
 
         public ContentPage() { }
@@ -62,73 +66,105 @@ namespace Sharp.UI
         public PresentationMode ShellPresentationMode
         {
             get => (PresentationMode)GetValue(Microsoft.Maui.Controls.Shell.PresentationModeProperty);
-            set => SetValue(Microsoft.Maui.Controls.Shell.PresentationModeProperty, value);
+            set
+            {
+                var mauiValue = MauiWrapper.Value<PresentationMode>(value);
+                SetValue(Microsoft.Maui.Controls.Shell.PresentationModeProperty, mauiValue);
+            }
         }
         
         public Color ShellBackgroundColor
         {
             get => (Color)GetValue(Microsoft.Maui.Controls.Shell.BackgroundColorProperty);
-            set => SetValue(Microsoft.Maui.Controls.Shell.BackgroundColorProperty, value);
+            set
+            {
+                var mauiValue = MauiWrapper.Value<Color>(value);
+                SetValue(Microsoft.Maui.Controls.Shell.BackgroundColorProperty, mauiValue);
+            }
         }
         
         public Color ShellForegroundColor
         {
             get => (Color)GetValue(Microsoft.Maui.Controls.Shell.ForegroundColorProperty);
-            set => SetValue(Microsoft.Maui.Controls.Shell.ForegroundColorProperty, value);
+            set
+            {
+                var mauiValue = MauiWrapper.Value<Color>(value);
+                SetValue(Microsoft.Maui.Controls.Shell.ForegroundColorProperty, mauiValue);
+            }
         }
         
         public Color ShellTitleColor
         {
             get => (Color)GetValue(Microsoft.Maui.Controls.Shell.TitleColorProperty);
-            set => SetValue(Microsoft.Maui.Controls.Shell.TitleColorProperty, value);
+            set
+            {
+                var mauiValue = MauiWrapper.Value<Color>(value);
+                SetValue(Microsoft.Maui.Controls.Shell.TitleColorProperty, mauiValue);
+            }
         }
         
         public Color ShellDisabledColor
         {
             get => (Color)GetValue(Microsoft.Maui.Controls.Shell.DisabledColorProperty);
-            set => SetValue(Microsoft.Maui.Controls.Shell.DisabledColorProperty, value);
+            set
+            {
+                var mauiValue = MauiWrapper.Value<Color>(value);
+                SetValue(Microsoft.Maui.Controls.Shell.DisabledColorProperty, mauiValue);
+            }
         }
         
         public Color ShellUnselectedColor
         {
             get => (Color)GetValue(Microsoft.Maui.Controls.Shell.UnselectedColorProperty);
-            set => SetValue(Microsoft.Maui.Controls.Shell.UnselectedColorProperty, value);
+            set
+            {
+                var mauiValue = MauiWrapper.Value<Color>(value);
+                SetValue(Microsoft.Maui.Controls.Shell.UnselectedColorProperty, mauiValue);
+            }
         }
         
         public Boolean ShellNavBarHasShadow
         {
             get => (Boolean)GetValue(Microsoft.Maui.Controls.Shell.NavBarHasShadowProperty);
-            set => SetValue(Microsoft.Maui.Controls.Shell.NavBarHasShadowProperty, value);
+            set
+            {
+                var mauiValue = MauiWrapper.Value<Boolean>(value);
+                SetValue(Microsoft.Maui.Controls.Shell.NavBarHasShadowProperty, mauiValue);
+            }
         }
         
         public Boolean ShellNavBarIsVisible
         {
             get => (Boolean)GetValue(Microsoft.Maui.Controls.Shell.NavBarIsVisibleProperty);
-            set => SetValue(Microsoft.Maui.Controls.Shell.NavBarIsVisibleProperty, value);
+            set
+            {
+                var mauiValue = MauiWrapper.Value<Boolean>(value);
+                SetValue(Microsoft.Maui.Controls.Shell.NavBarIsVisibleProperty, mauiValue);
+            }
         }
         
         public View ShellTitleView
         {
             get => (View)GetValue(Microsoft.Maui.Controls.Shell.TitleViewProperty);
-            set => SetValue(Microsoft.Maui.Controls.Shell.TitleViewProperty, value);
+            set
+            {
+                var mauiValue = MauiWrapper.Value<View>(value);
+                SetValue(Microsoft.Maui.Controls.Shell.TitleViewProperty, mauiValue);
+            }
         }
         
         // ----- single item container -----
 
         public IEnumerator GetEnumerator() { yield return this.Content; }
 
-        public void Add(Microsoft.Maui.Controls.View content) => this.Content = content;
+        public void Add(Microsoft.Maui.Controls.View content) => this.Content = MauiWrapper.Value<Microsoft.Maui.Controls.View>(content);
 
         // ----- binding context -----
 
         public new object BindingContext
         {
             get => base.BindingContext;
-            set
-            {
-                var mauiObject = MauiWrapper.Value<object>(value);
-                base.BindingContext = mauiObject;
-            }
+            set => base.BindingContext = MauiWrapper.Value<object>(value);           
         }
         
 

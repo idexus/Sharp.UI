@@ -17,7 +17,7 @@ namespace Sharp.UI
 
         public object _maui_RawObject { get; set; }
 
-        public Microsoft.Maui.Controls.VisualStateGroup MauiObject { get => (Microsoft.Maui.Controls.VisualStateGroup)_maui_RawObject; set => _maui_RawObject = value; }
+        public Microsoft.Maui.Controls.VisualStateGroup MauiObject { get => (Microsoft.Maui.Controls.VisualStateGroup)_maui_RawObject; protected set => _maui_RawObject = value; }
 
         // ----- constructors -----
 
@@ -55,16 +55,16 @@ namespace Sharp.UI
         // ----- collection container -----
 
         public int Count => this.MauiObject.States.Count;
-        public Microsoft.Maui.Controls.VisualState this[int index] { get => this.MauiObject.States[index]; set => this.MauiObject.States[index] = value; }
+        public Microsoft.Maui.Controls.VisualState this[int index] { get => this.MauiObject.States[index]; set => this.MauiObject.States[index] = MauiWrapper.Value<Microsoft.Maui.Controls.VisualState>(value); }
         public bool IsReadOnly => false;
-        public void Add(Microsoft.Maui.Controls.VisualState item) => this.MauiObject.States.Add(item);
+        public void Add(Microsoft.Maui.Controls.VisualState item) => this.MauiObject.States.Add(MauiWrapper.Value<Microsoft.Maui.Controls.VisualState>(item));
         public void Clear() => this.MauiObject.States.Clear();
-        public bool Contains(Microsoft.Maui.Controls.VisualState item) => this.MauiObject.States.Contains(item);
+        public bool Contains(Microsoft.Maui.Controls.VisualState item) => this.MauiObject.States.Contains(MauiWrapper.Value<Microsoft.Maui.Controls.VisualState>(item));
         public void CopyTo(Microsoft.Maui.Controls.VisualState[] array, int arrayIndex) => this.MauiObject.States.CopyTo(array, arrayIndex);
         public IEnumerator<Microsoft.Maui.Controls.VisualState> GetEnumerator() => this.MauiObject.States.GetEnumerator();
-        public int IndexOf(Microsoft.Maui.Controls.VisualState item) => this.MauiObject.States.IndexOf(item);
-        public void Insert(int index, Microsoft.Maui.Controls.VisualState item) => this.MauiObject.States.Insert(index, item);
-        public bool Remove(Microsoft.Maui.Controls.VisualState item) => this.MauiObject.States.Remove(item);
+        public int IndexOf(Microsoft.Maui.Controls.VisualState item) => this.MauiObject.States.IndexOf(MauiWrapper.Value<Microsoft.Maui.Controls.VisualState>(item));
+        public void Insert(int index, Microsoft.Maui.Controls.VisualState item) => this.MauiObject.States.Insert(index, MauiWrapper.Value<Microsoft.Maui.Controls.VisualState>(item));
+        public bool Remove(Microsoft.Maui.Controls.VisualState item) => this.MauiObject.States.Remove(MauiWrapper.Value<Microsoft.Maui.Controls.VisualState>(item));
         public void RemoveAt(int index) => this.MauiObject.States.RemoveAt(index);
         IEnumerator IEnumerable.GetEnumerator() => this.MauiObject.States.GetEnumerator();
 

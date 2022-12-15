@@ -13,6 +13,10 @@ namespace Sharp.UI
 {
     public partial class Label : Microsoft.Maui.Controls.Label, Sharp.UI.ILabel, IEnumerable, IWrappedBindableObject
     {
+        // ----- maui object -----
+
+        public Sharp.UI.Label MauiObject { get => this; }
+
         // ----- constructors -----
 
         public Label() { }
@@ -61,18 +65,14 @@ namespace Sharp.UI
 
         public IEnumerator GetEnumerator() { yield return this.Text; }
 
-        public void Add(string text) => this.Text = text;
+        public void Add(string text) => this.Text = MauiWrapper.Value<string>(text);
 
         // ----- binding context -----
 
         public new object BindingContext
         {
             get => base.BindingContext;
-            set
-            {
-                var mauiObject = MauiWrapper.Value<object>(value);
-                base.BindingContext = mauiObject;
-            }
+            set => base.BindingContext = MauiWrapper.Value<object>(value);           
         }
         
 

@@ -9,6 +9,10 @@ namespace Sharp.UI
 {
     public partial class CheckBox : Microsoft.Maui.Controls.CheckBox, Sharp.UI.ICheckBox, IWrappedBindableObject
     {
+        // ----- maui object -----
+
+        public Sharp.UI.CheckBox MauiObject { get => this; }
+
         // ----- constructors -----
 
         public CheckBox() { }
@@ -34,11 +38,7 @@ namespace Sharp.UI
         public new object BindingContext
         {
             get => base.BindingContext;
-            set
-            {
-                var mauiObject = MauiWrapper.Value<object>(value);
-                base.BindingContext = mauiObject;
-            }
+            set => base.BindingContext = MauiWrapper.Value<object>(value);           
         }
         
 

@@ -13,7 +13,7 @@ namespace Sharp.UI
 
         public object _maui_RawObject { get; set; }
 
-        public Microsoft.Maui.Controls.Binding MauiObject { get => (Microsoft.Maui.Controls.Binding)_maui_RawObject; set => _maui_RawObject = value; }
+        public Microsoft.Maui.Controls.Binding MauiObject { get => (Microsoft.Maui.Controls.Binding)_maui_RawObject; protected set => _maui_RawObject = value; }
 
         // ----- constructors -----
 

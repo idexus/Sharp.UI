@@ -13,6 +13,10 @@ namespace Sharp.UI
 {
     public partial class FlyoutItem : Microsoft.Maui.Controls.FlyoutItem, Sharp.UI.IFlyoutItem, IList<Microsoft.Maui.Controls.ShellSection>, IWrappedBindableObject
     {
+        // ----- maui object -----
+
+        public Sharp.UI.FlyoutItem MauiObject { get => this; }
+
         // ----- constructors -----
 
         public FlyoutItem() { }
@@ -60,16 +64,16 @@ namespace Sharp.UI
         // ----- collection container -----
 
         public int Count => this.Items.Count;
-        public Microsoft.Maui.Controls.ShellSection this[int index] { get => this.Items[index]; set => this.Items[index] = value; }
+        public Microsoft.Maui.Controls.ShellSection this[int index] { get => this.Items[index]; set => this.Items[index] = MauiWrapper.Value<Microsoft.Maui.Controls.ShellSection>(value); }
         public bool IsReadOnly => false;
-        public void Add(Microsoft.Maui.Controls.ShellSection item) => this.Items.Add(item);
+        public void Add(Microsoft.Maui.Controls.ShellSection item) => this.Items.Add(MauiWrapper.Value<Microsoft.Maui.Controls.ShellSection>(item));
         public void Clear() => this.Items.Clear();
-        public bool Contains(Microsoft.Maui.Controls.ShellSection item) => this.Items.Contains(item);
+        public bool Contains(Microsoft.Maui.Controls.ShellSection item) => this.Items.Contains(MauiWrapper.Value<Microsoft.Maui.Controls.ShellSection>(item));
         public void CopyTo(Microsoft.Maui.Controls.ShellSection[] array, int arrayIndex) => this.Items.CopyTo(array, arrayIndex);
         public IEnumerator<Microsoft.Maui.Controls.ShellSection> GetEnumerator() => this.Items.GetEnumerator();
-        public int IndexOf(Microsoft.Maui.Controls.ShellSection item) => this.Items.IndexOf(item);
-        public void Insert(int index, Microsoft.Maui.Controls.ShellSection item) => this.Items.Insert(index, item);
-        public bool Remove(Microsoft.Maui.Controls.ShellSection item) => this.Items.Remove(item);
+        public int IndexOf(Microsoft.Maui.Controls.ShellSection item) => this.Items.IndexOf(MauiWrapper.Value<Microsoft.Maui.Controls.ShellSection>(item));
+        public void Insert(int index, Microsoft.Maui.Controls.ShellSection item) => this.Items.Insert(index, MauiWrapper.Value<Microsoft.Maui.Controls.ShellSection>(item));
+        public bool Remove(Microsoft.Maui.Controls.ShellSection item) => this.Items.Remove(MauiWrapper.Value<Microsoft.Maui.Controls.ShellSection>(item));
         public void RemoveAt(int index) => this.Items.RemoveAt(index);
         IEnumerator IEnumerable.GetEnumerator() => this.Items.GetEnumerator();
 
@@ -78,11 +82,7 @@ namespace Sharp.UI
         public new object BindingContext
         {
             get => base.BindingContext;
-            set
-            {
-                var mauiObject = MauiWrapper.Value<object>(value);
-                base.BindingContext = mauiObject;
-            }
+            set => base.BindingContext = MauiWrapper.Value<object>(value);           
         }
         
 

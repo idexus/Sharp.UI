@@ -9,6 +9,10 @@ namespace Sharp.UI
 {
     public partial class CollectionView : Microsoft.Maui.Controls.CollectionView, Sharp.UI.ICollectionView, IWrappedBindableObject
     {
+        // ----- maui object -----
+
+        public Sharp.UI.CollectionView MauiObject { get => this; }
+
         // ----- constructors -----
 
         public CollectionView() { }
@@ -34,11 +38,7 @@ namespace Sharp.UI
         public new object BindingContext
         {
             get => base.BindingContext;
-            set
-            {
-                var mauiObject = MauiWrapper.Value<object>(value);
-                base.BindingContext = mauiObject;
-            }
+            set => base.BindingContext = MauiWrapper.Value<object>(value);           
         }
         
 

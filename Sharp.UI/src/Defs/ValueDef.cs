@@ -35,7 +35,7 @@ namespace Sharp.UI
         public bool ValueIsSet() => defaultIsSet || newValueIsSet;
         public T GetValue()
         {
-            if (newValueIsSet) return newValue;
+            if (newValueIsSet) return MauiWrapper.Value<T>(newValue);
             return @default;
         }
 

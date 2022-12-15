@@ -13,6 +13,10 @@ namespace Sharp.UI
 {
     public partial class TableView : Microsoft.Maui.Controls.TableView, Sharp.UI.ITableView, IList<Microsoft.Maui.Controls.TableSection>, IWrappedBindableObject
     {
+        // ----- maui object -----
+
+        public Sharp.UI.TableView MauiObject { get => this; }
+
         // ----- constructors -----
 
         public TableView(out TableView tableView) : this()
@@ -34,16 +38,16 @@ namespace Sharp.UI
         // ----- collection container -----
 
         public int Count => this.Root.Count;
-        public Microsoft.Maui.Controls.TableSection this[int index] { get => this.Root[index]; set => this.Root[index] = value; }
+        public Microsoft.Maui.Controls.TableSection this[int index] { get => this.Root[index]; set => this.Root[index] = MauiWrapper.Value<Microsoft.Maui.Controls.TableSection>(value); }
         public bool IsReadOnly => false;
-        public void Add(Microsoft.Maui.Controls.TableSection item) => this.Root.Add(item);
+        public void Add(Microsoft.Maui.Controls.TableSection item) => this.Root.Add(MauiWrapper.Value<Microsoft.Maui.Controls.TableSection>(item));
         public void Clear() => this.Root.Clear();
-        public bool Contains(Microsoft.Maui.Controls.TableSection item) => this.Root.Contains(item);
+        public bool Contains(Microsoft.Maui.Controls.TableSection item) => this.Root.Contains(MauiWrapper.Value<Microsoft.Maui.Controls.TableSection>(item));
         public void CopyTo(Microsoft.Maui.Controls.TableSection[] array, int arrayIndex) => this.Root.CopyTo(array, arrayIndex);
         public IEnumerator<Microsoft.Maui.Controls.TableSection> GetEnumerator() => this.Root.GetEnumerator();
-        public int IndexOf(Microsoft.Maui.Controls.TableSection item) => this.Root.IndexOf(item);
-        public void Insert(int index, Microsoft.Maui.Controls.TableSection item) => this.Root.Insert(index, item);
-        public bool Remove(Microsoft.Maui.Controls.TableSection item) => this.Root.Remove(item);
+        public int IndexOf(Microsoft.Maui.Controls.TableSection item) => this.Root.IndexOf(MauiWrapper.Value<Microsoft.Maui.Controls.TableSection>(item));
+        public void Insert(int index, Microsoft.Maui.Controls.TableSection item) => this.Root.Insert(index, MauiWrapper.Value<Microsoft.Maui.Controls.TableSection>(item));
+        public bool Remove(Microsoft.Maui.Controls.TableSection item) => this.Root.Remove(MauiWrapper.Value<Microsoft.Maui.Controls.TableSection>(item));
         public void RemoveAt(int index) => this.Root.RemoveAt(index);
         IEnumerator IEnumerable.GetEnumerator() => this.Root.GetEnumerator();
 
@@ -52,11 +56,7 @@ namespace Sharp.UI
         public new object BindingContext
         {
             get => base.BindingContext;
-            set
-            {
-                var mauiObject = MauiWrapper.Value<object>(value);
-                base.BindingContext = mauiObject;
-            }
+            set => base.BindingContext = MauiWrapper.Value<object>(value);           
         }
         
 

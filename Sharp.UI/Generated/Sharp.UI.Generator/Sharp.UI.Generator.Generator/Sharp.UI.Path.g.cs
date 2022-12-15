@@ -17,7 +17,7 @@ namespace Sharp.UI
 
         public object _maui_RawObject { get; set; }
 
-        public Microsoft.Maui.Controls.Shapes.Path MauiObject { get => (Microsoft.Maui.Controls.Shapes.Path)_maui_RawObject; set => _maui_RawObject = value; }
+        public Microsoft.Maui.Controls.Shapes.Path MauiObject { get => (Microsoft.Maui.Controls.Shapes.Path)_maui_RawObject; protected set => _maui_RawObject = value; }
 
         // ----- constructors -----
 
@@ -56,7 +56,7 @@ namespace Sharp.UI
 
         public IEnumerator GetEnumerator() { yield return this.Data; }
 
-        public void Add(Microsoft.Maui.Controls.Shapes.Geometry data) => this.Data = data;
+        public void Add(Microsoft.Maui.Controls.Shapes.Geometry data) => this.Data = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Geometry>(data);
 
         // ----- bindable properties -----
 
@@ -217,11 +217,7 @@ namespace Sharp.UI
         public object BindingContext
         {
             get => MauiObject.BindingContext;
-            set
-            {
-                var mauiObject = MauiWrapper.Value<object>(value);
-                MauiObject.BindingContext = mauiObject;
-            }
+            set => MauiObject.BindingContext = MauiWrapper.Value<object>(value);           
         }
         
 

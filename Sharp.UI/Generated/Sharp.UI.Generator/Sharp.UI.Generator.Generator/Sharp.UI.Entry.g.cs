@@ -9,6 +9,10 @@ namespace Sharp.UI
 {
     public partial class Entry : Microsoft.Maui.Controls.Entry, Sharp.UI.IEntry, IWrappedBindableObject
     {
+        // ----- maui object -----
+
+        public Sharp.UI.Entry MauiObject { get => this; }
+
         // ----- constructors -----
 
         public Entry() { }
@@ -58,11 +62,7 @@ namespace Sharp.UI
         public new object BindingContext
         {
             get => base.BindingContext;
-            set
-            {
-                var mauiObject = MauiWrapper.Value<object>(value);
-                base.BindingContext = mauiObject;
-            }
+            set => base.BindingContext = MauiWrapper.Value<object>(value);           
         }
         
 

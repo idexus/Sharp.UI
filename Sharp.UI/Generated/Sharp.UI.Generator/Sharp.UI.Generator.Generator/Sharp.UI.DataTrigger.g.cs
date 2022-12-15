@@ -17,7 +17,7 @@ namespace Sharp.UI
 
         public object _maui_RawObject { get; set; }
 
-        public Microsoft.Maui.Controls.DataTrigger MauiObject { get => (Microsoft.Maui.Controls.DataTrigger)_maui_RawObject; set => _maui_RawObject = value; }
+        public Microsoft.Maui.Controls.DataTrigger MauiObject { get => (Microsoft.Maui.Controls.DataTrigger)_maui_RawObject; protected set => _maui_RawObject = value; }
 
         // ----- constructors -----
 
@@ -34,16 +34,16 @@ namespace Sharp.UI
         // ----- collection container -----
 
         public int Count => this.MauiObject.Setters.Count;
-        public Microsoft.Maui.Controls.Setter this[int index] { get => this.MauiObject.Setters[index]; set => this.MauiObject.Setters[index] = value; }
+        public Microsoft.Maui.Controls.Setter this[int index] { get => this.MauiObject.Setters[index]; set => this.MauiObject.Setters[index] = MauiWrapper.Value<Microsoft.Maui.Controls.Setter>(value); }
         public bool IsReadOnly => false;
-        public void Add(Microsoft.Maui.Controls.Setter item) => this.MauiObject.Setters.Add(item);
+        public void Add(Microsoft.Maui.Controls.Setter item) => this.MauiObject.Setters.Add(MauiWrapper.Value<Microsoft.Maui.Controls.Setter>(item));
         public void Clear() => this.MauiObject.Setters.Clear();
-        public bool Contains(Microsoft.Maui.Controls.Setter item) => this.MauiObject.Setters.Contains(item);
+        public bool Contains(Microsoft.Maui.Controls.Setter item) => this.MauiObject.Setters.Contains(MauiWrapper.Value<Microsoft.Maui.Controls.Setter>(item));
         public void CopyTo(Microsoft.Maui.Controls.Setter[] array, int arrayIndex) => this.MauiObject.Setters.CopyTo(array, arrayIndex);
         public IEnumerator<Microsoft.Maui.Controls.Setter> GetEnumerator() => this.MauiObject.Setters.GetEnumerator();
-        public int IndexOf(Microsoft.Maui.Controls.Setter item) => this.MauiObject.Setters.IndexOf(item);
-        public void Insert(int index, Microsoft.Maui.Controls.Setter item) => this.MauiObject.Setters.Insert(index, item);
-        public bool Remove(Microsoft.Maui.Controls.Setter item) => this.MauiObject.Setters.Remove(item);
+        public int IndexOf(Microsoft.Maui.Controls.Setter item) => this.MauiObject.Setters.IndexOf(MauiWrapper.Value<Microsoft.Maui.Controls.Setter>(item));
+        public void Insert(int index, Microsoft.Maui.Controls.Setter item) => this.MauiObject.Setters.Insert(index, MauiWrapper.Value<Microsoft.Maui.Controls.Setter>(item));
+        public bool Remove(Microsoft.Maui.Controls.Setter item) => this.MauiObject.Setters.Remove(MauiWrapper.Value<Microsoft.Maui.Controls.Setter>(item));
         public void RemoveAt(int index) => this.MauiObject.Setters.RemoveAt(index);
         IEnumerator IEnumerable.GetEnumerator() => this.MauiObject.Setters.GetEnumerator();
 
@@ -69,11 +69,7 @@ namespace Sharp.UI
         public object BindingContext
         {
             get => MauiObject.BindingContext;
-            set
-            {
-                var mauiObject = MauiWrapper.Value<object>(value);
-                MauiObject.BindingContext = mauiObject;
-            }
+            set => MauiObject.BindingContext = MauiWrapper.Value<object>(value);           
         }
         
 

@@ -9,6 +9,10 @@ namespace Sharp.UI
 {
     public partial class NavigationPage : Microsoft.Maui.Controls.NavigationPage, Sharp.UI.INavigationPage, IWrappedBindableObject
     {
+        // ----- maui object -----
+
+        public Sharp.UI.NavigationPage MauiObject { get => this; }
+
         // ----- constructors -----
 
         public NavigationPage() { }
@@ -34,11 +38,7 @@ namespace Sharp.UI
         public new object BindingContext
         {
             get => base.BindingContext;
-            set
-            {
-                var mauiObject = MauiWrapper.Value<object>(value);
-                base.BindingContext = mauiObject;
-            }
+            set => base.BindingContext = MauiWrapper.Value<object>(value);           
         }
         
 

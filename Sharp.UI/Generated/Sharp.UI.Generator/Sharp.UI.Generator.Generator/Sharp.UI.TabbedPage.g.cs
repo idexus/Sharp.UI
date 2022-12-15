@@ -13,6 +13,10 @@ namespace Sharp.UI
 {
     public partial class TabbedPage : Microsoft.Maui.Controls.TabbedPage, Sharp.UI.ITabbedPage, IList<Microsoft.Maui.Controls.Page>, IWrappedBindableObject
     {
+        // ----- maui object -----
+
+        public Sharp.UI.TabbedPage MauiObject { get => this; }
+
         // ----- constructors -----
 
         public TabbedPage() { }
@@ -36,16 +40,16 @@ namespace Sharp.UI
         // ----- collection container -----
 
         public int Count => this.Children.Count;
-        public Microsoft.Maui.Controls.Page this[int index] { get => this.Children[index]; set => this.Children[index] = value; }
+        public Microsoft.Maui.Controls.Page this[int index] { get => this.Children[index]; set => this.Children[index] = MauiWrapper.Value<Microsoft.Maui.Controls.Page>(value); }
         public bool IsReadOnly => false;
-        public void Add(Microsoft.Maui.Controls.Page item) => this.Children.Add(item);
+        public void Add(Microsoft.Maui.Controls.Page item) => this.Children.Add(MauiWrapper.Value<Microsoft.Maui.Controls.Page>(item));
         public void Clear() => this.Children.Clear();
-        public bool Contains(Microsoft.Maui.Controls.Page item) => this.Children.Contains(item);
+        public bool Contains(Microsoft.Maui.Controls.Page item) => this.Children.Contains(MauiWrapper.Value<Microsoft.Maui.Controls.Page>(item));
         public void CopyTo(Microsoft.Maui.Controls.Page[] array, int arrayIndex) => this.Children.CopyTo(array, arrayIndex);
         public IEnumerator<Microsoft.Maui.Controls.Page> GetEnumerator() => this.Children.GetEnumerator();
-        public int IndexOf(Microsoft.Maui.Controls.Page item) => this.Children.IndexOf(item);
-        public void Insert(int index, Microsoft.Maui.Controls.Page item) => this.Children.Insert(index, item);
-        public bool Remove(Microsoft.Maui.Controls.Page item) => this.Children.Remove(item);
+        public int IndexOf(Microsoft.Maui.Controls.Page item) => this.Children.IndexOf(MauiWrapper.Value<Microsoft.Maui.Controls.Page>(item));
+        public void Insert(int index, Microsoft.Maui.Controls.Page item) => this.Children.Insert(index, MauiWrapper.Value<Microsoft.Maui.Controls.Page>(item));
+        public bool Remove(Microsoft.Maui.Controls.Page item) => this.Children.Remove(MauiWrapper.Value<Microsoft.Maui.Controls.Page>(item));
         public void RemoveAt(int index) => this.Children.RemoveAt(index);
         IEnumerator IEnumerable.GetEnumerator() => this.Children.GetEnumerator();
 
@@ -54,11 +58,7 @@ namespace Sharp.UI
         public new object BindingContext
         {
             get => base.BindingContext;
-            set
-            {
-                var mauiObject = MauiWrapper.Value<object>(value);
-                base.BindingContext = mauiObject;
-            }
+            set => base.BindingContext = MauiWrapper.Value<object>(value);           
         }
         
 

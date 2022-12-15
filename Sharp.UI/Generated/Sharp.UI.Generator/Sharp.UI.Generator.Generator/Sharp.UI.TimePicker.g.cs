@@ -9,6 +9,10 @@ namespace Sharp.UI
 {
     public partial class TimePicker : Microsoft.Maui.Controls.TimePicker, Sharp.UI.ITimePicker, IWrappedBindableObject
     {
+        // ----- maui object -----
+
+        public Sharp.UI.TimePicker MauiObject { get => this; }
+
         // ----- constructors -----
 
         public TimePicker() { }
@@ -34,11 +38,7 @@ namespace Sharp.UI
         public new object BindingContext
         {
             get => base.BindingContext;
-            set
-            {
-                var mauiObject = MauiWrapper.Value<object>(value);
-                base.BindingContext = mauiObject;
-            }
+            set => base.BindingContext = MauiWrapper.Value<object>(value);           
         }
         
 

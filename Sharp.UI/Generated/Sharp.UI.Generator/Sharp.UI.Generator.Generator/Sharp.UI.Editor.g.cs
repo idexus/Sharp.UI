@@ -9,6 +9,10 @@ namespace Sharp.UI
 {
     public partial class Editor : Microsoft.Maui.Controls.Editor, Sharp.UI.IEditor, IWrappedBindableObject
     {
+        // ----- maui object -----
+
+        public Sharp.UI.Editor MauiObject { get => this; }
+
         // ----- constructors -----
 
         public Editor() { }
@@ -58,11 +62,7 @@ namespace Sharp.UI
         public new object BindingContext
         {
             get => base.BindingContext;
-            set
-            {
-                var mauiObject = MauiWrapper.Value<object>(value);
-                base.BindingContext = mauiObject;
-            }
+            set => base.BindingContext = MauiWrapper.Value<object>(value);           
         }
         
 

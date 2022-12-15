@@ -9,6 +9,10 @@ namespace Sharp.UI
 {
     public partial class DropGestureRecognizer : Microsoft.Maui.Controls.DropGestureRecognizer, Sharp.UI.IDropGestureRecognizer, IWrappedBindableObject
     {
+        // ----- maui object -----
+
+        public Sharp.UI.DropGestureRecognizer MauiObject { get => this; }
+
         // ----- constructors -----
 
         public DropGestureRecognizer() { }
@@ -34,11 +38,7 @@ namespace Sharp.UI
         public new object BindingContext
         {
             get => base.BindingContext;
-            set
-            {
-                var mauiObject = MauiWrapper.Value<object>(value);
-                base.BindingContext = mauiObject;
-            }
+            set => base.BindingContext = MauiWrapper.Value<object>(value);           
         }
         
 
