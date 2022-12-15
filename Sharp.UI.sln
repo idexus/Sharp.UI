@@ -14,7 +14,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharp.UI.Generator", "Sharp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharp.UI.Example", "Sharp.UI.Example\Sharp.UI.Example.csproj", "{6721451F-0353-49A2-A73D-E066FAE1ACBD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp\TestApp.csproj", "{1601CCB8-DF7E-4491-81A2-88E2A720B84A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp\TestApp.csproj", "{6929389E-0AB8-4911-838A-FBAC40AA3A21}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,10 +34,10 @@ Global
 		{6721451F-0353-49A2-A73D-E066FAE1ACBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6721451F-0353-49A2-A73D-E066FAE1ACBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6721451F-0353-49A2-A73D-E066FAE1ACBD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1601CCB8-DF7E-4491-81A2-88E2A720B84A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1601CCB8-DF7E-4491-81A2-88E2A720B84A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1601CCB8-DF7E-4491-81A2-88E2A720B84A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1601CCB8-DF7E-4491-81A2-88E2A720B84A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6929389E-0AB8-4911-838A-FBAC40AA3A21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6929389E-0AB8-4911-838A-FBAC40AA3A21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6929389E-0AB8-4911-838A-FBAC40AA3A21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6929389E-0AB8-4911-838A-FBAC40AA3A21}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

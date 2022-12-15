@@ -7,7 +7,7 @@ namespace Sharp.UI.Example
         {
             var builder = MauiApp.CreateBuilder();
             builder
-                .UseMauiApp<App>()               
+                .UseMauiApp<App>()            
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
