@@ -31,14 +31,6 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <None Remove="docs\" />
-    <None Remove="Helpers\" />
-  </ItemGroup>
-  <ItemGroup>
 		<None Include="docs\README.md" Pack="true" PackagePath="\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="docs\" />
-    <Folder Include="Helpers\" />
   </ItemGroup>
 </Project>

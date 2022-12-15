@@ -1,5 +1,4 @@
-﻿using static CoreFoundation.DispatchSource;
-
+﻿
 namespace Sharp.UI.Example;
 
 using Sharp.UI;
