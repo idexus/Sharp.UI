@@ -14,8 +14,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IBindingBase
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BindingBase>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.BindingMode>(mode);
-            if (mode != null) mauiObject.Mode = mauiValue;
+            if (mode != null) mauiObject.Mode = (Microsoft.Maui.Controls.BindingMode)mode;
             return obj;
         }
         
@@ -25,8 +24,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IBindingBase
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BindingBase>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.BindingMode>(mode);
-            if (mode != null) mauiObject.Mode = mauiValue;
+            if (mode != null) mauiObject.Mode = (Microsoft.Maui.Controls.BindingMode)mode;
             var def = definition(new ValueDef<Microsoft.Maui.Controls.BindingMode>());
             if (def.ValueIsSet()) mauiObject.Mode = def.GetValue();
             return obj;
@@ -47,8 +45,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IBindingBase
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BindingBase>(obj);
-            var mauiValue = MauiWrapper.Value<string>(stringFormat);
-            if (stringFormat != null) mauiObject.StringFormat = mauiValue;
+            if (stringFormat != null) mauiObject.StringFormat = (string)stringFormat;
             return obj;
         }
         
@@ -58,8 +55,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IBindingBase
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BindingBase>(obj);
-            var mauiValue = MauiWrapper.Value<string>(stringFormat);
-            if (stringFormat != null) mauiObject.StringFormat = mauiValue;
+            if (stringFormat != null) mauiObject.StringFormat = (string)stringFormat;
             var def = definition(new ValueDef<string>());
             if (def.ValueIsSet()) mauiObject.StringFormat = def.GetValue();
             return obj;
@@ -80,8 +76,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IBindingBase
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BindingBase>(obj);
-            var mauiValue = MauiWrapper.Value<object>(targetNullValue);
-            if (targetNullValue != null) mauiObject.TargetNullValue = mauiValue;
+            if (targetNullValue != null) mauiObject.TargetNullValue = (object)targetNullValue;
             return obj;
         }
         
@@ -91,8 +86,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IBindingBase
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BindingBase>(obj);
-            var mauiValue = MauiWrapper.Value<object>(targetNullValue);
-            if (targetNullValue != null) mauiObject.TargetNullValue = mauiValue;
+            if (targetNullValue != null) mauiObject.TargetNullValue = (object)targetNullValue;
             var def = definition(new ValueDef<object>());
             if (def.ValueIsSet()) mauiObject.TargetNullValue = def.GetValue();
             return obj;
@@ -113,8 +107,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IBindingBase
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BindingBase>(obj);
-            var mauiValue = MauiWrapper.Value<object>(fallbackValue);
-            if (fallbackValue != null) mauiObject.FallbackValue = mauiValue;
+            if (fallbackValue != null) mauiObject.FallbackValue = (object)fallbackValue;
             return obj;
         }
         
@@ -124,8 +117,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IBindingBase
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BindingBase>(obj);
-            var mauiValue = MauiWrapper.Value<object>(fallbackValue);
-            if (fallbackValue != null) mauiObject.FallbackValue = mauiValue;
+            if (fallbackValue != null) mauiObject.FallbackValue = (object)fallbackValue;
             var def = definition(new ValueDef<object>());
             if (def.ValueIsSet()) mauiObject.FallbackValue = def.GetValue();
             return obj;

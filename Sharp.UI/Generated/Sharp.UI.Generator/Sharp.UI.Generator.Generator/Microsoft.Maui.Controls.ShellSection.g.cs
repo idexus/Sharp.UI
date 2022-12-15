@@ -14,8 +14,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IShellSection
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ShellSection>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.ShellContent>(currentItem);
-            if (currentItem != null) mauiObject.CurrentItem = mauiValue;
+            if (currentItem != null) mauiObject.CurrentItem = (Microsoft.Maui.Controls.ShellContent)currentItem;
             return obj;
         }
         
@@ -24,9 +23,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.ShellContent>, BindableDef<Microsoft.Maui.Controls.ShellContent>> definition)
             where T : Sharp.UI.IShellSection
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ShellSection>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.ShellContent>(currentItem);
-            if (currentItem != null) mauiObject.CurrentItem = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ShellSection>(obj);         
+            if (currentItem != null) mauiObject.CurrentItem = (Microsoft.Maui.Controls.ShellContent)currentItem;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.ShellContent>(mauiObject, Microsoft.Maui.Controls.ShellSection.CurrentItemProperty));
             if (def.ValueIsSet()) mauiObject.CurrentItem = def.GetValue();
             def.BindProperty();

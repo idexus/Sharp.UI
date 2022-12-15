@@ -14,8 +14,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IFontImageSource
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FontImageSource>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(color);
-            if (color != null) mauiObject.Color = mauiValue;
+            if (color != null) mauiObject.Color = (Microsoft.Maui.Graphics.Color)color;
             return obj;
         }
         
@@ -24,9 +23,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IFontImageSource
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FontImageSource>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(color);
-            if (color != null) mauiObject.Color = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FontImageSource>(obj);         
+            if (color != null) mauiObject.Color = (Microsoft.Maui.Graphics.Color)color;
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.FontImageSource.ColorProperty));
             if (def.ValueIsSet()) mauiObject.Color = def.GetValue();
             def.BindProperty();
@@ -49,8 +47,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IFontImageSource
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FontImageSource>(obj);
-            var mauiValue = MauiWrapper.Value<string>(fontFamily);
-            if (fontFamily != null) mauiObject.FontFamily = mauiValue;
+            if (fontFamily != null) mauiObject.FontFamily = (string)fontFamily;
             return obj;
         }
         
@@ -59,9 +56,8 @@ namespace Sharp.UI
             System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.IFontImageSource
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FontImageSource>(obj);
-            var mauiValue = MauiWrapper.Value<string>(fontFamily);
-            if (fontFamily != null) mauiObject.FontFamily = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FontImageSource>(obj);         
+            if (fontFamily != null) mauiObject.FontFamily = (string)fontFamily;
             var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.FontImageSource.FontFamilyProperty));
             if (def.ValueIsSet()) mauiObject.FontFamily = def.GetValue();
             def.BindProperty();
@@ -84,8 +80,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IFontImageSource
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FontImageSource>(obj);
-            var mauiValue = MauiWrapper.Value<string>(glyph);
-            if (glyph != null) mauiObject.Glyph = mauiValue;
+            if (glyph != null) mauiObject.Glyph = (string)glyph;
             return obj;
         }
         
@@ -94,9 +89,8 @@ namespace Sharp.UI
             System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.IFontImageSource
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FontImageSource>(obj);
-            var mauiValue = MauiWrapper.Value<string>(glyph);
-            if (glyph != null) mauiObject.Glyph = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FontImageSource>(obj);         
+            if (glyph != null) mauiObject.Glyph = (string)glyph;
             var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.FontImageSource.GlyphProperty));
             if (def.ValueIsSet()) mauiObject.Glyph = def.GetValue();
             def.BindProperty();
@@ -119,8 +113,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IFontImageSource
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FontImageSource>(obj);
-            var mauiValue = MauiWrapper.Value<double>(size);
-            if (size != null) mauiObject.Size = mauiValue;
+            if (size != null) mauiObject.Size = (double)size;
             return obj;
         }
         
@@ -129,9 +122,8 @@ namespace Sharp.UI
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IFontImageSource
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FontImageSource>(obj);
-            var mauiValue = MauiWrapper.Value<double>(size);
-            if (size != null) mauiObject.Size = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FontImageSource>(obj);         
+            if (size != null) mauiObject.Size = (double)size;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.FontImageSource.SizeProperty));
             if (def.ValueIsSet()) mauiObject.Size = def.GetValue();
             def.BindProperty();
@@ -154,8 +146,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IFontImageSource
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FontImageSource>(obj);
-            var mauiValue = MauiWrapper.Value<bool>(fontAutoScalingEnabled);
-            if (fontAutoScalingEnabled != null) mauiObject.FontAutoScalingEnabled = mauiValue;
+            if (fontAutoScalingEnabled != null) mauiObject.FontAutoScalingEnabled = (bool)fontAutoScalingEnabled;
             return obj;
         }
         
@@ -164,9 +155,8 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IFontImageSource
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FontImageSource>(obj);
-            var mauiValue = MauiWrapper.Value<bool>(fontAutoScalingEnabled);
-            if (fontAutoScalingEnabled != null) mauiObject.FontAutoScalingEnabled = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FontImageSource>(obj);         
+            if (fontAutoScalingEnabled != null) mauiObject.FontAutoScalingEnabled = (bool)fontAutoScalingEnabled;
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.FontImageSource.FontAutoScalingEnabledProperty));
             if (def.ValueIsSet()) mauiObject.FontAutoScalingEnabled = def.GetValue();
             def.BindProperty();

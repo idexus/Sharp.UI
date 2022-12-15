@@ -14,8 +14,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IBaseShellItem
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.ImageSource>(flyoutIcon);
-            if (flyoutIcon != null) mauiObject.FlyoutIcon = mauiValue;
+            if (flyoutIcon != null) mauiObject.FlyoutIcon = (Microsoft.Maui.Controls.ImageSource)flyoutIcon;
             return obj;
         }
         
@@ -24,9 +23,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.ImageSource>, BindableDef<Microsoft.Maui.Controls.ImageSource>> definition)
             where T : Sharp.UI.IBaseShellItem
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.ImageSource>(flyoutIcon);
-            if (flyoutIcon != null) mauiObject.FlyoutIcon = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);         
+            if (flyoutIcon != null) mauiObject.FlyoutIcon = (Microsoft.Maui.Controls.ImageSource)flyoutIcon;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.ImageSource>(mauiObject, Microsoft.Maui.Controls.BaseShellItem.FlyoutIconProperty));
             if (def.ValueIsSet()) mauiObject.FlyoutIcon = def.GetValue();
             def.BindProperty();
@@ -49,8 +47,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IBaseShellItem
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.ImageSource>(icon);
-            if (icon != null) mauiObject.Icon = mauiValue;
+            if (icon != null) mauiObject.Icon = (Microsoft.Maui.Controls.ImageSource)icon;
             return obj;
         }
         
@@ -59,9 +56,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.ImageSource>, BindableDef<Microsoft.Maui.Controls.ImageSource>> definition)
             where T : Sharp.UI.IBaseShellItem
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.ImageSource>(icon);
-            if (icon != null) mauiObject.Icon = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);         
+            if (icon != null) mauiObject.Icon = (Microsoft.Maui.Controls.ImageSource)icon;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.ImageSource>(mauiObject, Microsoft.Maui.Controls.BaseShellItem.IconProperty));
             if (def.ValueIsSet()) mauiObject.Icon = def.GetValue();
             def.BindProperty();
@@ -84,8 +80,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IBaseShellItem
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);
-            var mauiValue = MauiWrapper.Value<bool>(isEnabled);
-            if (isEnabled != null) mauiObject.IsEnabled = mauiValue;
+            if (isEnabled != null) mauiObject.IsEnabled = (bool)isEnabled;
             return obj;
         }
         
@@ -94,9 +89,8 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IBaseShellItem
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);
-            var mauiValue = MauiWrapper.Value<bool>(isEnabled);
-            if (isEnabled != null) mauiObject.IsEnabled = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);         
+            if (isEnabled != null) mauiObject.IsEnabled = (bool)isEnabled;
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.BaseShellItem.IsEnabledProperty));
             if (def.ValueIsSet()) mauiObject.IsEnabled = def.GetValue();
             def.BindProperty();
@@ -119,8 +113,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IBaseShellItem
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);
-            var mauiValue = MauiWrapper.Value<string>(route);
-            if (route != null) mauiObject.Route = mauiValue;
+            if (route != null) mauiObject.Route = (string)route;
             return obj;
         }
         
@@ -130,8 +123,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IBaseShellItem
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);
-            var mauiValue = MauiWrapper.Value<string>(route);
-            if (route != null) mauiObject.Route = mauiValue;
+            if (route != null) mauiObject.Route = (string)route;
             var def = definition(new ValueDef<string>());
             if (def.ValueIsSet()) mauiObject.Route = def.GetValue();
             return obj;
@@ -152,8 +144,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IBaseShellItem
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);
-            var mauiValue = MauiWrapper.Value<string>(title);
-            if (title != null) mauiObject.Title = mauiValue;
+            if (title != null) mauiObject.Title = (string)title;
             return obj;
         }
         
@@ -162,9 +153,8 @@ namespace Sharp.UI
             System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.IBaseShellItem
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);
-            var mauiValue = MauiWrapper.Value<string>(title);
-            if (title != null) mauiObject.Title = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);         
+            if (title != null) mauiObject.Title = (string)title;
             var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.BaseShellItem.TitleProperty));
             if (def.ValueIsSet()) mauiObject.Title = def.GetValue();
             def.BindProperty();
@@ -187,8 +177,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IBaseShellItem
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);
-            var mauiValue = MauiWrapper.Value<bool>(isVisible);
-            if (isVisible != null) mauiObject.IsVisible = mauiValue;
+            if (isVisible != null) mauiObject.IsVisible = (bool)isVisible;
             return obj;
         }
         
@@ -197,9 +186,8 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IBaseShellItem
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);
-            var mauiValue = MauiWrapper.Value<bool>(isVisible);
-            if (isVisible != null) mauiObject.IsVisible = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);         
+            if (isVisible != null) mauiObject.IsVisible = (bool)isVisible;
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.BaseShellItem.IsVisibleProperty));
             if (def.ValueIsSet()) mauiObject.IsVisible = def.GetValue();
             def.BindProperty();
@@ -222,8 +210,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IBaseShellItem
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);
-            var mauiValue = MauiWrapper.Value<bool>(flyoutItemIsVisible);
-            if (flyoutItemIsVisible != null) mauiObject.FlyoutItemIsVisible = mauiValue;
+            if (flyoutItemIsVisible != null) mauiObject.FlyoutItemIsVisible = (bool)flyoutItemIsVisible;
             return obj;
         }
         
@@ -233,8 +220,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IBaseShellItem
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);
-            var mauiValue = MauiWrapper.Value<bool>(flyoutItemIsVisible);
-            if (flyoutItemIsVisible != null) mauiObject.FlyoutItemIsVisible = mauiValue;
+            if (flyoutItemIsVisible != null) mauiObject.FlyoutItemIsVisible = (bool)flyoutItemIsVisible;
             var def = definition(new ValueDef<bool>());
             if (def.ValueIsSet()) mauiObject.FlyoutItemIsVisible = def.GetValue();
             return obj;
@@ -271,8 +257,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IBaseShellItem
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.DataTemplate>(itemTemplate);
-            if (itemTemplate != null) mauiObject.SetValue(Microsoft.Maui.Controls.Shell.ItemTemplateProperty, mauiValue);
+            if (itemTemplate != null) mauiObject.SetValue(Microsoft.Maui.Controls.Shell.ItemTemplateProperty, (Microsoft.Maui.Controls.DataTemplate)itemTemplate);
             return obj;
         }
         
@@ -281,9 +266,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
             where T : Sharp.UI.IBaseShellItem
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.DataTemplate>(itemTemplate);
-            if (itemTemplate != null) mauiObject.SetValue(Microsoft.Maui.Controls.Shell.ItemTemplateProperty, mauiValue);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);         
+            if (itemTemplate != null) mauiObject.SetValue(Microsoft.Maui.Controls.Shell.ItemTemplateProperty, (Microsoft.Maui.Controls.DataTemplate)itemTemplate);
             var def = definition(new BindableDef<Microsoft.Maui.Controls.DataTemplate>(mauiObject, Microsoft.Maui.Controls.Shell.ItemTemplateProperty));
             if (def.ValueIsSet()) mauiObject.SetValue(Microsoft.Maui.Controls.Shell.ItemTemplateProperty, def.GetValue());
             def.BindProperty();

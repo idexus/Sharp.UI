@@ -14,8 +14,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IEllipse
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Ellipse>(obj);
-            var mauiValue = MauiWrapper.Value<System.Collections.Generic.IList<string>>(@class);
-            if (@class != null) mauiObject.@class = mauiValue;
+            if (@class != null) mauiObject.@class = (System.Collections.Generic.IList<string>)@class;
             return obj;
         }
         
@@ -25,8 +24,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IEllipse
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Ellipse>(obj);
-            var mauiValue = MauiWrapper.Value<System.Collections.Generic.IList<string>>(@class);
-            if (@class != null) mauiObject.@class = mauiValue;
+            if (@class != null) mauiObject.@class = (System.Collections.Generic.IList<string>)@class;
             var def = definition(new ValueDef<System.Collections.Generic.IList<string>>());
             if (def.ValueIsSet()) mauiObject.@class = def.GetValue();
             return obj;

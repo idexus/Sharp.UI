@@ -69,6 +69,8 @@ namespace Sharp.UI.Generator
 
             WrappedType = GetWrappedType(sharpAttribute);
 
+            if (IsUserDefiniedType && !IsBindable()) throw new ArgumentException("User defined classes with SharpObject attribute is only allowed for BindableObject types");
+
             nameSpaceString = IsUserDefiniedType ? mainSymbol.ContainingNamespace.ToDisplayString() : "Sharp.UI";
             typeConformanceName = IsUserDefiniedType ? symbol.ToDisplayString() : $"Sharp.UI.I{GetNormalizedName()}";
 
@@ -79,7 +81,6 @@ namespace Sharp.UI.Generator
             notGenerateList.Add("this[]");
             notGenerateList.Add("Handler");
             notGenerateList.Add("LogicalChildren");
-            notGenerateList.Add("BindingContext");
         }
 
         void SetupContainerIfNeeded()

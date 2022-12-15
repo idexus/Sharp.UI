@@ -14,8 +14,7 @@ namespace Sharp.UI
             where T : Sharp.UI.ISwipeView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeView>(obj);
-            var mauiValue = MauiWrapper.Value<double>(threshold);
-            if (threshold != null) mauiObject.Threshold = mauiValue;
+            if (threshold != null) mauiObject.Threshold = (double)threshold;
             return obj;
         }
         
@@ -24,9 +23,8 @@ namespace Sharp.UI
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.ISwipeView
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeView>(obj);
-            var mauiValue = MauiWrapper.Value<double>(threshold);
-            if (threshold != null) mauiObject.Threshold = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeView>(obj);         
+            if (threshold != null) mauiObject.Threshold = (double)threshold;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.SwipeView.ThresholdProperty));
             if (def.ValueIsSet()) mauiObject.Threshold = def.GetValue();
             def.BindProperty();
@@ -49,8 +47,7 @@ namespace Sharp.UI
             where T : Sharp.UI.ISwipeView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeView>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeItems>(leftItems);
-            if (leftItems != null) mauiObject.LeftItems = mauiValue;
+            if (leftItems != null) mauiObject.LeftItems = (Microsoft.Maui.Controls.SwipeItems)leftItems;
             return obj;
         }
         
@@ -59,9 +56,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.SwipeItems>, BindableDef<Microsoft.Maui.Controls.SwipeItems>> definition)
             where T : Sharp.UI.ISwipeView
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeView>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeItems>(leftItems);
-            if (leftItems != null) mauiObject.LeftItems = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeView>(obj);         
+            if (leftItems != null) mauiObject.LeftItems = (Microsoft.Maui.Controls.SwipeItems)leftItems;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.SwipeItems>(mauiObject, Microsoft.Maui.Controls.SwipeView.LeftItemsProperty));
             if (def.ValueIsSet()) mauiObject.LeftItems = def.GetValue();
             def.BindProperty();
@@ -84,8 +80,7 @@ namespace Sharp.UI
             where T : Sharp.UI.ISwipeView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeView>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeItems>(rightItems);
-            if (rightItems != null) mauiObject.RightItems = mauiValue;
+            if (rightItems != null) mauiObject.RightItems = (Microsoft.Maui.Controls.SwipeItems)rightItems;
             return obj;
         }
         
@@ -94,9 +89,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.SwipeItems>, BindableDef<Microsoft.Maui.Controls.SwipeItems>> definition)
             where T : Sharp.UI.ISwipeView
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeView>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeItems>(rightItems);
-            if (rightItems != null) mauiObject.RightItems = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeView>(obj);         
+            if (rightItems != null) mauiObject.RightItems = (Microsoft.Maui.Controls.SwipeItems)rightItems;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.SwipeItems>(mauiObject, Microsoft.Maui.Controls.SwipeView.RightItemsProperty));
             if (def.ValueIsSet()) mauiObject.RightItems = def.GetValue();
             def.BindProperty();
@@ -119,8 +113,7 @@ namespace Sharp.UI
             where T : Sharp.UI.ISwipeView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeView>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeItems>(topItems);
-            if (topItems != null) mauiObject.TopItems = mauiValue;
+            if (topItems != null) mauiObject.TopItems = (Microsoft.Maui.Controls.SwipeItems)topItems;
             return obj;
         }
         
@@ -129,9 +122,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.SwipeItems>, BindableDef<Microsoft.Maui.Controls.SwipeItems>> definition)
             where T : Sharp.UI.ISwipeView
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeView>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeItems>(topItems);
-            if (topItems != null) mauiObject.TopItems = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeView>(obj);         
+            if (topItems != null) mauiObject.TopItems = (Microsoft.Maui.Controls.SwipeItems)topItems;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.SwipeItems>(mauiObject, Microsoft.Maui.Controls.SwipeView.TopItemsProperty));
             if (def.ValueIsSet()) mauiObject.TopItems = def.GetValue();
             def.BindProperty();
@@ -154,8 +146,7 @@ namespace Sharp.UI
             where T : Sharp.UI.ISwipeView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeView>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeItems>(bottomItems);
-            if (bottomItems != null) mauiObject.BottomItems = mauiValue;
+            if (bottomItems != null) mauiObject.BottomItems = (Microsoft.Maui.Controls.SwipeItems)bottomItems;
             return obj;
         }
         
@@ -164,9 +155,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.SwipeItems>, BindableDef<Microsoft.Maui.Controls.SwipeItems>> definition)
             where T : Sharp.UI.ISwipeView
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeView>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeItems>(bottomItems);
-            if (bottomItems != null) mauiObject.BottomItems = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeView>(obj);         
+            if (bottomItems != null) mauiObject.BottomItems = (Microsoft.Maui.Controls.SwipeItems)bottomItems;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.SwipeItems>(mauiObject, Microsoft.Maui.Controls.SwipeView.BottomItemsProperty));
             if (def.ValueIsSet()) mauiObject.BottomItems = def.GetValue();
             def.BindProperty();

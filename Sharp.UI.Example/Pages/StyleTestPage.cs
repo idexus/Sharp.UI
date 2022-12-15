@@ -36,19 +36,31 @@ namespace Sharp.UI.Example
         {
             Content = new VStack()
             {
-                new HStack(e => e.StyleClass())
+                new HStack
                 {
                     new RadioButton(new Image("dotnet_bot.png")),
                     new RadioButton(new Image("dotnet_bot.png")).IsChecked(true),
                     new RadioButton(new Image("dotnet_bot.png")),
                 },
                 new Label("This is a test of style"),
-                new Button("Test")
+                new Button("Test", out var button)
+                    .Style(new Style<Button>
+                    {
+                        Button.FontSizeProperty.Set(50),
+                        Button.BackgroundColorProperty.Set(AppColors.Gray100)
+                    })
                     .OnClicked(e =>
                     {
                         e.IsEnabled = false;
                     })
             };
+
+            //button.Style = new Style<Button>
+            //{
+            //    Button.FontSizeProperty.Set(50),
+            //    Button.BackgroundColorProperty.Set(AppColors.Gray100)
+            //};
+
             Content.Resources = localResources;
         }
     }

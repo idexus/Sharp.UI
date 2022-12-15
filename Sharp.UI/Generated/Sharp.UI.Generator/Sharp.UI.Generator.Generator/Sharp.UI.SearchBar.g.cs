@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public partial class SearchBar : Microsoft.Maui.Controls.SearchBar, Sharp.UI.ISearchBar, IWrappedBindableObject
+    public partial class SearchBar : Microsoft.Maui.Controls.SearchBar, Sharp.UI.ISearchBar, IMauiWrapper
     {
         // ----- maui object -----
 
@@ -57,15 +57,25 @@ namespace Sharp.UI
             configure(this);
         }
 
-        // ----- binding context -----
+        // ----- properties / events -----
 
-        public new object BindingContext
+        public new object SearchCommandParameter { get => base.SearchCommandParameter; set => base.SearchCommandParameter = MauiWrapper.Value<object>(value); }
+        public new Sharp.UI.Style Style { get => new Sharp.UI.Style(base.Style); set => base.Style = value.MauiObject; }
+        public new object BindingContext { get => base.BindingContext; set => base.BindingContext = MauiWrapper.Value<object>(value); }
+
+        // ----- set value method -----
+
+        public new void SetValue(Microsoft.Maui.Controls.BindableProperty property, object value)
         {
-            get => base.BindingContext;
-            set => base.BindingContext = MauiWrapper.Value<object>(value);           
+            var mauiValue = MauiWrapper.Value<object>(value);
+            ((Microsoft.Maui.Controls.BindableObject)this).SetValue(property, mauiValue);
         }
-        
 
+        public new void SetValue(Microsoft.Maui.Controls.BindablePropertyKey propertyKey, object value)
+        {
+            var mauiValue = MauiWrapper.Value<object>(value);
+            ((Microsoft.Maui.Controls.BindableObject)this).SetValue(propertyKey, mauiValue);
+        }
     }
 }
 

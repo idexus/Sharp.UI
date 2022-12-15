@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public partial class PropertyCondition : Sharp.UI.IPropertyCondition, ISealedMauiWrapper
+    public partial class PropertyCondition : Sharp.UI.IPropertyCondition, IMauiWrapper, ISealedMauiWrapper
     {
         // ----- maui object -----
 
@@ -17,7 +17,7 @@ namespace Sharp.UI
 
         // ----- constructors -----
 
-        protected PropertyCondition(Microsoft.Maui.Controls.PropertyCondition propertyCondition)
+        public PropertyCondition(Microsoft.Maui.Controls.PropertyCondition propertyCondition)
         {
             MauiObject = propertyCondition;
         }
@@ -48,13 +48,11 @@ namespace Sharp.UI
         public static implicit operator PropertyCondition(Microsoft.Maui.Controls.PropertyCondition mauiObject) => new PropertyCondition(mauiObject);
         public static implicit operator Microsoft.Maui.Controls.PropertyCondition(PropertyCondition obj) => obj.MauiObject;
 
-        // ----- bindable properties -----
-
-
         // ----- properties / events -----
 
         public Microsoft.Maui.Controls.BindableProperty Property { get => MauiObject.Property; set => MauiObject.Property = value; }
-        public object Value { get => MauiObject.Value; set => MauiObject.Value = value; }
+        public object Value { get => MauiObject.Value; set => MauiObject.Value = MauiWrapper.Value<object>(value); }
+
     }
 }
 

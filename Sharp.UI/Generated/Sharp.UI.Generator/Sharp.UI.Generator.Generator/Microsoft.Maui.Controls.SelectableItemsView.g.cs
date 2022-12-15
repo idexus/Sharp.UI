@@ -14,8 +14,7 @@ namespace Sharp.UI
             where T : Sharp.UI.ISelectableItemsView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SelectableItemsView>(obj);
-            var mauiValue = MauiWrapper.Value<object>(selectedItem);
-            if (selectedItem != null) mauiObject.SelectedItem = mauiValue;
+            if (selectedItem != null) mauiObject.SelectedItem = (object)selectedItem;
             return obj;
         }
         
@@ -24,9 +23,8 @@ namespace Sharp.UI
             System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.ISelectableItemsView
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SelectableItemsView>(obj);
-            var mauiValue = MauiWrapper.Value<object>(selectedItem);
-            if (selectedItem != null) mauiObject.SelectedItem = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SelectableItemsView>(obj);         
+            if (selectedItem != null) mauiObject.SelectedItem = (object)selectedItem;
             var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.SelectableItemsView.SelectedItemProperty));
             if (def.ValueIsSet()) mauiObject.SelectedItem = def.GetValue();
             def.BindProperty();
@@ -49,8 +47,7 @@ namespace Sharp.UI
             where T : Sharp.UI.ISelectableItemsView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SelectableItemsView>(obj);
-            var mauiValue = MauiWrapper.Value<System.Collections.Generic.IList<object>>(selectedItems);
-            if (selectedItems != null) mauiObject.SelectedItems = mauiValue;
+            if (selectedItems != null) mauiObject.SelectedItems = (System.Collections.Generic.IList<object>)selectedItems;
             return obj;
         }
         
@@ -59,9 +56,8 @@ namespace Sharp.UI
             System.Func<BindableDef<System.Collections.Generic.IList<object>>, BindableDef<System.Collections.Generic.IList<object>>> definition)
             where T : Sharp.UI.ISelectableItemsView
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SelectableItemsView>(obj);
-            var mauiValue = MauiWrapper.Value<System.Collections.Generic.IList<object>>(selectedItems);
-            if (selectedItems != null) mauiObject.SelectedItems = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SelectableItemsView>(obj);         
+            if (selectedItems != null) mauiObject.SelectedItems = (System.Collections.Generic.IList<object>)selectedItems;
             var def = definition(new BindableDef<System.Collections.Generic.IList<object>>(mauiObject, Microsoft.Maui.Controls.SelectableItemsView.SelectedItemsProperty));
             if (def.ValueIsSet()) mauiObject.SelectedItems = def.GetValue();
             def.BindProperty();
@@ -84,8 +80,7 @@ namespace Sharp.UI
             where T : Sharp.UI.ISelectableItemsView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SelectableItemsView>(obj);
-            var mauiValue = MauiWrapper.Value<System.Windows.Input.ICommand>(selectionChangedCommand);
-            if (selectionChangedCommand != null) mauiObject.SelectionChangedCommand = mauiValue;
+            if (selectionChangedCommand != null) mauiObject.SelectionChangedCommand = (System.Windows.Input.ICommand)selectionChangedCommand;
             return obj;
         }
         
@@ -94,9 +89,8 @@ namespace Sharp.UI
             System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.ISelectableItemsView
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SelectableItemsView>(obj);
-            var mauiValue = MauiWrapper.Value<System.Windows.Input.ICommand>(selectionChangedCommand);
-            if (selectionChangedCommand != null) mauiObject.SelectionChangedCommand = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SelectableItemsView>(obj);         
+            if (selectionChangedCommand != null) mauiObject.SelectionChangedCommand = (System.Windows.Input.ICommand)selectionChangedCommand;
             var def = definition(new BindableDef<System.Windows.Input.ICommand>(mauiObject, Microsoft.Maui.Controls.SelectableItemsView.SelectionChangedCommandProperty));
             if (def.ValueIsSet()) mauiObject.SelectionChangedCommand = def.GetValue();
             def.BindProperty();
@@ -119,8 +113,7 @@ namespace Sharp.UI
             where T : Sharp.UI.ISelectableItemsView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SelectableItemsView>(obj);
-            var mauiValue = MauiWrapper.Value<object>(selectionChangedCommandParameter);
-            if (selectionChangedCommandParameter != null) mauiObject.SelectionChangedCommandParameter = mauiValue;
+            if (selectionChangedCommandParameter != null) mauiObject.SelectionChangedCommandParameter = (object)selectionChangedCommandParameter;
             return obj;
         }
         
@@ -129,9 +122,8 @@ namespace Sharp.UI
             System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.ISelectableItemsView
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SelectableItemsView>(obj);
-            var mauiValue = MauiWrapper.Value<object>(selectionChangedCommandParameter);
-            if (selectionChangedCommandParameter != null) mauiObject.SelectionChangedCommandParameter = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SelectableItemsView>(obj);         
+            if (selectionChangedCommandParameter != null) mauiObject.SelectionChangedCommandParameter = (object)selectionChangedCommandParameter;
             var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.SelectableItemsView.SelectionChangedCommandParameterProperty));
             if (def.ValueIsSet()) mauiObject.SelectionChangedCommandParameter = def.GetValue();
             def.BindProperty();
@@ -154,8 +146,7 @@ namespace Sharp.UI
             where T : Sharp.UI.ISelectableItemsView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SelectableItemsView>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.SelectionMode>(selectionMode);
-            if (selectionMode != null) mauiObject.SelectionMode = mauiValue;
+            if (selectionMode != null) mauiObject.SelectionMode = (Microsoft.Maui.Controls.SelectionMode)selectionMode;
             return obj;
         }
         
@@ -164,9 +155,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.SelectionMode>, BindableDef<Microsoft.Maui.Controls.SelectionMode>> definition)
             where T : Sharp.UI.ISelectableItemsView
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SelectableItemsView>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.SelectionMode>(selectionMode);
-            if (selectionMode != null) mauiObject.SelectionMode = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SelectableItemsView>(obj);         
+            if (selectionMode != null) mauiObject.SelectionMode = (Microsoft.Maui.Controls.SelectionMode)selectionMode;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.SelectionMode>(mauiObject, Microsoft.Maui.Controls.SelectableItemsView.SelectionModeProperty));
             if (def.ValueIsSet()) mauiObject.SelectionMode = def.GetValue();
             def.BindProperty();

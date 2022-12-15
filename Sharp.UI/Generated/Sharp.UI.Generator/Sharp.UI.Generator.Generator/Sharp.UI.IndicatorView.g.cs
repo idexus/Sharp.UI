@@ -11,7 +11,7 @@ using System.Collections.ObjectModel;
 
 namespace Sharp.UI
 {
-    public partial class IndicatorView : Microsoft.Maui.Controls.IndicatorView, Sharp.UI.IIndicatorView, IEnumerable, IWrappedBindableObject
+    public partial class IndicatorView : Microsoft.Maui.Controls.IndicatorView, Sharp.UI.IIndicatorView, IMauiWrapper, IEnumerable
     {
         // ----- maui object -----
 
@@ -41,17 +41,26 @@ namespace Sharp.UI
 
         public IEnumerator GetEnumerator() { yield return this.IndicatorLayout; }
 
-        public void Add(Microsoft.Maui.Controls.IBindableLayout indicatorlayout) => this.IndicatorLayout = MauiWrapper.Value<Microsoft.Maui.Controls.IBindableLayout>(indicatorlayout);
+        public void Add(Microsoft.Maui.Controls.IBindableLayout indicatorlayout) => this.IndicatorLayout = indicatorlayout;
 
-        // ----- binding context -----
+        // ----- properties / events -----
 
-        public new object BindingContext
+        public new Sharp.UI.Style Style { get => new Sharp.UI.Style(base.Style); set => base.Style = value.MauiObject; }
+        public new object BindingContext { get => base.BindingContext; set => base.BindingContext = MauiWrapper.Value<object>(value); }
+
+        // ----- set value method -----
+
+        public new void SetValue(Microsoft.Maui.Controls.BindableProperty property, object value)
         {
-            get => base.BindingContext;
-            set => base.BindingContext = MauiWrapper.Value<object>(value);           
+            var mauiValue = MauiWrapper.Value<object>(value);
+            ((Microsoft.Maui.Controls.BindableObject)this).SetValue(property, mauiValue);
         }
-        
 
+        public new void SetValue(Microsoft.Maui.Controls.BindablePropertyKey propertyKey, object value)
+        {
+            var mauiValue = MauiWrapper.Value<object>(value);
+            ((Microsoft.Maui.Controls.BindableObject)this).SetValue(propertyKey, mauiValue);
+        }
     }
 }
 

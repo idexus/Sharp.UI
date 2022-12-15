@@ -11,7 +11,7 @@ using System.Collections.ObjectModel;
 
 namespace Sharp.UI
 {
-    public partial class EventTrigger : Sharp.UI.IEventTrigger, ISealedMauiWrapper, IList<Microsoft.Maui.Controls.TriggerAction>, IWrappedBindableObject
+    public partial class EventTrigger : Sharp.UI.IEventTrigger, IMauiWrapper, ISealedMauiWrapper, IList<Microsoft.Maui.Controls.TriggerAction>
     {
         // ----- maui object -----
 
@@ -21,7 +21,7 @@ namespace Sharp.UI
 
         // ----- constructors -----
 
-        protected EventTrigger(Microsoft.Maui.Controls.EventTrigger eventTrigger)
+        public EventTrigger(Microsoft.Maui.Controls.EventTrigger eventTrigger)
         {
             MauiObject = eventTrigger;
         }
@@ -55,20 +55,20 @@ namespace Sharp.UI
         // ----- collection container -----
 
         public int Count => this.MauiObject.Actions.Count;
-        public Microsoft.Maui.Controls.TriggerAction this[int index] { get => this.MauiObject.Actions[index]; set => this.MauiObject.Actions[index] = MauiWrapper.Value<Microsoft.Maui.Controls.TriggerAction>(value); }
+        public Microsoft.Maui.Controls.TriggerAction this[int index] { get => this.MauiObject.Actions[index]; set => this.MauiObject.Actions[index] = value; }
         public bool IsReadOnly => false;
-        public void Add(Microsoft.Maui.Controls.TriggerAction item) => this.MauiObject.Actions.Add(MauiWrapper.Value<Microsoft.Maui.Controls.TriggerAction>(item));
+        public void Add(Microsoft.Maui.Controls.TriggerAction item) => this.MauiObject.Actions.Add(item);
         public void Clear() => this.MauiObject.Actions.Clear();
-        public bool Contains(Microsoft.Maui.Controls.TriggerAction item) => this.MauiObject.Actions.Contains(MauiWrapper.Value<Microsoft.Maui.Controls.TriggerAction>(item));
+        public bool Contains(Microsoft.Maui.Controls.TriggerAction item) => this.MauiObject.Actions.Contains(item);
         public void CopyTo(Microsoft.Maui.Controls.TriggerAction[] array, int arrayIndex) => this.MauiObject.Actions.CopyTo(array, arrayIndex);
         public IEnumerator<Microsoft.Maui.Controls.TriggerAction> GetEnumerator() => this.MauiObject.Actions.GetEnumerator();
-        public int IndexOf(Microsoft.Maui.Controls.TriggerAction item) => this.MauiObject.Actions.IndexOf(MauiWrapper.Value<Microsoft.Maui.Controls.TriggerAction>(item));
-        public void Insert(int index, Microsoft.Maui.Controls.TriggerAction item) => this.MauiObject.Actions.Insert(index, MauiWrapper.Value<Microsoft.Maui.Controls.TriggerAction>(item));
-        public bool Remove(Microsoft.Maui.Controls.TriggerAction item) => this.MauiObject.Actions.Remove(MauiWrapper.Value<Microsoft.Maui.Controls.TriggerAction>(item));
+        public int IndexOf(Microsoft.Maui.Controls.TriggerAction item) => this.MauiObject.Actions.IndexOf(item);
+        public void Insert(int index, Microsoft.Maui.Controls.TriggerAction item) => this.MauiObject.Actions.Insert(index, item);
+        public bool Remove(Microsoft.Maui.Controls.TriggerAction item) => this.MauiObject.Actions.Remove(item);
         public void RemoveAt(int index) => this.MauiObject.Actions.RemoveAt(index);
         IEnumerator IEnumerable.GetEnumerator() => this.MauiObject.Actions.GetEnumerator();
 
-        // ----- bindable properties -----
+        // ----- sealed bindable properties -----
 
         public static Microsoft.Maui.Controls.BindableProperty BindingContextProperty => Microsoft.Maui.Controls.BindableObject.BindingContextProperty;
 
@@ -81,18 +81,24 @@ namespace Sharp.UI
         public bool IsSealed { get => MauiObject.IsSealed; }
         public System.Type TargetType { get => MauiObject.TargetType; }
         public Microsoft.Maui.Dispatching.IDispatcher Dispatcher { get => MauiObject.Dispatcher; }
+        public object BindingContext { get => MauiObject.BindingContext; set => MauiObject.BindingContext = MauiWrapper.Value<object>(value); }
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged { add => MauiObject.PropertyChanged += value; remove => MauiObject.PropertyChanged -= value; }
         public event Microsoft.Maui.Controls.PropertyChangingEventHandler PropertyChanging { add => MauiObject.PropertyChanging += value; remove => MauiObject.PropertyChanging -= value; }
         public event System.EventHandler BindingContextChanged { add => MauiObject.BindingContextChanged += value; remove => MauiObject.BindingContextChanged -= value; }
-        // ----- binding context -----
 
-        public object BindingContext
+        // ----- set value method -----
+
+        public void SetValue(Microsoft.Maui.Controls.BindableProperty property, object value)
         {
-            get => MauiObject.BindingContext;
-            set => MauiObject.BindingContext = MauiWrapper.Value<object>(value);           
+            var mauiValue = MauiWrapper.Value<object>(value);
+            MauiObject.SetValue(property, mauiValue);
         }
-        
 
+        public void SetValue(Microsoft.Maui.Controls.BindablePropertyKey propertyKey, object value)
+        {
+            var mauiValue = MauiWrapper.Value<object>(value);
+            MauiObject.SetValue(propertyKey, mauiValue);
+        }
     }
 }
 

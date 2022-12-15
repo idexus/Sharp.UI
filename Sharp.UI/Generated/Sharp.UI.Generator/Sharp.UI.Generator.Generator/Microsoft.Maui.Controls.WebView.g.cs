@@ -14,8 +14,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IWebView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.WebView>(obj);
-            var mauiValue = MauiWrapper.Value<System.Net.CookieContainer>(cookies);
-            if (cookies != null) mauiObject.Cookies = mauiValue;
+            if (cookies != null) mauiObject.Cookies = (System.Net.CookieContainer)cookies;
             return obj;
         }
         
@@ -24,9 +23,8 @@ namespace Sharp.UI
             System.Func<BindableDef<System.Net.CookieContainer>, BindableDef<System.Net.CookieContainer>> definition)
             where T : Sharp.UI.IWebView
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.WebView>(obj);
-            var mauiValue = MauiWrapper.Value<System.Net.CookieContainer>(cookies);
-            if (cookies != null) mauiObject.Cookies = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.WebView>(obj);         
+            if (cookies != null) mauiObject.Cookies = (System.Net.CookieContainer)cookies;
             var def = definition(new BindableDef<System.Net.CookieContainer>(mauiObject, Microsoft.Maui.Controls.WebView.CookiesProperty));
             if (def.ValueIsSet()) mauiObject.Cookies = def.GetValue();
             def.BindProperty();
@@ -49,8 +47,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IWebView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.WebView>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.WebViewSource>(source);
-            if (source != null) mauiObject.Source = mauiValue;
+            if (source != null) mauiObject.Source = (Microsoft.Maui.Controls.WebViewSource)source;
             return obj;
         }
         
@@ -59,9 +56,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.WebViewSource>, BindableDef<Microsoft.Maui.Controls.WebViewSource>> definition)
             where T : Sharp.UI.IWebView
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.WebView>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.WebViewSource>(source);
-            if (source != null) mauiObject.Source = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.WebView>(obj);         
+            if (source != null) mauiObject.Source = (Microsoft.Maui.Controls.WebViewSource)source;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.WebViewSource>(mauiObject, Microsoft.Maui.Controls.WebView.SourceProperty));
             if (def.ValueIsSet()) mauiObject.Source = def.GetValue();
             def.BindProperty();

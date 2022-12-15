@@ -14,8 +14,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IBinding
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Binding>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.IValueConverter>(converter);
-            if (converter != null) mauiObject.Converter = mauiValue;
+            if (converter != null) mauiObject.Converter = (Microsoft.Maui.Controls.IValueConverter)converter;
             return obj;
         }
         
@@ -25,8 +24,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IBinding
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Binding>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.IValueConverter>(converter);
-            if (converter != null) mauiObject.Converter = mauiValue;
+            if (converter != null) mauiObject.Converter = (Microsoft.Maui.Controls.IValueConverter)converter;
             var def = definition(new ValueDef<Microsoft.Maui.Controls.IValueConverter>());
             if (def.ValueIsSet()) mauiObject.Converter = def.GetValue();
             return obj;
@@ -47,8 +45,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IBinding
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Binding>(obj);
-            var mauiValue = MauiWrapper.Value<object>(converterParameter);
-            if (converterParameter != null) mauiObject.ConverterParameter = mauiValue;
+            if (converterParameter != null) mauiObject.ConverterParameter = (object)converterParameter;
             return obj;
         }
         
@@ -58,8 +55,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IBinding
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Binding>(obj);
-            var mauiValue = MauiWrapper.Value<object>(converterParameter);
-            if (converterParameter != null) mauiObject.ConverterParameter = mauiValue;
+            if (converterParameter != null) mauiObject.ConverterParameter = (object)converterParameter;
             var def = definition(new ValueDef<object>());
             if (def.ValueIsSet()) mauiObject.ConverterParameter = def.GetValue();
             return obj;
@@ -80,8 +76,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IBinding
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Binding>(obj);
-            var mauiValue = MauiWrapper.Value<string>(path);
-            if (path != null) mauiObject.Path = mauiValue;
+            if (path != null) mauiObject.Path = (string)path;
             return obj;
         }
         
@@ -91,8 +86,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IBinding
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Binding>(obj);
-            var mauiValue = MauiWrapper.Value<string>(path);
-            if (path != null) mauiObject.Path = mauiValue;
+            if (path != null) mauiObject.Path = (string)path;
             var def = definition(new ValueDef<string>());
             if (def.ValueIsSet()) mauiObject.Path = def.GetValue();
             return obj;
@@ -113,8 +107,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IBinding
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Binding>(obj);
-            var mauiValue = MauiWrapper.Value<object>(source);
-            if (source != null) mauiObject.Source = mauiValue;
+            if (source != null) mauiObject.Source = (object)source;
             return obj;
         }
         
@@ -124,8 +117,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IBinding
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Binding>(obj);
-            var mauiValue = MauiWrapper.Value<object>(source);
-            if (source != null) mauiObject.Source = mauiValue;
+            if (source != null) mauiObject.Source = (object)source;
             var def = definition(new ValueDef<object>());
             if (def.ValueIsSet()) mauiObject.Source = def.GetValue();
             return obj;
@@ -146,8 +138,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IBinding
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Binding>(obj);
-            var mauiValue = MauiWrapper.Value<string>(updateSourceEventName);
-            if (updateSourceEventName != null) mauiObject.UpdateSourceEventName = mauiValue;
+            if (updateSourceEventName != null) mauiObject.UpdateSourceEventName = (string)updateSourceEventName;
             return obj;
         }
         
@@ -157,8 +148,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IBinding
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Binding>(obj);
-            var mauiValue = MauiWrapper.Value<string>(updateSourceEventName);
-            if (updateSourceEventName != null) mauiObject.UpdateSourceEventName = mauiValue;
+            if (updateSourceEventName != null) mauiObject.UpdateSourceEventName = (string)updateSourceEventName;
             var def = definition(new ValueDef<string>());
             if (def.ValueIsSet()) mauiObject.UpdateSourceEventName = def.GetValue();
             return obj;

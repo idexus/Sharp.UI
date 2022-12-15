@@ -14,8 +14,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IContentView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ContentView>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.View>(content);
-            if (content != null) mauiObject.Content = mauiValue;
+            if (content != null) mauiObject.Content = (Microsoft.Maui.Controls.View)content;
             return obj;
         }
         
@@ -24,9 +23,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.View>, BindableDef<Microsoft.Maui.Controls.View>> definition)
             where T : Sharp.UI.IContentView
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ContentView>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.View>(content);
-            if (content != null) mauiObject.Content = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ContentView>(obj);         
+            if (content != null) mauiObject.Content = (Microsoft.Maui.Controls.View)content;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.View>(mauiObject, Microsoft.Maui.Controls.ContentView.ContentProperty));
             if (def.ValueIsSet()) mauiObject.Content = def.GetValue();
             def.BindProperty();

@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public partial class PointerGestureRecognizer : Sharp.UI.IPointerGestureRecognizer, ISealedMauiWrapper, IWrappedBindableObject
+    public partial class PointerGestureRecognizer : Sharp.UI.IPointerGestureRecognizer, IMauiWrapper, ISealedMauiWrapper
     {
         // ----- maui object -----
 
@@ -17,7 +17,7 @@ namespace Sharp.UI
 
         // ----- constructors -----
 
-        protected PointerGestureRecognizer(Microsoft.Maui.Controls.PointerGestureRecognizer pointerGestureRecognizer)
+        public PointerGestureRecognizer(Microsoft.Maui.Controls.PointerGestureRecognizer pointerGestureRecognizer)
         {
             MauiObject = pointerGestureRecognizer;
         }
@@ -48,7 +48,7 @@ namespace Sharp.UI
         public static implicit operator PointerGestureRecognizer(Microsoft.Maui.Controls.PointerGestureRecognizer mauiObject) => new PointerGestureRecognizer(mauiObject);
         public static implicit operator Microsoft.Maui.Controls.PointerGestureRecognizer(PointerGestureRecognizer obj) => obj.MauiObject;
 
-        // ----- bindable properties -----
+        // ----- sealed bindable properties -----
 
         public static Microsoft.Maui.Controls.BindableProperty PointerEnteredCommandProperty => Microsoft.Maui.Controls.PointerGestureRecognizer.PointerEnteredCommandProperty;
         public static Microsoft.Maui.Controls.BindableProperty PointerEnteredCommandParameterProperty => Microsoft.Maui.Controls.PointerGestureRecognizer.PointerEnteredCommandParameterProperty;
@@ -68,9 +68,6 @@ namespace Sharp.UI
         public System.Windows.Input.ICommand PointerExitedCommandParameter { get => MauiObject.PointerExitedCommandParameter; set => MauiObject.PointerExitedCommandParameter = value; }
         public System.Windows.Input.ICommand PointerMovedCommand { get => MauiObject.PointerMovedCommand; set => MauiObject.PointerMovedCommand = value; }
         public System.Windows.Input.ICommand PointerMovedCommandParameter { get => MauiObject.PointerMovedCommandParameter; set => MauiObject.PointerMovedCommandParameter = value; }
-        public event System.EventHandler<Microsoft.Maui.Controls.PointerEventArgs>? PointerEntered { add => MauiObject.PointerEntered += value; remove => MauiObject.PointerEntered -= value; }
-        public event System.EventHandler<Microsoft.Maui.Controls.PointerEventArgs>? PointerExited { add => MauiObject.PointerExited += value; remove => MauiObject.PointerExited -= value; }
-        public event System.EventHandler<Microsoft.Maui.Controls.PointerEventArgs>? PointerMoved { add => MauiObject.PointerMoved += value; remove => MauiObject.PointerMoved -= value; }
         public string AutomationId { get => MauiObject.AutomationId; set => MauiObject.AutomationId = value; }
         public string ClassId { get => MauiObject.ClassId; set => MauiObject.ClassId = value; }
         public System.Collections.Generic.IList<Microsoft.Maui.Controls.Effect> Effects { get => MauiObject.Effects; }
@@ -79,6 +76,11 @@ namespace Sharp.UI
         public Microsoft.Maui.Controls.Element RealParent { get => MauiObject.RealParent; }
         public Microsoft.Maui.Controls.Element Parent { get => MauiObject.Parent; set => MauiObject.Parent = value; }
         public Microsoft.Maui.Controls.IEffectControlProvider EffectControlProvider { get => MauiObject.EffectControlProvider; set => MauiObject.EffectControlProvider = value; }
+        public Microsoft.Maui.Dispatching.IDispatcher Dispatcher { get => MauiObject.Dispatcher; }
+        public object BindingContext { get => MauiObject.BindingContext; set => MauiObject.BindingContext = MauiWrapper.Value<object>(value); }
+        public event System.EventHandler<Microsoft.Maui.Controls.PointerEventArgs>? PointerEntered { add => MauiObject.PointerEntered += value; remove => MauiObject.PointerEntered -= value; }
+        public event System.EventHandler<Microsoft.Maui.Controls.PointerEventArgs>? PointerExited { add => MauiObject.PointerExited += value; remove => MauiObject.PointerExited -= value; }
+        public event System.EventHandler<Microsoft.Maui.Controls.PointerEventArgs>? PointerMoved { add => MauiObject.PointerMoved += value; remove => MauiObject.PointerMoved -= value; }
         public event System.EventHandler<Microsoft.Maui.Controls.ElementEventArgs> ChildAdded { add => MauiObject.ChildAdded += value; remove => MauiObject.ChildAdded -= value; }
         public event System.EventHandler<Microsoft.Maui.Controls.ElementEventArgs> ChildRemoved { add => MauiObject.ChildRemoved += value; remove => MauiObject.ChildRemoved -= value; }
         public event System.EventHandler<Microsoft.Maui.Controls.ElementEventArgs> DescendantAdded { add => MauiObject.DescendantAdded += value; remove => MauiObject.DescendantAdded -= value; }
@@ -87,19 +89,23 @@ namespace Sharp.UI
         public event System.EventHandler ParentChanged { add => MauiObject.ParentChanged += value; remove => MauiObject.ParentChanged -= value; }
         public event System.EventHandler<Microsoft.Maui.Controls.HandlerChangingEventArgs> HandlerChanging { add => MauiObject.HandlerChanging += value; remove => MauiObject.HandlerChanging -= value; }
         public event System.EventHandler HandlerChanged { add => MauiObject.HandlerChanged += value; remove => MauiObject.HandlerChanged -= value; }
-        public Microsoft.Maui.Dispatching.IDispatcher Dispatcher { get => MauiObject.Dispatcher; }
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged { add => MauiObject.PropertyChanged += value; remove => MauiObject.PropertyChanged -= value; }
         public event Microsoft.Maui.Controls.PropertyChangingEventHandler PropertyChanging { add => MauiObject.PropertyChanging += value; remove => MauiObject.PropertyChanging -= value; }
         public event System.EventHandler BindingContextChanged { add => MauiObject.BindingContextChanged += value; remove => MauiObject.BindingContextChanged -= value; }
-        // ----- binding context -----
 
-        public object BindingContext
+        // ----- set value method -----
+
+        public void SetValue(Microsoft.Maui.Controls.BindableProperty property, object value)
         {
-            get => MauiObject.BindingContext;
-            set => MauiObject.BindingContext = MauiWrapper.Value<object>(value);           
+            var mauiValue = MauiWrapper.Value<object>(value);
+            MauiObject.SetValue(property, mauiValue);
         }
-        
 
+        public void SetValue(Microsoft.Maui.Controls.BindablePropertyKey propertyKey, object value)
+        {
+            var mauiValue = MauiWrapper.Value<object>(value);
+            MauiObject.SetValue(propertyKey, mauiValue);
+        }
     }
 }
 

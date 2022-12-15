@@ -2,6 +2,8 @@
 
 namespace Sharp.UI
 {
+    public interface IMauiWrapper { }
+
     public interface ISealedMauiWrapper
     {
         public object _maui_RawObject { get; set; }

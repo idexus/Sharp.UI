@@ -14,8 +14,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IFlexLayout
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlexLayout>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Layouts.FlexDirection>(direction);
-            if (direction != null) mauiObject.Direction = mauiValue;
+            if (direction != null) mauiObject.Direction = (Microsoft.Maui.Layouts.FlexDirection)direction;
             return obj;
         }
         
@@ -24,9 +23,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Layouts.FlexDirection>, BindableDef<Microsoft.Maui.Layouts.FlexDirection>> definition)
             where T : Sharp.UI.IFlexLayout
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlexLayout>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Layouts.FlexDirection>(direction);
-            if (direction != null) mauiObject.Direction = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlexLayout>(obj);         
+            if (direction != null) mauiObject.Direction = (Microsoft.Maui.Layouts.FlexDirection)direction;
             var def = definition(new BindableDef<Microsoft.Maui.Layouts.FlexDirection>(mauiObject, Microsoft.Maui.Controls.FlexLayout.DirectionProperty));
             if (def.ValueIsSet()) mauiObject.Direction = def.GetValue();
             def.BindProperty();
@@ -49,8 +47,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IFlexLayout
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlexLayout>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Layouts.FlexJustify>(justifyContent);
-            if (justifyContent != null) mauiObject.JustifyContent = mauiValue;
+            if (justifyContent != null) mauiObject.JustifyContent = (Microsoft.Maui.Layouts.FlexJustify)justifyContent;
             return obj;
         }
         
@@ -59,9 +56,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Layouts.FlexJustify>, BindableDef<Microsoft.Maui.Layouts.FlexJustify>> definition)
             where T : Sharp.UI.IFlexLayout
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlexLayout>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Layouts.FlexJustify>(justifyContent);
-            if (justifyContent != null) mauiObject.JustifyContent = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlexLayout>(obj);         
+            if (justifyContent != null) mauiObject.JustifyContent = (Microsoft.Maui.Layouts.FlexJustify)justifyContent;
             var def = definition(new BindableDef<Microsoft.Maui.Layouts.FlexJustify>(mauiObject, Microsoft.Maui.Controls.FlexLayout.JustifyContentProperty));
             if (def.ValueIsSet()) mauiObject.JustifyContent = def.GetValue();
             def.BindProperty();
@@ -84,8 +80,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IFlexLayout
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlexLayout>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Layouts.FlexAlignContent>(alignContent);
-            if (alignContent != null) mauiObject.AlignContent = mauiValue;
+            if (alignContent != null) mauiObject.AlignContent = (Microsoft.Maui.Layouts.FlexAlignContent)alignContent;
             return obj;
         }
         
@@ -94,9 +89,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Layouts.FlexAlignContent>, BindableDef<Microsoft.Maui.Layouts.FlexAlignContent>> definition)
             where T : Sharp.UI.IFlexLayout
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlexLayout>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Layouts.FlexAlignContent>(alignContent);
-            if (alignContent != null) mauiObject.AlignContent = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlexLayout>(obj);         
+            if (alignContent != null) mauiObject.AlignContent = (Microsoft.Maui.Layouts.FlexAlignContent)alignContent;
             var def = definition(new BindableDef<Microsoft.Maui.Layouts.FlexAlignContent>(mauiObject, Microsoft.Maui.Controls.FlexLayout.AlignContentProperty));
             if (def.ValueIsSet()) mauiObject.AlignContent = def.GetValue();
             def.BindProperty();
@@ -119,8 +113,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IFlexLayout
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlexLayout>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Layouts.FlexAlignItems>(alignItems);
-            if (alignItems != null) mauiObject.AlignItems = mauiValue;
+            if (alignItems != null) mauiObject.AlignItems = (Microsoft.Maui.Layouts.FlexAlignItems)alignItems;
             return obj;
         }
         
@@ -129,9 +122,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Layouts.FlexAlignItems>, BindableDef<Microsoft.Maui.Layouts.FlexAlignItems>> definition)
             where T : Sharp.UI.IFlexLayout
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlexLayout>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Layouts.FlexAlignItems>(alignItems);
-            if (alignItems != null) mauiObject.AlignItems = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlexLayout>(obj);         
+            if (alignItems != null) mauiObject.AlignItems = (Microsoft.Maui.Layouts.FlexAlignItems)alignItems;
             var def = definition(new BindableDef<Microsoft.Maui.Layouts.FlexAlignItems>(mauiObject, Microsoft.Maui.Controls.FlexLayout.AlignItemsProperty));
             if (def.ValueIsSet()) mauiObject.AlignItems = def.GetValue();
             def.BindProperty();
@@ -154,8 +146,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IFlexLayout
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlexLayout>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Layouts.FlexPosition>(position);
-            if (position != null) mauiObject.Position = mauiValue;
+            if (position != null) mauiObject.Position = (Microsoft.Maui.Layouts.FlexPosition)position;
             return obj;
         }
         
@@ -164,9 +155,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Layouts.FlexPosition>, BindableDef<Microsoft.Maui.Layouts.FlexPosition>> definition)
             where T : Sharp.UI.IFlexLayout
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlexLayout>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Layouts.FlexPosition>(position);
-            if (position != null) mauiObject.Position = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlexLayout>(obj);         
+            if (position != null) mauiObject.Position = (Microsoft.Maui.Layouts.FlexPosition)position;
             var def = definition(new BindableDef<Microsoft.Maui.Layouts.FlexPosition>(mauiObject, Microsoft.Maui.Controls.FlexLayout.PositionProperty));
             if (def.ValueIsSet()) mauiObject.Position = def.GetValue();
             def.BindProperty();
@@ -189,8 +179,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IFlexLayout
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlexLayout>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Layouts.FlexWrap>(wrap);
-            if (wrap != null) mauiObject.Wrap = mauiValue;
+            if (wrap != null) mauiObject.Wrap = (Microsoft.Maui.Layouts.FlexWrap)wrap;
             return obj;
         }
         
@@ -199,9 +188,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Layouts.FlexWrap>, BindableDef<Microsoft.Maui.Layouts.FlexWrap>> definition)
             where T : Sharp.UI.IFlexLayout
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlexLayout>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Layouts.FlexWrap>(wrap);
-            if (wrap != null) mauiObject.Wrap = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlexLayout>(obj);         
+            if (wrap != null) mauiObject.Wrap = (Microsoft.Maui.Layouts.FlexWrap)wrap;
             var def = definition(new BindableDef<Microsoft.Maui.Layouts.FlexWrap>(mauiObject, Microsoft.Maui.Controls.FlexLayout.WrapProperty));
             if (def.ValueIsSet()) mauiObject.Wrap = def.GetValue();
             def.BindProperty();

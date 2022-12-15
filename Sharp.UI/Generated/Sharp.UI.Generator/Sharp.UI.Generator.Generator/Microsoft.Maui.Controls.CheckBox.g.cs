@@ -14,8 +14,7 @@ namespace Sharp.UI
             where T : Sharp.UI.ICheckBox
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CheckBox>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(color);
-            if (color != null) mauiObject.Color = mauiValue;
+            if (color != null) mauiObject.Color = (Microsoft.Maui.Graphics.Color)color;
             return obj;
         }
         
@@ -24,9 +23,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.ICheckBox
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CheckBox>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(color);
-            if (color != null) mauiObject.Color = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CheckBox>(obj);         
+            if (color != null) mauiObject.Color = (Microsoft.Maui.Graphics.Color)color;
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.CheckBox.ColorProperty));
             if (def.ValueIsSet()) mauiObject.Color = def.GetValue();
             def.BindProperty();
@@ -49,8 +47,7 @@ namespace Sharp.UI
             where T : Sharp.UI.ICheckBox
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CheckBox>(obj);
-            var mauiValue = MauiWrapper.Value<bool>(isChecked);
-            if (isChecked != null) mauiObject.IsChecked = mauiValue;
+            if (isChecked != null) mauiObject.IsChecked = (bool)isChecked;
             return obj;
         }
         
@@ -59,9 +56,8 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.ICheckBox
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CheckBox>(obj);
-            var mauiValue = MauiWrapper.Value<bool>(isChecked);
-            if (isChecked != null) mauiObject.IsChecked = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CheckBox>(obj);         
+            if (isChecked != null) mauiObject.IsChecked = (bool)isChecked;
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.CheckBox.IsCheckedProperty));
             if (def.ValueIsSet()) mauiObject.IsChecked = def.GetValue();
             def.BindProperty();

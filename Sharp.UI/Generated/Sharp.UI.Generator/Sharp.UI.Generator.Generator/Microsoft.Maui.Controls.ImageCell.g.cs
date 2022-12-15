@@ -14,8 +14,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IImageCell
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageCell>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.ImageSource>(imageSource);
-            if (imageSource != null) mauiObject.ImageSource = mauiValue;
+            if (imageSource != null) mauiObject.ImageSource = (Microsoft.Maui.Controls.ImageSource)imageSource;
             return obj;
         }
         
@@ -24,9 +23,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.ImageSource>, BindableDef<Microsoft.Maui.Controls.ImageSource>> definition)
             where T : Sharp.UI.IImageCell
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageCell>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.ImageSource>(imageSource);
-            if (imageSource != null) mauiObject.ImageSource = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageCell>(obj);         
+            if (imageSource != null) mauiObject.ImageSource = (Microsoft.Maui.Controls.ImageSource)imageSource;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.ImageSource>(mauiObject, Microsoft.Maui.Controls.ImageCell.ImageSourceProperty));
             if (def.ValueIsSet()) mauiObject.ImageSource = def.GetValue();
             def.BindProperty();

@@ -14,8 +14,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IRowDefinition
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RowDefinition>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.GridLength>(height);
-            if (height != null) mauiObject.Height = mauiValue;
+            if (height != null) mauiObject.Height = (Microsoft.Maui.GridLength)height;
             return obj;
         }
         
@@ -24,9 +23,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.GridLength>, BindableDef<Microsoft.Maui.GridLength>> definition)
             where T : Sharp.UI.IRowDefinition
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RowDefinition>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.GridLength>(height);
-            if (height != null) mauiObject.Height = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RowDefinition>(obj);         
+            if (height != null) mauiObject.Height = (Microsoft.Maui.GridLength)height;
             var def = definition(new BindableDef<Microsoft.Maui.GridLength>(mauiObject, Microsoft.Maui.Controls.RowDefinition.HeightProperty));
             if (def.ValueIsSet()) mauiObject.Height = def.GetValue();
             def.BindProperty();

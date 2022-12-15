@@ -14,8 +14,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IImage
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Image>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Aspect>(aspect);
-            if (aspect != null) mauiObject.Aspect = mauiValue;
+            if (aspect != null) mauiObject.Aspect = (Microsoft.Maui.Aspect)aspect;
             return obj;
         }
         
@@ -24,9 +23,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Aspect>, BindableDef<Microsoft.Maui.Aspect>> definition)
             where T : Sharp.UI.IImage
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Image>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Aspect>(aspect);
-            if (aspect != null) mauiObject.Aspect = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Image>(obj);         
+            if (aspect != null) mauiObject.Aspect = (Microsoft.Maui.Aspect)aspect;
             var def = definition(new BindableDef<Microsoft.Maui.Aspect>(mauiObject, Microsoft.Maui.Controls.Image.AspectProperty));
             if (def.ValueIsSet()) mauiObject.Aspect = def.GetValue();
             def.BindProperty();
@@ -49,8 +47,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IImage
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Image>(obj);
-            var mauiValue = MauiWrapper.Value<bool>(isOpaque);
-            if (isOpaque != null) mauiObject.IsOpaque = mauiValue;
+            if (isOpaque != null) mauiObject.IsOpaque = (bool)isOpaque;
             return obj;
         }
         
@@ -59,9 +56,8 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IImage
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Image>(obj);
-            var mauiValue = MauiWrapper.Value<bool>(isOpaque);
-            if (isOpaque != null) mauiObject.IsOpaque = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Image>(obj);         
+            if (isOpaque != null) mauiObject.IsOpaque = (bool)isOpaque;
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.Image.IsOpaqueProperty));
             if (def.ValueIsSet()) mauiObject.IsOpaque = def.GetValue();
             def.BindProperty();
@@ -84,8 +80,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IImage
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Image>(obj);
-            var mauiValue = MauiWrapper.Value<bool>(isAnimationPlaying);
-            if (isAnimationPlaying != null) mauiObject.IsAnimationPlaying = mauiValue;
+            if (isAnimationPlaying != null) mauiObject.IsAnimationPlaying = (bool)isAnimationPlaying;
             return obj;
         }
         
@@ -94,9 +89,8 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IImage
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Image>(obj);
-            var mauiValue = MauiWrapper.Value<bool>(isAnimationPlaying);
-            if (isAnimationPlaying != null) mauiObject.IsAnimationPlaying = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Image>(obj);         
+            if (isAnimationPlaying != null) mauiObject.IsAnimationPlaying = (bool)isAnimationPlaying;
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.Image.IsAnimationPlayingProperty));
             if (def.ValueIsSet()) mauiObject.IsAnimationPlaying = def.GetValue();
             def.BindProperty();
@@ -119,8 +113,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IImage
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Image>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.ImageSource>(source);
-            if (source != null) mauiObject.Source = mauiValue;
+            if (source != null) mauiObject.Source = (Microsoft.Maui.Controls.ImageSource)source;
             return obj;
         }
         
@@ -129,9 +122,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.ImageSource>, BindableDef<Microsoft.Maui.Controls.ImageSource>> definition)
             where T : Sharp.UI.IImage
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Image>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.ImageSource>(source);
-            if (source != null) mauiObject.Source = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Image>(obj);         
+            if (source != null) mauiObject.Source = (Microsoft.Maui.Controls.ImageSource)source;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.ImageSource>(mauiObject, Microsoft.Maui.Controls.Image.SourceProperty));
             if (def.ValueIsSet()) mauiObject.Source = def.GetValue();
             def.BindProperty();

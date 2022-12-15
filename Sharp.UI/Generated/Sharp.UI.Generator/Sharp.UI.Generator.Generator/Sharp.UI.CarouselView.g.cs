@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public partial class CarouselView : Microsoft.Maui.Controls.CarouselView, Sharp.UI.ICarouselView, IWrappedBindableObject
+    public partial class CarouselView : Microsoft.Maui.Controls.CarouselView, Sharp.UI.ICarouselView, IMauiWrapper
     {
         // ----- maui object -----
 
@@ -33,15 +33,29 @@ namespace Sharp.UI
             configure(this);
         }
 
-        // ----- binding context -----
+        // ----- properties / events -----
 
-        public new object BindingContext
+        public new object CurrentItem { get => base.CurrentItem; set => base.CurrentItem = MauiWrapper.Value<object>(value); }
+        public new object CurrentItemChangedCommandParameter { get => base.CurrentItemChangedCommandParameter; set => base.CurrentItemChangedCommandParameter = MauiWrapper.Value<object>(value); }
+        public new object PositionChangedCommandParameter { get => base.PositionChangedCommandParameter; set => base.PositionChangedCommandParameter = MauiWrapper.Value<object>(value); }
+        public new object EmptyView { get => base.EmptyView; set => base.EmptyView = MauiWrapper.Value<object>(value); }
+        public new object RemainingItemsThresholdReachedCommandParameter { get => base.RemainingItemsThresholdReachedCommandParameter; set => base.RemainingItemsThresholdReachedCommandParameter = MauiWrapper.Value<object>(value); }
+        public new Sharp.UI.Style Style { get => new Sharp.UI.Style(base.Style); set => base.Style = value.MauiObject; }
+        public new object BindingContext { get => base.BindingContext; set => base.BindingContext = MauiWrapper.Value<object>(value); }
+
+        // ----- set value method -----
+
+        public new void SetValue(Microsoft.Maui.Controls.BindableProperty property, object value)
         {
-            get => base.BindingContext;
-            set => base.BindingContext = MauiWrapper.Value<object>(value);           
+            var mauiValue = MauiWrapper.Value<object>(value);
+            ((Microsoft.Maui.Controls.BindableObject)this).SetValue(property, mauiValue);
         }
-        
 
+        public new void SetValue(Microsoft.Maui.Controls.BindablePropertyKey propertyKey, object value)
+        {
+            var mauiValue = MauiWrapper.Value<object>(value);
+            ((Microsoft.Maui.Controls.BindableObject)this).SetValue(propertyKey, mauiValue);
+        }
     }
 }
 

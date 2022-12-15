@@ -14,8 +14,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IGrid
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Grid>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.ColumnDefinitionCollection>(columnDefinitions);
-            if (columnDefinitions != null) mauiObject.ColumnDefinitions = mauiValue;
+            if (columnDefinitions != null) mauiObject.ColumnDefinitions = (Microsoft.Maui.Controls.ColumnDefinitionCollection)columnDefinitions;
             return obj;
         }
         
@@ -24,9 +23,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.ColumnDefinitionCollection>, BindableDef<Microsoft.Maui.Controls.ColumnDefinitionCollection>> definition)
             where T : Sharp.UI.IGrid
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Grid>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.ColumnDefinitionCollection>(columnDefinitions);
-            if (columnDefinitions != null) mauiObject.ColumnDefinitions = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Grid>(obj);         
+            if (columnDefinitions != null) mauiObject.ColumnDefinitions = (Microsoft.Maui.Controls.ColumnDefinitionCollection)columnDefinitions;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.ColumnDefinitionCollection>(mauiObject, Microsoft.Maui.Controls.Grid.ColumnDefinitionsProperty));
             if (def.ValueIsSet()) mauiObject.ColumnDefinitions = def.GetValue();
             def.BindProperty();
@@ -49,8 +47,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IGrid
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Grid>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.RowDefinitionCollection>(rowDefinitions);
-            if (rowDefinitions != null) mauiObject.RowDefinitions = mauiValue;
+            if (rowDefinitions != null) mauiObject.RowDefinitions = (Microsoft.Maui.Controls.RowDefinitionCollection)rowDefinitions;
             return obj;
         }
         
@@ -59,9 +56,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.RowDefinitionCollection>, BindableDef<Microsoft.Maui.Controls.RowDefinitionCollection>> definition)
             where T : Sharp.UI.IGrid
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Grid>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.RowDefinitionCollection>(rowDefinitions);
-            if (rowDefinitions != null) mauiObject.RowDefinitions = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Grid>(obj);         
+            if (rowDefinitions != null) mauiObject.RowDefinitions = (Microsoft.Maui.Controls.RowDefinitionCollection)rowDefinitions;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.RowDefinitionCollection>(mauiObject, Microsoft.Maui.Controls.Grid.RowDefinitionsProperty));
             if (def.ValueIsSet()) mauiObject.RowDefinitions = def.GetValue();
             def.BindProperty();
@@ -84,8 +80,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IGrid
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Grid>(obj);
-            var mauiValue = MauiWrapper.Value<double>(rowSpacing);
-            if (rowSpacing != null) mauiObject.RowSpacing = mauiValue;
+            if (rowSpacing != null) mauiObject.RowSpacing = (double)rowSpacing;
             return obj;
         }
         
@@ -94,9 +89,8 @@ namespace Sharp.UI
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IGrid
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Grid>(obj);
-            var mauiValue = MauiWrapper.Value<double>(rowSpacing);
-            if (rowSpacing != null) mauiObject.RowSpacing = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Grid>(obj);         
+            if (rowSpacing != null) mauiObject.RowSpacing = (double)rowSpacing;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Grid.RowSpacingProperty));
             if (def.ValueIsSet()) mauiObject.RowSpacing = def.GetValue();
             def.BindProperty();
@@ -119,8 +113,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IGrid
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Grid>(obj);
-            var mauiValue = MauiWrapper.Value<double>(columnSpacing);
-            if (columnSpacing != null) mauiObject.ColumnSpacing = mauiValue;
+            if (columnSpacing != null) mauiObject.ColumnSpacing = (double)columnSpacing;
             return obj;
         }
         
@@ -129,9 +122,8 @@ namespace Sharp.UI
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IGrid
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Grid>(obj);
-            var mauiValue = MauiWrapper.Value<double>(columnSpacing);
-            if (columnSpacing != null) mauiObject.ColumnSpacing = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Grid>(obj);         
+            if (columnSpacing != null) mauiObject.ColumnSpacing = (double)columnSpacing;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Grid.ColumnSpacingProperty));
             if (def.ValueIsSet()) mauiObject.ColumnSpacing = def.GetValue();
             def.BindProperty();

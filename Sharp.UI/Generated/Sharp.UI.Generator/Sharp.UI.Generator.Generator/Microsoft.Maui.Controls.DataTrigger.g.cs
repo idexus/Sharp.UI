@@ -14,8 +14,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IDataTrigger
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DataTrigger>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.BindingBase>(binding);
-            if (binding != null) mauiObject.Binding = mauiValue;
+            if (binding != null) mauiObject.Binding = (Microsoft.Maui.Controls.BindingBase)binding;
             return obj;
         }
         
@@ -25,8 +24,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IDataTrigger
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DataTrigger>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.BindingBase>(binding);
-            if (binding != null) mauiObject.Binding = mauiValue;
+            if (binding != null) mauiObject.Binding = (Microsoft.Maui.Controls.BindingBase)binding;
             var def = definition(new ValueDef<Microsoft.Maui.Controls.BindingBase>());
             if (def.ValueIsSet()) mauiObject.Binding = def.GetValue();
             return obj;
@@ -91,8 +89,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IDataTrigger
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DataTrigger>(obj);
-            var mauiValue = MauiWrapper.Value<object>(value);
-            if (value != null) mauiObject.Value = mauiValue;
+            if (value != null) mauiObject.Value = (object)value;
             return obj;
         }
         
@@ -102,8 +99,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IDataTrigger
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DataTrigger>(obj);
-            var mauiValue = MauiWrapper.Value<object>(value);
-            if (value != null) mauiObject.Value = mauiValue;
+            if (value != null) mauiObject.Value = (object)value;
             var def = definition(new ValueDef<object>());
             if (def.ValueIsSet()) mauiObject.Value = def.GetValue();
             return obj;

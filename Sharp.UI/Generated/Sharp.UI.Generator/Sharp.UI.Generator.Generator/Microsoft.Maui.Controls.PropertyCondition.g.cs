@@ -14,8 +14,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IPropertyCondition
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.PropertyCondition>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.BindableProperty>(property);
-            if (property != null) mauiObject.Property = mauiValue;
+            if (property != null) mauiObject.Property = (Microsoft.Maui.Controls.BindableProperty)property;
             return obj;
         }
         
@@ -25,8 +24,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IPropertyCondition
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.PropertyCondition>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.BindableProperty>(property);
-            if (property != null) mauiObject.Property = mauiValue;
+            if (property != null) mauiObject.Property = (Microsoft.Maui.Controls.BindableProperty)property;
             var def = definition(new ValueDef<Microsoft.Maui.Controls.BindableProperty>());
             if (def.ValueIsSet()) mauiObject.Property = def.GetValue();
             return obj;
@@ -47,8 +45,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IPropertyCondition
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.PropertyCondition>(obj);
-            var mauiValue = MauiWrapper.Value<object>(value);
-            if (value != null) mauiObject.Value = mauiValue;
+            if (value != null) mauiObject.Value = (object)value;
             return obj;
         }
         
@@ -58,8 +55,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IPropertyCondition
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.PropertyCondition>(obj);
-            var mauiValue = MauiWrapper.Value<object>(value);
-            if (value != null) mauiObject.Value = mauiValue;
+            if (value != null) mauiObject.Value = (object)value;
             var def = definition(new ValueDef<object>());
             if (def.ValueIsSet()) mauiObject.Value = def.GetValue();
             return obj;

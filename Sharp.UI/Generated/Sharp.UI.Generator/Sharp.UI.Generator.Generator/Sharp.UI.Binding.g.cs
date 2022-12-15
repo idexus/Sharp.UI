@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public partial class Binding : Sharp.UI.IBinding, ISealedMauiWrapper
+    public partial class Binding : Sharp.UI.IBinding, IMauiWrapper, ISealedMauiWrapper
     {
         // ----- maui object -----
 
@@ -17,7 +17,7 @@ namespace Sharp.UI
 
         // ----- constructors -----
 
-        protected Binding(Microsoft.Maui.Controls.Binding binding)
+        public Binding(Microsoft.Maui.Controls.Binding binding)
         {
             MauiObject = binding;
         }
@@ -48,20 +48,18 @@ namespace Sharp.UI
         public static implicit operator Binding(Microsoft.Maui.Controls.Binding mauiObject) => new Binding(mauiObject);
         public static implicit operator Microsoft.Maui.Controls.Binding(Binding obj) => obj.MauiObject;
 
-        // ----- bindable properties -----
-
-
         // ----- properties / events -----
 
         public Microsoft.Maui.Controls.IValueConverter Converter { get => MauiObject.Converter; set => MauiObject.Converter = value; }
-        public object ConverterParameter { get => MauiObject.ConverterParameter; set => MauiObject.ConverterParameter = value; }
+        public object ConverterParameter { get => MauiObject.ConverterParameter; set => MauiObject.ConverterParameter = MauiWrapper.Value<object>(value); }
         public string Path { get => MauiObject.Path; set => MauiObject.Path = value; }
-        public object Source { get => MauiObject.Source; set => MauiObject.Source = value; }
+        public object Source { get => MauiObject.Source; set => MauiObject.Source = MauiWrapper.Value<object>(value); }
         public string UpdateSourceEventName { get => MauiObject.UpdateSourceEventName; set => MauiObject.UpdateSourceEventName = value; }
         public Microsoft.Maui.Controls.BindingMode Mode { get => MauiObject.Mode; set => MauiObject.Mode = value; }
         public string StringFormat { get => MauiObject.StringFormat; set => MauiObject.StringFormat = value; }
-        public object TargetNullValue { get => MauiObject.TargetNullValue; set => MauiObject.TargetNullValue = value; }
-        public object FallbackValue { get => MauiObject.FallbackValue; set => MauiObject.FallbackValue = value; }
+        public object TargetNullValue { get => MauiObject.TargetNullValue; set => MauiObject.TargetNullValue = MauiWrapper.Value<object>(value); }
+        public object FallbackValue { get => MauiObject.FallbackValue; set => MauiObject.FallbackValue = MauiWrapper.Value<object>(value); }
+
     }
 }
 

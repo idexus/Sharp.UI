@@ -11,7 +11,7 @@ using System.Collections.ObjectModel;
 
 namespace Sharp.UI
 {
-    public partial class PathGeometry : Sharp.UI.IPathGeometry, ISealedMauiWrapper, IList<Microsoft.Maui.Controls.Shapes.PathFigure>, IWrappedBindableObject
+    public partial class PathGeometry : Sharp.UI.IPathGeometry, IMauiWrapper, ISealedMauiWrapper, IList<Microsoft.Maui.Controls.Shapes.PathFigure>
     {
         // ----- maui object -----
 
@@ -21,7 +21,7 @@ namespace Sharp.UI
 
         // ----- constructors -----
 
-        protected PathGeometry(Microsoft.Maui.Controls.Shapes.PathGeometry pathGeometry)
+        public PathGeometry(Microsoft.Maui.Controls.Shapes.PathGeometry pathGeometry)
         {
             MauiObject = pathGeometry;
         }
@@ -55,20 +55,20 @@ namespace Sharp.UI
         // ----- collection container -----
 
         public int Count => this.MauiObject.Figures.Count;
-        public Microsoft.Maui.Controls.Shapes.PathFigure this[int index] { get => this.MauiObject.Figures[index]; set => this.MauiObject.Figures[index] = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.PathFigure>(value); }
+        public Microsoft.Maui.Controls.Shapes.PathFigure this[int index] { get => this.MauiObject.Figures[index]; set => this.MauiObject.Figures[index] = value; }
         public bool IsReadOnly => false;
-        public void Add(Microsoft.Maui.Controls.Shapes.PathFigure item) => this.MauiObject.Figures.Add(MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.PathFigure>(item));
+        public void Add(Microsoft.Maui.Controls.Shapes.PathFigure item) => this.MauiObject.Figures.Add(item);
         public void Clear() => this.MauiObject.Figures.Clear();
-        public bool Contains(Microsoft.Maui.Controls.Shapes.PathFigure item) => this.MauiObject.Figures.Contains(MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.PathFigure>(item));
+        public bool Contains(Microsoft.Maui.Controls.Shapes.PathFigure item) => this.MauiObject.Figures.Contains(item);
         public void CopyTo(Microsoft.Maui.Controls.Shapes.PathFigure[] array, int arrayIndex) => this.MauiObject.Figures.CopyTo(array, arrayIndex);
         public IEnumerator<Microsoft.Maui.Controls.Shapes.PathFigure> GetEnumerator() => this.MauiObject.Figures.GetEnumerator();
-        public int IndexOf(Microsoft.Maui.Controls.Shapes.PathFigure item) => this.MauiObject.Figures.IndexOf(MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.PathFigure>(item));
-        public void Insert(int index, Microsoft.Maui.Controls.Shapes.PathFigure item) => this.MauiObject.Figures.Insert(index, MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.PathFigure>(item));
-        public bool Remove(Microsoft.Maui.Controls.Shapes.PathFigure item) => this.MauiObject.Figures.Remove(MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.PathFigure>(item));
+        public int IndexOf(Microsoft.Maui.Controls.Shapes.PathFigure item) => this.MauiObject.Figures.IndexOf(item);
+        public void Insert(int index, Microsoft.Maui.Controls.Shapes.PathFigure item) => this.MauiObject.Figures.Insert(index, item);
+        public bool Remove(Microsoft.Maui.Controls.Shapes.PathFigure item) => this.MauiObject.Figures.Remove(item);
         public void RemoveAt(int index) => this.MauiObject.Figures.RemoveAt(index);
         IEnumerator IEnumerable.GetEnumerator() => this.MauiObject.Figures.GetEnumerator();
 
-        // ----- bindable properties -----
+        // ----- sealed bindable properties -----
 
         public static Microsoft.Maui.Controls.BindableProperty FiguresProperty => Microsoft.Maui.Controls.Shapes.PathGeometry.FiguresProperty;
         public static Microsoft.Maui.Controls.BindableProperty FillRuleProperty => Microsoft.Maui.Controls.Shapes.PathGeometry.FillRuleProperty;
@@ -79,18 +79,24 @@ namespace Sharp.UI
         public Microsoft.Maui.Controls.Shapes.PathFigureCollection Figures { get => MauiObject.Figures; set => MauiObject.Figures = value; }
         public Microsoft.Maui.Controls.Shapes.FillRule FillRule { get => MauiObject.FillRule; set => MauiObject.FillRule = value; }
         public Microsoft.Maui.Dispatching.IDispatcher Dispatcher { get => MauiObject.Dispatcher; }
+        public object BindingContext { get => MauiObject.BindingContext; set => MauiObject.BindingContext = MauiWrapper.Value<object>(value); }
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged { add => MauiObject.PropertyChanged += value; remove => MauiObject.PropertyChanged -= value; }
         public event Microsoft.Maui.Controls.PropertyChangingEventHandler PropertyChanging { add => MauiObject.PropertyChanging += value; remove => MauiObject.PropertyChanging -= value; }
         public event System.EventHandler BindingContextChanged { add => MauiObject.BindingContextChanged += value; remove => MauiObject.BindingContextChanged -= value; }
-        // ----- binding context -----
 
-        public object BindingContext
+        // ----- set value method -----
+
+        public void SetValue(Microsoft.Maui.Controls.BindableProperty property, object value)
         {
-            get => MauiObject.BindingContext;
-            set => MauiObject.BindingContext = MauiWrapper.Value<object>(value);           
+            var mauiValue = MauiWrapper.Value<object>(value);
+            MauiObject.SetValue(property, mauiValue);
         }
-        
 
+        public void SetValue(Microsoft.Maui.Controls.BindablePropertyKey propertyKey, object value)
+        {
+            var mauiValue = MauiWrapper.Value<object>(value);
+            MauiObject.SetValue(propertyKey, mauiValue);
+        }
     }
 }
 

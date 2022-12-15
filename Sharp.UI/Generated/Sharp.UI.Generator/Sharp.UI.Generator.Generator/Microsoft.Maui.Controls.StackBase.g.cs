@@ -14,8 +14,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IStackBase
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StackBase>(obj);
-            var mauiValue = MauiWrapper.Value<double>(spacing);
-            if (spacing != null) mauiObject.Spacing = mauiValue;
+            if (spacing != null) mauiObject.Spacing = (double)spacing;
             return obj;
         }
         
@@ -24,9 +23,8 @@ namespace Sharp.UI
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IStackBase
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StackBase>(obj);
-            var mauiValue = MauiWrapper.Value<double>(spacing);
-            if (spacing != null) mauiObject.Spacing = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StackBase>(obj);         
+            if (spacing != null) mauiObject.Spacing = (double)spacing;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.StackBase.SpacingProperty));
             if (def.ValueIsSet()) mauiObject.Spacing = def.GetValue();
             def.BindProperty();

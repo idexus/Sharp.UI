@@ -41,11 +41,7 @@ namespace Sharp.UI.Example
         public string CardTitle
         {
             get => (string)GetValue(CardTitleProperty);
-            set
-            {
-                var mauiValue = MauiWrapper.Value<string>(value);
-                SetValue(CardTitleProperty, mauiValue);
-            }
+            set => SetValue(CardTitleProperty, value);
         }
         
         public static readonly Microsoft.Maui.Controls.BindableProperty CardDescriptionProperty =
@@ -58,11 +54,7 @@ namespace Sharp.UI.Example
         public string CardDescription
         {
             get => (string)GetValue(CardDescriptionProperty);
-            set
-            {
-                var mauiValue = MauiWrapper.Value<string>(value);
-                SetValue(CardDescriptionProperty, mauiValue);
-            }
+            set => SetValue(CardDescriptionProperty, value);
         }
         
         public static readonly Microsoft.Maui.Controls.BindableProperty CardColorProperty =
@@ -75,11 +67,7 @@ namespace Sharp.UI.Example
         public Microsoft.Maui.Graphics.Color CardColor
         {
             get => (Microsoft.Maui.Graphics.Color)GetValue(CardColorProperty);
-            set
-            {
-                var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(value);
-                SetValue(CardColorProperty, mauiValue);
-            }
+            set => SetValue(CardColorProperty, value);
         }
         
         public static readonly Microsoft.Maui.Controls.BindableProperty BorderColorProperty =
@@ -92,22 +80,87 @@ namespace Sharp.UI.Example
         public Microsoft.Maui.Graphics.Color BorderColor
         {
             get => (Microsoft.Maui.Graphics.Color)GetValue(BorderColorProperty);
-            set
-            {
-                var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(value);
-                SetValue(BorderColorProperty, mauiValue);
-            }
+            set => SetValue(BorderColorProperty, value);
         }
         
-        // ----- binding context -----
+        public static readonly Microsoft.Maui.Controls.BindableProperty MyStyleProperty =
+            BindableProperty.Create(
+                nameof(MyStyle),
+                typeof(Sharp.UI.Style),
+                typeof(Sharp.UI.Example.CardView),
+                default(Sharp.UI.Style));
 
-        public new object BindingContext
+        public Sharp.UI.Style MyStyle
         {
-            get => base.BindingContext;
-            set => base.BindingContext = MauiWrapper.Value<object>(value);           
+            get => (Sharp.UI.Style)GetValue(MyStyleProperty);
+            set => SetValue(MyStyleProperty, value);
         }
         
+        public static readonly Microsoft.Maui.Controls.BindableProperty MyNewStyleProperty =
+            BindableProperty.Create(
+                nameof(MyNewStyle),
+                typeof(Sharp.UI.Example.NewStyle),
+                typeof(Sharp.UI.Example.CardView),
+                default(Sharp.UI.Example.NewStyle));
 
+        public Sharp.UI.Example.NewStyle MyNewStyle
+        {
+            get => (Sharp.UI.Example.NewStyle)GetValue(MyNewStyleProperty);
+            set => SetValue(MyNewStyleProperty, value);
+        }
+        
+        public static readonly Microsoft.Maui.Controls.BindableProperty MyViewProperty =
+            BindableProperty.Create(
+                nameof(MyView),
+                typeof(Microsoft.Maui.Controls.View),
+                typeof(Sharp.UI.Example.CardView),
+                default(Microsoft.Maui.Controls.View));
+
+        public Microsoft.Maui.Controls.View MyView
+        {
+            get => (Microsoft.Maui.Controls.View)GetValue(MyViewProperty);
+            set => SetValue(MyViewProperty, value);
+        }
+        
+        public static readonly Microsoft.Maui.Controls.BindableProperty MyHStackProperty =
+            BindableProperty.Create(
+                nameof(MyHStack),
+                typeof(Sharp.UI.HStack),
+                typeof(Sharp.UI.Example.CardView),
+                default(Sharp.UI.HStack));
+
+        public Sharp.UI.HStack MyHStack
+        {
+            get => (Sharp.UI.HStack)GetValue(MyHStackProperty);
+            set => SetValue(MyHStackProperty, value);
+        }
+        
+        public static readonly Microsoft.Maui.Controls.BindableProperty MyObjectProperty =
+            BindableProperty.Create(
+                nameof(MyObject),
+                typeof(object),
+                typeof(Sharp.UI.Example.CardView),
+                default(object));
+
+        public object MyObject
+        {
+            get => (object)GetValue(MyObjectProperty);
+            set => SetValue(MyObjectProperty, value);
+        }
+        
+        // ----- set value method -----
+
+        public new void SetValue(Microsoft.Maui.Controls.BindableProperty property, object value)
+        {
+            var mauiValue = MauiWrapper.Value<object>(value);
+            ((Microsoft.Maui.Controls.BindableObject)this).SetValue(property, mauiValue);
+        }
+
+        public new void SetValue(Microsoft.Maui.Controls.BindablePropertyKey propertyKey, object value)
+        {
+            var mauiValue = MauiWrapper.Value<object>(value);
+            ((Microsoft.Maui.Controls.BindableObject)this).SetValue(propertyKey, mauiValue);
+        }
     }
 }
 

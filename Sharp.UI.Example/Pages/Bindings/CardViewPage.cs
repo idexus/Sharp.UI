@@ -2,6 +2,13 @@
 
 using Sharp.UI;
 
+public class NewStyle : Style
+{
+    public NewStyle(Microsoft.Maui.Controls.Style style) : base(style)
+    {
+    }
+}
+
 [BindableProperties]
 public interface ICardViewProperties
 {
@@ -9,6 +16,11 @@ public interface ICardViewProperties
     string CardDescription { get; set; }
     Color CardColor { get; set; }
     Color BorderColor { get; set; }
+    Style MyStyle { get; set; }
+    NewStyle MyNewStyle { get; set; }
+    View MyView { get; set; }
+    HStack MyHStack { get; set; }
+    object MyObject { get; set; }
 }
 
 [SharpObject]
@@ -39,6 +51,8 @@ public partial class CardView : ContentView, ICardViewProperties
     }
 }
 
+public class CardView2 : CardView { }
+
 public class CardViewPage : ContentPage
 {    
     public CardViewPage()
@@ -47,7 +61,7 @@ public class CardViewPage : ContentPage
         {
             new Slider(1,100, out var slider),
 
-            new CardView()
+            new CardView2()
                 .CardTitle(e => e
                     .Path("Value")
                     .Source(slider)

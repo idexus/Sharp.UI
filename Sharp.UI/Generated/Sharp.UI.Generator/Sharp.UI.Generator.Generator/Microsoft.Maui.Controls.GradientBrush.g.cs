@@ -14,8 +14,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IGradientBrush
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GradientBrush>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.GradientStopCollection>(gradientStops);
-            if (gradientStops != null) mauiObject.GradientStops = mauiValue;
+            if (gradientStops != null) mauiObject.GradientStops = (Microsoft.Maui.Controls.GradientStopCollection)gradientStops;
             return obj;
         }
         
@@ -24,9 +23,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.GradientStopCollection>, BindableDef<Microsoft.Maui.Controls.GradientStopCollection>> definition)
             where T : Sharp.UI.IGradientBrush
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GradientBrush>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.GradientStopCollection>(gradientStops);
-            if (gradientStops != null) mauiObject.GradientStops = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GradientBrush>(obj);         
+            if (gradientStops != null) mauiObject.GradientStops = (Microsoft.Maui.Controls.GradientStopCollection)gradientStops;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.GradientStopCollection>(mauiObject, Microsoft.Maui.Controls.GradientBrush.GradientStopsProperty));
             if (def.ValueIsSet()) mauiObject.GradientStops = def.GetValue();
             def.BindProperty();

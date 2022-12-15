@@ -14,8 +14,7 @@ namespace Sharp.UI
             where T : Sharp.UI.INavigationPage
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.NavigationPage>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(barBackgroundColor);
-            if (barBackgroundColor != null) mauiObject.BarBackgroundColor = mauiValue;
+            if (barBackgroundColor != null) mauiObject.BarBackgroundColor = (Microsoft.Maui.Graphics.Color)barBackgroundColor;
             return obj;
         }
         
@@ -24,9 +23,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.INavigationPage
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.NavigationPage>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(barBackgroundColor);
-            if (barBackgroundColor != null) mauiObject.BarBackgroundColor = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.NavigationPage>(obj);         
+            if (barBackgroundColor != null) mauiObject.BarBackgroundColor = (Microsoft.Maui.Graphics.Color)barBackgroundColor;
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.NavigationPage.BarBackgroundColorProperty));
             if (def.ValueIsSet()) mauiObject.BarBackgroundColor = def.GetValue();
             def.BindProperty();
@@ -49,8 +47,7 @@ namespace Sharp.UI
             where T : Sharp.UI.INavigationPage
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.NavigationPage>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.Brush>(barBackground);
-            if (barBackground != null) mauiObject.BarBackground = mauiValue;
+            if (barBackground != null) mauiObject.BarBackground = (Microsoft.Maui.Controls.Brush)barBackground;
             return obj;
         }
         
@@ -59,9 +56,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.Brush>, BindableDef<Microsoft.Maui.Controls.Brush>> definition)
             where T : Sharp.UI.INavigationPage
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.NavigationPage>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.Brush>(barBackground);
-            if (barBackground != null) mauiObject.BarBackground = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.NavigationPage>(obj);         
+            if (barBackground != null) mauiObject.BarBackground = (Microsoft.Maui.Controls.Brush)barBackground;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.Brush>(mauiObject, Microsoft.Maui.Controls.NavigationPage.BarBackgroundProperty));
             if (def.ValueIsSet()) mauiObject.BarBackground = def.GetValue();
             def.BindProperty();
@@ -84,8 +80,7 @@ namespace Sharp.UI
             where T : Sharp.UI.INavigationPage
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.NavigationPage>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(barTextColor);
-            if (barTextColor != null) mauiObject.BarTextColor = mauiValue;
+            if (barTextColor != null) mauiObject.BarTextColor = (Microsoft.Maui.Graphics.Color)barTextColor;
             return obj;
         }
         
@@ -94,9 +89,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.INavigationPage
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.NavigationPage>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(barTextColor);
-            if (barTextColor != null) mauiObject.BarTextColor = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.NavigationPage>(obj);         
+            if (barTextColor != null) mauiObject.BarTextColor = (Microsoft.Maui.Graphics.Color)barTextColor;
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.NavigationPage.BarTextColorProperty));
             if (def.ValueIsSet()) mauiObject.BarTextColor = def.GetValue();
             def.BindProperty();

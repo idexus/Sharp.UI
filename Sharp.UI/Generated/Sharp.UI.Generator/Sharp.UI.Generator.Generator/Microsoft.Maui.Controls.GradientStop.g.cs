@@ -14,8 +14,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IGradientStop
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GradientStop>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(color);
-            if (color != null) mauiObject.Color = mauiValue;
+            if (color != null) mauiObject.Color = (Microsoft.Maui.Graphics.Color)color;
             return obj;
         }
         
@@ -24,9 +23,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IGradientStop
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GradientStop>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(color);
-            if (color != null) mauiObject.Color = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GradientStop>(obj);         
+            if (color != null) mauiObject.Color = (Microsoft.Maui.Graphics.Color)color;
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.GradientStop.ColorProperty));
             if (def.ValueIsSet()) mauiObject.Color = def.GetValue();
             def.BindProperty();
@@ -49,8 +47,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IGradientStop
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GradientStop>(obj);
-            var mauiValue = MauiWrapper.Value<float>(offset);
-            if (offset != null) mauiObject.Offset = mauiValue;
+            if (offset != null) mauiObject.Offset = (float)offset;
             return obj;
         }
         
@@ -59,9 +56,8 @@ namespace Sharp.UI
             System.Func<BindableDef<float>, BindableDef<float>> definition)
             where T : Sharp.UI.IGradientStop
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GradientStop>(obj);
-            var mauiValue = MauiWrapper.Value<float>(offset);
-            if (offset != null) mauiObject.Offset = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GradientStop>(obj);         
+            if (offset != null) mauiObject.Offset = (float)offset;
             var def = definition(new BindableDef<float>(mauiObject, Microsoft.Maui.Controls.GradientStop.OffsetProperty));
             if (def.ValueIsSet()) mauiObject.Offset = def.GetValue();
             def.BindProperty();

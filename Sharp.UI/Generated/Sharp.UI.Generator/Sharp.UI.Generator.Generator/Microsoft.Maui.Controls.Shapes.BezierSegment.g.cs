@@ -14,8 +14,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IBezierSegment
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.BezierSegment>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Point>(point1);
-            if (point1 != null) mauiObject.Point1 = mauiValue;
+            if (point1 != null) mauiObject.Point1 = (Microsoft.Maui.Graphics.Point)point1;
             return obj;
         }
         
@@ -24,9 +23,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
             where T : Sharp.UI.IBezierSegment
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.BezierSegment>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Point>(point1);
-            if (point1 != null) mauiObject.Point1 = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.BezierSegment>(obj);         
+            if (point1 != null) mauiObject.Point1 = (Microsoft.Maui.Graphics.Point)point1;
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Point>(mauiObject, Microsoft.Maui.Controls.Shapes.BezierSegment.Point1Property));
             if (def.ValueIsSet()) mauiObject.Point1 = def.GetValue();
             def.BindProperty();
@@ -49,8 +47,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IBezierSegment
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.BezierSegment>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Point>(point2);
-            if (point2 != null) mauiObject.Point2 = mauiValue;
+            if (point2 != null) mauiObject.Point2 = (Microsoft.Maui.Graphics.Point)point2;
             return obj;
         }
         
@@ -59,9 +56,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
             where T : Sharp.UI.IBezierSegment
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.BezierSegment>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Point>(point2);
-            if (point2 != null) mauiObject.Point2 = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.BezierSegment>(obj);         
+            if (point2 != null) mauiObject.Point2 = (Microsoft.Maui.Graphics.Point)point2;
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Point>(mauiObject, Microsoft.Maui.Controls.Shapes.BezierSegment.Point2Property));
             if (def.ValueIsSet()) mauiObject.Point2 = def.GetValue();
             def.BindProperty();
@@ -84,8 +80,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IBezierSegment
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.BezierSegment>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Point>(point3);
-            if (point3 != null) mauiObject.Point3 = mauiValue;
+            if (point3 != null) mauiObject.Point3 = (Microsoft.Maui.Graphics.Point)point3;
             return obj;
         }
         
@@ -94,9 +89,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
             where T : Sharp.UI.IBezierSegment
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.BezierSegment>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Point>(point3);
-            if (point3 != null) mauiObject.Point3 = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.BezierSegment>(obj);         
+            if (point3 != null) mauiObject.Point3 = (Microsoft.Maui.Graphics.Point)point3;
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Point>(mauiObject, Microsoft.Maui.Controls.Shapes.BezierSegment.Point3Property));
             if (def.ValueIsSet()) mauiObject.Point3 = def.GetValue();
             def.BindProperty();

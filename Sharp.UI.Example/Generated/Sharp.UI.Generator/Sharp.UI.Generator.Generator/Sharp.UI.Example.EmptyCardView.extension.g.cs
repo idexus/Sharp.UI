@@ -16,8 +16,7 @@ namespace Sharp.UI.Example
             where T : Sharp.UI.Example.EmptyCardView
         {
             var mauiObject = MauiWrapper.Value<Sharp.UI.Example.EmptyCardView>(obj);
-            var mauiValue = MauiWrapper.Value<string>(cardTitle);
-            if (cardTitle != null) mauiObject.SetValue(Sharp.UI.Example.EmptyCardView.CardTitleProperty, mauiValue);
+            if (cardTitle != null) mauiObject.SetValue(Sharp.UI.Example.EmptyCardView.CardTitleProperty, (string)cardTitle);
             return obj;
         }
         
@@ -26,9 +25,8 @@ namespace Sharp.UI.Example
             System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.Example.EmptyCardView
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.EmptyCardView>(obj);
-            var mauiValue = MauiWrapper.Value<string>(cardTitle);
-            if (cardTitle != null) mauiObject.SetValue(Sharp.UI.Example.EmptyCardView.CardTitleProperty, mauiValue);
+            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.EmptyCardView>(obj);         
+            if (cardTitle != null) mauiObject.SetValue(Sharp.UI.Example.EmptyCardView.CardTitleProperty, (string)cardTitle);
             var def = definition(new BindableDef<string>(mauiObject, Sharp.UI.Example.EmptyCardView.CardTitleProperty));
             if (def.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.EmptyCardView.CardTitleProperty, def.GetValue());
             def.BindProperty();
@@ -51,8 +49,7 @@ namespace Sharp.UI.Example
             where T : Sharp.UI.Example.EmptyCardView
         {
             var mauiObject = MauiWrapper.Value<Sharp.UI.Example.EmptyCardView>(obj);
-            var mauiValue = MauiWrapper.Value<string>(cardDescription);
-            if (cardDescription != null) mauiObject.SetValue(Sharp.UI.Example.EmptyCardView.CardDescriptionProperty, mauiValue);
+            if (cardDescription != null) mauiObject.SetValue(Sharp.UI.Example.EmptyCardView.CardDescriptionProperty, (string)cardDescription);
             return obj;
         }
         
@@ -61,9 +58,8 @@ namespace Sharp.UI.Example
             System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.Example.EmptyCardView
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.EmptyCardView>(obj);
-            var mauiValue = MauiWrapper.Value<string>(cardDescription);
-            if (cardDescription != null) mauiObject.SetValue(Sharp.UI.Example.EmptyCardView.CardDescriptionProperty, mauiValue);
+            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.EmptyCardView>(obj);         
+            if (cardDescription != null) mauiObject.SetValue(Sharp.UI.Example.EmptyCardView.CardDescriptionProperty, (string)cardDescription);
             var def = definition(new BindableDef<string>(mauiObject, Sharp.UI.Example.EmptyCardView.CardDescriptionProperty));
             if (def.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.EmptyCardView.CardDescriptionProperty, def.GetValue());
             def.BindProperty();
@@ -86,8 +82,7 @@ namespace Sharp.UI.Example
             where T : Sharp.UI.Example.EmptyCardView
         {
             var mauiObject = MauiWrapper.Value<Sharp.UI.Example.EmptyCardView>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(cardColor);
-            if (cardColor != null) mauiObject.SetValue(Sharp.UI.Example.EmptyCardView.CardColorProperty, mauiValue);
+            if (cardColor != null) mauiObject.SetValue(Sharp.UI.Example.EmptyCardView.CardColorProperty, (Microsoft.Maui.Graphics.Color)cardColor);
             return obj;
         }
         
@@ -96,9 +91,8 @@ namespace Sharp.UI.Example
             System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.Example.EmptyCardView
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.EmptyCardView>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(cardColor);
-            if (cardColor != null) mauiObject.SetValue(Sharp.UI.Example.EmptyCardView.CardColorProperty, mauiValue);
+            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.EmptyCardView>(obj);         
+            if (cardColor != null) mauiObject.SetValue(Sharp.UI.Example.EmptyCardView.CardColorProperty, (Microsoft.Maui.Graphics.Color)cardColor);
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Sharp.UI.Example.EmptyCardView.CardColorProperty));
             if (def.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.EmptyCardView.CardColorProperty, def.GetValue());
             def.BindProperty();
@@ -121,8 +115,7 @@ namespace Sharp.UI.Example
             where T : Sharp.UI.Example.EmptyCardView
         {
             var mauiObject = MauiWrapper.Value<Sharp.UI.Example.EmptyCardView>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(borderColor);
-            if (borderColor != null) mauiObject.SetValue(Sharp.UI.Example.EmptyCardView.BorderColorProperty, mauiValue);
+            if (borderColor != null) mauiObject.SetValue(Sharp.UI.Example.EmptyCardView.BorderColorProperty, (Microsoft.Maui.Graphics.Color)borderColor);
             return obj;
         }
         
@@ -131,9 +124,8 @@ namespace Sharp.UI.Example
             System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.Example.EmptyCardView
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.EmptyCardView>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(borderColor);
-            if (borderColor != null) mauiObject.SetValue(Sharp.UI.Example.EmptyCardView.BorderColorProperty, mauiValue);
+            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.EmptyCardView>(obj);         
+            if (borderColor != null) mauiObject.SetValue(Sharp.UI.Example.EmptyCardView.BorderColorProperty, (Microsoft.Maui.Graphics.Color)borderColor);
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Sharp.UI.Example.EmptyCardView.BorderColorProperty));
             if (def.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.EmptyCardView.BorderColorProperty, def.GetValue());
             def.BindProperty();

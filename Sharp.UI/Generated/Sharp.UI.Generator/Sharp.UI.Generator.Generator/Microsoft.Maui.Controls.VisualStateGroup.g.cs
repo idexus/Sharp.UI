@@ -14,8 +14,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IVisualStateGroup
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualStateGroup>(obj);
-            var mauiValue = MauiWrapper.Value<System.Type>(targetType);
-            if (targetType != null) mauiObject.TargetType = mauiValue;
+            if (targetType != null) mauiObject.TargetType = (System.Type)targetType;
             return obj;
         }
         
@@ -25,8 +24,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IVisualStateGroup
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualStateGroup>(obj);
-            var mauiValue = MauiWrapper.Value<System.Type>(targetType);
-            if (targetType != null) mauiObject.TargetType = mauiValue;
+            if (targetType != null) mauiObject.TargetType = (System.Type)targetType;
             var def = definition(new ValueDef<System.Type>());
             if (def.ValueIsSet()) mauiObject.TargetType = def.GetValue();
             return obj;
@@ -47,8 +45,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IVisualStateGroup
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualStateGroup>(obj);
-            var mauiValue = MauiWrapper.Value<string>(name);
-            if (name != null) mauiObject.Name = mauiValue;
+            if (name != null) mauiObject.Name = (string)name;
             return obj;
         }
         
@@ -58,8 +55,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IVisualStateGroup
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualStateGroup>(obj);
-            var mauiValue = MauiWrapper.Value<string>(name);
-            if (name != null) mauiObject.Name = mauiValue;
+            if (name != null) mauiObject.Name = (string)name;
             var def = definition(new ValueDef<string>());
             if (def.ValueIsSet()) mauiObject.Name = def.GetValue();
             return obj;

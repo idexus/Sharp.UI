@@ -43,11 +43,7 @@ namespace Sharp.UI.Example
         public int Id
         {
             get => (int)GetValue(IdProperty);
-            set
-            {
-                var mauiValue = MauiWrapper.Value<int>(value);
-                SetValue(IdProperty, mauiValue);
-            }
+            set => SetValue(IdProperty, value);
         }
         
         public static readonly Microsoft.Maui.Controls.BindableProperty NameProperty =
@@ -60,11 +56,7 @@ namespace Sharp.UI.Example
         public string Name
         {
             get => (string)GetValue(NameProperty);
-            set
-            {
-                var mauiValue = MauiWrapper.Value<string>(value);
-                SetValue(NameProperty, mauiValue);
-            }
+            set => SetValue(NameProperty, value);
         }
         
         public static readonly Microsoft.Maui.Controls.BindableProperty AdminProperty =
@@ -77,22 +69,22 @@ namespace Sharp.UI.Example
         public bool Admin
         {
             get => (bool)GetValue(AdminProperty);
-            set
-            {
-                var mauiValue = MauiWrapper.Value<bool>(value);
-                SetValue(AdminProperty, mauiValue);
-            }
+            set => SetValue(AdminProperty, value);
         }
         
-        // ----- binding context -----
+        // ----- set value method -----
 
-        public new object BindingContext
+        public new void SetValue(Microsoft.Maui.Controls.BindableProperty property, object value)
         {
-            get => base.BindingContext;
-            set => base.BindingContext = MauiWrapper.Value<object>(value);           
+            var mauiValue = MauiWrapper.Value<object>(value);
+            ((Microsoft.Maui.Controls.BindableObject)this).SetValue(property, mauiValue);
         }
-        
 
+        public new void SetValue(Microsoft.Maui.Controls.BindablePropertyKey propertyKey, object value)
+        {
+            var mauiValue = MauiWrapper.Value<object>(value);
+            ((Microsoft.Maui.Controls.BindableObject)this).SetValue(propertyKey, mauiValue);
+        }
     }
 }
 

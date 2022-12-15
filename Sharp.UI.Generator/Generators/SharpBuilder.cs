@@ -16,6 +16,9 @@ public class SharpBuilder
 {
     GeneratorExecutionContext context;
 
+    public static List<string> SharpSealedTypesNameList { get; private set; }
+    public static List<string> InterfaceNameList { get; private set; }
+
     public SharpBuilder(GeneratorExecutionContext context)
     {
         this.context = context;
@@ -28,12 +31,22 @@ public class SharpBuilder
     public void Generate()
 	{
         doneExtensions = new List<String>();
+        SharpSealedTypesNameList = new List<string>();
+        InterfaceNameList = new List<string>();
 
         var wrappedSymbols = context.Compilation.GetSymbolsWithName((s) => true, filter: SymbolFilter.Type)
             .Where(e => !e.IsStatic && e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains(SharpSymbol.SharpObjectAttributeString)) != null);
 
         var wrappedStaticSymbols = context.Compilation.GetSymbolsWithName((s) => true, filter: SymbolFilter.Type)
             .Where(e => e.IsStatic && e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains(SharpSymbol.SharpObjectAttributeString)) != null);
+
+        foreach (var symbol in wrappedSymbols)
+        {
+            var typeSymbol = (INamedTypeSymbol)symbol;
+            var sharpSymbol = new SharpSymbol(typeSymbol);
+            if (sharpSymbol.IsWrappedType && sharpSymbol.WrappedType.IsSealed)
+                SharpSealedTypesNameList.Add(symbol.Name);
+        }
 
         GenerateInterfaces(wrappedSymbols);
 
@@ -138,8 +151,6 @@ public class SharpBuilder
     //-------------- generate interfaces ----------------
     //---------------------------------------------------
 
-    List<string> interfaceNameList;
-
     void GenerateInterfaces(IEnumerable<ISymbol> symbols)
     {
         var builder = new StringBuilder();
@@ -151,7 +162,7 @@ public class SharpBuilder
         builder.AppendLine();
         builder.AppendLine();
 
-        interfaceNameList = new List<string>();
+        InterfaceNameList = new List<string>();
 
         foreach (var symbol in symbols)
         {
@@ -161,26 +172,24 @@ public class SharpBuilder
                 Helpers.LoopDownToObject(sharpSymbol.WrappedType, type =>
                 {
                     var interfaceName = $"I{SharpSymbol.GetNormalizedName(type)}";
-                    if (!interfaceNameList.Contains(interfaceName))
+                    if (!InterfaceNameList.Contains(interfaceName))
                     {
                         AddInterface(builder, type);
-                        interfaceNameList.Add(interfaceName);
+                        InterfaceNameList.Add(interfaceName);
                     }
                     return false;
                 });
             }
         }
 
-        if (interfaceNameList.Count() > 0)
+        if (InterfaceNameList.Count() > 0)
             context.AddSource($"Interfaces.g.cs", builder.ToString());
     }
 
     void AddInterface(StringBuilder builder, INamedTypeSymbol type)
     {
-        var iListStr = Helpers.IsGenericIList(type, out var typeName) ? $", IList of {typeName}" : "";
-        var sealedString = type.IsSealed ? $" // from sealed{iListStr}" : "";
         var parentInterfaceName = $"I{SharpSymbol.GetNormalizedName(type.BaseType)}";
         var parentString = parentInterfaceName.Equals("IObject") ? "" : $" : {parentInterfaceName}";
-        builder.AppendLine($@"public partial interface I{SharpSymbol.GetNormalizedName(type)}{parentString} {{ }}{sealedString}");
+        builder.AppendLine($@"public partial interface I{SharpSymbol.GetNormalizedName(type)}{parentString} {{ }}");
     }
 }

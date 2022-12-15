@@ -14,8 +14,7 @@ namespace Sharp.UI
             where T : Sharp.UI.ITableSectionBase
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TableSectionBase>(obj);
-            var mauiValue = MauiWrapper.Value<string>(title);
-            if (title != null) mauiObject.Title = mauiValue;
+            if (title != null) mauiObject.Title = (string)title;
             return obj;
         }
         
@@ -24,9 +23,8 @@ namespace Sharp.UI
             System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.ITableSectionBase
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TableSectionBase>(obj);
-            var mauiValue = MauiWrapper.Value<string>(title);
-            if (title != null) mauiObject.Title = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TableSectionBase>(obj);         
+            if (title != null) mauiObject.Title = (string)title;
             var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.TableSectionBase.TitleProperty));
             if (def.ValueIsSet()) mauiObject.Title = def.GetValue();
             def.BindProperty();
@@ -49,8 +47,7 @@ namespace Sharp.UI
             where T : Sharp.UI.ITableSectionBase
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TableSectionBase>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(textColor);
-            if (textColor != null) mauiObject.TextColor = mauiValue;
+            if (textColor != null) mauiObject.TextColor = (Microsoft.Maui.Graphics.Color)textColor;
             return obj;
         }
         
@@ -59,9 +56,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.ITableSectionBase
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TableSectionBase>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(textColor);
-            if (textColor != null) mauiObject.TextColor = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TableSectionBase>(obj);         
+            if (textColor != null) mauiObject.TextColor = (Microsoft.Maui.Graphics.Color)textColor;
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.TableSectionBase.TextColorProperty));
             if (def.ValueIsSet()) mauiObject.TextColor = def.GetValue();
             def.BindProperty();

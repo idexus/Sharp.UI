@@ -14,8 +14,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IFrame
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Frame>(obj);
-            var mauiValue = MauiWrapper.Value<bool>(hasShadow);
-            if (hasShadow != null) mauiObject.HasShadow = mauiValue;
+            if (hasShadow != null) mauiObject.HasShadow = (bool)hasShadow;
             return obj;
         }
         
@@ -24,9 +23,8 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IFrame
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Frame>(obj);
-            var mauiValue = MauiWrapper.Value<bool>(hasShadow);
-            if (hasShadow != null) mauiObject.HasShadow = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Frame>(obj);         
+            if (hasShadow != null) mauiObject.HasShadow = (bool)hasShadow;
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.Frame.HasShadowProperty));
             if (def.ValueIsSet()) mauiObject.HasShadow = def.GetValue();
             def.BindProperty();
@@ -49,8 +47,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IFrame
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Frame>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(borderColor);
-            if (borderColor != null) mauiObject.BorderColor = mauiValue;
+            if (borderColor != null) mauiObject.BorderColor = (Microsoft.Maui.Graphics.Color)borderColor;
             return obj;
         }
         
@@ -59,9 +56,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IFrame
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Frame>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(borderColor);
-            if (borderColor != null) mauiObject.BorderColor = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Frame>(obj);         
+            if (borderColor != null) mauiObject.BorderColor = (Microsoft.Maui.Graphics.Color)borderColor;
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.Frame.BorderColorProperty));
             if (def.ValueIsSet()) mauiObject.BorderColor = def.GetValue();
             def.BindProperty();
@@ -84,8 +80,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IFrame
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Frame>(obj);
-            var mauiValue = MauiWrapper.Value<float>(cornerRadius);
-            if (cornerRadius != null) mauiObject.CornerRadius = mauiValue;
+            if (cornerRadius != null) mauiObject.CornerRadius = (float)cornerRadius;
             return obj;
         }
         
@@ -94,9 +89,8 @@ namespace Sharp.UI
             System.Func<BindableDef<float>, BindableDef<float>> definition)
             where T : Sharp.UI.IFrame
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Frame>(obj);
-            var mauiValue = MauiWrapper.Value<float>(cornerRadius);
-            if (cornerRadius != null) mauiObject.CornerRadius = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Frame>(obj);         
+            if (cornerRadius != null) mauiObject.CornerRadius = (float)cornerRadius;
             var def = definition(new BindableDef<float>(mauiObject, Microsoft.Maui.Controls.Frame.CornerRadiusProperty));
             if (def.ValueIsSet()) mauiObject.CornerRadius = def.GetValue();
             def.BindProperty();

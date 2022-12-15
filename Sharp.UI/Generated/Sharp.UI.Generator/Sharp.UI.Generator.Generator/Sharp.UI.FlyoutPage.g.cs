@@ -11,7 +11,7 @@ using System.Collections.ObjectModel;
 
 namespace Sharp.UI
 {
-    public partial class FlyoutPage : Microsoft.Maui.Controls.FlyoutPage, Sharp.UI.IFlyoutPage, IEnumerable, IWrappedBindableObject
+    public partial class FlyoutPage : Microsoft.Maui.Controls.FlyoutPage, Sharp.UI.IFlyoutPage, IMauiWrapper, IEnumerable
     {
         // ----- maui object -----
 
@@ -41,17 +41,26 @@ namespace Sharp.UI
 
         public IEnumerator GetEnumerator() { yield return this.Detail; }
 
-        public void Add(Microsoft.Maui.Controls.Page detail) => this.Detail = MauiWrapper.Value<Microsoft.Maui.Controls.Page>(detail);
+        public void Add(Microsoft.Maui.Controls.Page detail) => this.Detail = detail;
 
-        // ----- binding context -----
+        // ----- properties / events -----
 
-        public new object BindingContext
+        public new Sharp.UI.Style Style { get => new Sharp.UI.Style(base.Style); set => base.Style = value.MauiObject; }
+        public new object BindingContext { get => base.BindingContext; set => base.BindingContext = MauiWrapper.Value<object>(value); }
+
+        // ----- set value method -----
+
+        public new void SetValue(Microsoft.Maui.Controls.BindableProperty property, object value)
         {
-            get => base.BindingContext;
-            set => base.BindingContext = MauiWrapper.Value<object>(value);           
+            var mauiValue = MauiWrapper.Value<object>(value);
+            ((Microsoft.Maui.Controls.BindableObject)this).SetValue(property, mauiValue);
         }
-        
 
+        public new void SetValue(Microsoft.Maui.Controls.BindablePropertyKey propertyKey, object value)
+        {
+            var mauiValue = MauiWrapper.Value<object>(value);
+            ((Microsoft.Maui.Controls.BindableObject)this).SetValue(propertyKey, mauiValue);
+        }
     }
 }
 

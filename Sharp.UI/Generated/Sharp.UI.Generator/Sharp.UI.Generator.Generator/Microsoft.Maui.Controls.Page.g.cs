@@ -14,8 +14,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IPage
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Page>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.ImageSource>(backgroundImageSource);
-            if (backgroundImageSource != null) mauiObject.BackgroundImageSource = mauiValue;
+            if (backgroundImageSource != null) mauiObject.BackgroundImageSource = (Microsoft.Maui.Controls.ImageSource)backgroundImageSource;
             return obj;
         }
         
@@ -24,9 +23,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.ImageSource>, BindableDef<Microsoft.Maui.Controls.ImageSource>> definition)
             where T : Sharp.UI.IPage
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Page>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.ImageSource>(backgroundImageSource);
-            if (backgroundImageSource != null) mauiObject.BackgroundImageSource = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Page>(obj);         
+            if (backgroundImageSource != null) mauiObject.BackgroundImageSource = (Microsoft.Maui.Controls.ImageSource)backgroundImageSource;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.ImageSource>(mauiObject, Microsoft.Maui.Controls.Page.BackgroundImageSourceProperty));
             if (def.ValueIsSet()) mauiObject.BackgroundImageSource = def.GetValue();
             def.BindProperty();
@@ -49,8 +47,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IPage
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Page>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.ImageSource>(iconImageSource);
-            if (iconImageSource != null) mauiObject.IconImageSource = mauiValue;
+            if (iconImageSource != null) mauiObject.IconImageSource = (Microsoft.Maui.Controls.ImageSource)iconImageSource;
             return obj;
         }
         
@@ -59,9 +56,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.ImageSource>, BindableDef<Microsoft.Maui.Controls.ImageSource>> definition)
             where T : Sharp.UI.IPage
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Page>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.ImageSource>(iconImageSource);
-            if (iconImageSource != null) mauiObject.IconImageSource = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Page>(obj);         
+            if (iconImageSource != null) mauiObject.IconImageSource = (Microsoft.Maui.Controls.ImageSource)iconImageSource;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.ImageSource>(mauiObject, Microsoft.Maui.Controls.Page.IconImageSourceProperty));
             if (def.ValueIsSet()) mauiObject.IconImageSource = def.GetValue();
             def.BindProperty();
@@ -84,8 +80,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IPage
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Page>(obj);
-            var mauiValue = MauiWrapper.Value<bool>(isBusy);
-            if (isBusy != null) mauiObject.IsBusy = mauiValue;
+            if (isBusy != null) mauiObject.IsBusy = (bool)isBusy;
             return obj;
         }
         
@@ -94,9 +89,8 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IPage
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Page>(obj);
-            var mauiValue = MauiWrapper.Value<bool>(isBusy);
-            if (isBusy != null) mauiObject.IsBusy = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Page>(obj);         
+            if (isBusy != null) mauiObject.IsBusy = (bool)isBusy;
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.Page.IsBusyProperty));
             if (def.ValueIsSet()) mauiObject.IsBusy = def.GetValue();
             def.BindProperty();
@@ -119,8 +113,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IPage
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Page>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Thickness>(padding);
-            if (padding != null) mauiObject.Padding = mauiValue;
+            if (padding != null) mauiObject.Padding = (Microsoft.Maui.Thickness)padding;
             return obj;
         }
         
@@ -129,9 +122,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Thickness>, BindableDef<Microsoft.Maui.Thickness>> definition)
             where T : Sharp.UI.IPage
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Page>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Thickness>(padding);
-            if (padding != null) mauiObject.Padding = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Page>(obj);         
+            if (padding != null) mauiObject.Padding = (Microsoft.Maui.Thickness)padding;
             var def = definition(new BindableDef<Microsoft.Maui.Thickness>(mauiObject, Microsoft.Maui.Controls.Page.PaddingProperty));
             if (def.ValueIsSet()) mauiObject.Padding = def.GetValue();
             def.BindProperty();
@@ -154,8 +146,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IPage
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Page>(obj);
-            var mauiValue = MauiWrapper.Value<string>(title);
-            if (title != null) mauiObject.Title = mauiValue;
+            if (title != null) mauiObject.Title = (string)title;
             return obj;
         }
         
@@ -164,9 +155,8 @@ namespace Sharp.UI
             System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.IPage
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Page>(obj);
-            var mauiValue = MauiWrapper.Value<string>(title);
-            if (title != null) mauiObject.Title = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Page>(obj);         
+            if (title != null) mauiObject.Title = (string)title;
             var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.Page.TitleProperty));
             if (def.ValueIsSet()) mauiObject.Title = def.GetValue();
             def.BindProperty();
@@ -277,8 +267,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IPage
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Page>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Rect>(containerArea);
-            if (containerArea != null) mauiObject.ContainerArea = mauiValue;
+            if (containerArea != null) mauiObject.ContainerArea = (Microsoft.Maui.Graphics.Rect)containerArea;
             return obj;
         }
         
@@ -288,8 +277,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IPage
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Page>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Rect>(containerArea);
-            if (containerArea != null) mauiObject.ContainerArea = mauiValue;
+            if (containerArea != null) mauiObject.ContainerArea = (Microsoft.Maui.Graphics.Rect)containerArea;
             var def = definition(new ValueDef<Microsoft.Maui.Graphics.Rect>());
             if (def.ValueIsSet()) mauiObject.ContainerArea = def.GetValue();
             return obj;
@@ -310,8 +298,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IPage
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Page>(obj);
-            var mauiValue = MauiWrapper.Value<bool>(ignoresContainerArea);
-            if (ignoresContainerArea != null) mauiObject.IgnoresContainerArea = mauiValue;
+            if (ignoresContainerArea != null) mauiObject.IgnoresContainerArea = (bool)ignoresContainerArea;
             return obj;
         }
         
@@ -321,8 +308,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IPage
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Page>(obj);
-            var mauiValue = MauiWrapper.Value<bool>(ignoresContainerArea);
-            if (ignoresContainerArea != null) mauiObject.IgnoresContainerArea = mauiValue;
+            if (ignoresContainerArea != null) mauiObject.IgnoresContainerArea = (bool)ignoresContainerArea;
             var def = definition(new ValueDef<bool>());
             if (def.ValueIsSet()) mauiObject.IgnoresContainerArea = def.GetValue();
             return obj;

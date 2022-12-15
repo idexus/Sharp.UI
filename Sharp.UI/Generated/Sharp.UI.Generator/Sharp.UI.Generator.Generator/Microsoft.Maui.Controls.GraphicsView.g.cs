@@ -14,8 +14,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IGraphicsView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GraphicsView>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.IDrawable>(drawable);
-            if (drawable != null) mauiObject.Drawable = mauiValue;
+            if (drawable != null) mauiObject.Drawable = (Microsoft.Maui.Graphics.IDrawable)drawable;
             return obj;
         }
         
@@ -24,9 +23,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.IDrawable>, BindableDef<Microsoft.Maui.Graphics.IDrawable>> definition)
             where T : Sharp.UI.IGraphicsView
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GraphicsView>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.IDrawable>(drawable);
-            if (drawable != null) mauiObject.Drawable = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GraphicsView>(obj);         
+            if (drawable != null) mauiObject.Drawable = (Microsoft.Maui.Graphics.IDrawable)drawable;
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.IDrawable>(mauiObject, Microsoft.Maui.Controls.GraphicsView.DrawableProperty));
             if (def.ValueIsSet()) mauiObject.Drawable = def.GetValue();
             def.BindProperty();

@@ -14,8 +14,7 @@ namespace Sharp.UI
             where T : Sharp.UI.ITimePicker
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TimePicker>(obj);
-            var mauiValue = MauiWrapper.Value<string>(format);
-            if (format != null) mauiObject.Format = mauiValue;
+            if (format != null) mauiObject.Format = (string)format;
             return obj;
         }
         
@@ -24,9 +23,8 @@ namespace Sharp.UI
             System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.ITimePicker
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TimePicker>(obj);
-            var mauiValue = MauiWrapper.Value<string>(format);
-            if (format != null) mauiObject.Format = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TimePicker>(obj);         
+            if (format != null) mauiObject.Format = (string)format;
             var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.TimePicker.FormatProperty));
             if (def.ValueIsSet()) mauiObject.Format = def.GetValue();
             def.BindProperty();
@@ -49,8 +47,7 @@ namespace Sharp.UI
             where T : Sharp.UI.ITimePicker
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TimePicker>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(textColor);
-            if (textColor != null) mauiObject.TextColor = mauiValue;
+            if (textColor != null) mauiObject.TextColor = (Microsoft.Maui.Graphics.Color)textColor;
             return obj;
         }
         
@@ -59,9 +56,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.ITimePicker
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TimePicker>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(textColor);
-            if (textColor != null) mauiObject.TextColor = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TimePicker>(obj);         
+            if (textColor != null) mauiObject.TextColor = (Microsoft.Maui.Graphics.Color)textColor;
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.TimePicker.TextColorProperty));
             if (def.ValueIsSet()) mauiObject.TextColor = def.GetValue();
             def.BindProperty();
@@ -84,8 +80,7 @@ namespace Sharp.UI
             where T : Sharp.UI.ITimePicker
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TimePicker>(obj);
-            var mauiValue = MauiWrapper.Value<double>(characterSpacing);
-            if (characterSpacing != null) mauiObject.CharacterSpacing = mauiValue;
+            if (characterSpacing != null) mauiObject.CharacterSpacing = (double)characterSpacing;
             return obj;
         }
         
@@ -94,9 +89,8 @@ namespace Sharp.UI
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.ITimePicker
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TimePicker>(obj);
-            var mauiValue = MauiWrapper.Value<double>(characterSpacing);
-            if (characterSpacing != null) mauiObject.CharacterSpacing = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TimePicker>(obj);         
+            if (characterSpacing != null) mauiObject.CharacterSpacing = (double)characterSpacing;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.TimePicker.CharacterSpacingProperty));
             if (def.ValueIsSet()) mauiObject.CharacterSpacing = def.GetValue();
             def.BindProperty();
@@ -119,8 +113,7 @@ namespace Sharp.UI
             where T : Sharp.UI.ITimePicker
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TimePicker>(obj);
-            var mauiValue = MauiWrapper.Value<System.TimeSpan>(time);
-            if (time != null) mauiObject.Time = mauiValue;
+            if (time != null) mauiObject.Time = (System.TimeSpan)time;
             return obj;
         }
         
@@ -129,9 +122,8 @@ namespace Sharp.UI
             System.Func<BindableDef<System.TimeSpan>, BindableDef<System.TimeSpan>> definition)
             where T : Sharp.UI.ITimePicker
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TimePicker>(obj);
-            var mauiValue = MauiWrapper.Value<System.TimeSpan>(time);
-            if (time != null) mauiObject.Time = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TimePicker>(obj);         
+            if (time != null) mauiObject.Time = (System.TimeSpan)time;
             var def = definition(new BindableDef<System.TimeSpan>(mauiObject, Microsoft.Maui.Controls.TimePicker.TimeProperty));
             if (def.ValueIsSet()) mauiObject.Time = def.GetValue();
             def.BindProperty();
@@ -154,8 +146,7 @@ namespace Sharp.UI
             where T : Sharp.UI.ITimePicker
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TimePicker>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.FontAttributes>(fontAttributes);
-            if (fontAttributes != null) mauiObject.FontAttributes = mauiValue;
+            if (fontAttributes != null) mauiObject.FontAttributes = (Microsoft.Maui.Controls.FontAttributes)fontAttributes;
             return obj;
         }
         
@@ -164,9 +155,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.FontAttributes>, BindableDef<Microsoft.Maui.Controls.FontAttributes>> definition)
             where T : Sharp.UI.ITimePicker
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TimePicker>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.FontAttributes>(fontAttributes);
-            if (fontAttributes != null) mauiObject.FontAttributes = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TimePicker>(obj);         
+            if (fontAttributes != null) mauiObject.FontAttributes = (Microsoft.Maui.Controls.FontAttributes)fontAttributes;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.FontAttributes>(mauiObject, Microsoft.Maui.Controls.TimePicker.FontAttributesProperty));
             if (def.ValueIsSet()) mauiObject.FontAttributes = def.GetValue();
             def.BindProperty();
@@ -189,8 +179,7 @@ namespace Sharp.UI
             where T : Sharp.UI.ITimePicker
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TimePicker>(obj);
-            var mauiValue = MauiWrapper.Value<string>(fontFamily);
-            if (fontFamily != null) mauiObject.FontFamily = mauiValue;
+            if (fontFamily != null) mauiObject.FontFamily = (string)fontFamily;
             return obj;
         }
         
@@ -199,9 +188,8 @@ namespace Sharp.UI
             System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.ITimePicker
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TimePicker>(obj);
-            var mauiValue = MauiWrapper.Value<string>(fontFamily);
-            if (fontFamily != null) mauiObject.FontFamily = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TimePicker>(obj);         
+            if (fontFamily != null) mauiObject.FontFamily = (string)fontFamily;
             var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.TimePicker.FontFamilyProperty));
             if (def.ValueIsSet()) mauiObject.FontFamily = def.GetValue();
             def.BindProperty();
@@ -224,8 +212,7 @@ namespace Sharp.UI
             where T : Sharp.UI.ITimePicker
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TimePicker>(obj);
-            var mauiValue = MauiWrapper.Value<double>(fontSize);
-            if (fontSize != null) mauiObject.FontSize = mauiValue;
+            if (fontSize != null) mauiObject.FontSize = (double)fontSize;
             return obj;
         }
         
@@ -234,9 +221,8 @@ namespace Sharp.UI
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.ITimePicker
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TimePicker>(obj);
-            var mauiValue = MauiWrapper.Value<double>(fontSize);
-            if (fontSize != null) mauiObject.FontSize = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TimePicker>(obj);         
+            if (fontSize != null) mauiObject.FontSize = (double)fontSize;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.TimePicker.FontSizeProperty));
             if (def.ValueIsSet()) mauiObject.FontSize = def.GetValue();
             def.BindProperty();
@@ -259,8 +245,7 @@ namespace Sharp.UI
             where T : Sharp.UI.ITimePicker
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TimePicker>(obj);
-            var mauiValue = MauiWrapper.Value<bool>(fontAutoScalingEnabled);
-            if (fontAutoScalingEnabled != null) mauiObject.FontAutoScalingEnabled = mauiValue;
+            if (fontAutoScalingEnabled != null) mauiObject.FontAutoScalingEnabled = (bool)fontAutoScalingEnabled;
             return obj;
         }
         
@@ -269,9 +254,8 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.ITimePicker
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TimePicker>(obj);
-            var mauiValue = MauiWrapper.Value<bool>(fontAutoScalingEnabled);
-            if (fontAutoScalingEnabled != null) mauiObject.FontAutoScalingEnabled = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TimePicker>(obj);         
+            if (fontAutoScalingEnabled != null) mauiObject.FontAutoScalingEnabled = (bool)fontAutoScalingEnabled;
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.TimePicker.FontAutoScalingEnabledProperty));
             if (def.ValueIsSet()) mauiObject.FontAutoScalingEnabled = def.GetValue();
             def.BindProperty();

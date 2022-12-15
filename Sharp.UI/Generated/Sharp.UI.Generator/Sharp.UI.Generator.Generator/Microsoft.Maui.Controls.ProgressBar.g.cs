@@ -14,8 +14,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IProgressBar
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ProgressBar>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(progressColor);
-            if (progressColor != null) mauiObject.ProgressColor = mauiValue;
+            if (progressColor != null) mauiObject.ProgressColor = (Microsoft.Maui.Graphics.Color)progressColor;
             return obj;
         }
         
@@ -24,9 +23,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IProgressBar
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ProgressBar>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(progressColor);
-            if (progressColor != null) mauiObject.ProgressColor = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ProgressBar>(obj);         
+            if (progressColor != null) mauiObject.ProgressColor = (Microsoft.Maui.Graphics.Color)progressColor;
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.ProgressBar.ProgressColorProperty));
             if (def.ValueIsSet()) mauiObject.ProgressColor = def.GetValue();
             def.BindProperty();
@@ -49,8 +47,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IProgressBar
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ProgressBar>(obj);
-            var mauiValue = MauiWrapper.Value<double>(progress);
-            if (progress != null) mauiObject.Progress = mauiValue;
+            if (progress != null) mauiObject.Progress = (double)progress;
             return obj;
         }
         
@@ -59,9 +56,8 @@ namespace Sharp.UI
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IProgressBar
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ProgressBar>(obj);
-            var mauiValue = MauiWrapper.Value<double>(progress);
-            if (progress != null) mauiObject.Progress = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ProgressBar>(obj);         
+            if (progress != null) mauiObject.Progress = (double)progress;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.ProgressBar.ProgressProperty));
             if (def.ValueIsSet()) mauiObject.Progress = def.GetValue();
             def.BindProperty();

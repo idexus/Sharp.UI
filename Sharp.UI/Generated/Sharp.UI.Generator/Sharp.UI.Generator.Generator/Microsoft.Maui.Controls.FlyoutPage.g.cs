@@ -14,8 +14,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IFlyoutPage
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlyoutPage>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.Page>(detail);
-            if (detail != null) mauiObject.Detail = mauiValue;
+            if (detail != null) mauiObject.Detail = (Microsoft.Maui.Controls.Page)detail;
             return obj;
         }
         
@@ -25,8 +24,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IFlyoutPage
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlyoutPage>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.Page>(detail);
-            if (detail != null) mauiObject.Detail = mauiValue;
+            if (detail != null) mauiObject.Detail = (Microsoft.Maui.Controls.Page)detail;
             var def = definition(new ValueDef<Microsoft.Maui.Controls.Page>());
             if (def.ValueIsSet()) mauiObject.Detail = def.GetValue();
             return obj;
@@ -47,8 +45,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IFlyoutPage
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlyoutPage>(obj);
-            var mauiValue = MauiWrapper.Value<bool>(isGestureEnabled);
-            if (isGestureEnabled != null) mauiObject.IsGestureEnabled = mauiValue;
+            if (isGestureEnabled != null) mauiObject.IsGestureEnabled = (bool)isGestureEnabled;
             return obj;
         }
         
@@ -57,9 +54,8 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IFlyoutPage
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlyoutPage>(obj);
-            var mauiValue = MauiWrapper.Value<bool>(isGestureEnabled);
-            if (isGestureEnabled != null) mauiObject.IsGestureEnabled = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlyoutPage>(obj);         
+            if (isGestureEnabled != null) mauiObject.IsGestureEnabled = (bool)isGestureEnabled;
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.FlyoutPage.IsGestureEnabledProperty));
             if (def.ValueIsSet()) mauiObject.IsGestureEnabled = def.GetValue();
             def.BindProperty();
@@ -82,8 +78,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IFlyoutPage
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlyoutPage>(obj);
-            var mauiValue = MauiWrapper.Value<bool>(isPresented);
-            if (isPresented != null) mauiObject.IsPresented = mauiValue;
+            if (isPresented != null) mauiObject.IsPresented = (bool)isPresented;
             return obj;
         }
         
@@ -92,9 +87,8 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IFlyoutPage
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlyoutPage>(obj);
-            var mauiValue = MauiWrapper.Value<bool>(isPresented);
-            if (isPresented != null) mauiObject.IsPresented = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlyoutPage>(obj);         
+            if (isPresented != null) mauiObject.IsPresented = (bool)isPresented;
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.FlyoutPage.IsPresentedProperty));
             if (def.ValueIsSet()) mauiObject.IsPresented = def.GetValue();
             def.BindProperty();
@@ -117,8 +111,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IFlyoutPage
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlyoutPage>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.Page>(flyout);
-            if (flyout != null) mauiObject.Flyout = mauiValue;
+            if (flyout != null) mauiObject.Flyout = (Microsoft.Maui.Controls.Page)flyout;
             return obj;
         }
         
@@ -128,8 +121,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IFlyoutPage
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlyoutPage>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.Page>(flyout);
-            if (flyout != null) mauiObject.Flyout = mauiValue;
+            if (flyout != null) mauiObject.Flyout = (Microsoft.Maui.Controls.Page)flyout;
             var def = definition(new ValueDef<Microsoft.Maui.Controls.Page>());
             if (def.ValueIsSet()) mauiObject.Flyout = def.GetValue();
             return obj;
@@ -150,8 +142,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IFlyoutPage
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlyoutPage>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.FlyoutLayoutBehavior>(flyoutLayoutBehavior);
-            if (flyoutLayoutBehavior != null) mauiObject.FlyoutLayoutBehavior = mauiValue;
+            if (flyoutLayoutBehavior != null) mauiObject.FlyoutLayoutBehavior = (Microsoft.Maui.Controls.FlyoutLayoutBehavior)flyoutLayoutBehavior;
             return obj;
         }
         
@@ -160,9 +151,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.FlyoutLayoutBehavior>, BindableDef<Microsoft.Maui.Controls.FlyoutLayoutBehavior>> definition)
             where T : Sharp.UI.IFlyoutPage
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlyoutPage>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.FlyoutLayoutBehavior>(flyoutLayoutBehavior);
-            if (flyoutLayoutBehavior != null) mauiObject.FlyoutLayoutBehavior = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlyoutPage>(obj);         
+            if (flyoutLayoutBehavior != null) mauiObject.FlyoutLayoutBehavior = (Microsoft.Maui.Controls.FlyoutLayoutBehavior)flyoutLayoutBehavior;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.FlyoutLayoutBehavior>(mauiObject, Microsoft.Maui.Controls.FlyoutPage.FlyoutLayoutBehaviorProperty));
             if (def.ValueIsSet()) mauiObject.FlyoutLayoutBehavior = def.GetValue();
             def.BindProperty();

@@ -14,8 +14,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IBorder
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Border>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.View?>(content);
-            if (content != null) mauiObject.Content = mauiValue;
+            if (content != null) mauiObject.Content = (Microsoft.Maui.Controls.View?)content;
             return obj;
         }
         
@@ -24,9 +23,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.View?>, BindableDef<Microsoft.Maui.Controls.View?>> definition)
             where T : Sharp.UI.IBorder
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Border>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.View?>(content);
-            if (content != null) mauiObject.Content = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Border>(obj);         
+            if (content != null) mauiObject.Content = (Microsoft.Maui.Controls.View?)content;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.View?>(mauiObject, Microsoft.Maui.Controls.Border.ContentProperty));
             if (def.ValueIsSet()) mauiObject.Content = def.GetValue();
             def.BindProperty();
@@ -49,8 +47,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IBorder
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Border>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Thickness>(padding);
-            if (padding != null) mauiObject.Padding = mauiValue;
+            if (padding != null) mauiObject.Padding = (Microsoft.Maui.Thickness)padding;
             return obj;
         }
         
@@ -59,9 +56,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Thickness>, BindableDef<Microsoft.Maui.Thickness>> definition)
             where T : Sharp.UI.IBorder
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Border>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Thickness>(padding);
-            if (padding != null) mauiObject.Padding = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Border>(obj);         
+            if (padding != null) mauiObject.Padding = (Microsoft.Maui.Thickness)padding;
             var def = definition(new BindableDef<Microsoft.Maui.Thickness>(mauiObject, Microsoft.Maui.Controls.Border.PaddingProperty));
             if (def.ValueIsSet()) mauiObject.Padding = def.GetValue();
             def.BindProperty();
@@ -84,8 +80,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IBorder
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Border>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.IShape?>(strokeShape);
-            if (strokeShape != null) mauiObject.StrokeShape = mauiValue;
+            if (strokeShape != null) mauiObject.StrokeShape = (Microsoft.Maui.Graphics.IShape?)strokeShape;
             return obj;
         }
         
@@ -94,9 +89,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.IShape?>, BindableDef<Microsoft.Maui.Graphics.IShape?>> definition)
             where T : Sharp.UI.IBorder
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Border>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.IShape?>(strokeShape);
-            if (strokeShape != null) mauiObject.StrokeShape = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Border>(obj);         
+            if (strokeShape != null) mauiObject.StrokeShape = (Microsoft.Maui.Graphics.IShape?)strokeShape;
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.IShape?>(mauiObject, Microsoft.Maui.Controls.Border.StrokeShapeProperty));
             if (def.ValueIsSet()) mauiObject.StrokeShape = def.GetValue();
             def.BindProperty();
@@ -119,8 +113,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IBorder
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Border>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.Brush?>(stroke);
-            if (stroke != null) mauiObject.Stroke = mauiValue;
+            if (stroke != null) mauiObject.Stroke = (Microsoft.Maui.Controls.Brush?)stroke;
             return obj;
         }
         
@@ -129,9 +122,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.Brush?>, BindableDef<Microsoft.Maui.Controls.Brush?>> definition)
             where T : Sharp.UI.IBorder
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Border>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.Brush?>(stroke);
-            if (stroke != null) mauiObject.Stroke = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Border>(obj);         
+            if (stroke != null) mauiObject.Stroke = (Microsoft.Maui.Controls.Brush?)stroke;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.Brush?>(mauiObject, Microsoft.Maui.Controls.Border.StrokeProperty));
             if (def.ValueIsSet()) mauiObject.Stroke = def.GetValue();
             def.BindProperty();
@@ -154,8 +146,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IBorder
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Border>(obj);
-            var mauiValue = MauiWrapper.Value<double>(strokeThickness);
-            if (strokeThickness != null) mauiObject.StrokeThickness = mauiValue;
+            if (strokeThickness != null) mauiObject.StrokeThickness = (double)strokeThickness;
             return obj;
         }
         
@@ -164,9 +155,8 @@ namespace Sharp.UI
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IBorder
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Border>(obj);
-            var mauiValue = MauiWrapper.Value<double>(strokeThickness);
-            if (strokeThickness != null) mauiObject.StrokeThickness = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Border>(obj);         
+            if (strokeThickness != null) mauiObject.StrokeThickness = (double)strokeThickness;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Border.StrokeThicknessProperty));
             if (def.ValueIsSet()) mauiObject.StrokeThickness = def.GetValue();
             def.BindProperty();
@@ -189,8 +179,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IBorder
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Border>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.DoubleCollection?>(strokeDashArray);
-            if (strokeDashArray != null) mauiObject.StrokeDashArray = mauiValue;
+            if (strokeDashArray != null) mauiObject.StrokeDashArray = (Microsoft.Maui.Controls.DoubleCollection?)strokeDashArray;
             return obj;
         }
         
@@ -199,9 +188,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.DoubleCollection?>, BindableDef<Microsoft.Maui.Controls.DoubleCollection?>> definition)
             where T : Sharp.UI.IBorder
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Border>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.DoubleCollection?>(strokeDashArray);
-            if (strokeDashArray != null) mauiObject.StrokeDashArray = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Border>(obj);         
+            if (strokeDashArray != null) mauiObject.StrokeDashArray = (Microsoft.Maui.Controls.DoubleCollection?)strokeDashArray;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.DoubleCollection?>(mauiObject, Microsoft.Maui.Controls.Border.StrokeDashArrayProperty));
             if (def.ValueIsSet()) mauiObject.StrokeDashArray = def.GetValue();
             def.BindProperty();
@@ -224,8 +212,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IBorder
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Border>(obj);
-            var mauiValue = MauiWrapper.Value<double>(strokeDashOffset);
-            if (strokeDashOffset != null) mauiObject.StrokeDashOffset = mauiValue;
+            if (strokeDashOffset != null) mauiObject.StrokeDashOffset = (double)strokeDashOffset;
             return obj;
         }
         
@@ -234,9 +221,8 @@ namespace Sharp.UI
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IBorder
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Border>(obj);
-            var mauiValue = MauiWrapper.Value<double>(strokeDashOffset);
-            if (strokeDashOffset != null) mauiObject.StrokeDashOffset = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Border>(obj);         
+            if (strokeDashOffset != null) mauiObject.StrokeDashOffset = (double)strokeDashOffset;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Border.StrokeDashOffsetProperty));
             if (def.ValueIsSet()) mauiObject.StrokeDashOffset = def.GetValue();
             def.BindProperty();
@@ -259,8 +245,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IBorder
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Border>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.PenLineCap>(strokeLineCap);
-            if (strokeLineCap != null) mauiObject.StrokeLineCap = mauiValue;
+            if (strokeLineCap != null) mauiObject.StrokeLineCap = (Microsoft.Maui.Controls.Shapes.PenLineCap)strokeLineCap;
             return obj;
         }
         
@@ -269,9 +254,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.Shapes.PenLineCap>, BindableDef<Microsoft.Maui.Controls.Shapes.PenLineCap>> definition)
             where T : Sharp.UI.IBorder
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Border>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.PenLineCap>(strokeLineCap);
-            if (strokeLineCap != null) mauiObject.StrokeLineCap = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Border>(obj);         
+            if (strokeLineCap != null) mauiObject.StrokeLineCap = (Microsoft.Maui.Controls.Shapes.PenLineCap)strokeLineCap;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.Shapes.PenLineCap>(mauiObject, Microsoft.Maui.Controls.Border.StrokeLineCapProperty));
             if (def.ValueIsSet()) mauiObject.StrokeLineCap = def.GetValue();
             def.BindProperty();
@@ -294,8 +278,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IBorder
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Border>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.PenLineJoin>(strokeLineJoin);
-            if (strokeLineJoin != null) mauiObject.StrokeLineJoin = mauiValue;
+            if (strokeLineJoin != null) mauiObject.StrokeLineJoin = (Microsoft.Maui.Controls.Shapes.PenLineJoin)strokeLineJoin;
             return obj;
         }
         
@@ -304,9 +287,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.Shapes.PenLineJoin>, BindableDef<Microsoft.Maui.Controls.Shapes.PenLineJoin>> definition)
             where T : Sharp.UI.IBorder
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Border>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.PenLineJoin>(strokeLineJoin);
-            if (strokeLineJoin != null) mauiObject.StrokeLineJoin = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Border>(obj);         
+            if (strokeLineJoin != null) mauiObject.StrokeLineJoin = (Microsoft.Maui.Controls.Shapes.PenLineJoin)strokeLineJoin;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.Shapes.PenLineJoin>(mauiObject, Microsoft.Maui.Controls.Border.StrokeLineJoinProperty));
             if (def.ValueIsSet()) mauiObject.StrokeLineJoin = def.GetValue();
             def.BindProperty();
@@ -329,8 +311,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IBorder
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Border>(obj);
-            var mauiValue = MauiWrapper.Value<double>(strokeMiterLimit);
-            if (strokeMiterLimit != null) mauiObject.StrokeMiterLimit = mauiValue;
+            if (strokeMiterLimit != null) mauiObject.StrokeMiterLimit = (double)strokeMiterLimit;
             return obj;
         }
         
@@ -339,9 +320,8 @@ namespace Sharp.UI
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IBorder
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Border>(obj);
-            var mauiValue = MauiWrapper.Value<double>(strokeMiterLimit);
-            if (strokeMiterLimit != null) mauiObject.StrokeMiterLimit = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Border>(obj);         
+            if (strokeMiterLimit != null) mauiObject.StrokeMiterLimit = (double)strokeMiterLimit;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Border.StrokeMiterLimitProperty));
             if (def.ValueIsSet()) mauiObject.StrokeMiterLimit = def.GetValue();
             def.BindProperty();

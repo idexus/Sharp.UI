@@ -14,8 +14,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IPathGeometry
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.PathGeometry>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.PathFigureCollection>(figures);
-            if (figures != null) mauiObject.Figures = mauiValue;
+            if (figures != null) mauiObject.Figures = (Microsoft.Maui.Controls.Shapes.PathFigureCollection)figures;
             return obj;
         }
         
@@ -24,9 +23,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.Shapes.PathFigureCollection>, BindableDef<Microsoft.Maui.Controls.Shapes.PathFigureCollection>> definition)
             where T : Sharp.UI.IPathGeometry
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.PathGeometry>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.PathFigureCollection>(figures);
-            if (figures != null) mauiObject.Figures = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.PathGeometry>(obj);         
+            if (figures != null) mauiObject.Figures = (Microsoft.Maui.Controls.Shapes.PathFigureCollection)figures;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.Shapes.PathFigureCollection>(mauiObject, Microsoft.Maui.Controls.Shapes.PathGeometry.FiguresProperty));
             if (def.ValueIsSet()) mauiObject.Figures = def.GetValue();
             def.BindProperty();
@@ -49,8 +47,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IPathGeometry
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.PathGeometry>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.FillRule>(fillRule);
-            if (fillRule != null) mauiObject.FillRule = mauiValue;
+            if (fillRule != null) mauiObject.FillRule = (Microsoft.Maui.Controls.Shapes.FillRule)fillRule;
             return obj;
         }
         
@@ -59,9 +56,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.Shapes.FillRule>, BindableDef<Microsoft.Maui.Controls.Shapes.FillRule>> definition)
             where T : Sharp.UI.IPathGeometry
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.PathGeometry>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.FillRule>(fillRule);
-            if (fillRule != null) mauiObject.FillRule = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.PathGeometry>(obj);         
+            if (fillRule != null) mauiObject.FillRule = (Microsoft.Maui.Controls.Shapes.FillRule)fillRule;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.Shapes.FillRule>(mauiObject, Microsoft.Maui.Controls.Shapes.PathGeometry.FillRuleProperty));
             if (def.ValueIsSet()) mauiObject.FillRule = def.GetValue();
             def.BindProperty();

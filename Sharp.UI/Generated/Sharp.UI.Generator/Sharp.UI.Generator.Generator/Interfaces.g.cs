@@ -18,22 +18,22 @@ public partial interface IEllipseGeometry : IGeometry { }
 public partial interface ILineGeometry : IGeometry { }
 public partial interface IRectangleGeometry : IGeometry { }
 public partial interface IGeometryGroup : IGeometry { }
-public partial interface IPathGeometry : IGeometry { } // from sealed
-public partial interface IPathFigure : IBindableObject { } // from sealed
+public partial interface IPathGeometry : IGeometry { }
+public partial interface IPathFigure : IBindableObject { }
 public partial interface IArcSegment : IPathSegment { }
 public partial interface IPathSegment : IBindableObject { }
 public partial interface IBezierSegment : IPathSegment { }
 public partial interface ILineSegment : IPathSegment { }
-public partial interface IPolyBezierSegment : IPathSegment { } // from sealed
+public partial interface IPolyBezierSegment : IPathSegment { }
 public partial interface IPolyLineSegment : IPathSegment { }
 public partial interface IPolyQuadraticBezierSegment : IPathSegment { }
 public partial interface IQuadraticBezierSegment : IPathSegment { }
 public partial interface IPanGestureRecognizer : IGestureRecognizer { }
 public partial interface IGestureRecognizer : IElement { }
-public partial interface ITapGestureRecognizer : IGestureRecognizer { } // from sealed
-public partial interface IPinchGestureRecognizer : IGestureRecognizer { } // from sealed
-public partial interface IPointerGestureRecognizer : IGestureRecognizer { } // from sealed
-public partial interface ISwipeGestureRecognizer : IGestureRecognizer { } // from sealed
+public partial interface ITapGestureRecognizer : IGestureRecognizer { }
+public partial interface IPinchGestureRecognizer : IGestureRecognizer { }
+public partial interface IPointerGestureRecognizer : IGestureRecognizer { }
+public partial interface ISwipeGestureRecognizer : IGestureRecognizer { }
 public partial interface IDragGestureRecognizer : IGestureRecognizer { }
 public partial interface IDropGestureRecognizer : IGestureRecognizer { }
 public partial interface IAbsoluteLayout : ILayout { }
@@ -65,14 +65,14 @@ public partial interface IFlyoutPage : IPage { }
 public partial interface INavigationPage : IPage { }
 public partial interface ITabbedPage : IMultiPagePage { }
 public partial interface IMultiPagePage : IPage { }
-public partial interface IEllipse : IShape { } // from sealed
+public partial interface IEllipse : IShape { }
 public partial interface IShape : IView { }
-public partial interface IPolyline : IShape { } // from sealed
-public partial interface ILine : IShape { } // from sealed
-public partial interface IPath : IShape { } // from sealed
-public partial interface IPolygon : IShape { } // from sealed
-public partial interface IRectangle : IShape { } // from sealed
-public partial interface IRoundRectangle : IShape { } // from sealed
+public partial interface IPolyline : IShape { }
+public partial interface ILine : IShape { }
+public partial interface IPath : IShape { }
+public partial interface IPolygon : IShape { }
+public partial interface IRectangle : IShape { }
+public partial interface IRoundRectangle : IShape { }
 public partial interface IShell : IPage { }
 public partial interface ITabBar : IShellItem { }
 public partial interface IShellItem : IShellGroupItem { }
@@ -123,33 +123,33 @@ public partial interface ITimePicker : IView { }
 public partial interface IWebView : IView { }
 public partial interface ISwipeItem : IMenuItem { }
 public partial interface ISwipeItemView : IContentView { }
-public partial interface ITableSection : ITableSectionBaseCell { } // from sealed, IList of Microsoft.Maui.Controls.Cell
+public partial interface ITableSection : ITableSectionBaseCell { }
 public partial interface ITableSectionBaseCell : ITableSectionBase { }
 public partial interface ITableSectionBase : IBindableObject { }
-public partial interface IColumnDefinition : IBindableObject { } // from sealed
-public partial interface IRowDefinition : IBindableObject { } // from sealed
-public partial interface IBinding : IBindingBase { } // from sealed
+public partial interface IColumnDefinition : IBindableObject { }
+public partial interface IRowDefinition : IBindableObject { }
+public partial interface IBinding : IBindingBase { }
 public partial interface IBindingBase { }
 public partial interface ILinearGradientBrush : IGradientBrush { }
 public partial interface IGradientBrush : IBrush { }
 public partial interface IBrush : IElement { }
 public partial interface IRadialGradientBrush : IGradientBrush { }
 public partial interface IGradientStop : IElement { }
-public partial interface IStyle { } // from sealed
-public partial interface ITrigger : ITriggerBase { } // from sealed
+public partial interface IStyle { }
+public partial interface ITrigger : ITriggerBase { }
 public partial interface ITriggerBase : IBindableObject { }
-public partial interface IDataTrigger : ITriggerBase { } // from sealed
-public partial interface IEventTrigger : ITriggerBase { } // from sealed
-public partial interface IMultiTrigger : ITriggerBase { } // from sealed
-public partial interface IBindingCondition : ICondition { } // from sealed
+public partial interface IDataTrigger : ITriggerBase { }
+public partial interface IEventTrigger : ITriggerBase { }
+public partial interface IMultiTrigger : ITriggerBase { }
+public partial interface IBindingCondition : ICondition { }
 public partial interface ICondition { }
-public partial interface IPropertyCondition : ICondition { } // from sealed
-public partial interface IStateTrigger : IStateTriggerBase { } // from sealed
+public partial interface IPropertyCondition : ICondition { }
+public partial interface IStateTrigger : IStateTriggerBase { }
 public partial interface IStateTriggerBase : IBindableObject { }
-public partial interface IAdaptiveTrigger : IStateTriggerBase { } // from sealed
-public partial interface ICompareStateTrigger : IStateTriggerBase { } // from sealed
-public partial interface IDeviceStateTrigger : IStateTriggerBase { } // from sealed
-public partial interface IOrientationStateTrigger : IStateTriggerBase { } // from sealed
+public partial interface IAdaptiveTrigger : IStateTriggerBase { }
+public partial interface ICompareStateTrigger : IStateTriggerBase { }
+public partial interface IDeviceStateTrigger : IStateTriggerBase { }
+public partial interface IOrientationStateTrigger : IStateTriggerBase { }
 public partial interface IVisualStateGroupList { }
-public partial interface IVisualStateGroup { } // from sealed
-public partial interface IVisualState { } // from sealed
+public partial interface IVisualStateGroup { }
+public partial interface IVisualState { }

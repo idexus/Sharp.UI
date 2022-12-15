@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public partial class CompareStateTrigger : Sharp.UI.ICompareStateTrigger, ISealedMauiWrapper, IWrappedBindableObject
+    public partial class CompareStateTrigger : Sharp.UI.ICompareStateTrigger, IMauiWrapper, ISealedMauiWrapper
     {
         // ----- maui object -----
 
@@ -17,7 +17,7 @@ namespace Sharp.UI
 
         // ----- constructors -----
 
-        protected CompareStateTrigger(Microsoft.Maui.Controls.CompareStateTrigger compareStateTrigger)
+        public CompareStateTrigger(Microsoft.Maui.Controls.CompareStateTrigger compareStateTrigger)
         {
             MauiObject = compareStateTrigger;
         }
@@ -48,7 +48,7 @@ namespace Sharp.UI
         public static implicit operator CompareStateTrigger(Microsoft.Maui.Controls.CompareStateTrigger mauiObject) => new CompareStateTrigger(mauiObject);
         public static implicit operator Microsoft.Maui.Controls.CompareStateTrigger(CompareStateTrigger obj) => obj.MauiObject;
 
-        // ----- bindable properties -----
+        // ----- sealed bindable properties -----
 
         public static Microsoft.Maui.Controls.BindableProperty PropertyProperty => Microsoft.Maui.Controls.CompareStateTrigger.PropertyProperty;
         public static Microsoft.Maui.Controls.BindableProperty ValueProperty => Microsoft.Maui.Controls.CompareStateTrigger.ValueProperty;
@@ -56,24 +56,30 @@ namespace Sharp.UI
 
         // ----- properties / events -----
 
-        public object Property { get => MauiObject.Property; set => MauiObject.Property = value; }
-        public object Value { get => MauiObject.Value; set => MauiObject.Value = value; }
+        public object Property { get => MauiObject.Property; set => MauiObject.Property = MauiWrapper.Value<object>(value); }
+        public object Value { get => MauiObject.Value; set => MauiObject.Value = MauiWrapper.Value<object>(value); }
         public bool IsActive { get => MauiObject.IsActive; }
         public bool IsAttached { get => MauiObject.IsAttached; }
-        public event System.EventHandler IsActiveChanged { add => MauiObject.IsActiveChanged += value; remove => MauiObject.IsActiveChanged -= value; }
         public Microsoft.Maui.Dispatching.IDispatcher Dispatcher { get => MauiObject.Dispatcher; }
+        public object BindingContext { get => MauiObject.BindingContext; set => MauiObject.BindingContext = MauiWrapper.Value<object>(value); }
+        public event System.EventHandler IsActiveChanged { add => MauiObject.IsActiveChanged += value; remove => MauiObject.IsActiveChanged -= value; }
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged { add => MauiObject.PropertyChanged += value; remove => MauiObject.PropertyChanged -= value; }
         public event Microsoft.Maui.Controls.PropertyChangingEventHandler PropertyChanging { add => MauiObject.PropertyChanging += value; remove => MauiObject.PropertyChanging -= value; }
         public event System.EventHandler BindingContextChanged { add => MauiObject.BindingContextChanged += value; remove => MauiObject.BindingContextChanged -= value; }
-        // ----- binding context -----
 
-        public object BindingContext
+        // ----- set value method -----
+
+        public void SetValue(Microsoft.Maui.Controls.BindableProperty property, object value)
         {
-            get => MauiObject.BindingContext;
-            set => MauiObject.BindingContext = MauiWrapper.Value<object>(value);           
+            var mauiValue = MauiWrapper.Value<object>(value);
+            MauiObject.SetValue(property, mauiValue);
         }
-        
 
+        public void SetValue(Microsoft.Maui.Controls.BindablePropertyKey propertyKey, object value)
+        {
+            var mauiValue = MauiWrapper.Value<object>(value);
+            MauiObject.SetValue(propertyKey, mauiValue);
+        }
     }
 }
 

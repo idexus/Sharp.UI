@@ -14,8 +14,7 @@ namespace Sharp.UI
             where T : Sharp.UI.ITableView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TableView>(obj);
-            var mauiValue = MauiWrapper.Value<bool>(hasUnevenRows);
-            if (hasUnevenRows != null) mauiObject.HasUnevenRows = mauiValue;
+            if (hasUnevenRows != null) mauiObject.HasUnevenRows = (bool)hasUnevenRows;
             return obj;
         }
         
@@ -24,9 +23,8 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.ITableView
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TableView>(obj);
-            var mauiValue = MauiWrapper.Value<bool>(hasUnevenRows);
-            if (hasUnevenRows != null) mauiObject.HasUnevenRows = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TableView>(obj);         
+            if (hasUnevenRows != null) mauiObject.HasUnevenRows = (bool)hasUnevenRows;
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.TableView.HasUnevenRowsProperty));
             if (def.ValueIsSet()) mauiObject.HasUnevenRows = def.GetValue();
             def.BindProperty();
@@ -49,8 +47,7 @@ namespace Sharp.UI
             where T : Sharp.UI.ITableView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TableView>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.TableIntent>(intent);
-            if (intent != null) mauiObject.Intent = mauiValue;
+            if (intent != null) mauiObject.Intent = (Microsoft.Maui.Controls.TableIntent)intent;
             return obj;
         }
         
@@ -60,8 +57,7 @@ namespace Sharp.UI
             where T : Sharp.UI.ITableView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TableView>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.TableIntent>(intent);
-            if (intent != null) mauiObject.Intent = mauiValue;
+            if (intent != null) mauiObject.Intent = (Microsoft.Maui.Controls.TableIntent)intent;
             var def = definition(new ValueDef<Microsoft.Maui.Controls.TableIntent>());
             if (def.ValueIsSet()) mauiObject.Intent = def.GetValue();
             return obj;
@@ -82,8 +78,7 @@ namespace Sharp.UI
             where T : Sharp.UI.ITableView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TableView>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.TableRoot>(root);
-            if (root != null) mauiObject.Root = mauiValue;
+            if (root != null) mauiObject.Root = (Microsoft.Maui.Controls.TableRoot)root;
             return obj;
         }
         
@@ -93,8 +88,7 @@ namespace Sharp.UI
             where T : Sharp.UI.ITableView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TableView>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.TableRoot>(root);
-            if (root != null) mauiObject.Root = mauiValue;
+            if (root != null) mauiObject.Root = (Microsoft.Maui.Controls.TableRoot)root;
             var def = definition(new ValueDef<Microsoft.Maui.Controls.TableRoot>());
             if (def.ValueIsSet()) mauiObject.Root = def.GetValue();
             return obj;
@@ -115,8 +109,7 @@ namespace Sharp.UI
             where T : Sharp.UI.ITableView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TableView>(obj);
-            var mauiValue = MauiWrapper.Value<int>(rowHeight);
-            if (rowHeight != null) mauiObject.RowHeight = mauiValue;
+            if (rowHeight != null) mauiObject.RowHeight = (int)rowHeight;
             return obj;
         }
         
@@ -125,9 +118,8 @@ namespace Sharp.UI
             System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.ITableView
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TableView>(obj);
-            var mauiValue = MauiWrapper.Value<int>(rowHeight);
-            if (rowHeight != null) mauiObject.RowHeight = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TableView>(obj);         
+            if (rowHeight != null) mauiObject.RowHeight = (int)rowHeight;
             var def = definition(new BindableDef<int>(mauiObject, Microsoft.Maui.Controls.TableView.RowHeightProperty));
             if (def.ValueIsSet()) mauiObject.RowHeight = def.GetValue();
             def.BindProperty();
@@ -150,8 +142,7 @@ namespace Sharp.UI
             where T : Sharp.UI.ITableView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TableView>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.Internals.TableModel>(model);
-            if (model != null) mauiObject.Model = mauiValue;
+            if (model != null) mauiObject.Model = (Microsoft.Maui.Controls.Internals.TableModel)model;
             return obj;
         }
         
@@ -161,8 +152,7 @@ namespace Sharp.UI
             where T : Sharp.UI.ITableView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TableView>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.Internals.TableModel>(model);
-            if (model != null) mauiObject.Model = mauiValue;
+            if (model != null) mauiObject.Model = (Microsoft.Maui.Controls.Internals.TableModel)model;
             var def = definition(new ValueDef<Microsoft.Maui.Controls.Internals.TableModel>());
             if (def.ValueIsSet()) mauiObject.Model = def.GetValue();
             return obj;

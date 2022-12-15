@@ -14,8 +14,7 @@ namespace Sharp.UI
             where T : Sharp.UI.ISearchBar
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(cancelButtonColor);
-            if (cancelButtonColor != null) mauiObject.CancelButtonColor = mauiValue;
+            if (cancelButtonColor != null) mauiObject.CancelButtonColor = (Microsoft.Maui.Graphics.Color)cancelButtonColor;
             return obj;
         }
         
@@ -24,9 +23,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.ISearchBar
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(cancelButtonColor);
-            if (cancelButtonColor != null) mauiObject.CancelButtonColor = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);         
+            if (cancelButtonColor != null) mauiObject.CancelButtonColor = (Microsoft.Maui.Graphics.Color)cancelButtonColor;
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.SearchBar.CancelButtonColorProperty));
             if (def.ValueIsSet()) mauiObject.CancelButtonColor = def.GetValue();
             def.BindProperty();
@@ -49,8 +47,7 @@ namespace Sharp.UI
             where T : Sharp.UI.ISearchBar
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.TextAlignment>(horizontalTextAlignment);
-            if (horizontalTextAlignment != null) mauiObject.HorizontalTextAlignment = mauiValue;
+            if (horizontalTextAlignment != null) mauiObject.HorizontalTextAlignment = (Microsoft.Maui.TextAlignment)horizontalTextAlignment;
             return obj;
         }
         
@@ -59,9 +56,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.TextAlignment>, BindableDef<Microsoft.Maui.TextAlignment>> definition)
             where T : Sharp.UI.ISearchBar
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.TextAlignment>(horizontalTextAlignment);
-            if (horizontalTextAlignment != null) mauiObject.HorizontalTextAlignment = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);         
+            if (horizontalTextAlignment != null) mauiObject.HorizontalTextAlignment = (Microsoft.Maui.TextAlignment)horizontalTextAlignment;
             var def = definition(new BindableDef<Microsoft.Maui.TextAlignment>(mauiObject, Microsoft.Maui.Controls.SearchBar.HorizontalTextAlignmentProperty));
             if (def.ValueIsSet()) mauiObject.HorizontalTextAlignment = def.GetValue();
             def.BindProperty();
@@ -84,8 +80,7 @@ namespace Sharp.UI
             where T : Sharp.UI.ISearchBar
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.TextAlignment>(verticalTextAlignment);
-            if (verticalTextAlignment != null) mauiObject.VerticalTextAlignment = mauiValue;
+            if (verticalTextAlignment != null) mauiObject.VerticalTextAlignment = (Microsoft.Maui.TextAlignment)verticalTextAlignment;
             return obj;
         }
         
@@ -94,9 +89,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.TextAlignment>, BindableDef<Microsoft.Maui.TextAlignment>> definition)
             where T : Sharp.UI.ISearchBar
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.TextAlignment>(verticalTextAlignment);
-            if (verticalTextAlignment != null) mauiObject.VerticalTextAlignment = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);         
+            if (verticalTextAlignment != null) mauiObject.VerticalTextAlignment = (Microsoft.Maui.TextAlignment)verticalTextAlignment;
             var def = definition(new BindableDef<Microsoft.Maui.TextAlignment>(mauiObject, Microsoft.Maui.Controls.SearchBar.VerticalTextAlignmentProperty));
             if (def.ValueIsSet()) mauiObject.VerticalTextAlignment = def.GetValue();
             def.BindProperty();
@@ -119,8 +113,7 @@ namespace Sharp.UI
             where T : Sharp.UI.ISearchBar
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);
-            var mauiValue = MauiWrapper.Value<System.Windows.Input.ICommand>(searchCommand);
-            if (searchCommand != null) mauiObject.SearchCommand = mauiValue;
+            if (searchCommand != null) mauiObject.SearchCommand = (System.Windows.Input.ICommand)searchCommand;
             return obj;
         }
         
@@ -129,9 +122,8 @@ namespace Sharp.UI
             System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.ISearchBar
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);
-            var mauiValue = MauiWrapper.Value<System.Windows.Input.ICommand>(searchCommand);
-            if (searchCommand != null) mauiObject.SearchCommand = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);         
+            if (searchCommand != null) mauiObject.SearchCommand = (System.Windows.Input.ICommand)searchCommand;
             var def = definition(new BindableDef<System.Windows.Input.ICommand>(mauiObject, Microsoft.Maui.Controls.SearchBar.SearchCommandProperty));
             if (def.ValueIsSet()) mauiObject.SearchCommand = def.GetValue();
             def.BindProperty();
@@ -154,8 +146,7 @@ namespace Sharp.UI
             where T : Sharp.UI.ISearchBar
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);
-            var mauiValue = MauiWrapper.Value<object>(searchCommandParameter);
-            if (searchCommandParameter != null) mauiObject.SearchCommandParameter = mauiValue;
+            if (searchCommandParameter != null) mauiObject.SearchCommandParameter = (object)searchCommandParameter;
             return obj;
         }
         
@@ -164,9 +155,8 @@ namespace Sharp.UI
             System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.ISearchBar
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);
-            var mauiValue = MauiWrapper.Value<object>(searchCommandParameter);
-            if (searchCommandParameter != null) mauiObject.SearchCommandParameter = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);         
+            if (searchCommandParameter != null) mauiObject.SearchCommandParameter = (object)searchCommandParameter;
             var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.SearchBar.SearchCommandParameterProperty));
             if (def.ValueIsSet()) mauiObject.SearchCommandParameter = def.GetValue();
             def.BindProperty();
@@ -189,8 +179,7 @@ namespace Sharp.UI
             where T : Sharp.UI.ISearchBar
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.FontAttributes>(fontAttributes);
-            if (fontAttributes != null) mauiObject.FontAttributes = mauiValue;
+            if (fontAttributes != null) mauiObject.FontAttributes = (Microsoft.Maui.Controls.FontAttributes)fontAttributes;
             return obj;
         }
         
@@ -199,9 +188,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.FontAttributes>, BindableDef<Microsoft.Maui.Controls.FontAttributes>> definition)
             where T : Sharp.UI.ISearchBar
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.FontAttributes>(fontAttributes);
-            if (fontAttributes != null) mauiObject.FontAttributes = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);         
+            if (fontAttributes != null) mauiObject.FontAttributes = (Microsoft.Maui.Controls.FontAttributes)fontAttributes;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.FontAttributes>(mauiObject, Microsoft.Maui.Controls.SearchBar.FontAttributesProperty));
             if (def.ValueIsSet()) mauiObject.FontAttributes = def.GetValue();
             def.BindProperty();
@@ -224,8 +212,7 @@ namespace Sharp.UI
             where T : Sharp.UI.ISearchBar
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);
-            var mauiValue = MauiWrapper.Value<bool>(isTextPredictionEnabled);
-            if (isTextPredictionEnabled != null) mauiObject.IsTextPredictionEnabled = mauiValue;
+            if (isTextPredictionEnabled != null) mauiObject.IsTextPredictionEnabled = (bool)isTextPredictionEnabled;
             return obj;
         }
         
@@ -234,9 +221,8 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.ISearchBar
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);
-            var mauiValue = MauiWrapper.Value<bool>(isTextPredictionEnabled);
-            if (isTextPredictionEnabled != null) mauiObject.IsTextPredictionEnabled = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);         
+            if (isTextPredictionEnabled != null) mauiObject.IsTextPredictionEnabled = (bool)isTextPredictionEnabled;
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.SearchBar.IsTextPredictionEnabledProperty));
             if (def.ValueIsSet()) mauiObject.IsTextPredictionEnabled = def.GetValue();
             def.BindProperty();
@@ -259,8 +245,7 @@ namespace Sharp.UI
             where T : Sharp.UI.ISearchBar
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);
-            var mauiValue = MauiWrapper.Value<int>(cursorPosition);
-            if (cursorPosition != null) mauiObject.CursorPosition = mauiValue;
+            if (cursorPosition != null) mauiObject.CursorPosition = (int)cursorPosition;
             return obj;
         }
         
@@ -269,9 +254,8 @@ namespace Sharp.UI
             System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.ISearchBar
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);
-            var mauiValue = MauiWrapper.Value<int>(cursorPosition);
-            if (cursorPosition != null) mauiObject.CursorPosition = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);         
+            if (cursorPosition != null) mauiObject.CursorPosition = (int)cursorPosition;
             var def = definition(new BindableDef<int>(mauiObject, Microsoft.Maui.Controls.SearchBar.CursorPositionProperty));
             if (def.ValueIsSet()) mauiObject.CursorPosition = def.GetValue();
             def.BindProperty();
@@ -294,8 +278,7 @@ namespace Sharp.UI
             where T : Sharp.UI.ISearchBar
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);
-            var mauiValue = MauiWrapper.Value<int>(selectionLength);
-            if (selectionLength != null) mauiObject.SelectionLength = mauiValue;
+            if (selectionLength != null) mauiObject.SelectionLength = (int)selectionLength;
             return obj;
         }
         
@@ -304,9 +287,8 @@ namespace Sharp.UI
             System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.ISearchBar
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);
-            var mauiValue = MauiWrapper.Value<int>(selectionLength);
-            if (selectionLength != null) mauiObject.SelectionLength = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);         
+            if (selectionLength != null) mauiObject.SelectionLength = (int)selectionLength;
             var def = definition(new BindableDef<int>(mauiObject, Microsoft.Maui.Controls.SearchBar.SelectionLengthProperty));
             if (def.ValueIsSet()) mauiObject.SelectionLength = def.GetValue();
             def.BindProperty();
@@ -329,8 +311,7 @@ namespace Sharp.UI
             where T : Sharp.UI.ISearchBar
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);
-            var mauiValue = MauiWrapper.Value<string>(fontFamily);
-            if (fontFamily != null) mauiObject.FontFamily = mauiValue;
+            if (fontFamily != null) mauiObject.FontFamily = (string)fontFamily;
             return obj;
         }
         
@@ -339,9 +320,8 @@ namespace Sharp.UI
             System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.ISearchBar
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);
-            var mauiValue = MauiWrapper.Value<string>(fontFamily);
-            if (fontFamily != null) mauiObject.FontFamily = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);         
+            if (fontFamily != null) mauiObject.FontFamily = (string)fontFamily;
             var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.SearchBar.FontFamilyProperty));
             if (def.ValueIsSet()) mauiObject.FontFamily = def.GetValue();
             def.BindProperty();
@@ -364,8 +344,7 @@ namespace Sharp.UI
             where T : Sharp.UI.ISearchBar
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);
-            var mauiValue = MauiWrapper.Value<double>(fontSize);
-            if (fontSize != null) mauiObject.FontSize = mauiValue;
+            if (fontSize != null) mauiObject.FontSize = (double)fontSize;
             return obj;
         }
         
@@ -374,9 +353,8 @@ namespace Sharp.UI
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.ISearchBar
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);
-            var mauiValue = MauiWrapper.Value<double>(fontSize);
-            if (fontSize != null) mauiObject.FontSize = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);         
+            if (fontSize != null) mauiObject.FontSize = (double)fontSize;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.SearchBar.FontSizeProperty));
             if (def.ValueIsSet()) mauiObject.FontSize = def.GetValue();
             def.BindProperty();
@@ -399,8 +377,7 @@ namespace Sharp.UI
             where T : Sharp.UI.ISearchBar
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);
-            var mauiValue = MauiWrapper.Value<bool>(fontAutoScalingEnabled);
-            if (fontAutoScalingEnabled != null) mauiObject.FontAutoScalingEnabled = mauiValue;
+            if (fontAutoScalingEnabled != null) mauiObject.FontAutoScalingEnabled = (bool)fontAutoScalingEnabled;
             return obj;
         }
         
@@ -409,9 +386,8 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.ISearchBar
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);
-            var mauiValue = MauiWrapper.Value<bool>(fontAutoScalingEnabled);
-            if (fontAutoScalingEnabled != null) mauiObject.FontAutoScalingEnabled = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);         
+            if (fontAutoScalingEnabled != null) mauiObject.FontAutoScalingEnabled = (bool)fontAutoScalingEnabled;
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.SearchBar.FontAutoScalingEnabledProperty));
             if (def.ValueIsSet()) mauiObject.FontAutoScalingEnabled = def.GetValue();
             def.BindProperty();

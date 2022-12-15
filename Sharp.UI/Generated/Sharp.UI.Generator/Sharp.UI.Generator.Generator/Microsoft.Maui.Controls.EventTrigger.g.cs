@@ -58,8 +58,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IEventTrigger
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.EventTrigger>(obj);
-            var mauiValue = MauiWrapper.Value<string>(@event);
-            if (@event != null) mauiObject.Event = mauiValue;
+            if (@event != null) mauiObject.Event = (string)@event;
             return obj;
         }
         
@@ -69,8 +68,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IEventTrigger
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.EventTrigger>(obj);
-            var mauiValue = MauiWrapper.Value<string>(@event);
-            if (@event != null) mauiObject.Event = mauiValue;
+            if (@event != null) mauiObject.Event = (string)@event;
             var def = definition(new ValueDef<string>());
             if (def.ValueIsSet()) mauiObject.Event = def.GetValue();
             return obj;

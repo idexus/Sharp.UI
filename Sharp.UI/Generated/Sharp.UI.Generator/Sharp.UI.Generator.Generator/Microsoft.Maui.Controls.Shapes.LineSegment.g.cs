@@ -14,8 +14,7 @@ namespace Sharp.UI
             where T : Sharp.UI.ILineSegment
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.LineSegment>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Point>(point);
-            if (point != null) mauiObject.Point = mauiValue;
+            if (point != null) mauiObject.Point = (Microsoft.Maui.Graphics.Point)point;
             return obj;
         }
         
@@ -24,9 +23,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
             where T : Sharp.UI.ILineSegment
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.LineSegment>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Point>(point);
-            if (point != null) mauiObject.Point = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.LineSegment>(obj);         
+            if (point != null) mauiObject.Point = (Microsoft.Maui.Graphics.Point)point;
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Point>(mauiObject, Microsoft.Maui.Controls.Shapes.LineSegment.PointProperty));
             if (def.ValueIsSet()) mauiObject.Point = def.GetValue();
             def.BindProperty();

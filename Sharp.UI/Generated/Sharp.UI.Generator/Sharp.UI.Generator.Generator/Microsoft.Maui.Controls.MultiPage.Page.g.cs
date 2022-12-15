@@ -14,8 +14,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IMultiPagePage
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>>(obj);
-            var mauiValue = MauiWrapper.Value<System.Collections.IEnumerable>(itemsSource);
-            if (itemsSource != null) mauiObject.ItemsSource = mauiValue;
+            if (itemsSource != null) mauiObject.ItemsSource = (System.Collections.IEnumerable)itemsSource;
             return obj;
         }
         
@@ -24,9 +23,8 @@ namespace Sharp.UI
             System.Func<BindableDef<System.Collections.IEnumerable>, BindableDef<System.Collections.IEnumerable>> definition)
             where T : Sharp.UI.IMultiPagePage
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>>(obj);
-            var mauiValue = MauiWrapper.Value<System.Collections.IEnumerable>(itemsSource);
-            if (itemsSource != null) mauiObject.ItemsSource = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>>(obj);         
+            if (itemsSource != null) mauiObject.ItemsSource = (System.Collections.IEnumerable)itemsSource;
             var def = definition(new BindableDef<System.Collections.IEnumerable>(mauiObject, Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.ItemsSourceProperty));
             if (def.ValueIsSet()) mauiObject.ItemsSource = def.GetValue();
             def.BindProperty();
@@ -49,8 +47,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IMultiPagePage
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.DataTemplate>(itemTemplate);
-            if (itemTemplate != null) mauiObject.ItemTemplate = mauiValue;
+            if (itemTemplate != null) mauiObject.ItemTemplate = (Microsoft.Maui.Controls.DataTemplate)itemTemplate;
             return obj;
         }
         
@@ -59,9 +56,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
             where T : Sharp.UI.IMultiPagePage
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.DataTemplate>(itemTemplate);
-            if (itemTemplate != null) mauiObject.ItemTemplate = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>>(obj);         
+            if (itemTemplate != null) mauiObject.ItemTemplate = (Microsoft.Maui.Controls.DataTemplate)itemTemplate;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.DataTemplate>(mauiObject, Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.ItemTemplateProperty));
             if (def.ValueIsSet()) mauiObject.ItemTemplate = def.GetValue();
             def.BindProperty();
@@ -91,8 +87,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IMultiPagePage
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>>(obj);
-            var mauiValue = MauiWrapper.Value<object>(selectedItem);
-            if (selectedItem != null) mauiObject.SelectedItem = mauiValue;
+            if (selectedItem != null) mauiObject.SelectedItem = (object)selectedItem;
             return obj;
         }
         
@@ -101,9 +96,8 @@ namespace Sharp.UI
             System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IMultiPagePage
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>>(obj);
-            var mauiValue = MauiWrapper.Value<object>(selectedItem);
-            if (selectedItem != null) mauiObject.SelectedItem = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>>(obj);         
+            if (selectedItem != null) mauiObject.SelectedItem = (object)selectedItem;
             var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.SelectedItemProperty));
             if (def.ValueIsSet()) mauiObject.SelectedItem = def.GetValue();
             def.BindProperty();
@@ -126,8 +120,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IMultiPagePage
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.Page>(currentPage);
-            if (currentPage != null) mauiObject.CurrentPage = mauiValue;
+            if (currentPage != null) mauiObject.CurrentPage = (Microsoft.Maui.Controls.Page)currentPage;
             return obj;
         }
         
@@ -137,8 +130,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IMultiPagePage
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.Page>(currentPage);
-            if (currentPage != null) mauiObject.CurrentPage = mauiValue;
+            if (currentPage != null) mauiObject.CurrentPage = (Microsoft.Maui.Controls.Page)currentPage;
             var def = definition(new ValueDef<Microsoft.Maui.Controls.Page>());
             if (def.ValueIsSet()) mauiObject.CurrentPage = def.GetValue();
             return obj;

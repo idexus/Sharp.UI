@@ -10,6 +10,8 @@
     public partial class FlexLayout
     {
         public void Add(View view) => this.Children.Add(view);
+
+
     }
 
     [SharpObject(typeof(Microsoft.Maui.Controls.Grid))] 

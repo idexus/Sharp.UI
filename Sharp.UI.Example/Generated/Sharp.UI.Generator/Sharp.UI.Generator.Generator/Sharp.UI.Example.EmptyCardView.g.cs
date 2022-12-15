@@ -43,11 +43,7 @@ namespace Sharp.UI.Example
         public string CardTitle
         {
             get => (string)GetValue(CardTitleProperty);
-            set
-            {
-                var mauiValue = MauiWrapper.Value<string>(value);
-                SetValue(CardTitleProperty, mauiValue);
-            }
+            set => SetValue(CardTitleProperty, value);
         }
         
         public static readonly Microsoft.Maui.Controls.BindableProperty CardDescriptionProperty =
@@ -60,11 +56,7 @@ namespace Sharp.UI.Example
         public string CardDescription
         {
             get => (string)GetValue(CardDescriptionProperty);
-            set
-            {
-                var mauiValue = MauiWrapper.Value<string>(value);
-                SetValue(CardDescriptionProperty, mauiValue);
-            }
+            set => SetValue(CardDescriptionProperty, value);
         }
         
         public static readonly Microsoft.Maui.Controls.BindableProperty CardColorProperty =
@@ -77,11 +69,7 @@ namespace Sharp.UI.Example
         public Microsoft.Maui.Graphics.Color CardColor
         {
             get => (Microsoft.Maui.Graphics.Color)GetValue(CardColorProperty);
-            set
-            {
-                var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(value);
-                SetValue(CardColorProperty, mauiValue);
-            }
+            set => SetValue(CardColorProperty, value);
         }
         
         public static readonly Microsoft.Maui.Controls.BindableProperty BorderColorProperty =
@@ -94,22 +82,22 @@ namespace Sharp.UI.Example
         public Microsoft.Maui.Graphics.Color BorderColor
         {
             get => (Microsoft.Maui.Graphics.Color)GetValue(BorderColorProperty);
-            set
-            {
-                var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(value);
-                SetValue(BorderColorProperty, mauiValue);
-            }
+            set => SetValue(BorderColorProperty, value);
         }
         
-        // ----- binding context -----
+        // ----- set value method -----
 
-        public new object BindingContext
+        public new void SetValue(Microsoft.Maui.Controls.BindableProperty property, object value)
         {
-            get => base.BindingContext;
-            set => base.BindingContext = MauiWrapper.Value<object>(value);           
+            var mauiValue = MauiWrapper.Value<object>(value);
+            ((Microsoft.Maui.Controls.BindableObject)this).SetValue(property, mauiValue);
         }
-        
 
+        public new void SetValue(Microsoft.Maui.Controls.BindablePropertyKey propertyKey, object value)
+        {
+            var mauiValue = MauiWrapper.Value<object>(value);
+            ((Microsoft.Maui.Controls.BindableObject)this).SetValue(propertyKey, mauiValue);
+        }
     }
 }
 

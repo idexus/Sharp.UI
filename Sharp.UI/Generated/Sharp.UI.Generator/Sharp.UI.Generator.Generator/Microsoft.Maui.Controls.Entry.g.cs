@@ -14,8 +14,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IEntry
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Entry>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.TextAlignment>(horizontalTextAlignment);
-            if (horizontalTextAlignment != null) mauiObject.HorizontalTextAlignment = mauiValue;
+            if (horizontalTextAlignment != null) mauiObject.HorizontalTextAlignment = (Microsoft.Maui.TextAlignment)horizontalTextAlignment;
             return obj;
         }
         
@@ -24,9 +23,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.TextAlignment>, BindableDef<Microsoft.Maui.TextAlignment>> definition)
             where T : Sharp.UI.IEntry
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Entry>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.TextAlignment>(horizontalTextAlignment);
-            if (horizontalTextAlignment != null) mauiObject.HorizontalTextAlignment = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Entry>(obj);         
+            if (horizontalTextAlignment != null) mauiObject.HorizontalTextAlignment = (Microsoft.Maui.TextAlignment)horizontalTextAlignment;
             var def = definition(new BindableDef<Microsoft.Maui.TextAlignment>(mauiObject, Microsoft.Maui.Controls.Entry.HorizontalTextAlignmentProperty));
             if (def.ValueIsSet()) mauiObject.HorizontalTextAlignment = def.GetValue();
             def.BindProperty();
@@ -49,8 +47,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IEntry
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Entry>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.TextAlignment>(verticalTextAlignment);
-            if (verticalTextAlignment != null) mauiObject.VerticalTextAlignment = mauiValue;
+            if (verticalTextAlignment != null) mauiObject.VerticalTextAlignment = (Microsoft.Maui.TextAlignment)verticalTextAlignment;
             return obj;
         }
         
@@ -59,9 +56,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.TextAlignment>, BindableDef<Microsoft.Maui.TextAlignment>> definition)
             where T : Sharp.UI.IEntry
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Entry>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.TextAlignment>(verticalTextAlignment);
-            if (verticalTextAlignment != null) mauiObject.VerticalTextAlignment = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Entry>(obj);         
+            if (verticalTextAlignment != null) mauiObject.VerticalTextAlignment = (Microsoft.Maui.TextAlignment)verticalTextAlignment;
             var def = definition(new BindableDef<Microsoft.Maui.TextAlignment>(mauiObject, Microsoft.Maui.Controls.Entry.VerticalTextAlignmentProperty));
             if (def.ValueIsSet()) mauiObject.VerticalTextAlignment = def.GetValue();
             def.BindProperty();
@@ -84,8 +80,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IEntry
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Entry>(obj);
-            var mauiValue = MauiWrapper.Value<bool>(isPassword);
-            if (isPassword != null) mauiObject.IsPassword = mauiValue;
+            if (isPassword != null) mauiObject.IsPassword = (bool)isPassword;
             return obj;
         }
         
@@ -94,9 +89,8 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IEntry
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Entry>(obj);
-            var mauiValue = MauiWrapper.Value<bool>(isPassword);
-            if (isPassword != null) mauiObject.IsPassword = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Entry>(obj);         
+            if (isPassword != null) mauiObject.IsPassword = (bool)isPassword;
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.Entry.IsPasswordProperty));
             if (def.ValueIsSet()) mauiObject.IsPassword = def.GetValue();
             def.BindProperty();
@@ -119,8 +113,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IEntry
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Entry>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.FontAttributes>(fontAttributes);
-            if (fontAttributes != null) mauiObject.FontAttributes = mauiValue;
+            if (fontAttributes != null) mauiObject.FontAttributes = (Microsoft.Maui.Controls.FontAttributes)fontAttributes;
             return obj;
         }
         
@@ -129,9 +122,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.FontAttributes>, BindableDef<Microsoft.Maui.Controls.FontAttributes>> definition)
             where T : Sharp.UI.IEntry
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Entry>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.FontAttributes>(fontAttributes);
-            if (fontAttributes != null) mauiObject.FontAttributes = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Entry>(obj);         
+            if (fontAttributes != null) mauiObject.FontAttributes = (Microsoft.Maui.Controls.FontAttributes)fontAttributes;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.FontAttributes>(mauiObject, Microsoft.Maui.Controls.Entry.FontAttributesProperty));
             if (def.ValueIsSet()) mauiObject.FontAttributes = def.GetValue();
             def.BindProperty();
@@ -154,8 +146,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IEntry
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Entry>(obj);
-            var mauiValue = MauiWrapper.Value<string>(fontFamily);
-            if (fontFamily != null) mauiObject.FontFamily = mauiValue;
+            if (fontFamily != null) mauiObject.FontFamily = (string)fontFamily;
             return obj;
         }
         
@@ -164,9 +155,8 @@ namespace Sharp.UI
             System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.IEntry
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Entry>(obj);
-            var mauiValue = MauiWrapper.Value<string>(fontFamily);
-            if (fontFamily != null) mauiObject.FontFamily = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Entry>(obj);         
+            if (fontFamily != null) mauiObject.FontFamily = (string)fontFamily;
             var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.Entry.FontFamilyProperty));
             if (def.ValueIsSet()) mauiObject.FontFamily = def.GetValue();
             def.BindProperty();
@@ -189,8 +179,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IEntry
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Entry>(obj);
-            var mauiValue = MauiWrapper.Value<double>(fontSize);
-            if (fontSize != null) mauiObject.FontSize = mauiValue;
+            if (fontSize != null) mauiObject.FontSize = (double)fontSize;
             return obj;
         }
         
@@ -199,9 +188,8 @@ namespace Sharp.UI
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IEntry
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Entry>(obj);
-            var mauiValue = MauiWrapper.Value<double>(fontSize);
-            if (fontSize != null) mauiObject.FontSize = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Entry>(obj);         
+            if (fontSize != null) mauiObject.FontSize = (double)fontSize;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Entry.FontSizeProperty));
             if (def.ValueIsSet()) mauiObject.FontSize = def.GetValue();
             def.BindProperty();
@@ -224,8 +212,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IEntry
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Entry>(obj);
-            var mauiValue = MauiWrapper.Value<bool>(fontAutoScalingEnabled);
-            if (fontAutoScalingEnabled != null) mauiObject.FontAutoScalingEnabled = mauiValue;
+            if (fontAutoScalingEnabled != null) mauiObject.FontAutoScalingEnabled = (bool)fontAutoScalingEnabled;
             return obj;
         }
         
@@ -234,9 +221,8 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IEntry
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Entry>(obj);
-            var mauiValue = MauiWrapper.Value<bool>(fontAutoScalingEnabled);
-            if (fontAutoScalingEnabled != null) mauiObject.FontAutoScalingEnabled = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Entry>(obj);         
+            if (fontAutoScalingEnabled != null) mauiObject.FontAutoScalingEnabled = (bool)fontAutoScalingEnabled;
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.Entry.FontAutoScalingEnabledProperty));
             if (def.ValueIsSet()) mauiObject.FontAutoScalingEnabled = def.GetValue();
             def.BindProperty();
@@ -259,8 +245,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IEntry
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Entry>(obj);
-            var mauiValue = MauiWrapper.Value<bool>(isTextPredictionEnabled);
-            if (isTextPredictionEnabled != null) mauiObject.IsTextPredictionEnabled = mauiValue;
+            if (isTextPredictionEnabled != null) mauiObject.IsTextPredictionEnabled = (bool)isTextPredictionEnabled;
             return obj;
         }
         
@@ -269,9 +254,8 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IEntry
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Entry>(obj);
-            var mauiValue = MauiWrapper.Value<bool>(isTextPredictionEnabled);
-            if (isTextPredictionEnabled != null) mauiObject.IsTextPredictionEnabled = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Entry>(obj);         
+            if (isTextPredictionEnabled != null) mauiObject.IsTextPredictionEnabled = (bool)isTextPredictionEnabled;
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.Entry.IsTextPredictionEnabledProperty));
             if (def.ValueIsSet()) mauiObject.IsTextPredictionEnabled = def.GetValue();
             def.BindProperty();
@@ -294,8 +278,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IEntry
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Entry>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.ReturnType>(returnType);
-            if (returnType != null) mauiObject.ReturnType = mauiValue;
+            if (returnType != null) mauiObject.ReturnType = (Microsoft.Maui.ReturnType)returnType;
             return obj;
         }
         
@@ -304,9 +287,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.ReturnType>, BindableDef<Microsoft.Maui.ReturnType>> definition)
             where T : Sharp.UI.IEntry
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Entry>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.ReturnType>(returnType);
-            if (returnType != null) mauiObject.ReturnType = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Entry>(obj);         
+            if (returnType != null) mauiObject.ReturnType = (Microsoft.Maui.ReturnType)returnType;
             var def = definition(new BindableDef<Microsoft.Maui.ReturnType>(mauiObject, Microsoft.Maui.Controls.Entry.ReturnTypeProperty));
             if (def.ValueIsSet()) mauiObject.ReturnType = def.GetValue();
             def.BindProperty();
@@ -329,8 +311,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IEntry
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Entry>(obj);
-            var mauiValue = MauiWrapper.Value<int>(cursorPosition);
-            if (cursorPosition != null) mauiObject.CursorPosition = mauiValue;
+            if (cursorPosition != null) mauiObject.CursorPosition = (int)cursorPosition;
             return obj;
         }
         
@@ -339,9 +320,8 @@ namespace Sharp.UI
             System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.IEntry
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Entry>(obj);
-            var mauiValue = MauiWrapper.Value<int>(cursorPosition);
-            if (cursorPosition != null) mauiObject.CursorPosition = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Entry>(obj);         
+            if (cursorPosition != null) mauiObject.CursorPosition = (int)cursorPosition;
             var def = definition(new BindableDef<int>(mauiObject, Microsoft.Maui.Controls.Entry.CursorPositionProperty));
             if (def.ValueIsSet()) mauiObject.CursorPosition = def.GetValue();
             def.BindProperty();
@@ -364,8 +344,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IEntry
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Entry>(obj);
-            var mauiValue = MauiWrapper.Value<int>(selectionLength);
-            if (selectionLength != null) mauiObject.SelectionLength = mauiValue;
+            if (selectionLength != null) mauiObject.SelectionLength = (int)selectionLength;
             return obj;
         }
         
@@ -374,9 +353,8 @@ namespace Sharp.UI
             System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.IEntry
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Entry>(obj);
-            var mauiValue = MauiWrapper.Value<int>(selectionLength);
-            if (selectionLength != null) mauiObject.SelectionLength = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Entry>(obj);         
+            if (selectionLength != null) mauiObject.SelectionLength = (int)selectionLength;
             var def = definition(new BindableDef<int>(mauiObject, Microsoft.Maui.Controls.Entry.SelectionLengthProperty));
             if (def.ValueIsSet()) mauiObject.SelectionLength = def.GetValue();
             def.BindProperty();
@@ -399,8 +377,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IEntry
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Entry>(obj);
-            var mauiValue = MauiWrapper.Value<System.Windows.Input.ICommand>(returnCommand);
-            if (returnCommand != null) mauiObject.ReturnCommand = mauiValue;
+            if (returnCommand != null) mauiObject.ReturnCommand = (System.Windows.Input.ICommand)returnCommand;
             return obj;
         }
         
@@ -409,9 +386,8 @@ namespace Sharp.UI
             System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.IEntry
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Entry>(obj);
-            var mauiValue = MauiWrapper.Value<System.Windows.Input.ICommand>(returnCommand);
-            if (returnCommand != null) mauiObject.ReturnCommand = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Entry>(obj);         
+            if (returnCommand != null) mauiObject.ReturnCommand = (System.Windows.Input.ICommand)returnCommand;
             var def = definition(new BindableDef<System.Windows.Input.ICommand>(mauiObject, Microsoft.Maui.Controls.Entry.ReturnCommandProperty));
             if (def.ValueIsSet()) mauiObject.ReturnCommand = def.GetValue();
             def.BindProperty();
@@ -434,8 +410,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IEntry
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Entry>(obj);
-            var mauiValue = MauiWrapper.Value<object>(returnCommandParameter);
-            if (returnCommandParameter != null) mauiObject.ReturnCommandParameter = mauiValue;
+            if (returnCommandParameter != null) mauiObject.ReturnCommandParameter = (object)returnCommandParameter;
             return obj;
         }
         
@@ -444,9 +419,8 @@ namespace Sharp.UI
             System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IEntry
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Entry>(obj);
-            var mauiValue = MauiWrapper.Value<object>(returnCommandParameter);
-            if (returnCommandParameter != null) mauiObject.ReturnCommandParameter = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Entry>(obj);         
+            if (returnCommandParameter != null) mauiObject.ReturnCommandParameter = (object)returnCommandParameter;
             var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.Entry.ReturnCommandParameterProperty));
             if (def.ValueIsSet()) mauiObject.ReturnCommandParameter = def.GetValue();
             def.BindProperty();
@@ -469,8 +443,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IEntry
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Entry>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.ClearButtonVisibility>(clearButtonVisibility);
-            if (clearButtonVisibility != null) mauiObject.ClearButtonVisibility = mauiValue;
+            if (clearButtonVisibility != null) mauiObject.ClearButtonVisibility = (Microsoft.Maui.ClearButtonVisibility)clearButtonVisibility;
             return obj;
         }
         
@@ -479,9 +452,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.ClearButtonVisibility>, BindableDef<Microsoft.Maui.ClearButtonVisibility>> definition)
             where T : Sharp.UI.IEntry
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Entry>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.ClearButtonVisibility>(clearButtonVisibility);
-            if (clearButtonVisibility != null) mauiObject.ClearButtonVisibility = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Entry>(obj);         
+            if (clearButtonVisibility != null) mauiObject.ClearButtonVisibility = (Microsoft.Maui.ClearButtonVisibility)clearButtonVisibility;
             var def = definition(new BindableDef<Microsoft.Maui.ClearButtonVisibility>(mauiObject, Microsoft.Maui.Controls.Entry.ClearButtonVisibilityProperty));
             if (def.ValueIsSet()) mauiObject.ClearButtonVisibility = def.GetValue();
             def.BindProperty();

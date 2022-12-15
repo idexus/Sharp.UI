@@ -14,8 +14,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IStyle
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Style>(obj);
-            var mauiValue = MauiWrapper.Value<bool>(applyToDerivedTypes);
-            if (applyToDerivedTypes != null) mauiObject.ApplyToDerivedTypes = mauiValue;
+            if (applyToDerivedTypes != null) mauiObject.ApplyToDerivedTypes = (bool)applyToDerivedTypes;
             return obj;
         }
         
@@ -25,8 +24,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IStyle
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Style>(obj);
-            var mauiValue = MauiWrapper.Value<bool>(applyToDerivedTypes);
-            if (applyToDerivedTypes != null) mauiObject.ApplyToDerivedTypes = mauiValue;
+            if (applyToDerivedTypes != null) mauiObject.ApplyToDerivedTypes = (bool)applyToDerivedTypes;
             var def = definition(new ValueDef<bool>());
             if (def.ValueIsSet()) mauiObject.ApplyToDerivedTypes = def.GetValue();
             return obj;
@@ -43,7 +41,7 @@ namespace Sharp.UI
         }
         
         public static T BasedOn<T>(this T obj,
-            Microsoft.Maui.Controls.Style? basedOn)
+            Sharp.UI.Style? basedOn)
             where T : Sharp.UI.IStyle
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Style>(obj);
@@ -53,24 +51,24 @@ namespace Sharp.UI
         }
         
         public static T BasedOn<T>(this T obj,
-            Microsoft.Maui.Controls.Style? basedOn,
-            System.Func<ValueDef<Microsoft.Maui.Controls.Style>, ValueDef<Microsoft.Maui.Controls.Style>> definition)
+            Sharp.UI.Style? basedOn,
+            System.Func<ValueDef<Sharp.UI.Style>, ValueDef<Sharp.UI.Style>> definition)
             where T : Sharp.UI.IStyle
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Style>(obj);
             var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.Style>(basedOn);
             if (basedOn != null) mauiObject.BasedOn = mauiValue;
-            var def = definition(new ValueDef<Microsoft.Maui.Controls.Style>());
+            var def = definition(new ValueDef<Sharp.UI.Style>());
             if (def.ValueIsSet()) mauiObject.BasedOn = def.GetValue();
             return obj;
         }
         
         public static T BasedOn<T>(this T obj,
-            System.Func<ValueDef<Microsoft.Maui.Controls.Style>, ValueDef<Microsoft.Maui.Controls.Style>> definition)
+            System.Func<ValueDef<Sharp.UI.Style>, ValueDef<Sharp.UI.Style>> definition)
             where T : Sharp.UI.IStyle
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Style>(obj);
-            var def = definition(new ValueDef<Microsoft.Maui.Controls.Style>());
+            var def = definition(new ValueDef<Sharp.UI.Style>());
             if (def.ValueIsSet()) mauiObject.BasedOn = def.GetValue();
             return obj;
         }
@@ -80,8 +78,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IStyle
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Style>(obj);
-            var mauiValue = MauiWrapper.Value<string>(baseResourceKey);
-            if (baseResourceKey != null) mauiObject.BaseResourceKey = mauiValue;
+            if (baseResourceKey != null) mauiObject.BaseResourceKey = (string)baseResourceKey;
             return obj;
         }
         
@@ -91,8 +88,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IStyle
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Style>(obj);
-            var mauiValue = MauiWrapper.Value<string>(baseResourceKey);
-            if (baseResourceKey != null) mauiObject.BaseResourceKey = mauiValue;
+            if (baseResourceKey != null) mauiObject.BaseResourceKey = (string)baseResourceKey;
             var def = definition(new ValueDef<string>());
             if (def.ValueIsSet()) mauiObject.BaseResourceKey = def.GetValue();
             return obj;
@@ -157,8 +153,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IStyle
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Style>(obj);
-            var mauiValue = MauiWrapper.Value<bool>(canCascade);
-            if (canCascade != null) mauiObject.CanCascade = mauiValue;
+            if (canCascade != null) mauiObject.CanCascade = (bool)canCascade;
             return obj;
         }
         
@@ -168,8 +163,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IStyle
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Style>(obj);
-            var mauiValue = MauiWrapper.Value<bool>(canCascade);
-            if (canCascade != null) mauiObject.CanCascade = mauiValue;
+            if (canCascade != null) mauiObject.CanCascade = (bool)canCascade;
             var def = definition(new ValueDef<bool>());
             if (def.ValueIsSet()) mauiObject.CanCascade = def.GetValue();
             return obj;
@@ -190,8 +184,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IStyle
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Style>(obj);
-            var mauiValue = MauiWrapper.Value<string>(@class);
-            if (@class != null) mauiObject.Class = mauiValue;
+            if (@class != null) mauiObject.Class = (string)@class;
             return obj;
         }
         
@@ -201,8 +194,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IStyle
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Style>(obj);
-            var mauiValue = MauiWrapper.Value<string>(@class);
-            if (@class != null) mauiObject.Class = mauiValue;
+            if (@class != null) mauiObject.Class = (string)@class;
             var def = definition(new ValueDef<string>());
             if (def.ValueIsSet()) mauiObject.Class = def.GetValue();
             return obj;

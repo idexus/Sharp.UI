@@ -7,7 +7,7 @@
 
 namespace Sharp.UI
 {
-    public partial class VisualStateGroupList : Microsoft.Maui.Controls.VisualStateGroupList, Sharp.UI.IVisualStateGroupList
+    public partial class VisualStateGroupList : Microsoft.Maui.Controls.VisualStateGroupList, Sharp.UI.IVisualStateGroupList, IMauiWrapper
     {
         // ----- maui object -----
 
@@ -32,6 +32,9 @@ namespace Sharp.UI
             visualStateGroupList = this;
             configure(this);
         }
+
+        // ----- properties / events -----
+
 
     }
 }

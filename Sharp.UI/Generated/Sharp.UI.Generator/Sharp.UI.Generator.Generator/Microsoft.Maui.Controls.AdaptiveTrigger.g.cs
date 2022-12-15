@@ -14,8 +14,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IAdaptiveTrigger
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.AdaptiveTrigger>(obj);
-            var mauiValue = MauiWrapper.Value<double>(minWindowHeight);
-            if (minWindowHeight != null) mauiObject.MinWindowHeight = mauiValue;
+            if (minWindowHeight != null) mauiObject.MinWindowHeight = (double)minWindowHeight;
             return obj;
         }
         
@@ -24,9 +23,8 @@ namespace Sharp.UI
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IAdaptiveTrigger
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.AdaptiveTrigger>(obj);
-            var mauiValue = MauiWrapper.Value<double>(minWindowHeight);
-            if (minWindowHeight != null) mauiObject.MinWindowHeight = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.AdaptiveTrigger>(obj);         
+            if (minWindowHeight != null) mauiObject.MinWindowHeight = (double)minWindowHeight;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.AdaptiveTrigger.MinWindowHeightProperty));
             if (def.ValueIsSet()) mauiObject.MinWindowHeight = def.GetValue();
             def.BindProperty();
@@ -49,8 +47,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IAdaptiveTrigger
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.AdaptiveTrigger>(obj);
-            var mauiValue = MauiWrapper.Value<double>(minWindowWidth);
-            if (minWindowWidth != null) mauiObject.MinWindowWidth = mauiValue;
+            if (minWindowWidth != null) mauiObject.MinWindowWidth = (double)minWindowWidth;
             return obj;
         }
         
@@ -59,9 +56,8 @@ namespace Sharp.UI
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IAdaptiveTrigger
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.AdaptiveTrigger>(obj);
-            var mauiValue = MauiWrapper.Value<double>(minWindowWidth);
-            if (minWindowWidth != null) mauiObject.MinWindowWidth = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.AdaptiveTrigger>(obj);         
+            if (minWindowWidth != null) mauiObject.MinWindowWidth = (double)minWindowWidth;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.AdaptiveTrigger.MinWindowWidthProperty));
             if (def.ValueIsSet()) mauiObject.MinWindowWidth = def.GetValue();
             def.BindProperty();

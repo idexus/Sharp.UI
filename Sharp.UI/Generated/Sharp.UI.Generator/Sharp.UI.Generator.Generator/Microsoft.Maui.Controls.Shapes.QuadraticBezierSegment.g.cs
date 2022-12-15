@@ -14,8 +14,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IQuadraticBezierSegment
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Point>(point1);
-            if (point1 != null) mauiObject.Point1 = mauiValue;
+            if (point1 != null) mauiObject.Point1 = (Microsoft.Maui.Graphics.Point)point1;
             return obj;
         }
         
@@ -24,9 +23,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
             where T : Sharp.UI.IQuadraticBezierSegment
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Point>(point1);
-            if (point1 != null) mauiObject.Point1 = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment>(obj);         
+            if (point1 != null) mauiObject.Point1 = (Microsoft.Maui.Graphics.Point)point1;
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Point>(mauiObject, Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment.Point1Property));
             if (def.ValueIsSet()) mauiObject.Point1 = def.GetValue();
             def.BindProperty();
@@ -49,8 +47,7 @@ namespace Sharp.UI
             where T : Sharp.UI.IQuadraticBezierSegment
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Point>(point2);
-            if (point2 != null) mauiObject.Point2 = mauiValue;
+            if (point2 != null) mauiObject.Point2 = (Microsoft.Maui.Graphics.Point)point2;
             return obj;
         }
         
@@ -59,9 +56,8 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
             where T : Sharp.UI.IQuadraticBezierSegment
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Point>(point2);
-            if (point2 != null) mauiObject.Point2 = mauiValue;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment>(obj);         
+            if (point2 != null) mauiObject.Point2 = (Microsoft.Maui.Graphics.Point)point2;
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Point>(mauiObject, Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment.Point2Property));
             if (def.ValueIsSet()) mauiObject.Point2 = def.GetValue();
             def.BindProperty();

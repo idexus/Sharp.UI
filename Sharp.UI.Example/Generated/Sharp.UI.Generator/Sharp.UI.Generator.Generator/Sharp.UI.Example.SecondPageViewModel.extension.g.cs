@@ -16,8 +16,7 @@ namespace Sharp.UI.Example
             where T : Sharp.UI.Example.SecondPageViewModel
         {
             var mauiObject = MauiWrapper.Value<Sharp.UI.Example.SecondPageViewModel>(obj);
-            var mauiValue = MauiWrapper.Value<string>(title);
-            if (title != null) mauiObject.SetValue(Sharp.UI.Example.SecondPageViewModel.TitleProperty, mauiValue);
+            if (title != null) mauiObject.SetValue(Sharp.UI.Example.SecondPageViewModel.TitleProperty, (string)title);
             return obj;
         }
         
@@ -26,9 +25,8 @@ namespace Sharp.UI.Example
             System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.Example.SecondPageViewModel
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.SecondPageViewModel>(obj);
-            var mauiValue = MauiWrapper.Value<string>(title);
-            if (title != null) mauiObject.SetValue(Sharp.UI.Example.SecondPageViewModel.TitleProperty, mauiValue);
+            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.SecondPageViewModel>(obj);         
+            if (title != null) mauiObject.SetValue(Sharp.UI.Example.SecondPageViewModel.TitleProperty, (string)title);
             var def = definition(new BindableDef<string>(mauiObject, Sharp.UI.Example.SecondPageViewModel.TitleProperty));
             if (def.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.SecondPageViewModel.TitleProperty, def.GetValue());
             def.BindProperty();
@@ -51,8 +49,7 @@ namespace Sharp.UI.Example
             where T : Sharp.UI.Example.SecondPageViewModel
         {
             var mauiObject = MauiWrapper.Value<Sharp.UI.Example.SecondPageViewModel>(obj);
-            var mauiValue = MauiWrapper.Value<string>(author);
-            if (author != null) mauiObject.SetValue(Sharp.UI.Example.SecondPageViewModel.AuthorProperty, mauiValue);
+            if (author != null) mauiObject.SetValue(Sharp.UI.Example.SecondPageViewModel.AuthorProperty, (string)author);
             return obj;
         }
         
@@ -61,9 +58,8 @@ namespace Sharp.UI.Example
             System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.Example.SecondPageViewModel
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.SecondPageViewModel>(obj);
-            var mauiValue = MauiWrapper.Value<string>(author);
-            if (author != null) mauiObject.SetValue(Sharp.UI.Example.SecondPageViewModel.AuthorProperty, mauiValue);
+            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.SecondPageViewModel>(obj);         
+            if (author != null) mauiObject.SetValue(Sharp.UI.Example.SecondPageViewModel.AuthorProperty, (string)author);
             var def = definition(new BindableDef<string>(mauiObject, Sharp.UI.Example.SecondPageViewModel.AuthorProperty));
             if (def.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.SecondPageViewModel.AuthorProperty, def.GetValue());
             def.BindProperty();

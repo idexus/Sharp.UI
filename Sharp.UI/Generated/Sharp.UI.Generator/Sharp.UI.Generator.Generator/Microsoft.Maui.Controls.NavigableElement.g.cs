@@ -10,7 +10,7 @@ namespace Sharp.UI
     public static class NavigableElementGeneratedExtension
     {
         public static T Style<T>(this T obj,
-            Microsoft.Maui.Controls.Style? style)
+            Sharp.UI.Style? style)
             where T : Sharp.UI.INavigableElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.NavigableElement>(obj);
@@ -20,26 +20,26 @@ namespace Sharp.UI
         }
         
         public static T Style<T>(this T obj,
-            Microsoft.Maui.Controls.Style? style,
-            System.Func<BindableDef<Microsoft.Maui.Controls.Style>, BindableDef<Microsoft.Maui.Controls.Style>> definition)
+            Sharp.UI.Style? style,
+            System.Func<BindableDef<Sharp.UI.Style>, BindableDef<Sharp.UI.Style>> definition)
             where T : Sharp.UI.INavigableElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.NavigableElement>(obj);
-            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.Style>(style);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.Style>(style);         
             if (style != null) mauiObject.Style = mauiValue;
-            var def = definition(new BindableDef<Microsoft.Maui.Controls.Style>(mauiObject, Microsoft.Maui.Controls.NavigableElement.StyleProperty));
-            if (def.ValueIsSet()) mauiObject.Style = def.GetValue();
+            var def = definition(new BindableDef<Sharp.UI.Style>(mauiObject, Microsoft.Maui.Controls.NavigableElement.StyleProperty));
+            if (def.ValueIsSet()) mauiObject.Style = MauiWrapper.Value<Microsoft.Maui.Controls.Style>(def.GetValue());
             def.BindProperty();
             return obj;
         }
         
         public static T Style<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Controls.Style>, BindableDef<Microsoft.Maui.Controls.Style>> definition)
+            System.Func<BindableDef<Sharp.UI.Style>, BindableDef<Sharp.UI.Style>> definition)
             where T : Sharp.UI.INavigableElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.NavigableElement>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Controls.Style>(mauiObject, Microsoft.Maui.Controls.NavigableElement.StyleProperty));
-            if (def.ValueIsSet()) mauiObject.Style = def.GetValue();
+            var def = definition(new BindableDef<Sharp.UI.Style>(mauiObject, Microsoft.Maui.Controls.NavigableElement.StyleProperty));
+            if (def.ValueIsSet()) mauiObject.Style = MauiWrapper.Value<Microsoft.Maui.Controls.Style>(def.GetValue());
             def.BindProperty();
             return obj;
         }
@@ -49,8 +49,7 @@ namespace Sharp.UI
             where T : Sharp.UI.INavigableElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.NavigableElement>(obj);
-            var mauiValue = MauiWrapper.Value<System.Collections.Generic.IList<string>>(styleClass);
-            if (styleClass != null) mauiObject.StyleClass = mauiValue;
+            if (styleClass != null) mauiObject.StyleClass = (System.Collections.Generic.IList<string>)styleClass;
             return obj;
         }
         
@@ -60,8 +59,7 @@ namespace Sharp.UI
             where T : Sharp.UI.INavigableElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.NavigableElement>(obj);
-            var mauiValue = MauiWrapper.Value<System.Collections.Generic.IList<string>>(styleClass);
-            if (styleClass != null) mauiObject.StyleClass = mauiValue;
+            if (styleClass != null) mauiObject.StyleClass = (System.Collections.Generic.IList<string>)styleClass;
             var def = definition(new ValueDef<System.Collections.Generic.IList<string>>());
             if (def.ValueIsSet()) mauiObject.StyleClass = def.GetValue();
             return obj;
@@ -82,8 +80,7 @@ namespace Sharp.UI
             where T : Sharp.UI.INavigableElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.NavigableElement>(obj);
-            var mauiValue = MauiWrapper.Value<System.Collections.Generic.IList<string>>(@class);
-            if (@class != null) mauiObject.@class = mauiValue;
+            if (@class != null) mauiObject.@class = (System.Collections.Generic.IList<string>)@class;
             return obj;
         }
         
@@ -93,8 +90,7 @@ namespace Sharp.UI
             where T : Sharp.UI.INavigableElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.NavigableElement>(obj);
-            var mauiValue = MauiWrapper.Value<System.Collections.Generic.IList<string>>(@class);
-            if (@class != null) mauiObject.@class = mauiValue;
+            if (@class != null) mauiObject.@class = (System.Collections.Generic.IList<string>)@class;
             var def = definition(new ValueDef<System.Collections.Generic.IList<string>>());
             if (def.ValueIsSet()) mauiObject.@class = def.GetValue();
             return obj;
