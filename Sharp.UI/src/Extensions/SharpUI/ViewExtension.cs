@@ -20,5 +20,16 @@
             mauiObject.SetValue(Grid.RowSpanProperty, row);
             return obj;
         }
+
+        public static T GestureRecognizers<T, TItem>(this T obj,
+            TItem item)
+            where T : Sharp.UI.IView
+            where TItem : Sharp.UI.IGestureRecognizer
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.View>(obj);
+            var mauiItem = MauiWrapper.Value<Microsoft.Maui.Controls.IGestureRecognizer>(item);
+            mauiObject.GestureRecognizers.Add(mauiItem);
+            return obj;
+        }
     }
 }
