@@ -13,8 +13,9 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.Shapes.Geometry? data)
             where T : Sharp.UI.IPath
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Path>(obj);
-            if (data != null) mauiObject.Data = (Microsoft.Maui.Controls.Shapes.Geometry)data;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Path>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Geometry>(data);
+            if (data != null) mauiObject.Data = mauiValue;
             return obj;
         }
         
@@ -23,8 +24,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.Shapes.Geometry>, BindableDef<Microsoft.Maui.Controls.Shapes.Geometry>> definition)
             where T : Sharp.UI.IPath
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Path>(obj);
-            if (data != null) mauiObject.Data = (Microsoft.Maui.Controls.Shapes.Geometry)data;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Path>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Geometry>(data);
+            if (data != null) mauiObject.Data = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.Shapes.Geometry>(mauiObject, Microsoft.Maui.Controls.Shapes.Path.DataProperty));
             if (def.ValueIsSet()) mauiObject.Data = def.GetValue();
             def.BindProperty();
@@ -35,7 +37,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.Shapes.Geometry>, BindableDef<Microsoft.Maui.Controls.Shapes.Geometry>> definition)
             where T : Sharp.UI.IPath
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Path>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Path>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.Controls.Shapes.Geometry>(mauiObject, Microsoft.Maui.Controls.Shapes.Path.DataProperty));
             if (def.ValueIsSet()) mauiObject.Data = def.GetValue();
             def.BindProperty();
@@ -46,8 +48,9 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.Shapes.Transform? renderTransform)
             where T : Sharp.UI.IPath
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Path>(obj);
-            if (renderTransform != null) mauiObject.RenderTransform = (Microsoft.Maui.Controls.Shapes.Transform)renderTransform;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Path>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Transform>(renderTransform);
+            if (renderTransform != null) mauiObject.RenderTransform = mauiValue;
             return obj;
         }
         
@@ -56,8 +59,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.Shapes.Transform>, BindableDef<Microsoft.Maui.Controls.Shapes.Transform>> definition)
             where T : Sharp.UI.IPath
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Path>(obj);
-            if (renderTransform != null) mauiObject.RenderTransform = (Microsoft.Maui.Controls.Shapes.Transform)renderTransform;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Path>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Transform>(renderTransform);
+            if (renderTransform != null) mauiObject.RenderTransform = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.Shapes.Transform>(mauiObject, Microsoft.Maui.Controls.Shapes.Path.RenderTransformProperty));
             if (def.ValueIsSet()) mauiObject.RenderTransform = def.GetValue();
             def.BindProperty();
@@ -68,7 +72,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.Shapes.Transform>, BindableDef<Microsoft.Maui.Controls.Shapes.Transform>> definition)
             where T : Sharp.UI.IPath
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Path>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Path>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.Controls.Shapes.Transform>(mauiObject, Microsoft.Maui.Controls.Shapes.Path.RenderTransformProperty));
             if (def.ValueIsSet()) mauiObject.RenderTransform = def.GetValue();
             def.BindProperty();
@@ -79,8 +83,9 @@ namespace Sharp.UI
             System.Collections.Generic.IList<string>? @class)
             where T : Sharp.UI.IPath
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Path>(obj);
-            if (@class != null) mauiObject.@class = (System.Collections.Generic.IList<string>)@class;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Path>(obj);
+            var mauiValue = MauiWrapper.Value<System.Collections.Generic.IList<string>>(@class);
+            if (@class != null) mauiObject.@class = mauiValue;
             return obj;
         }
         
@@ -89,8 +94,9 @@ namespace Sharp.UI
             System.Func<ValueDef<System.Collections.Generic.IList<string>>, ValueDef<System.Collections.Generic.IList<string>>> definition)
             where T : Sharp.UI.IPath
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Path>(obj);
-            if (@class != null) mauiObject.@class = (System.Collections.Generic.IList<string>)@class;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Path>(obj);
+            var mauiValue = MauiWrapper.Value<System.Collections.Generic.IList<string>>(@class);
+            if (@class != null) mauiObject.@class = mauiValue;
             var def = definition(new ValueDef<System.Collections.Generic.IList<string>>());
             if (def.ValueIsSet()) mauiObject.@class = def.GetValue();
             return obj;
@@ -100,7 +106,7 @@ namespace Sharp.UI
             System.Func<ValueDef<System.Collections.Generic.IList<string>>, ValueDef<System.Collections.Generic.IList<string>>> definition)
             where T : Sharp.UI.IPath
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Path>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Path>(obj);
             var def = definition(new ValueDef<System.Collections.Generic.IList<string>>());
             if (def.ValueIsSet()) mauiObject.@class = def.GetValue();
             return obj;

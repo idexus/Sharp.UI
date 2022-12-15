@@ -13,8 +13,9 @@ namespace Sharp.UI
             bool? isActive)
             where T : Sharp.UI.IStateTrigger
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StateTrigger>(obj);
-            if (isActive != null) mauiObject.IsActive = (bool)isActive;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StateTrigger>(obj);
+            var mauiValue = MauiWrapper.Value<bool>(isActive);
+            if (isActive != null) mauiObject.IsActive = mauiValue;
             return obj;
         }
         
@@ -23,8 +24,9 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IStateTrigger
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StateTrigger>(obj);
-            if (isActive != null) mauiObject.IsActive = (bool)isActive;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StateTrigger>(obj);
+            var mauiValue = MauiWrapper.Value<bool>(isActive);
+            if (isActive != null) mauiObject.IsActive = mauiValue;
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.StateTrigger.IsActiveProperty));
             if (def.ValueIsSet()) mauiObject.IsActive = def.GetValue();
             def.BindProperty();
@@ -35,7 +37,7 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IStateTrigger
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StateTrigger>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StateTrigger>(obj);
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.StateTrigger.IsActiveProperty));
             if (def.ValueIsSet()) mauiObject.IsActive = def.GetValue();
             def.BindProperty();

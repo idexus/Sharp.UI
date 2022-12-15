@@ -567,7 +567,7 @@ namespace {nameSpaceString}
             get => {accessedWith}.BindingContext;
             set
             {{
-                var mauiObject = MauiWrapper.GetObject<object>(value);
+                var mauiObject = MauiWrapper.Value<object>(value);
                 {accessedWith}.BindingContext = mauiObject;
             }}
         }}

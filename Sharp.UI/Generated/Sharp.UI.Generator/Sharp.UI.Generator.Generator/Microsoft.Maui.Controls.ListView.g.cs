@@ -13,8 +13,9 @@ namespace Sharp.UI
             object? footer)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
-            if (footer != null) mauiObject.Footer = (object)footer;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiValue = MauiWrapper.Value<object>(footer);
+            if (footer != null) mauiObject.Footer = mauiValue;
             return obj;
         }
         
@@ -23,8 +24,9 @@ namespace Sharp.UI
             System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
-            if (footer != null) mauiObject.Footer = (object)footer;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiValue = MauiWrapper.Value<object>(footer);
+            if (footer != null) mauiObject.Footer = mauiValue;
             var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.ListView.FooterProperty));
             if (def.ValueIsSet()) mauiObject.Footer = def.GetValue();
             def.BindProperty();
@@ -35,7 +37,7 @@ namespace Sharp.UI
             System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
             var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.ListView.FooterProperty));
             if (def.ValueIsSet()) mauiObject.Footer = def.GetValue();
             def.BindProperty();
@@ -46,8 +48,9 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.DataTemplate? footerTemplate)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
-            if (footerTemplate != null) mauiObject.FooterTemplate = (Microsoft.Maui.Controls.DataTemplate)footerTemplate;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.DataTemplate>(footerTemplate);
+            if (footerTemplate != null) mauiObject.FooterTemplate = mauiValue;
             return obj;
         }
         
@@ -56,8 +59,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
-            if (footerTemplate != null) mauiObject.FooterTemplate = (Microsoft.Maui.Controls.DataTemplate)footerTemplate;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.DataTemplate>(footerTemplate);
+            if (footerTemplate != null) mauiObject.FooterTemplate = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.DataTemplate>(mauiObject, Microsoft.Maui.Controls.ListView.FooterTemplateProperty));
             if (def.ValueIsSet()) mauiObject.FooterTemplate = def.GetValue();
             def.BindProperty();
@@ -68,7 +72,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.Controls.DataTemplate>(mauiObject, Microsoft.Maui.Controls.ListView.FooterTemplateProperty));
             if (def.ValueIsSet()) mauiObject.FooterTemplate = def.GetValue();
             def.BindProperty();
@@ -77,7 +81,7 @@ namespace Sharp.UI
         
         public static T FooterTemplate<T>(this T obj, System.Func<object> loadTemplate) where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
             mauiObject.FooterTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
             return obj;
         }
@@ -86,8 +90,9 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.BindingBase? groupDisplayBinding)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
-            if (groupDisplayBinding != null) mauiObject.GroupDisplayBinding = (Microsoft.Maui.Controls.BindingBase)groupDisplayBinding;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.BindingBase>(groupDisplayBinding);
+            if (groupDisplayBinding != null) mauiObject.GroupDisplayBinding = mauiValue;
             return obj;
         }
         
@@ -96,8 +101,9 @@ namespace Sharp.UI
             System.Func<ValueDef<Microsoft.Maui.Controls.BindingBase>, ValueDef<Microsoft.Maui.Controls.BindingBase>> definition)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
-            if (groupDisplayBinding != null) mauiObject.GroupDisplayBinding = (Microsoft.Maui.Controls.BindingBase)groupDisplayBinding;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.BindingBase>(groupDisplayBinding);
+            if (groupDisplayBinding != null) mauiObject.GroupDisplayBinding = mauiValue;
             var def = definition(new ValueDef<Microsoft.Maui.Controls.BindingBase>());
             if (def.ValueIsSet()) mauiObject.GroupDisplayBinding = def.GetValue();
             return obj;
@@ -107,7 +113,7 @@ namespace Sharp.UI
             System.Func<ValueDef<Microsoft.Maui.Controls.BindingBase>, ValueDef<Microsoft.Maui.Controls.BindingBase>> definition)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
             var def = definition(new ValueDef<Microsoft.Maui.Controls.BindingBase>());
             if (def.ValueIsSet()) mauiObject.GroupDisplayBinding = def.GetValue();
             return obj;
@@ -117,8 +123,9 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.DataTemplate? groupHeaderTemplate)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
-            if (groupHeaderTemplate != null) mauiObject.GroupHeaderTemplate = (Microsoft.Maui.Controls.DataTemplate)groupHeaderTemplate;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.DataTemplate>(groupHeaderTemplate);
+            if (groupHeaderTemplate != null) mauiObject.GroupHeaderTemplate = mauiValue;
             return obj;
         }
         
@@ -127,8 +134,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
-            if (groupHeaderTemplate != null) mauiObject.GroupHeaderTemplate = (Microsoft.Maui.Controls.DataTemplate)groupHeaderTemplate;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.DataTemplate>(groupHeaderTemplate);
+            if (groupHeaderTemplate != null) mauiObject.GroupHeaderTemplate = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.DataTemplate>(mauiObject, Microsoft.Maui.Controls.ListView.GroupHeaderTemplateProperty));
             if (def.ValueIsSet()) mauiObject.GroupHeaderTemplate = def.GetValue();
             def.BindProperty();
@@ -139,7 +147,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.Controls.DataTemplate>(mauiObject, Microsoft.Maui.Controls.ListView.GroupHeaderTemplateProperty));
             if (def.ValueIsSet()) mauiObject.GroupHeaderTemplate = def.GetValue();
             def.BindProperty();
@@ -148,7 +156,7 @@ namespace Sharp.UI
         
         public static T GroupHeaderTemplate<T>(this T obj, System.Func<object> loadTemplate) where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
             mauiObject.GroupHeaderTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
             return obj;
         }
@@ -157,8 +165,9 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.BindingBase? groupShortNameBinding)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
-            if (groupShortNameBinding != null) mauiObject.GroupShortNameBinding = (Microsoft.Maui.Controls.BindingBase)groupShortNameBinding;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.BindingBase>(groupShortNameBinding);
+            if (groupShortNameBinding != null) mauiObject.GroupShortNameBinding = mauiValue;
             return obj;
         }
         
@@ -167,8 +176,9 @@ namespace Sharp.UI
             System.Func<ValueDef<Microsoft.Maui.Controls.BindingBase>, ValueDef<Microsoft.Maui.Controls.BindingBase>> definition)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
-            if (groupShortNameBinding != null) mauiObject.GroupShortNameBinding = (Microsoft.Maui.Controls.BindingBase)groupShortNameBinding;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.BindingBase>(groupShortNameBinding);
+            if (groupShortNameBinding != null) mauiObject.GroupShortNameBinding = mauiValue;
             var def = definition(new ValueDef<Microsoft.Maui.Controls.BindingBase>());
             if (def.ValueIsSet()) mauiObject.GroupShortNameBinding = def.GetValue();
             return obj;
@@ -178,7 +188,7 @@ namespace Sharp.UI
             System.Func<ValueDef<Microsoft.Maui.Controls.BindingBase>, ValueDef<Microsoft.Maui.Controls.BindingBase>> definition)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
             var def = definition(new ValueDef<Microsoft.Maui.Controls.BindingBase>());
             if (def.ValueIsSet()) mauiObject.GroupShortNameBinding = def.GetValue();
             return obj;
@@ -188,8 +198,9 @@ namespace Sharp.UI
             bool? hasUnevenRows)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
-            if (hasUnevenRows != null) mauiObject.HasUnevenRows = (bool)hasUnevenRows;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiValue = MauiWrapper.Value<bool>(hasUnevenRows);
+            if (hasUnevenRows != null) mauiObject.HasUnevenRows = mauiValue;
             return obj;
         }
         
@@ -198,8 +209,9 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
-            if (hasUnevenRows != null) mauiObject.HasUnevenRows = (bool)hasUnevenRows;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiValue = MauiWrapper.Value<bool>(hasUnevenRows);
+            if (hasUnevenRows != null) mauiObject.HasUnevenRows = mauiValue;
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.ListView.HasUnevenRowsProperty));
             if (def.ValueIsSet()) mauiObject.HasUnevenRows = def.GetValue();
             def.BindProperty();
@@ -210,7 +222,7 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.ListView.HasUnevenRowsProperty));
             if (def.ValueIsSet()) mauiObject.HasUnevenRows = def.GetValue();
             def.BindProperty();
@@ -221,8 +233,9 @@ namespace Sharp.UI
             object? header)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
-            if (header != null) mauiObject.Header = (object)header;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiValue = MauiWrapper.Value<object>(header);
+            if (header != null) mauiObject.Header = mauiValue;
             return obj;
         }
         
@@ -231,8 +244,9 @@ namespace Sharp.UI
             System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
-            if (header != null) mauiObject.Header = (object)header;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiValue = MauiWrapper.Value<object>(header);
+            if (header != null) mauiObject.Header = mauiValue;
             var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.ListView.HeaderProperty));
             if (def.ValueIsSet()) mauiObject.Header = def.GetValue();
             def.BindProperty();
@@ -243,7 +257,7 @@ namespace Sharp.UI
             System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
             var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.ListView.HeaderProperty));
             if (def.ValueIsSet()) mauiObject.Header = def.GetValue();
             def.BindProperty();
@@ -254,8 +268,9 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.DataTemplate? headerTemplate)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
-            if (headerTemplate != null) mauiObject.HeaderTemplate = (Microsoft.Maui.Controls.DataTemplate)headerTemplate;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.DataTemplate>(headerTemplate);
+            if (headerTemplate != null) mauiObject.HeaderTemplate = mauiValue;
             return obj;
         }
         
@@ -264,8 +279,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
-            if (headerTemplate != null) mauiObject.HeaderTemplate = (Microsoft.Maui.Controls.DataTemplate)headerTemplate;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.DataTemplate>(headerTemplate);
+            if (headerTemplate != null) mauiObject.HeaderTemplate = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.DataTemplate>(mauiObject, Microsoft.Maui.Controls.ListView.HeaderTemplateProperty));
             if (def.ValueIsSet()) mauiObject.HeaderTemplate = def.GetValue();
             def.BindProperty();
@@ -276,7 +292,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.Controls.DataTemplate>(mauiObject, Microsoft.Maui.Controls.ListView.HeaderTemplateProperty));
             if (def.ValueIsSet()) mauiObject.HeaderTemplate = def.GetValue();
             def.BindProperty();
@@ -285,7 +301,7 @@ namespace Sharp.UI
         
         public static T HeaderTemplate<T>(this T obj, System.Func<object> loadTemplate) where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
             mauiObject.HeaderTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
             return obj;
         }
@@ -294,8 +310,9 @@ namespace Sharp.UI
             bool? isGroupingEnabled)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
-            if (isGroupingEnabled != null) mauiObject.IsGroupingEnabled = (bool)isGroupingEnabled;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiValue = MauiWrapper.Value<bool>(isGroupingEnabled);
+            if (isGroupingEnabled != null) mauiObject.IsGroupingEnabled = mauiValue;
             return obj;
         }
         
@@ -304,8 +321,9 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
-            if (isGroupingEnabled != null) mauiObject.IsGroupingEnabled = (bool)isGroupingEnabled;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiValue = MauiWrapper.Value<bool>(isGroupingEnabled);
+            if (isGroupingEnabled != null) mauiObject.IsGroupingEnabled = mauiValue;
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.ListView.IsGroupingEnabledProperty));
             if (def.ValueIsSet()) mauiObject.IsGroupingEnabled = def.GetValue();
             def.BindProperty();
@@ -316,7 +334,7 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.ListView.IsGroupingEnabledProperty));
             if (def.ValueIsSet()) mauiObject.IsGroupingEnabled = def.GetValue();
             def.BindProperty();
@@ -327,8 +345,9 @@ namespace Sharp.UI
             bool? isPullToRefreshEnabled)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
-            if (isPullToRefreshEnabled != null) mauiObject.IsPullToRefreshEnabled = (bool)isPullToRefreshEnabled;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiValue = MauiWrapper.Value<bool>(isPullToRefreshEnabled);
+            if (isPullToRefreshEnabled != null) mauiObject.IsPullToRefreshEnabled = mauiValue;
             return obj;
         }
         
@@ -337,8 +356,9 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
-            if (isPullToRefreshEnabled != null) mauiObject.IsPullToRefreshEnabled = (bool)isPullToRefreshEnabled;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiValue = MauiWrapper.Value<bool>(isPullToRefreshEnabled);
+            if (isPullToRefreshEnabled != null) mauiObject.IsPullToRefreshEnabled = mauiValue;
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.ListView.IsPullToRefreshEnabledProperty));
             if (def.ValueIsSet()) mauiObject.IsPullToRefreshEnabled = def.GetValue();
             def.BindProperty();
@@ -349,7 +369,7 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.ListView.IsPullToRefreshEnabledProperty));
             if (def.ValueIsSet()) mauiObject.IsPullToRefreshEnabled = def.GetValue();
             def.BindProperty();
@@ -360,8 +380,9 @@ namespace Sharp.UI
             bool? isRefreshing)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
-            if (isRefreshing != null) mauiObject.IsRefreshing = (bool)isRefreshing;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiValue = MauiWrapper.Value<bool>(isRefreshing);
+            if (isRefreshing != null) mauiObject.IsRefreshing = mauiValue;
             return obj;
         }
         
@@ -370,8 +391,9 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
-            if (isRefreshing != null) mauiObject.IsRefreshing = (bool)isRefreshing;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiValue = MauiWrapper.Value<bool>(isRefreshing);
+            if (isRefreshing != null) mauiObject.IsRefreshing = mauiValue;
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.ListView.IsRefreshingProperty));
             if (def.ValueIsSet()) mauiObject.IsRefreshing = def.GetValue();
             def.BindProperty();
@@ -382,7 +404,7 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.ListView.IsRefreshingProperty));
             if (def.ValueIsSet()) mauiObject.IsRefreshing = def.GetValue();
             def.BindProperty();
@@ -393,8 +415,9 @@ namespace Sharp.UI
             System.Windows.Input.ICommand? refreshCommand)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
-            if (refreshCommand != null) mauiObject.RefreshCommand = (System.Windows.Input.ICommand)refreshCommand;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiValue = MauiWrapper.Value<System.Windows.Input.ICommand>(refreshCommand);
+            if (refreshCommand != null) mauiObject.RefreshCommand = mauiValue;
             return obj;
         }
         
@@ -403,8 +426,9 @@ namespace Sharp.UI
             System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
-            if (refreshCommand != null) mauiObject.RefreshCommand = (System.Windows.Input.ICommand)refreshCommand;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiValue = MauiWrapper.Value<System.Windows.Input.ICommand>(refreshCommand);
+            if (refreshCommand != null) mauiObject.RefreshCommand = mauiValue;
             var def = definition(new BindableDef<System.Windows.Input.ICommand>(mauiObject, Microsoft.Maui.Controls.ListView.RefreshCommandProperty));
             if (def.ValueIsSet()) mauiObject.RefreshCommand = def.GetValue();
             def.BindProperty();
@@ -415,7 +439,7 @@ namespace Sharp.UI
             System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
             var def = definition(new BindableDef<System.Windows.Input.ICommand>(mauiObject, Microsoft.Maui.Controls.ListView.RefreshCommandProperty));
             if (def.ValueIsSet()) mauiObject.RefreshCommand = def.GetValue();
             def.BindProperty();
@@ -426,8 +450,9 @@ namespace Sharp.UI
             int? rowHeight)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
-            if (rowHeight != null) mauiObject.RowHeight = (int)rowHeight;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiValue = MauiWrapper.Value<int>(rowHeight);
+            if (rowHeight != null) mauiObject.RowHeight = mauiValue;
             return obj;
         }
         
@@ -436,8 +461,9 @@ namespace Sharp.UI
             System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
-            if (rowHeight != null) mauiObject.RowHeight = (int)rowHeight;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiValue = MauiWrapper.Value<int>(rowHeight);
+            if (rowHeight != null) mauiObject.RowHeight = mauiValue;
             var def = definition(new BindableDef<int>(mauiObject, Microsoft.Maui.Controls.ListView.RowHeightProperty));
             if (def.ValueIsSet()) mauiObject.RowHeight = def.GetValue();
             def.BindProperty();
@@ -448,7 +474,7 @@ namespace Sharp.UI
             System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
             var def = definition(new BindableDef<int>(mauiObject, Microsoft.Maui.Controls.ListView.RowHeightProperty));
             if (def.ValueIsSet()) mauiObject.RowHeight = def.GetValue();
             def.BindProperty();
@@ -459,8 +485,9 @@ namespace Sharp.UI
             object? selectedItem)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
-            if (selectedItem != null) mauiObject.SelectedItem = (object)selectedItem;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiValue = MauiWrapper.Value<object>(selectedItem);
+            if (selectedItem != null) mauiObject.SelectedItem = mauiValue;
             return obj;
         }
         
@@ -469,8 +496,9 @@ namespace Sharp.UI
             System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
-            if (selectedItem != null) mauiObject.SelectedItem = (object)selectedItem;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiValue = MauiWrapper.Value<object>(selectedItem);
+            if (selectedItem != null) mauiObject.SelectedItem = mauiValue;
             var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.ListView.SelectedItemProperty));
             if (def.ValueIsSet()) mauiObject.SelectedItem = def.GetValue();
             def.BindProperty();
@@ -481,7 +509,7 @@ namespace Sharp.UI
             System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
             var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.ListView.SelectedItemProperty));
             if (def.ValueIsSet()) mauiObject.SelectedItem = def.GetValue();
             def.BindProperty();
@@ -492,8 +520,9 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.ListViewSelectionMode? selectionMode)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
-            if (selectionMode != null) mauiObject.SelectionMode = (Microsoft.Maui.Controls.ListViewSelectionMode)selectionMode;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.ListViewSelectionMode>(selectionMode);
+            if (selectionMode != null) mauiObject.SelectionMode = mauiValue;
             return obj;
         }
         
@@ -502,8 +531,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.ListViewSelectionMode>, BindableDef<Microsoft.Maui.Controls.ListViewSelectionMode>> definition)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
-            if (selectionMode != null) mauiObject.SelectionMode = (Microsoft.Maui.Controls.ListViewSelectionMode)selectionMode;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.ListViewSelectionMode>(selectionMode);
+            if (selectionMode != null) mauiObject.SelectionMode = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.ListViewSelectionMode>(mauiObject, Microsoft.Maui.Controls.ListView.SelectionModeProperty));
             if (def.ValueIsSet()) mauiObject.SelectionMode = def.GetValue();
             def.BindProperty();
@@ -514,7 +544,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.ListViewSelectionMode>, BindableDef<Microsoft.Maui.Controls.ListViewSelectionMode>> definition)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.Controls.ListViewSelectionMode>(mauiObject, Microsoft.Maui.Controls.ListView.SelectionModeProperty));
             if (def.ValueIsSet()) mauiObject.SelectionMode = def.GetValue();
             def.BindProperty();
@@ -525,8 +555,9 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color? separatorColor)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
-            if (separatorColor != null) mauiObject.SeparatorColor = (Microsoft.Maui.Graphics.Color)separatorColor;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(separatorColor);
+            if (separatorColor != null) mauiObject.SeparatorColor = mauiValue;
             return obj;
         }
         
@@ -535,8 +566,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
-            if (separatorColor != null) mauiObject.SeparatorColor = (Microsoft.Maui.Graphics.Color)separatorColor;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(separatorColor);
+            if (separatorColor != null) mauiObject.SeparatorColor = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.ListView.SeparatorColorProperty));
             if (def.ValueIsSet()) mauiObject.SeparatorColor = def.GetValue();
             def.BindProperty();
@@ -547,7 +579,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.ListView.SeparatorColorProperty));
             if (def.ValueIsSet()) mauiObject.SeparatorColor = def.GetValue();
             def.BindProperty();
@@ -558,8 +590,9 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color? refreshControlColor)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
-            if (refreshControlColor != null) mauiObject.RefreshControlColor = (Microsoft.Maui.Graphics.Color)refreshControlColor;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(refreshControlColor);
+            if (refreshControlColor != null) mauiObject.RefreshControlColor = mauiValue;
             return obj;
         }
         
@@ -568,8 +601,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
-            if (refreshControlColor != null) mauiObject.RefreshControlColor = (Microsoft.Maui.Graphics.Color)refreshControlColor;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(refreshControlColor);
+            if (refreshControlColor != null) mauiObject.RefreshControlColor = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.ListView.RefreshControlColorProperty));
             if (def.ValueIsSet()) mauiObject.RefreshControlColor = def.GetValue();
             def.BindProperty();
@@ -580,7 +614,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.ListView.RefreshControlColorProperty));
             if (def.ValueIsSet()) mauiObject.RefreshControlColor = def.GetValue();
             def.BindProperty();
@@ -591,8 +625,9 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.SeparatorVisibility? separatorVisibility)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
-            if (separatorVisibility != null) mauiObject.SeparatorVisibility = (Microsoft.Maui.Controls.SeparatorVisibility)separatorVisibility;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.SeparatorVisibility>(separatorVisibility);
+            if (separatorVisibility != null) mauiObject.SeparatorVisibility = mauiValue;
             return obj;
         }
         
@@ -601,8 +636,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.SeparatorVisibility>, BindableDef<Microsoft.Maui.Controls.SeparatorVisibility>> definition)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
-            if (separatorVisibility != null) mauiObject.SeparatorVisibility = (Microsoft.Maui.Controls.SeparatorVisibility)separatorVisibility;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.SeparatorVisibility>(separatorVisibility);
+            if (separatorVisibility != null) mauiObject.SeparatorVisibility = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.SeparatorVisibility>(mauiObject, Microsoft.Maui.Controls.ListView.SeparatorVisibilityProperty));
             if (def.ValueIsSet()) mauiObject.SeparatorVisibility = def.GetValue();
             def.BindProperty();
@@ -613,7 +649,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.SeparatorVisibility>, BindableDef<Microsoft.Maui.Controls.SeparatorVisibility>> definition)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.Controls.SeparatorVisibility>(mauiObject, Microsoft.Maui.Controls.ListView.SeparatorVisibilityProperty));
             if (def.ValueIsSet()) mauiObject.SeparatorVisibility = def.GetValue();
             def.BindProperty();
@@ -624,8 +660,9 @@ namespace Sharp.UI
             Microsoft.Maui.ScrollBarVisibility? horizontalScrollBarVisibility)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
-            if (horizontalScrollBarVisibility != null) mauiObject.HorizontalScrollBarVisibility = (Microsoft.Maui.ScrollBarVisibility)horizontalScrollBarVisibility;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.ScrollBarVisibility>(horizontalScrollBarVisibility);
+            if (horizontalScrollBarVisibility != null) mauiObject.HorizontalScrollBarVisibility = mauiValue;
             return obj;
         }
         
@@ -634,8 +671,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.ScrollBarVisibility>, BindableDef<Microsoft.Maui.ScrollBarVisibility>> definition)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
-            if (horizontalScrollBarVisibility != null) mauiObject.HorizontalScrollBarVisibility = (Microsoft.Maui.ScrollBarVisibility)horizontalScrollBarVisibility;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.ScrollBarVisibility>(horizontalScrollBarVisibility);
+            if (horizontalScrollBarVisibility != null) mauiObject.HorizontalScrollBarVisibility = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.ScrollBarVisibility>(mauiObject, Microsoft.Maui.Controls.ListView.HorizontalScrollBarVisibilityProperty));
             if (def.ValueIsSet()) mauiObject.HorizontalScrollBarVisibility = def.GetValue();
             def.BindProperty();
@@ -646,7 +684,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.ScrollBarVisibility>, BindableDef<Microsoft.Maui.ScrollBarVisibility>> definition)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.ScrollBarVisibility>(mauiObject, Microsoft.Maui.Controls.ListView.HorizontalScrollBarVisibilityProperty));
             if (def.ValueIsSet()) mauiObject.HorizontalScrollBarVisibility = def.GetValue();
             def.BindProperty();
@@ -657,8 +695,9 @@ namespace Sharp.UI
             Microsoft.Maui.ScrollBarVisibility? verticalScrollBarVisibility)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
-            if (verticalScrollBarVisibility != null) mauiObject.VerticalScrollBarVisibility = (Microsoft.Maui.ScrollBarVisibility)verticalScrollBarVisibility;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.ScrollBarVisibility>(verticalScrollBarVisibility);
+            if (verticalScrollBarVisibility != null) mauiObject.VerticalScrollBarVisibility = mauiValue;
             return obj;
         }
         
@@ -667,8 +706,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.ScrollBarVisibility>, BindableDef<Microsoft.Maui.ScrollBarVisibility>> definition)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
-            if (verticalScrollBarVisibility != null) mauiObject.VerticalScrollBarVisibility = (Microsoft.Maui.ScrollBarVisibility)verticalScrollBarVisibility;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.ScrollBarVisibility>(verticalScrollBarVisibility);
+            if (verticalScrollBarVisibility != null) mauiObject.VerticalScrollBarVisibility = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.ScrollBarVisibility>(mauiObject, Microsoft.Maui.Controls.ListView.VerticalScrollBarVisibilityProperty));
             if (def.ValueIsSet()) mauiObject.VerticalScrollBarVisibility = def.GetValue();
             def.BindProperty();
@@ -679,7 +719,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.ScrollBarVisibility>, BindableDef<Microsoft.Maui.ScrollBarVisibility>> definition)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.ScrollBarVisibility>(mauiObject, Microsoft.Maui.Controls.ListView.VerticalScrollBarVisibilityProperty));
             if (def.ValueIsSet()) mauiObject.VerticalScrollBarVisibility = def.GetValue();
             def.BindProperty();
@@ -690,8 +730,9 @@ namespace Sharp.UI
             bool? refreshAllowed)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
-            if (refreshAllowed != null) mauiObject.RefreshAllowed = (bool)refreshAllowed;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiValue = MauiWrapper.Value<bool>(refreshAllowed);
+            if (refreshAllowed != null) mauiObject.RefreshAllowed = mauiValue;
             return obj;
         }
         
@@ -700,8 +741,9 @@ namespace Sharp.UI
             System.Func<ValueDef<bool>, ValueDef<bool>> definition)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
-            if (refreshAllowed != null) mauiObject.RefreshAllowed = (bool)refreshAllowed;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiValue = MauiWrapper.Value<bool>(refreshAllowed);
+            if (refreshAllowed != null) mauiObject.RefreshAllowed = mauiValue;
             var def = definition(new ValueDef<bool>());
             if (def.ValueIsSet()) mauiObject.RefreshAllowed = def.GetValue();
             return obj;
@@ -711,7 +753,7 @@ namespace Sharp.UI
             System.Func<ValueDef<bool>, ValueDef<bool>> definition)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
             var def = definition(new ValueDef<bool>());
             if (def.ValueIsSet()) mauiObject.RefreshAllowed = def.GetValue();
             return obj;
@@ -720,7 +762,7 @@ namespace Sharp.UI
         public static T OnItemAppearing<T>(this T obj, OnEventAction<T, Microsoft.Maui.Controls.ItemVisibilityEventArgs> action)
             where T : Sharp.UI.IListView
         {            
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
             mauiObject.ItemAppearing += (o, arg) => action(obj, arg);
             return obj;
         }
@@ -728,7 +770,7 @@ namespace Sharp.UI
         public static T OnItemDisappearing<T>(this T obj, OnEventAction<T, Microsoft.Maui.Controls.ItemVisibilityEventArgs> action)
             where T : Sharp.UI.IListView
         {            
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
             mauiObject.ItemDisappearing += (o, arg) => action(obj, arg);
             return obj;
         }
@@ -736,7 +778,7 @@ namespace Sharp.UI
         public static T OnItemSelected<T>(this T obj, OnEventAction<T, Microsoft.Maui.Controls.SelectedItemChangedEventArgs> action)
             where T : Sharp.UI.IListView
         {            
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
             mauiObject.ItemSelected += (o, arg) => action(obj, arg);
             return obj;
         }
@@ -744,7 +786,7 @@ namespace Sharp.UI
         public static T OnItemTapped<T>(this T obj, OnEventAction<T, Microsoft.Maui.Controls.ItemTappedEventArgs> action)
             where T : Sharp.UI.IListView
         {            
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
             mauiObject.ItemTapped += (o, arg) => action(obj, arg);
             return obj;
         }
@@ -752,7 +794,7 @@ namespace Sharp.UI
         public static T OnScrolled<T>(this T obj, OnEventAction<T, Microsoft.Maui.Controls.ScrolledEventArgs> action)
             where T : Sharp.UI.IListView
         {            
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
             mauiObject.Scrolled += (o, arg) => action(obj, arg);
             return obj;
         }
@@ -760,7 +802,7 @@ namespace Sharp.UI
         public static T OnRefreshing<T>(this T obj, OnEventAction<T> action)
             where T : Sharp.UI.IListView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
             mauiObject.Refreshing += (o, arg) => action(obj);
             return obj;
         }
@@ -768,7 +810,7 @@ namespace Sharp.UI
         public static T OnScrollToRequested<T>(this T obj, OnEventAction<T, Microsoft.Maui.Controls.ScrollToRequestedEventArgs> action)
             where T : Sharp.UI.IListView
         {            
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ListView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ListView>(obj);
             mauiObject.ScrollToRequested += (o, arg) => action(obj, arg);
             return obj;
         }

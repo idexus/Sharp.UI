@@ -13,8 +13,9 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.IDrawable? drawable)
             where T : Sharp.UI.IGraphicsView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.GraphicsView>(obj);
-            if (drawable != null) mauiObject.Drawable = (Microsoft.Maui.Graphics.IDrawable)drawable;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GraphicsView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.IDrawable>(drawable);
+            if (drawable != null) mauiObject.Drawable = mauiValue;
             return obj;
         }
         
@@ -23,8 +24,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.IDrawable>, BindableDef<Microsoft.Maui.Graphics.IDrawable>> definition)
             where T : Sharp.UI.IGraphicsView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.GraphicsView>(obj);
-            if (drawable != null) mauiObject.Drawable = (Microsoft.Maui.Graphics.IDrawable)drawable;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GraphicsView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.IDrawable>(drawable);
+            if (drawable != null) mauiObject.Drawable = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.IDrawable>(mauiObject, Microsoft.Maui.Controls.GraphicsView.DrawableProperty));
             if (def.ValueIsSet()) mauiObject.Drawable = def.GetValue();
             def.BindProperty();
@@ -35,7 +37,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.IDrawable>, BindableDef<Microsoft.Maui.Graphics.IDrawable>> definition)
             where T : Sharp.UI.IGraphicsView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.GraphicsView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GraphicsView>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.IDrawable>(mauiObject, Microsoft.Maui.Controls.GraphicsView.DrawableProperty));
             if (def.ValueIsSet()) mauiObject.Drawable = def.GetValue();
             def.BindProperty();
@@ -45,7 +47,7 @@ namespace Sharp.UI
         public static T OnStartHoverInteraction<T>(this T obj, OnEventAction<T, Microsoft.Maui.Controls.TouchEventArgs> action)
             where T : Sharp.UI.IGraphicsView
         {            
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.GraphicsView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GraphicsView>(obj);
             mauiObject.StartHoverInteraction += (o, arg) => action(obj, arg);
             return obj;
         }
@@ -53,7 +55,7 @@ namespace Sharp.UI
         public static T OnMoveHoverInteraction<T>(this T obj, OnEventAction<T, Microsoft.Maui.Controls.TouchEventArgs> action)
             where T : Sharp.UI.IGraphicsView
         {            
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.GraphicsView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GraphicsView>(obj);
             mauiObject.MoveHoverInteraction += (o, arg) => action(obj, arg);
             return obj;
         }
@@ -61,7 +63,7 @@ namespace Sharp.UI
         public static T OnEndHoverInteraction<T>(this T obj, OnEventAction<T> action)
             where T : Sharp.UI.IGraphicsView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.GraphicsView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GraphicsView>(obj);
             mauiObject.EndHoverInteraction += (o, arg) => action(obj);
             return obj;
         }
@@ -69,7 +71,7 @@ namespace Sharp.UI
         public static T OnStartInteraction<T>(this T obj, OnEventAction<T, Microsoft.Maui.Controls.TouchEventArgs> action)
             where T : Sharp.UI.IGraphicsView
         {            
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.GraphicsView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GraphicsView>(obj);
             mauiObject.StartInteraction += (o, arg) => action(obj, arg);
             return obj;
         }
@@ -77,7 +79,7 @@ namespace Sharp.UI
         public static T OnDragInteraction<T>(this T obj, OnEventAction<T, Microsoft.Maui.Controls.TouchEventArgs> action)
             where T : Sharp.UI.IGraphicsView
         {            
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.GraphicsView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GraphicsView>(obj);
             mauiObject.DragInteraction += (o, arg) => action(obj, arg);
             return obj;
         }
@@ -85,7 +87,7 @@ namespace Sharp.UI
         public static T OnEndInteraction<T>(this T obj, OnEventAction<T, Microsoft.Maui.Controls.TouchEventArgs> action)
             where T : Sharp.UI.IGraphicsView
         {            
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.GraphicsView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GraphicsView>(obj);
             mauiObject.EndInteraction += (o, arg) => action(obj, arg);
             return obj;
         }
@@ -93,7 +95,7 @@ namespace Sharp.UI
         public static T OnCancelInteraction<T>(this T obj, OnEventAction<T> action)
             where T : Sharp.UI.IGraphicsView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.GraphicsView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GraphicsView>(obj);
             mauiObject.CancelInteraction += (o, arg) => action(obj);
             return obj;
         }

@@ -68,7 +68,7 @@
 
         public void BindProperty()
         {
-            var mauiSource = MauiWrapper.GetObject<object>(source);
+            var mauiSource = MauiWrapper.Value<object>(source);
             if (path != null)
             {
                 obj.SetBinding(

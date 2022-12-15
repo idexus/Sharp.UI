@@ -7,7 +7,7 @@ namespace Sharp.UI
            params string[] styleClasses)
             where T : INavigableElement
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.NavigableElement>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.NavigableElement>(obj);
             if (styleClasses.Length > 0) mauiObject.StyleClass = (System.Collections.Generic.IList<string>)styleClasses.ToList<string>();
             return obj;
         }

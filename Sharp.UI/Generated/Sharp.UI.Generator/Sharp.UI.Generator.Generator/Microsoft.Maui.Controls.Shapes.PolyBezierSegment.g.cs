@@ -13,8 +13,9 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.PointCollection? points)
             where T : Sharp.UI.IPolyBezierSegment
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.PolyBezierSegment>(obj);
-            if (points != null) mauiObject.Points = (Microsoft.Maui.Controls.PointCollection)points;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.PolyBezierSegment>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.PointCollection>(points);
+            if (points != null) mauiObject.Points = mauiValue;
             return obj;
         }
         
@@ -23,8 +24,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.PointCollection>, BindableDef<Microsoft.Maui.Controls.PointCollection>> definition)
             where T : Sharp.UI.IPolyBezierSegment
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.PolyBezierSegment>(obj);
-            if (points != null) mauiObject.Points = (Microsoft.Maui.Controls.PointCollection)points;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.PolyBezierSegment>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.PointCollection>(points);
+            if (points != null) mauiObject.Points = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.PointCollection>(mauiObject, Microsoft.Maui.Controls.Shapes.PolyBezierSegment.PointsProperty));
             if (def.ValueIsSet()) mauiObject.Points = def.GetValue();
             def.BindProperty();
@@ -35,7 +37,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.PointCollection>, BindableDef<Microsoft.Maui.Controls.PointCollection>> definition)
             where T : Sharp.UI.IPolyBezierSegment
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.PolyBezierSegment>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.PolyBezierSegment>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.Controls.PointCollection>(mauiObject, Microsoft.Maui.Controls.Shapes.PolyBezierSegment.PointsProperty));
             if (def.ValueIsSet()) mauiObject.Points = def.GetValue();
             def.BindProperty();

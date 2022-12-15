@@ -13,8 +13,9 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Point? startPoint)
             where T : Sharp.UI.ILineGeometry
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.LineGeometry>(obj);
-            if (startPoint != null) mauiObject.StartPoint = (Microsoft.Maui.Graphics.Point)startPoint;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.LineGeometry>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Point>(startPoint);
+            if (startPoint != null) mauiObject.StartPoint = mauiValue;
             return obj;
         }
         
@@ -23,8 +24,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
             where T : Sharp.UI.ILineGeometry
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.LineGeometry>(obj);
-            if (startPoint != null) mauiObject.StartPoint = (Microsoft.Maui.Graphics.Point)startPoint;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.LineGeometry>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Point>(startPoint);
+            if (startPoint != null) mauiObject.StartPoint = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Point>(mauiObject, Microsoft.Maui.Controls.Shapes.LineGeometry.StartPointProperty));
             if (def.ValueIsSet()) mauiObject.StartPoint = def.GetValue();
             def.BindProperty();
@@ -35,7 +37,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
             where T : Sharp.UI.ILineGeometry
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.LineGeometry>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.LineGeometry>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Point>(mauiObject, Microsoft.Maui.Controls.Shapes.LineGeometry.StartPointProperty));
             if (def.ValueIsSet()) mauiObject.StartPoint = def.GetValue();
             def.BindProperty();
@@ -46,8 +48,9 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Point? endPoint)
             where T : Sharp.UI.ILineGeometry
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.LineGeometry>(obj);
-            if (endPoint != null) mauiObject.EndPoint = (Microsoft.Maui.Graphics.Point)endPoint;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.LineGeometry>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Point>(endPoint);
+            if (endPoint != null) mauiObject.EndPoint = mauiValue;
             return obj;
         }
         
@@ -56,8 +59,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
             where T : Sharp.UI.ILineGeometry
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.LineGeometry>(obj);
-            if (endPoint != null) mauiObject.EndPoint = (Microsoft.Maui.Graphics.Point)endPoint;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.LineGeometry>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Point>(endPoint);
+            if (endPoint != null) mauiObject.EndPoint = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Point>(mauiObject, Microsoft.Maui.Controls.Shapes.LineGeometry.EndPointProperty));
             if (def.ValueIsSet()) mauiObject.EndPoint = def.GetValue();
             def.BindProperty();
@@ -68,7 +72,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
             where T : Sharp.UI.ILineGeometry
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.LineGeometry>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.LineGeometry>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Point>(mauiObject, Microsoft.Maui.Controls.Shapes.LineGeometry.EndPointProperty));
             if (def.ValueIsSet()) mauiObject.EndPoint = def.GetValue();
             def.BindProperty();

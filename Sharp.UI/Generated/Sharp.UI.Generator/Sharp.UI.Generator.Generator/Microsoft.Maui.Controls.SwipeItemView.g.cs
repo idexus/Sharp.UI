@@ -13,8 +13,9 @@ namespace Sharp.UI
             System.Windows.Input.ICommand? command)
             where T : Sharp.UI.ISwipeItemView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwipeItemView>(obj);
-            if (command != null) mauiObject.Command = (System.Windows.Input.ICommand)command;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeItemView>(obj);
+            var mauiValue = MauiWrapper.Value<System.Windows.Input.ICommand>(command);
+            if (command != null) mauiObject.Command = mauiValue;
             return obj;
         }
         
@@ -23,8 +24,9 @@ namespace Sharp.UI
             System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.ISwipeItemView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwipeItemView>(obj);
-            if (command != null) mauiObject.Command = (System.Windows.Input.ICommand)command;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeItemView>(obj);
+            var mauiValue = MauiWrapper.Value<System.Windows.Input.ICommand>(command);
+            if (command != null) mauiObject.Command = mauiValue;
             var def = definition(new BindableDef<System.Windows.Input.ICommand>(mauiObject, Microsoft.Maui.Controls.SwipeItemView.CommandProperty));
             if (def.ValueIsSet()) mauiObject.Command = def.GetValue();
             def.BindProperty();
@@ -35,7 +37,7 @@ namespace Sharp.UI
             System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.ISwipeItemView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwipeItemView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeItemView>(obj);
             var def = definition(new BindableDef<System.Windows.Input.ICommand>(mauiObject, Microsoft.Maui.Controls.SwipeItemView.CommandProperty));
             if (def.ValueIsSet()) mauiObject.Command = def.GetValue();
             def.BindProperty();
@@ -46,8 +48,9 @@ namespace Sharp.UI
             object? commandParameter)
             where T : Sharp.UI.ISwipeItemView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwipeItemView>(obj);
-            if (commandParameter != null) mauiObject.CommandParameter = (object)commandParameter;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeItemView>(obj);
+            var mauiValue = MauiWrapper.Value<object>(commandParameter);
+            if (commandParameter != null) mauiObject.CommandParameter = mauiValue;
             return obj;
         }
         
@@ -56,8 +59,9 @@ namespace Sharp.UI
             System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.ISwipeItemView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwipeItemView>(obj);
-            if (commandParameter != null) mauiObject.CommandParameter = (object)commandParameter;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeItemView>(obj);
+            var mauiValue = MauiWrapper.Value<object>(commandParameter);
+            if (commandParameter != null) mauiObject.CommandParameter = mauiValue;
             var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.SwipeItemView.CommandParameterProperty));
             if (def.ValueIsSet()) mauiObject.CommandParameter = def.GetValue();
             def.BindProperty();
@@ -68,7 +72,7 @@ namespace Sharp.UI
             System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.ISwipeItemView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwipeItemView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeItemView>(obj);
             var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.SwipeItemView.CommandParameterProperty));
             if (def.ValueIsSet()) mauiObject.CommandParameter = def.GetValue();
             def.BindProperty();
@@ -78,7 +82,7 @@ namespace Sharp.UI
         public static T OnInvoked<T>(this T obj, OnEventAction<T> action)
             where T : Sharp.UI.ISwipeItemView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwipeItemView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeItemView>(obj);
             mauiObject.Invoked += (o, arg) => action(obj);
             return obj;
         }

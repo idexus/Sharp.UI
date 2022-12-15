@@ -13,8 +13,9 @@ namespace Sharp.UI
             System.DateTime? date)
             where T : Sharp.UI.IDatePicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DatePicker>(obj);
-            if (date != null) mauiObject.Date = (System.DateTime)date;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DatePicker>(obj);
+            var mauiValue = MauiWrapper.Value<System.DateTime>(date);
+            if (date != null) mauiObject.Date = mauiValue;
             return obj;
         }
         
@@ -23,8 +24,9 @@ namespace Sharp.UI
             System.Func<BindableDef<System.DateTime>, BindableDef<System.DateTime>> definition)
             where T : Sharp.UI.IDatePicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DatePicker>(obj);
-            if (date != null) mauiObject.Date = (System.DateTime)date;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DatePicker>(obj);
+            var mauiValue = MauiWrapper.Value<System.DateTime>(date);
+            if (date != null) mauiObject.Date = mauiValue;
             var def = definition(new BindableDef<System.DateTime>(mauiObject, Microsoft.Maui.Controls.DatePicker.DateProperty));
             if (def.ValueIsSet()) mauiObject.Date = def.GetValue();
             def.BindProperty();
@@ -35,7 +37,7 @@ namespace Sharp.UI
             System.Func<BindableDef<System.DateTime>, BindableDef<System.DateTime>> definition)
             where T : Sharp.UI.IDatePicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DatePicker>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DatePicker>(obj);
             var def = definition(new BindableDef<System.DateTime>(mauiObject, Microsoft.Maui.Controls.DatePicker.DateProperty));
             if (def.ValueIsSet()) mauiObject.Date = def.GetValue();
             def.BindProperty();
@@ -46,8 +48,9 @@ namespace Sharp.UI
             string? format)
             where T : Sharp.UI.IDatePicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DatePicker>(obj);
-            if (format != null) mauiObject.Format = (string)format;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DatePicker>(obj);
+            var mauiValue = MauiWrapper.Value<string>(format);
+            if (format != null) mauiObject.Format = mauiValue;
             return obj;
         }
         
@@ -56,8 +59,9 @@ namespace Sharp.UI
             System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.IDatePicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DatePicker>(obj);
-            if (format != null) mauiObject.Format = (string)format;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DatePicker>(obj);
+            var mauiValue = MauiWrapper.Value<string>(format);
+            if (format != null) mauiObject.Format = mauiValue;
             var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.DatePicker.FormatProperty));
             if (def.ValueIsSet()) mauiObject.Format = def.GetValue();
             def.BindProperty();
@@ -68,7 +72,7 @@ namespace Sharp.UI
             System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.IDatePicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DatePicker>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DatePicker>(obj);
             var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.DatePicker.FormatProperty));
             if (def.ValueIsSet()) mauiObject.Format = def.GetValue();
             def.BindProperty();
@@ -79,8 +83,9 @@ namespace Sharp.UI
             System.DateTime? maximumDate)
             where T : Sharp.UI.IDatePicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DatePicker>(obj);
-            if (maximumDate != null) mauiObject.MaximumDate = (System.DateTime)maximumDate;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DatePicker>(obj);
+            var mauiValue = MauiWrapper.Value<System.DateTime>(maximumDate);
+            if (maximumDate != null) mauiObject.MaximumDate = mauiValue;
             return obj;
         }
         
@@ -89,8 +94,9 @@ namespace Sharp.UI
             System.Func<BindableDef<System.DateTime>, BindableDef<System.DateTime>> definition)
             where T : Sharp.UI.IDatePicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DatePicker>(obj);
-            if (maximumDate != null) mauiObject.MaximumDate = (System.DateTime)maximumDate;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DatePicker>(obj);
+            var mauiValue = MauiWrapper.Value<System.DateTime>(maximumDate);
+            if (maximumDate != null) mauiObject.MaximumDate = mauiValue;
             var def = definition(new BindableDef<System.DateTime>(mauiObject, Microsoft.Maui.Controls.DatePicker.MaximumDateProperty));
             if (def.ValueIsSet()) mauiObject.MaximumDate = def.GetValue();
             def.BindProperty();
@@ -101,7 +107,7 @@ namespace Sharp.UI
             System.Func<BindableDef<System.DateTime>, BindableDef<System.DateTime>> definition)
             where T : Sharp.UI.IDatePicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DatePicker>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DatePicker>(obj);
             var def = definition(new BindableDef<System.DateTime>(mauiObject, Microsoft.Maui.Controls.DatePicker.MaximumDateProperty));
             if (def.ValueIsSet()) mauiObject.MaximumDate = def.GetValue();
             def.BindProperty();
@@ -112,8 +118,9 @@ namespace Sharp.UI
             System.DateTime? minimumDate)
             where T : Sharp.UI.IDatePicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DatePicker>(obj);
-            if (minimumDate != null) mauiObject.MinimumDate = (System.DateTime)minimumDate;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DatePicker>(obj);
+            var mauiValue = MauiWrapper.Value<System.DateTime>(minimumDate);
+            if (minimumDate != null) mauiObject.MinimumDate = mauiValue;
             return obj;
         }
         
@@ -122,8 +129,9 @@ namespace Sharp.UI
             System.Func<BindableDef<System.DateTime>, BindableDef<System.DateTime>> definition)
             where T : Sharp.UI.IDatePicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DatePicker>(obj);
-            if (minimumDate != null) mauiObject.MinimumDate = (System.DateTime)minimumDate;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DatePicker>(obj);
+            var mauiValue = MauiWrapper.Value<System.DateTime>(minimumDate);
+            if (minimumDate != null) mauiObject.MinimumDate = mauiValue;
             var def = definition(new BindableDef<System.DateTime>(mauiObject, Microsoft.Maui.Controls.DatePicker.MinimumDateProperty));
             if (def.ValueIsSet()) mauiObject.MinimumDate = def.GetValue();
             def.BindProperty();
@@ -134,7 +142,7 @@ namespace Sharp.UI
             System.Func<BindableDef<System.DateTime>, BindableDef<System.DateTime>> definition)
             where T : Sharp.UI.IDatePicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DatePicker>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DatePicker>(obj);
             var def = definition(new BindableDef<System.DateTime>(mauiObject, Microsoft.Maui.Controls.DatePicker.MinimumDateProperty));
             if (def.ValueIsSet()) mauiObject.MinimumDate = def.GetValue();
             def.BindProperty();
@@ -145,8 +153,9 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color? textColor)
             where T : Sharp.UI.IDatePicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DatePicker>(obj);
-            if (textColor != null) mauiObject.TextColor = (Microsoft.Maui.Graphics.Color)textColor;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DatePicker>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(textColor);
+            if (textColor != null) mauiObject.TextColor = mauiValue;
             return obj;
         }
         
@@ -155,8 +164,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IDatePicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DatePicker>(obj);
-            if (textColor != null) mauiObject.TextColor = (Microsoft.Maui.Graphics.Color)textColor;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DatePicker>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(textColor);
+            if (textColor != null) mauiObject.TextColor = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.DatePicker.TextColorProperty));
             if (def.ValueIsSet()) mauiObject.TextColor = def.GetValue();
             def.BindProperty();
@@ -167,7 +177,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IDatePicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DatePicker>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DatePicker>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.DatePicker.TextColorProperty));
             if (def.ValueIsSet()) mauiObject.TextColor = def.GetValue();
             def.BindProperty();
@@ -178,8 +188,9 @@ namespace Sharp.UI
             double? characterSpacing)
             where T : Sharp.UI.IDatePicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DatePicker>(obj);
-            if (characterSpacing != null) mauiObject.CharacterSpacing = (double)characterSpacing;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DatePicker>(obj);
+            var mauiValue = MauiWrapper.Value<double>(characterSpacing);
+            if (characterSpacing != null) mauiObject.CharacterSpacing = mauiValue;
             return obj;
         }
         
@@ -188,8 +199,9 @@ namespace Sharp.UI
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IDatePicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DatePicker>(obj);
-            if (characterSpacing != null) mauiObject.CharacterSpacing = (double)characterSpacing;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DatePicker>(obj);
+            var mauiValue = MauiWrapper.Value<double>(characterSpacing);
+            if (characterSpacing != null) mauiObject.CharacterSpacing = mauiValue;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.DatePicker.CharacterSpacingProperty));
             if (def.ValueIsSet()) mauiObject.CharacterSpacing = def.GetValue();
             def.BindProperty();
@@ -200,7 +212,7 @@ namespace Sharp.UI
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IDatePicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DatePicker>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DatePicker>(obj);
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.DatePicker.CharacterSpacingProperty));
             if (def.ValueIsSet()) mauiObject.CharacterSpacing = def.GetValue();
             def.BindProperty();
@@ -211,8 +223,9 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.FontAttributes? fontAttributes)
             where T : Sharp.UI.IDatePicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DatePicker>(obj);
-            if (fontAttributes != null) mauiObject.FontAttributes = (Microsoft.Maui.Controls.FontAttributes)fontAttributes;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DatePicker>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.FontAttributes>(fontAttributes);
+            if (fontAttributes != null) mauiObject.FontAttributes = mauiValue;
             return obj;
         }
         
@@ -221,8 +234,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.FontAttributes>, BindableDef<Microsoft.Maui.Controls.FontAttributes>> definition)
             where T : Sharp.UI.IDatePicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DatePicker>(obj);
-            if (fontAttributes != null) mauiObject.FontAttributes = (Microsoft.Maui.Controls.FontAttributes)fontAttributes;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DatePicker>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.FontAttributes>(fontAttributes);
+            if (fontAttributes != null) mauiObject.FontAttributes = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.FontAttributes>(mauiObject, Microsoft.Maui.Controls.DatePicker.FontAttributesProperty));
             if (def.ValueIsSet()) mauiObject.FontAttributes = def.GetValue();
             def.BindProperty();
@@ -233,7 +247,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.FontAttributes>, BindableDef<Microsoft.Maui.Controls.FontAttributes>> definition)
             where T : Sharp.UI.IDatePicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DatePicker>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DatePicker>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.Controls.FontAttributes>(mauiObject, Microsoft.Maui.Controls.DatePicker.FontAttributesProperty));
             if (def.ValueIsSet()) mauiObject.FontAttributes = def.GetValue();
             def.BindProperty();
@@ -244,8 +258,9 @@ namespace Sharp.UI
             string? fontFamily)
             where T : Sharp.UI.IDatePicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DatePicker>(obj);
-            if (fontFamily != null) mauiObject.FontFamily = (string)fontFamily;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DatePicker>(obj);
+            var mauiValue = MauiWrapper.Value<string>(fontFamily);
+            if (fontFamily != null) mauiObject.FontFamily = mauiValue;
             return obj;
         }
         
@@ -254,8 +269,9 @@ namespace Sharp.UI
             System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.IDatePicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DatePicker>(obj);
-            if (fontFamily != null) mauiObject.FontFamily = (string)fontFamily;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DatePicker>(obj);
+            var mauiValue = MauiWrapper.Value<string>(fontFamily);
+            if (fontFamily != null) mauiObject.FontFamily = mauiValue;
             var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.DatePicker.FontFamilyProperty));
             if (def.ValueIsSet()) mauiObject.FontFamily = def.GetValue();
             def.BindProperty();
@@ -266,7 +282,7 @@ namespace Sharp.UI
             System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.IDatePicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DatePicker>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DatePicker>(obj);
             var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.DatePicker.FontFamilyProperty));
             if (def.ValueIsSet()) mauiObject.FontFamily = def.GetValue();
             def.BindProperty();
@@ -277,8 +293,9 @@ namespace Sharp.UI
             double? fontSize)
             where T : Sharp.UI.IDatePicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DatePicker>(obj);
-            if (fontSize != null) mauiObject.FontSize = (double)fontSize;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DatePicker>(obj);
+            var mauiValue = MauiWrapper.Value<double>(fontSize);
+            if (fontSize != null) mauiObject.FontSize = mauiValue;
             return obj;
         }
         
@@ -287,8 +304,9 @@ namespace Sharp.UI
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IDatePicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DatePicker>(obj);
-            if (fontSize != null) mauiObject.FontSize = (double)fontSize;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DatePicker>(obj);
+            var mauiValue = MauiWrapper.Value<double>(fontSize);
+            if (fontSize != null) mauiObject.FontSize = mauiValue;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.DatePicker.FontSizeProperty));
             if (def.ValueIsSet()) mauiObject.FontSize = def.GetValue();
             def.BindProperty();
@@ -299,7 +317,7 @@ namespace Sharp.UI
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IDatePicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DatePicker>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DatePicker>(obj);
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.DatePicker.FontSizeProperty));
             if (def.ValueIsSet()) mauiObject.FontSize = def.GetValue();
             def.BindProperty();
@@ -310,8 +328,9 @@ namespace Sharp.UI
             bool? fontAutoScalingEnabled)
             where T : Sharp.UI.IDatePicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DatePicker>(obj);
-            if (fontAutoScalingEnabled != null) mauiObject.FontAutoScalingEnabled = (bool)fontAutoScalingEnabled;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DatePicker>(obj);
+            var mauiValue = MauiWrapper.Value<bool>(fontAutoScalingEnabled);
+            if (fontAutoScalingEnabled != null) mauiObject.FontAutoScalingEnabled = mauiValue;
             return obj;
         }
         
@@ -320,8 +339,9 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IDatePicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DatePicker>(obj);
-            if (fontAutoScalingEnabled != null) mauiObject.FontAutoScalingEnabled = (bool)fontAutoScalingEnabled;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DatePicker>(obj);
+            var mauiValue = MauiWrapper.Value<bool>(fontAutoScalingEnabled);
+            if (fontAutoScalingEnabled != null) mauiObject.FontAutoScalingEnabled = mauiValue;
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.DatePicker.FontAutoScalingEnabledProperty));
             if (def.ValueIsSet()) mauiObject.FontAutoScalingEnabled = def.GetValue();
             def.BindProperty();
@@ -332,7 +352,7 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IDatePicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DatePicker>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DatePicker>(obj);
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.DatePicker.FontAutoScalingEnabledProperty));
             if (def.ValueIsSet()) mauiObject.FontAutoScalingEnabled = def.GetValue();
             def.BindProperty();
@@ -342,7 +362,7 @@ namespace Sharp.UI
         public static T OnDateSelected<T>(this T obj, OnEventAction<T, Microsoft.Maui.Controls.DateChangedEventArgs> action)
             where T : Sharp.UI.IDatePicker
         {            
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DatePicker>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DatePicker>(obj);
             mauiObject.DateSelected += (o, arg) => action(obj, arg);
             return obj;
         }

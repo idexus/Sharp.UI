@@ -12,7 +12,7 @@ namespace Sharp.UI
         public static T OnIsActiveChanged<T>(this T obj, OnEventAction<T> action)
             where T : Sharp.UI.IStateTriggerBase
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StateTriggerBase>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StateTriggerBase>(obj);
             mauiObject.IsActiveChanged += (o, arg) => action(obj);
             return obj;
         }

@@ -13,8 +13,9 @@ namespace Sharp.UI
             object? header)
             where T : Sharp.UI.IStructuredItemsView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StructuredItemsView>(obj);
-            if (header != null) mauiObject.Header = (object)header;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StructuredItemsView>(obj);
+            var mauiValue = MauiWrapper.Value<object>(header);
+            if (header != null) mauiObject.Header = mauiValue;
             return obj;
         }
         
@@ -23,8 +24,9 @@ namespace Sharp.UI
             System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IStructuredItemsView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StructuredItemsView>(obj);
-            if (header != null) mauiObject.Header = (object)header;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StructuredItemsView>(obj);
+            var mauiValue = MauiWrapper.Value<object>(header);
+            if (header != null) mauiObject.Header = mauiValue;
             var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.StructuredItemsView.HeaderProperty));
             if (def.ValueIsSet()) mauiObject.Header = def.GetValue();
             def.BindProperty();
@@ -35,7 +37,7 @@ namespace Sharp.UI
             System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IStructuredItemsView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StructuredItemsView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StructuredItemsView>(obj);
             var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.StructuredItemsView.HeaderProperty));
             if (def.ValueIsSet()) mauiObject.Header = def.GetValue();
             def.BindProperty();
@@ -46,8 +48,9 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.DataTemplate? headerTemplate)
             where T : Sharp.UI.IStructuredItemsView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StructuredItemsView>(obj);
-            if (headerTemplate != null) mauiObject.HeaderTemplate = (Microsoft.Maui.Controls.DataTemplate)headerTemplate;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StructuredItemsView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.DataTemplate>(headerTemplate);
+            if (headerTemplate != null) mauiObject.HeaderTemplate = mauiValue;
             return obj;
         }
         
@@ -56,8 +59,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
             where T : Sharp.UI.IStructuredItemsView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StructuredItemsView>(obj);
-            if (headerTemplate != null) mauiObject.HeaderTemplate = (Microsoft.Maui.Controls.DataTemplate)headerTemplate;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StructuredItemsView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.DataTemplate>(headerTemplate);
+            if (headerTemplate != null) mauiObject.HeaderTemplate = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.DataTemplate>(mauiObject, Microsoft.Maui.Controls.StructuredItemsView.HeaderTemplateProperty));
             if (def.ValueIsSet()) mauiObject.HeaderTemplate = def.GetValue();
             def.BindProperty();
@@ -68,7 +72,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
             where T : Sharp.UI.IStructuredItemsView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StructuredItemsView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StructuredItemsView>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.Controls.DataTemplate>(mauiObject, Microsoft.Maui.Controls.StructuredItemsView.HeaderTemplateProperty));
             if (def.ValueIsSet()) mauiObject.HeaderTemplate = def.GetValue();
             def.BindProperty();
@@ -77,7 +81,7 @@ namespace Sharp.UI
         
         public static T HeaderTemplate<T>(this T obj, System.Func<object> loadTemplate) where T : Sharp.UI.IStructuredItemsView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StructuredItemsView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StructuredItemsView>(obj);
             mauiObject.HeaderTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
             return obj;
         }
@@ -86,8 +90,9 @@ namespace Sharp.UI
             object? footer)
             where T : Sharp.UI.IStructuredItemsView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StructuredItemsView>(obj);
-            if (footer != null) mauiObject.Footer = (object)footer;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StructuredItemsView>(obj);
+            var mauiValue = MauiWrapper.Value<object>(footer);
+            if (footer != null) mauiObject.Footer = mauiValue;
             return obj;
         }
         
@@ -96,8 +101,9 @@ namespace Sharp.UI
             System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IStructuredItemsView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StructuredItemsView>(obj);
-            if (footer != null) mauiObject.Footer = (object)footer;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StructuredItemsView>(obj);
+            var mauiValue = MauiWrapper.Value<object>(footer);
+            if (footer != null) mauiObject.Footer = mauiValue;
             var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.StructuredItemsView.FooterProperty));
             if (def.ValueIsSet()) mauiObject.Footer = def.GetValue();
             def.BindProperty();
@@ -108,7 +114,7 @@ namespace Sharp.UI
             System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IStructuredItemsView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StructuredItemsView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StructuredItemsView>(obj);
             var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.StructuredItemsView.FooterProperty));
             if (def.ValueIsSet()) mauiObject.Footer = def.GetValue();
             def.BindProperty();
@@ -119,8 +125,9 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.DataTemplate? footerTemplate)
             where T : Sharp.UI.IStructuredItemsView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StructuredItemsView>(obj);
-            if (footerTemplate != null) mauiObject.FooterTemplate = (Microsoft.Maui.Controls.DataTemplate)footerTemplate;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StructuredItemsView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.DataTemplate>(footerTemplate);
+            if (footerTemplate != null) mauiObject.FooterTemplate = mauiValue;
             return obj;
         }
         
@@ -129,8 +136,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
             where T : Sharp.UI.IStructuredItemsView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StructuredItemsView>(obj);
-            if (footerTemplate != null) mauiObject.FooterTemplate = (Microsoft.Maui.Controls.DataTemplate)footerTemplate;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StructuredItemsView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.DataTemplate>(footerTemplate);
+            if (footerTemplate != null) mauiObject.FooterTemplate = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.DataTemplate>(mauiObject, Microsoft.Maui.Controls.StructuredItemsView.FooterTemplateProperty));
             if (def.ValueIsSet()) mauiObject.FooterTemplate = def.GetValue();
             def.BindProperty();
@@ -141,7 +149,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
             where T : Sharp.UI.IStructuredItemsView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StructuredItemsView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StructuredItemsView>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.Controls.DataTemplate>(mauiObject, Microsoft.Maui.Controls.StructuredItemsView.FooterTemplateProperty));
             if (def.ValueIsSet()) mauiObject.FooterTemplate = def.GetValue();
             def.BindProperty();
@@ -150,7 +158,7 @@ namespace Sharp.UI
         
         public static T FooterTemplate<T>(this T obj, System.Func<object> loadTemplate) where T : Sharp.UI.IStructuredItemsView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StructuredItemsView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StructuredItemsView>(obj);
             mauiObject.FooterTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
             return obj;
         }
@@ -159,8 +167,9 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.IItemsLayout? itemsLayout)
             where T : Sharp.UI.IStructuredItemsView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StructuredItemsView>(obj);
-            if (itemsLayout != null) mauiObject.ItemsLayout = (Microsoft.Maui.Controls.IItemsLayout)itemsLayout;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StructuredItemsView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.IItemsLayout>(itemsLayout);
+            if (itemsLayout != null) mauiObject.ItemsLayout = mauiValue;
             return obj;
         }
         
@@ -169,8 +178,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.IItemsLayout>, BindableDef<Microsoft.Maui.Controls.IItemsLayout>> definition)
             where T : Sharp.UI.IStructuredItemsView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StructuredItemsView>(obj);
-            if (itemsLayout != null) mauiObject.ItemsLayout = (Microsoft.Maui.Controls.IItemsLayout)itemsLayout;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StructuredItemsView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.IItemsLayout>(itemsLayout);
+            if (itemsLayout != null) mauiObject.ItemsLayout = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.IItemsLayout>(mauiObject, Microsoft.Maui.Controls.StructuredItemsView.ItemsLayoutProperty));
             if (def.ValueIsSet()) mauiObject.ItemsLayout = def.GetValue();
             def.BindProperty();
@@ -181,7 +191,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.IItemsLayout>, BindableDef<Microsoft.Maui.Controls.IItemsLayout>> definition)
             where T : Sharp.UI.IStructuredItemsView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StructuredItemsView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StructuredItemsView>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.Controls.IItemsLayout>(mauiObject, Microsoft.Maui.Controls.StructuredItemsView.ItemsLayoutProperty));
             if (def.ValueIsSet()) mauiObject.ItemsLayout = def.GetValue();
             def.BindProperty();
@@ -192,8 +202,9 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.ItemSizingStrategy? itemSizingStrategy)
             where T : Sharp.UI.IStructuredItemsView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StructuredItemsView>(obj);
-            if (itemSizingStrategy != null) mauiObject.ItemSizingStrategy = (Microsoft.Maui.Controls.ItemSizingStrategy)itemSizingStrategy;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StructuredItemsView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.ItemSizingStrategy>(itemSizingStrategy);
+            if (itemSizingStrategy != null) mauiObject.ItemSizingStrategy = mauiValue;
             return obj;
         }
         
@@ -202,8 +213,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.ItemSizingStrategy>, BindableDef<Microsoft.Maui.Controls.ItemSizingStrategy>> definition)
             where T : Sharp.UI.IStructuredItemsView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StructuredItemsView>(obj);
-            if (itemSizingStrategy != null) mauiObject.ItemSizingStrategy = (Microsoft.Maui.Controls.ItemSizingStrategy)itemSizingStrategy;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StructuredItemsView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.ItemSizingStrategy>(itemSizingStrategy);
+            if (itemSizingStrategy != null) mauiObject.ItemSizingStrategy = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.ItemSizingStrategy>(mauiObject, Microsoft.Maui.Controls.StructuredItemsView.ItemSizingStrategyProperty));
             if (def.ValueIsSet()) mauiObject.ItemSizingStrategy = def.GetValue();
             def.BindProperty();
@@ -214,7 +226,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.ItemSizingStrategy>, BindableDef<Microsoft.Maui.Controls.ItemSizingStrategy>> definition)
             where T : Sharp.UI.IStructuredItemsView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StructuredItemsView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StructuredItemsView>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.Controls.ItemSizingStrategy>(mauiObject, Microsoft.Maui.Controls.StructuredItemsView.ItemSizingStrategyProperty));
             if (def.ValueIsSet()) mauiObject.ItemSizingStrategy = def.GetValue();
             def.BindProperty();

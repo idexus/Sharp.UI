@@ -13,8 +13,9 @@ namespace Sharp.UI
             bool? loop)
             where T : Sharp.UI.ICarouselView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
-            if (loop != null) mauiObject.Loop = (bool)loop;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
+            var mauiValue = MauiWrapper.Value<bool>(loop);
+            if (loop != null) mauiObject.Loop = mauiValue;
             return obj;
         }
         
@@ -23,8 +24,9 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.ICarouselView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
-            if (loop != null) mauiObject.Loop = (bool)loop;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
+            var mauiValue = MauiWrapper.Value<bool>(loop);
+            if (loop != null) mauiObject.Loop = mauiValue;
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.CarouselView.LoopProperty));
             if (def.ValueIsSet()) mauiObject.Loop = def.GetValue();
             def.BindProperty();
@@ -35,7 +37,7 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.ICarouselView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.CarouselView.LoopProperty));
             if (def.ValueIsSet()) mauiObject.Loop = def.GetValue();
             def.BindProperty();
@@ -46,8 +48,9 @@ namespace Sharp.UI
             Microsoft.Maui.Thickness? peekAreaInsets)
             where T : Sharp.UI.ICarouselView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
-            if (peekAreaInsets != null) mauiObject.PeekAreaInsets = (Microsoft.Maui.Thickness)peekAreaInsets;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Thickness>(peekAreaInsets);
+            if (peekAreaInsets != null) mauiObject.PeekAreaInsets = mauiValue;
             return obj;
         }
         
@@ -56,8 +59,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Thickness>, BindableDef<Microsoft.Maui.Thickness>> definition)
             where T : Sharp.UI.ICarouselView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
-            if (peekAreaInsets != null) mauiObject.PeekAreaInsets = (Microsoft.Maui.Thickness)peekAreaInsets;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Thickness>(peekAreaInsets);
+            if (peekAreaInsets != null) mauiObject.PeekAreaInsets = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.Thickness>(mauiObject, Microsoft.Maui.Controls.CarouselView.PeekAreaInsetsProperty));
             if (def.ValueIsSet()) mauiObject.PeekAreaInsets = def.GetValue();
             def.BindProperty();
@@ -68,7 +72,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Thickness>, BindableDef<Microsoft.Maui.Thickness>> definition)
             where T : Sharp.UI.ICarouselView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.Thickness>(mauiObject, Microsoft.Maui.Controls.CarouselView.PeekAreaInsetsProperty));
             if (def.ValueIsSet()) mauiObject.PeekAreaInsets = def.GetValue();
             def.BindProperty();
@@ -79,8 +83,12 @@ namespace Sharp.UI
             System.Collections.ObjectModel.ObservableCollection<Microsoft.Maui.Controls.View> visibleViews)
             where T : Sharp.UI.ICarouselView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
-            foreach (var item in visibleViews) mauiObject.VisibleViews.Add(item);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
+            foreach (var item in visibleViews)
+            {
+                var mauiItem = MauiWrapper.Value<Microsoft.Maui.Controls.View>(item);
+                mauiObject.VisibleViews.Add(mauiItem);
+            }
             return obj;
         }
 
@@ -88,8 +96,12 @@ namespace Sharp.UI
             params Microsoft.Maui.Controls.View[] visibleViews)
             where T : Sharp.UI.ICarouselView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
-            foreach (var item in visibleViews) mauiObject.VisibleViews.Add(item);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
+            foreach (var item in visibleViews)
+            {
+                var mauiItem = MauiWrapper.Value<Microsoft.Maui.Controls.View>(item);
+                mauiObject.VisibleViews.Add(mauiItem);
+            }
             return obj;
         }
 
@@ -97,12 +109,16 @@ namespace Sharp.UI
             System.Func<Def<System.Collections.ObjectModel.ObservableCollection<Microsoft.Maui.Controls.View>>, Def<System.Collections.ObjectModel.ObservableCollection<Microsoft.Maui.Controls.View>>> definition)
             where T : Sharp.UI.ICarouselView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
             var def = definition(new Def<System.Collections.ObjectModel.ObservableCollection<Microsoft.Maui.Controls.View>>());
             if (def.ValueIsSet())
             {
                 var items = def.GetValue();
-                foreach (var item in items) mauiObject.VisibleViews.Add(item);
+                foreach (var item in items) 
+                {
+                    var mauiItem = MauiWrapper.Value<Microsoft.Maui.Controls.View>(item);
+                    mauiObject.VisibleViews.Add(mauiItem);
+                }
             }
             return obj;
         }
@@ -111,8 +127,9 @@ namespace Sharp.UI
             bool? isBounceEnabled)
             where T : Sharp.UI.ICarouselView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
-            if (isBounceEnabled != null) mauiObject.IsBounceEnabled = (bool)isBounceEnabled;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
+            var mauiValue = MauiWrapper.Value<bool>(isBounceEnabled);
+            if (isBounceEnabled != null) mauiObject.IsBounceEnabled = mauiValue;
             return obj;
         }
         
@@ -121,8 +138,9 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.ICarouselView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
-            if (isBounceEnabled != null) mauiObject.IsBounceEnabled = (bool)isBounceEnabled;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
+            var mauiValue = MauiWrapper.Value<bool>(isBounceEnabled);
+            if (isBounceEnabled != null) mauiObject.IsBounceEnabled = mauiValue;
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.CarouselView.IsBounceEnabledProperty));
             if (def.ValueIsSet()) mauiObject.IsBounceEnabled = def.GetValue();
             def.BindProperty();
@@ -133,7 +151,7 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.ICarouselView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.CarouselView.IsBounceEnabledProperty));
             if (def.ValueIsSet()) mauiObject.IsBounceEnabled = def.GetValue();
             def.BindProperty();
@@ -144,8 +162,9 @@ namespace Sharp.UI
             bool? isSwipeEnabled)
             where T : Sharp.UI.ICarouselView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
-            if (isSwipeEnabled != null) mauiObject.IsSwipeEnabled = (bool)isSwipeEnabled;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
+            var mauiValue = MauiWrapper.Value<bool>(isSwipeEnabled);
+            if (isSwipeEnabled != null) mauiObject.IsSwipeEnabled = mauiValue;
             return obj;
         }
         
@@ -154,8 +173,9 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.ICarouselView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
-            if (isSwipeEnabled != null) mauiObject.IsSwipeEnabled = (bool)isSwipeEnabled;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
+            var mauiValue = MauiWrapper.Value<bool>(isSwipeEnabled);
+            if (isSwipeEnabled != null) mauiObject.IsSwipeEnabled = mauiValue;
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.CarouselView.IsSwipeEnabledProperty));
             if (def.ValueIsSet()) mauiObject.IsSwipeEnabled = def.GetValue();
             def.BindProperty();
@@ -166,7 +186,7 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.ICarouselView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.CarouselView.IsSwipeEnabledProperty));
             if (def.ValueIsSet()) mauiObject.IsSwipeEnabled = def.GetValue();
             def.BindProperty();
@@ -177,8 +197,9 @@ namespace Sharp.UI
             bool? isScrollAnimated)
             where T : Sharp.UI.ICarouselView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
-            if (isScrollAnimated != null) mauiObject.IsScrollAnimated = (bool)isScrollAnimated;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
+            var mauiValue = MauiWrapper.Value<bool>(isScrollAnimated);
+            if (isScrollAnimated != null) mauiObject.IsScrollAnimated = mauiValue;
             return obj;
         }
         
@@ -187,8 +208,9 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.ICarouselView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
-            if (isScrollAnimated != null) mauiObject.IsScrollAnimated = (bool)isScrollAnimated;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
+            var mauiValue = MauiWrapper.Value<bool>(isScrollAnimated);
+            if (isScrollAnimated != null) mauiObject.IsScrollAnimated = mauiValue;
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.CarouselView.IsScrollAnimatedProperty));
             if (def.ValueIsSet()) mauiObject.IsScrollAnimated = def.GetValue();
             def.BindProperty();
@@ -199,7 +221,7 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.ICarouselView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.CarouselView.IsScrollAnimatedProperty));
             if (def.ValueIsSet()) mauiObject.IsScrollAnimated = def.GetValue();
             def.BindProperty();
@@ -210,8 +232,9 @@ namespace Sharp.UI
             object? currentItem)
             where T : Sharp.UI.ICarouselView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
-            if (currentItem != null) mauiObject.CurrentItem = (object)currentItem;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
+            var mauiValue = MauiWrapper.Value<object>(currentItem);
+            if (currentItem != null) mauiObject.CurrentItem = mauiValue;
             return obj;
         }
         
@@ -220,8 +243,9 @@ namespace Sharp.UI
             System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.ICarouselView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
-            if (currentItem != null) mauiObject.CurrentItem = (object)currentItem;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
+            var mauiValue = MauiWrapper.Value<object>(currentItem);
+            if (currentItem != null) mauiObject.CurrentItem = mauiValue;
             var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.CarouselView.CurrentItemProperty));
             if (def.ValueIsSet()) mauiObject.CurrentItem = def.GetValue();
             def.BindProperty();
@@ -232,7 +256,7 @@ namespace Sharp.UI
             System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.ICarouselView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
             var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.CarouselView.CurrentItemProperty));
             if (def.ValueIsSet()) mauiObject.CurrentItem = def.GetValue();
             def.BindProperty();
@@ -243,8 +267,9 @@ namespace Sharp.UI
             System.Windows.Input.ICommand? currentItemChangedCommand)
             where T : Sharp.UI.ICarouselView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
-            if (currentItemChangedCommand != null) mauiObject.CurrentItemChangedCommand = (System.Windows.Input.ICommand)currentItemChangedCommand;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
+            var mauiValue = MauiWrapper.Value<System.Windows.Input.ICommand>(currentItemChangedCommand);
+            if (currentItemChangedCommand != null) mauiObject.CurrentItemChangedCommand = mauiValue;
             return obj;
         }
         
@@ -253,8 +278,9 @@ namespace Sharp.UI
             System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.ICarouselView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
-            if (currentItemChangedCommand != null) mauiObject.CurrentItemChangedCommand = (System.Windows.Input.ICommand)currentItemChangedCommand;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
+            var mauiValue = MauiWrapper.Value<System.Windows.Input.ICommand>(currentItemChangedCommand);
+            if (currentItemChangedCommand != null) mauiObject.CurrentItemChangedCommand = mauiValue;
             var def = definition(new BindableDef<System.Windows.Input.ICommand>(mauiObject, Microsoft.Maui.Controls.CarouselView.CurrentItemChangedCommandProperty));
             if (def.ValueIsSet()) mauiObject.CurrentItemChangedCommand = def.GetValue();
             def.BindProperty();
@@ -265,7 +291,7 @@ namespace Sharp.UI
             System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.ICarouselView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
             var def = definition(new BindableDef<System.Windows.Input.ICommand>(mauiObject, Microsoft.Maui.Controls.CarouselView.CurrentItemChangedCommandProperty));
             if (def.ValueIsSet()) mauiObject.CurrentItemChangedCommand = def.GetValue();
             def.BindProperty();
@@ -276,8 +302,9 @@ namespace Sharp.UI
             object? currentItemChangedCommandParameter)
             where T : Sharp.UI.ICarouselView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
-            if (currentItemChangedCommandParameter != null) mauiObject.CurrentItemChangedCommandParameter = (object)currentItemChangedCommandParameter;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
+            var mauiValue = MauiWrapper.Value<object>(currentItemChangedCommandParameter);
+            if (currentItemChangedCommandParameter != null) mauiObject.CurrentItemChangedCommandParameter = mauiValue;
             return obj;
         }
         
@@ -286,8 +313,9 @@ namespace Sharp.UI
             System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.ICarouselView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
-            if (currentItemChangedCommandParameter != null) mauiObject.CurrentItemChangedCommandParameter = (object)currentItemChangedCommandParameter;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
+            var mauiValue = MauiWrapper.Value<object>(currentItemChangedCommandParameter);
+            if (currentItemChangedCommandParameter != null) mauiObject.CurrentItemChangedCommandParameter = mauiValue;
             var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.CarouselView.CurrentItemChangedCommandParameterProperty));
             if (def.ValueIsSet()) mauiObject.CurrentItemChangedCommandParameter = def.GetValue();
             def.BindProperty();
@@ -298,7 +326,7 @@ namespace Sharp.UI
             System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.ICarouselView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
             var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.CarouselView.CurrentItemChangedCommandParameterProperty));
             if (def.ValueIsSet()) mauiObject.CurrentItemChangedCommandParameter = def.GetValue();
             def.BindProperty();
@@ -309,8 +337,9 @@ namespace Sharp.UI
             int? position)
             where T : Sharp.UI.ICarouselView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
-            if (position != null) mauiObject.Position = (int)position;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
+            var mauiValue = MauiWrapper.Value<int>(position);
+            if (position != null) mauiObject.Position = mauiValue;
             return obj;
         }
         
@@ -319,8 +348,9 @@ namespace Sharp.UI
             System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.ICarouselView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
-            if (position != null) mauiObject.Position = (int)position;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
+            var mauiValue = MauiWrapper.Value<int>(position);
+            if (position != null) mauiObject.Position = mauiValue;
             var def = definition(new BindableDef<int>(mauiObject, Microsoft.Maui.Controls.CarouselView.PositionProperty));
             if (def.ValueIsSet()) mauiObject.Position = def.GetValue();
             def.BindProperty();
@@ -331,7 +361,7 @@ namespace Sharp.UI
             System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.ICarouselView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
             var def = definition(new BindableDef<int>(mauiObject, Microsoft.Maui.Controls.CarouselView.PositionProperty));
             if (def.ValueIsSet()) mauiObject.Position = def.GetValue();
             def.BindProperty();
@@ -342,8 +372,9 @@ namespace Sharp.UI
             System.Windows.Input.ICommand? positionChangedCommand)
             where T : Sharp.UI.ICarouselView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
-            if (positionChangedCommand != null) mauiObject.PositionChangedCommand = (System.Windows.Input.ICommand)positionChangedCommand;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
+            var mauiValue = MauiWrapper.Value<System.Windows.Input.ICommand>(positionChangedCommand);
+            if (positionChangedCommand != null) mauiObject.PositionChangedCommand = mauiValue;
             return obj;
         }
         
@@ -352,8 +383,9 @@ namespace Sharp.UI
             System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.ICarouselView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
-            if (positionChangedCommand != null) mauiObject.PositionChangedCommand = (System.Windows.Input.ICommand)positionChangedCommand;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
+            var mauiValue = MauiWrapper.Value<System.Windows.Input.ICommand>(positionChangedCommand);
+            if (positionChangedCommand != null) mauiObject.PositionChangedCommand = mauiValue;
             var def = definition(new BindableDef<System.Windows.Input.ICommand>(mauiObject, Microsoft.Maui.Controls.CarouselView.PositionChangedCommandProperty));
             if (def.ValueIsSet()) mauiObject.PositionChangedCommand = def.GetValue();
             def.BindProperty();
@@ -364,7 +396,7 @@ namespace Sharp.UI
             System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.ICarouselView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
             var def = definition(new BindableDef<System.Windows.Input.ICommand>(mauiObject, Microsoft.Maui.Controls.CarouselView.PositionChangedCommandProperty));
             if (def.ValueIsSet()) mauiObject.PositionChangedCommand = def.GetValue();
             def.BindProperty();
@@ -375,8 +407,9 @@ namespace Sharp.UI
             object? positionChangedCommandParameter)
             where T : Sharp.UI.ICarouselView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
-            if (positionChangedCommandParameter != null) mauiObject.PositionChangedCommandParameter = (object)positionChangedCommandParameter;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
+            var mauiValue = MauiWrapper.Value<object>(positionChangedCommandParameter);
+            if (positionChangedCommandParameter != null) mauiObject.PositionChangedCommandParameter = mauiValue;
             return obj;
         }
         
@@ -385,8 +418,9 @@ namespace Sharp.UI
             System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.ICarouselView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
-            if (positionChangedCommandParameter != null) mauiObject.PositionChangedCommandParameter = (object)positionChangedCommandParameter;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
+            var mauiValue = MauiWrapper.Value<object>(positionChangedCommandParameter);
+            if (positionChangedCommandParameter != null) mauiObject.PositionChangedCommandParameter = mauiValue;
             var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.CarouselView.PositionChangedCommandParameterProperty));
             if (def.ValueIsSet()) mauiObject.PositionChangedCommandParameter = def.GetValue();
             def.BindProperty();
@@ -397,7 +431,7 @@ namespace Sharp.UI
             System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.ICarouselView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
             var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.CarouselView.PositionChangedCommandParameterProperty));
             if (def.ValueIsSet()) mauiObject.PositionChangedCommandParameter = def.GetValue();
             def.BindProperty();
@@ -408,8 +442,9 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.LinearItemsLayout? itemsLayout)
             where T : Sharp.UI.ICarouselView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
-            if (itemsLayout != null) mauiObject.ItemsLayout = (Microsoft.Maui.Controls.LinearItemsLayout)itemsLayout;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.LinearItemsLayout>(itemsLayout);
+            if (itemsLayout != null) mauiObject.ItemsLayout = mauiValue;
             return obj;
         }
         
@@ -418,8 +453,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.LinearItemsLayout>, BindableDef<Microsoft.Maui.Controls.LinearItemsLayout>> definition)
             where T : Sharp.UI.ICarouselView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
-            if (itemsLayout != null) mauiObject.ItemsLayout = (Microsoft.Maui.Controls.LinearItemsLayout)itemsLayout;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.LinearItemsLayout>(itemsLayout);
+            if (itemsLayout != null) mauiObject.ItemsLayout = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.LinearItemsLayout>(mauiObject, Microsoft.Maui.Controls.CarouselView.ItemsLayoutProperty));
             if (def.ValueIsSet()) mauiObject.ItemsLayout = def.GetValue();
             def.BindProperty();
@@ -430,7 +466,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.LinearItemsLayout>, BindableDef<Microsoft.Maui.Controls.LinearItemsLayout>> definition)
             where T : Sharp.UI.ICarouselView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.Controls.LinearItemsLayout>(mauiObject, Microsoft.Maui.Controls.CarouselView.ItemsLayoutProperty));
             if (def.ValueIsSet()) mauiObject.ItemsLayout = def.GetValue();
             def.BindProperty();
@@ -441,8 +477,9 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.IndicatorView? indicatorView)
             where T : Sharp.UI.ICarouselView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
-            if (indicatorView != null) mauiObject.IndicatorView = (Microsoft.Maui.Controls.IndicatorView)indicatorView;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(indicatorView);
+            if (indicatorView != null) mauiObject.IndicatorView = mauiValue;
             return obj;
         }
         
@@ -451,8 +488,9 @@ namespace Sharp.UI
             System.Func<ValueDef<Microsoft.Maui.Controls.IndicatorView>, ValueDef<Microsoft.Maui.Controls.IndicatorView>> definition)
             where T : Sharp.UI.ICarouselView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
-            if (indicatorView != null) mauiObject.IndicatorView = (Microsoft.Maui.Controls.IndicatorView)indicatorView;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(indicatorView);
+            if (indicatorView != null) mauiObject.IndicatorView = mauiValue;
             var def = definition(new ValueDef<Microsoft.Maui.Controls.IndicatorView>());
             if (def.ValueIsSet()) mauiObject.IndicatorView = def.GetValue();
             return obj;
@@ -462,7 +500,7 @@ namespace Sharp.UI
             System.Func<ValueDef<Microsoft.Maui.Controls.IndicatorView>, ValueDef<Microsoft.Maui.Controls.IndicatorView>> definition)
             where T : Sharp.UI.ICarouselView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
             var def = definition(new ValueDef<Microsoft.Maui.Controls.IndicatorView>());
             if (def.ValueIsSet()) mauiObject.IndicatorView = def.GetValue();
             return obj;
@@ -472,8 +510,9 @@ namespace Sharp.UI
             bool? isScrolling)
             where T : Sharp.UI.ICarouselView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
-            if (isScrolling != null) mauiObject.IsScrolling = (bool)isScrolling;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
+            var mauiValue = MauiWrapper.Value<bool>(isScrolling);
+            if (isScrolling != null) mauiObject.IsScrolling = mauiValue;
             return obj;
         }
         
@@ -482,8 +521,9 @@ namespace Sharp.UI
             System.Func<ValueDef<bool>, ValueDef<bool>> definition)
             where T : Sharp.UI.ICarouselView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
-            if (isScrolling != null) mauiObject.IsScrolling = (bool)isScrolling;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
+            var mauiValue = MauiWrapper.Value<bool>(isScrolling);
+            if (isScrolling != null) mauiObject.IsScrolling = mauiValue;
             var def = definition(new ValueDef<bool>());
             if (def.ValueIsSet()) mauiObject.IsScrolling = def.GetValue();
             return obj;
@@ -493,7 +533,7 @@ namespace Sharp.UI
             System.Func<ValueDef<bool>, ValueDef<bool>> definition)
             where T : Sharp.UI.ICarouselView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
             var def = definition(new ValueDef<bool>());
             if (def.ValueIsSet()) mauiObject.IsScrolling = def.GetValue();
             return obj;
@@ -502,7 +542,7 @@ namespace Sharp.UI
         public static T OnCurrentItemChanged<T>(this T obj, OnEventAction<T, Microsoft.Maui.Controls.CurrentItemChangedEventArgs> action)
             where T : Sharp.UI.ICarouselView
         {            
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
             mauiObject.CurrentItemChanged += (o, arg) => action(obj, arg);
             return obj;
         }
@@ -510,7 +550,7 @@ namespace Sharp.UI
         public static T OnPositionChanged<T>(this T obj, OnEventAction<T, Microsoft.Maui.Controls.PositionChangedEventArgs> action)
             where T : Sharp.UI.ICarouselView
         {            
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.CarouselView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
             mauiObject.PositionChanged += (o, arg) => action(obj, arg);
             return obj;
         }

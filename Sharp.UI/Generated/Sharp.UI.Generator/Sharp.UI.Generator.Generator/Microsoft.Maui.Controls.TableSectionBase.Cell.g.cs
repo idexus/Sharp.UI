@@ -12,7 +12,7 @@ namespace Sharp.UI
         public static T OnCollectionChanged<T>(this T obj, OnEventAction<T, System.Collections.Specialized.NotifyCollectionChangedEventArgs> action)
             where T : Sharp.UI.ITableSectionBaseCell
         {            
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.TableSectionBase<Microsoft.Maui.Controls.Cell>>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TableSectionBase<Microsoft.Maui.Controls.Cell>>(obj);
             mauiObject.CollectionChanged += (o, arg) => action(obj, arg);
             return obj;
         }

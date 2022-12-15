@@ -13,8 +13,9 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.EditorAutoSizeOption? autoSize)
             where T : Sharp.UI.IEditor
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Editor>(obj);
-            if (autoSize != null) mauiObject.AutoSize = (Microsoft.Maui.Controls.EditorAutoSizeOption)autoSize;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Editor>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.EditorAutoSizeOption>(autoSize);
+            if (autoSize != null) mauiObject.AutoSize = mauiValue;
             return obj;
         }
         
@@ -23,8 +24,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.EditorAutoSizeOption>, BindableDef<Microsoft.Maui.Controls.EditorAutoSizeOption>> definition)
             where T : Sharp.UI.IEditor
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Editor>(obj);
-            if (autoSize != null) mauiObject.AutoSize = (Microsoft.Maui.Controls.EditorAutoSizeOption)autoSize;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Editor>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.EditorAutoSizeOption>(autoSize);
+            if (autoSize != null) mauiObject.AutoSize = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.EditorAutoSizeOption>(mauiObject, Microsoft.Maui.Controls.Editor.AutoSizeProperty));
             if (def.ValueIsSet()) mauiObject.AutoSize = def.GetValue();
             def.BindProperty();
@@ -35,7 +37,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.EditorAutoSizeOption>, BindableDef<Microsoft.Maui.Controls.EditorAutoSizeOption>> definition)
             where T : Sharp.UI.IEditor
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Editor>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Editor>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.Controls.EditorAutoSizeOption>(mauiObject, Microsoft.Maui.Controls.Editor.AutoSizeProperty));
             if (def.ValueIsSet()) mauiObject.AutoSize = def.GetValue();
             def.BindProperty();
@@ -46,8 +48,9 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.FontAttributes? fontAttributes)
             where T : Sharp.UI.IEditor
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Editor>(obj);
-            if (fontAttributes != null) mauiObject.FontAttributes = (Microsoft.Maui.Controls.FontAttributes)fontAttributes;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Editor>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.FontAttributes>(fontAttributes);
+            if (fontAttributes != null) mauiObject.FontAttributes = mauiValue;
             return obj;
         }
         
@@ -56,8 +59,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.FontAttributes>, BindableDef<Microsoft.Maui.Controls.FontAttributes>> definition)
             where T : Sharp.UI.IEditor
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Editor>(obj);
-            if (fontAttributes != null) mauiObject.FontAttributes = (Microsoft.Maui.Controls.FontAttributes)fontAttributes;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Editor>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.FontAttributes>(fontAttributes);
+            if (fontAttributes != null) mauiObject.FontAttributes = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.FontAttributes>(mauiObject, Microsoft.Maui.Controls.Editor.FontAttributesProperty));
             if (def.ValueIsSet()) mauiObject.FontAttributes = def.GetValue();
             def.BindProperty();
@@ -68,7 +72,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.FontAttributes>, BindableDef<Microsoft.Maui.Controls.FontAttributes>> definition)
             where T : Sharp.UI.IEditor
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Editor>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Editor>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.Controls.FontAttributes>(mauiObject, Microsoft.Maui.Controls.Editor.FontAttributesProperty));
             if (def.ValueIsSet()) mauiObject.FontAttributes = def.GetValue();
             def.BindProperty();
@@ -79,8 +83,9 @@ namespace Sharp.UI
             bool? isTextPredictionEnabled)
             where T : Sharp.UI.IEditor
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Editor>(obj);
-            if (isTextPredictionEnabled != null) mauiObject.IsTextPredictionEnabled = (bool)isTextPredictionEnabled;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Editor>(obj);
+            var mauiValue = MauiWrapper.Value<bool>(isTextPredictionEnabled);
+            if (isTextPredictionEnabled != null) mauiObject.IsTextPredictionEnabled = mauiValue;
             return obj;
         }
         
@@ -89,8 +94,9 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IEditor
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Editor>(obj);
-            if (isTextPredictionEnabled != null) mauiObject.IsTextPredictionEnabled = (bool)isTextPredictionEnabled;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Editor>(obj);
+            var mauiValue = MauiWrapper.Value<bool>(isTextPredictionEnabled);
+            if (isTextPredictionEnabled != null) mauiObject.IsTextPredictionEnabled = mauiValue;
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.Editor.IsTextPredictionEnabledProperty));
             if (def.ValueIsSet()) mauiObject.IsTextPredictionEnabled = def.GetValue();
             def.BindProperty();
@@ -101,7 +107,7 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IEditor
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Editor>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Editor>(obj);
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.Editor.IsTextPredictionEnabledProperty));
             if (def.ValueIsSet()) mauiObject.IsTextPredictionEnabled = def.GetValue();
             def.BindProperty();
@@ -112,8 +118,9 @@ namespace Sharp.UI
             int? cursorPosition)
             where T : Sharp.UI.IEditor
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Editor>(obj);
-            if (cursorPosition != null) mauiObject.CursorPosition = (int)cursorPosition;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Editor>(obj);
+            var mauiValue = MauiWrapper.Value<int>(cursorPosition);
+            if (cursorPosition != null) mauiObject.CursorPosition = mauiValue;
             return obj;
         }
         
@@ -122,8 +129,9 @@ namespace Sharp.UI
             System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.IEditor
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Editor>(obj);
-            if (cursorPosition != null) mauiObject.CursorPosition = (int)cursorPosition;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Editor>(obj);
+            var mauiValue = MauiWrapper.Value<int>(cursorPosition);
+            if (cursorPosition != null) mauiObject.CursorPosition = mauiValue;
             var def = definition(new BindableDef<int>(mauiObject, Microsoft.Maui.Controls.Editor.CursorPositionProperty));
             if (def.ValueIsSet()) mauiObject.CursorPosition = def.GetValue();
             def.BindProperty();
@@ -134,7 +142,7 @@ namespace Sharp.UI
             System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.IEditor
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Editor>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Editor>(obj);
             var def = definition(new BindableDef<int>(mauiObject, Microsoft.Maui.Controls.Editor.CursorPositionProperty));
             if (def.ValueIsSet()) mauiObject.CursorPosition = def.GetValue();
             def.BindProperty();
@@ -145,8 +153,9 @@ namespace Sharp.UI
             int? selectionLength)
             where T : Sharp.UI.IEditor
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Editor>(obj);
-            if (selectionLength != null) mauiObject.SelectionLength = (int)selectionLength;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Editor>(obj);
+            var mauiValue = MauiWrapper.Value<int>(selectionLength);
+            if (selectionLength != null) mauiObject.SelectionLength = mauiValue;
             return obj;
         }
         
@@ -155,8 +164,9 @@ namespace Sharp.UI
             System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.IEditor
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Editor>(obj);
-            if (selectionLength != null) mauiObject.SelectionLength = (int)selectionLength;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Editor>(obj);
+            var mauiValue = MauiWrapper.Value<int>(selectionLength);
+            if (selectionLength != null) mauiObject.SelectionLength = mauiValue;
             var def = definition(new BindableDef<int>(mauiObject, Microsoft.Maui.Controls.Editor.SelectionLengthProperty));
             if (def.ValueIsSet()) mauiObject.SelectionLength = def.GetValue();
             def.BindProperty();
@@ -167,7 +177,7 @@ namespace Sharp.UI
             System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.IEditor
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Editor>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Editor>(obj);
             var def = definition(new BindableDef<int>(mauiObject, Microsoft.Maui.Controls.Editor.SelectionLengthProperty));
             if (def.ValueIsSet()) mauiObject.SelectionLength = def.GetValue();
             def.BindProperty();
@@ -178,8 +188,9 @@ namespace Sharp.UI
             string? fontFamily)
             where T : Sharp.UI.IEditor
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Editor>(obj);
-            if (fontFamily != null) mauiObject.FontFamily = (string)fontFamily;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Editor>(obj);
+            var mauiValue = MauiWrapper.Value<string>(fontFamily);
+            if (fontFamily != null) mauiObject.FontFamily = mauiValue;
             return obj;
         }
         
@@ -188,8 +199,9 @@ namespace Sharp.UI
             System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.IEditor
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Editor>(obj);
-            if (fontFamily != null) mauiObject.FontFamily = (string)fontFamily;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Editor>(obj);
+            var mauiValue = MauiWrapper.Value<string>(fontFamily);
+            if (fontFamily != null) mauiObject.FontFamily = mauiValue;
             var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.Editor.FontFamilyProperty));
             if (def.ValueIsSet()) mauiObject.FontFamily = def.GetValue();
             def.BindProperty();
@@ -200,7 +212,7 @@ namespace Sharp.UI
             System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.IEditor
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Editor>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Editor>(obj);
             var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.Editor.FontFamilyProperty));
             if (def.ValueIsSet()) mauiObject.FontFamily = def.GetValue();
             def.BindProperty();
@@ -211,8 +223,9 @@ namespace Sharp.UI
             double? fontSize)
             where T : Sharp.UI.IEditor
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Editor>(obj);
-            if (fontSize != null) mauiObject.FontSize = (double)fontSize;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Editor>(obj);
+            var mauiValue = MauiWrapper.Value<double>(fontSize);
+            if (fontSize != null) mauiObject.FontSize = mauiValue;
             return obj;
         }
         
@@ -221,8 +234,9 @@ namespace Sharp.UI
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IEditor
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Editor>(obj);
-            if (fontSize != null) mauiObject.FontSize = (double)fontSize;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Editor>(obj);
+            var mauiValue = MauiWrapper.Value<double>(fontSize);
+            if (fontSize != null) mauiObject.FontSize = mauiValue;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Editor.FontSizeProperty));
             if (def.ValueIsSet()) mauiObject.FontSize = def.GetValue();
             def.BindProperty();
@@ -233,7 +247,7 @@ namespace Sharp.UI
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IEditor
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Editor>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Editor>(obj);
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Editor.FontSizeProperty));
             if (def.ValueIsSet()) mauiObject.FontSize = def.GetValue();
             def.BindProperty();
@@ -244,8 +258,9 @@ namespace Sharp.UI
             Microsoft.Maui.TextAlignment? horizontalTextAlignment)
             where T : Sharp.UI.IEditor
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Editor>(obj);
-            if (horizontalTextAlignment != null) mauiObject.HorizontalTextAlignment = (Microsoft.Maui.TextAlignment)horizontalTextAlignment;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Editor>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.TextAlignment>(horizontalTextAlignment);
+            if (horizontalTextAlignment != null) mauiObject.HorizontalTextAlignment = mauiValue;
             return obj;
         }
         
@@ -254,8 +269,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.TextAlignment>, BindableDef<Microsoft.Maui.TextAlignment>> definition)
             where T : Sharp.UI.IEditor
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Editor>(obj);
-            if (horizontalTextAlignment != null) mauiObject.HorizontalTextAlignment = (Microsoft.Maui.TextAlignment)horizontalTextAlignment;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Editor>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.TextAlignment>(horizontalTextAlignment);
+            if (horizontalTextAlignment != null) mauiObject.HorizontalTextAlignment = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.TextAlignment>(mauiObject, Microsoft.Maui.Controls.Editor.HorizontalTextAlignmentProperty));
             if (def.ValueIsSet()) mauiObject.HorizontalTextAlignment = def.GetValue();
             def.BindProperty();
@@ -266,7 +282,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.TextAlignment>, BindableDef<Microsoft.Maui.TextAlignment>> definition)
             where T : Sharp.UI.IEditor
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Editor>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Editor>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.TextAlignment>(mauiObject, Microsoft.Maui.Controls.Editor.HorizontalTextAlignmentProperty));
             if (def.ValueIsSet()) mauiObject.HorizontalTextAlignment = def.GetValue();
             def.BindProperty();
@@ -277,8 +293,9 @@ namespace Sharp.UI
             Microsoft.Maui.TextAlignment? verticalTextAlignment)
             where T : Sharp.UI.IEditor
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Editor>(obj);
-            if (verticalTextAlignment != null) mauiObject.VerticalTextAlignment = (Microsoft.Maui.TextAlignment)verticalTextAlignment;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Editor>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.TextAlignment>(verticalTextAlignment);
+            if (verticalTextAlignment != null) mauiObject.VerticalTextAlignment = mauiValue;
             return obj;
         }
         
@@ -287,8 +304,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.TextAlignment>, BindableDef<Microsoft.Maui.TextAlignment>> definition)
             where T : Sharp.UI.IEditor
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Editor>(obj);
-            if (verticalTextAlignment != null) mauiObject.VerticalTextAlignment = (Microsoft.Maui.TextAlignment)verticalTextAlignment;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Editor>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.TextAlignment>(verticalTextAlignment);
+            if (verticalTextAlignment != null) mauiObject.VerticalTextAlignment = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.TextAlignment>(mauiObject, Microsoft.Maui.Controls.Editor.VerticalTextAlignmentProperty));
             if (def.ValueIsSet()) mauiObject.VerticalTextAlignment = def.GetValue();
             def.BindProperty();
@@ -299,7 +317,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.TextAlignment>, BindableDef<Microsoft.Maui.TextAlignment>> definition)
             where T : Sharp.UI.IEditor
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Editor>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Editor>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.TextAlignment>(mauiObject, Microsoft.Maui.Controls.Editor.VerticalTextAlignmentProperty));
             if (def.ValueIsSet()) mauiObject.VerticalTextAlignment = def.GetValue();
             def.BindProperty();
@@ -310,8 +328,9 @@ namespace Sharp.UI
             bool? fontAutoScalingEnabled)
             where T : Sharp.UI.IEditor
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Editor>(obj);
-            if (fontAutoScalingEnabled != null) mauiObject.FontAutoScalingEnabled = (bool)fontAutoScalingEnabled;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Editor>(obj);
+            var mauiValue = MauiWrapper.Value<bool>(fontAutoScalingEnabled);
+            if (fontAutoScalingEnabled != null) mauiObject.FontAutoScalingEnabled = mauiValue;
             return obj;
         }
         
@@ -320,8 +339,9 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IEditor
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Editor>(obj);
-            if (fontAutoScalingEnabled != null) mauiObject.FontAutoScalingEnabled = (bool)fontAutoScalingEnabled;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Editor>(obj);
+            var mauiValue = MauiWrapper.Value<bool>(fontAutoScalingEnabled);
+            if (fontAutoScalingEnabled != null) mauiObject.FontAutoScalingEnabled = mauiValue;
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.Editor.FontAutoScalingEnabledProperty));
             if (def.ValueIsSet()) mauiObject.FontAutoScalingEnabled = def.GetValue();
             def.BindProperty();
@@ -332,7 +352,7 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IEditor
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Editor>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Editor>(obj);
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.Editor.FontAutoScalingEnabledProperty));
             if (def.ValueIsSet()) mauiObject.FontAutoScalingEnabled = def.GetValue();
             def.BindProperty();
@@ -342,7 +362,7 @@ namespace Sharp.UI
         public static T OnCompleted<T>(this T obj, OnEventAction<T> action)
             where T : Sharp.UI.IEditor
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Editor>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Editor>(obj);
             mauiObject.Completed += (o, arg) => action(obj);
             return obj;
         }

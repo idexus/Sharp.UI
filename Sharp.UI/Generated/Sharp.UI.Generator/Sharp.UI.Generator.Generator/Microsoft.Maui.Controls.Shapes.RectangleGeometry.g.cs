@@ -13,8 +13,9 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Rect? rect)
             where T : Sharp.UI.IRectangleGeometry
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.RectangleGeometry>(obj);
-            if (rect != null) mauiObject.Rect = (Microsoft.Maui.Graphics.Rect)rect;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.RectangleGeometry>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Rect>(rect);
+            if (rect != null) mauiObject.Rect = mauiValue;
             return obj;
         }
         
@@ -23,8 +24,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.Rect>, BindableDef<Microsoft.Maui.Graphics.Rect>> definition)
             where T : Sharp.UI.IRectangleGeometry
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.RectangleGeometry>(obj);
-            if (rect != null) mauiObject.Rect = (Microsoft.Maui.Graphics.Rect)rect;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.RectangleGeometry>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Rect>(rect);
+            if (rect != null) mauiObject.Rect = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Rect>(mauiObject, Microsoft.Maui.Controls.Shapes.RectangleGeometry.RectProperty));
             if (def.ValueIsSet()) mauiObject.Rect = def.GetValue();
             def.BindProperty();
@@ -35,7 +37,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.Rect>, BindableDef<Microsoft.Maui.Graphics.Rect>> definition)
             where T : Sharp.UI.IRectangleGeometry
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.RectangleGeometry>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.RectangleGeometry>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Rect>(mauiObject, Microsoft.Maui.Controls.Shapes.RectangleGeometry.RectProperty));
             if (def.ValueIsSet()) mauiObject.Rect = def.GetValue();
             def.BindProperty();

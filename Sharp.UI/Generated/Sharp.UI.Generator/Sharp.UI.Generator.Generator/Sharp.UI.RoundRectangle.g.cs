@@ -239,7 +239,7 @@ namespace Sharp.UI
             get => MauiObject.BindingContext;
             set
             {
-                var mauiObject = MauiWrapper.GetObject<object>(value);
+                var mauiObject = MauiWrapper.Value<object>(value);
                 MauiObject.BindingContext = mauiObject;
             }
         }

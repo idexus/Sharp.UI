@@ -13,8 +13,9 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.StackOrientation? orientation)
             where T : Sharp.UI.IStackLayout
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StackLayout>(obj);
-            if (orientation != null) mauiObject.Orientation = (Microsoft.Maui.Controls.StackOrientation)orientation;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StackLayout>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.StackOrientation>(orientation);
+            if (orientation != null) mauiObject.Orientation = mauiValue;
             return obj;
         }
         
@@ -23,8 +24,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.StackOrientation>, BindableDef<Microsoft.Maui.Controls.StackOrientation>> definition)
             where T : Sharp.UI.IStackLayout
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StackLayout>(obj);
-            if (orientation != null) mauiObject.Orientation = (Microsoft.Maui.Controls.StackOrientation)orientation;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StackLayout>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.StackOrientation>(orientation);
+            if (orientation != null) mauiObject.Orientation = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.StackOrientation>(mauiObject, Microsoft.Maui.Controls.StackLayout.OrientationProperty));
             if (def.ValueIsSet()) mauiObject.Orientation = def.GetValue();
             def.BindProperty();
@@ -35,7 +37,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.StackOrientation>, BindableDef<Microsoft.Maui.Controls.StackOrientation>> definition)
             where T : Sharp.UI.IStackLayout
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.StackLayout>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StackLayout>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.Controls.StackOrientation>(mauiObject, Microsoft.Maui.Controls.StackLayout.OrientationProperty));
             if (def.ValueIsSet()) mauiObject.Orientation = def.GetValue();
             def.BindProperty();

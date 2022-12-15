@@ -13,8 +13,9 @@ namespace Sharp.UI
             System.Collections.IEnumerable? itemsSource)
             where T : Sharp.UI.IItemsViewCell
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>>(obj);
-            if (itemsSource != null) mauiObject.ItemsSource = (System.Collections.IEnumerable)itemsSource;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>>(obj);
+            var mauiValue = MauiWrapper.Value<System.Collections.IEnumerable>(itemsSource);
+            if (itemsSource != null) mauiObject.ItemsSource = mauiValue;
             return obj;
         }
         
@@ -23,8 +24,9 @@ namespace Sharp.UI
             System.Func<BindableDef<System.Collections.IEnumerable>, BindableDef<System.Collections.IEnumerable>> definition)
             where T : Sharp.UI.IItemsViewCell
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>>(obj);
-            if (itemsSource != null) mauiObject.ItemsSource = (System.Collections.IEnumerable)itemsSource;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>>(obj);
+            var mauiValue = MauiWrapper.Value<System.Collections.IEnumerable>(itemsSource);
+            if (itemsSource != null) mauiObject.ItemsSource = mauiValue;
             var def = definition(new BindableDef<System.Collections.IEnumerable>(mauiObject, Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>.ItemsSourceProperty));
             if (def.ValueIsSet()) mauiObject.ItemsSource = def.GetValue();
             def.BindProperty();
@@ -35,7 +37,7 @@ namespace Sharp.UI
             System.Func<BindableDef<System.Collections.IEnumerable>, BindableDef<System.Collections.IEnumerable>> definition)
             where T : Sharp.UI.IItemsViewCell
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>>(obj);
             var def = definition(new BindableDef<System.Collections.IEnumerable>(mauiObject, Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>.ItemsSourceProperty));
             if (def.ValueIsSet()) mauiObject.ItemsSource = def.GetValue();
             def.BindProperty();
@@ -46,8 +48,9 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.DataTemplate? itemTemplate)
             where T : Sharp.UI.IItemsViewCell
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>>(obj);
-            if (itemTemplate != null) mauiObject.ItemTemplate = (Microsoft.Maui.Controls.DataTemplate)itemTemplate;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.DataTemplate>(itemTemplate);
+            if (itemTemplate != null) mauiObject.ItemTemplate = mauiValue;
             return obj;
         }
         
@@ -56,8 +59,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
             where T : Sharp.UI.IItemsViewCell
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>>(obj);
-            if (itemTemplate != null) mauiObject.ItemTemplate = (Microsoft.Maui.Controls.DataTemplate)itemTemplate;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.DataTemplate>(itemTemplate);
+            if (itemTemplate != null) mauiObject.ItemTemplate = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.DataTemplate>(mauiObject, Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>.ItemTemplateProperty));
             if (def.ValueIsSet()) mauiObject.ItemTemplate = def.GetValue();
             def.BindProperty();
@@ -68,7 +72,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
             where T : Sharp.UI.IItemsViewCell
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.Controls.DataTemplate>(mauiObject, Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>.ItemTemplateProperty));
             if (def.ValueIsSet()) mauiObject.ItemTemplate = def.GetValue();
             def.BindProperty();
@@ -77,7 +81,7 @@ namespace Sharp.UI
         
         public static T ItemTemplate<T>(this T obj, System.Func<object> loadTemplate) where T : Sharp.UI.IItemsViewCell
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>>(obj);
             mauiObject.ItemTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
             return obj;
         }

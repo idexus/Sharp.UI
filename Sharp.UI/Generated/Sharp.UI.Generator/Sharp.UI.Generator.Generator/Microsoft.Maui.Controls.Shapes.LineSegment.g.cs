@@ -13,8 +13,9 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Point? point)
             where T : Sharp.UI.ILineSegment
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.LineSegment>(obj);
-            if (point != null) mauiObject.Point = (Microsoft.Maui.Graphics.Point)point;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.LineSegment>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Point>(point);
+            if (point != null) mauiObject.Point = mauiValue;
             return obj;
         }
         
@@ -23,8 +24,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
             where T : Sharp.UI.ILineSegment
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.LineSegment>(obj);
-            if (point != null) mauiObject.Point = (Microsoft.Maui.Graphics.Point)point;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.LineSegment>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Point>(point);
+            if (point != null) mauiObject.Point = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Point>(mauiObject, Microsoft.Maui.Controls.Shapes.LineSegment.PointProperty));
             if (def.ValueIsSet()) mauiObject.Point = def.GetValue();
             def.BindProperty();
@@ -35,7 +37,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
             where T : Sharp.UI.ILineSegment
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.LineSegment>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.LineSegment>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Point>(mauiObject, Microsoft.Maui.Controls.Shapes.LineSegment.PointProperty));
             if (def.ValueIsSet()) mauiObject.Point = def.GetValue();
             def.BindProperty();

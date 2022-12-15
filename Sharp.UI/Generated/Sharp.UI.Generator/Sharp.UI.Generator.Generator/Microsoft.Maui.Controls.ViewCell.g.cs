@@ -13,8 +13,9 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.View? view)
             where T : Sharp.UI.IViewCell
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ViewCell>(obj);
-            if (view != null) mauiObject.View = (Microsoft.Maui.Controls.View)view;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ViewCell>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.View>(view);
+            if (view != null) mauiObject.View = mauiValue;
             return obj;
         }
         
@@ -23,8 +24,9 @@ namespace Sharp.UI
             System.Func<ValueDef<Microsoft.Maui.Controls.View>, ValueDef<Microsoft.Maui.Controls.View>> definition)
             where T : Sharp.UI.IViewCell
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ViewCell>(obj);
-            if (view != null) mauiObject.View = (Microsoft.Maui.Controls.View)view;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ViewCell>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.View>(view);
+            if (view != null) mauiObject.View = mauiValue;
             var def = definition(new ValueDef<Microsoft.Maui.Controls.View>());
             if (def.ValueIsSet()) mauiObject.View = def.GetValue();
             return obj;
@@ -34,7 +36,7 @@ namespace Sharp.UI
             System.Func<ValueDef<Microsoft.Maui.Controls.View>, ValueDef<Microsoft.Maui.Controls.View>> definition)
             where T : Sharp.UI.IViewCell
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ViewCell>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ViewCell>(obj);
             var def = definition(new ValueDef<Microsoft.Maui.Controls.View>());
             if (def.ValueIsSet()) mauiObject.View = def.GetValue();
             return obj;

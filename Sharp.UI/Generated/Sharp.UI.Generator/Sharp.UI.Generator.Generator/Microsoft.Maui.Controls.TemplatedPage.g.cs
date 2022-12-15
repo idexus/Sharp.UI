@@ -13,8 +13,9 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.ControlTemplate? controlTemplate)
             where T : Sharp.UI.ITemplatedPage
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.TemplatedPage>(obj);
-            if (controlTemplate != null) mauiObject.ControlTemplate = (Microsoft.Maui.Controls.ControlTemplate)controlTemplate;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TemplatedPage>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.ControlTemplate>(controlTemplate);
+            if (controlTemplate != null) mauiObject.ControlTemplate = mauiValue;
             return obj;
         }
         
@@ -23,8 +24,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.ControlTemplate>, BindableDef<Microsoft.Maui.Controls.ControlTemplate>> definition)
             where T : Sharp.UI.ITemplatedPage
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.TemplatedPage>(obj);
-            if (controlTemplate != null) mauiObject.ControlTemplate = (Microsoft.Maui.Controls.ControlTemplate)controlTemplate;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TemplatedPage>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.ControlTemplate>(controlTemplate);
+            if (controlTemplate != null) mauiObject.ControlTemplate = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.ControlTemplate>(mauiObject, Microsoft.Maui.Controls.TemplatedPage.ControlTemplateProperty));
             if (def.ValueIsSet()) mauiObject.ControlTemplate = def.GetValue();
             def.BindProperty();
@@ -35,7 +37,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.ControlTemplate>, BindableDef<Microsoft.Maui.Controls.ControlTemplate>> definition)
             where T : Sharp.UI.ITemplatedPage
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.TemplatedPage>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TemplatedPage>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.Controls.ControlTemplate>(mauiObject, Microsoft.Maui.Controls.TemplatedPage.ControlTemplateProperty));
             if (def.ValueIsSet()) mauiObject.ControlTemplate = def.GetValue();
             def.BindProperty();

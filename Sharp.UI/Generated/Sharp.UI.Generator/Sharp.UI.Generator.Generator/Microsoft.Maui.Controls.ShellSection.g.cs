@@ -13,8 +13,9 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.ShellContent? currentItem)
             where T : Sharp.UI.IShellSection
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ShellSection>(obj);
-            if (currentItem != null) mauiObject.CurrentItem = (Microsoft.Maui.Controls.ShellContent)currentItem;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ShellSection>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.ShellContent>(currentItem);
+            if (currentItem != null) mauiObject.CurrentItem = mauiValue;
             return obj;
         }
         
@@ -23,8 +24,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.ShellContent>, BindableDef<Microsoft.Maui.Controls.ShellContent>> definition)
             where T : Sharp.UI.IShellSection
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ShellSection>(obj);
-            if (currentItem != null) mauiObject.CurrentItem = (Microsoft.Maui.Controls.ShellContent)currentItem;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ShellSection>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.ShellContent>(currentItem);
+            if (currentItem != null) mauiObject.CurrentItem = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.ShellContent>(mauiObject, Microsoft.Maui.Controls.ShellSection.CurrentItemProperty));
             if (def.ValueIsSet()) mauiObject.CurrentItem = def.GetValue();
             def.BindProperty();
@@ -35,7 +37,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.ShellContent>, BindableDef<Microsoft.Maui.Controls.ShellContent>> definition)
             where T : Sharp.UI.IShellSection
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ShellSection>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ShellSection>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.Controls.ShellContent>(mauiObject, Microsoft.Maui.Controls.ShellSection.CurrentItemProperty));
             if (def.ValueIsSet()) mauiObject.CurrentItem = def.GetValue();
             def.BindProperty();
@@ -46,8 +48,12 @@ namespace Sharp.UI
             System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellContent> items)
             where T : Sharp.UI.IShellSection
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ShellSection>(obj);
-            foreach (var item in items) mauiObject.Items.Add(item);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ShellSection>(obj);
+            foreach (var item in items)
+            {
+                var mauiItem = MauiWrapper.Value<Microsoft.Maui.Controls.ShellContent>(item);
+                mauiObject.Items.Add(mauiItem);
+            }
             return obj;
         }
 
@@ -55,8 +61,12 @@ namespace Sharp.UI
             params Microsoft.Maui.Controls.ShellContent[] items)
             where T : Sharp.UI.IShellSection
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ShellSection>(obj);
-            foreach (var item in items) mauiObject.Items.Add(item);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ShellSection>(obj);
+            foreach (var item in items)
+            {
+                var mauiItem = MauiWrapper.Value<Microsoft.Maui.Controls.ShellContent>(item);
+                mauiObject.Items.Add(mauiItem);
+            }
             return obj;
         }
 
@@ -64,12 +74,16 @@ namespace Sharp.UI
             System.Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellContent>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellContent>>> definition)
             where T : Sharp.UI.IShellSection
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.ShellSection>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ShellSection>(obj);
             var def = definition(new Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellContent>>());
             if (def.ValueIsSet())
             {
                 var items = def.GetValue();
-                foreach (var item in items) mauiObject.Items.Add(item);
+                foreach (var item in items) 
+                {
+                    var mauiItem = MauiWrapper.Value<Microsoft.Maui.Controls.ShellContent>(item);
+                    mauiObject.Items.Add(mauiItem);
+                }
             }
             return obj;
         }

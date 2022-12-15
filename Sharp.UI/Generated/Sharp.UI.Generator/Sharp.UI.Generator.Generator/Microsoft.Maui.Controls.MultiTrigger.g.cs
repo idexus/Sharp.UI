@@ -13,8 +13,12 @@ namespace Sharp.UI
             System.Collections.Generic.IList<Microsoft.Maui.Controls.Condition> conditions)
             where T : Sharp.UI.IMultiTrigger
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.MultiTrigger>(obj);
-            foreach (var item in conditions) mauiObject.Conditions.Add(item);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MultiTrigger>(obj);
+            foreach (var item in conditions)
+            {
+                var mauiItem = MauiWrapper.Value<Microsoft.Maui.Controls.Condition>(item);
+                mauiObject.Conditions.Add(mauiItem);
+            }
             return obj;
         }
 
@@ -22,8 +26,12 @@ namespace Sharp.UI
             params Microsoft.Maui.Controls.Condition[] conditions)
             where T : Sharp.UI.IMultiTrigger
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.MultiTrigger>(obj);
-            foreach (var item in conditions) mauiObject.Conditions.Add(item);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MultiTrigger>(obj);
+            foreach (var item in conditions)
+            {
+                var mauiItem = MauiWrapper.Value<Microsoft.Maui.Controls.Condition>(item);
+                mauiObject.Conditions.Add(mauiItem);
+            }
             return obj;
         }
 
@@ -31,12 +39,16 @@ namespace Sharp.UI
             System.Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Condition>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Condition>>> definition)
             where T : Sharp.UI.IMultiTrigger
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.MultiTrigger>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MultiTrigger>(obj);
             var def = definition(new Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Condition>>());
             if (def.ValueIsSet())
             {
                 var items = def.GetValue();
-                foreach (var item in items) mauiObject.Conditions.Add(item);
+                foreach (var item in items) 
+                {
+                    var mauiItem = MauiWrapper.Value<Microsoft.Maui.Controls.Condition>(item);
+                    mauiObject.Conditions.Add(mauiItem);
+                }
             }
             return obj;
         }
@@ -45,8 +57,12 @@ namespace Sharp.UI
             System.Collections.Generic.IList<Microsoft.Maui.Controls.Setter> setters)
             where T : Sharp.UI.IMultiTrigger
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.MultiTrigger>(obj);
-            foreach (var item in setters) mauiObject.Setters.Add(item);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MultiTrigger>(obj);
+            foreach (var item in setters)
+            {
+                var mauiItem = MauiWrapper.Value<Microsoft.Maui.Controls.Setter>(item);
+                mauiObject.Setters.Add(mauiItem);
+            }
             return obj;
         }
 
@@ -54,8 +70,12 @@ namespace Sharp.UI
             params Microsoft.Maui.Controls.Setter[] setters)
             where T : Sharp.UI.IMultiTrigger
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.MultiTrigger>(obj);
-            foreach (var item in setters) mauiObject.Setters.Add(item);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MultiTrigger>(obj);
+            foreach (var item in setters)
+            {
+                var mauiItem = MauiWrapper.Value<Microsoft.Maui.Controls.Setter>(item);
+                mauiObject.Setters.Add(mauiItem);
+            }
             return obj;
         }
 
@@ -63,12 +83,16 @@ namespace Sharp.UI
             System.Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Setter>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Setter>>> definition)
             where T : Sharp.UI.IMultiTrigger
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.MultiTrigger>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MultiTrigger>(obj);
             var def = definition(new Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Setter>>());
             if (def.ValueIsSet())
             {
                 var items = def.GetValue();
-                foreach (var item in items) mauiObject.Setters.Add(item);
+                foreach (var item in items) 
+                {
+                    var mauiItem = MauiWrapper.Value<Microsoft.Maui.Controls.Setter>(item);
+                    mauiObject.Setters.Add(mauiItem);
+                }
             }
             return obj;
         }

@@ -9,7 +9,7 @@ namespace Sharp.UI
 
     public class MauiWrapper
     {
-        public static T GetObject<T>(object obj)
+        public static T Value<T>(object obj)
         {
             if (obj is ISealedMauiWrapper)
                 return (T)((obj as ISealedMauiWrapper)._maui_RawObject);

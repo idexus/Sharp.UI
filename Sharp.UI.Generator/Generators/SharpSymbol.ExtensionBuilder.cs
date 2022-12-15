@@ -198,7 +198,7 @@ namespace {mainSymbol.ContainingNamespace}
                 propertyTypeName = propertySymbol.Type.ToDisplayString();
                 camelCaseName = Helpers.CamelCase(propertyName);
                 typeTail = propertyTypeName.Contains("?") ? "" : "?";
-                assignmentString = $"{accessedWith}.{propertyName} = ({propertyTypeName}){camelCaseName}";
+                assignmentString = $"{accessedWith}.{propertyName} = mauiValue";
                 assignmentDefString = $"mauiObject.{propertyName} = def.GetValue()";
                 assignmentDataTemplateString = $"mauiObject.{propertyName} = new Microsoft.Maui.Controls.DataTemplate(loadTemplate)";
                 bindablePropertyName = $"{type.ToDisplayString()}.{propertyName}Property";
@@ -212,7 +212,7 @@ namespace {mainSymbol.ContainingNamespace}
                 camelCaseName = Helpers.CamelCase(property.Split(new[] { '.' }).Last());
                 typeTail = "?";
                 bindablePropertyName = $"{property}Property";
-                assignmentString = $"mauiObject.SetValue({bindablePropertyName}, ({propertyTypeName}){camelCaseName})";
+                assignmentString = $"mauiObject.SetValue({bindablePropertyName}, mauiValue)";
                 assignmentDefString = $"mauiObject.SetValue({bindablePropertyName}, def.GetValue())";
                 assignmentDataTemplateString = $"mauiObject.SetValue({bindablePropertyName}, new Microsoft.Maui.Controls.DataTemplate(loadTemplate))";
             }
@@ -287,10 +287,6 @@ namespace {mainSymbol.ContainingNamespace}
                             !ExistInBaseClasses(info.propertyName, getterAndSetter: false))
                         {
                             GenerateExtensionMethod_List(info, typeName);
-
-                            var shortTypeName = typeName.Split('.').Last();
-                            if (SharpBuilder.InterfaceNameList.Contains(shortTypeName))
-                                GenerateExtensionMethod_ListItemSharpInterfaces(info, typeName, $"Sharp.UI.{shortTypeName}");
                         }
                     }
                 }
@@ -305,8 +301,12 @@ namespace {mainSymbol.ContainingNamespace}
             {info.propertyTypeName} {info.camelCaseName})
             where T : {typeConformanceName}
         {{
-            var mauiObject = MauiWrapper.GetObject<{extensionType.ToDisplayString()}>(obj);
-            foreach (var item in {info.camelCaseName}) {info.accessedWith}.{info.propertyName}.Add(item);
+            var mauiObject = MauiWrapper.Value<{extensionType.ToDisplayString()}>(obj);
+            foreach (var item in {info.camelCaseName})
+            {{
+                var mauiItem = MauiWrapper.Value<{typeName}>(item);
+                {info.accessedWith}.{info.propertyName}.Add(mauiItem);
+            }}
             return obj;
         }}
 
@@ -314,8 +314,12 @@ namespace {mainSymbol.ContainingNamespace}
             params {typeName}[] {info.camelCaseName})
             where T : {typeConformanceName}
         {{
-            var mauiObject = MauiWrapper.GetObject<{extensionType.ToDisplayString()}>(obj);
-            foreach (var item in {info.camelCaseName}) {info.accessedWith}.{info.propertyName}.Add(item);
+            var mauiObject = MauiWrapper.Value<{extensionType.ToDisplayString()}>(obj);
+            foreach (var item in {info.camelCaseName})
+            {{
+                var mauiItem = MauiWrapper.Value<{typeName}>(item);
+                {info.accessedWith}.{info.propertyName}.Add(mauiItem);
+            }}
             return obj;
         }}
 
@@ -323,30 +327,17 @@ namespace {mainSymbol.ContainingNamespace}
             System.Func<Def<{info.propertyTypeName}>, Def<{info.propertyTypeName}>> definition)
             where T : {typeConformanceName}
         {{
-            var mauiObject = MauiWrapper.GetObject<{extensionType.ToDisplayString()}>(obj);
+            var mauiObject = MauiWrapper.Value<{extensionType.ToDisplayString()}>(obj);
             var def = definition(new Def<{info.propertyTypeName}>());
             if (def.ValueIsSet())
             {{
                 var items = def.GetValue();
-                foreach (var item in items) {info.accessedWith}.{info.propertyName}.Add(item);
+                foreach (var item in items) 
+                {{
+                    var mauiItem = MauiWrapper.Value<{typeName}>(item);
+                    {info.accessedWith}.{info.propertyName}.Add(mauiItem);
+                }}
             }}
-            return obj;
-        }}
-        ");
-        }
-
-        void GenerateExtensionMethod_ListItemSharpInterfaces(PropertyInfo info, string typeName, string typeOfSharpInterfaceName)
-        {
-            IsExtensionMethodsGenerated = true;
-            builder.Append($@"
-        public static T {info.propertyName}<T, TItem>(this T obj,
-            TItem item)
-            where T : {typeConformanceName}
-            where TItem : {typeOfSharpInterfaceName}
-        {{
-            var mauiObject = MauiWrapper.GetObject<{extensionType.ToDisplayString()}>(obj);
-            var mauiItem = MauiWrapper.GetObject<{typeName}>(item);
-            {info.accessedWith}.{info.propertyName}.Add(mauiItem);
             return obj;
         }}
         ");
@@ -360,7 +351,8 @@ namespace {mainSymbol.ContainingNamespace}
             {info.propertyTypeName}{info.typeTail} {info.camelCaseName})
             where T : {typeConformanceName}
         {{
-            var mauiObject = MauiWrapper.GetObject<{extensionType.ToDisplayString()}>(obj);
+            var mauiObject = MauiWrapper.Value<{extensionType.ToDisplayString()}>(obj);
+            var mauiValue = MauiWrapper.Value<{info.propertyTypeName}>({info.camelCaseName});
             if ({info.camelCaseName} != null) {info.assignmentString};
             return obj;
         }}
@@ -376,7 +368,8 @@ namespace {mainSymbol.ContainingNamespace}
             System.Func<BindableDef<{info.propertyTypeName}>, BindableDef<{info.propertyTypeName}>> definition)
             where T : {typeConformanceName}
         {{
-            var mauiObject = MauiWrapper.GetObject<{extensionType.ToDisplayString()}>(obj);
+            var mauiObject = MauiWrapper.Value<{extensionType.ToDisplayString()}>(obj);
+            var mauiValue = MauiWrapper.Value<{info.propertyTypeName}>({info.camelCaseName});
             if ({info.camelCaseName} != null) {info.assignmentString};
             var def = definition(new BindableDef<{info.propertyTypeName}>(mauiObject, {info.bindablePropertyName}));
             if (def.ValueIsSet()) {info.assignmentDefString};
@@ -394,7 +387,7 @@ namespace {mainSymbol.ContainingNamespace}
             System.Func<BindableDef<{info.propertyTypeName}>, BindableDef<{info.propertyTypeName}>> definition)
             where T : {typeConformanceName}
         {{
-            var mauiObject = MauiWrapper.GetObject<{extensionType.ToDisplayString()}>(obj);
+            var mauiObject = MauiWrapper.Value<{extensionType.ToDisplayString()}>(obj);
             var def = definition(new BindableDef<{info.propertyTypeName}>(mauiObject, {info.bindablePropertyName}));
             if (def.ValueIsSet()) {info.assignmentDefString};
             def.BindProperty();
@@ -412,7 +405,8 @@ namespace {mainSymbol.ContainingNamespace}
             System.Func<ValueDef<{info.propertyTypeName}>, ValueDef<{info.propertyTypeName}>> definition)
             where T : {typeConformanceName}
         {{
-            var mauiObject = MauiWrapper.GetObject<{extensionType.ToDisplayString()}>(obj);
+            var mauiObject = MauiWrapper.Value<{extensionType.ToDisplayString()}>(obj);
+            var mauiValue = MauiWrapper.Value<{info.propertyTypeName}>({info.camelCaseName});
             if ({info.camelCaseName} != null) {info.assignmentString};
             var def = definition(new ValueDef<{info.propertyTypeName}>());
             if (def.ValueIsSet()) mauiObject.{info.propertyName} = def.GetValue();
@@ -429,7 +423,7 @@ namespace {mainSymbol.ContainingNamespace}
             System.Func<ValueDef<{info.propertyTypeName}>, ValueDef<{info.propertyTypeName}>> definition)
             where T : {typeConformanceName}
         {{
-            var mauiObject = MauiWrapper.GetObject<{extensionType.ToDisplayString()}>(obj);
+            var mauiObject = MauiWrapper.Value<{extensionType.ToDisplayString()}>(obj);
             var def = definition(new ValueDef<{info.propertyTypeName}>());
             if (def.ValueIsSet()) mauiObject.{info.propertyName} = def.GetValue();
             return obj;
@@ -443,7 +437,7 @@ namespace {mainSymbol.ContainingNamespace}
             builder.Append($@"
         public static T {info.propertyName}<T>(this T obj, System.Func<object> loadTemplate) where T : {typeConformanceName}
         {{
-            var mauiObject = MauiWrapper.GetObject<{extensionType.ToDisplayString()}>(obj);
+            var mauiObject = MauiWrapper.Value<{extensionType.ToDisplayString()}>(obj);
             {info.assignmentDataTemplateString};
             return obj;
         }}
@@ -487,7 +481,7 @@ namespace {mainSymbol.ContainingNamespace}
         public static T On{eventSymbol.Name}<T>(this T obj, OnEventAction<T> action)
             where T : {typeConformanceName}
         {{
-            var mauiObject = MauiWrapper.GetObject<{extensionType.ToDisplayString()}>(obj);
+            var mauiObject = MauiWrapper.Value<{extensionType.ToDisplayString()}>(obj);
             mauiObject.{eventSymbol.Name} += (o, arg) => action(obj);
             return obj;
         }}
@@ -501,7 +495,7 @@ namespace {mainSymbol.ContainingNamespace}
         public static T On{eventSymbol.Name}<T>(this T obj, OnEventAction<T, {methodArgTypeName}> action)
             where T : {typeConformanceName}
         {{            
-            var mauiObject = MauiWrapper.GetObject<{extensionType.ToDisplayString()}>(obj);
+            var mauiObject = MauiWrapper.Value<{extensionType.ToDisplayString()}>(obj);
             mauiObject.{eventSymbol.Name} += (o, arg) => action(obj, arg);
             return obj;
         }}

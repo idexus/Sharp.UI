@@ -13,8 +13,9 @@ namespace Sharp.UI
             object? content)
             where T : Sharp.UI.IRadioButton
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.RadioButton>(obj);
-            if (content != null) mauiObject.Content = (object)content;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadioButton>(obj);
+            var mauiValue = MauiWrapper.Value<object>(content);
+            if (content != null) mauiObject.Content = mauiValue;
             return obj;
         }
         
@@ -23,8 +24,9 @@ namespace Sharp.UI
             System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IRadioButton
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.RadioButton>(obj);
-            if (content != null) mauiObject.Content = (object)content;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadioButton>(obj);
+            var mauiValue = MauiWrapper.Value<object>(content);
+            if (content != null) mauiObject.Content = mauiValue;
             var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.RadioButton.ContentProperty));
             if (def.ValueIsSet()) mauiObject.Content = def.GetValue();
             def.BindProperty();
@@ -35,7 +37,7 @@ namespace Sharp.UI
             System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IRadioButton
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.RadioButton>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadioButton>(obj);
             var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.RadioButton.ContentProperty));
             if (def.ValueIsSet()) mauiObject.Content = def.GetValue();
             def.BindProperty();
@@ -46,8 +48,9 @@ namespace Sharp.UI
             object? value)
             where T : Sharp.UI.IRadioButton
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.RadioButton>(obj);
-            if (value != null) mauiObject.Value = (object)value;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadioButton>(obj);
+            var mauiValue = MauiWrapper.Value<object>(value);
+            if (value != null) mauiObject.Value = mauiValue;
             return obj;
         }
         
@@ -56,8 +59,9 @@ namespace Sharp.UI
             System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IRadioButton
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.RadioButton>(obj);
-            if (value != null) mauiObject.Value = (object)value;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadioButton>(obj);
+            var mauiValue = MauiWrapper.Value<object>(value);
+            if (value != null) mauiObject.Value = mauiValue;
             var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.RadioButton.ValueProperty));
             if (def.ValueIsSet()) mauiObject.Value = def.GetValue();
             def.BindProperty();
@@ -68,7 +72,7 @@ namespace Sharp.UI
             System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IRadioButton
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.RadioButton>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadioButton>(obj);
             var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.RadioButton.ValueProperty));
             if (def.ValueIsSet()) mauiObject.Value = def.GetValue();
             def.BindProperty();
@@ -79,8 +83,9 @@ namespace Sharp.UI
             bool? isChecked)
             where T : Sharp.UI.IRadioButton
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.RadioButton>(obj);
-            if (isChecked != null) mauiObject.IsChecked = (bool)isChecked;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadioButton>(obj);
+            var mauiValue = MauiWrapper.Value<bool>(isChecked);
+            if (isChecked != null) mauiObject.IsChecked = mauiValue;
             return obj;
         }
         
@@ -89,8 +94,9 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IRadioButton
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.RadioButton>(obj);
-            if (isChecked != null) mauiObject.IsChecked = (bool)isChecked;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadioButton>(obj);
+            var mauiValue = MauiWrapper.Value<bool>(isChecked);
+            if (isChecked != null) mauiObject.IsChecked = mauiValue;
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.RadioButton.IsCheckedProperty));
             if (def.ValueIsSet()) mauiObject.IsChecked = def.GetValue();
             def.BindProperty();
@@ -101,7 +107,7 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IRadioButton
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.RadioButton>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadioButton>(obj);
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.RadioButton.IsCheckedProperty));
             if (def.ValueIsSet()) mauiObject.IsChecked = def.GetValue();
             def.BindProperty();
@@ -112,8 +118,9 @@ namespace Sharp.UI
             string? groupName)
             where T : Sharp.UI.IRadioButton
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.RadioButton>(obj);
-            if (groupName != null) mauiObject.GroupName = (string)groupName;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadioButton>(obj);
+            var mauiValue = MauiWrapper.Value<string>(groupName);
+            if (groupName != null) mauiObject.GroupName = mauiValue;
             return obj;
         }
         
@@ -122,8 +129,9 @@ namespace Sharp.UI
             System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.IRadioButton
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.RadioButton>(obj);
-            if (groupName != null) mauiObject.GroupName = (string)groupName;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadioButton>(obj);
+            var mauiValue = MauiWrapper.Value<string>(groupName);
+            if (groupName != null) mauiObject.GroupName = mauiValue;
             var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.RadioButton.GroupNameProperty));
             if (def.ValueIsSet()) mauiObject.GroupName = def.GetValue();
             def.BindProperty();
@@ -134,7 +142,7 @@ namespace Sharp.UI
             System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.IRadioButton
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.RadioButton>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadioButton>(obj);
             var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.RadioButton.GroupNameProperty));
             if (def.ValueIsSet()) mauiObject.GroupName = def.GetValue();
             def.BindProperty();
@@ -145,8 +153,9 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color? textColor)
             where T : Sharp.UI.IRadioButton
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.RadioButton>(obj);
-            if (textColor != null) mauiObject.TextColor = (Microsoft.Maui.Graphics.Color)textColor;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadioButton>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(textColor);
+            if (textColor != null) mauiObject.TextColor = mauiValue;
             return obj;
         }
         
@@ -155,8 +164,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IRadioButton
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.RadioButton>(obj);
-            if (textColor != null) mauiObject.TextColor = (Microsoft.Maui.Graphics.Color)textColor;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadioButton>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(textColor);
+            if (textColor != null) mauiObject.TextColor = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.RadioButton.TextColorProperty));
             if (def.ValueIsSet()) mauiObject.TextColor = def.GetValue();
             def.BindProperty();
@@ -167,7 +177,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IRadioButton
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.RadioButton>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadioButton>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.RadioButton.TextColorProperty));
             if (def.ValueIsSet()) mauiObject.TextColor = def.GetValue();
             def.BindProperty();
@@ -178,8 +188,9 @@ namespace Sharp.UI
             double? characterSpacing)
             where T : Sharp.UI.IRadioButton
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.RadioButton>(obj);
-            if (characterSpacing != null) mauiObject.CharacterSpacing = (double)characterSpacing;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadioButton>(obj);
+            var mauiValue = MauiWrapper.Value<double>(characterSpacing);
+            if (characterSpacing != null) mauiObject.CharacterSpacing = mauiValue;
             return obj;
         }
         
@@ -188,8 +199,9 @@ namespace Sharp.UI
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IRadioButton
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.RadioButton>(obj);
-            if (characterSpacing != null) mauiObject.CharacterSpacing = (double)characterSpacing;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadioButton>(obj);
+            var mauiValue = MauiWrapper.Value<double>(characterSpacing);
+            if (characterSpacing != null) mauiObject.CharacterSpacing = mauiValue;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.RadioButton.CharacterSpacingProperty));
             if (def.ValueIsSet()) mauiObject.CharacterSpacing = def.GetValue();
             def.BindProperty();
@@ -200,7 +212,7 @@ namespace Sharp.UI
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IRadioButton
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.RadioButton>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadioButton>(obj);
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.RadioButton.CharacterSpacingProperty));
             if (def.ValueIsSet()) mauiObject.CharacterSpacing = def.GetValue();
             def.BindProperty();
@@ -211,8 +223,9 @@ namespace Sharp.UI
             Microsoft.Maui.TextTransform? textTransform)
             where T : Sharp.UI.IRadioButton
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.RadioButton>(obj);
-            if (textTransform != null) mauiObject.TextTransform = (Microsoft.Maui.TextTransform)textTransform;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadioButton>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.TextTransform>(textTransform);
+            if (textTransform != null) mauiObject.TextTransform = mauiValue;
             return obj;
         }
         
@@ -221,8 +234,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.TextTransform>, BindableDef<Microsoft.Maui.TextTransform>> definition)
             where T : Sharp.UI.IRadioButton
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.RadioButton>(obj);
-            if (textTransform != null) mauiObject.TextTransform = (Microsoft.Maui.TextTransform)textTransform;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadioButton>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.TextTransform>(textTransform);
+            if (textTransform != null) mauiObject.TextTransform = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.TextTransform>(mauiObject, Microsoft.Maui.Controls.RadioButton.TextTransformProperty));
             if (def.ValueIsSet()) mauiObject.TextTransform = def.GetValue();
             def.BindProperty();
@@ -233,7 +247,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.TextTransform>, BindableDef<Microsoft.Maui.TextTransform>> definition)
             where T : Sharp.UI.IRadioButton
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.RadioButton>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadioButton>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.TextTransform>(mauiObject, Microsoft.Maui.Controls.RadioButton.TextTransformProperty));
             if (def.ValueIsSet()) mauiObject.TextTransform = def.GetValue();
             def.BindProperty();
@@ -244,8 +258,9 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.FontAttributes? fontAttributes)
             where T : Sharp.UI.IRadioButton
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.RadioButton>(obj);
-            if (fontAttributes != null) mauiObject.FontAttributes = (Microsoft.Maui.Controls.FontAttributes)fontAttributes;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadioButton>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.FontAttributes>(fontAttributes);
+            if (fontAttributes != null) mauiObject.FontAttributes = mauiValue;
             return obj;
         }
         
@@ -254,8 +269,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.FontAttributes>, BindableDef<Microsoft.Maui.Controls.FontAttributes>> definition)
             where T : Sharp.UI.IRadioButton
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.RadioButton>(obj);
-            if (fontAttributes != null) mauiObject.FontAttributes = (Microsoft.Maui.Controls.FontAttributes)fontAttributes;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadioButton>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.FontAttributes>(fontAttributes);
+            if (fontAttributes != null) mauiObject.FontAttributes = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.FontAttributes>(mauiObject, Microsoft.Maui.Controls.RadioButton.FontAttributesProperty));
             if (def.ValueIsSet()) mauiObject.FontAttributes = def.GetValue();
             def.BindProperty();
@@ -266,7 +282,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.FontAttributes>, BindableDef<Microsoft.Maui.Controls.FontAttributes>> definition)
             where T : Sharp.UI.IRadioButton
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.RadioButton>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadioButton>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.Controls.FontAttributes>(mauiObject, Microsoft.Maui.Controls.RadioButton.FontAttributesProperty));
             if (def.ValueIsSet()) mauiObject.FontAttributes = def.GetValue();
             def.BindProperty();
@@ -277,8 +293,9 @@ namespace Sharp.UI
             string? fontFamily)
             where T : Sharp.UI.IRadioButton
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.RadioButton>(obj);
-            if (fontFamily != null) mauiObject.FontFamily = (string)fontFamily;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadioButton>(obj);
+            var mauiValue = MauiWrapper.Value<string>(fontFamily);
+            if (fontFamily != null) mauiObject.FontFamily = mauiValue;
             return obj;
         }
         
@@ -287,8 +304,9 @@ namespace Sharp.UI
             System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.IRadioButton
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.RadioButton>(obj);
-            if (fontFamily != null) mauiObject.FontFamily = (string)fontFamily;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadioButton>(obj);
+            var mauiValue = MauiWrapper.Value<string>(fontFamily);
+            if (fontFamily != null) mauiObject.FontFamily = mauiValue;
             var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.RadioButton.FontFamilyProperty));
             if (def.ValueIsSet()) mauiObject.FontFamily = def.GetValue();
             def.BindProperty();
@@ -299,7 +317,7 @@ namespace Sharp.UI
             System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.IRadioButton
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.RadioButton>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadioButton>(obj);
             var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.RadioButton.FontFamilyProperty));
             if (def.ValueIsSet()) mauiObject.FontFamily = def.GetValue();
             def.BindProperty();
@@ -310,8 +328,9 @@ namespace Sharp.UI
             double? fontSize)
             where T : Sharp.UI.IRadioButton
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.RadioButton>(obj);
-            if (fontSize != null) mauiObject.FontSize = (double)fontSize;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadioButton>(obj);
+            var mauiValue = MauiWrapper.Value<double>(fontSize);
+            if (fontSize != null) mauiObject.FontSize = mauiValue;
             return obj;
         }
         
@@ -320,8 +339,9 @@ namespace Sharp.UI
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IRadioButton
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.RadioButton>(obj);
-            if (fontSize != null) mauiObject.FontSize = (double)fontSize;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadioButton>(obj);
+            var mauiValue = MauiWrapper.Value<double>(fontSize);
+            if (fontSize != null) mauiObject.FontSize = mauiValue;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.RadioButton.FontSizeProperty));
             if (def.ValueIsSet()) mauiObject.FontSize = def.GetValue();
             def.BindProperty();
@@ -332,7 +352,7 @@ namespace Sharp.UI
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IRadioButton
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.RadioButton>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadioButton>(obj);
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.RadioButton.FontSizeProperty));
             if (def.ValueIsSet()) mauiObject.FontSize = def.GetValue();
             def.BindProperty();
@@ -343,8 +363,9 @@ namespace Sharp.UI
             bool? fontAutoScalingEnabled)
             where T : Sharp.UI.IRadioButton
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.RadioButton>(obj);
-            if (fontAutoScalingEnabled != null) mauiObject.FontAutoScalingEnabled = (bool)fontAutoScalingEnabled;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadioButton>(obj);
+            var mauiValue = MauiWrapper.Value<bool>(fontAutoScalingEnabled);
+            if (fontAutoScalingEnabled != null) mauiObject.FontAutoScalingEnabled = mauiValue;
             return obj;
         }
         
@@ -353,8 +374,9 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IRadioButton
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.RadioButton>(obj);
-            if (fontAutoScalingEnabled != null) mauiObject.FontAutoScalingEnabled = (bool)fontAutoScalingEnabled;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadioButton>(obj);
+            var mauiValue = MauiWrapper.Value<bool>(fontAutoScalingEnabled);
+            if (fontAutoScalingEnabled != null) mauiObject.FontAutoScalingEnabled = mauiValue;
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.RadioButton.FontAutoScalingEnabledProperty));
             if (def.ValueIsSet()) mauiObject.FontAutoScalingEnabled = def.GetValue();
             def.BindProperty();
@@ -365,7 +387,7 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IRadioButton
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.RadioButton>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadioButton>(obj);
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.RadioButton.FontAutoScalingEnabledProperty));
             if (def.ValueIsSet()) mauiObject.FontAutoScalingEnabled = def.GetValue();
             def.BindProperty();
@@ -376,8 +398,9 @@ namespace Sharp.UI
             double? borderWidth)
             where T : Sharp.UI.IRadioButton
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.RadioButton>(obj);
-            if (borderWidth != null) mauiObject.BorderWidth = (double)borderWidth;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadioButton>(obj);
+            var mauiValue = MauiWrapper.Value<double>(borderWidth);
+            if (borderWidth != null) mauiObject.BorderWidth = mauiValue;
             return obj;
         }
         
@@ -386,8 +409,9 @@ namespace Sharp.UI
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IRadioButton
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.RadioButton>(obj);
-            if (borderWidth != null) mauiObject.BorderWidth = (double)borderWidth;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadioButton>(obj);
+            var mauiValue = MauiWrapper.Value<double>(borderWidth);
+            if (borderWidth != null) mauiObject.BorderWidth = mauiValue;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.RadioButton.BorderWidthProperty));
             if (def.ValueIsSet()) mauiObject.BorderWidth = def.GetValue();
             def.BindProperty();
@@ -398,7 +422,7 @@ namespace Sharp.UI
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IRadioButton
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.RadioButton>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadioButton>(obj);
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.RadioButton.BorderWidthProperty));
             if (def.ValueIsSet()) mauiObject.BorderWidth = def.GetValue();
             def.BindProperty();
@@ -409,8 +433,9 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color? borderColor)
             where T : Sharp.UI.IRadioButton
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.RadioButton>(obj);
-            if (borderColor != null) mauiObject.BorderColor = (Microsoft.Maui.Graphics.Color)borderColor;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadioButton>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(borderColor);
+            if (borderColor != null) mauiObject.BorderColor = mauiValue;
             return obj;
         }
         
@@ -419,8 +444,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IRadioButton
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.RadioButton>(obj);
-            if (borderColor != null) mauiObject.BorderColor = (Microsoft.Maui.Graphics.Color)borderColor;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadioButton>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(borderColor);
+            if (borderColor != null) mauiObject.BorderColor = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.RadioButton.BorderColorProperty));
             if (def.ValueIsSet()) mauiObject.BorderColor = def.GetValue();
             def.BindProperty();
@@ -431,7 +457,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IRadioButton
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.RadioButton>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadioButton>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.RadioButton.BorderColorProperty));
             if (def.ValueIsSet()) mauiObject.BorderColor = def.GetValue();
             def.BindProperty();
@@ -442,8 +468,9 @@ namespace Sharp.UI
             int? cornerRadius)
             where T : Sharp.UI.IRadioButton
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.RadioButton>(obj);
-            if (cornerRadius != null) mauiObject.CornerRadius = (int)cornerRadius;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadioButton>(obj);
+            var mauiValue = MauiWrapper.Value<int>(cornerRadius);
+            if (cornerRadius != null) mauiObject.CornerRadius = mauiValue;
             return obj;
         }
         
@@ -452,8 +479,9 @@ namespace Sharp.UI
             System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.IRadioButton
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.RadioButton>(obj);
-            if (cornerRadius != null) mauiObject.CornerRadius = (int)cornerRadius;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadioButton>(obj);
+            var mauiValue = MauiWrapper.Value<int>(cornerRadius);
+            if (cornerRadius != null) mauiObject.CornerRadius = mauiValue;
             var def = definition(new BindableDef<int>(mauiObject, Microsoft.Maui.Controls.RadioButton.CornerRadiusProperty));
             if (def.ValueIsSet()) mauiObject.CornerRadius = def.GetValue();
             def.BindProperty();
@@ -464,7 +492,7 @@ namespace Sharp.UI
             System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.IRadioButton
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.RadioButton>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadioButton>(obj);
             var def = definition(new BindableDef<int>(mauiObject, Microsoft.Maui.Controls.RadioButton.CornerRadiusProperty));
             if (def.ValueIsSet()) mauiObject.CornerRadius = def.GetValue();
             def.BindProperty();
@@ -474,7 +502,7 @@ namespace Sharp.UI
         public static T OnCheckedChanged<T>(this T obj, OnEventAction<T, Microsoft.Maui.Controls.CheckedChangedEventArgs> action)
             where T : Sharp.UI.IRadioButton
         {            
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.RadioButton>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadioButton>(obj);
             mauiObject.CheckedChanged += (o, arg) => action(obj, arg);
             return obj;
         }

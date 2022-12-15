@@ -13,8 +13,9 @@ namespace Sharp.UI
             System.Collections.Generic.IList<string>? @class)
             where T : Sharp.UI.IEllipse
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Ellipse>(obj);
-            if (@class != null) mauiObject.@class = (System.Collections.Generic.IList<string>)@class;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Ellipse>(obj);
+            var mauiValue = MauiWrapper.Value<System.Collections.Generic.IList<string>>(@class);
+            if (@class != null) mauiObject.@class = mauiValue;
             return obj;
         }
         
@@ -23,8 +24,9 @@ namespace Sharp.UI
             System.Func<ValueDef<System.Collections.Generic.IList<string>>, ValueDef<System.Collections.Generic.IList<string>>> definition)
             where T : Sharp.UI.IEllipse
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Ellipse>(obj);
-            if (@class != null) mauiObject.@class = (System.Collections.Generic.IList<string>)@class;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Ellipse>(obj);
+            var mauiValue = MauiWrapper.Value<System.Collections.Generic.IList<string>>(@class);
+            if (@class != null) mauiObject.@class = mauiValue;
             var def = definition(new ValueDef<System.Collections.Generic.IList<string>>());
             if (def.ValueIsSet()) mauiObject.@class = def.GetValue();
             return obj;
@@ -34,7 +36,7 @@ namespace Sharp.UI
             System.Func<ValueDef<System.Collections.Generic.IList<string>>, ValueDef<System.Collections.Generic.IList<string>>> definition)
             where T : Sharp.UI.IEllipse
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Ellipse>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Ellipse>(obj);
             var def = definition(new ValueDef<System.Collections.Generic.IList<string>>());
             if (def.ValueIsSet()) mauiObject.@class = def.GetValue();
             return obj;

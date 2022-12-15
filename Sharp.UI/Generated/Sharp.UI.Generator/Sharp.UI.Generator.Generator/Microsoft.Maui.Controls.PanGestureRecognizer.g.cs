@@ -13,8 +13,9 @@ namespace Sharp.UI
             int? touchPoints)
             where T : Sharp.UI.IPanGestureRecognizer
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.PanGestureRecognizer>(obj);
-            if (touchPoints != null) mauiObject.TouchPoints = (int)touchPoints;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.PanGestureRecognizer>(obj);
+            var mauiValue = MauiWrapper.Value<int>(touchPoints);
+            if (touchPoints != null) mauiObject.TouchPoints = mauiValue;
             return obj;
         }
         
@@ -23,8 +24,9 @@ namespace Sharp.UI
             System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.IPanGestureRecognizer
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.PanGestureRecognizer>(obj);
-            if (touchPoints != null) mauiObject.TouchPoints = (int)touchPoints;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.PanGestureRecognizer>(obj);
+            var mauiValue = MauiWrapper.Value<int>(touchPoints);
+            if (touchPoints != null) mauiObject.TouchPoints = mauiValue;
             var def = definition(new BindableDef<int>(mauiObject, Microsoft.Maui.Controls.PanGestureRecognizer.TouchPointsProperty));
             if (def.ValueIsSet()) mauiObject.TouchPoints = def.GetValue();
             def.BindProperty();
@@ -35,7 +37,7 @@ namespace Sharp.UI
             System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.IPanGestureRecognizer
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.PanGestureRecognizer>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.PanGestureRecognizer>(obj);
             var def = definition(new BindableDef<int>(mauiObject, Microsoft.Maui.Controls.PanGestureRecognizer.TouchPointsProperty));
             if (def.ValueIsSet()) mauiObject.TouchPoints = def.GetValue();
             def.BindProperty();
@@ -45,7 +47,7 @@ namespace Sharp.UI
         public static T OnPanUpdated<T>(this T obj, OnEventAction<T, Microsoft.Maui.Controls.PanUpdatedEventArgs> action)
             where T : Sharp.UI.IPanGestureRecognizer
         {            
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.PanGestureRecognizer>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.PanGestureRecognizer>(obj);
             mauiObject.PanUpdated += (o, arg) => action(obj, arg);
             return obj;
         }

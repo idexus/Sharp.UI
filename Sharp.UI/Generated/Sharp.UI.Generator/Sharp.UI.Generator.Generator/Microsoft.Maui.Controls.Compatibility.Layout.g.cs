@@ -13,8 +13,9 @@ namespace Sharp.UI
             bool? isClippedToBounds)
             where T : Sharp.UI.ICompatibilityLayout
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Compatibility.Layout>(obj);
-            if (isClippedToBounds != null) mauiObject.IsClippedToBounds = (bool)isClippedToBounds;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Compatibility.Layout>(obj);
+            var mauiValue = MauiWrapper.Value<bool>(isClippedToBounds);
+            if (isClippedToBounds != null) mauiObject.IsClippedToBounds = mauiValue;
             return obj;
         }
         
@@ -23,8 +24,9 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.ICompatibilityLayout
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Compatibility.Layout>(obj);
-            if (isClippedToBounds != null) mauiObject.IsClippedToBounds = (bool)isClippedToBounds;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Compatibility.Layout>(obj);
+            var mauiValue = MauiWrapper.Value<bool>(isClippedToBounds);
+            if (isClippedToBounds != null) mauiObject.IsClippedToBounds = mauiValue;
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.Compatibility.Layout.IsClippedToBoundsProperty));
             if (def.ValueIsSet()) mauiObject.IsClippedToBounds = def.GetValue();
             def.BindProperty();
@@ -35,7 +37,7 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.ICompatibilityLayout
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Compatibility.Layout>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Compatibility.Layout>(obj);
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.Compatibility.Layout.IsClippedToBoundsProperty));
             if (def.ValueIsSet()) mauiObject.IsClippedToBounds = def.GetValue();
             def.BindProperty();
@@ -46,8 +48,9 @@ namespace Sharp.UI
             Microsoft.Maui.Thickness? padding)
             where T : Sharp.UI.ICompatibilityLayout
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Compatibility.Layout>(obj);
-            if (padding != null) mauiObject.Padding = (Microsoft.Maui.Thickness)padding;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Compatibility.Layout>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Thickness>(padding);
+            if (padding != null) mauiObject.Padding = mauiValue;
             return obj;
         }
         
@@ -56,8 +59,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Thickness>, BindableDef<Microsoft.Maui.Thickness>> definition)
             where T : Sharp.UI.ICompatibilityLayout
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Compatibility.Layout>(obj);
-            if (padding != null) mauiObject.Padding = (Microsoft.Maui.Thickness)padding;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Compatibility.Layout>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Thickness>(padding);
+            if (padding != null) mauiObject.Padding = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.Thickness>(mauiObject, Microsoft.Maui.Controls.Compatibility.Layout.PaddingProperty));
             if (def.ValueIsSet()) mauiObject.Padding = def.GetValue();
             def.BindProperty();
@@ -68,7 +72,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Thickness>, BindableDef<Microsoft.Maui.Thickness>> definition)
             where T : Sharp.UI.ICompatibilityLayout
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Compatibility.Layout>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Compatibility.Layout>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.Thickness>(mauiObject, Microsoft.Maui.Controls.Compatibility.Layout.PaddingProperty));
             if (def.ValueIsSet()) mauiObject.Padding = def.GetValue();
             def.BindProperty();
@@ -79,8 +83,9 @@ namespace Sharp.UI
             bool? cascadeInputTransparent)
             where T : Sharp.UI.ICompatibilityLayout
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Compatibility.Layout>(obj);
-            if (cascadeInputTransparent != null) mauiObject.CascadeInputTransparent = (bool)cascadeInputTransparent;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Compatibility.Layout>(obj);
+            var mauiValue = MauiWrapper.Value<bool>(cascadeInputTransparent);
+            if (cascadeInputTransparent != null) mauiObject.CascadeInputTransparent = mauiValue;
             return obj;
         }
         
@@ -89,8 +94,9 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.ICompatibilityLayout
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Compatibility.Layout>(obj);
-            if (cascadeInputTransparent != null) mauiObject.CascadeInputTransparent = (bool)cascadeInputTransparent;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Compatibility.Layout>(obj);
+            var mauiValue = MauiWrapper.Value<bool>(cascadeInputTransparent);
+            if (cascadeInputTransparent != null) mauiObject.CascadeInputTransparent = mauiValue;
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.Compatibility.Layout.CascadeInputTransparentProperty));
             if (def.ValueIsSet()) mauiObject.CascadeInputTransparent = def.GetValue();
             def.BindProperty();
@@ -101,7 +107,7 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.ICompatibilityLayout
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Compatibility.Layout>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Compatibility.Layout>(obj);
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.Compatibility.Layout.CascadeInputTransparentProperty));
             if (def.ValueIsSet()) mauiObject.CascadeInputTransparent = def.GetValue();
             def.BindProperty();
@@ -111,7 +117,7 @@ namespace Sharp.UI
         public static T OnLayoutChanged<T>(this T obj, OnEventAction<T> action)
             where T : Sharp.UI.ICompatibilityLayout
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Compatibility.Layout>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Compatibility.Layout>(obj);
             mauiObject.LayoutChanged += (o, arg) => action(obj);
             return obj;
         }

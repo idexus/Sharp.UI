@@ -13,8 +13,9 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.BindableProperty? property)
             where T : Sharp.UI.IPropertyCondition
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.PropertyCondition>(obj);
-            if (property != null) mauiObject.Property = (Microsoft.Maui.Controls.BindableProperty)property;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.PropertyCondition>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.BindableProperty>(property);
+            if (property != null) mauiObject.Property = mauiValue;
             return obj;
         }
         
@@ -23,8 +24,9 @@ namespace Sharp.UI
             System.Func<ValueDef<Microsoft.Maui.Controls.BindableProperty>, ValueDef<Microsoft.Maui.Controls.BindableProperty>> definition)
             where T : Sharp.UI.IPropertyCondition
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.PropertyCondition>(obj);
-            if (property != null) mauiObject.Property = (Microsoft.Maui.Controls.BindableProperty)property;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.PropertyCondition>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.BindableProperty>(property);
+            if (property != null) mauiObject.Property = mauiValue;
             var def = definition(new ValueDef<Microsoft.Maui.Controls.BindableProperty>());
             if (def.ValueIsSet()) mauiObject.Property = def.GetValue();
             return obj;
@@ -34,7 +36,7 @@ namespace Sharp.UI
             System.Func<ValueDef<Microsoft.Maui.Controls.BindableProperty>, ValueDef<Microsoft.Maui.Controls.BindableProperty>> definition)
             where T : Sharp.UI.IPropertyCondition
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.PropertyCondition>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.PropertyCondition>(obj);
             var def = definition(new ValueDef<Microsoft.Maui.Controls.BindableProperty>());
             if (def.ValueIsSet()) mauiObject.Property = def.GetValue();
             return obj;
@@ -44,8 +46,9 @@ namespace Sharp.UI
             object? value)
             where T : Sharp.UI.IPropertyCondition
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.PropertyCondition>(obj);
-            if (value != null) mauiObject.Value = (object)value;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.PropertyCondition>(obj);
+            var mauiValue = MauiWrapper.Value<object>(value);
+            if (value != null) mauiObject.Value = mauiValue;
             return obj;
         }
         
@@ -54,8 +57,9 @@ namespace Sharp.UI
             System.Func<ValueDef<object>, ValueDef<object>> definition)
             where T : Sharp.UI.IPropertyCondition
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.PropertyCondition>(obj);
-            if (value != null) mauiObject.Value = (object)value;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.PropertyCondition>(obj);
+            var mauiValue = MauiWrapper.Value<object>(value);
+            if (value != null) mauiObject.Value = mauiValue;
             var def = definition(new ValueDef<object>());
             if (def.ValueIsSet()) mauiObject.Value = def.GetValue();
             return obj;
@@ -65,7 +69,7 @@ namespace Sharp.UI
             System.Func<ValueDef<object>, ValueDef<object>> definition)
             where T : Sharp.UI.IPropertyCondition
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.PropertyCondition>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.PropertyCondition>(obj);
             var def = definition(new ValueDef<object>());
             if (def.ValueIsSet()) mauiObject.Value = def.GetValue();
             return obj;

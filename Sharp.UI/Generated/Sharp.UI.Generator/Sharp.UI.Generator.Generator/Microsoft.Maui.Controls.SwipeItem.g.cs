@@ -13,8 +13,9 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color? backgroundColor)
             where T : Sharp.UI.ISwipeItem
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwipeItem>(obj);
-            if (backgroundColor != null) mauiObject.BackgroundColor = (Microsoft.Maui.Graphics.Color)backgroundColor;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeItem>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(backgroundColor);
+            if (backgroundColor != null) mauiObject.BackgroundColor = mauiValue;
             return obj;
         }
         
@@ -23,8 +24,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.ISwipeItem
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwipeItem>(obj);
-            if (backgroundColor != null) mauiObject.BackgroundColor = (Microsoft.Maui.Graphics.Color)backgroundColor;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeItem>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(backgroundColor);
+            if (backgroundColor != null) mauiObject.BackgroundColor = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.SwipeItem.BackgroundColorProperty));
             if (def.ValueIsSet()) mauiObject.BackgroundColor = def.GetValue();
             def.BindProperty();
@@ -35,7 +37,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.ISwipeItem
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwipeItem>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeItem>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.SwipeItem.BackgroundColorProperty));
             if (def.ValueIsSet()) mauiObject.BackgroundColor = def.GetValue();
             def.BindProperty();
@@ -46,8 +48,9 @@ namespace Sharp.UI
             bool? isVisible)
             where T : Sharp.UI.ISwipeItem
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwipeItem>(obj);
-            if (isVisible != null) mauiObject.IsVisible = (bool)isVisible;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeItem>(obj);
+            var mauiValue = MauiWrapper.Value<bool>(isVisible);
+            if (isVisible != null) mauiObject.IsVisible = mauiValue;
             return obj;
         }
         
@@ -56,8 +59,9 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.ISwipeItem
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwipeItem>(obj);
-            if (isVisible != null) mauiObject.IsVisible = (bool)isVisible;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeItem>(obj);
+            var mauiValue = MauiWrapper.Value<bool>(isVisible);
+            if (isVisible != null) mauiObject.IsVisible = mauiValue;
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.SwipeItem.IsVisibleProperty));
             if (def.ValueIsSet()) mauiObject.IsVisible = def.GetValue();
             def.BindProperty();
@@ -68,7 +72,7 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.ISwipeItem
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwipeItem>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeItem>(obj);
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.SwipeItem.IsVisibleProperty));
             if (def.ValueIsSet()) mauiObject.IsVisible = def.GetValue();
             def.BindProperty();
@@ -78,7 +82,7 @@ namespace Sharp.UI
         public static T OnInvoked<T>(this T obj, OnEventAction<T> action)
             where T : Sharp.UI.ISwipeItem
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwipeItem>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeItem>(obj);
             mauiObject.Invoked += (o, arg) => action(obj);
             return obj;
         }

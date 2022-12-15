@@ -13,8 +13,9 @@ namespace Sharp.UI
             double? x1)
             where T : Sharp.UI.ILine
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Line>(obj);
-            if (x1 != null) mauiObject.X1 = (double)x1;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Line>(obj);
+            var mauiValue = MauiWrapper.Value<double>(x1);
+            if (x1 != null) mauiObject.X1 = mauiValue;
             return obj;
         }
         
@@ -23,8 +24,9 @@ namespace Sharp.UI
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.ILine
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Line>(obj);
-            if (x1 != null) mauiObject.X1 = (double)x1;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Line>(obj);
+            var mauiValue = MauiWrapper.Value<double>(x1);
+            if (x1 != null) mauiObject.X1 = mauiValue;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Shapes.Line.X1Property));
             if (def.ValueIsSet()) mauiObject.X1 = def.GetValue();
             def.BindProperty();
@@ -35,7 +37,7 @@ namespace Sharp.UI
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.ILine
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Line>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Line>(obj);
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Shapes.Line.X1Property));
             if (def.ValueIsSet()) mauiObject.X1 = def.GetValue();
             def.BindProperty();
@@ -46,8 +48,9 @@ namespace Sharp.UI
             double? y1)
             where T : Sharp.UI.ILine
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Line>(obj);
-            if (y1 != null) mauiObject.Y1 = (double)y1;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Line>(obj);
+            var mauiValue = MauiWrapper.Value<double>(y1);
+            if (y1 != null) mauiObject.Y1 = mauiValue;
             return obj;
         }
         
@@ -56,8 +59,9 @@ namespace Sharp.UI
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.ILine
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Line>(obj);
-            if (y1 != null) mauiObject.Y1 = (double)y1;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Line>(obj);
+            var mauiValue = MauiWrapper.Value<double>(y1);
+            if (y1 != null) mauiObject.Y1 = mauiValue;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Shapes.Line.Y1Property));
             if (def.ValueIsSet()) mauiObject.Y1 = def.GetValue();
             def.BindProperty();
@@ -68,7 +72,7 @@ namespace Sharp.UI
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.ILine
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Line>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Line>(obj);
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Shapes.Line.Y1Property));
             if (def.ValueIsSet()) mauiObject.Y1 = def.GetValue();
             def.BindProperty();
@@ -79,8 +83,9 @@ namespace Sharp.UI
             double? x2)
             where T : Sharp.UI.ILine
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Line>(obj);
-            if (x2 != null) mauiObject.X2 = (double)x2;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Line>(obj);
+            var mauiValue = MauiWrapper.Value<double>(x2);
+            if (x2 != null) mauiObject.X2 = mauiValue;
             return obj;
         }
         
@@ -89,8 +94,9 @@ namespace Sharp.UI
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.ILine
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Line>(obj);
-            if (x2 != null) mauiObject.X2 = (double)x2;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Line>(obj);
+            var mauiValue = MauiWrapper.Value<double>(x2);
+            if (x2 != null) mauiObject.X2 = mauiValue;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Shapes.Line.X2Property));
             if (def.ValueIsSet()) mauiObject.X2 = def.GetValue();
             def.BindProperty();
@@ -101,7 +107,7 @@ namespace Sharp.UI
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.ILine
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Line>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Line>(obj);
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Shapes.Line.X2Property));
             if (def.ValueIsSet()) mauiObject.X2 = def.GetValue();
             def.BindProperty();
@@ -112,8 +118,9 @@ namespace Sharp.UI
             double? y2)
             where T : Sharp.UI.ILine
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Line>(obj);
-            if (y2 != null) mauiObject.Y2 = (double)y2;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Line>(obj);
+            var mauiValue = MauiWrapper.Value<double>(y2);
+            if (y2 != null) mauiObject.Y2 = mauiValue;
             return obj;
         }
         
@@ -122,8 +129,9 @@ namespace Sharp.UI
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.ILine
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Line>(obj);
-            if (y2 != null) mauiObject.Y2 = (double)y2;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Line>(obj);
+            var mauiValue = MauiWrapper.Value<double>(y2);
+            if (y2 != null) mauiObject.Y2 = mauiValue;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Shapes.Line.Y2Property));
             if (def.ValueIsSet()) mauiObject.Y2 = def.GetValue();
             def.BindProperty();
@@ -134,7 +142,7 @@ namespace Sharp.UI
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.ILine
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Line>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Line>(obj);
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Shapes.Line.Y2Property));
             if (def.ValueIsSet()) mauiObject.Y2 = def.GetValue();
             def.BindProperty();
@@ -145,8 +153,9 @@ namespace Sharp.UI
             System.Collections.Generic.IList<string>? @class)
             where T : Sharp.UI.ILine
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Line>(obj);
-            if (@class != null) mauiObject.@class = (System.Collections.Generic.IList<string>)@class;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Line>(obj);
+            var mauiValue = MauiWrapper.Value<System.Collections.Generic.IList<string>>(@class);
+            if (@class != null) mauiObject.@class = mauiValue;
             return obj;
         }
         
@@ -155,8 +164,9 @@ namespace Sharp.UI
             System.Func<ValueDef<System.Collections.Generic.IList<string>>, ValueDef<System.Collections.Generic.IList<string>>> definition)
             where T : Sharp.UI.ILine
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Line>(obj);
-            if (@class != null) mauiObject.@class = (System.Collections.Generic.IList<string>)@class;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Line>(obj);
+            var mauiValue = MauiWrapper.Value<System.Collections.Generic.IList<string>>(@class);
+            if (@class != null) mauiObject.@class = mauiValue;
             var def = definition(new ValueDef<System.Collections.Generic.IList<string>>());
             if (def.ValueIsSet()) mauiObject.@class = def.GetValue();
             return obj;
@@ -166,7 +176,7 @@ namespace Sharp.UI
             System.Func<ValueDef<System.Collections.Generic.IList<string>>, ValueDef<System.Collections.Generic.IList<string>>> definition)
             where T : Sharp.UI.ILine
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Shapes.Line>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Line>(obj);
             var def = definition(new ValueDef<System.Collections.Generic.IList<string>>());
             if (def.ValueIsSet()) mauiObject.@class = def.GetValue();
             return obj;

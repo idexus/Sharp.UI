@@ -13,8 +13,12 @@ namespace Sharp.UI
             System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerAction> actions)
             where T : Sharp.UI.IEventTrigger
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.EventTrigger>(obj);
-            foreach (var item in actions) mauiObject.Actions.Add(item);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.EventTrigger>(obj);
+            foreach (var item in actions)
+            {
+                var mauiItem = MauiWrapper.Value<Microsoft.Maui.Controls.TriggerAction>(item);
+                mauiObject.Actions.Add(mauiItem);
+            }
             return obj;
         }
 
@@ -22,8 +26,12 @@ namespace Sharp.UI
             params Microsoft.Maui.Controls.TriggerAction[] actions)
             where T : Sharp.UI.IEventTrigger
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.EventTrigger>(obj);
-            foreach (var item in actions) mauiObject.Actions.Add(item);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.EventTrigger>(obj);
+            foreach (var item in actions)
+            {
+                var mauiItem = MauiWrapper.Value<Microsoft.Maui.Controls.TriggerAction>(item);
+                mauiObject.Actions.Add(mauiItem);
+            }
             return obj;
         }
 
@@ -31,12 +39,16 @@ namespace Sharp.UI
             System.Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerAction>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerAction>>> definition)
             where T : Sharp.UI.IEventTrigger
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.EventTrigger>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.EventTrigger>(obj);
             var def = definition(new Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerAction>>());
             if (def.ValueIsSet())
             {
                 var items = def.GetValue();
-                foreach (var item in items) mauiObject.Actions.Add(item);
+                foreach (var item in items) 
+                {
+                    var mauiItem = MauiWrapper.Value<Microsoft.Maui.Controls.TriggerAction>(item);
+                    mauiObject.Actions.Add(mauiItem);
+                }
             }
             return obj;
         }
@@ -45,8 +57,9 @@ namespace Sharp.UI
             string? @event)
             where T : Sharp.UI.IEventTrigger
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.EventTrigger>(obj);
-            if (@event != null) mauiObject.Event = (string)@event;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.EventTrigger>(obj);
+            var mauiValue = MauiWrapper.Value<string>(@event);
+            if (@event != null) mauiObject.Event = mauiValue;
             return obj;
         }
         
@@ -55,8 +68,9 @@ namespace Sharp.UI
             System.Func<ValueDef<string>, ValueDef<string>> definition)
             where T : Sharp.UI.IEventTrigger
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.EventTrigger>(obj);
-            if (@event != null) mauiObject.Event = (string)@event;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.EventTrigger>(obj);
+            var mauiValue = MauiWrapper.Value<string>(@event);
+            if (@event != null) mauiObject.Event = mauiValue;
             var def = definition(new ValueDef<string>());
             if (def.ValueIsSet()) mauiObject.Event = def.GetValue();
             return obj;
@@ -66,7 +80,7 @@ namespace Sharp.UI
             System.Func<ValueDef<string>, ValueDef<string>> definition)
             where T : Sharp.UI.IEventTrigger
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.EventTrigger>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.EventTrigger>(obj);
             var def = definition(new ValueDef<string>());
             if (def.ValueIsSet()) mauiObject.Event = def.GetValue();
             return obj;

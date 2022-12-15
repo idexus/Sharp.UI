@@ -13,8 +13,9 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.IndicatorShape? indicatorsShape)
             where T : Sharp.UI.IIndicatorView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
-            if (indicatorsShape != null) mauiObject.IndicatorsShape = (Microsoft.Maui.Controls.IndicatorShape)indicatorsShape;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorShape>(indicatorsShape);
+            if (indicatorsShape != null) mauiObject.IndicatorsShape = mauiValue;
             return obj;
         }
         
@@ -23,8 +24,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.IndicatorShape>, BindableDef<Microsoft.Maui.Controls.IndicatorShape>> definition)
             where T : Sharp.UI.IIndicatorView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
-            if (indicatorsShape != null) mauiObject.IndicatorsShape = (Microsoft.Maui.Controls.IndicatorShape)indicatorsShape;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorShape>(indicatorsShape);
+            if (indicatorsShape != null) mauiObject.IndicatorsShape = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.IndicatorShape>(mauiObject, Microsoft.Maui.Controls.IndicatorView.IndicatorsShapeProperty));
             if (def.ValueIsSet()) mauiObject.IndicatorsShape = def.GetValue();
             def.BindProperty();
@@ -35,7 +37,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.IndicatorShape>, BindableDef<Microsoft.Maui.Controls.IndicatorShape>> definition)
             where T : Sharp.UI.IIndicatorView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.Controls.IndicatorShape>(mauiObject, Microsoft.Maui.Controls.IndicatorView.IndicatorsShapeProperty));
             if (def.ValueIsSet()) mauiObject.IndicatorsShape = def.GetValue();
             def.BindProperty();
@@ -46,8 +48,9 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.IBindableLayout? indicatorLayout)
             where T : Sharp.UI.IIndicatorView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
-            if (indicatorLayout != null) mauiObject.IndicatorLayout = (Microsoft.Maui.Controls.IBindableLayout)indicatorLayout;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.IBindableLayout>(indicatorLayout);
+            if (indicatorLayout != null) mauiObject.IndicatorLayout = mauiValue;
             return obj;
         }
         
@@ -56,8 +59,9 @@ namespace Sharp.UI
             System.Func<ValueDef<Microsoft.Maui.Controls.IBindableLayout>, ValueDef<Microsoft.Maui.Controls.IBindableLayout>> definition)
             where T : Sharp.UI.IIndicatorView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
-            if (indicatorLayout != null) mauiObject.IndicatorLayout = (Microsoft.Maui.Controls.IBindableLayout)indicatorLayout;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.IBindableLayout>(indicatorLayout);
+            if (indicatorLayout != null) mauiObject.IndicatorLayout = mauiValue;
             var def = definition(new ValueDef<Microsoft.Maui.Controls.IBindableLayout>());
             if (def.ValueIsSet()) mauiObject.IndicatorLayout = def.GetValue();
             return obj;
@@ -67,7 +71,7 @@ namespace Sharp.UI
             System.Func<ValueDef<Microsoft.Maui.Controls.IBindableLayout>, ValueDef<Microsoft.Maui.Controls.IBindableLayout>> definition)
             where T : Sharp.UI.IIndicatorView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
             var def = definition(new ValueDef<Microsoft.Maui.Controls.IBindableLayout>());
             if (def.ValueIsSet()) mauiObject.IndicatorLayout = def.GetValue();
             return obj;
@@ -77,8 +81,9 @@ namespace Sharp.UI
             int? position)
             where T : Sharp.UI.IIndicatorView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
-            if (position != null) mauiObject.Position = (int)position;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
+            var mauiValue = MauiWrapper.Value<int>(position);
+            if (position != null) mauiObject.Position = mauiValue;
             return obj;
         }
         
@@ -87,8 +92,9 @@ namespace Sharp.UI
             System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.IIndicatorView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
-            if (position != null) mauiObject.Position = (int)position;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
+            var mauiValue = MauiWrapper.Value<int>(position);
+            if (position != null) mauiObject.Position = mauiValue;
             var def = definition(new BindableDef<int>(mauiObject, Microsoft.Maui.Controls.IndicatorView.PositionProperty));
             if (def.ValueIsSet()) mauiObject.Position = def.GetValue();
             def.BindProperty();
@@ -99,7 +105,7 @@ namespace Sharp.UI
             System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.IIndicatorView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
             var def = definition(new BindableDef<int>(mauiObject, Microsoft.Maui.Controls.IndicatorView.PositionProperty));
             if (def.ValueIsSet()) mauiObject.Position = def.GetValue();
             def.BindProperty();
@@ -110,8 +116,9 @@ namespace Sharp.UI
             int? count)
             where T : Sharp.UI.IIndicatorView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
-            if (count != null) mauiObject.Count = (int)count;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
+            var mauiValue = MauiWrapper.Value<int>(count);
+            if (count != null) mauiObject.Count = mauiValue;
             return obj;
         }
         
@@ -120,8 +127,9 @@ namespace Sharp.UI
             System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.IIndicatorView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
-            if (count != null) mauiObject.Count = (int)count;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
+            var mauiValue = MauiWrapper.Value<int>(count);
+            if (count != null) mauiObject.Count = mauiValue;
             var def = definition(new BindableDef<int>(mauiObject, Microsoft.Maui.Controls.IndicatorView.CountProperty));
             if (def.ValueIsSet()) mauiObject.Count = def.GetValue();
             def.BindProperty();
@@ -132,7 +140,7 @@ namespace Sharp.UI
             System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.IIndicatorView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
             var def = definition(new BindableDef<int>(mauiObject, Microsoft.Maui.Controls.IndicatorView.CountProperty));
             if (def.ValueIsSet()) mauiObject.Count = def.GetValue();
             def.BindProperty();
@@ -143,8 +151,9 @@ namespace Sharp.UI
             int? maximumVisible)
             where T : Sharp.UI.IIndicatorView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
-            if (maximumVisible != null) mauiObject.MaximumVisible = (int)maximumVisible;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
+            var mauiValue = MauiWrapper.Value<int>(maximumVisible);
+            if (maximumVisible != null) mauiObject.MaximumVisible = mauiValue;
             return obj;
         }
         
@@ -153,8 +162,9 @@ namespace Sharp.UI
             System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.IIndicatorView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
-            if (maximumVisible != null) mauiObject.MaximumVisible = (int)maximumVisible;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
+            var mauiValue = MauiWrapper.Value<int>(maximumVisible);
+            if (maximumVisible != null) mauiObject.MaximumVisible = mauiValue;
             var def = definition(new BindableDef<int>(mauiObject, Microsoft.Maui.Controls.IndicatorView.MaximumVisibleProperty));
             if (def.ValueIsSet()) mauiObject.MaximumVisible = def.GetValue();
             def.BindProperty();
@@ -165,7 +175,7 @@ namespace Sharp.UI
             System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.IIndicatorView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
             var def = definition(new BindableDef<int>(mauiObject, Microsoft.Maui.Controls.IndicatorView.MaximumVisibleProperty));
             if (def.ValueIsSet()) mauiObject.MaximumVisible = def.GetValue();
             def.BindProperty();
@@ -176,8 +186,9 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.DataTemplate? indicatorTemplate)
             where T : Sharp.UI.IIndicatorView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
-            if (indicatorTemplate != null) mauiObject.IndicatorTemplate = (Microsoft.Maui.Controls.DataTemplate)indicatorTemplate;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.DataTemplate>(indicatorTemplate);
+            if (indicatorTemplate != null) mauiObject.IndicatorTemplate = mauiValue;
             return obj;
         }
         
@@ -186,8 +197,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
             where T : Sharp.UI.IIndicatorView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
-            if (indicatorTemplate != null) mauiObject.IndicatorTemplate = (Microsoft.Maui.Controls.DataTemplate)indicatorTemplate;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.DataTemplate>(indicatorTemplate);
+            if (indicatorTemplate != null) mauiObject.IndicatorTemplate = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.DataTemplate>(mauiObject, Microsoft.Maui.Controls.IndicatorView.IndicatorTemplateProperty));
             if (def.ValueIsSet()) mauiObject.IndicatorTemplate = def.GetValue();
             def.BindProperty();
@@ -198,7 +210,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
             where T : Sharp.UI.IIndicatorView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.Controls.DataTemplate>(mauiObject, Microsoft.Maui.Controls.IndicatorView.IndicatorTemplateProperty));
             if (def.ValueIsSet()) mauiObject.IndicatorTemplate = def.GetValue();
             def.BindProperty();
@@ -207,7 +219,7 @@ namespace Sharp.UI
         
         public static T IndicatorTemplate<T>(this T obj, System.Func<object> loadTemplate) where T : Sharp.UI.IIndicatorView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
             mauiObject.IndicatorTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
             return obj;
         }
@@ -216,8 +228,9 @@ namespace Sharp.UI
             bool? hideSingle)
             where T : Sharp.UI.IIndicatorView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
-            if (hideSingle != null) mauiObject.HideSingle = (bool)hideSingle;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
+            var mauiValue = MauiWrapper.Value<bool>(hideSingle);
+            if (hideSingle != null) mauiObject.HideSingle = mauiValue;
             return obj;
         }
         
@@ -226,8 +239,9 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IIndicatorView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
-            if (hideSingle != null) mauiObject.HideSingle = (bool)hideSingle;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
+            var mauiValue = MauiWrapper.Value<bool>(hideSingle);
+            if (hideSingle != null) mauiObject.HideSingle = mauiValue;
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.IndicatorView.HideSingleProperty));
             if (def.ValueIsSet()) mauiObject.HideSingle = def.GetValue();
             def.BindProperty();
@@ -238,7 +252,7 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IIndicatorView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.IndicatorView.HideSingleProperty));
             if (def.ValueIsSet()) mauiObject.HideSingle = def.GetValue();
             def.BindProperty();
@@ -249,8 +263,9 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color? indicatorColor)
             where T : Sharp.UI.IIndicatorView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
-            if (indicatorColor != null) mauiObject.IndicatorColor = (Microsoft.Maui.Graphics.Color)indicatorColor;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(indicatorColor);
+            if (indicatorColor != null) mauiObject.IndicatorColor = mauiValue;
             return obj;
         }
         
@@ -259,8 +274,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IIndicatorView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
-            if (indicatorColor != null) mauiObject.IndicatorColor = (Microsoft.Maui.Graphics.Color)indicatorColor;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(indicatorColor);
+            if (indicatorColor != null) mauiObject.IndicatorColor = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.IndicatorView.IndicatorColorProperty));
             if (def.ValueIsSet()) mauiObject.IndicatorColor = def.GetValue();
             def.BindProperty();
@@ -271,7 +287,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IIndicatorView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.IndicatorView.IndicatorColorProperty));
             if (def.ValueIsSet()) mauiObject.IndicatorColor = def.GetValue();
             def.BindProperty();
@@ -282,8 +298,9 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color? selectedIndicatorColor)
             where T : Sharp.UI.IIndicatorView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
-            if (selectedIndicatorColor != null) mauiObject.SelectedIndicatorColor = (Microsoft.Maui.Graphics.Color)selectedIndicatorColor;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(selectedIndicatorColor);
+            if (selectedIndicatorColor != null) mauiObject.SelectedIndicatorColor = mauiValue;
             return obj;
         }
         
@@ -292,8 +309,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IIndicatorView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
-            if (selectedIndicatorColor != null) mauiObject.SelectedIndicatorColor = (Microsoft.Maui.Graphics.Color)selectedIndicatorColor;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(selectedIndicatorColor);
+            if (selectedIndicatorColor != null) mauiObject.SelectedIndicatorColor = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.IndicatorView.SelectedIndicatorColorProperty));
             if (def.ValueIsSet()) mauiObject.SelectedIndicatorColor = def.GetValue();
             def.BindProperty();
@@ -304,7 +322,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IIndicatorView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.IndicatorView.SelectedIndicatorColorProperty));
             if (def.ValueIsSet()) mauiObject.SelectedIndicatorColor = def.GetValue();
             def.BindProperty();
@@ -315,8 +333,9 @@ namespace Sharp.UI
             double? indicatorSize)
             where T : Sharp.UI.IIndicatorView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
-            if (indicatorSize != null) mauiObject.IndicatorSize = (double)indicatorSize;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
+            var mauiValue = MauiWrapper.Value<double>(indicatorSize);
+            if (indicatorSize != null) mauiObject.IndicatorSize = mauiValue;
             return obj;
         }
         
@@ -325,8 +344,9 @@ namespace Sharp.UI
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IIndicatorView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
-            if (indicatorSize != null) mauiObject.IndicatorSize = (double)indicatorSize;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
+            var mauiValue = MauiWrapper.Value<double>(indicatorSize);
+            if (indicatorSize != null) mauiObject.IndicatorSize = mauiValue;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.IndicatorView.IndicatorSizeProperty));
             if (def.ValueIsSet()) mauiObject.IndicatorSize = def.GetValue();
             def.BindProperty();
@@ -337,7 +357,7 @@ namespace Sharp.UI
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IIndicatorView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.IndicatorView.IndicatorSizeProperty));
             if (def.ValueIsSet()) mauiObject.IndicatorSize = def.GetValue();
             def.BindProperty();
@@ -348,8 +368,9 @@ namespace Sharp.UI
             System.Collections.IEnumerable? itemsSource)
             where T : Sharp.UI.IIndicatorView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
-            if (itemsSource != null) mauiObject.ItemsSource = (System.Collections.IEnumerable)itemsSource;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
+            var mauiValue = MauiWrapper.Value<System.Collections.IEnumerable>(itemsSource);
+            if (itemsSource != null) mauiObject.ItemsSource = mauiValue;
             return obj;
         }
         
@@ -358,8 +379,9 @@ namespace Sharp.UI
             System.Func<BindableDef<System.Collections.IEnumerable>, BindableDef<System.Collections.IEnumerable>> definition)
             where T : Sharp.UI.IIndicatorView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
-            if (itemsSource != null) mauiObject.ItemsSource = (System.Collections.IEnumerable)itemsSource;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
+            var mauiValue = MauiWrapper.Value<System.Collections.IEnumerable>(itemsSource);
+            if (itemsSource != null) mauiObject.ItemsSource = mauiValue;
             var def = definition(new BindableDef<System.Collections.IEnumerable>(mauiObject, Microsoft.Maui.Controls.IndicatorView.ItemsSourceProperty));
             if (def.ValueIsSet()) mauiObject.ItemsSource = def.GetValue();
             def.BindProperty();
@@ -370,7 +392,7 @@ namespace Sharp.UI
             System.Func<BindableDef<System.Collections.IEnumerable>, BindableDef<System.Collections.IEnumerable>> definition)
             where T : Sharp.UI.IIndicatorView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.IndicatorView>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
             var def = definition(new BindableDef<System.Collections.IEnumerable>(mauiObject, Microsoft.Maui.Controls.IndicatorView.ItemsSourceProperty));
             if (def.ValueIsSet()) mauiObject.ItemsSource = def.GetValue();
             def.BindProperty();

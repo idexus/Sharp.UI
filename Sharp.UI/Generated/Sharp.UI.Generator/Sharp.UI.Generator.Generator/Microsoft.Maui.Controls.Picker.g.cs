@@ -13,8 +13,9 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.FontAttributes? fontAttributes)
             where T : Sharp.UI.IPicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
-            if (fontAttributes != null) mauiObject.FontAttributes = (Microsoft.Maui.Controls.FontAttributes)fontAttributes;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Picker>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.FontAttributes>(fontAttributes);
+            if (fontAttributes != null) mauiObject.FontAttributes = mauiValue;
             return obj;
         }
         
@@ -23,8 +24,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.FontAttributes>, BindableDef<Microsoft.Maui.Controls.FontAttributes>> definition)
             where T : Sharp.UI.IPicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
-            if (fontAttributes != null) mauiObject.FontAttributes = (Microsoft.Maui.Controls.FontAttributes)fontAttributes;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Picker>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.FontAttributes>(fontAttributes);
+            if (fontAttributes != null) mauiObject.FontAttributes = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.FontAttributes>(mauiObject, Microsoft.Maui.Controls.Picker.FontAttributesProperty));
             if (def.ValueIsSet()) mauiObject.FontAttributes = def.GetValue();
             def.BindProperty();
@@ -35,7 +37,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Controls.FontAttributes>, BindableDef<Microsoft.Maui.Controls.FontAttributes>> definition)
             where T : Sharp.UI.IPicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Picker>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.Controls.FontAttributes>(mauiObject, Microsoft.Maui.Controls.Picker.FontAttributesProperty));
             if (def.ValueIsSet()) mauiObject.FontAttributes = def.GetValue();
             def.BindProperty();
@@ -46,8 +48,9 @@ namespace Sharp.UI
             string? fontFamily)
             where T : Sharp.UI.IPicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
-            if (fontFamily != null) mauiObject.FontFamily = (string)fontFamily;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Picker>(obj);
+            var mauiValue = MauiWrapper.Value<string>(fontFamily);
+            if (fontFamily != null) mauiObject.FontFamily = mauiValue;
             return obj;
         }
         
@@ -56,8 +59,9 @@ namespace Sharp.UI
             System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.IPicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
-            if (fontFamily != null) mauiObject.FontFamily = (string)fontFamily;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Picker>(obj);
+            var mauiValue = MauiWrapper.Value<string>(fontFamily);
+            if (fontFamily != null) mauiObject.FontFamily = mauiValue;
             var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.Picker.FontFamilyProperty));
             if (def.ValueIsSet()) mauiObject.FontFamily = def.GetValue();
             def.BindProperty();
@@ -68,7 +72,7 @@ namespace Sharp.UI
             System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.IPicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Picker>(obj);
             var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.Picker.FontFamilyProperty));
             if (def.ValueIsSet()) mauiObject.FontFamily = def.GetValue();
             def.BindProperty();
@@ -79,8 +83,9 @@ namespace Sharp.UI
             double? fontSize)
             where T : Sharp.UI.IPicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
-            if (fontSize != null) mauiObject.FontSize = (double)fontSize;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Picker>(obj);
+            var mauiValue = MauiWrapper.Value<double>(fontSize);
+            if (fontSize != null) mauiObject.FontSize = mauiValue;
             return obj;
         }
         
@@ -89,8 +94,9 @@ namespace Sharp.UI
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IPicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
-            if (fontSize != null) mauiObject.FontSize = (double)fontSize;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Picker>(obj);
+            var mauiValue = MauiWrapper.Value<double>(fontSize);
+            if (fontSize != null) mauiObject.FontSize = mauiValue;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Picker.FontSizeProperty));
             if (def.ValueIsSet()) mauiObject.FontSize = def.GetValue();
             def.BindProperty();
@@ -101,7 +107,7 @@ namespace Sharp.UI
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IPicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Picker>(obj);
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Picker.FontSizeProperty));
             if (def.ValueIsSet()) mauiObject.FontSize = def.GetValue();
             def.BindProperty();
@@ -112,8 +118,9 @@ namespace Sharp.UI
             bool? fontAutoScalingEnabled)
             where T : Sharp.UI.IPicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
-            if (fontAutoScalingEnabled != null) mauiObject.FontAutoScalingEnabled = (bool)fontAutoScalingEnabled;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Picker>(obj);
+            var mauiValue = MauiWrapper.Value<bool>(fontAutoScalingEnabled);
+            if (fontAutoScalingEnabled != null) mauiObject.FontAutoScalingEnabled = mauiValue;
             return obj;
         }
         
@@ -122,8 +129,9 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IPicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
-            if (fontAutoScalingEnabled != null) mauiObject.FontAutoScalingEnabled = (bool)fontAutoScalingEnabled;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Picker>(obj);
+            var mauiValue = MauiWrapper.Value<bool>(fontAutoScalingEnabled);
+            if (fontAutoScalingEnabled != null) mauiObject.FontAutoScalingEnabled = mauiValue;
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.Picker.FontAutoScalingEnabledProperty));
             if (def.ValueIsSet()) mauiObject.FontAutoScalingEnabled = def.GetValue();
             def.BindProperty();
@@ -134,7 +142,7 @@ namespace Sharp.UI
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IPicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Picker>(obj);
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.Picker.FontAutoScalingEnabledProperty));
             if (def.ValueIsSet()) mauiObject.FontAutoScalingEnabled = def.GetValue();
             def.BindProperty();
@@ -145,8 +153,12 @@ namespace Sharp.UI
             System.Collections.Generic.IList<string> items)
             where T : Sharp.UI.IPicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
-            foreach (var item in items) mauiObject.Items.Add(item);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Picker>(obj);
+            foreach (var item in items)
+            {
+                var mauiItem = MauiWrapper.Value<string>(item);
+                mauiObject.Items.Add(mauiItem);
+            }
             return obj;
         }
 
@@ -154,8 +166,12 @@ namespace Sharp.UI
             params string[] items)
             where T : Sharp.UI.IPicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
-            foreach (var item in items) mauiObject.Items.Add(item);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Picker>(obj);
+            foreach (var item in items)
+            {
+                var mauiItem = MauiWrapper.Value<string>(item);
+                mauiObject.Items.Add(mauiItem);
+            }
             return obj;
         }
 
@@ -163,12 +179,16 @@ namespace Sharp.UI
             System.Func<Def<System.Collections.Generic.IList<string>>, Def<System.Collections.Generic.IList<string>>> definition)
             where T : Sharp.UI.IPicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Picker>(obj);
             var def = definition(new Def<System.Collections.Generic.IList<string>>());
             if (def.ValueIsSet())
             {
                 var items = def.GetValue();
-                foreach (var item in items) mauiObject.Items.Add(item);
+                foreach (var item in items) 
+                {
+                    var mauiItem = MauiWrapper.Value<string>(item);
+                    mauiObject.Items.Add(mauiItem);
+                }
             }
             return obj;
         }
@@ -177,8 +197,9 @@ namespace Sharp.UI
             System.Collections.IList? itemsSource)
             where T : Sharp.UI.IPicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
-            if (itemsSource != null) mauiObject.ItemsSource = (System.Collections.IList)itemsSource;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Picker>(obj);
+            var mauiValue = MauiWrapper.Value<System.Collections.IList>(itemsSource);
+            if (itemsSource != null) mauiObject.ItemsSource = mauiValue;
             return obj;
         }
         
@@ -187,8 +208,9 @@ namespace Sharp.UI
             System.Func<BindableDef<System.Collections.IList>, BindableDef<System.Collections.IList>> definition)
             where T : Sharp.UI.IPicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
-            if (itemsSource != null) mauiObject.ItemsSource = (System.Collections.IList)itemsSource;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Picker>(obj);
+            var mauiValue = MauiWrapper.Value<System.Collections.IList>(itemsSource);
+            if (itemsSource != null) mauiObject.ItemsSource = mauiValue;
             var def = definition(new BindableDef<System.Collections.IList>(mauiObject, Microsoft.Maui.Controls.Picker.ItemsSourceProperty));
             if (def.ValueIsSet()) mauiObject.ItemsSource = def.GetValue();
             def.BindProperty();
@@ -199,7 +221,7 @@ namespace Sharp.UI
             System.Func<BindableDef<System.Collections.IList>, BindableDef<System.Collections.IList>> definition)
             where T : Sharp.UI.IPicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Picker>(obj);
             var def = definition(new BindableDef<System.Collections.IList>(mauiObject, Microsoft.Maui.Controls.Picker.ItemsSourceProperty));
             if (def.ValueIsSet()) mauiObject.ItemsSource = def.GetValue();
             def.BindProperty();
@@ -210,8 +232,9 @@ namespace Sharp.UI
             int? selectedIndex)
             where T : Sharp.UI.IPicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
-            if (selectedIndex != null) mauiObject.SelectedIndex = (int)selectedIndex;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Picker>(obj);
+            var mauiValue = MauiWrapper.Value<int>(selectedIndex);
+            if (selectedIndex != null) mauiObject.SelectedIndex = mauiValue;
             return obj;
         }
         
@@ -220,8 +243,9 @@ namespace Sharp.UI
             System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.IPicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
-            if (selectedIndex != null) mauiObject.SelectedIndex = (int)selectedIndex;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Picker>(obj);
+            var mauiValue = MauiWrapper.Value<int>(selectedIndex);
+            if (selectedIndex != null) mauiObject.SelectedIndex = mauiValue;
             var def = definition(new BindableDef<int>(mauiObject, Microsoft.Maui.Controls.Picker.SelectedIndexProperty));
             if (def.ValueIsSet()) mauiObject.SelectedIndex = def.GetValue();
             def.BindProperty();
@@ -232,7 +256,7 @@ namespace Sharp.UI
             System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.IPicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Picker>(obj);
             var def = definition(new BindableDef<int>(mauiObject, Microsoft.Maui.Controls.Picker.SelectedIndexProperty));
             if (def.ValueIsSet()) mauiObject.SelectedIndex = def.GetValue();
             def.BindProperty();
@@ -243,8 +267,9 @@ namespace Sharp.UI
             object? selectedItem)
             where T : Sharp.UI.IPicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
-            if (selectedItem != null) mauiObject.SelectedItem = (object)selectedItem;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Picker>(obj);
+            var mauiValue = MauiWrapper.Value<object>(selectedItem);
+            if (selectedItem != null) mauiObject.SelectedItem = mauiValue;
             return obj;
         }
         
@@ -253,8 +278,9 @@ namespace Sharp.UI
             System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IPicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
-            if (selectedItem != null) mauiObject.SelectedItem = (object)selectedItem;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Picker>(obj);
+            var mauiValue = MauiWrapper.Value<object>(selectedItem);
+            if (selectedItem != null) mauiObject.SelectedItem = mauiValue;
             var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.Picker.SelectedItemProperty));
             if (def.ValueIsSet()) mauiObject.SelectedItem = def.GetValue();
             def.BindProperty();
@@ -265,7 +291,7 @@ namespace Sharp.UI
             System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IPicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Picker>(obj);
             var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.Picker.SelectedItemProperty));
             if (def.ValueIsSet()) mauiObject.SelectedItem = def.GetValue();
             def.BindProperty();
@@ -276,8 +302,9 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color? textColor)
             where T : Sharp.UI.IPicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
-            if (textColor != null) mauiObject.TextColor = (Microsoft.Maui.Graphics.Color)textColor;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Picker>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(textColor);
+            if (textColor != null) mauiObject.TextColor = mauiValue;
             return obj;
         }
         
@@ -286,8 +313,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IPicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
-            if (textColor != null) mauiObject.TextColor = (Microsoft.Maui.Graphics.Color)textColor;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Picker>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(textColor);
+            if (textColor != null) mauiObject.TextColor = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.Picker.TextColorProperty));
             if (def.ValueIsSet()) mauiObject.TextColor = def.GetValue();
             def.BindProperty();
@@ -298,7 +326,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IPicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Picker>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.Picker.TextColorProperty));
             if (def.ValueIsSet()) mauiObject.TextColor = def.GetValue();
             def.BindProperty();
@@ -309,8 +337,9 @@ namespace Sharp.UI
             double? characterSpacing)
             where T : Sharp.UI.IPicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
-            if (characterSpacing != null) mauiObject.CharacterSpacing = (double)characterSpacing;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Picker>(obj);
+            var mauiValue = MauiWrapper.Value<double>(characterSpacing);
+            if (characterSpacing != null) mauiObject.CharacterSpacing = mauiValue;
             return obj;
         }
         
@@ -319,8 +348,9 @@ namespace Sharp.UI
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IPicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
-            if (characterSpacing != null) mauiObject.CharacterSpacing = (double)characterSpacing;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Picker>(obj);
+            var mauiValue = MauiWrapper.Value<double>(characterSpacing);
+            if (characterSpacing != null) mauiObject.CharacterSpacing = mauiValue;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Picker.CharacterSpacingProperty));
             if (def.ValueIsSet()) mauiObject.CharacterSpacing = def.GetValue();
             def.BindProperty();
@@ -331,7 +361,7 @@ namespace Sharp.UI
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IPicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Picker>(obj);
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Picker.CharacterSpacingProperty));
             if (def.ValueIsSet()) mauiObject.CharacterSpacing = def.GetValue();
             def.BindProperty();
@@ -342,8 +372,9 @@ namespace Sharp.UI
             string? title)
             where T : Sharp.UI.IPicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
-            if (title != null) mauiObject.Title = (string)title;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Picker>(obj);
+            var mauiValue = MauiWrapper.Value<string>(title);
+            if (title != null) mauiObject.Title = mauiValue;
             return obj;
         }
         
@@ -352,8 +383,9 @@ namespace Sharp.UI
             System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.IPicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
-            if (title != null) mauiObject.Title = (string)title;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Picker>(obj);
+            var mauiValue = MauiWrapper.Value<string>(title);
+            if (title != null) mauiObject.Title = mauiValue;
             var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.Picker.TitleProperty));
             if (def.ValueIsSet()) mauiObject.Title = def.GetValue();
             def.BindProperty();
@@ -364,7 +396,7 @@ namespace Sharp.UI
             System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.IPicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Picker>(obj);
             var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.Picker.TitleProperty));
             if (def.ValueIsSet()) mauiObject.Title = def.GetValue();
             def.BindProperty();
@@ -375,8 +407,9 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color? titleColor)
             where T : Sharp.UI.IPicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
-            if (titleColor != null) mauiObject.TitleColor = (Microsoft.Maui.Graphics.Color)titleColor;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Picker>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(titleColor);
+            if (titleColor != null) mauiObject.TitleColor = mauiValue;
             return obj;
         }
         
@@ -385,8 +418,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IPicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
-            if (titleColor != null) mauiObject.TitleColor = (Microsoft.Maui.Graphics.Color)titleColor;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Picker>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Graphics.Color>(titleColor);
+            if (titleColor != null) mauiObject.TitleColor = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.Picker.TitleColorProperty));
             if (def.ValueIsSet()) mauiObject.TitleColor = def.GetValue();
             def.BindProperty();
@@ -397,7 +431,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IPicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Picker>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.Picker.TitleColorProperty));
             if (def.ValueIsSet()) mauiObject.TitleColor = def.GetValue();
             def.BindProperty();
@@ -408,8 +442,9 @@ namespace Sharp.UI
             Microsoft.Maui.TextAlignment? horizontalTextAlignment)
             where T : Sharp.UI.IPicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
-            if (horizontalTextAlignment != null) mauiObject.HorizontalTextAlignment = (Microsoft.Maui.TextAlignment)horizontalTextAlignment;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Picker>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.TextAlignment>(horizontalTextAlignment);
+            if (horizontalTextAlignment != null) mauiObject.HorizontalTextAlignment = mauiValue;
             return obj;
         }
         
@@ -418,8 +453,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.TextAlignment>, BindableDef<Microsoft.Maui.TextAlignment>> definition)
             where T : Sharp.UI.IPicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
-            if (horizontalTextAlignment != null) mauiObject.HorizontalTextAlignment = (Microsoft.Maui.TextAlignment)horizontalTextAlignment;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Picker>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.TextAlignment>(horizontalTextAlignment);
+            if (horizontalTextAlignment != null) mauiObject.HorizontalTextAlignment = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.TextAlignment>(mauiObject, Microsoft.Maui.Controls.Picker.HorizontalTextAlignmentProperty));
             if (def.ValueIsSet()) mauiObject.HorizontalTextAlignment = def.GetValue();
             def.BindProperty();
@@ -430,7 +466,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.TextAlignment>, BindableDef<Microsoft.Maui.TextAlignment>> definition)
             where T : Sharp.UI.IPicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Picker>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.TextAlignment>(mauiObject, Microsoft.Maui.Controls.Picker.HorizontalTextAlignmentProperty));
             if (def.ValueIsSet()) mauiObject.HorizontalTextAlignment = def.GetValue();
             def.BindProperty();
@@ -441,8 +477,9 @@ namespace Sharp.UI
             Microsoft.Maui.TextAlignment? verticalTextAlignment)
             where T : Sharp.UI.IPicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
-            if (verticalTextAlignment != null) mauiObject.VerticalTextAlignment = (Microsoft.Maui.TextAlignment)verticalTextAlignment;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Picker>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.TextAlignment>(verticalTextAlignment);
+            if (verticalTextAlignment != null) mauiObject.VerticalTextAlignment = mauiValue;
             return obj;
         }
         
@@ -451,8 +488,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.TextAlignment>, BindableDef<Microsoft.Maui.TextAlignment>> definition)
             where T : Sharp.UI.IPicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
-            if (verticalTextAlignment != null) mauiObject.VerticalTextAlignment = (Microsoft.Maui.TextAlignment)verticalTextAlignment;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Picker>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.TextAlignment>(verticalTextAlignment);
+            if (verticalTextAlignment != null) mauiObject.VerticalTextAlignment = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.TextAlignment>(mauiObject, Microsoft.Maui.Controls.Picker.VerticalTextAlignmentProperty));
             if (def.ValueIsSet()) mauiObject.VerticalTextAlignment = def.GetValue();
             def.BindProperty();
@@ -463,7 +501,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.TextAlignment>, BindableDef<Microsoft.Maui.TextAlignment>> definition)
             where T : Sharp.UI.IPicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Picker>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.TextAlignment>(mauiObject, Microsoft.Maui.Controls.Picker.VerticalTextAlignmentProperty));
             if (def.ValueIsSet()) mauiObject.VerticalTextAlignment = def.GetValue();
             def.BindProperty();
@@ -474,8 +512,9 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.BindingBase? itemDisplayBinding)
             where T : Sharp.UI.IPicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
-            if (itemDisplayBinding != null) mauiObject.ItemDisplayBinding = (Microsoft.Maui.Controls.BindingBase)itemDisplayBinding;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Picker>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.BindingBase>(itemDisplayBinding);
+            if (itemDisplayBinding != null) mauiObject.ItemDisplayBinding = mauiValue;
             return obj;
         }
         
@@ -484,8 +523,9 @@ namespace Sharp.UI
             System.Func<ValueDef<Microsoft.Maui.Controls.BindingBase>, ValueDef<Microsoft.Maui.Controls.BindingBase>> definition)
             where T : Sharp.UI.IPicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
-            if (itemDisplayBinding != null) mauiObject.ItemDisplayBinding = (Microsoft.Maui.Controls.BindingBase)itemDisplayBinding;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Picker>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.Controls.BindingBase>(itemDisplayBinding);
+            if (itemDisplayBinding != null) mauiObject.ItemDisplayBinding = mauiValue;
             var def = definition(new ValueDef<Microsoft.Maui.Controls.BindingBase>());
             if (def.ValueIsSet()) mauiObject.ItemDisplayBinding = def.GetValue();
             return obj;
@@ -495,7 +535,7 @@ namespace Sharp.UI
             System.Func<ValueDef<Microsoft.Maui.Controls.BindingBase>, ValueDef<Microsoft.Maui.Controls.BindingBase>> definition)
             where T : Sharp.UI.IPicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Picker>(obj);
             var def = definition(new ValueDef<Microsoft.Maui.Controls.BindingBase>());
             if (def.ValueIsSet()) mauiObject.ItemDisplayBinding = def.GetValue();
             return obj;
@@ -504,7 +544,7 @@ namespace Sharp.UI
         public static T OnSelectedIndexChanged<T>(this T obj, OnEventAction<T> action)
             where T : Sharp.UI.IPicker
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.Picker>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Picker>(obj);
             mauiObject.SelectedIndexChanged += (o, arg) => action(obj);
             return obj;
         }

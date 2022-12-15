@@ -13,8 +13,9 @@ namespace Sharp.UI
             System.Windows.Input.ICommand? pointerEnteredCommand)
             where T : Sharp.UI.IPointerGestureRecognizer
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
-            if (pointerEnteredCommand != null) mauiObject.PointerEnteredCommand = (System.Windows.Input.ICommand)pointerEnteredCommand;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
+            var mauiValue = MauiWrapper.Value<System.Windows.Input.ICommand>(pointerEnteredCommand);
+            if (pointerEnteredCommand != null) mauiObject.PointerEnteredCommand = mauiValue;
             return obj;
         }
         
@@ -23,8 +24,9 @@ namespace Sharp.UI
             System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.IPointerGestureRecognizer
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
-            if (pointerEnteredCommand != null) mauiObject.PointerEnteredCommand = (System.Windows.Input.ICommand)pointerEnteredCommand;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
+            var mauiValue = MauiWrapper.Value<System.Windows.Input.ICommand>(pointerEnteredCommand);
+            if (pointerEnteredCommand != null) mauiObject.PointerEnteredCommand = mauiValue;
             var def = definition(new BindableDef<System.Windows.Input.ICommand>(mauiObject, Microsoft.Maui.Controls.PointerGestureRecognizer.PointerEnteredCommandProperty));
             if (def.ValueIsSet()) mauiObject.PointerEnteredCommand = def.GetValue();
             def.BindProperty();
@@ -35,7 +37,7 @@ namespace Sharp.UI
             System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.IPointerGestureRecognizer
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
             var def = definition(new BindableDef<System.Windows.Input.ICommand>(mauiObject, Microsoft.Maui.Controls.PointerGestureRecognizer.PointerEnteredCommandProperty));
             if (def.ValueIsSet()) mauiObject.PointerEnteredCommand = def.GetValue();
             def.BindProperty();
@@ -46,8 +48,9 @@ namespace Sharp.UI
             System.Windows.Input.ICommand? pointerEnteredCommandParameter)
             where T : Sharp.UI.IPointerGestureRecognizer
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
-            if (pointerEnteredCommandParameter != null) mauiObject.PointerEnteredCommandParameter = (System.Windows.Input.ICommand)pointerEnteredCommandParameter;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
+            var mauiValue = MauiWrapper.Value<System.Windows.Input.ICommand>(pointerEnteredCommandParameter);
+            if (pointerEnteredCommandParameter != null) mauiObject.PointerEnteredCommandParameter = mauiValue;
             return obj;
         }
         
@@ -56,8 +59,9 @@ namespace Sharp.UI
             System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.IPointerGestureRecognizer
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
-            if (pointerEnteredCommandParameter != null) mauiObject.PointerEnteredCommandParameter = (System.Windows.Input.ICommand)pointerEnteredCommandParameter;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
+            var mauiValue = MauiWrapper.Value<System.Windows.Input.ICommand>(pointerEnteredCommandParameter);
+            if (pointerEnteredCommandParameter != null) mauiObject.PointerEnteredCommandParameter = mauiValue;
             var def = definition(new BindableDef<System.Windows.Input.ICommand>(mauiObject, Microsoft.Maui.Controls.PointerGestureRecognizer.PointerEnteredCommandParameterProperty));
             if (def.ValueIsSet()) mauiObject.PointerEnteredCommandParameter = def.GetValue();
             def.BindProperty();
@@ -68,7 +72,7 @@ namespace Sharp.UI
             System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.IPointerGestureRecognizer
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
             var def = definition(new BindableDef<System.Windows.Input.ICommand>(mauiObject, Microsoft.Maui.Controls.PointerGestureRecognizer.PointerEnteredCommandParameterProperty));
             if (def.ValueIsSet()) mauiObject.PointerEnteredCommandParameter = def.GetValue();
             def.BindProperty();
@@ -79,8 +83,9 @@ namespace Sharp.UI
             System.Windows.Input.ICommand? pointerExitedCommand)
             where T : Sharp.UI.IPointerGestureRecognizer
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
-            if (pointerExitedCommand != null) mauiObject.PointerExitedCommand = (System.Windows.Input.ICommand)pointerExitedCommand;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
+            var mauiValue = MauiWrapper.Value<System.Windows.Input.ICommand>(pointerExitedCommand);
+            if (pointerExitedCommand != null) mauiObject.PointerExitedCommand = mauiValue;
             return obj;
         }
         
@@ -89,8 +94,9 @@ namespace Sharp.UI
             System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.IPointerGestureRecognizer
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
-            if (pointerExitedCommand != null) mauiObject.PointerExitedCommand = (System.Windows.Input.ICommand)pointerExitedCommand;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
+            var mauiValue = MauiWrapper.Value<System.Windows.Input.ICommand>(pointerExitedCommand);
+            if (pointerExitedCommand != null) mauiObject.PointerExitedCommand = mauiValue;
             var def = definition(new BindableDef<System.Windows.Input.ICommand>(mauiObject, Microsoft.Maui.Controls.PointerGestureRecognizer.PointerExitedCommandProperty));
             if (def.ValueIsSet()) mauiObject.PointerExitedCommand = def.GetValue();
             def.BindProperty();
@@ -101,7 +107,7 @@ namespace Sharp.UI
             System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.IPointerGestureRecognizer
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
             var def = definition(new BindableDef<System.Windows.Input.ICommand>(mauiObject, Microsoft.Maui.Controls.PointerGestureRecognizer.PointerExitedCommandProperty));
             if (def.ValueIsSet()) mauiObject.PointerExitedCommand = def.GetValue();
             def.BindProperty();
@@ -112,8 +118,9 @@ namespace Sharp.UI
             System.Windows.Input.ICommand? pointerExitedCommandParameter)
             where T : Sharp.UI.IPointerGestureRecognizer
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
-            if (pointerExitedCommandParameter != null) mauiObject.PointerExitedCommandParameter = (System.Windows.Input.ICommand)pointerExitedCommandParameter;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
+            var mauiValue = MauiWrapper.Value<System.Windows.Input.ICommand>(pointerExitedCommandParameter);
+            if (pointerExitedCommandParameter != null) mauiObject.PointerExitedCommandParameter = mauiValue;
             return obj;
         }
         
@@ -122,8 +129,9 @@ namespace Sharp.UI
             System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.IPointerGestureRecognizer
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
-            if (pointerExitedCommandParameter != null) mauiObject.PointerExitedCommandParameter = (System.Windows.Input.ICommand)pointerExitedCommandParameter;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
+            var mauiValue = MauiWrapper.Value<System.Windows.Input.ICommand>(pointerExitedCommandParameter);
+            if (pointerExitedCommandParameter != null) mauiObject.PointerExitedCommandParameter = mauiValue;
             var def = definition(new BindableDef<System.Windows.Input.ICommand>(mauiObject, Microsoft.Maui.Controls.PointerGestureRecognizer.PointerExitedCommandParameterProperty));
             if (def.ValueIsSet()) mauiObject.PointerExitedCommandParameter = def.GetValue();
             def.BindProperty();
@@ -134,7 +142,7 @@ namespace Sharp.UI
             System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.IPointerGestureRecognizer
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
             var def = definition(new BindableDef<System.Windows.Input.ICommand>(mauiObject, Microsoft.Maui.Controls.PointerGestureRecognizer.PointerExitedCommandParameterProperty));
             if (def.ValueIsSet()) mauiObject.PointerExitedCommandParameter = def.GetValue();
             def.BindProperty();
@@ -145,8 +153,9 @@ namespace Sharp.UI
             System.Windows.Input.ICommand? pointerMovedCommand)
             where T : Sharp.UI.IPointerGestureRecognizer
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
-            if (pointerMovedCommand != null) mauiObject.PointerMovedCommand = (System.Windows.Input.ICommand)pointerMovedCommand;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
+            var mauiValue = MauiWrapper.Value<System.Windows.Input.ICommand>(pointerMovedCommand);
+            if (pointerMovedCommand != null) mauiObject.PointerMovedCommand = mauiValue;
             return obj;
         }
         
@@ -155,8 +164,9 @@ namespace Sharp.UI
             System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.IPointerGestureRecognizer
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
-            if (pointerMovedCommand != null) mauiObject.PointerMovedCommand = (System.Windows.Input.ICommand)pointerMovedCommand;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
+            var mauiValue = MauiWrapper.Value<System.Windows.Input.ICommand>(pointerMovedCommand);
+            if (pointerMovedCommand != null) mauiObject.PointerMovedCommand = mauiValue;
             var def = definition(new BindableDef<System.Windows.Input.ICommand>(mauiObject, Microsoft.Maui.Controls.PointerGestureRecognizer.PointerMovedCommandProperty));
             if (def.ValueIsSet()) mauiObject.PointerMovedCommand = def.GetValue();
             def.BindProperty();
@@ -167,7 +177,7 @@ namespace Sharp.UI
             System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.IPointerGestureRecognizer
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
             var def = definition(new BindableDef<System.Windows.Input.ICommand>(mauiObject, Microsoft.Maui.Controls.PointerGestureRecognizer.PointerMovedCommandProperty));
             if (def.ValueIsSet()) mauiObject.PointerMovedCommand = def.GetValue();
             def.BindProperty();
@@ -178,8 +188,9 @@ namespace Sharp.UI
             System.Windows.Input.ICommand? pointerMovedCommandParameter)
             where T : Sharp.UI.IPointerGestureRecognizer
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
-            if (pointerMovedCommandParameter != null) mauiObject.PointerMovedCommandParameter = (System.Windows.Input.ICommand)pointerMovedCommandParameter;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
+            var mauiValue = MauiWrapper.Value<System.Windows.Input.ICommand>(pointerMovedCommandParameter);
+            if (pointerMovedCommandParameter != null) mauiObject.PointerMovedCommandParameter = mauiValue;
             return obj;
         }
         
@@ -188,8 +199,9 @@ namespace Sharp.UI
             System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.IPointerGestureRecognizer
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
-            if (pointerMovedCommandParameter != null) mauiObject.PointerMovedCommandParameter = (System.Windows.Input.ICommand)pointerMovedCommandParameter;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
+            var mauiValue = MauiWrapper.Value<System.Windows.Input.ICommand>(pointerMovedCommandParameter);
+            if (pointerMovedCommandParameter != null) mauiObject.PointerMovedCommandParameter = mauiValue;
             var def = definition(new BindableDef<System.Windows.Input.ICommand>(mauiObject, Microsoft.Maui.Controls.PointerGestureRecognizer.PointerMovedCommandParameterProperty));
             if (def.ValueIsSet()) mauiObject.PointerMovedCommandParameter = def.GetValue();
             def.BindProperty();
@@ -200,7 +212,7 @@ namespace Sharp.UI
             System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.IPointerGestureRecognizer
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
             var def = definition(new BindableDef<System.Windows.Input.ICommand>(mauiObject, Microsoft.Maui.Controls.PointerGestureRecognizer.PointerMovedCommandParameterProperty));
             if (def.ValueIsSet()) mauiObject.PointerMovedCommandParameter = def.GetValue();
             def.BindProperty();
@@ -210,7 +222,7 @@ namespace Sharp.UI
         public static T OnPointerEntered<T>(this T obj, OnEventAction<T, Microsoft.Maui.Controls.PointerEventArgs> action)
             where T : Sharp.UI.IPointerGestureRecognizer
         {            
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
             mauiObject.PointerEntered += (o, arg) => action(obj, arg);
             return obj;
         }
@@ -218,7 +230,7 @@ namespace Sharp.UI
         public static T OnPointerExited<T>(this T obj, OnEventAction<T, Microsoft.Maui.Controls.PointerEventArgs> action)
             where T : Sharp.UI.IPointerGestureRecognizer
         {            
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
             mauiObject.PointerExited += (o, arg) => action(obj, arg);
             return obj;
         }
@@ -226,7 +238,7 @@ namespace Sharp.UI
         public static T OnPointerMoved<T>(this T obj, OnEventAction<T, Microsoft.Maui.Controls.PointerEventArgs> action)
             where T : Sharp.UI.IPointerGestureRecognizer
         {            
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.PointerGestureRecognizer>(obj);
             mauiObject.PointerMoved += (o, arg) => action(obj, arg);
             return obj;
         }

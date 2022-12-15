@@ -13,8 +13,9 @@ namespace Sharp.UI
             System.Windows.Input.ICommand? command)
             where T : Sharp.UI.ISwipeGestureRecognizer
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwipeGestureRecognizer>(obj);
-            if (command != null) mauiObject.Command = (System.Windows.Input.ICommand)command;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeGestureRecognizer>(obj);
+            var mauiValue = MauiWrapper.Value<System.Windows.Input.ICommand>(command);
+            if (command != null) mauiObject.Command = mauiValue;
             return obj;
         }
         
@@ -23,8 +24,9 @@ namespace Sharp.UI
             System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.ISwipeGestureRecognizer
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwipeGestureRecognizer>(obj);
-            if (command != null) mauiObject.Command = (System.Windows.Input.ICommand)command;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeGestureRecognizer>(obj);
+            var mauiValue = MauiWrapper.Value<System.Windows.Input.ICommand>(command);
+            if (command != null) mauiObject.Command = mauiValue;
             var def = definition(new BindableDef<System.Windows.Input.ICommand>(mauiObject, Microsoft.Maui.Controls.SwipeGestureRecognizer.CommandProperty));
             if (def.ValueIsSet()) mauiObject.Command = def.GetValue();
             def.BindProperty();
@@ -35,7 +37,7 @@ namespace Sharp.UI
             System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.ISwipeGestureRecognizer
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwipeGestureRecognizer>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeGestureRecognizer>(obj);
             var def = definition(new BindableDef<System.Windows.Input.ICommand>(mauiObject, Microsoft.Maui.Controls.SwipeGestureRecognizer.CommandProperty));
             if (def.ValueIsSet()) mauiObject.Command = def.GetValue();
             def.BindProperty();
@@ -46,8 +48,9 @@ namespace Sharp.UI
             object? commandParameter)
             where T : Sharp.UI.ISwipeGestureRecognizer
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwipeGestureRecognizer>(obj);
-            if (commandParameter != null) mauiObject.CommandParameter = (object)commandParameter;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeGestureRecognizer>(obj);
+            var mauiValue = MauiWrapper.Value<object>(commandParameter);
+            if (commandParameter != null) mauiObject.CommandParameter = mauiValue;
             return obj;
         }
         
@@ -56,8 +59,9 @@ namespace Sharp.UI
             System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.ISwipeGestureRecognizer
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwipeGestureRecognizer>(obj);
-            if (commandParameter != null) mauiObject.CommandParameter = (object)commandParameter;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeGestureRecognizer>(obj);
+            var mauiValue = MauiWrapper.Value<object>(commandParameter);
+            if (commandParameter != null) mauiObject.CommandParameter = mauiValue;
             var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.SwipeGestureRecognizer.CommandParameterProperty));
             if (def.ValueIsSet()) mauiObject.CommandParameter = def.GetValue();
             def.BindProperty();
@@ -68,7 +72,7 @@ namespace Sharp.UI
             System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.ISwipeGestureRecognizer
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwipeGestureRecognizer>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeGestureRecognizer>(obj);
             var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.SwipeGestureRecognizer.CommandParameterProperty));
             if (def.ValueIsSet()) mauiObject.CommandParameter = def.GetValue();
             def.BindProperty();
@@ -79,8 +83,9 @@ namespace Sharp.UI
             Microsoft.Maui.SwipeDirection? direction)
             where T : Sharp.UI.ISwipeGestureRecognizer
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwipeGestureRecognizer>(obj);
-            if (direction != null) mauiObject.Direction = (Microsoft.Maui.SwipeDirection)direction;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeGestureRecognizer>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.SwipeDirection>(direction);
+            if (direction != null) mauiObject.Direction = mauiValue;
             return obj;
         }
         
@@ -89,8 +94,9 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.SwipeDirection>, BindableDef<Microsoft.Maui.SwipeDirection>> definition)
             where T : Sharp.UI.ISwipeGestureRecognizer
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwipeGestureRecognizer>(obj);
-            if (direction != null) mauiObject.Direction = (Microsoft.Maui.SwipeDirection)direction;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeGestureRecognizer>(obj);
+            var mauiValue = MauiWrapper.Value<Microsoft.Maui.SwipeDirection>(direction);
+            if (direction != null) mauiObject.Direction = mauiValue;
             var def = definition(new BindableDef<Microsoft.Maui.SwipeDirection>(mauiObject, Microsoft.Maui.Controls.SwipeGestureRecognizer.DirectionProperty));
             if (def.ValueIsSet()) mauiObject.Direction = def.GetValue();
             def.BindProperty();
@@ -101,7 +107,7 @@ namespace Sharp.UI
             System.Func<BindableDef<Microsoft.Maui.SwipeDirection>, BindableDef<Microsoft.Maui.SwipeDirection>> definition)
             where T : Sharp.UI.ISwipeGestureRecognizer
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwipeGestureRecognizer>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeGestureRecognizer>(obj);
             var def = definition(new BindableDef<Microsoft.Maui.SwipeDirection>(mauiObject, Microsoft.Maui.Controls.SwipeGestureRecognizer.DirectionProperty));
             if (def.ValueIsSet()) mauiObject.Direction = def.GetValue();
             def.BindProperty();
@@ -112,8 +118,9 @@ namespace Sharp.UI
             uint? threshold)
             where T : Sharp.UI.ISwipeGestureRecognizer
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwipeGestureRecognizer>(obj);
-            if (threshold != null) mauiObject.Threshold = (uint)threshold;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeGestureRecognizer>(obj);
+            var mauiValue = MauiWrapper.Value<uint>(threshold);
+            if (threshold != null) mauiObject.Threshold = mauiValue;
             return obj;
         }
         
@@ -122,8 +129,9 @@ namespace Sharp.UI
             System.Func<BindableDef<uint>, BindableDef<uint>> definition)
             where T : Sharp.UI.ISwipeGestureRecognizer
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwipeGestureRecognizer>(obj);
-            if (threshold != null) mauiObject.Threshold = (uint)threshold;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeGestureRecognizer>(obj);
+            var mauiValue = MauiWrapper.Value<uint>(threshold);
+            if (threshold != null) mauiObject.Threshold = mauiValue;
             var def = definition(new BindableDef<uint>(mauiObject, Microsoft.Maui.Controls.SwipeGestureRecognizer.ThresholdProperty));
             if (def.ValueIsSet()) mauiObject.Threshold = def.GetValue();
             def.BindProperty();
@@ -134,7 +142,7 @@ namespace Sharp.UI
             System.Func<BindableDef<uint>, BindableDef<uint>> definition)
             where T : Sharp.UI.ISwipeGestureRecognizer
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwipeGestureRecognizer>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeGestureRecognizer>(obj);
             var def = definition(new BindableDef<uint>(mauiObject, Microsoft.Maui.Controls.SwipeGestureRecognizer.ThresholdProperty));
             if (def.ValueIsSet()) mauiObject.Threshold = def.GetValue();
             def.BindProperty();
@@ -144,7 +152,7 @@ namespace Sharp.UI
         public static T OnSwiped<T>(this T obj, OnEventAction<T, Microsoft.Maui.Controls.SwipedEventArgs> action)
             where T : Sharp.UI.ISwipeGestureRecognizer
         {            
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.SwipeGestureRecognizer>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeGestureRecognizer>(obj);
             mauiObject.Swiped += (o, arg) => action(obj, arg);
             return obj;
         }

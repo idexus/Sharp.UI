@@ -10,7 +10,7 @@ namespace Sharp.UI
             object value)
             where T : IBindableObject
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.BindableObject>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BindableObject>(obj);
             mauiObject.SetValue(property, value);
             return obj;
         }
@@ -24,7 +24,7 @@ namespace Sharp.UI
             string stringFormat = null,
             object source = null) where T : IBindableObject
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.BindableObject>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BindableObject>(obj);
             mauiObject.SetBinding(
                 targetProperty: property,
                 binding: new Microsoft.Maui.Controls.Binding(
@@ -45,7 +45,7 @@ namespace Sharp.UI
             string converterParameter = null,
             string stringFormat = null) where T : IBindableObject
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.BindableObject>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BindableObject>(obj);
             mauiObject.SetBinding(
                 targetProperty: property,
                 binding: new Microsoft.Maui.Controls.Binding(
@@ -61,8 +61,8 @@ namespace Sharp.UI
         public static T RegisterName<T>(this T obj, string name, IBindableObject scopedElement)
             where T : IBindableObject
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.BindableObject>(obj);
-            var mauiScopedElement = MauiWrapper.GetObject<Microsoft.Maui.Controls.BindableObject>(scopedElement);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BindableObject>(obj);
+            var mauiScopedElement = MauiWrapper.Value<Microsoft.Maui.Controls.BindableObject>(scopedElement);
 
             var nameScope = NameScope.GetNameScope(mauiScopedElement);
             if (nameScope == null)

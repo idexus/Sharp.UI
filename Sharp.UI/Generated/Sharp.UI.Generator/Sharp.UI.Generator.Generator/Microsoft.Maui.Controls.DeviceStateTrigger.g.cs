@@ -13,8 +13,9 @@ namespace Sharp.UI
             string? device)
             where T : Sharp.UI.IDeviceStateTrigger
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DeviceStateTrigger>(obj);
-            if (device != null) mauiObject.Device = (string)device;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DeviceStateTrigger>(obj);
+            var mauiValue = MauiWrapper.Value<string>(device);
+            if (device != null) mauiObject.Device = mauiValue;
             return obj;
         }
         
@@ -23,8 +24,9 @@ namespace Sharp.UI
             System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.IDeviceStateTrigger
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DeviceStateTrigger>(obj);
-            if (device != null) mauiObject.Device = (string)device;
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DeviceStateTrigger>(obj);
+            var mauiValue = MauiWrapper.Value<string>(device);
+            if (device != null) mauiObject.Device = mauiValue;
             var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.DeviceStateTrigger.DeviceProperty));
             if (def.ValueIsSet()) mauiObject.Device = def.GetValue();
             def.BindProperty();
@@ -35,7 +37,7 @@ namespace Sharp.UI
             System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.IDeviceStateTrigger
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.DeviceStateTrigger>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DeviceStateTrigger>(obj);
             var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.DeviceStateTrigger.DeviceProperty));
             if (def.ValueIsSet()) mauiObject.Device = def.GetValue();
             def.BindProperty();

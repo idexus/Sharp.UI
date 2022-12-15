@@ -15,7 +15,7 @@
     {
         public static T GridSpan<T>(this T obj, int column = 1, int row = 1) where T : IView
         {
-            var mauiObject = MauiWrapper.GetObject<Microsoft.Maui.Controls.View>(obj);
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.View>(obj);
             mauiObject.SetValue(Grid.ColumnSpanProperty, column);
             mauiObject.SetValue(Grid.RowSpanProperty, row);
             return obj;
