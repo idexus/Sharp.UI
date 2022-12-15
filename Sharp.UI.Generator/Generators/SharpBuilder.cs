@@ -188,8 +188,9 @@ public class SharpBuilder
 
     void AddInterface(StringBuilder builder, INamedTypeSymbol type)
     {
+        var sealedText = type.IsSealed ? " // from sealed class" : "";
         var parentInterfaceName = $"I{SharpSymbol.GetNormalizedName(type.BaseType)}";
         var parentString = parentInterfaceName.Equals("IObject") ? "" : $" : {parentInterfaceName}";
-        builder.AppendLine($@"public partial interface I{SharpSymbol.GetNormalizedName(type)}{parentString} {{ }}");
+        builder.AppendLine($@"public partial interface I{SharpSymbol.GetNormalizedName(type)}{parentString} {{ }}{sealedText}");
     }
 }
