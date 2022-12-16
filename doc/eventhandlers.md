@@ -1,6 +1,6 @@
 # Event handlers
 
-For each "Event Handler" in each maui class, a fluent helper method is generated. E.g for the `Clicked` event handler in `Button` class you will get two fluent methods
+For each `EventHandler` in maui classes, a fluent helper method is generated. E.g for the `Clicked` event handler in the `Button` class you will get two fluent methods
 - `OnClicked(Button sender)` 
 - `OnClicked(object sender, EventArgs e)`
 
