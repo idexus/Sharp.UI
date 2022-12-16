@@ -9,8 +9,8 @@
     [SharpObject(typeof(Microsoft.Maui.Controls.BoxView))] 
     public partial class BoxView { }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.Button), 
-        constructorWithProperties: new[] { "Text" })] 
+    [SharpObject(typeof(Microsoft.Maui.Controls.Button),
+        constructorWithProperties: new[] { "Text" })]
     public partial class Button { }
 
     [SharpObject(typeof(Microsoft.Maui.Controls.CarouselView))]

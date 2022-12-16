@@ -2,13 +2,6 @@
 
 using Sharp.UI;
 
-public class NewStyle : Style
-{
-    public NewStyle(Microsoft.Maui.Controls.Style style) : base(style)
-    {
-    }
-}
-
 [BindableProperties]
 public interface ICardViewProperties
 {
@@ -17,30 +10,51 @@ public interface ICardViewProperties
     Color CardColor { get; set; }
     Color BorderColor { get; set; }
     Style MyStyle { get; set; }
-    NewStyle MyNewStyle { get; set; }
     View MyView { get; set; }
-    HStack MyHStack { get; set; }
-    object MyObject { get; set; }
+    string ButtonTitle { get; set; }
 }
 
 [SharpObject]
 public partial class CardView : ContentView, ICardViewProperties
 {
+    public event EventHandler MyEventHandler;
+    private void MyButtonHandler(object sender, EventArgs e) => MyEventHandler.Invoke(sender, e);
+
     public CardView()
     {
         this.BindingContext = this;
         Content = new Border
         {
-            new VStack
+            new Grid
             {
-                new Label()
-                    .Text(e => e.Path(nameof(CardTitle)))
-                    .FontSize(44)
-                    .TextColor(Colors.White),
+                new VStack
+                {
+                    new Label()
+                        .Text(e => e.Path(nameof(CardTitle)))
+                        .FontSize(25)
+                        .TextColor(Colors.White),
 
-                new Label()
-                    .Text(e => e.Path(nameof(CardDescription)))
+                    new Label()
+                        .Text(e => e.Path(nameof(CardDescription))),
+                        //.Style(e => e.Path(nameof(MyStyle))),
+                },
+
+                new ContentView()
+                    .Row(1)
+                    .Content(e => e.Path(nameof(MyView)))
+                    .HorizontalOptions(LayoutOptions.Center)
+                    .VerticalOptions(LayoutOptions.Center)
+                    .SizeRequest(120,120),
+
+                new Button()
+                    .Row(2)                    
+                    .Text(e => e.Path(nameof(ButtonTitle)))
+                    .BackgroundColor(AppColors.Gray600)
+                    .TextColor(AppColors.Gray100)
+                    .OnClicked(MyButtonHandler)
             }
+            .RowDefinitions(e => e.Star(1).Star(2).Star(0.7))
+            .RowSpacing(10)
         }
         .StrokeShape(new RoundRectangle().CornerRadius(10))
         .Stroke(e => e.Path(nameof(BorderColor)))
@@ -49,9 +63,8 @@ public partial class CardView : ContentView, ICardViewProperties
         .Margin(50)
         .Padding(20);
     }
-}
 
-public class CardView2 : CardView { }
+}
 
 public class CardViewPage : ContentPage
 {    
@@ -61,21 +74,41 @@ public class CardViewPage : ContentPage
         {
             new Slider(1,100, out var slider),
 
-            new CardView2()
-                .CardTitle(e => e
-                    .Path("Value")
-                    .Source(slider)
-                    .StringFormat("Value {0:F2}"))
-                .CardDescription("Do you like it")
-                .CardColor(Colors.Blue)
-                .BorderColor(Colors.Red),
+            new HStack
+            {
+                new CardView(out var cardNo1)
+                    .CardTitle(e => e
+                        .Path("Value")
+                        .Source(slider)
+                        .StringFormat("Value {0:F1}"))
+                    .ButtonTitle("Play")
+                    .CardDescription("Do you like it")
+                    .CardColor(Colors.Blue)
+                    .BorderColor(Colors.Red)
+                    .MyView(new Image("dotnet_bot.png").Aspect(Aspect.AspectFit))
+                    .OnMyEventHandler(e =>
+                    {
+                        cardNo1.CardDescription = "Let's play :)";
+                    }),
 
-            new CardView()
-                .CardTitle("Title 2")
-                .CardDescription("Yes I do")
-                .CardColor(Colors.Red)
-                .BorderColor(Colors.Blue)
+                new CardView(out var cardView)
+                    .CardTitle("Title 2")
+                    .ButtonTitle("Stop")
+                    .CardDescription("Yes I do")
+                    .CardColor(Colors.Red)
+                    .BorderColor(Colors.Blue)
+                    .MyView(new VStack
+                    {
+                        new Label("This is a simpla card view example")
+                    })
+                    //.Style(new Style<Label>
+                    //{
+                    //    Label.TextColorProperty.Set(Colors.Blue)
+                    //})
+            }
+            .HorizontalOptions(LayoutOptions.Center)
         }
-        .VerticalOptions(LayoutOptions.Center);
+        .VerticalOptions(LayoutOptions.Center)
+        .Padding(100);
     }
 }

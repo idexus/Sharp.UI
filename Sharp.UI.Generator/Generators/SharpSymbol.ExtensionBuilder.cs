@@ -415,7 +415,8 @@ namespace {mainSymbol.ContainingNamespace}
         {
             var eventSymbol = (IEventSymbol)@event;
             var eventHandler = eventSymbol.AddMethod.Parameters.First();
-            var methodArgTypeName = ((INamedTypeSymbol)eventHandler.Type).DelegateInvokeMethod.Parameters.Last().ToDisplayString();
+            var eventHandlerType = ((INamedTypeSymbol)eventHandler.Type);
+            var methodArgTypeName = eventHandlerType.DelegateInvokeMethod.Parameters.Last().ToDisplayString();
 
             var existInBases = false;
             Helpers.LoopDownToObject(extensionType.BaseType, type =>
@@ -432,11 +433,23 @@ namespace {mainSymbol.ContainingNamespace}
 
             if (!existInBases && !notGenerateList.Contains(eventSymbol.Name))
             {
-                if (methodArgTypeName.Equals("System.EventArgs"))
-                    GenerateEventMethodNoArgs(eventSymbol);
-                else
-                    GenerateEventMethodWithArgs(eventSymbol, methodArgTypeName);
+                GenerateEventMethodHandler(eventSymbol, eventHandlerType);
+                GenerateEventMethodNoArgs(eventSymbol);
             }
+        }
+
+        void GenerateEventMethodHandler(IEventSymbol eventSymbol, INamedTypeSymbol namedType)
+        {
+            IsExtensionMethodsGenerated = true;
+            builder.Append($@"
+        public static T On{eventSymbol.Name}<T>(this T obj, {namedType.ToDisplayString()} handler)
+            where T : {typeConformanceName}
+        {{
+            var mauiObject = MauiWrapper.Value<{extensionType.ToDisplayString()}>(obj);
+            mauiObject.{eventSymbol.Name} += handler;
+            return obj;
+        }}
+        ");
         }
 
         void GenerateEventMethodNoArgs(IEventSymbol eventSymbol)
@@ -448,20 +461,6 @@ namespace {mainSymbol.ContainingNamespace}
         {{
             var mauiObject = MauiWrapper.Value<{extensionType.ToDisplayString()}>(obj);
             mauiObject.{eventSymbol.Name} += (o, arg) => action(obj);
-            return obj;
-        }}
-        ");
-        }
-
-        void GenerateEventMethodWithArgs(IEventSymbol eventSymbol, string methodArgTypeName)
-        {
-            IsExtensionMethodsGenerated = true;
-            builder.Append($@"
-        public static T On{eventSymbol.Name}<T>(this T obj, OnEventAction<T, {methodArgTypeName}> action)
-            where T : {typeConformanceName}
-        {{            
-            var mauiObject = MauiWrapper.Value<{extensionType.ToDisplayString()}>(obj);
-            mauiObject.{eventSymbol.Name} += (o, arg) => action(obj, arg);
             return obj;
         }}
         ");

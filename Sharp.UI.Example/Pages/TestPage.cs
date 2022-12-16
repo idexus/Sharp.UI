@@ -235,7 +235,7 @@ namespace Sharp.UI.Example
             .Margin(new Thickness(0, 30, 0, 0));
         }
 
-        private void OnSearch(SearchBar sender, TextChangedEventArgs args)
+        private void OnSearch(SearchBar sender)
         {
             label3.Text = sender.Text;
         }
