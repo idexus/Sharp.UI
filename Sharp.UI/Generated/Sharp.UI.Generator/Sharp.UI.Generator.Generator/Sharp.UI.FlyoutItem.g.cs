@@ -10,7 +10,10 @@ using System.Collections.ObjectModel;
 
 
 namespace Sharp.UI
-{
+{  
+    /// <summary>
+    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.FlyoutItem</c> class.
+    /// </summary>
     public partial class FlyoutItem : Microsoft.Maui.Controls.FlyoutItem, Sharp.UI.IFlyoutItem, IMauiWrapper, IList<Microsoft.Maui.Controls.ShellSection>
     {
         // ----- maui object -----

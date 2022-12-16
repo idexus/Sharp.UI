@@ -6,6 +6,7 @@ public class DataTriggerPage : ContentPage
 {
 	public DataTriggerPage()
 	{
+      
 		Content = new VStack
 		{
 			new Entry("Enter text...", out var entry).Text(""),
@@ -15,8 +16,8 @@ public class DataTriggerPage : ContentPage
                     new DataTrigger<Button>(e => e.Path("Text.Length").Source(entry), 0)
                     {
                         Entry.IsEnabledProperty.Set(false)
-                    }
-                })
+                    }                    
+                }),            
         }
 		.VerticalOptions(LayoutOptions.Center);
 	}

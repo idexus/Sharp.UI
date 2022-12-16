@@ -6,7 +6,11 @@
 
 
 namespace Sharp.UI
-{
+{  
+    /// <summary>
+    /// A <c>Sharp.UI</c> class wrapper from the sealed <c>Microsoft.Maui.Controls.Shapes.Line</c> class.
+    /// Use the <value>MauiObject</value> property to get the raw Maui object.
+    /// </summary>
     public partial class Line : Sharp.UI.ILine, IMauiWrapper, ISealedMauiWrapper
     {
         // ----- maui object -----

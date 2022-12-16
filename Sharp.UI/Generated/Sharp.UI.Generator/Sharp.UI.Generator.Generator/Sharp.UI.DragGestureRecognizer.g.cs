@@ -6,7 +6,10 @@
 
 
 namespace Sharp.UI
-{
+{  
+    /// <summary>
+    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.DragGestureRecognizer</c> class.
+    /// </summary>
     public partial class DragGestureRecognizer : Microsoft.Maui.Controls.DragGestureRecognizer, Sharp.UI.IDragGestureRecognizer, IMauiWrapper
     {
         // ----- maui object -----

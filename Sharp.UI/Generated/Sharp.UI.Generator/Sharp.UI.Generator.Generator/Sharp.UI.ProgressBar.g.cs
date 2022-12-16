@@ -6,7 +6,10 @@
 
 
 namespace Sharp.UI
-{
+{  
+    /// <summary>
+    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.ProgressBar</c> class.
+    /// </summary>
     public partial class ProgressBar : Microsoft.Maui.Controls.ProgressBar, Sharp.UI.IProgressBar, IMauiWrapper
     {
         // ----- maui object -----

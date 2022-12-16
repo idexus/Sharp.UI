@@ -40,7 +40,7 @@ public class DefExamplePage : ContentPage
     };
 
     public DefExamplePage()
-	{
+	{        
         Resources = pageResources;
         Content = new VStack
         {

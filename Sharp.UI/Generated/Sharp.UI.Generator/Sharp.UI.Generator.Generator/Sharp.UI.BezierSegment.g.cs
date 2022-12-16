@@ -6,7 +6,10 @@
 
 
 namespace Sharp.UI
-{
+{  
+    /// <summary>
+    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.Shapes.BezierSegment</c> class.
+    /// </summary>
     public partial class BezierSegment : Microsoft.Maui.Controls.Shapes.BezierSegment, Sharp.UI.IBezierSegment, IMauiWrapper
     {
         // ----- maui object -----

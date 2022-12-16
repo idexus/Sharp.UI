@@ -6,7 +6,10 @@
 
 
 namespace Sharp.UI
-{
+{  
+    /// <summary>
+    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.VerticalStackLayout</c> class.
+    /// </summary>
     public partial class VStack : Microsoft.Maui.Controls.VerticalStackLayout, Sharp.UI.IVerticalStackLayout, IMauiWrapper
     {
         // ----- maui object -----

@@ -6,7 +6,11 @@
 
 
 namespace Sharp.UI
-{
+{  
+    /// <summary>
+    /// A <c>Sharp.UI</c> class wrapper from the sealed <c>Microsoft.Maui.Controls.Binding</c> class.
+    /// Use the <value>MauiObject</value> property to get the raw Maui object.
+    /// </summary>
     public partial class Binding : Sharp.UI.IBinding, IMauiWrapper, ISealedMauiWrapper
     {
         // ----- maui object -----

@@ -6,7 +6,10 @@
 
 
 namespace Sharp.UI
-{
+{  
+    /// <summary>
+    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.Picker</c> class.
+    /// </summary>
     public partial class Picker : Microsoft.Maui.Controls.Picker, Sharp.UI.IPicker, IMauiWrapper
     {
         // ----- maui object -----

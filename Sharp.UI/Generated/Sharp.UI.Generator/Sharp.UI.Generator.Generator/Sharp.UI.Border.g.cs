@@ -10,7 +10,10 @@ using System.Collections.ObjectModel;
 
 
 namespace Sharp.UI
-{
+{  
+    /// <summary>
+    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.Border</c> class.
+    /// </summary>
     public partial class Border : Microsoft.Maui.Controls.Border, Sharp.UI.IBorder, IMauiWrapper, IEnumerable
     {
         // ----- maui object -----

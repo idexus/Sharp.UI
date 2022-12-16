@@ -10,7 +10,11 @@ using System.Collections.ObjectModel;
 
 
 namespace Sharp.UI
-{
+{  
+    /// <summary>
+    /// A <c>Sharp.UI</c> class wrapper from the sealed <c>Microsoft.Maui.Controls.Shapes.Polyline</c> class.
+    /// Use the <value>MauiObject</value> property to get the raw Maui object.
+    /// </summary>
     public partial class Polyline : Sharp.UI.IPolyline, IMauiWrapper, ISealedMauiWrapper, IList<Microsoft.Maui.Graphics.Point>
     {
         // ----- maui object -----

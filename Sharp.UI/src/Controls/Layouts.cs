@@ -26,6 +26,12 @@
         public void Add(View view) => this.Children.Add(view);
     }
 
+    [SharpObject(typeof(Microsoft.Maui.Controls.HorizontalStackLayout))]
+    public partial class HorizontalStackLayout
+    {
+        public void Add(View view) => this.Children.Add(view);
+    }
+
     [SharpObject(typeof(Microsoft.Maui.Controls.StackLayout))] 
     public partial class StackLayout
     {
@@ -34,6 +40,12 @@
 
     [SharpObject(typeof(Microsoft.Maui.Controls.VerticalStackLayout))] 
     public partial class VStack
+    {
+        public void Add(View view) => this.Children.Add(view);
+    }
+
+    [SharpObject(typeof(Microsoft.Maui.Controls.VerticalStackLayout))]
+    public partial class VerticalStackLayout
     {
         public void Add(View view) => this.Children.Add(view);
     }

@@ -6,7 +6,10 @@
 
 
 namespace Sharp.UI
-{
+{  
+    /// <summary>
+    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.TimePicker</c> class.
+    /// </summary>
     public partial class TimePicker : Microsoft.Maui.Controls.TimePicker, Sharp.UI.ITimePicker, IMauiWrapper
     {
         // ----- maui object -----

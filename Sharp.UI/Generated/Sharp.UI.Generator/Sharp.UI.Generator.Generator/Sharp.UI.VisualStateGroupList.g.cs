@@ -6,7 +6,10 @@
 
 
 namespace Sharp.UI
-{
+{  
+    /// <summary>
+    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.VisualStateGroupList</c> class.
+    /// </summary>
     public partial class VisualStateGroupList : Microsoft.Maui.Controls.VisualStateGroupList, Sharp.UI.IVisualStateGroupList, IMauiWrapper
     {
         // ----- maui object -----

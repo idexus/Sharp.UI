@@ -6,7 +6,10 @@
 
 
 namespace Sharp.UI
-{
+{  
+    /// <summary>
+    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.WebView</c> class.
+    /// </summary>
     public partial class WebView : Microsoft.Maui.Controls.WebView, Sharp.UI.IWebView, IMauiWrapper
     {
         // ----- maui object -----

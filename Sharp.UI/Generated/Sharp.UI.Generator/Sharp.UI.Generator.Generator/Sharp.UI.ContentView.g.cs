@@ -10,7 +10,10 @@ using System.Collections.ObjectModel;
 
 
 namespace Sharp.UI
-{
+{  
+    /// <summary>
+    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.ContentView</c> class.
+    /// </summary>
     public partial class ContentView : Microsoft.Maui.Controls.ContentView, Sharp.UI.IContentView, IMauiWrapper, IEnumerable
     {
         // ----- maui object -----

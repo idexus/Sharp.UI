@@ -6,7 +6,10 @@
 
 
 namespace Sharp.UI
-{
+{  
+    /// <summary>
+    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.PanGestureRecognizer</c> class.
+    /// </summary>
     public partial class PanGestureRecognizer : Microsoft.Maui.Controls.PanGestureRecognizer, Sharp.UI.IPanGestureRecognizer, IMauiWrapper
     {
         // ----- maui object -----

@@ -6,7 +6,10 @@
 
 
 namespace Sharp.UI
-{
+{  
+    /// <summary>
+    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.BoxView</c> class.
+    /// </summary>
     public partial class BoxView : Microsoft.Maui.Controls.BoxView, Sharp.UI.IBoxView, IMauiWrapper
     {
         // ----- maui object -----

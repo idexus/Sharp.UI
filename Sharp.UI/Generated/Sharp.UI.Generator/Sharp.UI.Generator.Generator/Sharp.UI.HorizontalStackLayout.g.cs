@@ -8,31 +8,31 @@
 namespace Sharp.UI
 {  
     /// <summary>
-    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.ContentPresenter</c> class.
+    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.HorizontalStackLayout</c> class.
     /// </summary>
-    public partial class ContentPresenter : Microsoft.Maui.Controls.ContentPresenter, Sharp.UI.IContentPresenter, IMauiWrapper
+    public partial class HorizontalStackLayout : Microsoft.Maui.Controls.HorizontalStackLayout, Sharp.UI.IHorizontalStackLayout, IMauiWrapper
     {
         // ----- maui object -----
 
-        public Sharp.UI.ContentPresenter MauiObject { get => this; }
+        public Sharp.UI.HorizontalStackLayout MauiObject { get => this; }
 
         // ----- constructors -----
 
-        public ContentPresenter() { }
+        public HorizontalStackLayout() { }
 
-        public ContentPresenter(out ContentPresenter contentPresenter) 
+        public HorizontalStackLayout(out HorizontalStackLayout horizontalStackLayout) 
         {
-            contentPresenter = this;
+            horizontalStackLayout = this;
         }
 
-        public ContentPresenter(System.Action<ContentPresenter> configure) 
+        public HorizontalStackLayout(System.Action<HorizontalStackLayout> configure) 
         {
             configure(this);
         }
 
-        public ContentPresenter(out ContentPresenter contentPresenter, System.Action<ContentPresenter> configure) 
+        public HorizontalStackLayout(out HorizontalStackLayout horizontalStackLayout, System.Action<HorizontalStackLayout> configure) 
         {
-            contentPresenter = this;
+            horizontalStackLayout = this;
             configure(this);
         }
 

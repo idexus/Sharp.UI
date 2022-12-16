@@ -6,7 +6,10 @@
 
 
 namespace Sharp.UI
-{
+{  
+    /// <summary>
+    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.Slider</c> class.
+    /// </summary>
     public partial class Slider : Microsoft.Maui.Controls.Slider, Sharp.UI.ISlider, IMauiWrapper
     {
         // ----- maui object -----

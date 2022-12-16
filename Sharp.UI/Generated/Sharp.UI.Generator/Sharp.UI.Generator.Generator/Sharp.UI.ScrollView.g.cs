@@ -10,7 +10,10 @@ using System.Collections.ObjectModel;
 
 
 namespace Sharp.UI
-{
+{  
+    /// <summary>
+    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.ScrollView</c> class.
+    /// </summary>
     public partial class ScrollView : Microsoft.Maui.Controls.ScrollView, Sharp.UI.IScrollView, IMauiWrapper, IEnumerable
     {
         // ----- maui object -----

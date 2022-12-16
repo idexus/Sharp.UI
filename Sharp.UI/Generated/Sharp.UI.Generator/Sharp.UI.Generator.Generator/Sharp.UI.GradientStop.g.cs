@@ -6,7 +6,10 @@
 
 
 namespace Sharp.UI
-{
+{  
+    /// <summary>
+    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.GradientStop</c> class.
+    /// </summary>
     public partial class GradientStop : Microsoft.Maui.Controls.GradientStop, Sharp.UI.IGradientStop, IMauiWrapper
     {
         // ----- maui object -----

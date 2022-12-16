@@ -6,7 +6,10 @@
 
 
 namespace Sharp.UI
-{
+{  
+    /// <summary>
+    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.TextCell</c> class.
+    /// </summary>
     public partial class TextCell : Microsoft.Maui.Controls.TextCell, Sharp.UI.ITextCell, IMauiWrapper
     {
         // ----- maui object -----

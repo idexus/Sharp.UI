@@ -34,10 +34,21 @@ using System.Collections.ObjectModel;
 
         void GenerateSharpUINameSpace()
         {
+            var infoText = IsWrappedType ? (WrappedType.IsSealed ?
+                @$"
+    /// <summary>
+    /// A <c>Sharp.UI</c> class wrapper from the sealed <c>{WrappedType.ToDisplayString()}</c> class.
+    /// Use the <value>MauiObject</value> property to get the raw Maui object.
+    /// </summary>" :
+                @$"
+    /// <summary>
+    /// A <c>Sharp.UI</c> class that inherits from the <c>{WrappedType.ToDisplayString()}</c> class.
+    /// </summary>") : "";
+    
             this.GenerateContainerUsingsIfNeeded();
             builder.Append($@"
 namespace {nameSpaceString}
-{{
+{{  {infoText}
     public partial class {mainSymbol.Name}{BaseString()}
     {{");
             GenerateClass();

@@ -6,7 +6,10 @@
 
 
 namespace Sharp.UI
-{
+{  
+    /// <summary>
+    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.Shapes.PolyLineSegment</c> class.
+    /// </summary>
     public partial class PolyLineSegment : Microsoft.Maui.Controls.Shapes.PolyLineSegment, Sharp.UI.IPolyLineSegment, IMauiWrapper
     {
         // ----- maui object -----

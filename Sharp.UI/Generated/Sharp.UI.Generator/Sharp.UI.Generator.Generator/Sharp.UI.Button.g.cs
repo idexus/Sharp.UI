@@ -6,7 +6,10 @@
 
 
 namespace Sharp.UI
-{
+{  
+    /// <summary>
+    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.Button</c> class.
+    /// </summary>
     public partial class Button : Microsoft.Maui.Controls.Button, Sharp.UI.IButton, IMauiWrapper
     {
         // ----- maui object -----

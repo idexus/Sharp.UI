@@ -6,7 +6,10 @@
 
 
 namespace Sharp.UI
-{
+{  
+    /// <summary>
+    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.Stepper</c> class.
+    /// </summary>
     public partial class Stepper : Microsoft.Maui.Controls.Stepper, Sharp.UI.IStepper, IMauiWrapper
     {
         // ----- maui object -----

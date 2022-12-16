@@ -10,7 +10,10 @@ using System.Collections.ObjectModel;
 
 
 namespace Sharp.UI
-{
+{  
+    /// <summary>
+    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.Shapes.GeometryGroup</c> class.
+    /// </summary>
     public partial class GeometryGroup : Microsoft.Maui.Controls.Shapes.GeometryGroup, Sharp.UI.IGeometryGroup, IMauiWrapper, IList<Microsoft.Maui.Controls.Shapes.Geometry>
     {
         // ----- maui object -----

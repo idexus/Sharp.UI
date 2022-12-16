@@ -6,7 +6,10 @@
 
 
 namespace Sharp.UI
-{
+{  
+    /// <summary>
+    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.MenuFlyoutItem</c> class.
+    /// </summary>
     public partial class MenuFlyoutItem : Microsoft.Maui.Controls.MenuFlyoutItem, Sharp.UI.IMenuFlyoutItem, IMauiWrapper
     {
         // ----- maui object -----

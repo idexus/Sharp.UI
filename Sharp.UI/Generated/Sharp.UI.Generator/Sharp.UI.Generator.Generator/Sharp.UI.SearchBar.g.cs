@@ -6,7 +6,10 @@
 
 
 namespace Sharp.UI
-{
+{  
+    /// <summary>
+    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.SearchBar</c> class.
+    /// </summary>
     public partial class SearchBar : Microsoft.Maui.Controls.SearchBar, Sharp.UI.ISearchBar, IMauiWrapper
     {
         // ----- maui object -----

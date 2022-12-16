@@ -6,7 +6,10 @@
 
 
 namespace Sharp.UI
-{
+{  
+    /// <summary>
+    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.Grid</c> class.
+    /// </summary>
     public partial class Grid : Microsoft.Maui.Controls.Grid, Sharp.UI.IGrid, IMauiWrapper
     {
         // ----- maui object -----

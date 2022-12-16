@@ -10,7 +10,11 @@ using System.Collections.ObjectModel;
 
 
 namespace Sharp.UI
-{
+{  
+    /// <summary>
+    /// A <c>Sharp.UI</c> class wrapper from the sealed <c>Microsoft.Maui.Controls.Shapes.PathGeometry</c> class.
+    /// Use the <value>MauiObject</value> property to get the raw Maui object.
+    /// </summary>
     public partial class PathGeometry : Sharp.UI.IPathGeometry, IMauiWrapper, ISealedMauiWrapper, IList<Microsoft.Maui.Controls.Shapes.PathFigure>
     {
         // ----- maui object -----

@@ -6,7 +6,11 @@
 
 
 namespace Sharp.UI
-{
+{  
+    /// <summary>
+    /// A <c>Sharp.UI</c> class wrapper from the sealed <c>Microsoft.Maui.Controls.CompareStateTrigger</c> class.
+    /// Use the <value>MauiObject</value> property to get the raw Maui object.
+    /// </summary>
     public partial class CompareStateTrigger : Sharp.UI.ICompareStateTrigger, IMauiWrapper, ISealedMauiWrapper
     {
         // ----- maui object -----

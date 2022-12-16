@@ -6,7 +6,10 @@
 
 
 namespace Sharp.UI
-{
+{  
+    /// <summary>
+    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.NavigationPage</c> class.
+    /// </summary>
     public partial class NavigationPage : Microsoft.Maui.Controls.NavigationPage, Sharp.UI.INavigationPage, IMauiWrapper
     {
         // ----- maui object -----

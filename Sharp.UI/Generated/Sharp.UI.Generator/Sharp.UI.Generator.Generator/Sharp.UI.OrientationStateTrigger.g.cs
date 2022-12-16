@@ -6,7 +6,11 @@
 
 
 namespace Sharp.UI
-{
+{  
+    /// <summary>
+    /// A <c>Sharp.UI</c> class wrapper from the sealed <c>Microsoft.Maui.Controls.OrientationStateTrigger</c> class.
+    /// Use the <value>MauiObject</value> property to get the raw Maui object.
+    /// </summary>
     public partial class OrientationStateTrigger : Sharp.UI.IOrientationStateTrigger, IMauiWrapper, ISealedMauiWrapper
     {
         // ----- maui object -----

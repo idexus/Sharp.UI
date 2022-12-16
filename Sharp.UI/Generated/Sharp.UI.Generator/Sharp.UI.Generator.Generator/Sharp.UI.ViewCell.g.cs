@@ -10,7 +10,10 @@ using System.Collections.ObjectModel;
 
 
 namespace Sharp.UI
-{
+{  
+    /// <summary>
+    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.ViewCell</c> class.
+    /// </summary>
     public partial class ViewCell : Microsoft.Maui.Controls.ViewCell, Sharp.UI.IViewCell, IMauiWrapper, IEnumerable
     {
         // ----- maui object -----

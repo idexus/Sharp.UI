@@ -10,7 +10,10 @@ using System.Collections.ObjectModel;
 
 
 namespace Sharp.UI
-{
+{  
+    /// <summary>
+    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.SwipeView</c> class.
+    /// </summary>
     public partial class SwipeView : Microsoft.Maui.Controls.SwipeView, Sharp.UI.ISwipeView, IMauiWrapper, IEnumerable
     {
         // ----- maui object -----
