@@ -20,10 +20,6 @@ public interface ICardViewProperties
 }
 ```
 
-Fluent helper method will be genearated for each `EventHandler` in a class with the `[SharpObject]` attribute, . E.g for the `Clicked` event handler you will get two fluent methods 
-- `OnClicked(sender)`
-- `OnClicked(sender, args)`
-
 #### Class declaration
 
 To automatically generate bindable properties and fluent helper methods for event handlers, you need to inherit interface and use the `[SharpObject]` attribute
@@ -80,6 +76,11 @@ public partial class CardView : ContentView, ICardViewProperties
     }
 }
 ```
+
+Fluent helper method will be genearated for each `EventHandler` in class with the `[SharpObject]` attribute, . E.g for the `Clicked` event handler you will get two fluent methods 
+- `OnClicked(sender)`
+- `OnClicked(sender, args)`
+
 #### Usage example
 
 ```cs
