@@ -8,7 +8,7 @@
 namespace Sharp.UI
 {  
     /// <summary>
-    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.MenuFlyout</c> class.
+    /// A <c>Sharp.UI</c> class inheriting from the <c>Microsoft.Maui.Controls.MenuFlyout</c> class.
     /// </summary>
     public partial class MenuFlyout : Microsoft.Maui.Controls.MenuFlyout, Sharp.UI.IMenuFlyout, IMauiWrapper
     {

@@ -8,7 +8,7 @@
 namespace Sharp.UI
 {  
     /// <summary>
-    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.ImageButton</c> class.
+    /// A <c>Sharp.UI</c> class inheriting from the <c>Microsoft.Maui.Controls.ImageButton</c> class.
     /// </summary>
     public partial class ImageButton : Microsoft.Maui.Controls.ImageButton, Sharp.UI.IImageButton, IMauiWrapper
     {

@@ -8,7 +8,7 @@
 namespace Sharp.UI
 {  
     /// <summary>
-    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment</c> class.
+    /// A <c>Sharp.UI</c> class inheriting from the <c>Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment</c> class.
     /// </summary>
     public partial class QuadraticBezierSegment : Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment, Sharp.UI.IQuadraticBezierSegment, IMauiWrapper
     {

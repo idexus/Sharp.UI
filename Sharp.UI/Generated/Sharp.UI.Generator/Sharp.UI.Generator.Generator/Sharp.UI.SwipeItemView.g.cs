@@ -12,7 +12,7 @@ using System.Collections.ObjectModel;
 namespace Sharp.UI
 {  
     /// <summary>
-    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.SwipeItemView</c> class.
+    /// A <c>Sharp.UI</c> class inheriting from the <c>Microsoft.Maui.Controls.SwipeItemView</c> class.
     /// </summary>
     public partial class SwipeItemView : Microsoft.Maui.Controls.SwipeItemView, Sharp.UI.ISwipeItemView, IMauiWrapper, IEnumerable
     {

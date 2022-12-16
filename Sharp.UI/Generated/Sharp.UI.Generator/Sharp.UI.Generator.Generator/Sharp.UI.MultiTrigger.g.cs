@@ -12,7 +12,7 @@ using System.Collections.ObjectModel;
 namespace Sharp.UI
 {  
     /// <summary>
-    /// A <c>Sharp.UI</c> class wrapper from the sealed <c>Microsoft.Maui.Controls.MultiTrigger</c> class.
+    /// A <c>Sharp.UI</c> class wrapping the sealed <c>Microsoft.Maui.Controls.MultiTrigger</c> class.
     /// Use the <value>MauiObject</value> property to get the raw Maui object.
     /// </summary>
     public partial class MultiTrigger : Sharp.UI.IMultiTrigger, IMauiWrapper, ISealedMauiWrapper, IList<Microsoft.Maui.Controls.Setter>

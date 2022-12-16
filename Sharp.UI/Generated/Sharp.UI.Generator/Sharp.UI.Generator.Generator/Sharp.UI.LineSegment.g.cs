@@ -8,7 +8,7 @@
 namespace Sharp.UI
 {  
     /// <summary>
-    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.Shapes.LineSegment</c> class.
+    /// A <c>Sharp.UI</c> class inheriting from the <c>Microsoft.Maui.Controls.Shapes.LineSegment</c> class.
     /// </summary>
     public partial class LineSegment : Microsoft.Maui.Controls.Shapes.LineSegment, Sharp.UI.ILineSegment, IMauiWrapper
     {

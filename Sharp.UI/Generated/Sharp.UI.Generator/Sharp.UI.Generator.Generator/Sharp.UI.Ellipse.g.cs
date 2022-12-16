@@ -8,7 +8,7 @@
 namespace Sharp.UI
 {  
     /// <summary>
-    /// A <c>Sharp.UI</c> class wrapper from the sealed <c>Microsoft.Maui.Controls.Shapes.Ellipse</c> class.
+    /// A <c>Sharp.UI</c> class wrapping the sealed <c>Microsoft.Maui.Controls.Shapes.Ellipse</c> class.
     /// Use the <value>MauiObject</value> property to get the raw Maui object.
     /// </summary>
     public partial class Ellipse : Sharp.UI.IEllipse, IMauiWrapper, ISealedMauiWrapper

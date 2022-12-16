@@ -37,12 +37,12 @@ using System.Collections.ObjectModel;
             var infoText = IsWrappedType ? (WrappedType.IsSealed ?
                 @$"
     /// <summary>
-    /// A <c>Sharp.UI</c> class wrapper from the sealed <c>{WrappedType.ToDisplayString()}</c> class.
+    /// A <c>Sharp.UI</c> class wrapping the sealed <c>{WrappedType.ToDisplayString()}</c> class.
     /// Use the <value>MauiObject</value> property to get the raw Maui object.
     /// </summary>" :
                 @$"
     /// <summary>
-    /// A <c>Sharp.UI</c> class that inherits from the <c>{WrappedType.ToDisplayString()}</c> class.
+    /// A <c>Sharp.UI</c> class inheriting from the <c>{WrappedType.ToDisplayString()}</c> class.
     /// </summary>") : "";
     
             this.GenerateContainerUsingsIfNeeded();

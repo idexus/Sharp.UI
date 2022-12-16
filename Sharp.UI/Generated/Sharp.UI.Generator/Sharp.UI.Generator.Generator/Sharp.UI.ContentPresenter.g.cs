@@ -8,7 +8,7 @@
 namespace Sharp.UI
 {  
     /// <summary>
-    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.ContentPresenter</c> class.
+    /// A <c>Sharp.UI</c> class inheriting from the <c>Microsoft.Maui.Controls.ContentPresenter</c> class.
     /// </summary>
     public partial class ContentPresenter : Microsoft.Maui.Controls.ContentPresenter, Sharp.UI.IContentPresenter, IMauiWrapper
     {

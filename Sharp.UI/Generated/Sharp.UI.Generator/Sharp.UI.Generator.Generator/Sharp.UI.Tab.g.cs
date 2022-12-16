@@ -12,7 +12,7 @@ using System.Collections.ObjectModel;
 namespace Sharp.UI
 {  
     /// <summary>
-    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.Tab</c> class.
+    /// A <c>Sharp.UI</c> class inheriting from the <c>Microsoft.Maui.Controls.Tab</c> class.
     /// </summary>
     public partial class Tab : Microsoft.Maui.Controls.Tab, Sharp.UI.ITab, IMauiWrapper, IList<Microsoft.Maui.Controls.ShellContent>
     {

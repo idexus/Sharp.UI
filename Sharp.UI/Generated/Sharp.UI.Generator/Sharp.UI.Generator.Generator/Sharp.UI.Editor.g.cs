@@ -8,7 +8,7 @@
 namespace Sharp.UI
 {  
     /// <summary>
-    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.Editor</c> class.
+    /// A <c>Sharp.UI</c> class inheriting from the <c>Microsoft.Maui.Controls.Editor</c> class.
     /// </summary>
     public partial class Editor : Microsoft.Maui.Controls.Editor, Sharp.UI.IEditor, IMauiWrapper
     {

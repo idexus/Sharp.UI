@@ -8,7 +8,7 @@
 namespace Sharp.UI
 {  
     /// <summary>
-    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.AbsoluteLayout</c> class.
+    /// A <c>Sharp.UI</c> class inheriting from the <c>Microsoft.Maui.Controls.AbsoluteLayout</c> class.
     /// </summary>
     public partial class AbsoluteLayout : Microsoft.Maui.Controls.AbsoluteLayout, Sharp.UI.IAbsoluteLayout, IMauiWrapper
     {

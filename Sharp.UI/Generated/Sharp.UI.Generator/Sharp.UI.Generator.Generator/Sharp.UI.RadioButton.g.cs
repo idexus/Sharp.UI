@@ -12,7 +12,7 @@ using System.Collections.ObjectModel;
 namespace Sharp.UI
 {  
     /// <summary>
-    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.RadioButton</c> class.
+    /// A <c>Sharp.UI</c> class inheriting from the <c>Microsoft.Maui.Controls.RadioButton</c> class.
     /// </summary>
     public partial class RadioButton : Microsoft.Maui.Controls.RadioButton, Sharp.UI.IRadioButton, IMauiWrapper, IEnumerable
     {

@@ -8,7 +8,7 @@
 namespace Sharp.UI
 {  
     /// <summary>
-    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.CarouselView</c> class.
+    /// A <c>Sharp.UI</c> class inheriting from the <c>Microsoft.Maui.Controls.CarouselView</c> class.
     /// </summary>
     public partial class CarouselView : Microsoft.Maui.Controls.CarouselView, Sharp.UI.ICarouselView, IMauiWrapper
     {

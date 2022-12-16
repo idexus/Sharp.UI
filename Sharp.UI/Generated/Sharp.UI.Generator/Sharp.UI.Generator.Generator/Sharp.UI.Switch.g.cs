@@ -8,7 +8,7 @@
 namespace Sharp.UI
 {  
     /// <summary>
-    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.Switch</c> class.
+    /// A <c>Sharp.UI</c> class inheriting from the <c>Microsoft.Maui.Controls.Switch</c> class.
     /// </summary>
     public partial class Switch : Microsoft.Maui.Controls.Switch, Sharp.UI.ISwitch, IMauiWrapper
     {

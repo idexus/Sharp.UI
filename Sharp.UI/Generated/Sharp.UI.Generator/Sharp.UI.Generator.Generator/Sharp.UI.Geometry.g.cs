@@ -8,7 +8,7 @@
 namespace Sharp.UI
 {  
     /// <summary>
-    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.Shapes.Geometry</c> class.
+    /// A <c>Sharp.UI</c> class inheriting from the <c>Microsoft.Maui.Controls.Shapes.Geometry</c> class.
     /// </summary>
     public partial class Geometry : Microsoft.Maui.Controls.Shapes.Geometry, Sharp.UI.IGeometry, IMauiWrapper
     {

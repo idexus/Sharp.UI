@@ -12,7 +12,7 @@ using System.Collections.ObjectModel;
 namespace Sharp.UI
 {  
     /// <summary>
-    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.RadialGradientBrush</c> class.
+    /// A <c>Sharp.UI</c> class inheriting from the <c>Microsoft.Maui.Controls.RadialGradientBrush</c> class.
     /// </summary>
     public partial class RadialGradientBrush : Microsoft.Maui.Controls.RadialGradientBrush, Sharp.UI.IRadialGradientBrush, IMauiWrapper, IList<Microsoft.Maui.Controls.GradientStop>
     {

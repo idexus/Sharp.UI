@@ -8,7 +8,7 @@
 namespace Sharp.UI
 {  
     /// <summary>
-    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.Shapes.ArcSegment</c> class.
+    /// A <c>Sharp.UI</c> class inheriting from the <c>Microsoft.Maui.Controls.Shapes.ArcSegment</c> class.
     /// </summary>
     public partial class ArcSegment : Microsoft.Maui.Controls.Shapes.ArcSegment, Sharp.UI.IArcSegment, IMauiWrapper
     {

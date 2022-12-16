@@ -8,7 +8,7 @@
 namespace Sharp.UI
 {  
     /// <summary>
-    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.CollectionView</c> class.
+    /// A <c>Sharp.UI</c> class inheriting from the <c>Microsoft.Maui.Controls.CollectionView</c> class.
     /// </summary>
     public partial class CollectionView : Microsoft.Maui.Controls.CollectionView, Sharp.UI.ICollectionView, IMauiWrapper
     {

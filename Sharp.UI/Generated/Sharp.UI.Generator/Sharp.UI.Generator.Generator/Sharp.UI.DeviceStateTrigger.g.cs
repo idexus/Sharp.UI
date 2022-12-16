@@ -8,7 +8,7 @@
 namespace Sharp.UI
 {  
     /// <summary>
-    /// A <c>Sharp.UI</c> class wrapper from the sealed <c>Microsoft.Maui.Controls.DeviceStateTrigger</c> class.
+    /// A <c>Sharp.UI</c> class wrapping the sealed <c>Microsoft.Maui.Controls.DeviceStateTrigger</c> class.
     /// Use the <value>MauiObject</value> property to get the raw Maui object.
     /// </summary>
     public partial class DeviceStateTrigger : Sharp.UI.IDeviceStateTrigger, IMauiWrapper, ISealedMauiWrapper

@@ -8,7 +8,7 @@
 namespace Sharp.UI
 {  
     /// <summary>
-    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.DropGestureRecognizer</c> class.
+    /// A <c>Sharp.UI</c> class inheriting from the <c>Microsoft.Maui.Controls.DropGestureRecognizer</c> class.
     /// </summary>
     public partial class DropGestureRecognizer : Microsoft.Maui.Controls.DropGestureRecognizer, Sharp.UI.IDropGestureRecognizer, IMauiWrapper
     {

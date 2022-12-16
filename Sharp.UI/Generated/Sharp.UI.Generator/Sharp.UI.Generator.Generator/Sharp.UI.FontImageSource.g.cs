@@ -8,7 +8,7 @@
 namespace Sharp.UI
 {  
     /// <summary>
-    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.FontImageSource</c> class.
+    /// A <c>Sharp.UI</c> class inheriting from the <c>Microsoft.Maui.Controls.FontImageSource</c> class.
     /// </summary>
     public partial class FontImageSource : Microsoft.Maui.Controls.FontImageSource, Sharp.UI.IFontImageSource, IMauiWrapper
     {

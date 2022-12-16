@@ -12,7 +12,7 @@ using System.Collections.ObjectModel;
 namespace Sharp.UI
 {  
     /// <summary>
-    /// A <c>Sharp.UI</c> class that inherits from the <c>Microsoft.Maui.Controls.IndicatorView</c> class.
+    /// A <c>Sharp.UI</c> class inheriting from the <c>Microsoft.Maui.Controls.IndicatorView</c> class.
     /// </summary>
     public partial class IndicatorView : Microsoft.Maui.Controls.IndicatorView, Sharp.UI.IIndicatorView, IMauiWrapper, IEnumerable
     {
