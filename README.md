@@ -43,9 +43,9 @@ public class HelloWorldPage : ContentPage
 }
 ```
 
-## How to start
+## Before you start
 
-- [How to start](./doc/howtostart.md)
+- [Before you start](./doc/howtostart.md)
 
 # Examples
 Here are some examples showing how to use the Sharp.UI library
