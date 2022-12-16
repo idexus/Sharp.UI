@@ -2,7 +2,7 @@
 
 In `Sharp.UI` you can create custom control views, and all interface bindable properties and fluent helper methods for event handlers will be generated automatically.
 
-#### Interface
+### Interface
 
 To auto-generate properties you have to set the `[BindableProperties]` attribute on an interface and the `[SharpObject]` attribute on a class.
 
@@ -20,7 +20,7 @@ public interface ICardViewProperties
 }
 ```
 
-#### Class declaration
+### Class declaration
 
 To automatically generate bindable properties and fluent helper methods for event handlers, you need to inherit interface and use the `[SharpObject]` attribute
 
@@ -81,7 +81,7 @@ Fluent helper method will be genearated for each `EventHandler` in class with th
 - `OnClicked(sender)`
 - `OnClicked(sender, args)`
 
-#### Usage example
+### Usage example
 
 ```cs
 new HStack
