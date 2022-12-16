@@ -14,7 +14,7 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 
 		<PackageId>Sharp.UI</PackageId>
-		<Version>0.2.1-beta</Version>
+		<Version>0.2.2-beta</Version>
 		<Authors>Pawel Krzywdzinski</Authors>
 		<Copyright>Pawel Krzywdzinski</Copyright>
 		<PackageDescription>An auto-generated wrapper library that allows you to use .NET MAUI only in C# code using fluent methods, without the need for XAML</PackageDescription>
@@ -34,6 +34,9 @@
 	<ItemGroup>
 		<ProjectReference Include="..\Sharp.UI.Generator\Sharp.UI.Generator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
 	</ItemGroup>
+	<ItemGroup>
+      <None Include="..\Sharp.UI.Generator\bin\$(Configuration)\netstandard2.0\Sharp.UI.Generator.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+    </ItemGroup>
 
 	<PropertyGroup>
 		<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
