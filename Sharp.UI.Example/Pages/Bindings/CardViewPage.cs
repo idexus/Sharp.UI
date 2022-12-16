@@ -9,16 +9,16 @@ public interface ICardViewProperties
     string CardDescription { get; set; }
     Color CardColor { get; set; }
     Color BorderColor { get; set; }
-    Style MyStyle { get; set; }
-    View MyView { get; set; }
+    Style DescriptionStyle { get; set; }
+    View ContentView { get; set; }
     string ButtonTitle { get; set; }
 }
 
 [SharpObject]
 public partial class CardView : ContentView, ICardViewProperties
 {
-    public event EventHandler MyEventHandler;
-    private void MyButtonHandler(object sender, EventArgs e) => MyEventHandler.Invoke(sender, e);
+    public event EventHandler Clicked;
+    private void OnButtonClicked(object sender, EventArgs e) => Clicked.Invoke(sender, e);
 
     public CardView()
     {
@@ -35,13 +35,13 @@ public partial class CardView : ContentView, ICardViewProperties
                         .TextColor(Colors.White),
 
                     new Label()
-                        .Text(e => e.Path(nameof(CardDescription))),
-                        //.Style(e => e.Path(nameof(MyStyle))),
+                        .Text(e => e.Path(nameof(CardDescription)))
+                        .Style(e => e.Path(nameof(DescriptionStyle))),
                 },
 
                 new ContentView()
                     .Row(1)
-                    .Content(e => e.Path(nameof(MyView)))
+                    .Content(e => e.Path(nameof(ContentView)))
                     .HorizontalOptions(LayoutOptions.Center)
                     .VerticalOptions(LayoutOptions.Center)
                     .SizeRequest(120,120),
@@ -51,7 +51,7 @@ public partial class CardView : ContentView, ICardViewProperties
                     .Text(e => e.Path(nameof(ButtonTitle)))
                     .BackgroundColor(AppColors.Gray600)
                     .TextColor(AppColors.Gray100)
-                    .OnClicked(MyButtonHandler)
+                    .OnClicked(OnButtonClicked)
             }
             .RowDefinitions(e => e.Star(1).Star(2).Star(0.7))
             .RowSpacing(10)
@@ -85,8 +85,8 @@ public class CardViewPage : ContentPage
                     .CardDescription("Do you like it")
                     .CardColor(Colors.Blue)
                     .BorderColor(Colors.Red)
-                    .MyView(new Image("dotnet_bot.png").Aspect(Aspect.AspectFit))
-                    .OnMyEventHandler(e =>
+                    .ContentView(new Image("dotnet_bot.png").Aspect(Aspect.AspectFit))
+                    .OnClicked(e =>
                     {
                         cardNo1.CardDescription = "Let's play :)";
                     }),
@@ -97,14 +97,15 @@ public class CardViewPage : ContentPage
                     .CardDescription("Yes I do")
                     .CardColor(Colors.Red)
                     .BorderColor(Colors.Blue)
-                    .MyView(new VStack
+                    .ContentView(new VStack
                     {
-                        new Label("This is a simpla card view example")
+                        new Label("This is a simple card view example")
                     })
-                    //.Style(new Style<Label>
-                    //{
-                    //    Label.TextColorProperty.Set(Colors.Blue)
-                    //})
+                    .DescriptionStyle(new Style<Label>
+                    {
+                        Label.TextColorProperty.Set(Colors.Blue),
+                        Label.FontSizeProperty.Set(20)
+                    })
             }
             .HorizontalOptions(LayoutOptions.Center)
         }

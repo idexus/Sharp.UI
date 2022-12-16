@@ -1,10 +1,10 @@
 # Event handlers
 
-`Sharp.UI` matches event handlers (e.g. `ExampleHandler`) with event handler fluid methods (e.g. `OnExampleHandler`)
+For each "Event Handler" in each maui class, a fluent helper method is generated. E.g for the `Clicked` event handler in `Button` class you will get two fluent methods
+- `OnClicked(Button sender)` 
+- `OnClicked(object sender, EventArgs e)`
 
 ### Example
-
-To handle event like `Clicked` yoy can use the `OnClicked` fluent method.
 
 ```cs
 using Sharp.UI;
@@ -30,7 +30,7 @@ public class HelloWorldPage : ContentPage
     }
 }
 ``` 
-another way
+or inline
 
 ```cs
 new Button("Click me")
