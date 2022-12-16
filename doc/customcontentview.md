@@ -1,4 +1,4 @@
-# Custom ContentView
+# Custom Control Views
 
 In `Sharp.UI` you can create custom control views, and all interface bindable properties and fluent helper methods for event handlers will be generated automatically.
 
