@@ -48,7 +48,7 @@ public class HelloWorldPage : ContentPage
 - [How to start](./doc/howtostart.md)
 
 # Examples
-Here are some simple examples showing how to use the Sharp.UI library
+Here are some examples showing how to use the Sharp.UI library
 
 - [Properties and fluent methods](./doc/properties.md)
 - [How to assign object references](./doc/assign.md)
