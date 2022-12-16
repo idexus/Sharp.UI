@@ -42,11 +42,14 @@
         public T GetValue()
         {
             T value = default(T);
-            bool isData = false;
-            if (loadValue != null) { value = loadValue(); isData = true; }
-            if (loadDefault != null) { value = loadDefault(); isData = true; }
-            if (isData && configure != null) configure(value);
-            return value;
+            if (loadValue != null) value = loadValue();
+            if (loadDefault != null && loadValue == null) value = loadDefault();
+            if (loadDefault != null || loadValue != null)
+            {
+                if (configure != null) configure(value);
+                return value;
+            }
+            throw new ArgumentException("No default value");
         }
 
         public static implicit operator T(Def<T> def) => def.GetValue();

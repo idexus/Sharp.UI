@@ -29,8 +29,7 @@ public class DefExamplePage : ContentPage
         new Style<Image>
         {
             Image.HorizontalOptionsProperty.Set(LayoutOptions.Center),
-            Image.HeightRequestProperty.Set(100),
-            Image.HeightRequestProperty.Set(40).TargetName(Names.smallbot),
+            Image.HeightRequestProperty.Set(60),
         },
         new Style<VStack>
         {
@@ -41,25 +40,31 @@ public class DefExamplePage : ContentPage
 
     public DefExamplePage()
 	{        
-        Resources = pageResources;
-        Content = new VStack
+        Content = new ContentView(out var contentView)
         {
-            new Def<VStack>(e => e
+            new VStack
+            {
+                new Def<VStack>(e => e
                     .BackgroundColor(Colors.Red)
                     .Padding(20)
                 )
                 .OnDesktop(() =>
                     new VStack
                     {
-                        new Label("Desktop version").RegisterName(Names.title, this),
-                        new Image("dotnet_bot.png").RegisterName(Names.smallbot, this),
+                        new Label("Desktop version").RegisterName(Names.title, contentView),
                         new Image("dotnet_bot.png"),
                     })
-                .OnPhone(() =>
+                .OnTablet(() =>
                     new VStack
                     {
-                        new Label("This is a phone version"),
+                        new Label("Tablet version").RegisterName(Names.title, contentView),
+                        new Label("This is a tablet version"),
                         new Label("No images...")
+                })
+                .Default(() =>
+                    new VStack
+                    {
+                        new Label("Default version").RegisterName(Names.title, contentView),
                     }),
 
                 new HStack()
@@ -70,11 +75,13 @@ public class DefExamplePage : ContentPage
                             new Label("ellipse:"),
                             new Ellipse(100,30).Fill(Colors.Pink)
                         })
-                        .OniOS(() => new View[]
+                        .Default(() => new View[]
                         {
                             new Label("No content")
                         })
                     ),
-        };
+            }
+        }
+        .Resources(pageResources);
 	}
 }
