@@ -9,7 +9,7 @@ public class ContextMenuPage : ContentPage
         Content = new Grid(out var grid)
         {
             new Image("dotnet_bot.png")
-                .FlyoutBaseContextFlyout(new MenuFlyout
+                .ContextFlyout(new MenuFlyout
                 {
                     new MenuFlyoutItem("Go to Grid Page")
                         .OnClicked(async e => await Shell.Current.GoToAsync("//top/main/grid")),

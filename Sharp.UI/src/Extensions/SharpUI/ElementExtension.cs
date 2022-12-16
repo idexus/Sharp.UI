@@ -3,7 +3,7 @@
     [AttachedProperties(typeof(Microsoft.Maui.Controls.FlyoutBase))]
     public interface IElementFlyoutBaseAttachedProperties
     {
-        MenuFlyout FlyoutBaseContextFlyout { get; set; }
+        MenuFlyout ContextFlyout { get; set; }
     }
 
     [SharpObject(typeof(Microsoft.Maui.Controls.Element))]

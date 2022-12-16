@@ -58,6 +58,7 @@ Here are some simple examples showing how to use the Sharp.UI library
 - [Attached properties](./doc/attachedproperties.md)
 - [Event handlers](./doc/eventhandlers.md)
 - [Grid definition](./doc/griddefinition.md)
+- [Absolute layout](./doc/absolutelayout.md)
 - [Menu definition](./doc/menudefinition.md)
 - [Gradient example](./doc/gradients.md)
 - [Gesture recognizers](./doc/gesturerecognizers.md)

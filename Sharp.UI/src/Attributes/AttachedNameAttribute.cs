@@ -1,8 +1,8 @@
 ﻿namespace Sharp.UI
 {
-    public class BindablePropertyNameAttribute : Attribute
+    public class AttachedNameAttribute : Attribute
     {
-        public BindablePropertyNameAttribute(string name)
+        public AttachedNameAttribute(string name)
         {
         }
     }

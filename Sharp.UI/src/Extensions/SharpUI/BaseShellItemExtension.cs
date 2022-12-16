@@ -3,6 +3,7 @@
     [AttachedProperties(typeof(Microsoft.Maui.Controls.Shell))]
     public interface IBaseShellItemShellAttachedProperties
     {
+        [AttachedName("ItemTemplate")]
         DataTemplate ShellItemTemplate { get; set; }
     }
 

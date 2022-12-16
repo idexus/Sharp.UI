@@ -165,8 +165,8 @@ namespace {mainSymbol.ContainingNamespace}
                         foreach (var prop in properties)
                         {
                             var propertySymbol = (IPropertySymbol)prop;
-                            var propName = prop.Name.Replace(attachedType.Name, "");
-                            var fullPropertyName = $"{attachedType.ToDisplayString()}.{propName}";
+                            var attachedName = GetAttachedName(propertySymbol);
+                            var fullPropertyName = $"{attachedType.ToDisplayString()}.{(attachedName != null ? attachedName : prop.Name)}";
                             GenerateExtensionMethod(propertySymbol, fullPropertyName);
                         }
                     }

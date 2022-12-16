@@ -5,14 +5,31 @@ namespace Sharp.UI
     [AttachedProperties(typeof(Microsoft.Maui.Controls.Shell))]
     public interface IContentPageShellAttachedProperties
     {
+        [AttachedName("PresentationMode")]
         PresentationMode ShellPresentationMode { get; set; }
+
+        [AttachedName("BackgroundColor")]
         Color ShellBackgroundColor { get; set; }
+
+        [AttachedName("ForegroundColor")]
         Color ShellForegroundColor { get; set; }
+
+        [AttachedName("TitleColor")]
         Color ShellTitleColor { get; set; }
+
+        [AttachedName("DisabledColor")]
         Color ShellDisabledColor { get; set; }
+
+        [AttachedName("UnselectedColor")]
         Color ShellUnselectedColor { get; set; }
+
+        [AttachedName("NavBarHasShadow")]
         bool ShellNavBarHasShadow { get; set; }
+
+        [AttachedName("NavBarIsVisible")]
         bool ShellNavBarIsVisible { get; set; }
+
+        [AttachedName("TitleView")]
         Microsoft.Maui.Controls.View ShellTitleView { get; set; }
     }
 

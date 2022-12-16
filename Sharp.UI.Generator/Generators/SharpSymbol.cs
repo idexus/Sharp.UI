@@ -18,6 +18,7 @@ namespace Sharp.UI.Generator
         public const string AttachedPropertiesAttributeString = "AttachedProperties";
         public const string AttachedInterfacesAttributeString = "AttachedInterfaces";
         public const string ContentPropertyAttributeString = "ContentProperty";
+        public const string AttachedNameAttributeString = "AttachedName";
 
         public const string CompatibilityString = "Compatibility";
 
@@ -187,6 +188,14 @@ namespace Sharp.UI.Generator
         {
             var attributes = mainSymbol.GetAttributes();
             return attributes.FirstOrDefault(e => e.AttributeClass.Name.Contains(AttachedInterfacesAttributeString));
+        }
+
+        string GetAttachedName(ISymbol symbol)
+        {
+            var attributes = symbol.GetAttributes();
+            var attributeData = attributes.FirstOrDefault(e => e.AttributeClass.Name.Contains(AttachedNameAttributeString));
+            if (attributeData != null) return (string)attributeData.ConstructorArguments[0].Value;
+            return null;
         }
 
         string FindContentPropertyName()

@@ -9,8 +9,18 @@
         int RowSpan { get; set; }
     }
 
+    [AttachedProperties(typeof(Microsoft.Maui.Controls.AbsoluteLayout))]
+    public interface IViewAbsoluteLayoutProperties
+    {
+        [AttachedName("LayoutFlags")]
+        Microsoft.Maui.Layouts.AbsoluteLayoutFlags AbsoluteLayoutFlags { get; set; }
+
+        [AttachedName("LayoutBounds")]
+        Microsoft.Maui.Graphics.Rect AbsoluteLayoutBounds { get; set; }
+    }
+    
     [SharpObject(typeof(Microsoft.Maui.Controls.View))]
-    [AttachedInterfaces(new[] {typeof(IViewGridAttachedProperties) })]
+    [AttachedInterfaces(new[] {typeof(IViewGridAttachedProperties), typeof(IViewAbsoluteLayoutProperties) })]
     public static class ViewExtension
     {
         public static T GridSpan<T>(this T obj, int column = 1, int row = 1) where T : IView

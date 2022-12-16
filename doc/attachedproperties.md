@@ -2,9 +2,32 @@
 
 `Sharp.UI` matches attached properties with the attached property fluent methods.
 
-### Example
 
-`Shell.NavBarIsVisible` is an attached property. You can set it using the `ShellNavBarIsVisible()` fluent method.
+### Attached properties list
+
+| Maui attached property | `Sharp.UI` fluent method |
+|-|-|
+|`Shell.ItemTemplate`|`ShellItemTemplate(shellItemTemplate)`|
+|`FlyoutBase.ContextFlyout`|`ContextFlyout(contextFlyout)`|
+|`Grid.Column`|`Column(column)`|
+|`Grid.Row`|`Row(row)`|
+|`Grid.ColumnSpan`|`ColumnSpan(rowSpan)`|
+|`Grid.RowSpan`|`RowSpan(columnSpan)`|
+||`Span(column, row)`|
+|`VisualStateManager.VisualStateGroups`|`VisualStateGroups(visualStateGroups)`|
+|`AbsoluteLayout.LayoutFlags`|`AbsoluteLayoutFlags(layoutFlags)`|
+|`AbsoluteLayout.LayoutBounds`|`AbsoluteLayoutBounds(layoutBounds)`|
+|`Shell.PresentationMode`|`ShellPresentationMode(presentationMode)`|
+|`ShellBackgroundColor`|`ShellBackgroundColor(backgroundColor)`|
+|`Shell.ForegroundColor`|`ShellForegroundColor(foregroundColor)`|
+|`Shell.TitleColor`|`ShellTitleColor(titleColor)`|
+|`Shell.DisabledColor`|`ShellDisabledColor(disabledColor)`|
+|`Shell.UnselectedColor`|`ShellUnselectedColor(unselectedColor)`|
+|`Shell.NavBarHasShadow`|`ShellNavBarHasShadow(navBarHasShadow)`|
+|`Shell.NavBarIsVisible`|`ShellNavBarIsVisible(navBarIsVisible)`|
+|`Shell.TitleView`|`ShellTitleView(titleView)`|
+
+### Example
 
 ```cs
 public class GridPage : ContentPage
@@ -20,5 +43,3 @@ public class GridPage : ContentPage
     }
 }
 ```
-### Attention
-Some attached properties like `Grid.Row`, `Grid.Column`, `Grid.ColumnSpan` and `Grid.RowSpan` have shorter method names: `Row()`, `Column()`, `ColumnSpan()`, `RowSpan()`.

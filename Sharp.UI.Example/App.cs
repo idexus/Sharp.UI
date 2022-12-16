@@ -13,9 +13,10 @@ public partial class App : Application
                 new Tab("Main", e => e.Route("main"))
                 {
                     new ShellContent<HelloWorldPage>("Hello Page"), // load at app startup
-                    new ShellContent<ExamplePage>("ExamplePage"),
                     new ShellContent<GridPage>("Grid").Route("grid"),
-                    new ShellContent<ShapesPage>("Shapes")
+                    new ShellContent<AbsoluteLayoutPage>("Absolute layout"),
+                    new ShellContent<ExamplePage>("Scroll View"),
+                    new ShellContent<ShapesPage>("Shapes"),
                 },
 
                 new Tab("Table/List")
