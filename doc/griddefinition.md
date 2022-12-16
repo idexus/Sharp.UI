@@ -1,6 +1,6 @@
 # Grid Definition
 
-Using the `Row()`, `Column()`, `GridColumnSpan()`, `GridRowSpan()` and `GridSpan()`, you can set the row, column and span within the grid definition.
+Using the `Row()`, `Column()`, `ColumnSpan()`, `RowSpan()` and `GridSpan()` methods, you can set the row, column and span within the grid definition.
 
 ```cs
 new Label("Column 0, Row 2, Span 2 columns")
