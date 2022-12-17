@@ -1,4 +1,6 @@
-# Bindable Properties
+# Control template
+
+### Bindable Properties
 
 `Sharp.UI` automatically generates bindable properties and helper methods for the classes with `[SharpObject]` attribute with inherited interfaces with the `[BindableProperties]` attribute.
 
