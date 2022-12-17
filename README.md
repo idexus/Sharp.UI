@@ -79,4 +79,4 @@ In `Sharp.UI` bindable properties and their fluent methods are generated automai
 
 # License 
 
-[The MIT License (MIT)](License.txt), Copyright (c) 2022 Pawel Krzywdzinski
+[The MIT License](License.txt), Copyright (c) 2022 Pawel Krzywdzinski
