@@ -1,6 +1,6 @@
 # Bindable Properties
 
-Sharp.UI automatically generates bindable properties and helper methods for `[SharpObject]` classes with interfaces with the `[BindableProperties]` attribute.
+`Sharp.UI` automatically generates bindable properties and helper methods for the classes with `[SharpObject]` attribute with inherited interfaces with the `[BindableProperties]` attribute.
 
 ```cs
 [BindableProperties]
@@ -18,7 +18,45 @@ public partial class CardView : ContentView, ICardViewProperties
 }
 ```
 
-A control template view
+### Usage
+
+```cs
+public class TemplatedParentPage : ContentPage
+{    
+    public TemplatedParentPage()
+    {
+        var controlTemplate = new ControlTemplate(typeof(CardViewTemplateView));
+
+        this.Content = new VStack
+        {
+            new Slider(1,100, out var slider),
+
+            new CardView()
+                .CardTitle(e => e
+                    .Path("Value")
+                    .Source(slider)
+                    .StringFormat("Value {0:F2}"))
+                .CardDescription("Do you like it")
+                .CardColor(Colors.Blue)
+                .BorderColor(Colors.Red)
+                .ControlTemplate(controlTemplate),
+
+            new CardView()
+                .CardTitle("Title 2")
+                .CardDescription("Yes I do")
+                .CardColor(Colors.Red)
+                .BorderColor(Colors.Blue)
+                .ControlTemplate(controlTemplate),
+
+        }
+        .VerticalOptions(LayoutOptions.Center);
+    }
+}
+```
+
+### Control template
+
+This content template used by `CardView` uses the `TemplatedPath` binding to its parent view.
 
 ```cs
 public class CardViewTemplateView : ContentView
@@ -44,42 +82,6 @@ public class CardViewTemplateView : ContentView
         .SizeRequest(200, 300)
         .Margin(50)
         .Padding(20);
-    }
-}
-```
-
-### Usage example
-
-```cs
-public class TemplatedParentPage : ContentPage
-{    
-    public TemplatedParentPage()
-    {
-        var controlTemplate = new ControlTemplate(typeof(CardViewTemplateView));
-
-        this.Content = new VStack
-        {
-            new Slider(1,100, out var slider),
-
-            new EmptyCardView()
-                .CardTitle(e => e
-                    .Path("Value")
-                    .Source(slider)
-                    .StringFormat("Value {0:F2}"))
-                .CardDescription("Do you like it")
-                .CardColor(Colors.Blue)
-                .BorderColor(Colors.Red)
-                .ControlTemplate(controlTemplate),
-
-            new EmptyCardView()
-                .CardTitle("Title 2")
-                .CardDescription("Yes I do")
-                .CardColor(Colors.Red)
-                .BorderColor(Colors.Blue)
-                .ControlTemplate(controlTemplate),
-
-        }
-        .VerticalOptions(LayoutOptions.Center);
     }
 }
 ```
