@@ -73,7 +73,7 @@ Here are some examples showing how to use the Sharp.UI library
 In `Sharp.UI` bindable properties and their fluent methods are generated automaically.
 
 - [View, View-Model pattern](./doc/viewmodel.md)
-- [Create Custom Controls](./doc/customcontentview.md)
+- [Create custom controls](./doc/customcontentview.md)
 - [Control template](./doc/autogenbindableproperties.md)
 
 
