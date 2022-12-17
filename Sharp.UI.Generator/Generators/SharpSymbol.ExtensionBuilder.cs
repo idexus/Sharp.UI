@@ -416,7 +416,6 @@ namespace {mainSymbol.ContainingNamespace}
             var eventSymbol = (IEventSymbol)@event;
             var eventHandler = eventSymbol.AddMethod.Parameters.First();
             var eventHandlerType = ((INamedTypeSymbol)eventHandler.Type);
-            var methodArgTypeName = eventHandlerType.DelegateInvokeMethod.Parameters.Last().ToDisplayString();
 
             var existInBases = false;
             Helpers.LoopDownToObject(extensionType.BaseType, type =>

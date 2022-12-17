@@ -18,13 +18,12 @@ public interface ICardViewProperties
 public partial class CardView : ContentView, ICardViewProperties
 {
     public event EventHandler Clicked;
-    private void OnButtonClicked(object sender, EventArgs e) => Clicked.Invoke(sender, e);
 
     public CardView()
     {
         this.BindingContext = this;
         Content = new Border
-        {
+        {            
             new Grid
             {
                 new VStack
@@ -51,7 +50,7 @@ public partial class CardView : ContentView, ICardViewProperties
                     .Text(e => e.Path(nameof(ButtonTitle)))
                     .BackgroundColor(AppColors.Gray600)
                     .TextColor(AppColors.Gray100)
-                    .OnClicked(OnButtonClicked)
+                    .OnClicked((sender, e) => Clicked(sender,e))
             }
             .RowDefinitions(e => e.Star(1).Star(2).Star(0.7))
             .RowSpacing(10)
