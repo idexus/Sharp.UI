@@ -47,7 +47,7 @@ public class HelloWorldPage : ContentPage
 
 - [Before you start](./doc/howtostart.md)
 
-# Examples
+## Examples
 
 Here are some examples showing how to use the Sharp.UI library
 
@@ -68,7 +68,7 @@ Here are some examples showing how to use the Sharp.UI library
 - [App theme, device idiom and platform templates](./doc/deftemplates.md)
 - [Application shell](./doc/shellapplication.md)
 
-### Automatic code generation
+## Automatic code generation
 
 In `Sharp.UI` bindable properties and their fluent methods are generated automaically.
 
