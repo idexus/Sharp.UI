@@ -48,13 +48,13 @@ public class HelloWorldPage : ContentPage
 - [Before you start](./doc/howtostart.md)
 
 # Examples
+
 Here are some examples showing how to use the Sharp.UI library
 
 - [Properties and fluent methods](./doc/properties.md)
 - [How to assign object references](./doc/assign.md)
 - [Object containers](./doc/containers.md)
 - [Property bindings](./doc/propertybindings.md)
-- [View, View-Model pattern](./doc/viewmodel.md)
 - [Attached properties](./doc/attachedproperties.md)
 - [Event handlers](./doc/eventhandlers.md)
 - [Grid definition](./doc/griddefinition.md)
@@ -68,7 +68,11 @@ Here are some examples showing how to use the Sharp.UI library
 - [App theme, device idiom and platform templates](./doc/deftemplates.md)
 - [Application shell](./doc/shellapplication.md)
 
-### Auto code generation
+### Automatic code generation
+
+In `Sharp.UI` bindable properties and their fluent methods are generated automaically.
+
+- [View, View-Model pattern](./doc/viewmodel.md)
 - [Create Custom Controls](./doc/customcontentview.md)
 - [Control template](./doc/autogenbindableproperties.md)
 
