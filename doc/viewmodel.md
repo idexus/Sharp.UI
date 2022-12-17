@@ -26,7 +26,7 @@ public partial class ViewModel : BindableObject, IViewModelProperties
 ### View
 
 ```cs
-public class ViewModelPage : ContentPage
+public class ViewPage : ContentPage
 {
     ViewModel viewModel = new ViewModel();
 
