@@ -50,7 +50,7 @@ public class ExamplePage : ContentPage
                     .Value(50)
                     .Assign(out var slider)
             }
-            .Invoke(e =>
+            .Configure(e =>
             {
                 e.Add(new Label($"Added Labels")
                         .FontSize(40)
@@ -65,7 +65,7 @@ public class ExamplePage : ContentPage
 
         }        
         .Margin(new Thickness(0,50,0,0))
-        .Invoke(o =>
+        .Configure(e =>
         {
             label2.BindingContext = slider;
         });
