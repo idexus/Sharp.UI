@@ -47,7 +47,7 @@ public class HelloWorldPage : ContentPage
 
 - [Before you start](./doc/howtostart.md)
 
-## Basic Examples
+# Basic Examples
 
 Here are some examples showing how to use the Sharp.UI library
 
@@ -91,7 +91,7 @@ public partial class ViewModel : BindableObject, IViewModelProperties
 }
 ```
 
-## Examples
+## Usage examples
 
 - [View, View-Model pattern](./doc/viewmodel.md)
 - [Create custom controls](./doc/customcontentview.md)
