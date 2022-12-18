@@ -72,6 +72,8 @@ Here are some examples showing how to use the Sharp.UI library
 
 In `Sharp.UI` bindable properties and their float helper methods are automatically generated. You just need to define the interface.
 
+### View-model
+
 ```cs
 [BindableProperties]
 public interface IViewModelProperties
@@ -90,10 +92,39 @@ public partial class ViewModel : BindableObject, IViewModelProperties
     }
 }
 ```
+### View
 
-## Usage examples
+```cs
+public class ViewPage : ContentPage
+{
+    ViewModel viewModel = new ViewModel();
 
-- [View, View-Model pattern](./doc/viewmodel.md)
+    public ViewModelPage()
+    {
+        this.BindingContext = viewModel;
+
+        this.Content = new VStack
+        {
+            new HStack
+            {
+                new Label("author:"),
+                new Label().Text(e => e.Path("Author"))
+            },
+
+            new HStack
+            {
+                new Label("title:"),
+                new Label().Text(e => e.Path("Title"))
+            },
+
+            new Button("Test")
+                .OnClicked(viewModel.SetAuthor)
+        };
+    }
+}
+```
+## Other examples
+
 - [Create custom controls](./doc/customcontentview.md)
 - [Control template](./doc/autogenbindableproperties.md)
 
