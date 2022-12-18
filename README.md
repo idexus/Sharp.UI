@@ -70,7 +70,7 @@ Here are some examples showing how to use the Sharp.UI library
 
 # Auto-generated bindable properties
 
-In `Sharp.UI` bindable properties and their float methods are automatically generated. You just need to define the interface.
+In `Sharp.UI` bindable properties and their float helper methods are automatically generated. You just need to define the interface.
 
 ```cs
 [BindableProperties]
