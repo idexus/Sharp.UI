@@ -2,7 +2,7 @@
 
 ### View-Model
 
-To auto-generate properties you have to set the [BindableProperties] attribute on the interface declaration and the [SharpObject] attribute on the class declaration.
+To auto-generate properties you have to set the `[BindableProperties]` attribute on the interface declaration and the `[SharpObject]` attribute on the class declaration.
 
 ```cs
 [BindableProperties]
