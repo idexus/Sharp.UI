@@ -125,7 +125,7 @@ public class ViewPage : ContentPage
 ```
 # Custom controls
 
-You can create custom controls using auto-generated properties and event handler methods.
+You can create custom controls using auto-generated properties and event handler helper methods.
 
 - [Create custom controls](./doc/customcontentview.md)
 - [Control template](./doc/autogenbindableproperties.md)
