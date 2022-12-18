@@ -68,9 +68,9 @@ Here are some examples showing how to use the Sharp.UI library
 - [App theme, device idiom and platform templates](./doc/deftemplates.md)
 - [Application shell](./doc/shellapplication.md)
 
-# Automatic code generation
+# Auto-generated bindable properties
 
-In `Sharp.UI` bindable properties and their fluent methods are generated automaically.
+In `Sharp.UI` bindable properties and their float methods are automatically generated. You just need to define the interface.
 
 ```cs
 [BindableProperties]
