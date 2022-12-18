@@ -2,7 +2,7 @@
 
 ### Bindable Properties
 
-`Sharp.UI` automatically generates bindable properties and helper methods for the classes with `[SharpObject]` attribute with inherited interfaces with the `[BindableProperties]` attribute.
+In `Sharp.UI` you can create custom control views, and all interface bindable properties will be generated automatically.
 
 ```cs
 [BindableProperties]
@@ -58,7 +58,7 @@ public class TemplatedParentPage : ContentPage
 
 ### Control template
 
-This content template used by `CardView` uses the `TemplatedPath` binding to its parent view.
+This content template used by `CardView` uses the `TemplatedPath()` binding method to its parent view.
 
 ```cs
 public class CardViewTemplateView : ContentView
