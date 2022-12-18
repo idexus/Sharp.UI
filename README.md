@@ -99,7 +99,7 @@ public class ViewPage : ContentPage
 {
     ViewModel viewModel = new ViewModel();
 
-    public ViewModelPage()
+    public ViewPage()
     {
         this.BindingContext = viewModel;
 
