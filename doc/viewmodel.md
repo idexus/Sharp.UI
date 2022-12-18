@@ -2,7 +2,7 @@
 
 ### View-Model
 
-By using the `[BindableProperties]` attribute on the interface and the `[SharpObject]` attribute on the class, you can define a bindable viewmodel. All bindable properties declared in the interface will be generated automatically.
+To auto-generate properties you have to set the [BindableProperties] attribute on the interface declaration and the [SharpObject] attribute on the class declaration.
 
 ```cs
 [BindableProperties]
