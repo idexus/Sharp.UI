@@ -47,7 +47,7 @@ public class HelloWorldPage : ContentPage
 
 - [Before you start](./doc/howtostart.md)
 
-# Examples
+## Basic Examples
 
 Here are some examples showing how to use the Sharp.UI library
 
@@ -72,10 +72,30 @@ Here are some examples showing how to use the Sharp.UI library
 
 In `Sharp.UI` bindable properties and their fluent methods are generated automaically.
 
+```cs
+[BindableProperties]
+public interface IViewModelProperties
+{
+    public string Title { get; set; }
+    public string Author { get; set; }
+}
+
+[SharpObject]
+public partial class ViewModel : BindableObject, IViewModelProperties
+{
+    public void SetAuthor(Button button)
+    {
+        this.Title = "Tosca";
+        this.Author = "Puccini";
+    }
+}
+```
+
+## Examples
+
 - [View, View-Model pattern](./doc/viewmodel.md)
 - [Create custom controls](./doc/customcontentview.md)
 - [Control template](./doc/autogenbindableproperties.md)
-
 
 # License 
 
