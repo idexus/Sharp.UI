@@ -51,6 +51,22 @@ namespace Sharp.UI
             configure(this);
         }
 
+        public EventTrigger(string @event, out EventTrigger eventTrigger) : this(@event)
+        {
+            eventTrigger = this;
+        }
+
+        public EventTrigger(string @event, System.Action<EventTrigger> configure) : this(@event)
+        {
+            configure(this);
+        }
+
+        public EventTrigger(string @event, out EventTrigger eventTrigger, System.Action<EventTrigger> configure) : this(@event)
+        {
+            eventTrigger = this;
+            configure(this);
+        }
+
         // ----- operators -----
 
         public static implicit operator EventTrigger(Microsoft.Maui.Controls.EventTrigger mauiObject) => new EventTrigger(mauiObject);

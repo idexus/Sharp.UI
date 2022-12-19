@@ -9,7 +9,7 @@ namespace Sharp.UI.Example
     {
         ResourceDictionary localResources => new ResourceDictionary
         {
-            new Style<RadioButton>
+            new Style<RadioButton>(applyToDerivedTypes: true)
             {
                 RadioButton.ControlTemplateProperty.Set(new ControlTemplate(typeof(RadioButtonTemplate)))
             },

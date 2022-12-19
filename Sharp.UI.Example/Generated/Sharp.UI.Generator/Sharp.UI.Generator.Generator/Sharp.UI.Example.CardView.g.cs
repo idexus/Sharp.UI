@@ -13,19 +13,17 @@ namespace Sharp.UI.Example
     {
         // ----- constructors -----
 
-        public CardView() { }
-
-        public CardView(out CardView cardView) 
+        public CardView(out CardView cardView) : this()
         {
             cardView = this;
         }
 
-        public CardView(System.Action<CardView> configure) 
+        public CardView(System.Action<CardView> configure) : this()
         {
             configure(this);
         }
 
-        public CardView(out CardView cardView, System.Action<CardView> configure) 
+        public CardView(out CardView cardView, System.Action<CardView> configure) : this()
         {
             cardView = this;
             configure(this);

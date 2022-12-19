@@ -32,6 +32,8 @@ using System.Collections.ObjectModel;
 ");
         }
 
+        private string fullMainSymbolName => mainSymbol.ToDisplayString().Split('.').Last();
+
         void GenerateSharpUINameSpace()
         {
             var infoText = IsWrappedType ? (WrappedType.IsSealed ?
@@ -49,7 +51,7 @@ using System.Collections.ObjectModel;
             builder.Append($@"
 namespace {nameSpaceString}
 {{  {infoText}
-    public partial class {mainSymbol.Name}{BaseString()}
+    public partial class {fullMainSymbolName}{BaseString()}
     {{");
             GenerateClass();
             builder.Append($@"
@@ -64,7 +66,7 @@ namespace {nameSpaceString}
 {{
     using Sharp.UI;
 
-    public partial class {mainSymbol.Name}
+    public partial class {fullMainSymbolName}
     {{");
             GenerateClass();
             builder.Append($@"
@@ -76,7 +78,7 @@ namespace {nameSpaceString}
 
         public string ClassBuilderSymbolFileNeme()
         {
-            return $"{mainSymbol.ContainingNamespace}.{mainSymbol.Name}.g.cs";
+            return $"{mainSymbol.ContainingNamespace}.{GetNormalizedName(mainSymbol)}.g.cs";
         }
 
 
@@ -88,6 +90,7 @@ namespace {nameSpaceString}
 
             Helpers.LoopDownToObject(IsWrappedType ? WrappedType : mainSymbol, type =>
             {
+                if (type.Interfaces.FirstOrDefault(e => e.Name.Equals("IBindableObject")) != null) isBindable = true;
                 if (type.Name.Equals("BindableObject")) isBindable = true;
                 return isBindable;
             });
@@ -137,9 +140,12 @@ namespace {nameSpaceString}
             {
                 GenerateConstructors();
                 GenerateConstructorWithProperties();
-                GenerateBindableProperties();
-                GenerateAttachedProperties();
-                GenerateSetValueMethod();
+                if (IsBindable())
+                {
+                    GenerateBindableProperties();
+                    GenerateAttachedProperties();
+                    GenerateSetValueMethod();
+                }
             }
         }
 
@@ -173,9 +179,7 @@ namespace {nameSpaceString}
 
             if (IsWrappedType && WrappedType.IsSealed) GenerateConstructorForSealedType();
             if (generateNoParamConstructor) GenerateNoParamConstructor();
-            if (generateAdditionalConstructors) GenerateAdditionalConstructors();
-            //if (this.generateAdditionalConstructorsForNoEmptyConstructors)
-            //    GenerateAdditionalConstructorsForNoEmptyConstructor()
+            if (this.generateAdditionalConstructors) GenerateAdditionalConstructors();
         }
 
         // generate constructor header
@@ -221,40 +225,12 @@ namespace {nameSpaceString}
 
         void GenerateAdditionalConstructors()
         {
-            var thisTail = IsWrappedType && WrappedType.IsSealed || !generateNoParamConstructor ? ": this()" : "";
-            builder.AppendLine($@"
-        public {mainSymbol.Name}(out {mainSymbol.Name} {Helpers.CamelCase(mainSymbol.Name)}) {thisTail}
-        {{
-            {Helpers.CamelCase(mainSymbol.Name)} = this;
-        }}
+            var argsString = "";
+            var baseArgsString = "";
+            var thisTail = "";
 
-        public {mainSymbol.Name}(System.Action<{mainSymbol.Name}> configure) {thisTail}
-        {{
-            configure(this);
-        }}
-
-        public {mainSymbol.Name}(out {mainSymbol.Name} {Helpers.CamelCase(mainSymbol.Name)}, System.Action<{mainSymbol.Name}> configure) {thisTail}
-        {{
-            {Helpers.CamelCase(mainSymbol.Name)} = this;
-            configure(this);
-        }}");
-        }
-
-        void GenerateAdditionalConstructorsForNoEmptyConstructor()
-        {
-            var constructors = mainSymbol.Constructors.Where(e => e.Parameters.Count() > 0 && !e.IsImplicitlyDeclared);
-
-            foreach (var constructor in constructors)
+            var buildConstructors = () =>
             {
-                var argsString = "";
-                var baseArgsString = "";
-                foreach (var argument in constructor.Parameters)
-                {
-                    argsString += $"{argument.Type.ToDisplayString()} {argument.Name}, ";
-                    baseArgsString += $"{argument.Name}";
-                }
-
-                var thisTail = IsWrappedType && WrappedType.IsSealed || !generateNoParamConstructor ? $": this({baseArgsString})" : "";
                 builder.AppendLine($@"
         public {mainSymbol.Name}({argsString}out {mainSymbol.Name} {Helpers.CamelCase(mainSymbol.Name)}) {thisTail}
         {{
@@ -271,6 +247,33 @@ namespace {nameSpaceString}
             {Helpers.CamelCase(mainSymbol.Name)} = this;
             configure(this);
         }}");
+            };
+
+            if (generateNoParamConstructor)
+            {
+                thisTail = IsWrappedType && WrappedType.IsSealed ? $": this()" : "";
+                buildConstructors();
+            }
+
+            var constructors = mainSymbol.Constructors.Where(e => !e.IsImplicitlyDeclared);
+
+            foreach (var constructor in constructors)
+            {
+                argsString = "";
+                baseArgsString = "";
+
+                foreach (var argument in constructor.Parameters)
+                {
+                    var camelCaseName = Helpers.CamelCase(argument.Name);
+
+                    argsString += $"{argument.Type.ToDisplayString()} {camelCaseName}, ";
+
+                    if (!string.IsNullOrEmpty(baseArgsString)) baseArgsString += ", ";
+                    baseArgsString += $"{camelCaseName}";
+                }
+
+                thisTail = $": this({baseArgsString})";
+                buildConstructors();
             }
         }
 

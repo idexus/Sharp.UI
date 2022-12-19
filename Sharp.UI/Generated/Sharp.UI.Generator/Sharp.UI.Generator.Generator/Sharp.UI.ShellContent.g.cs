@@ -40,6 +40,22 @@ namespace Sharp.UI
             configure(this);
         }
 
+        public ShellContent(System.Type page, out ShellContent shellContent) : this(page)
+        {
+            shellContent = this;
+        }
+
+        public ShellContent(System.Type page, System.Action<ShellContent> configure) : this(page)
+        {
+            configure(this);
+        }
+
+        public ShellContent(System.Type page, out ShellContent shellContent, System.Action<ShellContent> configure) : this(page)
+        {
+            shellContent = this;
+            configure(this);
+        }
+
         public ShellContent(string title, object content) 
         {  
             this.Title = title;

@@ -40,6 +40,22 @@ namespace Sharp.UI
             configure(this);
         }
 
+        public RadialGradientBrush(Microsoft.Maui.Graphics.Point center, out RadialGradientBrush radialGradientBrush) : this(center)
+        {
+            radialGradientBrush = this;
+        }
+
+        public RadialGradientBrush(Microsoft.Maui.Graphics.Point center, System.Action<RadialGradientBrush> configure) : this(center)
+        {
+            configure(this);
+        }
+
+        public RadialGradientBrush(Microsoft.Maui.Graphics.Point center, out RadialGradientBrush radialGradientBrush, System.Action<RadialGradientBrush> configure) : this(center)
+        {
+            radialGradientBrush = this;
+            configure(this);
+        }
+
         // ----- collection container -----
 
         public int Count => this.GradientStops.Count;

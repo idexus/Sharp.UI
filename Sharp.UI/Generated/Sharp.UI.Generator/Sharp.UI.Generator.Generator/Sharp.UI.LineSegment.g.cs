@@ -36,6 +36,22 @@ namespace Sharp.UI
             configure(this);
         }
 
+        public LineSegment(double x, double y, out LineSegment lineSegment) : this(x, y)
+        {
+            lineSegment = this;
+        }
+
+        public LineSegment(double x, double y, System.Action<LineSegment> configure) : this(x, y)
+        {
+            configure(this);
+        }
+
+        public LineSegment(double x, double y, out LineSegment lineSegment, System.Action<LineSegment> configure) : this(x, y)
+        {
+            lineSegment = this;
+            configure(this);
+        }
+
         // ----- properties / events -----
 
         public new object BindingContext { get => base.BindingContext; set => base.BindingContext = MauiWrapper.Value<object>(value); }

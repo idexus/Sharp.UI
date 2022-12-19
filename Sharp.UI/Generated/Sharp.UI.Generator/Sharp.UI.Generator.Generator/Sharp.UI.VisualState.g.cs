@@ -46,6 +46,22 @@ namespace Sharp.UI
             configure(this);
         }
 
+        public VisualState(string name, out VisualState visualState) : this(name)
+        {
+            visualState = this;
+        }
+
+        public VisualState(string name, System.Action<VisualState> configure) : this(name)
+        {
+            configure(this);
+        }
+
+        public VisualState(string name, out VisualState visualState, System.Action<VisualState> configure) : this(name)
+        {
+            visualState = this;
+            configure(this);
+        }
+
         // ----- operators -----
 
         public static implicit operator VisualState(Microsoft.Maui.Controls.VisualState mauiObject) => new VisualState(mauiObject);

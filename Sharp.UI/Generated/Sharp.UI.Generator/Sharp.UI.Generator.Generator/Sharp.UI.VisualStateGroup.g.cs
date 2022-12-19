@@ -51,6 +51,22 @@ namespace Sharp.UI
             configure(this);
         }
 
+        public VisualStateGroup(string name, out VisualStateGroup visualStateGroup) : this(name)
+        {
+            visualStateGroup = this;
+        }
+
+        public VisualStateGroup(string name, System.Action<VisualStateGroup> configure) : this(name)
+        {
+            configure(this);
+        }
+
+        public VisualStateGroup(string name, out VisualStateGroup visualStateGroup, System.Action<VisualStateGroup> configure) : this(name)
+        {
+            visualStateGroup = this;
+            configure(this);
+        }
+
         // ----- operators -----
 
         public static implicit operator VisualStateGroup(Microsoft.Maui.Controls.VisualStateGroup mauiObject) => new VisualStateGroup(mauiObject);

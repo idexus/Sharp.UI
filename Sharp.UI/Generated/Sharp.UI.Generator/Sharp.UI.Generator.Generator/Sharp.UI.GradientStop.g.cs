@@ -36,6 +36,22 @@ namespace Sharp.UI
             configure(this);
         }
 
+        public GradientStop(Microsoft.Maui.Graphics.Color color, double offset, out GradientStop gradientStop) : this(color, offset)
+        {
+            gradientStop = this;
+        }
+
+        public GradientStop(Microsoft.Maui.Graphics.Color color, double offset, System.Action<GradientStop> configure) : this(color, offset)
+        {
+            configure(this);
+        }
+
+        public GradientStop(Microsoft.Maui.Graphics.Color color, double offset, out GradientStop gradientStop, System.Action<GradientStop> configure) : this(color, offset)
+        {
+            gradientStop = this;
+            configure(this);
+        }
+
         // ----- properties / events -----
 
         public new object BindingContext { get => base.BindingContext; set => base.BindingContext = MauiWrapper.Value<object>(value); }

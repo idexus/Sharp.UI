@@ -36,6 +36,22 @@ namespace Sharp.UI
             configure(this);
         }
 
+        public RectangleGeometry(double x, double y, double width, double height, out RectangleGeometry rectangleGeometry) : this(x, y, width, height)
+        {
+            rectangleGeometry = this;
+        }
+
+        public RectangleGeometry(double x, double y, double width, double height, System.Action<RectangleGeometry> configure) : this(x, y, width, height)
+        {
+            configure(this);
+        }
+
+        public RectangleGeometry(double x, double y, double width, double height, out RectangleGeometry rectangleGeometry, System.Action<RectangleGeometry> configure) : this(x, y, width, height)
+        {
+            rectangleGeometry = this;
+            configure(this);
+        }
+
         // ----- properties / events -----
 
         public new object BindingContext { get => base.BindingContext; set => base.BindingContext = MauiWrapper.Value<object>(value); }

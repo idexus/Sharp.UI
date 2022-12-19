@@ -51,6 +51,22 @@ namespace Sharp.UI
             configure(this);
         }
 
+        public PathFigure(double x, double y, out PathFigure pathFigure) : this(x, y)
+        {
+            pathFigure = this;
+        }
+
+        public PathFigure(double x, double y, System.Action<PathFigure> configure) : this(x, y)
+        {
+            configure(this);
+        }
+
+        public PathFigure(double x, double y, out PathFigure pathFigure, System.Action<PathFigure> configure) : this(x, y)
+        {
+            pathFigure = this;
+            configure(this);
+        }
+
         // ----- operators -----
 
         public static implicit operator PathFigure(Microsoft.Maui.Controls.Shapes.PathFigure mauiObject) => new PathFigure(mauiObject);

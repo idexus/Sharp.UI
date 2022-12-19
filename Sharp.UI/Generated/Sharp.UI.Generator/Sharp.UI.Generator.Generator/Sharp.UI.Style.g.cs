@@ -30,6 +30,38 @@ namespace Sharp.UI
             MauiObject = style;
         }
 
+        public Style(System.Type type, out Style style) : this(type)
+        {
+            style = this;
+        }
+
+        public Style(System.Type type, System.Action<Style> configure) : this(type)
+        {
+            configure(this);
+        }
+
+        public Style(System.Type type, out Style style, System.Action<Style> configure) : this(type)
+        {
+            style = this;
+            configure(this);
+        }
+
+        public Style(System.Type type, bool applyToDerivedTypes, out Style style) : this(type, applyToDerivedTypes)
+        {
+            style = this;
+        }
+
+        public Style(System.Type type, bool applyToDerivedTypes, System.Action<Style> configure) : this(type, applyToDerivedTypes)
+        {
+            configure(this);
+        }
+
+        public Style(System.Type type, bool applyToDerivedTypes, out Style style, System.Action<Style> configure) : this(type, applyToDerivedTypes)
+        {
+            style = this;
+            configure(this);
+        }
+
         // ----- operators -----
 
         public static implicit operator Style(Microsoft.Maui.Controls.Style mauiObject) => new Style(mauiObject);

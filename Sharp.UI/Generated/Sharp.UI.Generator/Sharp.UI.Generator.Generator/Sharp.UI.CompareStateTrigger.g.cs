@@ -47,6 +47,22 @@ namespace Sharp.UI
             configure(this);
         }
 
+        public CompareStateTrigger(System.Func<Sharp.UI.Binding, Sharp.UI.Binding> bindingBuilder, object value, out CompareStateTrigger compareStateTrigger) : this(bindingBuilder, value)
+        {
+            compareStateTrigger = this;
+        }
+
+        public CompareStateTrigger(System.Func<Sharp.UI.Binding, Sharp.UI.Binding> bindingBuilder, object value, System.Action<CompareStateTrigger> configure) : this(bindingBuilder, value)
+        {
+            configure(this);
+        }
+
+        public CompareStateTrigger(System.Func<Sharp.UI.Binding, Sharp.UI.Binding> bindingBuilder, object value, out CompareStateTrigger compareStateTrigger, System.Action<CompareStateTrigger> configure) : this(bindingBuilder, value)
+        {
+            compareStateTrigger = this;
+            configure(this);
+        }
+
         // ----- operators -----
 
         public static implicit operator CompareStateTrigger(Microsoft.Maui.Controls.CompareStateTrigger mauiObject) => new CompareStateTrigger(mauiObject);

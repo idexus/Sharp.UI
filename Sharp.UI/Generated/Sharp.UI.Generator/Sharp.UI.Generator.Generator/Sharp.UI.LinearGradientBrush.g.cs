@@ -40,6 +40,22 @@ namespace Sharp.UI
             configure(this);
         }
 
+        public LinearGradientBrush(Microsoft.Maui.Graphics.Point startPoint, Microsoft.Maui.Graphics.Point endPoint, out LinearGradientBrush linearGradientBrush) : this(startPoint, endPoint)
+        {
+            linearGradientBrush = this;
+        }
+
+        public LinearGradientBrush(Microsoft.Maui.Graphics.Point startPoint, Microsoft.Maui.Graphics.Point endPoint, System.Action<LinearGradientBrush> configure) : this(startPoint, endPoint)
+        {
+            configure(this);
+        }
+
+        public LinearGradientBrush(Microsoft.Maui.Graphics.Point startPoint, Microsoft.Maui.Graphics.Point endPoint, out LinearGradientBrush linearGradientBrush, System.Action<LinearGradientBrush> configure) : this(startPoint, endPoint)
+        {
+            linearGradientBrush = this;
+            configure(this);
+        }
+
         // ----- collection container -----
 
         public int Count => this.GradientStops.Count;

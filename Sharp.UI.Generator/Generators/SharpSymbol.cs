@@ -51,7 +51,6 @@ namespace Sharp.UI.Generator
 
         // class generation
         bool generateAdditionalConstructors = false;
-        bool generateAdditionalConstructorsForNoEmptyConstructors = false;
         bool generateNoParamConstructor = false;
         bool singleItemContainer = false;
         string containerOfTypeName = null;
@@ -71,7 +70,7 @@ namespace Sharp.UI.Generator
 
             WrappedType = GetWrappedType(sharpAttribute);
 
-            if (IsUserDefiniedType && !IsBindable()) throw new ArgumentException("User defined classes with SharpObject attribute is only allowed for BindableObject types");
+            //if (IsUserDefiniedType && !IsBindable()) throw new ArgumentException("User defined classes with SharpObject attribute is only allowed for BindableObject types");
 
             nameSpaceString = IsUserDefiniedType ? mainSymbol.ContainingNamespace.ToDisplayString() : "Sharp.UI";
             typeConformanceName = IsUserDefiniedType ? symbol.ToDisplayString() : $"Sharp.UI.I{GetNormalizedName()}";
@@ -152,11 +151,8 @@ namespace Sharp.UI.Generator
             }
 
             this.generateAdditionalConstructors =
-                    mainSymbol.Constructors.FirstOrDefault(e => e.Parameters.Count() == 0 && !e.IsImplicitlyDeclared) != null ||
+                    mainSymbol.Constructors.FirstOrDefault(e => !e.IsImplicitlyDeclared) != null ||
                     this.generateNoParamConstructor;
-
-            this.generateAdditionalConstructorsForNoEmptyConstructors =
-                    mainSymbol.Constructors.FirstOrDefault(e => e.Parameters.Count() > 0 && !e.IsImplicitlyDeclared) != null;
         }
 
         // ------ normalized name ------

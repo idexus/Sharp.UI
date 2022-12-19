@@ -2,24 +2,34 @@
 
 namespace Sharp.UI
 {
-    public class Style<T> : Style
+    [SharpObject]
+    public partial class Style<T> : Style
     {
-        public Style(bool applyToDerivedTypes = false, bool canCascade = false, string styleClass = null)
-            : base(MauiWrapper.GetMauiType<T>(), applyToDerivedTypes, canCascade, styleClass)
+        public Style() : base(MauiWrapper.GetMauiType<T>())
         {
 
         }
-    }    
+
+        public Style(bool applyToDerivedTypes = false)
+            : base(MauiWrapper.GetMauiType<T>(), applyToDerivedTypes)
+        {
+
+        }
+    }
 
     [SharpObject(typeof(Microsoft.Maui.Controls.Style))]
     public partial class Style
     {
-        public Style(Type type, bool applyToDerivedTypes = false, bool canCascade = false, string styleClass = null)
+        public Style(Type type)
+            : this(new Microsoft.Maui.Controls.Style(type))
+        {
+
+        }
+
+        public Style(Type type, bool applyToDerivedTypes)
             : this(new Microsoft.Maui.Controls.Style(type))
         {
             this.MauiObject.ApplyToDerivedTypes = applyToDerivedTypes;
-            this.MauiObject.CanCascade = canCascade;
-            this.MauiObject.Class = styleClass;
         }
 
         Microsoft.Maui.Controls.VisualStateGroupList GetVisualStateGroupList()

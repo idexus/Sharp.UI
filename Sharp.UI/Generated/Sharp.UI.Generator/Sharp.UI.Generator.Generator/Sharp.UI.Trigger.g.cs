@@ -30,6 +30,22 @@ namespace Sharp.UI
             MauiObject = trigger;
         }
 
+        public Trigger(Microsoft.Maui.Controls.BindableProperty property, object value, out Trigger trigger) : this(property, value)
+        {
+            trigger = this;
+        }
+
+        public Trigger(Microsoft.Maui.Controls.BindableProperty property, object value, System.Action<Trigger> configure) : this(property, value)
+        {
+            configure(this);
+        }
+
+        public Trigger(Microsoft.Maui.Controls.BindableProperty property, object value, out Trigger trigger, System.Action<Trigger> configure) : this(property, value)
+        {
+            trigger = this;
+            configure(this);
+        }
+
         // ----- operators -----
 
         public static implicit operator Trigger(Microsoft.Maui.Controls.Trigger mauiObject) => new Trigger(mauiObject);
