@@ -10,7 +10,7 @@ namespace Sharp.UI
 
         }
 
-        public Style(bool applyToDerivedTypes = false)
+        public Style(bool applyToDerivedTypes)
             : base(MauiWrapper.GetMauiType<T>(), applyToDerivedTypes)
         {
 
