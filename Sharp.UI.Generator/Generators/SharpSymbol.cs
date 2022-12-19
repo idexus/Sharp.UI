@@ -51,6 +51,7 @@ namespace Sharp.UI.Generator
 
         // class generation
         bool generateAdditionalConstructors = false;
+        bool generateAdditionalConstructorsForNoEmptyConstructors = false;
         bool generateNoParamConstructor = false;
         bool singleItemContainer = false;
         string containerOfTypeName = null;
@@ -153,6 +154,9 @@ namespace Sharp.UI.Generator
             this.generateAdditionalConstructors =
                     mainSymbol.Constructors.FirstOrDefault(e => e.Parameters.Count() == 0 && !e.IsImplicitlyDeclared) != null ||
                     this.generateNoParamConstructor;
+
+            this.generateAdditionalConstructorsForNoEmptyConstructors =
+                    mainSymbol.Constructors.FirstOrDefault(e => e.Parameters.Count() > 0 && !e.IsImplicitlyDeclared) != null;
         }
 
         // ------ normalized name ------

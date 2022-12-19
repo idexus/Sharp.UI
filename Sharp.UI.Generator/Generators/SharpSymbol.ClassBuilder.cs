@@ -174,6 +174,8 @@ namespace {nameSpaceString}
             if (IsWrappedType && WrappedType.IsSealed) GenerateConstructorForSealedType();
             if (generateNoParamConstructor) GenerateNoParamConstructor();
             if (generateAdditionalConstructors) GenerateAdditionalConstructors();
+            //if (this.generateAdditionalConstructorsForNoEmptyConstructors)
+            //    GenerateAdditionalConstructorsForNoEmptyConstructor()
         }
 
         // generate constructor header
@@ -236,6 +238,40 @@ namespace {nameSpaceString}
             {Helpers.CamelCase(mainSymbol.Name)} = this;
             configure(this);
         }}");
+        }
+
+        void GenerateAdditionalConstructorsForNoEmptyConstructor()
+        {
+            var constructors = mainSymbol.Constructors.Where(e => e.Parameters.Count() > 0 && !e.IsImplicitlyDeclared);
+
+            foreach (var constructor in constructors)
+            {
+                var argsString = "";
+                var baseArgsString = "";
+                foreach (var argument in constructor.Parameters)
+                {
+                    argsString += $"{argument.Type.ToDisplayString()} {argument.Name}, ";
+                    baseArgsString += $"{argument.Name}";
+                }
+
+                var thisTail = IsWrappedType && WrappedType.IsSealed || !generateNoParamConstructor ? $": this({baseArgsString})" : "";
+                builder.AppendLine($@"
+        public {mainSymbol.Name}({argsString}out {mainSymbol.Name} {Helpers.CamelCase(mainSymbol.Name)}) {thisTail}
+        {{
+            {Helpers.CamelCase(mainSymbol.Name)} = this;
+        }}
+
+        public {mainSymbol.Name}({argsString}System.Action<{mainSymbol.Name}> configure) {thisTail}
+        {{
+            configure(this);
+        }}
+
+        public {mainSymbol.Name}({argsString}out {mainSymbol.Name} {Helpers.CamelCase(mainSymbol.Name)}, System.Action<{mainSymbol.Name}> configure) {thisTail}
+        {{
+            {Helpers.CamelCase(mainSymbol.Name)} = this;
+            configure(this);
+        }}");
+            }
         }
 
         // --------------------------------------

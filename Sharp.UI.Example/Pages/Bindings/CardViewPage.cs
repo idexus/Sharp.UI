@@ -19,7 +19,7 @@ public partial class CardView : ContentView, ICardViewProperties
 {
     public event EventHandler Clicked;
 
-    public CardView()
+    public CardView(int eventHandler)
     {
         this.BindingContext = this;
         Content = new Border

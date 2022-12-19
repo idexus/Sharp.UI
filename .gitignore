@@ -5,7 +5,7 @@ profile
 # TestApp
 
 TestApp
-Generated/
+# Generated/
 
 # vscode
 .vscode
