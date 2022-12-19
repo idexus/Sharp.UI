@@ -76,7 +76,9 @@ public partial class CardView : ContentView, ICardViewProperties
 }
 ```
 
-Fluent helper method will be genearated for each `EventHandler` in class, . E.g for the `Clicked` event handler you will get two fluent methods 
+### Event handlers
+
+By using the `[Sharp Object]` attribute in the class declaration, fluent helper methods will be generated for each `EventHandler`. E.g for the `Clicked` event handler you will get two fluent methods 
 - `OnClicked(sender)`
 - `OnClicked(sender, args)`
 
