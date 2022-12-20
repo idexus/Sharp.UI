@@ -1,8 +1,12 @@
 # Advanced scenarios
 
-### Interface declaration
 
-To auto-generate properties you have to use `[BindableProperties]` attribute in the interface declaration and the `[SharpObject]` attribute in the class declaration.
+For properties, you can use the following additional attributes
+
+- `[PropertyCallbacksAttribute(propertyChanged,validateValue,coerceValue,defaultValueCreator)]` to define callback names
+- `[DefaultValue(value)]` to define default value
+
+### Interface declaration
 
 ```cs
 [BindableProperties]
@@ -19,10 +23,7 @@ public interface IAngleViewModelProperties
 }
 ```
 
-For properties, you can use the following additional attributes
 
-- `[PropertyCallbacksAttribute(propertyChanged,validateValue,coerceValue,defaultValueCreator)]` to define callback names
-- `[DefaultValue(value)]` to define default value
 
 ### Class declaration
 
