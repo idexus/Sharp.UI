@@ -15,7 +15,7 @@ new Scrollview
 ```
 
 #### Multi item containers
-Objects such as `Grid`, `VStack` (short name for Maui `VerticalStackLayout`), `HStack` (short name for Maui `HorizontalStackLayout`) etc. can contain many elements.
+Objects such as `Grid`, `VStack` (short name for the Maui `VerticalStackLayout`), `HStack` (short name for the Maui `HorizontalStackLayout`) etc. can contain many elements.
 
 ```cs
 new VStack
