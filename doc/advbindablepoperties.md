@@ -4,7 +4,7 @@
 For properties, you can use the following additional attributes
 
 - `[PropertyCallbacks(propertyChanged,validateValue,coerceValue,defaultValueCreator)]` to define callback names
-- `[DefaultValue(value)]` to define default value
+- `[DefaultValue(value)]` to define default values
 
 ### Interface declaration
 
