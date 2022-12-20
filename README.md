@@ -123,13 +123,16 @@ public class ViewPage : ContentPage
     }
 }
 ```
+### Advanced
+
+- [Advanced bindable properties scenarios](./doc/advbindablepoperties.md)
+
 # Custom controls
 
 You can create custom controls using auto-generated properties and event handler helper methods.
 
 - [Create custom controls](./doc/customcontentview.md)
 - [Control template](./doc/autogenbindableproperties.md)
-- [Advanced scenarios](./doc/advbindablepoperties.md)
 
 # License 
 
