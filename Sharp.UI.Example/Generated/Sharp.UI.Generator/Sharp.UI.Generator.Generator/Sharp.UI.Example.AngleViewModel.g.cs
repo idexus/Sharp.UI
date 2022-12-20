@@ -66,7 +66,7 @@ namespace Sharp.UI.Example
                 nameof(MaximumAngle),
                 typeof(double),
                 typeof(Sharp.UI.Example.AngleViewModel),
-                (double)1.7976931348623157E+308);
+                (double)360);
 
         public double MaximumAngle
         {

@@ -71,6 +71,7 @@ public class AngleViewModelPage : ContentPage
 
             new Label()
                 .Text(e => e.Path("Angle").StringFormat("Angle {0}"))
+                .Rotation(e => e.Path("Angle"))
                 .FontSize(30)
 
         }

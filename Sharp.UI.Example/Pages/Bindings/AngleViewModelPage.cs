@@ -11,7 +11,7 @@ public interface IAngleViewModelProperties
     [PropertyCallbacks(coerceValue: "CoerceAngle")]
     public double Angle { get; set; }
 
-    [DefaultValue(double.MaxValue)]
+    [DefaultValue(360)]
     public double MaximumAngle { get; set; }
 }
 
@@ -55,6 +55,7 @@ public class AngleViewModelPage : ContentPage
 
             new Label()
                 .Text(e => e.Path("Angle").StringFormat("Angle {0}"))
+                .Rotation(e => e.Path("Angle"))
                 .FontSize(30)
 
         }
