@@ -3,7 +3,7 @@
 
 For properties, you can use the following additional attributes
 
-- `[PropertyCallbacksAttribute(propertyChanged,validateValue,coerceValue,defaultValueCreator)]` to define callback names
+- `[PropertyCallbacks(propertyChanged,validateValue,coerceValue,defaultValueCreator)]` to define callback names
 - `[DefaultValue(value)]` to define default value
 
 ### Interface declaration
