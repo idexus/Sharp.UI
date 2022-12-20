@@ -21,13 +21,13 @@ public partial class AngleViewModel : BindableObject, IAngleViewModelProperties
 {
     static void OnAngleChanged(BindableObject bindable, object oldValue, object newValue)
     {
-        AngleViewModel viewModel = bindable as AngleViewModel;
+        var viewModel = bindable as AngleViewModel;
         viewModel.Angle = (double)newValue;
     }
 
     static object CoerceAngle(BindableObject bindable, object value)
     {
-        AngleViewModel viewModel = bindable as AngleViewModel;
+        var viewModel = bindable as AngleViewModel;
         double input = (double)value;
 
         if (input > viewModel.MaximumAngle)
