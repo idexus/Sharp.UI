@@ -123,9 +123,9 @@ public class ViewPage : ContentPage
     }
 }
 ```
-### Advanced
+### Advanced scenarios
 
-- [Advanced bindable properties scenarios](./doc/advbindablepoperties.md)
+- [Callbacks, default values](./doc/advbindablepoperties.md)
 
 # Custom controls
 
