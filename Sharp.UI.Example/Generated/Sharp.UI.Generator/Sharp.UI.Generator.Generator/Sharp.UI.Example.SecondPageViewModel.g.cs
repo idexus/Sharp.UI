@@ -38,7 +38,7 @@ namespace Sharp.UI.Example
                 nameof(Title),
                 typeof(string),
                 typeof(Sharp.UI.Example.SecondPageViewModel),
-                default(string));
+                (string)"no title");
 
         public string Title
         {

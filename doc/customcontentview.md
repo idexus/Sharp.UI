@@ -4,7 +4,7 @@ In `Sharp.UI` you can create custom control views, and all interface bindable pr
 
 ### Interface
 
-To auto-generate properties you have to set the `[BindableProperties]` attribute in the interface declaration and the `[SharpObject]` attribute in the class declaration.
+To auto-generate properties you have to use `[BindableProperties]` attribute in the interface declaration and the `[SharpObject]` attribute in the class declaration.
 
 ```cs
 [BindableProperties]

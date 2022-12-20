@@ -10,7 +10,7 @@ public interface ICardViewProperties
     Color CardColor { get; set; }
     Color BorderColor { get; set; }
     Style DescriptionStyle { get; set; }
-    View ContentView { get; set; }
+    View ContentView { get; set; }    
     string ButtonTitle { get; set; }
 }
 

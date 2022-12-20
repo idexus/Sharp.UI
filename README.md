@@ -129,6 +129,7 @@ You can create custom controls using auto-generated properties and event handler
 
 - [Create custom controls](./doc/customcontentview.md)
 - [Control template](./doc/autogenbindableproperties.md)
+- [Advanced scenarios](./doc/advbindablepoperties.md)
 
 # License 
 

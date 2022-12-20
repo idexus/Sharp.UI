@@ -51,7 +51,8 @@ public partial class App : Application
 
                 new Tab("Bindings")
                 {
-                    new ShellContent<ViewModelPage>("View Model"),
+                    new ShellContent<ViewPage>("View Model"),
+                    new ShellContent<AngleViewModelPage>("Angle View"),
                     new ShellContent<TestBindingsPage>("Bindings"),
                     new ShellContent<SimpleBindings>("Simple bindings"),
                     new ShellContent<TemplatedParentPage>("Templated CardView"),

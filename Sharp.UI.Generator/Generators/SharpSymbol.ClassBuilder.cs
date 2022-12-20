@@ -381,6 +381,15 @@ namespace {nameSpaceString}
         {
             var name = symbol.Name;
             var typeName = symbol.Type.ToDisplayString();
+            var callbacks = GetPropertyCallbacks(symbol);
+            var defaultValueString = GetDefaultValueString(symbol, typeName);
+            var callbacksString = "";
+
+            foreach(var callback in callbacks)
+            {
+                callbacksString = $@",
+                {callback.Key}: {callback.Value}";
+            }
 
             builder.Append($@"
         public static readonly Microsoft.Maui.Controls.BindableProperty {name}Property =
@@ -388,7 +397,7 @@ namespace {nameSpaceString}
                 nameof({name}),
                 typeof({typeName}),
                 typeof({mainSymbol.ToDisplayString()}),
-                default({typeName}));
+                {(defaultValueString != null ? $"({typeName}){defaultValueString}" : $"default({typeName})")}{callbacksString});
 
         public {typeName} {name}
         {{

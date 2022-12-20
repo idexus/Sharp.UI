@@ -5,6 +5,7 @@ using Sharp.UI;
 [BindableProperties]
 public interface ISecondPageViewModelProperties
 {
+    [DefaultValue("no title")]
     public string Title { get; set; }
     public string Author { get; set; }
 }
@@ -20,7 +21,7 @@ public partial class SecondPageViewModel : BindableObject, ISecondPageViewModelP
     }
 }
 
-public class ViewModelPage : ContentPage
+public class ViewPage : ContentPage
 {
     SecondPageViewModel viewModel = new SecondPageViewModel();
     ResourceDictionary pageResources => new ResourceDictionary
@@ -45,7 +46,7 @@ public class ViewModelPage : ContentPage
         },
     };
 
-    public ViewModelPage()
+    public ViewPage()
     {
         this.Title = "View-Model";
         

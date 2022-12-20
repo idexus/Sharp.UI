@@ -15,7 +15,7 @@ public class FlyoutMainPage : FlyoutPage
                 new CollectionPage(),
                 new ExamplePage(),
                 new TableViewPage(),
-                new ViewModelPage(),
+                new ViewPage(),
                 new StyleTestPage(),
                 new SwipeViewPage(),
                 new PathPage(),

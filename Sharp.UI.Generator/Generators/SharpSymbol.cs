@@ -19,6 +19,8 @@ namespace Sharp.UI.Generator
         public const string AttachedInterfacesAttributeString = "AttachedInterfaces";
         public const string ContentPropertyAttributeString = "ContentProperty";
         public const string AttachedNameAttributeString = "AttachedName";
+        public const string PropertyCallbackAttributeString = "PropertyCallbacks";
+        public const string DefaultValueAttributeString = "DefaultValue";
 
         public const string CompatibilityString = "Compatibility";
 
@@ -195,6 +197,38 @@ namespace Sharp.UI.Generator
             var attributes = symbol.GetAttributes();
             var attributeData = attributes.FirstOrDefault(e => e.AttributeClass.Name.Contains(AttachedNameAttributeString));
             if (attributeData != null) return (string)attributeData.ConstructorArguments[0].Value;
+            return null;
+        }
+
+        Dictionary<string, string> GetPropertyCallbacks(ISymbol symbol)
+        {
+            var data = new Dictionary<string, string>();
+            var attributes = symbol.GetAttributes();
+            var attributeData = attributes.FirstOrDefault(e => e.AttributeClass.Name.Contains(PropertyCallbackAttributeString));
+            if (attributeData != null)
+            {
+                var arguments = attributeData.ConstructorArguments;
+                if (arguments[0].Value != null) data["propertyChanged"] = (string)arguments[0].Value;
+                if (arguments[1].Value != null) data["validateValue"] = (string)arguments[1].Value;
+                if (arguments[2].Value != null) data["coerceValue"] = (string)arguments[2].Value;
+                if (arguments[3].Value != null) data["defaultValueCreator"] = (string)arguments[3].Value;
+                if (data.Count() == 0) throw new ArgumentException($"PropertyCallback attribute must have minmium one attribute defined, symbol: {symbol.ToDisplayString()}");
+            }
+            return data;
+        }
+
+        string GetDefaultValueString(ISymbol symbol, string typeName)
+        {
+            var attributes = symbol.GetAttributes();
+            var attributeData = attributes.FirstOrDefault(e => e.AttributeClass.Name.Contains(DefaultValueAttributeString));
+            if (attributeData != null)
+            {
+                
+                var value =  attributeData.ConstructorArguments[0].Value.ToString();
+                if (typeName.Equals("string")) value = $"\"{value}\"";
+                if (typeName.Equals("double") || typeName.Equals("float")) value = value.Replace(",", ".");
+                return value;
+            }
             return null;
         }
 
