@@ -10,21 +10,21 @@ namespace Sharp.UI
     public static class ViewCellGeneratedExtension
     {
         public static T View<T>(this T obj,
-            Microsoft.Maui.Controls.View? view)
+            Microsoft.Maui.Controls.View view)
             where T : Sharp.UI.IViewCell
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ViewCell>(obj);
-            if (view != null) mauiObject.View = (Microsoft.Maui.Controls.View)view;
+            mauiObject.View = (Microsoft.Maui.Controls.View)view;
             return obj;
         }
         
         public static T View<T>(this T obj,
-            Microsoft.Maui.Controls.View? view,
+            Microsoft.Maui.Controls.View view,
             System.Func<ValueDef<Microsoft.Maui.Controls.View>, ValueDef<Microsoft.Maui.Controls.View>> definition)
             where T : Sharp.UI.IViewCell
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ViewCell>(obj);
-            if (view != null) mauiObject.View = (Microsoft.Maui.Controls.View)view;
+            mauiObject.View = (Microsoft.Maui.Controls.View)view;
             var def = definition(new ValueDef<Microsoft.Maui.Controls.View>());
             if (def.ValueIsSet()) mauiObject.View = def.GetValue();
             return obj;

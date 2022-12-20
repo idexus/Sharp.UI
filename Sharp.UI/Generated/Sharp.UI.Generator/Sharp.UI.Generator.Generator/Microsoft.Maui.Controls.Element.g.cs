@@ -10,21 +10,21 @@ namespace Sharp.UI
     public static class ElementGeneratedExtension
     {
         public static T AutomationId<T>(this T obj,
-            string? automationId)
+            string automationId)
             where T : Sharp.UI.IElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Element>(obj);
-            if (automationId != null) mauiObject.AutomationId = (string)automationId;
+            mauiObject.AutomationId = (string)automationId;
             return obj;
         }
         
         public static T AutomationId<T>(this T obj,
-            string? automationId,
+            string automationId,
             System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.IElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Element>(obj);         
-            if (automationId != null) mauiObject.AutomationId = (string)automationId;
+            mauiObject.AutomationId = (string)automationId;
             var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.Element.AutomationIdProperty));
             if (def.ValueIsSet()) mauiObject.AutomationId = def.GetValue();
             def.BindProperty();
@@ -43,21 +43,21 @@ namespace Sharp.UI
         }
         
         public static T ClassId<T>(this T obj,
-            string? classId)
+            string classId)
             where T : Sharp.UI.IElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Element>(obj);
-            if (classId != null) mauiObject.ClassId = (string)classId;
+            mauiObject.ClassId = (string)classId;
             return obj;
         }
         
         public static T ClassId<T>(this T obj,
-            string? classId,
+            string classId,
             System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.IElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Element>(obj);         
-            if (classId != null) mauiObject.ClassId = (string)classId;
+            mauiObject.ClassId = (string)classId;
             var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.Element.ClassIdProperty));
             if (def.ValueIsSet()) mauiObject.ClassId = def.GetValue();
             def.BindProperty();
@@ -120,21 +120,21 @@ namespace Sharp.UI
         }
         
         public static T StyleId<T>(this T obj,
-            string? styleId)
+            string styleId)
             where T : Sharp.UI.IElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Element>(obj);
-            if (styleId != null) mauiObject.StyleId = (string)styleId;
+            mauiObject.StyleId = (string)styleId;
             return obj;
         }
         
         public static T StyleId<T>(this T obj,
-            string? styleId,
+            string styleId,
             System.Func<ValueDef<string>, ValueDef<string>> definition)
             where T : Sharp.UI.IElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Element>(obj);
-            if (styleId != null) mauiObject.StyleId = (string)styleId;
+            mauiObject.StyleId = (string)styleId;
             var def = definition(new ValueDef<string>());
             if (def.ValueIsSet()) mauiObject.StyleId = def.GetValue();
             return obj;
@@ -151,21 +151,21 @@ namespace Sharp.UI
         }
         
         public static T Parent<T>(this T obj,
-            Microsoft.Maui.Controls.Element? parent)
+            Microsoft.Maui.Controls.Element parent)
             where T : Sharp.UI.IElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Element>(obj);
-            if (parent != null) mauiObject.Parent = (Microsoft.Maui.Controls.Element)parent;
+            mauiObject.Parent = (Microsoft.Maui.Controls.Element)parent;
             return obj;
         }
         
         public static T Parent<T>(this T obj,
-            Microsoft.Maui.Controls.Element? parent,
+            Microsoft.Maui.Controls.Element parent,
             System.Func<ValueDef<Microsoft.Maui.Controls.Element>, ValueDef<Microsoft.Maui.Controls.Element>> definition)
             where T : Sharp.UI.IElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Element>(obj);
-            if (parent != null) mauiObject.Parent = (Microsoft.Maui.Controls.Element)parent;
+            mauiObject.Parent = (Microsoft.Maui.Controls.Element)parent;
             var def = definition(new ValueDef<Microsoft.Maui.Controls.Element>());
             if (def.ValueIsSet()) mauiObject.Parent = def.GetValue();
             return obj;
@@ -182,21 +182,21 @@ namespace Sharp.UI
         }
         
         public static T EffectControlProvider<T>(this T obj,
-            Microsoft.Maui.Controls.IEffectControlProvider? effectControlProvider)
+            Microsoft.Maui.Controls.IEffectControlProvider effectControlProvider)
             where T : Sharp.UI.IElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Element>(obj);
-            if (effectControlProvider != null) mauiObject.EffectControlProvider = (Microsoft.Maui.Controls.IEffectControlProvider)effectControlProvider;
+            mauiObject.EffectControlProvider = (Microsoft.Maui.Controls.IEffectControlProvider)effectControlProvider;
             return obj;
         }
         
         public static T EffectControlProvider<T>(this T obj,
-            Microsoft.Maui.Controls.IEffectControlProvider? effectControlProvider,
+            Microsoft.Maui.Controls.IEffectControlProvider effectControlProvider,
             System.Func<ValueDef<Microsoft.Maui.Controls.IEffectControlProvider>, ValueDef<Microsoft.Maui.Controls.IEffectControlProvider>> definition)
             where T : Sharp.UI.IElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Element>(obj);
-            if (effectControlProvider != null) mauiObject.EffectControlProvider = (Microsoft.Maui.Controls.IEffectControlProvider)effectControlProvider;
+            mauiObject.EffectControlProvider = (Microsoft.Maui.Controls.IEffectControlProvider)effectControlProvider;
             var def = definition(new ValueDef<Microsoft.Maui.Controls.IEffectControlProvider>());
             if (def.ValueIsSet()) mauiObject.EffectControlProvider = def.GetValue();
             return obj;
@@ -341,21 +341,21 @@ namespace Sharp.UI
         }
         
         public static T ContextFlyout<T>(this T obj,
-            Sharp.UI.MenuFlyout? contextFlyout)
+            Sharp.UI.MenuFlyout contextFlyout)
             where T : Sharp.UI.IElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Element>(obj);
-            if (contextFlyout != null) mauiObject.SetValue(Microsoft.Maui.Controls.FlyoutBase.ContextFlyoutProperty, (Sharp.UI.MenuFlyout)contextFlyout);
+            mauiObject.SetValue(Microsoft.Maui.Controls.FlyoutBase.ContextFlyoutProperty, (Sharp.UI.MenuFlyout)contextFlyout);
             return obj;
         }
         
         public static T ContextFlyout<T>(this T obj,
-            Sharp.UI.MenuFlyout? contextFlyout,
+            Sharp.UI.MenuFlyout contextFlyout,
             System.Func<BindableDef<Sharp.UI.MenuFlyout>, BindableDef<Sharp.UI.MenuFlyout>> definition)
             where T : Sharp.UI.IElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Element>(obj);         
-            if (contextFlyout != null) mauiObject.SetValue(Microsoft.Maui.Controls.FlyoutBase.ContextFlyoutProperty, (Sharp.UI.MenuFlyout)contextFlyout);
+            mauiObject.SetValue(Microsoft.Maui.Controls.FlyoutBase.ContextFlyoutProperty, (Sharp.UI.MenuFlyout)contextFlyout);
             var def = definition(new BindableDef<Sharp.UI.MenuFlyout>(mauiObject, Microsoft.Maui.Controls.FlyoutBase.ContextFlyoutProperty));
             if (def.ValueIsSet()) mauiObject.SetValue(Microsoft.Maui.Controls.FlyoutBase.ContextFlyoutProperty, def.GetValue());
             def.BindProperty();

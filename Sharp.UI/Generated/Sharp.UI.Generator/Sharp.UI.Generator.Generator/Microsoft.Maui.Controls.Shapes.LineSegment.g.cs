@@ -10,21 +10,21 @@ namespace Sharp.UI
     public static class LineSegmentGeneratedExtension
     {
         public static T Point<T>(this T obj,
-            Microsoft.Maui.Graphics.Point? point)
+            Microsoft.Maui.Graphics.Point point)
             where T : Sharp.UI.ILineSegment
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.LineSegment>(obj);
-            if (point != null) mauiObject.Point = (Microsoft.Maui.Graphics.Point)point;
+            mauiObject.Point = (Microsoft.Maui.Graphics.Point)point;
             return obj;
         }
         
         public static T Point<T>(this T obj,
-            Microsoft.Maui.Graphics.Point? point,
+            Microsoft.Maui.Graphics.Point point,
             System.Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
             where T : Sharp.UI.ILineSegment
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.LineSegment>(obj);         
-            if (point != null) mauiObject.Point = (Microsoft.Maui.Graphics.Point)point;
+            mauiObject.Point = (Microsoft.Maui.Graphics.Point)point;
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Point>(mauiObject, Microsoft.Maui.Controls.Shapes.LineSegment.PointProperty));
             if (def.ValueIsSet()) mauiObject.Point = def.GetValue();
             def.BindProperty();

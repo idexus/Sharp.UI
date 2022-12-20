@@ -10,21 +10,21 @@ namespace Sharp.UI
     public static class MenuBarItemGeneratedExtension
     {
         public static T Priority<T>(this T obj,
-            int? priority)
+            int priority)
             where T : Sharp.UI.IMenuBarItem
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MenuBarItem>(obj);
-            if (priority != null) mauiObject.Priority = (int)priority;
+            mauiObject.Priority = (int)priority;
             return obj;
         }
         
         public static T Priority<T>(this T obj,
-            int? priority,
+            int priority,
             System.Func<ValueDef<int>, ValueDef<int>> definition)
             where T : Sharp.UI.IMenuBarItem
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MenuBarItem>(obj);
-            if (priority != null) mauiObject.Priority = (int)priority;
+            mauiObject.Priority = (int)priority;
             var def = definition(new ValueDef<int>());
             if (def.ValueIsSet()) mauiObject.Priority = def.GetValue();
             return obj;
@@ -41,21 +41,21 @@ namespace Sharp.UI
         }
         
         public static T IsEnabled<T>(this T obj,
-            bool? isEnabled)
+            bool isEnabled)
             where T : Sharp.UI.IMenuBarItem
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MenuBarItem>(obj);
-            if (isEnabled != null) mauiObject.IsEnabled = (bool)isEnabled;
+            mauiObject.IsEnabled = (bool)isEnabled;
             return obj;
         }
         
         public static T IsEnabled<T>(this T obj,
-            bool? isEnabled,
+            bool isEnabled,
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IMenuBarItem
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MenuBarItem>(obj);         
-            if (isEnabled != null) mauiObject.IsEnabled = (bool)isEnabled;
+            mauiObject.IsEnabled = (bool)isEnabled;
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.MenuBarItem.IsEnabledProperty));
             if (def.ValueIsSet()) mauiObject.IsEnabled = def.GetValue();
             def.BindProperty();
@@ -74,21 +74,21 @@ namespace Sharp.UI
         }
         
         public static T Text<T>(this T obj,
-            string? text)
+            string text)
             where T : Sharp.UI.IMenuBarItem
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MenuBarItem>(obj);
-            if (text != null) mauiObject.Text = (string)text;
+            mauiObject.Text = (string)text;
             return obj;
         }
         
         public static T Text<T>(this T obj,
-            string? text,
+            string text,
             System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.IMenuBarItem
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MenuBarItem>(obj);         
-            if (text != null) mauiObject.Text = (string)text;
+            mauiObject.Text = (string)text;
             var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.MenuBarItem.TextProperty));
             if (def.ValueIsSet()) mauiObject.Text = def.GetValue();
             def.BindProperty();

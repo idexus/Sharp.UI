@@ -10,21 +10,21 @@ namespace Sharp.UI
     public static class ReorderableItemsViewGeneratedExtension
     {
         public static T CanMixGroups<T>(this T obj,
-            bool? canMixGroups)
+            bool canMixGroups)
             where T : Sharp.UI.IReorderableItemsView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ReorderableItemsView>(obj);
-            if (canMixGroups != null) mauiObject.CanMixGroups = (bool)canMixGroups;
+            mauiObject.CanMixGroups = (bool)canMixGroups;
             return obj;
         }
         
         public static T CanMixGroups<T>(this T obj,
-            bool? canMixGroups,
+            bool canMixGroups,
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IReorderableItemsView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ReorderableItemsView>(obj);         
-            if (canMixGroups != null) mauiObject.CanMixGroups = (bool)canMixGroups;
+            mauiObject.CanMixGroups = (bool)canMixGroups;
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.ReorderableItemsView.CanMixGroupsProperty));
             if (def.ValueIsSet()) mauiObject.CanMixGroups = def.GetValue();
             def.BindProperty();
@@ -43,21 +43,21 @@ namespace Sharp.UI
         }
         
         public static T CanReorderItems<T>(this T obj,
-            bool? canReorderItems)
+            bool canReorderItems)
             where T : Sharp.UI.IReorderableItemsView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ReorderableItemsView>(obj);
-            if (canReorderItems != null) mauiObject.CanReorderItems = (bool)canReorderItems;
+            mauiObject.CanReorderItems = (bool)canReorderItems;
             return obj;
         }
         
         public static T CanReorderItems<T>(this T obj,
-            bool? canReorderItems,
+            bool canReorderItems,
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IReorderableItemsView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ReorderableItemsView>(obj);         
-            if (canReorderItems != null) mauiObject.CanReorderItems = (bool)canReorderItems;
+            mauiObject.CanReorderItems = (bool)canReorderItems;
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.ReorderableItemsView.CanReorderItemsProperty));
             if (def.ValueIsSet()) mauiObject.CanReorderItems = def.GetValue();
             def.BindProperty();

@@ -10,21 +10,21 @@ namespace Sharp.UI
     public static class StateTriggerGeneratedExtension
     {
         public static T IsActive<T>(this T obj,
-            bool? isActive)
+            bool isActive)
             where T : Sharp.UI.IStateTrigger
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StateTrigger>(obj);
-            if (isActive != null) mauiObject.IsActive = (bool)isActive;
+            mauiObject.IsActive = (bool)isActive;
             return obj;
         }
         
         public static T IsActive<T>(this T obj,
-            bool? isActive,
+            bool isActive,
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IStateTrigger
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StateTrigger>(obj);         
-            if (isActive != null) mauiObject.IsActive = (bool)isActive;
+            mauiObject.IsActive = (bool)isActive;
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.StateTrigger.IsActiveProperty));
             if (def.ValueIsSet()) mauiObject.IsActive = def.GetValue();
             def.BindProperty();

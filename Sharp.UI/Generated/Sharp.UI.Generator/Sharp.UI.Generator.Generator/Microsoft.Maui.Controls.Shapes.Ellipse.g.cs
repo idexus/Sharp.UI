@@ -10,21 +10,21 @@ namespace Sharp.UI
     public static class EllipseGeneratedExtension
     {
         public static T @class<T>(this T obj,
-            System.Collections.Generic.IList<string>? @class)
+            System.Collections.Generic.IList<string> @class)
             where T : Sharp.UI.IEllipse
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Ellipse>(obj);
-            if (@class != null) mauiObject.@class = (System.Collections.Generic.IList<string>)@class;
+            mauiObject.@class = (System.Collections.Generic.IList<string>)@class;
             return obj;
         }
         
         public static T @class<T>(this T obj,
-            System.Collections.Generic.IList<string>? @class,
+            System.Collections.Generic.IList<string> @class,
             System.Func<ValueDef<System.Collections.Generic.IList<string>>, ValueDef<System.Collections.Generic.IList<string>>> definition)
             where T : Sharp.UI.IEllipse
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Ellipse>(obj);
-            if (@class != null) mauiObject.@class = (System.Collections.Generic.IList<string>)@class;
+            mauiObject.@class = (System.Collections.Generic.IList<string>)@class;
             var def = definition(new ValueDef<System.Collections.Generic.IList<string>>());
             if (def.ValueIsSet()) mauiObject.@class = def.GetValue();
             return obj;

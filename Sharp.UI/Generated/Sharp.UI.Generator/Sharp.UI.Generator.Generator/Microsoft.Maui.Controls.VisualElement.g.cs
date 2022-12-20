@@ -10,21 +10,21 @@ namespace Sharp.UI
     public static class VisualElementGeneratedExtension
     {
         public static T Frame<T>(this T obj,
-            Microsoft.Maui.Graphics.Rect? frame)
+            Microsoft.Maui.Graphics.Rect frame)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            if (frame != null) mauiObject.Frame = (Microsoft.Maui.Graphics.Rect)frame;
+            mauiObject.Frame = (Microsoft.Maui.Graphics.Rect)frame;
             return obj;
         }
         
         public static T Frame<T>(this T obj,
-            Microsoft.Maui.Graphics.Rect? frame,
+            Microsoft.Maui.Graphics.Rect frame,
             System.Func<ValueDef<Microsoft.Maui.Graphics.Rect>, ValueDef<Microsoft.Maui.Graphics.Rect>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            if (frame != null) mauiObject.Frame = (Microsoft.Maui.Graphics.Rect)frame;
+            mauiObject.Frame = (Microsoft.Maui.Graphics.Rect)frame;
             var def = definition(new ValueDef<Microsoft.Maui.Graphics.Rect>());
             if (def.ValueIsSet()) mauiObject.Frame = def.GetValue();
             return obj;
@@ -41,21 +41,21 @@ namespace Sharp.UI
         }
         
         public static T Shadow<T>(this T obj,
-            Microsoft.Maui.Controls.Shadow? shadow)
+            Microsoft.Maui.Controls.Shadow shadow)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            if (shadow != null) mauiObject.Shadow = (Microsoft.Maui.Controls.Shadow)shadow;
+            mauiObject.Shadow = (Microsoft.Maui.Controls.Shadow)shadow;
             return obj;
         }
         
         public static T Shadow<T>(this T obj,
-            Microsoft.Maui.Controls.Shadow? shadow,
+            Microsoft.Maui.Controls.Shadow shadow,
             System.Func<BindableDef<Microsoft.Maui.Controls.Shadow>, BindableDef<Microsoft.Maui.Controls.Shadow>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);         
-            if (shadow != null) mauiObject.Shadow = (Microsoft.Maui.Controls.Shadow)shadow;
+            mauiObject.Shadow = (Microsoft.Maui.Controls.Shadow)shadow;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.Shadow>(mauiObject, Microsoft.Maui.Controls.VisualElement.ShadowProperty));
             if (def.ValueIsSet()) mauiObject.Shadow = def.GetValue();
             def.BindProperty();
@@ -74,21 +74,21 @@ namespace Sharp.UI
         }
         
         public static T ZIndex<T>(this T obj,
-            int? zIndex)
+            int zIndex)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            if (zIndex != null) mauiObject.ZIndex = (int)zIndex;
+            mauiObject.ZIndex = (int)zIndex;
             return obj;
         }
         
         public static T ZIndex<T>(this T obj,
-            int? zIndex,
+            int zIndex,
             System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);         
-            if (zIndex != null) mauiObject.ZIndex = (int)zIndex;
+            mauiObject.ZIndex = (int)zIndex;
             var def = definition(new BindableDef<int>(mauiObject, Microsoft.Maui.Controls.VisualElement.ZIndexProperty));
             if (def.ValueIsSet()) mauiObject.ZIndex = def.GetValue();
             def.BindProperty();
@@ -107,21 +107,21 @@ namespace Sharp.UI
         }
         
         public static T Visual<T>(this T obj,
-            Microsoft.Maui.Controls.IVisual? visual)
+            Microsoft.Maui.Controls.IVisual visual)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            if (visual != null) mauiObject.Visual = (Microsoft.Maui.Controls.IVisual)visual;
+            mauiObject.Visual = (Microsoft.Maui.Controls.IVisual)visual;
             return obj;
         }
         
         public static T Visual<T>(this T obj,
-            Microsoft.Maui.Controls.IVisual? visual,
+            Microsoft.Maui.Controls.IVisual visual,
             System.Func<BindableDef<Microsoft.Maui.Controls.IVisual>, BindableDef<Microsoft.Maui.Controls.IVisual>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);         
-            if (visual != null) mauiObject.Visual = (Microsoft.Maui.Controls.IVisual)visual;
+            mauiObject.Visual = (Microsoft.Maui.Controls.IVisual)visual;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.IVisual>(mauiObject, Microsoft.Maui.Controls.VisualElement.VisualProperty));
             if (def.ValueIsSet()) mauiObject.Visual = def.GetValue();
             def.BindProperty();
@@ -140,21 +140,21 @@ namespace Sharp.UI
         }
         
         public static T FlowDirection<T>(this T obj,
-            Microsoft.Maui.FlowDirection? flowDirection)
+            Microsoft.Maui.FlowDirection flowDirection)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            if (flowDirection != null) mauiObject.FlowDirection = (Microsoft.Maui.FlowDirection)flowDirection;
+            mauiObject.FlowDirection = (Microsoft.Maui.FlowDirection)flowDirection;
             return obj;
         }
         
         public static T FlowDirection<T>(this T obj,
-            Microsoft.Maui.FlowDirection? flowDirection,
+            Microsoft.Maui.FlowDirection flowDirection,
             System.Func<BindableDef<Microsoft.Maui.FlowDirection>, BindableDef<Microsoft.Maui.FlowDirection>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);         
-            if (flowDirection != null) mauiObject.FlowDirection = (Microsoft.Maui.FlowDirection)flowDirection;
+            mauiObject.FlowDirection = (Microsoft.Maui.FlowDirection)flowDirection;
             var def = definition(new BindableDef<Microsoft.Maui.FlowDirection>(mauiObject, Microsoft.Maui.Controls.VisualElement.FlowDirectionProperty));
             if (def.ValueIsSet()) mauiObject.FlowDirection = def.GetValue();
             def.BindProperty();
@@ -173,21 +173,21 @@ namespace Sharp.UI
         }
         
         public static T AnchorX<T>(this T obj,
-            double? anchorX)
+            double anchorX)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            if (anchorX != null) mauiObject.AnchorX = (double)anchorX;
+            mauiObject.AnchorX = (double)anchorX;
             return obj;
         }
         
         public static T AnchorX<T>(this T obj,
-            double? anchorX,
+            double anchorX,
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);         
-            if (anchorX != null) mauiObject.AnchorX = (double)anchorX;
+            mauiObject.AnchorX = (double)anchorX;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.VisualElement.AnchorXProperty));
             if (def.ValueIsSet()) mauiObject.AnchorX = def.GetValue();
             def.BindProperty();
@@ -206,21 +206,21 @@ namespace Sharp.UI
         }
         
         public static T AnchorY<T>(this T obj,
-            double? anchorY)
+            double anchorY)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            if (anchorY != null) mauiObject.AnchorY = (double)anchorY;
+            mauiObject.AnchorY = (double)anchorY;
             return obj;
         }
         
         public static T AnchorY<T>(this T obj,
-            double? anchorY,
+            double anchorY,
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);         
-            if (anchorY != null) mauiObject.AnchorY = (double)anchorY;
+            mauiObject.AnchorY = (double)anchorY;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.VisualElement.AnchorYProperty));
             if (def.ValueIsSet()) mauiObject.AnchorY = def.GetValue();
             def.BindProperty();
@@ -239,21 +239,21 @@ namespace Sharp.UI
         }
         
         public static T BackgroundColor<T>(this T obj,
-            Microsoft.Maui.Graphics.Color? backgroundColor)
+            Microsoft.Maui.Graphics.Color backgroundColor)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            if (backgroundColor != null) mauiObject.BackgroundColor = (Microsoft.Maui.Graphics.Color)backgroundColor;
+            mauiObject.BackgroundColor = (Microsoft.Maui.Graphics.Color)backgroundColor;
             return obj;
         }
         
         public static T BackgroundColor<T>(this T obj,
-            Microsoft.Maui.Graphics.Color? backgroundColor,
+            Microsoft.Maui.Graphics.Color backgroundColor,
             System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);         
-            if (backgroundColor != null) mauiObject.BackgroundColor = (Microsoft.Maui.Graphics.Color)backgroundColor;
+            mauiObject.BackgroundColor = (Microsoft.Maui.Graphics.Color)backgroundColor;
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.VisualElement.BackgroundColorProperty));
             if (def.ValueIsSet()) mauiObject.BackgroundColor = def.GetValue();
             def.BindProperty();
@@ -272,21 +272,21 @@ namespace Sharp.UI
         }
         
         public static T Background<T>(this T obj,
-            Microsoft.Maui.Controls.Brush? background)
+            Microsoft.Maui.Controls.Brush background)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            if (background != null) mauiObject.Background = (Microsoft.Maui.Controls.Brush)background;
+            mauiObject.Background = (Microsoft.Maui.Controls.Brush)background;
             return obj;
         }
         
         public static T Background<T>(this T obj,
-            Microsoft.Maui.Controls.Brush? background,
+            Microsoft.Maui.Controls.Brush background,
             System.Func<BindableDef<Microsoft.Maui.Controls.Brush>, BindableDef<Microsoft.Maui.Controls.Brush>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);         
-            if (background != null) mauiObject.Background = (Microsoft.Maui.Controls.Brush)background;
+            mauiObject.Background = (Microsoft.Maui.Controls.Brush)background;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.Brush>(mauiObject, Microsoft.Maui.Controls.VisualElement.BackgroundProperty));
             if (def.ValueIsSet()) mauiObject.Background = def.GetValue();
             def.BindProperty();
@@ -349,21 +349,21 @@ namespace Sharp.UI
         }
         
         public static T HeightRequest<T>(this T obj,
-            double? heightRequest)
+            double heightRequest)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            if (heightRequest != null) mauiObject.HeightRequest = (double)heightRequest;
+            mauiObject.HeightRequest = (double)heightRequest;
             return obj;
         }
         
         public static T HeightRequest<T>(this T obj,
-            double? heightRequest,
+            double heightRequest,
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);         
-            if (heightRequest != null) mauiObject.HeightRequest = (double)heightRequest;
+            mauiObject.HeightRequest = (double)heightRequest;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.VisualElement.HeightRequestProperty));
             if (def.ValueIsSet()) mauiObject.HeightRequest = def.GetValue();
             def.BindProperty();
@@ -382,21 +382,21 @@ namespace Sharp.UI
         }
         
         public static T InputTransparent<T>(this T obj,
-            bool? inputTransparent)
+            bool inputTransparent)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            if (inputTransparent != null) mauiObject.InputTransparent = (bool)inputTransparent;
+            mauiObject.InputTransparent = (bool)inputTransparent;
             return obj;
         }
         
         public static T InputTransparent<T>(this T obj,
-            bool? inputTransparent,
+            bool inputTransparent,
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);         
-            if (inputTransparent != null) mauiObject.InputTransparent = (bool)inputTransparent;
+            mauiObject.InputTransparent = (bool)inputTransparent;
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.VisualElement.InputTransparentProperty));
             if (def.ValueIsSet()) mauiObject.InputTransparent = def.GetValue();
             def.BindProperty();
@@ -415,21 +415,21 @@ namespace Sharp.UI
         }
         
         public static T IsEnabled<T>(this T obj,
-            bool? isEnabled)
+            bool isEnabled)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            if (isEnabled != null) mauiObject.IsEnabled = (bool)isEnabled;
+            mauiObject.IsEnabled = (bool)isEnabled;
             return obj;
         }
         
         public static T IsEnabled<T>(this T obj,
-            bool? isEnabled,
+            bool isEnabled,
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);         
-            if (isEnabled != null) mauiObject.IsEnabled = (bool)isEnabled;
+            mauiObject.IsEnabled = (bool)isEnabled;
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.VisualElement.IsEnabledProperty));
             if (def.ValueIsSet()) mauiObject.IsEnabled = def.GetValue();
             def.BindProperty();
@@ -448,21 +448,21 @@ namespace Sharp.UI
         }
         
         public static T IsVisible<T>(this T obj,
-            bool? isVisible)
+            bool isVisible)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            if (isVisible != null) mauiObject.IsVisible = (bool)isVisible;
+            mauiObject.IsVisible = (bool)isVisible;
             return obj;
         }
         
         public static T IsVisible<T>(this T obj,
-            bool? isVisible,
+            bool isVisible,
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);         
-            if (isVisible != null) mauiObject.IsVisible = (bool)isVisible;
+            mauiObject.IsVisible = (bool)isVisible;
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.VisualElement.IsVisibleProperty));
             if (def.ValueIsSet()) mauiObject.IsVisible = def.GetValue();
             def.BindProperty();
@@ -481,21 +481,21 @@ namespace Sharp.UI
         }
         
         public static T MinimumHeightRequest<T>(this T obj,
-            double? minimumHeightRequest)
+            double minimumHeightRequest)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            if (minimumHeightRequest != null) mauiObject.MinimumHeightRequest = (double)minimumHeightRequest;
+            mauiObject.MinimumHeightRequest = (double)minimumHeightRequest;
             return obj;
         }
         
         public static T MinimumHeightRequest<T>(this T obj,
-            double? minimumHeightRequest,
+            double minimumHeightRequest,
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);         
-            if (minimumHeightRequest != null) mauiObject.MinimumHeightRequest = (double)minimumHeightRequest;
+            mauiObject.MinimumHeightRequest = (double)minimumHeightRequest;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.VisualElement.MinimumHeightRequestProperty));
             if (def.ValueIsSet()) mauiObject.MinimumHeightRequest = def.GetValue();
             def.BindProperty();
@@ -514,21 +514,21 @@ namespace Sharp.UI
         }
         
         public static T MinimumWidthRequest<T>(this T obj,
-            double? minimumWidthRequest)
+            double minimumWidthRequest)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            if (minimumWidthRequest != null) mauiObject.MinimumWidthRequest = (double)minimumWidthRequest;
+            mauiObject.MinimumWidthRequest = (double)minimumWidthRequest;
             return obj;
         }
         
         public static T MinimumWidthRequest<T>(this T obj,
-            double? minimumWidthRequest,
+            double minimumWidthRequest,
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);         
-            if (minimumWidthRequest != null) mauiObject.MinimumWidthRequest = (double)minimumWidthRequest;
+            mauiObject.MinimumWidthRequest = (double)minimumWidthRequest;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.VisualElement.MinimumWidthRequestProperty));
             if (def.ValueIsSet()) mauiObject.MinimumWidthRequest = def.GetValue();
             def.BindProperty();
@@ -547,21 +547,21 @@ namespace Sharp.UI
         }
         
         public static T MaximumHeightRequest<T>(this T obj,
-            double? maximumHeightRequest)
+            double maximumHeightRequest)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            if (maximumHeightRequest != null) mauiObject.MaximumHeightRequest = (double)maximumHeightRequest;
+            mauiObject.MaximumHeightRequest = (double)maximumHeightRequest;
             return obj;
         }
         
         public static T MaximumHeightRequest<T>(this T obj,
-            double? maximumHeightRequest,
+            double maximumHeightRequest,
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);         
-            if (maximumHeightRequest != null) mauiObject.MaximumHeightRequest = (double)maximumHeightRequest;
+            mauiObject.MaximumHeightRequest = (double)maximumHeightRequest;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.VisualElement.MaximumHeightRequestProperty));
             if (def.ValueIsSet()) mauiObject.MaximumHeightRequest = def.GetValue();
             def.BindProperty();
@@ -580,21 +580,21 @@ namespace Sharp.UI
         }
         
         public static T MaximumWidthRequest<T>(this T obj,
-            double? maximumWidthRequest)
+            double maximumWidthRequest)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            if (maximumWidthRequest != null) mauiObject.MaximumWidthRequest = (double)maximumWidthRequest;
+            mauiObject.MaximumWidthRequest = (double)maximumWidthRequest;
             return obj;
         }
         
         public static T MaximumWidthRequest<T>(this T obj,
-            double? maximumWidthRequest,
+            double maximumWidthRequest,
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);         
-            if (maximumWidthRequest != null) mauiObject.MaximumWidthRequest = (double)maximumWidthRequest;
+            mauiObject.MaximumWidthRequest = (double)maximumWidthRequest;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.VisualElement.MaximumWidthRequestProperty));
             if (def.ValueIsSet()) mauiObject.MaximumWidthRequest = def.GetValue();
             def.BindProperty();
@@ -613,21 +613,21 @@ namespace Sharp.UI
         }
         
         public static T Opacity<T>(this T obj,
-            double? opacity)
+            double opacity)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            if (opacity != null) mauiObject.Opacity = (double)opacity;
+            mauiObject.Opacity = (double)opacity;
             return obj;
         }
         
         public static T Opacity<T>(this T obj,
-            double? opacity,
+            double opacity,
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);         
-            if (opacity != null) mauiObject.Opacity = (double)opacity;
+            mauiObject.Opacity = (double)opacity;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.VisualElement.OpacityProperty));
             if (def.ValueIsSet()) mauiObject.Opacity = def.GetValue();
             def.BindProperty();
@@ -646,21 +646,21 @@ namespace Sharp.UI
         }
         
         public static T Rotation<T>(this T obj,
-            double? rotation)
+            double rotation)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            if (rotation != null) mauiObject.Rotation = (double)rotation;
+            mauiObject.Rotation = (double)rotation;
             return obj;
         }
         
         public static T Rotation<T>(this T obj,
-            double? rotation,
+            double rotation,
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);         
-            if (rotation != null) mauiObject.Rotation = (double)rotation;
+            mauiObject.Rotation = (double)rotation;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.VisualElement.RotationProperty));
             if (def.ValueIsSet()) mauiObject.Rotation = def.GetValue();
             def.BindProperty();
@@ -679,21 +679,21 @@ namespace Sharp.UI
         }
         
         public static T RotationX<T>(this T obj,
-            double? rotationX)
+            double rotationX)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            if (rotationX != null) mauiObject.RotationX = (double)rotationX;
+            mauiObject.RotationX = (double)rotationX;
             return obj;
         }
         
         public static T RotationX<T>(this T obj,
-            double? rotationX,
+            double rotationX,
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);         
-            if (rotationX != null) mauiObject.RotationX = (double)rotationX;
+            mauiObject.RotationX = (double)rotationX;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.VisualElement.RotationXProperty));
             if (def.ValueIsSet()) mauiObject.RotationX = def.GetValue();
             def.BindProperty();
@@ -712,21 +712,21 @@ namespace Sharp.UI
         }
         
         public static T RotationY<T>(this T obj,
-            double? rotationY)
+            double rotationY)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            if (rotationY != null) mauiObject.RotationY = (double)rotationY;
+            mauiObject.RotationY = (double)rotationY;
             return obj;
         }
         
         public static T RotationY<T>(this T obj,
-            double? rotationY,
+            double rotationY,
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);         
-            if (rotationY != null) mauiObject.RotationY = (double)rotationY;
+            mauiObject.RotationY = (double)rotationY;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.VisualElement.RotationYProperty));
             if (def.ValueIsSet()) mauiObject.RotationY = def.GetValue();
             def.BindProperty();
@@ -745,21 +745,21 @@ namespace Sharp.UI
         }
         
         public static T Scale<T>(this T obj,
-            double? scale)
+            double scale)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            if (scale != null) mauiObject.Scale = (double)scale;
+            mauiObject.Scale = (double)scale;
             return obj;
         }
         
         public static T Scale<T>(this T obj,
-            double? scale,
+            double scale,
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);         
-            if (scale != null) mauiObject.Scale = (double)scale;
+            mauiObject.Scale = (double)scale;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.VisualElement.ScaleProperty));
             if (def.ValueIsSet()) mauiObject.Scale = def.GetValue();
             def.BindProperty();
@@ -778,21 +778,21 @@ namespace Sharp.UI
         }
         
         public static T ScaleX<T>(this T obj,
-            double? scaleX)
+            double scaleX)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            if (scaleX != null) mauiObject.ScaleX = (double)scaleX;
+            mauiObject.ScaleX = (double)scaleX;
             return obj;
         }
         
         public static T ScaleX<T>(this T obj,
-            double? scaleX,
+            double scaleX,
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);         
-            if (scaleX != null) mauiObject.ScaleX = (double)scaleX;
+            mauiObject.ScaleX = (double)scaleX;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.VisualElement.ScaleXProperty));
             if (def.ValueIsSet()) mauiObject.ScaleX = def.GetValue();
             def.BindProperty();
@@ -811,21 +811,21 @@ namespace Sharp.UI
         }
         
         public static T ScaleY<T>(this T obj,
-            double? scaleY)
+            double scaleY)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            if (scaleY != null) mauiObject.ScaleY = (double)scaleY;
+            mauiObject.ScaleY = (double)scaleY;
             return obj;
         }
         
         public static T ScaleY<T>(this T obj,
-            double? scaleY,
+            double scaleY,
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);         
-            if (scaleY != null) mauiObject.ScaleY = (double)scaleY;
+            mauiObject.ScaleY = (double)scaleY;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.VisualElement.ScaleYProperty));
             if (def.ValueIsSet()) mauiObject.ScaleY = def.GetValue();
             def.BindProperty();
@@ -844,21 +844,21 @@ namespace Sharp.UI
         }
         
         public static T TranslationX<T>(this T obj,
-            double? translationX)
+            double translationX)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            if (translationX != null) mauiObject.TranslationX = (double)translationX;
+            mauiObject.TranslationX = (double)translationX;
             return obj;
         }
         
         public static T TranslationX<T>(this T obj,
-            double? translationX,
+            double translationX,
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);         
-            if (translationX != null) mauiObject.TranslationX = (double)translationX;
+            mauiObject.TranslationX = (double)translationX;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.VisualElement.TranslationXProperty));
             if (def.ValueIsSet()) mauiObject.TranslationX = def.GetValue();
             def.BindProperty();
@@ -877,21 +877,21 @@ namespace Sharp.UI
         }
         
         public static T TranslationY<T>(this T obj,
-            double? translationY)
+            double translationY)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            if (translationY != null) mauiObject.TranslationY = (double)translationY;
+            mauiObject.TranslationY = (double)translationY;
             return obj;
         }
         
         public static T TranslationY<T>(this T obj,
-            double? translationY,
+            double translationY,
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);         
-            if (translationY != null) mauiObject.TranslationY = (double)translationY;
+            mauiObject.TranslationY = (double)translationY;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.VisualElement.TranslationYProperty));
             if (def.ValueIsSet()) mauiObject.TranslationY = def.GetValue();
             def.BindProperty();
@@ -954,21 +954,21 @@ namespace Sharp.UI
         }
         
         public static T WidthRequest<T>(this T obj,
-            double? widthRequest)
+            double widthRequest)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            if (widthRequest != null) mauiObject.WidthRequest = (double)widthRequest;
+            mauiObject.WidthRequest = (double)widthRequest;
             return obj;
         }
         
         public static T WidthRequest<T>(this T obj,
-            double? widthRequest,
+            double widthRequest,
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);         
-            if (widthRequest != null) mauiObject.WidthRequest = (double)widthRequest;
+            mauiObject.WidthRequest = (double)widthRequest;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.VisualElement.WidthRequestProperty));
             if (def.ValueIsSet()) mauiObject.WidthRequest = def.GetValue();
             def.BindProperty();
@@ -987,21 +987,21 @@ namespace Sharp.UI
         }
         
         public static T Clip<T>(this T obj,
-            Microsoft.Maui.Controls.Shapes.Geometry? clip)
+            Microsoft.Maui.Controls.Shapes.Geometry clip)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            if (clip != null) mauiObject.Clip = (Microsoft.Maui.Controls.Shapes.Geometry)clip;
+            mauiObject.Clip = (Microsoft.Maui.Controls.Shapes.Geometry)clip;
             return obj;
         }
         
         public static T Clip<T>(this T obj,
-            Microsoft.Maui.Controls.Shapes.Geometry? clip,
+            Microsoft.Maui.Controls.Shapes.Geometry clip,
             System.Func<BindableDef<Microsoft.Maui.Controls.Shapes.Geometry>, BindableDef<Microsoft.Maui.Controls.Shapes.Geometry>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);         
-            if (clip != null) mauiObject.Clip = (Microsoft.Maui.Controls.Shapes.Geometry)clip;
+            mauiObject.Clip = (Microsoft.Maui.Controls.Shapes.Geometry)clip;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.Shapes.Geometry>(mauiObject, Microsoft.Maui.Controls.VisualElement.ClipProperty));
             if (def.ValueIsSet()) mauiObject.Clip = def.GetValue();
             def.BindProperty();
@@ -1020,21 +1020,21 @@ namespace Sharp.UI
         }
         
         public static T DisableLayout<T>(this T obj,
-            bool? disableLayout)
+            bool disableLayout)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            if (disableLayout != null) mauiObject.DisableLayout = (bool)disableLayout;
+            mauiObject.DisableLayout = (bool)disableLayout;
             return obj;
         }
         
         public static T DisableLayout<T>(this T obj,
-            bool? disableLayout,
+            bool disableLayout,
             System.Func<ValueDef<bool>, ValueDef<bool>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            if (disableLayout != null) mauiObject.DisableLayout = (bool)disableLayout;
+            mauiObject.DisableLayout = (bool)disableLayout;
             var def = definition(new ValueDef<bool>());
             if (def.ValueIsSet()) mauiObject.DisableLayout = def.GetValue();
             return obj;
@@ -1051,21 +1051,21 @@ namespace Sharp.UI
         }
         
         public static T IsInPlatformLayout<T>(this T obj,
-            bool? isInPlatformLayout)
+            bool isInPlatformLayout)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            if (isInPlatformLayout != null) mauiObject.IsInPlatformLayout = (bool)isInPlatformLayout;
+            mauiObject.IsInPlatformLayout = (bool)isInPlatformLayout;
             return obj;
         }
         
         public static T IsInPlatformLayout<T>(this T obj,
-            bool? isInPlatformLayout,
+            bool isInPlatformLayout,
             System.Func<ValueDef<bool>, ValueDef<bool>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            if (isInPlatformLayout != null) mauiObject.IsInPlatformLayout = (bool)isInPlatformLayout;
+            mauiObject.IsInPlatformLayout = (bool)isInPlatformLayout;
             var def = definition(new ValueDef<bool>());
             if (def.ValueIsSet()) mauiObject.IsInPlatformLayout = def.GetValue();
             return obj;
@@ -1082,21 +1082,21 @@ namespace Sharp.UI
         }
         
         public static T IsPlatformStateConsistent<T>(this T obj,
-            bool? isPlatformStateConsistent)
+            bool isPlatformStateConsistent)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            if (isPlatformStateConsistent != null) mauiObject.IsPlatformStateConsistent = (bool)isPlatformStateConsistent;
+            mauiObject.IsPlatformStateConsistent = (bool)isPlatformStateConsistent;
             return obj;
         }
         
         public static T IsPlatformStateConsistent<T>(this T obj,
-            bool? isPlatformStateConsistent,
+            bool isPlatformStateConsistent,
             System.Func<ValueDef<bool>, ValueDef<bool>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            if (isPlatformStateConsistent != null) mauiObject.IsPlatformStateConsistent = (bool)isPlatformStateConsistent;
+            mauiObject.IsPlatformStateConsistent = (bool)isPlatformStateConsistent;
             var def = definition(new ValueDef<bool>());
             if (def.ValueIsSet()) mauiObject.IsPlatformStateConsistent = def.GetValue();
             return obj;
@@ -1113,21 +1113,21 @@ namespace Sharp.UI
         }
         
         public static T IsPlatformEnabled<T>(this T obj,
-            bool? isPlatformEnabled)
+            bool isPlatformEnabled)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            if (isPlatformEnabled != null) mauiObject.IsPlatformEnabled = (bool)isPlatformEnabled;
+            mauiObject.IsPlatformEnabled = (bool)isPlatformEnabled;
             return obj;
         }
         
         public static T IsPlatformEnabled<T>(this T obj,
-            bool? isPlatformEnabled,
+            bool isPlatformEnabled,
             System.Func<ValueDef<bool>, ValueDef<bool>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            if (isPlatformEnabled != null) mauiObject.IsPlatformEnabled = (bool)isPlatformEnabled;
+            mauiObject.IsPlatformEnabled = (bool)isPlatformEnabled;
             var def = definition(new ValueDef<bool>());
             if (def.ValueIsSet()) mauiObject.IsPlatformEnabled = def.GetValue();
             return obj;
@@ -1144,21 +1144,21 @@ namespace Sharp.UI
         }
         
         public static T Resources<T>(this T obj,
-            Microsoft.Maui.Controls.ResourceDictionary? resources)
+            Microsoft.Maui.Controls.ResourceDictionary resources)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            if (resources != null) mauiObject.Resources = (Microsoft.Maui.Controls.ResourceDictionary)resources;
+            mauiObject.Resources = (Microsoft.Maui.Controls.ResourceDictionary)resources;
             return obj;
         }
         
         public static T Resources<T>(this T obj,
-            Microsoft.Maui.Controls.ResourceDictionary? resources,
+            Microsoft.Maui.Controls.ResourceDictionary resources,
             System.Func<ValueDef<Microsoft.Maui.Controls.ResourceDictionary>, ValueDef<Microsoft.Maui.Controls.ResourceDictionary>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            if (resources != null) mauiObject.Resources = (Microsoft.Maui.Controls.ResourceDictionary)resources;
+            mauiObject.Resources = (Microsoft.Maui.Controls.ResourceDictionary)resources;
             var def = definition(new ValueDef<Microsoft.Maui.Controls.ResourceDictionary>());
             if (def.ValueIsSet()) mauiObject.Resources = def.GetValue();
             return obj;
@@ -1319,21 +1319,21 @@ namespace Sharp.UI
         }
         
         public static T VisualStateGroups<T>(this T obj,
-            Microsoft.Maui.Controls.VisualStateGroupList? visualStateGroups)
+            Microsoft.Maui.Controls.VisualStateGroupList visualStateGroups)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            if (visualStateGroups != null) mauiObject.SetValue(Microsoft.Maui.Controls.VisualStateManager.VisualStateGroupsProperty, (Microsoft.Maui.Controls.VisualStateGroupList)visualStateGroups);
+            mauiObject.SetValue(Microsoft.Maui.Controls.VisualStateManager.VisualStateGroupsProperty, (Microsoft.Maui.Controls.VisualStateGroupList)visualStateGroups);
             return obj;
         }
         
         public static T VisualStateGroups<T>(this T obj,
-            Microsoft.Maui.Controls.VisualStateGroupList? visualStateGroups,
+            Microsoft.Maui.Controls.VisualStateGroupList visualStateGroups,
             System.Func<BindableDef<Microsoft.Maui.Controls.VisualStateGroupList>, BindableDef<Microsoft.Maui.Controls.VisualStateGroupList>> definition)
             where T : Sharp.UI.IVisualElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);         
-            if (visualStateGroups != null) mauiObject.SetValue(Microsoft.Maui.Controls.VisualStateManager.VisualStateGroupsProperty, (Microsoft.Maui.Controls.VisualStateGroupList)visualStateGroups);
+            mauiObject.SetValue(Microsoft.Maui.Controls.VisualStateManager.VisualStateGroupsProperty, (Microsoft.Maui.Controls.VisualStateGroupList)visualStateGroups);
             var def = definition(new BindableDef<Microsoft.Maui.Controls.VisualStateGroupList>(mauiObject, Microsoft.Maui.Controls.VisualStateManager.VisualStateGroupsProperty));
             if (def.ValueIsSet()) mauiObject.SetValue(Microsoft.Maui.Controls.VisualStateManager.VisualStateGroupsProperty, def.GetValue());
             def.BindProperty();

@@ -10,21 +10,21 @@ namespace Sharp.UI
     public static class StepperGeneratedExtension
     {
         public static T Increment<T>(this T obj,
-            double? increment)
+            double increment)
             where T : Sharp.UI.IStepper
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Stepper>(obj);
-            if (increment != null) mauiObject.Increment = (double)increment;
+            mauiObject.Increment = (double)increment;
             return obj;
         }
         
         public static T Increment<T>(this T obj,
-            double? increment,
+            double increment,
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IStepper
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Stepper>(obj);         
-            if (increment != null) mauiObject.Increment = (double)increment;
+            mauiObject.Increment = (double)increment;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Stepper.IncrementProperty));
             if (def.ValueIsSet()) mauiObject.Increment = def.GetValue();
             def.BindProperty();
@@ -43,21 +43,21 @@ namespace Sharp.UI
         }
         
         public static T Maximum<T>(this T obj,
-            double? maximum)
+            double maximum)
             where T : Sharp.UI.IStepper
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Stepper>(obj);
-            if (maximum != null) mauiObject.Maximum = (double)maximum;
+            mauiObject.Maximum = (double)maximum;
             return obj;
         }
         
         public static T Maximum<T>(this T obj,
-            double? maximum,
+            double maximum,
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IStepper
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Stepper>(obj);         
-            if (maximum != null) mauiObject.Maximum = (double)maximum;
+            mauiObject.Maximum = (double)maximum;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Stepper.MaximumProperty));
             if (def.ValueIsSet()) mauiObject.Maximum = def.GetValue();
             def.BindProperty();
@@ -76,21 +76,21 @@ namespace Sharp.UI
         }
         
         public static T Minimum<T>(this T obj,
-            double? minimum)
+            double minimum)
             where T : Sharp.UI.IStepper
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Stepper>(obj);
-            if (minimum != null) mauiObject.Minimum = (double)minimum;
+            mauiObject.Minimum = (double)minimum;
             return obj;
         }
         
         public static T Minimum<T>(this T obj,
-            double? minimum,
+            double minimum,
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IStepper
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Stepper>(obj);         
-            if (minimum != null) mauiObject.Minimum = (double)minimum;
+            mauiObject.Minimum = (double)minimum;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Stepper.MinimumProperty));
             if (def.ValueIsSet()) mauiObject.Minimum = def.GetValue();
             def.BindProperty();
@@ -109,21 +109,21 @@ namespace Sharp.UI
         }
         
         public static T Value<T>(this T obj,
-            double? value)
+            double value)
             where T : Sharp.UI.IStepper
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Stepper>(obj);
-            if (value != null) mauiObject.Value = (double)value;
+            mauiObject.Value = (double)value;
             return obj;
         }
         
         public static T Value<T>(this T obj,
-            double? value,
+            double value,
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IStepper
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Stepper>(obj);         
-            if (value != null) mauiObject.Value = (double)value;
+            mauiObject.Value = (double)value;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Stepper.ValueProperty));
             if (def.ValueIsSet()) mauiObject.Value = def.GetValue();
             def.BindProperty();

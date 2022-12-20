@@ -10,21 +10,21 @@ namespace Sharp.UI
     public static class RectangleGeometryGeneratedExtension
     {
         public static T Rect<T>(this T obj,
-            Microsoft.Maui.Graphics.Rect? rect)
+            Microsoft.Maui.Graphics.Rect rect)
             where T : Sharp.UI.IRectangleGeometry
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.RectangleGeometry>(obj);
-            if (rect != null) mauiObject.Rect = (Microsoft.Maui.Graphics.Rect)rect;
+            mauiObject.Rect = (Microsoft.Maui.Graphics.Rect)rect;
             return obj;
         }
         
         public static T Rect<T>(this T obj,
-            Microsoft.Maui.Graphics.Rect? rect,
+            Microsoft.Maui.Graphics.Rect rect,
             System.Func<BindableDef<Microsoft.Maui.Graphics.Rect>, BindableDef<Microsoft.Maui.Graphics.Rect>> definition)
             where T : Sharp.UI.IRectangleGeometry
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.RectangleGeometry>(obj);         
-            if (rect != null) mauiObject.Rect = (Microsoft.Maui.Graphics.Rect)rect;
+            mauiObject.Rect = (Microsoft.Maui.Graphics.Rect)rect;
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Rect>(mauiObject, Microsoft.Maui.Controls.Shapes.RectangleGeometry.RectProperty));
             if (def.ValueIsSet()) mauiObject.Rect = def.GetValue();
             def.BindProperty();

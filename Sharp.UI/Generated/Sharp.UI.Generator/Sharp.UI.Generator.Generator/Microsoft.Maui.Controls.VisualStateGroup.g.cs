@@ -10,21 +10,21 @@ namespace Sharp.UI
     public static class VisualStateGroupGeneratedExtension
     {
         public static T TargetType<T>(this T obj,
-            System.Type? targetType)
+            System.Type targetType)
             where T : Sharp.UI.IVisualStateGroup
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualStateGroup>(obj);
-            if (targetType != null) mauiObject.TargetType = (System.Type)targetType;
+            mauiObject.TargetType = (System.Type)targetType;
             return obj;
         }
         
         public static T TargetType<T>(this T obj,
-            System.Type? targetType,
+            System.Type targetType,
             System.Func<ValueDef<System.Type>, ValueDef<System.Type>> definition)
             where T : Sharp.UI.IVisualStateGroup
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualStateGroup>(obj);
-            if (targetType != null) mauiObject.TargetType = (System.Type)targetType;
+            mauiObject.TargetType = (System.Type)targetType;
             var def = definition(new ValueDef<System.Type>());
             if (def.ValueIsSet()) mauiObject.TargetType = def.GetValue();
             return obj;
@@ -41,21 +41,21 @@ namespace Sharp.UI
         }
         
         public static T Name<T>(this T obj,
-            string? name)
+            string name)
             where T : Sharp.UI.IVisualStateGroup
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualStateGroup>(obj);
-            if (name != null) mauiObject.Name = (string)name;
+            mauiObject.Name = (string)name;
             return obj;
         }
         
         public static T Name<T>(this T obj,
-            string? name,
+            string name,
             System.Func<ValueDef<string>, ValueDef<string>> definition)
             where T : Sharp.UI.IVisualStateGroup
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualStateGroup>(obj);
-            if (name != null) mauiObject.Name = (string)name;
+            mauiObject.Name = (string)name;
             var def = definition(new ValueDef<string>());
             if (def.ValueIsSet()) mauiObject.Name = def.GetValue();
             return obj;

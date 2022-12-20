@@ -10,21 +10,21 @@ namespace Sharp.UI
     public static class StackBaseGeneratedExtension
     {
         public static T Spacing<T>(this T obj,
-            double? spacing)
+            double spacing)
             where T : Sharp.UI.IStackBase
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StackBase>(obj);
-            if (spacing != null) mauiObject.Spacing = (double)spacing;
+            mauiObject.Spacing = (double)spacing;
             return obj;
         }
         
         public static T Spacing<T>(this T obj,
-            double? spacing,
+            double spacing,
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IStackBase
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StackBase>(obj);         
-            if (spacing != null) mauiObject.Spacing = (double)spacing;
+            mauiObject.Spacing = (double)spacing;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.StackBase.SpacingProperty));
             if (def.ValueIsSet()) mauiObject.Spacing = def.GetValue();
             def.BindProperty();

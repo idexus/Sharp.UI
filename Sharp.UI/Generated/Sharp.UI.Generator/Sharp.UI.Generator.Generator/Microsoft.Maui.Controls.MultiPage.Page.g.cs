@@ -10,21 +10,21 @@ namespace Sharp.UI
     public static class MultiPagePageGeneratedExtension
     {
         public static T ItemsSource<T>(this T obj,
-            System.Collections.IEnumerable? itemsSource)
+            System.Collections.IEnumerable itemsSource)
             where T : Sharp.UI.IMultiPagePage
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>>(obj);
-            if (itemsSource != null) mauiObject.ItemsSource = (System.Collections.IEnumerable)itemsSource;
+            mauiObject.ItemsSource = (System.Collections.IEnumerable)itemsSource;
             return obj;
         }
         
         public static T ItemsSource<T>(this T obj,
-            System.Collections.IEnumerable? itemsSource,
+            System.Collections.IEnumerable itemsSource,
             System.Func<BindableDef<System.Collections.IEnumerable>, BindableDef<System.Collections.IEnumerable>> definition)
             where T : Sharp.UI.IMultiPagePage
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>>(obj);         
-            if (itemsSource != null) mauiObject.ItemsSource = (System.Collections.IEnumerable)itemsSource;
+            mauiObject.ItemsSource = (System.Collections.IEnumerable)itemsSource;
             var def = definition(new BindableDef<System.Collections.IEnumerable>(mauiObject, Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.ItemsSourceProperty));
             if (def.ValueIsSet()) mauiObject.ItemsSource = def.GetValue();
             def.BindProperty();
@@ -43,21 +43,21 @@ namespace Sharp.UI
         }
         
         public static T ItemTemplate<T>(this T obj,
-            Microsoft.Maui.Controls.DataTemplate? itemTemplate)
+            Microsoft.Maui.Controls.DataTemplate itemTemplate)
             where T : Sharp.UI.IMultiPagePage
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>>(obj);
-            if (itemTemplate != null) mauiObject.ItemTemplate = (Microsoft.Maui.Controls.DataTemplate)itemTemplate;
+            mauiObject.ItemTemplate = (Microsoft.Maui.Controls.DataTemplate)itemTemplate;
             return obj;
         }
         
         public static T ItemTemplate<T>(this T obj,
-            Microsoft.Maui.Controls.DataTemplate? itemTemplate,
+            Microsoft.Maui.Controls.DataTemplate itemTemplate,
             System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
             where T : Sharp.UI.IMultiPagePage
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>>(obj);         
-            if (itemTemplate != null) mauiObject.ItemTemplate = (Microsoft.Maui.Controls.DataTemplate)itemTemplate;
+            mauiObject.ItemTemplate = (Microsoft.Maui.Controls.DataTemplate)itemTemplate;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.DataTemplate>(mauiObject, Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.ItemTemplateProperty));
             if (def.ValueIsSet()) mauiObject.ItemTemplate = def.GetValue();
             def.BindProperty();
@@ -83,21 +83,21 @@ namespace Sharp.UI
         }
         
         public static T SelectedItem<T>(this T obj,
-            object? selectedItem)
+            object selectedItem)
             where T : Sharp.UI.IMultiPagePage
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>>(obj);
-            if (selectedItem != null) mauiObject.SelectedItem = (object)selectedItem;
+            mauiObject.SelectedItem = (object)selectedItem;
             return obj;
         }
         
         public static T SelectedItem<T>(this T obj,
-            object? selectedItem,
+            object selectedItem,
             System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IMultiPagePage
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>>(obj);         
-            if (selectedItem != null) mauiObject.SelectedItem = (object)selectedItem;
+            mauiObject.SelectedItem = (object)selectedItem;
             var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.SelectedItemProperty));
             if (def.ValueIsSet()) mauiObject.SelectedItem = def.GetValue();
             def.BindProperty();
@@ -116,21 +116,21 @@ namespace Sharp.UI
         }
         
         public static T CurrentPage<T>(this T obj,
-            Microsoft.Maui.Controls.Page? currentPage)
+            Microsoft.Maui.Controls.Page currentPage)
             where T : Sharp.UI.IMultiPagePage
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>>(obj);
-            if (currentPage != null) mauiObject.CurrentPage = (Microsoft.Maui.Controls.Page)currentPage;
+            mauiObject.CurrentPage = (Microsoft.Maui.Controls.Page)currentPage;
             return obj;
         }
         
         public static T CurrentPage<T>(this T obj,
-            Microsoft.Maui.Controls.Page? currentPage,
+            Microsoft.Maui.Controls.Page currentPage,
             System.Func<ValueDef<Microsoft.Maui.Controls.Page>, ValueDef<Microsoft.Maui.Controls.Page>> definition)
             where T : Sharp.UI.IMultiPagePage
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>>(obj);
-            if (currentPage != null) mauiObject.CurrentPage = (Microsoft.Maui.Controls.Page)currentPage;
+            mauiObject.CurrentPage = (Microsoft.Maui.Controls.Page)currentPage;
             var def = definition(new ValueDef<Microsoft.Maui.Controls.Page>());
             if (def.ValueIsSet()) mauiObject.CurrentPage = def.GetValue();
             return obj;

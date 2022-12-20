@@ -10,21 +10,21 @@ namespace Sharp.UI
     public static class BindableObjectGeneratedExtension
     {
         public static T BindingContext<T>(this T obj,
-            object? bindingContext)
+            object bindingContext)
             where T : Sharp.UI.IBindableObject
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BindableObject>(obj);
-            if (bindingContext != null) mauiObject.BindingContext = (object)bindingContext;
+            mauiObject.BindingContext = (object)bindingContext;
             return obj;
         }
         
         public static T BindingContext<T>(this T obj,
-            object? bindingContext,
+            object bindingContext,
             System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IBindableObject
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BindableObject>(obj);         
-            if (bindingContext != null) mauiObject.BindingContext = (object)bindingContext;
+            mauiObject.BindingContext = (object)bindingContext;
             var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.BindableObject.BindingContextProperty));
             if (def.ValueIsSet()) mauiObject.BindingContext = def.GetValue();
             def.BindProperty();

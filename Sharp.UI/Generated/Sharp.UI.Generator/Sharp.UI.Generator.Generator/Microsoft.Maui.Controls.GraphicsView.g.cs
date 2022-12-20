@@ -10,21 +10,21 @@ namespace Sharp.UI
     public static class GraphicsViewGeneratedExtension
     {
         public static T Drawable<T>(this T obj,
-            Microsoft.Maui.Graphics.IDrawable? drawable)
+            Microsoft.Maui.Graphics.IDrawable drawable)
             where T : Sharp.UI.IGraphicsView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GraphicsView>(obj);
-            if (drawable != null) mauiObject.Drawable = (Microsoft.Maui.Graphics.IDrawable)drawable;
+            mauiObject.Drawable = (Microsoft.Maui.Graphics.IDrawable)drawable;
             return obj;
         }
         
         public static T Drawable<T>(this T obj,
-            Microsoft.Maui.Graphics.IDrawable? drawable,
+            Microsoft.Maui.Graphics.IDrawable drawable,
             System.Func<BindableDef<Microsoft.Maui.Graphics.IDrawable>, BindableDef<Microsoft.Maui.Graphics.IDrawable>> definition)
             where T : Sharp.UI.IGraphicsView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GraphicsView>(obj);         
-            if (drawable != null) mauiObject.Drawable = (Microsoft.Maui.Graphics.IDrawable)drawable;
+            mauiObject.Drawable = (Microsoft.Maui.Graphics.IDrawable)drawable;
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.IDrawable>(mauiObject, Microsoft.Maui.Controls.GraphicsView.DrawableProperty));
             if (def.ValueIsSet()) mauiObject.Drawable = def.GetValue();
             def.BindProperty();

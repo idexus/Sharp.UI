@@ -10,21 +10,21 @@ namespace Sharp.UI
     public static class ShellGroupItemGeneratedExtension
     {
         public static T FlyoutDisplayOptions<T>(this T obj,
-            Microsoft.Maui.Controls.FlyoutDisplayOptions? flyoutDisplayOptions)
+            Microsoft.Maui.Controls.FlyoutDisplayOptions flyoutDisplayOptions)
             where T : Sharp.UI.IShellGroupItem
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ShellGroupItem>(obj);
-            if (flyoutDisplayOptions != null) mauiObject.FlyoutDisplayOptions = (Microsoft.Maui.Controls.FlyoutDisplayOptions)flyoutDisplayOptions;
+            mauiObject.FlyoutDisplayOptions = (Microsoft.Maui.Controls.FlyoutDisplayOptions)flyoutDisplayOptions;
             return obj;
         }
         
         public static T FlyoutDisplayOptions<T>(this T obj,
-            Microsoft.Maui.Controls.FlyoutDisplayOptions? flyoutDisplayOptions,
+            Microsoft.Maui.Controls.FlyoutDisplayOptions flyoutDisplayOptions,
             System.Func<BindableDef<Microsoft.Maui.Controls.FlyoutDisplayOptions>, BindableDef<Microsoft.Maui.Controls.FlyoutDisplayOptions>> definition)
             where T : Sharp.UI.IShellGroupItem
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ShellGroupItem>(obj);         
-            if (flyoutDisplayOptions != null) mauiObject.FlyoutDisplayOptions = (Microsoft.Maui.Controls.FlyoutDisplayOptions)flyoutDisplayOptions;
+            mauiObject.FlyoutDisplayOptions = (Microsoft.Maui.Controls.FlyoutDisplayOptions)flyoutDisplayOptions;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.FlyoutDisplayOptions>(mauiObject, Microsoft.Maui.Controls.ShellGroupItem.FlyoutDisplayOptionsProperty));
             if (def.ValueIsSet()) mauiObject.FlyoutDisplayOptions = def.GetValue();
             def.BindProperty();

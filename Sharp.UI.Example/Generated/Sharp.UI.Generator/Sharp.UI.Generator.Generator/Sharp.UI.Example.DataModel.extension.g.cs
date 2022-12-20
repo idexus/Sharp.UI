@@ -56,21 +56,21 @@ namespace Sharp.UI.Example
         }
         
         public static T Id<T>(this T obj,
-            int? id)
+            int id)
             where T : Sharp.UI.Example.DataModel
         {
             var mauiObject = MauiWrapper.Value<Sharp.UI.Example.DataModel>(obj);
-            if (id != null) mauiObject.SetValue(Sharp.UI.Example.DataModel.IdProperty, (int)id);
+            mauiObject.SetValue(Sharp.UI.Example.DataModel.IdProperty, (int)id);
             return obj;
         }
         
         public static T Id<T>(this T obj,
-            int? id,
+            int id,
             System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.Example.DataModel
         {
             var mauiObject = MauiWrapper.Value<Sharp.UI.Example.DataModel>(obj);         
-            if (id != null) mauiObject.SetValue(Sharp.UI.Example.DataModel.IdProperty, (int)id);
+            mauiObject.SetValue(Sharp.UI.Example.DataModel.IdProperty, (int)id);
             var def = definition(new BindableDef<int>(mauiObject, Sharp.UI.Example.DataModel.IdProperty));
             if (def.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.DataModel.IdProperty, def.GetValue());
             def.BindProperty();
@@ -89,21 +89,21 @@ namespace Sharp.UI.Example
         }
         
         public static T Name<T>(this T obj,
-            string? name)
+            string name)
             where T : Sharp.UI.Example.DataModel
         {
             var mauiObject = MauiWrapper.Value<Sharp.UI.Example.DataModel>(obj);
-            if (name != null) mauiObject.SetValue(Sharp.UI.Example.DataModel.NameProperty, (string)name);
+            mauiObject.SetValue(Sharp.UI.Example.DataModel.NameProperty, (string)name);
             return obj;
         }
         
         public static T Name<T>(this T obj,
-            string? name,
+            string name,
             System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.Example.DataModel
         {
             var mauiObject = MauiWrapper.Value<Sharp.UI.Example.DataModel>(obj);         
-            if (name != null) mauiObject.SetValue(Sharp.UI.Example.DataModel.NameProperty, (string)name);
+            mauiObject.SetValue(Sharp.UI.Example.DataModel.NameProperty, (string)name);
             var def = definition(new BindableDef<string>(mauiObject, Sharp.UI.Example.DataModel.NameProperty));
             if (def.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.DataModel.NameProperty, def.GetValue());
             def.BindProperty();
@@ -122,21 +122,21 @@ namespace Sharp.UI.Example
         }
         
         public static T Admin<T>(this T obj,
-            bool? admin)
+            bool admin)
             where T : Sharp.UI.Example.DataModel
         {
             var mauiObject = MauiWrapper.Value<Sharp.UI.Example.DataModel>(obj);
-            if (admin != null) mauiObject.SetValue(Sharp.UI.Example.DataModel.AdminProperty, (bool)admin);
+            mauiObject.SetValue(Sharp.UI.Example.DataModel.AdminProperty, (bool)admin);
             return obj;
         }
         
         public static T Admin<T>(this T obj,
-            bool? admin,
+            bool admin,
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.Example.DataModel
         {
             var mauiObject = MauiWrapper.Value<Sharp.UI.Example.DataModel>(obj);         
-            if (admin != null) mauiObject.SetValue(Sharp.UI.Example.DataModel.AdminProperty, (bool)admin);
+            mauiObject.SetValue(Sharp.UI.Example.DataModel.AdminProperty, (bool)admin);
             var def = definition(new BindableDef<bool>(mauiObject, Sharp.UI.Example.DataModel.AdminProperty));
             if (def.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.DataModel.AdminProperty, def.GetValue());
             def.BindProperty();

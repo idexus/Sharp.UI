@@ -10,21 +10,21 @@ namespace Sharp.UI
     public static class ColumnDefinitionGeneratedExtension
     {
         public static T Width<T>(this T obj,
-            Microsoft.Maui.GridLength? width)
+            Microsoft.Maui.GridLength width)
             where T : Sharp.UI.IColumnDefinition
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ColumnDefinition>(obj);
-            if (width != null) mauiObject.Width = (Microsoft.Maui.GridLength)width;
+            mauiObject.Width = (Microsoft.Maui.GridLength)width;
             return obj;
         }
         
         public static T Width<T>(this T obj,
-            Microsoft.Maui.GridLength? width,
+            Microsoft.Maui.GridLength width,
             System.Func<BindableDef<Microsoft.Maui.GridLength>, BindableDef<Microsoft.Maui.GridLength>> definition)
             where T : Sharp.UI.IColumnDefinition
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ColumnDefinition>(obj);         
-            if (width != null) mauiObject.Width = (Microsoft.Maui.GridLength)width;
+            mauiObject.Width = (Microsoft.Maui.GridLength)width;
             var def = definition(new BindableDef<Microsoft.Maui.GridLength>(mauiObject, Microsoft.Maui.Controls.ColumnDefinition.WidthProperty));
             if (def.ValueIsSet()) mauiObject.Width = def.GetValue();
             def.BindProperty();

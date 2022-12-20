@@ -10,21 +10,21 @@ namespace Sharp.UI
     public static class ActivityIndicatorGeneratedExtension
     {
         public static T Color<T>(this T obj,
-            Microsoft.Maui.Graphics.Color? color)
+            Microsoft.Maui.Graphics.Color color)
             where T : Sharp.UI.IActivityIndicator
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ActivityIndicator>(obj);
-            if (color != null) mauiObject.Color = (Microsoft.Maui.Graphics.Color)color;
+            mauiObject.Color = (Microsoft.Maui.Graphics.Color)color;
             return obj;
         }
         
         public static T Color<T>(this T obj,
-            Microsoft.Maui.Graphics.Color? color,
+            Microsoft.Maui.Graphics.Color color,
             System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IActivityIndicator
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ActivityIndicator>(obj);         
-            if (color != null) mauiObject.Color = (Microsoft.Maui.Graphics.Color)color;
+            mauiObject.Color = (Microsoft.Maui.Graphics.Color)color;
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.ActivityIndicator.ColorProperty));
             if (def.ValueIsSet()) mauiObject.Color = def.GetValue();
             def.BindProperty();
@@ -43,21 +43,21 @@ namespace Sharp.UI
         }
         
         public static T IsRunning<T>(this T obj,
-            bool? isRunning)
+            bool isRunning)
             where T : Sharp.UI.IActivityIndicator
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ActivityIndicator>(obj);
-            if (isRunning != null) mauiObject.IsRunning = (bool)isRunning;
+            mauiObject.IsRunning = (bool)isRunning;
             return obj;
         }
         
         public static T IsRunning<T>(this T obj,
-            bool? isRunning,
+            bool isRunning,
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IActivityIndicator
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ActivityIndicator>(obj);         
-            if (isRunning != null) mauiObject.IsRunning = (bool)isRunning;
+            mauiObject.IsRunning = (bool)isRunning;
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.ActivityIndicator.IsRunningProperty));
             if (def.ValueIsSet()) mauiObject.IsRunning = def.GetValue();
             def.BindProperty();

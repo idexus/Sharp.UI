@@ -185,7 +185,7 @@ namespace {mainSymbol.ContainingNamespace}
             public readonly string propertyTypeName;
             public readonly string propertyCastTypeName;
             public readonly string camelCaseName;
-            public readonly string typeTail;
+            //public readonly string typeTail;
             public readonly string assignmentString;
             public readonly string assignmentDefString;
             public readonly string assignmentDataTemplateString;
@@ -203,7 +203,6 @@ namespace {mainSymbol.ContainingNamespace}
                 propertyTypeName = isWrappedSealedType ? $"Sharp.UI.{propertySymbol.Type.Name}" : propertySymbol.Type.ToDisplayString();
                 propertyCastTypeName = propertySymbol.Type.ToDisplayString();
                 camelCaseName = Helpers.CamelCase(propertyName);
-                typeTail = propertyTypeName.Contains("?") ? "" : "?";
                 assignmentString = $"{accessedWith}.{propertyName} = {(isWrappedSealedType ? "mauiValue" : $"({propertyCastTypeName}){camelCaseName}")}";
                 assignmentDefString = $"mauiObject.{propertyName} = {(isWrappedSealedType ? $"MauiWrapper.Value<{propertyCastTypeName}>(def.GetValue())" : "def.GetValue()")}";
                 assignmentDataTemplateString = $"mauiObject.{propertyName} = new Microsoft.Maui.Controls.DataTemplate(loadTemplate)";
@@ -224,7 +223,6 @@ namespace {mainSymbol.ContainingNamespace}
                 propertyTypeName = propertySymbol.Type.ToDisplayString();
                 propertyCastTypeName = isWrappedSealedType ? "object" : propertySymbol.Type.ToDisplayString();
                 camelCaseName = Helpers.CamelCase(fullName.Split(new[] { '.' }).Last());
-                typeTail = "?";
                 bindablePropertyName = $"{fullName}Property";
                 assignmentString = $"mauiObject.SetValue({bindablePropertyName}, {(isWrappedSealedType ? "mauiValue" : $"({propertyCastTypeName}){camelCaseName}")})";
                 assignmentDefString = $"mauiObject.SetValue({bindablePropertyName}, {(isWrappedSealedType ? $"MauiWrapper.Value<{propertyCastTypeName}>(def.GetValue())" : "def.GetValue()")})";
@@ -316,11 +314,11 @@ namespace {mainSymbol.ContainingNamespace}
             IsExtensionMethodsGenerated = true;
             builder.Append($@"
         public static T {info.propertyName}<T>(this T obj,
-            {info.propertyTypeName}{info.typeTail} {info.camelCaseName})
+            {info.propertyTypeName} {info.camelCaseName})
             where T : {typeConformanceName}
         {{
             var mauiObject = MauiWrapper.Value<{extensionType.ToDisplayString()}>(obj);{info.mauiValueString}
-            if ({info.camelCaseName} != null) {info.assignmentString};
+            {info.assignmentString};
             return obj;
         }}
         ");
@@ -331,12 +329,12 @@ namespace {mainSymbol.ContainingNamespace}
             IsExtensionMethodsGenerated = true;
             builder.Append($@"
         public static T {info.propertyName}<T>(this T obj,
-            {info.propertyTypeName}{info.typeTail} {info.camelCaseName},
+            {info.propertyTypeName} {info.camelCaseName},
             System.Func<BindableDef<{info.propertyTypeName}>, BindableDef<{info.propertyTypeName}>> definition)
             where T : {typeConformanceName}
         {{
             var mauiObject = MauiWrapper.Value<{extensionType.ToDisplayString()}>(obj);{info.mauiValueString}         
-            if ({info.camelCaseName} != null) {info.assignmentString};
+            {info.assignmentString};
             var def = definition(new BindableDef<{info.propertyTypeName}>(mauiObject, {info.bindablePropertyName}));
             if (def.ValueIsSet()) {info.assignmentDefString};
             def.BindProperty();
@@ -367,12 +365,12 @@ namespace {mainSymbol.ContainingNamespace}
             IsExtensionMethodsGenerated = true;
             builder.Append($@"
         public static T {info.propertyName}<T>(this T obj,
-            {info.propertyTypeName}{info.typeTail} {info.camelCaseName},
+            {info.propertyTypeName} {info.camelCaseName},
             System.Func<ValueDef<{info.propertyTypeName}>, ValueDef<{info.propertyTypeName}>> definition)
             where T : {typeConformanceName}
         {{
             var mauiObject = MauiWrapper.Value<{extensionType.ToDisplayString()}>(obj);{info.mauiValueString}
-            if ({info.camelCaseName} != null) {info.assignmentString};
+            {info.assignmentString};
             var def = definition(new ValueDef<{info.propertyTypeName}>());
             if (def.ValueIsSet()) mauiObject.{info.propertyName} = def.GetValue();
             return obj;

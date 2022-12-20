@@ -10,21 +10,21 @@ namespace Sharp.UI
     public static class ShellSectionGeneratedExtension
     {
         public static T CurrentItem<T>(this T obj,
-            Microsoft.Maui.Controls.ShellContent? currentItem)
+            Microsoft.Maui.Controls.ShellContent currentItem)
             where T : Sharp.UI.IShellSection
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ShellSection>(obj);
-            if (currentItem != null) mauiObject.CurrentItem = (Microsoft.Maui.Controls.ShellContent)currentItem;
+            mauiObject.CurrentItem = (Microsoft.Maui.Controls.ShellContent)currentItem;
             return obj;
         }
         
         public static T CurrentItem<T>(this T obj,
-            Microsoft.Maui.Controls.ShellContent? currentItem,
+            Microsoft.Maui.Controls.ShellContent currentItem,
             System.Func<BindableDef<Microsoft.Maui.Controls.ShellContent>, BindableDef<Microsoft.Maui.Controls.ShellContent>> definition)
             where T : Sharp.UI.IShellSection
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ShellSection>(obj);         
-            if (currentItem != null) mauiObject.CurrentItem = (Microsoft.Maui.Controls.ShellContent)currentItem;
+            mauiObject.CurrentItem = (Microsoft.Maui.Controls.ShellContent)currentItem;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.ShellContent>(mauiObject, Microsoft.Maui.Controls.ShellSection.CurrentItemProperty));
             if (def.ValueIsSet()) mauiObject.CurrentItem = def.GetValue();
             def.BindProperty();

@@ -10,21 +10,21 @@ namespace Sharp.UI
     public static class EllipseGeometryGeneratedExtension
     {
         public static T Center<T>(this T obj,
-            Microsoft.Maui.Graphics.Point? center)
+            Microsoft.Maui.Graphics.Point center)
             where T : Sharp.UI.IEllipseGeometry
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.EllipseGeometry>(obj);
-            if (center != null) mauiObject.Center = (Microsoft.Maui.Graphics.Point)center;
+            mauiObject.Center = (Microsoft.Maui.Graphics.Point)center;
             return obj;
         }
         
         public static T Center<T>(this T obj,
-            Microsoft.Maui.Graphics.Point? center,
+            Microsoft.Maui.Graphics.Point center,
             System.Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
             where T : Sharp.UI.IEllipseGeometry
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.EllipseGeometry>(obj);         
-            if (center != null) mauiObject.Center = (Microsoft.Maui.Graphics.Point)center;
+            mauiObject.Center = (Microsoft.Maui.Graphics.Point)center;
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Point>(mauiObject, Microsoft.Maui.Controls.Shapes.EllipseGeometry.CenterProperty));
             if (def.ValueIsSet()) mauiObject.Center = def.GetValue();
             def.BindProperty();
@@ -43,21 +43,21 @@ namespace Sharp.UI
         }
         
         public static T RadiusX<T>(this T obj,
-            double? radiusX)
+            double radiusX)
             where T : Sharp.UI.IEllipseGeometry
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.EllipseGeometry>(obj);
-            if (radiusX != null) mauiObject.RadiusX = (double)radiusX;
+            mauiObject.RadiusX = (double)radiusX;
             return obj;
         }
         
         public static T RadiusX<T>(this T obj,
-            double? radiusX,
+            double radiusX,
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IEllipseGeometry
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.EllipseGeometry>(obj);         
-            if (radiusX != null) mauiObject.RadiusX = (double)radiusX;
+            mauiObject.RadiusX = (double)radiusX;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Shapes.EllipseGeometry.RadiusXProperty));
             if (def.ValueIsSet()) mauiObject.RadiusX = def.GetValue();
             def.BindProperty();
@@ -76,21 +76,21 @@ namespace Sharp.UI
         }
         
         public static T RadiusY<T>(this T obj,
-            double? radiusY)
+            double radiusY)
             where T : Sharp.UI.IEllipseGeometry
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.EllipseGeometry>(obj);
-            if (radiusY != null) mauiObject.RadiusY = (double)radiusY;
+            mauiObject.RadiusY = (double)radiusY;
             return obj;
         }
         
         public static T RadiusY<T>(this T obj,
-            double? radiusY,
+            double radiusY,
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IEllipseGeometry
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.EllipseGeometry>(obj);         
-            if (radiusY != null) mauiObject.RadiusY = (double)radiusY;
+            mauiObject.RadiusY = (double)radiusY;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Shapes.EllipseGeometry.RadiusYProperty));
             if (def.ValueIsSet()) mauiObject.RadiusY = def.GetValue();
             def.BindProperty();

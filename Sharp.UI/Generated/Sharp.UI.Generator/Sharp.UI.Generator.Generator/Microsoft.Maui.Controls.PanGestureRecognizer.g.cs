@@ -10,21 +10,21 @@ namespace Sharp.UI
     public static class PanGestureRecognizerGeneratedExtension
     {
         public static T TouchPoints<T>(this T obj,
-            int? touchPoints)
+            int touchPoints)
             where T : Sharp.UI.IPanGestureRecognizer
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.PanGestureRecognizer>(obj);
-            if (touchPoints != null) mauiObject.TouchPoints = (int)touchPoints;
+            mauiObject.TouchPoints = (int)touchPoints;
             return obj;
         }
         
         public static T TouchPoints<T>(this T obj,
-            int? touchPoints,
+            int touchPoints,
             System.Func<BindableDef<int>, BindableDef<int>> definition)
             where T : Sharp.UI.IPanGestureRecognizer
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.PanGestureRecognizer>(obj);         
-            if (touchPoints != null) mauiObject.TouchPoints = (int)touchPoints;
+            mauiObject.TouchPoints = (int)touchPoints;
             var def = definition(new BindableDef<int>(mauiObject, Microsoft.Maui.Controls.PanGestureRecognizer.TouchPointsProperty));
             if (def.ValueIsSet()) mauiObject.TouchPoints = def.GetValue();
             def.BindProperty();

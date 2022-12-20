@@ -10,21 +10,21 @@ namespace Sharp.UI
     public static class GeometryGroupGeneratedExtension
     {
         public static T Children<T>(this T obj,
-            Microsoft.Maui.Controls.Shapes.GeometryCollection? children)
+            Microsoft.Maui.Controls.Shapes.GeometryCollection children)
             where T : Sharp.UI.IGeometryGroup
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.GeometryGroup>(obj);
-            if (children != null) mauiObject.Children = (Microsoft.Maui.Controls.Shapes.GeometryCollection)children;
+            mauiObject.Children = (Microsoft.Maui.Controls.Shapes.GeometryCollection)children;
             return obj;
         }
         
         public static T Children<T>(this T obj,
-            Microsoft.Maui.Controls.Shapes.GeometryCollection? children,
+            Microsoft.Maui.Controls.Shapes.GeometryCollection children,
             System.Func<BindableDef<Microsoft.Maui.Controls.Shapes.GeometryCollection>, BindableDef<Microsoft.Maui.Controls.Shapes.GeometryCollection>> definition)
             where T : Sharp.UI.IGeometryGroup
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.GeometryGroup>(obj);         
-            if (children != null) mauiObject.Children = (Microsoft.Maui.Controls.Shapes.GeometryCollection)children;
+            mauiObject.Children = (Microsoft.Maui.Controls.Shapes.GeometryCollection)children;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.Shapes.GeometryCollection>(mauiObject, Microsoft.Maui.Controls.Shapes.GeometryGroup.ChildrenProperty));
             if (def.ValueIsSet()) mauiObject.Children = def.GetValue();
             def.BindProperty();
@@ -43,21 +43,21 @@ namespace Sharp.UI
         }
         
         public static T FillRule<T>(this T obj,
-            Microsoft.Maui.Controls.Shapes.FillRule? fillRule)
+            Microsoft.Maui.Controls.Shapes.FillRule fillRule)
             where T : Sharp.UI.IGeometryGroup
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.GeometryGroup>(obj);
-            if (fillRule != null) mauiObject.FillRule = (Microsoft.Maui.Controls.Shapes.FillRule)fillRule;
+            mauiObject.FillRule = (Microsoft.Maui.Controls.Shapes.FillRule)fillRule;
             return obj;
         }
         
         public static T FillRule<T>(this T obj,
-            Microsoft.Maui.Controls.Shapes.FillRule? fillRule,
+            Microsoft.Maui.Controls.Shapes.FillRule fillRule,
             System.Func<BindableDef<Microsoft.Maui.Controls.Shapes.FillRule>, BindableDef<Microsoft.Maui.Controls.Shapes.FillRule>> definition)
             where T : Sharp.UI.IGeometryGroup
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.GeometryGroup>(obj);         
-            if (fillRule != null) mauiObject.FillRule = (Microsoft.Maui.Controls.Shapes.FillRule)fillRule;
+            mauiObject.FillRule = (Microsoft.Maui.Controls.Shapes.FillRule)fillRule;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.Shapes.FillRule>(mauiObject, Microsoft.Maui.Controls.Shapes.GeometryGroup.FillRuleProperty));
             if (def.ValueIsSet()) mauiObject.FillRule = def.GetValue();
             def.BindProperty();

@@ -10,21 +10,21 @@ namespace Sharp.UI
     public static class StackLayoutGeneratedExtension
     {
         public static T Orientation<T>(this T obj,
-            Microsoft.Maui.Controls.StackOrientation? orientation)
+            Microsoft.Maui.Controls.StackOrientation orientation)
             where T : Sharp.UI.IStackLayout
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StackLayout>(obj);
-            if (orientation != null) mauiObject.Orientation = (Microsoft.Maui.Controls.StackOrientation)orientation;
+            mauiObject.Orientation = (Microsoft.Maui.Controls.StackOrientation)orientation;
             return obj;
         }
         
         public static T Orientation<T>(this T obj,
-            Microsoft.Maui.Controls.StackOrientation? orientation,
+            Microsoft.Maui.Controls.StackOrientation orientation,
             System.Func<BindableDef<Microsoft.Maui.Controls.StackOrientation>, BindableDef<Microsoft.Maui.Controls.StackOrientation>> definition)
             where T : Sharp.UI.IStackLayout
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StackLayout>(obj);         
-            if (orientation != null) mauiObject.Orientation = (Microsoft.Maui.Controls.StackOrientation)orientation;
+            mauiObject.Orientation = (Microsoft.Maui.Controls.StackOrientation)orientation;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.StackOrientation>(mauiObject, Microsoft.Maui.Controls.StackLayout.OrientationProperty));
             if (def.ValueIsSet()) mauiObject.Orientation = def.GetValue();
             def.BindProperty();

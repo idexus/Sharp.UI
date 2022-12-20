@@ -10,21 +10,21 @@ namespace Sharp.UI
     public static class TriggerGeneratedExtension
     {
         public static T Property<T>(this T obj,
-            Microsoft.Maui.Controls.BindableProperty? property)
+            Microsoft.Maui.Controls.BindableProperty property)
             where T : Sharp.UI.ITrigger
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Trigger>(obj);
-            if (property != null) mauiObject.Property = (Microsoft.Maui.Controls.BindableProperty)property;
+            mauiObject.Property = (Microsoft.Maui.Controls.BindableProperty)property;
             return obj;
         }
         
         public static T Property<T>(this T obj,
-            Microsoft.Maui.Controls.BindableProperty? property,
+            Microsoft.Maui.Controls.BindableProperty property,
             System.Func<ValueDef<Microsoft.Maui.Controls.BindableProperty>, ValueDef<Microsoft.Maui.Controls.BindableProperty>> definition)
             where T : Sharp.UI.ITrigger
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Trigger>(obj);
-            if (property != null) mauiObject.Property = (Microsoft.Maui.Controls.BindableProperty)property;
+            mauiObject.Property = (Microsoft.Maui.Controls.BindableProperty)property;
             var def = definition(new ValueDef<Microsoft.Maui.Controls.BindableProperty>());
             if (def.ValueIsSet()) mauiObject.Property = def.GetValue();
             return obj;
@@ -85,21 +85,21 @@ namespace Sharp.UI
         }
         
         public static T Value<T>(this T obj,
-            object? value)
+            object value)
             where T : Sharp.UI.ITrigger
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Trigger>(obj);
-            if (value != null) mauiObject.Value = (object)value;
+            mauiObject.Value = (object)value;
             return obj;
         }
         
         public static T Value<T>(this T obj,
-            object? value,
+            object value,
             System.Func<ValueDef<object>, ValueDef<object>> definition)
             where T : Sharp.UI.ITrigger
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Trigger>(obj);
-            if (value != null) mauiObject.Value = (object)value;
+            mauiObject.Value = (object)value;
             var def = definition(new ValueDef<object>());
             if (def.ValueIsSet()) mauiObject.Value = def.GetValue();
             return obj;

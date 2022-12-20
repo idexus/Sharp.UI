@@ -10,21 +10,21 @@ namespace Sharp.UI
     public static class RowDefinitionGeneratedExtension
     {
         public static T Height<T>(this T obj,
-            Microsoft.Maui.GridLength? height)
+            Microsoft.Maui.GridLength height)
             where T : Sharp.UI.IRowDefinition
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RowDefinition>(obj);
-            if (height != null) mauiObject.Height = (Microsoft.Maui.GridLength)height;
+            mauiObject.Height = (Microsoft.Maui.GridLength)height;
             return obj;
         }
         
         public static T Height<T>(this T obj,
-            Microsoft.Maui.GridLength? height,
+            Microsoft.Maui.GridLength height,
             System.Func<BindableDef<Microsoft.Maui.GridLength>, BindableDef<Microsoft.Maui.GridLength>> definition)
             where T : Sharp.UI.IRowDefinition
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RowDefinition>(obj);         
-            if (height != null) mauiObject.Height = (Microsoft.Maui.GridLength)height;
+            mauiObject.Height = (Microsoft.Maui.GridLength)height;
             var def = definition(new BindableDef<Microsoft.Maui.GridLength>(mauiObject, Microsoft.Maui.Controls.RowDefinition.HeightProperty));
             if (def.ValueIsSet()) mauiObject.Height = def.GetValue();
             def.BindProperty();

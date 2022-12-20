@@ -10,21 +10,21 @@ namespace Sharp.UI
     public static class SwitchCellGeneratedExtension
     {
         public static T OnColor<T>(this T obj,
-            Microsoft.Maui.Graphics.Color? onColor)
+            Microsoft.Maui.Graphics.Color onColor)
             where T : Sharp.UI.ISwitchCell
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwitchCell>(obj);
-            if (onColor != null) mauiObject.OnColor = (Microsoft.Maui.Graphics.Color)onColor;
+            mauiObject.OnColor = (Microsoft.Maui.Graphics.Color)onColor;
             return obj;
         }
         
         public static T OnColor<T>(this T obj,
-            Microsoft.Maui.Graphics.Color? onColor,
+            Microsoft.Maui.Graphics.Color onColor,
             System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.ISwitchCell
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwitchCell>(obj);         
-            if (onColor != null) mauiObject.OnColor = (Microsoft.Maui.Graphics.Color)onColor;
+            mauiObject.OnColor = (Microsoft.Maui.Graphics.Color)onColor;
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.SwitchCell.OnColorProperty));
             if (def.ValueIsSet()) mauiObject.OnColor = def.GetValue();
             def.BindProperty();
@@ -43,21 +43,21 @@ namespace Sharp.UI
         }
         
         public static T On<T>(this T obj,
-            bool? on)
+            bool on)
             where T : Sharp.UI.ISwitchCell
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwitchCell>(obj);
-            if (on != null) mauiObject.On = (bool)on;
+            mauiObject.On = (bool)on;
             return obj;
         }
         
         public static T On<T>(this T obj,
-            bool? on,
+            bool on,
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.ISwitchCell
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwitchCell>(obj);         
-            if (on != null) mauiObject.On = (bool)on;
+            mauiObject.On = (bool)on;
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.SwitchCell.OnProperty));
             if (def.ValueIsSet()) mauiObject.On = def.GetValue();
             def.BindProperty();
@@ -76,21 +76,21 @@ namespace Sharp.UI
         }
         
         public static T Text<T>(this T obj,
-            string? text)
+            string text)
             where T : Sharp.UI.ISwitchCell
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwitchCell>(obj);
-            if (text != null) mauiObject.Text = (string)text;
+            mauiObject.Text = (string)text;
             return obj;
         }
         
         public static T Text<T>(this T obj,
-            string? text,
+            string text,
             System.Func<BindableDef<string>, BindableDef<string>> definition)
             where T : Sharp.UI.ISwitchCell
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwitchCell>(obj);         
-            if (text != null) mauiObject.Text = (string)text;
+            mauiObject.Text = (string)text;
             var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.SwitchCell.TextProperty));
             if (def.ValueIsSet()) mauiObject.Text = def.GetValue();
             def.BindProperty();

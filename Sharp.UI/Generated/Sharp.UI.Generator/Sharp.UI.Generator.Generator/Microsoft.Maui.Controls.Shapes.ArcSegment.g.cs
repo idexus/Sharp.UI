@@ -10,21 +10,21 @@ namespace Sharp.UI
     public static class ArcSegmentGeneratedExtension
     {
         public static T Point<T>(this T obj,
-            Microsoft.Maui.Graphics.Point? point)
+            Microsoft.Maui.Graphics.Point point)
             where T : Sharp.UI.IArcSegment
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.ArcSegment>(obj);
-            if (point != null) mauiObject.Point = (Microsoft.Maui.Graphics.Point)point;
+            mauiObject.Point = (Microsoft.Maui.Graphics.Point)point;
             return obj;
         }
         
         public static T Point<T>(this T obj,
-            Microsoft.Maui.Graphics.Point? point,
+            Microsoft.Maui.Graphics.Point point,
             System.Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
             where T : Sharp.UI.IArcSegment
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.ArcSegment>(obj);         
-            if (point != null) mauiObject.Point = (Microsoft.Maui.Graphics.Point)point;
+            mauiObject.Point = (Microsoft.Maui.Graphics.Point)point;
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Point>(mauiObject, Microsoft.Maui.Controls.Shapes.ArcSegment.PointProperty));
             if (def.ValueIsSet()) mauiObject.Point = def.GetValue();
             def.BindProperty();
@@ -43,21 +43,21 @@ namespace Sharp.UI
         }
         
         public static T Size<T>(this T obj,
-            Microsoft.Maui.Graphics.Size? size)
+            Microsoft.Maui.Graphics.Size size)
             where T : Sharp.UI.IArcSegment
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.ArcSegment>(obj);
-            if (size != null) mauiObject.Size = (Microsoft.Maui.Graphics.Size)size;
+            mauiObject.Size = (Microsoft.Maui.Graphics.Size)size;
             return obj;
         }
         
         public static T Size<T>(this T obj,
-            Microsoft.Maui.Graphics.Size? size,
+            Microsoft.Maui.Graphics.Size size,
             System.Func<BindableDef<Microsoft.Maui.Graphics.Size>, BindableDef<Microsoft.Maui.Graphics.Size>> definition)
             where T : Sharp.UI.IArcSegment
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.ArcSegment>(obj);         
-            if (size != null) mauiObject.Size = (Microsoft.Maui.Graphics.Size)size;
+            mauiObject.Size = (Microsoft.Maui.Graphics.Size)size;
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Size>(mauiObject, Microsoft.Maui.Controls.Shapes.ArcSegment.SizeProperty));
             if (def.ValueIsSet()) mauiObject.Size = def.GetValue();
             def.BindProperty();
@@ -76,21 +76,21 @@ namespace Sharp.UI
         }
         
         public static T RotationAngle<T>(this T obj,
-            double? rotationAngle)
+            double rotationAngle)
             where T : Sharp.UI.IArcSegment
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.ArcSegment>(obj);
-            if (rotationAngle != null) mauiObject.RotationAngle = (double)rotationAngle;
+            mauiObject.RotationAngle = (double)rotationAngle;
             return obj;
         }
         
         public static T RotationAngle<T>(this T obj,
-            double? rotationAngle,
+            double rotationAngle,
             System.Func<BindableDef<double>, BindableDef<double>> definition)
             where T : Sharp.UI.IArcSegment
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.ArcSegment>(obj);         
-            if (rotationAngle != null) mauiObject.RotationAngle = (double)rotationAngle;
+            mauiObject.RotationAngle = (double)rotationAngle;
             var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Shapes.ArcSegment.RotationAngleProperty));
             if (def.ValueIsSet()) mauiObject.RotationAngle = def.GetValue();
             def.BindProperty();
@@ -109,21 +109,21 @@ namespace Sharp.UI
         }
         
         public static T SweepDirection<T>(this T obj,
-            Microsoft.Maui.Controls.SweepDirection? sweepDirection)
+            Microsoft.Maui.Controls.SweepDirection sweepDirection)
             where T : Sharp.UI.IArcSegment
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.ArcSegment>(obj);
-            if (sweepDirection != null) mauiObject.SweepDirection = (Microsoft.Maui.Controls.SweepDirection)sweepDirection;
+            mauiObject.SweepDirection = (Microsoft.Maui.Controls.SweepDirection)sweepDirection;
             return obj;
         }
         
         public static T SweepDirection<T>(this T obj,
-            Microsoft.Maui.Controls.SweepDirection? sweepDirection,
+            Microsoft.Maui.Controls.SweepDirection sweepDirection,
             System.Func<BindableDef<Microsoft.Maui.Controls.SweepDirection>, BindableDef<Microsoft.Maui.Controls.SweepDirection>> definition)
             where T : Sharp.UI.IArcSegment
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.ArcSegment>(obj);         
-            if (sweepDirection != null) mauiObject.SweepDirection = (Microsoft.Maui.Controls.SweepDirection)sweepDirection;
+            mauiObject.SweepDirection = (Microsoft.Maui.Controls.SweepDirection)sweepDirection;
             var def = definition(new BindableDef<Microsoft.Maui.Controls.SweepDirection>(mauiObject, Microsoft.Maui.Controls.Shapes.ArcSegment.SweepDirectionProperty));
             if (def.ValueIsSet()) mauiObject.SweepDirection = def.GetValue();
             def.BindProperty();
@@ -142,21 +142,21 @@ namespace Sharp.UI
         }
         
         public static T IsLargeArc<T>(this T obj,
-            bool? isLargeArc)
+            bool isLargeArc)
             where T : Sharp.UI.IArcSegment
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.ArcSegment>(obj);
-            if (isLargeArc != null) mauiObject.IsLargeArc = (bool)isLargeArc;
+            mauiObject.IsLargeArc = (bool)isLargeArc;
             return obj;
         }
         
         public static T IsLargeArc<T>(this T obj,
-            bool? isLargeArc,
+            bool isLargeArc,
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IArcSegment
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.ArcSegment>(obj);         
-            if (isLargeArc != null) mauiObject.IsLargeArc = (bool)isLargeArc;
+            mauiObject.IsLargeArc = (bool)isLargeArc;
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.Shapes.ArcSegment.IsLargeArcProperty));
             if (def.ValueIsSet()) mauiObject.IsLargeArc = def.GetValue();
             def.BindProperty();

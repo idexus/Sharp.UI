@@ -10,21 +10,21 @@ namespace Sharp.UI
     public static class ScrollViewGeneratedExtension
     {
         public static T LayoutAreaOverride<T>(this T obj,
-            Microsoft.Maui.Graphics.Rect? layoutAreaOverride)
+            Microsoft.Maui.Graphics.Rect layoutAreaOverride)
             where T : Sharp.UI.IScrollView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ScrollView>(obj);
-            if (layoutAreaOverride != null) mauiObject.LayoutAreaOverride = (Microsoft.Maui.Graphics.Rect)layoutAreaOverride;
+            mauiObject.LayoutAreaOverride = (Microsoft.Maui.Graphics.Rect)layoutAreaOverride;
             return obj;
         }
         
         public static T LayoutAreaOverride<T>(this T obj,
-            Microsoft.Maui.Graphics.Rect? layoutAreaOverride,
+            Microsoft.Maui.Graphics.Rect layoutAreaOverride,
             System.Func<ValueDef<Microsoft.Maui.Graphics.Rect>, ValueDef<Microsoft.Maui.Graphics.Rect>> definition)
             where T : Sharp.UI.IScrollView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ScrollView>(obj);
-            if (layoutAreaOverride != null) mauiObject.LayoutAreaOverride = (Microsoft.Maui.Graphics.Rect)layoutAreaOverride;
+            mauiObject.LayoutAreaOverride = (Microsoft.Maui.Graphics.Rect)layoutAreaOverride;
             var def = definition(new ValueDef<Microsoft.Maui.Graphics.Rect>());
             if (def.ValueIsSet()) mauiObject.LayoutAreaOverride = def.GetValue();
             return obj;
@@ -41,21 +41,21 @@ namespace Sharp.UI
         }
         
         public static T Content<T>(this T obj,
-            Microsoft.Maui.Controls.View? content)
+            Microsoft.Maui.Controls.View content)
             where T : Sharp.UI.IScrollView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ScrollView>(obj);
-            if (content != null) mauiObject.Content = (Microsoft.Maui.Controls.View)content;
+            mauiObject.Content = (Microsoft.Maui.Controls.View)content;
             return obj;
         }
         
         public static T Content<T>(this T obj,
-            Microsoft.Maui.Controls.View? content,
+            Microsoft.Maui.Controls.View content,
             System.Func<ValueDef<Microsoft.Maui.Controls.View>, ValueDef<Microsoft.Maui.Controls.View>> definition)
             where T : Sharp.UI.IScrollView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ScrollView>(obj);
-            if (content != null) mauiObject.Content = (Microsoft.Maui.Controls.View)content;
+            mauiObject.Content = (Microsoft.Maui.Controls.View)content;
             var def = definition(new ValueDef<Microsoft.Maui.Controls.View>());
             if (def.ValueIsSet()) mauiObject.Content = def.GetValue();
             return obj;
@@ -72,21 +72,21 @@ namespace Sharp.UI
         }
         
         public static T Orientation<T>(this T obj,
-            Microsoft.Maui.ScrollOrientation? orientation)
+            Microsoft.Maui.ScrollOrientation orientation)
             where T : Sharp.UI.IScrollView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ScrollView>(obj);
-            if (orientation != null) mauiObject.Orientation = (Microsoft.Maui.ScrollOrientation)orientation;
+            mauiObject.Orientation = (Microsoft.Maui.ScrollOrientation)orientation;
             return obj;
         }
         
         public static T Orientation<T>(this T obj,
-            Microsoft.Maui.ScrollOrientation? orientation,
+            Microsoft.Maui.ScrollOrientation orientation,
             System.Func<BindableDef<Microsoft.Maui.ScrollOrientation>, BindableDef<Microsoft.Maui.ScrollOrientation>> definition)
             where T : Sharp.UI.IScrollView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ScrollView>(obj);         
-            if (orientation != null) mauiObject.Orientation = (Microsoft.Maui.ScrollOrientation)orientation;
+            mauiObject.Orientation = (Microsoft.Maui.ScrollOrientation)orientation;
             var def = definition(new BindableDef<Microsoft.Maui.ScrollOrientation>(mauiObject, Microsoft.Maui.Controls.ScrollView.OrientationProperty));
             if (def.ValueIsSet()) mauiObject.Orientation = def.GetValue();
             def.BindProperty();
@@ -105,21 +105,21 @@ namespace Sharp.UI
         }
         
         public static T HorizontalScrollBarVisibility<T>(this T obj,
-            Microsoft.Maui.ScrollBarVisibility? horizontalScrollBarVisibility)
+            Microsoft.Maui.ScrollBarVisibility horizontalScrollBarVisibility)
             where T : Sharp.UI.IScrollView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ScrollView>(obj);
-            if (horizontalScrollBarVisibility != null) mauiObject.HorizontalScrollBarVisibility = (Microsoft.Maui.ScrollBarVisibility)horizontalScrollBarVisibility;
+            mauiObject.HorizontalScrollBarVisibility = (Microsoft.Maui.ScrollBarVisibility)horizontalScrollBarVisibility;
             return obj;
         }
         
         public static T HorizontalScrollBarVisibility<T>(this T obj,
-            Microsoft.Maui.ScrollBarVisibility? horizontalScrollBarVisibility,
+            Microsoft.Maui.ScrollBarVisibility horizontalScrollBarVisibility,
             System.Func<BindableDef<Microsoft.Maui.ScrollBarVisibility>, BindableDef<Microsoft.Maui.ScrollBarVisibility>> definition)
             where T : Sharp.UI.IScrollView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ScrollView>(obj);         
-            if (horizontalScrollBarVisibility != null) mauiObject.HorizontalScrollBarVisibility = (Microsoft.Maui.ScrollBarVisibility)horizontalScrollBarVisibility;
+            mauiObject.HorizontalScrollBarVisibility = (Microsoft.Maui.ScrollBarVisibility)horizontalScrollBarVisibility;
             var def = definition(new BindableDef<Microsoft.Maui.ScrollBarVisibility>(mauiObject, Microsoft.Maui.Controls.ScrollView.HorizontalScrollBarVisibilityProperty));
             if (def.ValueIsSet()) mauiObject.HorizontalScrollBarVisibility = def.GetValue();
             def.BindProperty();
@@ -138,21 +138,21 @@ namespace Sharp.UI
         }
         
         public static T VerticalScrollBarVisibility<T>(this T obj,
-            Microsoft.Maui.ScrollBarVisibility? verticalScrollBarVisibility)
+            Microsoft.Maui.ScrollBarVisibility verticalScrollBarVisibility)
             where T : Sharp.UI.IScrollView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ScrollView>(obj);
-            if (verticalScrollBarVisibility != null) mauiObject.VerticalScrollBarVisibility = (Microsoft.Maui.ScrollBarVisibility)verticalScrollBarVisibility;
+            mauiObject.VerticalScrollBarVisibility = (Microsoft.Maui.ScrollBarVisibility)verticalScrollBarVisibility;
             return obj;
         }
         
         public static T VerticalScrollBarVisibility<T>(this T obj,
-            Microsoft.Maui.ScrollBarVisibility? verticalScrollBarVisibility,
+            Microsoft.Maui.ScrollBarVisibility verticalScrollBarVisibility,
             System.Func<BindableDef<Microsoft.Maui.ScrollBarVisibility>, BindableDef<Microsoft.Maui.ScrollBarVisibility>> definition)
             where T : Sharp.UI.IScrollView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ScrollView>(obj);         
-            if (verticalScrollBarVisibility != null) mauiObject.VerticalScrollBarVisibility = (Microsoft.Maui.ScrollBarVisibility)verticalScrollBarVisibility;
+            mauiObject.VerticalScrollBarVisibility = (Microsoft.Maui.ScrollBarVisibility)verticalScrollBarVisibility;
             var def = definition(new BindableDef<Microsoft.Maui.ScrollBarVisibility>(mauiObject, Microsoft.Maui.Controls.ScrollView.VerticalScrollBarVisibilityProperty));
             if (def.ValueIsSet()) mauiObject.VerticalScrollBarVisibility = def.GetValue();
             def.BindProperty();

@@ -10,21 +10,21 @@ namespace Sharp.UI
     public static class LinearGradientBrushGeneratedExtension
     {
         public static T StartPoint<T>(this T obj,
-            Microsoft.Maui.Graphics.Point? startPoint)
+            Microsoft.Maui.Graphics.Point startPoint)
             where T : Sharp.UI.ILinearGradientBrush
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.LinearGradientBrush>(obj);
-            if (startPoint != null) mauiObject.StartPoint = (Microsoft.Maui.Graphics.Point)startPoint;
+            mauiObject.StartPoint = (Microsoft.Maui.Graphics.Point)startPoint;
             return obj;
         }
         
         public static T StartPoint<T>(this T obj,
-            Microsoft.Maui.Graphics.Point? startPoint,
+            Microsoft.Maui.Graphics.Point startPoint,
             System.Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
             where T : Sharp.UI.ILinearGradientBrush
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.LinearGradientBrush>(obj);         
-            if (startPoint != null) mauiObject.StartPoint = (Microsoft.Maui.Graphics.Point)startPoint;
+            mauiObject.StartPoint = (Microsoft.Maui.Graphics.Point)startPoint;
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Point>(mauiObject, Microsoft.Maui.Controls.LinearGradientBrush.StartPointProperty));
             if (def.ValueIsSet()) mauiObject.StartPoint = def.GetValue();
             def.BindProperty();
@@ -43,21 +43,21 @@ namespace Sharp.UI
         }
         
         public static T EndPoint<T>(this T obj,
-            Microsoft.Maui.Graphics.Point? endPoint)
+            Microsoft.Maui.Graphics.Point endPoint)
             where T : Sharp.UI.ILinearGradientBrush
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.LinearGradientBrush>(obj);
-            if (endPoint != null) mauiObject.EndPoint = (Microsoft.Maui.Graphics.Point)endPoint;
+            mauiObject.EndPoint = (Microsoft.Maui.Graphics.Point)endPoint;
             return obj;
         }
         
         public static T EndPoint<T>(this T obj,
-            Microsoft.Maui.Graphics.Point? endPoint,
+            Microsoft.Maui.Graphics.Point endPoint,
             System.Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
             where T : Sharp.UI.ILinearGradientBrush
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.LinearGradientBrush>(obj);         
-            if (endPoint != null) mauiObject.EndPoint = (Microsoft.Maui.Graphics.Point)endPoint;
+            mauiObject.EndPoint = (Microsoft.Maui.Graphics.Point)endPoint;
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Point>(mauiObject, Microsoft.Maui.Controls.LinearGradientBrush.EndPointProperty));
             if (def.ValueIsSet()) mauiObject.EndPoint = def.GetValue();
             def.BindProperty();

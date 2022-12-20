@@ -10,21 +10,21 @@ namespace Sharp.UI
     public static class RefreshViewGeneratedExtension
     {
         public static T IsRefreshing<T>(this T obj,
-            bool? isRefreshing)
+            bool isRefreshing)
             where T : Sharp.UI.IRefreshView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RefreshView>(obj);
-            if (isRefreshing != null) mauiObject.IsRefreshing = (bool)isRefreshing;
+            mauiObject.IsRefreshing = (bool)isRefreshing;
             return obj;
         }
         
         public static T IsRefreshing<T>(this T obj,
-            bool? isRefreshing,
+            bool isRefreshing,
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IRefreshView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RefreshView>(obj);         
-            if (isRefreshing != null) mauiObject.IsRefreshing = (bool)isRefreshing;
+            mauiObject.IsRefreshing = (bool)isRefreshing;
             var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.RefreshView.IsRefreshingProperty));
             if (def.ValueIsSet()) mauiObject.IsRefreshing = def.GetValue();
             def.BindProperty();
@@ -43,21 +43,21 @@ namespace Sharp.UI
         }
         
         public static T Command<T>(this T obj,
-            System.Windows.Input.ICommand? command)
+            System.Windows.Input.ICommand command)
             where T : Sharp.UI.IRefreshView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RefreshView>(obj);
-            if (command != null) mauiObject.Command = (System.Windows.Input.ICommand)command;
+            mauiObject.Command = (System.Windows.Input.ICommand)command;
             return obj;
         }
         
         public static T Command<T>(this T obj,
-            System.Windows.Input.ICommand? command,
+            System.Windows.Input.ICommand command,
             System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
             where T : Sharp.UI.IRefreshView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RefreshView>(obj);         
-            if (command != null) mauiObject.Command = (System.Windows.Input.ICommand)command;
+            mauiObject.Command = (System.Windows.Input.ICommand)command;
             var def = definition(new BindableDef<System.Windows.Input.ICommand>(mauiObject, Microsoft.Maui.Controls.RefreshView.CommandProperty));
             if (def.ValueIsSet()) mauiObject.Command = def.GetValue();
             def.BindProperty();
@@ -76,21 +76,21 @@ namespace Sharp.UI
         }
         
         public static T CommandParameter<T>(this T obj,
-            object? commandParameter)
+            object commandParameter)
             where T : Sharp.UI.IRefreshView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RefreshView>(obj);
-            if (commandParameter != null) mauiObject.CommandParameter = (object)commandParameter;
+            mauiObject.CommandParameter = (object)commandParameter;
             return obj;
         }
         
         public static T CommandParameter<T>(this T obj,
-            object? commandParameter,
+            object commandParameter,
             System.Func<BindableDef<object>, BindableDef<object>> definition)
             where T : Sharp.UI.IRefreshView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RefreshView>(obj);         
-            if (commandParameter != null) mauiObject.CommandParameter = (object)commandParameter;
+            mauiObject.CommandParameter = (object)commandParameter;
             var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.RefreshView.CommandParameterProperty));
             if (def.ValueIsSet()) mauiObject.CommandParameter = def.GetValue();
             def.BindProperty();
@@ -109,21 +109,21 @@ namespace Sharp.UI
         }
         
         public static T RefreshColor<T>(this T obj,
-            Microsoft.Maui.Graphics.Color? refreshColor)
+            Microsoft.Maui.Graphics.Color refreshColor)
             where T : Sharp.UI.IRefreshView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RefreshView>(obj);
-            if (refreshColor != null) mauiObject.RefreshColor = (Microsoft.Maui.Graphics.Color)refreshColor;
+            mauiObject.RefreshColor = (Microsoft.Maui.Graphics.Color)refreshColor;
             return obj;
         }
         
         public static T RefreshColor<T>(this T obj,
-            Microsoft.Maui.Graphics.Color? refreshColor,
+            Microsoft.Maui.Graphics.Color refreshColor,
             System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
             where T : Sharp.UI.IRefreshView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RefreshView>(obj);         
-            if (refreshColor != null) mauiObject.RefreshColor = (Microsoft.Maui.Graphics.Color)refreshColor;
+            mauiObject.RefreshColor = (Microsoft.Maui.Graphics.Color)refreshColor;
             var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.RefreshView.RefreshColorProperty));
             if (def.ValueIsSet()) mauiObject.RefreshColor = def.GetValue();
             def.BindProperty();
