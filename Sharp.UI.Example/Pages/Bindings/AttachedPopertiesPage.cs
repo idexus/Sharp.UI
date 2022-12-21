@@ -7,14 +7,14 @@ public class CustomShadow
     public static readonly BindableProperty HasCustomShadowProperty =
         BindableProperty.CreateAttached("HasCustomShadow", typeof(bool), typeof(Shadow), false);
 
-    public static bool GetHasCustomShadow(BindableObject view)
+    public static bool GetHasCustomShadow(BindableObject obj)
     {
-        return (bool)view.GetValue(HasCustomShadowProperty);
+        return (bool)obj.GetValue(HasCustomShadowProperty);
     }
 
-    public static void SetCustomHasShadow(BindableObject view, bool value)
+    public static void SetCustomHasShadow(BindableObject obj, bool value)
     {
-        view.SetValue(HasCustomShadowProperty, value);
+        obj.SetValue(HasCustomShadowProperty, value);
     }
 }
 
@@ -26,7 +26,7 @@ public interface IViewShadowAttachedProperties
 
 [SharpObject(typeof(View))]
 [AttachedInterfaces(new[] { typeof(IViewShadowAttachedProperties) })]
-public static class ViewExtension
+public static class ViewAttachedPropertiesExtension
 {
 
 }
@@ -42,6 +42,6 @@ public class AttachedPopertiesPage : ContentPage
 
             new Button()
                 .HasCustomShadow(false)
-		};
+        };
 	}
 }

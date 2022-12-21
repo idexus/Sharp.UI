@@ -9,11 +9,11 @@ namespace Sharp.UI.Example
 {
     using Sharp.UI;
 
-    public static class ViewGeneratedUserExtension
+    public static class ViewAttachedPropertiesGeneratedUserExtension
     {
         public static T HasCustomShadow<T>(this T obj,
             bool hasCustomShadow)
-            where T : Microsoft.Maui.Controls.View
+            where T : Sharp.UI.IView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.View>(obj);
             mauiObject.SetValue(Sharp.UI.Example.CustomShadow.HasCustomShadowProperty, (bool)hasCustomShadow);
@@ -23,7 +23,7 @@ namespace Sharp.UI.Example
         public static T HasCustomShadow<T>(this T obj,
             bool hasCustomShadow,
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
-            where T : Microsoft.Maui.Controls.View
+            where T : Sharp.UI.IView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.View>(obj);         
             mauiObject.SetValue(Sharp.UI.Example.CustomShadow.HasCustomShadowProperty, (bool)hasCustomShadow);
@@ -35,7 +35,7 @@ namespace Sharp.UI.Example
         
         public static T HasCustomShadow<T>(this T obj,
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
-            where T : Microsoft.Maui.Controls.View
+            where T : Sharp.UI.IView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.View>(obj);
             var def = definition(new BindableDef<bool>(mauiObject, Sharp.UI.Example.CustomShadow.HasCustomShadowProperty));

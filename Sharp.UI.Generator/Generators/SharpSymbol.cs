@@ -76,7 +76,7 @@ namespace Sharp.UI.Generator
             nameSpaceString = IsUserDefiniedType ? mainSymbol.ContainingNamespace.ToDisplayString() : "Sharp.UI";
             typeConformanceName =
                 IsSharpUIType && IsUserDefiniedType &&
-                (!mainSymbol.IsStatic || IsWrappedType && !WrappedType.ContainingNamespace.Name.Contains("Microsoft.Maui")) ?
+                (!mainSymbol.IsStatic || IsWrappedType && !WrappedType.ToDisplayString().StartsWith("Microsoft.Maui")) ?
                     extensionType.ToDisplayString() :
                     $"Sharp.UI.I{GetNormalizedName()}";
 
