@@ -7,33 +7,33 @@
 
 | Maui attached property | `Sharp.UI` fluent method |
 |-|-|
-|`Shell.ItemTemplate`|`ShellItemTemplate(shellItemTemplate)`|
-|`FlyoutBase.ContextFlyout`|`ContextFlyout(contextFlyout)`|
-|`Grid.Column`|`Column(column)`|
-|`Grid.Row`|`Row(row)`|
-|`Grid.ColumnSpan`|`ColumnSpan(rowSpan)`|
-|`Grid.RowSpan`|`RowSpan(columnSpan)`|
+|`Shell.ItemTemplate`|`ShellItemTemplate()`|
+|`FlyoutBase.ContextFlyout`|`ContextFlyout()`|
+|`Grid.Column`|`Column()`|
+|`Grid.Row`|`Row()`|
+|`Grid.ColumnSpan`|`ColumnSpan()`|
+|`Grid.RowSpan`|`RowSpan()`|
 ||`Span(column, row)`|
-|`VisualStateManager.VisualStateGroups`|`VisualStateGroups(visualStateGroups)`|
-|`AbsoluteLayout.LayoutFlags`|`AbsoluteLayoutFlags(layoutFlags)`|
-|`AbsoluteLayout.LayoutBounds`|`AbsoluteLayoutBounds(layoutBounds)`|
-|`Shell.PresentationMode`|`ShellPresentationMode(presentationMode)`|
-|`ShellBackgroundColor`|`ShellBackgroundColor(backgroundColor)`|
-|`Shell.ForegroundColor`|`ShellForegroundColor(foregroundColor)`|
-|`Shell.TitleColor`|`ShellTitleColor(titleColor)`|
-|`Shell.DisabledColor`|`ShellDisabledColor(disabledColor)`|
-|`Shell.UnselectedColor`|`ShellUnselectedColor(unselectedColor)`|
-|`Shell.NavBarHasShadow`|`ShellNavBarHasShadow(navBarHasShadow)`|
-|`Shell.NavBarIsVisible`|`ShellNavBarIsVisible(navBarIsVisible)`|
-|`Shell.TitleView`|`ShellTitleView(titleView)`|
-|`SemanticProperties.Hint`|`SemanticHint(hint)`|
-|`SemanticProperties.Description`|`SemanticDescription(description)`|
-|`SemanticProperties.HeadingLevel`|`SemanticHeadingLevel(headingLevel)`|
-|`AutomationProperties.ExcludedWithChildren`|`AutomationExcludedWithChildren(excludedWithChildren)`|
-|`AutomationProperties.IsInAccessibleTree`|`AutomationIsInAccessibleTree(isInAccessibleTree)`|
-|`AutomationProperties.Name`|`AutomationName(name)`|
-|`AutomationProperties.HelpText`|`AutomationHelpText(helpText)`|
-|`AutomationProperties.LabeledBy`|`AutomationLabeledBy(labeledBy)`|
+|`VisualStateManager.VisualStateGroups`|`VisualStateGroups()`|
+|`AbsoluteLayout.LayoutFlags`|`AbsoluteLayoutFlags()`|
+|`AbsoluteLayout.LayoutBounds`|`AbsoluteLayoutBounds()`|
+|`Shell.PresentationMode`|`ShellPresentationMode()`|
+|`ShellBackgroundColor`|`ShellBackgroundColor()`|
+|`Shell.ForegroundColor`|`ShellForegroundColor()`|
+|`Shell.TitleColor`|`ShellTitleColor()`|
+|`Shell.DisabledColor`|`ShellDisabledColor()`|
+|`Shell.UnselectedColor`|`ShellUnselectedColor()`|
+|`Shell.NavBarHasShadow`|`ShellNavBarHasShadow()`|
+|`Shell.NavBarIsVisible`|`ShellNavBarIsVisible()`|
+|`Shell.TitleView`|`ShellTitleView()`|
+|`SemanticProperties.Hint`|`SemanticHint()`|
+|`SemanticProperties.Description`|`SemanticDescription()`|
+|`SemanticProperties.HeadingLevel`|`SemanticHeadingLevel()`|
+|`AutomationProperties.ExcludedWithChildren`|`AutomationExcludedWithChildren()`|
+|`AutomationProperties.IsInAccessibleTree`|`AutomationIsInAccessibleTree()`|
+|`AutomationProperties.Name`|`AutomationName()`|
+|`AutomationProperties.HelpText`|`AutomationHelpText()`|
+|`AutomationProperties.LabeledBy`|`AutomationLabeledBy()`|
 
 ### Example
 
