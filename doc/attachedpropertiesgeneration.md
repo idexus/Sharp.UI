@@ -2,7 +2,7 @@
 
 In `Sharp.UI` attached properties fluent helper methods can be generated automatically.
 
-### Create an attachable property
+### Create an attached property
 
 ```cs
 public class CustomShadow
@@ -22,9 +22,9 @@ public class CustomShadow
 }
 ```
 
-### Fluent helper methods
+### Attached properties and fluent methods
 
-First you need to create an interface with the `[AttachedProperies(attachedType)]` attribute:
+To auto-generate fluent methods, first you need to create an interface with the `[AttachedProperies(attachedType)]` attribute:
 
 ```cs
 [AttachedProperties(typeof(CustomShadow))]
@@ -33,7 +33,7 @@ public interface IViewShadowAttachedProperties
     bool HasCustomShadow { get; set; }
 }
 ```
-Attach this interface to the static class with the `[AttachedInterfaces(..)]` attribute, and use the `[SharpObject(type)]` attribute with the type you want to attach.
+Than, attach this interface to the static class with the `[AttachedInterfaces(..)]` attribute, and use the `[SharpObject(type)]` attribute with the type you want to attach.
 
 ```cs
 [SharpObject(typeof(View))]
