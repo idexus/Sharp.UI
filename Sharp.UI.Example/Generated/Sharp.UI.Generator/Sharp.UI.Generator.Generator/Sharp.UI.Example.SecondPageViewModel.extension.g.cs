@@ -9,7 +9,7 @@ namespace Sharp.UI.Example
 {
     using Sharp.UI;
 
-    public static class SecondPageViewModelGeneratedExtension
+    public static class SecondPageViewModelGeneratedUserExtension
     {
         public static T Title<T>(this T obj,
             string title)

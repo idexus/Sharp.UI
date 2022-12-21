@@ -36,7 +36,7 @@ namespace Sharp.UI.Generator
             builder.Append($@"
 namespace Sharp.UI
 {{
-    public static class {GetNormalizedName()}GeneratedExtension
+    public static class {GetNormalizedExtensionName()}
     {{");
             GenerateClassExtensionBody();
             builder.AppendLine($@"
@@ -53,7 +53,7 @@ namespace {mainSymbol.ContainingNamespace}
 {{
     using Sharp.UI;
 
-    public static class {GetNormalizedName()}GeneratedExtension
+    public static class {GetNormalizedExtensionName()}
     {{");         
             GenerateClassExtensionBody();
             builder.AppendLine($@"
@@ -67,10 +67,10 @@ namespace {mainSymbol.ContainingNamespace}
 
         public string ExtensionBuilderFileName()
         {
-            var type = extensionType;
-            var tail = type.IsGenericType ? $".{type.TypeArguments.FirstOrDefault().Name}" : "";
-            var extension = IsUserDefiniedType ? ".extension" : "";
-            return $"{type.ContainingNamespace}.{type.Name}{tail}{extension}.g.cs";
+            var name = mainSymbol.IsStatic ? mainSymbol.Name.Replace("Extension", "") : mainSymbol.Name;
+            var tail = extensionType.IsGenericType ? $".{extensionType.TypeArguments.FirstOrDefault().Name}" : "";
+            var extension = IsSharpUIType ? ".extension" : "";
+            return $"{mainSymbol.ContainingNamespace}.{name}{tail}{extension}.g.cs";
         }
 
         //----------------------------------------
@@ -81,10 +81,9 @@ namespace {mainSymbol.ContainingNamespace}
 
         void GenerateClassExtensionBody()
         {
-            // loop for sealed
-            Helpers.LoopDownToObject(extensionType, type =>
+            if (!mainSymbol.IsStatic)
             {
-                var bindableProperties = type
+                var bindableProperties = extensionType
                     .GetMembers()
                     .Where(e => e.IsStatic && e.Name.EndsWith("Property") && e.DeclaredAccessibility == Accessibility.Public).ToList();
 
@@ -95,19 +94,17 @@ namespace {mainSymbol.ContainingNamespace}
                     extensionBindablePropertiesGenerated.Add(name);
                 }
 
-                var properties = type
+                var properties = extensionType
                     .GetMembers()
                     .Where(e => e.Kind == SymbolKind.Property && e.DeclaredAccessibility == Accessibility.Public);
 
-                var events = type
+                var events = extensionType
                     .GetMembers()
                     .Where(e => e.Kind == SymbolKind.Event && e.DeclaredAccessibility == Accessibility.Public);
 
                 foreach (var prop in properties) GenerateExtensionMethod(prop);
                 foreach (var @event in events) GenerateEventMethod(@event);
-
-                return IsWrappedType ? !WrappedType.IsSealed : true;
-            });
+            }
 
             GenerateBindablePropertiesExtension();
             GenerateAttachedPropertiesExtension();

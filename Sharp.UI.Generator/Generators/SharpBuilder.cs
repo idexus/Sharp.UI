@@ -54,6 +54,7 @@ public class SharpBuilder
 
         GenerateSymbols(wrappedSymbols);
         GenerateExtensions(wrappedSymbols);
+        GenerateWrappedExtensions(wrappedSymbols);
     }
 
     //------------- generate symbols -----------------
@@ -92,14 +93,15 @@ public class SharpBuilder
 
     void GenerateExtensions(IEnumerable<ISymbol> symbols)
     {
-
         foreach (var symbol in symbols)
         {
             var sharpSymbol = new SharpSymbol(symbol as INamedTypeSymbol);
             this.GenerateExtension(sharpSymbol);
-            doneExtensions.Add(sharpSymbol.GetNormalizedName());
         }
+    }
 
+    void GenerateWrappedExtensions(IEnumerable<ISymbol> symbols)
+    {
         foreach (var symbol in symbols)
         {
             var sharpSymbol = new SharpSymbol(symbol as INamedTypeSymbol);
@@ -129,11 +131,6 @@ public class SharpBuilder
         builder.AppendLine();
         builder.AppendLine("#pragma warning disable CS8669");
         builder.AppendLine();
-
-        if (sharpSymbol.GetNormalizedName().Equals("ActivityIndicator"))
-        {
-
-        }
 
         sharpSymbol.BuildExtension(builder);
 

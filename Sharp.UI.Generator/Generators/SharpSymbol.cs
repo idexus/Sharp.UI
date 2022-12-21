@@ -45,8 +45,9 @@ namespace Sharp.UI.Generator
         string containerPropertyName = null;
 
         // helpers
+        public bool IsSharpUIType => sharpAttribute != null;
         public bool IsWrappedType => WrappedType != null;
-        public bool IsUserDefiniedType => sharpAttribute != null && !IsWrappedType;
+        public bool IsUserDefiniedType => IsSharpUIType && !mainSymbol.ContainingNamespace.ToDisplayString().Equals("Sharp.UI");
 
         // not generate list
         List<string> notGenerateList = null;
@@ -60,7 +61,7 @@ namespace Sharp.UI.Generator
 
         // extensions
         private string typeConformanceName;
-        private INamedTypeSymbol extensionType => IsWrappedType ? WrappedType : mainSymbol;
+        private INamedTypeSymbol extensionType => mainSymbol.IsStatic && IsWrappedType ? WrappedType : mainSymbol;
 
         public SharpSymbol(INamedTypeSymbol symbol)
 		{
@@ -72,10 +73,8 @@ namespace Sharp.UI.Generator
 
             WrappedType = GetWrappedType(sharpAttribute);
 
-            //if (IsUserDefiniedType && !IsBindable()) throw new ArgumentException("User defined classes with SharpObject attribute is only allowed for BindableObject types");
-
             nameSpaceString = IsUserDefiniedType ? mainSymbol.ContainingNamespace.ToDisplayString() : "Sharp.UI";
-            typeConformanceName = IsUserDefiniedType ? symbol.ToDisplayString() : $"Sharp.UI.I{GetNormalizedName()}";
+            typeConformanceName = IsSharpUIType && IsUserDefiniedType && !mainSymbol.IsStatic ? symbol.ToDisplayString() : $"Sharp.UI.I{GetNormalizedName()}";
 
             SetupContainerIfNeeded();
             SetupConstructorsGeneration();
@@ -161,15 +160,22 @@ namespace Sharp.UI.Generator
 
         public static string GetNormalizedName(INamedTypeSymbol type)
         {
-            var tail = type.IsGenericType ? $"{type.TypeArguments.FirstOrDefault().Name}" : "";
             var prefix = type.ContainingNamespace.ToDisplayString().Contains(CompatibilityString) ? CompatibilityString : "";
-            return $"{prefix}{type.Name}{tail}";
+            var name = type.IsStatic ? type.Name.Replace("Extension", "") : type.Name;
+            var tail = type.IsGenericType ? $"{type.TypeArguments.FirstOrDefault().Name}" : "";
+            return $"{prefix}{name}{tail}";
         }
 
         public string GetNormalizedName()
         {
             var type = IsWrappedType ? WrappedType : mainSymbol;
             return GetNormalizedName(type);
+        }
+
+        public string GetNormalizedExtensionName()
+        {
+            var tail = IsSharpUIType ? (IsUserDefiniedType ? "GeneratedUserExtension" : "GeneratedSharpObjectExtension") : "GeneratedExtension";
+            return $"{GetNormalizedName(mainSymbol)}{tail}";
         }
 
         // ------ helpers ------

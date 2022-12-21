@@ -9,7 +9,7 @@ namespace Sharp.UI.Example
 {
     using Sharp.UI;
 
-    public static class CardViewGeneratedExtension
+    public static class CardViewGeneratedUserExtension
     {
         public static T OnClicked<T>(this T obj, System.EventHandler handler)
             where T : Sharp.UI.Example.CardView

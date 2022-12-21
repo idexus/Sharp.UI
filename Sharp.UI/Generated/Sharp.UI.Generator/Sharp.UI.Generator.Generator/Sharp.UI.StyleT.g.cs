@@ -6,9 +6,7 @@
 
 
 namespace Sharp.UI
-{
-    using Sharp.UI;
-
+{  
     public partial class Style<T>
     {
         // ----- constructors -----

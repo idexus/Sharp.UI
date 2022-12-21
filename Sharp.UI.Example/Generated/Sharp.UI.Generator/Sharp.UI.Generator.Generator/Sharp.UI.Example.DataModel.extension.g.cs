@@ -9,7 +9,7 @@ namespace Sharp.UI.Example
 {
     using Sharp.UI;
 
-    public static class DataModelGeneratedExtension
+    public static class DataModelGeneratedUserExtension
     {
         public static T SimpleData<T>(this T obj,
             System.Collections.Generic.List<Sharp.UI.Example.DataModel> simpleData)
