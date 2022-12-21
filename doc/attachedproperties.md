@@ -26,6 +26,14 @@
 |`Shell.NavBarHasShadow`|`ShellNavBarHasShadow(navBarHasShadow)`|
 |`Shell.NavBarIsVisible`|`ShellNavBarIsVisible(navBarIsVisible)`|
 |`Shell.TitleView`|`ShellTitleView(titleView)`|
+|`SemanticProperties.Hint`|`SemanticHint(hint)`|
+|`SemanticProperties.Description`|`SemanticDescription(description)`|
+|`SemanticProperties.HeadingLevel`|`SemanticHeadingLevel(headingLevel)`|
+|`AutomationProperties.ExcludedWithChildren`|`AutomationExcludedWithChildren(excludedWithChildren)`|
+|`AutomationProperties.IsInAccessibleTree`|`AutomationIsInAccessibleTree(isInAccessibleTree)`|
+|`AutomationProperties.Name`|`AutomationName(name)`|
+|`AutomationProperties.HelpText`|`AutomationHelpText(helpText)`|
+|`AutomationProperties.LabeledBy`|`AutomationLabeledBy(labeledBy)`|
 
 ### Example
 
