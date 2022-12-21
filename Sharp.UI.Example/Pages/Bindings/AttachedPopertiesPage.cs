@@ -24,7 +24,7 @@ public interface IViewShadowAttachedProperties
     bool HasCustomShadow { get; set; }
 }
 
-[SharpObject(typeof(Microsoft.Maui.Controls.View))]
+[SharpObject(typeof(View))]
 [AttachedInterfaces(new[] { typeof(IViewShadowAttachedProperties) })]
 public static class ViewExtension
 {
@@ -38,7 +38,10 @@ public class AttachedPopertiesPage : ContentPage
 		Content = new VStack
 		{
             new Label()
-                .HasCustomShadow(true)
+                .HasCustomShadow(true),
+
+            new Button()
+                .HasCustomShadow(false)
 		};
 	}
 }

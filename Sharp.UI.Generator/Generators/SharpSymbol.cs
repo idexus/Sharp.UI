@@ -74,7 +74,11 @@ namespace Sharp.UI.Generator
             WrappedType = GetWrappedType(sharpAttribute);
 
             nameSpaceString = IsUserDefiniedType ? mainSymbol.ContainingNamespace.ToDisplayString() : "Sharp.UI";
-            typeConformanceName = IsSharpUIType && IsUserDefiniedType && !mainSymbol.IsStatic ? symbol.ToDisplayString() : $"Sharp.UI.I{GetNormalizedName()}";
+            typeConformanceName =
+                IsSharpUIType && IsUserDefiniedType &&
+                (!mainSymbol.IsStatic || IsWrappedType && !WrappedType.ContainingNamespace.Name.Contains("Microsoft.Maui")) ?
+                    extensionType.ToDisplayString() :
+                    $"Sharp.UI.I{GetNormalizedName()}";
 
             SetupContainerIfNeeded();
             SetupConstructorsGeneration();
