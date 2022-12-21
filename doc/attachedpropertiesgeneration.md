@@ -33,7 +33,7 @@ public interface IViewShadowAttachedProperties
     bool HasCustomShadow { get; set; }
 }
 ```
-Than, attach this interface to the static class with the `[AttachedInterfaces(..)]` attribute, and use the `[SharpObject(type)]` attribute with the type you want to attach.
+Than, attach this interface to a static class with the `[AttachedInterfaces(..)]` attribute, and use the `[SharpObject(type)]` attribute with the type you want to attach.
 
 ```cs
 [SharpObject(typeof(View))]
