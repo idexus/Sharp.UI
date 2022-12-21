@@ -126,6 +126,7 @@ public class ViewPage : ContentPage
 ### Advanced scenarios
 
 - [Callbacks, default values](./doc/advbindablepoperties.md)
+- [Attached properties](./doc/attachedpropertiesgeneration.md)
 
 # Custom controls
 
