@@ -40,7 +40,7 @@ public static class ViewAttachedPropertiesExtension
 }
 ```
 
-### Consume the attached properties
+### Consume attached properties
 
 ```cs
 public class AttachedPopertiesPage : ContentPage
