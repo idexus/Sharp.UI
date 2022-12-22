@@ -7,17 +7,17 @@ In `Sharp.UI` attached properties fluent helper methods can be generated automat
 ```cs
 public class CustomShadow
 {
-    public static readonly BindableProperty HasCustomShadowProperty =
-        BindableProperty.CreateAttached("HasCustomShadow", typeof(bool), typeof(Shadow), false);
+    public static readonly BindableProperty HasShadowProperty =
+        BindableProperty.CreateAttached("HasShadow", typeof(bool), typeof(Shadow), false);
 
-    public static bool GetHasCustomShadow(BindableObject obj)
+    public static bool GetHasShadow(BindableObject obj)
     {
-        return (bool)obj.GetValue(HasCustomShadowProperty);
+        return (bool)obj.GetValue(HasShadowProperty);
     }
 
     public static void SetCustomHasShadow(BindableObject obj, bool value)
     {
-        obj.SetValue(HasCustomShadowProperty, value);
+        obj.SetValue(HasShadowProperty, value);
     }
 }
 ```
@@ -30,6 +30,7 @@ To auto-generate fluent methods, first you need to create an interface with the 
 [AttachedProperties(typeof(CustomShadow))]
 public interface IViewShadowAttachedProperties
 {
+    [AttachedName("HasShadow")]
     bool HasCustomShadow { get; set; }
 }
 ```

@@ -12,23 +12,23 @@ namespace Sharp.UI.Example
     public static class ViewAttachedPropertiesGeneratedUserExtension
     {
         public static T HasCustomShadow<T>(this T obj,
-            bool hasCustomShadow)
+            bool hasShadow)
             where T : Sharp.UI.IView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.View>(obj);
-            mauiObject.SetValue(Sharp.UI.Example.CustomShadow.HasCustomShadowProperty, (bool)hasCustomShadow);
+            mauiObject.SetValue(Sharp.UI.Example.CustomShadow.HasShadowProperty, (bool)hasShadow);
             return obj;
         }
         
         public static T HasCustomShadow<T>(this T obj,
-            bool hasCustomShadow,
+            bool hasShadow,
             System.Func<BindableDef<bool>, BindableDef<bool>> definition)
             where T : Sharp.UI.IView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.View>(obj);         
-            mauiObject.SetValue(Sharp.UI.Example.CustomShadow.HasCustomShadowProperty, (bool)hasCustomShadow);
-            var def = definition(new BindableDef<bool>(mauiObject, Sharp.UI.Example.CustomShadow.HasCustomShadowProperty));
-            if (def.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.CustomShadow.HasCustomShadowProperty, def.GetValue());
+            mauiObject.SetValue(Sharp.UI.Example.CustomShadow.HasShadowProperty, (bool)hasShadow);
+            var def = definition(new BindableDef<bool>(mauiObject, Sharp.UI.Example.CustomShadow.HasShadowProperty));
+            if (def.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.CustomShadow.HasShadowProperty, def.GetValue());
             def.BindProperty();
             return obj;
         }
@@ -38,8 +38,8 @@ namespace Sharp.UI.Example
             where T : Sharp.UI.IView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.View>(obj);
-            var def = definition(new BindableDef<bool>(mauiObject, Sharp.UI.Example.CustomShadow.HasCustomShadowProperty));
-            if (def.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.CustomShadow.HasCustomShadowProperty, def.GetValue());
+            var def = definition(new BindableDef<bool>(mauiObject, Sharp.UI.Example.CustomShadow.HasShadowProperty));
+            if (def.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.CustomShadow.HasShadowProperty, def.GetValue());
             def.BindProperty();
             return obj;
         }
