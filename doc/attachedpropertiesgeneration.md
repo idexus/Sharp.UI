@@ -1,8 +1,6 @@
-# Attached properties
+# Attached properties generation
 
 In `Sharp.UI` attached properties and their fluent helper methods can be generated automatically.
-
-### Attached properties generation
 
 ```cs
 [AttachedProperties(typeof(CustomShadow))]
