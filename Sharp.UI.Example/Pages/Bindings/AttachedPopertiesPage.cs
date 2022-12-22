@@ -2,28 +2,32 @@
 
 using Sharp.UI;
 
-public class CustomShadow
-{
-    public static readonly BindableProperty HasShadowProperty =
-        BindableProperty.CreateAttached("HasShadow", typeof(bool), typeof(CustomShadow), false);
-
-    public static bool GetHasShadow(BindableObject obj)
-    {
-        return (bool)obj.GetValue(HasShadowProperty);
-    }
-
-    public static void SetCustomHasShadow(BindableObject obj, bool value)
-    {
-        obj.SetValue(HasShadowProperty, value);
-    }
-}
+// --- attached properties declaration ---
 
 [AttachedProperties(typeof(CustomShadow))]
 public interface IViewShadowAttachedProperties
 {
     [AttachedName("HasShadow")]
+    [PropertyCallbacks(propertyChanged: "OnHasShadowChanged")]
     bool HasCustomShadow { get; set; }
+
+    double ShadowSize { get; set; }
+
+    [DefaultValue("Colors.Red")]
+    Color ShadowColor { get; set; }
 }
+
+[SharpObject]
+[AttachedInterfaces(new[] {typeof(IViewShadowAttachedProperties) })]
+public partial class CustomShadow
+{
+    static void OnHasShadowChanged(BindableObject bindable, object oldValue, object newValue)
+    {
+        // On HasShadow changed
+    }
+}
+
+// --- generate attached fluent methods ---
 
 [SharpObject(typeof(View))]
 [AttachedInterfaces(new[] { typeof(IViewShadowAttachedProperties) })]
@@ -32,6 +36,8 @@ public static class ViewAttachedPropertiesExtension
 
 }
 
+// --- consume attached properties ----
+
 public class AttachedPopertiesPage : ContentPage
 {
 	public AttachedPopertiesPage()
@@ -39,7 +45,9 @@ public class AttachedPopertiesPage : ContentPage
 		Content = new VStack
 		{
             new Label()
-                .HasCustomShadow(true),
+                .HasCustomShadow(true)
+                .ShadowSize(23)
+                .ShadowColor(Colors.Blue),
 
             new Button()
                 .HasCustomShadow(false)

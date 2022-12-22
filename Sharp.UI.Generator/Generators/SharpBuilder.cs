@@ -35,10 +35,10 @@ public class SharpBuilder
         InterfaceNameList = new List<string>();
 
         var wrappedSymbols = context.Compilation.GetSymbolsWithName((s) => true, filter: SymbolFilter.Type)
-            .Where(e => !e.IsStatic && e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains(SharpSymbol.SharpObjectAttributeString)) != null);
+            .Where(e => !e.IsStatic && e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Equals(SharpSymbol.SharpObjectAttributeString)) != null);
 
         var wrappedStaticSymbols = context.Compilation.GetSymbolsWithName((s) => true, filter: SymbolFilter.Type)
-            .Where(e => e.IsStatic && e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains(SharpSymbol.SharpObjectAttributeString)) != null);
+            .Where(e => e.IsStatic && e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Equals(SharpSymbol.SharpObjectAttributeString)) != null);
 
         foreach (var symbol in wrappedSymbols)
         {

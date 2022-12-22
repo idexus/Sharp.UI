@@ -115,7 +115,7 @@ namespace {mainSymbol.ContainingNamespace}
             // generate using bindable interface
             var interfaces = extensionType
                 .Interfaces
-                .Where(e => e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains(BindablePropertiesAttributeString)) != null);
+                .Where(e => e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Equals(BindablePropertiesAttributeString)) != null);
 
             foreach (var inter in interfaces)
             {
@@ -140,31 +140,37 @@ namespace {mainSymbol.ContainingNamespace}
 
                 if (attachedInterfacesAttribute != null)
                 {
-                    interfaces.AddRange(attachedInterfacesAttribute.ConstructorArguments[0].Values.Select(e => (INamedTypeSymbol)e.Value).ToList());
+                    interfaces.AddRange(attachedInterfacesAttribute.ConstructorArguments[0].Values
+                        .Select(e => (INamedTypeSymbol)e.Value)
+                        .Where(e => e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Equals(AttachedPropertiesAttributeString)) != null)
+                        .ToList());
                 }
 
                 interfaces.AddRange(
                     mainSymbol
                         .Interfaces
-                        .Where(e => e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains(AttachedPropertiesAttributeString)) != null));
+                        .Where(e => e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Equals(AttachedPropertiesAttributeString)) != null));
 
                 foreach (var inter in interfaces)
                 {
-                    var attribute = inter.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains(AttachedPropertiesAttributeString));
+                    var attribute = inter.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Equals(AttachedPropertiesAttributeString));
                     if (attribute != null)
                     {
                         var attachedType = attribute.ConstructorArguments[0].Value as INamedTypeSymbol;
 
-                        var properties = inter
-                            .GetMembers()
-                            .Where(e => e.Kind == SymbolKind.Property);
-
-                        foreach (var prop in properties)
+                        if (!attachedType.ToDisplayString().Equals(mainSymbol.ToDisplayString()))
                         {
-                            var propertySymbol = (IPropertySymbol)prop;
-                            var attachedName = GetAttachedName(propertySymbol);
-                            var fullPropertyName = $"{attachedType.ToDisplayString()}.{(attachedName != null ? attachedName : prop.Name)}";
-                            GenerateExtensionMethod(propertySymbol, fullPropertyName);
+                            var properties = inter
+                                .GetMembers()
+                                .Where(e => e.Kind == SymbolKind.Property);
+
+                            foreach (var prop in properties)
+                            {
+                                var propertySymbol = (IPropertySymbol)prop;
+                                var attachedName = GetAttachedName(propertySymbol);
+                                var fullPropertyName = $"{attachedType.ToDisplayString()}.{attachedName}";
+                                GenerateExtensionMethod(propertySymbol, fullPropertyName);
+                            }
                         }
                     }
                 }

@@ -64,7 +64,7 @@ namespace Sharp.UI
             configure(this);
         }
 
-        // ----- attached properties -----
+        // ----- consumed attached properties -----
 
         public Microsoft.Maui.Controls.PresentationMode ShellPresentationMode
         {

@@ -130,6 +130,7 @@ namespace {nameSpaceString}
                 GenerateOperatorsForSealedType();
                 GenerateBindableProperties();
                 GenerateAttachedProperties();
+                GenerateConsumedAttachedProperties();
                 GenerateSingleItemContainer();
                 GenerateCollectionContainer();
                 GenerateParentBindablePropertiesForSealedType();
@@ -140,10 +141,11 @@ namespace {nameSpaceString}
             {
                 GenerateConstructors();
                 GenerateConstructorWithProperties();
+                GenerateAttachedProperties();
                 if (IsBindable())
                 {
                     GenerateBindableProperties();
-                    GenerateAttachedProperties();
+                    GenerateConsumedAttachedProperties();
                     GenerateSetValueMethod();
                 }
             }
@@ -360,7 +362,7 @@ namespace {nameSpaceString}
             {
                 var bindableInterfaces = mainSymbol
                     .Interfaces
-                    .Where(e => e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains(BindablePropertiesAttributeString)) != null);
+                    .Where(e => e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Equals(BindablePropertiesAttributeString)) != null);
 
                 if (bindableInterfaces.Count() > 0) builder.AppendLine($@"
         // ----- bindable properties -----");
@@ -407,22 +409,83 @@ namespace {nameSpaceString}
         ");
         }
 
-        // --------------------------------------
+        // ----------------------------------------
         // ---- generate attached properties ----
-        // --------------------------------------
+        // ----------------------------------------
 
         void GenerateAttachedProperties()
         {
+            if (attachedInterfacesAttribute != null)
+            {
+                var attachedInterfaces = attachedInterfacesAttribute.ConstructorArguments[0].Values
+                    .Select(e => (INamedTypeSymbol)e.Value)
+                    .Where(e => e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Equals(AttachedPropertiesAttributeString)) != null).ToList();
+
+                if (attachedInterfaces.Count() > 0) builder.AppendLine($@"
+        // ----- attached properties -----");
+
+                foreach (var inter in attachedInterfaces)
+                {
+                    var properties = inter
+                        .GetMembers()
+                        .Where(e => e.Kind == SymbolKind.Property);
+
+                    foreach (var prop in properties)
+                        GenerateAttachablePropertyForField((IPropertySymbol)prop);
+                }
+            }
+        }
+
+        void GenerateAttachablePropertyForField(IPropertySymbol symbol)
+        {
+            var name = GetAttachedName(symbol);
+            var typeName = symbol.Type.ToDisplayString();
+            var callbacks = GetPropertyCallbacks(symbol);
+            var defaultValueString = GetDefaultValueString(symbol, typeName);
+            var callbacksString = "";
+
+            foreach (var callback in callbacks)
+            {
+                callbacksString = $@",
+                {callback.Key}: {callback.Value}";
+            }
+
+            builder.Append($@"
+        public static readonly Microsoft.Maui.Controls.BindableProperty {name}Property =
+            BindableProperty.CreateAttached(
+                ""{name}"",
+                typeof({typeName}),
+                typeof({mainSymbol.ToDisplayString()}),
+                {(defaultValueString != null ? $"({typeName}){defaultValueString}" : $"default({typeName})")}{callbacksString});
+
+        public static {typeName} Get{name}(BindableObject obj)
+        {{
+            return ({typeName})obj.GetValue({name}Property);
+        }}
+
+        public static void Set{name}(BindableObject obj, {typeName} value)
+        {{
+            obj.SetValue({name}Property, value);
+        }}
+        ");
+        }
+
+        // -----------------------------------------------
+        // ---- generate consumed attached properties ----
+        // -----------------------------------------------
+
+        void GenerateConsumedAttachedProperties()
+        {
             var bindableInterfaces = mainSymbol
                 .Interfaces
-                .Where(e => e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains(AttachedPropertiesAttributeString)) != null);
+                .Where(e => e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Equals(AttachedPropertiesAttributeString)) != null);
 
             if (bindableInterfaces.Count() > 0) builder.AppendLine($@"
-        // ----- attached properties -----");
+        // ----- consumed attached properties -----");
 
             foreach (var inter in bindableInterfaces)
             {
-                var attribute = inter.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains(AttachedPropertiesAttributeString));
+                var attribute = inter.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Equals(AttachedPropertiesAttributeString));
                 if (attribute != null)
                 {
                     var attachedType = attribute.ConstructorArguments[0].Value as INamedTypeSymbol;

@@ -5,7 +5,8 @@ namespace Sharp.UI
 	{
 		public PropertyCallbacksAttribute(
 			string propertyChanged = null,
-			string validateValue = null,
+			string propertyChanging = null,
+            string validateValue = null,
 			string coerceValue = null,
             string defaultValueCreator = null)
 		{

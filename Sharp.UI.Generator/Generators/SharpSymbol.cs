@@ -13,14 +13,14 @@ namespace Sharp.UI.Generator
 {
 	public partial class SharpSymbol
 	{
-        public const string SharpObjectAttributeString = "SharpObject";
-        public const string BindablePropertiesAttributeString = "BindableProperties";
-        public const string AttachedPropertiesAttributeString = "AttachedProperties";
-        public const string AttachedInterfacesAttributeString = "AttachedInterfaces";
-        public const string ContentPropertyAttributeString = "ContentProperty";
-        public const string AttachedNameAttributeString = "AttachedName";
-        public const string PropertyCallbackAttributeString = "PropertyCallbacks";
-        public const string DefaultValueAttributeString = "DefaultValue";
+        public const string SharpObjectAttributeString = "SharpObjectAttribute";
+        public const string BindablePropertiesAttributeString = "BindablePropertiesAttribute";
+        public const string AttachedPropertiesAttributeString = "AttachedPropertiesAttribute";
+        public const string AttachedInterfacesAttributeString = "AttachedInterfacesAttribute";
+        public const string ContentPropertyAttributeString = "ContentPropertyAttribute";
+        public const string AttachedNameAttributeString = "AttachedNameAttribute";
+        public const string PropertyCallbackAttributeString = "PropertyCallbacksAttribute";
+        public const string DefaultValueAttributeString = "DefaultValueAttribute";
 
         public const string CompatibilityString = "Compatibility";
 
@@ -187,7 +187,7 @@ namespace Sharp.UI.Generator
         public static AttributeData GetSharpAttributeData(INamedTypeSymbol symbol)
         {
             var attributes = symbol.GetAttributes();
-            return attributes.FirstOrDefault(e => e.AttributeClass.Name.Contains(SharpObjectAttributeString));
+            return attributes.FirstOrDefault(e => e.AttributeClass.Name.Equals(SharpObjectAttributeString));
         }
 
         public static INamedTypeSymbol GetWrappedType(AttributeData attributeData)
@@ -199,29 +199,30 @@ namespace Sharp.UI.Generator
         AttributeData GetAttachedInterfacesAttributeData()
         {
             var attributes = mainSymbol.GetAttributes();
-            return attributes.FirstOrDefault(e => e.AttributeClass.Name.Contains(AttachedInterfacesAttributeString));
+            return attributes.FirstOrDefault(e => e.AttributeClass.Name.Equals(AttachedInterfacesAttributeString));
         }
 
         string GetAttachedName(ISymbol symbol)
         {
             var attributes = symbol.GetAttributes();
-            var attributeData = attributes.FirstOrDefault(e => e.AttributeClass.Name.Contains(AttachedNameAttributeString));
+            var attributeData = attributes.FirstOrDefault(e => e.AttributeClass.Name.Equals(AttachedNameAttributeString));
             if (attributeData != null) return (string)attributeData.ConstructorArguments[0].Value;
-            return null;
+            return symbol.Name;
         }
 
         Dictionary<string, string> GetPropertyCallbacks(ISymbol symbol)
         {
             var data = new Dictionary<string, string>();
             var attributes = symbol.GetAttributes();
-            var attributeData = attributes.FirstOrDefault(e => e.AttributeClass.Name.Contains(PropertyCallbackAttributeString));
+            var attributeData = attributes.FirstOrDefault(e => e.AttributeClass.Name.Equals(PropertyCallbackAttributeString));
             if (attributeData != null)
             {
                 var arguments = attributeData.ConstructorArguments;
                 if (arguments[0].Value != null) data["propertyChanged"] = (string)arguments[0].Value;
-                if (arguments[1].Value != null) data["validateValue"] = (string)arguments[1].Value;
-                if (arguments[2].Value != null) data["coerceValue"] = (string)arguments[2].Value;
-                if (arguments[3].Value != null) data["defaultValueCreator"] = (string)arguments[3].Value;
+                if (arguments[1].Value != null) data["propertyChanging"] = (string)arguments[1].Value;
+                if (arguments[2].Value != null) data["validateValue"] = (string)arguments[2].Value;
+                if (arguments[3].Value != null) data["coerceValue"] = (string)arguments[3].Value;
+                if (arguments[4].Value != null) data["defaultValueCreator"] = (string)arguments[4].Value;
                 if (data.Count() == 0) throw new ArgumentException($"PropertyCallback attribute must have minmium one attribute defined, symbol: {symbol.ToDisplayString()}");
             }
             return data;
@@ -230,7 +231,7 @@ namespace Sharp.UI.Generator
         string GetDefaultValueString(ISymbol symbol, string typeName)
         {
             var attributes = symbol.GetAttributes();
-            var attributeData = attributes.FirstOrDefault(e => e.AttributeClass.Name.Contains(DefaultValueAttributeString));
+            var attributeData = attributes.FirstOrDefault(e => e.AttributeClass.Name.Equals(DefaultValueAttributeString));
             if (attributeData != null)
             {
                 
@@ -247,7 +248,7 @@ namespace Sharp.UI.Generator
             AttributeData attributeData = null;
             Helpers.LoopDownToObject(this.WrappedType, type =>
             {
-                attributeData = type.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Contains(ContentPropertyAttributeString));
+                attributeData = type.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Equals(ContentPropertyAttributeString));
                 return attributeData != null;
             });
             if (attributeData != null)

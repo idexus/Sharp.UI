@@ -1,40 +1,37 @@
 # Attached properties
 
-In `Sharp.UI` attached properties fluent helper methods can be generated automatically.
+In `Sharp.UI` attached properties and their fluent helper methods can be generated automatically.
 
-### Create an attached property
-
-```cs
-public class CustomShadow
-{
-    public static readonly BindableProperty HasShadowProperty =
-        BindableProperty.CreateAttached("HasShadow", typeof(bool), typeof(CustomShadow), false);
-
-    public static bool GetHasShadow(BindableObject obj)
-    {
-        return (bool)obj.GetValue(HasShadowProperty);
-    }
-
-    public static void SetCustomHasShadow(BindableObject obj, bool value)
-    {
-        obj.SetValue(HasShadowProperty, value);
-    }
-}
-```
-
-### Attached properties and fluent methods
-
-To auto-generate fluent methods, first you need to create an interface with the `[AttachedProperies(attachedType)]` attribute:
+### Attached properties generation
 
 ```cs
 [AttachedProperties(typeof(CustomShadow))]
 public interface IViewShadowAttachedProperties
 {
     [AttachedName("HasShadow")]
+    [PropertyCallbacks(propertyChanged: "OnHasShadowChanged")]
     bool HasCustomShadow { get; set; }
+
+    double ShadowSize { get; set; }
+
+    [DefaultValue("Colors.Red")]
+    Color ShadowColor { get; set; }
+}
+
+[SharpObject]
+[AttachedInterfaces(new[] {typeof(IViewShadowAttachedProperties) })]
+public partial class CustomShadow
+{
+    static void OnHasShadowChanged(BindableObject bindable, object oldValue, object newValue)
+    {
+        // On HasShadow changed
+    }
 }
 ```
-Than, attach this interface to a static class with the `[AttachedInterfaces(..)]` attribute, and use the `[SharpObject(type)]` attribute with the type you want to attach.
+
+### Generate attached fluent methods
+
+To auto-generate fluent methods, attach the interface to a static class with the `[AttachedInterfaces(..)]` attribute, and use the `[SharpObject(type)]` attribute with the type you want to attach.
 
 ```cs
 [SharpObject(typeof(View))]
@@ -45,7 +42,7 @@ public static class ViewAttachedPropertiesExtension
 }
 ```
 
-### Consume an attached property
+### Consume the attached properties
 
 ```cs
 public class AttachedPopertiesPage : ContentPage
@@ -55,7 +52,9 @@ public class AttachedPopertiesPage : ContentPage
         Content = new VStack
         {
             new Label()
-                .HasCustomShadow(true),
+                .HasCustomShadow(true)
+                .CustomShadowSize(23)
+                .ShadowColor(Colors.Blue),
 
             new Button()
                 .HasCustomShadow(false)
