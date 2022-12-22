@@ -8,7 +8,7 @@ In `Sharp.UI` attached properties fluent helper methods can be generated automat
 public class CustomShadow
 {
     public static readonly BindableProperty HasShadowProperty =
-        BindableProperty.CreateAttached("HasShadow", typeof(bool), typeof(Shadow), false);
+        BindableProperty.CreateAttached("HasShadow", typeof(bool), typeof(CustomShadow), false);
 
     public static bool GetHasShadow(BindableObject obj)
     {
