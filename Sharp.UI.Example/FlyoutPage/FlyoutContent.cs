@@ -10,15 +10,12 @@ public class FlyoutContent : ContentView
 				.Source(e => e.Path("Icon"))
 				.VerticalOptions(LayoutOptions.Center)
 				.HorizontalOptions(LayoutOptions.Center)
-				.HeightRequest(new OnPlatform<double>(Default: 24, iOS: 22, WinUI: 16))
-				.Margin(new OnPlatform<Thickness>(WinUI: new Thickness(12,0,12,0))),
+				.HeightRequest(e => e.Default(24).OniOS(22).OnWinUI(16)),
 
 			new Label()
 				.Column(1)
 				.Text(e => e.Path("Title"))
 				.FontSize(14)
-				.FontAttributes(new OnTheme<FontAttributes>(light:FontAttributes.Bold))
-				.HorizontalOptions(new OnPlatform<LayoutOptions>(Default: LayoutOptions.Center, WinUI: LayoutOptions.Start))
 				.HorizontalTextAlignment(TextAlignment.Start)
 				.VerticalTextAlignment(TextAlignment.Center)
 

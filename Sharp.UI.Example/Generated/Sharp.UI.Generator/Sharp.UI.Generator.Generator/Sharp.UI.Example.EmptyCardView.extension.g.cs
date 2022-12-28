@@ -9,7 +9,7 @@ namespace Sharp.UI.Example
 {
     using Sharp.UI;
 
-    public static class EmptyCardViewGeneratedUserExtension
+    public static class EmptyCardViewGeneratedSharpObjectExtension
     {
         public static T CardTitle<T>(this T obj,
             string cardTitle)

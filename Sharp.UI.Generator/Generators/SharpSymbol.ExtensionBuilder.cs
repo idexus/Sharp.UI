@@ -22,43 +22,32 @@ namespace Sharp.UI.Generator
         public void BuildExtension(StringBuilder builder)
         {
             this.builder = builder;
-
-            if (IsUserDefiniedType)
-                GenerateUserDefinedTypeExtensionNameSpace();
-            else
-                GenerateSharpUIExtentionNameSpace();
+            GenerateExtensionNameSpace();
         }
 
-        // -------- Sharp.UI namespace ---------
 
-        void GenerateSharpUIExtentionNameSpace()
+        // --------- extension namespace ---------
+
+        void GenerateExtensionNameSpace()
         {
             builder.Append($@"
-namespace Sharp.UI
+namespace {nameSpaceString}
 {{
-    public static class {GetNormalizedExtensionName()}
-    {{");
-            GenerateClassExtensionBody();
-            builder.AppendLine($@"
-    }}
-}}");
-        }
-
-        // --------- user definied type ---------
-
-        void GenerateUserDefinedTypeExtensionNameSpace()
-        {
-            builder.Append($@"
-namespace {mainSymbol.ContainingNamespace}
-{{
-    using Sharp.UI;
-
-    public static class {GetNormalizedExtensionName()}
+    {GetUsingString()}public static class {GetNormalizedExtensionName()}
     {{");         
             GenerateClassExtensionBody();
             builder.AppendLine($@"
     }}
 }}");
+        }
+
+        string GetUsingString()
+        {
+            if (!nameSpaceString.Equals("Sharp.UI"))
+                return $@"using Sharp.UI;
+
+    ";
+            return "";
         }
 
         #endregion
@@ -188,7 +177,6 @@ namespace {mainSymbol.ContainingNamespace}
             public readonly string propertyTypeName;
             public readonly string propertyCastTypeName;
             public readonly string camelCaseName;
-            //public readonly string typeTail;
             public readonly string assignmentString;
             public readonly string assignmentDefString;
             public readonly string assignmentDataTemplateString;
@@ -198,12 +186,12 @@ namespace {mainSymbol.ContainingNamespace}
             {
                 this.propertySymbol = propertySymbol;
 
-                CheckIfIsWrappedSealedType(propertySymbol.Type, out var isWrappedSealedType, out var isArrayOfWrappedSealedType, out var isObjectType);
+                CheckIfIsWrappedSealedType(propertySymbol.Type, out var isWrappedSealedType, out var isArrayOfWrappedSealedType, out var isObjectType, out var symbolNamespace);
 
                 propertyName = propertySymbol.Name.Split(new[] { "." }, StringSplitOptions.None).Last();
                 propertyName = propertyName.Equals("class") ? "@class" : propertyName;
                 accessedWith = propertySymbol.IsStatic ? $"{type.ToDisplayString()}" : "mauiObject";
-                propertyTypeName = isWrappedSealedType ? $"Sharp.UI.{propertySymbol.Type.Name}" : propertySymbol.Type.ToDisplayString();
+                propertyTypeName = isWrappedSealedType ? $"{symbolNamespace}.{propertySymbol.Type.Name}" : propertySymbol.Type.ToDisplayString();
                 propertyCastTypeName = propertySymbol.Type.ToDisplayString();
                 camelCaseName = Helpers.CamelCase(propertyName);
                 assignmentString = $"{accessedWith}.{propertyName} = {(isWrappedSealedType ? "mauiValue" : $"({propertyCastTypeName}){camelCaseName}")}";
@@ -218,7 +206,7 @@ namespace {mainSymbol.ContainingNamespace}
             {
                 this.propertySymbol = propertySymbol;
 
-                CheckIfIsWrappedSealedType(propertySymbol.Type, out var isWrappedSealedType, out var isArrayOfWrappedSealedType, out var isObjectType);
+                CheckIfIsWrappedSealedType(propertySymbol.Type, out var isWrappedSealedType, out var isArrayOfWrappedSealedType, out var isObjectType, out var symbolNamespace);
 
                 var propertyType = ((IPropertySymbol)propertySymbol).Type.ToDisplayString();
                 propertyName = propertySymbol.Name;

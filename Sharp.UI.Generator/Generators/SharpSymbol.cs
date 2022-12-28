@@ -47,7 +47,6 @@ namespace Sharp.UI.Generator
         // helpers
         public bool IsSharpUIType => sharpAttribute != null;
         public bool IsWrappedType => WrappedType != null;
-        public bool IsUserDefiniedType => IsSharpUIType && !mainSymbol.ContainingNamespace.ToDisplayString().Equals("Sharp.UI");
 
         // not generate list
         List<string> notGenerateList = null;
@@ -63,7 +62,7 @@ namespace Sharp.UI.Generator
         private string typeConformanceName;
         private INamedTypeSymbol extensionType => mainSymbol.IsStatic && IsWrappedType ? WrappedType : mainSymbol;
 
-        public SharpSymbol(INamedTypeSymbol symbol)
+        public SharpSymbol(INamedTypeSymbol symbol, INamedTypeSymbol sharpSymbol = null)
 		{
             mainSymbol = symbol;
 
@@ -73,12 +72,10 @@ namespace Sharp.UI.Generator
 
             WrappedType = GetWrappedType(sharpAttribute);
 
-            nameSpaceString = IsUserDefiniedType ? mainSymbol.ContainingNamespace.ToDisplayString() : "Sharp.UI";
-            typeConformanceName =
-                IsSharpUIType && IsUserDefiniedType &&
-                (!mainSymbol.IsStatic || IsWrappedType && !WrappedType.ToDisplayString().StartsWith("Microsoft.Maui")) ?
-                    extensionType.ToDisplayString() :
-                    $"Sharp.UI.I{GetNormalizedName()}";
+            nameSpaceString = sharpSymbol != null ? sharpSymbol.ContainingNamespace.ToDisplayString() : mainSymbol.ContainingNamespace.ToDisplayString();
+            typeConformanceName = IsWrappedType && WrappedType.ContainingNamespace.ToDisplayString().StartsWith("Microsoft.Maui") ?
+                ($"Sharp.UI.I{GetNormalizedName()}") :
+                (IsWrappedType || sharpSymbol != null ? $"{nameSpaceString}.I{GetNormalizedName()}" : mainSymbol.ToDisplayString());
 
             SetupContainerIfNeeded();
             SetupConstructorsGeneration();
@@ -178,8 +175,8 @@ namespace Sharp.UI.Generator
 
         public string GetNormalizedExtensionName()
         {
-            var tail = IsSharpUIType ? (IsUserDefiniedType ? "GeneratedUserExtension" : "GeneratedSharpObjectExtension") : "GeneratedExtension";
-            return $"{GetNormalizedName(mainSymbol)}{tail}";
+            var tail = IsSharpUIType ? "SharpObject" : "";
+            return $"{GetNormalizedName(mainSymbol)}Generated{tail}Extension";
         }
 
         // ------ helpers ------

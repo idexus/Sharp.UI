@@ -9,7 +9,7 @@ namespace Sharp.UI.Example
 {
     using Sharp.UI;
 
-    public static class ViewAttachedPropertiesGeneratedUserExtension
+    public static class ViewAttachedPropertiesGeneratedSharpObjectExtension
     {
         public static T HasCustomShadow<T>(this T obj,
             bool hasShadow)

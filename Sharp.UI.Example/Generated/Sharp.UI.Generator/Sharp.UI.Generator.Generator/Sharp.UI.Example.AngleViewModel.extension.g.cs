@@ -9,7 +9,7 @@ namespace Sharp.UI.Example
 {
     using Sharp.UI;
 
-    public static class AngleViewModelGeneratedUserExtension
+    public static class AngleViewModelGeneratedSharpObjectExtension
     {
         public static T RawAngle<T>(this T obj,
             double rawAngle)
