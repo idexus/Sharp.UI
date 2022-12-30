@@ -19,26 +19,32 @@ namespace Sharp.UI
         }
         
         public static T FlyoutIcon<T>(this T obj,
-            Microsoft.Maui.Controls.ImageSource flyoutIcon,
-            System.Func<BindableDef<Microsoft.Maui.Controls.ImageSource>, BindableDef<Microsoft.Maui.Controls.ImageSource>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.ImageSource>, ValueBuilder<Microsoft.Maui.Controls.ImageSource>> buildValue)
             where T : Sharp.UI.IBaseShellItem
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);         
-            mauiObject.FlyoutIcon = (Microsoft.Maui.Controls.ImageSource)flyoutIcon;
-            var def = definition(new BindableDef<Microsoft.Maui.Controls.ImageSource>(mauiObject, Microsoft.Maui.Controls.BaseShellItem.FlyoutIconProperty));
-            if (def.ValueIsSet()) mauiObject.FlyoutIcon = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
+            if (builder.ValueIsSet()) mauiObject.FlyoutIcon = builder.GetValue();
             return obj;
         }
         
         public static T FlyoutIcon<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Controls.ImageSource>, BindableDef<Microsoft.Maui.Controls.ImageSource>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.ImageSource>, LazyValueBuilder<Microsoft.Maui.Controls.ImageSource>> buildValue)
             where T : Sharp.UI.IBaseShellItem
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Controls.ImageSource>(mauiObject, Microsoft.Maui.Controls.BaseShellItem.FlyoutIconProperty));
-            if (def.ValueIsSet()) mauiObject.FlyoutIcon = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.ImageSource>());
+            if (builder.ValueIsSet()) mauiObject.FlyoutIcon = builder.GetValue();
+            return obj;
+        }
+        
+        public static T FlyoutIcon<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.ImageSource>, BindingBuilder<Microsoft.Maui.Controls.ImageSource>> buildBinding)
+            where T : Sharp.UI.IBaseShellItem
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ImageSource>(mauiObject, Microsoft.Maui.Controls.BaseShellItem.FlyoutIconProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -52,26 +58,32 @@ namespace Sharp.UI
         }
         
         public static T Icon<T>(this T obj,
-            Microsoft.Maui.Controls.ImageSource icon,
-            System.Func<BindableDef<Microsoft.Maui.Controls.ImageSource>, BindableDef<Microsoft.Maui.Controls.ImageSource>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.ImageSource>, ValueBuilder<Microsoft.Maui.Controls.ImageSource>> buildValue)
             where T : Sharp.UI.IBaseShellItem
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);         
-            mauiObject.Icon = (Microsoft.Maui.Controls.ImageSource)icon;
-            var def = definition(new BindableDef<Microsoft.Maui.Controls.ImageSource>(mauiObject, Microsoft.Maui.Controls.BaseShellItem.IconProperty));
-            if (def.ValueIsSet()) mauiObject.Icon = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
+            if (builder.ValueIsSet()) mauiObject.Icon = builder.GetValue();
             return obj;
         }
         
         public static T Icon<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Controls.ImageSource>, BindableDef<Microsoft.Maui.Controls.ImageSource>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.ImageSource>, LazyValueBuilder<Microsoft.Maui.Controls.ImageSource>> buildValue)
             where T : Sharp.UI.IBaseShellItem
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Controls.ImageSource>(mauiObject, Microsoft.Maui.Controls.BaseShellItem.IconProperty));
-            if (def.ValueIsSet()) mauiObject.Icon = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.ImageSource>());
+            if (builder.ValueIsSet()) mauiObject.Icon = builder.GetValue();
+            return obj;
+        }
+        
+        public static T Icon<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.ImageSource>, BindingBuilder<Microsoft.Maui.Controls.ImageSource>> buildBinding)
+            where T : Sharp.UI.IBaseShellItem
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ImageSource>(mauiObject, Microsoft.Maui.Controls.BaseShellItem.IconProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -85,26 +97,32 @@ namespace Sharp.UI
         }
         
         public static T IsEnabled<T>(this T obj,
-            bool isEnabled,
-            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Sharp.UI.IBaseShellItem
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);         
-            mauiObject.IsEnabled = (bool)isEnabled;
-            var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.BaseShellItem.IsEnabledProperty));
-            if (def.ValueIsSet()) mauiObject.IsEnabled = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) mauiObject.IsEnabled = builder.GetValue();
             return obj;
         }
         
         public static T IsEnabled<T>(this T obj,
-            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
             where T : Sharp.UI.IBaseShellItem
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);
-            var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.BaseShellItem.IsEnabledProperty));
-            if (def.ValueIsSet()) mauiObject.IsEnabled = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<bool>());
+            if (builder.ValueIsSet()) mauiObject.IsEnabled = builder.GetValue();
+            return obj;
+        }
+        
+        public static T IsEnabled<T>(this T obj,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+            where T : Sharp.UI.IBaseShellItem
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);
+            var builder = buildBinding(new BindingBuilder<bool>(mauiObject, Microsoft.Maui.Controls.BaseShellItem.IsEnabledProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -118,24 +136,22 @@ namespace Sharp.UI
         }
         
         public static T Route<T>(this T obj,
-            string route,
-            System.Func<ValueDef<string>, ValueDef<string>> definition)
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
             where T : Sharp.UI.IBaseShellItem
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);
-            mauiObject.Route = (string)route;
-            var def = definition(new ValueDef<string>());
-            if (def.ValueIsSet()) mauiObject.Route = def.GetValue();
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) mauiObject.Route = builder.GetValue();
             return obj;
         }
         
         public static T Route<T>(this T obj,
-            System.Func<ValueDef<string>, ValueDef<string>> definition)
+            System.Func<LazyValueBuilder<string>, LazyValueBuilder<string>> buildValue)
             where T : Sharp.UI.IBaseShellItem
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);
-            var def = definition(new ValueDef<string>());
-            if (def.ValueIsSet()) mauiObject.Route = def.GetValue();
+            var builder = buildValue(new LazyValueBuilder<string>());
+            if (builder.ValueIsSet()) mauiObject.Route = builder.GetValue();
             return obj;
         }
         
@@ -149,26 +165,32 @@ namespace Sharp.UI
         }
         
         public static T Title<T>(this T obj,
-            string title,
-            System.Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
             where T : Sharp.UI.IBaseShellItem
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);         
-            mauiObject.Title = (string)title;
-            var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.BaseShellItem.TitleProperty));
-            if (def.ValueIsSet()) mauiObject.Title = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) mauiObject.Title = builder.GetValue();
             return obj;
         }
         
         public static T Title<T>(this T obj,
-            System.Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<LazyValueBuilder<string>, LazyValueBuilder<string>> buildValue)
             where T : Sharp.UI.IBaseShellItem
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);
-            var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.BaseShellItem.TitleProperty));
-            if (def.ValueIsSet()) mauiObject.Title = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<string>());
+            if (builder.ValueIsSet()) mauiObject.Title = builder.GetValue();
+            return obj;
+        }
+        
+        public static T Title<T>(this T obj,
+            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+            where T : Sharp.UI.IBaseShellItem
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);
+            var builder = buildBinding(new BindingBuilder<string>(mauiObject, Microsoft.Maui.Controls.BaseShellItem.TitleProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -182,26 +204,32 @@ namespace Sharp.UI
         }
         
         public static T IsVisible<T>(this T obj,
-            bool isVisible,
-            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Sharp.UI.IBaseShellItem
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);         
-            mauiObject.IsVisible = (bool)isVisible;
-            var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.BaseShellItem.IsVisibleProperty));
-            if (def.ValueIsSet()) mauiObject.IsVisible = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) mauiObject.IsVisible = builder.GetValue();
             return obj;
         }
         
         public static T IsVisible<T>(this T obj,
-            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
             where T : Sharp.UI.IBaseShellItem
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);
-            var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.BaseShellItem.IsVisibleProperty));
-            if (def.ValueIsSet()) mauiObject.IsVisible = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<bool>());
+            if (builder.ValueIsSet()) mauiObject.IsVisible = builder.GetValue();
+            return obj;
+        }
+        
+        public static T IsVisible<T>(this T obj,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+            where T : Sharp.UI.IBaseShellItem
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);
+            var builder = buildBinding(new BindingBuilder<bool>(mauiObject, Microsoft.Maui.Controls.BaseShellItem.IsVisibleProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -215,24 +243,22 @@ namespace Sharp.UI
         }
         
         public static T FlyoutItemIsVisible<T>(this T obj,
-            bool flyoutItemIsVisible,
-            System.Func<ValueDef<bool>, ValueDef<bool>> definition)
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Sharp.UI.IBaseShellItem
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);
-            mauiObject.FlyoutItemIsVisible = (bool)flyoutItemIsVisible;
-            var def = definition(new ValueDef<bool>());
-            if (def.ValueIsSet()) mauiObject.FlyoutItemIsVisible = def.GetValue();
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) mauiObject.FlyoutItemIsVisible = builder.GetValue();
             return obj;
         }
         
         public static T FlyoutItemIsVisible<T>(this T obj,
-            System.Func<ValueDef<bool>, ValueDef<bool>> definition)
+            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
             where T : Sharp.UI.IBaseShellItem
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);
-            var def = definition(new ValueDef<bool>());
-            if (def.ValueIsSet()) mauiObject.FlyoutItemIsVisible = def.GetValue();
+            var builder = buildValue(new LazyValueBuilder<bool>());
+            if (builder.ValueIsSet()) mauiObject.FlyoutItemIsVisible = builder.GetValue();
             return obj;
         }
         

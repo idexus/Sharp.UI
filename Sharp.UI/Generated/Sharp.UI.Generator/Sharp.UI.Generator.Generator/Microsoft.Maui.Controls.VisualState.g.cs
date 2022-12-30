@@ -19,24 +19,22 @@ namespace Sharp.UI
         }
         
         public static T Name<T>(this T obj,
-            string name,
-            System.Func<ValueDef<string>, ValueDef<string>> definition)
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
             where T : Sharp.UI.IVisualState
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualState>(obj);
-            mauiObject.Name = (string)name;
-            var def = definition(new ValueDef<string>());
-            if (def.ValueIsSet()) mauiObject.Name = def.GetValue();
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) mauiObject.Name = builder.GetValue();
             return obj;
         }
         
         public static T Name<T>(this T obj,
-            System.Func<ValueDef<string>, ValueDef<string>> definition)
+            System.Func<LazyValueBuilder<string>, LazyValueBuilder<string>> buildValue)
             where T : Sharp.UI.IVisualState
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualState>(obj);
-            var def = definition(new ValueDef<string>());
-            if (def.ValueIsSet()) mauiObject.Name = def.GetValue();
+            var builder = buildValue(new LazyValueBuilder<string>());
+            if (builder.ValueIsSet()) mauiObject.Name = builder.GetValue();
             return obj;
         }
         
@@ -67,14 +65,14 @@ namespace Sharp.UI
         }
 
         public static T Setters<T>(this T obj,
-            System.Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Setter>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Setter>>> definition)
+            System.Func<LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.Setter>>, LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.Setter>>> buildValue)
             where T : Sharp.UI.IVisualState
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualState>(obj);
-            var def = definition(new Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Setter>>());
-            if (def.ValueIsSet())
+            var builder = buildValue(new LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.Setter>>());
+            if (builder.ValueIsSet())
             {
-                var items = def.GetValue();
+                var items = builder.GetValue();
                 foreach (var item in items) 
                 {
                     var mauiItem = MauiWrapper.Value<Microsoft.Maui.Controls.Setter>(item);
@@ -111,14 +109,14 @@ namespace Sharp.UI
         }
 
         public static T StateTriggers<T>(this T obj,
-            System.Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.StateTriggerBase>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.StateTriggerBase>>> definition)
+            System.Func<LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.StateTriggerBase>>, LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.StateTriggerBase>>> buildValue)
             where T : Sharp.UI.IVisualState
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualState>(obj);
-            var def = definition(new Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.StateTriggerBase>>());
-            if (def.ValueIsSet())
+            var builder = buildValue(new LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.StateTriggerBase>>());
+            if (builder.ValueIsSet())
             {
-                var items = def.GetValue();
+                var items = builder.GetValue();
                 foreach (var item in items) 
                 {
                     var mauiItem = MauiWrapper.Value<Microsoft.Maui.Controls.StateTriggerBase>(item);
@@ -138,24 +136,22 @@ namespace Sharp.UI
         }
         
         public static T TargetType<T>(this T obj,
-            System.Type targetType,
-            System.Func<ValueDef<System.Type>, ValueDef<System.Type>> definition)
+            System.Func<ValueBuilder<System.Type>, ValueBuilder<System.Type>> buildValue)
             where T : Sharp.UI.IVisualState
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualState>(obj);
-            mauiObject.TargetType = (System.Type)targetType;
-            var def = definition(new ValueDef<System.Type>());
-            if (def.ValueIsSet()) mauiObject.TargetType = def.GetValue();
+            var builder = buildValue(new ValueBuilder<System.Type>());
+            if (builder.ValueIsSet()) mauiObject.TargetType = builder.GetValue();
             return obj;
         }
         
         public static T TargetType<T>(this T obj,
-            System.Func<ValueDef<System.Type>, ValueDef<System.Type>> definition)
+            System.Func<LazyValueBuilder<System.Type>, LazyValueBuilder<System.Type>> buildValue)
             where T : Sharp.UI.IVisualState
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualState>(obj);
-            var def = definition(new ValueDef<System.Type>());
-            if (def.ValueIsSet()) mauiObject.TargetType = def.GetValue();
+            var builder = buildValue(new LazyValueBuilder<System.Type>());
+            if (builder.ValueIsSet()) mauiObject.TargetType = builder.GetValue();
             return obj;
         }
         

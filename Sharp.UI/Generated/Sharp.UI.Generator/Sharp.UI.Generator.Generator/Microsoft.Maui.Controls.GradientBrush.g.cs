@@ -19,26 +19,32 @@ namespace Sharp.UI
         }
         
         public static T GradientStops<T>(this T obj,
-            Microsoft.Maui.Controls.GradientStopCollection gradientStops,
-            System.Func<BindableDef<Microsoft.Maui.Controls.GradientStopCollection>, BindableDef<Microsoft.Maui.Controls.GradientStopCollection>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.GradientStopCollection>, ValueBuilder<Microsoft.Maui.Controls.GradientStopCollection>> buildValue)
             where T : Sharp.UI.IGradientBrush
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GradientBrush>(obj);         
-            mauiObject.GradientStops = (Microsoft.Maui.Controls.GradientStopCollection)gradientStops;
-            var def = definition(new BindableDef<Microsoft.Maui.Controls.GradientStopCollection>(mauiObject, Microsoft.Maui.Controls.GradientBrush.GradientStopsProperty));
-            if (def.ValueIsSet()) mauiObject.GradientStops = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GradientBrush>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.GradientStopCollection>());
+            if (builder.ValueIsSet()) mauiObject.GradientStops = builder.GetValue();
             return obj;
         }
         
         public static T GradientStops<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Controls.GradientStopCollection>, BindableDef<Microsoft.Maui.Controls.GradientStopCollection>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.GradientStopCollection>, LazyValueBuilder<Microsoft.Maui.Controls.GradientStopCollection>> buildValue)
             where T : Sharp.UI.IGradientBrush
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GradientBrush>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Controls.GradientStopCollection>(mauiObject, Microsoft.Maui.Controls.GradientBrush.GradientStopsProperty));
-            if (def.ValueIsSet()) mauiObject.GradientStops = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.GradientStopCollection>());
+            if (builder.ValueIsSet()) mauiObject.GradientStops = builder.GetValue();
+            return obj;
+        }
+        
+        public static T GradientStops<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.GradientStopCollection>, BindingBuilder<Microsoft.Maui.Controls.GradientStopCollection>> buildBinding)
+            where T : Sharp.UI.IGradientBrush
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GradientBrush>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.GradientStopCollection>(mauiObject, Microsoft.Maui.Controls.GradientBrush.GradientStopsProperty));
+            builder.BindProperty();
             return obj;
         }
         

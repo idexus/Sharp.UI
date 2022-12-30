@@ -19,26 +19,32 @@ namespace Sharp.UI
         }
         
         public static T IsActive<T>(this T obj,
-            bool isActive,
-            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Sharp.UI.IStateTrigger
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StateTrigger>(obj);         
-            mauiObject.IsActive = (bool)isActive;
-            var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.StateTrigger.IsActiveProperty));
-            if (def.ValueIsSet()) mauiObject.IsActive = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StateTrigger>(obj);
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) mauiObject.IsActive = builder.GetValue();
             return obj;
         }
         
         public static T IsActive<T>(this T obj,
-            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
             where T : Sharp.UI.IStateTrigger
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StateTrigger>(obj);
-            var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.StateTrigger.IsActiveProperty));
-            if (def.ValueIsSet()) mauiObject.IsActive = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<bool>());
+            if (builder.ValueIsSet()) mauiObject.IsActive = builder.GetValue();
+            return obj;
+        }
+        
+        public static T IsActive<T>(this T obj,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+            where T : Sharp.UI.IStateTrigger
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StateTrigger>(obj);
+            var builder = buildBinding(new BindingBuilder<bool>(mauiObject, Microsoft.Maui.Controls.StateTrigger.IsActiveProperty));
+            builder.BindProperty();
             return obj;
         }
         

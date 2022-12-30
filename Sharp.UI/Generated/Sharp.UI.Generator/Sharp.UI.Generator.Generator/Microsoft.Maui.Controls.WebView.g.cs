@@ -19,26 +19,32 @@ namespace Sharp.UI
         }
         
         public static T Cookies<T>(this T obj,
-            System.Net.CookieContainer cookies,
-            System.Func<BindableDef<System.Net.CookieContainer>, BindableDef<System.Net.CookieContainer>> definition)
+            System.Func<ValueBuilder<System.Net.CookieContainer>, ValueBuilder<System.Net.CookieContainer>> buildValue)
             where T : Sharp.UI.IWebView
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.WebView>(obj);         
-            mauiObject.Cookies = (System.Net.CookieContainer)cookies;
-            var def = definition(new BindableDef<System.Net.CookieContainer>(mauiObject, Microsoft.Maui.Controls.WebView.CookiesProperty));
-            if (def.ValueIsSet()) mauiObject.Cookies = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.WebView>(obj);
+            var builder = buildValue(new ValueBuilder<System.Net.CookieContainer>());
+            if (builder.ValueIsSet()) mauiObject.Cookies = builder.GetValue();
             return obj;
         }
         
         public static T Cookies<T>(this T obj,
-            System.Func<BindableDef<System.Net.CookieContainer>, BindableDef<System.Net.CookieContainer>> definition)
+            System.Func<LazyValueBuilder<System.Net.CookieContainer>, LazyValueBuilder<System.Net.CookieContainer>> buildValue)
             where T : Sharp.UI.IWebView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.WebView>(obj);
-            var def = definition(new BindableDef<System.Net.CookieContainer>(mauiObject, Microsoft.Maui.Controls.WebView.CookiesProperty));
-            if (def.ValueIsSet()) mauiObject.Cookies = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<System.Net.CookieContainer>());
+            if (builder.ValueIsSet()) mauiObject.Cookies = builder.GetValue();
+            return obj;
+        }
+        
+        public static T Cookies<T>(this T obj,
+            System.Func<BindingBuilder<System.Net.CookieContainer>, BindingBuilder<System.Net.CookieContainer>> buildBinding)
+            where T : Sharp.UI.IWebView
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.WebView>(obj);
+            var builder = buildBinding(new BindingBuilder<System.Net.CookieContainer>(mauiObject, Microsoft.Maui.Controls.WebView.CookiesProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -52,26 +58,32 @@ namespace Sharp.UI
         }
         
         public static T Source<T>(this T obj,
-            Microsoft.Maui.Controls.WebViewSource source,
-            System.Func<BindableDef<Microsoft.Maui.Controls.WebViewSource>, BindableDef<Microsoft.Maui.Controls.WebViewSource>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.WebViewSource>, ValueBuilder<Microsoft.Maui.Controls.WebViewSource>> buildValue)
             where T : Sharp.UI.IWebView
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.WebView>(obj);         
-            mauiObject.Source = (Microsoft.Maui.Controls.WebViewSource)source;
-            var def = definition(new BindableDef<Microsoft.Maui.Controls.WebViewSource>(mauiObject, Microsoft.Maui.Controls.WebView.SourceProperty));
-            if (def.ValueIsSet()) mauiObject.Source = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.WebView>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.WebViewSource>());
+            if (builder.ValueIsSet()) mauiObject.Source = builder.GetValue();
             return obj;
         }
         
         public static T Source<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Controls.WebViewSource>, BindableDef<Microsoft.Maui.Controls.WebViewSource>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.WebViewSource>, LazyValueBuilder<Microsoft.Maui.Controls.WebViewSource>> buildValue)
             where T : Sharp.UI.IWebView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.WebView>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Controls.WebViewSource>(mauiObject, Microsoft.Maui.Controls.WebView.SourceProperty));
-            if (def.ValueIsSet()) mauiObject.Source = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.WebViewSource>());
+            if (builder.ValueIsSet()) mauiObject.Source = builder.GetValue();
+            return obj;
+        }
+        
+        public static T Source<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.WebViewSource>, BindingBuilder<Microsoft.Maui.Controls.WebViewSource>> buildBinding)
+            where T : Sharp.UI.IWebView
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.WebView>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.WebViewSource>(mauiObject, Microsoft.Maui.Controls.WebView.SourceProperty));
+            builder.BindProperty();
             return obj;
         }
         

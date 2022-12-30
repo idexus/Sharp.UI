@@ -19,26 +19,32 @@ namespace Sharp.UI
         }
         
         public static T Spacing<T>(this T obj,
-            double spacing,
-            System.Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Sharp.UI.IStackBase
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StackBase>(obj);         
-            mauiObject.Spacing = (double)spacing;
-            var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.StackBase.SpacingProperty));
-            if (def.ValueIsSet()) mauiObject.Spacing = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StackBase>(obj);
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) mauiObject.Spacing = builder.GetValue();
             return obj;
         }
         
         public static T Spacing<T>(this T obj,
-            System.Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
             where T : Sharp.UI.IStackBase
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StackBase>(obj);
-            var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.StackBase.SpacingProperty));
-            if (def.ValueIsSet()) mauiObject.Spacing = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<double>());
+            if (builder.ValueIsSet()) mauiObject.Spacing = builder.GetValue();
+            return obj;
+        }
+        
+        public static T Spacing<T>(this T obj,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+            where T : Sharp.UI.IStackBase
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StackBase>(obj);
+            var builder = buildBinding(new BindingBuilder<double>(mauiObject, Microsoft.Maui.Controls.StackBase.SpacingProperty));
+            builder.BindProperty();
             return obj;
         }
         

@@ -19,26 +19,32 @@ namespace Sharp.UI
         }
         
         public static T RadiusX<T>(this T obj,
-            double radiusX,
-            System.Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Sharp.UI.IRectangle
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Rectangle>(obj);         
-            mauiObject.RadiusX = (double)radiusX;
-            var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Shapes.Rectangle.RadiusXProperty));
-            if (def.ValueIsSet()) mauiObject.RadiusX = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Rectangle>(obj);
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) mauiObject.RadiusX = builder.GetValue();
             return obj;
         }
         
         public static T RadiusX<T>(this T obj,
-            System.Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
             where T : Sharp.UI.IRectangle
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Rectangle>(obj);
-            var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Shapes.Rectangle.RadiusXProperty));
-            if (def.ValueIsSet()) mauiObject.RadiusX = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<double>());
+            if (builder.ValueIsSet()) mauiObject.RadiusX = builder.GetValue();
+            return obj;
+        }
+        
+        public static T RadiusX<T>(this T obj,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+            where T : Sharp.UI.IRectangle
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Rectangle>(obj);
+            var builder = buildBinding(new BindingBuilder<double>(mauiObject, Microsoft.Maui.Controls.Shapes.Rectangle.RadiusXProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -52,26 +58,32 @@ namespace Sharp.UI
         }
         
         public static T RadiusY<T>(this T obj,
-            double radiusY,
-            System.Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Sharp.UI.IRectangle
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Rectangle>(obj);         
-            mauiObject.RadiusY = (double)radiusY;
-            var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Shapes.Rectangle.RadiusYProperty));
-            if (def.ValueIsSet()) mauiObject.RadiusY = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Rectangle>(obj);
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) mauiObject.RadiusY = builder.GetValue();
             return obj;
         }
         
         public static T RadiusY<T>(this T obj,
-            System.Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
             where T : Sharp.UI.IRectangle
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Rectangle>(obj);
-            var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Shapes.Rectangle.RadiusYProperty));
-            if (def.ValueIsSet()) mauiObject.RadiusY = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<double>());
+            if (builder.ValueIsSet()) mauiObject.RadiusY = builder.GetValue();
+            return obj;
+        }
+        
+        public static T RadiusY<T>(this T obj,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+            where T : Sharp.UI.IRectangle
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Rectangle>(obj);
+            var builder = buildBinding(new BindingBuilder<double>(mauiObject, Microsoft.Maui.Controls.Shapes.Rectangle.RadiusYProperty));
+            builder.BindProperty();
             return obj;
         }
         

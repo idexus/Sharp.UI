@@ -19,26 +19,32 @@ namespace Sharp.UI
         }
         
         public static T Point<T>(this T obj,
-            Microsoft.Maui.Graphics.Point point,
-            System.Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Point>, ValueBuilder<Microsoft.Maui.Graphics.Point>> buildValue)
             where T : Sharp.UI.ILineSegment
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.LineSegment>(obj);         
-            mauiObject.Point = (Microsoft.Maui.Graphics.Point)point;
-            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Point>(mauiObject, Microsoft.Maui.Controls.Shapes.LineSegment.PointProperty));
-            if (def.ValueIsSet()) mauiObject.Point = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.LineSegment>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Point>());
+            if (builder.ValueIsSet()) mauiObject.Point = builder.GetValue();
             return obj;
         }
         
         public static T Point<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Point>, LazyValueBuilder<Microsoft.Maui.Graphics.Point>> buildValue)
             where T : Sharp.UI.ILineSegment
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.LineSegment>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Point>(mauiObject, Microsoft.Maui.Controls.Shapes.LineSegment.PointProperty));
-            if (def.ValueIsSet()) mauiObject.Point = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Point>());
+            if (builder.ValueIsSet()) mauiObject.Point = builder.GetValue();
+            return obj;
+        }
+        
+        public static T Point<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Point>, BindingBuilder<Microsoft.Maui.Graphics.Point>> buildBinding)
+            where T : Sharp.UI.ILineSegment
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.LineSegment>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Point>(mauiObject, Microsoft.Maui.Controls.Shapes.LineSegment.PointProperty));
+            builder.BindProperty();
             return obj;
         }
         

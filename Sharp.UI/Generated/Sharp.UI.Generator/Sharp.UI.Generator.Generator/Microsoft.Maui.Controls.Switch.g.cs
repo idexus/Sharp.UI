@@ -19,26 +19,32 @@ namespace Sharp.UI
         }
         
         public static T OnColor<T>(this T obj,
-            Microsoft.Maui.Graphics.Color onColor,
-            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : Sharp.UI.ISwitch
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Switch>(obj);         
-            mauiObject.OnColor = (Microsoft.Maui.Graphics.Color)onColor;
-            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.Switch.OnColorProperty));
-            if (def.ValueIsSet()) mauiObject.OnColor = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Switch>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) mauiObject.OnColor = builder.GetValue();
             return obj;
         }
         
         public static T OnColor<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Color>, LazyValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : Sharp.UI.ISwitch
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Switch>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.Switch.OnColorProperty));
-            if (def.ValueIsSet()) mauiObject.OnColor = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) mauiObject.OnColor = builder.GetValue();
+            return obj;
+        }
+        
+        public static T OnColor<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+            where T : Sharp.UI.ISwitch
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Switch>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.Switch.OnColorProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -52,26 +58,32 @@ namespace Sharp.UI
         }
         
         public static T ThumbColor<T>(this T obj,
-            Microsoft.Maui.Graphics.Color thumbColor,
-            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : Sharp.UI.ISwitch
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Switch>(obj);         
-            mauiObject.ThumbColor = (Microsoft.Maui.Graphics.Color)thumbColor;
-            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.Switch.ThumbColorProperty));
-            if (def.ValueIsSet()) mauiObject.ThumbColor = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Switch>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) mauiObject.ThumbColor = builder.GetValue();
             return obj;
         }
         
         public static T ThumbColor<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Color>, LazyValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : Sharp.UI.ISwitch
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Switch>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.Switch.ThumbColorProperty));
-            if (def.ValueIsSet()) mauiObject.ThumbColor = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) mauiObject.ThumbColor = builder.GetValue();
+            return obj;
+        }
+        
+        public static T ThumbColor<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+            where T : Sharp.UI.ISwitch
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Switch>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.Switch.ThumbColorProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -85,26 +97,32 @@ namespace Sharp.UI
         }
         
         public static T IsToggled<T>(this T obj,
-            bool isToggled,
-            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Sharp.UI.ISwitch
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Switch>(obj);         
-            mauiObject.IsToggled = (bool)isToggled;
-            var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.Switch.IsToggledProperty));
-            if (def.ValueIsSet()) mauiObject.IsToggled = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Switch>(obj);
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) mauiObject.IsToggled = builder.GetValue();
             return obj;
         }
         
         public static T IsToggled<T>(this T obj,
-            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
             where T : Sharp.UI.ISwitch
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Switch>(obj);
-            var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.Switch.IsToggledProperty));
-            if (def.ValueIsSet()) mauiObject.IsToggled = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<bool>());
+            if (builder.ValueIsSet()) mauiObject.IsToggled = builder.GetValue();
+            return obj;
+        }
+        
+        public static T IsToggled<T>(this T obj,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+            where T : Sharp.UI.ISwitch
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Switch>(obj);
+            var builder = buildBinding(new BindingBuilder<bool>(mauiObject, Microsoft.Maui.Controls.Switch.IsToggledProperty));
+            builder.BindProperty();
             return obj;
         }
         

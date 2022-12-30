@@ -19,26 +19,32 @@ namespace Sharp.UI
         }
         
         public static T HasShadow<T>(this T obj,
-            bool hasShadow,
-            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Sharp.UI.IFrame
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Frame>(obj);         
-            mauiObject.HasShadow = (bool)hasShadow;
-            var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.Frame.HasShadowProperty));
-            if (def.ValueIsSet()) mauiObject.HasShadow = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Frame>(obj);
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) mauiObject.HasShadow = builder.GetValue();
             return obj;
         }
         
         public static T HasShadow<T>(this T obj,
-            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
             where T : Sharp.UI.IFrame
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Frame>(obj);
-            var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.Frame.HasShadowProperty));
-            if (def.ValueIsSet()) mauiObject.HasShadow = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<bool>());
+            if (builder.ValueIsSet()) mauiObject.HasShadow = builder.GetValue();
+            return obj;
+        }
+        
+        public static T HasShadow<T>(this T obj,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+            where T : Sharp.UI.IFrame
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Frame>(obj);
+            var builder = buildBinding(new BindingBuilder<bool>(mauiObject, Microsoft.Maui.Controls.Frame.HasShadowProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -52,26 +58,32 @@ namespace Sharp.UI
         }
         
         public static T BorderColor<T>(this T obj,
-            Microsoft.Maui.Graphics.Color borderColor,
-            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : Sharp.UI.IFrame
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Frame>(obj);         
-            mauiObject.BorderColor = (Microsoft.Maui.Graphics.Color)borderColor;
-            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.Frame.BorderColorProperty));
-            if (def.ValueIsSet()) mauiObject.BorderColor = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Frame>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) mauiObject.BorderColor = builder.GetValue();
             return obj;
         }
         
         public static T BorderColor<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Color>, LazyValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : Sharp.UI.IFrame
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Frame>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.Frame.BorderColorProperty));
-            if (def.ValueIsSet()) mauiObject.BorderColor = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) mauiObject.BorderColor = builder.GetValue();
+            return obj;
+        }
+        
+        public static T BorderColor<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+            where T : Sharp.UI.IFrame
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Frame>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.Frame.BorderColorProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -85,26 +97,32 @@ namespace Sharp.UI
         }
         
         public static T CornerRadius<T>(this T obj,
-            float cornerRadius,
-            System.Func<BindableDef<float>, BindableDef<float>> definition)
+            System.Func<ValueBuilder<float>, ValueBuilder<float>> buildValue)
             where T : Sharp.UI.IFrame
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Frame>(obj);         
-            mauiObject.CornerRadius = (float)cornerRadius;
-            var def = definition(new BindableDef<float>(mauiObject, Microsoft.Maui.Controls.Frame.CornerRadiusProperty));
-            if (def.ValueIsSet()) mauiObject.CornerRadius = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Frame>(obj);
+            var builder = buildValue(new ValueBuilder<float>());
+            if (builder.ValueIsSet()) mauiObject.CornerRadius = builder.GetValue();
             return obj;
         }
         
         public static T CornerRadius<T>(this T obj,
-            System.Func<BindableDef<float>, BindableDef<float>> definition)
+            System.Func<LazyValueBuilder<float>, LazyValueBuilder<float>> buildValue)
             where T : Sharp.UI.IFrame
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Frame>(obj);
-            var def = definition(new BindableDef<float>(mauiObject, Microsoft.Maui.Controls.Frame.CornerRadiusProperty));
-            if (def.ValueIsSet()) mauiObject.CornerRadius = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<float>());
+            if (builder.ValueIsSet()) mauiObject.CornerRadius = builder.GetValue();
+            return obj;
+        }
+        
+        public static T CornerRadius<T>(this T obj,
+            System.Func<BindingBuilder<float>, BindingBuilder<float>> buildBinding)
+            where T : Sharp.UI.IFrame
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Frame>(obj);
+            var builder = buildBinding(new BindingBuilder<float>(mauiObject, Microsoft.Maui.Controls.Frame.CornerRadiusProperty));
+            builder.BindProperty();
             return obj;
         }
         

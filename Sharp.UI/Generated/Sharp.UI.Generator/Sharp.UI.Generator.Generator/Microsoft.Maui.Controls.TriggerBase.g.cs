@@ -36,14 +36,14 @@ namespace Sharp.UI
         }
 
         public static T EnterActions<T>(this T obj,
-            System.Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerAction>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerAction>>> definition)
+            System.Func<LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerAction>>, LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerAction>>> buildValue)
             where T : Sharp.UI.ITriggerBase
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TriggerBase>(obj);
-            var def = definition(new Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerAction>>());
-            if (def.ValueIsSet())
+            var builder = buildValue(new LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerAction>>());
+            if (builder.ValueIsSet())
             {
-                var items = def.GetValue();
+                var items = builder.GetValue();
                 foreach (var item in items) 
                 {
                     var mauiItem = MauiWrapper.Value<Microsoft.Maui.Controls.TriggerAction>(item);
@@ -80,14 +80,14 @@ namespace Sharp.UI
         }
 
         public static T ExitActions<T>(this T obj,
-            System.Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerAction>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerAction>>> definition)
+            System.Func<LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerAction>>, LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerAction>>> buildValue)
             where T : Sharp.UI.ITriggerBase
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TriggerBase>(obj);
-            var def = definition(new Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerAction>>());
-            if (def.ValueIsSet())
+            var builder = buildValue(new LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerAction>>());
+            if (builder.ValueIsSet())
             {
-                var items = def.GetValue();
+                var items = builder.GetValue();
                 foreach (var item in items) 
                 {
                     var mauiItem = MauiWrapper.Value<Microsoft.Maui.Controls.TriggerAction>(item);

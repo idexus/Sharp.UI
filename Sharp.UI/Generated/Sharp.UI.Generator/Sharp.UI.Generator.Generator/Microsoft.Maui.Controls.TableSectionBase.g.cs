@@ -19,26 +19,32 @@ namespace Sharp.UI
         }
         
         public static T Title<T>(this T obj,
-            string title,
-            System.Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
             where T : Sharp.UI.ITableSectionBase
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TableSectionBase>(obj);         
-            mauiObject.Title = (string)title;
-            var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.TableSectionBase.TitleProperty));
-            if (def.ValueIsSet()) mauiObject.Title = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TableSectionBase>(obj);
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) mauiObject.Title = builder.GetValue();
             return obj;
         }
         
         public static T Title<T>(this T obj,
-            System.Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<LazyValueBuilder<string>, LazyValueBuilder<string>> buildValue)
             where T : Sharp.UI.ITableSectionBase
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TableSectionBase>(obj);
-            var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.TableSectionBase.TitleProperty));
-            if (def.ValueIsSet()) mauiObject.Title = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<string>());
+            if (builder.ValueIsSet()) mauiObject.Title = builder.GetValue();
+            return obj;
+        }
+        
+        public static T Title<T>(this T obj,
+            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+            where T : Sharp.UI.ITableSectionBase
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TableSectionBase>(obj);
+            var builder = buildBinding(new BindingBuilder<string>(mauiObject, Microsoft.Maui.Controls.TableSectionBase.TitleProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -52,26 +58,32 @@ namespace Sharp.UI
         }
         
         public static T TextColor<T>(this T obj,
-            Microsoft.Maui.Graphics.Color textColor,
-            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : Sharp.UI.ITableSectionBase
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TableSectionBase>(obj);         
-            mauiObject.TextColor = (Microsoft.Maui.Graphics.Color)textColor;
-            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.TableSectionBase.TextColorProperty));
-            if (def.ValueIsSet()) mauiObject.TextColor = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TableSectionBase>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) mauiObject.TextColor = builder.GetValue();
             return obj;
         }
         
         public static T TextColor<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Color>, LazyValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : Sharp.UI.ITableSectionBase
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TableSectionBase>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.TableSectionBase.TextColorProperty));
-            if (def.ValueIsSet()) mauiObject.TextColor = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) mauiObject.TextColor = builder.GetValue();
+            return obj;
+        }
+        
+        public static T TextColor<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+            where T : Sharp.UI.ITableSectionBase
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TableSectionBase>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.TableSectionBase.TextColorProperty));
+            builder.BindProperty();
             return obj;
         }
         

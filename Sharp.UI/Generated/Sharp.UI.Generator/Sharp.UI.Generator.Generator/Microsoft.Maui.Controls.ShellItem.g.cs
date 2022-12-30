@@ -19,26 +19,32 @@ namespace Sharp.UI
         }
         
         public static T CurrentItem<T>(this T obj,
-            Microsoft.Maui.Controls.ShellSection currentItem,
-            System.Func<BindableDef<Microsoft.Maui.Controls.ShellSection>, BindableDef<Microsoft.Maui.Controls.ShellSection>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.ShellSection>, ValueBuilder<Microsoft.Maui.Controls.ShellSection>> buildValue)
             where T : Sharp.UI.IShellItem
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ShellItem>(obj);         
-            mauiObject.CurrentItem = (Microsoft.Maui.Controls.ShellSection)currentItem;
-            var def = definition(new BindableDef<Microsoft.Maui.Controls.ShellSection>(mauiObject, Microsoft.Maui.Controls.ShellItem.CurrentItemProperty));
-            if (def.ValueIsSet()) mauiObject.CurrentItem = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ShellItem>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ShellSection>());
+            if (builder.ValueIsSet()) mauiObject.CurrentItem = builder.GetValue();
             return obj;
         }
         
         public static T CurrentItem<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Controls.ShellSection>, BindableDef<Microsoft.Maui.Controls.ShellSection>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.ShellSection>, LazyValueBuilder<Microsoft.Maui.Controls.ShellSection>> buildValue)
             where T : Sharp.UI.IShellItem
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ShellItem>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Controls.ShellSection>(mauiObject, Microsoft.Maui.Controls.ShellItem.CurrentItemProperty));
-            if (def.ValueIsSet()) mauiObject.CurrentItem = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.ShellSection>());
+            if (builder.ValueIsSet()) mauiObject.CurrentItem = builder.GetValue();
+            return obj;
+        }
+        
+        public static T CurrentItem<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.ShellSection>, BindingBuilder<Microsoft.Maui.Controls.ShellSection>> buildBinding)
+            where T : Sharp.UI.IShellItem
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ShellItem>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ShellSection>(mauiObject, Microsoft.Maui.Controls.ShellItem.CurrentItemProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -69,14 +75,14 @@ namespace Sharp.UI
         }
 
         public static T Items<T>(this T obj,
-            System.Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellSection>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellSection>>> definition)
+            System.Func<LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellSection>>, LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellSection>>> buildValue)
             where T : Sharp.UI.IShellItem
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ShellItem>(obj);
-            var def = definition(new Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellSection>>());
-            if (def.ValueIsSet())
+            var builder = buildValue(new LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellSection>>());
+            if (builder.ValueIsSet())
             {
-                var items = def.GetValue();
+                var items = builder.GetValue();
                 foreach (var item in items) 
                 {
                     var mauiItem = MauiWrapper.Value<Microsoft.Maui.Controls.ShellSection>(item);

@@ -19,26 +19,32 @@ namespace Sharp.UI
         }
         
         public static T X1<T>(this T obj,
-            double x1,
-            System.Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Sharp.UI.ILine
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Line>(obj);         
-            mauiObject.X1 = (double)x1;
-            var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Shapes.Line.X1Property));
-            if (def.ValueIsSet()) mauiObject.X1 = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Line>(obj);
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) mauiObject.X1 = builder.GetValue();
             return obj;
         }
         
         public static T X1<T>(this T obj,
-            System.Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
             where T : Sharp.UI.ILine
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Line>(obj);
-            var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Shapes.Line.X1Property));
-            if (def.ValueIsSet()) mauiObject.X1 = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<double>());
+            if (builder.ValueIsSet()) mauiObject.X1 = builder.GetValue();
+            return obj;
+        }
+        
+        public static T X1<T>(this T obj,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+            where T : Sharp.UI.ILine
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Line>(obj);
+            var builder = buildBinding(new BindingBuilder<double>(mauiObject, Microsoft.Maui.Controls.Shapes.Line.X1Property));
+            builder.BindProperty();
             return obj;
         }
         
@@ -52,26 +58,32 @@ namespace Sharp.UI
         }
         
         public static T Y1<T>(this T obj,
-            double y1,
-            System.Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Sharp.UI.ILine
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Line>(obj);         
-            mauiObject.Y1 = (double)y1;
-            var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Shapes.Line.Y1Property));
-            if (def.ValueIsSet()) mauiObject.Y1 = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Line>(obj);
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) mauiObject.Y1 = builder.GetValue();
             return obj;
         }
         
         public static T Y1<T>(this T obj,
-            System.Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
             where T : Sharp.UI.ILine
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Line>(obj);
-            var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Shapes.Line.Y1Property));
-            if (def.ValueIsSet()) mauiObject.Y1 = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<double>());
+            if (builder.ValueIsSet()) mauiObject.Y1 = builder.GetValue();
+            return obj;
+        }
+        
+        public static T Y1<T>(this T obj,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+            where T : Sharp.UI.ILine
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Line>(obj);
+            var builder = buildBinding(new BindingBuilder<double>(mauiObject, Microsoft.Maui.Controls.Shapes.Line.Y1Property));
+            builder.BindProperty();
             return obj;
         }
         
@@ -85,26 +97,32 @@ namespace Sharp.UI
         }
         
         public static T X2<T>(this T obj,
-            double x2,
-            System.Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Sharp.UI.ILine
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Line>(obj);         
-            mauiObject.X2 = (double)x2;
-            var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Shapes.Line.X2Property));
-            if (def.ValueIsSet()) mauiObject.X2 = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Line>(obj);
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) mauiObject.X2 = builder.GetValue();
             return obj;
         }
         
         public static T X2<T>(this T obj,
-            System.Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
             where T : Sharp.UI.ILine
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Line>(obj);
-            var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Shapes.Line.X2Property));
-            if (def.ValueIsSet()) mauiObject.X2 = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<double>());
+            if (builder.ValueIsSet()) mauiObject.X2 = builder.GetValue();
+            return obj;
+        }
+        
+        public static T X2<T>(this T obj,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+            where T : Sharp.UI.ILine
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Line>(obj);
+            var builder = buildBinding(new BindingBuilder<double>(mauiObject, Microsoft.Maui.Controls.Shapes.Line.X2Property));
+            builder.BindProperty();
             return obj;
         }
         
@@ -118,26 +136,32 @@ namespace Sharp.UI
         }
         
         public static T Y2<T>(this T obj,
-            double y2,
-            System.Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Sharp.UI.ILine
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Line>(obj);         
-            mauiObject.Y2 = (double)y2;
-            var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Shapes.Line.Y2Property));
-            if (def.ValueIsSet()) mauiObject.Y2 = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Line>(obj);
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) mauiObject.Y2 = builder.GetValue();
             return obj;
         }
         
         public static T Y2<T>(this T obj,
-            System.Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
             where T : Sharp.UI.ILine
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Line>(obj);
-            var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Shapes.Line.Y2Property));
-            if (def.ValueIsSet()) mauiObject.Y2 = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<double>());
+            if (builder.ValueIsSet()) mauiObject.Y2 = builder.GetValue();
+            return obj;
+        }
+        
+        public static T Y2<T>(this T obj,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+            where T : Sharp.UI.ILine
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Line>(obj);
+            var builder = buildBinding(new BindingBuilder<double>(mauiObject, Microsoft.Maui.Controls.Shapes.Line.Y2Property));
+            builder.BindProperty();
             return obj;
         }
         

@@ -19,26 +19,32 @@ namespace Sharp.UI
         }
         
         public static T Rect<T>(this T obj,
-            Microsoft.Maui.Graphics.Rect rect,
-            System.Func<BindableDef<Microsoft.Maui.Graphics.Rect>, BindableDef<Microsoft.Maui.Graphics.Rect>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Rect>, ValueBuilder<Microsoft.Maui.Graphics.Rect>> buildValue)
             where T : Sharp.UI.IRectangleGeometry
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.RectangleGeometry>(obj);         
-            mauiObject.Rect = (Microsoft.Maui.Graphics.Rect)rect;
-            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Rect>(mauiObject, Microsoft.Maui.Controls.Shapes.RectangleGeometry.RectProperty));
-            if (def.ValueIsSet()) mauiObject.Rect = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.RectangleGeometry>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Rect>());
+            if (builder.ValueIsSet()) mauiObject.Rect = builder.GetValue();
             return obj;
         }
         
         public static T Rect<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Graphics.Rect>, BindableDef<Microsoft.Maui.Graphics.Rect>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Rect>, LazyValueBuilder<Microsoft.Maui.Graphics.Rect>> buildValue)
             where T : Sharp.UI.IRectangleGeometry
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.RectangleGeometry>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Rect>(mauiObject, Microsoft.Maui.Controls.Shapes.RectangleGeometry.RectProperty));
-            if (def.ValueIsSet()) mauiObject.Rect = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Rect>());
+            if (builder.ValueIsSet()) mauiObject.Rect = builder.GetValue();
+            return obj;
+        }
+        
+        public static T Rect<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Rect>, BindingBuilder<Microsoft.Maui.Graphics.Rect>> buildBinding)
+            where T : Sharp.UI.IRectangleGeometry
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.RectangleGeometry>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Rect>(mauiObject, Microsoft.Maui.Controls.Shapes.RectangleGeometry.RectProperty));
+            builder.BindProperty();
             return obj;
         }
         

@@ -19,26 +19,32 @@ namespace Sharp.UI
         }
         
         public static T Point1<T>(this T obj,
-            Microsoft.Maui.Graphics.Point point1,
-            System.Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Point>, ValueBuilder<Microsoft.Maui.Graphics.Point>> buildValue)
             where T : Sharp.UI.IQuadraticBezierSegment
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment>(obj);         
-            mauiObject.Point1 = (Microsoft.Maui.Graphics.Point)point1;
-            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Point>(mauiObject, Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment.Point1Property));
-            if (def.ValueIsSet()) mauiObject.Point1 = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Point>());
+            if (builder.ValueIsSet()) mauiObject.Point1 = builder.GetValue();
             return obj;
         }
         
         public static T Point1<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Point>, LazyValueBuilder<Microsoft.Maui.Graphics.Point>> buildValue)
             where T : Sharp.UI.IQuadraticBezierSegment
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Point>(mauiObject, Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment.Point1Property));
-            if (def.ValueIsSet()) mauiObject.Point1 = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Point>());
+            if (builder.ValueIsSet()) mauiObject.Point1 = builder.GetValue();
+            return obj;
+        }
+        
+        public static T Point1<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Point>, BindingBuilder<Microsoft.Maui.Graphics.Point>> buildBinding)
+            where T : Sharp.UI.IQuadraticBezierSegment
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Point>(mauiObject, Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment.Point1Property));
+            builder.BindProperty();
             return obj;
         }
         
@@ -52,26 +58,32 @@ namespace Sharp.UI
         }
         
         public static T Point2<T>(this T obj,
-            Microsoft.Maui.Graphics.Point point2,
-            System.Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Point>, ValueBuilder<Microsoft.Maui.Graphics.Point>> buildValue)
             where T : Sharp.UI.IQuadraticBezierSegment
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment>(obj);         
-            mauiObject.Point2 = (Microsoft.Maui.Graphics.Point)point2;
-            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Point>(mauiObject, Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment.Point2Property));
-            if (def.ValueIsSet()) mauiObject.Point2 = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Point>());
+            if (builder.ValueIsSet()) mauiObject.Point2 = builder.GetValue();
             return obj;
         }
         
         public static T Point2<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Point>, LazyValueBuilder<Microsoft.Maui.Graphics.Point>> buildValue)
             where T : Sharp.UI.IQuadraticBezierSegment
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Point>(mauiObject, Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment.Point2Property));
-            if (def.ValueIsSet()) mauiObject.Point2 = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Point>());
+            if (builder.ValueIsSet()) mauiObject.Point2 = builder.GetValue();
+            return obj;
+        }
+        
+        public static T Point2<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Point>, BindingBuilder<Microsoft.Maui.Graphics.Point>> buildBinding)
+            where T : Sharp.UI.IQuadraticBezierSegment
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Point>(mauiObject, Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment.Point2Property));
+            builder.BindProperty();
             return obj;
         }
         

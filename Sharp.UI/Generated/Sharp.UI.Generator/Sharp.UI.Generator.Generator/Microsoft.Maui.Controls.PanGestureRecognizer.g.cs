@@ -19,26 +19,32 @@ namespace Sharp.UI
         }
         
         public static T TouchPoints<T>(this T obj,
-            int touchPoints,
-            System.Func<BindableDef<int>, BindableDef<int>> definition)
+            System.Func<ValueBuilder<int>, ValueBuilder<int>> buildValue)
             where T : Sharp.UI.IPanGestureRecognizer
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.PanGestureRecognizer>(obj);         
-            mauiObject.TouchPoints = (int)touchPoints;
-            var def = definition(new BindableDef<int>(mauiObject, Microsoft.Maui.Controls.PanGestureRecognizer.TouchPointsProperty));
-            if (def.ValueIsSet()) mauiObject.TouchPoints = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.PanGestureRecognizer>(obj);
+            var builder = buildValue(new ValueBuilder<int>());
+            if (builder.ValueIsSet()) mauiObject.TouchPoints = builder.GetValue();
             return obj;
         }
         
         public static T TouchPoints<T>(this T obj,
-            System.Func<BindableDef<int>, BindableDef<int>> definition)
+            System.Func<LazyValueBuilder<int>, LazyValueBuilder<int>> buildValue)
             where T : Sharp.UI.IPanGestureRecognizer
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.PanGestureRecognizer>(obj);
-            var def = definition(new BindableDef<int>(mauiObject, Microsoft.Maui.Controls.PanGestureRecognizer.TouchPointsProperty));
-            if (def.ValueIsSet()) mauiObject.TouchPoints = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<int>());
+            if (builder.ValueIsSet()) mauiObject.TouchPoints = builder.GetValue();
+            return obj;
+        }
+        
+        public static T TouchPoints<T>(this T obj,
+            System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
+            where T : Sharp.UI.IPanGestureRecognizer
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.PanGestureRecognizer>(obj);
+            var builder = buildBinding(new BindingBuilder<int>(mauiObject, Microsoft.Maui.Controls.PanGestureRecognizer.TouchPointsProperty));
+            builder.BindProperty();
             return obj;
         }
         

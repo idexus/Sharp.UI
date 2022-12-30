@@ -19,26 +19,32 @@ namespace Sharp.UI
         }
         
         public static T OnColor<T>(this T obj,
-            Microsoft.Maui.Graphics.Color onColor,
-            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : Sharp.UI.ISwitchCell
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwitchCell>(obj);         
-            mauiObject.OnColor = (Microsoft.Maui.Graphics.Color)onColor;
-            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.SwitchCell.OnColorProperty));
-            if (def.ValueIsSet()) mauiObject.OnColor = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwitchCell>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) mauiObject.OnColor = builder.GetValue();
             return obj;
         }
         
         public static T OnColor<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Color>, LazyValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : Sharp.UI.ISwitchCell
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwitchCell>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.SwitchCell.OnColorProperty));
-            if (def.ValueIsSet()) mauiObject.OnColor = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) mauiObject.OnColor = builder.GetValue();
+            return obj;
+        }
+        
+        public static T OnColor<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+            where T : Sharp.UI.ISwitchCell
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwitchCell>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.SwitchCell.OnColorProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -52,26 +58,32 @@ namespace Sharp.UI
         }
         
         public static T On<T>(this T obj,
-            bool on,
-            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Sharp.UI.ISwitchCell
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwitchCell>(obj);         
-            mauiObject.On = (bool)on;
-            var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.SwitchCell.OnProperty));
-            if (def.ValueIsSet()) mauiObject.On = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwitchCell>(obj);
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) mauiObject.On = builder.GetValue();
             return obj;
         }
         
         public static T On<T>(this T obj,
-            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
             where T : Sharp.UI.ISwitchCell
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwitchCell>(obj);
-            var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.SwitchCell.OnProperty));
-            if (def.ValueIsSet()) mauiObject.On = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<bool>());
+            if (builder.ValueIsSet()) mauiObject.On = builder.GetValue();
+            return obj;
+        }
+        
+        public static T On<T>(this T obj,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+            where T : Sharp.UI.ISwitchCell
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwitchCell>(obj);
+            var builder = buildBinding(new BindingBuilder<bool>(mauiObject, Microsoft.Maui.Controls.SwitchCell.OnProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -85,26 +97,32 @@ namespace Sharp.UI
         }
         
         public static T Text<T>(this T obj,
-            string text,
-            System.Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
             where T : Sharp.UI.ISwitchCell
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwitchCell>(obj);         
-            mauiObject.Text = (string)text;
-            var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.SwitchCell.TextProperty));
-            if (def.ValueIsSet()) mauiObject.Text = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwitchCell>(obj);
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) mauiObject.Text = builder.GetValue();
             return obj;
         }
         
         public static T Text<T>(this T obj,
-            System.Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<LazyValueBuilder<string>, LazyValueBuilder<string>> buildValue)
             where T : Sharp.UI.ISwitchCell
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwitchCell>(obj);
-            var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.SwitchCell.TextProperty));
-            if (def.ValueIsSet()) mauiObject.Text = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<string>());
+            if (builder.ValueIsSet()) mauiObject.Text = builder.GetValue();
+            return obj;
+        }
+        
+        public static T Text<T>(this T obj,
+            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+            where T : Sharp.UI.ISwitchCell
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwitchCell>(obj);
+            var builder = buildBinding(new BindingBuilder<string>(mauiObject, Microsoft.Maui.Controls.SwitchCell.TextProperty));
+            builder.BindProperty();
             return obj;
         }
         

@@ -19,26 +19,32 @@ namespace Sharp.UI
         }
         
         public static T Points<T>(this T obj,
-            Microsoft.Maui.Controls.PointCollection points,
-            System.Func<BindableDef<Microsoft.Maui.Controls.PointCollection>, BindableDef<Microsoft.Maui.Controls.PointCollection>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.PointCollection>, ValueBuilder<Microsoft.Maui.Controls.PointCollection>> buildValue)
             where T : Sharp.UI.IPolyline
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Polyline>(obj);         
-            mauiObject.Points = (Microsoft.Maui.Controls.PointCollection)points;
-            var def = definition(new BindableDef<Microsoft.Maui.Controls.PointCollection>(mauiObject, Microsoft.Maui.Controls.Shapes.Polyline.PointsProperty));
-            if (def.ValueIsSet()) mauiObject.Points = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Polyline>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.PointCollection>());
+            if (builder.ValueIsSet()) mauiObject.Points = builder.GetValue();
             return obj;
         }
         
         public static T Points<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Controls.PointCollection>, BindableDef<Microsoft.Maui.Controls.PointCollection>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.PointCollection>, LazyValueBuilder<Microsoft.Maui.Controls.PointCollection>> buildValue)
             where T : Sharp.UI.IPolyline
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Polyline>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Controls.PointCollection>(mauiObject, Microsoft.Maui.Controls.Shapes.Polyline.PointsProperty));
-            if (def.ValueIsSet()) mauiObject.Points = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.PointCollection>());
+            if (builder.ValueIsSet()) mauiObject.Points = builder.GetValue();
+            return obj;
+        }
+        
+        public static T Points<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.PointCollection>, BindingBuilder<Microsoft.Maui.Controls.PointCollection>> buildBinding)
+            where T : Sharp.UI.IPolyline
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Polyline>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.PointCollection>(mauiObject, Microsoft.Maui.Controls.Shapes.Polyline.PointsProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -52,26 +58,32 @@ namespace Sharp.UI
         }
         
         public static T FillRule<T>(this T obj,
-            Microsoft.Maui.Controls.Shapes.FillRule fillRule,
-            System.Func<BindableDef<Microsoft.Maui.Controls.Shapes.FillRule>, BindableDef<Microsoft.Maui.Controls.Shapes.FillRule>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.Shapes.FillRule>, ValueBuilder<Microsoft.Maui.Controls.Shapes.FillRule>> buildValue)
             where T : Sharp.UI.IPolyline
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Polyline>(obj);         
-            mauiObject.FillRule = (Microsoft.Maui.Controls.Shapes.FillRule)fillRule;
-            var def = definition(new BindableDef<Microsoft.Maui.Controls.Shapes.FillRule>(mauiObject, Microsoft.Maui.Controls.Shapes.Polyline.FillRuleProperty));
-            if (def.ValueIsSet()) mauiObject.FillRule = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Polyline>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Shapes.FillRule>());
+            if (builder.ValueIsSet()) mauiObject.FillRule = builder.GetValue();
             return obj;
         }
         
         public static T FillRule<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Controls.Shapes.FillRule>, BindableDef<Microsoft.Maui.Controls.Shapes.FillRule>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.Shapes.FillRule>, LazyValueBuilder<Microsoft.Maui.Controls.Shapes.FillRule>> buildValue)
             where T : Sharp.UI.IPolyline
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Polyline>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Controls.Shapes.FillRule>(mauiObject, Microsoft.Maui.Controls.Shapes.Polyline.FillRuleProperty));
-            if (def.ValueIsSet()) mauiObject.FillRule = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.Shapes.FillRule>());
+            if (builder.ValueIsSet()) mauiObject.FillRule = builder.GetValue();
+            return obj;
+        }
+        
+        public static T FillRule<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.Shapes.FillRule>, BindingBuilder<Microsoft.Maui.Controls.Shapes.FillRule>> buildBinding)
+            where T : Sharp.UI.IPolyline
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Polyline>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Shapes.FillRule>(mauiObject, Microsoft.Maui.Controls.Shapes.Polyline.FillRuleProperty));
+            builder.BindProperty();
             return obj;
         }
         

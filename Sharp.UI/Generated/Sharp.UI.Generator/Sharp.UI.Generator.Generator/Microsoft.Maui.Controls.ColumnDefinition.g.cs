@@ -19,26 +19,32 @@ namespace Sharp.UI
         }
         
         public static T Width<T>(this T obj,
-            Microsoft.Maui.GridLength width,
-            System.Func<BindableDef<Microsoft.Maui.GridLength>, BindableDef<Microsoft.Maui.GridLength>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.GridLength>, ValueBuilder<Microsoft.Maui.GridLength>> buildValue)
             where T : Sharp.UI.IColumnDefinition
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ColumnDefinition>(obj);         
-            mauiObject.Width = (Microsoft.Maui.GridLength)width;
-            var def = definition(new BindableDef<Microsoft.Maui.GridLength>(mauiObject, Microsoft.Maui.Controls.ColumnDefinition.WidthProperty));
-            if (def.ValueIsSet()) mauiObject.Width = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ColumnDefinition>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.GridLength>());
+            if (builder.ValueIsSet()) mauiObject.Width = builder.GetValue();
             return obj;
         }
         
         public static T Width<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.GridLength>, BindableDef<Microsoft.Maui.GridLength>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.GridLength>, LazyValueBuilder<Microsoft.Maui.GridLength>> buildValue)
             where T : Sharp.UI.IColumnDefinition
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ColumnDefinition>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.GridLength>(mauiObject, Microsoft.Maui.Controls.ColumnDefinition.WidthProperty));
-            if (def.ValueIsSet()) mauiObject.Width = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.GridLength>());
+            if (builder.ValueIsSet()) mauiObject.Width = builder.GetValue();
+            return obj;
+        }
+        
+        public static T Width<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.GridLength>, BindingBuilder<Microsoft.Maui.GridLength>> buildBinding)
+            where T : Sharp.UI.IColumnDefinition
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ColumnDefinition>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.GridLength>(mauiObject, Microsoft.Maui.Controls.ColumnDefinition.WidthProperty));
+            builder.BindProperty();
             return obj;
         }
         

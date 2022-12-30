@@ -19,26 +19,32 @@ namespace Sharp.UI
         }
         
         public static T MinWindowHeight<T>(this T obj,
-            double minWindowHeight,
-            System.Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Sharp.UI.IAdaptiveTrigger
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.AdaptiveTrigger>(obj);         
-            mauiObject.MinWindowHeight = (double)minWindowHeight;
-            var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.AdaptiveTrigger.MinWindowHeightProperty));
-            if (def.ValueIsSet()) mauiObject.MinWindowHeight = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.AdaptiveTrigger>(obj);
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) mauiObject.MinWindowHeight = builder.GetValue();
             return obj;
         }
         
         public static T MinWindowHeight<T>(this T obj,
-            System.Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
             where T : Sharp.UI.IAdaptiveTrigger
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.AdaptiveTrigger>(obj);
-            var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.AdaptiveTrigger.MinWindowHeightProperty));
-            if (def.ValueIsSet()) mauiObject.MinWindowHeight = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<double>());
+            if (builder.ValueIsSet()) mauiObject.MinWindowHeight = builder.GetValue();
+            return obj;
+        }
+        
+        public static T MinWindowHeight<T>(this T obj,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+            where T : Sharp.UI.IAdaptiveTrigger
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.AdaptiveTrigger>(obj);
+            var builder = buildBinding(new BindingBuilder<double>(mauiObject, Microsoft.Maui.Controls.AdaptiveTrigger.MinWindowHeightProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -52,26 +58,32 @@ namespace Sharp.UI
         }
         
         public static T MinWindowWidth<T>(this T obj,
-            double minWindowWidth,
-            System.Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Sharp.UI.IAdaptiveTrigger
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.AdaptiveTrigger>(obj);         
-            mauiObject.MinWindowWidth = (double)minWindowWidth;
-            var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.AdaptiveTrigger.MinWindowWidthProperty));
-            if (def.ValueIsSet()) mauiObject.MinWindowWidth = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.AdaptiveTrigger>(obj);
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) mauiObject.MinWindowWidth = builder.GetValue();
             return obj;
         }
         
         public static T MinWindowWidth<T>(this T obj,
-            System.Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
             where T : Sharp.UI.IAdaptiveTrigger
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.AdaptiveTrigger>(obj);
-            var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.AdaptiveTrigger.MinWindowWidthProperty));
-            if (def.ValueIsSet()) mauiObject.MinWindowWidth = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<double>());
+            if (builder.ValueIsSet()) mauiObject.MinWindowWidth = builder.GetValue();
+            return obj;
+        }
+        
+        public static T MinWindowWidth<T>(this T obj,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+            where T : Sharp.UI.IAdaptiveTrigger
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.AdaptiveTrigger>(obj);
+            var builder = buildBinding(new BindingBuilder<double>(mauiObject, Microsoft.Maui.Controls.AdaptiveTrigger.MinWindowWidthProperty));
+            builder.BindProperty();
             return obj;
         }
         

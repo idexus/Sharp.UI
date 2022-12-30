@@ -19,26 +19,32 @@ namespace Sharp.UI
         }
         
         public static T SelectedItem<T>(this T obj,
-            object selectedItem,
-            System.Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buildValue)
             where T : Sharp.UI.ISelectableItemsView
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SelectableItemsView>(obj);         
-            mauiObject.SelectedItem = (object)selectedItem;
-            var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.SelectableItemsView.SelectedItemProperty));
-            if (def.ValueIsSet()) mauiObject.SelectedItem = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SelectableItemsView>(obj);
+            var builder = buildValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) mauiObject.SelectedItem = builder.GetValue();
             return obj;
         }
         
         public static T SelectedItem<T>(this T obj,
-            System.Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<LazyValueBuilder<object>, LazyValueBuilder<object>> buildValue)
             where T : Sharp.UI.ISelectableItemsView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SelectableItemsView>(obj);
-            var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.SelectableItemsView.SelectedItemProperty));
-            if (def.ValueIsSet()) mauiObject.SelectedItem = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<object>());
+            if (builder.ValueIsSet()) mauiObject.SelectedItem = builder.GetValue();
+            return obj;
+        }
+        
+        public static T SelectedItem<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
+            where T : Sharp.UI.ISelectableItemsView
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SelectableItemsView>(obj);
+            var builder = buildBinding(new BindingBuilder<object>(mauiObject, Microsoft.Maui.Controls.SelectableItemsView.SelectedItemProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -52,26 +58,32 @@ namespace Sharp.UI
         }
         
         public static T SelectedItems<T>(this T obj,
-            System.Collections.Generic.IList<object> selectedItems,
-            System.Func<BindableDef<System.Collections.Generic.IList<object>>, BindableDef<System.Collections.Generic.IList<object>>> definition)
+            System.Func<ValueBuilder<System.Collections.Generic.IList<object>>, ValueBuilder<System.Collections.Generic.IList<object>>> buildValue)
             where T : Sharp.UI.ISelectableItemsView
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SelectableItemsView>(obj);         
-            mauiObject.SelectedItems = (System.Collections.Generic.IList<object>)selectedItems;
-            var def = definition(new BindableDef<System.Collections.Generic.IList<object>>(mauiObject, Microsoft.Maui.Controls.SelectableItemsView.SelectedItemsProperty));
-            if (def.ValueIsSet()) mauiObject.SelectedItems = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SelectableItemsView>(obj);
+            var builder = buildValue(new ValueBuilder<System.Collections.Generic.IList<object>>());
+            if (builder.ValueIsSet()) mauiObject.SelectedItems = builder.GetValue();
             return obj;
         }
         
         public static T SelectedItems<T>(this T obj,
-            System.Func<BindableDef<System.Collections.Generic.IList<object>>, BindableDef<System.Collections.Generic.IList<object>>> definition)
+            System.Func<LazyValueBuilder<System.Collections.Generic.IList<object>>, LazyValueBuilder<System.Collections.Generic.IList<object>>> buildValue)
             where T : Sharp.UI.ISelectableItemsView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SelectableItemsView>(obj);
-            var def = definition(new BindableDef<System.Collections.Generic.IList<object>>(mauiObject, Microsoft.Maui.Controls.SelectableItemsView.SelectedItemsProperty));
-            if (def.ValueIsSet()) mauiObject.SelectedItems = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<System.Collections.Generic.IList<object>>());
+            if (builder.ValueIsSet()) mauiObject.SelectedItems = builder.GetValue();
+            return obj;
+        }
+        
+        public static T SelectedItems<T>(this T obj,
+            System.Func<BindingBuilder<System.Collections.Generic.IList<object>>, BindingBuilder<System.Collections.Generic.IList<object>>> buildBinding)
+            where T : Sharp.UI.ISelectableItemsView
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SelectableItemsView>(obj);
+            var builder = buildBinding(new BindingBuilder<System.Collections.Generic.IList<object>>(mauiObject, Microsoft.Maui.Controls.SelectableItemsView.SelectedItemsProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -85,26 +97,32 @@ namespace Sharp.UI
         }
         
         public static T SelectionChangedCommand<T>(this T obj,
-            System.Windows.Input.ICommand selectionChangedCommand,
-            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<ValueBuilder<System.Windows.Input.ICommand>, ValueBuilder<System.Windows.Input.ICommand>> buildValue)
             where T : Sharp.UI.ISelectableItemsView
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SelectableItemsView>(obj);         
-            mauiObject.SelectionChangedCommand = (System.Windows.Input.ICommand)selectionChangedCommand;
-            var def = definition(new BindableDef<System.Windows.Input.ICommand>(mauiObject, Microsoft.Maui.Controls.SelectableItemsView.SelectionChangedCommandProperty));
-            if (def.ValueIsSet()) mauiObject.SelectionChangedCommand = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SelectableItemsView>(obj);
+            var builder = buildValue(new ValueBuilder<System.Windows.Input.ICommand>());
+            if (builder.ValueIsSet()) mauiObject.SelectionChangedCommand = builder.GetValue();
             return obj;
         }
         
         public static T SelectionChangedCommand<T>(this T obj,
-            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<LazyValueBuilder<System.Windows.Input.ICommand>, LazyValueBuilder<System.Windows.Input.ICommand>> buildValue)
             where T : Sharp.UI.ISelectableItemsView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SelectableItemsView>(obj);
-            var def = definition(new BindableDef<System.Windows.Input.ICommand>(mauiObject, Microsoft.Maui.Controls.SelectableItemsView.SelectionChangedCommandProperty));
-            if (def.ValueIsSet()) mauiObject.SelectionChangedCommand = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<System.Windows.Input.ICommand>());
+            if (builder.ValueIsSet()) mauiObject.SelectionChangedCommand = builder.GetValue();
+            return obj;
+        }
+        
+        public static T SelectionChangedCommand<T>(this T obj,
+            System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buildBinding)
+            where T : Sharp.UI.ISelectableItemsView
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SelectableItemsView>(obj);
+            var builder = buildBinding(new BindingBuilder<System.Windows.Input.ICommand>(mauiObject, Microsoft.Maui.Controls.SelectableItemsView.SelectionChangedCommandProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -118,26 +136,32 @@ namespace Sharp.UI
         }
         
         public static T SelectionChangedCommandParameter<T>(this T obj,
-            object selectionChangedCommandParameter,
-            System.Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buildValue)
             where T : Sharp.UI.ISelectableItemsView
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SelectableItemsView>(obj);         
-            mauiObject.SelectionChangedCommandParameter = (object)selectionChangedCommandParameter;
-            var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.SelectableItemsView.SelectionChangedCommandParameterProperty));
-            if (def.ValueIsSet()) mauiObject.SelectionChangedCommandParameter = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SelectableItemsView>(obj);
+            var builder = buildValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) mauiObject.SelectionChangedCommandParameter = builder.GetValue();
             return obj;
         }
         
         public static T SelectionChangedCommandParameter<T>(this T obj,
-            System.Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<LazyValueBuilder<object>, LazyValueBuilder<object>> buildValue)
             where T : Sharp.UI.ISelectableItemsView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SelectableItemsView>(obj);
-            var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.SelectableItemsView.SelectionChangedCommandParameterProperty));
-            if (def.ValueIsSet()) mauiObject.SelectionChangedCommandParameter = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<object>());
+            if (builder.ValueIsSet()) mauiObject.SelectionChangedCommandParameter = builder.GetValue();
+            return obj;
+        }
+        
+        public static T SelectionChangedCommandParameter<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
+            where T : Sharp.UI.ISelectableItemsView
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SelectableItemsView>(obj);
+            var builder = buildBinding(new BindingBuilder<object>(mauiObject, Microsoft.Maui.Controls.SelectableItemsView.SelectionChangedCommandParameterProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -151,26 +175,32 @@ namespace Sharp.UI
         }
         
         public static T SelectionMode<T>(this T obj,
-            Microsoft.Maui.Controls.SelectionMode selectionMode,
-            System.Func<BindableDef<Microsoft.Maui.Controls.SelectionMode>, BindableDef<Microsoft.Maui.Controls.SelectionMode>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.SelectionMode>, ValueBuilder<Microsoft.Maui.Controls.SelectionMode>> buildValue)
             where T : Sharp.UI.ISelectableItemsView
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SelectableItemsView>(obj);         
-            mauiObject.SelectionMode = (Microsoft.Maui.Controls.SelectionMode)selectionMode;
-            var def = definition(new BindableDef<Microsoft.Maui.Controls.SelectionMode>(mauiObject, Microsoft.Maui.Controls.SelectableItemsView.SelectionModeProperty));
-            if (def.ValueIsSet()) mauiObject.SelectionMode = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SelectableItemsView>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.SelectionMode>());
+            if (builder.ValueIsSet()) mauiObject.SelectionMode = builder.GetValue();
             return obj;
         }
         
         public static T SelectionMode<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Controls.SelectionMode>, BindableDef<Microsoft.Maui.Controls.SelectionMode>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.SelectionMode>, LazyValueBuilder<Microsoft.Maui.Controls.SelectionMode>> buildValue)
             where T : Sharp.UI.ISelectableItemsView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SelectableItemsView>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Controls.SelectionMode>(mauiObject, Microsoft.Maui.Controls.SelectableItemsView.SelectionModeProperty));
-            if (def.ValueIsSet()) mauiObject.SelectionMode = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.SelectionMode>());
+            if (builder.ValueIsSet()) mauiObject.SelectionMode = builder.GetValue();
+            return obj;
+        }
+        
+        public static T SelectionMode<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.SelectionMode>, BindingBuilder<Microsoft.Maui.Controls.SelectionMode>> buildBinding)
+            where T : Sharp.UI.ISelectableItemsView
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SelectableItemsView>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.SelectionMode>(mauiObject, Microsoft.Maui.Controls.SelectableItemsView.SelectionModeProperty));
+            builder.BindProperty();
             return obj;
         }
         

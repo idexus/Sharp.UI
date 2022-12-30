@@ -21,26 +21,32 @@ namespace Sharp.UI.Example
         }
         
         public static T HasCustomShadow<T>(this T obj,
-            bool hasShadow,
-            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Sharp.UI.IView
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.View>(obj);         
-            mauiObject.SetValue(Sharp.UI.Example.CustomShadow.HasShadowProperty, (bool)hasShadow);
-            var def = definition(new BindableDef<bool>(mauiObject, Sharp.UI.Example.CustomShadow.HasShadowProperty));
-            if (def.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.CustomShadow.HasShadowProperty, def.GetValue());
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.View>(obj);
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.CustomShadow.HasShadowProperty, builder.GetValue());
             return obj;
         }
         
         public static T HasCustomShadow<T>(this T obj,
-            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
             where T : Sharp.UI.IView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.View>(obj);
-            var def = definition(new BindableDef<bool>(mauiObject, Sharp.UI.Example.CustomShadow.HasShadowProperty));
-            if (def.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.CustomShadow.HasShadowProperty, def.GetValue());
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<bool>());
+            if (builder.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.CustomShadow.HasShadowProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T HasCustomShadow<T>(this T obj,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+            where T : Sharp.UI.IView
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.View>(obj);
+            var builder = buildBinding(new BindingBuilder<bool>(mauiObject, Sharp.UI.Example.CustomShadow.HasShadowProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -54,26 +60,32 @@ namespace Sharp.UI.Example
         }
         
         public static T ShadowSize<T>(this T obj,
-            double shadowSize,
-            System.Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Sharp.UI.IView
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.View>(obj);         
-            mauiObject.SetValue(Sharp.UI.Example.CustomShadow.ShadowSizeProperty, (double)shadowSize);
-            var def = definition(new BindableDef<double>(mauiObject, Sharp.UI.Example.CustomShadow.ShadowSizeProperty));
-            if (def.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.CustomShadow.ShadowSizeProperty, def.GetValue());
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.View>(obj);
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.CustomShadow.ShadowSizeProperty, builder.GetValue());
             return obj;
         }
         
         public static T ShadowSize<T>(this T obj,
-            System.Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
             where T : Sharp.UI.IView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.View>(obj);
-            var def = definition(new BindableDef<double>(mauiObject, Sharp.UI.Example.CustomShadow.ShadowSizeProperty));
-            if (def.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.CustomShadow.ShadowSizeProperty, def.GetValue());
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<double>());
+            if (builder.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.CustomShadow.ShadowSizeProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T ShadowSize<T>(this T obj,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+            where T : Sharp.UI.IView
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.View>(obj);
+            var builder = buildBinding(new BindingBuilder<double>(mauiObject, Sharp.UI.Example.CustomShadow.ShadowSizeProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -87,26 +99,32 @@ namespace Sharp.UI.Example
         }
         
         public static T ShadowColor<T>(this T obj,
-            Microsoft.Maui.Graphics.Color shadowColor,
-            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : Sharp.UI.IView
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.View>(obj);         
-            mauiObject.SetValue(Sharp.UI.Example.CustomShadow.ShadowColorProperty, (Microsoft.Maui.Graphics.Color)shadowColor);
-            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Sharp.UI.Example.CustomShadow.ShadowColorProperty));
-            if (def.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.CustomShadow.ShadowColorProperty, def.GetValue());
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.View>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.CustomShadow.ShadowColorProperty, builder.GetValue());
             return obj;
         }
         
         public static T ShadowColor<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Color>, LazyValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : Sharp.UI.IView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.View>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Sharp.UI.Example.CustomShadow.ShadowColorProperty));
-            if (def.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.CustomShadow.ShadowColorProperty, def.GetValue());
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.CustomShadow.ShadowColorProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T ShadowColor<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+            where T : Sharp.UI.IView
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.View>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(mauiObject, Sharp.UI.Example.CustomShadow.ShadowColorProperty));
+            builder.BindProperty();
             return obj;
         }
         

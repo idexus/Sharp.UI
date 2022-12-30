@@ -19,24 +19,22 @@ namespace Sharp.UI
         }
         
         public static T Converter<T>(this T obj,
-            Microsoft.Maui.Controls.IValueConverter converter,
-            System.Func<ValueDef<Microsoft.Maui.Controls.IValueConverter>, ValueDef<Microsoft.Maui.Controls.IValueConverter>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.IValueConverter>, ValueBuilder<Microsoft.Maui.Controls.IValueConverter>> buildValue)
             where T : Sharp.UI.IBinding
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Binding>(obj);
-            mauiObject.Converter = (Microsoft.Maui.Controls.IValueConverter)converter;
-            var def = definition(new ValueDef<Microsoft.Maui.Controls.IValueConverter>());
-            if (def.ValueIsSet()) mauiObject.Converter = def.GetValue();
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.IValueConverter>());
+            if (builder.ValueIsSet()) mauiObject.Converter = builder.GetValue();
             return obj;
         }
         
         public static T Converter<T>(this T obj,
-            System.Func<ValueDef<Microsoft.Maui.Controls.IValueConverter>, ValueDef<Microsoft.Maui.Controls.IValueConverter>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.IValueConverter>, LazyValueBuilder<Microsoft.Maui.Controls.IValueConverter>> buildValue)
             where T : Sharp.UI.IBinding
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Binding>(obj);
-            var def = definition(new ValueDef<Microsoft.Maui.Controls.IValueConverter>());
-            if (def.ValueIsSet()) mauiObject.Converter = def.GetValue();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.IValueConverter>());
+            if (builder.ValueIsSet()) mauiObject.Converter = builder.GetValue();
             return obj;
         }
         
@@ -50,24 +48,22 @@ namespace Sharp.UI
         }
         
         public static T ConverterParameter<T>(this T obj,
-            object converterParameter,
-            System.Func<ValueDef<object>, ValueDef<object>> definition)
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buildValue)
             where T : Sharp.UI.IBinding
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Binding>(obj);
-            mauiObject.ConverterParameter = (object)converterParameter;
-            var def = definition(new ValueDef<object>());
-            if (def.ValueIsSet()) mauiObject.ConverterParameter = def.GetValue();
+            var builder = buildValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) mauiObject.ConverterParameter = builder.GetValue();
             return obj;
         }
         
         public static T ConverterParameter<T>(this T obj,
-            System.Func<ValueDef<object>, ValueDef<object>> definition)
+            System.Func<LazyValueBuilder<object>, LazyValueBuilder<object>> buildValue)
             where T : Sharp.UI.IBinding
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Binding>(obj);
-            var def = definition(new ValueDef<object>());
-            if (def.ValueIsSet()) mauiObject.ConverterParameter = def.GetValue();
+            var builder = buildValue(new LazyValueBuilder<object>());
+            if (builder.ValueIsSet()) mauiObject.ConverterParameter = builder.GetValue();
             return obj;
         }
         
@@ -81,24 +77,22 @@ namespace Sharp.UI
         }
         
         public static T Path<T>(this T obj,
-            string path,
-            System.Func<ValueDef<string>, ValueDef<string>> definition)
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
             where T : Sharp.UI.IBinding
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Binding>(obj);
-            mauiObject.Path = (string)path;
-            var def = definition(new ValueDef<string>());
-            if (def.ValueIsSet()) mauiObject.Path = def.GetValue();
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) mauiObject.Path = builder.GetValue();
             return obj;
         }
         
         public static T Path<T>(this T obj,
-            System.Func<ValueDef<string>, ValueDef<string>> definition)
+            System.Func<LazyValueBuilder<string>, LazyValueBuilder<string>> buildValue)
             where T : Sharp.UI.IBinding
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Binding>(obj);
-            var def = definition(new ValueDef<string>());
-            if (def.ValueIsSet()) mauiObject.Path = def.GetValue();
+            var builder = buildValue(new LazyValueBuilder<string>());
+            if (builder.ValueIsSet()) mauiObject.Path = builder.GetValue();
             return obj;
         }
         
@@ -112,24 +106,22 @@ namespace Sharp.UI
         }
         
         public static T Source<T>(this T obj,
-            object source,
-            System.Func<ValueDef<object>, ValueDef<object>> definition)
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buildValue)
             where T : Sharp.UI.IBinding
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Binding>(obj);
-            mauiObject.Source = (object)source;
-            var def = definition(new ValueDef<object>());
-            if (def.ValueIsSet()) mauiObject.Source = def.GetValue();
+            var builder = buildValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) mauiObject.Source = builder.GetValue();
             return obj;
         }
         
         public static T Source<T>(this T obj,
-            System.Func<ValueDef<object>, ValueDef<object>> definition)
+            System.Func<LazyValueBuilder<object>, LazyValueBuilder<object>> buildValue)
             where T : Sharp.UI.IBinding
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Binding>(obj);
-            var def = definition(new ValueDef<object>());
-            if (def.ValueIsSet()) mauiObject.Source = def.GetValue();
+            var builder = buildValue(new LazyValueBuilder<object>());
+            if (builder.ValueIsSet()) mauiObject.Source = builder.GetValue();
             return obj;
         }
         
@@ -143,24 +135,22 @@ namespace Sharp.UI
         }
         
         public static T UpdateSourceEventName<T>(this T obj,
-            string updateSourceEventName,
-            System.Func<ValueDef<string>, ValueDef<string>> definition)
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
             where T : Sharp.UI.IBinding
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Binding>(obj);
-            mauiObject.UpdateSourceEventName = (string)updateSourceEventName;
-            var def = definition(new ValueDef<string>());
-            if (def.ValueIsSet()) mauiObject.UpdateSourceEventName = def.GetValue();
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) mauiObject.UpdateSourceEventName = builder.GetValue();
             return obj;
         }
         
         public static T UpdateSourceEventName<T>(this T obj,
-            System.Func<ValueDef<string>, ValueDef<string>> definition)
+            System.Func<LazyValueBuilder<string>, LazyValueBuilder<string>> buildValue)
             where T : Sharp.UI.IBinding
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Binding>(obj);
-            var def = definition(new ValueDef<string>());
-            if (def.ValueIsSet()) mauiObject.UpdateSourceEventName = def.GetValue();
+            var builder = buildValue(new LazyValueBuilder<string>());
+            if (builder.ValueIsSet()) mauiObject.UpdateSourceEventName = builder.GetValue();
             return obj;
         }
         

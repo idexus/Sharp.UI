@@ -19,26 +19,32 @@ namespace Sharp.UI
         }
         
         public static T ItemsSource<T>(this T obj,
-            System.Collections.IEnumerable itemsSource,
-            System.Func<BindableDef<System.Collections.IEnumerable>, BindableDef<System.Collections.IEnumerable>> definition)
+            System.Func<ValueBuilder<System.Collections.IEnumerable>, ValueBuilder<System.Collections.IEnumerable>> buildValue)
             where T : Sharp.UI.IItemsViewCell
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>>(obj);         
-            mauiObject.ItemsSource = (System.Collections.IEnumerable)itemsSource;
-            var def = definition(new BindableDef<System.Collections.IEnumerable>(mauiObject, Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>.ItemsSourceProperty));
-            if (def.ValueIsSet()) mauiObject.ItemsSource = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>>(obj);
+            var builder = buildValue(new ValueBuilder<System.Collections.IEnumerable>());
+            if (builder.ValueIsSet()) mauiObject.ItemsSource = builder.GetValue();
             return obj;
         }
         
         public static T ItemsSource<T>(this T obj,
-            System.Func<BindableDef<System.Collections.IEnumerable>, BindableDef<System.Collections.IEnumerable>> definition)
+            System.Func<LazyValueBuilder<System.Collections.IEnumerable>, LazyValueBuilder<System.Collections.IEnumerable>> buildValue)
             where T : Sharp.UI.IItemsViewCell
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>>(obj);
-            var def = definition(new BindableDef<System.Collections.IEnumerable>(mauiObject, Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>.ItemsSourceProperty));
-            if (def.ValueIsSet()) mauiObject.ItemsSource = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<System.Collections.IEnumerable>());
+            if (builder.ValueIsSet()) mauiObject.ItemsSource = builder.GetValue();
+            return obj;
+        }
+        
+        public static T ItemsSource<T>(this T obj,
+            System.Func<BindingBuilder<System.Collections.IEnumerable>, BindingBuilder<System.Collections.IEnumerable>> buildBinding)
+            where T : Sharp.UI.IItemsViewCell
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>>(obj);
+            var builder = buildBinding(new BindingBuilder<System.Collections.IEnumerable>(mauiObject, Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>.ItemsSourceProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -52,26 +58,32 @@ namespace Sharp.UI
         }
         
         public static T ItemTemplate<T>(this T obj,
-            Microsoft.Maui.Controls.DataTemplate itemTemplate,
-            System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.DataTemplate>, ValueBuilder<Microsoft.Maui.Controls.DataTemplate>> buildValue)
             where T : Sharp.UI.IItemsViewCell
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>>(obj);         
-            mauiObject.ItemTemplate = (Microsoft.Maui.Controls.DataTemplate)itemTemplate;
-            var def = definition(new BindableDef<Microsoft.Maui.Controls.DataTemplate>(mauiObject, Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>.ItemTemplateProperty));
-            if (def.ValueIsSet()) mauiObject.ItemTemplate = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
+            if (builder.ValueIsSet()) mauiObject.ItemTemplate = builder.GetValue();
             return obj;
         }
         
         public static T ItemTemplate<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.DataTemplate>, LazyValueBuilder<Microsoft.Maui.Controls.DataTemplate>> buildValue)
             where T : Sharp.UI.IItemsViewCell
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Controls.DataTemplate>(mauiObject, Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>.ItemTemplateProperty));
-            if (def.ValueIsSet()) mauiObject.ItemTemplate = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
+            if (builder.ValueIsSet()) mauiObject.ItemTemplate = builder.GetValue();
+            return obj;
+        }
+        
+        public static T ItemTemplate<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buildBinding)
+            where T : Sharp.UI.IItemsViewCell
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(mauiObject, Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>.ItemTemplateProperty));
+            builder.BindProperty();
             return obj;
         }
         

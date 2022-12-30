@@ -19,26 +19,32 @@ namespace Sharp.UI
         }
         
         public static T CanDrag<T>(this T obj,
-            bool canDrag,
-            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Sharp.UI.IDragGestureRecognizer
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DragGestureRecognizer>(obj);         
-            mauiObject.CanDrag = (bool)canDrag;
-            var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.DragGestureRecognizer.CanDragProperty));
-            if (def.ValueIsSet()) mauiObject.CanDrag = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DragGestureRecognizer>(obj);
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) mauiObject.CanDrag = builder.GetValue();
             return obj;
         }
         
         public static T CanDrag<T>(this T obj,
-            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
             where T : Sharp.UI.IDragGestureRecognizer
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DragGestureRecognizer>(obj);
-            var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.DragGestureRecognizer.CanDragProperty));
-            if (def.ValueIsSet()) mauiObject.CanDrag = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<bool>());
+            if (builder.ValueIsSet()) mauiObject.CanDrag = builder.GetValue();
+            return obj;
+        }
+        
+        public static T CanDrag<T>(this T obj,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+            where T : Sharp.UI.IDragGestureRecognizer
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DragGestureRecognizer>(obj);
+            var builder = buildBinding(new BindingBuilder<bool>(mauiObject, Microsoft.Maui.Controls.DragGestureRecognizer.CanDragProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -52,26 +58,32 @@ namespace Sharp.UI
         }
         
         public static T DropCompletedCommand<T>(this T obj,
-            System.Windows.Input.ICommand dropCompletedCommand,
-            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<ValueBuilder<System.Windows.Input.ICommand>, ValueBuilder<System.Windows.Input.ICommand>> buildValue)
             where T : Sharp.UI.IDragGestureRecognizer
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DragGestureRecognizer>(obj);         
-            mauiObject.DropCompletedCommand = (System.Windows.Input.ICommand)dropCompletedCommand;
-            var def = definition(new BindableDef<System.Windows.Input.ICommand>(mauiObject, Microsoft.Maui.Controls.DragGestureRecognizer.DropCompletedCommandProperty));
-            if (def.ValueIsSet()) mauiObject.DropCompletedCommand = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DragGestureRecognizer>(obj);
+            var builder = buildValue(new ValueBuilder<System.Windows.Input.ICommand>());
+            if (builder.ValueIsSet()) mauiObject.DropCompletedCommand = builder.GetValue();
             return obj;
         }
         
         public static T DropCompletedCommand<T>(this T obj,
-            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<LazyValueBuilder<System.Windows.Input.ICommand>, LazyValueBuilder<System.Windows.Input.ICommand>> buildValue)
             where T : Sharp.UI.IDragGestureRecognizer
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DragGestureRecognizer>(obj);
-            var def = definition(new BindableDef<System.Windows.Input.ICommand>(mauiObject, Microsoft.Maui.Controls.DragGestureRecognizer.DropCompletedCommandProperty));
-            if (def.ValueIsSet()) mauiObject.DropCompletedCommand = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<System.Windows.Input.ICommand>());
+            if (builder.ValueIsSet()) mauiObject.DropCompletedCommand = builder.GetValue();
+            return obj;
+        }
+        
+        public static T DropCompletedCommand<T>(this T obj,
+            System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buildBinding)
+            where T : Sharp.UI.IDragGestureRecognizer
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DragGestureRecognizer>(obj);
+            var builder = buildBinding(new BindingBuilder<System.Windows.Input.ICommand>(mauiObject, Microsoft.Maui.Controls.DragGestureRecognizer.DropCompletedCommandProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -85,26 +97,32 @@ namespace Sharp.UI
         }
         
         public static T DropCompletedCommandParameter<T>(this T obj,
-            object dropCompletedCommandParameter,
-            System.Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buildValue)
             where T : Sharp.UI.IDragGestureRecognizer
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DragGestureRecognizer>(obj);         
-            mauiObject.DropCompletedCommandParameter = (object)dropCompletedCommandParameter;
-            var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.DragGestureRecognizer.DropCompletedCommandParameterProperty));
-            if (def.ValueIsSet()) mauiObject.DropCompletedCommandParameter = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DragGestureRecognizer>(obj);
+            var builder = buildValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) mauiObject.DropCompletedCommandParameter = builder.GetValue();
             return obj;
         }
         
         public static T DropCompletedCommandParameter<T>(this T obj,
-            System.Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<LazyValueBuilder<object>, LazyValueBuilder<object>> buildValue)
             where T : Sharp.UI.IDragGestureRecognizer
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DragGestureRecognizer>(obj);
-            var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.DragGestureRecognizer.DropCompletedCommandParameterProperty));
-            if (def.ValueIsSet()) mauiObject.DropCompletedCommandParameter = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<object>());
+            if (builder.ValueIsSet()) mauiObject.DropCompletedCommandParameter = builder.GetValue();
+            return obj;
+        }
+        
+        public static T DropCompletedCommandParameter<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
+            where T : Sharp.UI.IDragGestureRecognizer
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DragGestureRecognizer>(obj);
+            var builder = buildBinding(new BindingBuilder<object>(mauiObject, Microsoft.Maui.Controls.DragGestureRecognizer.DropCompletedCommandParameterProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -118,26 +136,32 @@ namespace Sharp.UI
         }
         
         public static T DragStartingCommand<T>(this T obj,
-            System.Windows.Input.ICommand dragStartingCommand,
-            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<ValueBuilder<System.Windows.Input.ICommand>, ValueBuilder<System.Windows.Input.ICommand>> buildValue)
             where T : Sharp.UI.IDragGestureRecognizer
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DragGestureRecognizer>(obj);         
-            mauiObject.DragStartingCommand = (System.Windows.Input.ICommand)dragStartingCommand;
-            var def = definition(new BindableDef<System.Windows.Input.ICommand>(mauiObject, Microsoft.Maui.Controls.DragGestureRecognizer.DragStartingCommandProperty));
-            if (def.ValueIsSet()) mauiObject.DragStartingCommand = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DragGestureRecognizer>(obj);
+            var builder = buildValue(new ValueBuilder<System.Windows.Input.ICommand>());
+            if (builder.ValueIsSet()) mauiObject.DragStartingCommand = builder.GetValue();
             return obj;
         }
         
         public static T DragStartingCommand<T>(this T obj,
-            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<LazyValueBuilder<System.Windows.Input.ICommand>, LazyValueBuilder<System.Windows.Input.ICommand>> buildValue)
             where T : Sharp.UI.IDragGestureRecognizer
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DragGestureRecognizer>(obj);
-            var def = definition(new BindableDef<System.Windows.Input.ICommand>(mauiObject, Microsoft.Maui.Controls.DragGestureRecognizer.DragStartingCommandProperty));
-            if (def.ValueIsSet()) mauiObject.DragStartingCommand = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<System.Windows.Input.ICommand>());
+            if (builder.ValueIsSet()) mauiObject.DragStartingCommand = builder.GetValue();
+            return obj;
+        }
+        
+        public static T DragStartingCommand<T>(this T obj,
+            System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buildBinding)
+            where T : Sharp.UI.IDragGestureRecognizer
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DragGestureRecognizer>(obj);
+            var builder = buildBinding(new BindingBuilder<System.Windows.Input.ICommand>(mauiObject, Microsoft.Maui.Controls.DragGestureRecognizer.DragStartingCommandProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -151,26 +175,32 @@ namespace Sharp.UI
         }
         
         public static T DragStartingCommandParameter<T>(this T obj,
-            object dragStartingCommandParameter,
-            System.Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buildValue)
             where T : Sharp.UI.IDragGestureRecognizer
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DragGestureRecognizer>(obj);         
-            mauiObject.DragStartingCommandParameter = (object)dragStartingCommandParameter;
-            var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.DragGestureRecognizer.DragStartingCommandParameterProperty));
-            if (def.ValueIsSet()) mauiObject.DragStartingCommandParameter = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DragGestureRecognizer>(obj);
+            var builder = buildValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) mauiObject.DragStartingCommandParameter = builder.GetValue();
             return obj;
         }
         
         public static T DragStartingCommandParameter<T>(this T obj,
-            System.Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<LazyValueBuilder<object>, LazyValueBuilder<object>> buildValue)
             where T : Sharp.UI.IDragGestureRecognizer
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DragGestureRecognizer>(obj);
-            var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.DragGestureRecognizer.DragStartingCommandParameterProperty));
-            if (def.ValueIsSet()) mauiObject.DragStartingCommandParameter = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<object>());
+            if (builder.ValueIsSet()) mauiObject.DragStartingCommandParameter = builder.GetValue();
+            return obj;
+        }
+        
+        public static T DragStartingCommandParameter<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
+            where T : Sharp.UI.IDragGestureRecognizer
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DragGestureRecognizer>(obj);
+            var builder = buildBinding(new BindingBuilder<object>(mauiObject, Microsoft.Maui.Controls.DragGestureRecognizer.DragStartingCommandParameterProperty));
+            builder.BindProperty();
             return obj;
         }
         

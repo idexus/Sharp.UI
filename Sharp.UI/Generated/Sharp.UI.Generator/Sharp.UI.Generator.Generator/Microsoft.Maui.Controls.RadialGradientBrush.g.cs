@@ -19,26 +19,32 @@ namespace Sharp.UI
         }
         
         public static T Center<T>(this T obj,
-            Microsoft.Maui.Graphics.Point center,
-            System.Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Point>, ValueBuilder<Microsoft.Maui.Graphics.Point>> buildValue)
             where T : Sharp.UI.IRadialGradientBrush
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadialGradientBrush>(obj);         
-            mauiObject.Center = (Microsoft.Maui.Graphics.Point)center;
-            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Point>(mauiObject, Microsoft.Maui.Controls.RadialGradientBrush.CenterProperty));
-            if (def.ValueIsSet()) mauiObject.Center = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadialGradientBrush>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Point>());
+            if (builder.ValueIsSet()) mauiObject.Center = builder.GetValue();
             return obj;
         }
         
         public static T Center<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Point>, LazyValueBuilder<Microsoft.Maui.Graphics.Point>> buildValue)
             where T : Sharp.UI.IRadialGradientBrush
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadialGradientBrush>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Point>(mauiObject, Microsoft.Maui.Controls.RadialGradientBrush.CenterProperty));
-            if (def.ValueIsSet()) mauiObject.Center = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Point>());
+            if (builder.ValueIsSet()) mauiObject.Center = builder.GetValue();
+            return obj;
+        }
+        
+        public static T Center<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Point>, BindingBuilder<Microsoft.Maui.Graphics.Point>> buildBinding)
+            where T : Sharp.UI.IRadialGradientBrush
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadialGradientBrush>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Point>(mauiObject, Microsoft.Maui.Controls.RadialGradientBrush.CenterProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -52,26 +58,32 @@ namespace Sharp.UI
         }
         
         public static T Radius<T>(this T obj,
-            double radius,
-            System.Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Sharp.UI.IRadialGradientBrush
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadialGradientBrush>(obj);         
-            mauiObject.Radius = (double)radius;
-            var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.RadialGradientBrush.RadiusProperty));
-            if (def.ValueIsSet()) mauiObject.Radius = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadialGradientBrush>(obj);
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) mauiObject.Radius = builder.GetValue();
             return obj;
         }
         
         public static T Radius<T>(this T obj,
-            System.Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
             where T : Sharp.UI.IRadialGradientBrush
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadialGradientBrush>(obj);
-            var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.RadialGradientBrush.RadiusProperty));
-            if (def.ValueIsSet()) mauiObject.Radius = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<double>());
+            if (builder.ValueIsSet()) mauiObject.Radius = builder.GetValue();
+            return obj;
+        }
+        
+        public static T Radius<T>(this T obj,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+            where T : Sharp.UI.IRadialGradientBrush
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RadialGradientBrush>(obj);
+            var builder = buildBinding(new BindingBuilder<double>(mauiObject, Microsoft.Maui.Controls.RadialGradientBrush.RadiusProperty));
+            builder.BindProperty();
             return obj;
         }
         

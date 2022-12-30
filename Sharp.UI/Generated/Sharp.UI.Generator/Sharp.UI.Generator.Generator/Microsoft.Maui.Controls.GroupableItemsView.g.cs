@@ -19,26 +19,32 @@ namespace Sharp.UI
         }
         
         public static T IsGrouped<T>(this T obj,
-            bool isGrouped,
-            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Sharp.UI.IGroupableItemsView
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GroupableItemsView>(obj);         
-            mauiObject.IsGrouped = (bool)isGrouped;
-            var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.GroupableItemsView.IsGroupedProperty));
-            if (def.ValueIsSet()) mauiObject.IsGrouped = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GroupableItemsView>(obj);
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) mauiObject.IsGrouped = builder.GetValue();
             return obj;
         }
         
         public static T IsGrouped<T>(this T obj,
-            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
             where T : Sharp.UI.IGroupableItemsView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GroupableItemsView>(obj);
-            var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.GroupableItemsView.IsGroupedProperty));
-            if (def.ValueIsSet()) mauiObject.IsGrouped = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<bool>());
+            if (builder.ValueIsSet()) mauiObject.IsGrouped = builder.GetValue();
+            return obj;
+        }
+        
+        public static T IsGrouped<T>(this T obj,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+            where T : Sharp.UI.IGroupableItemsView
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GroupableItemsView>(obj);
+            var builder = buildBinding(new BindingBuilder<bool>(mauiObject, Microsoft.Maui.Controls.GroupableItemsView.IsGroupedProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -52,26 +58,32 @@ namespace Sharp.UI
         }
         
         public static T GroupHeaderTemplate<T>(this T obj,
-            Microsoft.Maui.Controls.DataTemplate groupHeaderTemplate,
-            System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.DataTemplate>, ValueBuilder<Microsoft.Maui.Controls.DataTemplate>> buildValue)
             where T : Sharp.UI.IGroupableItemsView
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GroupableItemsView>(obj);         
-            mauiObject.GroupHeaderTemplate = (Microsoft.Maui.Controls.DataTemplate)groupHeaderTemplate;
-            var def = definition(new BindableDef<Microsoft.Maui.Controls.DataTemplate>(mauiObject, Microsoft.Maui.Controls.GroupableItemsView.GroupHeaderTemplateProperty));
-            if (def.ValueIsSet()) mauiObject.GroupHeaderTemplate = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GroupableItemsView>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
+            if (builder.ValueIsSet()) mauiObject.GroupHeaderTemplate = builder.GetValue();
             return obj;
         }
         
         public static T GroupHeaderTemplate<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.DataTemplate>, LazyValueBuilder<Microsoft.Maui.Controls.DataTemplate>> buildValue)
             where T : Sharp.UI.IGroupableItemsView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GroupableItemsView>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Controls.DataTemplate>(mauiObject, Microsoft.Maui.Controls.GroupableItemsView.GroupHeaderTemplateProperty));
-            if (def.ValueIsSet()) mauiObject.GroupHeaderTemplate = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
+            if (builder.ValueIsSet()) mauiObject.GroupHeaderTemplate = builder.GetValue();
+            return obj;
+        }
+        
+        public static T GroupHeaderTemplate<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buildBinding)
+            where T : Sharp.UI.IGroupableItemsView
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GroupableItemsView>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(mauiObject, Microsoft.Maui.Controls.GroupableItemsView.GroupHeaderTemplateProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -92,26 +104,32 @@ namespace Sharp.UI
         }
         
         public static T GroupFooterTemplate<T>(this T obj,
-            Microsoft.Maui.Controls.DataTemplate groupFooterTemplate,
-            System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.DataTemplate>, ValueBuilder<Microsoft.Maui.Controls.DataTemplate>> buildValue)
             where T : Sharp.UI.IGroupableItemsView
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GroupableItemsView>(obj);         
-            mauiObject.GroupFooterTemplate = (Microsoft.Maui.Controls.DataTemplate)groupFooterTemplate;
-            var def = definition(new BindableDef<Microsoft.Maui.Controls.DataTemplate>(mauiObject, Microsoft.Maui.Controls.GroupableItemsView.GroupFooterTemplateProperty));
-            if (def.ValueIsSet()) mauiObject.GroupFooterTemplate = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GroupableItemsView>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
+            if (builder.ValueIsSet()) mauiObject.GroupFooterTemplate = builder.GetValue();
             return obj;
         }
         
         public static T GroupFooterTemplate<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Controls.DataTemplate>, BindableDef<Microsoft.Maui.Controls.DataTemplate>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.DataTemplate>, LazyValueBuilder<Microsoft.Maui.Controls.DataTemplate>> buildValue)
             where T : Sharp.UI.IGroupableItemsView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GroupableItemsView>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Controls.DataTemplate>(mauiObject, Microsoft.Maui.Controls.GroupableItemsView.GroupFooterTemplateProperty));
-            if (def.ValueIsSet()) mauiObject.GroupFooterTemplate = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
+            if (builder.ValueIsSet()) mauiObject.GroupFooterTemplate = builder.GetValue();
+            return obj;
+        }
+        
+        public static T GroupFooterTemplate<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buildBinding)
+            where T : Sharp.UI.IGroupableItemsView
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GroupableItemsView>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(mauiObject, Microsoft.Maui.Controls.GroupableItemsView.GroupFooterTemplateProperty));
+            builder.BindProperty();
             return obj;
         }
         

@@ -19,26 +19,32 @@ namespace Sharp.UI
         }
         
         public static T ControlTemplate<T>(this T obj,
-            Microsoft.Maui.Controls.ControlTemplate controlTemplate,
-            System.Func<BindableDef<Microsoft.Maui.Controls.ControlTemplate>, BindableDef<Microsoft.Maui.Controls.ControlTemplate>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.ControlTemplate>, ValueBuilder<Microsoft.Maui.Controls.ControlTemplate>> buildValue)
             where T : Sharp.UI.ITemplatedPage
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TemplatedPage>(obj);         
-            mauiObject.ControlTemplate = (Microsoft.Maui.Controls.ControlTemplate)controlTemplate;
-            var def = definition(new BindableDef<Microsoft.Maui.Controls.ControlTemplate>(mauiObject, Microsoft.Maui.Controls.TemplatedPage.ControlTemplateProperty));
-            if (def.ValueIsSet()) mauiObject.ControlTemplate = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TemplatedPage>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ControlTemplate>());
+            if (builder.ValueIsSet()) mauiObject.ControlTemplate = builder.GetValue();
             return obj;
         }
         
         public static T ControlTemplate<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Controls.ControlTemplate>, BindableDef<Microsoft.Maui.Controls.ControlTemplate>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.ControlTemplate>, LazyValueBuilder<Microsoft.Maui.Controls.ControlTemplate>> buildValue)
             where T : Sharp.UI.ITemplatedPage
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TemplatedPage>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Controls.ControlTemplate>(mauiObject, Microsoft.Maui.Controls.TemplatedPage.ControlTemplateProperty));
-            if (def.ValueIsSet()) mauiObject.ControlTemplate = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.ControlTemplate>());
+            if (builder.ValueIsSet()) mauiObject.ControlTemplate = builder.GetValue();
+            return obj;
+        }
+        
+        public static T ControlTemplate<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.ControlTemplate>, BindingBuilder<Microsoft.Maui.Controls.ControlTemplate>> buildBinding)
+            where T : Sharp.UI.ITemplatedPage
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TemplatedPage>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ControlTemplate>(mauiObject, Microsoft.Maui.Controls.TemplatedPage.ControlTemplateProperty));
+            builder.BindProperty();
             return obj;
         }
         

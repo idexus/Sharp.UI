@@ -19,26 +19,32 @@ namespace Sharp.UI
         }
         
         public static T Direction<T>(this T obj,
-            Microsoft.Maui.Layouts.FlexDirection direction,
-            System.Func<BindableDef<Microsoft.Maui.Layouts.FlexDirection>, BindableDef<Microsoft.Maui.Layouts.FlexDirection>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Layouts.FlexDirection>, ValueBuilder<Microsoft.Maui.Layouts.FlexDirection>> buildValue)
             where T : Sharp.UI.IFlexLayout
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlexLayout>(obj);         
-            mauiObject.Direction = (Microsoft.Maui.Layouts.FlexDirection)direction;
-            var def = definition(new BindableDef<Microsoft.Maui.Layouts.FlexDirection>(mauiObject, Microsoft.Maui.Controls.FlexLayout.DirectionProperty));
-            if (def.ValueIsSet()) mauiObject.Direction = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlexLayout>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Layouts.FlexDirection>());
+            if (builder.ValueIsSet()) mauiObject.Direction = builder.GetValue();
             return obj;
         }
         
         public static T Direction<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Layouts.FlexDirection>, BindableDef<Microsoft.Maui.Layouts.FlexDirection>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Layouts.FlexDirection>, LazyValueBuilder<Microsoft.Maui.Layouts.FlexDirection>> buildValue)
             where T : Sharp.UI.IFlexLayout
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlexLayout>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Layouts.FlexDirection>(mauiObject, Microsoft.Maui.Controls.FlexLayout.DirectionProperty));
-            if (def.ValueIsSet()) mauiObject.Direction = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Layouts.FlexDirection>());
+            if (builder.ValueIsSet()) mauiObject.Direction = builder.GetValue();
+            return obj;
+        }
+        
+        public static T Direction<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Layouts.FlexDirection>, BindingBuilder<Microsoft.Maui.Layouts.FlexDirection>> buildBinding)
+            where T : Sharp.UI.IFlexLayout
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlexLayout>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Layouts.FlexDirection>(mauiObject, Microsoft.Maui.Controls.FlexLayout.DirectionProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -52,26 +58,32 @@ namespace Sharp.UI
         }
         
         public static T JustifyContent<T>(this T obj,
-            Microsoft.Maui.Layouts.FlexJustify justifyContent,
-            System.Func<BindableDef<Microsoft.Maui.Layouts.FlexJustify>, BindableDef<Microsoft.Maui.Layouts.FlexJustify>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Layouts.FlexJustify>, ValueBuilder<Microsoft.Maui.Layouts.FlexJustify>> buildValue)
             where T : Sharp.UI.IFlexLayout
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlexLayout>(obj);         
-            mauiObject.JustifyContent = (Microsoft.Maui.Layouts.FlexJustify)justifyContent;
-            var def = definition(new BindableDef<Microsoft.Maui.Layouts.FlexJustify>(mauiObject, Microsoft.Maui.Controls.FlexLayout.JustifyContentProperty));
-            if (def.ValueIsSet()) mauiObject.JustifyContent = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlexLayout>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Layouts.FlexJustify>());
+            if (builder.ValueIsSet()) mauiObject.JustifyContent = builder.GetValue();
             return obj;
         }
         
         public static T JustifyContent<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Layouts.FlexJustify>, BindableDef<Microsoft.Maui.Layouts.FlexJustify>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Layouts.FlexJustify>, LazyValueBuilder<Microsoft.Maui.Layouts.FlexJustify>> buildValue)
             where T : Sharp.UI.IFlexLayout
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlexLayout>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Layouts.FlexJustify>(mauiObject, Microsoft.Maui.Controls.FlexLayout.JustifyContentProperty));
-            if (def.ValueIsSet()) mauiObject.JustifyContent = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Layouts.FlexJustify>());
+            if (builder.ValueIsSet()) mauiObject.JustifyContent = builder.GetValue();
+            return obj;
+        }
+        
+        public static T JustifyContent<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Layouts.FlexJustify>, BindingBuilder<Microsoft.Maui.Layouts.FlexJustify>> buildBinding)
+            where T : Sharp.UI.IFlexLayout
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlexLayout>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Layouts.FlexJustify>(mauiObject, Microsoft.Maui.Controls.FlexLayout.JustifyContentProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -85,26 +97,32 @@ namespace Sharp.UI
         }
         
         public static T AlignContent<T>(this T obj,
-            Microsoft.Maui.Layouts.FlexAlignContent alignContent,
-            System.Func<BindableDef<Microsoft.Maui.Layouts.FlexAlignContent>, BindableDef<Microsoft.Maui.Layouts.FlexAlignContent>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Layouts.FlexAlignContent>, ValueBuilder<Microsoft.Maui.Layouts.FlexAlignContent>> buildValue)
             where T : Sharp.UI.IFlexLayout
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlexLayout>(obj);         
-            mauiObject.AlignContent = (Microsoft.Maui.Layouts.FlexAlignContent)alignContent;
-            var def = definition(new BindableDef<Microsoft.Maui.Layouts.FlexAlignContent>(mauiObject, Microsoft.Maui.Controls.FlexLayout.AlignContentProperty));
-            if (def.ValueIsSet()) mauiObject.AlignContent = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlexLayout>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Layouts.FlexAlignContent>());
+            if (builder.ValueIsSet()) mauiObject.AlignContent = builder.GetValue();
             return obj;
         }
         
         public static T AlignContent<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Layouts.FlexAlignContent>, BindableDef<Microsoft.Maui.Layouts.FlexAlignContent>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Layouts.FlexAlignContent>, LazyValueBuilder<Microsoft.Maui.Layouts.FlexAlignContent>> buildValue)
             where T : Sharp.UI.IFlexLayout
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlexLayout>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Layouts.FlexAlignContent>(mauiObject, Microsoft.Maui.Controls.FlexLayout.AlignContentProperty));
-            if (def.ValueIsSet()) mauiObject.AlignContent = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Layouts.FlexAlignContent>());
+            if (builder.ValueIsSet()) mauiObject.AlignContent = builder.GetValue();
+            return obj;
+        }
+        
+        public static T AlignContent<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Layouts.FlexAlignContent>, BindingBuilder<Microsoft.Maui.Layouts.FlexAlignContent>> buildBinding)
+            where T : Sharp.UI.IFlexLayout
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlexLayout>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Layouts.FlexAlignContent>(mauiObject, Microsoft.Maui.Controls.FlexLayout.AlignContentProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -118,26 +136,32 @@ namespace Sharp.UI
         }
         
         public static T AlignItems<T>(this T obj,
-            Microsoft.Maui.Layouts.FlexAlignItems alignItems,
-            System.Func<BindableDef<Microsoft.Maui.Layouts.FlexAlignItems>, BindableDef<Microsoft.Maui.Layouts.FlexAlignItems>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Layouts.FlexAlignItems>, ValueBuilder<Microsoft.Maui.Layouts.FlexAlignItems>> buildValue)
             where T : Sharp.UI.IFlexLayout
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlexLayout>(obj);         
-            mauiObject.AlignItems = (Microsoft.Maui.Layouts.FlexAlignItems)alignItems;
-            var def = definition(new BindableDef<Microsoft.Maui.Layouts.FlexAlignItems>(mauiObject, Microsoft.Maui.Controls.FlexLayout.AlignItemsProperty));
-            if (def.ValueIsSet()) mauiObject.AlignItems = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlexLayout>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Layouts.FlexAlignItems>());
+            if (builder.ValueIsSet()) mauiObject.AlignItems = builder.GetValue();
             return obj;
         }
         
         public static T AlignItems<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Layouts.FlexAlignItems>, BindableDef<Microsoft.Maui.Layouts.FlexAlignItems>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Layouts.FlexAlignItems>, LazyValueBuilder<Microsoft.Maui.Layouts.FlexAlignItems>> buildValue)
             where T : Sharp.UI.IFlexLayout
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlexLayout>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Layouts.FlexAlignItems>(mauiObject, Microsoft.Maui.Controls.FlexLayout.AlignItemsProperty));
-            if (def.ValueIsSet()) mauiObject.AlignItems = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Layouts.FlexAlignItems>());
+            if (builder.ValueIsSet()) mauiObject.AlignItems = builder.GetValue();
+            return obj;
+        }
+        
+        public static T AlignItems<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Layouts.FlexAlignItems>, BindingBuilder<Microsoft.Maui.Layouts.FlexAlignItems>> buildBinding)
+            where T : Sharp.UI.IFlexLayout
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlexLayout>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Layouts.FlexAlignItems>(mauiObject, Microsoft.Maui.Controls.FlexLayout.AlignItemsProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -151,26 +175,32 @@ namespace Sharp.UI
         }
         
         public static T Position<T>(this T obj,
-            Microsoft.Maui.Layouts.FlexPosition position,
-            System.Func<BindableDef<Microsoft.Maui.Layouts.FlexPosition>, BindableDef<Microsoft.Maui.Layouts.FlexPosition>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Layouts.FlexPosition>, ValueBuilder<Microsoft.Maui.Layouts.FlexPosition>> buildValue)
             where T : Sharp.UI.IFlexLayout
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlexLayout>(obj);         
-            mauiObject.Position = (Microsoft.Maui.Layouts.FlexPosition)position;
-            var def = definition(new BindableDef<Microsoft.Maui.Layouts.FlexPosition>(mauiObject, Microsoft.Maui.Controls.FlexLayout.PositionProperty));
-            if (def.ValueIsSet()) mauiObject.Position = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlexLayout>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Layouts.FlexPosition>());
+            if (builder.ValueIsSet()) mauiObject.Position = builder.GetValue();
             return obj;
         }
         
         public static T Position<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Layouts.FlexPosition>, BindableDef<Microsoft.Maui.Layouts.FlexPosition>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Layouts.FlexPosition>, LazyValueBuilder<Microsoft.Maui.Layouts.FlexPosition>> buildValue)
             where T : Sharp.UI.IFlexLayout
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlexLayout>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Layouts.FlexPosition>(mauiObject, Microsoft.Maui.Controls.FlexLayout.PositionProperty));
-            if (def.ValueIsSet()) mauiObject.Position = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Layouts.FlexPosition>());
+            if (builder.ValueIsSet()) mauiObject.Position = builder.GetValue();
+            return obj;
+        }
+        
+        public static T Position<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Layouts.FlexPosition>, BindingBuilder<Microsoft.Maui.Layouts.FlexPosition>> buildBinding)
+            where T : Sharp.UI.IFlexLayout
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlexLayout>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Layouts.FlexPosition>(mauiObject, Microsoft.Maui.Controls.FlexLayout.PositionProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -184,26 +214,32 @@ namespace Sharp.UI
         }
         
         public static T Wrap<T>(this T obj,
-            Microsoft.Maui.Layouts.FlexWrap wrap,
-            System.Func<BindableDef<Microsoft.Maui.Layouts.FlexWrap>, BindableDef<Microsoft.Maui.Layouts.FlexWrap>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Layouts.FlexWrap>, ValueBuilder<Microsoft.Maui.Layouts.FlexWrap>> buildValue)
             where T : Sharp.UI.IFlexLayout
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlexLayout>(obj);         
-            mauiObject.Wrap = (Microsoft.Maui.Layouts.FlexWrap)wrap;
-            var def = definition(new BindableDef<Microsoft.Maui.Layouts.FlexWrap>(mauiObject, Microsoft.Maui.Controls.FlexLayout.WrapProperty));
-            if (def.ValueIsSet()) mauiObject.Wrap = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlexLayout>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Layouts.FlexWrap>());
+            if (builder.ValueIsSet()) mauiObject.Wrap = builder.GetValue();
             return obj;
         }
         
         public static T Wrap<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Layouts.FlexWrap>, BindableDef<Microsoft.Maui.Layouts.FlexWrap>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Layouts.FlexWrap>, LazyValueBuilder<Microsoft.Maui.Layouts.FlexWrap>> buildValue)
             where T : Sharp.UI.IFlexLayout
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlexLayout>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Layouts.FlexWrap>(mauiObject, Microsoft.Maui.Controls.FlexLayout.WrapProperty));
-            if (def.ValueIsSet()) mauiObject.Wrap = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Layouts.FlexWrap>());
+            if (builder.ValueIsSet()) mauiObject.Wrap = builder.GetValue();
+            return obj;
+        }
+        
+        public static T Wrap<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Layouts.FlexWrap>, BindingBuilder<Microsoft.Maui.Layouts.FlexWrap>> buildBinding)
+            where T : Sharp.UI.IFlexLayout
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlexLayout>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Layouts.FlexWrap>(mauiObject, Microsoft.Maui.Controls.FlexLayout.WrapProperty));
+            builder.BindProperty();
             return obj;
         }
         

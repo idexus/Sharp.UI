@@ -19,24 +19,22 @@ namespace Sharp.UI
         }
         
         public static T View<T>(this T obj,
-            Microsoft.Maui.Controls.View view,
-            System.Func<ValueDef<Microsoft.Maui.Controls.View>, ValueDef<Microsoft.Maui.Controls.View>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.View>, ValueBuilder<Microsoft.Maui.Controls.View>> buildValue)
             where T : Sharp.UI.IViewCell
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ViewCell>(obj);
-            mauiObject.View = (Microsoft.Maui.Controls.View)view;
-            var def = definition(new ValueDef<Microsoft.Maui.Controls.View>());
-            if (def.ValueIsSet()) mauiObject.View = def.GetValue();
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.View>());
+            if (builder.ValueIsSet()) mauiObject.View = builder.GetValue();
             return obj;
         }
         
         public static T View<T>(this T obj,
-            System.Func<ValueDef<Microsoft.Maui.Controls.View>, ValueDef<Microsoft.Maui.Controls.View>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.View>, LazyValueBuilder<Microsoft.Maui.Controls.View>> buildValue)
             where T : Sharp.UI.IViewCell
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ViewCell>(obj);
-            var def = definition(new ValueDef<Microsoft.Maui.Controls.View>());
-            if (def.ValueIsSet()) mauiObject.View = def.GetValue();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.View>());
+            if (builder.ValueIsSet()) mauiObject.View = builder.GetValue();
             return obj;
         }
         

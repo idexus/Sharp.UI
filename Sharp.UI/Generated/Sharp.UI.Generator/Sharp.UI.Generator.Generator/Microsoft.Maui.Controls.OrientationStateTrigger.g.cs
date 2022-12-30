@@ -19,26 +19,32 @@ namespace Sharp.UI
         }
         
         public static T Orientation<T>(this T obj,
-            Microsoft.Maui.Devices.DisplayOrientation orientation,
-            System.Func<BindableDef<Microsoft.Maui.Devices.DisplayOrientation>, BindableDef<Microsoft.Maui.Devices.DisplayOrientation>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Devices.DisplayOrientation>, ValueBuilder<Microsoft.Maui.Devices.DisplayOrientation>> buildValue)
             where T : Sharp.UI.IOrientationStateTrigger
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.OrientationStateTrigger>(obj);         
-            mauiObject.Orientation = (Microsoft.Maui.Devices.DisplayOrientation)orientation;
-            var def = definition(new BindableDef<Microsoft.Maui.Devices.DisplayOrientation>(mauiObject, Microsoft.Maui.Controls.OrientationStateTrigger.OrientationProperty));
-            if (def.ValueIsSet()) mauiObject.Orientation = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.OrientationStateTrigger>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Devices.DisplayOrientation>());
+            if (builder.ValueIsSet()) mauiObject.Orientation = builder.GetValue();
             return obj;
         }
         
         public static T Orientation<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Devices.DisplayOrientation>, BindableDef<Microsoft.Maui.Devices.DisplayOrientation>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Devices.DisplayOrientation>, LazyValueBuilder<Microsoft.Maui.Devices.DisplayOrientation>> buildValue)
             where T : Sharp.UI.IOrientationStateTrigger
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.OrientationStateTrigger>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Devices.DisplayOrientation>(mauiObject, Microsoft.Maui.Controls.OrientationStateTrigger.OrientationProperty));
-            if (def.ValueIsSet()) mauiObject.Orientation = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Devices.DisplayOrientation>());
+            if (builder.ValueIsSet()) mauiObject.Orientation = builder.GetValue();
+            return obj;
+        }
+        
+        public static T Orientation<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Devices.DisplayOrientation>, BindingBuilder<Microsoft.Maui.Devices.DisplayOrientation>> buildBinding)
+            where T : Sharp.UI.IOrientationStateTrigger
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.OrientationStateTrigger>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Devices.DisplayOrientation>(mauiObject, Microsoft.Maui.Controls.OrientationStateTrigger.OrientationProperty));
+            builder.BindProperty();
             return obj;
         }
         

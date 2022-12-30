@@ -36,14 +36,14 @@ namespace Sharp.UI
         }
 
         public static T Actions<T>(this T obj,
-            System.Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerAction>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerAction>>> definition)
+            System.Func<LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerAction>>, LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerAction>>> buildValue)
             where T : Sharp.UI.IEventTrigger
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.EventTrigger>(obj);
-            var def = definition(new Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerAction>>());
-            if (def.ValueIsSet())
+            var builder = buildValue(new LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerAction>>());
+            if (builder.ValueIsSet())
             {
-                var items = def.GetValue();
+                var items = builder.GetValue();
                 foreach (var item in items) 
                 {
                     var mauiItem = MauiWrapper.Value<Microsoft.Maui.Controls.TriggerAction>(item);
@@ -63,24 +63,22 @@ namespace Sharp.UI
         }
         
         public static T Event<T>(this T obj,
-            string @event,
-            System.Func<ValueDef<string>, ValueDef<string>> definition)
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
             where T : Sharp.UI.IEventTrigger
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.EventTrigger>(obj);
-            mauiObject.Event = (string)@event;
-            var def = definition(new ValueDef<string>());
-            if (def.ValueIsSet()) mauiObject.Event = def.GetValue();
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) mauiObject.Event = builder.GetValue();
             return obj;
         }
         
         public static T Event<T>(this T obj,
-            System.Func<ValueDef<string>, ValueDef<string>> definition)
+            System.Func<LazyValueBuilder<string>, LazyValueBuilder<string>> buildValue)
             where T : Sharp.UI.IEventTrigger
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.EventTrigger>(obj);
-            var def = definition(new ValueDef<string>());
-            if (def.ValueIsSet()) mauiObject.Event = def.GetValue();
+            var builder = buildValue(new LazyValueBuilder<string>());
+            if (builder.ValueIsSet()) mauiObject.Event = builder.GetValue();
             return obj;
         }
         

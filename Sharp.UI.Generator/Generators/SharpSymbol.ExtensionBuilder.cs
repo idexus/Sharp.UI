@@ -178,7 +178,7 @@ namespace {nameSpaceString}
             public readonly string propertyCastTypeName;
             public readonly string camelCaseName;
             public readonly string assignmentString;
-            public readonly string assignmentDefString;
+            public readonly string assignmentBuilderString;
             public readonly string assignmentDataTemplateString;
             public readonly string mauiValueString;
 
@@ -195,7 +195,7 @@ namespace {nameSpaceString}
                 propertyCastTypeName = propertySymbol.Type.ToDisplayString();
                 camelCaseName = Helpers.CamelCase(propertyName);
                 assignmentString = $"{accessedWith}.{propertyName} = {(isWrappedSealedType ? "mauiValue" : $"({propertyCastTypeName}){camelCaseName}")}";
-                assignmentDefString = $"mauiObject.{propertyName} = {(isWrappedSealedType ? $"MauiWrapper.Value<{propertyCastTypeName}>(def.GetValue())" : "def.GetValue()")}";
+                assignmentBuilderString = $"mauiObject.{propertyName} = {(isWrappedSealedType ? $"MauiWrapper.Value<{propertyCastTypeName}>(builder.GetValue())" : "builder.GetValue()")}";
                 assignmentDataTemplateString = $"mauiObject.{propertyName} = new Microsoft.Maui.Controls.DataTemplate(loadTemplate)";
                 bindablePropertyName = $"{type.ToDisplayString()}.{propertyName}Property";
                 mauiValueString = !isWrappedSealedType ? "" : @$"
@@ -216,7 +216,7 @@ namespace {nameSpaceString}
                 camelCaseName = Helpers.CamelCase(fullName.Split(new[] { '.' }).Last());
                 bindablePropertyName = $"{fullName}Property";
                 assignmentString = $"mauiObject.SetValue({bindablePropertyName}, {(isWrappedSealedType ? "mauiValue" : $"({propertyCastTypeName}){camelCaseName}")})";
-                assignmentDefString = $"mauiObject.SetValue({bindablePropertyName}, {(isWrappedSealedType ? $"MauiWrapper.Value<{propertyCastTypeName}>(def.GetValue())" : "def.GetValue()")})";
+                assignmentBuilderString = $"mauiObject.SetValue({bindablePropertyName}, {(isWrappedSealedType ? $"MauiWrapper.Value<{propertyCastTypeName}>(builder.GetValue())" : "builder.GetValue()")})";
                 assignmentDataTemplateString = $"mauiObject.SetValue({bindablePropertyName}, new Microsoft.Maui.Controls.DataTemplate(loadTemplate))";
                 mauiValueString = !isWrappedSealedType ? "" : @$"
             var mauiValue = MauiWrapper.Value<{propertyCastTypeName}>({camelCaseName});";
@@ -246,9 +246,10 @@ namespace {nameSpaceString}
             var info = new PropertyInfo(propertySymbol, fullName);
             if (!notGenerateList.Contains(info.propertyName))
             {
-                GenerateExtensionMethod_OnlyValue(info);
-                GenerateExtensionMethod_ValueAndBindableDef(info);
-                GenerateExtensionMethod_OnlyBindableDef(info);
+                GenerateExtensionMethod_Value(info);
+                GenerateExtensionMethod_ValueBuilder(info);
+                GenerateExtensionMethod_LazyValueBuilder(info);
+                GenerateExtensionMethod_BindingBuilder(info);
 
                 if (info.propertyTypeName.Contains("DataTemplate"))
                     GenerateExtensionMethod_DataTemplate(info);
@@ -264,17 +265,11 @@ namespace {nameSpaceString}
                     info.propertySymbol.SetMethod.DeclaredAccessibility == Accessibility.Public &&
                     !ExistInBaseClasses(info.propertyName, getterAndSetter: true))
                 {
-                    GenerateExtensionMethod_OnlyValue(info);
+                    GenerateExtensionMethod_Value(info);
+                    GenerateExtensionMethod_ValueBuilder(info);
+                    GenerateExtensionMethod_LazyValueBuilder(info);
                     if (extensionBindablePropertiesGenerated.Contains(info.propertyName))
-                    {
-                        GenerateExtensionMethod_ValueAndBindableDef(info);
-                        GenerateExtensionMethod_OnlyBindableDef(info);
-                    }
-                    else
-                    {
-                        GenerateExtensionMethod_ValueAndDef(info);
-                        GenerateExtensionMethod_OnlyDef(info);
-                    }
+                        GenerateExtensionMethod_BindingBuilder(info);
 
                     if (info.propertySymbol.Type.Name.Equals("DataTemplate"))
                         GenerateExtensionMethod_DataTemplate(info);
@@ -298,9 +293,7 @@ namespace {nameSpaceString}
             }
         }
 
-
-
-        void GenerateExtensionMethod_OnlyValue(PropertyInfo info)
+        void GenerateExtensionMethod_Value(PropertyInfo info)
         {
             IsExtensionMethodsGenerated = true;
             builder.Append($@"
@@ -315,71 +308,49 @@ namespace {nameSpaceString}
         ");
         }
 
-        void GenerateExtensionMethod_ValueAndBindableDef(PropertyInfo info)
+        void GenerateExtensionMethod_ValueBuilder(PropertyInfo info)
         {
             IsExtensionMethodsGenerated = true;
             builder.Append($@"
         public static T {info.propertyName}<T>(this T obj,
-            {info.propertyTypeName} {info.camelCaseName},
-            System.Func<BindableDef<{info.propertyTypeName}>, BindableDef<{info.propertyTypeName}>> definition)
-            where T : {typeConformanceName}
-        {{
-            var mauiObject = MauiWrapper.Value<{extensionType.ToDisplayString()}>(obj);{info.mauiValueString}         
-            {info.assignmentString};
-            var def = definition(new BindableDef<{info.propertyTypeName}>(mauiObject, {info.bindablePropertyName}));
-            if (def.ValueIsSet()) {info.assignmentDefString};
-            def.BindProperty();
-            return obj;
-        }}
-        ");
-        }
-
-        void GenerateExtensionMethod_OnlyBindableDef(PropertyInfo info)
-        {
-            IsExtensionMethodsGenerated = true;
-            builder.Append($@"
-        public static T {info.propertyName}<T>(this T obj,
-            System.Func<BindableDef<{info.propertyTypeName}>, BindableDef<{info.propertyTypeName}>> definition)
+            System.Func<ValueBuilder<{info.propertyTypeName}>, ValueBuilder<{info.propertyTypeName}>> buildValue)
             where T : {typeConformanceName}
         {{
             var mauiObject = MauiWrapper.Value<{extensionType.ToDisplayString()}>(obj);
-            var def = definition(new BindableDef<{info.propertyTypeName}>(mauiObject, {info.bindablePropertyName}));
-            if (def.ValueIsSet()) {info.assignmentDefString};
-            def.BindProperty();
+            var builder = buildValue(new ValueBuilder<{info.propertyTypeName}>());
+            if (builder.ValueIsSet()) {info.assignmentBuilderString};
             return obj;
         }}
         ");
         }
 
-        void GenerateExtensionMethod_ValueAndDef(PropertyInfo info)
+        void GenerateExtensionMethod_LazyValueBuilder(PropertyInfo info)
         {
             IsExtensionMethodsGenerated = true;
             builder.Append($@"
         public static T {info.propertyName}<T>(this T obj,
-            {info.propertyTypeName} {info.camelCaseName},
-            System.Func<ValueDef<{info.propertyTypeName}>, ValueDef<{info.propertyTypeName}>> definition)
-            where T : {typeConformanceName}
-        {{
-            var mauiObject = MauiWrapper.Value<{extensionType.ToDisplayString()}>(obj);{info.mauiValueString}
-            {info.assignmentString};
-            var def = definition(new ValueDef<{info.propertyTypeName}>());
-            if (def.ValueIsSet()) mauiObject.{info.propertyName} = def.GetValue();
-            return obj;
-        }}
-        ");
-        }
-
-        void GenerateExtensionMethod_OnlyDef(PropertyInfo info)
-        {
-            IsExtensionMethodsGenerated = true;
-            builder.Append($@"
-        public static T {info.propertyName}<T>(this T obj,
-            System.Func<ValueDef<{info.propertyTypeName}>, ValueDef<{info.propertyTypeName}>> definition)
+            System.Func<LazyValueBuilder<{info.propertyTypeName}>, LazyValueBuilder<{info.propertyTypeName}>> buildValue)
             where T : {typeConformanceName}
         {{
             var mauiObject = MauiWrapper.Value<{extensionType.ToDisplayString()}>(obj);
-            var def = definition(new ValueDef<{info.propertyTypeName}>());
-            if (def.ValueIsSet()) mauiObject.{info.propertyName} = def.GetValue();
+            var builder = buildValue(new LazyValueBuilder<{info.propertyTypeName}>());
+            if (builder.ValueIsSet()) {info.assignmentBuilderString};
+            return obj;
+        }}
+        ");
+        }
+
+        void GenerateExtensionMethod_BindingBuilder(PropertyInfo info)
+        {
+            IsExtensionMethodsGenerated = true;
+            builder.Append($@"
+        public static T {info.propertyName}<T>(this T obj,
+            System.Func<BindingBuilder<{info.propertyTypeName}>, BindingBuilder<{info.propertyTypeName}>> buildBinding)
+            where T : {typeConformanceName}
+        {{
+            var mauiObject = MauiWrapper.Value<{extensionType.ToDisplayString()}>(obj);
+            var builder = buildBinding(new BindingBuilder<{info.propertyTypeName}>(mauiObject, {info.bindablePropertyName}));
+            builder.BindProperty();
             return obj;
         }}
         ");
@@ -487,14 +458,14 @@ namespace {nameSpaceString}
         }}
 
         public static T {info.propertyName}<T>(this T obj,
-            System.Func<Def<{info.propertyTypeName}>, Def<{info.propertyTypeName}>> definition)
+            System.Func<LazyValueBuilder<{info.propertyTypeName}>, LazyValueBuilder<{info.propertyTypeName}>> buildValue)
             where T : {typeConformanceName}
         {{
             var mauiObject = MauiWrapper.Value<{extensionType.ToDisplayString()}>(obj);
-            var def = definition(new Def<{info.propertyTypeName}>());
-            if (def.ValueIsSet())
+            var builder = buildValue(new LazyValueBuilder<{info.propertyTypeName}>());
+            if (builder.ValueIsSet())
             {{
-                var items = def.GetValue();
+                var items = builder.GetValue();
                 foreach (var item in items) 
                 {{
                     var mauiItem = MauiWrapper.Value<{typeName}>(item);

@@ -19,26 +19,32 @@ namespace Sharp.UI
         }
         
         public static T Segments<T>(this T obj,
-            Microsoft.Maui.Controls.Shapes.PathSegmentCollection segments,
-            System.Func<BindableDef<Microsoft.Maui.Controls.Shapes.PathSegmentCollection>, BindableDef<Microsoft.Maui.Controls.Shapes.PathSegmentCollection>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.Shapes.PathSegmentCollection>, ValueBuilder<Microsoft.Maui.Controls.Shapes.PathSegmentCollection>> buildValue)
             where T : Sharp.UI.IPathFigure
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.PathFigure>(obj);         
-            mauiObject.Segments = (Microsoft.Maui.Controls.Shapes.PathSegmentCollection)segments;
-            var def = definition(new BindableDef<Microsoft.Maui.Controls.Shapes.PathSegmentCollection>(mauiObject, Microsoft.Maui.Controls.Shapes.PathFigure.SegmentsProperty));
-            if (def.ValueIsSet()) mauiObject.Segments = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.PathFigure>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Shapes.PathSegmentCollection>());
+            if (builder.ValueIsSet()) mauiObject.Segments = builder.GetValue();
             return obj;
         }
         
         public static T Segments<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Controls.Shapes.PathSegmentCollection>, BindableDef<Microsoft.Maui.Controls.Shapes.PathSegmentCollection>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.Shapes.PathSegmentCollection>, LazyValueBuilder<Microsoft.Maui.Controls.Shapes.PathSegmentCollection>> buildValue)
             where T : Sharp.UI.IPathFigure
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.PathFigure>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Controls.Shapes.PathSegmentCollection>(mauiObject, Microsoft.Maui.Controls.Shapes.PathFigure.SegmentsProperty));
-            if (def.ValueIsSet()) mauiObject.Segments = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.Shapes.PathSegmentCollection>());
+            if (builder.ValueIsSet()) mauiObject.Segments = builder.GetValue();
+            return obj;
+        }
+        
+        public static T Segments<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.Shapes.PathSegmentCollection>, BindingBuilder<Microsoft.Maui.Controls.Shapes.PathSegmentCollection>> buildBinding)
+            where T : Sharp.UI.IPathFigure
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.PathFigure>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Shapes.PathSegmentCollection>(mauiObject, Microsoft.Maui.Controls.Shapes.PathFigure.SegmentsProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -52,26 +58,32 @@ namespace Sharp.UI
         }
         
         public static T StartPoint<T>(this T obj,
-            Microsoft.Maui.Graphics.Point startPoint,
-            System.Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Point>, ValueBuilder<Microsoft.Maui.Graphics.Point>> buildValue)
             where T : Sharp.UI.IPathFigure
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.PathFigure>(obj);         
-            mauiObject.StartPoint = (Microsoft.Maui.Graphics.Point)startPoint;
-            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Point>(mauiObject, Microsoft.Maui.Controls.Shapes.PathFigure.StartPointProperty));
-            if (def.ValueIsSet()) mauiObject.StartPoint = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.PathFigure>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Point>());
+            if (builder.ValueIsSet()) mauiObject.StartPoint = builder.GetValue();
             return obj;
         }
         
         public static T StartPoint<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Graphics.Point>, BindableDef<Microsoft.Maui.Graphics.Point>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Point>, LazyValueBuilder<Microsoft.Maui.Graphics.Point>> buildValue)
             where T : Sharp.UI.IPathFigure
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.PathFigure>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Point>(mauiObject, Microsoft.Maui.Controls.Shapes.PathFigure.StartPointProperty));
-            if (def.ValueIsSet()) mauiObject.StartPoint = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Point>());
+            if (builder.ValueIsSet()) mauiObject.StartPoint = builder.GetValue();
+            return obj;
+        }
+        
+        public static T StartPoint<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Point>, BindingBuilder<Microsoft.Maui.Graphics.Point>> buildBinding)
+            where T : Sharp.UI.IPathFigure
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.PathFigure>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Point>(mauiObject, Microsoft.Maui.Controls.Shapes.PathFigure.StartPointProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -85,26 +97,32 @@ namespace Sharp.UI
         }
         
         public static T IsClosed<T>(this T obj,
-            bool isClosed,
-            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Sharp.UI.IPathFigure
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.PathFigure>(obj);         
-            mauiObject.IsClosed = (bool)isClosed;
-            var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.Shapes.PathFigure.IsClosedProperty));
-            if (def.ValueIsSet()) mauiObject.IsClosed = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.PathFigure>(obj);
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) mauiObject.IsClosed = builder.GetValue();
             return obj;
         }
         
         public static T IsClosed<T>(this T obj,
-            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
             where T : Sharp.UI.IPathFigure
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.PathFigure>(obj);
-            var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.Shapes.PathFigure.IsClosedProperty));
-            if (def.ValueIsSet()) mauiObject.IsClosed = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<bool>());
+            if (builder.ValueIsSet()) mauiObject.IsClosed = builder.GetValue();
+            return obj;
+        }
+        
+        public static T IsClosed<T>(this T obj,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+            where T : Sharp.UI.IPathFigure
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.PathFigure>(obj);
+            var builder = buildBinding(new BindingBuilder<bool>(mauiObject, Microsoft.Maui.Controls.Shapes.PathFigure.IsClosedProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -118,26 +136,32 @@ namespace Sharp.UI
         }
         
         public static T IsFilled<T>(this T obj,
-            bool isFilled,
-            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Sharp.UI.IPathFigure
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.PathFigure>(obj);         
-            mauiObject.IsFilled = (bool)isFilled;
-            var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.Shapes.PathFigure.IsFilledProperty));
-            if (def.ValueIsSet()) mauiObject.IsFilled = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.PathFigure>(obj);
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) mauiObject.IsFilled = builder.GetValue();
             return obj;
         }
         
         public static T IsFilled<T>(this T obj,
-            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
             where T : Sharp.UI.IPathFigure
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.PathFigure>(obj);
-            var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.Shapes.PathFigure.IsFilledProperty));
-            if (def.ValueIsSet()) mauiObject.IsFilled = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<bool>());
+            if (builder.ValueIsSet()) mauiObject.IsFilled = builder.GetValue();
+            return obj;
+        }
+        
+        public static T IsFilled<T>(this T obj,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+            where T : Sharp.UI.IPathFigure
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.PathFigure>(obj);
+            var builder = buildBinding(new BindingBuilder<bool>(mauiObject, Microsoft.Maui.Controls.Shapes.PathFigure.IsFilledProperty));
+            builder.BindProperty();
             return obj;
         }
         

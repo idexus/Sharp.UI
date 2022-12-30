@@ -19,26 +19,32 @@ namespace Sharp.UI
         }
         
         public static T AutomationId<T>(this T obj,
-            string automationId,
-            System.Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
             where T : Sharp.UI.IElement
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Element>(obj);         
-            mauiObject.AutomationId = (string)automationId;
-            var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.Element.AutomationIdProperty));
-            if (def.ValueIsSet()) mauiObject.AutomationId = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Element>(obj);
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) mauiObject.AutomationId = builder.GetValue();
             return obj;
         }
         
         public static T AutomationId<T>(this T obj,
-            System.Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<LazyValueBuilder<string>, LazyValueBuilder<string>> buildValue)
             where T : Sharp.UI.IElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Element>(obj);
-            var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.Element.AutomationIdProperty));
-            if (def.ValueIsSet()) mauiObject.AutomationId = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<string>());
+            if (builder.ValueIsSet()) mauiObject.AutomationId = builder.GetValue();
+            return obj;
+        }
+        
+        public static T AutomationId<T>(this T obj,
+            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+            where T : Sharp.UI.IElement
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Element>(obj);
+            var builder = buildBinding(new BindingBuilder<string>(mauiObject, Microsoft.Maui.Controls.Element.AutomationIdProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -52,26 +58,32 @@ namespace Sharp.UI
         }
         
         public static T ClassId<T>(this T obj,
-            string classId,
-            System.Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
             where T : Sharp.UI.IElement
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Element>(obj);         
-            mauiObject.ClassId = (string)classId;
-            var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.Element.ClassIdProperty));
-            if (def.ValueIsSet()) mauiObject.ClassId = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Element>(obj);
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) mauiObject.ClassId = builder.GetValue();
             return obj;
         }
         
         public static T ClassId<T>(this T obj,
-            System.Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<LazyValueBuilder<string>, LazyValueBuilder<string>> buildValue)
             where T : Sharp.UI.IElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Element>(obj);
-            var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.Element.ClassIdProperty));
-            if (def.ValueIsSet()) mauiObject.ClassId = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<string>());
+            if (builder.ValueIsSet()) mauiObject.ClassId = builder.GetValue();
+            return obj;
+        }
+        
+        public static T ClassId<T>(this T obj,
+            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+            where T : Sharp.UI.IElement
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Element>(obj);
+            var builder = buildBinding(new BindingBuilder<string>(mauiObject, Microsoft.Maui.Controls.Element.ClassIdProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -102,14 +114,14 @@ namespace Sharp.UI
         }
 
         public static T Effects<T>(this T obj,
-            System.Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Effect>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Effect>>> definition)
+            System.Func<LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.Effect>>, LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.Effect>>> buildValue)
             where T : Sharp.UI.IElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Element>(obj);
-            var def = definition(new Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Effect>>());
-            if (def.ValueIsSet())
+            var builder = buildValue(new LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.Effect>>());
+            if (builder.ValueIsSet())
             {
-                var items = def.GetValue();
+                var items = builder.GetValue();
                 foreach (var item in items) 
                 {
                     var mauiItem = MauiWrapper.Value<Microsoft.Maui.Controls.Effect>(item);
@@ -129,24 +141,22 @@ namespace Sharp.UI
         }
         
         public static T StyleId<T>(this T obj,
-            string styleId,
-            System.Func<ValueDef<string>, ValueDef<string>> definition)
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
             where T : Sharp.UI.IElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Element>(obj);
-            mauiObject.StyleId = (string)styleId;
-            var def = definition(new ValueDef<string>());
-            if (def.ValueIsSet()) mauiObject.StyleId = def.GetValue();
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) mauiObject.StyleId = builder.GetValue();
             return obj;
         }
         
         public static T StyleId<T>(this T obj,
-            System.Func<ValueDef<string>, ValueDef<string>> definition)
+            System.Func<LazyValueBuilder<string>, LazyValueBuilder<string>> buildValue)
             where T : Sharp.UI.IElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Element>(obj);
-            var def = definition(new ValueDef<string>());
-            if (def.ValueIsSet()) mauiObject.StyleId = def.GetValue();
+            var builder = buildValue(new LazyValueBuilder<string>());
+            if (builder.ValueIsSet()) mauiObject.StyleId = builder.GetValue();
             return obj;
         }
         
@@ -160,24 +170,22 @@ namespace Sharp.UI
         }
         
         public static T Parent<T>(this T obj,
-            Microsoft.Maui.Controls.Element parent,
-            System.Func<ValueDef<Microsoft.Maui.Controls.Element>, ValueDef<Microsoft.Maui.Controls.Element>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.Element>, ValueBuilder<Microsoft.Maui.Controls.Element>> buildValue)
             where T : Sharp.UI.IElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Element>(obj);
-            mauiObject.Parent = (Microsoft.Maui.Controls.Element)parent;
-            var def = definition(new ValueDef<Microsoft.Maui.Controls.Element>());
-            if (def.ValueIsSet()) mauiObject.Parent = def.GetValue();
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Element>());
+            if (builder.ValueIsSet()) mauiObject.Parent = builder.GetValue();
             return obj;
         }
         
         public static T Parent<T>(this T obj,
-            System.Func<ValueDef<Microsoft.Maui.Controls.Element>, ValueDef<Microsoft.Maui.Controls.Element>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.Element>, LazyValueBuilder<Microsoft.Maui.Controls.Element>> buildValue)
             where T : Sharp.UI.IElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Element>(obj);
-            var def = definition(new ValueDef<Microsoft.Maui.Controls.Element>());
-            if (def.ValueIsSet()) mauiObject.Parent = def.GetValue();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.Element>());
+            if (builder.ValueIsSet()) mauiObject.Parent = builder.GetValue();
             return obj;
         }
         
@@ -191,24 +199,22 @@ namespace Sharp.UI
         }
         
         public static T EffectControlProvider<T>(this T obj,
-            Microsoft.Maui.Controls.IEffectControlProvider effectControlProvider,
-            System.Func<ValueDef<Microsoft.Maui.Controls.IEffectControlProvider>, ValueDef<Microsoft.Maui.Controls.IEffectControlProvider>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.IEffectControlProvider>, ValueBuilder<Microsoft.Maui.Controls.IEffectControlProvider>> buildValue)
             where T : Sharp.UI.IElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Element>(obj);
-            mauiObject.EffectControlProvider = (Microsoft.Maui.Controls.IEffectControlProvider)effectControlProvider;
-            var def = definition(new ValueDef<Microsoft.Maui.Controls.IEffectControlProvider>());
-            if (def.ValueIsSet()) mauiObject.EffectControlProvider = def.GetValue();
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.IEffectControlProvider>());
+            if (builder.ValueIsSet()) mauiObject.EffectControlProvider = builder.GetValue();
             return obj;
         }
         
         public static T EffectControlProvider<T>(this T obj,
-            System.Func<ValueDef<Microsoft.Maui.Controls.IEffectControlProvider>, ValueDef<Microsoft.Maui.Controls.IEffectControlProvider>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.IEffectControlProvider>, LazyValueBuilder<Microsoft.Maui.Controls.IEffectControlProvider>> buildValue)
             where T : Sharp.UI.IElement
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Element>(obj);
-            var def = definition(new ValueDef<Microsoft.Maui.Controls.IEffectControlProvider>());
-            if (def.ValueIsSet()) mauiObject.EffectControlProvider = def.GetValue();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.IEffectControlProvider>());
+            if (builder.ValueIsSet()) mauiObject.EffectControlProvider = builder.GetValue();
             return obj;
         }
         

@@ -19,26 +19,32 @@ namespace Sharp.UI
         }
         
         public static T Color<T>(this T obj,
-            Microsoft.Maui.Graphics.Color color,
-            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : Sharp.UI.IGradientStop
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GradientStop>(obj);         
-            mauiObject.Color = (Microsoft.Maui.Graphics.Color)color;
-            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.GradientStop.ColorProperty));
-            if (def.ValueIsSet()) mauiObject.Color = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GradientStop>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) mauiObject.Color = builder.GetValue();
             return obj;
         }
         
         public static T Color<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Color>, LazyValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : Sharp.UI.IGradientStop
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GradientStop>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.GradientStop.ColorProperty));
-            if (def.ValueIsSet()) mauiObject.Color = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) mauiObject.Color = builder.GetValue();
+            return obj;
+        }
+        
+        public static T Color<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+            where T : Sharp.UI.IGradientStop
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GradientStop>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.GradientStop.ColorProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -52,26 +58,32 @@ namespace Sharp.UI
         }
         
         public static T Offset<T>(this T obj,
-            float offset,
-            System.Func<BindableDef<float>, BindableDef<float>> definition)
+            System.Func<ValueBuilder<float>, ValueBuilder<float>> buildValue)
             where T : Sharp.UI.IGradientStop
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GradientStop>(obj);         
-            mauiObject.Offset = (float)offset;
-            var def = definition(new BindableDef<float>(mauiObject, Microsoft.Maui.Controls.GradientStop.OffsetProperty));
-            if (def.ValueIsSet()) mauiObject.Offset = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GradientStop>(obj);
+            var builder = buildValue(new ValueBuilder<float>());
+            if (builder.ValueIsSet()) mauiObject.Offset = builder.GetValue();
             return obj;
         }
         
         public static T Offset<T>(this T obj,
-            System.Func<BindableDef<float>, BindableDef<float>> definition)
+            System.Func<LazyValueBuilder<float>, LazyValueBuilder<float>> buildValue)
             where T : Sharp.UI.IGradientStop
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GradientStop>(obj);
-            var def = definition(new BindableDef<float>(mauiObject, Microsoft.Maui.Controls.GradientStop.OffsetProperty));
-            if (def.ValueIsSet()) mauiObject.Offset = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<float>());
+            if (builder.ValueIsSet()) mauiObject.Offset = builder.GetValue();
+            return obj;
+        }
+        
+        public static T Offset<T>(this T obj,
+            System.Func<BindingBuilder<float>, BindingBuilder<float>> buildBinding)
+            where T : Sharp.UI.IGradientStop
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GradientStop>(obj);
+            var builder = buildBinding(new BindingBuilder<float>(mauiObject, Microsoft.Maui.Controls.GradientStop.OffsetProperty));
+            builder.BindProperty();
             return obj;
         }
         

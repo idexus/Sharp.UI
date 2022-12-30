@@ -19,26 +19,32 @@ namespace Sharp.UI
         }
         
         public static T MinimumTrackColor<T>(this T obj,
-            Microsoft.Maui.Graphics.Color minimumTrackColor,
-            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : Sharp.UI.ISlider
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);         
-            mauiObject.MinimumTrackColor = (Microsoft.Maui.Graphics.Color)minimumTrackColor;
-            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.Slider.MinimumTrackColorProperty));
-            if (def.ValueIsSet()) mauiObject.MinimumTrackColor = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) mauiObject.MinimumTrackColor = builder.GetValue();
             return obj;
         }
         
         public static T MinimumTrackColor<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Color>, LazyValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : Sharp.UI.ISlider
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.Slider.MinimumTrackColorProperty));
-            if (def.ValueIsSet()) mauiObject.MinimumTrackColor = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) mauiObject.MinimumTrackColor = builder.GetValue();
+            return obj;
+        }
+        
+        public static T MinimumTrackColor<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+            where T : Sharp.UI.ISlider
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.Slider.MinimumTrackColorProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -52,26 +58,32 @@ namespace Sharp.UI
         }
         
         public static T MaximumTrackColor<T>(this T obj,
-            Microsoft.Maui.Graphics.Color maximumTrackColor,
-            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : Sharp.UI.ISlider
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);         
-            mauiObject.MaximumTrackColor = (Microsoft.Maui.Graphics.Color)maximumTrackColor;
-            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.Slider.MaximumTrackColorProperty));
-            if (def.ValueIsSet()) mauiObject.MaximumTrackColor = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) mauiObject.MaximumTrackColor = builder.GetValue();
             return obj;
         }
         
         public static T MaximumTrackColor<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Color>, LazyValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : Sharp.UI.ISlider
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.Slider.MaximumTrackColorProperty));
-            if (def.ValueIsSet()) mauiObject.MaximumTrackColor = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) mauiObject.MaximumTrackColor = builder.GetValue();
+            return obj;
+        }
+        
+        public static T MaximumTrackColor<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+            where T : Sharp.UI.ISlider
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.Slider.MaximumTrackColorProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -85,26 +97,32 @@ namespace Sharp.UI
         }
         
         public static T ThumbColor<T>(this T obj,
-            Microsoft.Maui.Graphics.Color thumbColor,
-            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : Sharp.UI.ISlider
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);         
-            mauiObject.ThumbColor = (Microsoft.Maui.Graphics.Color)thumbColor;
-            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.Slider.ThumbColorProperty));
-            if (def.ValueIsSet()) mauiObject.ThumbColor = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) mauiObject.ThumbColor = builder.GetValue();
             return obj;
         }
         
         public static T ThumbColor<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Color>, LazyValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : Sharp.UI.ISlider
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.Slider.ThumbColorProperty));
-            if (def.ValueIsSet()) mauiObject.ThumbColor = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) mauiObject.ThumbColor = builder.GetValue();
+            return obj;
+        }
+        
+        public static T ThumbColor<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+            where T : Sharp.UI.ISlider
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.Slider.ThumbColorProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -118,26 +136,32 @@ namespace Sharp.UI
         }
         
         public static T ThumbImageSource<T>(this T obj,
-            Microsoft.Maui.Controls.ImageSource thumbImageSource,
-            System.Func<BindableDef<Microsoft.Maui.Controls.ImageSource>, BindableDef<Microsoft.Maui.Controls.ImageSource>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.ImageSource>, ValueBuilder<Microsoft.Maui.Controls.ImageSource>> buildValue)
             where T : Sharp.UI.ISlider
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);         
-            mauiObject.ThumbImageSource = (Microsoft.Maui.Controls.ImageSource)thumbImageSource;
-            var def = definition(new BindableDef<Microsoft.Maui.Controls.ImageSource>(mauiObject, Microsoft.Maui.Controls.Slider.ThumbImageSourceProperty));
-            if (def.ValueIsSet()) mauiObject.ThumbImageSource = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
+            if (builder.ValueIsSet()) mauiObject.ThumbImageSource = builder.GetValue();
             return obj;
         }
         
         public static T ThumbImageSource<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Controls.ImageSource>, BindableDef<Microsoft.Maui.Controls.ImageSource>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.ImageSource>, LazyValueBuilder<Microsoft.Maui.Controls.ImageSource>> buildValue)
             where T : Sharp.UI.ISlider
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Controls.ImageSource>(mauiObject, Microsoft.Maui.Controls.Slider.ThumbImageSourceProperty));
-            if (def.ValueIsSet()) mauiObject.ThumbImageSource = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.ImageSource>());
+            if (builder.ValueIsSet()) mauiObject.ThumbImageSource = builder.GetValue();
+            return obj;
+        }
+        
+        public static T ThumbImageSource<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.ImageSource>, BindingBuilder<Microsoft.Maui.Controls.ImageSource>> buildBinding)
+            where T : Sharp.UI.ISlider
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ImageSource>(mauiObject, Microsoft.Maui.Controls.Slider.ThumbImageSourceProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -151,26 +175,32 @@ namespace Sharp.UI
         }
         
         public static T DragStartedCommand<T>(this T obj,
-            System.Windows.Input.ICommand dragStartedCommand,
-            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<ValueBuilder<System.Windows.Input.ICommand>, ValueBuilder<System.Windows.Input.ICommand>> buildValue)
             where T : Sharp.UI.ISlider
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);         
-            mauiObject.DragStartedCommand = (System.Windows.Input.ICommand)dragStartedCommand;
-            var def = definition(new BindableDef<System.Windows.Input.ICommand>(mauiObject, Microsoft.Maui.Controls.Slider.DragStartedCommandProperty));
-            if (def.ValueIsSet()) mauiObject.DragStartedCommand = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);
+            var builder = buildValue(new ValueBuilder<System.Windows.Input.ICommand>());
+            if (builder.ValueIsSet()) mauiObject.DragStartedCommand = builder.GetValue();
             return obj;
         }
         
         public static T DragStartedCommand<T>(this T obj,
-            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<LazyValueBuilder<System.Windows.Input.ICommand>, LazyValueBuilder<System.Windows.Input.ICommand>> buildValue)
             where T : Sharp.UI.ISlider
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);
-            var def = definition(new BindableDef<System.Windows.Input.ICommand>(mauiObject, Microsoft.Maui.Controls.Slider.DragStartedCommandProperty));
-            if (def.ValueIsSet()) mauiObject.DragStartedCommand = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<System.Windows.Input.ICommand>());
+            if (builder.ValueIsSet()) mauiObject.DragStartedCommand = builder.GetValue();
+            return obj;
+        }
+        
+        public static T DragStartedCommand<T>(this T obj,
+            System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buildBinding)
+            where T : Sharp.UI.ISlider
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);
+            var builder = buildBinding(new BindingBuilder<System.Windows.Input.ICommand>(mauiObject, Microsoft.Maui.Controls.Slider.DragStartedCommandProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -184,26 +214,32 @@ namespace Sharp.UI
         }
         
         public static T DragCompletedCommand<T>(this T obj,
-            System.Windows.Input.ICommand dragCompletedCommand,
-            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<ValueBuilder<System.Windows.Input.ICommand>, ValueBuilder<System.Windows.Input.ICommand>> buildValue)
             where T : Sharp.UI.ISlider
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);         
-            mauiObject.DragCompletedCommand = (System.Windows.Input.ICommand)dragCompletedCommand;
-            var def = definition(new BindableDef<System.Windows.Input.ICommand>(mauiObject, Microsoft.Maui.Controls.Slider.DragCompletedCommandProperty));
-            if (def.ValueIsSet()) mauiObject.DragCompletedCommand = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);
+            var builder = buildValue(new ValueBuilder<System.Windows.Input.ICommand>());
+            if (builder.ValueIsSet()) mauiObject.DragCompletedCommand = builder.GetValue();
             return obj;
         }
         
         public static T DragCompletedCommand<T>(this T obj,
-            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<LazyValueBuilder<System.Windows.Input.ICommand>, LazyValueBuilder<System.Windows.Input.ICommand>> buildValue)
             where T : Sharp.UI.ISlider
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);
-            var def = definition(new BindableDef<System.Windows.Input.ICommand>(mauiObject, Microsoft.Maui.Controls.Slider.DragCompletedCommandProperty));
-            if (def.ValueIsSet()) mauiObject.DragCompletedCommand = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<System.Windows.Input.ICommand>());
+            if (builder.ValueIsSet()) mauiObject.DragCompletedCommand = builder.GetValue();
+            return obj;
+        }
+        
+        public static T DragCompletedCommand<T>(this T obj,
+            System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buildBinding)
+            where T : Sharp.UI.ISlider
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);
+            var builder = buildBinding(new BindingBuilder<System.Windows.Input.ICommand>(mauiObject, Microsoft.Maui.Controls.Slider.DragCompletedCommandProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -217,26 +253,32 @@ namespace Sharp.UI
         }
         
         public static T Maximum<T>(this T obj,
-            double maximum,
-            System.Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Sharp.UI.ISlider
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);         
-            mauiObject.Maximum = (double)maximum;
-            var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Slider.MaximumProperty));
-            if (def.ValueIsSet()) mauiObject.Maximum = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) mauiObject.Maximum = builder.GetValue();
             return obj;
         }
         
         public static T Maximum<T>(this T obj,
-            System.Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
             where T : Sharp.UI.ISlider
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);
-            var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Slider.MaximumProperty));
-            if (def.ValueIsSet()) mauiObject.Maximum = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<double>());
+            if (builder.ValueIsSet()) mauiObject.Maximum = builder.GetValue();
+            return obj;
+        }
+        
+        public static T Maximum<T>(this T obj,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+            where T : Sharp.UI.ISlider
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);
+            var builder = buildBinding(new BindingBuilder<double>(mauiObject, Microsoft.Maui.Controls.Slider.MaximumProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -250,26 +292,32 @@ namespace Sharp.UI
         }
         
         public static T Minimum<T>(this T obj,
-            double minimum,
-            System.Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Sharp.UI.ISlider
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);         
-            mauiObject.Minimum = (double)minimum;
-            var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Slider.MinimumProperty));
-            if (def.ValueIsSet()) mauiObject.Minimum = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) mauiObject.Minimum = builder.GetValue();
             return obj;
         }
         
         public static T Minimum<T>(this T obj,
-            System.Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
             where T : Sharp.UI.ISlider
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);
-            var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Slider.MinimumProperty));
-            if (def.ValueIsSet()) mauiObject.Minimum = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<double>());
+            if (builder.ValueIsSet()) mauiObject.Minimum = builder.GetValue();
+            return obj;
+        }
+        
+        public static T Minimum<T>(this T obj,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+            where T : Sharp.UI.ISlider
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);
+            var builder = buildBinding(new BindingBuilder<double>(mauiObject, Microsoft.Maui.Controls.Slider.MinimumProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -283,26 +331,32 @@ namespace Sharp.UI
         }
         
         public static T Value<T>(this T obj,
-            double value,
-            System.Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Sharp.UI.ISlider
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);         
-            mauiObject.Value = (double)value;
-            var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Slider.ValueProperty));
-            if (def.ValueIsSet()) mauiObject.Value = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) mauiObject.Value = builder.GetValue();
             return obj;
         }
         
         public static T Value<T>(this T obj,
-            System.Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
             where T : Sharp.UI.ISlider
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);
-            var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Slider.ValueProperty));
-            if (def.ValueIsSet()) mauiObject.Value = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<double>());
+            if (builder.ValueIsSet()) mauiObject.Value = builder.GetValue();
+            return obj;
+        }
+        
+        public static T Value<T>(this T obj,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+            where T : Sharp.UI.ISlider
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);
+            var builder = buildBinding(new BindingBuilder<double>(mauiObject, Microsoft.Maui.Controls.Slider.ValueProperty));
+            builder.BindProperty();
             return obj;
         }
         

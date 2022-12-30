@@ -19,26 +19,32 @@ namespace Sharp.UI
         }
         
         public static T ImageSource<T>(this T obj,
-            Microsoft.Maui.Controls.ImageSource imageSource,
-            System.Func<BindableDef<Microsoft.Maui.Controls.ImageSource>, BindableDef<Microsoft.Maui.Controls.ImageSource>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.ImageSource>, ValueBuilder<Microsoft.Maui.Controls.ImageSource>> buildValue)
             where T : Sharp.UI.IImageCell
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageCell>(obj);         
-            mauiObject.ImageSource = (Microsoft.Maui.Controls.ImageSource)imageSource;
-            var def = definition(new BindableDef<Microsoft.Maui.Controls.ImageSource>(mauiObject, Microsoft.Maui.Controls.ImageCell.ImageSourceProperty));
-            if (def.ValueIsSet()) mauiObject.ImageSource = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageCell>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
+            if (builder.ValueIsSet()) mauiObject.ImageSource = builder.GetValue();
             return obj;
         }
         
         public static T ImageSource<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Controls.ImageSource>, BindableDef<Microsoft.Maui.Controls.ImageSource>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.ImageSource>, LazyValueBuilder<Microsoft.Maui.Controls.ImageSource>> buildValue)
             where T : Sharp.UI.IImageCell
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageCell>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Controls.ImageSource>(mauiObject, Microsoft.Maui.Controls.ImageCell.ImageSourceProperty));
-            if (def.ValueIsSet()) mauiObject.ImageSource = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.ImageSource>());
+            if (builder.ValueIsSet()) mauiObject.ImageSource = builder.GetValue();
+            return obj;
+        }
+        
+        public static T ImageSource<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.ImageSource>, BindingBuilder<Microsoft.Maui.Controls.ImageSource>> buildBinding)
+            where T : Sharp.UI.IImageCell
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageCell>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ImageSource>(mauiObject, Microsoft.Maui.Controls.ImageCell.ImageSourceProperty));
+            builder.BindProperty();
             return obj;
         }
         

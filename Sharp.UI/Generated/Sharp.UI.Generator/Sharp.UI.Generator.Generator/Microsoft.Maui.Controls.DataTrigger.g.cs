@@ -19,24 +19,22 @@ namespace Sharp.UI
         }
         
         public static T Binding<T>(this T obj,
-            Microsoft.Maui.Controls.BindingBase binding,
-            System.Func<ValueDef<Microsoft.Maui.Controls.BindingBase>, ValueDef<Microsoft.Maui.Controls.BindingBase>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.BindingBase>, ValueBuilder<Microsoft.Maui.Controls.BindingBase>> buildValue)
             where T : Sharp.UI.IDataTrigger
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DataTrigger>(obj);
-            mauiObject.Binding = (Microsoft.Maui.Controls.BindingBase)binding;
-            var def = definition(new ValueDef<Microsoft.Maui.Controls.BindingBase>());
-            if (def.ValueIsSet()) mauiObject.Binding = def.GetValue();
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.BindingBase>());
+            if (builder.ValueIsSet()) mauiObject.Binding = builder.GetValue();
             return obj;
         }
         
         public static T Binding<T>(this T obj,
-            System.Func<ValueDef<Microsoft.Maui.Controls.BindingBase>, ValueDef<Microsoft.Maui.Controls.BindingBase>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.BindingBase>, LazyValueBuilder<Microsoft.Maui.Controls.BindingBase>> buildValue)
             where T : Sharp.UI.IDataTrigger
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DataTrigger>(obj);
-            var def = definition(new ValueDef<Microsoft.Maui.Controls.BindingBase>());
-            if (def.ValueIsSet()) mauiObject.Binding = def.GetValue();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.BindingBase>());
+            if (builder.ValueIsSet()) mauiObject.Binding = builder.GetValue();
             return obj;
         }
         
@@ -67,14 +65,14 @@ namespace Sharp.UI
         }
 
         public static T Setters<T>(this T obj,
-            System.Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Setter>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Setter>>> definition)
+            System.Func<LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.Setter>>, LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.Setter>>> buildValue)
             where T : Sharp.UI.IDataTrigger
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DataTrigger>(obj);
-            var def = definition(new Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.Setter>>());
-            if (def.ValueIsSet())
+            var builder = buildValue(new LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.Setter>>());
+            if (builder.ValueIsSet())
             {
-                var items = def.GetValue();
+                var items = builder.GetValue();
                 foreach (var item in items) 
                 {
                     var mauiItem = MauiWrapper.Value<Microsoft.Maui.Controls.Setter>(item);
@@ -94,24 +92,22 @@ namespace Sharp.UI
         }
         
         public static T Value<T>(this T obj,
-            object value,
-            System.Func<ValueDef<object>, ValueDef<object>> definition)
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buildValue)
             where T : Sharp.UI.IDataTrigger
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DataTrigger>(obj);
-            mauiObject.Value = (object)value;
-            var def = definition(new ValueDef<object>());
-            if (def.ValueIsSet()) mauiObject.Value = def.GetValue();
+            var builder = buildValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) mauiObject.Value = builder.GetValue();
             return obj;
         }
         
         public static T Value<T>(this T obj,
-            System.Func<ValueDef<object>, ValueDef<object>> definition)
+            System.Func<LazyValueBuilder<object>, LazyValueBuilder<object>> buildValue)
             where T : Sharp.UI.IDataTrigger
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DataTrigger>(obj);
-            var def = definition(new ValueDef<object>());
-            if (def.ValueIsSet()) mauiObject.Value = def.GetValue();
+            var builder = buildValue(new LazyValueBuilder<object>());
+            if (builder.ValueIsSet()) mauiObject.Value = builder.GetValue();
             return obj;
         }
         

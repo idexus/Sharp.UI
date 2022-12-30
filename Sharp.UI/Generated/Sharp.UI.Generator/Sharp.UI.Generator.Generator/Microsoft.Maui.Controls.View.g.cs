@@ -36,14 +36,14 @@ namespace Sharp.UI
         }
 
         public static T GestureRecognizers<T>(this T obj,
-            System.Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.IGestureRecognizer>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.IGestureRecognizer>>> definition)
+            System.Func<LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.IGestureRecognizer>>, LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.IGestureRecognizer>>> buildValue)
             where T : Sharp.UI.IView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.View>(obj);
-            var def = definition(new Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.IGestureRecognizer>>());
-            if (def.ValueIsSet())
+            var builder = buildValue(new LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.IGestureRecognizer>>());
+            if (builder.ValueIsSet())
             {
-                var items = def.GetValue();
+                var items = builder.GetValue();
                 foreach (var item in items) 
                 {
                     var mauiItem = MauiWrapper.Value<Microsoft.Maui.Controls.IGestureRecognizer>(item);
@@ -63,26 +63,32 @@ namespace Sharp.UI
         }
         
         public static T HorizontalOptions<T>(this T obj,
-            Microsoft.Maui.Controls.LayoutOptions horizontalOptions,
-            System.Func<BindableDef<Microsoft.Maui.Controls.LayoutOptions>, BindableDef<Microsoft.Maui.Controls.LayoutOptions>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.LayoutOptions>, ValueBuilder<Microsoft.Maui.Controls.LayoutOptions>> buildValue)
             where T : Sharp.UI.IView
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.View>(obj);         
-            mauiObject.HorizontalOptions = (Microsoft.Maui.Controls.LayoutOptions)horizontalOptions;
-            var def = definition(new BindableDef<Microsoft.Maui.Controls.LayoutOptions>(mauiObject, Microsoft.Maui.Controls.View.HorizontalOptionsProperty));
-            if (def.ValueIsSet()) mauiObject.HorizontalOptions = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.View>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.LayoutOptions>());
+            if (builder.ValueIsSet()) mauiObject.HorizontalOptions = builder.GetValue();
             return obj;
         }
         
         public static T HorizontalOptions<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Controls.LayoutOptions>, BindableDef<Microsoft.Maui.Controls.LayoutOptions>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.LayoutOptions>, LazyValueBuilder<Microsoft.Maui.Controls.LayoutOptions>> buildValue)
             where T : Sharp.UI.IView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.View>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Controls.LayoutOptions>(mauiObject, Microsoft.Maui.Controls.View.HorizontalOptionsProperty));
-            if (def.ValueIsSet()) mauiObject.HorizontalOptions = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.LayoutOptions>());
+            if (builder.ValueIsSet()) mauiObject.HorizontalOptions = builder.GetValue();
+            return obj;
+        }
+        
+        public static T HorizontalOptions<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.LayoutOptions>, BindingBuilder<Microsoft.Maui.Controls.LayoutOptions>> buildBinding)
+            where T : Sharp.UI.IView
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.View>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.LayoutOptions>(mauiObject, Microsoft.Maui.Controls.View.HorizontalOptionsProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -96,26 +102,32 @@ namespace Sharp.UI
         }
         
         public static T Margin<T>(this T obj,
-            Microsoft.Maui.Thickness margin,
-            System.Func<BindableDef<Microsoft.Maui.Thickness>, BindableDef<Microsoft.Maui.Thickness>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Thickness>, ValueBuilder<Microsoft.Maui.Thickness>> buildValue)
             where T : Sharp.UI.IView
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.View>(obj);         
-            mauiObject.Margin = (Microsoft.Maui.Thickness)margin;
-            var def = definition(new BindableDef<Microsoft.Maui.Thickness>(mauiObject, Microsoft.Maui.Controls.View.MarginProperty));
-            if (def.ValueIsSet()) mauiObject.Margin = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.View>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Thickness>());
+            if (builder.ValueIsSet()) mauiObject.Margin = builder.GetValue();
             return obj;
         }
         
         public static T Margin<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Thickness>, BindableDef<Microsoft.Maui.Thickness>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Thickness>, LazyValueBuilder<Microsoft.Maui.Thickness>> buildValue)
             where T : Sharp.UI.IView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.View>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Thickness>(mauiObject, Microsoft.Maui.Controls.View.MarginProperty));
-            if (def.ValueIsSet()) mauiObject.Margin = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Thickness>());
+            if (builder.ValueIsSet()) mauiObject.Margin = builder.GetValue();
+            return obj;
+        }
+        
+        public static T Margin<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Thickness>, BindingBuilder<Microsoft.Maui.Thickness>> buildBinding)
+            where T : Sharp.UI.IView
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.View>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Thickness>(mauiObject, Microsoft.Maui.Controls.View.MarginProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -129,26 +141,32 @@ namespace Sharp.UI
         }
         
         public static T VerticalOptions<T>(this T obj,
-            Microsoft.Maui.Controls.LayoutOptions verticalOptions,
-            System.Func<BindableDef<Microsoft.Maui.Controls.LayoutOptions>, BindableDef<Microsoft.Maui.Controls.LayoutOptions>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.LayoutOptions>, ValueBuilder<Microsoft.Maui.Controls.LayoutOptions>> buildValue)
             where T : Sharp.UI.IView
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.View>(obj);         
-            mauiObject.VerticalOptions = (Microsoft.Maui.Controls.LayoutOptions)verticalOptions;
-            var def = definition(new BindableDef<Microsoft.Maui.Controls.LayoutOptions>(mauiObject, Microsoft.Maui.Controls.View.VerticalOptionsProperty));
-            if (def.ValueIsSet()) mauiObject.VerticalOptions = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.View>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.LayoutOptions>());
+            if (builder.ValueIsSet()) mauiObject.VerticalOptions = builder.GetValue();
             return obj;
         }
         
         public static T VerticalOptions<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Controls.LayoutOptions>, BindableDef<Microsoft.Maui.Controls.LayoutOptions>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.LayoutOptions>, LazyValueBuilder<Microsoft.Maui.Controls.LayoutOptions>> buildValue)
             where T : Sharp.UI.IView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.View>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Controls.LayoutOptions>(mauiObject, Microsoft.Maui.Controls.View.VerticalOptionsProperty));
-            if (def.ValueIsSet()) mauiObject.VerticalOptions = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.LayoutOptions>());
+            if (builder.ValueIsSet()) mauiObject.VerticalOptions = builder.GetValue();
+            return obj;
+        }
+        
+        public static T VerticalOptions<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.LayoutOptions>, BindingBuilder<Microsoft.Maui.Controls.LayoutOptions>> buildBinding)
+            where T : Sharp.UI.IView
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.View>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.LayoutOptions>(mauiObject, Microsoft.Maui.Controls.View.VerticalOptionsProperty));
+            builder.BindProperty();
             return obj;
         }
         

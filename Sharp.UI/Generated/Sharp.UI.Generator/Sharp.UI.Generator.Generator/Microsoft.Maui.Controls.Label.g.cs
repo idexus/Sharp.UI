@@ -19,26 +19,32 @@ namespace Sharp.UI
         }
         
         public static T TextTransform<T>(this T obj,
-            Microsoft.Maui.TextTransform textTransform,
-            System.Func<BindableDef<Microsoft.Maui.TextTransform>, BindableDef<Microsoft.Maui.TextTransform>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.TextTransform>, ValueBuilder<Microsoft.Maui.TextTransform>> buildValue)
             where T : Sharp.UI.ILabel
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);         
-            mauiObject.TextTransform = (Microsoft.Maui.TextTransform)textTransform;
-            var def = definition(new BindableDef<Microsoft.Maui.TextTransform>(mauiObject, Microsoft.Maui.Controls.Label.TextTransformProperty));
-            if (def.ValueIsSet()) mauiObject.TextTransform = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.TextTransform>());
+            if (builder.ValueIsSet()) mauiObject.TextTransform = builder.GetValue();
             return obj;
         }
         
         public static T TextTransform<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.TextTransform>, BindableDef<Microsoft.Maui.TextTransform>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.TextTransform>, LazyValueBuilder<Microsoft.Maui.TextTransform>> buildValue)
             where T : Sharp.UI.ILabel
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.TextTransform>(mauiObject, Microsoft.Maui.Controls.Label.TextTransformProperty));
-            if (def.ValueIsSet()) mauiObject.TextTransform = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.TextTransform>());
+            if (builder.ValueIsSet()) mauiObject.TextTransform = builder.GetValue();
+            return obj;
+        }
+        
+        public static T TextTransform<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.TextTransform>, BindingBuilder<Microsoft.Maui.TextTransform>> buildBinding)
+            where T : Sharp.UI.ILabel
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.TextTransform>(mauiObject, Microsoft.Maui.Controls.Label.TextTransformProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -52,26 +58,32 @@ namespace Sharp.UI
         }
         
         public static T FormattedText<T>(this T obj,
-            Microsoft.Maui.Controls.FormattedString formattedText,
-            System.Func<BindableDef<Microsoft.Maui.Controls.FormattedString>, BindableDef<Microsoft.Maui.Controls.FormattedString>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.FormattedString>, ValueBuilder<Microsoft.Maui.Controls.FormattedString>> buildValue)
             where T : Sharp.UI.ILabel
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);         
-            mauiObject.FormattedText = (Microsoft.Maui.Controls.FormattedString)formattedText;
-            var def = definition(new BindableDef<Microsoft.Maui.Controls.FormattedString>(mauiObject, Microsoft.Maui.Controls.Label.FormattedTextProperty));
-            if (def.ValueIsSet()) mauiObject.FormattedText = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.FormattedString>());
+            if (builder.ValueIsSet()) mauiObject.FormattedText = builder.GetValue();
             return obj;
         }
         
         public static T FormattedText<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Controls.FormattedString>, BindableDef<Microsoft.Maui.Controls.FormattedString>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.FormattedString>, LazyValueBuilder<Microsoft.Maui.Controls.FormattedString>> buildValue)
             where T : Sharp.UI.ILabel
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Controls.FormattedString>(mauiObject, Microsoft.Maui.Controls.Label.FormattedTextProperty));
-            if (def.ValueIsSet()) mauiObject.FormattedText = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.FormattedString>());
+            if (builder.ValueIsSet()) mauiObject.FormattedText = builder.GetValue();
+            return obj;
+        }
+        
+        public static T FormattedText<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.FormattedString>, BindingBuilder<Microsoft.Maui.Controls.FormattedString>> buildBinding)
+            where T : Sharp.UI.ILabel
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.FormattedString>(mauiObject, Microsoft.Maui.Controls.Label.FormattedTextProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -85,26 +97,32 @@ namespace Sharp.UI
         }
         
         public static T HorizontalTextAlignment<T>(this T obj,
-            Microsoft.Maui.TextAlignment horizontalTextAlignment,
-            System.Func<BindableDef<Microsoft.Maui.TextAlignment>, BindableDef<Microsoft.Maui.TextAlignment>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.TextAlignment>, ValueBuilder<Microsoft.Maui.TextAlignment>> buildValue)
             where T : Sharp.UI.ILabel
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);         
-            mauiObject.HorizontalTextAlignment = (Microsoft.Maui.TextAlignment)horizontalTextAlignment;
-            var def = definition(new BindableDef<Microsoft.Maui.TextAlignment>(mauiObject, Microsoft.Maui.Controls.Label.HorizontalTextAlignmentProperty));
-            if (def.ValueIsSet()) mauiObject.HorizontalTextAlignment = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.TextAlignment>());
+            if (builder.ValueIsSet()) mauiObject.HorizontalTextAlignment = builder.GetValue();
             return obj;
         }
         
         public static T HorizontalTextAlignment<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.TextAlignment>, BindableDef<Microsoft.Maui.TextAlignment>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.TextAlignment>, LazyValueBuilder<Microsoft.Maui.TextAlignment>> buildValue)
             where T : Sharp.UI.ILabel
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.TextAlignment>(mauiObject, Microsoft.Maui.Controls.Label.HorizontalTextAlignmentProperty));
-            if (def.ValueIsSet()) mauiObject.HorizontalTextAlignment = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.TextAlignment>());
+            if (builder.ValueIsSet()) mauiObject.HorizontalTextAlignment = builder.GetValue();
+            return obj;
+        }
+        
+        public static T HorizontalTextAlignment<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.TextAlignment>, BindingBuilder<Microsoft.Maui.TextAlignment>> buildBinding)
+            where T : Sharp.UI.ILabel
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.TextAlignment>(mauiObject, Microsoft.Maui.Controls.Label.HorizontalTextAlignmentProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -118,26 +136,32 @@ namespace Sharp.UI
         }
         
         public static T LineBreakMode<T>(this T obj,
-            Microsoft.Maui.LineBreakMode lineBreakMode,
-            System.Func<BindableDef<Microsoft.Maui.LineBreakMode>, BindableDef<Microsoft.Maui.LineBreakMode>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.LineBreakMode>, ValueBuilder<Microsoft.Maui.LineBreakMode>> buildValue)
             where T : Sharp.UI.ILabel
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);         
-            mauiObject.LineBreakMode = (Microsoft.Maui.LineBreakMode)lineBreakMode;
-            var def = definition(new BindableDef<Microsoft.Maui.LineBreakMode>(mauiObject, Microsoft.Maui.Controls.Label.LineBreakModeProperty));
-            if (def.ValueIsSet()) mauiObject.LineBreakMode = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.LineBreakMode>());
+            if (builder.ValueIsSet()) mauiObject.LineBreakMode = builder.GetValue();
             return obj;
         }
         
         public static T LineBreakMode<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.LineBreakMode>, BindableDef<Microsoft.Maui.LineBreakMode>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.LineBreakMode>, LazyValueBuilder<Microsoft.Maui.LineBreakMode>> buildValue)
             where T : Sharp.UI.ILabel
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.LineBreakMode>(mauiObject, Microsoft.Maui.Controls.Label.LineBreakModeProperty));
-            if (def.ValueIsSet()) mauiObject.LineBreakMode = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.LineBreakMode>());
+            if (builder.ValueIsSet()) mauiObject.LineBreakMode = builder.GetValue();
+            return obj;
+        }
+        
+        public static T LineBreakMode<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.LineBreakMode>, BindingBuilder<Microsoft.Maui.LineBreakMode>> buildBinding)
+            where T : Sharp.UI.ILabel
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.LineBreakMode>(mauiObject, Microsoft.Maui.Controls.Label.LineBreakModeProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -151,26 +175,32 @@ namespace Sharp.UI
         }
         
         public static T Text<T>(this T obj,
-            string text,
-            System.Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
             where T : Sharp.UI.ILabel
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);         
-            mauiObject.Text = (string)text;
-            var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.Label.TextProperty));
-            if (def.ValueIsSet()) mauiObject.Text = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) mauiObject.Text = builder.GetValue();
             return obj;
         }
         
         public static T Text<T>(this T obj,
-            System.Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<LazyValueBuilder<string>, LazyValueBuilder<string>> buildValue)
             where T : Sharp.UI.ILabel
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
-            var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.Label.TextProperty));
-            if (def.ValueIsSet()) mauiObject.Text = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<string>());
+            if (builder.ValueIsSet()) mauiObject.Text = builder.GetValue();
+            return obj;
+        }
+        
+        public static T Text<T>(this T obj,
+            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+            where T : Sharp.UI.ILabel
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
+            var builder = buildBinding(new BindingBuilder<string>(mauiObject, Microsoft.Maui.Controls.Label.TextProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -184,26 +214,32 @@ namespace Sharp.UI
         }
         
         public static T TextColor<T>(this T obj,
-            Microsoft.Maui.Graphics.Color textColor,
-            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : Sharp.UI.ILabel
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);         
-            mauiObject.TextColor = (Microsoft.Maui.Graphics.Color)textColor;
-            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.Label.TextColorProperty));
-            if (def.ValueIsSet()) mauiObject.TextColor = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) mauiObject.TextColor = builder.GetValue();
             return obj;
         }
         
         public static T TextColor<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Color>, LazyValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : Sharp.UI.ILabel
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.Label.TextColorProperty));
-            if (def.ValueIsSet()) mauiObject.TextColor = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) mauiObject.TextColor = builder.GetValue();
+            return obj;
+        }
+        
+        public static T TextColor<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+            where T : Sharp.UI.ILabel
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.Label.TextColorProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -217,26 +253,32 @@ namespace Sharp.UI
         }
         
         public static T CharacterSpacing<T>(this T obj,
-            double characterSpacing,
-            System.Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Sharp.UI.ILabel
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);         
-            mauiObject.CharacterSpacing = (double)characterSpacing;
-            var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Label.CharacterSpacingProperty));
-            if (def.ValueIsSet()) mauiObject.CharacterSpacing = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) mauiObject.CharacterSpacing = builder.GetValue();
             return obj;
         }
         
         public static T CharacterSpacing<T>(this T obj,
-            System.Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
             where T : Sharp.UI.ILabel
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
-            var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Label.CharacterSpacingProperty));
-            if (def.ValueIsSet()) mauiObject.CharacterSpacing = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<double>());
+            if (builder.ValueIsSet()) mauiObject.CharacterSpacing = builder.GetValue();
+            return obj;
+        }
+        
+        public static T CharacterSpacing<T>(this T obj,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+            where T : Sharp.UI.ILabel
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
+            var builder = buildBinding(new BindingBuilder<double>(mauiObject, Microsoft.Maui.Controls.Label.CharacterSpacingProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -250,26 +292,32 @@ namespace Sharp.UI
         }
         
         public static T VerticalTextAlignment<T>(this T obj,
-            Microsoft.Maui.TextAlignment verticalTextAlignment,
-            System.Func<BindableDef<Microsoft.Maui.TextAlignment>, BindableDef<Microsoft.Maui.TextAlignment>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.TextAlignment>, ValueBuilder<Microsoft.Maui.TextAlignment>> buildValue)
             where T : Sharp.UI.ILabel
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);         
-            mauiObject.VerticalTextAlignment = (Microsoft.Maui.TextAlignment)verticalTextAlignment;
-            var def = definition(new BindableDef<Microsoft.Maui.TextAlignment>(mauiObject, Microsoft.Maui.Controls.Label.VerticalTextAlignmentProperty));
-            if (def.ValueIsSet()) mauiObject.VerticalTextAlignment = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.TextAlignment>());
+            if (builder.ValueIsSet()) mauiObject.VerticalTextAlignment = builder.GetValue();
             return obj;
         }
         
         public static T VerticalTextAlignment<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.TextAlignment>, BindableDef<Microsoft.Maui.TextAlignment>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.TextAlignment>, LazyValueBuilder<Microsoft.Maui.TextAlignment>> buildValue)
             where T : Sharp.UI.ILabel
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.TextAlignment>(mauiObject, Microsoft.Maui.Controls.Label.VerticalTextAlignmentProperty));
-            if (def.ValueIsSet()) mauiObject.VerticalTextAlignment = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.TextAlignment>());
+            if (builder.ValueIsSet()) mauiObject.VerticalTextAlignment = builder.GetValue();
+            return obj;
+        }
+        
+        public static T VerticalTextAlignment<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.TextAlignment>, BindingBuilder<Microsoft.Maui.TextAlignment>> buildBinding)
+            where T : Sharp.UI.ILabel
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.TextAlignment>(mauiObject, Microsoft.Maui.Controls.Label.VerticalTextAlignmentProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -283,26 +331,32 @@ namespace Sharp.UI
         }
         
         public static T FontAttributes<T>(this T obj,
-            Microsoft.Maui.Controls.FontAttributes fontAttributes,
-            System.Func<BindableDef<Microsoft.Maui.Controls.FontAttributes>, BindableDef<Microsoft.Maui.Controls.FontAttributes>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.FontAttributes>, ValueBuilder<Microsoft.Maui.Controls.FontAttributes>> buildValue)
             where T : Sharp.UI.ILabel
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);         
-            mauiObject.FontAttributes = (Microsoft.Maui.Controls.FontAttributes)fontAttributes;
-            var def = definition(new BindableDef<Microsoft.Maui.Controls.FontAttributes>(mauiObject, Microsoft.Maui.Controls.Label.FontAttributesProperty));
-            if (def.ValueIsSet()) mauiObject.FontAttributes = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.FontAttributes>());
+            if (builder.ValueIsSet()) mauiObject.FontAttributes = builder.GetValue();
             return obj;
         }
         
         public static T FontAttributes<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Controls.FontAttributes>, BindableDef<Microsoft.Maui.Controls.FontAttributes>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.FontAttributes>, LazyValueBuilder<Microsoft.Maui.Controls.FontAttributes>> buildValue)
             where T : Sharp.UI.ILabel
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Controls.FontAttributes>(mauiObject, Microsoft.Maui.Controls.Label.FontAttributesProperty));
-            if (def.ValueIsSet()) mauiObject.FontAttributes = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.FontAttributes>());
+            if (builder.ValueIsSet()) mauiObject.FontAttributes = builder.GetValue();
+            return obj;
+        }
+        
+        public static T FontAttributes<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.FontAttributes>, BindingBuilder<Microsoft.Maui.Controls.FontAttributes>> buildBinding)
+            where T : Sharp.UI.ILabel
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.FontAttributes>(mauiObject, Microsoft.Maui.Controls.Label.FontAttributesProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -316,26 +370,32 @@ namespace Sharp.UI
         }
         
         public static T TextDecorations<T>(this T obj,
-            Microsoft.Maui.TextDecorations textDecorations,
-            System.Func<BindableDef<Microsoft.Maui.TextDecorations>, BindableDef<Microsoft.Maui.TextDecorations>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.TextDecorations>, ValueBuilder<Microsoft.Maui.TextDecorations>> buildValue)
             where T : Sharp.UI.ILabel
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);         
-            mauiObject.TextDecorations = (Microsoft.Maui.TextDecorations)textDecorations;
-            var def = definition(new BindableDef<Microsoft.Maui.TextDecorations>(mauiObject, Microsoft.Maui.Controls.Label.TextDecorationsProperty));
-            if (def.ValueIsSet()) mauiObject.TextDecorations = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.TextDecorations>());
+            if (builder.ValueIsSet()) mauiObject.TextDecorations = builder.GetValue();
             return obj;
         }
         
         public static T TextDecorations<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.TextDecorations>, BindableDef<Microsoft.Maui.TextDecorations>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.TextDecorations>, LazyValueBuilder<Microsoft.Maui.TextDecorations>> buildValue)
             where T : Sharp.UI.ILabel
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.TextDecorations>(mauiObject, Microsoft.Maui.Controls.Label.TextDecorationsProperty));
-            if (def.ValueIsSet()) mauiObject.TextDecorations = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.TextDecorations>());
+            if (builder.ValueIsSet()) mauiObject.TextDecorations = builder.GetValue();
+            return obj;
+        }
+        
+        public static T TextDecorations<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.TextDecorations>, BindingBuilder<Microsoft.Maui.TextDecorations>> buildBinding)
+            where T : Sharp.UI.ILabel
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.TextDecorations>(mauiObject, Microsoft.Maui.Controls.Label.TextDecorationsProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -349,26 +409,32 @@ namespace Sharp.UI
         }
         
         public static T FontFamily<T>(this T obj,
-            string fontFamily,
-            System.Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
             where T : Sharp.UI.ILabel
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);         
-            mauiObject.FontFamily = (string)fontFamily;
-            var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.Label.FontFamilyProperty));
-            if (def.ValueIsSet()) mauiObject.FontFamily = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) mauiObject.FontFamily = builder.GetValue();
             return obj;
         }
         
         public static T FontFamily<T>(this T obj,
-            System.Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<LazyValueBuilder<string>, LazyValueBuilder<string>> buildValue)
             where T : Sharp.UI.ILabel
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
-            var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.Label.FontFamilyProperty));
-            if (def.ValueIsSet()) mauiObject.FontFamily = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<string>());
+            if (builder.ValueIsSet()) mauiObject.FontFamily = builder.GetValue();
+            return obj;
+        }
+        
+        public static T FontFamily<T>(this T obj,
+            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+            where T : Sharp.UI.ILabel
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
+            var builder = buildBinding(new BindingBuilder<string>(mauiObject, Microsoft.Maui.Controls.Label.FontFamilyProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -382,26 +448,32 @@ namespace Sharp.UI
         }
         
         public static T FontSize<T>(this T obj,
-            double fontSize,
-            System.Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Sharp.UI.ILabel
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);         
-            mauiObject.FontSize = (double)fontSize;
-            var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Label.FontSizeProperty));
-            if (def.ValueIsSet()) mauiObject.FontSize = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) mauiObject.FontSize = builder.GetValue();
             return obj;
         }
         
         public static T FontSize<T>(this T obj,
-            System.Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
             where T : Sharp.UI.ILabel
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
-            var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Label.FontSizeProperty));
-            if (def.ValueIsSet()) mauiObject.FontSize = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<double>());
+            if (builder.ValueIsSet()) mauiObject.FontSize = builder.GetValue();
+            return obj;
+        }
+        
+        public static T FontSize<T>(this T obj,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+            where T : Sharp.UI.ILabel
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
+            var builder = buildBinding(new BindingBuilder<double>(mauiObject, Microsoft.Maui.Controls.Label.FontSizeProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -415,26 +487,32 @@ namespace Sharp.UI
         }
         
         public static T FontAutoScalingEnabled<T>(this T obj,
-            bool fontAutoScalingEnabled,
-            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Sharp.UI.ILabel
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);         
-            mauiObject.FontAutoScalingEnabled = (bool)fontAutoScalingEnabled;
-            var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.Label.FontAutoScalingEnabledProperty));
-            if (def.ValueIsSet()) mauiObject.FontAutoScalingEnabled = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) mauiObject.FontAutoScalingEnabled = builder.GetValue();
             return obj;
         }
         
         public static T FontAutoScalingEnabled<T>(this T obj,
-            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
             where T : Sharp.UI.ILabel
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
-            var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.Label.FontAutoScalingEnabledProperty));
-            if (def.ValueIsSet()) mauiObject.FontAutoScalingEnabled = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<bool>());
+            if (builder.ValueIsSet()) mauiObject.FontAutoScalingEnabled = builder.GetValue();
+            return obj;
+        }
+        
+        public static T FontAutoScalingEnabled<T>(this T obj,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+            where T : Sharp.UI.ILabel
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
+            var builder = buildBinding(new BindingBuilder<bool>(mauiObject, Microsoft.Maui.Controls.Label.FontAutoScalingEnabledProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -448,26 +526,32 @@ namespace Sharp.UI
         }
         
         public static T LineHeight<T>(this T obj,
-            double lineHeight,
-            System.Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Sharp.UI.ILabel
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);         
-            mauiObject.LineHeight = (double)lineHeight;
-            var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Label.LineHeightProperty));
-            if (def.ValueIsSet()) mauiObject.LineHeight = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) mauiObject.LineHeight = builder.GetValue();
             return obj;
         }
         
         public static T LineHeight<T>(this T obj,
-            System.Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
             where T : Sharp.UI.ILabel
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
-            var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.Label.LineHeightProperty));
-            if (def.ValueIsSet()) mauiObject.LineHeight = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<double>());
+            if (builder.ValueIsSet()) mauiObject.LineHeight = builder.GetValue();
+            return obj;
+        }
+        
+        public static T LineHeight<T>(this T obj,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+            where T : Sharp.UI.ILabel
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
+            var builder = buildBinding(new BindingBuilder<double>(mauiObject, Microsoft.Maui.Controls.Label.LineHeightProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -481,26 +565,32 @@ namespace Sharp.UI
         }
         
         public static T MaxLines<T>(this T obj,
-            int maxLines,
-            System.Func<BindableDef<int>, BindableDef<int>> definition)
+            System.Func<ValueBuilder<int>, ValueBuilder<int>> buildValue)
             where T : Sharp.UI.ILabel
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);         
-            mauiObject.MaxLines = (int)maxLines;
-            var def = definition(new BindableDef<int>(mauiObject, Microsoft.Maui.Controls.Label.MaxLinesProperty));
-            if (def.ValueIsSet()) mauiObject.MaxLines = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
+            var builder = buildValue(new ValueBuilder<int>());
+            if (builder.ValueIsSet()) mauiObject.MaxLines = builder.GetValue();
             return obj;
         }
         
         public static T MaxLines<T>(this T obj,
-            System.Func<BindableDef<int>, BindableDef<int>> definition)
+            System.Func<LazyValueBuilder<int>, LazyValueBuilder<int>> buildValue)
             where T : Sharp.UI.ILabel
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
-            var def = definition(new BindableDef<int>(mauiObject, Microsoft.Maui.Controls.Label.MaxLinesProperty));
-            if (def.ValueIsSet()) mauiObject.MaxLines = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<int>());
+            if (builder.ValueIsSet()) mauiObject.MaxLines = builder.GetValue();
+            return obj;
+        }
+        
+        public static T MaxLines<T>(this T obj,
+            System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
+            where T : Sharp.UI.ILabel
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
+            var builder = buildBinding(new BindingBuilder<int>(mauiObject, Microsoft.Maui.Controls.Label.MaxLinesProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -514,26 +604,32 @@ namespace Sharp.UI
         }
         
         public static T Padding<T>(this T obj,
-            Microsoft.Maui.Thickness padding,
-            System.Func<BindableDef<Microsoft.Maui.Thickness>, BindableDef<Microsoft.Maui.Thickness>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Thickness>, ValueBuilder<Microsoft.Maui.Thickness>> buildValue)
             where T : Sharp.UI.ILabel
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);         
-            mauiObject.Padding = (Microsoft.Maui.Thickness)padding;
-            var def = definition(new BindableDef<Microsoft.Maui.Thickness>(mauiObject, Microsoft.Maui.Controls.Label.PaddingProperty));
-            if (def.ValueIsSet()) mauiObject.Padding = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Thickness>());
+            if (builder.ValueIsSet()) mauiObject.Padding = builder.GetValue();
             return obj;
         }
         
         public static T Padding<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Thickness>, BindableDef<Microsoft.Maui.Thickness>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Thickness>, LazyValueBuilder<Microsoft.Maui.Thickness>> buildValue)
             where T : Sharp.UI.ILabel
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Thickness>(mauiObject, Microsoft.Maui.Controls.Label.PaddingProperty));
-            if (def.ValueIsSet()) mauiObject.Padding = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Thickness>());
+            if (builder.ValueIsSet()) mauiObject.Padding = builder.GetValue();
+            return obj;
+        }
+        
+        public static T Padding<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Thickness>, BindingBuilder<Microsoft.Maui.Thickness>> buildBinding)
+            where T : Sharp.UI.ILabel
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Thickness>(mauiObject, Microsoft.Maui.Controls.Label.PaddingProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -547,26 +643,32 @@ namespace Sharp.UI
         }
         
         public static T TextType<T>(this T obj,
-            Microsoft.Maui.TextType textType,
-            System.Func<BindableDef<Microsoft.Maui.TextType>, BindableDef<Microsoft.Maui.TextType>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.TextType>, ValueBuilder<Microsoft.Maui.TextType>> buildValue)
             where T : Sharp.UI.ILabel
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);         
-            mauiObject.TextType = (Microsoft.Maui.TextType)textType;
-            var def = definition(new BindableDef<Microsoft.Maui.TextType>(mauiObject, Microsoft.Maui.Controls.Label.TextTypeProperty));
-            if (def.ValueIsSet()) mauiObject.TextType = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.TextType>());
+            if (builder.ValueIsSet()) mauiObject.TextType = builder.GetValue();
             return obj;
         }
         
         public static T TextType<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.TextType>, BindableDef<Microsoft.Maui.TextType>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.TextType>, LazyValueBuilder<Microsoft.Maui.TextType>> buildValue)
             where T : Sharp.UI.ILabel
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.TextType>(mauiObject, Microsoft.Maui.Controls.Label.TextTypeProperty));
-            if (def.ValueIsSet()) mauiObject.TextType = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.TextType>());
+            if (builder.ValueIsSet()) mauiObject.TextType = builder.GetValue();
+            return obj;
+        }
+        
+        public static T TextType<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.TextType>, BindingBuilder<Microsoft.Maui.TextType>> buildBinding)
+            where T : Sharp.UI.ILabel
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Label>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.TextType>(mauiObject, Microsoft.Maui.Controls.Label.TextTypeProperty));
+            builder.BindProperty();
             return obj;
         }
         

@@ -44,7 +44,7 @@ public class DefExamplePage : ContentPage
         {
             new VStack
             {
-                new Def<VStack>(e => e
+                new LazyValueBuilder<VStack>(e => e
                     .BackgroundColor(Colors.Red)
                     .Padding(20)
                 )
@@ -65,7 +65,8 @@ public class DefExamplePage : ContentPage
                     new VStack
                     {
                         new Label("Default version").RegisterName(Names.title, contentView),
-                    }),
+                    })
+                .GetValue(),
 
                 new HStack()
                     .HorizontalOptions(LayoutOptions.Center)

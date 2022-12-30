@@ -19,26 +19,32 @@ namespace Sharp.UI
         }
         
         public static T Property<T>(this T obj,
-            object property,
-            System.Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buildValue)
             where T : Sharp.UI.ICompareStateTrigger
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CompareStateTrigger>(obj);         
-            mauiObject.Property = (object)property;
-            var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.CompareStateTrigger.PropertyProperty));
-            if (def.ValueIsSet()) mauiObject.Property = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CompareStateTrigger>(obj);
+            var builder = buildValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) mauiObject.Property = builder.GetValue();
             return obj;
         }
         
         public static T Property<T>(this T obj,
-            System.Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<LazyValueBuilder<object>, LazyValueBuilder<object>> buildValue)
             where T : Sharp.UI.ICompareStateTrigger
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CompareStateTrigger>(obj);
-            var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.CompareStateTrigger.PropertyProperty));
-            if (def.ValueIsSet()) mauiObject.Property = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<object>());
+            if (builder.ValueIsSet()) mauiObject.Property = builder.GetValue();
+            return obj;
+        }
+        
+        public static T Property<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
+            where T : Sharp.UI.ICompareStateTrigger
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CompareStateTrigger>(obj);
+            var builder = buildBinding(new BindingBuilder<object>(mauiObject, Microsoft.Maui.Controls.CompareStateTrigger.PropertyProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -52,26 +58,32 @@ namespace Sharp.UI
         }
         
         public static T Value<T>(this T obj,
-            object value,
-            System.Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buildValue)
             where T : Sharp.UI.ICompareStateTrigger
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CompareStateTrigger>(obj);         
-            mauiObject.Value = (object)value;
-            var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.CompareStateTrigger.ValueProperty));
-            if (def.ValueIsSet()) mauiObject.Value = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CompareStateTrigger>(obj);
+            var builder = buildValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) mauiObject.Value = builder.GetValue();
             return obj;
         }
         
         public static T Value<T>(this T obj,
-            System.Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<LazyValueBuilder<object>, LazyValueBuilder<object>> buildValue)
             where T : Sharp.UI.ICompareStateTrigger
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CompareStateTrigger>(obj);
-            var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.CompareStateTrigger.ValueProperty));
-            if (def.ValueIsSet()) mauiObject.Value = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<object>());
+            if (builder.ValueIsSet()) mauiObject.Value = builder.GetValue();
+            return obj;
+        }
+        
+        public static T Value<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
+            where T : Sharp.UI.ICompareStateTrigger
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CompareStateTrigger>(obj);
+            var builder = buildBinding(new BindingBuilder<object>(mauiObject, Microsoft.Maui.Controls.CompareStateTrigger.ValueProperty));
+            builder.BindProperty();
             return obj;
         }
         

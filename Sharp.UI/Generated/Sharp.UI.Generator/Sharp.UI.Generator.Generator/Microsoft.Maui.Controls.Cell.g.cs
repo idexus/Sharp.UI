@@ -36,14 +36,14 @@ namespace Sharp.UI
         }
 
         public static T ContextActions<T>(this T obj,
-            System.Func<Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.MenuItem>>, Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.MenuItem>>> definition)
+            System.Func<LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.MenuItem>>, LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.MenuItem>>> buildValue)
             where T : Sharp.UI.ICell
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Cell>(obj);
-            var def = definition(new Def<System.Collections.Generic.IList<Microsoft.Maui.Controls.MenuItem>>());
-            if (def.ValueIsSet())
+            var builder = buildValue(new LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.MenuItem>>());
+            if (builder.ValueIsSet())
             {
-                var items = def.GetValue();
+                var items = builder.GetValue();
                 foreach (var item in items) 
                 {
                     var mauiItem = MauiWrapper.Value<Microsoft.Maui.Controls.MenuItem>(item);
@@ -63,24 +63,22 @@ namespace Sharp.UI
         }
         
         public static T IsContextActionsLegacyModeEnabled<T>(this T obj,
-            bool isContextActionsLegacyModeEnabled,
-            System.Func<ValueDef<bool>, ValueDef<bool>> definition)
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Sharp.UI.ICell
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Cell>(obj);
-            mauiObject.IsContextActionsLegacyModeEnabled = (bool)isContextActionsLegacyModeEnabled;
-            var def = definition(new ValueDef<bool>());
-            if (def.ValueIsSet()) mauiObject.IsContextActionsLegacyModeEnabled = def.GetValue();
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) mauiObject.IsContextActionsLegacyModeEnabled = builder.GetValue();
             return obj;
         }
         
         public static T IsContextActionsLegacyModeEnabled<T>(this T obj,
-            System.Func<ValueDef<bool>, ValueDef<bool>> definition)
+            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
             where T : Sharp.UI.ICell
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Cell>(obj);
-            var def = definition(new ValueDef<bool>());
-            if (def.ValueIsSet()) mauiObject.IsContextActionsLegacyModeEnabled = def.GetValue();
+            var builder = buildValue(new LazyValueBuilder<bool>());
+            if (builder.ValueIsSet()) mauiObject.IsContextActionsLegacyModeEnabled = builder.GetValue();
             return obj;
         }
         
@@ -94,24 +92,22 @@ namespace Sharp.UI
         }
         
         public static T Height<T>(this T obj,
-            double height,
-            System.Func<ValueDef<double>, ValueDef<double>> definition)
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Sharp.UI.ICell
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Cell>(obj);
-            mauiObject.Height = (double)height;
-            var def = definition(new ValueDef<double>());
-            if (def.ValueIsSet()) mauiObject.Height = def.GetValue();
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) mauiObject.Height = builder.GetValue();
             return obj;
         }
         
         public static T Height<T>(this T obj,
-            System.Func<ValueDef<double>, ValueDef<double>> definition)
+            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
             where T : Sharp.UI.ICell
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Cell>(obj);
-            var def = definition(new ValueDef<double>());
-            if (def.ValueIsSet()) mauiObject.Height = def.GetValue();
+            var builder = buildValue(new LazyValueBuilder<double>());
+            if (builder.ValueIsSet()) mauiObject.Height = builder.GetValue();
             return obj;
         }
         
@@ -125,26 +121,32 @@ namespace Sharp.UI
         }
         
         public static T IsEnabled<T>(this T obj,
-            bool isEnabled,
-            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Sharp.UI.ICell
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Cell>(obj);         
-            mauiObject.IsEnabled = (bool)isEnabled;
-            var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.Cell.IsEnabledProperty));
-            if (def.ValueIsSet()) mauiObject.IsEnabled = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Cell>(obj);
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) mauiObject.IsEnabled = builder.GetValue();
             return obj;
         }
         
         public static T IsEnabled<T>(this T obj,
-            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
             where T : Sharp.UI.ICell
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Cell>(obj);
-            var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.Cell.IsEnabledProperty));
-            if (def.ValueIsSet()) mauiObject.IsEnabled = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<bool>());
+            if (builder.ValueIsSet()) mauiObject.IsEnabled = builder.GetValue();
+            return obj;
+        }
+        
+        public static T IsEnabled<T>(this T obj,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+            where T : Sharp.UI.ICell
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Cell>(obj);
+            var builder = buildBinding(new BindingBuilder<bool>(mauiObject, Microsoft.Maui.Controls.Cell.IsEnabledProperty));
+            builder.BindProperty();
             return obj;
         }
         

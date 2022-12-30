@@ -19,26 +19,32 @@ namespace Sharp.UI
         }
         
         public static T BorderColor<T>(this T obj,
-            Microsoft.Maui.Graphics.Color borderColor,
-            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : Sharp.UI.IImageButton
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);         
-            mauiObject.BorderColor = (Microsoft.Maui.Graphics.Color)borderColor;
-            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.ImageButton.BorderColorProperty));
-            if (def.ValueIsSet()) mauiObject.BorderColor = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) mauiObject.BorderColor = builder.GetValue();
             return obj;
         }
         
         public static T BorderColor<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Color>, LazyValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : Sharp.UI.IImageButton
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.ImageButton.BorderColorProperty));
-            if (def.ValueIsSet()) mauiObject.BorderColor = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) mauiObject.BorderColor = builder.GetValue();
+            return obj;
+        }
+        
+        public static T BorderColor<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+            where T : Sharp.UI.IImageButton
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.ImageButton.BorderColorProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -52,26 +58,32 @@ namespace Sharp.UI
         }
         
         public static T CornerRadius<T>(this T obj,
-            int cornerRadius,
-            System.Func<BindableDef<int>, BindableDef<int>> definition)
+            System.Func<ValueBuilder<int>, ValueBuilder<int>> buildValue)
             where T : Sharp.UI.IImageButton
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);         
-            mauiObject.CornerRadius = (int)cornerRadius;
-            var def = definition(new BindableDef<int>(mauiObject, Microsoft.Maui.Controls.ImageButton.CornerRadiusProperty));
-            if (def.ValueIsSet()) mauiObject.CornerRadius = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);
+            var builder = buildValue(new ValueBuilder<int>());
+            if (builder.ValueIsSet()) mauiObject.CornerRadius = builder.GetValue();
             return obj;
         }
         
         public static T CornerRadius<T>(this T obj,
-            System.Func<BindableDef<int>, BindableDef<int>> definition)
+            System.Func<LazyValueBuilder<int>, LazyValueBuilder<int>> buildValue)
             where T : Sharp.UI.IImageButton
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);
-            var def = definition(new BindableDef<int>(mauiObject, Microsoft.Maui.Controls.ImageButton.CornerRadiusProperty));
-            if (def.ValueIsSet()) mauiObject.CornerRadius = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<int>());
+            if (builder.ValueIsSet()) mauiObject.CornerRadius = builder.GetValue();
+            return obj;
+        }
+        
+        public static T CornerRadius<T>(this T obj,
+            System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
+            where T : Sharp.UI.IImageButton
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);
+            var builder = buildBinding(new BindingBuilder<int>(mauiObject, Microsoft.Maui.Controls.ImageButton.CornerRadiusProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -85,26 +97,32 @@ namespace Sharp.UI
         }
         
         public static T BorderWidth<T>(this T obj,
-            double borderWidth,
-            System.Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Sharp.UI.IImageButton
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);         
-            mauiObject.BorderWidth = (double)borderWidth;
-            var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.ImageButton.BorderWidthProperty));
-            if (def.ValueIsSet()) mauiObject.BorderWidth = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) mauiObject.BorderWidth = builder.GetValue();
             return obj;
         }
         
         public static T BorderWidth<T>(this T obj,
-            System.Func<BindableDef<double>, BindableDef<double>> definition)
+            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
             where T : Sharp.UI.IImageButton
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);
-            var def = definition(new BindableDef<double>(mauiObject, Microsoft.Maui.Controls.ImageButton.BorderWidthProperty));
-            if (def.ValueIsSet()) mauiObject.BorderWidth = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<double>());
+            if (builder.ValueIsSet()) mauiObject.BorderWidth = builder.GetValue();
+            return obj;
+        }
+        
+        public static T BorderWidth<T>(this T obj,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+            where T : Sharp.UI.IImageButton
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);
+            var builder = buildBinding(new BindingBuilder<double>(mauiObject, Microsoft.Maui.Controls.ImageButton.BorderWidthProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -118,26 +136,32 @@ namespace Sharp.UI
         }
         
         public static T Aspect<T>(this T obj,
-            Microsoft.Maui.Aspect aspect,
-            System.Func<BindableDef<Microsoft.Maui.Aspect>, BindableDef<Microsoft.Maui.Aspect>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Aspect>, ValueBuilder<Microsoft.Maui.Aspect>> buildValue)
             where T : Sharp.UI.IImageButton
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);         
-            mauiObject.Aspect = (Microsoft.Maui.Aspect)aspect;
-            var def = definition(new BindableDef<Microsoft.Maui.Aspect>(mauiObject, Microsoft.Maui.Controls.ImageButton.AspectProperty));
-            if (def.ValueIsSet()) mauiObject.Aspect = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Aspect>());
+            if (builder.ValueIsSet()) mauiObject.Aspect = builder.GetValue();
             return obj;
         }
         
         public static T Aspect<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Aspect>, BindableDef<Microsoft.Maui.Aspect>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Aspect>, LazyValueBuilder<Microsoft.Maui.Aspect>> buildValue)
             where T : Sharp.UI.IImageButton
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Aspect>(mauiObject, Microsoft.Maui.Controls.ImageButton.AspectProperty));
-            if (def.ValueIsSet()) mauiObject.Aspect = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Aspect>());
+            if (builder.ValueIsSet()) mauiObject.Aspect = builder.GetValue();
+            return obj;
+        }
+        
+        public static T Aspect<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Aspect>, BindingBuilder<Microsoft.Maui.Aspect>> buildBinding)
+            where T : Sharp.UI.IImageButton
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Aspect>(mauiObject, Microsoft.Maui.Controls.ImageButton.AspectProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -151,26 +175,32 @@ namespace Sharp.UI
         }
         
         public static T IsOpaque<T>(this T obj,
-            bool isOpaque,
-            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Sharp.UI.IImageButton
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);         
-            mauiObject.IsOpaque = (bool)isOpaque;
-            var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.ImageButton.IsOpaqueProperty));
-            if (def.ValueIsSet()) mauiObject.IsOpaque = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) mauiObject.IsOpaque = builder.GetValue();
             return obj;
         }
         
         public static T IsOpaque<T>(this T obj,
-            System.Func<BindableDef<bool>, BindableDef<bool>> definition)
+            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
             where T : Sharp.UI.IImageButton
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);
-            var def = definition(new BindableDef<bool>(mauiObject, Microsoft.Maui.Controls.ImageButton.IsOpaqueProperty));
-            if (def.ValueIsSet()) mauiObject.IsOpaque = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<bool>());
+            if (builder.ValueIsSet()) mauiObject.IsOpaque = builder.GetValue();
+            return obj;
+        }
+        
+        public static T IsOpaque<T>(this T obj,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+            where T : Sharp.UI.IImageButton
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);
+            var builder = buildBinding(new BindingBuilder<bool>(mauiObject, Microsoft.Maui.Controls.ImageButton.IsOpaqueProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -184,26 +214,32 @@ namespace Sharp.UI
         }
         
         public static T Command<T>(this T obj,
-            System.Windows.Input.ICommand command,
-            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<ValueBuilder<System.Windows.Input.ICommand>, ValueBuilder<System.Windows.Input.ICommand>> buildValue)
             where T : Sharp.UI.IImageButton
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);         
-            mauiObject.Command = (System.Windows.Input.ICommand)command;
-            var def = definition(new BindableDef<System.Windows.Input.ICommand>(mauiObject, Microsoft.Maui.Controls.ImageButton.CommandProperty));
-            if (def.ValueIsSet()) mauiObject.Command = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);
+            var builder = buildValue(new ValueBuilder<System.Windows.Input.ICommand>());
+            if (builder.ValueIsSet()) mauiObject.Command = builder.GetValue();
             return obj;
         }
         
         public static T Command<T>(this T obj,
-            System.Func<BindableDef<System.Windows.Input.ICommand>, BindableDef<System.Windows.Input.ICommand>> definition)
+            System.Func<LazyValueBuilder<System.Windows.Input.ICommand>, LazyValueBuilder<System.Windows.Input.ICommand>> buildValue)
             where T : Sharp.UI.IImageButton
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);
-            var def = definition(new BindableDef<System.Windows.Input.ICommand>(mauiObject, Microsoft.Maui.Controls.ImageButton.CommandProperty));
-            if (def.ValueIsSet()) mauiObject.Command = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<System.Windows.Input.ICommand>());
+            if (builder.ValueIsSet()) mauiObject.Command = builder.GetValue();
+            return obj;
+        }
+        
+        public static T Command<T>(this T obj,
+            System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buildBinding)
+            where T : Sharp.UI.IImageButton
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);
+            var builder = buildBinding(new BindingBuilder<System.Windows.Input.ICommand>(mauiObject, Microsoft.Maui.Controls.ImageButton.CommandProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -217,26 +253,32 @@ namespace Sharp.UI
         }
         
         public static T CommandParameter<T>(this T obj,
-            object commandParameter,
-            System.Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buildValue)
             where T : Sharp.UI.IImageButton
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);         
-            mauiObject.CommandParameter = (object)commandParameter;
-            var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.ImageButton.CommandParameterProperty));
-            if (def.ValueIsSet()) mauiObject.CommandParameter = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);
+            var builder = buildValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) mauiObject.CommandParameter = builder.GetValue();
             return obj;
         }
         
         public static T CommandParameter<T>(this T obj,
-            System.Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<LazyValueBuilder<object>, LazyValueBuilder<object>> buildValue)
             where T : Sharp.UI.IImageButton
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);
-            var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.ImageButton.CommandParameterProperty));
-            if (def.ValueIsSet()) mauiObject.CommandParameter = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<object>());
+            if (builder.ValueIsSet()) mauiObject.CommandParameter = builder.GetValue();
+            return obj;
+        }
+        
+        public static T CommandParameter<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
+            where T : Sharp.UI.IImageButton
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);
+            var builder = buildBinding(new BindingBuilder<object>(mauiObject, Microsoft.Maui.Controls.ImageButton.CommandParameterProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -250,26 +292,32 @@ namespace Sharp.UI
         }
         
         public static T Source<T>(this T obj,
-            Microsoft.Maui.Controls.ImageSource source,
-            System.Func<BindableDef<Microsoft.Maui.Controls.ImageSource>, BindableDef<Microsoft.Maui.Controls.ImageSource>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.ImageSource>, ValueBuilder<Microsoft.Maui.Controls.ImageSource>> buildValue)
             where T : Sharp.UI.IImageButton
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);         
-            mauiObject.Source = (Microsoft.Maui.Controls.ImageSource)source;
-            var def = definition(new BindableDef<Microsoft.Maui.Controls.ImageSource>(mauiObject, Microsoft.Maui.Controls.ImageButton.SourceProperty));
-            if (def.ValueIsSet()) mauiObject.Source = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
+            if (builder.ValueIsSet()) mauiObject.Source = builder.GetValue();
             return obj;
         }
         
         public static T Source<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Controls.ImageSource>, BindableDef<Microsoft.Maui.Controls.ImageSource>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.ImageSource>, LazyValueBuilder<Microsoft.Maui.Controls.ImageSource>> buildValue)
             where T : Sharp.UI.IImageButton
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Controls.ImageSource>(mauiObject, Microsoft.Maui.Controls.ImageButton.SourceProperty));
-            if (def.ValueIsSet()) mauiObject.Source = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.ImageSource>());
+            if (builder.ValueIsSet()) mauiObject.Source = builder.GetValue();
+            return obj;
+        }
+        
+        public static T Source<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.ImageSource>, BindingBuilder<Microsoft.Maui.Controls.ImageSource>> buildBinding)
+            where T : Sharp.UI.IImageButton
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ImageSource>(mauiObject, Microsoft.Maui.Controls.ImageButton.SourceProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -283,26 +331,32 @@ namespace Sharp.UI
         }
         
         public static T Padding<T>(this T obj,
-            Microsoft.Maui.Thickness padding,
-            System.Func<BindableDef<Microsoft.Maui.Thickness>, BindableDef<Microsoft.Maui.Thickness>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Thickness>, ValueBuilder<Microsoft.Maui.Thickness>> buildValue)
             where T : Sharp.UI.IImageButton
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);         
-            mauiObject.Padding = (Microsoft.Maui.Thickness)padding;
-            var def = definition(new BindableDef<Microsoft.Maui.Thickness>(mauiObject, Microsoft.Maui.Controls.ImageButton.PaddingProperty));
-            if (def.ValueIsSet()) mauiObject.Padding = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Thickness>());
+            if (builder.ValueIsSet()) mauiObject.Padding = builder.GetValue();
             return obj;
         }
         
         public static T Padding<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Thickness>, BindableDef<Microsoft.Maui.Thickness>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Thickness>, LazyValueBuilder<Microsoft.Maui.Thickness>> buildValue)
             where T : Sharp.UI.IImageButton
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Thickness>(mauiObject, Microsoft.Maui.Controls.ImageButton.PaddingProperty));
-            if (def.ValueIsSet()) mauiObject.Padding = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Thickness>());
+            if (builder.ValueIsSet()) mauiObject.Padding = builder.GetValue();
+            return obj;
+        }
+        
+        public static T Padding<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Thickness>, BindingBuilder<Microsoft.Maui.Thickness>> buildBinding)
+            where T : Sharp.UI.IImageButton
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Thickness>(mauiObject, Microsoft.Maui.Controls.ImageButton.PaddingProperty));
+            builder.BindProperty();
             return obj;
         }
         

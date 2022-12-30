@@ -19,26 +19,32 @@ namespace Sharp.UI
         }
         
         public static T CornerRadius<T>(this T obj,
-            Microsoft.Maui.CornerRadius cornerRadius,
-            System.Func<BindableDef<Microsoft.Maui.CornerRadius>, BindableDef<Microsoft.Maui.CornerRadius>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.CornerRadius>, ValueBuilder<Microsoft.Maui.CornerRadius>> buildValue)
             where T : Sharp.UI.IRoundRectangle
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.RoundRectangle>(obj);         
-            mauiObject.CornerRadius = (Microsoft.Maui.CornerRadius)cornerRadius;
-            var def = definition(new BindableDef<Microsoft.Maui.CornerRadius>(mauiObject, Microsoft.Maui.Controls.Shapes.RoundRectangle.CornerRadiusProperty));
-            if (def.ValueIsSet()) mauiObject.CornerRadius = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.RoundRectangle>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.CornerRadius>());
+            if (builder.ValueIsSet()) mauiObject.CornerRadius = builder.GetValue();
             return obj;
         }
         
         public static T CornerRadius<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.CornerRadius>, BindableDef<Microsoft.Maui.CornerRadius>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.CornerRadius>, LazyValueBuilder<Microsoft.Maui.CornerRadius>> buildValue)
             where T : Sharp.UI.IRoundRectangle
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.RoundRectangle>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.CornerRadius>(mauiObject, Microsoft.Maui.Controls.Shapes.RoundRectangle.CornerRadiusProperty));
-            if (def.ValueIsSet()) mauiObject.CornerRadius = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.CornerRadius>());
+            if (builder.ValueIsSet()) mauiObject.CornerRadius = builder.GetValue();
+            return obj;
+        }
+        
+        public static T CornerRadius<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.CornerRadius>, BindingBuilder<Microsoft.Maui.CornerRadius>> buildBinding)
+            where T : Sharp.UI.IRoundRectangle
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.RoundRectangle>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.CornerRadius>(mauiObject, Microsoft.Maui.Controls.Shapes.RoundRectangle.CornerRadiusProperty));
+            builder.BindProperty();
             return obj;
         }
         

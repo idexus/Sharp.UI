@@ -19,26 +19,32 @@ namespace Sharp.UI
         }
         
         public static T HorizontalTextAlignment<T>(this T obj,
-            Microsoft.Maui.TextAlignment horizontalTextAlignment,
-            System.Func<BindableDef<Microsoft.Maui.TextAlignment>, BindableDef<Microsoft.Maui.TextAlignment>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.TextAlignment>, ValueBuilder<Microsoft.Maui.TextAlignment>> buildValue)
             where T : Sharp.UI.IEntryCell
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.EntryCell>(obj);         
-            mauiObject.HorizontalTextAlignment = (Microsoft.Maui.TextAlignment)horizontalTextAlignment;
-            var def = definition(new BindableDef<Microsoft.Maui.TextAlignment>(mauiObject, Microsoft.Maui.Controls.EntryCell.HorizontalTextAlignmentProperty));
-            if (def.ValueIsSet()) mauiObject.HorizontalTextAlignment = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.EntryCell>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.TextAlignment>());
+            if (builder.ValueIsSet()) mauiObject.HorizontalTextAlignment = builder.GetValue();
             return obj;
         }
         
         public static T HorizontalTextAlignment<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.TextAlignment>, BindableDef<Microsoft.Maui.TextAlignment>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.TextAlignment>, LazyValueBuilder<Microsoft.Maui.TextAlignment>> buildValue)
             where T : Sharp.UI.IEntryCell
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.EntryCell>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.TextAlignment>(mauiObject, Microsoft.Maui.Controls.EntryCell.HorizontalTextAlignmentProperty));
-            if (def.ValueIsSet()) mauiObject.HorizontalTextAlignment = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.TextAlignment>());
+            if (builder.ValueIsSet()) mauiObject.HorizontalTextAlignment = builder.GetValue();
+            return obj;
+        }
+        
+        public static T HorizontalTextAlignment<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.TextAlignment>, BindingBuilder<Microsoft.Maui.TextAlignment>> buildBinding)
+            where T : Sharp.UI.IEntryCell
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.EntryCell>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.TextAlignment>(mauiObject, Microsoft.Maui.Controls.EntryCell.HorizontalTextAlignmentProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -52,26 +58,32 @@ namespace Sharp.UI
         }
         
         public static T VerticalTextAlignment<T>(this T obj,
-            Microsoft.Maui.TextAlignment verticalTextAlignment,
-            System.Func<BindableDef<Microsoft.Maui.TextAlignment>, BindableDef<Microsoft.Maui.TextAlignment>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.TextAlignment>, ValueBuilder<Microsoft.Maui.TextAlignment>> buildValue)
             where T : Sharp.UI.IEntryCell
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.EntryCell>(obj);         
-            mauiObject.VerticalTextAlignment = (Microsoft.Maui.TextAlignment)verticalTextAlignment;
-            var def = definition(new BindableDef<Microsoft.Maui.TextAlignment>(mauiObject, Microsoft.Maui.Controls.EntryCell.VerticalTextAlignmentProperty));
-            if (def.ValueIsSet()) mauiObject.VerticalTextAlignment = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.EntryCell>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.TextAlignment>());
+            if (builder.ValueIsSet()) mauiObject.VerticalTextAlignment = builder.GetValue();
             return obj;
         }
         
         public static T VerticalTextAlignment<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.TextAlignment>, BindableDef<Microsoft.Maui.TextAlignment>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.TextAlignment>, LazyValueBuilder<Microsoft.Maui.TextAlignment>> buildValue)
             where T : Sharp.UI.IEntryCell
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.EntryCell>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.TextAlignment>(mauiObject, Microsoft.Maui.Controls.EntryCell.VerticalTextAlignmentProperty));
-            if (def.ValueIsSet()) mauiObject.VerticalTextAlignment = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.TextAlignment>());
+            if (builder.ValueIsSet()) mauiObject.VerticalTextAlignment = builder.GetValue();
+            return obj;
+        }
+        
+        public static T VerticalTextAlignment<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.TextAlignment>, BindingBuilder<Microsoft.Maui.TextAlignment>> buildBinding)
+            where T : Sharp.UI.IEntryCell
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.EntryCell>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.TextAlignment>(mauiObject, Microsoft.Maui.Controls.EntryCell.VerticalTextAlignmentProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -85,26 +97,32 @@ namespace Sharp.UI
         }
         
         public static T Keyboard<T>(this T obj,
-            Microsoft.Maui.Keyboard keyboard,
-            System.Func<BindableDef<Microsoft.Maui.Keyboard>, BindableDef<Microsoft.Maui.Keyboard>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Keyboard>, ValueBuilder<Microsoft.Maui.Keyboard>> buildValue)
             where T : Sharp.UI.IEntryCell
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.EntryCell>(obj);         
-            mauiObject.Keyboard = (Microsoft.Maui.Keyboard)keyboard;
-            var def = definition(new BindableDef<Microsoft.Maui.Keyboard>(mauiObject, Microsoft.Maui.Controls.EntryCell.KeyboardProperty));
-            if (def.ValueIsSet()) mauiObject.Keyboard = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.EntryCell>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Keyboard>());
+            if (builder.ValueIsSet()) mauiObject.Keyboard = builder.GetValue();
             return obj;
         }
         
         public static T Keyboard<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Keyboard>, BindableDef<Microsoft.Maui.Keyboard>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Keyboard>, LazyValueBuilder<Microsoft.Maui.Keyboard>> buildValue)
             where T : Sharp.UI.IEntryCell
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.EntryCell>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Keyboard>(mauiObject, Microsoft.Maui.Controls.EntryCell.KeyboardProperty));
-            if (def.ValueIsSet()) mauiObject.Keyboard = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Keyboard>());
+            if (builder.ValueIsSet()) mauiObject.Keyboard = builder.GetValue();
+            return obj;
+        }
+        
+        public static T Keyboard<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Keyboard>, BindingBuilder<Microsoft.Maui.Keyboard>> buildBinding)
+            where T : Sharp.UI.IEntryCell
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.EntryCell>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Keyboard>(mauiObject, Microsoft.Maui.Controls.EntryCell.KeyboardProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -118,26 +136,32 @@ namespace Sharp.UI
         }
         
         public static T Label<T>(this T obj,
-            string label,
-            System.Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
             where T : Sharp.UI.IEntryCell
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.EntryCell>(obj);         
-            mauiObject.Label = (string)label;
-            var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.EntryCell.LabelProperty));
-            if (def.ValueIsSet()) mauiObject.Label = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.EntryCell>(obj);
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) mauiObject.Label = builder.GetValue();
             return obj;
         }
         
         public static T Label<T>(this T obj,
-            System.Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<LazyValueBuilder<string>, LazyValueBuilder<string>> buildValue)
             where T : Sharp.UI.IEntryCell
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.EntryCell>(obj);
-            var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.EntryCell.LabelProperty));
-            if (def.ValueIsSet()) mauiObject.Label = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<string>());
+            if (builder.ValueIsSet()) mauiObject.Label = builder.GetValue();
+            return obj;
+        }
+        
+        public static T Label<T>(this T obj,
+            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+            where T : Sharp.UI.IEntryCell
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.EntryCell>(obj);
+            var builder = buildBinding(new BindingBuilder<string>(mauiObject, Microsoft.Maui.Controls.EntryCell.LabelProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -151,26 +175,32 @@ namespace Sharp.UI
         }
         
         public static T LabelColor<T>(this T obj,
-            Microsoft.Maui.Graphics.Color labelColor,
-            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : Sharp.UI.IEntryCell
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.EntryCell>(obj);         
-            mauiObject.LabelColor = (Microsoft.Maui.Graphics.Color)labelColor;
-            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.EntryCell.LabelColorProperty));
-            if (def.ValueIsSet()) mauiObject.LabelColor = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.EntryCell>(obj);
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) mauiObject.LabelColor = builder.GetValue();
             return obj;
         }
         
         public static T LabelColor<T>(this T obj,
-            System.Func<BindableDef<Microsoft.Maui.Graphics.Color>, BindableDef<Microsoft.Maui.Graphics.Color>> definition)
+            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Color>, LazyValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : Sharp.UI.IEntryCell
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.EntryCell>(obj);
-            var def = definition(new BindableDef<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.EntryCell.LabelColorProperty));
-            if (def.ValueIsSet()) mauiObject.LabelColor = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) mauiObject.LabelColor = builder.GetValue();
+            return obj;
+        }
+        
+        public static T LabelColor<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+            where T : Sharp.UI.IEntryCell
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.EntryCell>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(mauiObject, Microsoft.Maui.Controls.EntryCell.LabelColorProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -184,26 +214,32 @@ namespace Sharp.UI
         }
         
         public static T Placeholder<T>(this T obj,
-            string placeholder,
-            System.Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
             where T : Sharp.UI.IEntryCell
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.EntryCell>(obj);         
-            mauiObject.Placeholder = (string)placeholder;
-            var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.EntryCell.PlaceholderProperty));
-            if (def.ValueIsSet()) mauiObject.Placeholder = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.EntryCell>(obj);
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) mauiObject.Placeholder = builder.GetValue();
             return obj;
         }
         
         public static T Placeholder<T>(this T obj,
-            System.Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<LazyValueBuilder<string>, LazyValueBuilder<string>> buildValue)
             where T : Sharp.UI.IEntryCell
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.EntryCell>(obj);
-            var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.EntryCell.PlaceholderProperty));
-            if (def.ValueIsSet()) mauiObject.Placeholder = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<string>());
+            if (builder.ValueIsSet()) mauiObject.Placeholder = builder.GetValue();
+            return obj;
+        }
+        
+        public static T Placeholder<T>(this T obj,
+            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+            where T : Sharp.UI.IEntryCell
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.EntryCell>(obj);
+            var builder = buildBinding(new BindingBuilder<string>(mauiObject, Microsoft.Maui.Controls.EntryCell.PlaceholderProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -217,26 +253,32 @@ namespace Sharp.UI
         }
         
         public static T Text<T>(this T obj,
-            string text,
-            System.Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
             where T : Sharp.UI.IEntryCell
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.EntryCell>(obj);         
-            mauiObject.Text = (string)text;
-            var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.EntryCell.TextProperty));
-            if (def.ValueIsSet()) mauiObject.Text = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.EntryCell>(obj);
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) mauiObject.Text = builder.GetValue();
             return obj;
         }
         
         public static T Text<T>(this T obj,
-            System.Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<LazyValueBuilder<string>, LazyValueBuilder<string>> buildValue)
             where T : Sharp.UI.IEntryCell
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.EntryCell>(obj);
-            var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.EntryCell.TextProperty));
-            if (def.ValueIsSet()) mauiObject.Text = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<string>());
+            if (builder.ValueIsSet()) mauiObject.Text = builder.GetValue();
+            return obj;
+        }
+        
+        public static T Text<T>(this T obj,
+            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+            where T : Sharp.UI.IEntryCell
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.EntryCell>(obj);
+            var builder = buildBinding(new BindingBuilder<string>(mauiObject, Microsoft.Maui.Controls.EntryCell.TextProperty));
+            builder.BindProperty();
             return obj;
         }
         

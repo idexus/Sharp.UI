@@ -19,26 +19,32 @@ namespace Sharp.UI
         }
         
         public static T BindingContext<T>(this T obj,
-            object bindingContext,
-            System.Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buildValue)
             where T : Sharp.UI.IBindableObject
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BindableObject>(obj);         
-            mauiObject.BindingContext = (object)bindingContext;
-            var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.BindableObject.BindingContextProperty));
-            if (def.ValueIsSet()) mauiObject.BindingContext = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BindableObject>(obj);
+            var builder = buildValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) mauiObject.BindingContext = builder.GetValue();
             return obj;
         }
         
         public static T BindingContext<T>(this T obj,
-            System.Func<BindableDef<object>, BindableDef<object>> definition)
+            System.Func<LazyValueBuilder<object>, LazyValueBuilder<object>> buildValue)
             where T : Sharp.UI.IBindableObject
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BindableObject>(obj);
-            var def = definition(new BindableDef<object>(mauiObject, Microsoft.Maui.Controls.BindableObject.BindingContextProperty));
-            if (def.ValueIsSet()) mauiObject.BindingContext = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<object>());
+            if (builder.ValueIsSet()) mauiObject.BindingContext = builder.GetValue();
+            return obj;
+        }
+        
+        public static T BindingContext<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
+            where T : Sharp.UI.IBindableObject
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BindableObject>(obj);
+            var builder = buildBinding(new BindingBuilder<object>(mauiObject, Microsoft.Maui.Controls.BindableObject.BindingContextProperty));
+            builder.BindProperty();
             return obj;
         }
         

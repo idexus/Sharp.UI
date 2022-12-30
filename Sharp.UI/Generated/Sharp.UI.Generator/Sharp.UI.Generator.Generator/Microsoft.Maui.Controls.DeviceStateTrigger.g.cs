@@ -19,26 +19,32 @@ namespace Sharp.UI
         }
         
         public static T Device<T>(this T obj,
-            string device,
-            System.Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
             where T : Sharp.UI.IDeviceStateTrigger
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DeviceStateTrigger>(obj);         
-            mauiObject.Device = (string)device;
-            var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.DeviceStateTrigger.DeviceProperty));
-            if (def.ValueIsSet()) mauiObject.Device = def.GetValue();
-            def.BindProperty();
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DeviceStateTrigger>(obj);
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) mauiObject.Device = builder.GetValue();
             return obj;
         }
         
         public static T Device<T>(this T obj,
-            System.Func<BindableDef<string>, BindableDef<string>> definition)
+            System.Func<LazyValueBuilder<string>, LazyValueBuilder<string>> buildValue)
             where T : Sharp.UI.IDeviceStateTrigger
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DeviceStateTrigger>(obj);
-            var def = definition(new BindableDef<string>(mauiObject, Microsoft.Maui.Controls.DeviceStateTrigger.DeviceProperty));
-            if (def.ValueIsSet()) mauiObject.Device = def.GetValue();
-            def.BindProperty();
+            var builder = buildValue(new LazyValueBuilder<string>());
+            if (builder.ValueIsSet()) mauiObject.Device = builder.GetValue();
+            return obj;
+        }
+        
+        public static T Device<T>(this T obj,
+            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+            where T : Sharp.UI.IDeviceStateTrigger
+        {
+            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DeviceStateTrigger>(obj);
+            var builder = buildBinding(new BindingBuilder<string>(mauiObject, Microsoft.Maui.Controls.DeviceStateTrigger.DeviceProperty));
+            builder.BindProperty();
             return obj;
         }
         
