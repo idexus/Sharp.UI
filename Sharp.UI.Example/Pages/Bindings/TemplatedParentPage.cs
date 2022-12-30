@@ -25,17 +25,17 @@ public class CardViewTemplateView : ContentView
             new VStack
             {
                 new Label()
-                    .Text(e => e.TemplatedPath("CardTitle"))
+                    .Text(e => e.Path("CardTitle").Source(RelativeBindingSource.TemplatedParent))
                     .FontSize(44)
                     .TextColor(Colors.White),
 
                 new Label()
-                    .Text(e => e.TemplatedPath("CardDescription"))
+                    .Text(e => e.Path("CardDescription").Source(RelativeBindingSource.TemplatedParent))
             }
         }
         .StrokeShape(new RoundRectangle().CornerRadius(10))
-        .Stroke(e => e.TemplatedPath("BorderColor"))
-        .BackgroundColor(e => e.TemplatedPath("CardColor"))
+        .Stroke(e => e.Path("BorderColor").Source(RelativeBindingSource.TemplatedParent))
+        .BackgroundColor(e => e.Path("CardColor").Source(RelativeBindingSource.TemplatedParent))
         .SizeRequest(200, 300)
         .Margin(50)
         .Padding(20);
