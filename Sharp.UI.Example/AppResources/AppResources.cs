@@ -10,22 +10,22 @@ public class AppResources
             
             new Style<ActivityIndicator>
             {
-                ActivityIndicator.ColorProperty.Set().Light(AppColors.Primary).Dark(Colors.White),
+                ActivityIndicator.ColorProperty.Set().OnLight(AppColors.Primary).OnDark(Colors.White),
             },
 
             // "IndicatorView"
 
             new Style<IndicatorView>
             {
-                IndicatorView.IndicatorColorProperty.Set().Light(AppColors.Gray200).Dark(AppColors.Gray500),
-                IndicatorView.SelectedIndicatorColorProperty.Set().Light(AppColors.Gray950).Dark(AppColors.Gray100),
+                IndicatorView.IndicatorColorProperty.Set().OnLight(AppColors.Gray200).OnDark(AppColors.Gray500),
+                IndicatorView.SelectedIndicatorColorProperty.Set().OnLight(AppColors.Gray950).OnDark(AppColors.Gray100),
             },
 
             // "Border"
 
             new Style<Border>
             {
-                Border.StrokeProperty.Set().Light(AppColors.Gray200).Dark(AppColors.Gray500),
+                Border.StrokeProperty.Set().OnLight(AppColors.Gray200).OnDark(AppColors.Gray500),
                 Border.StrokeShapeProperty.Set(new Rectangle()),
                 Border.StrokeThicknessProperty.Set(1),
             },
@@ -34,15 +34,15 @@ public class AppResources
 
             new Style<BoxView>
             {
-                BoxView.ColorProperty.Set().Light(AppColors.Gray950).Dark(AppColors.Gray200),
+                BoxView.ColorProperty.Set().OnLight(AppColors.Gray950).OnDark(AppColors.Gray200),
             },
 
             // "Button"
 
             new Style<Button>
             {
-                Button.TextColorProperty.Set().Light(Colors.White).Dark(AppColors.Primary),
-                Button.BackgroundColorProperty.Set().Light(AppColors.Primary).Dark(Colors.White),
+                Button.TextColorProperty.Set().OnLight(Colors.White).OnDark(AppColors.Primary),
+                Button.BackgroundColorProperty.Set().OnLight(AppColors.Primary).OnDark(Colors.White),
                 Button.FontFamilyProperty.Set("OpenSansRegular"),
                 Button.FontSizeProperty.Set(14),
                 Button.CornerRadiusProperty.Set(8),
@@ -52,13 +52,13 @@ public class AppResources
 
                 new VisualState(VisualState.VisualElement.Normal)
                 {
-                    Button.TextColorProperty.Set().Light(Colors.White).Dark(AppColors.Primary),
-                    Button.BackgroundColorProperty.Set().Light(AppColors.Primary).Dark(Colors.White),
+                    Button.TextColorProperty.Set().OnLight(Colors.White).OnDark(AppColors.Primary),
+                    Button.BackgroundColorProperty.Set().OnLight(AppColors.Primary).OnDark(Colors.White),
                 },
                 new VisualState(VisualState.VisualElement.Disabled)
                 {
-                    Button.TextColorProperty.Set().Light(AppColors.Gray950).Dark(AppColors.Gray200),
-                    Button.BackgroundColorProperty.Set().Light(AppColors.Gray200).Dark(AppColors.Gray600),
+                    Button.TextColorProperty.Set().OnLight(AppColors.Gray950).OnDark(AppColors.Gray200),
+                    Button.BackgroundColorProperty.Set().OnLight(AppColors.Gray200).OnDark(AppColors.Gray600),
                 },
             },            
 
@@ -66,14 +66,14 @@ public class AppResources
 
             new Style<CheckBox>
             {
-                CheckBox.ColorProperty.Set().Light(AppColors.Primary).Dark(Colors.White),
+                CheckBox.ColorProperty.Set().OnLight(AppColors.Primary).OnDark(Colors.White),
                 CheckBox.MinimumHeightRequestProperty.Set(44),
                 CheckBox.MinimumWidthRequestProperty.Set(44),
 
                 new VisualState(VisualState.VisualElement.Normal),
                 new VisualState(VisualState.VisualElement.Disabled)
                 {
-                    CheckBox.ColorProperty.Set().Light(AppColors.Gray300).Dark(AppColors.Gray600),
+                    CheckBox.ColorProperty.Set().OnLight(AppColors.Gray300).OnDark(AppColors.Gray600),
                 },
             },
 
@@ -81,7 +81,7 @@ public class AppResources
 
             new Style<DatePicker>
             {
-                DatePicker.TextColorProperty.Set().Light(AppColors.Gray900).Dark(Colors.White),
+                DatePicker.TextColorProperty.Set().OnLight(AppColors.Gray900).OnDark(Colors.White),
                 DatePicker.BackgroundColorProperty.Set(Colors.Transparent),
                 DatePicker.FontFamilyProperty.Set("OpenSansRegular"),
                 DatePicker.FontSizeProperty.Set(14),
@@ -91,7 +91,7 @@ public class AppResources
                 new VisualState(VisualState.VisualElement.Normal),
                 new VisualState(VisualState.VisualElement.Disabled)
                 {
-                    DatePicker.TextColorProperty.Set().Light(AppColors.Gray200).Dark(AppColors.Gray500),
+                    DatePicker.TextColorProperty.Set().OnLight(AppColors.Gray200).OnDark(AppColors.Gray500),
                 },
             },
 
@@ -99,18 +99,18 @@ public class AppResources
 
             new Style<Editor>
             {
-                Editor.TextColorProperty.Set().Light(Colors.Black).Dark(Colors.White),
+                Editor.TextColorProperty.Set().OnLight(Colors.Black).OnDark(Colors.White),
                 Editor.BackgroundColorProperty.Set(Colors.Transparent),
                 Editor.FontFamilyProperty.Set("OpenSansRegular"),
                 Editor.FontSizeProperty.Set(14),
-                Editor.PlaceholderColorProperty.Set().Light(AppColors.Gray200).Dark(AppColors.Gray500),
+                Editor.PlaceholderColorProperty.Set().OnLight(AppColors.Gray200).OnDark(AppColors.Gray500),
                 Editor.MinimumHeightRequestProperty.Set(44),
                 Editor.MinimumWidthRequestProperty.Set(44),
 
                 new VisualState(VisualState.VisualElement.Normal),
                 new VisualState(VisualState.VisualElement.Disabled)
                 {
-                    Editor.TextColorProperty.Set().Light(AppColors.Gray300).Dark(AppColors.Gray600),
+                    Editor.TextColorProperty.Set().OnLight(AppColors.Gray300).OnDark(AppColors.Gray600),
                 },
             },
 
@@ -118,18 +118,18 @@ public class AppResources
 
             new Style<Entry>
             {
-                Entry.TextColorProperty.Set().Light(Colors.Black).Dark(Colors.White),
+                Entry.TextColorProperty.Set().OnLight(Colors.Black).OnDark(Colors.White),
                 Entry.BackgroundColorProperty.Set(Colors.Transparent),
                 Entry.FontFamilyProperty.Set("OpenSansRegular"),
                 Entry.FontSizeProperty.Set(14),
-                Entry.PlaceholderColorProperty.Set().Light(AppColors.Gray200).Dark(AppColors.Gray500),
+                Entry.PlaceholderColorProperty.Set().OnLight(AppColors.Gray200).OnDark(AppColors.Gray500),
                 Entry.MinimumHeightRequestProperty.Set(44),
                 Entry.MinimumWidthRequestProperty.Set(44),
 
                 new VisualState(VisualState.VisualElement.Normal),
                 new VisualState(VisualState.VisualElement.Disabled)
                 {
-                    Entry.TextColorProperty.Set().Light(AppColors.Gray300).Dark(AppColors.Gray600),
+                    Entry.TextColorProperty.Set().OnLight(AppColors.Gray300).OnDark(AppColors.Gray600),
                 },
             },
 
@@ -138,7 +138,7 @@ public class AppResources
             new Style<Frame>
             {
                 Frame.HasShadowProperty.Set(false),
-                Frame.BorderColorProperty.Set().Light(AppColors.Gray200).Dark(AppColors.Gray950),
+                Frame.BorderColorProperty.Set().OnLight(AppColors.Gray200).OnDark(AppColors.Gray950),
                 Frame.CornerRadiusProperty.Set(8)
             },
 
@@ -164,7 +164,7 @@ public class AppResources
 
             new Style<Label>
             {
-                Label.TextColorProperty.Set().Light(AppColors.Gray900).Dark(Colors.White),
+                Label.TextColorProperty.Set().OnLight(AppColors.Gray900).OnDark(Colors.White),
                 Label.BackgroundColorProperty.Set(Colors.Transparent),
                 Label.FontFamilyProperty.Set("OpenSansRegular"),
                 Label.FontSizeProperty.Set(14),
@@ -172,7 +172,7 @@ public class AppResources
                 new VisualState(VisualState.VisualElement.Normal),
                 new VisualState(VisualState.VisualElement.Disabled)
                 {
-                    Label.TextColorProperty.Set().Light(AppColors.Gray300).Dark(AppColors.Gray600),
+                    Label.TextColorProperty.Set().OnLight(AppColors.Gray300).OnDark(AppColors.Gray600),
                 },
             },
 
@@ -180,16 +180,16 @@ public class AppResources
 
             new Style<ListView>
             {
-                ListView.SeparatorColorProperty.Set().Light(AppColors.Gray200).Dark(AppColors.Gray500),
-                ListView.RefreshControlColorProperty.Set().Light(AppColors.Gray900).Dark(AppColors.Gray200),
+                ListView.SeparatorColorProperty.Set().OnLight(AppColors.Gray200).OnDark(AppColors.Gray500),
+                ListView.RefreshControlColorProperty.Set().OnLight(AppColors.Gray900).OnDark(AppColors.Gray200),
             },
 
             // "Picker"
 
             new Style<Picker>
             {
-                Picker.TextColorProperty.Set().Light(AppColors.Gray900).Dark(Colors.White),
-                Picker.TitleColorProperty.Set().Light(AppColors.Gray900).Dark(AppColors.Gray200),
+                Picker.TextColorProperty.Set().OnLight(AppColors.Gray900).OnDark(Colors.White),
+                Picker.TitleColorProperty.Set().OnLight(AppColors.Gray900).OnDark(AppColors.Gray200),
                 Picker.BackgroundColorProperty.Set(Colors.Transparent),
                 Picker.FontFamilyProperty.Set("OpenSansRegular"),
                 Picker.FontSizeProperty.Set(14),
@@ -199,8 +199,8 @@ public class AppResources
                 new VisualState(VisualState.VisualElement.Normal),
                 new VisualState(VisualState.VisualElement.Disabled)
                 {
-                    Picker.TextColorProperty.Set().Light(AppColors.Gray300).Dark(AppColors.Gray600),
-                    Picker.TitleColorProperty.Set().Light(AppColors.Gray300).Dark(AppColors.Gray600),
+                    Picker.TextColorProperty.Set().OnLight(AppColors.Gray300).OnDark(AppColors.Gray600),
+                    Picker.TitleColorProperty.Set().OnLight(AppColors.Gray300).OnDark(AppColors.Gray600),
                 },
             },
 
@@ -208,12 +208,12 @@ public class AppResources
 
             new Style<ProgressBar>
             {
-                ProgressBar.ProgressColorProperty.Set().Light(AppColors.Primary).Dark(Colors.White),
+                ProgressBar.ProgressColorProperty.Set().OnLight(AppColors.Primary).OnDark(Colors.White),
 
                 new VisualState(VisualState.VisualElement.Normal),
                 new VisualState(VisualState.VisualElement.Disabled)
                 {
-                    ProgressBar.ProgressColorProperty.Set().Light(AppColors.Gray300).Dark(AppColors.Gray600),
+                    ProgressBar.ProgressColorProperty.Set().OnLight(AppColors.Gray300).OnDark(AppColors.Gray600),
                 }
             },
 
@@ -222,7 +222,7 @@ public class AppResources
             new Style<RadioButton>
             {
                 RadioButton.BackgroundColorProperty.Set(Colors.Transparent),
-                RadioButton.TextColorProperty.Set().Light(Colors.Black).Dark(Colors.White),
+                RadioButton.TextColorProperty.Set().OnLight(Colors.Black).OnDark(Colors.White),
                 RadioButton.FontFamilyProperty.Set("OpenSansRegular"),
                 RadioButton.FontSizeProperty.Set(14),
                 RadioButton.MinimumHeightRequestProperty.Set(44),
@@ -231,7 +231,7 @@ public class AppResources
                 new VisualState(VisualState.VisualElement.Normal),
                 new VisualState(VisualState.VisualElement.Disabled)
                 {
-                    RadioButton.TextColorProperty.Set().Light(AppColors.Gray300).Dark(AppColors.Gray600),
+                    RadioButton.TextColorProperty.Set().OnLight(AppColors.Gray300).OnDark(AppColors.Gray600),
                 }
             },
 
@@ -239,14 +239,14 @@ public class AppResources
 
             new Style<RefreshView>
             {
-                RefreshView.RefreshColorProperty.Set().Light(AppColors.Gray900).Dark(AppColors.Gray200),
+                RefreshView.RefreshColorProperty.Set().OnLight(AppColors.Gray900).OnDark(AppColors.Gray200),
             },
 
             // "SearchBar"
 
             new Style<SearchBar>
             {
-                SearchBar.TextColorProperty.Set().Light(AppColors.Gray900).Dark(Colors.White),
+                SearchBar.TextColorProperty.Set().OnLight(AppColors.Gray900).OnDark(Colors.White),
                 SearchBar.PlaceholderColorProperty.Set(AppColors.Gray500),
                 SearchBar.CancelButtonColorProperty.Set(AppColors.Gray500),
                 SearchBar.BackgroundColorProperty.Set(Colors.Transparent),
@@ -256,8 +256,8 @@ public class AppResources
                 new VisualState(VisualState.VisualElement.Normal),
                 new VisualState(VisualState.VisualElement.Disabled)
                 {
-                    SearchBar.TextColorProperty.Set().Light(AppColors.Gray300).Dark(AppColors.Gray600),
-                    SearchBar.PlaceholderColorProperty.Set().Light(AppColors.Gray300).Dark(AppColors.Gray600),
+                    SearchBar.TextColorProperty.Set().OnLight(AppColors.Gray300).OnDark(AppColors.Gray600),
+                    SearchBar.PlaceholderColorProperty.Set().OnLight(AppColors.Gray300).OnDark(AppColors.Gray600),
                 }
             },
 
@@ -265,7 +265,7 @@ public class AppResources
 
             new Style<SearchHandler>
             {
-                SearchHandler.TextColorProperty.Set().Light(AppColors.Gray900).Dark(Colors.White),
+                SearchHandler.TextColorProperty.Set().OnLight(AppColors.Gray900).OnDark(Colors.White),
                 SearchHandler.PlaceholderColorProperty.Set(AppColors.Gray500),
                 SearchHandler.BackgroundColorProperty.Set(Colors.Transparent),
                 SearchHandler.FontFamilyProperty.Set("OpenSansRegular"),
@@ -274,8 +274,8 @@ public class AppResources
                 new VisualState(VisualState.VisualElement.Normal),
                 new VisualState(VisualState.VisualElement.Disabled)
                 {
-                    SearchHandler.TextColorProperty.Set().Light(AppColors.Gray300).Dark(AppColors.Gray600),
-                    SearchHandler.PlaceholderColorProperty.Set().Light(AppColors.Gray300).Dark(AppColors.Gray600),
+                    SearchHandler.TextColorProperty.Set().OnLight(AppColors.Gray300).OnDark(AppColors.Gray600),
+                    SearchHandler.PlaceholderColorProperty.Set().OnLight(AppColors.Gray300).OnDark(AppColors.Gray600),
                 }
             },
 
@@ -285,7 +285,7 @@ public class AppResources
             {
                 Shadow.RadiusProperty.Set(15),
                 Shadow.OpacityProperty.Set(0.5),
-                Shadow.BrushProperty.Set().Light(Colors.White).Dark(Colors.White),
+                Shadow.BrushProperty.Set().OnLight(Colors.White).OnDark(Colors.White),
                 Shadow.OffsetProperty.Set(new Point(10, 10)),
             },
 
@@ -293,16 +293,16 @@ public class AppResources
 
             new Style<Slider>
             {
-                Slider.MinimumTrackColorProperty.Set().Light(AppColors.Primary).Dark(Colors.White),
-                Slider.MaximumTrackColorProperty.Set().Light(AppColors.Gray200).Dark(AppColors.Gray600),
-                Slider.ThumbColorProperty.Set().Light(AppColors.Primary).Dark(Colors.White),
+                Slider.MinimumTrackColorProperty.Set().OnLight(AppColors.Primary).OnDark(Colors.White),
+                Slider.MaximumTrackColorProperty.Set().OnLight(AppColors.Gray200).OnDark(AppColors.Gray600),
+                Slider.ThumbColorProperty.Set().OnLight(AppColors.Primary).OnDark(Colors.White),
 
                 new VisualState(VisualState.VisualElement.Normal),
                 new VisualState(VisualState.VisualElement.Disabled)
                 {
-                    Slider.MinimumTrackColorProperty.Set().Light(AppColors.Gray300).Dark(AppColors.Gray600),
-                    Slider.MaximumTrackColorProperty.Set().Light(AppColors.Gray300).Dark(AppColors.Gray600),
-                    Slider.ThumbColorProperty.Set().Light(AppColors.Gray300).Dark(AppColors.Gray600),
+                    Slider.MinimumTrackColorProperty.Set().OnLight(AppColors.Gray300).OnDark(AppColors.Gray600),
+                    Slider.MaximumTrackColorProperty.Set().OnLight(AppColors.Gray300).OnDark(AppColors.Gray600),
+                    Slider.ThumbColorProperty.Set().OnLight(AppColors.Gray300).OnDark(AppColors.Gray600),
                 }
             },
 
@@ -310,31 +310,31 @@ public class AppResources
 
             new Style<SwipeItem>
             {
-                SwipeItem.BackgroundColorProperty.Set().Light(Colors.White).Dark(Colors.Black),
+                SwipeItem.BackgroundColorProperty.Set().OnLight(Colors.White).OnDark(Colors.Black),
             },
 
             // "Switch"
 
             new Style<Switch>
             {
-                Switch.OnColorProperty.Set().Light(AppColors.Primary).Dark(Colors.White),
-                Switch.ThumbColorProperty.Set().Light(AppColors.Gray400).Dark(AppColors.Gray500),
+                Switch.OnColorProperty.Set().OnLight(AppColors.Primary).OnDark(Colors.White),
+                Switch.ThumbColorProperty.Set().OnLight(AppColors.Gray400).OnDark(AppColors.Gray500),
 
                 new VisualState(VisualState.VisualElement.Normal),
                 new VisualState(VisualState.VisualElement.Disabled)
                 {
-                    Switch.OnColorProperty.Set().Light(AppColors.Gray300).Dark(AppColors.Gray600),
-                    Switch.ThumbColorProperty.Set().Light(AppColors.Gray300).Dark(AppColors.Gray600),
+                    Switch.OnColorProperty.Set().OnLight(AppColors.Gray300).OnDark(AppColors.Gray600),
+                    Switch.ThumbColorProperty.Set().OnLight(AppColors.Gray300).OnDark(AppColors.Gray600),
                 },
                 new VisualState(VisualState.Switch.On)
                 {
-                    Switch.OnColorProperty.Set().Light(AppColors.Secondary).Dark(AppColors.Gray200),
-                    Switch.ThumbColorProperty.Set().Light(AppColors.Primary).Dark(Colors.White),
+                    Switch.OnColorProperty.Set().OnLight(AppColors.Secondary).OnDark(AppColors.Gray200),
+                    Switch.ThumbColorProperty.Set().OnLight(AppColors.Primary).OnDark(Colors.White),
                 },
                 new VisualState(VisualState.Switch.Off)
                 {
-                    Switch.OnColorProperty.Set().Light(AppColors.Primary).Dark(Colors.White),
-                    Switch.ThumbColorProperty.Set().Light(AppColors.Gray400).Dark(AppColors.Gray500),
+                    Switch.OnColorProperty.Set().OnLight(AppColors.Primary).OnDark(Colors.White),
+                    Switch.ThumbColorProperty.Set().OnLight(AppColors.Gray400).OnDark(AppColors.Gray500),
                 }
             },
 
@@ -342,7 +342,7 @@ public class AppResources
 
             new Style<TimePicker>
             {
-                TimePicker.TextColorProperty.Set().Light(AppColors.Gray900).Dark(Colors.White),
+                TimePicker.TextColorProperty.Set().OnLight(AppColors.Gray900).OnDark(Colors.White),
                 TimePicker.BackgroundColorProperty.Set(Colors.Transparent),
                 TimePicker.FontFamilyProperty.Set("OpenSansRegular"),
                 TimePicker.FontSizeProperty.Set(14),
@@ -352,7 +352,7 @@ public class AppResources
                 new VisualState(VisualState.VisualElement.Normal),
                 new VisualState(VisualState.VisualElement.Disabled)
                 {
-                    TimePicker.TextColorProperty.Set().Light(AppColors.Gray300).Dark(AppColors.Gray600),
+                    TimePicker.TextColorProperty.Set().OnLight(AppColors.Gray300).OnDark(AppColors.Gray600),
                 }
             },
 
@@ -361,7 +361,7 @@ public class AppResources
             new Style<Page>(applyToDerivedTypes: true)
             {
                 Page.PaddingProperty.Set(0),
-                Page.BackgroundColorProperty.Set().Light(Colors.White).Dark(Colors.Black),
+                Page.BackgroundColorProperty.Set().OnLight(Colors.White).OnDark(Colors.Black),
             },
 
             // "Shell"
@@ -369,34 +369,34 @@ public class AppResources
             new Style<Shell>(applyToDerivedTypes: true)
             {
                 Shell.NavBarHasShadowProperty.Set(0),
-                Shell.BackgroundColorProperty.Set().Light(AppColors.Primary).Dark(AppColors.Gray950),
-                Shell.ForegroundColorProperty.Set().Light(AppColors.Primary).Dark(Colors.White),
-                Shell.TitleColorProperty.Set().Light(Colors.White).Dark(Colors.White),
-                Shell.DisabledColorProperty.Set().Light(AppColors.Gray200).Dark(AppColors.Gray950),
-                Shell.UnselectedColorProperty.Set().Light(AppColors.Gray200).Dark(AppColors.Gray200),
-                Shell.TabBarBackgroundColorProperty.Set().Light(Colors.White).Dark(Colors.Black),
-                Shell.TabBarForegroundColorProperty.Set().Light(AppColors.Primary).Dark(Colors.White),
-                Shell.TabBarTitleColorProperty.Set().Light(AppColors.Primary).Dark(Colors.White),
-                Shell.TabBarUnselectedColorProperty.Set().Light(AppColors.Gray900).Dark(AppColors.Gray200),
+                Shell.BackgroundColorProperty.Set().OnLight(AppColors.Primary).OnDark(AppColors.Gray950),
+                Shell.ForegroundColorProperty.Set().OnLight(AppColors.Primary).OnDark(Colors.White),
+                Shell.TitleColorProperty.Set().OnLight(Colors.White).OnDark(Colors.White),
+                Shell.DisabledColorProperty.Set().OnLight(AppColors.Gray200).OnDark(AppColors.Gray950),
+                Shell.UnselectedColorProperty.Set().OnLight(AppColors.Gray200).OnDark(AppColors.Gray200),
+                Shell.TabBarBackgroundColorProperty.Set().OnLight(Colors.White).OnDark(Colors.Black),
+                Shell.TabBarForegroundColorProperty.Set().OnLight(AppColors.Primary).OnDark(Colors.White),
+                Shell.TabBarTitleColorProperty.Set().OnLight(AppColors.Primary).OnDark(Colors.White),
+                Shell.TabBarUnselectedColorProperty.Set().OnLight(AppColors.Gray900).OnDark(AppColors.Gray200),
             },
 
             // "NavigationPage"
 
             new Style<NavigationPage>
             {
-                NavigationPage.BarBackgroundColorProperty.Set().Light(AppColors.Primary).Dark(AppColors.Gray950),
-                NavigationPage.BarTextColorProperty.Set().Light(AppColors.Gray200).Dark(Colors.White),
-                NavigationPage.IconColorProperty.Set().Light(AppColors.Gray200).Dark(Colors.White),
+                NavigationPage.BarBackgroundColorProperty.Set().OnLight(AppColors.Primary).OnDark(AppColors.Gray950),
+                NavigationPage.BarTextColorProperty.Set().OnLight(AppColors.Gray200).OnDark(Colors.White),
+                NavigationPage.IconColorProperty.Set().OnLight(AppColors.Gray200).OnDark(Colors.White),
             },
 
             // "TabbedPage"
 
             new Style<TabbedPage>
             {
-                TabbedPage.BarBackgroundColorProperty.Set().Light(Colors.White).Dark(AppColors.Gray950),
-                TabbedPage.BarTextColorProperty.Set().Light(AppColors.Primary).Dark(Colors.White),
-                TabbedPage.UnselectedTabColorProperty.Set().Light(AppColors.Gray200).Dark(AppColors.Gray500),
-                TabbedPage.SelectedTabColorProperty.Set().Light(AppColors.Gray950).Dark(AppColors.Gray100),
+                TabbedPage.BarBackgroundColorProperty.Set().OnLight(Colors.White).OnDark(AppColors.Gray950),
+                TabbedPage.BarTextColorProperty.Set().OnLight(AppColors.Primary).OnDark(Colors.White),
+                TabbedPage.UnselectedTabColorProperty.Set().OnLight(AppColors.Gray200).OnDark(AppColors.Gray500),
+                TabbedPage.SelectedTabColorProperty.Set().OnLight(AppColors.Gray950).OnDark(AppColors.Gray100),
             },
         };
 }

@@ -28,7 +28,7 @@ public class ViewPage : ContentPage
     {
         new Style<Label>
         {
-            Label.TextColorProperty.Set().Light(Colors.Red).Dark(Colors.Blue),
+            Label.TextColorProperty.Set().OnLight(Colors.Red).OnDark(Colors.Blue),
             Label.FontSizeProperty.Set(50.0),
             Label.HorizontalOptionsProperty.Set(LayoutOptions.Center),
             Label.VerticalOptionsProperty.Set(LayoutOptions.Center),

@@ -2,8 +2,8 @@
 {
     public static class SetterExtension
     {
-        public static Setter Light(this Setter setter, object value) { if (Application.Current?.RequestedTheme == AppTheme.Light) setter.Value = value; return setter; }
-        public static Setter Dark(this Setter setter, object value) { if (Application.Current?.RequestedTheme == AppTheme.Dark) setter.Value = value; return setter; }
+        public static Setter OnLight(this Setter setter, object value) { if (Application.Current?.RequestedTheme == AppTheme.Light) setter.Value = value; return setter; }
+        public static Setter OnDark(this Setter setter, object value) { if (Application.Current?.RequestedTheme == AppTheme.Dark) setter.Value = value; return setter; }
 
         public static Setter OnPhone(this Setter setter, object value) { if (DeviceInfo.Idiom == DeviceIdiom.Phone) setter.Value = value; return setter; }
         public static Setter OnTablet(this Setter setter, object value) { if (DeviceInfo.Idiom == DeviceIdiom.Tablet) setter.Value = value; return setter; }

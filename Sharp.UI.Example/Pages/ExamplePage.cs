@@ -14,7 +14,7 @@ public class ExamplePage : ContentPage
         Resources = new ResourceDictionary {
             new Style<Label>
             {
-                Label.TextColorProperty.Set().Dark(Colors.LightCyan),
+                Label.TextColorProperty.Set().OnDark(Colors.LightCyan),
                 Label.FontSizeProperty.Set(20),
                 Label.HorizontalOptionsProperty.Set(LayoutOptions.Center),
                 Label.PaddingProperty.Set().OniOS(20)
