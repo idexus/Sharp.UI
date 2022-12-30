@@ -1,8 +1,8 @@
 # Templates
-Using `Def<T>` class you can create templates depending on device idiom, platform, or app theme
+Using `LazyValueBuilder<T>` class you can create templates depending on device idiom, platform, or app theme
 
 ```cs
-new Def<VStack>(e => e
+new LazyValueBuilder<VStack>(e => e
         .BackgroundColor(Colors.Red)
         .Padding(20)
     )
@@ -17,5 +17,6 @@ new Def<VStack>(e => e
         {
             new Label("This is a phone version"),
             new Label("No images...")
-        }),
+        })
+    .GetValue(),
 ```

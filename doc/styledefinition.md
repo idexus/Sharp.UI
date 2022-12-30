@@ -21,8 +21,8 @@ If you want to use different values depending on your app theme, device idiom, o
 ```cs
 new Style<Button>
 {
-    Button.TextColorProperty.Set().Light(Colors.White).Dark(AppColors.Primary),
-    Button.BackgroundColorProperty.Set().Light(AppColors.Primary).Dark(Colors.White),
+    Button.TextColorProperty.Set().OnLight(Colors.White).OnDark(AppColors.Primary),
+    Button.BackgroundColorProperty.Set().OnLight(AppColors.Primary).OnDark(Colors.White),
     Button.FontSizeProperty.Set(14).OnDesktop(20),
     Button.CornerRadiusProperty.Set(8).OniOS(15),
     ...
@@ -36,13 +36,13 @@ new Style<Button>
     ...
     new VisualState(VisualState.VisualElement.Normal)
     {
-        Button.TextColorProperty.Set().Light(Colors.White).Dark(AppColors.Primary),
-        Button.BackgroundColorProperty.Set().Light(AppColors.Primary).Dark(Colors.White),
+        Button.TextColorProperty.Set().OnLight(Colors.White).OnDark(AppColors.Primary),
+        Button.BackgroundColorProperty.Set().OnLight(AppColors.Primary).OnDark(Colors.White),
     },
     new VisualState(VisualState.VisualElement.Disabled)
     {
-        Button.TextColorProperty.Set().Light(AppColors.Gray950).Dark(AppColors.Gray200),
-        Button.BackgroundColorProperty.Set().Light(AppColors.Gray200).Dark(AppColors.Gray600),
+        Button.TextColorProperty.Set().OnLight(AppColors.Gray950).OnDark(AppColors.Gray200),
+        Button.BackgroundColorProperty.Set().OnLight(AppColors.Gray200).OnDark(AppColors.Gray600),
     },
     ...
 },

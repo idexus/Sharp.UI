@@ -21,5 +21,5 @@ You can set the property value depending on the device idiom, platform, or app t
 ```cs
 new Label("Hello")
     .FontSize(e => e.Default(50).OnDesktop(80).OnPhone(30))
-    .TextColor(e => e.Light(Colors.Black).Dark(Colors.Teal))
+    .TextColor(e => e.OnLight(Colors.Black).OnDark(Colors.Teal))
 ```
