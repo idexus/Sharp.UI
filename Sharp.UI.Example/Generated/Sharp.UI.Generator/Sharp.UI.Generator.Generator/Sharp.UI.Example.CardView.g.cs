@@ -5,11 +5,15 @@
 #pragma warning disable CS8669
 
 
+using System.Collections;
+using System.Collections.ObjectModel;
+
+
 namespace Sharp.UI.Example
 {  
     using Sharp.UI;
 
-    public partial class CardView
+    public partial class CardView: IEnumerable
     {
         // ----- constructors -----
 
@@ -28,6 +32,11 @@ namespace Sharp.UI.Example
             cardView = this;
             configure(this);
         }
+
+        // ----- single item container -----
+
+        public new IEnumerator GetEnumerator() { yield return this.ContentView; }
+        public new void Add(Microsoft.Maui.Controls.View contentview) => this.ContentView = contentview;
 
         // ----- bindable properties -----
 

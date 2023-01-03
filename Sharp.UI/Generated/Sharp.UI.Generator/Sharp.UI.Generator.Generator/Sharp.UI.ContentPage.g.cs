@@ -14,6 +14,7 @@ namespace Sharp.UI
     /// <summary>
     /// A <c>Sharp.UI</c> class inheriting from the <c>Microsoft.Maui.Controls.ContentPage</c> class.
     /// </summary>
+    [ContentProperty("Content")]
     public partial class ContentPage : Microsoft.Maui.Controls.ContentPage, Sharp.UI.IContentPage, IMauiWrapper, IEnumerable
     {
         // ----- maui object -----
@@ -55,6 +56,11 @@ namespace Sharp.UI
             contentPage = this;
             configure(this);
         }
+
+        // ----- single item container -----
+
+        public IEnumerator GetEnumerator() { yield return this.Content; }
+        public void Add(Microsoft.Maui.Controls.View content) => this.Content = content;
 
         // ----- consumed attached properties -----
 
@@ -112,12 +118,6 @@ namespace Sharp.UI
             set => SetValue(Microsoft.Maui.Controls.Shell.TitleViewProperty, value);
         }
         
-        // ----- single item container -----
-
-        public IEnumerator GetEnumerator() { yield return this.Content; }
-
-        public void Add(Microsoft.Maui.Controls.View content) => this.Content = content;
-
         // ----- properties / events -----
 
         public new Sharp.UI.Style Style { get => new Sharp.UI.Style(base.Style); set => base.Style = value.MauiObject; }

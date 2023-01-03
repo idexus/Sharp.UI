@@ -14,6 +14,7 @@ namespace Sharp.UI
     /// <summary>
     /// A <c>Sharp.UI</c> class inheriting from the <c>Microsoft.Maui.Controls.ViewCell</c> class.
     /// </summary>
+    [ContentProperty("View")]
     public partial class ViewCell : Microsoft.Maui.Controls.ViewCell, Sharp.UI.IViewCell, IMauiWrapper, IEnumerable
     {
         // ----- maui object -----
@@ -43,7 +44,6 @@ namespace Sharp.UI
         // ----- single item container -----
 
         public IEnumerator GetEnumerator() { yield return this.View; }
-
         public void Add(Microsoft.Maui.Controls.View view) => this.View = view;
 
         // ----- properties / events -----

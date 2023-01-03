@@ -26,6 +26,7 @@ To automatically generate bindable properties and fluent helper methods for even
 
 ```cs
 [SharpObject]
+[ContentProperty(nameof(ContentView))]
 public partial class CardView : ContentView, ICardViewProperties
 {
     public event EventHandler Clicked;
@@ -34,7 +35,7 @@ public partial class CardView : ContentView, ICardViewProperties
     {
         this.BindingContext = this;
         Content = new Border
-        {
+        {            
             new Grid
             {
                 new VStack
@@ -78,44 +79,65 @@ public partial class CardView : ContentView, ICardViewProperties
 
 ### Event handlers
 
-By using the `[Sharp Object]` attribute in the class declaration, fluent helper methods will be generated for each `EventHandler`. E.g for the `Clicked` event handler you will get two fluent methods 
+By using the `[SharpObject]` attribute in the class declaration, fluent helper methods will be generated for each `EventHandler`. E.g for the `Clicked` event handler you will get two fluent methods 
 - `OnClicked(sender)`
 - `OnClicked(sender, args)`
 
 ### Usage example
 
 ```cs
-new HStack
-{
-    new CardView(out var cardNo1)
-        .CardTitle(e => e
-            .Path("Value")
-            .Source(slider)
-            .StringFormat("Value {0:F1}"))
-        .ButtonTitle("Play")
-        .CardDescription("Do you like it")
-        .CardColor(Colors.Blue)
-        .BorderColor(Colors.Red)
-        .ContentView(new Image("dotnet_bot.png").Aspect(Aspect.AspectFit))
-        .OnClicked(e =>
-        {
-            cardNo1.CardDescription = "Let's play :)";
-        }),
-
-    new CardView(out var cardView)
-        .CardTitle("Title 2")
-        .ButtonTitle("Stop")
-        .CardDescription("Yes I do")
-        .CardColor(Colors.Red)
-        .BorderColor(Colors.Blue)
-        .ContentView(new VStack
-        {
-            new Label("This is a simple card view example")
-        })
-        .DescriptionStyle(new Style<Label>
+public class CardViewPage : ContentPage
+{    
+    public CardViewPage()
+    {
+        var labelStyle = new Style<Label>
         {
             Label.TextColorProperty.Set(Colors.Blue),
             Label.FontSizeProperty.Set(20)
-        })
+        };
+
+        this.Content = new VStack
+        {
+            new Slider(1,100, out var slider),
+
+            new HStack
+            {
+                new CardView(out var cardNo1)
+                {
+                    new Image("dotnet_bot.png")
+                        .Aspect(Aspect.AspectFit)
+                }
+                .CardTitle(e => e.Path("Value").Source(slider).StringFormat("Value {0:F1}"))
+                .ButtonTitle("Play")
+                .CardDescription("Do you like it")
+                .CardColor(Colors.Blue)
+                .BorderColor(Colors.Red)
+                .OnClicked(e =>
+                {
+                    cardNo1.CardDescription = "Let's play :)";
+                }),
+
+                new CardView(out var cardView)
+                {
+                    new VStack
+                    {
+                        new Label("This is a simple card view example"),
+                        new Label("Second label")
+                            .FontSize(20)
+                            .TextColor(AppColors.Gray200)
+                    }
+                }
+                .CardTitle("Title 2")
+                .ButtonTitle("Stop")
+                .CardDescription("Yes I do")
+                .CardColor(Colors.Red)
+                .BorderColor(Colors.Blue)
+                .DescriptionStyle(labelStyle)
+            }
+            .HorizontalOptions(LayoutOptions.Center)
+        }
+        .VerticalOptions(LayoutOptions.Center)
+        .Padding(100);
+    }
 }
 ```

@@ -14,6 +14,7 @@ namespace Sharp.UI
     /// <summary>
     /// A <c>Sharp.UI</c> class inheriting from the <c>Microsoft.Maui.Controls.IndicatorView</c> class.
     /// </summary>
+    [ContentProperty("IndicatorLayout")]
     public partial class IndicatorView : Microsoft.Maui.Controls.IndicatorView, Sharp.UI.IIndicatorView, IMauiWrapper, IEnumerable
     {
         // ----- maui object -----
@@ -43,7 +44,6 @@ namespace Sharp.UI
         // ----- single item container -----
 
         public IEnumerator GetEnumerator() { yield return this.IndicatorLayout; }
-
         public void Add(Microsoft.Maui.Controls.IBindableLayout indicatorlayout) => this.IndicatorLayout = indicatorlayout;
 
         // ----- properties / events -----

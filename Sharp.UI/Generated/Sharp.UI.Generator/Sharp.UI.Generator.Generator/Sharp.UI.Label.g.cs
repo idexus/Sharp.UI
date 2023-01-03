@@ -14,6 +14,7 @@ namespace Sharp.UI
     /// <summary>
     /// A <c>Sharp.UI</c> class inheriting from the <c>Microsoft.Maui.Controls.Label</c> class.
     /// </summary>
+    [ContentProperty("Text")]
     public partial class Label : Microsoft.Maui.Controls.Label, Sharp.UI.ILabel, IMauiWrapper, IEnumerable
     {
         // ----- maui object -----
@@ -59,7 +60,6 @@ namespace Sharp.UI
         // ----- single item container -----
 
         public IEnumerator GetEnumerator() { yield return this.Text; }
-
         public void Add(string text) => this.Text = text;
 
         // ----- properties / events -----

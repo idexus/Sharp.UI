@@ -14,6 +14,7 @@ namespace Sharp.UI
     /// <summary>
     /// A <c>Sharp.UI</c> class inheriting from the <c>Microsoft.Maui.Controls.FlyoutPage</c> class.
     /// </summary>
+    [ContentProperty("Detail")]
     public partial class FlyoutPage : Microsoft.Maui.Controls.FlyoutPage, Sharp.UI.IFlyoutPage, IMauiWrapper, IEnumerable
     {
         // ----- maui object -----
@@ -43,7 +44,6 @@ namespace Sharp.UI
         // ----- single item container -----
 
         public IEnumerator GetEnumerator() { yield return this.Detail; }
-
         public void Add(Microsoft.Maui.Controls.Page detail) => this.Detail = detail;
 
         // ----- properties / events -----

@@ -15,6 +15,7 @@ public interface ICardViewProperties
 }
 
 [SharpObject]
+[ContentProperty(nameof(ContentView))]
 public partial class CardView : ContentView, ICardViewProperties
 {
     public event EventHandler Clicked;
@@ -62,13 +63,18 @@ public partial class CardView : ContentView, ICardViewProperties
         .Margin(50)
         .Padding(20);
     }
-
 }
 
 public class CardViewPage : ContentPage
 {    
     public CardViewPage()
     {
+        var labelStyle = new Style<Label>
+        {
+            Label.TextColorProperty.Set(Colors.Blue),
+            Label.FontSizeProperty.Set(20)
+        };
+
         this.Content = new VStack
         {
             new Slider(1,100, out var slider),
@@ -76,35 +82,36 @@ public class CardViewPage : ContentPage
             new HStack
             {
                 new CardView(out var cardNo1)
-                    .CardTitle(e => e
-                        .Path("Value")
-                        .Source(slider)
-                        .StringFormat("Value {0:F1}"))
-                    .ButtonTitle("Play")
-                    .CardDescription("Do you like it")
-                    .CardColor(Colors.Blue)
-                    .BorderColor(Colors.Red)
-                    .ContentView(new Image("dotnet_bot.png").Aspect(Aspect.AspectFit))
-                    .OnClicked(e =>
-                    {
-                        cardNo1.CardDescription = "Let's play :)";
-                    }),
+                {
+                    new Image("dotnet_bot.png")
+                        .Aspect(Aspect.AspectFit)
+                }
+                .CardTitle(e => e.Path("Value").Source(slider).StringFormat("Value {0:F1}"))
+                .ButtonTitle("Play")
+                .CardDescription("Do you like it")
+                .CardColor(Colors.Blue)
+                .BorderColor(Colors.Red)
+                .OnClicked(e =>
+                {
+                    cardNo1.CardDescription = "Let's play :)";
+                }),
 
                 new CardView(out var cardView)
-                    .CardTitle("Title 2")
-                    .ButtonTitle("Stop")
-                    .CardDescription("Yes I do")
-                    .CardColor(Colors.Red)
-                    .BorderColor(Colors.Blue)
-                    .ContentView(new VStack
+                {
+                    new VStack
                     {
-                        new Label("This is a simple card view example")
-                    })
-                    .DescriptionStyle(new Style<Label>
-                    {
-                        Label.TextColorProperty.Set(Colors.Blue),
-                        Label.FontSizeProperty.Set(20)
-                    })
+                        new Label("This is a simple card view example"),
+                        new Label("Second label")
+                            .FontSize(20)
+                            .TextColor(AppColors.Gray200)
+                    }
+                }
+                .CardTitle("Title 2")
+                .ButtonTitle("Stop")
+                .CardDescription("Yes I do")
+                .CardColor(Colors.Red)
+                .BorderColor(Colors.Blue)
+                .DescriptionStyle(labelStyle)
             }
             .HorizontalOptions(LayoutOptions.Center)
         }

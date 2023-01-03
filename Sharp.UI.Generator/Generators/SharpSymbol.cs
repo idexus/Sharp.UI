@@ -44,6 +44,7 @@ namespace Sharp.UI.Generator
         // helpers
         public bool IsSharpUIType => sharpAttribute != null;
         public bool IsWrappedType => WrappedType != null;
+        public bool IsWrappedSealedType => WrappedType != null && WrappedType.IsSealed;
 
         // not generate list
         List<string> notGenerateList = null;
@@ -54,6 +55,7 @@ namespace Sharp.UI.Generator
         bool singleItemContainer = false;
         string containerOfTypeName = null;
         string nameSpaceString;
+        bool isNewContainer = false;
 
         // extensions
         private string typeConformanceName;
@@ -74,9 +76,12 @@ namespace Sharp.UI.Generator
                 ($"Sharp.UI.I{GetNormalizedName()}") :
                 (IsWrappedType || sharpSymbol != null ? $"{nameSpaceString}.I{GetNormalizedName()}" : mainSymbol.ToDisplayString());
 
-            SetupContainerIfNeeded();
-            SetupConstructorsGeneration();
-          
+            if (IsSharpUIType)
+            {
+                SetupContainerIfNeeded();
+                SetupConstructorsGeneration();
+            }
+
             this.notGenerateList = new List<string>();
             notGenerateList.Add("this[]");
             notGenerateList.Add("Handler");
@@ -85,12 +90,15 @@ namespace Sharp.UI.Generator
 
         void SetupContainerIfNeeded()
         {
-            if (IsWrappedType)
+            //if (IsWrappedType)
             {
                 this.containerPropertyName = GetContentPropertyName(mainSymbol);
 
-                var isContainerThis = Helpers.IsGenericIList(WrappedType, out var containerType);
-                if (isContainerThis && WrappedType.IsSealed)
+                var isContainerThis = Helpers.IsGenericIList(IsWrappedType ? WrappedType : mainSymbol, out var containerType);
+
+                if (containerPropertyName != null && isContainerThis) throw new ArgumentException($"Type {mainSymbol.ToDisplayString()} defines IList interface, you can not use ContentProperty attribute");
+
+                if (isContainerThis && (!IsWrappedType || WrappedType.IsSealed))
                 {
                     this.containerOfTypeName = containerType;
                     this.containerPropertyName = "this";
@@ -99,14 +107,21 @@ namespace Sharp.UI.Generator
                 else if (!isContainerThis)
                 {
                     // if is null try to find
-                    if (string.IsNullOrEmpty(this.containerPropertyName))
+                    if (IsWrappedType)
                     {
-                        var propertyName = FindContentPropertyName();
-                        if (propertyName != null && string.IsNullOrEmpty(this.containerPropertyName))
-                            this.containerPropertyName = propertyName;
+                        if (string.IsNullOrEmpty(this.containerPropertyName))
+                        {
+                            var propertyName = FindContentPropertyName();
+                            if (propertyName != null && string.IsNullOrEmpty(this.containerPropertyName))
+                                this.containerPropertyName = propertyName;
+                        }
+                    }
+                    else
+                    {
+                        isNewContainer = containerPropertyName != null && IsNewPropertyContainer(mainSymbol);
                     }
 
-                    if (!string.IsNullOrEmpty(this.containerPropertyName))
+                    if (!string.IsNullOrEmpty(this.containerPropertyName) && string.IsNullOrEmpty(containerOfTypeName))
                     {
                         IPropertySymbol propertySymbol = FindPropertySymbolWithName(this.containerPropertyName);
 
@@ -168,6 +183,31 @@ namespace Sharp.UI.Generator
         }
 
         // ------ helpers ------
+
+        static bool IsISealedMauiWrapper(INamedTypeSymbol symbol)
+        {
+            return symbol.AllInterfaces.FirstOrDefault(e => e.Name.Equals("ISealedMauiWrapper")) != null;
+        }
+
+        static bool IsIMauiWrapper(INamedTypeSymbol symbol)
+        {
+            return symbol.AllInterfaces.FirstOrDefault(e => e.Name.Equals("IMauiWrapper")) != null;
+        }
+
+        static bool IsNewPropertyContainer(INamedTypeSymbol symbol)
+        {
+            bool isNewContainer = false;
+            bool isIMauiWrapper = IsIMauiWrapper(symbol);
+            if (isIMauiWrapper)
+            {
+                Helpers.LoopDownToObject(symbol.BaseType, type =>
+                {
+                    isNewContainer = type.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Equals(ContentPropertyAttributeString, StringComparison.Ordinal)) != null;
+                    return isNewContainer;
+                });
+            }
+            return isNewContainer;
+        }
 
         public static AttributeData GetSharpAttributeData(INamedTypeSymbol symbol)
         {
@@ -245,14 +285,41 @@ namespace Sharp.UI.Generator
             return name;
         }
 
+        IPropertySymbol GetPropertyFromInterface(string name)
+        {
+            if (IsBindable())
+            {
+                var bindableInterfaces = mainSymbol
+                    .AllInterfaces
+                    .Where(e => e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Equals(BindablePropertiesAttributeString)) != null);
+
+                if (bindableInterfaces.Count() > 0)
+
+                    foreach (var inter in bindableInterfaces)
+                    {
+                        var properties = inter
+                            .GetMembers()
+                            .Where(e => e.Kind == SymbolKind.Property);
+
+                        foreach (var prop in properties)
+                            if (prop.Name.Equals(name, StringComparison.Ordinal))
+                                return (IPropertySymbol)prop;
+                    }
+            }
+            return null;
+        }
+
         IPropertySymbol FindPropertySymbolWithName(string propertyName)
         {
-            IPropertySymbol propertySymbol = null;
-            Helpers.LoopDownToObject(this.WrappedType, type =>
+            IPropertySymbol propertySymbol = GetPropertyFromInterface(propertyName);
+            if (propertySymbol == null)
             {
-                propertySymbol = (IPropertySymbol)(type.GetMembers(propertyName).FirstOrDefault());
-                return propertySymbol != null;
-            });
+                Helpers.LoopDownToObject(IsWrappedType ? WrappedType : mainSymbol, type =>
+                {
+                    propertySymbol = (IPropertySymbol)(type.GetMembers(propertyName).FirstOrDefault());
+                    return propertySymbol != null;
+                });
+            }
             return propertySymbol;
         }
     }

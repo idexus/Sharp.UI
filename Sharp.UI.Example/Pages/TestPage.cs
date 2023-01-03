@@ -228,8 +228,7 @@ namespace Sharp.UI.Example
 
                     new TimePicker(),
 
-                    new WebView("https://learn.microsoft.com/dotnet/maui").SizeRequest(500, 500)
-                            
+                    new WebView("https://learn.microsoft.com/dotnet/maui").SizeRequest(500, 500)                            
                 }
             }
             .Margin(new Thickness(0, 30, 0, 0));

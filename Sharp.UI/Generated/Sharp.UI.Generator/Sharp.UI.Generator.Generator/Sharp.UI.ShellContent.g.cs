@@ -14,6 +14,7 @@ namespace Sharp.UI
     /// <summary>
     /// A <c>Sharp.UI</c> class inheriting from the <c>Microsoft.Maui.Controls.ShellContent</c> class.
     /// </summary>
+    [ContentProperty("Content")]
     public partial class ShellContent : Microsoft.Maui.Controls.ShellContent, Sharp.UI.IShellContent, IMauiWrapper, IEnumerable
     {
         // ----- maui object -----
@@ -75,7 +76,6 @@ namespace Sharp.UI
         // ----- single item container -----
 
         public IEnumerator GetEnumerator() { yield return this.Content; }
-
         public void Add(object content) => this.Content = content;
 
         // ----- properties / events -----

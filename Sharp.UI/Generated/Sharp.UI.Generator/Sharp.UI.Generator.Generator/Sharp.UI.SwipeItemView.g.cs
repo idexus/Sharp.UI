@@ -14,6 +14,7 @@ namespace Sharp.UI
     /// <summary>
     /// A <c>Sharp.UI</c> class inheriting from the <c>Microsoft.Maui.Controls.SwipeItemView</c> class.
     /// </summary>
+    [ContentProperty("Content")]
     public partial class SwipeItemView : Microsoft.Maui.Controls.SwipeItemView, Sharp.UI.ISwipeItemView, IMauiWrapper, IEnumerable
     {
         // ----- maui object -----
@@ -43,7 +44,6 @@ namespace Sharp.UI
         // ----- single item container -----
 
         public IEnumerator GetEnumerator() { yield return this.Content; }
-
         public void Add(Microsoft.Maui.Controls.View content) => this.Content = content;
 
         // ----- properties / events -----
