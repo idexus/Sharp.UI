@@ -12,7 +12,7 @@ public partial class App : Application
             {
                 new Tab("Main", e => e.Route("main"))
                 {
-                    new ShellContent<HelloWorldPage>("Hello Page"), // load at app startup
+                    new ShellContent<HelloWorldPage>("Hello Page"), 
                     new ShellContent<GridPage>("Grid").Route("grid"),
                     new ShellContent<AbsoluteLayoutPage>("Absolute layout"),
                     new ShellContent<ExamplePage>("Scroll View"),
@@ -21,7 +21,7 @@ public partial class App : Application
 
                 new Tab("Table/List")
                 {
-                    new ShellContent<TableViewPage>("TableView"), // load on demand
+                    new ShellContent<TableViewPage>("TableView"),
                     new ShellContent<ListViewPage>("ListView"),
                     new ShellContent<CollectionPage>("Collection"),
                 },
