@@ -47,34 +47,18 @@ namespace Sharp.UI
             configure(this);
         }
 
-        public RoundRectangle(double widthrequest, double heightrequest, Microsoft.Maui.CornerRadius cornerradius) : this()
-        {  
-            this.WidthRequest = widthrequest;
-            this.HeightRequest = heightrequest;
-            this.CornerRadius = cornerradius;
-        }
-
-        public RoundRectangle(double widthrequest, double heightrequest, Microsoft.Maui.CornerRadius cornerradius, out RoundRectangle roundRectangle) : this()
-        {  
-            this.WidthRequest = widthrequest;
-            this.HeightRequest = heightrequest;
-            this.CornerRadius = cornerradius;;
+        public RoundRectangle(double widthRequest, double heightRequest, double cornerRadius, out RoundRectangle roundRectangle) : this(widthRequest, heightRequest, cornerRadius)
+        {
             roundRectangle = this;
         }
 
-        public RoundRectangle(double widthrequest, double heightrequest, Microsoft.Maui.CornerRadius cornerradius, System.Action<RoundRectangle> configure) : this()
-        {  
-            this.WidthRequest = widthrequest;
-            this.HeightRequest = heightrequest;
-            this.CornerRadius = cornerradius;
+        public RoundRectangle(double widthRequest, double heightRequest, double cornerRadius, System.Action<RoundRectangle> configure) : this(widthRequest, heightRequest, cornerRadius)
+        {
             configure(this);
         }
 
-        public RoundRectangle(double widthrequest, double heightrequest, Microsoft.Maui.CornerRadius cornerradius, out RoundRectangle roundRectangle, System.Action<RoundRectangle> configure) : this()
-        {  
-            this.WidthRequest = widthrequest;
-            this.HeightRequest = heightrequest;
-            this.CornerRadius = cornerradius;
+        public RoundRectangle(double widthRequest, double heightRequest, double cornerRadius, out RoundRectangle roundRectangle, System.Action<RoundRectangle> configure) : this(widthRequest, heightRequest, cornerRadius)
+        {
             roundRectangle = this;
             configure(this);
         }

@@ -47,38 +47,18 @@ namespace Sharp.UI
             configure(this);
         }
 
-        public Line(double x1, double y1, double x2, double y2) : this()
-        {  
-            this.X1 = x1;
-            this.Y1 = y1;
-            this.X2 = x2;
-            this.Y2 = y2;
-        }
-
-        public Line(double x1, double y1, double x2, double y2, out Line line) : this()
-        {  
-            this.X1 = x1;
-            this.Y1 = y1;
-            this.X2 = x2;
-            this.Y2 = y2;;
+        public Line(double x1, double y1, double x2, double y2, out Line line) : this(x1, y1, x2, y2)
+        {
             line = this;
         }
 
-        public Line(double x1, double y1, double x2, double y2, System.Action<Line> configure) : this()
-        {  
-            this.X1 = x1;
-            this.Y1 = y1;
-            this.X2 = x2;
-            this.Y2 = y2;
+        public Line(double x1, double y1, double x2, double y2, System.Action<Line> configure) : this(x1, y1, x2, y2)
+        {
             configure(this);
         }
 
-        public Line(double x1, double y1, double x2, double y2, out Line line, System.Action<Line> configure) : this()
-        {  
-            this.X1 = x1;
-            this.Y1 = y1;
-            this.X2 = x2;
-            this.Y2 = y2;
+        public Line(double x1, double y1, double x2, double y2, out Line line, System.Action<Line> configure) : this(x1, y1, x2, y2)
+        {
             line = this;
             configure(this);
         }

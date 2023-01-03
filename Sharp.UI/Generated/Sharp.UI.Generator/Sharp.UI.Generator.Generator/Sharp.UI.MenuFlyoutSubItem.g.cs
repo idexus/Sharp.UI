@@ -36,26 +36,18 @@ namespace Sharp.UI
             configure(this);
         }
 
-        public MenuFlyoutSubItem(string text) 
-        {  
-            this.Text = text;
-        }
-
-        public MenuFlyoutSubItem(string text, out MenuFlyoutSubItem menuFlyoutSubItem) 
-        {  
-            this.Text = text;;
+        public MenuFlyoutSubItem(string text, out MenuFlyoutSubItem menuFlyoutSubItem) : this(text)
+        {
             menuFlyoutSubItem = this;
         }
 
-        public MenuFlyoutSubItem(string text, System.Action<MenuFlyoutSubItem> configure) 
-        {  
-            this.Text = text;
+        public MenuFlyoutSubItem(string text, System.Action<MenuFlyoutSubItem> configure) : this(text)
+        {
             configure(this);
         }
 
-        public MenuFlyoutSubItem(string text, out MenuFlyoutSubItem menuFlyoutSubItem, System.Action<MenuFlyoutSubItem> configure) 
-        {  
-            this.Text = text;
+        public MenuFlyoutSubItem(string text, out MenuFlyoutSubItem menuFlyoutSubItem, System.Action<MenuFlyoutSubItem> configure) : this(text)
+        {
             menuFlyoutSubItem = this;
             configure(this);
         }

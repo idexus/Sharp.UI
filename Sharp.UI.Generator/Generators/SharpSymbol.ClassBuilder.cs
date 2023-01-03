@@ -108,7 +108,6 @@ namespace {nameSpaceString}
             {
                 GenerateMauiObjectPropertyForSealedType();
                 GenerateConstructors();
-                GenerateConstructorWithProperties();
                 GenerateOperatorsForSealedType();
                 GenerateBindableProperties();
                 GenerateAttachedProperties();
@@ -122,7 +121,6 @@ namespace {nameSpaceString}
             else
             {
                 GenerateConstructors();
-                GenerateConstructorWithProperties();
                 GenerateAttachedProperties();
                 if (IsBindable())
                 {
@@ -259,67 +257,7 @@ namespace {nameSpaceString}
                 thisTail = $": this({baseArgsString})";
                 buildConstructors();
             }
-        }
-
-        // --------------------------------------
-        // ----- constructors with property -----
-        // --------------------------------------
-
-        void GenerateConstructorWithProperties()
-        {
-            if (constructorWithProperties.Count() > 0)
-            {
-                string definitionString = "";
-                string assignmentString = "";
-                var count = 0;
-                foreach (var constructorWithProperty in constructorWithProperties)
-                {
-                    count++;
-                    ISymbol property = null;
-
-                    Helpers.LoopDownToObject(IsWrappedType ? WrappedType : mainSymbol, type =>
-                    {
-                        property = type
-                            .GetMembers()
-                            .Where(e => e.Kind == SymbolKind.Property && e.DeclaredAccessibility == Accessibility.Public && e.Name.Equals(constructorWithProperty))
-                            .FirstOrDefault();
-                        return property != null;
-                    });
-
-                    if (property == null) throw new ArgumentException($"No property name : {constructorWithProperty}, type: {mainSymbol.Name}");
-                    var propertyTypeName = ((IPropertySymbol)property).Type.ToDisplayString();
-
-                    definitionString += $"{propertyTypeName} {constructorWithProperty.ToLower()}";
-                    if (count != constructorWithProperties.Count()) definitionString += ", ";
-
-                    assignmentString += $@"
-            this.{constructorWithProperty} = {constructorWithProperty.ToLower()};";
-                }
-
-                var thisTail = IsWrappedType && WrappedType.IsSealed ? ": this()" : "";
-
-                builder.AppendLine($@"
-        public {mainSymbol.Name}({definitionString}) {thisTail}
-        {{  {assignmentString}
-        }}
-
-        public {mainSymbol.Name}({definitionString}, out {mainSymbol.Name} {Helpers.CamelCase(mainSymbol.Name)}) {thisTail}
-        {{  {assignmentString};
-            {Helpers.CamelCase(mainSymbol.Name)} = this;
-        }}
-
-        public {mainSymbol.Name}({definitionString}, System.Action<{mainSymbol.Name}> configure) {thisTail}
-        {{  {assignmentString}
-            configure(this);
-        }}
-
-        public {mainSymbol.Name}({definitionString}, out {mainSymbol.Name} {Helpers.CamelCase(mainSymbol.Name)}, System.Action<{mainSymbol.Name}> configure) {thisTail}
-        {{  {assignmentString}
-            {Helpers.CamelCase(mainSymbol.Name)} = this;
-            configure(this);
-        }}");
-            }
-        }
+        }        
 
         // ------------------------
         // ------ operators -------
@@ -515,12 +453,12 @@ namespace {nameSpaceString}
         // --------------------------------
 
         void GenerateCollectionContainer()
-        {
-            var prefix = $"this.{containerPropertyName}";
-            if (WrappedType.IsSealed) prefix = containerPropertyName.Equals("this") ? "this.MauiObject" : $"this.MauiObject.{containerPropertyName}";
-
+        {            
             if (containerOfTypeName != null && singleItemContainer == false)
             {
+                var prefix = $"this.{containerPropertyName}";
+                if (WrappedType.IsSealed) prefix = containerPropertyName.Equals("this") ? "this.MauiObject" : $"this.MauiObject.{containerPropertyName}";
+
                 notGenerateList.Add("Count");
 
                 builder.AppendLine($@"

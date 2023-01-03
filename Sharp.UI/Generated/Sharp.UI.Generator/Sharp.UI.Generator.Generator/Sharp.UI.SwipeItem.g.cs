@@ -36,26 +36,18 @@ namespace Sharp.UI
             configure(this);
         }
 
-        public SwipeItem(string text) 
-        {  
-            this.Text = text;
-        }
-
-        public SwipeItem(string text, out SwipeItem swipeItem) 
-        {  
-            this.Text = text;;
+        public SwipeItem(string text, out SwipeItem swipeItem) : this(text)
+        {
             swipeItem = this;
         }
 
-        public SwipeItem(string text, System.Action<SwipeItem> configure) 
-        {  
-            this.Text = text;
+        public SwipeItem(string text, System.Action<SwipeItem> configure) : this(text)
+        {
             configure(this);
         }
 
-        public SwipeItem(string text, out SwipeItem swipeItem, System.Action<SwipeItem> configure) 
-        {  
-            this.Text = text;
+        public SwipeItem(string text, out SwipeItem swipeItem, System.Action<SwipeItem> configure) : this(text)
+        {
             swipeItem = this;
             configure(this);
         }

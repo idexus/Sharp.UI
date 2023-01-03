@@ -12,9 +12,14 @@
     [SharpObject(typeof(Microsoft.Maui.Controls.PointerGestureRecognizer))]
     public partial class PointerGestureRecognizer { }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.SwipeGestureRecognizer),
-        constructorWithProperties: new[] { "Direction" })]
-    public partial class SwipeGestureRecognizer { }
+    [SharpObject(typeof(Microsoft.Maui.Controls.SwipeGestureRecognizer))]
+    public partial class SwipeGestureRecognizer
+    {
+        public SwipeGestureRecognizer(SwipeDirection direction) : this()
+        {
+            this.Direction = direction;
+        }
+    }
 
     [SharpObject(typeof(Microsoft.Maui.Controls.DragGestureRecognizer))]
     public partial class DragGestureRecognizer { }

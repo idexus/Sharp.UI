@@ -40,26 +40,18 @@ namespace Sharp.UI
             configure(this);
         }
 
-        public Label(string text) 
-        {  
-            this.Text = text;
-        }
-
-        public Label(string text, out Label label) 
-        {  
-            this.Text = text;;
+        public Label(string text, out Label label) : this(text)
+        {
             label = this;
         }
 
-        public Label(string text, System.Action<Label> configure) 
-        {  
-            this.Text = text;
+        public Label(string text, System.Action<Label> configure) : this(text)
+        {
             configure(this);
         }
 
-        public Label(string text, out Label label, System.Action<Label> configure) 
-        {  
-            this.Text = text;
+        public Label(string text, out Label label, System.Action<Label> configure) : this(text)
+        {
             label = this;
             configure(this);
         }

@@ -27,8 +27,6 @@ namespace Sharp.UI.Generator
         class SharpObjectAttribParams
         {
             public const int WrappedType = 0;
-            public const int ConstructorWithProperties = 1;
-            public const int ContainerPopertyName = 2;
         }
 
         private StringBuilder builder;
@@ -41,7 +39,6 @@ namespace Sharp.UI.Generator
 
         // [SharpObject] parameters
         public INamedTypeSymbol WrappedType { get; private set; }
-        List<string> constructorWithProperties = null;
         string containerPropertyName = null;
 
         // helpers
@@ -90,7 +87,7 @@ namespace Sharp.UI.Generator
         {
             if (IsWrappedType)
             {
-                this.containerPropertyName = (string)(sharpAttribute.ConstructorArguments[SharpObjectAttribParams.ContainerPopertyName].Value);
+                this.containerPropertyName = GetContentPropertyName(mainSymbol);
 
                 var isContainerThis = Helpers.IsGenericIList(WrappedType, out var containerType);
                 if (isContainerThis && WrappedType.IsSealed)
@@ -133,15 +130,6 @@ namespace Sharp.UI.Generator
 
         void SetupConstructorsGeneration()
         {
-            if (sharpAttribute != null)
-            {
-                var constructorWithPropertiesValues = sharpAttribute.ConstructorArguments[SharpObjectAttribParams.ConstructorWithProperties].Values;
-                if (!constructorWithPropertiesValues.IsDefaultOrEmpty)
-                    this.constructorWithProperties = constructorWithPropertiesValues.Select(e => (string)e.Value).ToList();
-                else
-                    this.constructorWithProperties = new List<string>();
-            }
-
             this.generateNoParamConstructor = true;
             if (mainSymbol.Constructors.FirstOrDefault(e => e.Parameters.Count() == 0 && !e.IsImplicitlyDeclared) != null)
                 this.generateNoParamConstructor = false;
@@ -240,19 +228,21 @@ namespace Sharp.UI.Generator
             return null;
         }
 
+        string GetContentPropertyName(INamedTypeSymbol symbol)
+        {
+            var attributeData = symbol.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Equals(ContentPropertyAttributeString));
+            return attributeData != null ? (string)attributeData.ConstructorArguments[0].Value : null;
+        }
+
         string FindContentPropertyName()
         {
-            AttributeData attributeData = null;
+            string name = null;
             Helpers.LoopDownToObject(this.WrappedType, type =>
             {
-                attributeData = type.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Equals(ContentPropertyAttributeString));
-                return attributeData != null;
+                name = GetContentPropertyName(type);
+                return name != null;
             });
-            if (attributeData != null)
-            {
-                return (string)attributeData.ConstructorArguments[0].Value;
-            }
-            return null;
+            return name;
         }
 
         IPropertySymbol FindPropertySymbolWithName(string propertyName)

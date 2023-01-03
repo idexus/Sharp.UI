@@ -36,26 +36,18 @@ namespace Sharp.UI
             configure(this);
         }
 
-        public ListView(System.Collections.IEnumerable itemssource) 
-        {  
-            this.ItemsSource = itemssource;
-        }
-
-        public ListView(System.Collections.IEnumerable itemssource, out ListView listView) 
-        {  
-            this.ItemsSource = itemssource;;
+        public ListView(System.Collections.IEnumerable itemsSource, out ListView listView) : this(itemsSource)
+        {
             listView = this;
         }
 
-        public ListView(System.Collections.IEnumerable itemssource, System.Action<ListView> configure) 
-        {  
-            this.ItemsSource = itemssource;
+        public ListView(System.Collections.IEnumerable itemsSource, System.Action<ListView> configure) : this(itemsSource)
+        {
             configure(this);
         }
 
-        public ListView(System.Collections.IEnumerable itemssource, out ListView listView, System.Action<ListView> configure) 
-        {  
-            this.ItemsSource = itemssource;
+        public ListView(System.Collections.IEnumerable itemsSource, out ListView listView, System.Action<ListView> configure) : this(itemsSource)
+        {
             listView = this;
             configure(this);
         }

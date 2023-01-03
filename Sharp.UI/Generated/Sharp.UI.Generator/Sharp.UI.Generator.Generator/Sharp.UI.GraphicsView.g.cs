@@ -36,26 +36,18 @@ namespace Sharp.UI
             configure(this);
         }
 
-        public GraphicsView(Microsoft.Maui.Graphics.IDrawable drawable) 
-        {  
-            this.Drawable = drawable;
-        }
-
-        public GraphicsView(Microsoft.Maui.Graphics.IDrawable drawable, out GraphicsView graphicsView) 
-        {  
-            this.Drawable = drawable;;
+        public GraphicsView(Microsoft.Maui.Graphics.IDrawable drawable, out GraphicsView graphicsView) : this(drawable)
+        {
             graphicsView = this;
         }
 
-        public GraphicsView(Microsoft.Maui.Graphics.IDrawable drawable, System.Action<GraphicsView> configure) 
-        {  
-            this.Drawable = drawable;
+        public GraphicsView(Microsoft.Maui.Graphics.IDrawable drawable, System.Action<GraphicsView> configure) : this(drawable)
+        {
             configure(this);
         }
 
-        public GraphicsView(Microsoft.Maui.Graphics.IDrawable drawable, out GraphicsView graphicsView, System.Action<GraphicsView> configure) 
-        {  
-            this.Drawable = drawable;
+        public GraphicsView(Microsoft.Maui.Graphics.IDrawable drawable, out GraphicsView graphicsView, System.Action<GraphicsView> configure) : this(drawable)
+        {
             graphicsView = this;
             configure(this);
         }

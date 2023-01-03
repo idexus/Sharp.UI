@@ -188,7 +188,7 @@ namespace Sharp.UI.Example
                     new StackLayout()
                     {
                         new Label("What's your favorite animal?"),
-                        new RadioButton("Dog"),
+                        new RadioButton { "Dog" },
                         new RadioButton(e => e.IsChecked(true))
                         {
                             new HStack(e => e.HorizontalOptions(LayoutOptions.Start))
@@ -202,8 +202,8 @@ namespace Sharp.UI.Example
                                     .FontSize(18)
                             }
                         },
-                        new RadioButton("Elephant"),
-                        new RadioButton("Monkey"),
+                        new RadioButton { "Elephant" },
+                        new RadioButton { "Monkey" },
                     },
 
                     new Rectangle(100, 100, out var rect).Stroke(Colors.Wheat).StrokeThickness(10),

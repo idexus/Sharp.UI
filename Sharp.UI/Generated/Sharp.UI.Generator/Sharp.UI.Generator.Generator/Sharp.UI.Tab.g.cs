@@ -40,26 +40,18 @@ namespace Sharp.UI
             configure(this);
         }
 
-        public Tab(string title) 
-        {  
-            this.Title = title;
-        }
-
-        public Tab(string title, out Tab tab) 
-        {  
-            this.Title = title;;
+        public Tab(string title, out Tab tab) : this(title)
+        {
             tab = this;
         }
 
-        public Tab(string title, System.Action<Tab> configure) 
-        {  
-            this.Title = title;
+        public Tab(string title, System.Action<Tab> configure) : this(title)
+        {
             configure(this);
         }
 
-        public Tab(string title, out Tab tab, System.Action<Tab> configure) 
-        {  
-            this.Title = title;
+        public Tab(string title, out Tab tab, System.Action<Tab> configure) : this(title)
+        {
             tab = this;
             configure(this);
         }

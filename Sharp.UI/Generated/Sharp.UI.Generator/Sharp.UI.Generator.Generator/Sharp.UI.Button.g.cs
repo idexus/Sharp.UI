@@ -36,26 +36,18 @@ namespace Sharp.UI
             configure(this);
         }
 
-        public Button(string text) 
-        {  
-            this.Text = text;
-        }
-
-        public Button(string text, out Button button) 
-        {  
-            this.Text = text;;
+        public Button(string text, out Button button) : this(text)
+        {
             button = this;
         }
 
-        public Button(string text, System.Action<Button> configure) 
-        {  
-            this.Text = text;
+        public Button(string text, System.Action<Button> configure) : this(text)
+        {
             configure(this);
         }
 
-        public Button(string text, out Button button, System.Action<Button> configure) 
-        {  
-            this.Text = text;
+        public Button(string text, out Button button, System.Action<Button> configure) : this(text)
+        {
             button = this;
             configure(this);
         }

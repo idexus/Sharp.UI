@@ -36,34 +36,18 @@ namespace Sharp.UI
             configure(this);
         }
 
-        public Stepper(double minimum, double maximum, double increment) 
-        {  
-            this.Minimum = minimum;
-            this.Maximum = maximum;
-            this.Increment = increment;
-        }
-
-        public Stepper(double minimum, double maximum, double increment, out Stepper stepper) 
-        {  
-            this.Minimum = minimum;
-            this.Maximum = maximum;
-            this.Increment = increment;;
+        public Stepper(double minimum, double maximum, double increment, out Stepper stepper) : this(minimum, maximum, increment)
+        {
             stepper = this;
         }
 
-        public Stepper(double minimum, double maximum, double increment, System.Action<Stepper> configure) 
-        {  
-            this.Minimum = minimum;
-            this.Maximum = maximum;
-            this.Increment = increment;
+        public Stepper(double minimum, double maximum, double increment, System.Action<Stepper> configure) : this(minimum, maximum, increment)
+        {
             configure(this);
         }
 
-        public Stepper(double minimum, double maximum, double increment, out Stepper stepper, System.Action<Stepper> configure) 
-        {  
-            this.Minimum = minimum;
-            this.Maximum = maximum;
-            this.Increment = increment;
+        public Stepper(double minimum, double maximum, double increment, out Stepper stepper, System.Action<Stepper> configure) : this(minimum, maximum, increment)
+        {
             stepper = this;
             configure(this);
         }

@@ -51,26 +51,18 @@ namespace Sharp.UI
             configure(this);
         }
 
-        public TableSection(string title) : this()
-        {  
-            this.Title = title;
-        }
-
-        public TableSection(string title, out TableSection tableSection) : this()
-        {  
-            this.Title = title;;
+        public TableSection(string title, out TableSection tableSection) : this(title)
+        {
             tableSection = this;
         }
 
-        public TableSection(string title, System.Action<TableSection> configure) : this()
-        {  
-            this.Title = title;
+        public TableSection(string title, System.Action<TableSection> configure) : this(title)
+        {
             configure(this);
         }
 
-        public TableSection(string title, out TableSection tableSection, System.Action<TableSection> configure) : this()
-        {  
-            this.Title = title;
+        public TableSection(string title, out TableSection tableSection, System.Action<TableSection> configure) : this(title)
+        {
             tableSection = this;
             configure(this);
         }

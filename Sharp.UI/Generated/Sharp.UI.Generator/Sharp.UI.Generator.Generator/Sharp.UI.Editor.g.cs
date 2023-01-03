@@ -36,26 +36,18 @@ namespace Sharp.UI
             configure(this);
         }
 
-        public Editor(string placeholder) 
-        {  
-            this.Placeholder = placeholder;
-        }
-
-        public Editor(string placeholder, out Editor editor) 
-        {  
-            this.Placeholder = placeholder;;
+        public Editor(string placeholder, out Editor editor) : this(placeholder)
+        {
             editor = this;
         }
 
-        public Editor(string placeholder, System.Action<Editor> configure) 
-        {  
-            this.Placeholder = placeholder;
+        public Editor(string placeholder, System.Action<Editor> configure) : this(placeholder)
+        {
             configure(this);
         }
 
-        public Editor(string placeholder, out Editor editor, System.Action<Editor> configure) 
-        {  
-            this.Placeholder = placeholder;
+        public Editor(string placeholder, out Editor editor, System.Action<Editor> configure) : this(placeholder)
+        {
             editor = this;
             configure(this);
         }

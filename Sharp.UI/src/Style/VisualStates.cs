@@ -19,8 +19,8 @@ namespace Sharp.UI
         public const string CommonStates = "CommonStates";
     }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.VisualState),
-        containerPopertyName: "Setters")]
+    [SharpObject(typeof(Microsoft.Maui.Controls.VisualState))]
+    [ContentProperty("Setters")]
     public partial class VisualState
     {
         public VisualState() : this(Guid.NewGuid().ToString()) { }

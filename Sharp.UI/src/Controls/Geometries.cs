@@ -3,9 +3,14 @@
     [SharpObject(typeof(Microsoft.Maui.Controls.Shapes.Geometry))] 
     public abstract partial class Geometry { }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.Shapes.EllipseGeometry),
-        constructorWithProperties: new[] { "RadiusX", "RadiusY", "Center" })] 
-    public partial class EllipseGeometry { }
+    [SharpObject(typeof(Microsoft.Maui.Controls.Shapes.EllipseGeometry))] 
+    public partial class EllipseGeometry
+    {
+        public EllipseGeometry(double radiusX, double radiusY, Point center) : this()
+        {
+            this.RadiusX = radiusX; this.RadiusY = radiusY; this.Center = center;
+        }
+    }
 
     [SharpObject(typeof(Microsoft.Maui.Controls.Shapes.LineGeometry))] 
     public partial class LineGeometry { }

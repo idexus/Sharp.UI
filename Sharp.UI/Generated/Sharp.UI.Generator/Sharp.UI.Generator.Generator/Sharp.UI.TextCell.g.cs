@@ -36,26 +36,18 @@ namespace Sharp.UI
             configure(this);
         }
 
-        public TextCell(string text) 
-        {  
-            this.Text = text;
-        }
-
-        public TextCell(string text, out TextCell textCell) 
-        {  
-            this.Text = text;;
+        public TextCell(string text, out TextCell textCell) : this(text)
+        {
             textCell = this;
         }
 
-        public TextCell(string text, System.Action<TextCell> configure) 
-        {  
-            this.Text = text;
+        public TextCell(string text, System.Action<TextCell> configure) : this(text)
+        {
             configure(this);
         }
 
-        public TextCell(string text, out TextCell textCell, System.Action<TextCell> configure) 
-        {  
-            this.Text = text;
+        public TextCell(string text, out TextCell textCell, System.Action<TextCell> configure) : this(text)
+        {
             textCell = this;
             configure(this);
         }

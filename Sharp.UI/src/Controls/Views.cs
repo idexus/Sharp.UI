@@ -9,9 +9,14 @@
     [SharpObject(typeof(Microsoft.Maui.Controls.BoxView))] 
     public partial class BoxView { }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.Button),
-        constructorWithProperties: new[] { "Text" })]
-    public partial class Button { }
+    [SharpObject(typeof(Microsoft.Maui.Controls.Button))]
+    public partial class Button
+    {
+        public Button(string text) : this()
+        {
+            this.Text = text;
+        }
+    }
 
     [SharpObject(typeof(Microsoft.Maui.Controls.CarouselView))]
     public partial class CarouselView { }
@@ -28,51 +33,95 @@
     [SharpObject(typeof(Microsoft.Maui.Controls.DatePicker))] 
     public partial class DatePicker { }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.Editor), 
-        constructorWithProperties: new[] { "Placeholder" })]
-    public partial class Editor { }
+    [SharpObject(typeof(Microsoft.Maui.Controls.Editor))]
+    public partial class Editor
+    {
+        public Editor(string placeholder) : this()
+        {
+            this.Placeholder = placeholder;
+        }
+    }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.Entry), 
-        constructorWithProperties: new[] { "Placeholder" })]
-    public partial class Entry { }
+    [SharpObject(typeof(Microsoft.Maui.Controls.Entry))]
+    public partial class Entry
+    {
+        public Entry(string placeholder) : this()
+        {
+            this.Placeholder = placeholder;
+        }
+    }
 
     [SharpObject(typeof(Microsoft.Maui.Controls.Frame))] 
     public partial class Frame { }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.GraphicsView), 
-        constructorWithProperties: new[] { "Drawable" })]
-    public partial class GraphicsView { }
+    [SharpObject(typeof(Microsoft.Maui.Controls.GraphicsView))]
+    public partial class GraphicsView
+    {
+        public GraphicsView(Microsoft.Maui.Graphics.IDrawable Drawable) : this()
+        {
+            this.Drawable = Drawable;
+        }
+    }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.Image), 
-        constructorWithProperties: new[] { "Source" })]
-    public partial class Image { }
+    [SharpObject(typeof(Microsoft.Maui.Controls.Image))]
+    public partial class Image
+    {
+        public Image(Microsoft.Maui.Controls.ImageSource Source) : this()
+        {
+            this.Source = Source;
+        }
+    }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.ImageButton), 
-        constructorWithProperties: new[] { "Source" })]
-    public partial class ImageButton { }
+    [SharpObject(typeof(Microsoft.Maui.Controls.ImageButton))]
+    public partial class ImageButton
+    {
+        public ImageButton(Microsoft.Maui.Controls.ImageSource Source) : this()
+        {
+            this.Source = Source;
+        }
+    }
 
     [SharpObject(typeof(Microsoft.Maui.Controls.IndicatorView))] 
     public partial class IndicatorView { }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.Label), 
-        constructorWithProperties: new[] { "Text" })]
-    public partial class Label { }
+    [SharpObject(typeof(Microsoft.Maui.Controls.Label))]
+    public partial class Label
+    {
+        public Label(string text) : this()
+        {
+            this.Text = text;
+        }
+    }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.ListView), 
-        constructorWithProperties: new[] { "ItemsSource" })] 
-    public partial class ListView { }
+    [SharpObject(typeof(Microsoft.Maui.Controls.ListView))] 
+    public partial class ListView
+    {
+        public ListView(System.Collections.IEnumerable itemsSource) : this()
+        {
+            this.ItemsSource = itemsSource;
+        }
+    }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.Picker), 
-        constructorWithProperties: new[] { "Title" })] 
-    public partial class Picker { }
+    [SharpObject(typeof(Microsoft.Maui.Controls.Picker))] 
+    public partial class Picker
+    {
+        public Picker(string title) : this()
+        {
+            this.Title = title;
+        }
+    }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.ProgressBar), 
-        constructorWithProperties: new[] { "Progress" })]
-    public partial class ProgressBar { }
+    [SharpObject(typeof(Microsoft.Maui.Controls.ProgressBar))]
+    public partial class ProgressBar
+    {
+        public ProgressBar(double progress) : this()
+        {
+            this.Progress = progress;
+        }
+    }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.RadioButton), 
-        constructorWithProperties: new[] { "Content" },
-        containerPopertyName: "Content")]
+    [SharpObject(typeof(Microsoft.Maui.Controls.RadioButton))]
+    [ContentProperty("Content")]
     public partial class RadioButton { }
 
     [SharpObject(typeof(Microsoft.Maui.Controls.RefreshView))] 
@@ -81,17 +130,37 @@
     [SharpObject(typeof(Microsoft.Maui.Controls.ScrollView))] 
     public partial class ScrollView { }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.SearchBar), 
-        constructorWithProperties: new[] { "Placeholder" })]
-    public partial class SearchBar { }
+    [SharpObject(typeof(Microsoft.Maui.Controls.SearchBar))]
+    public partial class SearchBar
+    {
+        public SearchBar(string placeholder) : this()
+        {
+            this.Placeholder = placeholder;
+        }
+    }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.Slider), 
-        constructorWithProperties: new[] { "Minimum", "Maximum" })] 
-    public partial class Slider { }
+    [SharpObject(typeof(Microsoft.Maui.Controls.Slider))] 
+    public partial class Slider
+    {
+        public Slider(double minimum, double maximum, double value) : this()
+        {
+            this.Minimum = minimum; this.Maximum = maximum; this.Value = value;
+        }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.Stepper), 
-        constructorWithProperties: new[] { "Minimum", "Maximum", "Increment" })]
-    public partial class Stepper { }
+        public Slider(double minimum, double maximum) : this()
+        {
+            this.Minimum = minimum; this.Maximum = maximum;
+        }
+    }
+
+    [SharpObject(typeof(Microsoft.Maui.Controls.Stepper))]
+    public partial class Stepper
+    {
+        public Stepper(double minimum, double maximum, double increment) : this()
+        {
+            this.Minimum = minimum; this.Maximum = maximum; this.Increment = increment;
+        }
+    }
 
     [SharpObject(typeof(Microsoft.Maui.Controls.SwipeView))] 
     public partial class SwipeView { }
@@ -111,23 +180,34 @@
     [SharpObject(typeof(Microsoft.Maui.Controls.TimePicker))] 
     public partial class TimePicker { }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.WebView), 
-        constructorWithProperties: new[] {"Source"})]
-    public partial class WebView { }
+    [SharpObject(typeof(Microsoft.Maui.Controls.WebView))]
+    public partial class WebView
+    {
+        public WebView(WebViewSource source) : this()
+        {
+            this.Source = source;
+        }
+    }
 
-    //------ swipe items ------
-
-    [SharpObject(typeof(Microsoft.Maui.Controls.SwipeItem), 
-        constructorWithProperties: new[] { "Text" })]
-    public partial class SwipeItem { }
+    [SharpObject(typeof(Microsoft.Maui.Controls.SwipeItem))]
+    public partial class SwipeItem
+    {
+        public SwipeItem(string text) : this()
+        {
+            this.Text = text;
+        }
+    }
 
     [SharpObject(typeof(Microsoft.Maui.Controls.SwipeItemView))] 
     public partial class SwipeItemView { }
 
-    //------ table view (sealed) ------
-
-    [SharpObject(typeof(Microsoft.Maui.Controls.TableSection), 
-        constructorWithProperties: new[] { "Title" })]
-    public partial class TableSection { }
+    [SharpObject(typeof(Microsoft.Maui.Controls.TableSection))]
+    public partial class TableSection
+    {
+        public TableSection(string title) : this()
+        {
+            this.Title = title;
+        }
+    }
 
 }

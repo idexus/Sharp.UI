@@ -40,26 +40,18 @@ namespace Sharp.UI
             configure(this);
         }
 
-        public ContentPage(string title) 
-        {  
-            this.Title = title;
-        }
-
-        public ContentPage(string title, out ContentPage contentPage) 
-        {  
-            this.Title = title;;
+        public ContentPage(string title, out ContentPage contentPage) : this(title)
+        {
             contentPage = this;
         }
 
-        public ContentPage(string title, System.Action<ContentPage> configure) 
-        {  
-            this.Title = title;
+        public ContentPage(string title, System.Action<ContentPage> configure) : this(title)
+        {
             configure(this);
         }
 
-        public ContentPage(string title, out ContentPage contentPage, System.Action<ContentPage> configure) 
-        {  
-            this.Title = title;
+        public ContentPage(string title, out ContentPage contentPage, System.Action<ContentPage> configure) : this(title)
+        {
             contentPage = this;
             configure(this);
         }

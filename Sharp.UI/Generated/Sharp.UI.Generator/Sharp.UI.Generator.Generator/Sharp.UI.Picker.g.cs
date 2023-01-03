@@ -36,26 +36,18 @@ namespace Sharp.UI
             configure(this);
         }
 
-        public Picker(string title) 
-        {  
-            this.Title = title;
-        }
-
-        public Picker(string title, out Picker picker) 
-        {  
-            this.Title = title;;
+        public Picker(string title, out Picker picker) : this(title)
+        {
             picker = this;
         }
 
-        public Picker(string title, System.Action<Picker> configure) 
-        {  
-            this.Title = title;
+        public Picker(string title, System.Action<Picker> configure) : this(title)
+        {
             configure(this);
         }
 
-        public Picker(string title, out Picker picker, System.Action<Picker> configure) 
-        {  
-            this.Title = title;
+        public Picker(string title, out Picker picker, System.Action<Picker> configure) : this(title)
+        {
             picker = this;
             configure(this);
         }

@@ -40,30 +40,6 @@ namespace Sharp.UI
             configure(this);
         }
 
-        public RadioButton(object content) 
-        {  
-            this.Content = content;
-        }
-
-        public RadioButton(object content, out RadioButton radioButton) 
-        {  
-            this.Content = content;;
-            radioButton = this;
-        }
-
-        public RadioButton(object content, System.Action<RadioButton> configure) 
-        {  
-            this.Content = content;
-            configure(this);
-        }
-
-        public RadioButton(object content, out RadioButton radioButton, System.Action<RadioButton> configure) 
-        {  
-            this.Content = content;
-            radioButton = this;
-            configure(this);
-        }
-
         // ----- single item container -----
 
         public IEnumerator GetEnumerator() { yield return this.Content; }

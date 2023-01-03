@@ -36,26 +36,18 @@ namespace Sharp.UI
             configure(this);
         }
 
-        public MenuBarItem(string text) 
-        {  
-            this.Text = text;
-        }
-
-        public MenuBarItem(string text, out MenuBarItem menuBarItem) 
-        {  
-            this.Text = text;;
+        public MenuBarItem(string text, out MenuBarItem menuBarItem) : this(text)
+        {
             menuBarItem = this;
         }
 
-        public MenuBarItem(string text, System.Action<MenuBarItem> configure) 
-        {  
-            this.Text = text;
+        public MenuBarItem(string text, System.Action<MenuBarItem> configure) : this(text)
+        {
             configure(this);
         }
 
-        public MenuBarItem(string text, out MenuBarItem menuBarItem, System.Action<MenuBarItem> configure) 
-        {  
-            this.Text = text;
+        public MenuBarItem(string text, out MenuBarItem menuBarItem, System.Action<MenuBarItem> configure) : this(text)
+        {
             menuBarItem = this;
             configure(this);
         }

@@ -40,6 +40,22 @@ namespace Sharp.UI
             configure(this);
         }
 
+        public ShellContent(string title, object content, out ShellContent shellContent) : this(title, content)
+        {
+            shellContent = this;
+        }
+
+        public ShellContent(string title, object content, System.Action<ShellContent> configure) : this(title, content)
+        {
+            configure(this);
+        }
+
+        public ShellContent(string title, object content, out ShellContent shellContent, System.Action<ShellContent> configure) : this(title, content)
+        {
+            shellContent = this;
+            configure(this);
+        }
+
         public ShellContent(System.Type page, out ShellContent shellContent) : this(page)
         {
             shellContent = this;
@@ -52,34 +68,6 @@ namespace Sharp.UI
 
         public ShellContent(System.Type page, out ShellContent shellContent, System.Action<ShellContent> configure) : this(page)
         {
-            shellContent = this;
-            configure(this);
-        }
-
-        public ShellContent(string title, object content) 
-        {  
-            this.Title = title;
-            this.Content = content;
-        }
-
-        public ShellContent(string title, object content, out ShellContent shellContent) 
-        {  
-            this.Title = title;
-            this.Content = content;;
-            shellContent = this;
-        }
-
-        public ShellContent(string title, object content, System.Action<ShellContent> configure) 
-        {  
-            this.Title = title;
-            this.Content = content;
-            configure(this);
-        }
-
-        public ShellContent(string title, object content, out ShellContent shellContent, System.Action<ShellContent> configure) 
-        {  
-            this.Title = title;
-            this.Content = content;
             shellContent = this;
             configure(this);
         }

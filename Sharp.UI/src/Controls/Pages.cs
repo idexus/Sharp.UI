@@ -33,9 +33,14 @@ namespace Sharp.UI
         Microsoft.Maui.Controls.View ShellTitleView { get; set; }
     }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.ContentPage),
-        constructorWithProperties: new[] { "Title" })] 
-    public partial class ContentPage : IContentPageShellAttachedProperties { }
+    [SharpObject(typeof(Microsoft.Maui.Controls.ContentPage))] 
+    public partial class ContentPage : IContentPageShellAttachedProperties
+    {
+        public ContentPage(string title) : this()
+        {
+            this.Title = title;
+        }
+    }
 
     [SharpObject(typeof(Microsoft.Maui.Controls.FlyoutPage))] 
     public partial class FlyoutPage { }

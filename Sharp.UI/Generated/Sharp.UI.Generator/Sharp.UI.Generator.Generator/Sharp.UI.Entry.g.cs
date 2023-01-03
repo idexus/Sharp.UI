@@ -36,26 +36,18 @@ namespace Sharp.UI
             configure(this);
         }
 
-        public Entry(string placeholder) 
-        {  
-            this.Placeholder = placeholder;
-        }
-
-        public Entry(string placeholder, out Entry entry) 
-        {  
-            this.Placeholder = placeholder;;
+        public Entry(string placeholder, out Entry entry) : this(placeholder)
+        {
             entry = this;
         }
 
-        public Entry(string placeholder, System.Action<Entry> configure) 
-        {  
-            this.Placeholder = placeholder;
+        public Entry(string placeholder, System.Action<Entry> configure) : this(placeholder)
+        {
             configure(this);
         }
 
-        public Entry(string placeholder, out Entry entry, System.Action<Entry> configure) 
-        {  
-            this.Placeholder = placeholder;
+        public Entry(string placeholder, out Entry entry, System.Action<Entry> configure) : this(placeholder)
+        {
             entry = this;
             configure(this);
         }
