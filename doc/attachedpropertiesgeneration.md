@@ -51,7 +51,7 @@ public class AttachedPopertiesPage : ContentPage
         {
             new Label()
                 .HasCustomShadow(true)
-                .CustomShadowSize(23)
+                .ShadowSize(23)
                 .ShadowColor(Colors.Blue),
 
             new Button()
