@@ -34,7 +34,7 @@
 
         protected ShellContent(Type page) : this()
         {
-            this.ContentTemplate = new DataTemplate(page);
+            this.ContentTemplate = new Microsoft.Maui.Controls.DataTemplate(page);
         }
     }
 

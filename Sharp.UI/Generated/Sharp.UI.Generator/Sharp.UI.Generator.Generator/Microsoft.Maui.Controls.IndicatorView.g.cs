@@ -236,7 +236,7 @@ namespace Sharp.UI
         public static T IndicatorTemplate<T>(this T obj, System.Func<object> loadTemplate) where T : Sharp.UI.IIndicatorView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
-            mauiObject.IndicatorTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
+            mauiObject.IndicatorTemplate = new DataTemplate(loadTemplate);
             return obj;
         }
         

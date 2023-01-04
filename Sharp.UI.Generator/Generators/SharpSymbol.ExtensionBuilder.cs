@@ -196,7 +196,7 @@ namespace {nameSpaceString}
                 camelCaseName = Helpers.CamelCase(propertyName);
                 assignmentString = $"{accessedWith}.{propertyName} = {(isWrappedSealedType ? "mauiValue" : $"({propertyCastTypeName}){camelCaseName}")}";
                 assignmentBuilderString = $"mauiObject.{propertyName} = {(isWrappedSealedType ? $"MauiWrapper.Value<{propertyCastTypeName}>(builder.GetValue())" : "builder.GetValue()")}";
-                assignmentDataTemplateString = $"mauiObject.{propertyName} = new Microsoft.Maui.Controls.DataTemplate(loadTemplate)";
+                assignmentDataTemplateString = $"mauiObject.{propertyName} = new DataTemplate(loadTemplate)";
                 bindablePropertyName = $"{type.ToDisplayString()}.{propertyName}Property";
                 mauiValueString = !isWrappedSealedType ? "" : @$"
             var mauiValue = MauiWrapper.Value<{propertyCastTypeName}>({camelCaseName});";

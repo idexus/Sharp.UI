@@ -90,7 +90,7 @@ namespace Sharp.UI
         public static T EmptyViewTemplate<T>(this T obj, System.Func<object> loadTemplate) where T : Sharp.UI.IItemsView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ItemsView>(obj);
-            mauiObject.EmptyViewTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
+            mauiObject.EmptyViewTemplate = new DataTemplate(loadTemplate);
             return obj;
         }
         
@@ -370,7 +370,7 @@ namespace Sharp.UI
         public static T ItemTemplate<T>(this T obj, System.Func<object> loadTemplate) where T : Sharp.UI.IItemsView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ItemsView>(obj);
-            mauiObject.ItemTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
+            mauiObject.ItemTemplate = new DataTemplate(loadTemplate);
             return obj;
         }
         

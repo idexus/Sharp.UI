@@ -17,7 +17,13 @@ public class DataTriggerPage : ContentPage
                     {
                         Entry.IsEnabledProperty.Set(false)
                     }                    
-                }),            
+                }),
+
+            new Button("Save", out var button)
+                .Triggers(new DataTrigger<Button>(e => e.Path("Text.Length").Source(entry), 0)
+                    {
+                        Entry.IsEnabledProperty.Set(false)
+                    })
         }
 		.VerticalOptions(LayoutOptions.Center);
 	}

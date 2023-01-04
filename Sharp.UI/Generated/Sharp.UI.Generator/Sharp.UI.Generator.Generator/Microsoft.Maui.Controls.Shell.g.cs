@@ -597,7 +597,7 @@ namespace Sharp.UI
         public static T FlyoutHeaderTemplate<T>(this T obj, System.Func<object> loadTemplate) where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shell>(obj);
-            mauiObject.FlyoutHeaderTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
+            mauiObject.FlyoutHeaderTemplate = new DataTemplate(loadTemplate);
             return obj;
         }
         
@@ -643,7 +643,7 @@ namespace Sharp.UI
         public static T FlyoutFooterTemplate<T>(this T obj, System.Func<object> loadTemplate) where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shell>(obj);
-            mauiObject.FlyoutFooterTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
+            mauiObject.FlyoutFooterTemplate = new DataTemplate(loadTemplate);
             return obj;
         }
         
@@ -772,7 +772,7 @@ namespace Sharp.UI
         public static T ItemTemplate<T>(this T obj, System.Func<object> loadTemplate) where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shell>(obj);
-            mauiObject.ItemTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
+            mauiObject.ItemTemplate = new DataTemplate(loadTemplate);
             return obj;
         }
         
@@ -818,7 +818,7 @@ namespace Sharp.UI
         public static T MenuItemTemplate<T>(this T obj, System.Func<object> loadTemplate) where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shell>(obj);
-            mauiObject.MenuItemTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
+            mauiObject.MenuItemTemplate = new DataTemplate(loadTemplate);
             return obj;
         }
         
@@ -903,7 +903,7 @@ namespace Sharp.UI
         public static T FlyoutContentTemplate<T>(this T obj, System.Func<object> loadTemplate) where T : Sharp.UI.IShell
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shell>(obj);
-            mauiObject.FlyoutContentTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
+            mauiObject.FlyoutContentTemplate = new DataTemplate(loadTemplate);
             return obj;
         }
         

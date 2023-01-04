@@ -10,40 +10,40 @@ namespace Sharp.UI
     public static class BaseShellItemGeneratedSharpObjectExtension
     {
         public static T ShellItemTemplate<T>(this T obj,
-            Microsoft.Maui.Controls.DataTemplate itemTemplate)
+            Sharp.UI.DataTemplate itemTemplate)
             where T : Sharp.UI.IBaseShellItem
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);
-            mauiObject.SetValue(Microsoft.Maui.Controls.Shell.ItemTemplateProperty, (Microsoft.Maui.Controls.DataTemplate)itemTemplate);
+            mauiObject.SetValue(Microsoft.Maui.Controls.Shell.ItemTemplateProperty, (Sharp.UI.DataTemplate)itemTemplate);
             return obj;
         }
         
         public static T ShellItemTemplate<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.DataTemplate>, ValueBuilder<Microsoft.Maui.Controls.DataTemplate>> buildValue)
+            System.Func<ValueBuilder<Sharp.UI.DataTemplate>, ValueBuilder<Sharp.UI.DataTemplate>> buildValue)
             where T : Sharp.UI.IBaseShellItem
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
+            var builder = buildValue(new ValueBuilder<Sharp.UI.DataTemplate>());
             if (builder.ValueIsSet()) mauiObject.SetValue(Microsoft.Maui.Controls.Shell.ItemTemplateProperty, builder.GetValue());
             return obj;
         }
         
         public static T ShellItemTemplate<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.DataTemplate>, LazyValueBuilder<Microsoft.Maui.Controls.DataTemplate>> buildValue)
+            System.Func<LazyValueBuilder<Sharp.UI.DataTemplate>, LazyValueBuilder<Sharp.UI.DataTemplate>> buildValue)
             where T : Sharp.UI.IBaseShellItem
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
+            var builder = buildValue(new LazyValueBuilder<Sharp.UI.DataTemplate>());
             if (builder.ValueIsSet()) mauiObject.SetValue(Microsoft.Maui.Controls.Shell.ItemTemplateProperty, builder.GetValue());
             return obj;
         }
         
         public static T ShellItemTemplate<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buildBinding)
+            System.Func<BindingBuilder<Sharp.UI.DataTemplate>, BindingBuilder<Sharp.UI.DataTemplate>> buildBinding)
             where T : Sharp.UI.IBaseShellItem
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BaseShellItem>(obj);
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(mauiObject, Microsoft.Maui.Controls.Shell.ItemTemplateProperty));
+            var builder = buildBinding(new BindingBuilder<Sharp.UI.DataTemplate>(mauiObject, Microsoft.Maui.Controls.Shell.ItemTemplateProperty));
             builder.BindProperty();
             return obj;
         }

@@ -90,7 +90,7 @@ namespace Sharp.UI
         public static T GroupHeaderTemplate<T>(this T obj, System.Func<object> loadTemplate) where T : Sharp.UI.IGroupableItemsView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GroupableItemsView>(obj);
-            mauiObject.GroupHeaderTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
+            mauiObject.GroupHeaderTemplate = new DataTemplate(loadTemplate);
             return obj;
         }
         
@@ -136,7 +136,7 @@ namespace Sharp.UI
         public static T GroupFooterTemplate<T>(this T obj, System.Func<object> loadTemplate) where T : Sharp.UI.IGroupableItemsView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GroupableItemsView>(obj);
-            mauiObject.GroupFooterTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
+            mauiObject.GroupFooterTemplate = new DataTemplate(loadTemplate);
             return obj;
         }
         

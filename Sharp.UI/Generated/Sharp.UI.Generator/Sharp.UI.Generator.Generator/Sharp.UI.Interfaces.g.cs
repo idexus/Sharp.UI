@@ -89,6 +89,8 @@ public partial interface IButton : Sharp.UI.IView { }
 public partial interface ICarouselView : Sharp.UI.IItemsView { }
 public partial interface IItemsView : Sharp.UI.IView { }
 public partial interface ICheckBox : Sharp.UI.IView { }
+public partial interface IDataTemplate : Sharp.UI.IElementTemplate { }
+public partial interface IElementTemplate { }
 public partial interface ICollectionView : Sharp.UI.IReorderableItemsView { }
 public partial interface IReorderableItemsView : Sharp.UI.IGroupableItemsView { }
 public partial interface IGroupableItemsView : Sharp.UI.ISelectableItemsView { }

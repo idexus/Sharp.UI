@@ -90,7 +90,7 @@ namespace Sharp.UI
         public static T HeaderTemplate<T>(this T obj, System.Func<object> loadTemplate) where T : Sharp.UI.IStructuredItemsView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StructuredItemsView>(obj);
-            mauiObject.HeaderTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
+            mauiObject.HeaderTemplate = new DataTemplate(loadTemplate);
             return obj;
         }
         
@@ -175,7 +175,7 @@ namespace Sharp.UI
         public static T FooterTemplate<T>(this T obj, System.Func<object> loadTemplate) where T : Sharp.UI.IStructuredItemsView
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StructuredItemsView>(obj);
-            mauiObject.FooterTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
+            mauiObject.FooterTemplate = new DataTemplate(loadTemplate);
             return obj;
         }
         

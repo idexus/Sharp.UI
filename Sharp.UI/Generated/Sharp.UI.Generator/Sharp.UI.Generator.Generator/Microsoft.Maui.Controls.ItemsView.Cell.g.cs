@@ -90,7 +90,7 @@ namespace Sharp.UI
         public static T ItemTemplate<T>(this T obj, System.Func<object> loadTemplate) where T : Sharp.UI.IItemsViewCell
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>>(obj);
-            mauiObject.ItemTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
+            mauiObject.ItemTemplate = new DataTemplate(loadTemplate);
             return obj;
         }
         

@@ -90,7 +90,7 @@ namespace Sharp.UI
         public static T ItemTemplate<T>(this T obj, System.Func<object> loadTemplate) where T : Sharp.UI.IMultiPagePage
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>>(obj);
-            mauiObject.ItemTemplate = new Microsoft.Maui.Controls.DataTemplate(loadTemplate);
+            mauiObject.ItemTemplate = new DataTemplate(loadTemplate);
             return obj;
         }
         

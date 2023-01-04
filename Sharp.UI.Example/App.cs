@@ -24,6 +24,7 @@ public partial class App : Application
                     new ShellContent<TableViewPage>("TableView"),
                     new ShellContent<ListViewPage>("ListView"),
                     new ShellContent<CollectionPage>("Collection"),
+                    new ShellContent<CollectionAlternatePage>("Collection Alternate"),
                 },
                 new Tab("Triggers")
                 {
