@@ -1,7 +1,27 @@
-﻿namespace Sharp.UI
+﻿using System.Globalization;
+
+namespace Sharp.UI
 {
     public class BindingBuilder<T>
     {
+        public class ValueConverter : IValueConverter
+        {
+            internal System.Func<object, T> FuncConvert = null;
+            internal System.Func<T, object> FuncConvertBack = null;
+
+            public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+            {
+                if (value != null && FuncConvert != null) return FuncConvert(value);
+                return null;
+            }
+
+            public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+            {
+                if (value != null && FuncConvertBack != null) return FuncConvertBack((T)value);
+                return null;
+            }
+        }
+
         //--- bindable ---
 
         public BindingBuilder<T> Path(string path) { this.path = path; return this; }
@@ -11,12 +31,29 @@
         public BindingBuilder<T> Parameter(string converterParameter) { this.converterParameter = converterParameter; return this; }
         public BindingBuilder<T> Source(object source) { this.source = source; return this; }
 
-        private string path = null;
-        private BindingMode bindingMode = Microsoft.Maui.Controls.BindingMode.Default;
-        private IValueConverter converter = null;
-        private string converterParameter = null;
-        private string stringFormat = null;
-        private object source = null;
+        public BindingBuilder<T> Convert<Q>(Func<Q, T> convert)
+        {
+            if (valueConverter == null) valueConverter = new ValueConverter();
+            valueConverter.FuncConvert = e => convert((Q)e);
+            this.converter = valueConverter;
+            return this;
+        }
+
+        public BindingBuilder<T> ConvertBack<Q>(Func<T, Q> convert)
+        {
+            if (valueConverter == null) valueConverter = new ValueConverter();
+            valueConverter.FuncConvertBack = e => convert((T)e);
+            this.converter = valueConverter;
+            return this;
+        }
+
+        string path = null;
+        BindingMode bindingMode = Microsoft.Maui.Controls.BindingMode.Default;
+        IValueConverter converter = null;
+        ValueConverter valueConverter = null;
+        string converterParameter = null;
+        string stringFormat = null;
+        object source = null;
 
         private BindableObject obj;
         private BindableProperty property;
@@ -43,4 +80,14 @@
             }
         }
     }
+
+    //public static class BindingBuilderExtension
+    //{
+    //    public static BindingBuilder<T> Converter<T, Q>(this BindingBuilder<T> bindingBuilder, Func<ConverterBuilder<T, Q>, ConverterBuilder<T, Q>> convertBuilder)
+    //    {
+    //        var builder = new ConverterBuilder<T, Q>();
+    //        bindingBuilder.converter = convertBuilder(builder).Converter;
+    //        return bindingBuilder;
+    //    }
+    //}
 }

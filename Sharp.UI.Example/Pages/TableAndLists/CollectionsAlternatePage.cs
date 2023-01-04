@@ -16,7 +16,7 @@ namespace Sharp.UI.Example
         }
 
         public AlternateCollectionPage()
-        {          
+        {
             var itemSource = DataModel.SimpleData
                 .Select((e, i) => new AlternateRowModel { DataModel = e, Id = i });
 
