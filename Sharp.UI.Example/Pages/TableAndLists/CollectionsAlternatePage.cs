@@ -5,9 +5,9 @@ namespace Sharp.UI.Example
 {
     using Sharp.UI;
 
-    public class CollectionAlternatePage : ContentPage
+    public class AlternateCollectionPage : ContentPage
     {
-        class CustomRow
+        class AlternateRowModel
         {
             public int Id { get; set; }
             public object DataModel { get; set; }
@@ -15,13 +15,13 @@ namespace Sharp.UI.Example
             public Style GridStyle => new Style<Grid> { Grid.BackgroundProperty.Set(Id % 2 == 0 ? Colors.LightGray : Colors.DarkSlateGray) };
         }
 
-        public CollectionAlternatePage()
+        public AlternateCollectionPage()
         {          
             var itemSource = DataModel.SimpleData
-                .Select((e, i) => new CustomRow { DataModel = e, Id = i });
+                .Select((e, i) => new AlternateRowModel { DataModel = e, Id = i });
 
             Content = new VStack
-            {             
+            {
                 new CollectionView
                 {
                     () => new Grid()
@@ -33,9 +33,8 @@ namespace Sharp.UI.Example
                     }
                     .Style(e => e.Path("GridStyle"))
                 }
-                .ItemsSource(itemSource)                   
-            }
-            .Margin(new Thickness(0, 30, 0, 0));
+                .ItemsSource(itemSource)
+            };
         }
     }
 }
