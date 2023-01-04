@@ -13,6 +13,8 @@ public partial interface IImageCell : Sharp.UI.ITextCell { }
 public partial interface ISwitchCell : Sharp.UI.ICell { }
 public partial interface IEntryCell : Sharp.UI.ICell { }
 public partial interface IViewCell : Sharp.UI.ICell { }
+public partial interface IDataTemplate : Sharp.UI.IElementTemplate { }
+public partial interface IElementTemplate { }
 public partial interface IGeometry : Sharp.UI.IBindableObject { }
 public partial interface IEllipseGeometry : Sharp.UI.IGeometry { }
 public partial interface ILineGeometry : Sharp.UI.IGeometry { }
@@ -89,8 +91,6 @@ public partial interface IButton : Sharp.UI.IView { }
 public partial interface ICarouselView : Sharp.UI.IItemsView { }
 public partial interface IItemsView : Sharp.UI.IView { }
 public partial interface ICheckBox : Sharp.UI.IView { }
-public partial interface IDataTemplate : Sharp.UI.IElementTemplate { }
-public partial interface IElementTemplate { }
 public partial interface ICollectionView : Sharp.UI.IReorderableItemsView { }
 public partial interface IReorderableItemsView : Sharp.UI.IGroupableItemsView { }
 public partial interface IGroupableItemsView : Sharp.UI.ISelectableItemsView { }
