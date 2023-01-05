@@ -54,12 +54,28 @@ All defined styles can be placed in the `ResourceDictionary`
 ```cs
 new ResourceDictionary
 {
-    new Style<VStack>
+    new Style<Button>
     {
-        VStack.VerticalOptionsProperty.Set(LayoutOptions.Center),
-        VStack.HorizontalOptionsProperty.Set(LayoutOptions.Center)
-        ...
-    },
+        Button.TextColorProperty.Set().OnLight(Colors.White).OnDark(AppColors.Primary),
+        Button.BackgroundColorProperty.Set().OnLight(AppColors.Primary).OnDark(Colors.White),
+        Button.FontFamilyProperty.Set("OpenSansRegular"),
+        Button.FontSizeProperty.Set(14),
+        Button.CornerRadiusProperty.Set(8),
+        Button.PaddingProperty.Set(new Thickness(14,10)),
+        Button.MinimumHeightRequestProperty.Set(44),
+        Button.MinimumWidthRequestProperty.Set(44),
+
+        new VisualState(VisualState.VisualElement.Normal)
+        {
+            Button.TextColorProperty.Set().OnLight(Colors.White).OnDark(AppColors.Primary),
+            Button.BackgroundColorProperty.Set().OnLight(AppColors.Primary).OnDark(Colors.White),
+        },
+        new VisualState(VisualState.VisualElement.Disabled)
+        {
+            Button.TextColorProperty.Set().OnLight(AppColors.Gray950).OnDark(AppColors.Gray200),
+            Button.BackgroundColorProperty.Set().OnLight(AppColors.Gray200).OnDark(AppColors.Gray600),
+        },
+    },            
     new Style<Label>
     {
         Label.TextColorProperty.Set(Colors.Red),
