@@ -32,7 +32,7 @@ namespace Sharp.UI
         public IEnumerator GetEnumerator() { yield return this.ItemTemplate; }
         public void Add(DataTemplate dataTemplate) => this.ItemTemplate = dataTemplate;
         public void Add(System.Func<object> loadTemplate) => this.ItemTemplate = new DataTemplate(loadTemplate);
-    }
+    }    
 
     [SharpObject(typeof(Microsoft.Maui.Controls.ContentView))] 
     public partial class ContentView { }

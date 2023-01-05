@@ -21,7 +21,8 @@ namespace Sharp.UI.Example
                             .TextColor(Colors.Gray)
                             .BackgroundColor(e => e
                                 .Path(".")
-                                .Convert((int n) => n%2 == 0 ? Colors.White : Colors.Black))
+                                .Convert((int n) => n%2 == 0 ? Colors.White : Colors.Black)
+                            )
                 }
                 .ItemsSource(Numbers)
             };
