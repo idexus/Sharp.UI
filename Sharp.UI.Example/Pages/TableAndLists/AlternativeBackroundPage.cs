@@ -17,12 +17,13 @@ namespace Sharp.UI.Example
                 new CollectionView
                 {
                     () => new Label()
-                            .Text(e => e.Path("."))
-                            .TextColor(Colors.Gray)
-                            .BackgroundColor(e => e
-                                .Path(".")
-                                .Convert((int n) => n%2 == 0 ? Colors.White : Colors.Black)
-                            )
+                        .FontSize(30)
+                        .Text(e => e.Path("."))
+                        .TextColor(Colors.Gray)
+                        .BackgroundColor(e => e
+                            .Path(".")
+                            .Convert((int n) => n%2 == 0 ? Colors.White : Colors.Black)
+                        )
                 }
                 .ItemsSource(Numbers)
             };

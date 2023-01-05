@@ -55,6 +55,7 @@ Here are some examples showing how to use the Sharp.UI library
 - [How to assign object references](./doc/assign.md)
 - [Object containers](./doc/containers.md)
 - [Property bindings](./doc/propertybindings.md)
+- [Binding converters](./doc/bindingconverters.md)
 - [Attached properties](./doc/attachedproperties.md)
 - [Event handlers](./doc/eventhandlers.md)
 - [Grid definition](./doc/griddefinition.md)
