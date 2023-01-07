@@ -17,10 +17,6 @@ namespace Sharp.UI
     [ContentProperty("Content")]
     public partial class ContentView : Microsoft.Maui.Controls.ContentView, Sharp.UI.IContentView, IMauiWrapper, IEnumerable
     {
-        // ----- maui object -----
-
-        public Sharp.UI.ContentView MauiObject { get => this; }
-
         // ----- constructors -----
 
         public ContentView() { }

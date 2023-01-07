@@ -17,10 +17,6 @@ namespace Sharp.UI
     [ContentProperty("Content")]
     public partial class ContentPage : Microsoft.Maui.Controls.ContentPage, Sharp.UI.IContentPage, IMauiWrapper, IEnumerable
     {
-        // ----- maui object -----
-
-        public Sharp.UI.ContentPage MauiObject { get => this; }
-
         // ----- constructors -----
 
         public ContentPage() { }

@@ -12,10 +12,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class ArcSegment : Microsoft.Maui.Controls.Shapes.ArcSegment, Sharp.UI.IArcSegment, IMauiWrapper
     {
-        // ----- maui object -----
-
-        public Sharp.UI.ArcSegment MauiObject { get => this; }
-
         // ----- constructors -----
 
         public ArcSegment() { }

@@ -12,10 +12,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class Stepper : Microsoft.Maui.Controls.Stepper, Sharp.UI.IStepper, IMauiWrapper
     {
-        // ----- maui object -----
-
-        public Sharp.UI.Stepper MauiObject { get => this; }
-
         // ----- constructors -----
 
         public Stepper() { }

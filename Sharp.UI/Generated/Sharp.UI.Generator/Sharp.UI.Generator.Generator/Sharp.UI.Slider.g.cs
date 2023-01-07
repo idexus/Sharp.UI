@@ -12,10 +12,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class Slider : Microsoft.Maui.Controls.Slider, Sharp.UI.ISlider, IMauiWrapper
     {
-        // ----- maui object -----
-
-        public Sharp.UI.Slider MauiObject { get => this; }
-
         // ----- constructors -----
 
         public Slider() { }

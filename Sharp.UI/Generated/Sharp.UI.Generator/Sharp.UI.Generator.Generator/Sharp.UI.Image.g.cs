@@ -12,10 +12,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class Image : Microsoft.Maui.Controls.Image, Sharp.UI.IImage, IMauiWrapper
     {
-        // ----- maui object -----
-
-        public Sharp.UI.Image MauiObject { get => this; }
-
         // ----- constructors -----
 
         public Image() { }

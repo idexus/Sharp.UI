@@ -12,10 +12,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class MenuFlyout : Microsoft.Maui.Controls.MenuFlyout, Sharp.UI.IMenuFlyout, IMauiWrapper
     {
-        // ----- maui object -----
-
-        public Sharp.UI.MenuFlyout MauiObject { get => this; }
-
         // ----- constructors -----
 
         public MenuFlyout() { }

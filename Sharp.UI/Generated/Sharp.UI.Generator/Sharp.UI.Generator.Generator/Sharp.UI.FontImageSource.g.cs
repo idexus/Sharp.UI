@@ -12,10 +12,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class FontImageSource : Microsoft.Maui.Controls.FontImageSource, Sharp.UI.IFontImageSource, IMauiWrapper
     {
-        // ----- maui object -----
-
-        public Sharp.UI.FontImageSource MauiObject { get => this; }
-
         // ----- constructors -----
 
         public FontImageSource() { }

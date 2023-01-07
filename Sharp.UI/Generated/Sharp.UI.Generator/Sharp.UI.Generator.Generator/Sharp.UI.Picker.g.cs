@@ -12,10 +12,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class Picker : Microsoft.Maui.Controls.Picker, Sharp.UI.IPicker, IMauiWrapper
     {
-        // ----- maui object -----
-
-        public Sharp.UI.Picker MauiObject { get => this; }
-
         // ----- constructors -----
 
         public Picker() { }

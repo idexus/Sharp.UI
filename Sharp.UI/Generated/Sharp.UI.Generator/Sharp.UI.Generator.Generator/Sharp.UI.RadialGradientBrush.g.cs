@@ -16,10 +16,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class RadialGradientBrush : Microsoft.Maui.Controls.RadialGradientBrush, Sharp.UI.IRadialGradientBrush, IMauiWrapper, IList<Microsoft.Maui.Controls.GradientStop>
     {
-        // ----- maui object -----
-
-        public Sharp.UI.RadialGradientBrush MauiObject { get => this; }
-
         // ----- constructors -----
 
         public RadialGradientBrush() { }

@@ -12,10 +12,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class ProgressBar : Microsoft.Maui.Controls.ProgressBar, Sharp.UI.IProgressBar, IMauiWrapper
     {
-        // ----- maui object -----
-
-        public Sharp.UI.ProgressBar MauiObject { get => this; }
-
         // ----- constructors -----
 
         public ProgressBar() { }

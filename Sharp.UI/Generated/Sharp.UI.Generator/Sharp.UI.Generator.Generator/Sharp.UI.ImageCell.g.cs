@@ -12,10 +12,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class ImageCell : Microsoft.Maui.Controls.ImageCell, Sharp.UI.IImageCell, IMauiWrapper
     {
-        // ----- maui object -----
-
-        public Sharp.UI.ImageCell MauiObject { get => this; }
-
         // ----- constructors -----
 
         public ImageCell() { }

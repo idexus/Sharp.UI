@@ -12,10 +12,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class ContentPresenter : Microsoft.Maui.Controls.ContentPresenter, Sharp.UI.IContentPresenter, IMauiWrapper
     {
-        // ----- maui object -----
-
-        public Sharp.UI.ContentPresenter MauiObject { get => this; }
-
         // ----- constructors -----
 
         public ContentPresenter() { }

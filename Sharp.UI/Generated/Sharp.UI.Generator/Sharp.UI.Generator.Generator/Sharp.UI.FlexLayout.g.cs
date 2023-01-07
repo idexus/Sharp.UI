@@ -12,10 +12,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class FlexLayout : Microsoft.Maui.Controls.FlexLayout, Sharp.UI.IFlexLayout, IMauiWrapper
     {
-        // ----- maui object -----
-
-        public Sharp.UI.FlexLayout MauiObject { get => this; }
-
         // ----- constructors -----
 
         public FlexLayout() { }

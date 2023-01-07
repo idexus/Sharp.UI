@@ -12,10 +12,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class ActivityIndicator : Microsoft.Maui.Controls.ActivityIndicator, Sharp.UI.IActivityIndicator, IMauiWrapper
     {
-        // ----- maui object -----
-
-        public Sharp.UI.ActivityIndicator MauiObject { get => this; }
-
         // ----- constructors -----
 
         public ActivityIndicator() { }

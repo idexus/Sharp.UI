@@ -12,10 +12,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class LineGeometry : Microsoft.Maui.Controls.Shapes.LineGeometry, Sharp.UI.ILineGeometry, IMauiWrapper
     {
-        // ----- maui object -----
-
-        public Sharp.UI.LineGeometry MauiObject { get => this; }
-
         // ----- constructors -----
 
         public LineGeometry() { }

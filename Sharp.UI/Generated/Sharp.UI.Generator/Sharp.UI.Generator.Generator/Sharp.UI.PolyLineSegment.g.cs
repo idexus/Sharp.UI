@@ -12,10 +12,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class PolyLineSegment : Microsoft.Maui.Controls.Shapes.PolyLineSegment, Sharp.UI.IPolyLineSegment, IMauiWrapper
     {
-        // ----- maui object -----
-
-        public Sharp.UI.PolyLineSegment MauiObject { get => this; }
-
         // ----- constructors -----
 
         public PolyLineSegment() { }

@@ -12,10 +12,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class HorizontalStackLayout : Microsoft.Maui.Controls.HorizontalStackLayout, Sharp.UI.IHorizontalStackLayout, IMauiWrapper
     {
-        // ----- maui object -----
-
-        public Sharp.UI.HorizontalStackLayout MauiObject { get => this; }
-
         // ----- constructors -----
 
         public HorizontalStackLayout() { }

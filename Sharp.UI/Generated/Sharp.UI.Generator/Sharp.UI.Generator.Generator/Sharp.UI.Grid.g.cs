@@ -12,10 +12,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class Grid : Microsoft.Maui.Controls.Grid, Sharp.UI.IGrid, IMauiWrapper
     {
-        // ----- maui object -----
-
-        public Sharp.UI.Grid MauiObject { get => this; }
-
         // ----- constructors -----
 
         public Grid() { }

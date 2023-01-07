@@ -12,10 +12,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class BezierSegment : Microsoft.Maui.Controls.Shapes.BezierSegment, Sharp.UI.IBezierSegment, IMauiWrapper
     {
-        // ----- maui object -----
-
-        public Sharp.UI.BezierSegment MauiObject { get => this; }
-
         // ----- constructors -----
 
         public BezierSegment() { }

@@ -17,10 +17,6 @@ namespace Sharp.UI
     [ContentProperty("View")]
     public partial class ViewCell : Microsoft.Maui.Controls.ViewCell, Sharp.UI.IViewCell, IMauiWrapper, IEnumerable
     {
-        // ----- maui object -----
-
-        public Sharp.UI.ViewCell MauiObject { get => this; }
-
         // ----- constructors -----
 
         public ViewCell() { }

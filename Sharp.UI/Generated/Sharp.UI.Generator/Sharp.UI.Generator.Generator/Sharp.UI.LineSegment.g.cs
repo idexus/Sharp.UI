@@ -12,10 +12,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class LineSegment : Microsoft.Maui.Controls.Shapes.LineSegment, Sharp.UI.ILineSegment, IMauiWrapper
     {
-        // ----- maui object -----
-
-        public Sharp.UI.LineSegment MauiObject { get => this; }
-
         // ----- constructors -----
 
         public LineSegment() { }

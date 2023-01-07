@@ -12,10 +12,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class SearchBar : Microsoft.Maui.Controls.SearchBar, Sharp.UI.ISearchBar, IMauiWrapper
     {
-        // ----- maui object -----
-
-        public Sharp.UI.SearchBar MauiObject { get => this; }
-
         // ----- constructors -----
 
         public SearchBar() { }

@@ -12,10 +12,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class Entry : Microsoft.Maui.Controls.Entry, Sharp.UI.IEntry, IMauiWrapper
     {
-        // ----- maui object -----
-
-        public Sharp.UI.Entry MauiObject { get => this; }
-
         // ----- constructors -----
 
         public Entry() { }

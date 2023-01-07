@@ -12,10 +12,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class NavigationPage : Microsoft.Maui.Controls.NavigationPage, Sharp.UI.INavigationPage, IMauiWrapper
     {
-        // ----- maui object -----
-
-        public Sharp.UI.NavigationPage MauiObject { get => this; }
-
         // ----- constructors -----
 
         public NavigationPage() { }

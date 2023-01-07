@@ -12,10 +12,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class GraphicsView : Microsoft.Maui.Controls.GraphicsView, Sharp.UI.IGraphicsView, IMauiWrapper
     {
-        // ----- maui object -----
-
-        public Sharp.UI.GraphicsView MauiObject { get => this; }
-
         // ----- constructors -----
 
         public GraphicsView() { }

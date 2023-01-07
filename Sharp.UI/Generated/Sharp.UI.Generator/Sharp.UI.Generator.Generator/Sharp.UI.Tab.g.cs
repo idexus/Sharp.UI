@@ -16,10 +16,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class Tab : Microsoft.Maui.Controls.Tab, Sharp.UI.ITab, IMauiWrapper, IList<Microsoft.Maui.Controls.ShellContent>
     {
-        // ----- maui object -----
-
-        public Sharp.UI.Tab MauiObject { get => this; }
-
         // ----- constructors -----
 
         public Tab() { }

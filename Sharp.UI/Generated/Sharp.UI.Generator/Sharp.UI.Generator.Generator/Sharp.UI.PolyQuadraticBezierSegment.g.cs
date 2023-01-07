@@ -12,10 +12,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class PolyQuadraticBezierSegment : Microsoft.Maui.Controls.Shapes.PolyQuadraticBezierSegment, Sharp.UI.IPolyQuadraticBezierSegment, IMauiWrapper
     {
-        // ----- maui object -----
-
-        public Sharp.UI.PolyQuadraticBezierSegment MauiObject { get => this; }
-
         // ----- constructors -----
 
         public PolyQuadraticBezierSegment() { }

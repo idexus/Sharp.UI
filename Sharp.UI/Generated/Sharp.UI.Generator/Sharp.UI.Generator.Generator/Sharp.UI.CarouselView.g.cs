@@ -12,10 +12,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class CarouselView : Microsoft.Maui.Controls.CarouselView, Sharp.UI.ICarouselView, IMauiWrapper
     {
-        // ----- maui object -----
-
-        public Sharp.UI.CarouselView MauiObject { get => this; }
-
         // ----- constructors -----
 
         public CarouselView() { }

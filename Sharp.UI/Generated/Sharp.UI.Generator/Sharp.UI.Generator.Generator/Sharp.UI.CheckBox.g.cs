@@ -12,10 +12,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class CheckBox : Microsoft.Maui.Controls.CheckBox, Sharp.UI.ICheckBox, IMauiWrapper
     {
-        // ----- maui object -----
-
-        public Sharp.UI.CheckBox MauiObject { get => this; }
-
         // ----- constructors -----
 
         public CheckBox() { }

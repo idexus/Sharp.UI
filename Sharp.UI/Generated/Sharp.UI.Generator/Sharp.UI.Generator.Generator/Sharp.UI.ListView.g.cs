@@ -12,10 +12,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class ListView : Microsoft.Maui.Controls.ListView, Sharp.UI.IListView, IMauiWrapper
     {
-        // ----- maui object -----
-
-        public Sharp.UI.ListView MauiObject { get => this; }
-
         // ----- constructors -----
 
         public ListView() { }

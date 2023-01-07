@@ -16,10 +16,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class TabbedPage : Microsoft.Maui.Controls.TabbedPage, Sharp.UI.ITabbedPage, IMauiWrapper, IList<Microsoft.Maui.Controls.Page>
     {
-        // ----- maui object -----
-
-        public Sharp.UI.TabbedPage MauiObject { get => this; }
-
         // ----- constructors -----
 
         public TabbedPage() { }

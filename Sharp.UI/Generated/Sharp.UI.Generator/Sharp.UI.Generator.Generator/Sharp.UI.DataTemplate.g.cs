@@ -12,10 +12,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class DataTemplate : Microsoft.Maui.Controls.DataTemplate, Sharp.UI.IDataTemplate, IMauiWrapper
     {
-        // ----- maui object -----
-
-        public Sharp.UI.DataTemplate MauiObject { get => this; }
-
         // ----- constructors -----
 
         public DataTemplate() { }

@@ -12,10 +12,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class TextCell : Microsoft.Maui.Controls.TextCell, Sharp.UI.ITextCell, IMauiWrapper
     {
-        // ----- maui object -----
-
-        public Sharp.UI.TextCell MauiObject { get => this; }
-
         // ----- constructors -----
 
         public TextCell() { }

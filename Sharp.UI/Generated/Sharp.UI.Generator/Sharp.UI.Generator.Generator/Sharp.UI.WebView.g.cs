@@ -12,10 +12,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class WebView : Microsoft.Maui.Controls.WebView, Sharp.UI.IWebView, IMauiWrapper
     {
-        // ----- maui object -----
-
-        public Sharp.UI.WebView MauiObject { get => this; }
-
         // ----- constructors -----
 
         public WebView() { }

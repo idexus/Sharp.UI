@@ -12,10 +12,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class Geometry : Microsoft.Maui.Controls.Shapes.Geometry, Sharp.UI.IGeometry, IMauiWrapper
     {
-        // ----- maui object -----
-
-        public Sharp.UI.Geometry MauiObject { get => this; }
-
         // ----- constructors -----
 
         public Geometry() { }

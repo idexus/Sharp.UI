@@ -17,10 +17,6 @@ namespace Sharp.UI
     [ContentProperty("Content")]
     public partial class ScrollView : Microsoft.Maui.Controls.ScrollView, Sharp.UI.IScrollView, IMauiWrapper, IEnumerable
     {
-        // ----- maui object -----
-
-        public Sharp.UI.ScrollView MauiObject { get => this; }
-
         // ----- constructors -----
 
         public ScrollView() { }

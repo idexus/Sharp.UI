@@ -17,10 +17,6 @@ namespace Sharp.UI
     [ContentProperty("Content")]
     public partial class Frame : Microsoft.Maui.Controls.Frame, Sharp.UI.IFrame, IMauiWrapper, IEnumerable
     {
-        // ----- maui object -----
-
-        public Sharp.UI.Frame MauiObject { get => this; }
-
         // ----- constructors -----
 
         public Frame() { }

@@ -16,10 +16,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class RadioButton : Microsoft.Maui.Controls.RadioButton, Sharp.UI.IRadioButton, IMauiWrapper, IEnumerable
     {
-        // ----- maui object -----
-
-        public Sharp.UI.RadioButton MauiObject { get => this; }
-
         // ----- constructors -----
 
         public RadioButton() { }

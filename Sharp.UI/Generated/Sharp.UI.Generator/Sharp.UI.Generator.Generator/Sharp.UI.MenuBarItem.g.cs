@@ -12,10 +12,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class MenuBarItem : Microsoft.Maui.Controls.MenuBarItem, Sharp.UI.IMenuBarItem, IMauiWrapper
     {
-        // ----- maui object -----
-
-        public Sharp.UI.MenuBarItem MauiObject { get => this; }
-
         // ----- constructors -----
 
         public MenuBarItem() { }

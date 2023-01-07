@@ -12,10 +12,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class Editor : Microsoft.Maui.Controls.Editor, Sharp.UI.IEditor, IMauiWrapper
     {
-        // ----- maui object -----
-
-        public Sharp.UI.Editor MauiObject { get => this; }
-
         // ----- constructors -----
 
         public Editor() { }

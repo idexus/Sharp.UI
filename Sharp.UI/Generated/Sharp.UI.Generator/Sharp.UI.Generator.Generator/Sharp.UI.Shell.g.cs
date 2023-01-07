@@ -16,10 +16,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class Shell : Microsoft.Maui.Controls.Shell, Sharp.UI.IShell, IMauiWrapper, IList<Microsoft.Maui.Controls.ShellItem>
     {
-        // ----- maui object -----
-
-        public Sharp.UI.Shell MauiObject { get => this; }
-
         // ----- constructors -----
 
         public Shell() { }

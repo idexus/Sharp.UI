@@ -12,10 +12,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class PanGestureRecognizer : Microsoft.Maui.Controls.PanGestureRecognizer, Sharp.UI.IPanGestureRecognizer, IMauiWrapper
     {
-        // ----- maui object -----
-
-        public Sharp.UI.PanGestureRecognizer MauiObject { get => this; }
-
         // ----- constructors -----
 
         public PanGestureRecognizer() { }

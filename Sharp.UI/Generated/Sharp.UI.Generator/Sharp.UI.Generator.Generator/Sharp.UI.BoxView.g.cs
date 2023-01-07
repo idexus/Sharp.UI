@@ -12,10 +12,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class BoxView : Microsoft.Maui.Controls.BoxView, Sharp.UI.IBoxView, IMauiWrapper
     {
-        // ----- maui object -----
-
-        public Sharp.UI.BoxView MauiObject { get => this; }
-
         // ----- constructors -----
 
         public BoxView() { }

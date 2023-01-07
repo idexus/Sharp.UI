@@ -12,10 +12,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class Switch : Microsoft.Maui.Controls.Switch, Sharp.UI.ISwitch, IMauiWrapper
     {
-        // ----- maui object -----
-
-        public Sharp.UI.Switch MauiObject { get => this; }
-
         // ----- constructors -----
 
         public Switch() { }

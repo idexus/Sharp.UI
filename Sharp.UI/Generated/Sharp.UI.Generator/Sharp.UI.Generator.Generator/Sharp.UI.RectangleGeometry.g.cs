@@ -12,10 +12,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class RectangleGeometry : Microsoft.Maui.Controls.Shapes.RectangleGeometry, Sharp.UI.IRectangleGeometry, IMauiWrapper
     {
-        // ----- maui object -----
-
-        public Sharp.UI.RectangleGeometry MauiObject { get => this; }
-
         // ----- constructors -----
 
         public RectangleGeometry() { }

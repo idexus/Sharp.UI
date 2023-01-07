@@ -17,10 +17,6 @@ namespace Sharp.UI
     [ContentProperty("IndicatorLayout")]
     public partial class IndicatorView : Microsoft.Maui.Controls.IndicatorView, Sharp.UI.IIndicatorView, IMauiWrapper, IEnumerable
     {
-        // ----- maui object -----
-
-        public Sharp.UI.IndicatorView MauiObject { get => this; }
-
         // ----- constructors -----
 
         public IndicatorView() { }

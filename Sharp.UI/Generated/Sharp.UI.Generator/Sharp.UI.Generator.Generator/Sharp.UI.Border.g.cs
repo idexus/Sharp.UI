@@ -17,10 +17,6 @@ namespace Sharp.UI
     [ContentProperty("Content")]
     public partial class Border : Microsoft.Maui.Controls.Border, Sharp.UI.IBorder, IMauiWrapper, IEnumerable
     {
-        // ----- maui object -----
-
-        public Sharp.UI.Border MauiObject { get => this; }
-
         // ----- constructors -----
 
         public Border() { }

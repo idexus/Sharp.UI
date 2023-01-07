@@ -17,10 +17,6 @@ namespace Sharp.UI
     [ContentProperty("Content")]
     public partial class SwipeView : Microsoft.Maui.Controls.SwipeView, Sharp.UI.ISwipeView, IMauiWrapper, IEnumerable
     {
-        // ----- maui object -----
-
-        public Sharp.UI.SwipeView MauiObject { get => this; }
-
         // ----- constructors -----
 
         public SwipeView() { }

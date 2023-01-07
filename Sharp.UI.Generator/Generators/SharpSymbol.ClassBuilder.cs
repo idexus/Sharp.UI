@@ -160,11 +160,6 @@ namespace {nameSpaceString}
         public object _maui_RawObject {{ get; set; }}
 
         public {WrappedType.ToDisplayString()} MauiObject {{ get => ({WrappedType.ToDisplayString()})_maui_RawObject; protected set => _maui_RawObject = value; }}");
-            else
-                builder.AppendLine($@"
-        // ----- maui object -----
-
-        public {mainSymbol.ToDisplayString()} MauiObject {{ get => this; }}");
         }
 
         // ------------------------

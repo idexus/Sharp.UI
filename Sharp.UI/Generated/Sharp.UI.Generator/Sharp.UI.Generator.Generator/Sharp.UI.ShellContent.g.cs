@@ -17,10 +17,6 @@ namespace Sharp.UI
     [ContentProperty("Content")]
     public partial class ShellContent : Microsoft.Maui.Controls.ShellContent, Sharp.UI.IShellContent, IMauiWrapper, IEnumerable
     {
-        // ----- maui object -----
-
-        public Sharp.UI.ShellContent MauiObject { get => this; }
-
         // ----- constructors -----
 
         public ShellContent() { }

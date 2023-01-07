@@ -12,10 +12,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class EntryCell : Microsoft.Maui.Controls.EntryCell, Sharp.UI.IEntryCell, IMauiWrapper
     {
-        // ----- maui object -----
-
-        public Sharp.UI.EntryCell MauiObject { get => this; }
-
         // ----- constructors -----
 
         public EntryCell() { }

@@ -12,10 +12,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class EllipseGeometry : Microsoft.Maui.Controls.Shapes.EllipseGeometry, Sharp.UI.IEllipseGeometry, IMauiWrapper
     {
-        // ----- maui object -----
-
-        public Sharp.UI.EllipseGeometry MauiObject { get => this; }
-
         // ----- constructors -----
 
         public EllipseGeometry() { }

@@ -12,10 +12,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class ImageButton : Microsoft.Maui.Controls.ImageButton, Sharp.UI.IImageButton, IMauiWrapper
     {
-        // ----- maui object -----
-
-        public Sharp.UI.ImageButton MauiObject { get => this; }
-
         // ----- constructors -----
 
         public ImageButton() { }

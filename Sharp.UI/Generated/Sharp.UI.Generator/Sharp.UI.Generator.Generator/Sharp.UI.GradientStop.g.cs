@@ -12,10 +12,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class GradientStop : Microsoft.Maui.Controls.GradientStop, Sharp.UI.IGradientStop, IMauiWrapper
     {
-        // ----- maui object -----
-
-        public Sharp.UI.GradientStop MauiObject { get => this; }
-
         // ----- constructors -----
 
         public GradientStop() { }

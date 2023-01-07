@@ -12,10 +12,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class SwitchCell : Microsoft.Maui.Controls.SwitchCell, Sharp.UI.ISwitchCell, IMauiWrapper
     {
-        // ----- maui object -----
-
-        public Sharp.UI.SwitchCell MauiObject { get => this; }
-
         // ----- constructors -----
 
         public SwitchCell() { }

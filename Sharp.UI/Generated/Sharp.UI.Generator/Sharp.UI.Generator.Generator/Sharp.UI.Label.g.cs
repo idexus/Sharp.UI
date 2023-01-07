@@ -17,10 +17,6 @@ namespace Sharp.UI
     [ContentProperty("Text")]
     public partial class Label : Microsoft.Maui.Controls.Label, Sharp.UI.ILabel, IMauiWrapper, IEnumerable
     {
-        // ----- maui object -----
-
-        public Sharp.UI.Label MauiObject { get => this; }
-
         // ----- constructors -----
 
         public Label() { }

@@ -12,10 +12,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class AbsoluteLayout : Microsoft.Maui.Controls.AbsoluteLayout, Sharp.UI.IAbsoluteLayout, IMauiWrapper
     {
-        // ----- maui object -----
-
-        public Sharp.UI.AbsoluteLayout MauiObject { get => this; }
-
         // ----- constructors -----
 
         public AbsoluteLayout() { }

@@ -17,10 +17,6 @@ namespace Sharp.UI
     [ContentProperty("Content")]
     public partial class RefreshView : Microsoft.Maui.Controls.RefreshView, Sharp.UI.IRefreshView, IMauiWrapper, IEnumerable
     {
-        // ----- maui object -----
-
-        public Sharp.UI.RefreshView MauiObject { get => this; }
-
         // ----- constructors -----
 
         public RefreshView() { }

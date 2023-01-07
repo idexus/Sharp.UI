@@ -17,10 +17,6 @@ namespace Sharp.UI
     [ContentProperty("Detail")]
     public partial class FlyoutPage : Microsoft.Maui.Controls.FlyoutPage, Sharp.UI.IFlyoutPage, IMauiWrapper, IEnumerable
     {
-        // ----- maui object -----
-
-        public Sharp.UI.FlyoutPage MauiObject { get => this; }
-
         // ----- constructors -----
 
         public FlyoutPage() { }

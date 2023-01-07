@@ -12,10 +12,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class DatePicker : Microsoft.Maui.Controls.DatePicker, Sharp.UI.IDatePicker, IMauiWrapper
     {
-        // ----- maui object -----
-
-        public Sharp.UI.DatePicker MauiObject { get => this; }
-
         // ----- constructors -----
 
         public DatePicker() { }

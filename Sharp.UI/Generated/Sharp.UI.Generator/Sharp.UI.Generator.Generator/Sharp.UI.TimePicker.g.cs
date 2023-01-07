@@ -12,10 +12,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class TimePicker : Microsoft.Maui.Controls.TimePicker, Sharp.UI.ITimePicker, IMauiWrapper
     {
-        // ----- maui object -----
-
-        public Sharp.UI.TimePicker MauiObject { get => this; }
-
         // ----- constructors -----
 
         public TimePicker() { }

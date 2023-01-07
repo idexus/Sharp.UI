@@ -12,10 +12,6 @@ namespace Sharp.UI
     /// </summary>
     public partial class CollectionView : Microsoft.Maui.Controls.CollectionView, Sharp.UI.ICollectionView, IMauiWrapper
     {
-        // ----- maui object -----
-
-        public Sharp.UI.CollectionView MauiObject { get => this; }
-
         // ----- constructors -----
 
         public CollectionView() { }
