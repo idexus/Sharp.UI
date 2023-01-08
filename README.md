@@ -1,5 +1,5 @@
 # Overview
-Sharp.UI allows you to build a .NET Multi-platform App User Interface (.NET MAUI) declaratively in C# code using fluent methods, without the need for XAML. It is a wrapper library, mostly auto-generated.
+__Sharp.UI__ allows you to build a .NET Multi-platform App User Interface (.NET MAUI) declaratively in C# code __using fluent methods__, without the need for XAML. It is a wrapper library, mostly auto-generated.
 
 # Hello, World!
 
@@ -71,7 +71,7 @@ Here are some examples showing how to use the Sharp.UI library
 
 # Auto-generated bindable properties
 
-In `Sharp.UI` bindable properties and their float helper methods are automatically generated. You just need to define the interface.
+In __Sharp.UI__ bindable properties and their float helper methods are automatically generated. You just need to define the interface.
 
 ### View-model
 
@@ -135,6 +135,10 @@ You can create custom controls using auto-generated properties and event handler
 
 - [Create custom controls](./doc/customcontentview.md)
 - [Control template](./doc/autogenbindableproperties.md)
+
+# Disclaimer
+
+__Sharp.UI__ is a proof of concept. There is no official support. Use at your own risk.
 
 # License 
 
