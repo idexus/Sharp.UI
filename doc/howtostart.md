@@ -22,18 +22,18 @@ Last relases
 ##### .NET CLI
 
 ```
-dotnet add package Sharp.UI --version 0.2.2-beta.2
+dotnet add package Sharp.UI --version 0.2.3-alfa.5
 ```
 
 ##### Package manager
 
 ```
-NuGet\Install-Package Sharp.UI -Version 0.2.2-beta.2
+NuGet\Install-Package Sharp.UI -Version 0.2.3-alfa.5
 ```
 
 ## VS Project Reference
 
-If you want to use the `Sharp.UI` library by project reference
+If you want to use the `Sharp.UI` library by project reference (Hot reload does not work in this case)
 
 ```xml
 <ItemGroup>
