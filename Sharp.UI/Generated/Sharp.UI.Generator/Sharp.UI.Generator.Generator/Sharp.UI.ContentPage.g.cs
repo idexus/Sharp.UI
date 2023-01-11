@@ -19,19 +19,17 @@ namespace Sharp.UI
     {
         // ----- constructors -----
 
-        public ContentPage() { }
-
-        public ContentPage(out ContentPage contentPage) 
+        public ContentPage(out ContentPage contentPage) : this()
         {
             contentPage = this;
         }
 
-        public ContentPage(System.Action<ContentPage> configure) 
+        public ContentPage(System.Action<ContentPage> configure) : this()
         {
             configure(this);
         }
 
-        public ContentPage(out ContentPage contentPage, System.Action<ContentPage> configure) 
+        public ContentPage(out ContentPage contentPage, System.Action<ContentPage> configure) : this()
         {
             contentPage = this;
             configure(this);

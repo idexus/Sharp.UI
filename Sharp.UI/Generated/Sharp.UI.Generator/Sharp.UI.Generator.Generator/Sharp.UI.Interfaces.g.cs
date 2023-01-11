@@ -5,10 +5,11 @@
 namespace Sharp.UI;
 
 
-public partial interface ITextCell : Sharp.UI.ICell { }
-public partial interface ICell : Sharp.UI.IElement { }
+public partial interface IApplication : Sharp.UI.IElement { }
 public partial interface IElement : Sharp.UI.IBindableObject { }
 public partial interface IBindableObject { }
+public partial interface ITextCell : Sharp.UI.ICell { }
+public partial interface ICell : Sharp.UI.IElement { }
 public partial interface IImageCell : Sharp.UI.ITextCell { }
 public partial interface ISwitchCell : Sharp.UI.ICell { }
 public partial interface IEntryCell : Sharp.UI.ICell { }

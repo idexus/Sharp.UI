@@ -1,9 +1,11 @@
-﻿using Sharp.UI;
-
+﻿
 namespace Sharp.UI.Example;
-
+using Sharp.UI;
+ 
 public partial class App : Application
 {
+    public static int Counter = 0;
+
     public App()
     {
         MainPage = new Shell
@@ -12,7 +14,7 @@ public partial class App : Application
             {
                 new Tab("Main", e => e.Route("main"))
                 {
-                    new ShellContent<HelloWorldPage>("Hello Page"), 
+                    new ShellContent<HelloWorldPage>("Hello Page"),
                     new ShellContent<GridPage>("Grid").Route("grid"),
                     new ShellContent<AbsoluteLayoutPage>("Absolute layout"),
                     new ShellContent<ExamplePage>("Scroll View"),

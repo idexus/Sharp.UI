@@ -36,6 +36,13 @@ namespace Sharp.UI
     [SharpObject(typeof(Microsoft.Maui.Controls.ContentPage))] 
     public partial class ContentPage : IContentPageShellAttachedProperties
     {
+        public ContentPage()
+        {
+            #if DEBUG
+                HotReload.RegisterActive(this);
+            #endif
+        }
+
         public ContentPage(string title) : this()
         {
             this.Title = title;

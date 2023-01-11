@@ -25,7 +25,6 @@ namespace Sharp.UI.Generator
             GenerateExtensionNameSpace();
         }
 
-
         // --------- extension namespace ---------
 
         void GenerateExtensionNameSpace()
@@ -195,8 +194,8 @@ namespace {nameSpaceString}
                 propertyCastTypeName = propertySymbol.Type.ToDisplayString();
                 camelCaseName = Helpers.CamelCase(propertyName);
                 assignmentString = $"{accessedWith}.{propertyName} = {(isWrappedSealedType ? "mauiValue" : $"({propertyCastTypeName}){camelCaseName}")}";
-                assignmentBuilderString = $"mauiObject.{propertyName} = {(isWrappedSealedType ? $"MauiWrapper.Value<{propertyCastTypeName}>(builder.GetValue())" : "builder.GetValue()")}";
-                assignmentDataTemplateString = $"mauiObject.{propertyName} = new DataTemplate(loadTemplate)";
+                assignmentBuilderString = $"{accessedWith}.{propertyName} = {(isWrappedSealedType ? $"MauiWrapper.Value<{propertyCastTypeName}>(builder.GetValue())" : "builder.GetValue()")}";
+                assignmentDataTemplateString = $"{accessedWith}.{propertyName} = new DataTemplate(loadTemplate)";
                 bindablePropertyName = $"{type.ToDisplayString()}.{propertyName}Property";
                 mauiValueString = !isWrappedSealedType ? "" : @$"
             var mauiValue = MauiWrapper.Value<{propertyCastTypeName}>({camelCaseName});";

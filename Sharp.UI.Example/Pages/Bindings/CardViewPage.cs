@@ -81,6 +81,8 @@ public class CardViewPage : ContentPage
 
             new HStack
             {
+                new ScrollView
+                {
                 new CardView(out var cardNo1)
                 {
                     new Image("dotnet_bot.png")
@@ -95,6 +97,7 @@ public class CardViewPage : ContentPage
                 {
                     cardNo1.CardDescription = "Let's play :)";
                 }),
+                },
 
                 new CardView(out var cardView)
                 {
