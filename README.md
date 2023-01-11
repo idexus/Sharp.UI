@@ -1,6 +1,10 @@
 # Overview
 __Sharp.UI__ allows you to build a .NET Multi-platform App User Interface (.NET MAUI) declaratively in C# code __using fluent methods__, without the need for XAML. It is a wrapper library, mostly auto-generated.
 
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=Bu7CDc8_hqw" target="_blank">
+ <img src="http://img.youtube.com/vi/Bu7CDc8_hqw/mqdefault.jpg" alt="Watch the video" width="640" height="360" border="10" />
+</a>
+
 # Hello, World!
 
 ```cs
@@ -68,6 +72,17 @@ Here are some examples showing how to use the Sharp.UI library
 - [Behaviors](./doc/behaviors.md)
 - [App theme, device idiom and platform templates](./doc/deftemplates.md)
 - [Application shell](./doc/shellapplication.md)
+
+# Hot Reload
+
+[HotReloadTest](https://github.com/idexus/HotReloadTest) is a test project of working with the __Sharp.UI__ library using Visual Studio Code and [Reloadify3000](https://github.com/Clancey/Reloadify3000) library. 
+
+This is an alpha version.
+
+Known limitations:
+
+- Does not work for classes with automatically generated code, e.g. for classes with automatically generated bindable properties
+- Does not work if you want to use the Sharp.UI library by project reference. Use nuget package.
 
 # Auto-generated bindable properties
 
