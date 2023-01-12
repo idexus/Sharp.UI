@@ -1,7 +1,9 @@
-﻿using Sharp.UI;
+﻿
 
-namespace Sharp.UI.Example
+namespace ExampleApp
 {
+    using Sharp.UI;
+
     public class RadioButtonTemplate : ContentView
     {
         public RadioButtonTemplate()

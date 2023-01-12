@@ -5,7 +5,7 @@
 #pragma warning disable CS8669
 
 
-namespace Sharp.UI.Example
+namespace ExampleApp
 {  
     using Sharp.UI;
 
@@ -37,7 +37,7 @@ namespace Sharp.UI.Example
             BindableProperty.Create(
                 nameof(CardTitle),
                 typeof(string),
-                typeof(Sharp.UI.Example.EmptyCardView),
+                typeof(ExampleApp.EmptyCardView),
                 default(string));
 
         public string CardTitle
@@ -50,7 +50,7 @@ namespace Sharp.UI.Example
             BindableProperty.Create(
                 nameof(CardDescription),
                 typeof(string),
-                typeof(Sharp.UI.Example.EmptyCardView),
+                typeof(ExampleApp.EmptyCardView),
                 default(string));
 
         public string CardDescription
@@ -63,7 +63,7 @@ namespace Sharp.UI.Example
             BindableProperty.Create(
                 nameof(CardColor),
                 typeof(Microsoft.Maui.Graphics.Color),
-                typeof(Sharp.UI.Example.EmptyCardView),
+                typeof(ExampleApp.EmptyCardView),
                 default(Microsoft.Maui.Graphics.Color));
 
         public Microsoft.Maui.Graphics.Color CardColor
@@ -76,7 +76,7 @@ namespace Sharp.UI.Example
             BindableProperty.Create(
                 nameof(BorderColor),
                 typeof(Microsoft.Maui.Graphics.Color),
-                typeof(Sharp.UI.Example.EmptyCardView),
+                typeof(ExampleApp.EmptyCardView),
                 default(Microsoft.Maui.Graphics.Color));
 
         public Microsoft.Maui.Graphics.Color BorderColor

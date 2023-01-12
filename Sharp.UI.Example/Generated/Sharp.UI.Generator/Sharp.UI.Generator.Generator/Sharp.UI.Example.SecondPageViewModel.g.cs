@@ -5,7 +5,7 @@
 #pragma warning disable CS8669
 
 
-namespace Sharp.UI.Example
+namespace ExampleApp
 {  
     using Sharp.UI;
 
@@ -37,7 +37,7 @@ namespace Sharp.UI.Example
             BindableProperty.Create(
                 nameof(Title),
                 typeof(string),
-                typeof(Sharp.UI.Example.SecondPageViewModel),
+                typeof(ExampleApp.SecondPageViewModel),
                 (string)"no title");
 
         public string Title
@@ -50,7 +50,7 @@ namespace Sharp.UI.Example
             BindableProperty.Create(
                 nameof(Author),
                 typeof(string),
-                typeof(Sharp.UI.Example.SecondPageViewModel),
+                typeof(ExampleApp.SecondPageViewModel),
                 default(string));
 
         public string Author

@@ -5,7 +5,7 @@
 #pragma warning disable CS8669
 
 
-namespace Sharp.UI.Example
+namespace ExampleApp
 {  
     using Sharp.UI;
 
@@ -37,7 +37,7 @@ namespace Sharp.UI.Example
             BindableProperty.Create(
                 nameof(RawAngle),
                 typeof(double),
-                typeof(Sharp.UI.Example.AngleViewModel),
+                typeof(ExampleApp.AngleViewModel),
                 default(double),
                 propertyChanged: OnAngleChanged);
 
@@ -51,7 +51,7 @@ namespace Sharp.UI.Example
             BindableProperty.Create(
                 nameof(Angle),
                 typeof(double),
-                typeof(Sharp.UI.Example.AngleViewModel),
+                typeof(ExampleApp.AngleViewModel),
                 default(double),
                 coerceValue: CoerceAngle);
 
@@ -65,7 +65,7 @@ namespace Sharp.UI.Example
             BindableProperty.Create(
                 nameof(MaximumAngle),
                 typeof(double),
-                typeof(Sharp.UI.Example.AngleViewModel),
+                typeof(ExampleApp.AngleViewModel),
                 (double)360);
 
         public double MaximumAngle

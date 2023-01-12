@@ -5,7 +5,7 @@
 #pragma warning disable CS8669
 
 
-namespace Sharp.UI.Example
+namespace ExampleApp
 {  
     using Sharp.UI;
 
@@ -37,7 +37,7 @@ namespace Sharp.UI.Example
             BindableProperty.CreateAttached(
                 "HasShadow",
                 typeof(bool),
-                typeof(Sharp.UI.Example.CustomShadow),
+                typeof(ExampleApp.CustomShadow),
                 default(bool),
                 propertyChanged: OnHasShadowChanged);
 
@@ -55,7 +55,7 @@ namespace Sharp.UI.Example
             BindableProperty.CreateAttached(
                 "ShadowSize",
                 typeof(double),
-                typeof(Sharp.UI.Example.CustomShadow),
+                typeof(ExampleApp.CustomShadow),
                 default(double));
 
         public static double GetShadowSize(BindableObject obj)
@@ -72,7 +72,7 @@ namespace Sharp.UI.Example
             BindableProperty.CreateAttached(
                 "ShadowColor",
                 typeof(Microsoft.Maui.Graphics.Color),
-                typeof(Sharp.UI.Example.CustomShadow),
+                typeof(ExampleApp.CustomShadow),
                 (Microsoft.Maui.Graphics.Color)Colors.Red);
 
         public static Microsoft.Maui.Graphics.Color GetShadowColor(BindableObject obj)

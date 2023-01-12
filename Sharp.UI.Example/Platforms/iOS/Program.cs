@@ -1,7 +1,7 @@
 ﻿using ObjCRuntime;
 using UIKit;
 
-namespace Sharp.UI.Example;
+namespace ExampleApp;
 
 public class Program
 {

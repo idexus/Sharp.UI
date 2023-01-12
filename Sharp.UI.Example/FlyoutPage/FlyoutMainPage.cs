@@ -1,4 +1,5 @@
-﻿namespace Sharp.UI.Example;
+﻿namespace ExampleApp;
+using Sharp.UI;
 
 public class FlyoutMainPage : FlyoutPage
 {

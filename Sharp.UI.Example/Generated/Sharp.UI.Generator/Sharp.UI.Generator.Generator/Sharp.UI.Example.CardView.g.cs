@@ -9,7 +9,7 @@ using System.Collections;
 using System.Collections.ObjectModel;
 
 
-namespace Sharp.UI.Example
+namespace ExampleApp
 {  
     using Sharp.UI;
 
@@ -44,7 +44,7 @@ namespace Sharp.UI.Example
             BindableProperty.Create(
                 nameof(CardTitle),
                 typeof(string),
-                typeof(Sharp.UI.Example.CardView),
+                typeof(ExampleApp.CardView),
                 default(string));
 
         public string CardTitle
@@ -57,7 +57,7 @@ namespace Sharp.UI.Example
             BindableProperty.Create(
                 nameof(CardDescription),
                 typeof(string),
-                typeof(Sharp.UI.Example.CardView),
+                typeof(ExampleApp.CardView),
                 default(string));
 
         public string CardDescription
@@ -70,7 +70,7 @@ namespace Sharp.UI.Example
             BindableProperty.Create(
                 nameof(CardColor),
                 typeof(Microsoft.Maui.Graphics.Color),
-                typeof(Sharp.UI.Example.CardView),
+                typeof(ExampleApp.CardView),
                 default(Microsoft.Maui.Graphics.Color));
 
         public Microsoft.Maui.Graphics.Color CardColor
@@ -83,7 +83,7 @@ namespace Sharp.UI.Example
             BindableProperty.Create(
                 nameof(BorderColor),
                 typeof(Microsoft.Maui.Graphics.Color),
-                typeof(Sharp.UI.Example.CardView),
+                typeof(ExampleApp.CardView),
                 default(Microsoft.Maui.Graphics.Color));
 
         public Microsoft.Maui.Graphics.Color BorderColor
@@ -96,7 +96,7 @@ namespace Sharp.UI.Example
             BindableProperty.Create(
                 nameof(DescriptionStyle),
                 typeof(Sharp.UI.Style),
-                typeof(Sharp.UI.Example.CardView),
+                typeof(ExampleApp.CardView),
                 default(Sharp.UI.Style));
 
         public Sharp.UI.Style DescriptionStyle
@@ -109,7 +109,7 @@ namespace Sharp.UI.Example
             BindableProperty.Create(
                 nameof(ContentView),
                 typeof(Microsoft.Maui.Controls.View),
-                typeof(Sharp.UI.Example.CardView),
+                typeof(ExampleApp.CardView),
                 default(Microsoft.Maui.Controls.View));
 
         public Microsoft.Maui.Controls.View ContentView
@@ -122,7 +122,7 @@ namespace Sharp.UI.Example
             BindableProperty.Create(
                 nameof(ButtonTitle),
                 typeof(string),
-                typeof(Sharp.UI.Example.CardView),
+                typeof(ExampleApp.CardView),
                 default(string));
 
         public string ButtonTitle

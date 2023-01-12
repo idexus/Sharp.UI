@@ -5,298 +5,298 @@
 #pragma warning disable CS8669
 
 
-namespace Sharp.UI.Example
+namespace ExampleApp
 {
     using Sharp.UI;
 
     public static class CardViewGeneratedSharpObjectExtension
     {
         public static T OnClicked<T>(this T obj, System.EventHandler handler)
-            where T : Sharp.UI.Example.CardView
+            where T : ExampleApp.CardView
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.CardView>(obj);
+            var mauiObject = MauiWrapper.Value<ExampleApp.CardView>(obj);
             mauiObject.Clicked += handler;
             return obj;
         }
         
         public static T OnClicked<T>(this T obj, OnEventAction<T> action)
-            where T : Sharp.UI.Example.CardView
+            where T : ExampleApp.CardView
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.CardView>(obj);
+            var mauiObject = MauiWrapper.Value<ExampleApp.CardView>(obj);
             mauiObject.Clicked += (o, arg) => action(obj);
             return obj;
         }
         
         public static T CardTitle<T>(this T obj,
             string cardTitle)
-            where T : Sharp.UI.Example.CardView
+            where T : ExampleApp.CardView
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.CardView>(obj);
-            mauiObject.SetValue(Sharp.UI.Example.CardView.CardTitleProperty, (string)cardTitle);
+            var mauiObject = MauiWrapper.Value<ExampleApp.CardView>(obj);
+            mauiObject.SetValue(ExampleApp.CardView.CardTitleProperty, (string)cardTitle);
             return obj;
         }
         
         public static T CardTitle<T>(this T obj,
             System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
-            where T : Sharp.UI.Example.CardView
+            where T : ExampleApp.CardView
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.CardView>(obj);
+            var mauiObject = MauiWrapper.Value<ExampleApp.CardView>(obj);
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.CardView.CardTitleProperty, builder.GetValue());
+            if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.CardView.CardTitleProperty, builder.GetValue());
             return obj;
         }
         
         public static T CardTitle<T>(this T obj,
             System.Func<LazyValueBuilder<string>, LazyValueBuilder<string>> buildValue)
-            where T : Sharp.UI.Example.CardView
+            where T : ExampleApp.CardView
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.CardView>(obj);
+            var mauiObject = MauiWrapper.Value<ExampleApp.CardView>(obj);
             var builder = buildValue(new LazyValueBuilder<string>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.CardView.CardTitleProperty, builder.GetValue());
+            if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.CardView.CardTitleProperty, builder.GetValue());
             return obj;
         }
         
         public static T CardTitle<T>(this T obj,
             System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
-            where T : Sharp.UI.Example.CardView
+            where T : ExampleApp.CardView
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.CardView>(obj);
-            var builder = buildBinding(new BindingBuilder<string>(mauiObject, Sharp.UI.Example.CardView.CardTitleProperty));
+            var mauiObject = MauiWrapper.Value<ExampleApp.CardView>(obj);
+            var builder = buildBinding(new BindingBuilder<string>(mauiObject, ExampleApp.CardView.CardTitleProperty));
             builder.BindProperty();
             return obj;
         }
         
         public static T CardDescription<T>(this T obj,
             string cardDescription)
-            where T : Sharp.UI.Example.CardView
+            where T : ExampleApp.CardView
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.CardView>(obj);
-            mauiObject.SetValue(Sharp.UI.Example.CardView.CardDescriptionProperty, (string)cardDescription);
+            var mauiObject = MauiWrapper.Value<ExampleApp.CardView>(obj);
+            mauiObject.SetValue(ExampleApp.CardView.CardDescriptionProperty, (string)cardDescription);
             return obj;
         }
         
         public static T CardDescription<T>(this T obj,
             System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
-            where T : Sharp.UI.Example.CardView
+            where T : ExampleApp.CardView
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.CardView>(obj);
+            var mauiObject = MauiWrapper.Value<ExampleApp.CardView>(obj);
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.CardView.CardDescriptionProperty, builder.GetValue());
+            if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.CardView.CardDescriptionProperty, builder.GetValue());
             return obj;
         }
         
         public static T CardDescription<T>(this T obj,
             System.Func<LazyValueBuilder<string>, LazyValueBuilder<string>> buildValue)
-            where T : Sharp.UI.Example.CardView
+            where T : ExampleApp.CardView
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.CardView>(obj);
+            var mauiObject = MauiWrapper.Value<ExampleApp.CardView>(obj);
             var builder = buildValue(new LazyValueBuilder<string>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.CardView.CardDescriptionProperty, builder.GetValue());
+            if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.CardView.CardDescriptionProperty, builder.GetValue());
             return obj;
         }
         
         public static T CardDescription<T>(this T obj,
             System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
-            where T : Sharp.UI.Example.CardView
+            where T : ExampleApp.CardView
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.CardView>(obj);
-            var builder = buildBinding(new BindingBuilder<string>(mauiObject, Sharp.UI.Example.CardView.CardDescriptionProperty));
+            var mauiObject = MauiWrapper.Value<ExampleApp.CardView>(obj);
+            var builder = buildBinding(new BindingBuilder<string>(mauiObject, ExampleApp.CardView.CardDescriptionProperty));
             builder.BindProperty();
             return obj;
         }
         
         public static T CardColor<T>(this T obj,
             Microsoft.Maui.Graphics.Color cardColor)
-            where T : Sharp.UI.Example.CardView
+            where T : ExampleApp.CardView
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.CardView>(obj);
-            mauiObject.SetValue(Sharp.UI.Example.CardView.CardColorProperty, (Microsoft.Maui.Graphics.Color)cardColor);
+            var mauiObject = MauiWrapper.Value<ExampleApp.CardView>(obj);
+            mauiObject.SetValue(ExampleApp.CardView.CardColorProperty, (Microsoft.Maui.Graphics.Color)cardColor);
             return obj;
         }
         
         public static T CardColor<T>(this T obj,
             System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
-            where T : Sharp.UI.Example.CardView
+            where T : ExampleApp.CardView
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.CardView>(obj);
+            var mauiObject = MauiWrapper.Value<ExampleApp.CardView>(obj);
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.CardView.CardColorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.CardView.CardColorProperty, builder.GetValue());
             return obj;
         }
         
         public static T CardColor<T>(this T obj,
             System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Color>, LazyValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
-            where T : Sharp.UI.Example.CardView
+            where T : ExampleApp.CardView
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.CardView>(obj);
+            var mauiObject = MauiWrapper.Value<ExampleApp.CardView>(obj);
             var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.CardView.CardColorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.CardView.CardColorProperty, builder.GetValue());
             return obj;
         }
         
         public static T CardColor<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
-            where T : Sharp.UI.Example.CardView
+            where T : ExampleApp.CardView
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.CardView>(obj);
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(mauiObject, Sharp.UI.Example.CardView.CardColorProperty));
+            var mauiObject = MauiWrapper.Value<ExampleApp.CardView>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(mauiObject, ExampleApp.CardView.CardColorProperty));
             builder.BindProperty();
             return obj;
         }
         
         public static T BorderColor<T>(this T obj,
             Microsoft.Maui.Graphics.Color borderColor)
-            where T : Sharp.UI.Example.CardView
+            where T : ExampleApp.CardView
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.CardView>(obj);
-            mauiObject.SetValue(Sharp.UI.Example.CardView.BorderColorProperty, (Microsoft.Maui.Graphics.Color)borderColor);
+            var mauiObject = MauiWrapper.Value<ExampleApp.CardView>(obj);
+            mauiObject.SetValue(ExampleApp.CardView.BorderColorProperty, (Microsoft.Maui.Graphics.Color)borderColor);
             return obj;
         }
         
         public static T BorderColor<T>(this T obj,
             System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
-            where T : Sharp.UI.Example.CardView
+            where T : ExampleApp.CardView
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.CardView>(obj);
+            var mauiObject = MauiWrapper.Value<ExampleApp.CardView>(obj);
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.CardView.BorderColorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.CardView.BorderColorProperty, builder.GetValue());
             return obj;
         }
         
         public static T BorderColor<T>(this T obj,
             System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Color>, LazyValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
-            where T : Sharp.UI.Example.CardView
+            where T : ExampleApp.CardView
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.CardView>(obj);
+            var mauiObject = MauiWrapper.Value<ExampleApp.CardView>(obj);
             var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.CardView.BorderColorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.CardView.BorderColorProperty, builder.GetValue());
             return obj;
         }
         
         public static T BorderColor<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
-            where T : Sharp.UI.Example.CardView
+            where T : ExampleApp.CardView
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.CardView>(obj);
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(mauiObject, Sharp.UI.Example.CardView.BorderColorProperty));
+            var mauiObject = MauiWrapper.Value<ExampleApp.CardView>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(mauiObject, ExampleApp.CardView.BorderColorProperty));
             builder.BindProperty();
             return obj;
         }
         
         public static T DescriptionStyle<T>(this T obj,
             Sharp.UI.Style descriptionStyle)
-            where T : Sharp.UI.Example.CardView
+            where T : ExampleApp.CardView
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.CardView>(obj);
+            var mauiObject = MauiWrapper.Value<ExampleApp.CardView>(obj);
             var mauiValue = MauiWrapper.Value<object>(descriptionStyle);
-            mauiObject.SetValue(Sharp.UI.Example.CardView.DescriptionStyleProperty, mauiValue);
+            mauiObject.SetValue(ExampleApp.CardView.DescriptionStyleProperty, mauiValue);
             return obj;
         }
         
         public static T DescriptionStyle<T>(this T obj,
             System.Func<ValueBuilder<Sharp.UI.Style>, ValueBuilder<Sharp.UI.Style>> buildValue)
-            where T : Sharp.UI.Example.CardView
+            where T : ExampleApp.CardView
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.CardView>(obj);
+            var mauiObject = MauiWrapper.Value<ExampleApp.CardView>(obj);
             var builder = buildValue(new ValueBuilder<Sharp.UI.Style>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.CardView.DescriptionStyleProperty, MauiWrapper.Value<object>(builder.GetValue()));
+            if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.CardView.DescriptionStyleProperty, MauiWrapper.Value<object>(builder.GetValue()));
             return obj;
         }
         
         public static T DescriptionStyle<T>(this T obj,
             System.Func<LazyValueBuilder<Sharp.UI.Style>, LazyValueBuilder<Sharp.UI.Style>> buildValue)
-            where T : Sharp.UI.Example.CardView
+            where T : ExampleApp.CardView
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.CardView>(obj);
+            var mauiObject = MauiWrapper.Value<ExampleApp.CardView>(obj);
             var builder = buildValue(new LazyValueBuilder<Sharp.UI.Style>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.CardView.DescriptionStyleProperty, MauiWrapper.Value<object>(builder.GetValue()));
+            if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.CardView.DescriptionStyleProperty, MauiWrapper.Value<object>(builder.GetValue()));
             return obj;
         }
         
         public static T DescriptionStyle<T>(this T obj,
             System.Func<BindingBuilder<Sharp.UI.Style>, BindingBuilder<Sharp.UI.Style>> buildBinding)
-            where T : Sharp.UI.Example.CardView
+            where T : ExampleApp.CardView
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.CardView>(obj);
-            var builder = buildBinding(new BindingBuilder<Sharp.UI.Style>(mauiObject, Sharp.UI.Example.CardView.DescriptionStyleProperty));
+            var mauiObject = MauiWrapper.Value<ExampleApp.CardView>(obj);
+            var builder = buildBinding(new BindingBuilder<Sharp.UI.Style>(mauiObject, ExampleApp.CardView.DescriptionStyleProperty));
             builder.BindProperty();
             return obj;
         }
         
         public static T ContentView<T>(this T obj,
             Microsoft.Maui.Controls.View contentView)
-            where T : Sharp.UI.Example.CardView
+            where T : ExampleApp.CardView
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.CardView>(obj);
-            mauiObject.SetValue(Sharp.UI.Example.CardView.ContentViewProperty, (Microsoft.Maui.Controls.View)contentView);
+            var mauiObject = MauiWrapper.Value<ExampleApp.CardView>(obj);
+            mauiObject.SetValue(ExampleApp.CardView.ContentViewProperty, (Microsoft.Maui.Controls.View)contentView);
             return obj;
         }
         
         public static T ContentView<T>(this T obj,
             System.Func<ValueBuilder<Microsoft.Maui.Controls.View>, ValueBuilder<Microsoft.Maui.Controls.View>> buildValue)
-            where T : Sharp.UI.Example.CardView
+            where T : ExampleApp.CardView
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.CardView>(obj);
+            var mauiObject = MauiWrapper.Value<ExampleApp.CardView>(obj);
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.View>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.CardView.ContentViewProperty, builder.GetValue());
+            if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.CardView.ContentViewProperty, builder.GetValue());
             return obj;
         }
         
         public static T ContentView<T>(this T obj,
             System.Func<LazyValueBuilder<Microsoft.Maui.Controls.View>, LazyValueBuilder<Microsoft.Maui.Controls.View>> buildValue)
-            where T : Sharp.UI.Example.CardView
+            where T : ExampleApp.CardView
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.CardView>(obj);
+            var mauiObject = MauiWrapper.Value<ExampleApp.CardView>(obj);
             var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.View>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.CardView.ContentViewProperty, builder.GetValue());
+            if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.CardView.ContentViewProperty, builder.GetValue());
             return obj;
         }
         
         public static T ContentView<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Controls.View>, BindingBuilder<Microsoft.Maui.Controls.View>> buildBinding)
-            where T : Sharp.UI.Example.CardView
+            where T : ExampleApp.CardView
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.CardView>(obj);
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.View>(mauiObject, Sharp.UI.Example.CardView.ContentViewProperty));
+            var mauiObject = MauiWrapper.Value<ExampleApp.CardView>(obj);
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.View>(mauiObject, ExampleApp.CardView.ContentViewProperty));
             builder.BindProperty();
             return obj;
         }
         
         public static T ButtonTitle<T>(this T obj,
             string buttonTitle)
-            where T : Sharp.UI.Example.CardView
+            where T : ExampleApp.CardView
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.CardView>(obj);
-            mauiObject.SetValue(Sharp.UI.Example.CardView.ButtonTitleProperty, (string)buttonTitle);
+            var mauiObject = MauiWrapper.Value<ExampleApp.CardView>(obj);
+            mauiObject.SetValue(ExampleApp.CardView.ButtonTitleProperty, (string)buttonTitle);
             return obj;
         }
         
         public static T ButtonTitle<T>(this T obj,
             System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
-            where T : Sharp.UI.Example.CardView
+            where T : ExampleApp.CardView
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.CardView>(obj);
+            var mauiObject = MauiWrapper.Value<ExampleApp.CardView>(obj);
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.CardView.ButtonTitleProperty, builder.GetValue());
+            if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.CardView.ButtonTitleProperty, builder.GetValue());
             return obj;
         }
         
         public static T ButtonTitle<T>(this T obj,
             System.Func<LazyValueBuilder<string>, LazyValueBuilder<string>> buildValue)
-            where T : Sharp.UI.Example.CardView
+            where T : ExampleApp.CardView
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.CardView>(obj);
+            var mauiObject = MauiWrapper.Value<ExampleApp.CardView>(obj);
             var builder = buildValue(new LazyValueBuilder<string>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.CardView.ButtonTitleProperty, builder.GetValue());
+            if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.CardView.ButtonTitleProperty, builder.GetValue());
             return obj;
         }
         
         public static T ButtonTitle<T>(this T obj,
             System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
-            where T : Sharp.UI.Example.CardView
+            where T : ExampleApp.CardView
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.CardView>(obj);
-            var builder = buildBinding(new BindingBuilder<string>(mauiObject, Sharp.UI.Example.CardView.ButtonTitleProperty));
+            var mauiObject = MauiWrapper.Value<ExampleApp.CardView>(obj);
+            var builder = buildBinding(new BindingBuilder<string>(mauiObject, ExampleApp.CardView.ButtonTitleProperty));
             builder.BindProperty();
             return obj;
         }

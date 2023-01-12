@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace Sharp.UI.Example;
+namespace ExampleApp;
 
 using Sharp.UI;
 

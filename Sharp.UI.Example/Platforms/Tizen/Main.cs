@@ -2,7 +2,7 @@
 using Microsoft.Maui;
 using Microsoft.Maui.Hosting;
 
-namespace Sharp.UI.Example;
+namespace ExampleApp;
 
 class Program : MauiApplication
 {

@@ -1,7 +1,7 @@
 ﻿
-namespace Sharp.UI.Example;
+namespace ExampleApp;
 using Sharp.UI;
- 
+
 public partial class App : Application
 {
     public static int Counter = 0;

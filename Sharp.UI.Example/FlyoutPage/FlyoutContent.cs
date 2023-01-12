@@ -1,4 +1,6 @@
-﻿namespace Sharp.UI.Example;
+﻿namespace ExampleApp;
+
+using Sharp.UI;
 
 public class FlyoutContent : ContentView
 {

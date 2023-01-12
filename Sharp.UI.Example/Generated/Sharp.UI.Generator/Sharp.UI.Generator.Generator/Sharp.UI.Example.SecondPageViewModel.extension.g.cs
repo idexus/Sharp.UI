@@ -5,7 +5,7 @@
 #pragma warning disable CS8669
 
 
-namespace Sharp.UI.Example
+namespace ExampleApp
 {
     using Sharp.UI;
 
@@ -13,78 +13,78 @@ namespace Sharp.UI.Example
     {
         public static T Title<T>(this T obj,
             string title)
-            where T : Sharp.UI.Example.SecondPageViewModel
+            where T : ExampleApp.SecondPageViewModel
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.SecondPageViewModel>(obj);
-            mauiObject.SetValue(Sharp.UI.Example.SecondPageViewModel.TitleProperty, (string)title);
+            var mauiObject = MauiWrapper.Value<ExampleApp.SecondPageViewModel>(obj);
+            mauiObject.SetValue(ExampleApp.SecondPageViewModel.TitleProperty, (string)title);
             return obj;
         }
         
         public static T Title<T>(this T obj,
             System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
-            where T : Sharp.UI.Example.SecondPageViewModel
+            where T : ExampleApp.SecondPageViewModel
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.SecondPageViewModel>(obj);
+            var mauiObject = MauiWrapper.Value<ExampleApp.SecondPageViewModel>(obj);
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.SecondPageViewModel.TitleProperty, builder.GetValue());
+            if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.SecondPageViewModel.TitleProperty, builder.GetValue());
             return obj;
         }
         
         public static T Title<T>(this T obj,
             System.Func<LazyValueBuilder<string>, LazyValueBuilder<string>> buildValue)
-            where T : Sharp.UI.Example.SecondPageViewModel
+            where T : ExampleApp.SecondPageViewModel
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.SecondPageViewModel>(obj);
+            var mauiObject = MauiWrapper.Value<ExampleApp.SecondPageViewModel>(obj);
             var builder = buildValue(new LazyValueBuilder<string>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.SecondPageViewModel.TitleProperty, builder.GetValue());
+            if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.SecondPageViewModel.TitleProperty, builder.GetValue());
             return obj;
         }
         
         public static T Title<T>(this T obj,
             System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
-            where T : Sharp.UI.Example.SecondPageViewModel
+            where T : ExampleApp.SecondPageViewModel
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.SecondPageViewModel>(obj);
-            var builder = buildBinding(new BindingBuilder<string>(mauiObject, Sharp.UI.Example.SecondPageViewModel.TitleProperty));
+            var mauiObject = MauiWrapper.Value<ExampleApp.SecondPageViewModel>(obj);
+            var builder = buildBinding(new BindingBuilder<string>(mauiObject, ExampleApp.SecondPageViewModel.TitleProperty));
             builder.BindProperty();
             return obj;
         }
         
         public static T Author<T>(this T obj,
             string author)
-            where T : Sharp.UI.Example.SecondPageViewModel
+            where T : ExampleApp.SecondPageViewModel
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.SecondPageViewModel>(obj);
-            mauiObject.SetValue(Sharp.UI.Example.SecondPageViewModel.AuthorProperty, (string)author);
+            var mauiObject = MauiWrapper.Value<ExampleApp.SecondPageViewModel>(obj);
+            mauiObject.SetValue(ExampleApp.SecondPageViewModel.AuthorProperty, (string)author);
             return obj;
         }
         
         public static T Author<T>(this T obj,
             System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
-            where T : Sharp.UI.Example.SecondPageViewModel
+            where T : ExampleApp.SecondPageViewModel
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.SecondPageViewModel>(obj);
+            var mauiObject = MauiWrapper.Value<ExampleApp.SecondPageViewModel>(obj);
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.SecondPageViewModel.AuthorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.SecondPageViewModel.AuthorProperty, builder.GetValue());
             return obj;
         }
         
         public static T Author<T>(this T obj,
             System.Func<LazyValueBuilder<string>, LazyValueBuilder<string>> buildValue)
-            where T : Sharp.UI.Example.SecondPageViewModel
+            where T : ExampleApp.SecondPageViewModel
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.SecondPageViewModel>(obj);
+            var mauiObject = MauiWrapper.Value<ExampleApp.SecondPageViewModel>(obj);
             var builder = buildValue(new LazyValueBuilder<string>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.SecondPageViewModel.AuthorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.SecondPageViewModel.AuthorProperty, builder.GetValue());
             return obj;
         }
         
         public static T Author<T>(this T obj,
             System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
-            where T : Sharp.UI.Example.SecondPageViewModel
+            where T : ExampleApp.SecondPageViewModel
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.SecondPageViewModel>(obj);
-            var builder = buildBinding(new BindingBuilder<string>(mauiObject, Sharp.UI.Example.SecondPageViewModel.AuthorProperty));
+            var mauiObject = MauiWrapper.Value<ExampleApp.SecondPageViewModel>(obj);
+            var builder = buildBinding(new BindingBuilder<string>(mauiObject, ExampleApp.SecondPageViewModel.AuthorProperty));
             builder.BindProperty();
             return obj;
         }

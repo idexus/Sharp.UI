@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Sharp.UI.Example
+namespace ExampleApp
 {
     public static class MauiProgram
     {

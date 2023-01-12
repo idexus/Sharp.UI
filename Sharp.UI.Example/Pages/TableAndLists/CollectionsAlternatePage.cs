@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 
-namespace Sharp.UI.Example
+namespace ExampleApp
 {
     using Sharp.UI;
 

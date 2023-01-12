@@ -4,7 +4,7 @@ using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.Hosting;
 using Microsoft.Maui.Hosting;
 
-namespace Sharp.UI.Example;
+namespace ExampleApp;
 
 [Register("AppDelegate")]
 public class AppDelegate : MauiUIApplicationDelegate

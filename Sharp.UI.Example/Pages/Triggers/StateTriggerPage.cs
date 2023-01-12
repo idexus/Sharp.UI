@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 
-namespace Sharp.UI.Example;
+namespace ExampleApp;
 
 using Sharp.UI;
 

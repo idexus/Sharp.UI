@@ -5,7 +5,7 @@
 #pragma warning disable CS8669
 
 
-namespace Sharp.UI.Example
+namespace ExampleApp
 {  
     using Sharp.UI;
 
@@ -53,7 +53,7 @@ namespace Sharp.UI.Example
             BindableProperty.Create(
                 nameof(Id),
                 typeof(int),
-                typeof(Sharp.UI.Example.DataModel),
+                typeof(ExampleApp.DataModel),
                 default(int));
 
         public int Id
@@ -66,7 +66,7 @@ namespace Sharp.UI.Example
             BindableProperty.Create(
                 nameof(Name),
                 typeof(string),
-                typeof(Sharp.UI.Example.DataModel),
+                typeof(ExampleApp.DataModel),
                 default(string));
 
         public string Name
@@ -79,7 +79,7 @@ namespace Sharp.UI.Example
             BindableProperty.Create(
                 nameof(Admin),
                 typeof(bool),
-                typeof(Sharp.UI.Example.DataModel),
+                typeof(ExampleApp.DataModel),
                 default(bool));
 
         public bool Admin

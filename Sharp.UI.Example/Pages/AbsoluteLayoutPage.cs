@@ -1,4 +1,4 @@
-﻿namespace Sharp.UI.Example;
+﻿namespace ExampleApp;
 
 using Sharp.UI;
 
@@ -8,6 +8,11 @@ public class AbsoluteLayoutPage : ContentPage
 	{
 		Content = new AbsoluteLayout
 		{
+            new Frame
+            {
+
+            },
+            
 			new Grid
 			{
 				new Label("Absolute Layout")

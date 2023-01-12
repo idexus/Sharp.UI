@@ -1,6 +1,6 @@
 ﻿using Microsoft.Maui.Controls.Shapes;
 
-namespace Sharp.UI.Example
+namespace ExampleApp
 {
 	using Sharp.UI;
 	

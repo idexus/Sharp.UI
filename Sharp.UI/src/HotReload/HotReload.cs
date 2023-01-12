@@ -5,6 +5,15 @@ namespace Sharp.UI
         static List<Type> replaceWithTypeList = new List<Type>();
         static List<Element> registeredActiveList = new List<Element>();
 
+        public static void UpdateApplication(Type[] types)
+        {
+            MainThread.BeginInvokeOnMainThread(() => {
+                foreach (var type in types)
+                    HotReload.replaceWithTypeList.Add(type);
+            });
+            TriggerHotReload();
+        }
+
         public static void RegisterActive(Element element)
         {
             registeredActiveList.Add(element);

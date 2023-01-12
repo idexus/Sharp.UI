@@ -6,16 +6,16 @@
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
 		<!-- <TargetFrameworks>$(TargetFrameworks);net7.0-tizen</TargetFrameworks> -->
 		<OutputType>Exe</OutputType>
-		<RootNamespace>Sharp.UI.Example</RootNamespace>
+		<RootNamespace>ExampleApp</RootNamespace>
 		<UseMaui>true</UseMaui>
 		<SingleProject>true</SingleProject>
 		<ImplicitUsings>true</ImplicitUsings>
 
 		<!-- Display name -->
-		<ApplicationTitle>Sharp.UI.Example</ApplicationTitle>
+		<ApplicationTitle>ExampleApp</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>one.dexus.sharp.ui.example</ApplicationId>
+		<ApplicationId>one.dexus.ExampleApp</ApplicationId>
 		<ApplicationIdGuid>f59e31be-1d79-4abf-a86b-d40a3c439496</ApplicationIdGuid>
 
 		<!-- Versions -->
@@ -28,7 +28,7 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
-		<AssemblyName>Sharp.UI.Example</AssemblyName>
+		<AssemblyName>ExampleApp</AssemblyName>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
@@ -69,5 +69,24 @@
 		<Compile Remove="$(CompilerGeneratedFilesOutputPath)/**/*.cs" />
 	    <None Include="$(CompilerGeneratedFilesOutputPath)/Sharp.UI.Generator/**/*.cs" />
     </ItemGroup>
+	<ItemGroup>
+	  <Page Remove="Platforms\Windows\App.xaml" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Compile Update="Platforms\Windows\App.xaml.cs">
+	    <DependentUpon>%(Filename)</DependentUpon>
+	    <ExcludeFromCurrentConfiguration>true</ExcludeFromCurrentConfiguration>
+	  </Compile>
+	</ItemGroup>
+	<ItemGroup>
+	  <MauiXaml Update="Platforms\Windows\App.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+	<ItemGroup>
+	  <None Update="Platforms\Windows\Package.appxmanifest">
+	    <SubType>Designer</SubType>
+	  </None>
+	</ItemGroup>
 
 </Project>

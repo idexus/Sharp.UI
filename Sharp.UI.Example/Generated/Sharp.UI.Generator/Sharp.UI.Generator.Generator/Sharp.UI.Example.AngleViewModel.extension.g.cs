@@ -5,7 +5,7 @@
 #pragma warning disable CS8669
 
 
-namespace Sharp.UI.Example
+namespace ExampleApp
 {
     using Sharp.UI;
 
@@ -13,117 +13,117 @@ namespace Sharp.UI.Example
     {
         public static T RawAngle<T>(this T obj,
             double rawAngle)
-            where T : Sharp.UI.Example.AngleViewModel
+            where T : ExampleApp.AngleViewModel
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.AngleViewModel>(obj);
-            mauiObject.SetValue(Sharp.UI.Example.AngleViewModel.RawAngleProperty, (double)rawAngle);
+            var mauiObject = MauiWrapper.Value<ExampleApp.AngleViewModel>(obj);
+            mauiObject.SetValue(ExampleApp.AngleViewModel.RawAngleProperty, (double)rawAngle);
             return obj;
         }
         
         public static T RawAngle<T>(this T obj,
             System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
-            where T : Sharp.UI.Example.AngleViewModel
+            where T : ExampleApp.AngleViewModel
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.AngleViewModel>(obj);
+            var mauiObject = MauiWrapper.Value<ExampleApp.AngleViewModel>(obj);
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.AngleViewModel.RawAngleProperty, builder.GetValue());
+            if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.AngleViewModel.RawAngleProperty, builder.GetValue());
             return obj;
         }
         
         public static T RawAngle<T>(this T obj,
             System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.Example.AngleViewModel
+            where T : ExampleApp.AngleViewModel
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.AngleViewModel>(obj);
+            var mauiObject = MauiWrapper.Value<ExampleApp.AngleViewModel>(obj);
             var builder = buildValue(new LazyValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.AngleViewModel.RawAngleProperty, builder.GetValue());
+            if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.AngleViewModel.RawAngleProperty, builder.GetValue());
             return obj;
         }
         
         public static T RawAngle<T>(this T obj,
             System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
-            where T : Sharp.UI.Example.AngleViewModel
+            where T : ExampleApp.AngleViewModel
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.AngleViewModel>(obj);
-            var builder = buildBinding(new BindingBuilder<double>(mauiObject, Sharp.UI.Example.AngleViewModel.RawAngleProperty));
+            var mauiObject = MauiWrapper.Value<ExampleApp.AngleViewModel>(obj);
+            var builder = buildBinding(new BindingBuilder<double>(mauiObject, ExampleApp.AngleViewModel.RawAngleProperty));
             builder.BindProperty();
             return obj;
         }
         
         public static T Angle<T>(this T obj,
             double angle)
-            where T : Sharp.UI.Example.AngleViewModel
+            where T : ExampleApp.AngleViewModel
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.AngleViewModel>(obj);
-            mauiObject.SetValue(Sharp.UI.Example.AngleViewModel.AngleProperty, (double)angle);
+            var mauiObject = MauiWrapper.Value<ExampleApp.AngleViewModel>(obj);
+            mauiObject.SetValue(ExampleApp.AngleViewModel.AngleProperty, (double)angle);
             return obj;
         }
         
         public static T Angle<T>(this T obj,
             System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
-            where T : Sharp.UI.Example.AngleViewModel
+            where T : ExampleApp.AngleViewModel
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.AngleViewModel>(obj);
+            var mauiObject = MauiWrapper.Value<ExampleApp.AngleViewModel>(obj);
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.AngleViewModel.AngleProperty, builder.GetValue());
+            if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.AngleViewModel.AngleProperty, builder.GetValue());
             return obj;
         }
         
         public static T Angle<T>(this T obj,
             System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.Example.AngleViewModel
+            where T : ExampleApp.AngleViewModel
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.AngleViewModel>(obj);
+            var mauiObject = MauiWrapper.Value<ExampleApp.AngleViewModel>(obj);
             var builder = buildValue(new LazyValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.AngleViewModel.AngleProperty, builder.GetValue());
+            if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.AngleViewModel.AngleProperty, builder.GetValue());
             return obj;
         }
         
         public static T Angle<T>(this T obj,
             System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
-            where T : Sharp.UI.Example.AngleViewModel
+            where T : ExampleApp.AngleViewModel
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.AngleViewModel>(obj);
-            var builder = buildBinding(new BindingBuilder<double>(mauiObject, Sharp.UI.Example.AngleViewModel.AngleProperty));
+            var mauiObject = MauiWrapper.Value<ExampleApp.AngleViewModel>(obj);
+            var builder = buildBinding(new BindingBuilder<double>(mauiObject, ExampleApp.AngleViewModel.AngleProperty));
             builder.BindProperty();
             return obj;
         }
         
         public static T MaximumAngle<T>(this T obj,
             double maximumAngle)
-            where T : Sharp.UI.Example.AngleViewModel
+            where T : ExampleApp.AngleViewModel
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.AngleViewModel>(obj);
-            mauiObject.SetValue(Sharp.UI.Example.AngleViewModel.MaximumAngleProperty, (double)maximumAngle);
+            var mauiObject = MauiWrapper.Value<ExampleApp.AngleViewModel>(obj);
+            mauiObject.SetValue(ExampleApp.AngleViewModel.MaximumAngleProperty, (double)maximumAngle);
             return obj;
         }
         
         public static T MaximumAngle<T>(this T obj,
             System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
-            where T : Sharp.UI.Example.AngleViewModel
+            where T : ExampleApp.AngleViewModel
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.AngleViewModel>(obj);
+            var mauiObject = MauiWrapper.Value<ExampleApp.AngleViewModel>(obj);
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.AngleViewModel.MaximumAngleProperty, builder.GetValue());
+            if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.AngleViewModel.MaximumAngleProperty, builder.GetValue());
             return obj;
         }
         
         public static T MaximumAngle<T>(this T obj,
             System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.Example.AngleViewModel
+            where T : ExampleApp.AngleViewModel
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.AngleViewModel>(obj);
+            var mauiObject = MauiWrapper.Value<ExampleApp.AngleViewModel>(obj);
             var builder = buildValue(new LazyValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(Sharp.UI.Example.AngleViewModel.MaximumAngleProperty, builder.GetValue());
+            if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.AngleViewModel.MaximumAngleProperty, builder.GetValue());
             return obj;
         }
         
         public static T MaximumAngle<T>(this T obj,
             System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
-            where T : Sharp.UI.Example.AngleViewModel
+            where T : ExampleApp.AngleViewModel
         {
-            var mauiObject = MauiWrapper.Value<Sharp.UI.Example.AngleViewModel>(obj);
-            var builder = buildBinding(new BindingBuilder<double>(mauiObject, Sharp.UI.Example.AngleViewModel.MaximumAngleProperty));
+            var mauiObject = MauiWrapper.Value<ExampleApp.AngleViewModel>(obj);
+            var builder = buildBinding(new BindingBuilder<double>(mauiObject, ExampleApp.AngleViewModel.MaximumAngleProperty));
             builder.BindProperty();
             return obj;
         }

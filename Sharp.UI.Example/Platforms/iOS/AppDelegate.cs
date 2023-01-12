@@ -3,7 +3,7 @@ using Microsoft.Maui;
 using Microsoft.Maui.Controls.Hosting;
 using Microsoft.Maui.Hosting;
 
-namespace Sharp.UI.Example;
+namespace ExampleApp;
 
 [Register("AppDelegate")]
 public class AppDelegate : MauiUIApplicationDelegate
