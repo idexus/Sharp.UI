@@ -22,13 +22,13 @@ Last relases
 ##### .NET CLI
 
 ```
-dotnet add package Sharp.UI --version 0.2.3-alfa.5
+dotnet add package Sharp.UI --version 0.2.3-alpha.6
 ```
 
 ##### Package manager
 
 ```
-NuGet\Install-Package Sharp.UI -Version 0.2.3-alfa.5
+NuGet\Install-Package Sharp.UI -Version 0.2.3-alpha.6
 ```
 
 ## VS Project Reference
