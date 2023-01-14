@@ -83,6 +83,7 @@ This is an alpha version.
 
 Known limitations:
 
+- Does not support MAUI shell 
 - Does not work for classes with automatically generated code, e.g. for classes with automatically generated bindable properties
 - Does not work if you want to use the Sharp.UI library by project reference. Use nuget package.
 
