@@ -75,7 +75,9 @@ Here are some examples showing how to use the Sharp.UI library
 
 # Hot Reload
 
-[HotReloadTest](https://github.com/idexus/HotReloadTest) is a test project of working with the __Sharp.UI__ library using Visual Studio Code and [Reloadify3000](https://github.com/Clancey/Reloadify3000) library with [vscode-comet](https://github.com/Clancey/vscode-comet) plugin.
+[HotReloadTest](https://github.com/idexus/HotReloadTest) is a test project of working with the __Sharp.UI__ library 
+- using Visual Studio 2022 for Windows
+- using Visual Studio Code and [Reloadify3000](https://github.com/Clancey/Reloadify3000) library with [vscode-comet](https://github.com/Clancey/vscode-comet) plugin.
 
 This is an alpha version.
 
