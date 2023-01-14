@@ -17,7 +17,7 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 
 		<PackageId>Sharp.UI</PackageId>
-		<Version>0.2.3-alfa.5</Version>
+		<Version>0.2.3-alpha.6</Version>
 		<Authors>Pawel Krzywdzinski</Authors>
 		<Copyright>Pawel Krzywdzinski</Copyright>
 		<PackageDescription>An auto-generated wrapper library that allows you to use .NET MAUI only in C# code using fluent methods, without the need for XAML</PackageDescription>
