@@ -1,3 +1,5 @@
+using Microsoft.Maui.HotReload;
+
 namespace Sharp.UI
 {
     public static class HotReload
@@ -54,6 +56,7 @@ namespace Sharp.UI
                                             newContentPage.BindingContext = bindingContext;
                                             if (parent is Window parentWindow) parentWindow.Page = newContentPage;
                                             else if (parent is ShellContent parentShellContent) parentShellContent.Content = newContentPage;
+                                            //((IReloadHandler)newContentPage).Reload();
                                         }
                                     }
                                 }
