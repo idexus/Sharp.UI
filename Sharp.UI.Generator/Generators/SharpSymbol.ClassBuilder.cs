@@ -93,7 +93,7 @@ namespace {nameSpaceString}
 
         string BaseString()
         {
-            string baseString;
+            string baseString = "";
             if (IsWrappedType)
             {
                 if (WrappedType.IsSealed)
@@ -107,7 +107,8 @@ namespace {nameSpaceString}
             }
             else
             {
-                baseString = (containerOfTypeName != null && singleItemContainer) ? $": IEnumerable" : "";
+                if (containerOfTypeName != null && singleItemContainer) baseString += $" : IEnumerable";
+                if (containerOfTypeName != null && !singleItemContainer && !isAlreadyContainerOfThis) baseString += $" : IList<{containerOfTypeName}>";
             }
             return baseString;
         }
@@ -137,6 +138,7 @@ namespace {nameSpaceString}
             {
                 GenerateConstructors();
                 GenerateSingleItemContainer();
+                GenerateCollectionContainer();
                 GenerateAttachedProperties();
                 if (IsBindable())
                 {
@@ -305,7 +307,9 @@ namespace {nameSpaceString}
                         .Where(e => e.Kind == SymbolKind.Property);
 
                     foreach (var prop in properties)
+                    {
                         GeneratePropertyForField((IPropertySymbol)prop);
+                    }
                 }
             }
         }
@@ -318,26 +322,31 @@ namespace {nameSpaceString}
             var defaultValueString = GetDefaultValueString(symbol, typeName);
             var callbacksString = "";
 
-            foreach(var callback in callbacks)
+            var implementedProperty = mainSymbol
+                .GetMembers()
+                .Where(e => e.Kind == SymbolKind.Property && e.DeclaredAccessibility == Accessibility.Public && e.Name.Equals(symbol.Name)).FirstOrDefault();
+
+            foreach (var callback in callbacks)
             {
                 callbacksString = $@",
                 {callback.Key}: {callback.Value}";
             }
 
-            builder.Append($@"
+            builder.AppendLine($@"
         public static readonly Microsoft.Maui.Controls.BindableProperty {name}Property =
             BindableProperty.Create(
                 nameof({name}),
                 typeof({typeName}),
                 typeof({mainSymbol.ToDisplayString()}),
-                {(defaultValueString != null ? $"({typeName}){defaultValueString}" : $"default({typeName})")}{callbacksString});
+                {(defaultValueString != null ? $"({typeName}){defaultValueString}" : $"default({typeName})")}{callbacksString});");
 
+            if (implementedProperty is null)
+                builder.AppendLine($@"
         public {typeName} {name}
         {{
             get => ({typeName})GetValue({name}Property);
             set => SetValue({name}Property, value);
-        }}
-        ");
+        }}");
         }
 
         // ----------------------------------------
@@ -471,11 +480,12 @@ namespace {nameSpaceString}
         {
             if (containerOfTypeName != null && singleItemContainer == false)
             {
-                var isContainerOfThis = containerPropertyName.Equals("this");
-                if (IsWrappedSealedType || !isContainerOfThis)
+                if (IsWrappedSealedType || !isAlreadyContainerOfThis)
                 {
+                    var newPrefix = isNewContainer ? " new" : "";
+
                     var prefix = IsWrappedSealedType ?
-                        (isContainerOfThis ? "this.MauiObject" : $"this.MauiObject.{containerPropertyName}") :
+                        (isAlreadyContainerOfThis ? "this.MauiObject" : $"this.MauiObject.{containerPropertyName}") :
                         $"this.{containerPropertyName}";
 
                     notGenerateList.Add("Count");
@@ -490,7 +500,7 @@ namespace {nameSpaceString}
         public void Clear() => {prefix}.Clear();
         public bool Contains({containerOfTypeName} item) => {prefix}.Contains(item);
         public void CopyTo({containerOfTypeName}[] array, int arrayIndex) => {prefix}.CopyTo(array, arrayIndex);
-        public IEnumerator<{containerOfTypeName}> GetEnumerator() => {prefix}.GetEnumerator();
+        public{newPrefix} IEnumerator<{containerOfTypeName}> GetEnumerator() => {prefix}.GetEnumerator();
         public int IndexOf({containerOfTypeName} item) => {prefix}.IndexOf(item);
         public void Insert(int index, {containerOfTypeName} item) => {prefix}.Insert(index, item);
         public bool Remove({containerOfTypeName} item) => {prefix}.Remove(item);

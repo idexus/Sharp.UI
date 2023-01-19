@@ -65,21 +65,24 @@ namespace {nameSpaceString}
         #region extension generator
         //----------------------------------------
 
-        private readonly List<string> extensionBindablePropertiesGenerated = new List<string>();
+        private readonly List<string> bindablePropertiesGeneratedFromInterface = new List<string>();
+        private readonly List<string> bindablePropertiesToGenerate = new List<string>();
 
         void GenerateClassExtensionBody()
         {
+            GenerateBindablePropertiesFromInterface();
+
             if (!mainSymbol.IsStatic)
             {
                 var bindableProperties = extensionType
                     .GetMembers()
                     .Where(e => e.IsStatic && e.Name.EndsWith("Property") && e.DeclaredAccessibility == Accessibility.Public).ToList();
 
-                extensionBindablePropertiesGenerated.Clear();
+                bindablePropertiesToGenerate.Clear();
                 foreach (var prop in bindableProperties)
                 {
                     var name = prop.Name.Substring(0, prop.Name.Length - "Property".Length);
-                    extensionBindablePropertiesGenerated.Add(name);
+                    bindablePropertiesToGenerate.Add(name);
                 }
 
                 var properties = extensionType
@@ -90,15 +93,18 @@ namespace {nameSpaceString}
                     .GetMembers()
                     .Where(e => e.Kind == SymbolKind.Event && e.DeclaredAccessibility == Accessibility.Public);
 
-                foreach (var prop in properties) GenerateExtensionMethod(prop);
+                foreach (var prop in properties)
+                {
+                    if (!bindablePropertiesGeneratedFromInterface.Contains(prop.Name))
+                        GenerateExtensionMethod(prop);
+                }
                 foreach (var @event in events) GenerateEventMethod(@event);
             }
 
-            GenerateBindablePropertiesExtension();
             GenerateAttachedPropertiesExtension();
         }
 
-        void GenerateBindablePropertiesExtension()
+        void GenerateBindablePropertiesFromInterface()
         {
             // generate using bindable interface
             var interfaces = extensionType
@@ -116,6 +122,7 @@ namespace {nameSpaceString}
                     var propertySymbol = (IPropertySymbol)prop;
                     var fullPropertyName = $"{extensionType.ToDisplayString()}.{prop.Name}";
                     GenerateExtensionMethod(propertySymbol, fullPropertyName);
+                    bindablePropertiesGeneratedFromInterface.Add(prop.Name);
                 }
             }
         }
@@ -267,7 +274,7 @@ namespace {nameSpaceString}
                     GenerateExtensionMethod_Value(info);
                     GenerateExtensionMethod_ValueBuilder(info);
                     GenerateExtensionMethod_LazyValueBuilder(info);
-                    if (extensionBindablePropertiesGenerated.Contains(info.propertyName))
+                    if (bindablePropertiesToGenerate.Contains(info.propertyName))
                         GenerateExtensionMethod_BindingBuilder(info);
 
                     if (info.propertySymbol.Type.Name.Equals("DataTemplate"))

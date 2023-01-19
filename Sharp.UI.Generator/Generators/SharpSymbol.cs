@@ -56,6 +56,7 @@ namespace Sharp.UI.Generator
         string containerOfTypeName = null;
         string nameSpaceString;
         bool isNewContainer = false;
+        bool isAlreadyContainerOfThis = false;
 
         // extensions
         private string typeConformanceName;
@@ -90,54 +91,56 @@ namespace Sharp.UI.Generator
 
         void SetupContainerIfNeeded()
         {
-            //if (IsWrappedType)
+            this.containerPropertyName = GetContentPropertyName(mainSymbol);
+
+            this.isAlreadyContainerOfThis = Helpers.IsGenericIList(IsWrappedType ? WrappedType : mainSymbol, out var containerType);
+
+            if (containerPropertyName != null && isAlreadyContainerOfThis) throw new ArgumentException($"Type {mainSymbol.ToDisplayString()} defines IList interface, you can not use ContentProperty attribute");
+
+            if (isAlreadyContainerOfThis && (!IsWrappedType || WrappedType.IsSealed))
             {
-                this.containerPropertyName = GetContentPropertyName(mainSymbol);
-
-                var isContainerThis = Helpers.IsGenericIList(IsWrappedType ? WrappedType : mainSymbol, out var containerType);
-
-                if (containerPropertyName != null && isContainerThis) throw new ArgumentException($"Type {mainSymbol.ToDisplayString()} defines IList interface, you can not use ContentProperty attribute");
-
-                if (isContainerThis && (!IsWrappedType || WrappedType.IsSealed))
+                this.containerOfTypeName = containerType;
+                this.containerPropertyName = "this";
+                this.singleItemContainer = false;
+            }
+            else if (!isAlreadyContainerOfThis)
+            {
+                if (mainSymbol.Name.Contains("FlyoutContent"))
                 {
-                    this.containerOfTypeName = containerType;
-                    this.containerPropertyName = "this";
-                    this.singleItemContainer = false;
+
                 }
-                else if (!isContainerThis)
+
+                // if is null try to find
+                if (IsWrappedType)
                 {
-                    // if is null try to find
-                    if (IsWrappedType)
+                    if (string.IsNullOrEmpty(this.containerPropertyName))
                     {
-                        if (string.IsNullOrEmpty(this.containerPropertyName))
-                        {
-                            var propertyName = FindContentPropertyName();
-                            if (propertyName != null && string.IsNullOrEmpty(this.containerPropertyName))
-                                this.containerPropertyName = propertyName;
-                        }
+                        var propertyName = FindContentPropertyName();
+                        if (propertyName != null && string.IsNullOrEmpty(this.containerPropertyName))
+                            this.containerPropertyName = propertyName;
+                    }
+                }
+                else
+                {
+                    isNewContainer = containerPropertyName != null && IsNewPropertyContainer(mainSymbol);
+                }
+
+                if (!string.IsNullOrEmpty(this.containerPropertyName) && string.IsNullOrEmpty(containerOfTypeName))
+                {
+                    IPropertySymbol propertySymbol = FindPropertySymbolWithName(this.containerPropertyName);
+
+                    if (propertySymbol == null) throw new Exception($"No content property for: {WrappedType.Name}");
+
+                    var mauiContainerType = (INamedTypeSymbol)((propertySymbol).Type);
+                    if (Helpers.IsGenericIList(mauiContainerType, out var ofTypeName))
+                    {
+                        this.containerOfTypeName = ofTypeName;
+                        this.singleItemContainer = false;
                     }
                     else
                     {
-                        isNewContainer = containerPropertyName != null && IsNewPropertyContainer(mainSymbol);
-                    }
-
-                    if (!string.IsNullOrEmpty(this.containerPropertyName) && string.IsNullOrEmpty(containerOfTypeName))
-                    {
-                        IPropertySymbol propertySymbol = FindPropertySymbolWithName(this.containerPropertyName);
-
-                        if (propertySymbol == null) throw new Exception($"No content property for: {WrappedType.Name}");
-
-                        var mauiContainerType = (INamedTypeSymbol)((propertySymbol).Type);
-                        if (Helpers.IsGenericIList(mauiContainerType, out var ofTypeName))
-                        {
-                            this.containerOfTypeName = ofTypeName;
-                            this.singleItemContainer = false;
-                        }
-                        else
-                        {
-                            this.containerOfTypeName = mauiContainerType.ToDisplayString();
-                            this.singleItemContainer = true;
-                        }
+                        this.containerOfTypeName = mauiContainerType.ToDisplayString();
+                        this.singleItemContainer = true;
                     }
                 }
             }

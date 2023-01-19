@@ -16,4 +16,13 @@ namespace Sharp.UI
         public void Add(System.Func<object> loadTemplate) => this.LoadTemplate = loadTemplate;
     }
 
+    public class DataTemplate<T> : DataTemplate
+    {
+        public DataTemplate(System.Func<T> loadTemplate)
+            : base(() => loadTemplate())
+        {
+        }
+
+        public new T CreateContent() => (T)base.CreateContent();
+    }
 }

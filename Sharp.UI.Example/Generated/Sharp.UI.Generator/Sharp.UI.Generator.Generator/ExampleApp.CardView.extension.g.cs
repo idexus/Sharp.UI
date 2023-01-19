@@ -11,22 +11,6 @@ namespace ExampleApp
 
     public static class CardViewGeneratedSharpObjectExtension
     {
-        public static T OnClicked<T>(this T obj, System.EventHandler handler)
-            where T : ExampleApp.CardView
-        {
-            var mauiObject = MauiWrapper.Value<ExampleApp.CardView>(obj);
-            mauiObject.Clicked += handler;
-            return obj;
-        }
-        
-        public static T OnClicked<T>(this T obj, OnEventAction<T> action)
-            where T : ExampleApp.CardView
-        {
-            var mauiObject = MauiWrapper.Value<ExampleApp.CardView>(obj);
-            mauiObject.Clicked += (o, arg) => action(obj);
-            return obj;
-        }
-        
         public static T CardTitle<T>(this T obj,
             string cardTitle)
             where T : ExampleApp.CardView
@@ -298,6 +282,22 @@ namespace ExampleApp
             var mauiObject = MauiWrapper.Value<ExampleApp.CardView>(obj);
             var builder = buildBinding(new BindingBuilder<string>(mauiObject, ExampleApp.CardView.ButtonTitleProperty));
             builder.BindProperty();
+            return obj;
+        }
+        
+        public static T OnClicked<T>(this T obj, System.EventHandler handler)
+            where T : ExampleApp.CardView
+        {
+            var mauiObject = MauiWrapper.Value<ExampleApp.CardView>(obj);
+            mauiObject.Clicked += handler;
+            return obj;
+        }
+        
+        public static T OnClicked<T>(this T obj, OnEventAction<T> action)
+            where T : ExampleApp.CardView
+        {
+            var mauiObject = MauiWrapper.Value<ExampleApp.CardView>(obj);
+            mauiObject.Clicked += (o, arg) => action(obj);
             return obj;
         }
         

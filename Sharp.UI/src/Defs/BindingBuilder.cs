@@ -80,14 +80,4 @@ namespace Sharp.UI
             }
         }
     }
-
-    //public static class BindingBuilderExtension
-    //{
-    //    public static BindingBuilder<T> Converter<T, Q>(this BindingBuilder<T> bindingBuilder, Func<ConverterBuilder<T, Q>, ConverterBuilder<T, Q>> convertBuilder)
-    //    {
-    //        var builder = new ConverterBuilder<T, Q>();
-    //        bindingBuilder.converter = convertBuilder(builder).Converter;
-    //        return bindingBuilder;
-    //    }
-    //}
 }

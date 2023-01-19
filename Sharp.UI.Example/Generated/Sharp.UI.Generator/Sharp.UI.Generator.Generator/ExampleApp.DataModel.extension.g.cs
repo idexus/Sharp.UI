@@ -11,50 +11,6 @@ namespace ExampleApp
 
     public static class DataModelGeneratedSharpObjectExtension
     {
-        public static T SimpleData<T>(this T obj,
-            System.Collections.Generic.List<ExampleApp.DataModel> simpleData)
-            where T : ExampleApp.DataModel
-        {
-            var mauiObject = MauiWrapper.Value<ExampleApp.DataModel>(obj);
-            foreach (var item in simpleData)
-            {
-                var mauiItem = MauiWrapper.Value<ExampleApp.DataModel>(item);
-                ExampleApp.DataModel.SimpleData.Add(mauiItem);
-            }
-            return obj;
-        }
-
-        public static T SimpleData<T>(this T obj,
-            params ExampleApp.DataModel[] simpleData)
-            where T : ExampleApp.DataModel
-        {
-            var mauiObject = MauiWrapper.Value<ExampleApp.DataModel>(obj);
-            foreach (var item in simpleData)
-            {
-                var mauiItem = MauiWrapper.Value<ExampleApp.DataModel>(item);
-                ExampleApp.DataModel.SimpleData.Add(mauiItem);
-            }
-            return obj;
-        }
-
-        public static T SimpleData<T>(this T obj,
-            System.Func<LazyValueBuilder<System.Collections.Generic.List<ExampleApp.DataModel>>, LazyValueBuilder<System.Collections.Generic.List<ExampleApp.DataModel>>> buildValue)
-            where T : ExampleApp.DataModel
-        {
-            var mauiObject = MauiWrapper.Value<ExampleApp.DataModel>(obj);
-            var builder = buildValue(new LazyValueBuilder<System.Collections.Generic.List<ExampleApp.DataModel>>());
-            if (builder.ValueIsSet())
-            {
-                var items = builder.GetValue();
-                foreach (var item in items) 
-                {
-                    var mauiItem = MauiWrapper.Value<ExampleApp.DataModel>(item);
-                    ExampleApp.DataModel.SimpleData.Add(mauiItem);
-                }
-            }
-            return obj;
-        }
-        
         public static T Id<T>(this T obj,
             int id)
             where T : ExampleApp.DataModel
@@ -169,6 +125,50 @@ namespace ExampleApp
             var mauiObject = MauiWrapper.Value<ExampleApp.DataModel>(obj);
             var builder = buildBinding(new BindingBuilder<bool>(mauiObject, ExampleApp.DataModel.AdminProperty));
             builder.BindProperty();
+            return obj;
+        }
+        
+        public static T SimpleData<T>(this T obj,
+            System.Collections.Generic.List<ExampleApp.DataModel> simpleData)
+            where T : ExampleApp.DataModel
+        {
+            var mauiObject = MauiWrapper.Value<ExampleApp.DataModel>(obj);
+            foreach (var item in simpleData)
+            {
+                var mauiItem = MauiWrapper.Value<ExampleApp.DataModel>(item);
+                ExampleApp.DataModel.SimpleData.Add(mauiItem);
+            }
+            return obj;
+        }
+
+        public static T SimpleData<T>(this T obj,
+            params ExampleApp.DataModel[] simpleData)
+            where T : ExampleApp.DataModel
+        {
+            var mauiObject = MauiWrapper.Value<ExampleApp.DataModel>(obj);
+            foreach (var item in simpleData)
+            {
+                var mauiItem = MauiWrapper.Value<ExampleApp.DataModel>(item);
+                ExampleApp.DataModel.SimpleData.Add(mauiItem);
+            }
+            return obj;
+        }
+
+        public static T SimpleData<T>(this T obj,
+            System.Func<LazyValueBuilder<System.Collections.Generic.List<ExampleApp.DataModel>>, LazyValueBuilder<System.Collections.Generic.List<ExampleApp.DataModel>>> buildValue)
+            where T : ExampleApp.DataModel
+        {
+            var mauiObject = MauiWrapper.Value<ExampleApp.DataModel>(obj);
+            var builder = buildValue(new LazyValueBuilder<System.Collections.Generic.List<ExampleApp.DataModel>>());
+            if (builder.ValueIsSet())
+            {
+                var items = builder.GetValue();
+                foreach (var item in items) 
+                {
+                    var mauiItem = MauiWrapper.Value<ExampleApp.DataModel>(item);
+                    ExampleApp.DataModel.SimpleData.Add(mauiItem);
+                }
+            }
             return obj;
         }
         

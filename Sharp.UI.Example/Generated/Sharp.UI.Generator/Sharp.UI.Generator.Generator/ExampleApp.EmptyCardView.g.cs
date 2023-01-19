@@ -45,7 +45,7 @@ namespace ExampleApp
             get => (string)GetValue(CardTitleProperty);
             set => SetValue(CardTitleProperty, value);
         }
-        
+
         public static readonly Microsoft.Maui.Controls.BindableProperty CardDescriptionProperty =
             BindableProperty.Create(
                 nameof(CardDescription),
@@ -58,7 +58,7 @@ namespace ExampleApp
             get => (string)GetValue(CardDescriptionProperty);
             set => SetValue(CardDescriptionProperty, value);
         }
-        
+
         public static readonly Microsoft.Maui.Controls.BindableProperty CardColorProperty =
             BindableProperty.Create(
                 nameof(CardColor),
@@ -71,7 +71,7 @@ namespace ExampleApp
             get => (Microsoft.Maui.Graphics.Color)GetValue(CardColorProperty);
             set => SetValue(CardColorProperty, value);
         }
-        
+
         public static readonly Microsoft.Maui.Controls.BindableProperty BorderColorProperty =
             BindableProperty.Create(
                 nameof(BorderColor),
@@ -84,7 +84,7 @@ namespace ExampleApp
             get => (Microsoft.Maui.Graphics.Color)GetValue(BorderColorProperty);
             set => SetValue(BorderColorProperty, value);
         }
-        
+
         // ----- set value method -----
 
         public new void SetValue(Microsoft.Maui.Controls.BindableProperty property, object value)

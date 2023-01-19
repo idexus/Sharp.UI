@@ -46,7 +46,7 @@ namespace ExampleApp
             get => (double)GetValue(RawAngleProperty);
             set => SetValue(RawAngleProperty, value);
         }
-        
+
         public static readonly Microsoft.Maui.Controls.BindableProperty AngleProperty =
             BindableProperty.Create(
                 nameof(Angle),
@@ -60,7 +60,7 @@ namespace ExampleApp
             get => (double)GetValue(AngleProperty);
             set => SetValue(AngleProperty, value);
         }
-        
+
         public static readonly Microsoft.Maui.Controls.BindableProperty MaximumAngleProperty =
             BindableProperty.Create(
                 nameof(MaximumAngle),
@@ -73,7 +73,7 @@ namespace ExampleApp
             get => (double)GetValue(MaximumAngleProperty);
             set => SetValue(MaximumAngleProperty, value);
         }
-        
+
         // ----- set value method -----
 
         public new void SetValue(Microsoft.Maui.Controls.BindableProperty property, object value)

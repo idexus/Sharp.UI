@@ -61,7 +61,7 @@ namespace ExampleApp
             get => (int)GetValue(IdProperty);
             set => SetValue(IdProperty, value);
         }
-        
+
         public static readonly Microsoft.Maui.Controls.BindableProperty NameProperty =
             BindableProperty.Create(
                 nameof(Name),
@@ -74,7 +74,7 @@ namespace ExampleApp
             get => (string)GetValue(NameProperty);
             set => SetValue(NameProperty, value);
         }
-        
+
         public static readonly Microsoft.Maui.Controls.BindableProperty AdminProperty =
             BindableProperty.Create(
                 nameof(Admin),
@@ -87,7 +87,7 @@ namespace ExampleApp
             get => (bool)GetValue(AdminProperty);
             set => SetValue(AdminProperty, value);
         }
-        
+
         // ----- set value method -----
 
         public new void SetValue(Microsoft.Maui.Controls.BindableProperty property, object value)

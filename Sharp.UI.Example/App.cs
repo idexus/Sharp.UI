@@ -4,8 +4,6 @@ using Sharp.UI;
 
 public partial class App : Application
 {
-    public static int Counter = 0;
-
     public App()
     {
         MainPage = new Shell

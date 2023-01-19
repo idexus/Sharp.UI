@@ -45,7 +45,7 @@ namespace ExampleApp
             get => (string)GetValue(TitleProperty);
             set => SetValue(TitleProperty, value);
         }
-        
+
         public static readonly Microsoft.Maui.Controls.BindableProperty AuthorProperty =
             BindableProperty.Create(
                 nameof(Author),
@@ -58,7 +58,7 @@ namespace ExampleApp
             get => (string)GetValue(AuthorProperty);
             set => SetValue(AuthorProperty, value);
         }
-        
+
         // ----- set value method -----
 
         public new void SetValue(Microsoft.Maui.Controls.BindableProperty property, object value)
