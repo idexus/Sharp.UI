@@ -55,8 +55,14 @@ namespace Sharp.UI
                                         {
                                             newContentPage.BindingContext = bindingContext;
                                             if (parent is Window parentWindow) parentWindow.Page = newContentPage;
-                                            else if (parent is ShellContent parentShellContent) parentShellContent.Content = newContentPage;
-                                            //((IReloadHandler)newContentPage).Reload();
+                                            else if (parent is ShellContent parentShellContent)
+                                            {
+                                                var shellSection = parentShellContent.Parent as ShellSection;
+                                                var id = shellSection.Items.IndexOf(parentShellContent);
+                                                var newContent = new ShellContent().Content(newContentPage);
+                                                newContentPage.SetValue(Shell.PresentationModeProperty, oldContentPage.GetValue(Shell.PresentationModeProperty));
+                                                shellSection.Items[id] = newContent;
+                                            }
                                         }
                                     }
                                 }
