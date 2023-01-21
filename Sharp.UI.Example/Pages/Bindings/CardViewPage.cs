@@ -23,9 +23,20 @@ public partial class CardView : ContentView, ICardViewProperties
     public CardView()
     {
         this.BindingContext = this;
-        Content = new Border
+
+        Content =
+
+        new Border(e => e
+            .StrokeShape(new RoundRectangle().CornerRadius(10))
+            .Stroke(e => e.Path(nameof(BorderColor)))
+            .BackgroundColor(e => e.Path(nameof(CardColor)))
+            .SizeRequest(200, 300)
+            .Margin(50)
+            .Padding(20))
         {            
-            new Grid
+            new Grid(e => e
+                .RowDefinitions(e => e.Star(1).Star(2).Star(0.7))
+                .RowSpacing(10))
             {
                 new VStack
                 {
@@ -52,16 +63,9 @@ public partial class CardView : ContentView, ICardViewProperties
                     .BackgroundColor(AppColors.Gray600)
                     .TextColor(AppColors.Gray100)
                     .OnClicked((sender, e) => Clicked(sender,e))
-            }
-            .RowDefinitions(e => e.Star(1).Star(2).Star(0.7))
-            .RowSpacing(10)
-        }
-        .StrokeShape(new RoundRectangle().CornerRadius(10))
-        .Stroke(e => e.Path(nameof(BorderColor)))
-        .BackgroundColor(e => e.Path(nameof(CardColor)))
-        .SizeRequest(200, 300)
-        .Margin(50)
-        .Padding(20);
+            }            
+        };
+
     }
 }
 
