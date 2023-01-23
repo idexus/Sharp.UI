@@ -21,6 +21,8 @@ public class TestBindingsPage : ContentPage
 			new Label(out var label).Text(e => e.Path("Rotation")).BindingContext(rect),
 			new Ellipse(out var ellipse).SizeRequest(300,100).Rotation(e => e.Path("Rotation").Source(rect)).Stroke(Colors.Blue),
 			new Button("Test it")
+				.FontSize(30)
+				.Margin(20)
 				.OnClicked(e =>
 				{
 					if (rect.Rotation < 180)

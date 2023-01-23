@@ -21,13 +21,13 @@ public class AbsoluteLayoutPage : ContentPage
                     .VerticalOptions(LayoutOptions.Center)
             }
 			.BackgroundColor(Colors.Red)
-            .AbsoluteLayoutBounds(new Rect(100,100,400,400)),
+            .AbsoluteLayoutBounds(new Rect(100,100,400,300)),
 
             new Border
             {
                 new Label("This is a test", out var label)
                     .Padding(20)
-                    .FontSize(30)
+                    .FontSize(40)
                     .HorizontalOptions(LayoutOptions.Center)
                     .VerticalOptions(LayoutOptions.Center)
             }
@@ -37,8 +37,8 @@ public class AbsoluteLayoutPage : ContentPage
                 new GradientStop(Colors.Red, 0.25),
                 new GradientStop(Colors.Blue, 0.75),
                 new GradientStop(Colors.LimeGreen, 1.0)
-            })
-            .AbsoluteLayoutBounds(new Rect(600,400,300,200))
+            }) 
+            .AbsoluteLayoutBounds(new Rect(400,500,300,200))
             .Stroke(Colors.Blue)
             .StrokeThickness(4)
             .StrokeShape(new RoundRectangle().CornerRadius(40)),

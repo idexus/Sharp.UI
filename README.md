@@ -75,17 +75,16 @@ Here are some examples showing how to use the Sharp.UI library
 
 # Hot Reload
 
-[HotReloadTest](https://github.com/idexus/HotReloadTest) is a test project of working with the __Sharp.UI__ library 
-- using Visual Studio 2022 for Windows
-- using Visual Studio Code and [Reloadify3000](https://github.com/Clancey/Reloadify3000) library with [vscode-comet](https://github.com/Clancey/vscode-comet) plugin.
+You can use hot reload for content pages 
+- using Visual Studio 2022 for Mac with Sharp.UI Hot Reload extension Sharp.UI.HotReloadExt.Mac_0.1.7.mpack (supports only desktop apps)
+- using Visual Studio 2022 for Windows and `System.Reflection.Metadata.MetadataUpdateHandlerAttribute`
+- using Visual Studio Code and [Reloadify3000](https://github.com/Clancey/Reloadify3000) library with [vscode-comet](https://github.com/Clancey/vscode-comet) plugin 
 
-This is an alpha version.
+This is a proof of concept. There is no official support. Use at your own risk.
 
-Known limitations:
+_VS 2022 for Windows, and in VS Code:_ 
+_Does not work if you want to use the Sharp.UI library by project reference. Use nuget package_
 
-- Does not support MAUI shell 
-- Does not work for classes with automatically generated code, e.g. for classes with automatically generated bindable properties
-- Does not work if you want to use the Sharp.UI library by project reference. Use nuget package.
 
 # Auto-generated bindable properties
 

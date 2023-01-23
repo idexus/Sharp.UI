@@ -3,6 +3,23 @@ namespace ExampleApp;
 
 using Sharp.UI;
 
+[BindableProperties]
+public interface ListViewPageViewModelProperties
+{
+    List<DataModel> SimpleData { get; set; }
+}
+
+[SharpObject]
+public partial class ListViewPageViewModel : BindableObject, ListViewPageViewModelProperties
+{
+    public ListViewPageViewModel()
+    {
+        SimpleData = DataModel.SimpleData;
+        var test = SimpleData.First().Name;
+    }
+}
+
+[ViewModel(typeof(ListViewPageViewModel))]
 public class ListViewPage : ContentPage
 {
 	public ListViewPage()
@@ -10,11 +27,23 @@ public class ListViewPage : ContentPage
         Content = new ScrollView {
             new VStack
             {
+                new Grid(e => e
+                    .HeightRequest(80)
+                    .BackgroundColor(Colors.Gray))
+                {
+                    new Label("This is a test of ListView")
+                        .TextColor(Colors.White)
+                        .FontSize(28)
+                        .HorizontalOptions(LayoutOptions.Center)
+                        .VerticalOptions(LayoutOptions.Center)
+                },
+
                 new Label("TextCell")
                     .FontSize(40)
                     .TextColor(Colors.Red)
                     .BackgroundColor(AppColors.Gray900),
-                new ListView(DataModel.SimpleData)
+                new ListView()
+                    .ItemsSource(e => e.Path(nameof(ListViewPageViewModel.SimpleData)))
                     .ItemTemplate(() =>
                         new TextCell()
                             .Text(e => e.Path(nameof(DataModel.Name)))
@@ -25,7 +54,8 @@ public class ListViewPage : ContentPage
                     .FontSize(40)
                     .TextColor(Colors.Red)
                     .BackgroundColor(AppColors.Gray900),
-                new ListView(DataModel.SimpleData)
+                new ListView()
+                    .ItemsSource(e => e.Path(nameof(ListViewPageViewModel.SimpleData)))
                     .ItemTemplate(() =>
                         new ImageCell()
                             .ImageSource("dotnet_bot.png")
@@ -37,7 +67,8 @@ public class ListViewPage : ContentPage
                     .FontSize(40)
                     .TextColor(Colors.Red)
                     .BackgroundColor(AppColors.Gray900),
-                new ListView(DataModel.SimpleData)
+                new ListView()
+                    .ItemsSource(e => e.Path(nameof(ListViewPageViewModel.SimpleData)))
                     .ItemTemplate(() =>
                         new SwitchCell()
                             .Text(e => e.Path(nameof(DataModel.Name)))
@@ -48,7 +79,8 @@ public class ListViewPage : ContentPage
                     .FontSize(40)
                     .TextColor(Colors.Red)
                     .BackgroundColor(AppColors.Gray900),
-                new ListView(DataModel.SimpleData)
+                new ListView()
+                    .ItemsSource(e => e.Path(nameof(ListViewPageViewModel.SimpleData)))
                     .ItemTemplate(() =>
                         new EntryCell()
                             .Text(e => e.Path(nameof(DataModel.Name)))
@@ -59,7 +91,7 @@ public class ListViewPage : ContentPage
                     .TextColor(Colors.Red)
                     .BackgroundColor(AppColors.Gray900),
                 new ListView()
-                    .ItemsSource(DataModel.SimpleData)
+                    .ItemsSource(e => e.Path(nameof(ListViewPageViewModel.SimpleData)))
                     .ItemTemplate(() =>
                         new ViewCell
                         {

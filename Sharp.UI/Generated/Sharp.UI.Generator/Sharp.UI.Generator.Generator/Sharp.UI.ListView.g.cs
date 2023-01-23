@@ -32,22 +32,6 @@ namespace Sharp.UI
             configure(this);
         }
 
-        public ListView(System.Collections.IEnumerable itemsSource, out ListView listView) : this(itemsSource)
-        {
-            listView = this;
-        }
-
-        public ListView(System.Collections.IEnumerable itemsSource, System.Action<ListView> configure) : this(itemsSource)
-        {
-            configure(this);
-        }
-
-        public ListView(System.Collections.IEnumerable itemsSource, out ListView listView, System.Action<ListView> configure) : this(itemsSource)
-        {
-            listView = this;
-            configure(this);
-        }
-
         // ----- properties / events -----
 
         public new object Footer { get => base.Footer; set => base.Footer = MauiWrapper.Value<object>(value); }

@@ -11,7 +11,7 @@ public class PanGesturePage : ContentPage
 		Content = new Grid
 		{
 			new Image("dotnet_bot.png", out var image)
-				.SizeRequest(100,100)
+				.SizeRequest(150,150)
 				.GestureRecognizers(
                     new PanGestureRecognizer()
                         .OnPanUpdated((e, args) =>

@@ -2,24 +2,24 @@
 
 using Sharp.UI;
 
-public class HelloWorldPage : ContentPage
+public class HelloWorldPage : ContentPage 
 {
     int count = 0;
 
-    public HelloWorldPage()
+    public HelloWorldPage()  
 	{
-		Content = new VStack
+		Content = new VStack   
 		{			
 			new Image("dotnet_bot.png")
-				.HeightRequest(200)
-				.HorizontalOptions(LayoutOptions.Center),
+				.HeightRequest(250) 
+				.HorizontalOptions(LayoutOptions.Center), 
             
 			new Label("Welcome to .NET Multi-platform App UI")
-				.FontSize(18)
-				.HorizontalOptions(LayoutOptions.Center),
+				.FontSize(28)
+				.HorizontalOptions(LayoutOptions.Center),  
 
 			new Button("Click me")
-				.HorizontalOptions(LayoutOptions.Center)
+				.HorizontalOptions(LayoutOptions.Center) 
 				.OnClicked(button =>
 				{
                     count++;
@@ -32,3 +32,4 @@ public class HelloWorldPage : ContentPage
 		.VerticalOptions(LayoutOptions.Center); 
 	}
 }
+ 

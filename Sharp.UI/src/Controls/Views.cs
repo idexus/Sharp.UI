@@ -39,9 +39,21 @@ namespace Sharp.UI
     {
         public ContentView()
         {
+            var attribute = this.GetType().CustomAttributes.FirstOrDefault(e => e.AttributeType.Name.Equals("ViewModelAttribute"));
+
 #if DEBUG
             HotReload.RegisterActive(this);
+            if (attribute == null && HotReload.BindingContext != null) BindingContext = HotReload.BindingContext;
 #endif
+
+            if (attribute != null && BindingContext == null)
+            {
+                var type = attribute.ConstructorArguments.FirstOrDefault().Value as Type;
+                if (BindingContext == null && Application.ServiceProvider != null)
+                {
+                    BindingContext = ActivatorUtilities.GetServiceOrCreateInstance(Application.ServiceProvider, type);
+                }
+            }
         }
     }
 
@@ -108,14 +120,8 @@ namespace Sharp.UI
         }
     }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.ListView))] 
-    public partial class ListView
-    {
-        public ListView(System.Collections.IEnumerable itemsSource) : this()
-        {
-            this.ItemsSource = itemsSource;
-        }
-    }
+    [SharpObject(typeof(Microsoft.Maui.Controls.ListView))]
+    public partial class ListView { }
 
     [SharpObject(typeof(Microsoft.Maui.Controls.Picker))] 
     public partial class Picker

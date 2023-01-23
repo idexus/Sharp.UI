@@ -63,6 +63,24 @@ namespace ExampleApp
                     new DatePicker()
                         .HorizontalOptions(LayoutOptions.Center),
 
+                    new ScrollView
+                    {
+                        new CardView 
+                        {
+                            new Image("dotnet_bot.png")
+                                .Aspect(Aspect.AspectFit)
+                        }
+                        .CardTitle("My Card")
+                        .ButtonTitle("Play")
+                        .CardDescription("Do you like it?")
+                        .CardColor(Colors.Blue)
+                        .BorderColor(Colors.Red)
+                        .OnClicked(e =>
+                        {
+                            e.CardDescription = "Let's play :)";
+                        }),
+                    },
+
                     new Editor("Enter text")
                         .HeightRequest(100),
 

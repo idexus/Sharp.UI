@@ -1,4 +1,4 @@
-﻿
+﻿ 
 namespace ExampleApp;
 using Sharp.UI;
 

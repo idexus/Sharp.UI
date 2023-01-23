@@ -20,20 +20,27 @@ namespace ExampleApp
             var itemSource = DataModel.SimpleData
                 .Select((e, i) => new AlternateRowModel { DataModel = e, Id = i });
 
-            Content = new VStack
+            Content = new Grid
             {
-                new CollectionView
+                new VStack
                 {
-                    () => new Grid()
+                    new CollectionView
                     {
-                        new Label()
-                            .Text(e => e.Path("DataModel.Name"))
-                            .Style(e => e.Path("LabelStyle"))
+                        () => new Grid()
+                        {
+                            new Label()
+                                .Text(e => e.Path("DataModel.Name"))
+                                .Style(e => e.Path("LabelStyle"))
+                                .FontSize(25)
+                                .HorizontalOptions(LayoutOptions.Center)
 
+                        }
+                        .Style(e => e.Path("GridStyle"))
                     }
-                    .Style(e => e.Path("GridStyle"))
+                    .ItemsSource(itemSource)
                 }
-                .ItemsSource(itemSource)
+                .VerticalOptions(LayoutOptions.Center)
+                .Margin(20)
             };
         }
     }

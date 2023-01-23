@@ -1,4 +1,6 @@
 ﻿using System;
+using Sharp.UI;
+
 namespace ExampleApp
 {
     public static class MauiProgram
@@ -15,7 +17,12 @@ namespace ExampleApp
                 });
 #if DEBUG
             //builder.Logging.AddDebug();
+            HotReload.InitSharpUIHotReload();
 #endif
+
+            builder.Services.AddSingleton<ListViewPageViewModel>();
+            builder.Services.AddSingleton<SecondPageViewModel>();
+            
             return builder.Build();
         }
     }

@@ -21,9 +21,11 @@ public partial class SecondPageViewModel : BindableObject, ISecondPageViewModelP
     }
 }
 
+[ViewModel(typeof(SecondPageViewModel))]
 public class ViewPage : ContentPage
 {
-    SecondPageViewModel viewModel = new SecondPageViewModel();
+    SecondPageViewModel viewModel => BindingContext as SecondPageViewModel;
+
     ResourceDictionary pageResources => new ResourceDictionary
     {
         new Style<Label>
@@ -49,29 +51,31 @@ public class ViewPage : ContentPage
     public ViewPage()
     {
         this.Title = "View-Model";
-        
-        this.BindingContext = viewModel;
         this.Resources = pageResources;
 
         this.Content = new VStack
         {
-            new HStack()
-                .HorizontalOptions(LayoutOptions.Center)
-                .Children(new View[]
-                {
-                    new Label("author:"),
-                    new Label()
-                        .Text(e => e.Path("Author"))
-                        .FontSize(e => e.OnMacCatalyst(60).OniOS(70)),
-                }),
-
-            new HStack
+            new VStack
             {
-                new Label("title:"),
-                new Label()
-                    .Text(e => e.Path("Title"))
+                new HStack()
+                    .HorizontalOptions(LayoutOptions.Center)
+                    .Children(new View[]
+                    {
+                        new Label("Author : "),
+                        new Label()
+                            .Text(e => e.Path("Author"))
+                            .FontSize(e => e.OnMacCatalyst(60).OniOS(70)),
+                    }),
+
+                new HStack
+                {
+                    new Label("Title : "),
+                    new Label()
+                        .Text(e => e.Path("Title"))
+                }
+                .HorizontalOptions(LayoutOptions.Center)
             }
-            .HorizontalOptions(LayoutOptions.Center),
+            .Margin(30),
 
             new Button("Test")
                 .OnClicked(viewModel.SetAuthor)
