@@ -10,8 +10,8 @@ namespace ExampleApp
     [BindableProperties]
     public interface IMyViewModel
     {
-        public int Counter { get; set; }
-        public double SliderValue { get; set; }
+        int Counter { get; set; }
+        double SliderValue { get; set; }
     }
 
     [SharpObject]
