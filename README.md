@@ -97,8 +97,8 @@ In __Sharp.UI__ bindable properties and their float helper methods are automatic
 [BindableProperties]
 public interface IViewModelProperties
 {
-    public string Title { get; set; }
-    public string Author { get; set; }
+    string Title { get; set; }
+    string Author { get; set; }
 }
 
 [SharpObject]
