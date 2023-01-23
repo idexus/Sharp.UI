@@ -80,8 +80,6 @@ namespace Sharp.UI
         }
 
         internal static object BindingContext = null;
-
-        static SemaphoreSlim semaphore = new SemaphoreSlim(1);
         public static void TriggerHotReload()
         {            
             MainThread.BeginInvokeOnMainThread(async () =>
