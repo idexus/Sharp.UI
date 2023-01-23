@@ -5,10 +5,10 @@ using Mono.Addins.Description;
 [assembly:Addin (
 	"HotReload",
 	Namespace = "SharpUI",
-	Version = "0.1.7"
+	Version = "0.1.8"
 )]
 
 [assembly:AddinName ("Sharp.UI Hot Reload")]
 [assembly:AddinCategory ("IDE extensions")]
-[assembly:AddinDescription ("Sharp.UI Hot Reload")]
+[assembly:AddinDescription ("Sharp.UI Hot Reload for Visual Studio for Mac")]
 [assembly:AddinAuthor ("Pawel Krzywdzinski")]

@@ -13,6 +13,8 @@ namespace Sharp.UI
 
     public static class HotReload
     {
+        public static IServiceProvider ServiceProvider { get; private set; } = null;
+
         // views and pages
 
         static List<Type> replaceWithTypeList = new List<Type>();
@@ -42,15 +44,19 @@ namespace Sharp.UI
         }
 
         // Sharp.UI hot reload
-        public static void InitSharpUIHotReload()
+        public static void InitSharpUIHotReload<T>(MauiApp mauiApp)
         {
+            ServiceProvider = mauiApp.Services;
+
             Task.Run(async () =>
             {
                 while (true)
                 {
                     try
                     {
-                        using (NamedPipeServerStream pipeServer = new NamedPipeServerStream("sharpuipipe", PipeDirection.In))
+                        var pipeName = typeof(T).GetTypeInfo().Assembly.GetName().Name;
+
+                        using (NamedPipeServerStream pipeServer = new NamedPipeServerStream(pipeName, PipeDirection.In))
                         {
                             await pipeServer.WaitForConnectionAsync();
 

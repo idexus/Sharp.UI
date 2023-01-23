@@ -155,7 +155,7 @@ namespace HotReload
                     process.Start();
                     await process.WaitForExitAsync();
 
-                    using (NamedPipeClientStream pipeClient = new NamedPipeClientStream(".", "sharpuipipe", PipeDirection.Out))
+                    using (NamedPipeClientStream pipeClient = new NamedPipeClientStream(".", dllName, PipeDirection.Out))
                     {
                         // pipe connection
                         await pipeClient.ConnectAsync();

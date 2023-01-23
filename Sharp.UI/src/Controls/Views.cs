@@ -49,9 +49,9 @@ namespace Sharp.UI
             if (attribute != null && BindingContext == null)
             {
                 var type = attribute.ConstructorArguments.FirstOrDefault().Value as Type;
-                if (BindingContext == null && Application.ServiceProvider != null)
+                if (BindingContext == null && HotReload.ServiceProvider != null)
                 {
-                    BindingContext = ActivatorUtilities.GetServiceOrCreateInstance(Application.ServiceProvider, type);
+                    BindingContext = ActivatorUtilities.GetServiceOrCreateInstance(HotReload.ServiceProvider, type);
                 }
             }
         }
