@@ -145,7 +145,7 @@ namespace Sharp.UI
                         }
                     }
                 }
-                catch (Exception ex)
+                catch
                 {
 
                 }

@@ -1,8 +1,9 @@
 ﻿using System;
-using Sharp.UI;
 
 namespace ExampleApp
 {
+    using Sharp.UI;
+
     public static class MauiProgram
     {
         public static MauiApp CreateMauiApp()
@@ -22,8 +23,11 @@ namespace ExampleApp
 
             builder.Services.AddSingleton<ListViewPageViewModel>();
             builder.Services.AddSingleton<SecondPageViewModel>();
-            
-            return builder.Build();
+            builder.Services.AddSingleton<MyViewModel>();
+           
+            var mauiApp = builder.Build();
+            Application.ServiceProvider = mauiApp.Services;
+            return mauiApp;
         }
     }
 }

@@ -1,11 +1,15 @@
 ﻿ 
 namespace ExampleApp;
+
+using Microsoft.Maui;
 using Sharp.UI;
 
 public partial class App : Application
 {
     public App()
     {
+        //MainPage = new HotReloadTestPage();
+
         MainPage = new Shell
         {
             new FlyoutItem(FlyoutDisplayOptions.AsMultipleItems, e => e.Route("top"))

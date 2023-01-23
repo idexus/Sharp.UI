@@ -42,7 +42,7 @@ namespace Sharp.UI
 
 #if DEBUG
             HotReload.RegisterActive(this);
-            if (attribute == null && HotReload.BindingContext != null) BindingContext = HotReload.BindingContext;
+            if (attribute != null && HotReload.BindingContext != null) BindingContext = HotReload.BindingContext;
 #endif
 
             if (attribute != null && BindingContext == null)
