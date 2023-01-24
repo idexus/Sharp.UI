@@ -51,7 +51,23 @@ public class HelloWorldPage : ContentPage
 
 # Before you start
 
-- [Before you start](./doc/howtostart.md)
+
+If you want to use this library, you need to include the `using Sharp.UI` inside your app namespace, which replaces the standard MAUI classes.
+
+```cs
+namespace ExampleApp;
+using Sharp.UI;
+```
+
+```cs
+namespace ExampleApp
+{
+    using Sharp.UI;
+    ...
+}
+```
+
+- [Adding the library to the project](./doc/howtostart.md)
 
 # Basic Examples
 
