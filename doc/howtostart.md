@@ -1,19 +1,3 @@
-# Before you start
-
-If you want to use this library, you must include the `using Sharp.UI` inside your app namespace, which replaces the standard MAUI classes.
-
-```cs
-namespace ExampleApp;
-using Sharp.UI;
-```
-
-```cs
-namespace ExampleApp
-{
-    using Sharp.UI;
-    ...
-}
-```
 
 ## Nuget Package
 
@@ -22,13 +6,13 @@ Last relases
 ##### .NET CLI
 
 ```
-dotnet add package Sharp.UI --version 0.2.3-alpha.6
+dotnet add package Sharp.UI --version 0.2.4-alpha.1
 ```
 
 ##### Package manager
 
 ```
-NuGet\Install-Package Sharp.UI -Version 0.2.3-alpha.6
+NuGet\Install-Package Sharp.UI -Version 0.2.4-alpha.1
 ```
 
 ## VS Project Reference
