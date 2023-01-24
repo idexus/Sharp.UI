@@ -67,7 +67,9 @@ namespace ExampleApp
 }
 ```
 
-- [Adding the library to the project](./doc/howtostart.md)
+Adding the library to the project:
+
+- [Nuget package / project reference](./doc/howtostart.md)
 
 # Basic Examples
 
