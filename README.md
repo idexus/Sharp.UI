@@ -1,7 +1,7 @@
 # Overview
 __Sharp.UI__ allows you to build a .NET Multi-platform App User Interface (.NET MAUI) declaratively in C# code (with Hot Reload) using fluent methods, without the need for XAML. It is a wrapper library, mostly auto-generated.
 
-### Hot Reload Example
+### Hot Reload Example (VS2022 Mac)
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=r3Ri4VHYo7I" target="_blank">
  <img src="./doc/assets/output.gif" alt="Watch the video" width="640" height="360" border="0" />
