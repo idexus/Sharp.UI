@@ -1,29 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Addin id="HotReload" version="0.1.8" namespace="SharpUI" name="Sharp.UI Hot Reload for VS2022" author="Pawel Krzywdzinski" description="Sharp.UI Hot Reload VS2022" category="IDE extensions">
+<Addin id="HotReload" version="0.2.0" namespace="SharpUI" name="Sharp.UI Hot Reload for VS2022" author="Pawel Krzywdzinski" description="Sharp.UI Hot Reload VS2022" category="IDE extensions">
   <Runtime>
-    <Import assembly="Humanizer.dll" />
-    <Import assembly="Microsoft.Bcl.AsyncInterfaces.dll" />
     <Import assembly="Microsoft.Build.Framework.dll" />
     <Import assembly="Microsoft.Build.Tasks.Core.dll" />
     <Import assembly="Microsoft.Build.Utilities.Core.dll" />
-    <Import assembly="Microsoft.CodeAnalysis.CSharp.dll" />
-    <Import assembly="Microsoft.CodeAnalysis.CSharp.Workspaces.dll" />
-    <Import assembly="Microsoft.CodeAnalysis.dll" />
-    <Import assembly="Microsoft.CodeAnalysis.VisualBasic.dll" />
-    <Import assembly="Microsoft.CodeAnalysis.VisualBasic.Workspaces.dll" />
-    <Import assembly="Microsoft.CodeAnalysis.Workspaces.dll" />
     <Import assembly="Microsoft.NET.StringTools.dll" />
     <Import assembly="Microsoft.Win32.SystemEvents.dll" />
     <Import assembly="SharpUI.HotReload.dll" />
     <Import assembly="System.CodeDom.dll" />
-    <Import assembly="System.Composition.AttributedModel.dll" />
-    <Import assembly="System.Composition.Convention.dll" />
-    <Import assembly="System.Composition.Hosting.dll" />
-    <Import assembly="System.Composition.Runtime.dll" />
-    <Import assembly="System.Composition.TypedParts.dll" />
     <Import assembly="System.Configuration.ConfigurationManager.dll" />
     <Import assembly="System.Drawing.Common.dll" />
-    <Import assembly="System.IO.Pipelines.dll" />
     <Import assembly="System.Resources.Extensions.dll" />
     <Import assembly="System.Security.Cryptography.Pkcs.dll" />
     <Import assembly="System.Security.Cryptography.ProtectedData.dll" />

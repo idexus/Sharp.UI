@@ -20,13 +20,13 @@ public partial class CardView : ContentView, ICardViewProperties
 {
     public event EventHandler Clicked;
 
-    public CardView()  
+    public CardView() 
     {
         BindingContext = this;
 
         Content =
             new Border(e => e
-                .StrokeShape(new RoundRectangle().CornerRadius(10))
+                .StrokeShape(new RoundRectangle().CornerRadius(10)) 
                 .Stroke(e => e.Path(nameof(BorderColor)))
                 .BackgroundColor(e => e.Path(nameof(CardColor)))
                 .SizeRequest(200, 300)
@@ -67,7 +67,7 @@ public partial class CardView : ContentView, ICardViewProperties
     }
 }
 
-public class CardViewPage : ContentPage
+public partial class CardViewPage : ContentPage
 {    
     public CardViewPage()
     {
@@ -79,11 +79,16 @@ public class CardViewPage : ContentPage
 
         this.Content = new VStack
         {
+            new Label(out var label)
+                .Text($"Counter {counter}")
+                .FontSize(30)
+                .Margin(40),
+
             new Slider(1,100, out var slider),
 
             new HStack
             {
-                new ScrollView  
+                new ScrollView
                 {
                     new CardView(out var cardNo1)
                     {
@@ -112,11 +117,16 @@ public class CardViewPage : ContentPage
                     }
                 }
                 .CardTitle("Title 2")
-                .ButtonTitle("Stop")
                 .CardDescription("Yes I do")
                 .CardColor(Colors.Red)
                 .BorderColor(Colors.Blue)
                 .DescriptionStyle(labelStyle)
+                .ButtonTitle("Count")
+                .OnClicked(button =>
+                {
+                    counter += 1;
+                    label.Text = $"Counter {counter}";
+                })
             }
             .HorizontalOptions(LayoutOptions.Center)
         }

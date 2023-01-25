@@ -5,7 +5,7 @@ using Mono.Addins.Description;
 [assembly:Addin (
 	"HotReload",
 	Namespace = "SharpUI",
-	Version = "0.1.8"
+	Version = "0.2.0"
 )]
 
 [assembly:AddinName ("Sharp.UI Hot Reload")]

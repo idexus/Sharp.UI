@@ -5,10 +5,11 @@ using System.Text.Json;
 
 namespace Sharp.UI
 {
-    class HotReloadData
+    public class HotReloadData
     {
-        public string DllFileName { get; set; }
         public string[] TypeNames { get; set; }
+        public byte[] AssemblyData { get; set; }
+        public byte[] PdbData { get; set; }
     }
 
     public static class HotReload
@@ -65,7 +66,7 @@ namespace Sharp.UI
 
                             var hotReloadData = JsonSerializer.Deserialize<HotReloadData>(jsonData);
 
-                            var assembly = Assembly.LoadFile($"{hotReloadData.DllFileName}.dll");
+                            var assembly = Assembly.Load(hotReloadData.AssemblyData, hotReloadData.PdbData);
 
                             MainThread.BeginInvokeOnMainThread(() =>
                             {
@@ -80,7 +81,6 @@ namespace Sharp.UI
                         }
                     }
                     catch { }
-                    await Task.Delay(1000);
                 }
             });
         }

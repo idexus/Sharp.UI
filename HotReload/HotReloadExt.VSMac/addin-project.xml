@@ -1,6 +1,6 @@
 <AddinProject appVersion="0.1.0">
 	<Project>
-		<AddinFile>HotReloadExt/bin/Debug/HotReload.dll</AddinFile>
+		<AddinFile>HotReloadExt.VSMac/bin/Debug/net7.0/SharpUI.HotReload.dll</AddinFile>
 		<BuildFile>HotReloadExt.sln</BuildFile>
 		<BuildConfiguration>Debug</BuildConfiguration>
 	</Project>

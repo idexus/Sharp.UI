@@ -13,11 +13,5 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudioMac.Sdk" Version="17.4.0" />
-    <PackageReference Include="Microsoft.CodeAnalysis" Version="4.4.0" />
-    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.4.0" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Remove="Microsoft.CodeAnalysis" />
-    <None Remove="Microsoft.CodeAnalysis.CSharp" />
   </ItemGroup>
 </Project>
