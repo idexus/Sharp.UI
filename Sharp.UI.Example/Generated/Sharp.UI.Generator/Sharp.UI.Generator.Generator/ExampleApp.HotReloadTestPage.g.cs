@@ -13,17 +13,35 @@ namespace ExampleApp
     {
         // ----- constructors -----
 
-        public HotReloadTestPage(out HotReloadTestPage hotReloadTestPage) : this()
+        public HotReloadTestPage() { }
+
+        public HotReloadTestPage(out HotReloadTestPage hotReloadTestPage) 
         {
             hotReloadTestPage = this;
         }
 
-        public HotReloadTestPage(System.Action<HotReloadTestPage> configure) : this()
+        public HotReloadTestPage(System.Action<HotReloadTestPage> configure) 
         {
             configure(this);
         }
 
-        public HotReloadTestPage(out HotReloadTestPage hotReloadTestPage, System.Action<HotReloadTestPage> configure) : this()
+        public HotReloadTestPage(out HotReloadTestPage hotReloadTestPage, System.Action<HotReloadTestPage> configure) 
+        {
+            hotReloadTestPage = this;
+            configure(this);
+        }
+
+        public HotReloadTestPage(ExampleApp.MyViewModel viewModel, out HotReloadTestPage hotReloadTestPage) : this(viewModel)
+        {
+            hotReloadTestPage = this;
+        }
+
+        public HotReloadTestPage(ExampleApp.MyViewModel viewModel, System.Action<HotReloadTestPage> configure) : this(viewModel)
+        {
+            configure(this);
+        }
+
+        public HotReloadTestPage(ExampleApp.MyViewModel viewModel, out HotReloadTestPage hotReloadTestPage, System.Action<HotReloadTestPage> configure) : this(viewModel)
         {
             hotReloadTestPage = this;
             configure(this);

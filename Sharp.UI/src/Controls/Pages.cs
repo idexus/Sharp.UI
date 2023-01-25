@@ -38,21 +38,10 @@ namespace Sharp.UI
     {
         public ContentPage()
         {
-            var attribute = this.GetType().CustomAttributes.FirstOrDefault(e => e.AttributeType.Name.Equals("ViewModelAttribute"));
-
 #if DEBUG
             HotReload.RegisterActive(this);
-            if (attribute != null && HotReload.BindingContext != null) BindingContext = HotReload.BindingContext;
+            if (HotReload.BindingContext != null) BindingContext = HotReload.BindingContext;
 #endif
-
-            if (attribute != null && BindingContext == null)
-            {
-                var type = attribute.ConstructorArguments.FirstOrDefault().Value as Type;
-                if (BindingContext == null && HotReload.ServiceProvider != null)
-                {
-                    BindingContext = ActivatorUtilities.GetServiceOrCreateInstance(HotReload.ServiceProvider, type);
-                }
-            }
         }
 
         public ContentPage(string title) : this()

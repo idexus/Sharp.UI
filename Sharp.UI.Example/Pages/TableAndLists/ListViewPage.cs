@@ -3,27 +3,15 @@ namespace ExampleApp;
 
 using Sharp.UI;
 
-[BindableProperties]
-public interface ListViewPageViewModelProperties
-{
-    List<DataModel> SimpleData { get; set; }
-}
 
-[SharpObject]
-public partial class ListViewPageViewModel : BindableObject, ListViewPageViewModelProperties
-{
-    public ListViewPageViewModel()
-    {
-        SimpleData = DataModel.SimpleData;
-        var test = SimpleData.First().Name;
-    }
-}
-
-[ViewModel(typeof(ListViewPageViewModel))]
 public class ListViewPage : ContentPage
 {
-	public ListViewPage()
+    ListViewPageViewModel viewModel => BindingContext as ListViewPageViewModel;
+
+    public ListViewPage(ListViewPageViewModel viewModel)
 	{
+        BindingContext = viewModel;
+
         Content = new ScrollView {
             new VStack
             {

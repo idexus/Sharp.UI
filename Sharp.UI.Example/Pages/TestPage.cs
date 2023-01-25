@@ -53,7 +53,7 @@ namespace ExampleApp
                         new GradientStop(Colors.Blue, 0.75),
                         new GradientStop(Colors.LimeGreen, 1.0)
                     })
-                    .SizeRequest(400,200)
+                    .SizeRequest(300,150)
                     .Stroke(Colors.Blue)
                     .StrokeThickness(4)
                     .StrokeShape(new RoundRectangle().CornerRadius(40)),

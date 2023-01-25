@@ -104,7 +104,10 @@ namespace Sharp.UI
 
                                 // reload binding context
                                 BindingContext = activeObject.BindingContext;
-                                var newObject = toReloadType.GetConstructors().Where(e => e.GetParameters().Count() == 0).FirstOrDefault().Invoke(null);
+
+                                //var newObject = toReloadType.GetConstructors().Where(e => e.GetParameters().Count() == 0).FirstOrDefault().Invoke(null);
+
+                                var newObject = ActivatorUtilities.GetServiceOrCreateInstance(HotReload.ServiceProvider, toReloadType);
 
                                 var parent = activeObject.Parent;
                                 if (newObject is ContentPage newContentPage && activeObject is ContentPage oldContentPage)

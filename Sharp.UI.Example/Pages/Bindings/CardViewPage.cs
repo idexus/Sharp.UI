@@ -116,7 +116,7 @@ public partial class CardViewPage : ContentPage
                             .TextColor(AppColors.Gray200)
                     }
                 }
-                .CardTitle("Title 2")
+                .CardTitle("Title")
                 .CardDescription("Yes I do")
                 .CardColor(Colors.Red)
                 .BorderColor(Colors.Blue)

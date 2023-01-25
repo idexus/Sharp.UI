@@ -1,42 +1,18 @@
 ﻿using System;
 namespace ExampleApp
 {
-
     using Sharp.UI;
-    using System.Diagnostics.Metrics;
-    using System.Linq;
-    using System.Windows.Input;
-
-    [BindableProperties]
-    public interface IMyViewModel
-    {
-        int Counter { get; set; }
-        double SliderValue { get; set; }
-    }
 
     [SharpObject]
-    public partial class MyViewModel : BindableObject, IMyViewModel
-    {
-        public ICommand CountCommand { get; }
-
-        public MyViewModel()
-        {
-            CountCommand = new Command(Count);
-        }
-
-        public void Count()
-        {
-            Counter += 1;
-        }
-    }
-
-    [SharpObject]
-    [ViewModel(typeof(MyViewModel))]
     public partial class HotReloadTestPage : ContentPage
     {
-        public HotReloadTestPage()
+        MyViewModel viewModel => BindingContext as MyViewModel;
+
+        public HotReloadTestPage(MyViewModel viewModel)
         {
+            BindingContext = viewModel;
             Resources = AppResources.Default;
+
             Content = new Grid
             {
                 new VStack
