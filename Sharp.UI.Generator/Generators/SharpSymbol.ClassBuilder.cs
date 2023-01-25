@@ -681,7 +681,7 @@ namespace {nameSpaceString}
             if (!notGenerateList.Contains(eventSymbol.Name))
             {
                 builder.Append($@"
-        public event {eventHandler.ToDisplayString()} {eventSymbol.Name} {{ add => MauiObject.{eventSymbol.Name} += value; remove => MauiObject.{eventSymbol.Name} -= value; }}");
+        public event {eventHandler.Type.ToDisplayString()} {eventSymbol.Name} {{ add => MauiObject.{eventSymbol.Name} += value; remove => MauiObject.{eventSymbol.Name} -= value; }}");
             }
         }
 
