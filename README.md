@@ -140,12 +140,13 @@ public partial class ViewModel : BindableObject, IViewModelProperties
 ### View
 
 ```cs
-[ViewModel(typeof(ViewModel))]
 public class ViewPage : ContentPage
 {
-    public ViewPage()
+    public ViewPage(ViewModel viewModel)
     {
-        this.Content = new VStack
+        BindingContext = viewModel;
+       
+        Content = new VStack
         {
             new HStack
             {
