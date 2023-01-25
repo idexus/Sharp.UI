@@ -25,7 +25,7 @@ public class ExamplePage : ContentPage
             new VStack
             {
                 new Label("This is a test"),
-
+                
                 new HStack {
                     new Label("It is a simple label", out var label1),
                     new Label().Text(" (+)"),

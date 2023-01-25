@@ -122,10 +122,16 @@ namespace Sharp.UI
                                             var newShellContent = new ShellContent();
                                             newShellContent.Content = newContentPage;
                                             newShellContent.Title = oldShellContent.Title;
-                                            shellSection.Items[id] = newShellContent;
-                                            shellSection.CurrentItem = newShellContent;
 
-                                            await Shell.Current.GoToAsync($"///{shellSection.Items[id].Route}", false);
+                                            if (shellSection.CurrentItem == oldShellContent)
+                                            {
+                                                shellSection.Items[id] = newShellContent;
+                                                shellSection.CurrentItem = newShellContent;
+
+                                                await Shell.Current.GoToAsync($"///{shellSection.Items[id].Route}", false);
+                                            }
+                                            else
+                                                shellSection.Items[id] = newShellContent;
                                         }
                                     }
                                 }
