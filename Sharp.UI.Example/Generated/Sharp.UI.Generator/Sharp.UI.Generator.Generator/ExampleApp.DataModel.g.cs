@@ -13,24 +13,6 @@ namespace ExampleApp
     {
         // ----- constructors -----
 
-        public DataModel() { }
-
-        public DataModel(out DataModel dataModel) 
-        {
-            dataModel = this;
-        }
-
-        public DataModel(System.Action<DataModel> configure) 
-        {
-            configure(this);
-        }
-
-        public DataModel(out DataModel dataModel, System.Action<DataModel> configure) 
-        {
-            dataModel = this;
-            configure(this);
-        }
-
         public DataModel(int id, string name, bool admin, out DataModel dataModel) : this(id, name, admin)
         {
             dataModel = this;

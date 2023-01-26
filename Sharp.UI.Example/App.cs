@@ -8,8 +8,8 @@ public partial class App : Application
 {
     public App()
     {
-        //MainPage = new HotReloadTestPage();
-
+        //MainPage =  ActivatorUtilities.GetServiceOrCreateInstance<HotReloadTestPage>(Application.Services);
+        
         MainPage = new Shell
         {
             new FlyoutItem(FlyoutDisplayOptions.AsMultipleItems, e => e.Route("top"))

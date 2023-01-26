@@ -5,6 +5,7 @@
     <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
     <OutputType>Library</OutputType>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
 
     <PackageId>Sharp.UI.Generator</PackageId>
 		<Version>0.2.0-beta</Version>

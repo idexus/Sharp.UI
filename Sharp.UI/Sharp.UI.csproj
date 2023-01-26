@@ -38,6 +38,9 @@
 		<ProjectReference Include="..\Sharp.UI.Generator\Sharp.UI.Generator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
 	</ItemGroup>
 	<ItemGroup>
+	  <None Remove="src\AppBuilder\" />
+	</ItemGroup>
+	<ItemGroup>
       <None Include="..\Sharp.UI.Generator\bin\$(Configuration)\netstandard2.0\Sharp.UI.Generator.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
     </ItemGroup>
 
@@ -49,5 +52,8 @@
 		<Compile Remove="$(CompilerGeneratedFilesOutputPath)/**/*.cs" />
 	    <None Include="$(CompilerGeneratedFilesOutputPath)/Sharp.UI.Generator/**/*.cs" />
 		<None Include="docs\README.md" Pack="true" PackagePath="\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="src\AppBuilder\" />
 	</ItemGroup>
 </Project>

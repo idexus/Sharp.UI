@@ -14,8 +14,6 @@ namespace Sharp.UI
 
     public static partial class HotReload
     {
-        static IServiceProvider serviceProvider;
-
         // views and pages
 
         static List<Type> replaceWithTypeList = new List<Type>();
@@ -45,10 +43,8 @@ namespace Sharp.UI
         }
 
         // Sharp.UI hot reload
-        public static void InitSharpUIHotReload<T>(IServiceProvider services)
+        internal static void InitSharpUIHotReload<T>()
         {
-            serviceProvider = services;
-
             Task.Run(async () =>
             {
                 while (true)
@@ -88,7 +84,7 @@ namespace Sharp.UI
         internal static object BindingContext = null;
         public static void TriggerHotReload()
         {            
-            MainThread.BeginInvokeOnMainThread(async () =>
+            MainThread.BeginInvokeOnMainThread(() =>
             {
                 try
                 {
@@ -105,7 +101,7 @@ namespace Sharp.UI
                                 // reload binding context
                                 BindingContext = activeObject.BindingContext;
 
-                                var newObject = ActivatorUtilities.GetServiceOrCreateInstance(serviceProvider, toReloadType);
+                                var newObject = ActivatorUtilities.GetServiceOrCreateInstance(Application.Services, toReloadType);
 
                                 var parent = activeObject.Parent;
                                 if (newObject is ContentPage newContentPage && activeObject is ContentPage oldContentPage)
@@ -144,11 +140,7 @@ namespace Sharp.UI
                         }
                     }
                 }
-                catch
-                {
-
-                }
-
+                catch { }
                 replaceWithTypeList.Clear();
             });
         }
