@@ -106,18 +106,43 @@ namespace HotReload
             return classList;
         }
 
+        string GetFrameworkShortName()
+        {
+            dynamic dynamic_target = IdeApp.Workspace.ActiveExecutionTarget;
+            return dynamic_target.FrameworkShortName; // e.g. "net7.0-maccatalyst"
+        }
+
+        string GetDllOutputhPath(string activeProjectName)
+        {
+            var basePath = ActiveProject.MSBuildProject.BaseDirectory;
+
+            var configuration = IdeApp.Workspace.ActiveConfiguration;
+            var configurationName = configuration.ToString();
+
+            dynamic dynamic_target = IdeApp.Workspace.ActiveExecutionTarget;
+            string frameworkShortName = dynamic_target.FrameworkShortName; // e.g. "net7.0-maccatalyst"
+            string runtimeIdentifier = dynamic_target.RuntimeIdentifier; // "maccatalyst-x64"
+
+            var runtimeTail = !string.IsNullOrEmpty(runtimeIdentifier) ? $"/{runtimeIdentifier}" : "";
+
+            return $"{basePath}/bin/{configurationName}/{frameworkShortName}{runtimeTail}/{activeProjectName}.dll";
+        }
+
         async Task CompileAndEmitChanges(string activeProjectName, IEnumerable<string> changedFilePaths)
         {
             try
             {
                 asseblyVersion++;
 
+                var dllOutputhPath = GetDllOutputhPath(activeProjectName);
+                string frameworkShortName = GetFrameworkShortName();
+
                 // ------ Microsoft.CodeAnalysis projects ------
 
                 var typeService = await Runtime.GetService<TypeSystemService>();
                 var solution = typeService.Workspace.CurrentSolution;
                 var projects = solution.Projects;
-                var activeProject = solution.Projects.FirstOrDefault(e => e.AssemblyName.Equals(activeProjectName));
+                var activeProject = solution.Projects.FirstOrDefault(e => e.AssemblyName.Equals(activeProjectName) && e.Name.Contains(frameworkShortName));
                 var referencedProjects = activeProject.ProjectReferences?.Select(e => solution.Projects.FirstOrDefault(x => x.Id == e.ProjectId));
                 var generators = activeProject.AnalyzerReferences.SelectMany(e => e.GetGeneratorsForAllLanguages());
                 var includedProjects = referencedProjects?.ToList() ?? new List<Microsoft.CodeAnalysis.Project>();
@@ -169,7 +194,7 @@ namespace HotReload
                 // --------- metadata reference ---------
 
                 List<MetadataReference> metadataReferences = new List<MetadataReference>();
-                metadataReferences.AddRange(includedProjects.Select(e => MetadataReference.CreateFromFile(e.OutputFilePath)));
+                metadataReferences.AddRange(includedProjects.Select(e => MetadataReference.CreateFromFile(dllOutputhPath)));
                 metadataReferences.AddRange(compilation.References);
 
                 // --------- new compilation ------------

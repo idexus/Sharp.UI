@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Addin id="HotReload" version="0.2.0" namespace="SharpUI" name="Sharp.UI Hot Reload for VS2022" author="Pawel Krzywdzinski" description="Sharp.UI Hot Reload VS2022" category="IDE extensions">
+<Addin id="HotReload" version="0.2.1" namespace="SharpUI" name="Sharp.UI Hot Reload for VS2022" author="Pawel Krzywdzinski" description="Sharp.UI Hot Reload VS2022" category="IDE extensions">
   <Runtime>
     <Import assembly="Microsoft.Build.Framework.dll" />
     <Import assembly="Microsoft.Build.Tasks.Core.dll" />
