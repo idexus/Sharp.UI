@@ -10,7 +10,7 @@ namespace ExampleApp
         {
             var builder = MauiApp.CreateBuilder();
             builder
-                .EnableSharpUIHotReload<App>()
+                .SharpUIApplication<App>()
                 .UseMauiApp<App>()            
                 .ConfigureFonts(fonts =>
                 {

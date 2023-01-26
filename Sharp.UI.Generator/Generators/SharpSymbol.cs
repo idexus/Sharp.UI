@@ -149,12 +149,17 @@ namespace Sharp.UI.Generator
         void SetupConstructorsGeneration()
         {
             this.generateNoParamConstructor = true;
-            if (mainSymbol.Constructors.FirstOrDefault(e => e.Parameters.Count() == 0 && !e.IsImplicitlyDeclared) != null)
+            if (mainSymbol.Constructors.Any(e => e.Parameters.Count() == 0 && !e.IsImplicitlyDeclared))
                 this.generateNoParamConstructor = false;
 
             if (IsWrappedType)
             {
                 if (WrappedType.Constructors.FirstOrDefault(e => e.Parameters.Count() == 0) == null)
+                    this.generateNoParamConstructor = false;
+            }
+            else
+            {
+                if (mainSymbol.Constructors.Any(e => e.Parameters.Count() > 0))
                     this.generateNoParamConstructor = false;
             }
 

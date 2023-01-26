@@ -26,7 +26,7 @@ public partial class CardView : ContentView, ICardViewProperties
 
         Content =
             new Border(e => e
-                .StrokeShape(new RoundRectangle().CornerRadius(10)) 
+                .StrokeShape(new RoundRectangle().CornerRadius(20)) 
                 .Stroke(e => e.Path(nameof(BorderColor)))
                 .BackgroundColor(e => e.Path(nameof(CardColor)))
                 .SizeRequest(200, 300)
