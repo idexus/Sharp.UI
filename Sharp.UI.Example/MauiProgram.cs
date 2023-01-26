@@ -10,6 +10,7 @@ namespace ExampleApp
         {
             var builder = MauiApp.CreateBuilder();
             builder
+                .EnableSharpUIHotReload<App>()
                 .UseMauiApp<App>()            
                 .ConfigureFonts(fonts =>
                 {
@@ -24,13 +25,7 @@ namespace ExampleApp
             builder.Services.AddSingleton<ListViewPage>();
             builder.Services.AddSingleton<SecondPage>();
 
-            var mauiApp = builder.Build();
-
-#if DEBUG
-            HotReload.InitSharpUIHotReload<App>(mauiApp);
-#endif
-
-            return mauiApp;
+            return builder.Build();
         }
     }
 }

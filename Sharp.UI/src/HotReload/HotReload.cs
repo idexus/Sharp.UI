@@ -12,9 +12,9 @@ namespace Sharp.UI
         public byte[] PdbData { get; set; }
     }
 
-    public static class HotReload
+    public static partial class HotReload
     {
-        public static IServiceProvider ServiceProvider { get; private set; } = null;
+        static IServiceProvider serviceProvider;
 
         // views and pages
 
@@ -45,9 +45,9 @@ namespace Sharp.UI
         }
 
         // Sharp.UI hot reload
-        public static void InitSharpUIHotReload<T>(MauiApp mauiApp)
+        public static void InitSharpUIHotReload<T>(IServiceProvider services)
         {
-            ServiceProvider = mauiApp.Services;
+            serviceProvider = services;
 
             Task.Run(async () =>
             {
@@ -105,9 +105,7 @@ namespace Sharp.UI
                                 // reload binding context
                                 BindingContext = activeObject.BindingContext;
 
-                                //var newObject = toReloadType.GetConstructors().Where(e => e.GetParameters().Count() == 0).FirstOrDefault().Invoke(null);
-
-                                var newObject = ActivatorUtilities.GetServiceOrCreateInstance(HotReload.ServiceProvider, toReloadType);
+                                var newObject = ActivatorUtilities.GetServiceOrCreateInstance(serviceProvider, toReloadType);
 
                                 var parent = activeObject.Parent;
                                 if (newObject is ContentPage newContentPage && activeObject is ContentPage oldContentPage)
@@ -115,23 +113,11 @@ namespace Sharp.UI
                                     if (oldContentPage != newContentPage)
                                     {
                                         if (parent is Window parentWindow) parentWindow.Page = newContentPage;
-                                        else if (parent is ShellContent oldShellContent)
+                                        else if (parent is ShellContent shellContent)
                                         {
-                                            var shellSection = oldShellContent.Parent as ShellSection;
-                                            var id = shellSection.Items.IndexOf(oldShellContent);
-                                            var newShellContent = new ShellContent();
-                                            newShellContent.Content = newContentPage;
-                                            newShellContent.Title = oldShellContent.Title;
-
-                                            if (shellSection.CurrentItem == oldShellContent)
-                                            {
-                                                shellSection.Items[id] = newShellContent;
-                                                shellSection.CurrentItem = newShellContent;
-
-                                                await Shell.Current.GoToAsync($"///{shellSection.Items[id].Route}", false);
-                                            }
-                                            else
-                                                shellSection.Items[id] = newShellContent;
+                                            shellContent.ContentTemplate = null;
+                                            shellContent.Content = newContentPage;
+                                            if (newContentPage.Handler == null) newContentPage.Handler = oldContentPage.Handler;
                                         }
                                     }
                                 }

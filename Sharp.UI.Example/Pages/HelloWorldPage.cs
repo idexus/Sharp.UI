@@ -5,7 +5,7 @@ using Sharp.UI;
 [SharpObject]
 public partial class HelloWorldPage : ContentPage 
 {
-    int count = 0;
+    int count = 0; 
 
     public HelloWorldPage()
 	{
@@ -13,11 +13,11 @@ public partial class HelloWorldPage : ContentPage
 		{			
 			new Image("dotnet_bot.png", out var image)        
 				.HeightRequest(250) 
-				.HorizontalOptions(LayoutOptions.Center), 
-            
-			new Label("Welcome to .NET Multi-platform App UI")
-				.FontSize(30)
 				.HorizontalOptions(LayoutOptions.Center),
+
+			new Label("Welcome to .NET Multi-platform App UI")
+                .FontSize(30)
+                .HorizontalOptions(LayoutOptions.Center),
 
             new Button("Click me")
 				.HorizontalOptions(LayoutOptions.Center) 
