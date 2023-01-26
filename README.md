@@ -124,13 +124,7 @@ public interface IViewModelProperties
 [SharpObject]
 public partial class ViewModel : BindableObject, IViewModelProperties
 {
-    public ViewModel()
-    {
-        SetAuthorCommand = new Command(SetAuthor);
-    }
-
-    public ICommand SetAuthorCommand { get; }
-    public void SetAuthor()
+    public void SetAuthor(Button button)
     {
         this.Title = "Tosca";
         this.Author = "Puccini";
@@ -142,6 +136,8 @@ public partial class ViewModel : BindableObject, IViewModelProperties
 ```cs
 public class ViewPage : ContentPage
 {
+    ViewModel viewModel => BindingContext as ViewModel;
+
     public ViewPage(ViewModel viewModel)
     {
         BindingContext = viewModel;
@@ -160,8 +156,9 @@ public class ViewPage : ContentPage
                 new Label().Text(e => e.Path("Title"))
             },
 
-            new Button("Test")
-                .Command(e => e.Path("SetAuthorCommand"))
+            new Button("Test
+                .FontSize(100)
+                .OnClicked(viewModel.SetAuthor)
         };
     }
 }
