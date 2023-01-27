@@ -48,6 +48,22 @@ namespace Sharp.UI
             configure(this);
         }
 
+        public DataTemplate(System.Type type, out DataTemplate dataTemplate) : this(type)
+        {
+            dataTemplate = this;
+        }
+
+        public DataTemplate(System.Type type, System.Action<DataTemplate> configure) : this(type)
+        {
+            configure(this);
+        }
+
+        public DataTemplate(System.Type type, out DataTemplate dataTemplate, System.Action<DataTemplate> configure) : this(type)
+        {
+            dataTemplate = this;
+            configure(this);
+        }
+
         // ----- properties / events -----
 
 

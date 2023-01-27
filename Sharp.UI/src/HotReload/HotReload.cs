@@ -5,7 +5,12 @@ using System.Text.Json;
 
 namespace Sharp.UI
 {
-    public class HotReloadData
+    class HotReloadRequest
+    {
+        public string[] TypeNames { get; set; }
+    }
+
+    class HotReloadData
     {
         public string[] TypeNames { get; set; }
         public byte[] AssemblyData { get; set; }
@@ -14,35 +19,45 @@ namespace Sharp.UI
 
     public static partial class HotReload
     {
-        // views and pages
+        static List<ContentPage> registeredActivePages = new List<ContentPage>();
 
-        static List<Type> replaceWithTypeList = new List<Type>();
-        static List<Element> registeredActiveList = new List<Element>();
+        internal static Dictionary<string, Type> ReplacedTypesDict = new Dictionary<string, Type>();
 
-        public static void RegisterActive(Element element)
-        {
-            registeredActiveList.Add(element);
-        }
+        // --------- public -----------
 
         public static void UpdateApplication(Type[] types)
         {
             MainThread.BeginInvokeOnMainThread(() =>
             {
                 foreach (var type in types)
-                    HotReload.replaceWithTypeList.Add(type);
+                    ReplacedTypesDict[type.FullName] = type;
+                InvokeHotReload();
             });
-            TriggerHotReload();
         }
 
         public static void ReplaceWithType(Type type)
         {
             MainThread.BeginInvokeOnMainThread(() =>
             {
-                replaceWithTypeList.Add(type);
+                ReplacedTypesDict[type.FullName] = type;
             });
         }
 
-        // Sharp.UI hot reload
+        public static void TriggerHotReload()
+        {
+            MainThread.BeginInvokeOnMainThread(() =>
+            {
+                InvokeHotReload();
+            });
+        }
+
+        // ------------ internal/private -----------
+
+        internal static void RegisterActive(ContentPage page)
+        {
+            registeredActivePages.Add(page);
+        }
+
         internal static void InitSharpUIHotReload<T>()
         {
             Task.Run(async () =>
@@ -53,14 +68,37 @@ namespace Sharp.UI
                     {
                         var pipeName = typeof(T).GetTypeInfo().Assembly.GetName().Name;
 
-                        using (NamedPipeServerStream pipeServer = new NamedPipeServerStream(pipeName, PipeDirection.In))
+                        using (NamedPipeServerStream pipeServer = new NamedPipeServerStream(pipeName, PipeDirection.InOut))
                         {
                             await pipeServer.WaitForConnectionAsync();
+
+                            // ------- reequest types ---------
+
+                            var requestedTypeNames = registeredActivePages
+                                    .Select(e => e.GetType().FullName)
+                                    .Distinct()
+                                    .ToList();
+
+                            requestedTypeNames.AddRange(ReplacedTypesDict.Keys);
+
+                            var hotReloadRequest = new HotReloadRequest
+                            {
+                                TypeNames = requestedTypeNames.Distinct().ToArray()
+                            };
+
+                            var streamWriter = new StreamWriter(pipeServer);
+                            streamWriter.AutoFlush = true;
+                            var jsonRequest = JsonSerializer.Serialize(hotReloadRequest);
+                            await streamWriter.WriteLineAsync(jsonRequest);
+
+                            // --------- Hot Reload assembly data ----------
 
                             var streamReader = new StreamReader(pipeServer);
                             var jsonData = await streamReader.ReadLineAsync();
 
                             var hotReloadData = JsonSerializer.Deserialize<HotReloadData>(jsonData);
+
+                            // --------- load, register and hot reload ----------
 
                             var assembly = Assembly.Load(hotReloadData.AssemblyData, hotReloadData.PdbData);
 
@@ -69,11 +107,10 @@ namespace Sharp.UI
                                 foreach (var typeName in hotReloadData.TypeNames)
                                 {
                                     var type = assembly.GetType(typeName);
-                                    HotReload.replaceWithTypeList.Add(type);
+                                    ReplacedTypesDict[type.FullName] = type;
                                 }
+                                InvokeHotReload();
                             });
-
-                            TriggerHotReload();
                         }
                     }
                     catch { }
@@ -82,67 +119,53 @@ namespace Sharp.UI
         }
 
         internal static object BindingContext = null;
-        public static void TriggerHotReload()
-        {            
-            MainThread.BeginInvokeOnMainThread(() =>
+        static void InvokeHotReload()
+        {
+            try
             {
-                try
+                foreach (var toReloadTypeName in ReplacedTypesDict.Keys)
                 {
-                    foreach (var toReloadType in replaceWithTypeList)
-                    {
-                        var activeObjectList = registeredActiveList.Where(e => e.GetType().FullName == toReloadType.FullName).ToList();
+                    var activePagesForTypeName = registeredActivePages.Where(e => e.GetType().FullName == toReloadTypeName).ToList();
 
-                        foreach (var activeObject in activeObjectList)
+                    foreach (var activePage in activePagesForTypeName)
+                    {
+                        // check if page type changed
+                        var typeToReload = ReplacedTypesDict[toReloadTypeName];
+                        if (activePage.GetType() != typeToReload)
                         {
+                            var replaced = false;
                             try
                             {
-                                registeredActiveList.Remove(activeObject);
-
-                                // reload binding context
-                                BindingContext = activeObject.BindingContext;
-
-                                var newObject = ActivatorUtilities.GetServiceOrCreateInstance(Application.Services, toReloadType);
-
-                                var parent = activeObject.Parent;
-                                if (newObject is ContentPage newContentPage && activeObject is ContentPage oldContentPage)
+                                var newObject = ActivatorUtilities.GetServiceOrCreateInstance(Application.Services, typeToReload);
+                                if (newObject is ContentPage newContentPage)
                                 {
-                                    if (oldContentPage != newContentPage)
+                                    BindingContext = activePage.BindingContext;
+
+                                    var parent = activePage.Parent;
+                                    if (parent is Window parentWindow)
                                     {
-                                        if (parent is Window parentWindow) parentWindow.Page = newContentPage;
-                                        else if (parent is ShellContent shellContent)
-                                        {
-                                            shellContent.ContentTemplate = null;
-                                            shellContent.Content = newContentPage;
-                                            if (newContentPage.Handler == null) newContentPage.Handler = oldContentPage.Handler;
-                                        }
+                                        parentWindow.Page = newContentPage;
+                                        replaced = true;
                                     }
-                                }
-                                else if (newObject is ContentView newView && activeObject is ContentView oldView)
-                                {
-                                    if (oldView != newView)
+                                    else if (parent is ShellContent shellContent)
                                     {
-                                        if (parent is Layout parentLayout)
-                                        {
-                                            var id = parentLayout.IndexOf(oldView);
-                                            parentLayout.Children[id] = newView;
-                                        }
-                                        else if (parent is ContentView parentContentView) parentContentView.Content = newView;
-                                        else if (parent is ScrollView parentScrollView) parentScrollView.Content = newView;
-                                        else if (parent is ContentPage parentContentPage) parentContentPage.Content = newView;
-                                        else if (parent is Border parentBorder) parentBorder.Content = newView;
+                                        shellContent.ContentTemplate = null;
+                                        shellContent.Content = newContentPage;
+                                        if (newContentPage.Handler == null) newContentPage.Handler = activePage.Handler;
+                                        replaced = true;
                                     }
                                 }
                             }
                             finally
                             {
+                                if (replaced) registeredActivePages.Remove(activePage);
                                 BindingContext = null;
                             }
                         }
                     }
                 }
-                catch { }
-                replaceWithTypeList.Clear();
-            });
+            }
+            catch { }
         }
     }
 }

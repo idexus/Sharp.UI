@@ -5,11 +5,44 @@ namespace Sharp.UI
     [SharpObject(typeof(Microsoft.Maui.Controls.DataTemplate))]
     public partial class DataTemplate : IEnumerable
     {
-        public new System.Func<object> LoadTemplate { get => base.LoadTemplate; set => base.LoadTemplate = () => MauiWrapper.Value<object>(value()); }
+        static object getValue(System.Func<object> loadValue)
+        {
+            object value = loadValue();
+#if DEBUG
+            var typeName = value.GetType().FullName;
+            if (HotReload.ReplacedTypesDict.TryGetValue(typeName, out var replacedType))
+            {
+                value = ActivatorUtilities.CreateInstance(Application.Services, replacedType);
+            }
+#endif
+            return MauiWrapper.Value<object>(value);
+        }
+
+        public new System.Func<object> LoadTemplate
+        {
+            get => base.LoadTemplate;
+            set => base.LoadTemplate = () => getValue(value);
+        }
 
         public DataTemplate(System.Func<object> loadTemplate)
-            : base(() => MauiWrapper.Value<object>(loadTemplate()))
         {
+            base.LoadTemplate = () => getValue(loadTemplate);
+        }
+
+        public DataTemplate(Type type)
+        {            
+            base.LoadTemplate = () =>
+            {
+#if DEBUG
+                var typeName = type.FullName;
+                if (HotReload.ReplacedTypesDict.TryGetValue(typeName, out var replacedType))
+                {
+                    type = replacedType;
+                }
+#endif
+                var value = ActivatorUtilities.CreateInstance(Application.Services, type);
+                return MauiWrapper.Value<object>(value);
+            };
         }
 
         public IEnumerator GetEnumerator() { yield return this.LoadTemplate; }

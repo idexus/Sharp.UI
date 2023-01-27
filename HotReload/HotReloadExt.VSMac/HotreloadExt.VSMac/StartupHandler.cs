@@ -28,7 +28,12 @@ using Pango;
 
 namespace HotReload
 {
-    public class HotReloadData
+    public class HotReloadRequest
+    {
+        public string[] TypeNames { get; set; }
+    }
+
+    class HotReloadData
     {
         public string[] TypeNames { get; set; }
         public byte[] AssemblyData { get; set; }
@@ -37,7 +42,6 @@ namespace HotReload
 
     public class StartupHandler : CommandHandler
 	{
-        static DateTime beginTime;
         static int asseblyVersion = 0;
 
         protected override void Run ()
@@ -65,7 +69,6 @@ namespace HotReload
         {
             if (ActiveProject != null && HotReloadedProject == null)
             {
-                beginTime = DateTime.Now;
                 HotReloadedProject = ActiveProject;                
                 HotReloadedProject.FileChangedInProject += ActiveProject_FileChangedInProject;  
             }
@@ -103,7 +106,7 @@ namespace HotReload
             foreach (var syntaxTree in changedFilesSyntaxTreeList)
                 classList.AddRange(GetClassNames(syntaxTree));
 
-            return classList;
+            return classList.Distinct().ToList();
         }
 
         string GetFrameworkShortName()
@@ -128,6 +131,90 @@ namespace HotReload
             return $"{basePath}/bin/{configurationName}/{frameworkShortName}{runtimeTail}/{activeProjectName}.dll";
         }
 
+        async Task<(Compilation compilation, IEnumerable<string> changedClassNames)> Compile(HotReloadRequest hotReloadRequest, string activeProjectName, string dllOutputhPath, string frameworkShortName, IEnumerable<string> changedFilePaths)
+        {
+            // ------ Microsoft.CodeAnalysis projects ------
+
+            var typeService = await Runtime.GetService<TypeSystemService>();
+            var solution = typeService.Workspace.CurrentSolution;
+            var projects = solution.Projects;
+            var activeProject = solution.Projects.FirstOrDefault(e => e.AssemblyName.Equals(activeProjectName) && e.Name.Contains(frameworkShortName));
+            var referencedProjects = activeProject.ProjectReferences?.Select(e => solution.Projects.FirstOrDefault(x => x.Id == e.ProjectId));
+            var generators = activeProject.AnalyzerReferences.SelectMany(e => e.GetGeneratorsForAllLanguages());
+            var includedProjects = referencedProjects?.ToList() ?? new List<Microsoft.CodeAnalysis.Project>();
+            includedProjects.Add(activeProject);
+
+            var compilation = await activeProject?.GetCompilationAsync();
+
+            // --------- syntax tree ----------
+
+            List<SyntaxTree> syntaxTreeList = new List<SyntaxTree>();
+            List<SyntaxTree> changedFilesSyntaxTreeList = new List<SyntaxTree>();
+
+            // assembly name
+            var versionSyntaxTree = CSharpSyntaxTree.ParseText($"[assembly: System.Reflection.AssemblyVersionAttribute(\"1.0.{asseblyVersion}\")]");
+
+            // global usings
+            var usings = compilation.SyntaxTrees
+                    .SelectMany(e => e
+                        .GetRoot()
+                        .DescendantNodes().OfType<UsingDirectiveSyntax>()
+                        .Where(e => e.GlobalKeyword.ValueText == "global"))
+                    .Select(e => e.ToString())
+                    .Distinct()
+                    .ToList();
+            var usingsText = string.Join("\n", usings);
+            var usingsSyntaxTree = CSharpSyntaxTree.ParseText(usingsText);
+            syntaxTreeList.Add(usingsSyntaxTree);
+
+            // collect changed and requested file paths
+            var changedAndRequestedFilePaths = compilation.SyntaxTrees
+                .Where(e =>
+                    !e.FilePath.EndsWith(".g.cs") &&
+                    (changedFilePaths.Contains(e.FilePath) ||
+                    GetClassNames(e).Intersect(hotReloadRequest.TypeNames).Count() > 0))
+                .Select(e => e.FilePath)
+                .ToList();
+
+            // go through changed and requested files
+            foreach (var filePath in changedAndRequestedFilePaths)
+            {
+                var codeText = await File.ReadAllTextAsync(filePath);
+                var syntaxTree = CSharpSyntaxTree.ParseText(codeText);
+                syntaxTreeList.Add(syntaxTree);
+                changedFilesSyntaxTreeList.Add(syntaxTree);
+            }
+
+            var changedClassNames = GetClassNamesForChangedSyntaxTrees(changedFilesSyntaxTreeList);
+
+            // partial classes
+            var partialSyntaxTrees = compilation.SyntaxTrees
+                    .Where(e =>
+                        !e.FilePath.EndsWith(".g.cs") &&
+                        GetClassNames(e).Intersect(changedClassNames).Count() > 0 &&
+                        !changedAndRequestedFilePaths.Contains(e.FilePath));
+            syntaxTreeList.AddRange(partialSyntaxTrees);
+
+            // --------- metadata reference ---------
+
+            List<MetadataReference> metadataReferences = new List<MetadataReference>();
+            metadataReferences.AddRange(includedProjects.Select(e => MetadataReference.CreateFromFile(dllOutputhPath)));
+            metadataReferences.AddRange(compilation.References);
+
+            // --------- new compilation ------------
+
+            var outputAssemblyName = $"{activeProjectName}-{asseblyVersion}";
+
+            CSharpCompilation newCompilation =
+                CSharpCompilation.Create(outputAssemblyName, syntaxTreeList, metadataReferences,
+                new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary));
+
+            var generatorDriver = CSharpGeneratorDriver.Create(generators);
+            generatorDriver.RunGeneratorsAndUpdateCompilation(newCompilation, out var newCompilationWithGenetators, out var diagnostics);
+
+            return (newCompilationWithGenetators, changedClassNames);
+        }
+
         async Task CompileAndEmitChanges(string activeProjectName, IEnumerable<string> changedFilePaths)
         {
             try
@@ -135,97 +222,39 @@ namespace HotReload
                 asseblyVersion++;
 
                 var dllOutputhPath = GetDllOutputhPath(activeProjectName);
-                string frameworkShortName = GetFrameworkShortName();
-
-                // ------ Microsoft.CodeAnalysis projects ------
-
-                var typeService = await Runtime.GetService<TypeSystemService>();
-                var solution = typeService.Workspace.CurrentSolution;
-                var projects = solution.Projects;
-                var activeProject = solution.Projects.FirstOrDefault(e => e.AssemblyName.Equals(activeProjectName) && e.Name.Contains(frameworkShortName));
-                var referencedProjects = activeProject.ProjectReferences?.Select(e => solution.Projects.FirstOrDefault(x => x.Id == e.ProjectId));
-                var generators = activeProject.AnalyzerReferences.SelectMany(e => e.GetGeneratorsForAllLanguages());
-                var includedProjects = referencedProjects?.ToList() ?? new List<Microsoft.CodeAnalysis.Project>();
-                includedProjects.Add(activeProject);
-
-                var compilation = await activeProject?.GetCompilationAsync();
-
-                // --------- syntax tree ----------
-
-                List<SyntaxTree> syntaxTreeList = new List<SyntaxTree>();
-                List<SyntaxTree> changedFilesSyntaxTreeList = new List<SyntaxTree>();
-
-                // assembly name
-                var versionSyntaxTree = CSharpSyntaxTree.ParseText($"[assembly: System.Reflection.AssemblyVersionAttribute(\"1.0.{asseblyVersion}\")]");
-
-                // global usings
-                var usings = compilation.SyntaxTrees
-                        .SelectMany(e => e
-                            .GetRoot()
-                            .DescendantNodes().OfType<UsingDirectiveSyntax>()
-                            .Where(e => e.GlobalKeyword.ValueText == "global"))
-                        .Select(e => e.ToString())
-                        .Distinct()
-                        .ToList();
-                var usingsText = string.Join("\n", usings);
-                var usingsSyntaxTree = CSharpSyntaxTree.ParseText(usingsText);
-                syntaxTreeList.Add(usingsSyntaxTree);
-
-                // changed files
-                foreach (var changedFilePath in changedFilePaths)
-                {
-                    var codeText = await File.ReadAllTextAsync(changedFilePath);
-                    var syntaxTree = CSharpSyntaxTree.ParseText(codeText);
-                    syntaxTreeList.Add(syntaxTree);
-                    changedFilesSyntaxTreeList.Add(syntaxTree);                                       
-                }
-
-                // find changed names
-                var changedClassNames = GetClassNamesForChangedSyntaxTrees(changedFilesSyntaxTreeList);
-
-                // partial classes
-                var partialSyntaxTrees = compilation.SyntaxTrees
-                        .Where(e =>
-                            !e.FilePath.EndsWith(".g.cs") &&
-                            GetClassNames(e).Intersect(changedClassNames).Count() > 0 &&
-                            !changedFilePaths.Contains(e.FilePath));
-                syntaxTreeList.AddRange(partialSyntaxTrees);
-
-                // --------- metadata reference ---------
-
-                List<MetadataReference> metadataReferences = new List<MetadataReference>();
-                metadataReferences.AddRange(includedProjects.Select(e => MetadataReference.CreateFromFile(dllOutputhPath)));
-                metadataReferences.AddRange(compilation.References);
-
-                // --------- new compilation ------------
-
-                var outputAssemblyName = $"{activeProjectName}-{asseblyVersion}";
-
-                CSharpCompilation newCompilation =
-                    CSharpCompilation.Create(outputAssemblyName, syntaxTreeList, metadataReferences,
-                    new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary));
-
-                var generatorDriver = CSharpGeneratorDriver.Create(generators);
-                generatorDriver.RunGeneratorsAndUpdateCompilation(newCompilation, out var newCompilationWithGenetators, out var diagnostics);
+                var frameworkShortName = GetFrameworkShortName();
 
 #pragma warning disable CA1416
-                using (NamedPipeClientStream pipeClient = new NamedPipeClientStream(".", activeProjectName, PipeDirection.Out))
+                using (NamedPipeClientStream pipeClient = new NamedPipeClientStream(".", activeProjectName, PipeDirection.InOut))
                 {
                     // pipe connection
                     await pipeClient.ConnectAsync();
 #pragma warning restore CA1416
+
+                    // ------- reequest types ---------
+
+                    var streamReader = new StreamReader(pipeClient);
+                    var jsonData = await streamReader.ReadLineAsync();
+                    var hotReloadRequest = JsonSerializer.Deserialize<HotReloadRequest>(jsonData);
+
+                    // ------- compilation ---------
+
+                    var compilationData = await Compile(hotReloadRequest, activeProjectName, dllOutputhPath, frameworkShortName, changedFilePaths);
+
+                    // ------- send data assembly ---------
+
                     var streamWriter = new StreamWriter(pipeClient);
                     streamWriter.AutoFlush = true;
 
                     using (var dllStream = new MemoryStream())
                     using (var pdbStream = new MemoryStream())
                     {
-                        var emitResult = newCompilationWithGenetators.Emit(dllStream, pdbStream);
+                        var emitResult = compilationData.compilation.Emit(dllStream, pdbStream);
                         if (emitResult.Success)
                         {
                             var hotReloadData = new HotReloadData
                             {
-                                TypeNames = changedClassNames.ToArray(),
+                                TypeNames = compilationData.changedClassNames.ToArray(),
                                 AssemblyData = dllStream.GetBuffer(),
                                 PdbData = pdbStream.GetBuffer()
                             };
@@ -246,18 +275,12 @@ namespace HotReload
 #pragma warning restore CS0168
         }
 
-        const double timeSpanBetweenCompilations = 2.0;
         static SemaphoreSlim semaphore = new SemaphoreSlim(1);
         async void ActiveProject_FileChangedInProject(object sender, ProjectFileEventArgs args)
         {
             if (IdeServices.ProjectOperations.CurrentRunOperation.IsCompleted) HotReloadedProject = null;
 
-            var lapsedTime = DateTime.Now.Subtract(beginTime).TotalSeconds;
-            if (HotReloadedProject is null || lapsedTime < timeSpanBetweenCompilations) return;
-
             await semaphore.WaitAsync();
-
-            beginTime = DateTime.Now;
 
             var configuration = IdeApp.Workspace.ActiveConfiguration;
             var dllName = ActiveProject.GetOutputFileName(configuration).FileNameWithoutExtension;

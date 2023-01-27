@@ -38,8 +38,7 @@ namespace Sharp.UI
     {
         public ContentPage()
         {
-#if DEBUG
-            HotReload.RegisterActive(this);
+#if DEBUG            
             if (HotReload.BindingContext != null) BindingContext = HotReload.BindingContext;
 #endif
         }
@@ -49,9 +48,12 @@ namespace Sharp.UI
             this.Title = title;
         }
 
-        protected override void OnParentSet()
+        protected override void OnAppearing()
         {
-            base.OnParentSet();
+            base.OnAppearing();
+#if DEBUG            
+            HotReload.RegisterActive(this);
+#endif
         }
     }
 

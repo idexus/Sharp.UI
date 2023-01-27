@@ -19,17 +19,19 @@ namespace Sharp.UI
     {
         // ----- constructors -----
 
-        public ContentView(out ContentView contentView) : this()
+        public ContentView() { }
+
+        public ContentView(out ContentView contentView) 
         {
             contentView = this;
         }
 
-        public ContentView(System.Action<ContentView> configure) : this()
+        public ContentView(System.Action<ContentView> configure) 
         {
             configure(this);
         }
 
-        public ContentView(out ContentView contentView, System.Action<ContentView> configure) : this()
+        public ContentView(out ContentView contentView, System.Action<ContentView> configure) 
         {
             contentView = this;
             configure(this);

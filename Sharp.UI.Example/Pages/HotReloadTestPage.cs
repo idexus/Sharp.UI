@@ -17,7 +17,7 @@ namespace ExampleApp
             {
                 new VStack
                 {
-                    new Label("Hot Reload")
+                    new Label("Hot Reload Test :)")
                         .FontSize(55)
                         .TextColor(Colors.Red)
                         .HorizontalOptions(LayoutOptions.Center),
