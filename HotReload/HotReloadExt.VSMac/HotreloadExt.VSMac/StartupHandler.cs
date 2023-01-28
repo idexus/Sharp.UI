@@ -25,6 +25,13 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis;
 using System.Text;
 using Pango;
+using System.Net.Sockets;
+using System.Net;
+using Network;
+using System.Net.Http;
+using NetworkExtension;
+
+#pragma warning disable CA1416
 
 namespace HotReload
 {
@@ -54,29 +61,72 @@ namespace HotReload
                 ?? IdeApp.ProjectOperations.CurrentSelectedBuildTarget)
                 as DotNetProject;
 
-        DotNetProject _hotReloadedProject = null;
-        DotNetProject HotReloadedProject
+        void ProjectOperations_BeforeStartProject(object sender, EventArgs e)
         {
-            get => _hotReloadedProject;
-            set
-            {
-                if (_hotReloadedProject != null) _hotReloadedProject.FileChangedInProject -= ActiveProject_FileChangedInProject;
-                _hotReloadedProject = value;
-            }
+            StartTcpServer();
         }
+
+        TcpClient hotReloadClient = null;
+        CancellationTokenSource serverCancellationTokenSource;
+        void StartTcpServer()
+        {
+            Task.Factory.StartNew(async () =>
+            {
+                var ipEndPoint = new IPEndPoint(IPAddress.Any, 9988);
+                TcpListener listener = null;
+                try
+                {
+                    listener = new TcpListener(ipEndPoint);
+                    listener.Start();
+                    Console.WriteLine("Server started");
+
+                    serverCancellationTokenSource = new CancellationTokenSource();
+                    hotReloadClient = await listener.AcceptTcpClientAsync(serverCancellationTokenSource.Token);
+                    Console.WriteLine("Hot Reload connected");
+
+                    var token = await hotReloadClient.GetStream().ReadStringAsync();
+                    Console.WriteLine("Get Token");
+
+                    StartHotReloadSession();
+
+                    await IdeServices.ProjectOperations.CurrentRunOperation.Task;
+                    Console.WriteLine("End running");
+
+                    StopHotReloadSession();
+                }
+#pragma warning disable CS0168
+                catch (Exception ex)
+                {
+                }
+#pragma warning restore CS0168
+                finally
+                {
+                    serverCancellationTokenSource?.Cancel();
+                    hotReloadClient?.Close();
+                    listener?.Stop();
+                    hotReloadClient = null;
+                }
+            }, TaskCreationOptions.LongRunning);
+        }
+
+        DotNetProject memActiveProject = null;
 
         void StartHotReloadSession()
         {
-            if (ActiveProject != null && HotReloadedProject == null)
+            if (ActiveProject != null && memActiveProject == null)
             {
-                HotReloadedProject = ActiveProject;                
-                HotReloadedProject.FileChangedInProject += ActiveProject_FileChangedInProject;  
+                memActiveProject = ActiveProject;
+                memActiveProject.FileChangedInProject += ActiveProject_FileChangedInProject;  
             }
         }
 
-        void ProjectOperations_BeforeStartProject(object sender, EventArgs e)
+        void StopHotReloadSession()
         {
-            StartHotReloadSession();
+            if (memActiveProject != null)
+            {
+                memActiveProject.FileChangedInProject -= ActiveProject_FileChangedInProject;
+                memActiveProject = null;
+            }
         }
 
         string GetClassNameWithNamespace(ClassDeclarationSyntax syntax)
@@ -224,48 +274,50 @@ namespace HotReload
                 var dllOutputhPath = GetDllOutputhPath(activeProjectName);
                 var frameworkShortName = GetFrameworkShortName();
 
-#pragma warning disable CA1416
-                using (NamedPipeClientStream pipeClient = new NamedPipeClientStream(".", activeProjectName, PipeDirection.InOut))
-                {
-                    // pipe connection
-                    await pipeClient.ConnectAsync();
-#pragma warning restore CA1416
+                await using NetworkStream stream = hotReloadClient.GetStream();
+                var buffer = new byte[1_024];
+                int received = await stream.ReadAsync(buffer, serverCancellationTokenSource.Token);
 
-                    // ------- reequest types ---------
+                //using (NamedPipeClientStream pipeClient = new NamedPipeClientStream(".", activeProjectName, PipeDirection.InOut))
+                //{
+                //    // pipe connection
+                //    await pipeClient.ConnectAsync();
 
-                    var streamReader = new StreamReader(pipeClient);
-                    var jsonData = await streamReader.ReadLineAsync();
-                    var hotReloadRequest = JsonSerializer.Deserialize<HotReloadRequest>(jsonData);
+                //    // ------- reequest types ---------
 
-                    // ------- compilation ---------
+                //    var streamReader = new StreamReader(pipeClient);
+                //    var jsonData = await streamReader.ReadLineAsync();
+                //    var hotReloadRequest = JsonSerializer.Deserialize<HotReloadRequest>(jsonData);
 
-                    var compilationData = await Compile(hotReloadRequest, activeProjectName, dllOutputhPath, frameworkShortName, changedFilePaths);
+                //    // ------- compilation ---------
 
-                    // ------- send data assembly ---------
+                //    var compilationData = await Compile(hotReloadRequest, activeProjectName, dllOutputhPath, frameworkShortName, changedFilePaths);
 
-                    var streamWriter = new StreamWriter(pipeClient);
-                    streamWriter.AutoFlush = true;
+                //    // ------- send data assembly ---------
 
-                    using (var dllStream = new MemoryStream())
-                    using (var pdbStream = new MemoryStream())
-                    {
-                        var emitResult = compilationData.compilation.Emit(dllStream, pdbStream);
-                        if (emitResult.Success)
-                        {
-                            var hotReloadData = new HotReloadData
-                            {
-                                TypeNames = compilationData.changedClassNames.ToArray(),
-                                AssemblyData = dllStream.GetBuffer(),
-                                PdbData = pdbStream.GetBuffer()
-                            };
+                //    var streamWriter = new StreamWriter(pipeClient);
+                //    streamWriter.AutoFlush = true;
 
-                            var json = JsonSerializer.Serialize(hotReloadData);
+                //    using (var dllStream = new MemoryStream())
+                //    using (var pdbStream = new MemoryStream())
+                //    {
+                //        var emitResult = compilationData.compilation.Emit(dllStream, pdbStream);
+                //        if (emitResult.Success)
+                //        {
+                //            var hotReloadData = new HotReloadData
+                //            {
+                //                TypeNames = compilationData.changedClassNames.ToArray(),
+                //                AssemblyData = dllStream.GetBuffer(),
+                //                PdbData = pdbStream.GetBuffer()
+                //            };
 
-                            // send file location
-                            await streamWriter.WriteLineAsync(json);
-                        }
-                    }
-                }
+                //            var json = JsonSerializer.Serialize(hotReloadData);
+
+                //            // send file location
+                //            await streamWriter.WriteLineAsync(json);
+                //        }
+                //    }
+                //}
             }
 #pragma warning disable CS0168
             catch (Exception ex)
@@ -278,8 +330,6 @@ namespace HotReload
         static SemaphoreSlim semaphore = new SemaphoreSlim(1);
         async void ActiveProject_FileChangedInProject(object sender, ProjectFileEventArgs args)
         {
-            if (IdeServices.ProjectOperations.CurrentRunOperation.IsCompleted) HotReloadedProject = null;
-
             await semaphore.WaitAsync();
 
             var configuration = IdeApp.Workspace.ActiveConfiguration;
@@ -295,3 +345,5 @@ namespace HotReload
         }
 	}
 }
+
+#pragma warning restore CA1416

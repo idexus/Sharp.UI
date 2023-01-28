@@ -1,6 +1,7 @@
 ﻿ 
 namespace ExampleApp;
 
+using System.Net;
 using Microsoft.Maui;
 using Sharp.UI;
 
