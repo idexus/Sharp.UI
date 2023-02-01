@@ -6,6 +6,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System;
+using HotReloadKit;
 
 namespace Sharp.UI
 {
@@ -28,7 +29,7 @@ namespace Sharp.UI
 
     public static partial class HotReload
     {
-        static internal IPAddress[] IdeIPs;
+        static IPAddress[] IdeIPs;
         static List<ContentPage> registeredActivePages = new List<ContentPage>();
 
         internal static Dictionary<string, Type> ReplacedTypesDict = new Dictionary<string, Type>();
@@ -76,69 +77,11 @@ namespace Sharp.UI
             return stream.WriteAsync(messageBytes, cancellationToken);
         }
 
-        internal static void InitSharpUIHotReload<T>()
+        internal static void InitSharpUIHotReload<T>(IPAddress[] IdeIPs)
         {
-            Task.Run(async () =>
-            {
-                while (true)
-                {
-                    try
-                    {                     
-                        var pipeName = typeof(T).GetTypeInfo().Assembly.GetName().Name;
-
-                        using (NamedPipeServerStream pipeServer = new NamedPipeServerStream(pipeName, PipeDirection.InOut))
-                        {
-                            await pipeServer.WaitForConnectionAsync();
-
-                            // ------- reequest types ---------
-
-                            var requestedTypeNames = registeredActivePages
-                                    .Select(e => e.GetType().FullName)
-                                    .Distinct()
-                                    .ToList();
-
-                            requestedTypeNames.AddRange(ReplacedTypesDict.Keys);
-
-                            var hotReloadRequest = new HotReloadRequest
-                            {
-                                TypeNames = requestedTypeNames.Distinct().ToArray()
-                            };
-
-                            var streamWriter = new StreamWriter(pipeServer);
-                            streamWriter.AutoFlush = true;
-                            var jsonRequest = JsonSerializer.Serialize(hotReloadRequest);
-                            await streamWriter.WriteLineAsync(jsonRequest);
-
-                            // --------- Hot Reload assembly data ----------
-
-                            var streamReader = new StreamReader(pipeServer);
-                            var jsonData = await streamReader.ReadLineAsync();
-
-                            var hotReloadData = JsonSerializer.Deserialize<HotReloadData>(jsonData);
-
-                            // --------- load, register and hot reload ----------
-
-                            var assembly = Assembly.Load(hotReloadData.AssemblyData, hotReloadData.PdbData);
-
-                            MainThread.BeginInvokeOnMainThread(() =>
-                            {
-                                foreach (var typeName in hotReloadData.TypeNames)
-                                {
-                                    var type = assembly.GetType(typeName);
-                                    ReplacedTypesDict[type.FullName] = type;
-                                }
-                                InvokeHotReload();
-                            });
-                        }
-                    }
-#pragma warning disable CS0168
-                    catch (Exception ex)
-                    {
-
-                    }
-#pragma warning restore CS0168
-                }
-            });
+            CodeReloader.Init<T>(IdeIPs);
+            CodeReloader.RequestedTypeNamesHandler = () => registeredActivePages.Select(e => e.GetType().FullName).ToArray();
+            CodeReloader.UpdateApplication = UpdateApplication;
         }
 
         internal static object BindingContext = null;
@@ -165,12 +108,13 @@ namespace Sharp.UI
                                     BindingContext = activePage.BindingContext;
 
                                     var parent = activePage.Parent;
+                                    var parentType = parent.GetType();
                                     if (parent is Window parentWindow)
                                     {
                                         parentWindow.Page = newContentPage;
                                         replaced = true;
                                     }
-                                    else if (parent is ShellContent shellContent)
+                                    else if (parent is Microsoft.Maui.Controls.ShellContent shellContent)
                                     {
                                         shellContent.ContentTemplate = null;
                                         shellContent.Content = newContentPage;

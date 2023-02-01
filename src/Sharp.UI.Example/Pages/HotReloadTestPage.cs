@@ -17,21 +17,21 @@ namespace ExampleApp
             {
                 new VStack
                 {
-                    new Label("Hot Reload Test :)")
-                        .FontSize(55)
-                        .TextColor(Colors.Red)
+                    new Label("Hot Reload :)")
+                        .FontSize(e => e.Default(40).OnDesktop(80))
+                        .TextColor(Colors.Blue)
                         .HorizontalOptions(LayoutOptions.Center),
 
                     new Slider(1, 20, 1, out var slider)
                         .Value(e => e.Path(nameof(MyViewModel.SliderValue)))
-                        .Margin(new Thickness(80, 30)),
+                        .Margin(new Thickness(50, 30)),
 
                     new Border
                     {
                         new Grid
                         {
                             new Label()
-                                .FontSize(40)
+                                .FontSize(35)
                                 .Text(e => e.Path("Value").Source(slider).StringFormat("Value : {0:F2}"))
                                 .HorizontalOptions(LayoutOptions.Center)
                                 .VerticalOptions(LayoutOptions.Center)
@@ -40,27 +40,28 @@ namespace ExampleApp
                             new Image("dotnet_bot.png").Row(1),
 
                             new Label("Hello, World").Row(2)
-                                .FontSize(40)
+                                .FontSize(30)
                                 .TextColor(AppColors.Gray200)
                                 .HorizontalOptions(LayoutOptions.Center)
                                 .VerticalOptions(LayoutOptions.Center),
                         }
                         .RowDefinitions(e => e.Star().Star(2).Star())
                     }
-                    .SizeRequest(300, 500)
-                    .StrokeShape(new RoundRectangle().CornerRadius(30))
+                    .WidthRequest(e => e.Default(250).OnDesktop(300).OnAndroid(220))
+                    .HeightRequest(e => e.Default(350).OnDesktop(500))
+                    .StrokeShape(new RoundRectangle().CornerRadius(40))
                     .BackgroundColor(Colors.DarkSlateGray),
 
                     new Label()
                         .Text(e => e.Path("Counter").StringFormat("Counter : {0}"))
                         .TextColor(Colors.Red)
-                        .FontSize(50)
+                        .FontSize(40)
                         .HorizontalOptions(LayoutOptions.Center)
                         .Margin(20),
 
                     new Button("Count")
-                        .WidthRequest(300)
-                        .FontSize(30)
+                        .WidthRequest(200)
+                        .FontSize(22)
                         .Command(e => e.Path(nameof(MyViewModel.CountCommand)))
                 }
                 .VerticalOptions(LayoutOptions.Center)

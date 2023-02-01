@@ -23,8 +23,7 @@ namespace Sharp.UI
             {
                 Application.Services = services;
 #if DEBUG
-                HotReload.InitSharpUIHotReload<T>();
-                HotReload.IdeIPs = IdeIPs;
+                HotReload.InitSharpUIHotReload<T>(IdeIPs);
 #endif
             }
         }

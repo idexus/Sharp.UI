@@ -51,6 +51,16 @@ public class HelloWorldPage : ContentPage
 
 # Before you start
 
+### Working with this repository
+
+This project uses git submodules.
+
+```
+git submodule update --init --recursive
+dotnet restore
+```
+
+### Sharp.UI namespace
 
 If you want to use this library, you need to include the `using Sharp.UI` inside your app namespace, which replaces the standard MAUI classes.
 
@@ -67,7 +77,7 @@ namespace ExampleApp
 }
 ```
 
-Adding the library to the project:
+### Adding the library to the project:
 
 - [Nuget package / project reference](./doc/howtostart.md)
 
@@ -97,7 +107,7 @@ Here are some examples showing how to use the Sharp.UI library
 
 You can use hot reload for content pages created in the MVVM pattern
 
-- using Visual Studio 2022 for Mac with Sharp.UI Hot Reload extension [Sharp.UI.HotReloadExt.Mac_0.2.1.mpack](https://github.com/idexus/Sharp.UI/releases) (supports desktop apps)
+- using Visual Studio 2022 for Mac with HotReloadKit.VSMac extension [HotReloadKit.VSMac_0.3.0_beta.1.mpack](https://github.com/idexus/Sharp.UI/releases)
 - using Visual Studio 2022 for Windows and [System.Reflection.Metadata.MetadataUpdateHandlerAttribute](https://learn.microsoft.com/en-us/dotnet/api/system.reflection.metadata.metadataupdatehandlerattribute?view=net-7.0&viewFallbackFrom=net-5.0)
 - using Visual Studio Code and [Reloadify3000](https://github.com/Clancey/Reloadify3000) library with [vscode-comet](https://github.com/Clancey/vscode-comet) plugin 
 
