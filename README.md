@@ -51,17 +51,6 @@ public class HelloWorldPage : ContentPage
 
 # Before you start
 
-### Working with this repository
-
-This project uses git submodules.
-
-```
-git submodule update --init --recursive
-dotnet restore
-```
-
-### Sharp.UI namespace
-
 If you want to use this library, you need to include the `using Sharp.UI` inside your app namespace, which replaces the standard MAUI classes.
 
 ```cs
