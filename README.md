@@ -96,7 +96,7 @@ Here are some examples showing how to use the Sharp.UI library
 
 You can use hot reload for content pages created in the MVVM pattern
 
-- using Visual Studio 2022 for Mac with HotReloadKit.VSMac extension [HotReloadKit.VSMac_0.3.0_beta.1.mpack](https://github.com/idexus/Sharp.UI/releases)
+- using Visual Studio 2022 for Mac with HotReloadKit.VSMac extension [HotReloadKit.VSMac_0.3.0_beta.3.mpack](https://github.com/idexus/HotReloadKit/releases)
 - using Visual Studio 2022 for Windows and [System.Reflection.Metadata.MetadataUpdateHandlerAttribute](https://learn.microsoft.com/en-us/dotnet/api/system.reflection.metadata.metadataupdatehandlerattribute?view=net-7.0&viewFallbackFrom=net-5.0)
 - using Visual Studio Code and [Reloadify3000](https://github.com/Clancey/Reloadify3000) library with [vscode-comet](https://github.com/Clancey/vscode-comet) plugin 
 
