@@ -17,7 +17,7 @@ namespace ExampleApp
             {
                 new VStack
                 {
-                    new Label("Hot Reload :)")
+                    new Label("Sharp.UI")
                         .FontSize(e => e.Default(40).OnDesktop(80))
                         .TextColor(Colors.Blue)
                         .HorizontalOptions(LayoutOptions.Center),
