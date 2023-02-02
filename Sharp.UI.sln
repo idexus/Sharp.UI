@@ -8,11 +8,12 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EBEF87B9-CBCC-47E7-B35D-2786A76CD608}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
+		doc\howtostart.md = doc\howtostart.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sharp.UI.Generator", "src\Sharp.UI.Generator\Sharp.UI.Generator.csproj", "{DB13FDDD-8B03-44F4-A017-4CEAC318A148}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sharp.UI.Example", "src\Sharp.UI.Example\Sharp.UI.Example.csproj", "{6721451F-0353-49A2-A73D-E066FAE1ACBD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharp.UI.Example", "src\Sharp.UI.Example\Sharp.UI.Example.csproj", "{6721451F-0353-49A2-A73D-E066FAE1ACBD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
