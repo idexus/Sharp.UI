@@ -23,7 +23,6 @@ namespace Sharp.UI.Generator
             //Helpers.WaitForDebugger(context.CancellationToken);
 
             new SharpBuilder(context).Generate();
-            HotReloadSupport.Build(context);
         }
     }
 }

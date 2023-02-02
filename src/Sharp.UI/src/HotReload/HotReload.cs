@@ -29,7 +29,6 @@ namespace Sharp.UI
 
     public static partial class HotReload
     {
-        static IPAddress[] IdeIPs;
         static List<ContentPage> registeredActivePages = new List<ContentPage>();
 
         internal static Dictionary<string, Type> ReplacedTypesDict = new Dictionary<string, Type>();
