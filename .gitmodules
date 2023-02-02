@@ -1,3 +1,0 @@
-[submodule "libs/HotReloadKit"]
-	path = libs/HotReloadKit
-	url = https://github.com/idexus/HotReloadKit.git

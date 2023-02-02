@@ -14,14 +14,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sharp.UI.Generator", "src\S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sharp.UI.Example", "src\Sharp.UI.Example\Sharp.UI.Example.csproj", "{6721451F-0353-49A2-A73D-E066FAE1ACBD}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{2AB7983D-5321-4DCA-8DEC-B596E82885C9}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotReloadKit.Generator", "libs\HotReloadKit\src\HotReloadKit.Generator\HotReloadKit.Generator.csproj", "{E9E04836-C15F-42E9-B867-5D1F01C23C37}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotReloadKit", "libs\HotReloadKit\src\HotReloadKit\HotReloadKit.csproj", "{85A8CC69-A117-46ED-82C7-2B69F70B329B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlimMessenger", "libs\HotReloadKit\libs\SlimMessenger\src\SlimMessenger\SlimMessenger.csproj", "{336ED726-9AC5-43B5-B168-E16A4AFE96F5}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

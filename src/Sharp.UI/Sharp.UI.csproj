@@ -40,6 +40,9 @@
 		<ProjectReference Include="..\..\libs\HotReloadKit\src\HotReloadKit.Generator\HotReloadKit.Generator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
 	</ItemGroup>
 	<ItemGroup>
+	  <None Remove="HotReloadKit" />
+	</ItemGroup>
+	<ItemGroup>
       <None Include="..\..\libs\HotReloadKit\src\HotReloadKit.Generator\bin\$(Configuration)\netstandard2.0\HotReloadKit.Generator.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
     </ItemGroup>
 	<ItemGroup>
@@ -57,4 +60,7 @@
 		<None Include="docs\README.md" Pack="true" PackagePath="\" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <PackageReference Include="HotReloadKit" Version="0.3.0-beta.3" />
+	</ItemGroup>
 </Project>
