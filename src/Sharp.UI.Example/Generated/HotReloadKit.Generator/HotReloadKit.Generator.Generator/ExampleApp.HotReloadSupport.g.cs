@@ -14,7 +14,7 @@ namespace ExampleApp
 #if DEBUG
         {
             new IPAddress(new byte[] {127, 0, 0, 1}),
-            new IPAddress(new byte[] {10, 0, 5, 2}),
+            new IPAddress(new byte[] {10, 0, 7, 56}),
         };
 #else
         { };

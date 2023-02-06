@@ -36,6 +36,7 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\Sharp.UI.Generator\Sharp.UI.Generator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+		<ProjectReference Include="..\..\..\HotReloadKit\src\HotReloadKit\HotReloadKit.csproj" />
 	</ItemGroup>
 	<ItemGroup>
 	  <None Remove="HotReloadKit" />
@@ -55,7 +56,4 @@
 		<None Include="docs\README.md" Pack="true" PackagePath="\" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <PackageReference Include="HotReloadKit" Version="0.3.0-beta.3" />
-	</ItemGroup>
 </Project>

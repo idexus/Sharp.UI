@@ -78,9 +78,9 @@ namespace Sharp.UI
 
         internal static void InitSharpUIHotReload<T>(IPAddress[] IdeIPs)
         {
-            CodeReloader.Init<T>(IdeIPs);
-            CodeReloader.RequestedTypeNamesHandler = () => registeredActivePages.Select(e => e.GetType().FullName).ToArray();
-            CodeReloader.UpdateApplication = UpdateApplication;
+            HotReloader.Init<T>(IdeIPs, platformName: SharpPlatform.Name);
+            HotReloader.RequestAdditionalTypeNames = () => registeredActivePages.Select(e => e.GetType().FullName).ToArray();
+            HotReloader.UpdateApplication = UpdateApplication;
         }
 
         internal static object BindingContext = null;
