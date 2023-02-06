@@ -1,0 +1,43 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31611.283
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharp.UI", "Sharp.UI\Sharp.UI.csproj", "{FB396864-6EFC-4A20-A9A7-30CF1B0245CC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EBEF87B9-CBCC-47E7-B35D-2786A76CD608}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+		doc\howtostart.md = doc\howtostart.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sharp.UI.Generator", "Sharp.UI.Generator\Sharp.UI.Generator.csproj", "{DB13FDDD-8B03-44F4-A017-4CEAC318A148}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharp.UI.Example", "Sharp.UI.Example\Sharp.UI.Example.csproj", "{6721451F-0353-49A2-A73D-E066FAE1ACBD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{5EAB34D2-9270-4CE3-AE54-DA18E08B6218}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FB396864-6EFC-4A20-A9A7-30CF1B0245CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB396864-6EFC-4A20-A9A7-30CF1B0245CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB396864-6EFC-4A20-A9A7-30CF1B0245CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB396864-6EFC-4A20-A9A7-30CF1B0245CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB13FDDD-8B03-44F4-A017-4CEAC318A148}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB13FDDD-8B03-44F4-A017-4CEAC318A148}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB13FDDD-8B03-44F4-A017-4CEAC318A148}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB13FDDD-8B03-44F4-A017-4CEAC318A148}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+	EndGlobalSection
+EndGlobal
