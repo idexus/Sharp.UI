@@ -80,7 +80,7 @@ git submodule update --init --recursive
 
 Adding the library to the project:
 
-- [VS project reference](./doc/howtostart.md)
+- [by VS project reference](./doc/howtostart.md)
 
 # Hot Reload
 
