@@ -17,7 +17,7 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 
 		<PackageId>Sharp.UI</PackageId>
-		<Version>0.2.7-alpha.1</Version>
+		<Version>0.2.7-alpha.7</Version>
 		<Authors>Pawel Krzywdzinski</Authors>
 		<Copyright>Pawel Krzywdzinski</Copyright>
 		<PackageDescription>A library that allows you to use .NET MAUI only in C# code using fluent methods, with code Hot Reload, without the need for XAML</PackageDescription>
@@ -35,16 +35,14 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\libs\HotReloadKit\src\HotReloadKit\HotReloadKit.csproj" />
 		<ProjectReference Include="..\Sharp.UI.Generator\Sharp.UI.Generator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+		<ProjectReference Include="..\..\libs\HotReloadKit\src\HotReloadKit\HotReloadKit.csproj" />
 	</ItemGroup>
-	<ItemGroup>
-	  <None Remove="HotReloadKit" />
-	</ItemGroup>
+
 	<ItemGroup>
     <None Include="..\Sharp.UI.Generator\bin\$(Configuration)\netstandard2.0\Sharp.UI.Generator.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
     <None Include="..\..\libs\HotReloadKit\src\HotReloadKit.Generator\bin\$(Configuration)\netstandard2.0\HotReloadKit.Generator.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
-  </ItemGroup>
+	</ItemGroup>
 
 	<PropertyGroup>
 		<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
@@ -56,5 +54,4 @@
 	    <None Include="$(CompilerGeneratedFilesOutputPath)/HotReloadKit.Generator/**/*.cs" />
 		<None Include="docs\README.md" Pack="true" PackagePath="\" />
 	</ItemGroup>
-
 </Project>

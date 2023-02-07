@@ -18,7 +18,7 @@ namespace ExampleApp
                 new VStack
                 {
                     new Label("Hot Reload :)")
-                        .FontSize(e => e.Default(40).OnDesktop(80))
+                        .FontSize(e => e.Default(45).OnDesktop(80))
                         .TextColor(Colors.Blue)
                         .HorizontalOptions(LayoutOptions.Center),
 
