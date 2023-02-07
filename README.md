@@ -49,6 +49,14 @@ public class HelloWorldPage : ContentPage
 }
 ```
 
+# Using this repository
+
+This project uses submodules
+
+```
+git submodule update --init --recursive
+```
+
 # How to start
 
 If you want to use this library, you need to include the `using Sharp.UI` inside your app namespace, which replaces the standard MAUI classes.
@@ -65,15 +73,8 @@ namespace ExampleApp
     ...
 }
 ```
-# Using this repository
 
-project uses submodules
-
-```
-git submodule update --init --recursive
-```
-
-# Nuget Package
+# Using Nuget Package
 
 ```
 dotnet add package Sharp.UI
