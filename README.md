@@ -66,16 +66,16 @@ namespace ExampleApp
 }
 ```
 
-# Nuget Package
-
-```
-dotnet add package Sharp.UI
-```
-
 project uses submodules
 
 ```
 git submodule update --init --recursive
+```
+
+# Nuget Package
+
+```
+dotnet add package Sharp.UI
 ```
 
 Adding the library to the project:
