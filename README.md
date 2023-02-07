@@ -1,5 +1,5 @@
 # Overview
-__Sharp.UI__ allows you to build a .NET Multi-platform App User Interface (.NET MAUI) declaratively in C# code (with Hot Reload) using fluent methods, without the need for XAML. It is a wrapper library, mostly auto-generated.
+__Sharp.UI__ allows you to build a .NET Multi-platform App User Interface (.NET MAUI) declaratively in C# code (with Hot Reload Win/Mac) using fluent methods, without the need for XAML. It is a wrapper library, mostly auto-generated.
 
 ### Hot Reload Example (VS2022 Mac)
 
@@ -49,7 +49,7 @@ public class HelloWorldPage : ContentPage
 }
 ```
 
-# Before you start
+# How to start
 
 If you want to use this library, you need to include the `using Sharp.UI` inside your app namespace, which replaces the standard MAUI classes.
 
@@ -66,9 +66,36 @@ namespace ExampleApp
 }
 ```
 
-### Adding the library to the project:
+# Nuget Package
 
-- [Nuget package / project reference](./doc/howtostart.md)
+```
+dotnet add package Sharp.UI
+```
+
+project uses submodules
+
+```
+git submodule update --init --recursive
+```
+
+Adding the library to the project:
+
+- [VS project reference](./doc/howtostart.md)
+
+# Hot Reload
+
+You can use hot reload for content pages using [HotReloadKit](https://github.com/idexus/HotReloadKit.git)
+
+- [mpack package for VS for Mac](https://github.com/idexus/HotReloadKit/releases)
+- [vsix package for VS for Windows](https://github.com/idexus/HotReloadKit/releases)
+
+Nuget package
+
+```
+dotnet add package HotReloadKit
+```
+
+This is a proof of concept. There is no official support. Use at your own risk.
 
 # Basic Examples
 
@@ -91,20 +118,6 @@ Here are some examples showing how to use the Sharp.UI library
 - [Behaviors](./doc/behaviors.md)
 - [App theme, device idiom and platform templates](./doc/deftemplates.md)
 - [Application shell](./doc/shellapplication.md)
-
-# Hot Reload
-
-You can use hot reload for content pages created in the MVVM pattern
-
-- using Visual Studio 2022 for Mac with HotReloadKit.VSMac extension [HotReloadKit.VSMac_0.3.0_beta.3.mpack](https://github.com/idexus/HotReloadKit/releases)
-- using Visual Studio 2022 for Windows and [System.Reflection.Metadata.MetadataUpdateHandlerAttribute](https://learn.microsoft.com/en-us/dotnet/api/system.reflection.metadata.metadataupdatehandlerattribute?view=net-7.0&viewFallbackFrom=net-5.0)
-- using Visual Studio Code and [Reloadify3000](https://github.com/Clancey/Reloadify3000) library with [vscode-comet](https://github.com/Clancey/vscode-comet) plugin 
-
-This is a proof of concept. There is no official support. Use at your own risk.
-
-_VS 2022 for Windows, and in VS Code:_ 
-_Does not work if you want to use the Sharp.UI library by project reference. Use nuget package_
-
 
 # Auto-generated bindable properties
 

@@ -6,8 +6,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sharp.UI", "Sharp.UI\Sharp.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EBEF87B9-CBCC-47E7-B35D-2786A76CD608}"
 	ProjectSection(SolutionItems) = preProject
-		doc\howtostart.md = doc\howtostart.md
-		README.md = README.md
+		..\doc\howtostart.md = ..\doc\howtostart.md
+		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sharp.UI.Generator", "Sharp.UI.Generator\Sharp.UI.Generator.csproj", "{DB13FDDD-8B03-44F4-A017-4CEAC318A148}"
