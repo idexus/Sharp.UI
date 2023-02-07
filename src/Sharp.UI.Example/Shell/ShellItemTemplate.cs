@@ -14,12 +14,12 @@ public class ShellItemTemplate : ContentView
 				.HeightRequest(45),
 
 			new Label()
-				.Column(1)
+				.Row(1)
 				.Text(e => e.Path("Title"))
 				.FontSize(20)
 				.FontAttributes(FontAttributes.Italic)
 				.VerticalTextAlignment(TextAlignment.Center)
 		}
-		.ColumnDefinitions(e => e.Star(0.2).Star(0.8));
+		.RowDefinitions(e => e.Star(0.2).Star(0.8));
 	}
 }

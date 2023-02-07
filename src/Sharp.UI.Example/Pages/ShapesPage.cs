@@ -22,7 +22,7 @@ namespace ExampleApp
 			Content = new Grid(e => e
 				.BackgroundColor(Colors.Cyan)
 				.Padding(50)
-                .ColumnDefinitions(e => e.Star(1).Star(1).Star(1.5))
+                .ColumnDefinitions(e => e.Star(1).Star(1).Star(1.8))
 				.RowDefinitions(e => e.Star(1).Star(1)))
 			{
 				new ContentView

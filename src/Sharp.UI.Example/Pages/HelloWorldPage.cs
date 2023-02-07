@@ -12,15 +12,16 @@ public partial class HelloWorldPage : ContentPage
 		Content = new VStack   
 		{			
 			new Image("dotnet_bot.png", out var image)        
-				.HeightRequest(250) 
+				.HeightRequest(280) 
 				.HorizontalOptions(LayoutOptions.Center),
 
 			new Label("Welcome to .NET Multi-platform App UI")
-                .FontSize(e => e.Default(30).OnPhone(18))
+                .FontSize(e => e.Default(30).OnPhone(20))
                 .HorizontalOptions(LayoutOptions.Center),
 
             new Button("Click me")
-				.HorizontalOptions(LayoutOptions.Center) 
+				.HorizontalOptions(LayoutOptions.Center)
+				.FontSize(20)
 				.OnClicked(button =>
 				{
                     count++;

@@ -63,6 +63,9 @@
 	  <CreatePackage>false</CreatePackage>
 	</PropertyGroup>
 	<ItemGroup>
+	  <None Remove="Shell\Templates\" />
+	</ItemGroup>
+	<ItemGroup>
 		<Compile Remove="$(CompilerGeneratedFilesOutputPath)/**/*.cs" />
 	    <None Include="$(CompilerGeneratedFilesOutputPath)/Sharp.UI.Generator/**/*.cs" />
 		<None Include="$(CompilerGeneratedFilesOutputPath)/HotReloadKit.Generator/**/*.cs" />
@@ -86,5 +89,8 @@
 	  <None Update="Platforms\Windows\Package.appxmanifest">
 	    <SubType>Designer</SubType>
 	  </None>
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Shell\Templates\" />
 	</ItemGroup>
 </Project>

@@ -9,7 +9,7 @@ namespace ExampleApp
         {
             Content = new Grid(out var grid)
             {
-                new BoxView().Color(Colors.Green),
+                new BoxView().Color(Colors.Red),
                 new Label("Column 0, Row 0"),
 
                 new BoxView().Color(Colors.Blue).Column(1).Row(0),
@@ -32,10 +32,11 @@ namespace ExampleApp
                         grid.BackgroundColor = Colors.DarkRed;
                     })
             }
+            .Margin(new Thickness(0,35,0,0))
             .RowSpacing(15)
             .ColumnSpacing(15)
             .Padding(10)
-            .RowDefinitions(e => e.Star(2).Star().Absolute(100).Absolute(100))
+            .RowDefinitions(e => e.Star(2).Star(1).Absolute(100).Absolute(100))
             .ColumnDefinitions(e => e.Star().Star(2));
         }
     }
