@@ -19,7 +19,11 @@ namespace ExampleApp
 
 			this.BackgroundColor(Colors.White);
 
-			Content = new Grid
+			Content = new Grid(e => e
+				.BackgroundColor(Colors.Cyan)
+				.Padding(50)
+                .ColumnDefinitions(e => e.Star(1).Star(1).Star(1.5))
+				.RowDefinitions(e => e.Star(1).Star(1)))
 			{
 				new ContentView
 				{
@@ -151,9 +155,7 @@ namespace ExampleApp
 					.StrokeThickness(12)
 					.StrokeLineJoin(PenLineJoin.Round)
 				}
-            }
-			.ColumnDefinitions(e => e.Star(1).Star(1).Star(1))
-			.RowDefinitions(e => e.Star(1).Star(1));
+            };
 		}
 	}
 }

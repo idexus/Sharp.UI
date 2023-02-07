@@ -35,15 +35,16 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\..\libs\HotReloadKit\src\HotReloadKit\HotReloadKit.csproj" />
 		<ProjectReference Include="..\Sharp.UI.Generator\Sharp.UI.Generator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
-		<ProjectReference Include="..\..\..\HotReloadKit\src\HotReloadKit\HotReloadKit.csproj" />
 	</ItemGroup>
 	<ItemGroup>
 	  <None Remove="HotReloadKit" />
 	</ItemGroup>
 	<ItemGroup>
-      <None Include="..\Sharp.UI.Generator\bin\$(Configuration)\netstandard2.0\Sharp.UI.Generator.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
-    </ItemGroup>
+    <None Include="..\Sharp.UI.Generator\bin\$(Configuration)\netstandard2.0\Sharp.UI.Generator.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+    <None Include="..\..\libs\HotReloadKit\src\HotReloadKit.Generator\bin\$(Configuration)\netstandard2.0\HotReloadKit.Generator.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+  </ItemGroup>
 
 	<PropertyGroup>
 		<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
