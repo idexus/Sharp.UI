@@ -3,7 +3,6 @@ namespace ExampleApp;
 
 using Sharp.UI;
 
-
 public class ListViewPage : ContentPage
 {
     ListViewPageViewModel viewModel => BindingContext as ListViewPageViewModel;
@@ -29,24 +28,11 @@ public class ListViewPage : ContentPage
                 new Label("TextCell")
                     .FontSize(40)
                     .TextColor(Colors.Red)
-                    .BackgroundColor(AppColors.Gray900),
+                    .BackgroundColor(AppColors.Gray600),
                 new ListView()
                     .ItemsSource(e => e.Path(nameof(ListViewPageViewModel.SimpleData)))
                     .ItemTemplate(() =>
                         new TextCell()
-                            .Text(e => e.Path(nameof(DataModel.Name)))
-                            .Detail(e => e.Path(nameof(DataModel.Id)).StringFormat("id: {0}"))
-                    ),
-
-                new Label("ImageCell")
-                    .FontSize(40)
-                    .TextColor(Colors.Red)
-                    .BackgroundColor(AppColors.Gray900),
-                new ListView()
-                    .ItemsSource(e => e.Path(nameof(ListViewPageViewModel.SimpleData)))
-                    .ItemTemplate(() =>
-                        new ImageCell()
-                            .ImageSource("dotnet_bot.png")
                             .Text(e => e.Path(nameof(DataModel.Name)))
                             .Detail(e => e.Path(nameof(DataModel.Id)).StringFormat("id: {0}"))
                     ),

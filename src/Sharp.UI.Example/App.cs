@@ -9,7 +9,7 @@ public partial class App : Application
 {
     public App()
     {
-        MainPage =  ActivatorUtilities.GetServiceOrCreateInstance<HotReloadTestPage>(Application.Services);
+        MainPage = ActivatorUtilities.GetServiceOrCreateInstance<HotReloadTestPage>(Application.Services);
         /*
         MainPage = new Shell
         {

@@ -48,8 +48,9 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\Sharp.UI\Sharp.UI.csproj" />
-	  <ProjectReference Include="..\Sharp.UI.Generator\Sharp.UI.Generator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
-	</ItemGroup>
+    <ProjectReference Include="..\Sharp.UI.Generator\Sharp.UI.Generator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+    <ProjectReference Include="..\..\libs\HotReloadKit\src\HotReloadKit.Generator\HotReloadKit.Generator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+	</ItemGroup> 
 
 	<PropertyGroup>
 		<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
@@ -61,6 +62,9 @@
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
 	  <CreatePackage>false</CreatePackage>
 	</PropertyGroup>
+	<ItemGroup>
+	  <None Remove="Shell\Templates\" />
+	</ItemGroup>
 	<ItemGroup>
 		<Compile Remove="$(CompilerGeneratedFilesOutputPath)/**/*.cs" />
 	    <None Include="$(CompilerGeneratedFilesOutputPath)/Sharp.UI.Generator/**/*.cs" />
@@ -85,5 +89,8 @@
 	  <None Update="Platforms\Windows\Package.appxmanifest">
 	    <SubType>Designer</SubType>
 	  </None>
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Shell\Templates\" />
 	</ItemGroup>
 </Project>

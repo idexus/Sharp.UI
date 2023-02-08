@@ -21,7 +21,7 @@ public class AbsoluteLayoutPage : ContentPage
                     .VerticalOptions(LayoutOptions.Center)
             }
 			.BackgroundColor(Colors.Red)
-            .AbsoluteLayoutBounds(new Rect(100,100,400,300)),
+            .AbsoluteLayoutBounds(new Rect(50,100,280,200)),
 
             new Border
             {
@@ -38,7 +38,7 @@ public class AbsoluteLayoutPage : ContentPage
                 new GradientStop(Colors.Blue, 0.75),
                 new GradientStop(Colors.LimeGreen, 1.0)
             }) 
-            .AbsoluteLayoutBounds(new Rect(400,500,300,200))
+            .AbsoluteLayoutBounds(new Rect(100,400,300,200))
             .Stroke(Colors.Blue)
             .StrokeThickness(4)
             .StrokeShape(new RoundRectangle().CornerRadius(40)),

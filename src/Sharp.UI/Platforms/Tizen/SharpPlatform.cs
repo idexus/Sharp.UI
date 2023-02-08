@@ -2,5 +2,5 @@
 
 public static class SharpPlatform
 {
-
+    public const string Name = "tizen";
 }
