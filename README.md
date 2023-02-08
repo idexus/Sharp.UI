@@ -82,7 +82,7 @@ namespace ExampleApp
 # Nuget Package
 
 ```
-dotnet add package Sharp.UI
+dotnet add package Sharp.UI --version 0.3.0-alpha.1
 ```
 
 #### Project reference
@@ -99,7 +99,7 @@ You can use hot reload for content pages using [HotReloadKit](https://github.com
 #### Nuget package
 
 ```
-dotnet add package HotReloadKit
+dotnet add package HotReloadKit --version 0.4.0-beta.1
 ```
 
 This is a proof of concept. There is no official support. Use at your own risk.
