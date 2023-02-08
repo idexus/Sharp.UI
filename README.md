@@ -7,8 +7,10 @@ __Sharp.UI__ allows you to build a .NET Multi-platform App User Interface (.NET 
 
 It is a wrapper library, mostly auto-generated.
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=r3Ri4VHYo7I" target="_blank">
- <img src="./doc/assets/output.gif" alt="Watch the video" width="640" height="360" border="0" />
+#### Hot Reload Example
+
+<a href="https://youtu.be/g2da90-LaGI" target="_blank">
+ <img src="./doc/assets/ytscreen.png" alt="Hot Reload Support" width="640" border="0" />
 </a>
 
 # Hello, World!
