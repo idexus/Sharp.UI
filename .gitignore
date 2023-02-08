@@ -6,6 +6,8 @@ profile
 
 TestApp
 # Generated/
+*.snk
+*.HotReloadSupport.g.cs
 
 # vscode
 .vscode
