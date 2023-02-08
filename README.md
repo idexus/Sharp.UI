@@ -9,7 +9,7 @@ It is a wrapper library, mostly auto-generated.
 
 #### Hot Reload Example
 
-<a href="https://youtu.be/g2da90-LaGI" target="_blank">
+<a href="https://youtu.be/w5863t1E5tg" target="_blank">
  <img src="./doc/assets/ytscreen.jpg" alt="Hot Reload Support" width="640" border="0" />
 </a>
 
