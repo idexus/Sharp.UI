@@ -1,7 +1,11 @@
 # Overview
-__Sharp.UI__ allows you to build a .NET Multi-platform App User Interface (.NET MAUI) declaratively in C# code (with Hot Reload Win/Mac) using fluent methods, without the need for XAML. It is a wrapper library, mostly auto-generated.
+__Sharp.UI__ allows you to build a .NET Multi-platform App User Interface (.NET MAUI) 
 
-### Hot Reload Example (VS2022 Mac)
+- declaratively in C# code using fluent methods
+- without the need for XAML
+- with Hot Reload Support (VS2022 Win/Mac)
+
+It is a wrapper library, mostly auto-generated.
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=r3Ri4VHYo7I" target="_blank">
  <img src="./doc/assets/output.gif" alt="Watch the video" width="640" height="360" border="0" />
@@ -49,9 +53,10 @@ public class HelloWorldPage : ContentPage
 }
 ```
 
+
 # Using this repository
 
-This project uses submodules
+This project uses submodules. You have to init them.
 
 ```
 git submodule update --init --recursive
@@ -59,7 +64,7 @@ git submodule update --init --recursive
 
 # How to start
 
-If you want to use this library, you need to include the `using Sharp.UI` inside your app namespace, which replaces the standard MAUI classes.
+If you want to use this library in your projects, you need to include the `using Sharp.UI` inside your app namespace, which replaces the standard MAUI classes.
 
 ```cs
 namespace ExampleApp;
@@ -74,15 +79,15 @@ namespace ExampleApp
 }
 ```
 
-# Using Nuget Package
+# Nuget Package
 
 ```
 dotnet add package Sharp.UI
 ```
 
-Adding the library to the project:
+#### Project reference
 
-- [by VS project reference](./doc/howtostart.md)
+- [Adding the library by VS project reference](./doc/howtostart.md)
 
 # Hot Reload
 
@@ -91,7 +96,7 @@ You can use hot reload for content pages using [HotReloadKit](https://github.com
 - [mpack package for VS for Mac](https://github.com/idexus/HotReloadKit/releases)
 - [vsix package for VS for Windows](https://github.com/idexus/HotReloadKit/releases)
 
-Nuget package
+#### Nuget package
 
 ```
 dotnet add package HotReloadKit
