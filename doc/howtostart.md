@@ -1,7 +1,7 @@
 
 # VS Project Reference
 
-If you want to use the `Sharp.UI` library by project reference (Hot reload does not work in this case)
+If you want to use the `Sharp.UI` library by project reference
 
 ```xml
 <ItemGroup>
