@@ -3,7 +3,7 @@ __Sharp.UI__ allows you to build a .NET Multi-platform App User Interface (.NET 
 
 - declaratively in C# code using fluent methods
 - without the need for XAML
-- with Hot Reload Support (VS2022 Win/Mac)
+- with Hot Reload Support (VS2022 Win/Mac) using [HotReloadKit](https://github.com/idexus/HotReloadKit.git)
 
 It is a wrapper library, mostly auto-generated.
 
@@ -93,14 +93,10 @@ dotnet add package Sharp.UI --version 0.3.0-alpha.1
 
 You can use hot reload for content pages using [HotReloadKit](https://github.com/idexus/HotReloadKit.git)
 
+#### VS2022 extensions
+
 - [mpack package for VS for Mac](https://github.com/idexus/HotReloadKit/releases)
 - [vsix package for VS for Windows](https://github.com/idexus/HotReloadKit/releases)
-
-#### Nuget package
-
-```
-dotnet add package HotReloadKit --version 0.4.0-beta.2
-```
 
 This is a proof of concept. There is no official support. Use at your own risk.
 
