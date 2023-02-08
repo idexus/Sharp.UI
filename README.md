@@ -93,6 +93,8 @@ dotnet add package Sharp.UI --version 0.3.0-alpha.1
 
 You can use hot reload for content pages using [HotReloadKit](https://github.com/idexus/HotReloadKit.git)
 
+#### VS2022 extensions
+
 - [mpack package for VS for Mac](https://github.com/idexus/HotReloadKit/releases)
 - [vsix package for VS for Windows](https://github.com/idexus/HotReloadKit/releases)
 
