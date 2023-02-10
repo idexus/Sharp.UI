@@ -33,15 +33,17 @@ namespace Sharp.UI
             return this;
         }
 
-        public ColumnDefinitions Star(double width = 1)
+        public ColumnDefinitions Star(double width = 1, int count = 1)
         {
-            items.Add(ColumnDefinition.Star(width));
+            for(int i = 0; i < count; i++)
+                items.Add(ColumnDefinition.Star(width));
             return this;
         }
 
-        public ColumnDefinitions Absolute(double width)
+        public ColumnDefinitions Absolute(double width, int count = 1)
         {
-            items.Add(ColumnDefinition.Absolute(width));
+            for (int i = 0; i < count; i++)
+                items.Add(ColumnDefinition.Absolute(width));
             return this;
         }
     }
