@@ -1,19 +1,16 @@
 # Overview
-__Sharp.UI__ allows you to build a .NET Multi-platform App User Interface (.NET MAUI) 
 
-- declaratively in C# code using fluent methods
-- without the need for XAML
-- with Hot Reload Support (VS2022 Win/Mac) using [HotReloadKit](https://github.com/idexus/HotReloadKit.git)
+Sharp.UI is a .NET Multi-platform App User Interface (MAUI) library that allows you to build user interfaces declaratively in C# code using fluent methods. You do not need to use XAML to create your interfaces. The library comes with Hot Reload Support, which means you can make changes to your UI in real-time and see the results without having to rebuild the entire application. The hot reload feature is supported in Visual Studio 2022 for both Windows and Mac using the [HotReloadKit library](https://github.com/idexus/HotReloadKit.git).
 
-It is a wrapper library, mostly auto-generated.
-
-#### Hot Reload Example
+Sharp.UI is a wrapper library, mostly auto-generated, and it replaces the standard MAUI classes.
 
 <a href="https://youtu.be/w5863t1E5tg" target="_blank">
  <img src="https://github.com/idexus/Sharp.UI/raw/main/doc/assets/ytscreen.jpg" alt="Hot Reload Support" width="640" border="0" />
 </a>
 
-# Hello, World!
+# Hello, World! Example
+
+Here is an example of how you could create a simple "Hello, World!" page in Sharp.UI:
 
 ```cs
 namespace ExampleApp;
@@ -55,23 +52,16 @@ public class HelloWorldPage : ContentPage
 }
 ```
 
+# Using Sharp.UI
 
-# Using this repository
-
-This project uses submodules. You have to init them.
-
-```
-git submodule update --init --recursive
-```
-
-# How to start
-
-If you want to use this library in your projects, you need to include the `using Sharp.UI` inside your app namespace, which replaces the standard MAUI classes.
+To use Sharp.UI in your projects, you need to include the `using Sharp.UI` statement inside your app namespace.
 
 ```cs
 namespace ExampleApp;
 using Sharp.UI;
 ```
+
+Or:
 
 ```cs
 namespace ExampleApp
@@ -81,33 +71,26 @@ namespace ExampleApp
 }
 ```
 
-# Nuget Package
+### Nuget Package
+
+To add the Sharp.UI library to your project, run the following command:
 
 ```
 dotnet add package Sharp.UI --version 0.3.0-alpha.1
 ```
 
-#### Project reference
-
-- [Adding the library by VS project reference](./doc/howtostart.md)
+You can also add the library to your project by adding a project reference to the Sharp.UI library. For more information, see the [Adding the Library by VS Project Reference](./doc/howtostart.md) document.
 
 # Hot Reload
 
-You can use hot reload for content pages using [HotReloadKit](https://github.com/idexus/HotReloadKit.git)
-
-#### VS2022 extensions
-
-- [mpack package for VS for Mac](https://github.com/idexus/HotReloadKit/releases)
-- [vsix package for VS for Windows](https://github.com/idexus/HotReloadKit/releases)
-
-This is a proof of concept. There is no official support. Use at your own risk.
+The hot reload feature allows you to see changes to your UI in real-time without having to rebuild the entire application. To use hot reload in Sharp.UI, you will need to use the [HotReloadKit](https://github.com/idexus/HotReloadKit.git) library. Visual Studio 2022 extensions for both Windows and Mac are available for download from the [HotReloadKit releases page](https://github.com/idexus/HotReloadKit/releases). Please note that this is a proof of concept and there is no official support. Use it at your own risk.
 
 # Basic Examples
 
 Here are some examples showing how to use the Sharp.UI library
 
 - [Properties and fluent methods](./doc/properties.md)
-- [How to assign object references](./doc/assign.md)
+- [Object references assignment](./doc/assign.md)
 - [Object containers](./doc/containers.md)
 - [Property bindings](./doc/propertybindings.md)
 - [Binding converters](./doc/bindingconverters.md)
@@ -124,12 +107,10 @@ Here are some examples showing how to use the Sharp.UI library
 - [App theme, device idiom and platform templates](./doc/deftemplates.md)
 - [Application shell](./doc/shellapplication.md)
 
-# Auto-generated bindable properties
+# Auto-generated code
 
-In __Sharp.UI__ bindable properties and their float helper methods are automatically generated. You just need to define the interface.
-
-### View-model
-
+__Sharp.UI__ library has a feature of automatically generating bindable properties and their fluent helper methods. To use this feature, you need to define the __view-model__ as follows:
+ 
 ```cs
 [BindableProperties]
 public interface IViewModelProperties
@@ -148,7 +129,8 @@ public partial class ViewModel : BindableObject, IViewModelProperties
     }
 }
 ```
-### View
+
+And, in the __view__, the code will be:
 
 ```cs
 public class ViewPage : ContentPage
@@ -180,17 +162,23 @@ public class ViewPage : ContentPage
     }
 }
 ```
-### Advanced scenarios
+There are also advanced scenarios that you can explore
 
-- [Callbacks, default values](./doc/advbindablepoperties.md)
+- [Callbacks and default values](./doc/advbindablepoperties.md)
 - [Attached properties generation](./doc/attachedpropertiesgeneration.md)
 
-# Custom controls
+Custom controls can also be created using the auto-generated properties and event handler helper methods. The following links provide more information:
 
-You can create custom controls using auto-generated properties and event handler helper methods.
-
-- [Create custom controls](./doc/customcontentview.md)
+- [Creating custom controls](./doc/customcontentview.md)
 - [Control template](./doc/autogenbindableproperties.md)
+
+# Using this repository
+
+This project uses submodules. You have to init them.
+
+```
+git submodule update --init --recursive
+```
 
 # Disclaimer
 
