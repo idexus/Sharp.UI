@@ -4,10 +4,13 @@ profile
 
 # TestApp
 
+
 TestApp
 # Generated/
 *.snk
 *.HotReloadSupport.g.cs
+Microsoft.Interop.JavaScript.JSImportGenerator
+Microsoft.Interop.LibraryImportGenerator
 
 # vscode
 .vscode

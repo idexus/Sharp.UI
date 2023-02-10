@@ -33,15 +33,17 @@ namespace Sharp.UI
             return this;
         }
 
-        public RowDefinitions Star(double height = 1)
+        public RowDefinitions Star(double height = 1, int count = 1)
         {
-            items.Add(RowDefinition.Star(height));
+            for (int i = 0; i < count; i++)
+                items.Add(RowDefinition.Star(height));
             return this;
         }
 
-        public RowDefinitions Absolute(double height)
+        public RowDefinitions Absolute(double height, int count = 1)
         {
-            items.Add(RowDefinition.Absolute(height));
+            for (int i = 0; i < count; i++)
+                items.Add(RowDefinition.Absolute(height));
             return this;
         }
     }
