@@ -1,5 +1,6 @@
 # Overview
-An auto-generated wrapper library that allows you to use .NET MAUI only in C# code using fluent methods, without the need for XAML.
+
+Wrapper Library for .NET MAUI: Code-Only UI dev with Fluent Methods, Hot Reload and No XAML
 
 # Hello, World!
 

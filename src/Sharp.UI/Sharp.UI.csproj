@@ -17,10 +17,10 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 
 		<PackageId>Sharp.UI</PackageId>
-		<Version>0.3.0-alpha.1</Version>
+		<Version>0.3.0-alpha.2</Version>
 		<Authors>Pawel Krzywdzinski</Authors>
 		<Copyright>Pawel Krzywdzinski</Copyright>
-		<PackageDescription>A library that allows you to use .NET MAUI only in C# code using fluent methods, with code Hot Reload, without the need for XAML</PackageDescription>
+		<PackageDescription>Wrapper Library for .NET MAUI: Code-Only UI dev with Fluent Methods, Hot Reload and No XAML</PackageDescription>
 		<Company></Company>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
