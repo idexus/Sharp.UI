@@ -1,6 +1,6 @@
 # Gesture Recognizers
 
-`Sharp.UI` provides gesture recognizers to handle user interactions on views. The following gesture recognizers are available:
+The following gesture recognizers are available:
 
 - `TapGestureRecognizer`
 - `PanGestureRecognizer`
