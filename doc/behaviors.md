@@ -69,21 +69,21 @@ You can then apply the attached behavior using a style in your `ContentPage`:
 ```cs
 public class AttachedBehaviorPage : ContentPage
 {
-	public AttachedBehaviorPage()
+    public AttachedBehaviorPage()
+    {
+	Resources = new ResourceDictionary
 	{
-        Resources = new ResourceDictionary
-        {
-            new Style<Entry>
-            {
-                NumericValidationStyleBehavior.AttachedProperty.Set(true)
-            }
-        };
+	    new Style<Entry>
+	    {
+		NumericValidationStyleBehavior.AttachedProperty.Set(true)
+	    }
+	};
 
-		Content = new VStack
-		{
-			new Entry("Enter text...", out var entry).Text("")
-		}
-		.VerticalOptions(LayoutOptions.Center);
+	Content = new VStack
+	{
+		new Entry("Enter text...", out var entry).Text("")
 	}
+	.VerticalOptions(LayoutOptions.Center);
+    }
 }
 ```
