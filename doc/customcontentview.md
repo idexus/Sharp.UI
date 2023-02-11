@@ -1,10 +1,10 @@
 # Custom Control Views
 
-In `Sharp.UI` you can create custom control views, and all interface bindable properties and fluent helper methods for event handlers will be generated automatically.
+In `Sharp.UI`, you can create custom control views, and all interface bindable properties and fluent helper methods for event handlers will be generated automatically.
 
 ### Interface
 
-To auto-generate properties you have to use `[BindableProperties]` attribute in the interface declaration and the `[SharpObject]` attribute in the class declaration.
+To auto-generate properties, you have to use the `[BindableProperties]` attribute in the interface declaration and the `[SharpObject]` attribute in the class declaration. For example, you can declare an interface `ICardViewProperties` as follows:
 
 ```cs
 [BindableProperties]
@@ -20,9 +20,9 @@ public interface ICardViewProperties
 }
 ```
 
-### Class declaration
+### Class Declaration
 
-To automatically generate bindable properties and fluent helper methods for event handlers, you need to inherit interface and use the `[SharpObject]` attribute
+To automatically generate bindable properties and fluent helper methods for event handlers, you need to inherit the interface and use the `[SharpObject]` attribute. In the following example, a CardView class is declared that implements the `ICardViewProperties` interface:
 
 ```cs
 [SharpObject]
@@ -77,67 +77,29 @@ public partial class CardView : ContentView, ICardViewProperties
 }
 ```
 
-### Event handlers
+# Event Handlers
 
-By using the `[SharpObject]` attribute in the class declaration, fluent helper methods will be generated for each `EventHandler`. E.g for the `Clicked` event handler you will get two fluent methods 
-- `OnClicked(sender)`
-- `OnClicked(sender, args)`
-
-### Usage example
+In `Sharp.UI`, you can add event handlers to your controls using fluent helper methods. Event handlers are methods that are called when a specific event occurs, such as a button being clicked. The following is an example of adding a click event handler to a button:
 
 ```cs
-public class CardViewPage : ContentPage
+public class EventHandlerPage : ContentPage
 {    
-    public CardViewPage()
+    public EventHandlerPage()
     {
-        var labelStyle = new Style<Label>
+        Content = new VStack
         {
-            Label.TextColorProperty.Set(Colors.Blue),
-            Label.FontSizeProperty.Set(20)
-        };
-
-        this.Content = new VStack
-        {
-            new Slider(1,100, out var slider),
-
-            new HStack
-            {
-                new CardView(out var cardNo1)
-                {
-                    new Image("dotnet_bot.png")
-                        .Aspect(Aspect.AspectFit)
-                }
-                .CardTitle(e => e.Path("Value").Source(slider).StringFormat("Value {0:F1}"))
-                .ButtonTitle("Play")
-                .CardDescription("Do you like it")
-                .CardColor(Colors.Blue)
-                .BorderColor(Colors.Red)
+            new Button("Click me!")
                 .OnClicked(e =>
                 {
-                    cardNo1.CardDescription = "Let's play :)";
-                }),
-
-                new CardView(out var cardView)
-                {
-                    new VStack
-                    {
-                        new Label("This is a simple card view example"),
-                        new Label("Second label")
-                            .FontSize(20)
-                            .TextColor(AppColors.Gray200)
-                    }
-                }
-                .CardTitle("Title 2")
-                .ButtonTitle("Stop")
-                .CardDescription("Yes I do")
-                .CardColor(Colors.Red)
-                .BorderColor(Colors.Blue)
-                .DescriptionStyle(labelStyle)
-            }
-            .HorizontalOptions(LayoutOptions.Center)
+                    // Code to be executed when the button is clicked
+                    DisplayAlert("Button clicked", "You just clicked the button!", "OK");
+                })
         }
-        .VerticalOptions(LayoutOptions.Center)
-        .Padding(100);
+        .VerticalOptions(LayoutOptions.Center);
     }
 }
 ```
+
+In the example above, the `OnClicked` fluent helper method is used to add a click event handler to the button. When the button is clicked, the code inside the lambda expression will be executed, in this case displaying an alert to the user.
+
+Fluent helper methods are generated for each `EventHandler` in the class declaration, so you can add event handlers for different events in a similar way.

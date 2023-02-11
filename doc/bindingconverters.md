@@ -1,6 +1,6 @@
 # Binding Converters
 
-Example of using binding converters
+This code is an example of how to use binding converters in `Sharp.UI`. A `CollectionView` is defined and for each item in the `Numbers` list, a label is created with text equal to the value of the item. The `BackgroundColor` property of the label is bound to the item using the `Convert` method, which takes in a function that converts the value of the item (an integer) to a color. In this case, the function checks if the number is even or odd, and returns either `Colors.White` or `Colors.Black` based on the result.
 
 ```cs
 public class AlternativeBackroundPage : ContentPage
@@ -20,7 +20,7 @@ public class AlternativeBackroundPage : ContentPage
                     .TextColor(Colors.Gray)
                     .BackgroundColor(e => e
                         .Path(".")
-                        .Convert((int n) => n%2 == 0 ? Colors.White : Colors.Black)
+                        .Convert((int n) => n % 2 == 0 ? Colors.White : Colors.Black)
                     )
             }
             .ItemsSource(Numbers)

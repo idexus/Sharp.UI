@@ -1,5 +1,8 @@
-# Properties and fluent methods
-The properties of the MAUI classes are matched with their fluent helper methods
+# Properties and Fluent Methods
+
+`Sharp.UI` provides a convenient way to set properties for UI elements by matching properties with fluent helper methods. This makes it easier and more readable to define the interface of your application.
+
+Here is an example of using fluent methods to set properties on a `Label`:
 
 ```cs
 new Label()
@@ -10,13 +13,13 @@ new Label()
     .VerticalOptions(LayoutOptions.Center)
 ```
 
-To speed up defining the interface, some common properties are placed directly as constructor arguments
+Additionally, some common properties can be set directly as constructor arguments for even faster definition of the interface. Here is an example using a constructor argument to set the text property on a `Label`:
 
 ```cs
 new Label("This is a test")
 ```
 
-You can set the property value depending on the device idiom, platform, or app theme
+`Sharp.UI` also provides a way to set property values based on device idiom, platform, or app theme. Here is an example of setting the font size and text color of a `Label` based on the current device or theme:
 
 ```cs
 new Label("Hello")

@@ -1,6 +1,8 @@
-# Menu
+# Menus in Sharp.UI
 
-#### Context menu
+### Context menu
+
+Here is an example of creating a context menu for an image. The context menu has options for copying and pasting, and also for changing the background color of a grid.
 
 ```cs
 new Grid(out var grid)
@@ -25,7 +27,9 @@ new Grid(out var grid)
 }
 ```
 
-#### Menu bar
+### Menu bar
+
+Here is an example of creating a menu bar for a `ContentPage`. The menu bar has three options: My Menu, Edit, and Theme.
 
 ```cs
 public class MenuPage : ContentPage
@@ -50,10 +54,7 @@ public class MenuPage : ContentPage
             {
                 new MenuFlyoutItem("Blue")
                     .OnClicked(e => this.BackgroundColor = Colors.Blue),
-                new MenuFlyoutItem("Red")
-                    .OnClicked(e => this.BackgroundColor = Colors.Red),
-                new MenuFlyoutItem("Black")
-                    .OnClicked(e => this.BackgroundColor = Colors.Black)
+                ...
             }
         });
 

@@ -1,6 +1,16 @@
-# Gesture recognizers
+# Gesture Recognizers
 
-#### Tap gesture recognizer
+`Sharp.UI` provides gesture recognizers to handle user interactions on views. The following gesture recognizers are available:
+
+- `TapGestureRecognizer`
+- `PanGestureRecognizer`
+- `PointerGestureRecognizer`
+
+### Tap Gesture Recognizer
+
+The `TapGestureRecognizer` class is used to detect tap gestures on a view. You can specify the number of taps required using the `NumberOfTapsRequired` property.
+
+Here's an example of using the TapGestureRecognizer to detect a double-tap gesture on an image:
 
 ```cs
 new VStack
@@ -20,7 +30,11 @@ new VStack
 }
 ```
 
-#### Pan gesture recognizer
+### Pan Gesture Recognizer
+
+The `PanGestureRecognizer` class is used to detect pan gestures on a view. You can use the `OnPanUpdated` method to handle the pan gesture event and update the position of the view.
+
+Here's an example of using the `PanGestureRecognizer` to move an image on the screen:
 
 ```cs
 public class PanGesturePage : ContentPage
@@ -57,7 +71,11 @@ public class PanGesturePage : ContentPage
 }
 ```
 
-#### Pointer gesture recognizer
+### Pointer Gesture Recognizer
+
+The `PointerGestureRecognizer` class is used to detect pointer events such as entering, exiting, and moving on a view. You can use the `OnPointerEntered`, `OnPointerExited`, and `OnPointerMoved` methods to handle these events and update the view accordingly.
+
+Here's an example of using the `PointerGestureRecognizer` to display the position of a pointer on an image:
 
 ```cs
 public class PointerGesturePage : ContentPage

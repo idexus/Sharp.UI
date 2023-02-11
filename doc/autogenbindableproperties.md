@@ -1,8 +1,12 @@
 # Control template
 
-### Bindable Properties
+In `Sharp.UI`, custom control views can be easily created by implementing an interface that defines bindable properties. When the interface is implemented, all of the bindable properties defined in the interface are automatically generated in the custom control view class. This makes it simple and straightforward to use and manipulate the properties in code, without having to manually write property implementations for each one.
 
-In `Sharp.UI` you can create custom control views, and all interface bindable properties will be generated automatically.
+### Example
+
+This code demonstrates how to create a custom control view using a control template in `Sharp.UI`.
+
+The `ICardViewProperties` interface defines four bindable properties: `CardTitle`, `CardDescription`, `CardColor`, and `BorderColor`. The `CardView` class implements the `ICardViewProperties` interface. These properties are automatically generated in the CardView class.
 
 ```cs
 [BindableProperties]
@@ -20,7 +24,7 @@ public partial class CardView : ContentView, ICardViewProperties
 }
 ```
 
-### Usage
+### Consume
 
 ```cs
 public class TemplatedParentPage : ContentPage
@@ -52,38 +56,6 @@ public class TemplatedParentPage : ContentPage
 
         }
         .VerticalOptions(LayoutOptions.Center);
-    }
-}
-```
-
-### Control template
-
-This content template used by `CardView` uses the `TemplatedPath()` binding method to its parent view.
-
-```cs
-public class CardViewTemplateView : ContentView
-{
-    public CardViewTemplateView()
-    {
-        Content = new Border
-        {
-            new VStack
-            {
-                new Label()
-                    .Text(e => e.TemplatedPath("CardTitle"))
-                    .FontSize(44)
-                    .TextColor(Colors.White),
-
-                new Label()
-                    .Text(e => e.TemplatedPath("CardDescription"))
-            }
-        }
-        .StrokeShape(new RoundRectangle().CornerRadius(10))
-        .Stroke(e => e.TemplatedPath("BorderColor"))
-        .BackgroundColor(e => e.TemplatedPath("CardColor"))
-        .SizeRequest(200, 300)
-        .Margin(50)
-        .Padding(20);
     }
 }
 ```

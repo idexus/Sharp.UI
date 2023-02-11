@@ -1,12 +1,23 @@
 # Advanced scenarios
 
+Sharp.UI provides two attributes, `PropertyCallbacks` and `DefaultValue`, to allow developers to customize properties and their behavior.
 
-For properties, you can use the following additional attributes
+### PropertyCallbacks Attribute
 
-- `[PropertyCallbacks(propertyChanged,validateValue,coerceValue,defaultValueCreator)]` to define callback names
-- `[DefaultValue(value)]` to define default values
+The `PropertyCallbacks` attribute allows you to specify four different callbacks for a property: `propertyChanged`, `validateValue`, `coerceValue`, and `defaultValueCreator`.
 
-### Interface declaration
+- `propertyChanged` callback is invoked when the value of the property changes.
+- `validateValue` callback is used to validate the value of the property before it is set.
+- `coerceValue` callback is used to adjust the value of the property, for example, to ensure that it falls within a certain range.
+- `defaultValueCreator` callback is used to create the default value for the property.
+
+### DefaultValue Attribute
+
+The `DefaultValue` attribute allows you to specify the default value for a property. This attribute provides a convenient way to set a default value for a property without having to create a defaultValueCreator callback.
+
+### Example
+
+
 
 ```cs
 [BindableProperties]
@@ -23,7 +34,7 @@ public interface IAngleViewModelProperties
 }
 ```
 
-### Class declaration
+Class declaration
 
 ```cs
 [SharpObject]
@@ -48,7 +59,7 @@ public partial class AngleViewModel : BindableObject, IAngleViewModelProperties
 }
 ```
 
-### Usage
+Usage
 
 ```cs
 public class AngleViewModelPage : ContentPage
