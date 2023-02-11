@@ -1,6 +1,6 @@
 # Property Bindings
 
-`Sharp.UI` provides a way to bind properties of an element to a source, so that when the source changes, the property changes as well. You can bind a property by using the fluent method e.g. `Text()`, `TextColor()` etc. and calling in lambda the method `Path()` to specify the property you want to bind to.
+`Sharp.UI` provides a way to bind properties of an element to a source, so that when the source changes, the property changes as well. You can bind a property by using the fluent method e.g. `Text()`, `TextColor()` etc. and calling the method `Path()` to specify the property you want to bind to.
 
 
 ```cs
