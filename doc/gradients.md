@@ -7,7 +7,7 @@
 
 ### Example
 
-Here is an example of a Border element with a `LinearGradientBrush` as its background. The gradient effect goes from the top-left corner to the bottom-right corner.
+Here is an example of a `Border` element with a `LinearGradientBrush` as its background. The gradient effect goes from the top-left corner to the bottom-right corner.
 
 ```cs
 new Border
