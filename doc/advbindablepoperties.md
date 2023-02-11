@@ -13,7 +13,7 @@ The `PropertyCallbacks` attribute allows you to specify four different callbacks
 
 ### DefaultValue Attribute
 
-The `DefaultValue` attribute allows you to specify the default value for a property. This attribute provides a convenient way to set a default value for a property without having to create a defaultValueCreator callback.
+The `DefaultValue` attribute allows you to specify the default value for a property. This attribute provides a convenient way to set a default value for a property without having to create a `defaultValueCreator` callback.
 
 ### Example
 
