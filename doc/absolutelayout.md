@@ -53,7 +53,7 @@ public class AbsoluteLayoutPage : ContentPage
 
 ### Using attached properties
 
-In addition to the `AbsoluteLayoutBounds` method, Sharp.UI also provides access to the following attached properties for the AbsoluteLayout class:
+In addition to the `AbsoluteLayoutBounds` method, Sharp.UI also provides access to the following attached properties for the `AbsoluteLayout` class:
 
 | Attached property | Fluent method |
 |-|-|
