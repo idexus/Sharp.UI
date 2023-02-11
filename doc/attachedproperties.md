@@ -11,7 +11,7 @@ new Border
 }.AbsoluteLayoutBounds(new Rect(100, 100, 200, 200));
 ```
 
-This would set the `AbsoluteLayout.LayoutBounds` attached property to the specified rectangle value on the Border object.
+This would set the `AbsoluteLayout.LayoutBounds` attached property to the specified rectangle value on the `Border` object.
 
 ## Attached properties list
 
