@@ -1,6 +1,6 @@
 # Templates
 
-This below code demonstrates how to use the `LazyValueBuilder<T>` class to create templates that vary based on the device's idiom, platform, or app theme. The `LazyValueBuilder<T>` class constructor takes a `Func<T>` as an argument that specifies the default template. In this case, the default template is a VStack with a red background color and 20 pixels of padding.
+The code below demonstrates how to use the `LazyValueBuilder<T>` class to create templates that vary based on the device's idiom, platform, or app theme. The `LazyValueBuilder<T>` class constructor takes a `Func<T>` as an argument that specifies the default template. In this case, the default template is a VStack with a red background color and 20 pixels of padding.
 
 The `OnDesktop` method allows you to specify a different template for desktop devices. In this case, the desktop template is a `VStack` containing a label with the text "Desktop version" and an image of the dotnet bot.
 
