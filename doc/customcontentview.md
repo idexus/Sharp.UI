@@ -77,29 +77,6 @@ public partial class CardView : ContentView, ICardViewProperties
 }
 ```
 
-# Event Handlers
-
-In `Sharp.UI`, you can add event handlers to your controls using fluent helper methods. Event handlers are methods that are called when a specific event occurs, such as a button being clicked. The following is an example of adding a click event handler to a button:
-
-```cs
-public class EventHandlerPage : ContentPage
-{    
-    public EventHandlerPage()
-    {
-        Content = new VStack
-        {
-            new Button("Click me!")
-                .OnClicked(e =>
-                {
-                    // Code to be executed when the button is clicked
-                    DisplayAlert("Button clicked", "You just clicked the button!", "OK");
-                })
-        }
-        .VerticalOptions(LayoutOptions.Center);
-    }
-}
-```
-
 In the example above, the `OnClicked` fluent helper method is used to add a click event handler to the button. When the button is clicked, the code inside the lambda expression will be executed, in this case displaying an alert to the user.
 
 Fluent helper methods are generated for each `EventHandler` in the class declaration, so you can add event handlers for different events in a similar way.
