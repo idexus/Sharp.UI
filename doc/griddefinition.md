@@ -1,18 +1,12 @@
 # Grid Definition
 
-Using the `Row()`, `Column()`, `ColumnSpan()`, `RowSpan()` and `GridSpan()` methods, you can set the row, column and span within the grid definition.
+The `Grid` element allows you to create complex, multi-row and multi-column layout using Row and Column definitions. You can define the number and size of the rows and columns using the `RowDefinitions` and `ColumnDefinitions` methods, respectively.
 
-```cs
-new Label("Column 0, Row 2, Span 2 columns")
-    .Column(0)
-    .Row(2)
-    .ColumnSpan(2)
-```
-
-Methods like `Row()`, `Column()`, `ColumnSpan()`, `RowSpan()` matches attached properties: `Grid.Row`, `Grid.Column`, `Grid.ColumnSpan` and `Grid.RowSpan`.
+You can set the position of a child element within the grid using the `Row()`, `Column()`, `ColumnSpan()`, and `RowSpan()` methods. These methods match the attached properties `Grid.Row`, `Grid.Column`, `Grid.ColumnSpan`, and `Grid.RowSpan`, respectively.
 
 ### Row and column definition
-Using folowing fluent methods you can define the number and sizes of rows and columns.
+
+You can define the number and size of the rows and columns in a Grid element using the following methods:
 
 ```cs
 new Grid
@@ -23,12 +17,14 @@ new Grid
 .ColumnDefinitions(e => e.Absolute(100).Star());
 ``` 
 
-In this example you define
-- 3 rows - `Star(2)`, `Star()`, `Star(3)`) 
-- 2 columns - `Absolute(100)`, `Star()`
+In this example, you are defining:
 
+- Three rows (`Star(2)`, `Star()`, `Star(3)`)
+- Two columns (`Absolute(100)`, `Star()`)
 
 ### Example grid definition
+
+Here is an example of a grid definition:
 
 ```cs
 new Grid

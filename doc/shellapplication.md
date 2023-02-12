@@ -1,6 +1,6 @@
 # Shell Application
 
-An example of the application shell
+Here's an example of a simple shell-based application:
 
 ```cs
 using Sharp.UI;
@@ -29,9 +29,9 @@ public partial class App : Application
 }
 ```
 
-### FlyoutItem appearance
+You can customize the appearance of the `FlyoutItem` by defining a custom content view and setting the `ItemTemplate` property on the `Shell` element.
 
-An example of defining `FlyoutItem` appearance
+Here's an example of defining the appearance of a `FlyoutItem`:
 
 ```cs
 public class ShellItemTemplate : ContentView
