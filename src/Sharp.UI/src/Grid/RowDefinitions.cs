@@ -27,9 +27,10 @@ namespace Sharp.UI
         public IEnumerator<RowDefinition> GetEnumerator() => items.GetEnumerator();
         IEnumerator IEnumerable.GetEnumerator() => items.GetEnumerator();
 
-        public RowDefinitions Auto()
+        public RowDefinitions Auto(int count = 1)
         {
-            items.Add(RowDefinition.Auto);
+            for (int i = 0; i < count; i++)
+                items.Add(RowDefinition.Auto);
             return this;
         }
 
