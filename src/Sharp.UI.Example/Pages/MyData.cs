@@ -6,7 +6,7 @@ public class MyData
     public int Id { get; set; }
     public string Text { get; set; }
 
-    public static List<MyData> Source = Enumerable.Range(1, 1000).Select(id => new MyData
+    public static IEnumerable<MyData> Source = Enumerable.Range(1, 1000).Select(id => new MyData
     {
         Id = id,
         Text = $"Lorem ipsum dolor sit amet. Sit quos odit et reiciendis delectus et " +
@@ -21,5 +21,5 @@ public class MyData
         $"exercitationem. A error deserunt in culpa veniam ut beatae provident aut animi " +
         $"reiciendis non similique dolores sed omnis quae in dolorum enim. Et velit dolore " +
         $"ea dolores nihil ut rerum voluptatem sit deserunt asperiores aut libero quisquam."
-    }).ToList();
+    });
 }

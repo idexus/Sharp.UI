@@ -76,7 +76,7 @@ namespace ExampleApp
 To add the Sharp.UI library to your project, run the following command:
 
 ```
-dotnet add package Sharp.UI --version 0.3.0-alpha.2
+dotnet add package Sharp.UI --version 0.3.0-alpha.3
 ```
 
 You can also add the library to your project by adding a project reference to the Sharp.UI library. For more information, see the [Adding the Library by VS Project Reference](./doc/howtostart.md) document.

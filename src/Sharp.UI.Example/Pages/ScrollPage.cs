@@ -14,17 +14,24 @@ public class ScrollPage : ContentPage
         Content =
             new CollectionView(e => e.ItemsSource(MyData.Source))
             {
-                () => new VStack
+                () => new Grid
                 {
-                    new Label()
-                        .Text(e => e.Path("Id"))
-                        .FontSize(30)
-                        .TextColor(Colors.Blue),
+                    new Grid(e => e.ColumnDefinitions(e => e.Star(count: 2)))
+                    {
+                        new Label(),
 
-                    new Label()
-                        .FontSize(20)
-                        .Text(e => e.Path("Text"))
-                        .HeightRequest(200),
+                        new Label()
+                            .Text(e => e.Path("Id"))
+                            .FontSize(20)
+                            .TextColor(Colors.Blue)
+                            .HeightRequest(50),
+
+                        new Label()
+                            .Column(1)
+                            .FontSize(20)
+                            .Text(e => e.Path("Text"))
+                            .HeightRequest(200),
+                    }
                 }
             };
     }
