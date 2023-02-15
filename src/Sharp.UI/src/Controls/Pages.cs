@@ -38,9 +38,10 @@ namespace Sharp.UI
     {
         public ContentPage()
         {
-#if DEBUG            
-            if (HotReload.BindingContext != null) BindingContext = HotReload.BindingContext;
-#endif
+            if (Application.HotReloadIsEnabled)
+            {
+                if (HotReload.BindingContext != null) BindingContext = HotReload.BindingContext;
+            }
         }
 
         public ContentPage(string title) : this()
@@ -51,9 +52,10 @@ namespace Sharp.UI
         protected override void OnAppearing()
         {
             base.OnAppearing();
-#if DEBUG            
-            HotReload.RegisterActive(this);
-#endif
+            if (Application.HotReloadIsEnabled)
+            {
+                HotReload.RegisterActive(this);
+            }
         }
     }
 
