@@ -16,13 +16,16 @@ public class ScrollPage : ContentPage
             {
                 () => new Grid
                 {
-                    new Grid(e => e.ColumnDefinitions(e => e.Star(count: 2)))
+                    new Grid(e => e.ColumnDefinitions(e => e.Auto().Star()))
                     {
                         new Label(),
 
                         new Label()
+                            .Margin(50)
                             .Text(e => e.Path("Id"))
-                            .FontSize(20)
+                            .HorizontalOptions(LayoutOptions.Center)
+                            .VerticalOptions(LayoutOptions.Center)
+                            .FontSize(50)
                             .TextColor(Colors.Blue)
                             .HeightRequest(50),
 
