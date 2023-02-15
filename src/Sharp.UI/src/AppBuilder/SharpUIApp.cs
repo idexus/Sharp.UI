@@ -22,7 +22,11 @@ namespace Sharp.UI
             public void Initialize(IServiceProvider services)
             {
                 Application.Services = services;
-                HotReload.InitSharpUIHotReload<T>(IdeIPs);
+                Application.HotReloadIsEnabled = IdeIPs.Count() > 0;
+                if (Application.HotReloadIsEnabled)
+                {
+                    HotReload.InitSharpUIHotReload<T>(IdeIPs);
+                }
             }
         }
     }

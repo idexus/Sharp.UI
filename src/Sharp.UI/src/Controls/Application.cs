@@ -4,5 +4,6 @@ namespace Sharp.UI
     public partial class Application
     {
         public static IServiceProvider Services { get; internal set; }
+        public static bool HotReloadIsEnabled { get; internal set; } = false;
     }
 }

@@ -8,13 +8,14 @@ namespace Sharp.UI
         static object getValue(System.Func<object> loadValue)
         {
             object value = loadValue();
-#if DEBUG
-            var typeName = value.GetType().FullName;
-            if (HotReload.ReplacedTypesDict.TryGetValue(typeName, out var replacedType))
+            if (Application.HotReloadIsEnabled)
             {
-                value = ActivatorUtilities.CreateInstance(Application.Services, replacedType);
+                var typeName = value.GetType().FullName;
+                if (HotReload.ReplacedTypesDict.TryGetValue(typeName, out var replacedType))
+                {
+                    value = ActivatorUtilities.CreateInstance(Application.Services, replacedType);
+                }
             }
-#endif
             return MauiWrapper.Value<object>(value);
         }
 
@@ -33,13 +34,15 @@ namespace Sharp.UI
         {            
             base.LoadTemplate = () =>
             {
-#if DEBUG
-                var typeName = type.FullName;
-                if (HotReload.ReplacedTypesDict.TryGetValue(typeName, out var replacedType))
+                if (Application.HotReloadIsEnabled)
                 {
-                    type = replacedType;
+                    var typeName = type.FullName;
+                    if (HotReload.ReplacedTypesDict.TryGetValue(typeName, out var replacedType))
+                    {
+                        type = replacedType;
+                    }
                 }
-#endif
+
                 var value = ActivatorUtilities.CreateInstance(Application.Services, type);
                 return MauiWrapper.Value<object>(value);
             };
