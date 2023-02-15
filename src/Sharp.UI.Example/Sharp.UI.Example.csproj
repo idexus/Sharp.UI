@@ -64,6 +64,7 @@
 	</PropertyGroup>
 	<ItemGroup>
 	  <None Remove="Shell\Templates\" />
+	  <None Remove="Pages\KeyPad\" />
 	</ItemGroup>
 	<ItemGroup>
 		<Compile Remove="$(CompilerGeneratedFilesOutputPath)/**/*.cs" />
@@ -92,5 +93,6 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Shell\Templates\" />
+	  <Folder Include="Pages\KeyPad\" />
 	</ItemGroup>
 </Project>

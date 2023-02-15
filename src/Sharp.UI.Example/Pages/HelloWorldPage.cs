@@ -2,6 +2,7 @@
 
 using Sharp.UI;
 
+
 [SharpObject]
 public partial class HelloWorldPage : ContentPage 
 {

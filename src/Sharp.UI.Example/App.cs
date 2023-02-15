@@ -9,8 +9,8 @@ public partial class App : Application
 {
     public App()
     {
-        MainPage = ActivatorUtilities.GetServiceOrCreateInstance<HotReloadTestPage>(Application.Services);
-        /*
+        //MainPage = ActivatorUtilities.GetServiceOrCreateInstance<HotReloadTestPage>(Application.Services);
+        
         MainPage = new Shell
         {
             new FlyoutItem(FlyoutDisplayOptions.AsMultipleItems, e => e.Route("top"))
@@ -19,6 +19,7 @@ public partial class App : Application
                 {
                     new ShellContent<HelloWorldPage>("Hello Page"),
                     new ShellContent<GridPage>("Grid").Route("grid"),
+                    new ShellContent<KeypadPage>("Keypad"),
                     new ShellContent<AbsoluteLayoutPage>("Absolute layout"),
                     new ShellContent<ExamplePage>("Scroll View"),
                     new ShellContent<ShapesPage>("Shapes"),
@@ -27,6 +28,7 @@ public partial class App : Application
                 new Tab("Table/List")
                 {
                     new ShellContent<TableViewPage>("TableView"),
+                    new ShellContent<ScrollPage>("ScrollPage"),
                     new ShellContent<ListViewPage>("ListView"),
                     new ShellContent<CollectionPage>("Collection"),
                     new ShellContent<AlternateCollectionPage>("Alternate"),
@@ -81,7 +83,6 @@ public partial class App : Application
         .ItemTemplate(() => new ShellItemTemplate())
         .FlyoutHeaderTemplate(() => new FlyoutHeaderTemplate())
         .Resources(AppResources.Default)
-        .FlyoutBackgroundColor(AppColors.Gray950);
-        */
+        .FlyoutBackgroundColor(AppColors.Gray950);       
     }
 }
