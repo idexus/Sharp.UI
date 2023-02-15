@@ -101,7 +101,11 @@ namespace Sharp.UI
     }
 
     [SharpObject(typeof(Microsoft.Maui.Controls.ListView))]
-    public partial class ListView { }
+    [ContentProperty(nameof(ItemTemplate))]
+    public partial class ListView
+    {
+        public void Add(Func<Cell> loadTemplate) => this.ItemTemplate = new DataTemplate(loadTemplate);
+    }
 
     [SharpObject(typeof(Microsoft.Maui.Controls.Picker))] 
     public partial class Picker

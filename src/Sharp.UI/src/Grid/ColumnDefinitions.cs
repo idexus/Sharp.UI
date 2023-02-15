@@ -27,9 +27,10 @@ namespace Sharp.UI
         public IEnumerator<ColumnDefinition> GetEnumerator() => items.GetEnumerator();
         IEnumerator IEnumerable.GetEnumerator() => items.GetEnumerator();
 
-        public ColumnDefinitions Auto()
+        public ColumnDefinitions Auto(int count = 1)
         {
-            items.Add(ColumnDefinition.Auto);
+            for (int i = 0; i < count; i++)
+                items.Add(ColumnDefinition.Auto);
             return this;
         }
 
