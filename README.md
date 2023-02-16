@@ -24,6 +24,11 @@ public class HelloWorldPage : ContentPage
     {
         Content = new VStack
         {
+            e => e
+                .Spacing(25)
+                .Padding(new Thickness(30, 0))
+                .VerticalOptions(LayoutOptions.Center),
+
             new Image("dotnet_bot.png")
                 .HeightRequest(200)
                 .HorizontalOptions(LayoutOptions.Center),
@@ -44,10 +49,7 @@ public class HelloWorldPage : ContentPage
                     button.Text = $"Clicked {count} ";
                     button.Text += count == 1 ? "time" : "times";
                 })
-        }
-        .Spacing(25)
-        .Padding(new Thickness(30, 0))
-        .VerticalOptions(LayoutOptions.Center);
+        };
     }
 }
 ```
