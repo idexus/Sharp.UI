@@ -15,7 +15,7 @@
 		<ApplicationTitle>ExampleApp</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>one.dexus.ExampleApp</ApplicationId>
+		<ApplicationId>one.dexus.maui.ExampleApp</ApplicationId>
 		<ApplicationIdGuid>f59e31be-1d79-4abf-a86b-d40a3c439496</ApplicationIdGuid>
 
 		<!-- Versions -->
@@ -63,7 +63,6 @@
 	  <CreatePackage>false</CreatePackage>
 	</PropertyGroup>
 	<ItemGroup>
-	  <None Remove="Shell\Templates\" />
 	  <None Remove="Pages\KeyPad\" />
 	</ItemGroup>
 	<ItemGroup>
@@ -92,7 +91,6 @@
 	  </None>
 	</ItemGroup>
 	<ItemGroup>
-	  <Folder Include="Shell\Templates\" />
 	  <Folder Include="Pages\KeyPad\" />
 	</ItemGroup>
 </Project>

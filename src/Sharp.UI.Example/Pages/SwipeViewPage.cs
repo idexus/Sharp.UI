@@ -8,8 +8,6 @@ public class SwipeViewPage : ContentPage
 	{
 		Content = new VStack
 		{
-			new Image("dotnet_bot.png").SizeRequest(100,100),
-
 			new SwipeView
 			{
 				//------ content -----

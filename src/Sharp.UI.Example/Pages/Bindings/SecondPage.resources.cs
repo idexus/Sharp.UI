@@ -10,21 +10,28 @@ namespace ExampleApp
         {
             new Style<Label>
             {
-                Label.TextColorProperty.Set().OnLight(Colors.Red).OnDark(Colors.Blue),
-                Label.FontSizeProperty.Set(60.0),
+                Label.TextColorProperty.Set(AppColors.Gray400),
+                Label.FontSizeProperty.Set(40.0),
                 Label.HorizontalOptionsProperty.Set(LayoutOptions.Center),
                 Label.VerticalOptionsProperty.Set(LayoutOptions.Center),
                 Label.MarginProperty.Set(new Thickness(10,0)),
             },
             new Style<Button>
             {
-                Button.TextColorProperty.Set(Colors.Blue),
-                Button.WidthRequestProperty.Set(300)
+                Button.TextColorProperty.Set(AppColors.Gray100),
+                Button.WidthRequestProperty.Set(300),
+                Button.BackgroundColorProperty.Set(AppColors.Gray950),
+                Button.FontSizeProperty.Set(40)
             },
             new Style<VStack>
             {
                 VStack.HorizontalOptionsProperty.Set(LayoutOptions.Center),
                 VStack.VerticalOptionsProperty.Set(LayoutOptions.Center)
+            },
+            new Style<HStack>
+            {
+                HStack.HorizontalOptionsProperty.Set(LayoutOptions.Center),
+                HStack.VerticalOptionsProperty.Set(LayoutOptions.Center)
             },
         };
     }
