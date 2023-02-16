@@ -24,13 +24,15 @@ public class HelloWorldPage : ContentPage
     {
         Content = new VStack
         {
-            // properies
+            // properties
+            
             e => e
                 .Spacing(25)
                 .Padding(new Thickness(30, 0))
                 .VerticalOptions(LayoutOptions.Center),
 
             // content
+            
             new Image("dotnet_bot.png")
                 .HeightRequest(200)
                 .HorizontalOptions(LayoutOptions.Center),
