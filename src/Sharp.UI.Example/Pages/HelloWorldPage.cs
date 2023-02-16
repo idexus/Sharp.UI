@@ -17,7 +17,7 @@ public partial class HelloWorldPage : ContentPage
 				.HorizontalOptions(LayoutOptions.Center),
 
 			new Label("Welcome to .NET Multi-platform App UI")
-                .FontSize(e => e.Default(30).OnPhone(20))
+                .FontSize(e => e.Default(30).OnPhone(16))
                 .HorizontalOptions(LayoutOptions.Center),
 
             new Button("Click me")
@@ -35,4 +35,3 @@ public partial class HelloWorldPage : ContentPage
 		.VerticalOptions(LayoutOptions.Center); 
 	}
 }
- 

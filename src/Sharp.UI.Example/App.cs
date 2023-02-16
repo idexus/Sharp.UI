@@ -18,10 +18,10 @@ public partial class App : Application
                 new Tab("Main", e => e.Route("main"))
                 {
                     new ShellContent<HelloWorldPage>("Hello Page"),
+                    new ShellContent<HotReloadTestPage>("TestPage"),
                     new ShellContent<GridPage>("Grid").Route("grid"),
                     new ShellContent<KeypadPage>("Keypad"),
                     new ShellContent<AbsoluteLayoutPage>("Absolute layout"),
-                    new ShellContent<ExamplePage>("Scroll View"),
                     new ShellContent<ShapesPage>("Shapes"),
                 },
 
@@ -42,7 +42,6 @@ public partial class App : Application
                     new ShellContent<MultiTriggerPage>("Multi trigger"),
                     new ShellContent<EnterExitActionsPage>("Enter/exit"),
                     new ShellContent<StateTriggerPage>("State trigger"),
-                    new ShellContent<OrientationTriggerPage>("Orientation")
                 },
                 new Tab("Menus")
                 {
@@ -75,6 +74,7 @@ public partial class App : Application
                     new ShellContent<AttachedBehaviorPage>("Attached behaviours"),
                     new ShellContent<TestPage>("Test Page"),
                     new ShellContent<PathPage>("Path"),
+                    new ShellContent<ExamplePage>("Scroll View"),
                     new ShellContent<SwipeViewPage>("Swipe"),
                     new ShellContent<DefExamplePage>("Platform Def")
                 }

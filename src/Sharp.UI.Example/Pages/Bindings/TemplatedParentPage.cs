@@ -37,7 +37,7 @@ public class CardViewTemplateView : ContentView
         .Stroke(e => e.Path("BorderColor").Source(RelativeBindingSource.TemplatedParent))
         .BackgroundColor(e => e.Path("CardColor").Source(RelativeBindingSource.TemplatedParent))
         .SizeRequest(200, 300)
-        .Margin(50)
+        .Margin(20)
         .Padding(20);
     }
 }
@@ -48,28 +48,32 @@ public class TemplatedParentPage : ContentPage
     {
         var controlTemplate = new ControlTemplate(typeof(CardViewTemplateView));
 
-        this.Content = new VStack
+        this.Content = new ScrollView(e => e.Margin(new Thickness(0,30,0,0)))
         {
-            new Slider(1,100, out var slider),
+            new VStack
+            {
+                new Slider(1,100, out var slider)
+                    .Margin(50),
 
-            new EmptyCardView()
-                .CardTitle(e => e
-                    .Path("Value")
-                    .Source(slider)
-                    .StringFormat("Value {0:F2}"))
-                .CardDescription("Do you like it")
-                .CardColor(Colors.Blue)
-                .BorderColor(Colors.Red)
-                .ControlTemplate(controlTemplate),
+                new EmptyCardView()
+                    .CardTitle(e => e
+                        .Path("Value")
+                        .Source(slider)
+                        .StringFormat("Value {0:F2}"))
+                    .CardDescription("Do you like it")
+                    .CardColor(Colors.Blue)
+                    .BorderColor(Colors.Red)
+                    .ControlTemplate(controlTemplate),
 
-            new EmptyCardView()
-                .CardTitle("Title 2")
-                .CardDescription("Yes I do")
-                .CardColor(Colors.Red)
-                .BorderColor(Colors.Blue)
-                .ControlTemplate(controlTemplate),
+                new EmptyCardView()
+                    .CardTitle("Title 2")
+                    .CardDescription("Yes I do")
+                    .CardColor(Colors.Red)
+                    .BorderColor(Colors.Blue)
+                    .ControlTemplate(controlTemplate),
 
-        }
-        .VerticalOptions(LayoutOptions.Center);
+            }
+            .VerticalOptions(LayoutOptions.Center)
+        };
     }
 }

@@ -12,8 +12,8 @@ public class KeypadPage : ContentPage
 		BindingContext = vm;
 		Content =
 			new Grid(e => e
-				.RowDefinitions(e => e.Auto(count: 5))
-				.ColumnDefinitions(e => e.Absolute(80, count: 3))
+				.RowDefinitions(e => e.Absolute(80, count: 5))
+				.ColumnDefinitions(e => e.Absolute(100, count: 3))
 				.HorizontalOptions(LayoutOptions.Center)
 				.VerticalOptions(LayoutOptions.Center)
 				.ColumnSpacing(10)
@@ -31,6 +31,7 @@ public class KeypadPage : ContentPage
 
 				labels.Select((label, i) =>
 					new Button(label)
+						//.HeightRequest(70)
                         .Row(i/3+1).Column(i%3)
                         .Command(vm.AddCharCommand).CommandParameter(label))
 			};

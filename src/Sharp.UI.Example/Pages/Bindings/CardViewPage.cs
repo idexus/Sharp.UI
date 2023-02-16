@@ -12,18 +12,20 @@ public partial class CardViewPage : ContentPage
             Label.FontSizeProperty.Set(21)
         };
 
-        this.Content = new VStack
+        this.Content = new ScrollView(e => e.Margin(new Thickness(0, 30, 0, 0)))
         {
-            new Label(out var label)
-                .Text($"Counter {counter}")
-                .FontSize(30)
-                .Margin(40),
-
-            new Slider(1,100, out var slider),
-
-            new HStack
+            new VStack
             {
-                new ScrollView
+                new Label(out var label)
+                    .HorizontalOptions(LayoutOptions.Center)
+                    .Text($"Counter {counter}")
+                    .FontSize(30)
+                    .Margin(40),
+
+                new Slider(1,100, out var slider)
+                    .Margin(30),
+
+                new StackLayout(e => e.Orientation(e => e.OnPhone(StackOrientation.Vertical).Default(StackOrientation.Horizontal)))
                 {
                     new CardView(out var cardNo1)
                     {
@@ -39,33 +41,31 @@ public partial class CardViewPage : ContentPage
                     {
                         cardNo1.CardDescription = "Let's play :)";
                     }),
-                },
 
-                new CardView(out var cardView)
-                {
-                    new VStack
+                    new CardView(out var cardView)
                     {
-                        new Label("This is a simple card view example"),
-                        new Label("Second label")
-                            .FontSize(20)
-                            .TextColor(AppColors.Gray200)
+                        new VStack
+                        {
+                            new Label("This is a simple card view example"),
+                            new Label("Second label")
+                                .FontSize(20)
+                                .TextColor(AppColors.Gray200)
+                        }
                     }
+                    .CardTitle("Title")
+                    .CardDescription("Yes I do")
+                    .CardColor(Colors.Red)
+                    .BorderColor(Colors.Blue)
+                    .DescriptionStyle(labelStyle)
+                    .ButtonTitle("Count")
+                    .OnClicked(button =>
+                    {
+                        counter += 1;
+                        label.Text = $"Counter {counter}";
+                    })
                 }
-                .CardTitle("Title")
-                .CardDescription("Yes I do")
-                .CardColor(Colors.Red)
-                .BorderColor(Colors.Blue)
-                .DescriptionStyle(labelStyle)
-                .ButtonTitle("Count")
-                .OnClicked(button =>
-                {
-                    counter += 1;
-                    label.Text = $"Counter {counter}";
-                })
             }
             .HorizontalOptions(LayoutOptions.Center)
-        }
-        .VerticalOptions(LayoutOptions.Center)
-        .Padding(100);
+        };
     }
 }

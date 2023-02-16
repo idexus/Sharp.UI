@@ -7,14 +7,15 @@ namespace ExampleApp
 
     public class AlternativeBackroundPage : ContentPage
     {
-        private List<int> _nubmers = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
+        private List<int> _nubmers = Enumerable.Range(1,100).ToList();
         public List<int> Numbers => _nubmers;
 
         public AlternativeBackroundPage()
         {
-            Content = new VStack
-            {
-                new CollectionView
+            Content =
+                new CollectionView(e => e
+                    .Margin(new Thickness(0, 30, 0, 0))
+                    .ItemsSource(Numbers))
                 {
                     () => new Label()
                         .FontSize(30)
@@ -24,9 +25,7 @@ namespace ExampleApp
                             .Path(".")
                             .Convert((int n) => n%2 == 0 ? Colors.White : Colors.Black)
                         )
-                }
-                .ItemsSource(Numbers)
-            };
+                };
         }
     }
 }

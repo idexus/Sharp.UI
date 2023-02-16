@@ -44,21 +44,19 @@ public class AngleViewModelPage : ContentPage
     public AngleViewModelPage()
     {
         this.BindingContext = viewModel;
-        this.Content = new VStack
+        this.Content = new VStack(e => e.VerticalOptions(LayoutOptions.Center))
         {
             new Slider(0, 500)
                 .Value(e => e.Path("RawAngle")),
 
             new Label()
-                .Text(e => e.Path("RawAngle").StringFormat("Raw angle {0}"))
+                .Text(e => e.Path("RawAngle").StringFormat("Raw angle {0:F1}"))
                 .FontSize(30),
 
             new Label()
-                .Text(e => e.Path("Angle").StringFormat("Angle {0}"))
+                .Text(e => e.Path("Angle").StringFormat("Angle {0:F1}"))
                 .Rotation(e => e.Path("Angle"))
                 .FontSize(30)
-
-        }
-        .VerticalOptions(LayoutOptions.Center);
+        };
     }
 }

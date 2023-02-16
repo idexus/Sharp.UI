@@ -20,14 +20,7 @@ namespace ExampleApp
             {
                 HStack.VerticalOptionsProperty.Set(LayoutOptions.Center),
                 HStack.HorizontalOptionsProperty.Set(LayoutOptions.Center)
-            },
-            new Style<Label>
-            {
-                Label.TextColorProperty.Set(Colors.Red),
-                Label.FontSizeProperty.Set(30.0),
-                Label.MarginProperty.Set(new Thickness(10,10)),
-                Label.HorizontalOptionsProperty.Set(LayoutOptions.Center)
-            },
+            },            
         };
     }
 }
