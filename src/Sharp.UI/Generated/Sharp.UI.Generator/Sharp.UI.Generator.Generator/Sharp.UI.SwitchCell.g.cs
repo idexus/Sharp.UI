@@ -21,17 +21,6 @@ namespace Sharp.UI
             switchCell = this;
         }
 
-        public SwitchCell(System.Action<SwitchCell> configure) 
-        {
-            configure(this);
-        }
-
-        public SwitchCell(out SwitchCell switchCell, System.Action<SwitchCell> configure) 
-        {
-            switchCell = this;
-            configure(this);
-        }
-
         // ----- properties / events -----
 
         public new object BindingContext { get => base.BindingContext; set => base.BindingContext = MauiWrapper.Value<object>(value); }

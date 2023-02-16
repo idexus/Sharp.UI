@@ -21,31 +21,9 @@ namespace Sharp.UI
             swipeItem = this;
         }
 
-        public SwipeItem(System.Action<SwipeItem> configure) 
-        {
-            configure(this);
-        }
-
-        public SwipeItem(out SwipeItem swipeItem, System.Action<SwipeItem> configure) 
-        {
-            swipeItem = this;
-            configure(this);
-        }
-
         public SwipeItem(string text, out SwipeItem swipeItem) : this(text)
         {
             swipeItem = this;
-        }
-
-        public SwipeItem(string text, System.Action<SwipeItem> configure) : this(text)
-        {
-            configure(this);
-        }
-
-        public SwipeItem(string text, out SwipeItem swipeItem, System.Action<SwipeItem> configure) : this(text)
-        {
-            swipeItem = this;
-            configure(this);
         }
 
         // ----- properties / events -----

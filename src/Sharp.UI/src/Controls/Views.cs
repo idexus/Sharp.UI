@@ -27,10 +27,9 @@ namespace Sharp.UI
     public partial class CheckBox { }
 
     [SharpObject(typeof(Microsoft.Maui.Controls.CollectionView))]
-    public partial class CollectionView : IEnumerable
+    [ContentProperty(nameof(ItemTemplate))]
+    public partial class CollectionView
     {
-        public IEnumerator GetEnumerator() { yield return this.ItemTemplate; }
-        public void Add(DataTemplate dataTemplate) => this.ItemTemplate = dataTemplate;
         public void Add(System.Func<object> loadTemplate) => this.ItemTemplate = new DataTemplate(loadTemplate);
     }
 

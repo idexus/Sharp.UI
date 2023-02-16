@@ -21,31 +21,9 @@ namespace Sharp.UI
             menuFlyoutItem = this;
         }
 
-        public MenuFlyoutItem(System.Action<MenuFlyoutItem> configure) 
-        {
-            configure(this);
-        }
-
-        public MenuFlyoutItem(out MenuFlyoutItem menuFlyoutItem, System.Action<MenuFlyoutItem> configure) 
-        {
-            menuFlyoutItem = this;
-            configure(this);
-        }
-
         public MenuFlyoutItem(string text, out MenuFlyoutItem menuFlyoutItem) : this(text)
         {
             menuFlyoutItem = this;
-        }
-
-        public MenuFlyoutItem(string text, System.Action<MenuFlyoutItem> configure) : this(text)
-        {
-            configure(this);
-        }
-
-        public MenuFlyoutItem(string text, out MenuFlyoutItem menuFlyoutItem, System.Action<MenuFlyoutItem> configure) : this(text)
-        {
-            menuFlyoutItem = this;
-            configure(this);
         }
 
         // ----- properties / events -----

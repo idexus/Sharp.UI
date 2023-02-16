@@ -21,17 +21,6 @@ namespace Sharp.UI
             imageCell = this;
         }
 
-        public ImageCell(System.Action<ImageCell> configure) 
-        {
-            configure(this);
-        }
-
-        public ImageCell(out ImageCell imageCell, System.Action<ImageCell> configure) 
-        {
-            imageCell = this;
-            configure(this);
-        }
-
         // ----- properties / events -----
 
         public new object CommandParameter { get => base.CommandParameter; set => base.CommandParameter = MauiWrapper.Value<object>(value); }

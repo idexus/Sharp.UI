@@ -21,17 +21,6 @@ namespace Sharp.UI
             panGestureRecognizer = this;
         }
 
-        public PanGestureRecognizer(System.Action<PanGestureRecognizer> configure) 
-        {
-            configure(this);
-        }
-
-        public PanGestureRecognizer(out PanGestureRecognizer panGestureRecognizer, System.Action<PanGestureRecognizer> configure) 
-        {
-            panGestureRecognizer = this;
-            configure(this);
-        }
-
         // ----- properties / events -----
 
         public new object BindingContext { get => base.BindingContext; set => base.BindingContext = MauiWrapper.Value<object>(value); }

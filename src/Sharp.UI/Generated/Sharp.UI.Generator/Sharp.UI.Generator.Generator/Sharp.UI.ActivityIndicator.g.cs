@@ -21,17 +21,6 @@ namespace Sharp.UI
             activityIndicator = this;
         }
 
-        public ActivityIndicator(System.Action<ActivityIndicator> configure) 
-        {
-            configure(this);
-        }
-
-        public ActivityIndicator(out ActivityIndicator activityIndicator, System.Action<ActivityIndicator> configure) 
-        {
-            activityIndicator = this;
-            configure(this);
-        }
-
         // ----- properties / events -----
 
         public new Sharp.UI.Style Style { get => new Sharp.UI.Style(base.Style); set => base.Style = value.MauiObject; }

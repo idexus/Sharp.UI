@@ -21,17 +21,6 @@ namespace Sharp.UI
             contentPresenter = this;
         }
 
-        public ContentPresenter(System.Action<ContentPresenter> configure) 
-        {
-            configure(this);
-        }
-
-        public ContentPresenter(out ContentPresenter contentPresenter, System.Action<ContentPresenter> configure) 
-        {
-            contentPresenter = this;
-            configure(this);
-        }
-
         // ----- properties / events -----
 
         public new Sharp.UI.Style Style { get => new Sharp.UI.Style(base.Style); set => base.Style = value.MauiObject; }

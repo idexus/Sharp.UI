@@ -21,17 +21,6 @@ namespace Sharp.UI
             dragGestureRecognizer = this;
         }
 
-        public DragGestureRecognizer(System.Action<DragGestureRecognizer> configure) 
-        {
-            configure(this);
-        }
-
-        public DragGestureRecognizer(out DragGestureRecognizer dragGestureRecognizer, System.Action<DragGestureRecognizer> configure) 
-        {
-            dragGestureRecognizer = this;
-            configure(this);
-        }
-
         // ----- properties / events -----
 
         public new object DropCompletedCommandParameter { get => base.DropCompletedCommandParameter; set => base.DropCompletedCommandParameter = MauiWrapper.Value<object>(value); }

@@ -230,8 +230,10 @@ namespace {nameSpaceString}
         public {mainSymbol.Name}({argsString}out {mainSymbol.Name} {Helpers.CamelCase(mainSymbol.Name)}) {thisTail}
         {{
             {Helpers.CamelCase(mainSymbol.Name)} = this;
-        }}
+        }}");
 
+                if (containerOfTypeName != null || isAlreadyContainerOfThis)
+                    builder.AppendLine($@"
         public {mainSymbol.Name}({argsString}System.Action<{mainSymbol.Name}> configure) {thisTail}
         {{
             configure(this);

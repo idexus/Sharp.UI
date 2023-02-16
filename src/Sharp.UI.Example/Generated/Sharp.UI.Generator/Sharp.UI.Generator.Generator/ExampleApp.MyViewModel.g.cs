@@ -18,17 +18,6 @@ namespace ExampleApp
             myViewModel = this;
         }
 
-        public MyViewModel(System.Action<MyViewModel> configure) : this()
-        {
-            configure(this);
-        }
-
-        public MyViewModel(out MyViewModel myViewModel, System.Action<MyViewModel> configure) : this()
-        {
-            myViewModel = this;
-            configure(this);
-        }
-
         // ----- bindable properties -----
 
         public static readonly Microsoft.Maui.Controls.BindableProperty CounterProperty =

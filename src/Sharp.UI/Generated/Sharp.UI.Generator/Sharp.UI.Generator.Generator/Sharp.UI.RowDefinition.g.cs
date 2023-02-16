@@ -36,47 +36,14 @@ namespace Sharp.UI
             rowDefinition = this;
         }
 
-        public RowDefinition(System.Action<RowDefinition> configure) : this()
-        {
-            configure(this);
-        }
-
-        public RowDefinition(out RowDefinition rowDefinition, System.Action<RowDefinition> configure) : this()
-        {
-            rowDefinition = this;
-            configure(this);
-        }
-
         public RowDefinition(double height, out RowDefinition rowDefinition) : this(height)
         {
             rowDefinition = this;
         }
 
-        public RowDefinition(double height, System.Action<RowDefinition> configure) : this(height)
-        {
-            configure(this);
-        }
-
-        public RowDefinition(double height, out RowDefinition rowDefinition, System.Action<RowDefinition> configure) : this(height)
-        {
-            rowDefinition = this;
-            configure(this);
-        }
-
         public RowDefinition(double height, Microsoft.Maui.GridUnitType unitType, out RowDefinition rowDefinition) : this(height, unitType)
         {
             rowDefinition = this;
-        }
-
-        public RowDefinition(double height, Microsoft.Maui.GridUnitType unitType, System.Action<RowDefinition> configure) : this(height, unitType)
-        {
-            configure(this);
-        }
-
-        public RowDefinition(double height, Microsoft.Maui.GridUnitType unitType, out RowDefinition rowDefinition, System.Action<RowDefinition> configure) : this(height, unitType)
-        {
-            rowDefinition = this;
-            configure(this);
         }
 
         // ----- operators -----

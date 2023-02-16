@@ -18,17 +18,6 @@ namespace ExampleApp
             listViewPageViewModel = this;
         }
 
-        public ListViewPageViewModel(System.Action<ListViewPageViewModel> configure) : this()
-        {
-            configure(this);
-        }
-
-        public ListViewPageViewModel(out ListViewPageViewModel listViewPageViewModel, System.Action<ListViewPageViewModel> configure) : this()
-        {
-            listViewPageViewModel = this;
-            configure(this);
-        }
-
         // ----- bindable properties -----
 
         public static readonly Microsoft.Maui.Controls.BindableProperty SimpleDataProperty =

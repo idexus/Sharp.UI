@@ -21,31 +21,9 @@ namespace Sharp.UI
             image = this;
         }
 
-        public Image(System.Action<Image> configure) 
-        {
-            configure(this);
-        }
-
-        public Image(out Image image, System.Action<Image> configure) 
-        {
-            image = this;
-            configure(this);
-        }
-
         public Image(Microsoft.Maui.Controls.ImageSource source, out Image image) : this(source)
         {
             image = this;
-        }
-
-        public Image(Microsoft.Maui.Controls.ImageSource source, System.Action<Image> configure) : this(source)
-        {
-            configure(this);
-        }
-
-        public Image(Microsoft.Maui.Controls.ImageSource source, out Image image, System.Action<Image> configure) : this(source)
-        {
-            image = this;
-            configure(this);
         }
 
         // ----- properties / events -----

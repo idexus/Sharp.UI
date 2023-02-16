@@ -21,31 +21,9 @@ namespace Sharp.UI
             lineSegment = this;
         }
 
-        public LineSegment(System.Action<LineSegment> configure) 
-        {
-            configure(this);
-        }
-
-        public LineSegment(out LineSegment lineSegment, System.Action<LineSegment> configure) 
-        {
-            lineSegment = this;
-            configure(this);
-        }
-
         public LineSegment(double x, double y, out LineSegment lineSegment) : this(x, y)
         {
             lineSegment = this;
-        }
-
-        public LineSegment(double x, double y, System.Action<LineSegment> configure) : this(x, y)
-        {
-            configure(this);
-        }
-
-        public LineSegment(double x, double y, out LineSegment lineSegment, System.Action<LineSegment> configure) : this(x, y)
-        {
-            lineSegment = this;
-            configure(this);
         }
 
         // ----- properties / events -----

@@ -21,17 +21,6 @@ namespace Sharp.UI
             polyLineSegment = this;
         }
 
-        public PolyLineSegment(System.Action<PolyLineSegment> configure) 
-        {
-            configure(this);
-        }
-
-        public PolyLineSegment(out PolyLineSegment polyLineSegment, System.Action<PolyLineSegment> configure) 
-        {
-            polyLineSegment = this;
-            configure(this);
-        }
-
         // ----- properties / events -----
 
         public new object BindingContext { get => base.BindingContext; set => base.BindingContext = MauiWrapper.Value<object>(value); }

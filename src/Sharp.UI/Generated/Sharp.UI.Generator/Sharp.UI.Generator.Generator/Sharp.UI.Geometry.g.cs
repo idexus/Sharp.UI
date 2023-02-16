@@ -21,17 +21,6 @@ namespace Sharp.UI
             geometry = this;
         }
 
-        public Geometry(System.Action<Geometry> configure) 
-        {
-            configure(this);
-        }
-
-        public Geometry(out Geometry geometry, System.Action<Geometry> configure) 
-        {
-            geometry = this;
-            configure(this);
-        }
-
         // ----- properties / events -----
 
         public new object BindingContext { get => base.BindingContext; set => base.BindingContext = MauiWrapper.Value<object>(value); }

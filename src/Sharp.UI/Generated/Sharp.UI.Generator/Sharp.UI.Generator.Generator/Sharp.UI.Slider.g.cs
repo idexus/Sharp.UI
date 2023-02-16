@@ -21,47 +21,14 @@ namespace Sharp.UI
             slider = this;
         }
 
-        public Slider(System.Action<Slider> configure) 
-        {
-            configure(this);
-        }
-
-        public Slider(out Slider slider, System.Action<Slider> configure) 
-        {
-            slider = this;
-            configure(this);
-        }
-
         public Slider(double minimum, double maximum, double value, out Slider slider) : this(minimum, maximum, value)
         {
             slider = this;
         }
 
-        public Slider(double minimum, double maximum, double value, System.Action<Slider> configure) : this(minimum, maximum, value)
-        {
-            configure(this);
-        }
-
-        public Slider(double minimum, double maximum, double value, out Slider slider, System.Action<Slider> configure) : this(minimum, maximum, value)
-        {
-            slider = this;
-            configure(this);
-        }
-
         public Slider(double minimum, double maximum, out Slider slider) : this(minimum, maximum)
         {
             slider = this;
-        }
-
-        public Slider(double minimum, double maximum, System.Action<Slider> configure) : this(minimum, maximum)
-        {
-            configure(this);
-        }
-
-        public Slider(double minimum, double maximum, out Slider slider, System.Action<Slider> configure) : this(minimum, maximum)
-        {
-            slider = this;
-            configure(this);
         }
 
         // ----- properties / events -----

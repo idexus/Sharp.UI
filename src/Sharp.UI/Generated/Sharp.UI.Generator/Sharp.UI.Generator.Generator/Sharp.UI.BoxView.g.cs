@@ -21,17 +21,6 @@ namespace Sharp.UI
             boxView = this;
         }
 
-        public BoxView(System.Action<BoxView> configure) 
-        {
-            configure(this);
-        }
-
-        public BoxView(out BoxView boxView, System.Action<BoxView> configure) 
-        {
-            boxView = this;
-            configure(this);
-        }
-
         // ----- properties / events -----
 
         public new Sharp.UI.Style Style { get => new Sharp.UI.Style(base.Style); set => base.Style = value.MauiObject; }

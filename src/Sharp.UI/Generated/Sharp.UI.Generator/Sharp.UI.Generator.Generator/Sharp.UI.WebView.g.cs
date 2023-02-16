@@ -21,31 +21,9 @@ namespace Sharp.UI
             webView = this;
         }
 
-        public WebView(System.Action<WebView> configure) 
-        {
-            configure(this);
-        }
-
-        public WebView(out WebView webView, System.Action<WebView> configure) 
-        {
-            webView = this;
-            configure(this);
-        }
-
         public WebView(Microsoft.Maui.Controls.WebViewSource source, out WebView webView) : this(source)
         {
             webView = this;
-        }
-
-        public WebView(Microsoft.Maui.Controls.WebViewSource source, System.Action<WebView> configure) : this(source)
-        {
-            configure(this);
-        }
-
-        public WebView(Microsoft.Maui.Controls.WebViewSource source, out WebView webView, System.Action<WebView> configure) : this(source)
-        {
-            webView = this;
-            configure(this);
         }
 
         // ----- properties / events -----

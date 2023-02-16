@@ -21,17 +21,6 @@ namespace Sharp.UI
             quadraticBezierSegment = this;
         }
 
-        public QuadraticBezierSegment(System.Action<QuadraticBezierSegment> configure) 
-        {
-            configure(this);
-        }
-
-        public QuadraticBezierSegment(out QuadraticBezierSegment quadraticBezierSegment, System.Action<QuadraticBezierSegment> configure) 
-        {
-            quadraticBezierSegment = this;
-            configure(this);
-        }
-
         // ----- properties / events -----
 
         public new object BindingContext { get => base.BindingContext; set => base.BindingContext = MauiWrapper.Value<object>(value); }

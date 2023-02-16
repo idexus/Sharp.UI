@@ -36,17 +36,6 @@ namespace Sharp.UI
             adaptiveTrigger = this;
         }
 
-        public AdaptiveTrigger(System.Action<AdaptiveTrigger> configure) : this()
-        {
-            configure(this);
-        }
-
-        public AdaptiveTrigger(out AdaptiveTrigger adaptiveTrigger, System.Action<AdaptiveTrigger> configure) : this()
-        {
-            adaptiveTrigger = this;
-            configure(this);
-        }
-
         // ----- operators -----
 
         public static implicit operator AdaptiveTrigger(Microsoft.Maui.Controls.AdaptiveTrigger mauiObject) => new AdaptiveTrigger(mauiObject);

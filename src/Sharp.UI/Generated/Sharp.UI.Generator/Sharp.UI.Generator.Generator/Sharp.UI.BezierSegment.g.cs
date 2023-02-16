@@ -21,17 +21,6 @@ namespace Sharp.UI
             bezierSegment = this;
         }
 
-        public BezierSegment(System.Action<BezierSegment> configure) 
-        {
-            configure(this);
-        }
-
-        public BezierSegment(out BezierSegment bezierSegment, System.Action<BezierSegment> configure) 
-        {
-            bezierSegment = this;
-            configure(this);
-        }
-
         // ----- properties / events -----
 
         public new object BindingContext { get => base.BindingContext; set => base.BindingContext = MauiWrapper.Value<object>(value); }

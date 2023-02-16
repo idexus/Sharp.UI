@@ -105,11 +105,6 @@ namespace Sharp.UI.Generator
             }
             else if (!isAlreadyContainerOfThis)
             {
-                if (mainSymbol.Name.Contains("FlyoutContent"))
-                {
-
-                }
-
                 // if is null try to find
                 if (IsWrappedType)
                 {

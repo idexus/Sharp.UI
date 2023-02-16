@@ -18,17 +18,6 @@ namespace ExampleApp
             dataModel = this;
         }
 
-        public DataModel(int id, string name, bool admin, System.Action<DataModel> configure) : this(id, name, admin)
-        {
-            configure(this);
-        }
-
-        public DataModel(int id, string name, bool admin, out DataModel dataModel, System.Action<DataModel> configure) : this(id, name, admin)
-        {
-            dataModel = this;
-            configure(this);
-        }
-
         // ----- bindable properties -----
 
         public static readonly Microsoft.Maui.Controls.BindableProperty IdProperty =

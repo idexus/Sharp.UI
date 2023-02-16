@@ -36,31 +36,9 @@ namespace Sharp.UI
             roundRectangle = this;
         }
 
-        public RoundRectangle(System.Action<RoundRectangle> configure) : this()
-        {
-            configure(this);
-        }
-
-        public RoundRectangle(out RoundRectangle roundRectangle, System.Action<RoundRectangle> configure) : this()
-        {
-            roundRectangle = this;
-            configure(this);
-        }
-
         public RoundRectangle(double widthRequest, double heightRequest, double cornerRadius, out RoundRectangle roundRectangle) : this(widthRequest, heightRequest, cornerRadius)
         {
             roundRectangle = this;
-        }
-
-        public RoundRectangle(double widthRequest, double heightRequest, double cornerRadius, System.Action<RoundRectangle> configure) : this(widthRequest, heightRequest, cornerRadius)
-        {
-            configure(this);
-        }
-
-        public RoundRectangle(double widthRequest, double heightRequest, double cornerRadius, out RoundRectangle roundRectangle, System.Action<RoundRectangle> configure) : this(widthRequest, heightRequest, cornerRadius)
-        {
-            roundRectangle = this;
-            configure(this);
         }
 
         // ----- operators -----

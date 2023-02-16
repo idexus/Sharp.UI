@@ -5,12 +5,16 @@
 #pragma warning disable CS8669
 
 
+using System.Collections;
+using System.Collections.ObjectModel;
+
+
 namespace Sharp.UI
 {  
     /// <summary>
     /// A <c>Sharp.UI</c> class inheriting from the <c>Microsoft.Maui.Controls.CollectionView</c> class.
     /// </summary>
-    public partial class CollectionView : Microsoft.Maui.Controls.CollectionView, Sharp.UI.ICollectionView, IMauiWrapper
+    public partial class CollectionView : Microsoft.Maui.Controls.CollectionView, Sharp.UI.ICollectionView, IMauiWrapper, IEnumerable
     {
         // ----- constructors -----
 
@@ -31,6 +35,11 @@ namespace Sharp.UI
             collectionView = this;
             configure(this);
         }
+
+        // ----- single item container -----
+
+        public IEnumerator GetEnumerator() { yield return this.ItemTemplate; }
+        public void Add(Microsoft.Maui.Controls.DataTemplate itemtemplate) => this.ItemTemplate = itemtemplate;
 
         // ----- properties / events -----
 

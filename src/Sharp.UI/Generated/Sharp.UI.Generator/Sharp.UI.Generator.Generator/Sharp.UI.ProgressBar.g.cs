@@ -21,31 +21,9 @@ namespace Sharp.UI
             progressBar = this;
         }
 
-        public ProgressBar(System.Action<ProgressBar> configure) 
-        {
-            configure(this);
-        }
-
-        public ProgressBar(out ProgressBar progressBar, System.Action<ProgressBar> configure) 
-        {
-            progressBar = this;
-            configure(this);
-        }
-
         public ProgressBar(double progress, out ProgressBar progressBar) : this(progress)
         {
             progressBar = this;
-        }
-
-        public ProgressBar(double progress, System.Action<ProgressBar> configure) : this(progress)
-        {
-            configure(this);
-        }
-
-        public ProgressBar(double progress, out ProgressBar progressBar, System.Action<ProgressBar> configure) : this(progress)
-        {
-            progressBar = this;
-            configure(this);
         }
 
         // ----- properties / events -----

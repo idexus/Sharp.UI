@@ -21,17 +21,6 @@ namespace Sharp.UI
             timePicker = this;
         }
 
-        public TimePicker(System.Action<TimePicker> configure) 
-        {
-            configure(this);
-        }
-
-        public TimePicker(out TimePicker timePicker, System.Action<TimePicker> configure) 
-        {
-            timePicker = this;
-            configure(this);
-        }
-
         // ----- properties / events -----
 
         public new Sharp.UI.Style Style { get => new Sharp.UI.Style(base.Style); set => base.Style = value.MauiObject; }

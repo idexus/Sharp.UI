@@ -21,31 +21,9 @@ namespace Sharp.UI
             gradientStop = this;
         }
 
-        public GradientStop(System.Action<GradientStop> configure) 
-        {
-            configure(this);
-        }
-
-        public GradientStop(out GradientStop gradientStop, System.Action<GradientStop> configure) 
-        {
-            gradientStop = this;
-            configure(this);
-        }
-
         public GradientStop(Microsoft.Maui.Graphics.Color color, double offset, out GradientStop gradientStop) : this(color, offset)
         {
             gradientStop = this;
-        }
-
-        public GradientStop(Microsoft.Maui.Graphics.Color color, double offset, System.Action<GradientStop> configure) : this(color, offset)
-        {
-            configure(this);
-        }
-
-        public GradientStop(Microsoft.Maui.Graphics.Color color, double offset, out GradientStop gradientStop, System.Action<GradientStop> configure) : this(color, offset)
-        {
-            gradientStop = this;
-            configure(this);
         }
 
         // ----- properties / events -----

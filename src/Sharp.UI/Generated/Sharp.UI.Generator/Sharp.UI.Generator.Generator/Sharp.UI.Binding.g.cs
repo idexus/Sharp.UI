@@ -36,17 +36,6 @@ namespace Sharp.UI
             binding = this;
         }
 
-        public Binding(System.Action<Binding> configure) : this()
-        {
-            configure(this);
-        }
-
-        public Binding(out Binding binding, System.Action<Binding> configure) : this()
-        {
-            binding = this;
-            configure(this);
-        }
-
         // ----- operators -----
 
         public static implicit operator Binding(Microsoft.Maui.Controls.Binding mauiObject) => new Binding(mauiObject);

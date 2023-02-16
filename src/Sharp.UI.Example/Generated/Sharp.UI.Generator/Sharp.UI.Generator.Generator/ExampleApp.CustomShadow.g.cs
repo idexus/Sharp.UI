@@ -20,17 +20,6 @@ namespace ExampleApp
             customShadow = this;
         }
 
-        public CustomShadow(System.Action<CustomShadow> configure) 
-        {
-            configure(this);
-        }
-
-        public CustomShadow(out CustomShadow customShadow, System.Action<CustomShadow> configure) 
-        {
-            customShadow = this;
-            configure(this);
-        }
-
         // ----- attached properties -----
 
         public static readonly Microsoft.Maui.Controls.BindableProperty HasShadowProperty =
