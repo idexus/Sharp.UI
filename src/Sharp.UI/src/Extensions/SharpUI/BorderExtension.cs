@@ -22,15 +22,15 @@
             return obj;
         }
 
-        public static T StrokeShape<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.Shapes.Shape?>, LazyValueBuilder<Microsoft.Maui.Controls.Shapes.Shape?>> buildValue)
-            where T : Sharp.UI.IBorder
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Border>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.Shapes.Shape?>());
-            if (builder.ValueIsSet()) mauiObject.StrokeShape = builder.GetValue();
-            return obj;
-        }
+        //public static T StrokeShape<T>(this T obj,
+        //    System.Func<LazyValueBuilder<Microsoft.Maui.Controls.Shapes.Shape?>, LazyValueBuilder<Microsoft.Maui.Controls.Shapes.Shape?>> buildValue)
+        //    where T : Sharp.UI.IBorder
+        //{
+        //    var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Border>(obj);
+        //    var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.Shapes.Shape?>());
+        //    if (builder.ValueIsSet()) mauiObject.StrokeShape = builder.GetValue();
+        //    return obj;
+        //}
 
         public static T StrokeShape<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Controls.Shapes.Shape?>, BindingBuilder<Microsoft.Maui.Controls.Shapes.Shape?>> buildBinding)

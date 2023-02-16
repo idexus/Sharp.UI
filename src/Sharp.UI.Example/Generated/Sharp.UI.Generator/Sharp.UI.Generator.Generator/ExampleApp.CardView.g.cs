@@ -22,11 +22,13 @@ namespace ExampleApp
             cardView = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public CardView(System.Action<CardView> configure) : this()
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces.")]
         public CardView(out CardView cardView, System.Action<CardView> configure) : this()
         {
             cardView = this;
@@ -37,6 +39,8 @@ namespace ExampleApp
 
         public new IEnumerator GetEnumerator() { yield return this.ContentView; }
         public new void Add(Microsoft.Maui.Controls.View contentview) => this.ContentView = contentview;
+
+        public void Add(Func<ExampleApp.CardView, ExampleApp.CardView> configure) { configure(this); }
 
         // ----- bindable properties -----
 

@@ -5,12 +5,16 @@
 #pragma warning disable CS8669
 
 
+using System.Collections;
+using System.Collections.ObjectModel;
+
+
 namespace Sharp.UI
 {  
     /// <summary>
     /// A <c>Sharp.UI</c> class inheriting from the <c>Microsoft.Maui.Controls.MenuFlyoutSubItem</c> class.
     /// </summary>
-    public partial class MenuFlyoutSubItem : Microsoft.Maui.Controls.MenuFlyoutSubItem, Sharp.UI.IMenuFlyoutSubItem, IMauiWrapper
+    public partial class MenuFlyoutSubItem : Microsoft.Maui.Controls.MenuFlyoutSubItem, Sharp.UI.IMenuFlyoutSubItem, IMauiWrapper, IList<Microsoft.Maui.IMenuElement>
     {
         // ----- constructors -----
 
@@ -21,11 +25,13 @@ namespace Sharp.UI
             menuFlyoutSubItem = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public MenuFlyoutSubItem(System.Action<MenuFlyoutSubItem> configure) 
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces.")]
         public MenuFlyoutSubItem(out MenuFlyoutSubItem menuFlyoutSubItem, System.Action<MenuFlyoutSubItem> configure) 
         {
             menuFlyoutSubItem = this;
@@ -37,15 +43,27 @@ namespace Sharp.UI
             menuFlyoutSubItem = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public MenuFlyoutSubItem(string text, System.Action<MenuFlyoutSubItem> configure) : this(text)
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces.")]
         public MenuFlyoutSubItem(string text, out MenuFlyoutSubItem menuFlyoutSubItem, System.Action<MenuFlyoutSubItem> configure) : this(text)
         {
             menuFlyoutSubItem = this;
             configure(this);
+        }
+
+        public void Add(Func<Sharp.UI.MenuFlyoutSubItem, Sharp.UI.MenuFlyoutSubItem> configure) { configure(this); }
+
+        public void Add(Action<IList<Microsoft.Maui.IMenuElement>> builder)
+        {
+            List<Microsoft.Maui.IMenuElement> items = new List<Microsoft.Maui.IMenuElement>();
+            builder(items);
+            foreach (var item in items)
+                base.Add(item);
         }
 
         // ----- properties / events -----

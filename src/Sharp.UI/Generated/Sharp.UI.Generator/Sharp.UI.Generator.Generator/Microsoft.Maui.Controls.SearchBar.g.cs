@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T CancelButtonColor<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Color>, LazyValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
-            where T : Sharp.UI.ISearchBar
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) mauiObject.CancelButtonColor = builder.GetValue();
-            return obj;
-        }
-        
-        public static T CancelButtonColor<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
             where T : Sharp.UI.ISearchBar
         {
@@ -63,16 +53,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.TextAlignment>());
-            if (builder.ValueIsSet()) mauiObject.HorizontalTextAlignment = builder.GetValue();
-            return obj;
-        }
-        
-        public static T HorizontalTextAlignment<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.TextAlignment>, LazyValueBuilder<Microsoft.Maui.TextAlignment>> buildValue)
-            where T : Sharp.UI.ISearchBar
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.TextAlignment>());
             if (builder.ValueIsSet()) mauiObject.HorizontalTextAlignment = builder.GetValue();
             return obj;
         }
@@ -107,16 +87,6 @@ namespace Sharp.UI
         }
         
         public static T VerticalTextAlignment<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.TextAlignment>, LazyValueBuilder<Microsoft.Maui.TextAlignment>> buildValue)
-            where T : Sharp.UI.ISearchBar
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.TextAlignment>());
-            if (builder.ValueIsSet()) mauiObject.VerticalTextAlignment = builder.GetValue();
-            return obj;
-        }
-        
-        public static T VerticalTextAlignment<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.TextAlignment>, BindingBuilder<Microsoft.Maui.TextAlignment>> buildBinding)
             where T : Sharp.UI.ISearchBar
         {
@@ -141,16 +111,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);
             var builder = buildValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) mauiObject.SearchCommand = builder.GetValue();
-            return obj;
-        }
-        
-        public static T SearchCommand<T>(this T obj,
-            System.Func<LazyValueBuilder<System.Windows.Input.ICommand>, LazyValueBuilder<System.Windows.Input.ICommand>> buildValue)
-            where T : Sharp.UI.ISearchBar
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);
-            var builder = buildValue(new LazyValueBuilder<System.Windows.Input.ICommand>());
             if (builder.ValueIsSet()) mauiObject.SearchCommand = builder.GetValue();
             return obj;
         }
@@ -185,16 +145,6 @@ namespace Sharp.UI
         }
         
         public static T SearchCommandParameter<T>(this T obj,
-            System.Func<LazyValueBuilder<object>, LazyValueBuilder<object>> buildValue)
-            where T : Sharp.UI.ISearchBar
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);
-            var builder = buildValue(new LazyValueBuilder<object>());
-            if (builder.ValueIsSet()) mauiObject.SearchCommandParameter = builder.GetValue();
-            return obj;
-        }
-        
-        public static T SearchCommandParameter<T>(this T obj,
             System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
             where T : Sharp.UI.ISearchBar
         {
@@ -219,16 +169,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.FontAttributes>());
-            if (builder.ValueIsSet()) mauiObject.FontAttributes = builder.GetValue();
-            return obj;
-        }
-        
-        public static T FontAttributes<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.FontAttributes>, LazyValueBuilder<Microsoft.Maui.Controls.FontAttributes>> buildValue)
-            where T : Sharp.UI.ISearchBar
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.FontAttributes>());
             if (builder.ValueIsSet()) mauiObject.FontAttributes = builder.GetValue();
             return obj;
         }
@@ -263,16 +203,6 @@ namespace Sharp.UI
         }
         
         public static T IsTextPredictionEnabled<T>(this T obj,
-            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
-            where T : Sharp.UI.ISearchBar
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);
-            var builder = buildValue(new LazyValueBuilder<bool>());
-            if (builder.ValueIsSet()) mauiObject.IsTextPredictionEnabled = builder.GetValue();
-            return obj;
-        }
-        
-        public static T IsTextPredictionEnabled<T>(this T obj,
             System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Sharp.UI.ISearchBar
         {
@@ -297,16 +227,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);
             var builder = buildValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) mauiObject.CursorPosition = builder.GetValue();
-            return obj;
-        }
-        
-        public static T CursorPosition<T>(this T obj,
-            System.Func<LazyValueBuilder<int>, LazyValueBuilder<int>> buildValue)
-            where T : Sharp.UI.ISearchBar
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);
-            var builder = buildValue(new LazyValueBuilder<int>());
             if (builder.ValueIsSet()) mauiObject.CursorPosition = builder.GetValue();
             return obj;
         }
@@ -341,16 +261,6 @@ namespace Sharp.UI
         }
         
         public static T SelectionLength<T>(this T obj,
-            System.Func<LazyValueBuilder<int>, LazyValueBuilder<int>> buildValue)
-            where T : Sharp.UI.ISearchBar
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);
-            var builder = buildValue(new LazyValueBuilder<int>());
-            if (builder.ValueIsSet()) mauiObject.SelectionLength = builder.GetValue();
-            return obj;
-        }
-        
-        public static T SelectionLength<T>(this T obj,
             System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
             where T : Sharp.UI.ISearchBar
         {
@@ -375,16 +285,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) mauiObject.FontFamily = builder.GetValue();
-            return obj;
-        }
-        
-        public static T FontFamily<T>(this T obj,
-            System.Func<LazyValueBuilder<string>, LazyValueBuilder<string>> buildValue)
-            where T : Sharp.UI.ISearchBar
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);
-            var builder = buildValue(new LazyValueBuilder<string>());
             if (builder.ValueIsSet()) mauiObject.FontFamily = builder.GetValue();
             return obj;
         }
@@ -419,16 +319,6 @@ namespace Sharp.UI
         }
         
         public static T FontSize<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.ISearchBar
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.FontSize = builder.GetValue();
-            return obj;
-        }
-        
-        public static T FontSize<T>(this T obj,
             System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Sharp.UI.ISearchBar
         {
@@ -453,16 +343,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) mauiObject.FontAutoScalingEnabled = builder.GetValue();
-            return obj;
-        }
-        
-        public static T FontAutoScalingEnabled<T>(this T obj,
-            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
-            where T : Sharp.UI.ISearchBar
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SearchBar>(obj);
-            var builder = buildValue(new LazyValueBuilder<bool>());
             if (builder.ValueIsSet()) mauiObject.FontAutoScalingEnabled = builder.GetValue();
             return obj;
         }

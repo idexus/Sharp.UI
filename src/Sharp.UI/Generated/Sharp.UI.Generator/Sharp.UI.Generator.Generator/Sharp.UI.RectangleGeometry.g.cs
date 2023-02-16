@@ -21,31 +21,9 @@ namespace Sharp.UI
             rectangleGeometry = this;
         }
 
-        public RectangleGeometry(System.Action<RectangleGeometry> configure) 
-        {
-            configure(this);
-        }
-
-        public RectangleGeometry(out RectangleGeometry rectangleGeometry, System.Action<RectangleGeometry> configure) 
-        {
-            rectangleGeometry = this;
-            configure(this);
-        }
-
         public RectangleGeometry(double x, double y, double width, double height, out RectangleGeometry rectangleGeometry) : this(x, y, width, height)
         {
             rectangleGeometry = this;
-        }
-
-        public RectangleGeometry(double x, double y, double width, double height, System.Action<RectangleGeometry> configure) : this(x, y, width, height)
-        {
-            configure(this);
-        }
-
-        public RectangleGeometry(double x, double y, double width, double height, out RectangleGeometry rectangleGeometry, System.Action<RectangleGeometry> configure) : this(x, y, width, height)
-        {
-            rectangleGeometry = this;
-            configure(this);
         }
 
         // ----- properties / events -----

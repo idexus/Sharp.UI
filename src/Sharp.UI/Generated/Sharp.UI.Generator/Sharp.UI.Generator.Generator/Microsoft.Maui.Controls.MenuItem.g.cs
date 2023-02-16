@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T Command<T>(this T obj,
-            System.Func<LazyValueBuilder<System.Windows.Input.ICommand>, LazyValueBuilder<System.Windows.Input.ICommand>> buildValue)
-            where T : Sharp.UI.IMenuItem
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MenuItem>(obj);
-            var builder = buildValue(new LazyValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) mauiObject.Command = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Command<T>(this T obj,
             System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buildBinding)
             where T : Sharp.UI.IMenuItem
         {
@@ -63,16 +53,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MenuItem>(obj);
             var builder = buildValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) mauiObject.CommandParameter = builder.GetValue();
-            return obj;
-        }
-        
-        public static T CommandParameter<T>(this T obj,
-            System.Func<LazyValueBuilder<object>, LazyValueBuilder<object>> buildValue)
-            where T : Sharp.UI.IMenuItem
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MenuItem>(obj);
-            var builder = buildValue(new LazyValueBuilder<object>());
             if (builder.ValueIsSet()) mauiObject.CommandParameter = builder.GetValue();
             return obj;
         }
@@ -107,16 +87,6 @@ namespace Sharp.UI
         }
         
         public static T IconImageSource<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.ImageSource>, LazyValueBuilder<Microsoft.Maui.Controls.ImageSource>> buildValue)
-            where T : Sharp.UI.IMenuItem
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MenuItem>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.ImageSource>());
-            if (builder.ValueIsSet()) mauiObject.IconImageSource = builder.GetValue();
-            return obj;
-        }
-        
-        public static T IconImageSource<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Controls.ImageSource>, BindingBuilder<Microsoft.Maui.Controls.ImageSource>> buildBinding)
             where T : Sharp.UI.IMenuItem
         {
@@ -141,16 +111,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MenuItem>(obj);
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) mauiObject.IsDestructive = builder.GetValue();
-            return obj;
-        }
-        
-        public static T IsDestructive<T>(this T obj,
-            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
-            where T : Sharp.UI.IMenuItem
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MenuItem>(obj);
-            var builder = buildValue(new LazyValueBuilder<bool>());
             if (builder.ValueIsSet()) mauiObject.IsDestructive = builder.GetValue();
             return obj;
         }
@@ -185,16 +145,6 @@ namespace Sharp.UI
         }
         
         public static T Text<T>(this T obj,
-            System.Func<LazyValueBuilder<string>, LazyValueBuilder<string>> buildValue)
-            where T : Sharp.UI.IMenuItem
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MenuItem>(obj);
-            var builder = buildValue(new LazyValueBuilder<string>());
-            if (builder.ValueIsSet()) mauiObject.Text = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Text<T>(this T obj,
             System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
             where T : Sharp.UI.IMenuItem
         {
@@ -219,16 +169,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MenuItem>(obj);
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) mauiObject.IsEnabled = builder.GetValue();
-            return obj;
-        }
-        
-        public static T IsEnabled<T>(this T obj,
-            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
-            where T : Sharp.UI.IMenuItem
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MenuItem>(obj);
-            var builder = buildValue(new LazyValueBuilder<bool>());
             if (builder.ValueIsSet()) mauiObject.IsEnabled = builder.GetValue();
             return obj;
         }
@@ -262,16 +202,6 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T StyleClass<T>(this T obj,
-            System.Func<LazyValueBuilder<System.Collections.Generic.IList<string>>, LazyValueBuilder<System.Collections.Generic.IList<string>>> buildValue)
-            where T : Sharp.UI.IMenuItem
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MenuItem>(obj);
-            var builder = buildValue(new LazyValueBuilder<System.Collections.Generic.IList<string>>());
-            if (builder.ValueIsSet()) mauiObject.StyleClass = builder.GetValue();
-            return obj;
-        }
-        
         public static T @class<T>(this T obj,
             System.Collections.Generic.IList<string> @class)
             where T : Sharp.UI.IMenuItem
@@ -287,16 +217,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MenuItem>(obj);
             var builder = buildValue(new ValueBuilder<System.Collections.Generic.IList<string>>());
-            if (builder.ValueIsSet()) mauiObject.@class = builder.GetValue();
-            return obj;
-        }
-        
-        public static T @class<T>(this T obj,
-            System.Func<LazyValueBuilder<System.Collections.Generic.IList<string>>, LazyValueBuilder<System.Collections.Generic.IList<string>>> buildValue)
-            where T : Sharp.UI.IMenuItem
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MenuItem>(obj);
-            var builder = buildValue(new LazyValueBuilder<System.Collections.Generic.IList<string>>());
             if (builder.ValueIsSet()) mauiObject.@class = builder.GetValue();
             return obj;
         }

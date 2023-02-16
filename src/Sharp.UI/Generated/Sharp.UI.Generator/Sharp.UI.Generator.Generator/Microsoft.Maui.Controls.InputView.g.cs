@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T MaxLength<T>(this T obj,
-            System.Func<LazyValueBuilder<int>, LazyValueBuilder<int>> buildValue)
-            where T : Sharp.UI.IInputView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.InputView>(obj);
-            var builder = buildValue(new LazyValueBuilder<int>());
-            if (builder.ValueIsSet()) mauiObject.MaxLength = builder.GetValue();
-            return obj;
-        }
-        
-        public static T MaxLength<T>(this T obj,
             System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
             where T : Sharp.UI.IInputView
         {
@@ -63,16 +53,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.InputView>(obj);
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) mauiObject.Text = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Text<T>(this T obj,
-            System.Func<LazyValueBuilder<string>, LazyValueBuilder<string>> buildValue)
-            where T : Sharp.UI.IInputView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.InputView>(obj);
-            var builder = buildValue(new LazyValueBuilder<string>());
             if (builder.ValueIsSet()) mauiObject.Text = builder.GetValue();
             return obj;
         }
@@ -107,16 +87,6 @@ namespace Sharp.UI
         }
         
         public static T Keyboard<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Keyboard>, LazyValueBuilder<Microsoft.Maui.Keyboard>> buildValue)
-            where T : Sharp.UI.IInputView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.InputView>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Keyboard>());
-            if (builder.ValueIsSet()) mauiObject.Keyboard = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Keyboard<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Keyboard>, BindingBuilder<Microsoft.Maui.Keyboard>> buildBinding)
             where T : Sharp.UI.IInputView
         {
@@ -141,16 +111,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.InputView>(obj);
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) mauiObject.IsSpellCheckEnabled = builder.GetValue();
-            return obj;
-        }
-        
-        public static T IsSpellCheckEnabled<T>(this T obj,
-            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
-            where T : Sharp.UI.IInputView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.InputView>(obj);
-            var builder = buildValue(new LazyValueBuilder<bool>());
             if (builder.ValueIsSet()) mauiObject.IsSpellCheckEnabled = builder.GetValue();
             return obj;
         }
@@ -185,16 +145,6 @@ namespace Sharp.UI
         }
         
         public static T IsReadOnly<T>(this T obj,
-            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
-            where T : Sharp.UI.IInputView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.InputView>(obj);
-            var builder = buildValue(new LazyValueBuilder<bool>());
-            if (builder.ValueIsSet()) mauiObject.IsReadOnly = builder.GetValue();
-            return obj;
-        }
-        
-        public static T IsReadOnly<T>(this T obj,
             System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Sharp.UI.IInputView
         {
@@ -219,16 +169,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.InputView>(obj);
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) mauiObject.Placeholder = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Placeholder<T>(this T obj,
-            System.Func<LazyValueBuilder<string>, LazyValueBuilder<string>> buildValue)
-            where T : Sharp.UI.IInputView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.InputView>(obj);
-            var builder = buildValue(new LazyValueBuilder<string>());
             if (builder.ValueIsSet()) mauiObject.Placeholder = builder.GetValue();
             return obj;
         }
@@ -263,16 +203,6 @@ namespace Sharp.UI
         }
         
         public static T PlaceholderColor<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Color>, LazyValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
-            where T : Sharp.UI.IInputView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.InputView>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) mauiObject.PlaceholderColor = builder.GetValue();
-            return obj;
-        }
-        
-        public static T PlaceholderColor<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
             where T : Sharp.UI.IInputView
         {
@@ -297,16 +227,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.InputView>(obj);
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) mauiObject.TextColor = builder.GetValue();
-            return obj;
-        }
-        
-        public static T TextColor<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Color>, LazyValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
-            where T : Sharp.UI.IInputView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.InputView>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Color>());
             if (builder.ValueIsSet()) mauiObject.TextColor = builder.GetValue();
             return obj;
         }
@@ -341,16 +261,6 @@ namespace Sharp.UI
         }
         
         public static T CharacterSpacing<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.IInputView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.InputView>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.CharacterSpacing = builder.GetValue();
-            return obj;
-        }
-        
-        public static T CharacterSpacing<T>(this T obj,
             System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Sharp.UI.IInputView
         {
@@ -375,16 +285,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.InputView>(obj);
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.TextTransform>());
-            if (builder.ValueIsSet()) mauiObject.TextTransform = builder.GetValue();
-            return obj;
-        }
-        
-        public static T TextTransform<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.TextTransform>, LazyValueBuilder<Microsoft.Maui.TextTransform>> buildValue)
-            where T : Sharp.UI.IInputView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.InputView>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.TextTransform>());
             if (builder.ValueIsSet()) mauiObject.TextTransform = builder.GetValue();
             return obj;
         }

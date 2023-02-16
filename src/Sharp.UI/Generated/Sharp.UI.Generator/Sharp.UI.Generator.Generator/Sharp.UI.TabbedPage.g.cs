@@ -25,11 +25,13 @@ namespace Sharp.UI
             tabbedPage = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public TabbedPage(System.Action<TabbedPage> configure) 
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces.")]
         public TabbedPage(out TabbedPage tabbedPage, System.Action<TabbedPage> configure) 
         {
             tabbedPage = this;
@@ -41,7 +43,6 @@ namespace Sharp.UI
         public int Count => this.Children.Count;
         public Microsoft.Maui.Controls.Page this[int index] { get => this.Children[index]; set => this.Children[index] = value; }
         public bool IsReadOnly => false;
-        public void Add(Microsoft.Maui.Controls.Page item) => this.Children.Add(item);
         public void Clear() => this.Children.Clear();
         public bool Contains(Microsoft.Maui.Controls.Page item) => this.Children.Contains(item);
         public void CopyTo(Microsoft.Maui.Controls.Page[] array, int arrayIndex) => this.Children.CopyTo(array, arrayIndex);
@@ -51,6 +52,18 @@ namespace Sharp.UI
         public bool Remove(Microsoft.Maui.Controls.Page item) => this.Children.Remove(item);
         public void RemoveAt(int index) => this.Children.RemoveAt(index);
         IEnumerator IEnumerable.GetEnumerator() => this.Children.GetEnumerator();
+
+        public void Add(Func<Sharp.UI.TabbedPage, Sharp.UI.TabbedPage> configure) { configure(this); }
+
+        public void Add(Microsoft.Maui.Controls.Page page) => this.Children.Add(page);
+
+        public void Add(Action<IList<Microsoft.Maui.Controls.Page>> builder)
+        {
+            List<Microsoft.Maui.Controls.Page> items = new List<Microsoft.Maui.Controls.Page>();
+            builder(items);
+            foreach (var item in items)
+                this.Children.Add(item);
+        }
 
         // ----- properties / events -----
 

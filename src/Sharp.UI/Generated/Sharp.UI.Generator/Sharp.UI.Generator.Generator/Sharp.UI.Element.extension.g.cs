@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T ContextFlyout<T>(this T obj,
-            System.Func<LazyValueBuilder<Sharp.UI.MenuFlyout>, LazyValueBuilder<Sharp.UI.MenuFlyout>> buildValue)
-            where T : Sharp.UI.IElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Element>(obj);
-            var builder = buildValue(new LazyValueBuilder<Sharp.UI.MenuFlyout>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(Microsoft.Maui.Controls.FlyoutBase.ContextFlyoutProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T ContextFlyout<T>(this T obj,
             System.Func<BindingBuilder<Sharp.UI.MenuFlyout>, BindingBuilder<Sharp.UI.MenuFlyout>> buildBinding)
             where T : Sharp.UI.IElement
         {

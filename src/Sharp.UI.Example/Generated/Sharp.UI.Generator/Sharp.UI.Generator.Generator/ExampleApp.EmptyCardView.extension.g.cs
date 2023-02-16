@@ -31,16 +31,6 @@ namespace ExampleApp
         }
         
         public static T CardTitle<T>(this T obj,
-            System.Func<LazyValueBuilder<string>, LazyValueBuilder<string>> buildValue)
-            where T : ExampleApp.EmptyCardView
-        {
-            var mauiObject = MauiWrapper.Value<ExampleApp.EmptyCardView>(obj);
-            var builder = buildValue(new LazyValueBuilder<string>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.EmptyCardView.CardTitleProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T CardTitle<T>(this T obj,
             System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
             where T : ExampleApp.EmptyCardView
         {
@@ -65,16 +55,6 @@ namespace ExampleApp
         {
             var mauiObject = MauiWrapper.Value<ExampleApp.EmptyCardView>(obj);
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.EmptyCardView.CardDescriptionProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T CardDescription<T>(this T obj,
-            System.Func<LazyValueBuilder<string>, LazyValueBuilder<string>> buildValue)
-            where T : ExampleApp.EmptyCardView
-        {
-            var mauiObject = MauiWrapper.Value<ExampleApp.EmptyCardView>(obj);
-            var builder = buildValue(new LazyValueBuilder<string>());
             if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.EmptyCardView.CardDescriptionProperty, builder.GetValue());
             return obj;
         }
@@ -109,16 +89,6 @@ namespace ExampleApp
         }
         
         public static T CardColor<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Color>, LazyValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
-            where T : ExampleApp.EmptyCardView
-        {
-            var mauiObject = MauiWrapper.Value<ExampleApp.EmptyCardView>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.EmptyCardView.CardColorProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T CardColor<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
             where T : ExampleApp.EmptyCardView
         {
@@ -143,16 +113,6 @@ namespace ExampleApp
         {
             var mauiObject = MauiWrapper.Value<ExampleApp.EmptyCardView>(obj);
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.EmptyCardView.BorderColorProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T BorderColor<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Color>, LazyValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
-            where T : ExampleApp.EmptyCardView
-        {
-            var mauiObject = MauiWrapper.Value<ExampleApp.EmptyCardView>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Color>());
             if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.EmptyCardView.BorderColorProperty, builder.GetValue());
             return obj;
         }

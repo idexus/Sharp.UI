@@ -16,31 +16,9 @@ namespace Sharp.UI
             style = this;
         }
 
-        public Style(System.Action<Style> configure) : this()
-        {
-            configure(this);
-        }
-
-        public Style(out Style style, System.Action<Style> configure) : this()
-        {
-            style = this;
-            configure(this);
-        }
-
         public Style(bool applyToDerivedTypes, out Style style) : this(applyToDerivedTypes)
         {
             style = this;
-        }
-
-        public Style(bool applyToDerivedTypes, System.Action<Style> configure) : this(applyToDerivedTypes)
-        {
-            configure(this);
-        }
-
-        public Style(bool applyToDerivedTypes, out Style style, System.Action<Style> configure) : this(applyToDerivedTypes)
-        {
-            style = this;
-            configure(this);
         }
 
     }

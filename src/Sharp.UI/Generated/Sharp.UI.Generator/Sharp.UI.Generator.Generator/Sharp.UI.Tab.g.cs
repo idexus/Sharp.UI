@@ -25,11 +25,13 @@ namespace Sharp.UI
             tab = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public Tab(System.Action<Tab> configure) 
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces.")]
         public Tab(out Tab tab, System.Action<Tab> configure) 
         {
             tab = this;
@@ -41,11 +43,13 @@ namespace Sharp.UI
             tab = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public Tab(string title, System.Action<Tab> configure) : this(title)
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces.")]
         public Tab(string title, out Tab tab, System.Action<Tab> configure) : this(title)
         {
             tab = this;
@@ -57,7 +61,6 @@ namespace Sharp.UI
         public int Count => this.Items.Count;
         public Microsoft.Maui.Controls.ShellContent this[int index] { get => this.Items[index]; set => this.Items[index] = value; }
         public bool IsReadOnly => false;
-        public void Add(Microsoft.Maui.Controls.ShellContent item) => this.Items.Add(item);
         public void Clear() => this.Items.Clear();
         public bool Contains(Microsoft.Maui.Controls.ShellContent item) => this.Items.Contains(item);
         public void CopyTo(Microsoft.Maui.Controls.ShellContent[] array, int arrayIndex) => this.Items.CopyTo(array, arrayIndex);
@@ -67,6 +70,18 @@ namespace Sharp.UI
         public bool Remove(Microsoft.Maui.Controls.ShellContent item) => this.Items.Remove(item);
         public void RemoveAt(int index) => this.Items.RemoveAt(index);
         IEnumerator IEnumerable.GetEnumerator() => this.Items.GetEnumerator();
+
+        public void Add(Func<Sharp.UI.Tab, Sharp.UI.Tab> configure) { configure(this); }
+
+        public void Add(Microsoft.Maui.Controls.ShellContent shellContent) => this.Items.Add(shellContent);
+
+        public void Add(Action<IList<Microsoft.Maui.Controls.ShellContent>> builder)
+        {
+            List<Microsoft.Maui.Controls.ShellContent> items = new List<Microsoft.Maui.Controls.ShellContent>();
+            builder(items);
+            foreach (var item in items)
+                this.Items.Add(item);
+        }
 
         // ----- properties / events -----
 

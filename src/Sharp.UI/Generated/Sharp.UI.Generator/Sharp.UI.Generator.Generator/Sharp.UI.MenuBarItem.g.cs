@@ -5,12 +5,16 @@
 #pragma warning disable CS8669
 
 
+using System.Collections;
+using System.Collections.ObjectModel;
+
+
 namespace Sharp.UI
 {  
     /// <summary>
     /// A <c>Sharp.UI</c> class inheriting from the <c>Microsoft.Maui.Controls.MenuBarItem</c> class.
     /// </summary>
-    public partial class MenuBarItem : Microsoft.Maui.Controls.MenuBarItem, Sharp.UI.IMenuBarItem, IMauiWrapper
+    public partial class MenuBarItem : Microsoft.Maui.Controls.MenuBarItem, Sharp.UI.IMenuBarItem, IMauiWrapper, IList<Microsoft.Maui.IMenuElement>
     {
         // ----- constructors -----
 
@@ -21,11 +25,13 @@ namespace Sharp.UI
             menuBarItem = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public MenuBarItem(System.Action<MenuBarItem> configure) 
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces.")]
         public MenuBarItem(out MenuBarItem menuBarItem, System.Action<MenuBarItem> configure) 
         {
             menuBarItem = this;
@@ -37,15 +43,27 @@ namespace Sharp.UI
             menuBarItem = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public MenuBarItem(string text, System.Action<MenuBarItem> configure) : this(text)
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces.")]
         public MenuBarItem(string text, out MenuBarItem menuBarItem, System.Action<MenuBarItem> configure) : this(text)
         {
             menuBarItem = this;
             configure(this);
+        }
+
+        public void Add(Func<Sharp.UI.MenuBarItem, Sharp.UI.MenuBarItem> configure) { configure(this); }
+
+        public void Add(Action<IList<Microsoft.Maui.IMenuElement>> builder)
+        {
+            List<Microsoft.Maui.IMenuElement> items = new List<Microsoft.Maui.IMenuElement>();
+            builder(items);
+            foreach (var item in items)
+                base.Add(item);
         }
 
         // ----- properties / events -----

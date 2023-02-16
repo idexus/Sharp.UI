@@ -31,38 +31,6 @@ namespace Sharp.UI
             MauiObject = new Microsoft.Maui.Controls.Shapes.Rectangle();
         }
 
-        public Rectangle(out Rectangle rectangle) : this()
-        {
-            rectangle = this;
-        }
-
-        public Rectangle(System.Action<Rectangle> configure) : this()
-        {
-            configure(this);
-        }
-
-        public Rectangle(out Rectangle rectangle, System.Action<Rectangle> configure) : this()
-        {
-            rectangle = this;
-            configure(this);
-        }
-
-        public Rectangle(double widthRequest, double heightRequest, out Rectangle rectangle) : this(widthRequest, heightRequest)
-        {
-            rectangle = this;
-        }
-
-        public Rectangle(double widthRequest, double heightRequest, System.Action<Rectangle> configure) : this(widthRequest, heightRequest)
-        {
-            configure(this);
-        }
-
-        public Rectangle(double widthRequest, double heightRequest, out Rectangle rectangle, System.Action<Rectangle> configure) : this(widthRequest, heightRequest)
-        {
-            rectangle = this;
-            configure(this);
-        }
-
         // ----- operators -----
 
         public static implicit operator Rectangle(Microsoft.Maui.Controls.Shapes.Rectangle mauiObject) => new Rectangle(mauiObject);

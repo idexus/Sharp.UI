@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T Property<T>(this T obj,
-            System.Func<LazyValueBuilder<object>, LazyValueBuilder<object>> buildValue)
-            where T : Sharp.UI.ICompareStateTrigger
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CompareStateTrigger>(obj);
-            var builder = buildValue(new LazyValueBuilder<object>());
-            if (builder.ValueIsSet()) mauiObject.Property = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Property<T>(this T obj,
             System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
             where T : Sharp.UI.ICompareStateTrigger
         {
@@ -63,16 +53,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CompareStateTrigger>(obj);
             var builder = buildValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) mauiObject.Value = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Value<T>(this T obj,
-            System.Func<LazyValueBuilder<object>, LazyValueBuilder<object>> buildValue)
-            where T : Sharp.UI.ICompareStateTrigger
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CompareStateTrigger>(obj);
-            var builder = buildValue(new LazyValueBuilder<object>());
             if (builder.ValueIsSet()) mauiObject.Value = builder.GetValue();
             return obj;
         }

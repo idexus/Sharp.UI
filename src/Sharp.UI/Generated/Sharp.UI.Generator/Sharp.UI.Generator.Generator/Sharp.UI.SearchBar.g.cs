@@ -21,31 +21,9 @@ namespace Sharp.UI
             searchBar = this;
         }
 
-        public SearchBar(System.Action<SearchBar> configure) 
-        {
-            configure(this);
-        }
-
-        public SearchBar(out SearchBar searchBar, System.Action<SearchBar> configure) 
-        {
-            searchBar = this;
-            configure(this);
-        }
-
         public SearchBar(string placeholder, out SearchBar searchBar) : this(placeholder)
         {
             searchBar = this;
-        }
-
-        public SearchBar(string placeholder, System.Action<SearchBar> configure) : this(placeholder)
-        {
-            configure(this);
-        }
-
-        public SearchBar(string placeholder, out SearchBar searchBar, System.Action<SearchBar> configure) : this(placeholder)
-        {
-            searchBar = this;
-            configure(this);
         }
 
         // ----- properties / events -----

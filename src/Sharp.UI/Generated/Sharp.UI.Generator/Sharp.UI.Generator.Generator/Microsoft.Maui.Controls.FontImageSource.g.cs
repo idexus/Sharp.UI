@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T Color<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Color>, LazyValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
-            where T : Sharp.UI.IFontImageSource
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FontImageSource>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) mauiObject.Color = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Color<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
             where T : Sharp.UI.IFontImageSource
         {
@@ -63,16 +53,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FontImageSource>(obj);
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) mauiObject.FontFamily = builder.GetValue();
-            return obj;
-        }
-        
-        public static T FontFamily<T>(this T obj,
-            System.Func<LazyValueBuilder<string>, LazyValueBuilder<string>> buildValue)
-            where T : Sharp.UI.IFontImageSource
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FontImageSource>(obj);
-            var builder = buildValue(new LazyValueBuilder<string>());
             if (builder.ValueIsSet()) mauiObject.FontFamily = builder.GetValue();
             return obj;
         }
@@ -107,16 +87,6 @@ namespace Sharp.UI
         }
         
         public static T Glyph<T>(this T obj,
-            System.Func<LazyValueBuilder<string>, LazyValueBuilder<string>> buildValue)
-            where T : Sharp.UI.IFontImageSource
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FontImageSource>(obj);
-            var builder = buildValue(new LazyValueBuilder<string>());
-            if (builder.ValueIsSet()) mauiObject.Glyph = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Glyph<T>(this T obj,
             System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
             where T : Sharp.UI.IFontImageSource
         {
@@ -146,16 +116,6 @@ namespace Sharp.UI
         }
         
         public static T Size<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.IFontImageSource
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FontImageSource>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.Size = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Size<T>(this T obj,
             System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Sharp.UI.IFontImageSource
         {
@@ -180,16 +140,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FontImageSource>(obj);
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) mauiObject.FontAutoScalingEnabled = builder.GetValue();
-            return obj;
-        }
-        
-        public static T FontAutoScalingEnabled<T>(this T obj,
-            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
-            where T : Sharp.UI.IFontImageSource
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FontImageSource>(obj);
-            var builder = buildValue(new LazyValueBuilder<bool>());
             if (builder.ValueIsSet()) mauiObject.FontAutoScalingEnabled = builder.GetValue();
             return obj;
         }

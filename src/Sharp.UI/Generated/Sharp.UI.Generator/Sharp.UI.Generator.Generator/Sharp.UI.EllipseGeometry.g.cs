@@ -21,31 +21,9 @@ namespace Sharp.UI
             ellipseGeometry = this;
         }
 
-        public EllipseGeometry(System.Action<EllipseGeometry> configure) 
-        {
-            configure(this);
-        }
-
-        public EllipseGeometry(out EllipseGeometry ellipseGeometry, System.Action<EllipseGeometry> configure) 
-        {
-            ellipseGeometry = this;
-            configure(this);
-        }
-
         public EllipseGeometry(double radiusX, double radiusY, Microsoft.Maui.Graphics.Point center, out EllipseGeometry ellipseGeometry) : this(radiusX, radiusY, center)
         {
             ellipseGeometry = this;
-        }
-
-        public EllipseGeometry(double radiusX, double radiusY, Microsoft.Maui.Graphics.Point center, System.Action<EllipseGeometry> configure) : this(radiusX, radiusY, center)
-        {
-            configure(this);
-        }
-
-        public EllipseGeometry(double radiusX, double radiusY, Microsoft.Maui.Graphics.Point center, out EllipseGeometry ellipseGeometry, System.Action<EllipseGeometry> configure) : this(radiusX, radiusY, center)
-        {
-            ellipseGeometry = this;
-            configure(this);
         }
 
         // ----- properties / events -----

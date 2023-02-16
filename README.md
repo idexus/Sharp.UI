@@ -24,6 +24,11 @@ public class HelloWorldPage : ContentPage
     {
         Content = new VStack
         {
+            e => e
+                .Spacing(25)
+                .Padding(new Thickness(30, 0))
+                .VerticalOptions(LayoutOptions.Center),
+
             new Image("dotnet_bot.png")
                 .HeightRequest(200)
                 .HorizontalOptions(LayoutOptions.Center),
@@ -44,10 +49,7 @@ public class HelloWorldPage : ContentPage
                     button.Text = $"Clicked {count} ";
                     button.Text += count == 1 ? "time" : "times";
                 })
-        }
-        .Spacing(25)
-        .Padding(new Thickness(30, 0))
-        .VerticalOptions(LayoutOptions.Center);
+        };
     }
 }
 ```
@@ -76,7 +78,7 @@ namespace ExampleApp
 To add the Sharp.UI library to your project, run the following command:
 
 ```
-dotnet add package Sharp.UI --version 0.3.0-alpha.5
+dotnet add package Sharp.UI --version 0.3.1-alpha.1
 ```
 
 You can also add the library to your project by adding a project reference to the Sharp.UI library. For more information, see the [Adding the Library by VS Project Reference](./doc/howtostart.md) document.
@@ -104,7 +106,6 @@ Here are some examples showing how to use the Sharp.UI library
 - [Application styling](./doc/styledefinition.md)
 - [Triggers](./doc/triggers.md)
 - [Behaviors](./doc/behaviors.md)
-- [App theme, device idiom and platform templates](./doc/deftemplates.md)
 - [Application shell](./doc/shellapplication.md)
 
 # Auto-generated code

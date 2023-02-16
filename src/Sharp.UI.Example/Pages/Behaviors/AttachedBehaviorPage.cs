@@ -38,8 +38,9 @@ public class AttachedBehaviorPage : ContentPage
 
 		Content = new VStack
 		{
-			new Entry("Enter text...", out var entry).Text("")
-		}
-		.VerticalOptions(LayoutOptions.Center);
+            e=>e.VerticalOptions(LayoutOptions.Center),
+
+            new Entry("Enter text...", out var entry).Text("")
+		};
 	}
 }

@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T HasShadow<T>(this T obj,
-            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
-            where T : Sharp.UI.IFrame
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Frame>(obj);
-            var builder = buildValue(new LazyValueBuilder<bool>());
-            if (builder.ValueIsSet()) mauiObject.HasShadow = builder.GetValue();
-            return obj;
-        }
-        
-        public static T HasShadow<T>(this T obj,
             System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Sharp.UI.IFrame
         {
@@ -68,16 +58,6 @@ namespace Sharp.UI
         }
         
         public static T BorderColor<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Color>, LazyValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
-            where T : Sharp.UI.IFrame
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Frame>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) mauiObject.BorderColor = builder.GetValue();
-            return obj;
-        }
-        
-        public static T BorderColor<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
             where T : Sharp.UI.IFrame
         {
@@ -102,16 +82,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Frame>(obj);
             var builder = buildValue(new ValueBuilder<float>());
-            if (builder.ValueIsSet()) mauiObject.CornerRadius = builder.GetValue();
-            return obj;
-        }
-        
-        public static T CornerRadius<T>(this T obj,
-            System.Func<LazyValueBuilder<float>, LazyValueBuilder<float>> buildValue)
-            where T : Sharp.UI.IFrame
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Frame>(obj);
-            var builder = buildValue(new LazyValueBuilder<float>());
             if (builder.ValueIsSet()) mauiObject.CornerRadius = builder.GetValue();
             return obj;
         }

@@ -5,12 +5,16 @@
 #pragma warning disable CS8669
 
 
+using System.Collections;
+using System.Collections.ObjectModel;
+
+
 namespace Sharp.UI
 {  
     /// <summary>
     /// A <c>Sharp.UI</c> class inheriting from the <c>Microsoft.Maui.Controls.CollectionView</c> class.
     /// </summary>
-    public partial class CollectionView : Microsoft.Maui.Controls.CollectionView, Sharp.UI.ICollectionView, IMauiWrapper
+    public partial class CollectionView : Microsoft.Maui.Controls.CollectionView, Sharp.UI.ICollectionView, IMauiWrapper, IEnumerable
     {
         // ----- constructors -----
 
@@ -21,16 +25,25 @@ namespace Sharp.UI
             collectionView = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public CollectionView(System.Action<CollectionView> configure) 
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces.")]
         public CollectionView(out CollectionView collectionView, System.Action<CollectionView> configure) 
         {
             collectionView = this;
             configure(this);
         }
+
+        // ----- single item container -----
+
+        public IEnumerator GetEnumerator() { yield return this.ItemTemplate; }
+        public void Add(Microsoft.Maui.Controls.DataTemplate itemtemplate) => this.ItemTemplate = itemtemplate;
+
+        public void Add(Func<Sharp.UI.CollectionView, Sharp.UI.CollectionView> configure) { configure(this); }
 
         // ----- properties / events -----
 

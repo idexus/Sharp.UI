@@ -31,16 +31,6 @@ namespace ExampleApp
         }
         
         public static T Id<T>(this T obj,
-            System.Func<LazyValueBuilder<int>, LazyValueBuilder<int>> buildValue)
-            where T : ExampleApp.DataModel
-        {
-            var mauiObject = MauiWrapper.Value<ExampleApp.DataModel>(obj);
-            var builder = buildValue(new LazyValueBuilder<int>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.DataModel.IdProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T Id<T>(this T obj,
             System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
             where T : ExampleApp.DataModel
         {
@@ -70,16 +60,6 @@ namespace ExampleApp
         }
         
         public static T Name<T>(this T obj,
-            System.Func<LazyValueBuilder<string>, LazyValueBuilder<string>> buildValue)
-            where T : ExampleApp.DataModel
-        {
-            var mauiObject = MauiWrapper.Value<ExampleApp.DataModel>(obj);
-            var builder = buildValue(new LazyValueBuilder<string>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.DataModel.NameProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T Name<T>(this T obj,
             System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
             where T : ExampleApp.DataModel
         {
@@ -104,16 +84,6 @@ namespace ExampleApp
         {
             var mauiObject = MauiWrapper.Value<ExampleApp.DataModel>(obj);
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.DataModel.AdminProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T Admin<T>(this T obj,
-            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
-            where T : ExampleApp.DataModel
-        {
-            var mauiObject = MauiWrapper.Value<ExampleApp.DataModel>(obj);
-            var builder = buildValue(new LazyValueBuilder<bool>());
             if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.DataModel.AdminProperty, builder.GetValue());
             return obj;
         }
@@ -150,24 +120,6 @@ namespace ExampleApp
             {
                 var mauiItem = MauiWrapper.Value<ExampleApp.DataModel>(item);
                 ExampleApp.DataModel.SimpleData.Add(mauiItem);
-            }
-            return obj;
-        }
-
-        public static T SimpleData<T>(this T obj,
-            System.Func<LazyValueBuilder<System.Collections.Generic.List<ExampleApp.DataModel>>, LazyValueBuilder<System.Collections.Generic.List<ExampleApp.DataModel>>> buildValue)
-            where T : ExampleApp.DataModel
-        {
-            var mauiObject = MauiWrapper.Value<ExampleApp.DataModel>(obj);
-            var builder = buildValue(new LazyValueBuilder<System.Collections.Generic.List<ExampleApp.DataModel>>());
-            if (builder.ValueIsSet())
-            {
-                var items = builder.GetValue();
-                foreach (var item in items) 
-                {
-                    var mauiItem = MauiWrapper.Value<ExampleApp.DataModel>(item);
-                    ExampleApp.DataModel.SimpleData.Add(mauiItem);
-                }
             }
             return obj;
         }

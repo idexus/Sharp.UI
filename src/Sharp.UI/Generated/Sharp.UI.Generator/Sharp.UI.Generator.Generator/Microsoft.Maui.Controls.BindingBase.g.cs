@@ -28,16 +28,6 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T Mode<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.BindingMode>, LazyValueBuilder<Microsoft.Maui.Controls.BindingMode>> buildValue)
-            where T : Sharp.UI.IBindingBase
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BindingBase>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.BindingMode>());
-            if (builder.ValueIsSet()) mauiObject.Mode = builder.GetValue();
-            return obj;
-        }
-        
         public static T StringFormat<T>(this T obj,
             string stringFormat)
             where T : Sharp.UI.IBindingBase
@@ -53,16 +43,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BindingBase>(obj);
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) mauiObject.StringFormat = builder.GetValue();
-            return obj;
-        }
-        
-        public static T StringFormat<T>(this T obj,
-            System.Func<LazyValueBuilder<string>, LazyValueBuilder<string>> buildValue)
-            where T : Sharp.UI.IBindingBase
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BindingBase>(obj);
-            var builder = buildValue(new LazyValueBuilder<string>());
             if (builder.ValueIsSet()) mauiObject.StringFormat = builder.GetValue();
             return obj;
         }
@@ -86,16 +66,6 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T TargetNullValue<T>(this T obj,
-            System.Func<LazyValueBuilder<object>, LazyValueBuilder<object>> buildValue)
-            where T : Sharp.UI.IBindingBase
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BindingBase>(obj);
-            var builder = buildValue(new LazyValueBuilder<object>());
-            if (builder.ValueIsSet()) mauiObject.TargetNullValue = builder.GetValue();
-            return obj;
-        }
-        
         public static T FallbackValue<T>(this T obj,
             object fallbackValue)
             where T : Sharp.UI.IBindingBase
@@ -111,16 +81,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BindingBase>(obj);
             var builder = buildValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) mauiObject.FallbackValue = builder.GetValue();
-            return obj;
-        }
-        
-        public static T FallbackValue<T>(this T obj,
-            System.Func<LazyValueBuilder<object>, LazyValueBuilder<object>> buildValue)
-            where T : Sharp.UI.IBindingBase
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BindingBase>(obj);
-            var builder = buildValue(new LazyValueBuilder<object>());
             if (builder.ValueIsSet()) mauiObject.FallbackValue = builder.GetValue();
             return obj;
         }

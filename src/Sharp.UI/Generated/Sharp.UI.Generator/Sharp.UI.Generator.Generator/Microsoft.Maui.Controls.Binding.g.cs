@@ -28,16 +28,6 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T Converter<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.IValueConverter>, LazyValueBuilder<Microsoft.Maui.Controls.IValueConverter>> buildValue)
-            where T : Sharp.UI.IBinding
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Binding>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.IValueConverter>());
-            if (builder.ValueIsSet()) mauiObject.Converter = builder.GetValue();
-            return obj;
-        }
-        
         public static T ConverterParameter<T>(this T obj,
             object converterParameter)
             where T : Sharp.UI.IBinding
@@ -53,16 +43,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Binding>(obj);
             var builder = buildValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) mauiObject.ConverterParameter = builder.GetValue();
-            return obj;
-        }
-        
-        public static T ConverterParameter<T>(this T obj,
-            System.Func<LazyValueBuilder<object>, LazyValueBuilder<object>> buildValue)
-            where T : Sharp.UI.IBinding
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Binding>(obj);
-            var builder = buildValue(new LazyValueBuilder<object>());
             if (builder.ValueIsSet()) mauiObject.ConverterParameter = builder.GetValue();
             return obj;
         }
@@ -86,16 +66,6 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T Path<T>(this T obj,
-            System.Func<LazyValueBuilder<string>, LazyValueBuilder<string>> buildValue)
-            where T : Sharp.UI.IBinding
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Binding>(obj);
-            var builder = buildValue(new LazyValueBuilder<string>());
-            if (builder.ValueIsSet()) mauiObject.Path = builder.GetValue();
-            return obj;
-        }
-        
         public static T Source<T>(this T obj,
             object source)
             where T : Sharp.UI.IBinding
@@ -115,16 +85,6 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T Source<T>(this T obj,
-            System.Func<LazyValueBuilder<object>, LazyValueBuilder<object>> buildValue)
-            where T : Sharp.UI.IBinding
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Binding>(obj);
-            var builder = buildValue(new LazyValueBuilder<object>());
-            if (builder.ValueIsSet()) mauiObject.Source = builder.GetValue();
-            return obj;
-        }
-        
         public static T UpdateSourceEventName<T>(this T obj,
             string updateSourceEventName)
             where T : Sharp.UI.IBinding
@@ -140,16 +100,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Binding>(obj);
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) mauiObject.UpdateSourceEventName = builder.GetValue();
-            return obj;
-        }
-        
-        public static T UpdateSourceEventName<T>(this T obj,
-            System.Func<LazyValueBuilder<string>, LazyValueBuilder<string>> buildValue)
-            where T : Sharp.UI.IBinding
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Binding>(obj);
-            var builder = buildValue(new LazyValueBuilder<string>());
             if (builder.ValueIsSet()) mauiObject.UpdateSourceEventName = builder.GetValue();
             return obj;
         }

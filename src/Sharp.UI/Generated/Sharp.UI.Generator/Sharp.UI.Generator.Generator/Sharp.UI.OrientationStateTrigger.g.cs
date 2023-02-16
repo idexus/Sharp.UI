@@ -31,22 +31,6 @@ namespace Sharp.UI
             MauiObject = new Microsoft.Maui.Controls.OrientationStateTrigger();
         }
 
-        public OrientationStateTrigger(out OrientationStateTrigger orientationStateTrigger) : this()
-        {
-            orientationStateTrigger = this;
-        }
-
-        public OrientationStateTrigger(System.Action<OrientationStateTrigger> configure) : this()
-        {
-            configure(this);
-        }
-
-        public OrientationStateTrigger(out OrientationStateTrigger orientationStateTrigger, System.Action<OrientationStateTrigger> configure) : this()
-        {
-            orientationStateTrigger = this;
-            configure(this);
-        }
-
         // ----- operators -----
 
         public static implicit operator OrientationStateTrigger(Microsoft.Maui.Controls.OrientationStateTrigger mauiObject) => new OrientationStateTrigger(mauiObject);

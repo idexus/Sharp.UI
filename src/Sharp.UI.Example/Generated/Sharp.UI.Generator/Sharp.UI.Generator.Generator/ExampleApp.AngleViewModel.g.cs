@@ -20,17 +20,6 @@ namespace ExampleApp
             angleViewModel = this;
         }
 
-        public AngleViewModel(System.Action<AngleViewModel> configure) 
-        {
-            configure(this);
-        }
-
-        public AngleViewModel(out AngleViewModel angleViewModel, System.Action<AngleViewModel> configure) 
-        {
-            angleViewModel = this;
-            configure(this);
-        }
-
         // ----- bindable properties -----
 
         public static readonly Microsoft.Maui.Controls.BindableProperty RawAngleProperty =

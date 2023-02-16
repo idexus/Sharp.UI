@@ -35,22 +35,6 @@ namespace Sharp.UI
             MauiObject = new Microsoft.Maui.Controls.Shapes.Polyline();
         }
 
-        public Polyline(out Polyline polyline) : this()
-        {
-            polyline = this;
-        }
-
-        public Polyline(System.Action<Polyline> configure) : this()
-        {
-            configure(this);
-        }
-
-        public Polyline(out Polyline polyline, System.Action<Polyline> configure) : this()
-        {
-            polyline = this;
-            configure(this);
-        }
-
         // ----- operators -----
 
         public static implicit operator Polyline(Microsoft.Maui.Controls.Shapes.Polyline mauiObject) => new Polyline(mauiObject);
@@ -61,7 +45,6 @@ namespace Sharp.UI
         public int Count => this.MauiObject.Points.Count;
         public Microsoft.Maui.Graphics.Point this[int index] { get => this.MauiObject.Points[index]; set => this.MauiObject.Points[index] = value; }
         public bool IsReadOnly => false;
-        public void Add(Microsoft.Maui.Graphics.Point item) => this.MauiObject.Points.Add(item);
         public void Clear() => this.MauiObject.Points.Clear();
         public bool Contains(Microsoft.Maui.Graphics.Point item) => this.MauiObject.Points.Contains(item);
         public void CopyTo(Microsoft.Maui.Graphics.Point[] array, int arrayIndex) => this.MauiObject.Points.CopyTo(array, arrayIndex);
@@ -71,6 +54,18 @@ namespace Sharp.UI
         public bool Remove(Microsoft.Maui.Graphics.Point item) => this.MauiObject.Points.Remove(item);
         public void RemoveAt(int index) => this.MauiObject.Points.RemoveAt(index);
         IEnumerator IEnumerable.GetEnumerator() => this.MauiObject.Points.GetEnumerator();
+
+        public void Add(Func<Sharp.UI.Polyline, Sharp.UI.Polyline> configure) { configure(this); }
+
+        public void Add(Microsoft.Maui.Graphics.Point point) => this.MauiObject.Points.Add(point);
+
+        public void Add(Action<IList<Microsoft.Maui.Graphics.Point>> builder)
+        {
+            List<Microsoft.Maui.Graphics.Point> items = new List<Microsoft.Maui.Graphics.Point>();
+            builder(items);
+            foreach (var item in items)
+                this.MauiObject.Points.Add(item);
+        }
 
         // ----- sealed bindable properties -----
 

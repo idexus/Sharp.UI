@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T CurrentItem<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.ShellContent>, LazyValueBuilder<Microsoft.Maui.Controls.ShellContent>> buildValue)
-            where T : Sharp.UI.IShellSection
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ShellSection>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.ShellContent>());
-            if (builder.ValueIsSet()) mauiObject.CurrentItem = builder.GetValue();
-            return obj;
-        }
-        
-        public static T CurrentItem<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Controls.ShellContent>, BindingBuilder<Microsoft.Maui.Controls.ShellContent>> buildBinding)
             where T : Sharp.UI.IShellSection
         {
@@ -70,24 +60,6 @@ namespace Sharp.UI
             {
                 var mauiItem = MauiWrapper.Value<Microsoft.Maui.Controls.ShellContent>(item);
                 mauiObject.Items.Add(mauiItem);
-            }
-            return obj;
-        }
-
-        public static T Items<T>(this T obj,
-            System.Func<LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellContent>>, LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellContent>>> buildValue)
-            where T : Sharp.UI.IShellSection
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ShellSection>(obj);
-            var builder = buildValue(new LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellContent>>());
-            if (builder.ValueIsSet())
-            {
-                var items = builder.GetValue();
-                foreach (var item in items) 
-                {
-                    var mauiItem = MauiWrapper.Value<Microsoft.Maui.Controls.ShellContent>(item);
-                    mauiObject.Items.Add(mauiItem);
-                }
             }
             return obj;
         }

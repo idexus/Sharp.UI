@@ -25,11 +25,13 @@ namespace Sharp.UI
             geometryGroup = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public GeometryGroup(System.Action<GeometryGroup> configure) 
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces.")]
         public GeometryGroup(out GeometryGroup geometryGroup, System.Action<GeometryGroup> configure) 
         {
             geometryGroup = this;
@@ -41,7 +43,6 @@ namespace Sharp.UI
         public int Count => this.Children.Count;
         public Microsoft.Maui.Controls.Shapes.Geometry this[int index] { get => this.Children[index]; set => this.Children[index] = value; }
         public bool IsReadOnly => false;
-        public void Add(Microsoft.Maui.Controls.Shapes.Geometry item) => this.Children.Add(item);
         public void Clear() => this.Children.Clear();
         public bool Contains(Microsoft.Maui.Controls.Shapes.Geometry item) => this.Children.Contains(item);
         public void CopyTo(Microsoft.Maui.Controls.Shapes.Geometry[] array, int arrayIndex) => this.Children.CopyTo(array, arrayIndex);
@@ -51,6 +52,18 @@ namespace Sharp.UI
         public bool Remove(Microsoft.Maui.Controls.Shapes.Geometry item) => this.Children.Remove(item);
         public void RemoveAt(int index) => this.Children.RemoveAt(index);
         IEnumerator IEnumerable.GetEnumerator() => this.Children.GetEnumerator();
+
+        public void Add(Func<Sharp.UI.GeometryGroup, Sharp.UI.GeometryGroup> configure) { configure(this); }
+
+        public void Add(Microsoft.Maui.Controls.Shapes.Geometry geometry) => this.Children.Add(geometry);
+
+        public void Add(Action<IList<Microsoft.Maui.Controls.Shapes.Geometry>> builder)
+        {
+            List<Microsoft.Maui.Controls.Shapes.Geometry> items = new List<Microsoft.Maui.Controls.Shapes.Geometry>();
+            builder(items);
+            foreach (var item in items)
+                this.Children.Add(item);
+        }
 
         // ----- properties / events -----
 

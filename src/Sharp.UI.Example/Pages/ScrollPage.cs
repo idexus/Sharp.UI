@@ -12,14 +12,18 @@ public class ScrollPage : ContentPage
     public ScrollPage()
     {
         Content =
-            new CollectionView(e => e
-                .ItemsSource(MyData.Source)
-                .Margin(new Thickness(0,50,0,0)))
+            new CollectionView
             {
+                e => e
+                    .ItemsSource(MyData.Source)
+                    .Margin(new Thickness(0,50,0,0)),
+
                 () => new Grid
                 {
-                    new Grid(e => e.ColumnDefinitions(e => e.Auto().Star()))
+                    new Grid
                     {
+                        e => e.ColumnDefinitions(e => e.Auto().Star()),
+
                         new Label(),
 
                         new Label()

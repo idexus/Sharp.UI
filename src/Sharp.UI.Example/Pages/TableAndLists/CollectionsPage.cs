@@ -9,8 +9,12 @@ namespace ExampleApp
     {
         public CollectionPage()
         {
-            Content = new VStack(e => e.Margin(new Thickness(0, 30, 0, 0)).BackgroundColor(Colors.Black))
+            Content = new VStack
             {
+                e => e
+                    .Margin(new Thickness(0, 30, 0, 0))
+                    .BackgroundColor(Colors.Black),
+
                 new Label("CollectionView")
                     .FontSize(40)
                     .TextColor(AppColors.Gray400)
@@ -19,11 +23,13 @@ namespace ExampleApp
                 new CollectionView()
                     .ItemsSource(DataModel.SimpleData)
                     .ItemTemplate(() =>
-                        new HStack(e => e
-                            .VerticalOptions(LayoutOptions.Center)
-                            .Padding(new Thickness(10))
-                            .Assign(out var hStack))
+                        new HStack
                         {
+                            e => e
+                                .VerticalOptions(LayoutOptions.Center)
+                                .Padding(new Thickness(10))
+                                .Assign(out var hStack),
+
                             new Image("dotnet_bot.png")
                                     .WidthRequest(50)
                                     .HeightRequest(50),

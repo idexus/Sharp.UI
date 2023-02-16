@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T Content<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.View?>, LazyValueBuilder<Microsoft.Maui.Controls.View?>> buildValue)
-            where T : Sharp.UI.IBorder
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Border>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.View?>());
-            if (builder.ValueIsSet()) mauiObject.Content = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Content<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Controls.View?>, BindingBuilder<Microsoft.Maui.Controls.View?>> buildBinding)
             where T : Sharp.UI.IBorder
         {
@@ -63,16 +53,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Border>(obj);
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Thickness>());
-            if (builder.ValueIsSet()) mauiObject.Padding = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Padding<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Thickness>, LazyValueBuilder<Microsoft.Maui.Thickness>> buildValue)
-            where T : Sharp.UI.IBorder
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Border>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Thickness>());
             if (builder.ValueIsSet()) mauiObject.Padding = builder.GetValue();
             return obj;
         }
@@ -107,16 +87,6 @@ namespace Sharp.UI
         }
         
         public static T StrokeShape<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.IShape?>, LazyValueBuilder<Microsoft.Maui.Graphics.IShape?>> buildValue)
-            where T : Sharp.UI.IBorder
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Border>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.IShape?>());
-            if (builder.ValueIsSet()) mauiObject.StrokeShape = builder.GetValue();
-            return obj;
-        }
-        
-        public static T StrokeShape<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Graphics.IShape?>, BindingBuilder<Microsoft.Maui.Graphics.IShape?>> buildBinding)
             where T : Sharp.UI.IBorder
         {
@@ -141,16 +111,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Border>(obj);
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Brush?>());
-            if (builder.ValueIsSet()) mauiObject.Stroke = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Stroke<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.Brush?>, LazyValueBuilder<Microsoft.Maui.Controls.Brush?>> buildValue)
-            where T : Sharp.UI.IBorder
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Border>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.Brush?>());
             if (builder.ValueIsSet()) mauiObject.Stroke = builder.GetValue();
             return obj;
         }
@@ -185,16 +145,6 @@ namespace Sharp.UI
         }
         
         public static T StrokeThickness<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.IBorder
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Border>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.StrokeThickness = builder.GetValue();
-            return obj;
-        }
-        
-        public static T StrokeThickness<T>(this T obj,
             System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Sharp.UI.IBorder
         {
@@ -219,16 +169,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Border>(obj);
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.DoubleCollection?>());
-            if (builder.ValueIsSet()) mauiObject.StrokeDashArray = builder.GetValue();
-            return obj;
-        }
-        
-        public static T StrokeDashArray<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.DoubleCollection?>, LazyValueBuilder<Microsoft.Maui.Controls.DoubleCollection?>> buildValue)
-            where T : Sharp.UI.IBorder
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Border>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.DoubleCollection?>());
             if (builder.ValueIsSet()) mauiObject.StrokeDashArray = builder.GetValue();
             return obj;
         }
@@ -263,16 +203,6 @@ namespace Sharp.UI
         }
         
         public static T StrokeDashOffset<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.IBorder
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Border>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.StrokeDashOffset = builder.GetValue();
-            return obj;
-        }
-        
-        public static T StrokeDashOffset<T>(this T obj,
             System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Sharp.UI.IBorder
         {
@@ -297,16 +227,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Border>(obj);
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Shapes.PenLineCap>());
-            if (builder.ValueIsSet()) mauiObject.StrokeLineCap = builder.GetValue();
-            return obj;
-        }
-        
-        public static T StrokeLineCap<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.Shapes.PenLineCap>, LazyValueBuilder<Microsoft.Maui.Controls.Shapes.PenLineCap>> buildValue)
-            where T : Sharp.UI.IBorder
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Border>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.Shapes.PenLineCap>());
             if (builder.ValueIsSet()) mauiObject.StrokeLineCap = builder.GetValue();
             return obj;
         }
@@ -341,16 +261,6 @@ namespace Sharp.UI
         }
         
         public static T StrokeLineJoin<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.Shapes.PenLineJoin>, LazyValueBuilder<Microsoft.Maui.Controls.Shapes.PenLineJoin>> buildValue)
-            where T : Sharp.UI.IBorder
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Border>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.Shapes.PenLineJoin>());
-            if (builder.ValueIsSet()) mauiObject.StrokeLineJoin = builder.GetValue();
-            return obj;
-        }
-        
-        public static T StrokeLineJoin<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Controls.Shapes.PenLineJoin>, BindingBuilder<Microsoft.Maui.Controls.Shapes.PenLineJoin>> buildBinding)
             where T : Sharp.UI.IBorder
         {
@@ -375,16 +285,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Border>(obj);
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.StrokeMiterLimit = builder.GetValue();
-            return obj;
-        }
-        
-        public static T StrokeMiterLimit<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.IBorder
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Border>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
             if (builder.ValueIsSet()) mauiObject.StrokeMiterLimit = builder.GetValue();
             return obj;
         }

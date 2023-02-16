@@ -26,11 +26,13 @@ namespace Sharp.UI
             scrollView = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public ScrollView(System.Action<ScrollView> configure) 
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces.")]
         public ScrollView(out ScrollView scrollView, System.Action<ScrollView> configure) 
         {
             scrollView = this;
@@ -41,6 +43,8 @@ namespace Sharp.UI
 
         public IEnumerator GetEnumerator() { yield return this.Content; }
         public void Add(Microsoft.Maui.Controls.View content) => this.Content = content;
+
+        public void Add(Func<Sharp.UI.ScrollView, Sharp.UI.ScrollView> configure) { configure(this); }
 
         // ----- properties / events -----
 

@@ -25,11 +25,13 @@ namespace Sharp.UI
             shell = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public Shell(System.Action<Shell> configure) 
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces.")]
         public Shell(out Shell shell, System.Action<Shell> configure) 
         {
             shell = this;
@@ -41,7 +43,6 @@ namespace Sharp.UI
         public int Count => this.Items.Count;
         public Microsoft.Maui.Controls.ShellItem this[int index] { get => this.Items[index]; set => this.Items[index] = value; }
         public bool IsReadOnly => false;
-        public void Add(Microsoft.Maui.Controls.ShellItem item) => this.Items.Add(item);
         public void Clear() => this.Items.Clear();
         public bool Contains(Microsoft.Maui.Controls.ShellItem item) => this.Items.Contains(item);
         public void CopyTo(Microsoft.Maui.Controls.ShellItem[] array, int arrayIndex) => this.Items.CopyTo(array, arrayIndex);
@@ -51,6 +52,18 @@ namespace Sharp.UI
         public bool Remove(Microsoft.Maui.Controls.ShellItem item) => this.Items.Remove(item);
         public void RemoveAt(int index) => this.Items.RemoveAt(index);
         IEnumerator IEnumerable.GetEnumerator() => this.Items.GetEnumerator();
+
+        public void Add(Func<Sharp.UI.Shell, Sharp.UI.Shell> configure) { configure(this); }
+
+        public void Add(Microsoft.Maui.Controls.ShellItem shellItem) => this.Items.Add(shellItem);
+
+        public void Add(Action<IList<Microsoft.Maui.Controls.ShellItem>> builder)
+        {
+            List<Microsoft.Maui.Controls.ShellItem> items = new List<Microsoft.Maui.Controls.ShellItem>();
+            builder(items);
+            foreach (var item in items)
+                this.Items.Add(item);
+        }
 
         // ----- properties / events -----
 

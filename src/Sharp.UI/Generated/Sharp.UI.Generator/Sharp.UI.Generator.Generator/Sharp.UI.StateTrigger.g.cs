@@ -31,22 +31,6 @@ namespace Sharp.UI
             MauiObject = new Microsoft.Maui.Controls.StateTrigger();
         }
 
-        public StateTrigger(out StateTrigger stateTrigger) : this()
-        {
-            stateTrigger = this;
-        }
-
-        public StateTrigger(System.Action<StateTrigger> configure) : this()
-        {
-            configure(this);
-        }
-
-        public StateTrigger(out StateTrigger stateTrigger, System.Action<StateTrigger> configure) : this()
-        {
-            stateTrigger = this;
-            configure(this);
-        }
-
         // ----- operators -----
 
         public static implicit operator StateTrigger(Microsoft.Maui.Controls.StateTrigger mauiObject) => new StateTrigger(mauiObject);

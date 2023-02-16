@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T CurrentItem<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.ShellSection>, LazyValueBuilder<Microsoft.Maui.Controls.ShellSection>> buildValue)
-            where T : Sharp.UI.IShellItem
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ShellItem>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.ShellSection>());
-            if (builder.ValueIsSet()) mauiObject.CurrentItem = builder.GetValue();
-            return obj;
-        }
-        
-        public static T CurrentItem<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Controls.ShellSection>, BindingBuilder<Microsoft.Maui.Controls.ShellSection>> buildBinding)
             where T : Sharp.UI.IShellItem
         {
@@ -70,24 +60,6 @@ namespace Sharp.UI
             {
                 var mauiItem = MauiWrapper.Value<Microsoft.Maui.Controls.ShellSection>(item);
                 mauiObject.Items.Add(mauiItem);
-            }
-            return obj;
-        }
-
-        public static T Items<T>(this T obj,
-            System.Func<LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellSection>>, LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellSection>>> buildValue)
-            where T : Sharp.UI.IShellItem
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ShellItem>(obj);
-            var builder = buildValue(new LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellSection>>());
-            if (builder.ValueIsSet())
-            {
-                var items = builder.GetValue();
-                foreach (var item in items) 
-                {
-                    var mauiItem = MauiWrapper.Value<Microsoft.Maui.Controls.ShellSection>(item);
-                    mauiObject.Items.Add(mauiItem);
-                }
             }
             return obj;
         }

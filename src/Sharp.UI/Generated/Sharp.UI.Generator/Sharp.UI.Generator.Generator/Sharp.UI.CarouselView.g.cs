@@ -21,17 +21,6 @@ namespace Sharp.UI
             carouselView = this;
         }
 
-        public CarouselView(System.Action<CarouselView> configure) 
-        {
-            configure(this);
-        }
-
-        public CarouselView(out CarouselView carouselView, System.Action<CarouselView> configure) 
-        {
-            carouselView = this;
-            configure(this);
-        }
-
         // ----- properties / events -----
 
         public new object CurrentItem { get => base.CurrentItem; set => base.CurrentItem = MauiWrapper.Value<object>(value); }

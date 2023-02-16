@@ -23,11 +23,13 @@ namespace Sharp.UI
             tableView = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public TableView(System.Action<TableView> configure) : this()
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces.")]
         public TableView(out TableView tableView, System.Action<TableView> configure) : this()
         {
             tableView = this;
@@ -39,7 +41,6 @@ namespace Sharp.UI
         public int Count => this.Root.Count;
         public Microsoft.Maui.Controls.TableSection this[int index] { get => this.Root[index]; set => this.Root[index] = value; }
         public bool IsReadOnly => false;
-        public void Add(Microsoft.Maui.Controls.TableSection item) => this.Root.Add(item);
         public void Clear() => this.Root.Clear();
         public bool Contains(Microsoft.Maui.Controls.TableSection item) => this.Root.Contains(item);
         public void CopyTo(Microsoft.Maui.Controls.TableSection[] array, int arrayIndex) => this.Root.CopyTo(array, arrayIndex);
@@ -49,6 +50,18 @@ namespace Sharp.UI
         public bool Remove(Microsoft.Maui.Controls.TableSection item) => this.Root.Remove(item);
         public void RemoveAt(int index) => this.Root.RemoveAt(index);
         IEnumerator IEnumerable.GetEnumerator() => this.Root.GetEnumerator();
+
+        public void Add(Func<Sharp.UI.TableView, Sharp.UI.TableView> configure) { configure(this); }
+
+        public void Add(Microsoft.Maui.Controls.TableSection tableSection) => this.Root.Add(tableSection);
+
+        public void Add(Action<IList<Microsoft.Maui.Controls.TableSection>> builder)
+        {
+            List<Microsoft.Maui.Controls.TableSection> items = new List<Microsoft.Maui.Controls.TableSection>();
+            builder(items);
+            foreach (var item in items)
+                this.Root.Add(item);
+        }
 
         // ----- properties / events -----
 

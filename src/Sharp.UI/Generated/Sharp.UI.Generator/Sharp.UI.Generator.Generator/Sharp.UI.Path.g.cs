@@ -35,22 +35,6 @@ namespace Sharp.UI
             MauiObject = new Microsoft.Maui.Controls.Shapes.Path();
         }
 
-        public Path(out Path path) : this()
-        {
-            path = this;
-        }
-
-        public Path(System.Action<Path> configure) : this()
-        {
-            configure(this);
-        }
-
-        public Path(out Path path, System.Action<Path> configure) : this()
-        {
-            path = this;
-            configure(this);
-        }
-
         // ----- operators -----
 
         public static implicit operator Path(Microsoft.Maui.Controls.Shapes.Path mauiObject) => new Path(mauiObject);
@@ -60,6 +44,8 @@ namespace Sharp.UI
 
         public IEnumerator GetEnumerator() { yield return this.Data; }
         public void Add(Microsoft.Maui.Controls.Shapes.Geometry data) => this.Data = data;
+
+        public void Add(Func<Sharp.UI.Path, Sharp.UI.Path> configure) { configure(this); }
 
         // ----- sealed bindable properties -----
 

@@ -35,38 +35,6 @@ namespace Sharp.UI
             MauiObject = new Microsoft.Maui.Controls.EventTrigger();
         }
 
-        public EventTrigger(out EventTrigger eventTrigger) : this()
-        {
-            eventTrigger = this;
-        }
-
-        public EventTrigger(System.Action<EventTrigger> configure) : this()
-        {
-            configure(this);
-        }
-
-        public EventTrigger(out EventTrigger eventTrigger, System.Action<EventTrigger> configure) : this()
-        {
-            eventTrigger = this;
-            configure(this);
-        }
-
-        public EventTrigger(string @event, out EventTrigger eventTrigger) : this(@event)
-        {
-            eventTrigger = this;
-        }
-
-        public EventTrigger(string @event, System.Action<EventTrigger> configure) : this(@event)
-        {
-            configure(this);
-        }
-
-        public EventTrigger(string @event, out EventTrigger eventTrigger, System.Action<EventTrigger> configure) : this(@event)
-        {
-            eventTrigger = this;
-            configure(this);
-        }
-
         // ----- operators -----
 
         public static implicit operator EventTrigger(Microsoft.Maui.Controls.EventTrigger mauiObject) => new EventTrigger(mauiObject);
@@ -77,7 +45,6 @@ namespace Sharp.UI
         public int Count => this.MauiObject.Actions.Count;
         public Microsoft.Maui.Controls.TriggerAction this[int index] { get => this.MauiObject.Actions[index]; set => this.MauiObject.Actions[index] = value; }
         public bool IsReadOnly => false;
-        public void Add(Microsoft.Maui.Controls.TriggerAction item) => this.MauiObject.Actions.Add(item);
         public void Clear() => this.MauiObject.Actions.Clear();
         public bool Contains(Microsoft.Maui.Controls.TriggerAction item) => this.MauiObject.Actions.Contains(item);
         public void CopyTo(Microsoft.Maui.Controls.TriggerAction[] array, int arrayIndex) => this.MauiObject.Actions.CopyTo(array, arrayIndex);
@@ -87,6 +54,18 @@ namespace Sharp.UI
         public bool Remove(Microsoft.Maui.Controls.TriggerAction item) => this.MauiObject.Actions.Remove(item);
         public void RemoveAt(int index) => this.MauiObject.Actions.RemoveAt(index);
         IEnumerator IEnumerable.GetEnumerator() => this.MauiObject.Actions.GetEnumerator();
+
+        public void Add(Func<Sharp.UI.EventTrigger, Sharp.UI.EventTrigger> configure) { configure(this); }
+
+        public void Add(Microsoft.Maui.Controls.TriggerAction triggerAction) => this.MauiObject.Actions.Add(triggerAction);
+
+        public void Add(Action<IList<Microsoft.Maui.Controls.TriggerAction>> builder)
+        {
+            List<Microsoft.Maui.Controls.TriggerAction> items = new List<Microsoft.Maui.Controls.TriggerAction>();
+            builder(items);
+            foreach (var item in items)
+                this.MauiObject.Actions.Add(item);
+        }
 
         // ----- sealed bindable properties -----
 

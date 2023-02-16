@@ -21,17 +21,6 @@ namespace Sharp.UI
             arcSegment = this;
         }
 
-        public ArcSegment(System.Action<ArcSegment> configure) 
-        {
-            configure(this);
-        }
-
-        public ArcSegment(out ArcSegment arcSegment, System.Action<ArcSegment> configure) 
-        {
-            arcSegment = this;
-            configure(this);
-        }
-
         // ----- properties / events -----
 
         public new object BindingContext { get => base.BindingContext; set => base.BindingContext = MauiWrapper.Value<object>(value); }

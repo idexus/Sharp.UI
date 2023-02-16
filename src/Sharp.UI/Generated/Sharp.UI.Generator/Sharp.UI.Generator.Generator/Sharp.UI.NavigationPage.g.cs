@@ -21,17 +21,6 @@ namespace Sharp.UI
             navigationPage = this;
         }
 
-        public NavigationPage(System.Action<NavigationPage> configure) 
-        {
-            configure(this);
-        }
-
-        public NavigationPage(out NavigationPage navigationPage, System.Action<NavigationPage> configure) 
-        {
-            navigationPage = this;
-            configure(this);
-        }
-
         // ----- properties / events -----
 
         public new Sharp.UI.Style Style { get => new Sharp.UI.Style(base.Style); set => base.Style = value.MauiObject; }

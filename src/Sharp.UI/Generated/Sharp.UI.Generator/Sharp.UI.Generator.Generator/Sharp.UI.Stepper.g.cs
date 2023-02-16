@@ -21,31 +21,9 @@ namespace Sharp.UI
             stepper = this;
         }
 
-        public Stepper(System.Action<Stepper> configure) 
-        {
-            configure(this);
-        }
-
-        public Stepper(out Stepper stepper, System.Action<Stepper> configure) 
-        {
-            stepper = this;
-            configure(this);
-        }
-
         public Stepper(double minimum, double maximum, double increment, out Stepper stepper) : this(minimum, maximum, increment)
         {
             stepper = this;
-        }
-
-        public Stepper(double minimum, double maximum, double increment, System.Action<Stepper> configure) : this(minimum, maximum, increment)
-        {
-            configure(this);
-        }
-
-        public Stepper(double minimum, double maximum, double increment, out Stepper stepper, System.Action<Stepper> configure) : this(minimum, maximum, increment)
-        {
-            stepper = this;
-            configure(this);
         }
 
         // ----- properties / events -----

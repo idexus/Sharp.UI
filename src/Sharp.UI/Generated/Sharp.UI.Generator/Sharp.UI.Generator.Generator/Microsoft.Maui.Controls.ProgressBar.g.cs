@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T ProgressColor<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Color>, LazyValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
-            where T : Sharp.UI.IProgressBar
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ProgressBar>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) mauiObject.ProgressColor = builder.GetValue();
-            return obj;
-        }
-        
-        public static T ProgressColor<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
             where T : Sharp.UI.IProgressBar
         {
@@ -63,16 +53,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ProgressBar>(obj);
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.Progress = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Progress<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.IProgressBar
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ProgressBar>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
             if (builder.ValueIsSet()) mauiObject.Progress = builder.GetValue();
             return obj;
         }

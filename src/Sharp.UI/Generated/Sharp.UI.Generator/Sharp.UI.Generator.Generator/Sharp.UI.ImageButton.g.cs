@@ -21,31 +21,9 @@ namespace Sharp.UI
             imageButton = this;
         }
 
-        public ImageButton(System.Action<ImageButton> configure) 
-        {
-            configure(this);
-        }
-
-        public ImageButton(out ImageButton imageButton, System.Action<ImageButton> configure) 
-        {
-            imageButton = this;
-            configure(this);
-        }
-
         public ImageButton(Microsoft.Maui.Controls.ImageSource source, out ImageButton imageButton) : this(source)
         {
             imageButton = this;
-        }
-
-        public ImageButton(Microsoft.Maui.Controls.ImageSource source, System.Action<ImageButton> configure) : this(source)
-        {
-            configure(this);
-        }
-
-        public ImageButton(Microsoft.Maui.Controls.ImageSource source, out ImageButton imageButton, System.Action<ImageButton> configure) : this(source)
-        {
-            imageButton = this;
-            configure(this);
         }
 
         // ----- properties / events -----

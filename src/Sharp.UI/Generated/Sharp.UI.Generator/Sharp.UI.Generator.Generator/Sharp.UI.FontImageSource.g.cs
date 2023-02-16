@@ -21,31 +21,9 @@ namespace Sharp.UI
             fontImageSource = this;
         }
 
-        public FontImageSource(System.Action<FontImageSource> configure) 
-        {
-            configure(this);
-        }
-
-        public FontImageSource(out FontImageSource fontImageSource, System.Action<FontImageSource> configure) 
-        {
-            fontImageSource = this;
-            configure(this);
-        }
-
         public FontImageSource(string glyph, string fontFamily, out FontImageSource fontImageSource) : this(glyph, fontFamily)
         {
             fontImageSource = this;
-        }
-
-        public FontImageSource(string glyph, string fontFamily, System.Action<FontImageSource> configure) : this(glyph, fontFamily)
-        {
-            configure(this);
-        }
-
-        public FontImageSource(string glyph, string fontFamily, out FontImageSource fontImageSource, System.Action<FontImageSource> configure) : this(glyph, fontFamily)
-        {
-            fontImageSource = this;
-            configure(this);
         }
 
         // ----- properties / events -----

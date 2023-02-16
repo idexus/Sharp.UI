@@ -31,38 +31,6 @@ namespace Sharp.UI
             MauiObject = new Microsoft.Maui.Controls.Shapes.Line();
         }
 
-        public Line(out Line line) : this()
-        {
-            line = this;
-        }
-
-        public Line(System.Action<Line> configure) : this()
-        {
-            configure(this);
-        }
-
-        public Line(out Line line, System.Action<Line> configure) : this()
-        {
-            line = this;
-            configure(this);
-        }
-
-        public Line(double x1, double y1, double x2, double y2, out Line line) : this(x1, y1, x2, y2)
-        {
-            line = this;
-        }
-
-        public Line(double x1, double y1, double x2, double y2, System.Action<Line> configure) : this(x1, y1, x2, y2)
-        {
-            configure(this);
-        }
-
-        public Line(double x1, double y1, double x2, double y2, out Line line, System.Action<Line> configure) : this(x1, y1, x2, y2)
-        {
-            line = this;
-            configure(this);
-        }
-
         // ----- operators -----
 
         public static implicit operator Line(Microsoft.Maui.Controls.Shapes.Line mauiObject) => new Line(mauiObject);

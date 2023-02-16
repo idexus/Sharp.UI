@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T Threshold<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.ISwipeView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeView>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.Threshold = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Threshold<T>(this T obj,
             System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Sharp.UI.ISwipeView
         {
@@ -63,16 +53,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeView>(obj);
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.SwipeItems>());
-            if (builder.ValueIsSet()) mauiObject.LeftItems = builder.GetValue();
-            return obj;
-        }
-        
-        public static T LeftItems<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.SwipeItems>, LazyValueBuilder<Microsoft.Maui.Controls.SwipeItems>> buildValue)
-            where T : Sharp.UI.ISwipeView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeView>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.SwipeItems>());
             if (builder.ValueIsSet()) mauiObject.LeftItems = builder.GetValue();
             return obj;
         }
@@ -107,16 +87,6 @@ namespace Sharp.UI
         }
         
         public static T RightItems<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.SwipeItems>, LazyValueBuilder<Microsoft.Maui.Controls.SwipeItems>> buildValue)
-            where T : Sharp.UI.ISwipeView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeView>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.SwipeItems>());
-            if (builder.ValueIsSet()) mauiObject.RightItems = builder.GetValue();
-            return obj;
-        }
-        
-        public static T RightItems<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Controls.SwipeItems>, BindingBuilder<Microsoft.Maui.Controls.SwipeItems>> buildBinding)
             where T : Sharp.UI.ISwipeView
         {
@@ -146,16 +116,6 @@ namespace Sharp.UI
         }
         
         public static T TopItems<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.SwipeItems>, LazyValueBuilder<Microsoft.Maui.Controls.SwipeItems>> buildValue)
-            where T : Sharp.UI.ISwipeView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeView>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.SwipeItems>());
-            if (builder.ValueIsSet()) mauiObject.TopItems = builder.GetValue();
-            return obj;
-        }
-        
-        public static T TopItems<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Controls.SwipeItems>, BindingBuilder<Microsoft.Maui.Controls.SwipeItems>> buildBinding)
             where T : Sharp.UI.ISwipeView
         {
@@ -180,16 +140,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeView>(obj);
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.SwipeItems>());
-            if (builder.ValueIsSet()) mauiObject.BottomItems = builder.GetValue();
-            return obj;
-        }
-        
-        public static T BottomItems<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.SwipeItems>, LazyValueBuilder<Microsoft.Maui.Controls.SwipeItems>> buildValue)
-            where T : Sharp.UI.ISwipeView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeView>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.SwipeItems>());
             if (builder.ValueIsSet()) mauiObject.BottomItems = builder.GetValue();
             return obj;
         }

@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T Loop<T>(this T obj,
-            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
-            where T : Sharp.UI.ICarouselView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
-            var builder = buildValue(new LazyValueBuilder<bool>());
-            if (builder.ValueIsSet()) mauiObject.Loop = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Loop<T>(this T obj,
             System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Sharp.UI.ICarouselView
         {
@@ -63,16 +53,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Thickness>());
-            if (builder.ValueIsSet()) mauiObject.PeekAreaInsets = builder.GetValue();
-            return obj;
-        }
-        
-        public static T PeekAreaInsets<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Thickness>, LazyValueBuilder<Microsoft.Maui.Thickness>> buildValue)
-            where T : Sharp.UI.ICarouselView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Thickness>());
             if (builder.ValueIsSet()) mauiObject.PeekAreaInsets = builder.GetValue();
             return obj;
         }
@@ -112,24 +92,6 @@ namespace Sharp.UI
             }
             return obj;
         }
-
-        public static T VisibleViews<T>(this T obj,
-            System.Func<LazyValueBuilder<System.Collections.ObjectModel.ObservableCollection<Microsoft.Maui.Controls.View>>, LazyValueBuilder<System.Collections.ObjectModel.ObservableCollection<Microsoft.Maui.Controls.View>>> buildValue)
-            where T : Sharp.UI.ICarouselView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
-            var builder = buildValue(new LazyValueBuilder<System.Collections.ObjectModel.ObservableCollection<Microsoft.Maui.Controls.View>>());
-            if (builder.ValueIsSet())
-            {
-                var items = builder.GetValue();
-                foreach (var item in items) 
-                {
-                    var mauiItem = MauiWrapper.Value<Microsoft.Maui.Controls.View>(item);
-                    mauiObject.VisibleViews.Add(mauiItem);
-                }
-            }
-            return obj;
-        }
         
         public static T IsBounceEnabled<T>(this T obj,
             bool isBounceEnabled)
@@ -146,16 +108,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) mauiObject.IsBounceEnabled = builder.GetValue();
-            return obj;
-        }
-        
-        public static T IsBounceEnabled<T>(this T obj,
-            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
-            where T : Sharp.UI.ICarouselView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
-            var builder = buildValue(new LazyValueBuilder<bool>());
             if (builder.ValueIsSet()) mauiObject.IsBounceEnabled = builder.GetValue();
             return obj;
         }
@@ -190,16 +142,6 @@ namespace Sharp.UI
         }
         
         public static T IsSwipeEnabled<T>(this T obj,
-            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
-            where T : Sharp.UI.ICarouselView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
-            var builder = buildValue(new LazyValueBuilder<bool>());
-            if (builder.ValueIsSet()) mauiObject.IsSwipeEnabled = builder.GetValue();
-            return obj;
-        }
-        
-        public static T IsSwipeEnabled<T>(this T obj,
             System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Sharp.UI.ICarouselView
         {
@@ -224,16 +166,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) mauiObject.IsScrollAnimated = builder.GetValue();
-            return obj;
-        }
-        
-        public static T IsScrollAnimated<T>(this T obj,
-            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
-            where T : Sharp.UI.ICarouselView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
-            var builder = buildValue(new LazyValueBuilder<bool>());
             if (builder.ValueIsSet()) mauiObject.IsScrollAnimated = builder.GetValue();
             return obj;
         }
@@ -268,16 +200,6 @@ namespace Sharp.UI
         }
         
         public static T CurrentItem<T>(this T obj,
-            System.Func<LazyValueBuilder<object>, LazyValueBuilder<object>> buildValue)
-            where T : Sharp.UI.ICarouselView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
-            var builder = buildValue(new LazyValueBuilder<object>());
-            if (builder.ValueIsSet()) mauiObject.CurrentItem = builder.GetValue();
-            return obj;
-        }
-        
-        public static T CurrentItem<T>(this T obj,
             System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
             where T : Sharp.UI.ICarouselView
         {
@@ -302,16 +224,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
             var builder = buildValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) mauiObject.CurrentItemChangedCommand = builder.GetValue();
-            return obj;
-        }
-        
-        public static T CurrentItemChangedCommand<T>(this T obj,
-            System.Func<LazyValueBuilder<System.Windows.Input.ICommand>, LazyValueBuilder<System.Windows.Input.ICommand>> buildValue)
-            where T : Sharp.UI.ICarouselView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
-            var builder = buildValue(new LazyValueBuilder<System.Windows.Input.ICommand>());
             if (builder.ValueIsSet()) mauiObject.CurrentItemChangedCommand = builder.GetValue();
             return obj;
         }
@@ -346,16 +258,6 @@ namespace Sharp.UI
         }
         
         public static T CurrentItemChangedCommandParameter<T>(this T obj,
-            System.Func<LazyValueBuilder<object>, LazyValueBuilder<object>> buildValue)
-            where T : Sharp.UI.ICarouselView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
-            var builder = buildValue(new LazyValueBuilder<object>());
-            if (builder.ValueIsSet()) mauiObject.CurrentItemChangedCommandParameter = builder.GetValue();
-            return obj;
-        }
-        
-        public static T CurrentItemChangedCommandParameter<T>(this T obj,
             System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
             where T : Sharp.UI.ICarouselView
         {
@@ -380,16 +282,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
             var builder = buildValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) mauiObject.Position = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Position<T>(this T obj,
-            System.Func<LazyValueBuilder<int>, LazyValueBuilder<int>> buildValue)
-            where T : Sharp.UI.ICarouselView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
-            var builder = buildValue(new LazyValueBuilder<int>());
             if (builder.ValueIsSet()) mauiObject.Position = builder.GetValue();
             return obj;
         }
@@ -424,16 +316,6 @@ namespace Sharp.UI
         }
         
         public static T PositionChangedCommand<T>(this T obj,
-            System.Func<LazyValueBuilder<System.Windows.Input.ICommand>, LazyValueBuilder<System.Windows.Input.ICommand>> buildValue)
-            where T : Sharp.UI.ICarouselView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
-            var builder = buildValue(new LazyValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) mauiObject.PositionChangedCommand = builder.GetValue();
-            return obj;
-        }
-        
-        public static T PositionChangedCommand<T>(this T obj,
             System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buildBinding)
             where T : Sharp.UI.ICarouselView
         {
@@ -458,16 +340,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
             var builder = buildValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) mauiObject.PositionChangedCommandParameter = builder.GetValue();
-            return obj;
-        }
-        
-        public static T PositionChangedCommandParameter<T>(this T obj,
-            System.Func<LazyValueBuilder<object>, LazyValueBuilder<object>> buildValue)
-            where T : Sharp.UI.ICarouselView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
-            var builder = buildValue(new LazyValueBuilder<object>());
             if (builder.ValueIsSet()) mauiObject.PositionChangedCommandParameter = builder.GetValue();
             return obj;
         }
@@ -502,16 +374,6 @@ namespace Sharp.UI
         }
         
         public static T ItemsLayout<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.LinearItemsLayout>, LazyValueBuilder<Microsoft.Maui.Controls.LinearItemsLayout>> buildValue)
-            where T : Sharp.UI.ICarouselView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.LinearItemsLayout>());
-            if (builder.ValueIsSet()) mauiObject.ItemsLayout = builder.GetValue();
-            return obj;
-        }
-        
-        public static T ItemsLayout<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Controls.LinearItemsLayout>, BindingBuilder<Microsoft.Maui.Controls.LinearItemsLayout>> buildBinding)
             where T : Sharp.UI.ICarouselView
         {
@@ -540,16 +402,6 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T IndicatorView<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.IndicatorView>, LazyValueBuilder<Microsoft.Maui.Controls.IndicatorView>> buildValue)
-            where T : Sharp.UI.ICarouselView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.IndicatorView>());
-            if (builder.ValueIsSet()) mauiObject.IndicatorView = builder.GetValue();
-            return obj;
-        }
-        
         public static T IsScrolling<T>(this T obj,
             bool isScrolling)
             where T : Sharp.UI.ICarouselView
@@ -565,16 +417,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) mauiObject.IsScrolling = builder.GetValue();
-            return obj;
-        }
-        
-        public static T IsScrolling<T>(this T obj,
-            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
-            where T : Sharp.UI.ICarouselView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.CarouselView>(obj);
-            var builder = buildValue(new LazyValueBuilder<bool>());
             if (builder.ValueIsSet()) mauiObject.IsScrolling = builder.GetValue();
             return obj;
         }

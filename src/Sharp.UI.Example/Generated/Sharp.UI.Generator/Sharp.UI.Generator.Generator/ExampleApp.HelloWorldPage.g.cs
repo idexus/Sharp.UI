@@ -18,17 +18,6 @@ namespace ExampleApp
             helloWorldPage = this;
         }
 
-        public HelloWorldPage(System.Action<HelloWorldPage> configure) : this()
-        {
-            configure(this);
-        }
-
-        public HelloWorldPage(out HelloWorldPage helloWorldPage, System.Action<HelloWorldPage> configure) : this()
-        {
-            helloWorldPage = this;
-            configure(this);
-        }
-
         // ----- set value method -----
 
         public new void SetValue(Microsoft.Maui.Controls.BindableProperty property, object value)

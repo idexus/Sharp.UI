@@ -5,12 +5,16 @@
 #pragma warning disable CS8669
 
 
+using System.Collections;
+using System.Collections.ObjectModel;
+
+
 namespace Sharp.UI
 {  
     /// <summary>
     /// A <c>Sharp.UI</c> class inheriting from the <c>Microsoft.Maui.Controls.FlexLayout</c> class.
     /// </summary>
-    public partial class FlexLayout : Microsoft.Maui.Controls.FlexLayout, Sharp.UI.IFlexLayout, IMauiWrapper
+    public partial class FlexLayout : Microsoft.Maui.Controls.FlexLayout, Sharp.UI.IFlexLayout, IMauiWrapper, IList<Microsoft.Maui.IView>
     {
         // ----- constructors -----
 
@@ -21,15 +25,50 @@ namespace Sharp.UI
             flexLayout = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public FlexLayout(System.Action<FlexLayout> configure) 
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces.")]
         public FlexLayout(out FlexLayout flexLayout, System.Action<FlexLayout> configure) 
         {
             flexLayout = this;
             configure(this);
+        }
+
+        public void Add(Func<Sharp.UI.FlexLayout, Sharp.UI.FlexLayout> configure) { configure(this); }
+
+        public void Add(Microsoft.Maui.Controls.View view) => base.Add(view);
+
+        public void Add(Action<IList<Microsoft.Maui.Controls.View>> builder)
+        {
+            List<Microsoft.Maui.Controls.View> items = new List<Microsoft.Maui.Controls.View>();
+            builder(items);
+            foreach (var item in items)
+                base.Add(item);
+        }
+
+        public void Add(Func<Microsoft.Maui.Controls.View> builder)
+        {
+            var item = builder();
+            if (item != null)
+                base.Add(item);
+        }
+
+        public void Add(IEnumerable<Microsoft.Maui.Controls.View> items)
+        {
+            if (items.GetType().IsAssignableTo(typeof(Microsoft.Maui.Controls.Layout)))
+            {
+                var item = (Microsoft.Maui.Controls.Layout)items;
+                base.Add(item);
+            }
+            else
+            {
+                foreach (var item in items)
+                    base.Add(item);
+            }
         }
 
         // ----- properties / events -----

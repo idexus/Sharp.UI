@@ -28,16 +28,6 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T View<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.View>, LazyValueBuilder<Microsoft.Maui.Controls.View>> buildValue)
-            where T : Sharp.UI.IViewCell
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ViewCell>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.View>());
-            if (builder.ValueIsSet()) mauiObject.View = builder.GetValue();
-            return obj;
-        }
-        
     }
 }
 

@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T ControlTemplate<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.ControlTemplate>, LazyValueBuilder<Microsoft.Maui.Controls.ControlTemplate>> buildValue)
-            where T : Sharp.UI.ITemplatedPage
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TemplatedPage>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.ControlTemplate>());
-            if (builder.ValueIsSet()) mauiObject.ControlTemplate = builder.GetValue();
-            return obj;
-        }
-        
-        public static T ControlTemplate<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Controls.ControlTemplate>, BindingBuilder<Microsoft.Maui.Controls.ControlTemplate>> buildBinding)
             where T : Sharp.UI.ITemplatedPage
         {

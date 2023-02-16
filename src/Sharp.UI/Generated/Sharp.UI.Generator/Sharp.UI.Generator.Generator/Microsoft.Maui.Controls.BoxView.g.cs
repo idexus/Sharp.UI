@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T Color<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Color>, LazyValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
-            where T : Sharp.UI.IBoxView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BoxView>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) mauiObject.Color = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Color<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
             where T : Sharp.UI.IBoxView
         {
@@ -63,16 +53,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BoxView>(obj);
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.CornerRadius>());
-            if (builder.ValueIsSet()) mauiObject.CornerRadius = builder.GetValue();
-            return obj;
-        }
-        
-        public static T CornerRadius<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.CornerRadius>, LazyValueBuilder<Microsoft.Maui.CornerRadius>> buildValue)
-            where T : Sharp.UI.IBoxView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BoxView>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.CornerRadius>());
             if (builder.ValueIsSet()) mauiObject.CornerRadius = builder.GetValue();
             return obj;
         }

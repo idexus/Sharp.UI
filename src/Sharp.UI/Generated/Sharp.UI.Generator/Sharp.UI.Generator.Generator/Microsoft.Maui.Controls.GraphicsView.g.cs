@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T Drawable<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.IDrawable>, LazyValueBuilder<Microsoft.Maui.Graphics.IDrawable>> buildValue)
-            where T : Sharp.UI.IGraphicsView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.GraphicsView>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.IDrawable>());
-            if (builder.ValueIsSet()) mauiObject.Drawable = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Drawable<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Graphics.IDrawable>, BindingBuilder<Microsoft.Maui.Graphics.IDrawable>> buildBinding)
             where T : Sharp.UI.IGraphicsView
         {

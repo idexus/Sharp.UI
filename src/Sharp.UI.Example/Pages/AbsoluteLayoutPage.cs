@@ -12,22 +12,31 @@ public class AbsoluteLayoutPage : ContentPage
 	{
 		Content = new AbsoluteLayout
 		{   
-			new Grid(out grid, e => e
-                .BackgroundColor(Colors.Red)
-                .AbsoluteLayoutBounds(new Rect(30,170,300,100)))
-			{
-				new Label("Absolute Layout")
+			new Grid(out grid)
+            {
+                e=>e.BackgroundColor(Colors.Red)
+                    .AbsoluteLayoutBounds(new Rect(30,170,300,100))
+                    .Background(new LinearGradientBrush(new Point(0, 0), new Point(1, 1))
+                    {
+                        new GradientStop(Colors.Yellow, 0.0),
+                        new GradientStop(Colors.Red, 0.25),
+                        new GradientStop(Colors.Blue, 0.75),
+                        new GradientStop(Colors.LimeGreen, 1.0)
+                    }),
+
+                new Label("Absolute Layout")
                     .FontSize(30)
                     .HorizontalOptions(LayoutOptions.Center)
                     .VerticalOptions(LayoutOptions.Center)
             },
 
-            new Border(out border, e => e
-                .AbsoluteLayoutBounds(new Rect(100,400,300,200))
-                .Stroke(Colors.Blue)
-                .StrokeThickness(4)
-                .StrokeShape(new RoundRectangle().CornerRadius(40)))
+            new Border(out border)
             {
+                e=>e.AbsoluteLayoutBounds(new Rect(100,400,300,200))
+                    .Stroke(Colors.Blue)
+                    .StrokeThickness(4)
+                    .StrokeShape(new RoundRectangle().CornerRadius(40)),
+
                 new Label("This is a test", out var label)
                     .Padding(20)
                     .FontSize(40)
@@ -35,16 +44,6 @@ public class AbsoluteLayoutPage : ContentPage
                     .VerticalOptions(LayoutOptions.Center)
             }
         };
-
-        border.Background(new LinearGradientBrush(new Point(0, 0), new Point(1, 1))
-        {
-            new GradientStop(Colors.Yellow, 0.0),
-            new GradientStop(Colors.Red, 0.25),
-            new GradientStop(Colors.Blue, 0.75),
-            new GradientStop(Colors.LimeGreen, 1.0)
-        });
-
-        
     }
 
     Task borderTask = null;

@@ -20,17 +20,6 @@ namespace ExampleApp
             secondPageViewModel = this;
         }
 
-        public SecondPageViewModel(System.Action<SecondPageViewModel> configure) 
-        {
-            configure(this);
-        }
-
-        public SecondPageViewModel(out SecondPageViewModel secondPageViewModel, System.Action<SecondPageViewModel> configure) 
-        {
-            secondPageViewModel = this;
-            configure(this);
-        }
-
         // ----- bindable properties -----
 
         public static readonly Microsoft.Maui.Controls.BindableProperty TitleProperty =

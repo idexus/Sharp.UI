@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T Format<T>(this T obj,
-            System.Func<LazyValueBuilder<string>, LazyValueBuilder<string>> buildValue)
-            where T : Sharp.UI.ITimePicker
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TimePicker>(obj);
-            var builder = buildValue(new LazyValueBuilder<string>());
-            if (builder.ValueIsSet()) mauiObject.Format = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Format<T>(this T obj,
             System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
             where T : Sharp.UI.ITimePicker
         {
@@ -63,16 +53,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TimePicker>(obj);
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) mauiObject.TextColor = builder.GetValue();
-            return obj;
-        }
-        
-        public static T TextColor<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Color>, LazyValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
-            where T : Sharp.UI.ITimePicker
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TimePicker>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Color>());
             if (builder.ValueIsSet()) mauiObject.TextColor = builder.GetValue();
             return obj;
         }
@@ -107,16 +87,6 @@ namespace Sharp.UI
         }
         
         public static T CharacterSpacing<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.ITimePicker
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TimePicker>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.CharacterSpacing = builder.GetValue();
-            return obj;
-        }
-        
-        public static T CharacterSpacing<T>(this T obj,
             System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Sharp.UI.ITimePicker
         {
@@ -141,16 +111,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TimePicker>(obj);
             var builder = buildValue(new ValueBuilder<System.TimeSpan>());
-            if (builder.ValueIsSet()) mauiObject.Time = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Time<T>(this T obj,
-            System.Func<LazyValueBuilder<System.TimeSpan>, LazyValueBuilder<System.TimeSpan>> buildValue)
-            where T : Sharp.UI.ITimePicker
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TimePicker>(obj);
-            var builder = buildValue(new LazyValueBuilder<System.TimeSpan>());
             if (builder.ValueIsSet()) mauiObject.Time = builder.GetValue();
             return obj;
         }
@@ -185,16 +145,6 @@ namespace Sharp.UI
         }
         
         public static T FontAttributes<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.FontAttributes>, LazyValueBuilder<Microsoft.Maui.Controls.FontAttributes>> buildValue)
-            where T : Sharp.UI.ITimePicker
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TimePicker>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.FontAttributes>());
-            if (builder.ValueIsSet()) mauiObject.FontAttributes = builder.GetValue();
-            return obj;
-        }
-        
-        public static T FontAttributes<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Controls.FontAttributes>, BindingBuilder<Microsoft.Maui.Controls.FontAttributes>> buildBinding)
             where T : Sharp.UI.ITimePicker
         {
@@ -219,16 +169,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TimePicker>(obj);
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) mauiObject.FontFamily = builder.GetValue();
-            return obj;
-        }
-        
-        public static T FontFamily<T>(this T obj,
-            System.Func<LazyValueBuilder<string>, LazyValueBuilder<string>> buildValue)
-            where T : Sharp.UI.ITimePicker
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TimePicker>(obj);
-            var builder = buildValue(new LazyValueBuilder<string>());
             if (builder.ValueIsSet()) mauiObject.FontFamily = builder.GetValue();
             return obj;
         }
@@ -263,16 +203,6 @@ namespace Sharp.UI
         }
         
         public static T FontSize<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.ITimePicker
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TimePicker>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.FontSize = builder.GetValue();
-            return obj;
-        }
-        
-        public static T FontSize<T>(this T obj,
             System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Sharp.UI.ITimePicker
         {
@@ -297,16 +227,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TimePicker>(obj);
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) mauiObject.FontAutoScalingEnabled = builder.GetValue();
-            return obj;
-        }
-        
-        public static T FontAutoScalingEnabled<T>(this T obj,
-            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
-            where T : Sharp.UI.ITimePicker
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TimePicker>(obj);
-            var builder = buildValue(new LazyValueBuilder<bool>());
             if (builder.ValueIsSet()) mauiObject.FontAutoScalingEnabled = builder.GetValue();
             return obj;
         }

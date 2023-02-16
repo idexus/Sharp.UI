@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T ColumnDefinitions<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.ColumnDefinitionCollection>, LazyValueBuilder<Microsoft.Maui.Controls.ColumnDefinitionCollection>> buildValue)
-            where T : Sharp.UI.IGrid
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Grid>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.ColumnDefinitionCollection>());
-            if (builder.ValueIsSet()) mauiObject.ColumnDefinitions = builder.GetValue();
-            return obj;
-        }
-        
-        public static T ColumnDefinitions<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Controls.ColumnDefinitionCollection>, BindingBuilder<Microsoft.Maui.Controls.ColumnDefinitionCollection>> buildBinding)
             where T : Sharp.UI.IGrid
         {
@@ -63,16 +53,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Grid>(obj);
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.RowDefinitionCollection>());
-            if (builder.ValueIsSet()) mauiObject.RowDefinitions = builder.GetValue();
-            return obj;
-        }
-        
-        public static T RowDefinitions<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.RowDefinitionCollection>, LazyValueBuilder<Microsoft.Maui.Controls.RowDefinitionCollection>> buildValue)
-            where T : Sharp.UI.IGrid
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Grid>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.RowDefinitionCollection>());
             if (builder.ValueIsSet()) mauiObject.RowDefinitions = builder.GetValue();
             return obj;
         }
@@ -107,16 +87,6 @@ namespace Sharp.UI
         }
         
         public static T RowSpacing<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.IGrid
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Grid>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.RowSpacing = builder.GetValue();
-            return obj;
-        }
-        
-        public static T RowSpacing<T>(this T obj,
             System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Sharp.UI.IGrid
         {
@@ -141,16 +111,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Grid>(obj);
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.ColumnSpacing = builder.GetValue();
-            return obj;
-        }
-        
-        public static T ColumnSpacing<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.IGrid
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Grid>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
             if (builder.ValueIsSet()) mauiObject.ColumnSpacing = builder.GetValue();
             return obj;
         }

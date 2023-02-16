@@ -21,17 +21,6 @@ namespace Sharp.UI
             polyQuadraticBezierSegment = this;
         }
 
-        public PolyQuadraticBezierSegment(System.Action<PolyQuadraticBezierSegment> configure) 
-        {
-            configure(this);
-        }
-
-        public PolyQuadraticBezierSegment(out PolyQuadraticBezierSegment polyQuadraticBezierSegment, System.Action<PolyQuadraticBezierSegment> configure) 
-        {
-            polyQuadraticBezierSegment = this;
-            configure(this);
-        }
-
         // ----- properties / events -----
 
         public new object BindingContext { get => base.BindingContext; set => base.BindingContext = MauiWrapper.Value<object>(value); }

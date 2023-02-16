@@ -21,31 +21,9 @@ namespace Sharp.UI
             entry = this;
         }
 
-        public Entry(System.Action<Entry> configure) 
-        {
-            configure(this);
-        }
-
-        public Entry(out Entry entry, System.Action<Entry> configure) 
-        {
-            entry = this;
-            configure(this);
-        }
-
         public Entry(string placeholder, out Entry entry) : this(placeholder)
         {
             entry = this;
-        }
-
-        public Entry(string placeholder, System.Action<Entry> configure) : this(placeholder)
-        {
-            configure(this);
-        }
-
-        public Entry(string placeholder, out Entry entry, System.Action<Entry> configure) : this(placeholder)
-        {
-            entry = this;
-            configure(this);
         }
 
         // ----- properties / events -----

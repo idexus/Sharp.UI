@@ -35,38 +35,6 @@ namespace Sharp.UI
             MauiObject = new Microsoft.Maui.Controls.TableSection();
         }
 
-        public TableSection(out TableSection tableSection) : this()
-        {
-            tableSection = this;
-        }
-
-        public TableSection(System.Action<TableSection> configure) : this()
-        {
-            configure(this);
-        }
-
-        public TableSection(out TableSection tableSection, System.Action<TableSection> configure) : this()
-        {
-            tableSection = this;
-            configure(this);
-        }
-
-        public TableSection(string title, out TableSection tableSection) : this(title)
-        {
-            tableSection = this;
-        }
-
-        public TableSection(string title, System.Action<TableSection> configure) : this(title)
-        {
-            configure(this);
-        }
-
-        public TableSection(string title, out TableSection tableSection, System.Action<TableSection> configure) : this(title)
-        {
-            tableSection = this;
-            configure(this);
-        }
-
         // ----- operators -----
 
         public static implicit operator TableSection(Microsoft.Maui.Controls.TableSection mauiObject) => new TableSection(mauiObject);
@@ -77,7 +45,6 @@ namespace Sharp.UI
         public int Count => this.MauiObject.Count;
         public Microsoft.Maui.Controls.Cell this[int index] { get => this.MauiObject[index]; set => this.MauiObject[index] = value; }
         public bool IsReadOnly => false;
-        public void Add(Microsoft.Maui.Controls.Cell item) => this.MauiObject.Add(item);
         public void Clear() => this.MauiObject.Clear();
         public bool Contains(Microsoft.Maui.Controls.Cell item) => this.MauiObject.Contains(item);
         public void CopyTo(Microsoft.Maui.Controls.Cell[] array, int arrayIndex) => this.MauiObject.CopyTo(array, arrayIndex);
@@ -87,6 +54,18 @@ namespace Sharp.UI
         public bool Remove(Microsoft.Maui.Controls.Cell item) => this.MauiObject.Remove(item);
         public void RemoveAt(int index) => this.MauiObject.RemoveAt(index);
         IEnumerator IEnumerable.GetEnumerator() => this.MauiObject.GetEnumerator();
+
+        public void Add(Func<Sharp.UI.TableSection, Sharp.UI.TableSection> configure) { configure(this); }
+
+        public void Add(Microsoft.Maui.Controls.Cell cell) => this.MauiObject.Add(cell);
+
+        public void Add(Action<IList<Microsoft.Maui.Controls.Cell>> builder)
+        {
+            List<Microsoft.Maui.Controls.Cell> items = new List<Microsoft.Maui.Controls.Cell>();
+            builder(items);
+            foreach (var item in items)
+                this.MauiObject.Add(item);
+        }
 
         // ----- sealed bindable properties -----
 

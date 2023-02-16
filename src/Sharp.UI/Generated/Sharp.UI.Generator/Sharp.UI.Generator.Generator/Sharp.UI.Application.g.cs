@@ -21,17 +21,6 @@ namespace Sharp.UI
             application = this;
         }
 
-        public Application(System.Action<Application> configure) 
-        {
-            configure(this);
-        }
-
-        public Application(out Application application, System.Action<Application> configure) 
-        {
-            application = this;
-            configure(this);
-        }
-
         // ----- properties / events -----
 
         public new object BindingContext { get => base.BindingContext; set => base.BindingContext = MauiWrapper.Value<object>(value); }

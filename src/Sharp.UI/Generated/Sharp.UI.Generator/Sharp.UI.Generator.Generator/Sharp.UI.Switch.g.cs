@@ -21,17 +21,6 @@ namespace Sharp.UI
             @switch = this;
         }
 
-        public Switch(System.Action<Switch> configure) 
-        {
-            configure(this);
-        }
-
-        public Switch(out Switch @switch, System.Action<Switch> configure) 
-        {
-            @switch = this;
-            configure(this);
-        }
-
         // ----- properties / events -----
 
         public new Sharp.UI.Style Style { get => new Sharp.UI.Style(base.Style); set => base.Style = value.MauiObject; }

@@ -11,8 +11,10 @@ public class ListViewPage : ContentPage
 	{
         BindingContext = viewModel;
 
-        Content = new ScrollView(e => e.Margin(new Thickness(0, 30, 0, 0)))
+        Content = new ScrollView
         {
+            e => e.Margin(new Thickness(0, 30, 0, 0)),
+
             new VStack
             {
                 new Label("EntryCell")
@@ -56,10 +58,11 @@ public class ListViewPage : ContentPage
                     .TextColor(AppColors.Gray400)
                     .BackgroundColor(AppColors.Gray900),
 
-                new ListView(e => e.ItemsSource(e => e.Path(nameof(ListViewPageViewModel.SimpleData))))
+                new ListView
                 {
-                    () =>
-                    new ViewCell
+                    e => e.ItemsSource(e => e.Path(nameof(ListViewPageViewModel.SimpleData))),
+
+                    () => new ViewCell
                     {
                         new HStack
                         {

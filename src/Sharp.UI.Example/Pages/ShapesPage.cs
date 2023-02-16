@@ -20,35 +20,43 @@ namespace ExampleApp
 			this.BackgroundColor(Colors.White);
 
 			Content =
-				new Grid(e => e
-					.BackgroundColor(Colors.Cyan)
-					.Padding(50)
-					.ColumnDefinitions(e => e.Star(count: 3))
-					.RowDefinitions(e => e.Star(count: 2)))
+				new Grid
 				{
-					new ContentView
+                    e => e
+						.BackgroundColor(Colors.Cyan)
+						.Padding(50)
+						.ColumnDefinitions(e => e.Star(count: 3))
+						.RowDefinitions(e => e.Star(count: 2)),
+
+                    new ContentView
 					{
-						new Polygon(e => e
-                            .Fill(Colors.AliceBlue)
-							.Stroke(Colors.Green)
-							.StrokeThickness(5))
+						new Polygon
                         {
-							new Point(40,10),
+                            e => e
+								.Fill(Colors.AliceBlue)
+								.Stroke(Colors.Green)
+								.StrokeThickness(5),
+
+                            new Point(40,10),
 							new Point(70,80),
 							new Point(10,50)
 						}
 						
 					},
 
-					new ContentView(e => e.Column(1))
+					new ContentView
 					{
-						new Polygon(e => e							
-							.Fill(Colors.Blue)
-							.Stroke(Colors.Red)
-							.StrokeThickness(3)
-							.Scale(e => e.Default(1).OnPhone(0.5)))
+                        e => e.Column(1),
+
+                        new Polygon
 						{
-							new Point(0,48),
+                            e => e
+								.Fill(Colors.Blue)
+								.Stroke(Colors.Red)
+								.StrokeThickness(3)
+								.Scale(e => e.Default(1).OnPhone(0.5)),
+
+                            new Point(0,48),
 							new Point(0,144),
 							new Point(96,150),
 							new Point(100, 0),
@@ -62,11 +70,15 @@ namespace ExampleApp
 						
 					},
 
-					new ContentView(e => e.Column(2))
+					new ContentView
 					{
-						new Polyline(e => e.Stroke(Colors.Red))
+                        e => e.Column(2),
+
+                        new Polyline
                         {
-							new Point(0,0),
+                            e => e.Stroke(Colors.Red),
+
+                            new Point(0,0),
 							new Point(10,30),
 							new Point(15,0),
 							new Point(18,60),
@@ -79,41 +91,52 @@ namespace ExampleApp
 						},
 					},
 
-					new ContentView(e => e.Row(1))
+					new ContentView
 					{
-						new Ellipse(60,180)
+                        e => e.Row(1),
+
+                        new Ellipse(60,180)
 							.Fill(Colors.Yellow)
 							.Stroke(Colors.Green)
 							.StrokeThickness(4)
 					},
 
-					new ContentView(e => e.Row(1).Column(1))
+					new ContentView
 					{
-						new Path(e => e
-                            .Stroke(Colors.Blue)
-							.Aspect(Stretch.Uniform)
-							.HorizontalOptions(LayoutOptions.Start))
+                        e => e.Row(1).Column(1),
+
+                        new Path
                         {
-							new GeometryGroup(e => e.FillRule(FillRule.EvenOdd))
+                            e => e
+								.Stroke(Colors.Blue)
+								.Aspect(Stretch.Uniform)
+								.HorizontalOptions(LayoutOptions.Start),
+
+                            new GeometryGroup
                             {
-								new EllipseGeometry(50, 50, new Point(75,75)),
+                                e => e.FillRule(FillRule.EvenOdd),
+
+                                new EllipseGeometry(50, 50, new Point(75,75)),
 								new EllipseGeometry(70, 70, new Point(75,75)),
 								new EllipseGeometry(100, 100, new Point(75,75)),
 								new EllipseGeometry(120, 120, new Point(75,75)),
-							}
-							
+							}							
 						}						
 					},
 
-					new ContentView(e => e.Row(1).Column(2))
+					new ContentView
 					{
-						new Path(e => e
-							.Stroke(Colors.Red)
-							.StrokeThickness(12)
-							.StrokeLineJoin(PenLineJoin.Round)
-                            .Scale(e => e.Default(1).OnPhone(0.25)))
+                        e => e.Row(1).Column(2),
+
+                        new Path
 						{
-							new PathGeometry
+                            e => e
+								.Stroke(Colors.Red)
+								.StrokeThickness(12)
+								.StrokeLineJoin(PenLineJoin.Round)
+								.Scale(e => e.Default(0.7).OnPhone(0.25)),
+
+                            new PathGeometry
 							{
 								// -- H --
 								new PathFigure(0,0)	{ new LineSegment(0, 100) },

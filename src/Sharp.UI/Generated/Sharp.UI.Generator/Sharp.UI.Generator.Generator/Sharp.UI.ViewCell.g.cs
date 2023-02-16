@@ -26,11 +26,13 @@ namespace Sharp.UI
             viewCell = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public ViewCell(System.Action<ViewCell> configure) 
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces.")]
         public ViewCell(out ViewCell viewCell, System.Action<ViewCell> configure) 
         {
             viewCell = this;
@@ -41,6 +43,8 @@ namespace Sharp.UI
 
         public IEnumerator GetEnumerator() { yield return this.View; }
         public void Add(Microsoft.Maui.Controls.View view) => this.View = view;
+
+        public void Add(Func<Sharp.UI.ViewCell, Sharp.UI.ViewCell> configure) { configure(this); }
 
         // ----- properties / events -----
 

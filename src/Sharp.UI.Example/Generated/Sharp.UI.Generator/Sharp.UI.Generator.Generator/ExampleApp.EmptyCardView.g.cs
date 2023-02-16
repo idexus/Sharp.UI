@@ -20,17 +20,6 @@ namespace ExampleApp
             emptyCardView = this;
         }
 
-        public EmptyCardView(System.Action<EmptyCardView> configure) 
-        {
-            configure(this);
-        }
-
-        public EmptyCardView(out EmptyCardView emptyCardView, System.Action<EmptyCardView> configure) 
-        {
-            emptyCardView = this;
-            configure(this);
-        }
-
         // ----- bindable properties -----
 
         public static readonly Microsoft.Maui.Controls.BindableProperty CardTitleProperty =

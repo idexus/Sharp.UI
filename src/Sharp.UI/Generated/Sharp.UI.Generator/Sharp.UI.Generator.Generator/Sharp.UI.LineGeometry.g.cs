@@ -21,17 +21,6 @@ namespace Sharp.UI
             lineGeometry = this;
         }
 
-        public LineGeometry(System.Action<LineGeometry> configure) 
-        {
-            configure(this);
-        }
-
-        public LineGeometry(out LineGeometry lineGeometry, System.Action<LineGeometry> configure) 
-        {
-            lineGeometry = this;
-            configure(this);
-        }
-
         // ----- properties / events -----
 
         public new object BindingContext { get => base.BindingContext; set => base.BindingContext = MauiWrapper.Value<object>(value); }

@@ -31,9 +31,12 @@ namespace ExampleApp
         {
             Title = "Test Page";
 
-            Content =  new ScrollView {
-                new VStack(out var vstack, e => e.WidthRequest(400).BackgroundColor(AppColors.Gray900))                        
+            Content =  new ScrollView 
+            {
+                new VStack(out var vstack)                        
                 {
+                    e => e.WidthRequest(400).BackgroundColor(AppColors.Gray900),
+
                     new ActivityIndicator()
                         .IsRunning(true)
                         .Color(Colors.Blue),
@@ -207,10 +210,14 @@ namespace ExampleApp
                     {
                         new Label("What's your favorite animal?"),
                         new RadioButton { "Dog" },
-                        new RadioButton(e => e.IsChecked(true))
+                        new RadioButton
                         {
-                            new HStack(e => e.HorizontalOptions(LayoutOptions.Start))
+                            e => e.IsChecked(true),
+
+                            new HStack
                             {
+                                e => e.HorizontalOptions(LayoutOptions.Start),
+
                                 new Image("dotnet_bot.png")
                                     .SizeRequest(50,50),
                                         
@@ -224,7 +231,10 @@ namespace ExampleApp
                         new RadioButton { "Monkey" },
                     },
 
-                    new Rectangle(100, 100, out var rect).Stroke(Colors.Wheat).StrokeThickness(10),
+                    new Rectangle(100, 100)
+                        .Assign(out var rect)
+                        .Stroke(Colors.Wheat)
+                        .StrokeThickness(10),
 
                     new RoundRectangle(100, 100, 10).Stroke(Colors.Pink).StrokeThickness(10),
 

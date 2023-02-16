@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T Color<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Color>, LazyValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
-            where T : Sharp.UI.IActivityIndicator
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ActivityIndicator>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) mauiObject.Color = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Color<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
             where T : Sharp.UI.IActivityIndicator
         {
@@ -63,16 +53,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ActivityIndicator>(obj);
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) mauiObject.IsRunning = builder.GetValue();
-            return obj;
-        }
-        
-        public static T IsRunning<T>(this T obj,
-            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
-            where T : Sharp.UI.IActivityIndicator
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ActivityIndicator>(obj);
-            var builder = buildValue(new LazyValueBuilder<bool>());
             if (builder.ValueIsSet()) mauiObject.IsRunning = builder.GetValue();
             return obj;
         }

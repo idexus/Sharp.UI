@@ -26,11 +26,13 @@ namespace Sharp.UI
             swipeView = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public SwipeView(System.Action<SwipeView> configure) 
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces.")]
         public SwipeView(out SwipeView swipeView, System.Action<SwipeView> configure) 
         {
             swipeView = this;
@@ -41,6 +43,8 @@ namespace Sharp.UI
 
         public IEnumerator GetEnumerator() { yield return this.Content; }
         public void Add(Microsoft.Maui.Controls.View content) => this.Content = content;
+
+        public void Add(Func<Sharp.UI.SwipeView, Sharp.UI.SwipeView> configure) { configure(this); }
 
         // ----- properties / events -----
 

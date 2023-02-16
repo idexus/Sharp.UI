@@ -31,16 +31,6 @@ namespace ExampleApp
         }
         
         public static T HasCustomShadow<T>(this T obj,
-            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
-            where T : Sharp.UI.IView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.View>(obj);
-            var builder = buildValue(new LazyValueBuilder<bool>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.CustomShadow.HasShadowProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T HasCustomShadow<T>(this T obj,
             System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Sharp.UI.IView
         {
@@ -70,16 +60,6 @@ namespace ExampleApp
         }
         
         public static T ShadowSize<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.IView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.View>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.CustomShadow.ShadowSizeProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T ShadowSize<T>(this T obj,
             System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Sharp.UI.IView
         {
@@ -104,16 +84,6 @@ namespace ExampleApp
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.View>(obj);
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.CustomShadow.ShadowColorProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T ShadowColor<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Color>, LazyValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
-            where T : Sharp.UI.IView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.View>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Color>());
             if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.CustomShadow.ShadowColorProperty, builder.GetValue());
             return obj;
         }

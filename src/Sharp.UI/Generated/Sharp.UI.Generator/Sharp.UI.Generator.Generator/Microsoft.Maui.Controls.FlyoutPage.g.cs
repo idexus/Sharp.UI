@@ -28,16 +28,6 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T Detail<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.Page>, LazyValueBuilder<Microsoft.Maui.Controls.Page>> buildValue)
-            where T : Sharp.UI.IFlyoutPage
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlyoutPage>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.Page>());
-            if (builder.ValueIsSet()) mauiObject.Detail = builder.GetValue();
-            return obj;
-        }
-        
         public static T IsGestureEnabled<T>(this T obj,
             bool isGestureEnabled)
             where T : Sharp.UI.IFlyoutPage
@@ -53,16 +43,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlyoutPage>(obj);
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) mauiObject.IsGestureEnabled = builder.GetValue();
-            return obj;
-        }
-        
-        public static T IsGestureEnabled<T>(this T obj,
-            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
-            where T : Sharp.UI.IFlyoutPage
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlyoutPage>(obj);
-            var builder = buildValue(new LazyValueBuilder<bool>());
             if (builder.ValueIsSet()) mauiObject.IsGestureEnabled = builder.GetValue();
             return obj;
         }
@@ -97,16 +77,6 @@ namespace Sharp.UI
         }
         
         public static T IsPresented<T>(this T obj,
-            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
-            where T : Sharp.UI.IFlyoutPage
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlyoutPage>(obj);
-            var builder = buildValue(new LazyValueBuilder<bool>());
-            if (builder.ValueIsSet()) mauiObject.IsPresented = builder.GetValue();
-            return obj;
-        }
-        
-        public static T IsPresented<T>(this T obj,
             System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Sharp.UI.IFlyoutPage
         {
@@ -135,16 +105,6 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T Flyout<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.Page>, LazyValueBuilder<Microsoft.Maui.Controls.Page>> buildValue)
-            where T : Sharp.UI.IFlyoutPage
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlyoutPage>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.Page>());
-            if (builder.ValueIsSet()) mauiObject.Flyout = builder.GetValue();
-            return obj;
-        }
-        
         public static T FlyoutLayoutBehavior<T>(this T obj,
             Microsoft.Maui.Controls.FlyoutLayoutBehavior flyoutLayoutBehavior)
             where T : Sharp.UI.IFlyoutPage
@@ -160,16 +120,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlyoutPage>(obj);
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.FlyoutLayoutBehavior>());
-            if (builder.ValueIsSet()) mauiObject.FlyoutLayoutBehavior = builder.GetValue();
-            return obj;
-        }
-        
-        public static T FlyoutLayoutBehavior<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.FlyoutLayoutBehavior>, LazyValueBuilder<Microsoft.Maui.Controls.FlyoutLayoutBehavior>> buildValue)
-            where T : Sharp.UI.IFlyoutPage
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.FlyoutPage>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.FlyoutLayoutBehavior>());
             if (builder.ValueIsSet()) mauiObject.FlyoutLayoutBehavior = builder.GetValue();
             return obj;
         }

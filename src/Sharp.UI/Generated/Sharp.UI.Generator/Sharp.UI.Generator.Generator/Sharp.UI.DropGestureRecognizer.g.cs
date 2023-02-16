@@ -21,17 +21,6 @@ namespace Sharp.UI
             dropGestureRecognizer = this;
         }
 
-        public DropGestureRecognizer(System.Action<DropGestureRecognizer> configure) 
-        {
-            configure(this);
-        }
-
-        public DropGestureRecognizer(out DropGestureRecognizer dropGestureRecognizer, System.Action<DropGestureRecognizer> configure) 
-        {
-            dropGestureRecognizer = this;
-            configure(this);
-        }
-
         // ----- properties / events -----
 
         public new object DragOverCommandParameter { get => base.DragOverCommandParameter; set => base.DragOverCommandParameter = MauiWrapper.Value<object>(value); }

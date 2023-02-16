@@ -9,14 +9,24 @@ public partial class App : Application
 {
     public App()
     {
-        //MainPage = ActivatorUtilities.GetServiceOrCreateInstance<HotReloadTestPage>(Application.Services);
-        
+        //MainPage = ActivatorUtilities.GetServiceOrCreateInstance<HelloWorldPage>(Application.Services);
+                
         MainPage = new Shell
         {
-            new FlyoutItem(FlyoutDisplayOptions.AsMultipleItems, e => e.Route("top"))
+            e => e
+                .ItemTemplate(() => new ShellItemTemplate())
+                .FlyoutHeaderTemplate(() => new FlyoutHeaderTemplate())
+                .Resources(AppResources.Default)
+                .FlyoutBackgroundColor(AppColors.Gray950),
+
+            new FlyoutItem(FlyoutDisplayOptions.AsMultipleItems)
             {
-                new Tab("Main", e => e.Route("main"))
+                e => e.Route("top"),
+
+                new Tab("Main")
                 {
+                    e => e.Route("main"),
+
                     new ShellContent<HelloWorldPage>("Hello Page"),
                     new ShellContent<HotReloadTestPage>("TestPage"),
                     new ShellContent<GridPage>("Grid").Route("grid"),
@@ -76,13 +86,9 @@ public partial class App : Application
                     new ShellContent<PathPage>("Path"),
                     new ShellContent<ExamplePage>("Scroll View"),
                     new ShellContent<SwipeViewPage>("Swipe"),
-                    new ShellContent<DefExamplePage>("Platform Def")
+                    new ShellContent<DeviceIdiomPage>("Idiom Page")
                 }
             }
-        }
-        .ItemTemplate(() => new ShellItemTemplate())
-        .FlyoutHeaderTemplate(() => new FlyoutHeaderTemplate())
-        .Resources(AppResources.Default)
-        .FlyoutBackgroundColor(AppColors.Gray950);       
+        };
     }
 }

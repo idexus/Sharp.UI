@@ -31,22 +31,6 @@ namespace Sharp.UI
             MauiObject = new Microsoft.Maui.Controls.DeviceStateTrigger();
         }
 
-        public DeviceStateTrigger(out DeviceStateTrigger deviceStateTrigger) : this()
-        {
-            deviceStateTrigger = this;
-        }
-
-        public DeviceStateTrigger(System.Action<DeviceStateTrigger> configure) : this()
-        {
-            configure(this);
-        }
-
-        public DeviceStateTrigger(out DeviceStateTrigger deviceStateTrigger, System.Action<DeviceStateTrigger> configure) : this()
-        {
-            deviceStateTrigger = this;
-            configure(this);
-        }
-
         // ----- operators -----
 
         public static implicit operator DeviceStateTrigger(Microsoft.Maui.Controls.DeviceStateTrigger mauiObject) => new DeviceStateTrigger(mauiObject);
