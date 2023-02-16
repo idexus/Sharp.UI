@@ -47,30 +47,38 @@ public class AbsoluteLayoutPage : ContentPage
         
     }
 
+    Task borderTask = null;
+    Task gridTask = null;
     protected override void OnAppearing()
     {
         base.OnAppearing();
         animate = true;
 
-        Task.Run(async () =>
+        if (borderTask == null || borderTask.IsCompleted)
         {
-            await Task.Delay(300);
-            while (animate)
+            borderTask = Task.Run(async () =>
             {
-                await border.TranslateTo(-border.X, 0, 1000);
-                await border.TranslateTo(this.Width - border.Width - border.X, 0, 1000);
-            }
-        });
+                await Task.Delay(300);
+                while (animate)
+                {
+                    await border.TranslateTo(-border.X, 0, 1000);
+                    await border.TranslateTo(this.Width - border.Width - border.X, 0, 1000);
+                }
+            });
+        }
 
-        Task.Run(async () =>
+        if (gridTask == null || gridTask.IsCompleted)
         {
-            await Task.Delay(300);
-            while (animate)
+            gridTask = Task.Run(async () =>
             {
-                await grid.TranslateTo(-grid.X, 0, 700);
-                await grid.TranslateTo(this.Width - grid.Width - grid.X, 0, 700);
-            }
-        });
+                await Task.Delay(300);
+                while (animate)
+                {
+                    await grid.TranslateTo(-grid.X, 0, 700);
+                    await grid.TranslateTo(this.Width - grid.Width - grid.X, 0, 700);
+                }
+            });
+        }
     }
 
     protected override void OnDisappearing()
