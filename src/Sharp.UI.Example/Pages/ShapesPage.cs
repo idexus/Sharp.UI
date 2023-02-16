@@ -134,7 +134,7 @@ namespace ExampleApp
 								.Stroke(Colors.Red)
 								.StrokeThickness(12)
 								.StrokeLineJoin(PenLineJoin.Round)
-								.Scale(e => e.Default(1).OnPhone(0.25)),
+								.Scale(e => e.Default(0.7).OnPhone(0.25)),
 
                             new PathGeometry
 							{

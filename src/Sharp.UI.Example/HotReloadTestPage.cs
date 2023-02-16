@@ -18,7 +18,7 @@ namespace ExampleApp
                 {
                     e => e
                         .BackgroundColor(Colors.Black)
-                        .Margin(new Thickness(0,30,0,0))
+                        .Margin(e => e.Default(new Thickness(0,30,0,0)).OnWinUI(0))
                         .VerticalOptions(LayoutOptions.Center)
                         .HorizontalOptions(LayoutOptions.Center),
 

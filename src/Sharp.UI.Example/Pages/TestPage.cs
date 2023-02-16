@@ -31,7 +31,8 @@ namespace ExampleApp
         {
             Title = "Test Page";
 
-            Content =  new ScrollView {
+            Content =  new ScrollView 
+            {
                 new VStack(out var vstack)                        
                 {
                     e => e.WidthRequest(400).BackgroundColor(AppColors.Gray900),

@@ -242,7 +242,7 @@ namespace {nameSpaceString}
             configure(this);
         }}
 
-        [Obsolete(""This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces."")]
+        [Obsolete(""This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces."")]
         public {mainSymbol.Name}({argsString}out {mainSymbol.Name} {Helpers.CamelCase(mainSymbol.Name)}, System.Action<{mainSymbol.Name}> configure) {thisTail}
         {{
             {Helpers.CamelCase(mainSymbol.Name)} = this;
@@ -543,7 +543,8 @@ namespace {nameSpaceString}
         public void Add({contTypeName} {shortName}) => {prefix}.Add({shortName});");
 
                     builder.AppendLine($@"
-        public void Add(Func<IEnumerable<{contTypeName}>> builder)
+        public void Add<T>(IEnumerable<T> builder)
+            where T : Microsoft.Maui.Controls.View, {contTypeName}
         {{
             var items = builder();
             foreach (var item in items)
