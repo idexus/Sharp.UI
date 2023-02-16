@@ -31,16 +31,6 @@ namespace Sharp.UI
             MauiObject = new Microsoft.Maui.Controls.BindingCondition();
         }
 
-        public BindingCondition(out BindingCondition bindingCondition) : this()
-        {
-            bindingCondition = this;
-        }
-
-        public BindingCondition(System.Func<Sharp.UI.Binding, Sharp.UI.Binding> bindingBuilder, object value, out BindingCondition bindingCondition) : this(bindingBuilder, value)
-        {
-            bindingCondition = this;
-        }
-
         // ----- operators -----
 
         public static implicit operator BindingCondition(Microsoft.Maui.Controls.BindingCondition mauiObject) => new BindingCondition(mauiObject);

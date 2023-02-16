@@ -17,12 +17,14 @@ public class TestBindingsPage : ContentPage
 		Resources = localResources;
 		Content = new VStack
 		{
-			new Rectangle(200, 200, out var rect)
+			new Rectangle(200, 200)
+				.Assign(out var rect)				
 				.Stroke(Colors.Blue)
 				.StrokeThickness(10)
 				.Margin(50),
 
-			new Ellipse(out var ellipse)
+			new Ellipse()
+				.Assign(out var ellipse)
 				.SizeRequest(300,100)
 				.Rotation(e => e.Path("Rotation")
 				.Source(rect))

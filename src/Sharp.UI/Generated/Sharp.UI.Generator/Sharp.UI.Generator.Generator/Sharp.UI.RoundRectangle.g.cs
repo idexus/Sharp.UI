@@ -31,16 +31,6 @@ namespace Sharp.UI
             MauiObject = new Microsoft.Maui.Controls.Shapes.RoundRectangle();
         }
 
-        public RoundRectangle(out RoundRectangle roundRectangle) : this()
-        {
-            roundRectangle = this;
-        }
-
-        public RoundRectangle(double widthRequest, double heightRequest, double cornerRadius, out RoundRectangle roundRectangle) : this(widthRequest, heightRequest, cornerRadius)
-        {
-            roundRectangle = this;
-        }
-
         // ----- operators -----
 
         public static implicit operator RoundRectangle(Microsoft.Maui.Controls.Shapes.RoundRectangle mauiObject) => new RoundRectangle(mauiObject);

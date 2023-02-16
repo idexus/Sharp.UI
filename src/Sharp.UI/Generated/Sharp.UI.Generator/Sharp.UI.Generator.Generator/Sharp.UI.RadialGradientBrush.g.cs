@@ -61,7 +61,6 @@ namespace Sharp.UI
         public int Count => this.GradientStops.Count;
         public Microsoft.Maui.Controls.GradientStop this[int index] { get => this.GradientStops[index]; set => this.GradientStops[index] = value; }
         public bool IsReadOnly => false;
-        public void Add(Microsoft.Maui.Controls.GradientStop item) => this.GradientStops.Add(item);
         public void Clear() => this.GradientStops.Clear();
         public bool Contains(Microsoft.Maui.Controls.GradientStop item) => this.GradientStops.Contains(item);
         public void CopyTo(Microsoft.Maui.Controls.GradientStop[] array, int arrayIndex) => this.GradientStops.CopyTo(array, arrayIndex);
@@ -73,6 +72,23 @@ namespace Sharp.UI
         IEnumerator IEnumerable.GetEnumerator() => this.GradientStops.GetEnumerator();
 
         public void Add(Func<Sharp.UI.RadialGradientBrush, Sharp.UI.RadialGradientBrush> configure) { configure(this); }
+
+        public void Add(Microsoft.Maui.Controls.GradientStop gradientStop) => this.GradientStops.Add(gradientStop);
+
+        public void Add(Func<IEnumerable<Microsoft.Maui.Controls.GradientStop>> builder)
+        {
+            var items = builder();
+            foreach (var item in items)
+                this.GradientStops.Add(item);
+        }
+
+        public void Add(Action<IList<Microsoft.Maui.Controls.GradientStop>> builder)
+        {
+            List<Microsoft.Maui.Controls.GradientStop> items = new List<Microsoft.Maui.Controls.GradientStop>();
+            builder(items);
+            foreach (var item in items)
+                this.GradientStops.Add(item);
+        }
 
         // ----- properties / events -----
 

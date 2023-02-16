@@ -30,42 +30,6 @@ namespace Sharp.UI
             MauiObject = style;
         }
 
-        public Style(System.Type type, out Style style) : this(type)
-        {
-            style = this;
-        }
-
-        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
-        public Style(System.Type type, System.Action<Style> configure) : this(type)
-        {
-            configure(this);
-        }
-
-        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
-        public Style(System.Type type, out Style style, System.Action<Style> configure) : this(type)
-        {
-            style = this;
-            configure(this);
-        }
-
-        public Style(System.Type type, bool applyToDerivedTypes, out Style style) : this(type, applyToDerivedTypes)
-        {
-            style = this;
-        }
-
-        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
-        public Style(System.Type type, bool applyToDerivedTypes, System.Action<Style> configure) : this(type, applyToDerivedTypes)
-        {
-            configure(this);
-        }
-
-        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
-        public Style(System.Type type, bool applyToDerivedTypes, out Style style, System.Action<Style> configure) : this(type, applyToDerivedTypes)
-        {
-            style = this;
-            configure(this);
-        }
-
         // ----- operators -----
 
         public static implicit operator Style(Microsoft.Maui.Controls.Style mauiObject) => new Style(mauiObject);
@@ -76,7 +40,6 @@ namespace Sharp.UI
         public int Count => this.MauiObject.Setters.Count;
         public Microsoft.Maui.Controls.Setter this[int index] { get => this.MauiObject.Setters[index]; set => this.MauiObject.Setters[index] = value; }
         public bool IsReadOnly => false;
-        public void Add(Microsoft.Maui.Controls.Setter item) => this.MauiObject.Setters.Add(item);
         public void Clear() => this.MauiObject.Setters.Clear();
         public bool Contains(Microsoft.Maui.Controls.Setter item) => this.MauiObject.Setters.Contains(item);
         public void CopyTo(Microsoft.Maui.Controls.Setter[] array, int arrayIndex) => this.MauiObject.Setters.CopyTo(array, arrayIndex);
@@ -88,6 +51,23 @@ namespace Sharp.UI
         IEnumerator IEnumerable.GetEnumerator() => this.MauiObject.Setters.GetEnumerator();
 
         public void Add(Func<Sharp.UI.Style, Sharp.UI.Style> configure) { configure(this); }
+
+        public void Add(Microsoft.Maui.Controls.Setter setter) => this.MauiObject.Setters.Add(setter);
+
+        public void Add(Func<IEnumerable<Microsoft.Maui.Controls.Setter>> builder)
+        {
+            var items = builder();
+            foreach (var item in items)
+                this.MauiObject.Setters.Add(item);
+        }
+
+        public void Add(Action<IList<Microsoft.Maui.Controls.Setter>> builder)
+        {
+            List<Microsoft.Maui.Controls.Setter> items = new List<Microsoft.Maui.Controls.Setter>();
+            builder(items);
+            foreach (var item in items)
+                this.MauiObject.Setters.Add(item);
+        }
 
         // ----- properties / events -----
 

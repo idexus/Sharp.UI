@@ -35,24 +35,6 @@ namespace Sharp.UI
             MauiObject = new Microsoft.Maui.Controls.Shapes.PathGeometry();
         }
 
-        public PathGeometry(out PathGeometry pathGeometry) : this()
-        {
-            pathGeometry = this;
-        }
-
-        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
-        public PathGeometry(System.Action<PathGeometry> configure) : this()
-        {
-            configure(this);
-        }
-
-        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
-        public PathGeometry(out PathGeometry pathGeometry, System.Action<PathGeometry> configure) : this()
-        {
-            pathGeometry = this;
-            configure(this);
-        }
-
         // ----- operators -----
 
         public static implicit operator PathGeometry(Microsoft.Maui.Controls.Shapes.PathGeometry mauiObject) => new PathGeometry(mauiObject);
@@ -63,7 +45,6 @@ namespace Sharp.UI
         public int Count => this.MauiObject.Figures.Count;
         public Microsoft.Maui.Controls.Shapes.PathFigure this[int index] { get => this.MauiObject.Figures[index]; set => this.MauiObject.Figures[index] = value; }
         public bool IsReadOnly => false;
-        public void Add(Microsoft.Maui.Controls.Shapes.PathFigure item) => this.MauiObject.Figures.Add(item);
         public void Clear() => this.MauiObject.Figures.Clear();
         public bool Contains(Microsoft.Maui.Controls.Shapes.PathFigure item) => this.MauiObject.Figures.Contains(item);
         public void CopyTo(Microsoft.Maui.Controls.Shapes.PathFigure[] array, int arrayIndex) => this.MauiObject.Figures.CopyTo(array, arrayIndex);
@@ -75,6 +56,23 @@ namespace Sharp.UI
         IEnumerator IEnumerable.GetEnumerator() => this.MauiObject.Figures.GetEnumerator();
 
         public void Add(Func<Sharp.UI.PathGeometry, Sharp.UI.PathGeometry> configure) { configure(this); }
+
+        public void Add(Microsoft.Maui.Controls.Shapes.PathFigure pathFigure) => this.MauiObject.Figures.Add(pathFigure);
+
+        public void Add(Func<IEnumerable<Microsoft.Maui.Controls.Shapes.PathFigure>> builder)
+        {
+            var items = builder();
+            foreach (var item in items)
+                this.MauiObject.Figures.Add(item);
+        }
+
+        public void Add(Action<IList<Microsoft.Maui.Controls.Shapes.PathFigure>> builder)
+        {
+            List<Microsoft.Maui.Controls.Shapes.PathFigure> items = new List<Microsoft.Maui.Controls.Shapes.PathFigure>();
+            builder(items);
+            foreach (var item in items)
+                this.MauiObject.Figures.Add(item);
+        }
 
         // ----- sealed bindable properties -----
 

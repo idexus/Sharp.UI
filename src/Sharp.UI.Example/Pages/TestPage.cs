@@ -230,7 +230,10 @@ namespace ExampleApp
                         new RadioButton { "Monkey" },
                     },
 
-                    new Rectangle(100, 100, out var rect).Stroke(Colors.Wheat).StrokeThickness(10),
+                    new Rectangle(100, 100)
+                        .Assign(out var rect)
+                        .Stroke(Colors.Wheat)
+                        .StrokeThickness(10),
 
                     new RoundRectangle(100, 100, 10).Stroke(Colors.Pink).StrokeThickness(10),
 

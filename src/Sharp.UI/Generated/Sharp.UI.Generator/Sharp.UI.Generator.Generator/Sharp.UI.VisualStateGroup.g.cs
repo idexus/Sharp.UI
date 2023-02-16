@@ -35,42 +35,6 @@ namespace Sharp.UI
             MauiObject = new Microsoft.Maui.Controls.VisualStateGroup();
         }
 
-        public VisualStateGroup(out VisualStateGroup visualStateGroup) : this()
-        {
-            visualStateGroup = this;
-        }
-
-        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
-        public VisualStateGroup(System.Action<VisualStateGroup> configure) : this()
-        {
-            configure(this);
-        }
-
-        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
-        public VisualStateGroup(out VisualStateGroup visualStateGroup, System.Action<VisualStateGroup> configure) : this()
-        {
-            visualStateGroup = this;
-            configure(this);
-        }
-
-        public VisualStateGroup(string name, out VisualStateGroup visualStateGroup) : this(name)
-        {
-            visualStateGroup = this;
-        }
-
-        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
-        public VisualStateGroup(string name, System.Action<VisualStateGroup> configure) : this(name)
-        {
-            configure(this);
-        }
-
-        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
-        public VisualStateGroup(string name, out VisualStateGroup visualStateGroup, System.Action<VisualStateGroup> configure) : this(name)
-        {
-            visualStateGroup = this;
-            configure(this);
-        }
-
         // ----- operators -----
 
         public static implicit operator VisualStateGroup(Microsoft.Maui.Controls.VisualStateGroup mauiObject) => new VisualStateGroup(mauiObject);
@@ -81,7 +45,6 @@ namespace Sharp.UI
         public int Count => this.MauiObject.States.Count;
         public Microsoft.Maui.Controls.VisualState this[int index] { get => this.MauiObject.States[index]; set => this.MauiObject.States[index] = value; }
         public bool IsReadOnly => false;
-        public void Add(Microsoft.Maui.Controls.VisualState item) => this.MauiObject.States.Add(item);
         public void Clear() => this.MauiObject.States.Clear();
         public bool Contains(Microsoft.Maui.Controls.VisualState item) => this.MauiObject.States.Contains(item);
         public void CopyTo(Microsoft.Maui.Controls.VisualState[] array, int arrayIndex) => this.MauiObject.States.CopyTo(array, arrayIndex);
@@ -93,6 +56,23 @@ namespace Sharp.UI
         IEnumerator IEnumerable.GetEnumerator() => this.MauiObject.States.GetEnumerator();
 
         public void Add(Func<Sharp.UI.VisualStateGroup, Sharp.UI.VisualStateGroup> configure) { configure(this); }
+
+        public void Add(Microsoft.Maui.Controls.VisualState visualState) => this.MauiObject.States.Add(visualState);
+
+        public void Add(Func<IEnumerable<Microsoft.Maui.Controls.VisualState>> builder)
+        {
+            var items = builder();
+            foreach (var item in items)
+                this.MauiObject.States.Add(item);
+        }
+
+        public void Add(Action<IList<Microsoft.Maui.Controls.VisualState>> builder)
+        {
+            List<Microsoft.Maui.Controls.VisualState> items = new List<Microsoft.Maui.Controls.VisualState>();
+            builder(items);
+            foreach (var item in items)
+                this.MauiObject.States.Add(item);
+        }
 
         // ----- properties / events -----
 

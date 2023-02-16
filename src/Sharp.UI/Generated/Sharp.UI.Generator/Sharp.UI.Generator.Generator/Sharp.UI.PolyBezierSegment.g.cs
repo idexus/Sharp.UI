@@ -31,11 +31,6 @@ namespace Sharp.UI
             MauiObject = new Microsoft.Maui.Controls.Shapes.PolyBezierSegment();
         }
 
-        public PolyBezierSegment(out PolyBezierSegment polyBezierSegment) : this()
-        {
-            polyBezierSegment = this;
-        }
-
         // ----- operators -----
 
         public static implicit operator PolyBezierSegment(Microsoft.Maui.Controls.Shapes.PolyBezierSegment mauiObject) => new PolyBezierSegment(mauiObject);

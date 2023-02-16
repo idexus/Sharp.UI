@@ -9,8 +9,8 @@ public partial class App : Application
 {
     public App()
     {
-        //MainPage = ActivatorUtilities.GetServiceOrCreateInstance<HotReloadTestPage>(Application.Services);
-        
+        //MainPage = ActivatorUtilities.GetServiceOrCreateInstance<HelloWorldPage>(Application.Services);
+                
         MainPage = new Shell
         {
             new FlyoutItem(FlyoutDisplayOptions.AsMultipleItems)
@@ -87,6 +87,7 @@ public partial class App : Application
         .ItemTemplate(() => new ShellItemTemplate())
         .FlyoutHeaderTemplate(() => new FlyoutHeaderTemplate())
         .Resources(AppResources.Default)
-        .FlyoutBackgroundColor(AppColors.Gray950);       
+        .FlyoutBackgroundColor(AppColors.Gray950);
+        
     }
 }

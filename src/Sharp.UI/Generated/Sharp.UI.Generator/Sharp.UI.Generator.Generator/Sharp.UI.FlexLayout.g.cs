@@ -5,12 +5,16 @@
 #pragma warning disable CS8669
 
 
+using System.Collections;
+using System.Collections.ObjectModel;
+
+
 namespace Sharp.UI
 {  
     /// <summary>
     /// A <c>Sharp.UI</c> class inheriting from the <c>Microsoft.Maui.Controls.FlexLayout</c> class.
     /// </summary>
-    public partial class FlexLayout : Microsoft.Maui.Controls.FlexLayout, Sharp.UI.IFlexLayout, IMauiWrapper
+    public partial class FlexLayout : Microsoft.Maui.Controls.FlexLayout, Sharp.UI.IFlexLayout, IMauiWrapper, IList<Microsoft.Maui.IView>
     {
         // ----- constructors -----
 
@@ -35,6 +39,23 @@ namespace Sharp.UI
         }
 
         public void Add(Func<Sharp.UI.FlexLayout, Sharp.UI.FlexLayout> configure) { configure(this); }
+
+        public void Add(Microsoft.Maui.Controls.View view) => base.Add(view);
+
+        public void Add(Func<IEnumerable<Microsoft.Maui.Controls.View>> builder)
+        {
+            var items = builder();
+            foreach (var item in items)
+                base.Add(item);
+        }
+
+        public void Add(Action<IList<Microsoft.Maui.Controls.View>> builder)
+        {
+            List<Microsoft.Maui.Controls.View> items = new List<Microsoft.Maui.Controls.View>();
+            builder(items);
+            foreach (var item in items)
+                base.Add(item);
+        }
 
         // ----- properties / events -----
 

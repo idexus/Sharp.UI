@@ -43,7 +43,6 @@ namespace Sharp.UI
         public int Count => this.Items.Count;
         public Microsoft.Maui.Controls.ShellSection this[int index] { get => this.Items[index]; set => this.Items[index] = value; }
         public bool IsReadOnly => false;
-        public void Add(Microsoft.Maui.Controls.ShellSection item) => this.Items.Add(item);
         public void Clear() => this.Items.Clear();
         public bool Contains(Microsoft.Maui.Controls.ShellSection item) => this.Items.Contains(item);
         public void CopyTo(Microsoft.Maui.Controls.ShellSection[] array, int arrayIndex) => this.Items.CopyTo(array, arrayIndex);
@@ -55,6 +54,23 @@ namespace Sharp.UI
         IEnumerator IEnumerable.GetEnumerator() => this.Items.GetEnumerator();
 
         public void Add(Func<Sharp.UI.TabBar, Sharp.UI.TabBar> configure) { configure(this); }
+
+        public void Add(Microsoft.Maui.Controls.ShellSection shellSection) => this.Items.Add(shellSection);
+
+        public void Add(Func<IEnumerable<Microsoft.Maui.Controls.ShellSection>> builder)
+        {
+            var items = builder();
+            foreach (var item in items)
+                this.Items.Add(item);
+        }
+
+        public void Add(Action<IList<Microsoft.Maui.Controls.ShellSection>> builder)
+        {
+            List<Microsoft.Maui.Controls.ShellSection> items = new List<Microsoft.Maui.Controls.ShellSection>();
+            builder(items);
+            foreach (var item in items)
+                this.Items.Add(item);
+        }
 
         // ----- properties / events -----
 

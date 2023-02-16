@@ -35,24 +35,6 @@ namespace Sharp.UI
             MauiObject = new Microsoft.Maui.Controls.Shapes.Polygon();
         }
 
-        public Polygon(out Polygon polygon) : this()
-        {
-            polygon = this;
-        }
-
-        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
-        public Polygon(System.Action<Polygon> configure) : this()
-        {
-            configure(this);
-        }
-
-        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
-        public Polygon(out Polygon polygon, System.Action<Polygon> configure) : this()
-        {
-            polygon = this;
-            configure(this);
-        }
-
         // ----- operators -----
 
         public static implicit operator Polygon(Microsoft.Maui.Controls.Shapes.Polygon mauiObject) => new Polygon(mauiObject);
@@ -63,7 +45,6 @@ namespace Sharp.UI
         public int Count => this.MauiObject.Points.Count;
         public Microsoft.Maui.Graphics.Point this[int index] { get => this.MauiObject.Points[index]; set => this.MauiObject.Points[index] = value; }
         public bool IsReadOnly => false;
-        public void Add(Microsoft.Maui.Graphics.Point item) => this.MauiObject.Points.Add(item);
         public void Clear() => this.MauiObject.Points.Clear();
         public bool Contains(Microsoft.Maui.Graphics.Point item) => this.MauiObject.Points.Contains(item);
         public void CopyTo(Microsoft.Maui.Graphics.Point[] array, int arrayIndex) => this.MauiObject.Points.CopyTo(array, arrayIndex);
@@ -75,6 +56,23 @@ namespace Sharp.UI
         IEnumerator IEnumerable.GetEnumerator() => this.MauiObject.Points.GetEnumerator();
 
         public void Add(Func<Sharp.UI.Polygon, Sharp.UI.Polygon> configure) { configure(this); }
+
+        public void Add(Microsoft.Maui.Graphics.Point point) => this.MauiObject.Points.Add(point);
+
+        public void Add(Func<IEnumerable<Microsoft.Maui.Graphics.Point>> builder)
+        {
+            var items = builder();
+            foreach (var item in items)
+                this.MauiObject.Points.Add(item);
+        }
+
+        public void Add(Action<IList<Microsoft.Maui.Graphics.Point>> builder)
+        {
+            List<Microsoft.Maui.Graphics.Point> items = new List<Microsoft.Maui.Graphics.Point>();
+            builder(items);
+            foreach (var item in items)
+                this.MauiObject.Points.Add(item);
+        }
 
         // ----- sealed bindable properties -----
 

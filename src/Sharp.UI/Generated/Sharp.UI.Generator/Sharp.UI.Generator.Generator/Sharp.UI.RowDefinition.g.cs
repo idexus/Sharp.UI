@@ -31,21 +31,6 @@ namespace Sharp.UI
             MauiObject = new Microsoft.Maui.Controls.RowDefinition();
         }
 
-        public RowDefinition(out RowDefinition rowDefinition) : this()
-        {
-            rowDefinition = this;
-        }
-
-        public RowDefinition(double height, out RowDefinition rowDefinition) : this(height)
-        {
-            rowDefinition = this;
-        }
-
-        public RowDefinition(double height, Microsoft.Maui.GridUnitType unitType, out RowDefinition rowDefinition) : this(height, unitType)
-        {
-            rowDefinition = this;
-        }
-
         // ----- operators -----
 
         public static implicit operator RowDefinition(Microsoft.Maui.Controls.RowDefinition mauiObject) => new RowDefinition(mauiObject);

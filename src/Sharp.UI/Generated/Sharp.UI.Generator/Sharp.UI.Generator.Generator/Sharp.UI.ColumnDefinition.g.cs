@@ -31,21 +31,6 @@ namespace Sharp.UI
             MauiObject = new Microsoft.Maui.Controls.ColumnDefinition();
         }
 
-        public ColumnDefinition(out ColumnDefinition columnDefinition) : this()
-        {
-            columnDefinition = this;
-        }
-
-        public ColumnDefinition(double width, out ColumnDefinition columnDefinition) : this(width)
-        {
-            columnDefinition = this;
-        }
-
-        public ColumnDefinition(double width, Microsoft.Maui.GridUnitType unitType, out ColumnDefinition columnDefinition) : this(width, unitType)
-        {
-            columnDefinition = this;
-        }
-
         // ----- operators -----
 
         public static implicit operator ColumnDefinition(Microsoft.Maui.Controls.ColumnDefinition mauiObject) => new ColumnDefinition(mauiObject);

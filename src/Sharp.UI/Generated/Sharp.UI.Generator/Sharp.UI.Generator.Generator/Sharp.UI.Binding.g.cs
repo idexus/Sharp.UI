@@ -31,11 +31,6 @@ namespace Sharp.UI
             MauiObject = new Microsoft.Maui.Controls.Binding();
         }
 
-        public Binding(out Binding binding) : this()
-        {
-            binding = this;
-        }
-
         // ----- operators -----
 
         public static implicit operator Binding(Microsoft.Maui.Controls.Binding mauiObject) => new Binding(mauiObject);

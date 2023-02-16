@@ -31,16 +31,6 @@ namespace Sharp.UI
             MauiObject = new Microsoft.Maui.Controls.Shapes.Ellipse();
         }
 
-        public Ellipse(out Ellipse ellipse) : this()
-        {
-            ellipse = this;
-        }
-
-        public Ellipse(double widthRequest, double heightRequest, out Ellipse ellipse) : this(widthRequest, heightRequest)
-        {
-            ellipse = this;
-        }
-
         // ----- operators -----
 
         public static implicit operator Ellipse(Microsoft.Maui.Controls.Shapes.Ellipse mauiObject) => new Ellipse(mauiObject);

@@ -52,7 +52,7 @@ namespace Sharp.UI.Generator
         // class generation
         bool generateAdditionalConstructors = false;
         bool generateNoParamConstructor = false;
-        bool singleItemContainer = false;
+        bool isSingleItemContainer = false;
         string containerOfTypeName = null;
         string nameSpaceString;
         bool isNewContainer = false;
@@ -97,13 +97,13 @@ namespace Sharp.UI.Generator
 
             if (containerPropertyName != null && isAlreadyContainerOfThis) throw new ArgumentException($"Type {mainSymbol.ToDisplayString()} defines IList interface, you can not use ContentProperty attribute");
 
-            if (isAlreadyContainerOfThis && (!IsWrappedType || WrappedType.IsSealed))
+            if (isAlreadyContainerOfThis)
             {
                 this.containerOfTypeName = containerType;
                 this.containerPropertyName = "this";
-                this.singleItemContainer = false;
+                this.isSingleItemContainer = false;
             }
-            else if (!isAlreadyContainerOfThis)
+            else
             {
                 // if is null try to find
                 if (IsWrappedType)
@@ -130,12 +130,12 @@ namespace Sharp.UI.Generator
                     if (Helpers.IsGenericIList(mauiContainerType, out var ofTypeName))
                     {
                         this.containerOfTypeName = ofTypeName;
-                        this.singleItemContainer = false;
+                        this.isSingleItemContainer = false;
                     }
                     else
                     {
                         this.containerOfTypeName = mauiContainerType.ToDisplayString();
-                        this.singleItemContainer = true;
+                        this.isSingleItemContainer = true;
                     }
                 }
             }

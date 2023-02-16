@@ -43,7 +43,6 @@ namespace Sharp.UI
         public int Count => this.Children.Count;
         public Microsoft.Maui.Controls.Page this[int index] { get => this.Children[index]; set => this.Children[index] = value; }
         public bool IsReadOnly => false;
-        public void Add(Microsoft.Maui.Controls.Page item) => this.Children.Add(item);
         public void Clear() => this.Children.Clear();
         public bool Contains(Microsoft.Maui.Controls.Page item) => this.Children.Contains(item);
         public void CopyTo(Microsoft.Maui.Controls.Page[] array, int arrayIndex) => this.Children.CopyTo(array, arrayIndex);
@@ -55,6 +54,23 @@ namespace Sharp.UI
         IEnumerator IEnumerable.GetEnumerator() => this.Children.GetEnumerator();
 
         public void Add(Func<Sharp.UI.TabbedPage, Sharp.UI.TabbedPage> configure) { configure(this); }
+
+        public void Add(Microsoft.Maui.Controls.Page page) => this.Children.Add(page);
+
+        public void Add(Func<IEnumerable<Microsoft.Maui.Controls.Page>> builder)
+        {
+            var items = builder();
+            foreach (var item in items)
+                this.Children.Add(item);
+        }
+
+        public void Add(Action<IList<Microsoft.Maui.Controls.Page>> builder)
+        {
+            List<Microsoft.Maui.Controls.Page> items = new List<Microsoft.Maui.Controls.Page>();
+            builder(items);
+            foreach (var item in items)
+                this.Children.Add(item);
+        }
 
         // ----- properties / events -----
 

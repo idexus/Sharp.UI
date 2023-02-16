@@ -5,12 +5,16 @@
 #pragma warning disable CS8669
 
 
+using System.Collections;
+using System.Collections.ObjectModel;
+
+
 namespace Sharp.UI
 {  
     /// <summary>
     /// A <c>Sharp.UI</c> class inheriting from the <c>Microsoft.Maui.Controls.MenuBarItem</c> class.
     /// </summary>
-    public partial class MenuBarItem : Microsoft.Maui.Controls.MenuBarItem, Sharp.UI.IMenuBarItem, IMauiWrapper
+    public partial class MenuBarItem : Microsoft.Maui.Controls.MenuBarItem, Sharp.UI.IMenuBarItem, IMauiWrapper, IList<Microsoft.Maui.IMenuElement>
     {
         // ----- constructors -----
 
@@ -53,6 +57,21 @@ namespace Sharp.UI
         }
 
         public void Add(Func<Sharp.UI.MenuBarItem, Sharp.UI.MenuBarItem> configure) { configure(this); }
+
+        public void Add(Func<IEnumerable<Microsoft.Maui.IMenuElement>> builder)
+        {
+            var items = builder();
+            foreach (var item in items)
+                base.Add(item);
+        }
+
+        public void Add(Action<IList<Microsoft.Maui.IMenuElement>> builder)
+        {
+            List<Microsoft.Maui.IMenuElement> items = new List<Microsoft.Maui.IMenuElement>();
+            builder(items);
+            foreach (var item in items)
+                base.Add(item);
+        }
 
         // ----- properties / events -----
 

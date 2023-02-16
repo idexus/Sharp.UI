@@ -35,24 +35,6 @@ namespace Sharp.UI
             MauiObject = new Microsoft.Maui.Controls.Shapes.Path();
         }
 
-        public Path(out Path path) : this()
-        {
-            path = this;
-        }
-
-        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
-        public Path(System.Action<Path> configure) : this()
-        {
-            configure(this);
-        }
-
-        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
-        public Path(out Path path, System.Action<Path> configure) : this()
-        {
-            path = this;
-            configure(this);
-        }
-
         // ----- operators -----
 
         public static implicit operator Path(Microsoft.Maui.Controls.Shapes.Path mauiObject) => new Path(mauiObject);

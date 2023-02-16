@@ -41,7 +41,6 @@ namespace Sharp.UI
         public int Count => this.Root.Count;
         public Microsoft.Maui.Controls.TableSection this[int index] { get => this.Root[index]; set => this.Root[index] = value; }
         public bool IsReadOnly => false;
-        public void Add(Microsoft.Maui.Controls.TableSection item) => this.Root.Add(item);
         public void Clear() => this.Root.Clear();
         public bool Contains(Microsoft.Maui.Controls.TableSection item) => this.Root.Contains(item);
         public void CopyTo(Microsoft.Maui.Controls.TableSection[] array, int arrayIndex) => this.Root.CopyTo(array, arrayIndex);
@@ -53,6 +52,23 @@ namespace Sharp.UI
         IEnumerator IEnumerable.GetEnumerator() => this.Root.GetEnumerator();
 
         public void Add(Func<Sharp.UI.TableView, Sharp.UI.TableView> configure) { configure(this); }
+
+        public void Add(Microsoft.Maui.Controls.TableSection tableSection) => this.Root.Add(tableSection);
+
+        public void Add(Func<IEnumerable<Microsoft.Maui.Controls.TableSection>> builder)
+        {
+            var items = builder();
+            foreach (var item in items)
+                this.Root.Add(item);
+        }
+
+        public void Add(Action<IList<Microsoft.Maui.Controls.TableSection>> builder)
+        {
+            List<Microsoft.Maui.Controls.TableSection> items = new List<Microsoft.Maui.Controls.TableSection>();
+            builder(items);
+            foreach (var item in items)
+                this.Root.Add(item);
+        }
 
         // ----- properties / events -----
 

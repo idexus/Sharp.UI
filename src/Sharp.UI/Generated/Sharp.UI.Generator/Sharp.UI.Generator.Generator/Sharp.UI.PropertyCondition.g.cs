@@ -31,16 +31,6 @@ namespace Sharp.UI
             MauiObject = new Microsoft.Maui.Controls.PropertyCondition();
         }
 
-        public PropertyCondition(out PropertyCondition propertyCondition) : this()
-        {
-            propertyCondition = this;
-        }
-
-        public PropertyCondition(Microsoft.Maui.Controls.BindableProperty property, object value, out PropertyCondition propertyCondition) : this(property, value)
-        {
-            propertyCondition = this;
-        }
-
         // ----- operators -----
 
         public static implicit operator PropertyCondition(Microsoft.Maui.Controls.PropertyCondition mauiObject) => new PropertyCondition(mauiObject);

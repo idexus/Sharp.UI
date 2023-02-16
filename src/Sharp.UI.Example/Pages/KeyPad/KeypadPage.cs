@@ -31,7 +31,7 @@ public class KeypadPage : ContentPage
 
 				new Button("\x21E6").Command(vm.DeleteCharCommand).Column(2),
 
-				labels.Select((label, i) =>
+				() => labels.Select((label, i) =>
 					new Button(label)
                         .Row(i/3+1).Column(i%3)
                         .Command(vm.AddCharCommand).CommandParameter(label))

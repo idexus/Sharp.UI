@@ -43,7 +43,6 @@ namespace Sharp.UI
         public int Count => this.Children.Count;
         public Microsoft.Maui.Controls.Shapes.Geometry this[int index] { get => this.Children[index]; set => this.Children[index] = value; }
         public bool IsReadOnly => false;
-        public void Add(Microsoft.Maui.Controls.Shapes.Geometry item) => this.Children.Add(item);
         public void Clear() => this.Children.Clear();
         public bool Contains(Microsoft.Maui.Controls.Shapes.Geometry item) => this.Children.Contains(item);
         public void CopyTo(Microsoft.Maui.Controls.Shapes.Geometry[] array, int arrayIndex) => this.Children.CopyTo(array, arrayIndex);
@@ -55,6 +54,23 @@ namespace Sharp.UI
         IEnumerator IEnumerable.GetEnumerator() => this.Children.GetEnumerator();
 
         public void Add(Func<Sharp.UI.GeometryGroup, Sharp.UI.GeometryGroup> configure) { configure(this); }
+
+        public void Add(Microsoft.Maui.Controls.Shapes.Geometry geometry) => this.Children.Add(geometry);
+
+        public void Add(Func<IEnumerable<Microsoft.Maui.Controls.Shapes.Geometry>> builder)
+        {
+            var items = builder();
+            foreach (var item in items)
+                this.Children.Add(item);
+        }
+
+        public void Add(Action<IList<Microsoft.Maui.Controls.Shapes.Geometry>> builder)
+        {
+            List<Microsoft.Maui.Controls.Shapes.Geometry> items = new List<Microsoft.Maui.Controls.Shapes.Geometry>();
+            builder(items);
+            foreach (var item in items)
+                this.Children.Add(item);
+        }
 
         // ----- properties / events -----
 

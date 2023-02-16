@@ -31,11 +31,6 @@ namespace Sharp.UI
             MauiObject = new Microsoft.Maui.Controls.TapGestureRecognizer();
         }
 
-        public TapGestureRecognizer(out TapGestureRecognizer tapGestureRecognizer) : this()
-        {
-            tapGestureRecognizer = this;
-        }
-
         // ----- operators -----
 
         public static implicit operator TapGestureRecognizer(Microsoft.Maui.Controls.TapGestureRecognizer mauiObject) => new TapGestureRecognizer(mauiObject);

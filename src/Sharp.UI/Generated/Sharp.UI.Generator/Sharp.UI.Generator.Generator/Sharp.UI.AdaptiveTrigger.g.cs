@@ -31,11 +31,6 @@ namespace Sharp.UI
             MauiObject = new Microsoft.Maui.Controls.AdaptiveTrigger();
         }
 
-        public AdaptiveTrigger(out AdaptiveTrigger adaptiveTrigger) : this()
-        {
-            adaptiveTrigger = this;
-        }
-
         // ----- operators -----
 
         public static implicit operator AdaptiveTrigger(Microsoft.Maui.Controls.AdaptiveTrigger mauiObject) => new AdaptiveTrigger(mauiObject);

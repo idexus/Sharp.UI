@@ -60,7 +60,7 @@ namespace {nameSpaceString}
 
         string GetContentPropertyString()
         {
-            return IsWrappedType && containerPropertyName != null && singleItemContainer && GetContentPropertyName(mainSymbol) == null ?
+            return IsWrappedType && containerPropertyName != null && isSingleItemContainer && GetContentPropertyName(mainSymbol) == null ?
                 $@"[ContentProperty(""{containerPropertyName}"")]
     " : "";
         }
@@ -102,13 +102,13 @@ namespace {nameSpaceString}
                     baseString = $" : {WrappedType.ToDisplayString()}, {nameSpaceString}.I{GetNormalizedName(WrappedType)}, IMauiWrapper";
 
                 if (WrappedType.IsSealed) baseString += $", ISealedMauiWrapper";
-                if (containerOfTypeName != null && singleItemContainer) baseString += $", IEnumerable";
-                if (containerOfTypeName != null && !singleItemContainer) baseString += $", IList<{containerOfTypeName}>";
+                if (containerOfTypeName != null && isSingleItemContainer) baseString += $", IEnumerable";
+                if (containerOfTypeName != null && !isSingleItemContainer) baseString += $", IList<{containerOfTypeName}>";
             }
             else
             {
-                if (containerOfTypeName != null && singleItemContainer) baseString += $" : IEnumerable";
-                if (containerOfTypeName != null && !singleItemContainer && !isAlreadyContainerOfThis) baseString += $" : IList<{containerOfTypeName}>";
+                if (containerOfTypeName != null && isSingleItemContainer) baseString += $" : IEnumerable";
+                if (containerOfTypeName != null && !isSingleItemContainer && !isAlreadyContainerOfThis) baseString += $" : IList<{containerOfTypeName}>";
             }
             return baseString;
         }
@@ -176,7 +176,7 @@ namespace {nameSpaceString}
 
             if (IsWrappedType && WrappedType.IsSealed) GenerateConstructorForSealedType();
             if (generateNoParamConstructor) GenerateNoParamConstructor();
-            if (this.generateAdditionalConstructors) GenerateAdditionalConstructors();
+            if (generateAdditionalConstructors && !IsWrappedSealedType) GenerateAdditionalConstructors();
         }
 
         // generate constructor header
@@ -466,7 +466,7 @@ namespace {nameSpaceString}
 
         void GenerateSingleItemContainer()
         {
-            if (containerOfTypeName != null && singleItemContainer == true)
+            if (containerOfTypeName != null && isSingleItemContainer == true)
             {
                 var newPrefix = isNewContainer ? " new" : "";
                 var typeName = mainSymbol.ToDisplayString();
@@ -486,7 +486,7 @@ namespace {nameSpaceString}
 
         void GenerateCollectionContainer()
         {
-            if (containerOfTypeName != null && singleItemContainer == false)
+            if (containerOfTypeName != null && isSingleItemContainer == false)
             {
                 var newPrefix = isNewContainer ? " new" : "";
 
@@ -505,7 +505,6 @@ namespace {nameSpaceString}
         public int Count => {prefix}.Count;
         public {containerOfTypeName} this[int index] {{ get => {prefix}[index]; set => {prefix}[index] = value; }}
         public bool IsReadOnly => false;
-        public void Add({containerOfTypeName} item) => {prefix}.Add(item);
         public void Clear() => {prefix}.Clear();
         public bool Contains({containerOfTypeName} item) => {prefix}.Contains(item);
         public void CopyTo({containerOfTypeName}[] array, int arrayIndex) => {prefix}.CopyTo(array, arrayIndex);
@@ -524,9 +523,41 @@ namespace {nameSpaceString}
             if (containerOfTypeName != null || isAlreadyContainerOfThis)
             {
                 var typeName = mainSymbol.ToDisplayString();
+                var newPrefix = isNewContainer && isSingleItemContainer ? " new" : "";
 
                 builder.AppendLine($@"
         public void Add(Func<{typeName}, {typeName}> configure) {{ configure(this); }}");
+
+                if (containerOfTypeName != null && !isSingleItemContainer || isAlreadyContainerOfThis)
+                {
+                    var prefix = IsWrappedSealedType ?
+                        (isAlreadyContainerOfThis ? "this.MauiObject" : $"this.MauiObject.{containerPropertyName}") :
+                        (isAlreadyContainerOfThis ? "base" : $"this.{containerPropertyName}");
+
+                    var contTypeName = containerOfTypeName == "Microsoft.Maui.IView" ? "Microsoft.Maui.Controls.View" : containerOfTypeName;
+
+                    var shortName = Helpers.CamelCase(contTypeName.Split('.').Last());
+
+                    if (!isAlreadyContainerOfThis || IsWrappedSealedType || containerOfTypeName == "Microsoft.Maui.IView")
+                        builder.AppendLine($@"
+        public void Add({contTypeName} {shortName}) => {prefix}.Add({shortName});");
+
+                    builder.AppendLine($@"
+        public void Add(Func<IEnumerable<{contTypeName}>> builder)
+        {{
+            var items = builder();
+            foreach (var item in items)
+                {prefix}.Add(item);
+        }}
+
+        public void Add(Action<IList<{contTypeName}>> builder)
+        {{
+            List<{contTypeName}> items = new List<{contTypeName}>();
+            builder(items);
+            foreach (var item in items)
+                {prefix}.Add(item);
+        }}");
+                }
             }
         }
 
