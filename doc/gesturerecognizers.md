@@ -84,6 +84,10 @@ public class PointerGesturePage : ContentPage
     {
         Content = new VStack
         {
+            e => e
+                .HorizontalOptions(LayoutOptions.Center)
+                .VerticalOptions(LayoutOptions.Center),
+
             new Label(out var label).FontSize(20),
             new Label(out var enterExitLabel).FontSize(20).TextColor(Colors.Blue),
             new Image("dotnet_bot.png", out var image)
@@ -105,9 +109,7 @@ public class PointerGesturePage : ContentPage
                             label.Text = $"point: {pos.X}, {pos.Y}";
                         })
                 })
-        }
-        .HorizontalOptions(LayoutOptions.Center)
-        .VerticalOptions(LayoutOptions.Center);
+        };
     }
 }
 ```

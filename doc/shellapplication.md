@@ -11,6 +11,10 @@ public partial class App : Application
     {
         MainPage = new Shell
         {
+            e => e
+                .ItemTemplate(() => new ShellItemTemplate())
+                .Resources(AppResources.Default),
+
             new FlyoutItem(FlyoutDisplayOptions.AsMultipleItems)
             {
                 new Tab("Main")
@@ -22,9 +26,7 @@ public partial class App : Application
                 new ShellContent<GridPage>("Grid"),
                 ...
             }
-        }
-        .ItemTemplate(() => new ShellItemTemplate())
-        .Resources(AppResources.Default);
+        };
     }
 }
 ```
@@ -40,6 +42,8 @@ public class ShellItemTemplate : ContentView
     {
         Content = new Grid
         {
+            e => e.ColumnDefinitions(e => e.Star(0.2).Star(0.8)),
+            
             new Image()
                 .Source(e => e.Path("FlyoutIcon"))
                 .Margin(5)
@@ -51,8 +55,7 @@ public class ShellItemTemplate : ContentView
                 .FontSize(20)
                 .FontAttributes(FontAttributes.Italic)
                 .VerticalTextAlignment(TextAlignment.Center)
-        }
-        .ColumnDefinitions(e => e.Star(0.2).Star(0.8));
+        };
     }
 }
 ```

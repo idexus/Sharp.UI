@@ -22,8 +22,7 @@ public class SimpleBindings : ContentPage
                 )
                 .FontSize(28)
                 .TextColor(Colors.Blue)
-        }
-        .VerticalOptions(LayoutOptions.Center);
+        };
     }
 }
 ``` 

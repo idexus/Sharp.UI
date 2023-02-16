@@ -24,11 +24,13 @@ public class HelloWorldPage : ContentPage
     {
         Content = new VStack
         {
+            // properies
             e => e
                 .Spacing(25)
                 .Padding(new Thickness(30, 0))
                 .VerticalOptions(LayoutOptions.Center),
 
+            // content
             new Image("dotnet_bot.png")
                 .HeightRequest(200)
                 .HorizontalOptions(LayoutOptions.Center),
@@ -141,7 +143,6 @@ public class ViewPage : ContentPage
     public ViewPage(ViewModel viewModel)
     {
         BindingContext = viewModel;
-       
         Content = new VStack
         {
             new HStack
