@@ -40,11 +40,13 @@ namespace Sharp.UI
             path = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public Path(System.Action<Path> configure) : this()
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public Path(out Path path, System.Action<Path> configure) : this()
         {
             path = this;
@@ -60,6 +62,8 @@ namespace Sharp.UI
 
         public IEnumerator GetEnumerator() { yield return this.Data; }
         public void Add(Microsoft.Maui.Controls.Shapes.Geometry data) => this.Data = data;
+
+        public void Add(Func<Sharp.UI.Path, Sharp.UI.Path> configure) { configure(this); }
 
         // ----- sealed bindable properties -----
 

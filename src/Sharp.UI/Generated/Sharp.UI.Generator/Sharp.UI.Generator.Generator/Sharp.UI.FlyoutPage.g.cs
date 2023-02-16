@@ -26,11 +26,13 @@ namespace Sharp.UI
             flyoutPage = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public FlyoutPage(System.Action<FlyoutPage> configure) 
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public FlyoutPage(out FlyoutPage flyoutPage, System.Action<FlyoutPage> configure) 
         {
             flyoutPage = this;
@@ -41,6 +43,8 @@ namespace Sharp.UI
 
         public IEnumerator GetEnumerator() { yield return this.Detail; }
         public void Add(Microsoft.Maui.Controls.Page detail) => this.Detail = detail;
+
+        public void Add(Func<Sharp.UI.FlyoutPage, Sharp.UI.FlyoutPage> configure) { configure(this); }
 
         // ----- properties / events -----
 

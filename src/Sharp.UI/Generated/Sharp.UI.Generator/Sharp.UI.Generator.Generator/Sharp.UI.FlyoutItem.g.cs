@@ -25,11 +25,13 @@ namespace Sharp.UI
             flyoutItem = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public FlyoutItem(System.Action<FlyoutItem> configure) 
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public FlyoutItem(out FlyoutItem flyoutItem, System.Action<FlyoutItem> configure) 
         {
             flyoutItem = this;
@@ -41,11 +43,13 @@ namespace Sharp.UI
             flyoutItem = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public FlyoutItem(Microsoft.Maui.Controls.FlyoutDisplayOptions displayOptions, System.Action<FlyoutItem> configure) : this(displayOptions)
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public FlyoutItem(Microsoft.Maui.Controls.FlyoutDisplayOptions displayOptions, out FlyoutItem flyoutItem, System.Action<FlyoutItem> configure) : this(displayOptions)
         {
             flyoutItem = this;
@@ -67,6 +71,8 @@ namespace Sharp.UI
         public bool Remove(Microsoft.Maui.Controls.ShellSection item) => this.Items.Remove(item);
         public void RemoveAt(int index) => this.Items.RemoveAt(index);
         IEnumerator IEnumerable.GetEnumerator() => this.Items.GetEnumerator();
+
+        public void Add(Func<Sharp.UI.FlyoutItem, Sharp.UI.FlyoutItem> configure) { configure(this); }
 
         // ----- properties / events -----
 

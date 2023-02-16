@@ -51,6 +51,8 @@ namespace Sharp.UI
         public void RemoveAt(int index) => this.MauiObject.Setters.RemoveAt(index);
         IEnumerator IEnumerable.GetEnumerator() => this.MauiObject.Setters.GetEnumerator();
 
+        public void Add(Func<Sharp.UI.DataTrigger, Sharp.UI.DataTrigger> configure) { configure(this); }
+
         // ----- sealed bindable properties -----
 
         public static Microsoft.Maui.Controls.BindableProperty BindingContextProperty => Microsoft.Maui.Controls.BindableObject.BindingContextProperty;

@@ -26,11 +26,13 @@ namespace Sharp.UI
             refreshView = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public RefreshView(System.Action<RefreshView> configure) 
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public RefreshView(out RefreshView refreshView, System.Action<RefreshView> configure) 
         {
             refreshView = this;
@@ -41,6 +43,8 @@ namespace Sharp.UI
 
         public IEnumerator GetEnumerator() { yield return this.Content; }
         public void Add(Microsoft.Maui.Controls.View content) => this.Content = content;
+
+        public void Add(Func<Sharp.UI.RefreshView, Sharp.UI.RefreshView> configure) { configure(this); }
 
         // ----- properties / events -----
 

@@ -25,11 +25,13 @@ namespace Sharp.UI
             geometryGroup = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public GeometryGroup(System.Action<GeometryGroup> configure) 
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public GeometryGroup(out GeometryGroup geometryGroup, System.Action<GeometryGroup> configure) 
         {
             geometryGroup = this;
@@ -51,6 +53,8 @@ namespace Sharp.UI
         public bool Remove(Microsoft.Maui.Controls.Shapes.Geometry item) => this.Children.Remove(item);
         public void RemoveAt(int index) => this.Children.RemoveAt(index);
         IEnumerator IEnumerable.GetEnumerator() => this.Children.GetEnumerator();
+
+        public void Add(Func<Sharp.UI.GeometryGroup, Sharp.UI.GeometryGroup> configure) { configure(this); }
 
         // ----- properties / events -----
 

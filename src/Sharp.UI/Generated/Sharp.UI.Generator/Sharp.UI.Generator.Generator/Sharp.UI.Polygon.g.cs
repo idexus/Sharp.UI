@@ -40,11 +40,13 @@ namespace Sharp.UI
             polygon = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public Polygon(System.Action<Polygon> configure) : this()
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public Polygon(out Polygon polygon, System.Action<Polygon> configure) : this()
         {
             polygon = this;
@@ -71,6 +73,8 @@ namespace Sharp.UI
         public bool Remove(Microsoft.Maui.Graphics.Point item) => this.MauiObject.Points.Remove(item);
         public void RemoveAt(int index) => this.MauiObject.Points.RemoveAt(index);
         IEnumerator IEnumerable.GetEnumerator() => this.MauiObject.Points.GetEnumerator();
+
+        public void Add(Func<Sharp.UI.Polygon, Sharp.UI.Polygon> configure) { configure(this); }
 
         // ----- sealed bindable properties -----
 

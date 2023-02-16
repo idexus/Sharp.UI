@@ -35,11 +35,13 @@ namespace Sharp.UI
             visualState = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public VisualState(System.Action<VisualState> configure) : this()
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public VisualState(out VisualState visualState, System.Action<VisualState> configure) : this()
         {
             visualState = this;
@@ -51,11 +53,13 @@ namespace Sharp.UI
             visualState = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public VisualState(string name, System.Action<VisualState> configure) : this(name)
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public VisualState(string name, out VisualState visualState, System.Action<VisualState> configure) : this(name)
         {
             visualState = this;
@@ -82,6 +86,8 @@ namespace Sharp.UI
         public bool Remove(Microsoft.Maui.Controls.Setter item) => this.MauiObject.Setters.Remove(item);
         public void RemoveAt(int index) => this.MauiObject.Setters.RemoveAt(index);
         IEnumerator IEnumerable.GetEnumerator() => this.MauiObject.Setters.GetEnumerator();
+
+        public void Add(Func<Sharp.UI.VisualState, Sharp.UI.VisualState> configure) { configure(this); }
 
         // ----- properties / events -----
 

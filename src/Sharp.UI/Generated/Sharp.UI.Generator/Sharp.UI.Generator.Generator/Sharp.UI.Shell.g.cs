@@ -25,11 +25,13 @@ namespace Sharp.UI
             shell = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public Shell(System.Action<Shell> configure) 
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public Shell(out Shell shell, System.Action<Shell> configure) 
         {
             shell = this;
@@ -51,6 +53,8 @@ namespace Sharp.UI
         public bool Remove(Microsoft.Maui.Controls.ShellItem item) => this.Items.Remove(item);
         public void RemoveAt(int index) => this.Items.RemoveAt(index);
         IEnumerator IEnumerable.GetEnumerator() => this.Items.GetEnumerator();
+
+        public void Add(Func<Sharp.UI.Shell, Sharp.UI.Shell> configure) { configure(this); }
 
         // ----- properties / events -----
 

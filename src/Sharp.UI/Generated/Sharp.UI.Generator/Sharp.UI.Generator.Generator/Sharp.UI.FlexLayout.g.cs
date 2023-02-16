@@ -21,16 +21,20 @@ namespace Sharp.UI
             flexLayout = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public FlexLayout(System.Action<FlexLayout> configure) 
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public FlexLayout(out FlexLayout flexLayout, System.Action<FlexLayout> configure) 
         {
             flexLayout = this;
             configure(this);
         }
+
+        public void Add(Func<Sharp.UI.FlexLayout, Sharp.UI.FlexLayout> configure) { configure(this); }
 
         // ----- properties / events -----
 

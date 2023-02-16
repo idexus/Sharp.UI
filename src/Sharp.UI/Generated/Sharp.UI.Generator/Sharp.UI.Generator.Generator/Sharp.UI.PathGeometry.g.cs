@@ -40,11 +40,13 @@ namespace Sharp.UI
             pathGeometry = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public PathGeometry(System.Action<PathGeometry> configure) : this()
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public PathGeometry(out PathGeometry pathGeometry, System.Action<PathGeometry> configure) : this()
         {
             pathGeometry = this;
@@ -71,6 +73,8 @@ namespace Sharp.UI
         public bool Remove(Microsoft.Maui.Controls.Shapes.PathFigure item) => this.MauiObject.Figures.Remove(item);
         public void RemoveAt(int index) => this.MauiObject.Figures.RemoveAt(index);
         IEnumerator IEnumerable.GetEnumerator() => this.MauiObject.Figures.GetEnumerator();
+
+        public void Add(Func<Sharp.UI.PathGeometry, Sharp.UI.PathGeometry> configure) { configure(this); }
 
         // ----- sealed bindable properties -----
 

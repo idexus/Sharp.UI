@@ -21,16 +21,20 @@ namespace Sharp.UI
             hStack = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public HStack(System.Action<HStack> configure) 
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public HStack(out HStack hStack, System.Action<HStack> configure) 
         {
             hStack = this;
             configure(this);
         }
+
+        public void Add(Func<Sharp.UI.HStack, Sharp.UI.HStack> configure) { configure(this); }
 
         // ----- properties / events -----
 

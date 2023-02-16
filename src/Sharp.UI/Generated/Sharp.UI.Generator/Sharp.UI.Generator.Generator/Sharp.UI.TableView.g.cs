@@ -23,11 +23,13 @@ namespace Sharp.UI
             tableView = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public TableView(System.Action<TableView> configure) : this()
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public TableView(out TableView tableView, System.Action<TableView> configure) : this()
         {
             tableView = this;
@@ -49,6 +51,8 @@ namespace Sharp.UI
         public bool Remove(Microsoft.Maui.Controls.TableSection item) => this.Root.Remove(item);
         public void RemoveAt(int index) => this.Root.RemoveAt(index);
         IEnumerator IEnumerable.GetEnumerator() => this.Root.GetEnumerator();
+
+        public void Add(Func<Sharp.UI.TableView, Sharp.UI.TableView> configure) { configure(this); }
 
         // ----- properties / events -----
 

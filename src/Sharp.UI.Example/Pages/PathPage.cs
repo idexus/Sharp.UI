@@ -8,15 +8,19 @@ namespace ExampleApp
         public PathPage()
         {
             Content =
-                new ScrollView(e => e.Margin(new Thickness(0, 30, 0, 0)))
+                new ScrollView
                 {
+                    e => e.Margin(new Thickness(0, 30, 0, 0)),
+
                     new VStack(out var vstack)
                     {
-                        new Path(e => e
-                            .Fill(Colors.Blue)
-                            .Stroke(Colors.Red)
-                            .WidthRequest(200).HeightRequest(200))
+                        new Path
                         {
+                            e => e
+                                .Fill(Colors.Blue)
+                                .Stroke(Colors.Red)
+                                .WidthRequest(200).HeightRequest(200),
+
                             new EllipseGeometry()
                                 .Center(new Point(100,100))
                                 .RadiusX(100)
@@ -34,10 +38,12 @@ namespace ExampleApp
                             .HeightRequest(300)
                             .Clip(new EllipseGeometry().RadiusX(80).RadiusY(80).Center(new Point(140, 120))),
 
-                        new Path(e => e
-                            .WidthRequest(200).HeightRequest(200)
-                            .Stroke(Colors.Red))
+                        new Path
                         {
+                            e => e
+                                .WidthRequest(200).HeightRequest(200)
+                                .Stroke(Colors.Red),
+
                             new GeometryGroup
                             {
                                 new RectangleGeometry().Rect(new Rect(0,0,170,100)),
@@ -48,11 +54,13 @@ namespace ExampleApp
                             }
                         },
 
-                        new Path(e => e
-                            .Stroke(Colors.Yellow)
-                            .Fill(Colors.Red)
-                            .HorizontalOptions(LayoutOptions.Center))
+                        new Path
                         {
+                            e => e
+                                .Stroke(Colors.Yellow)
+                                .Fill(Colors.Red)
+                                .HorizontalOptions(LayoutOptions.Center),
+
                             new GeometryGroup
                             {
                                 new PathGeometry

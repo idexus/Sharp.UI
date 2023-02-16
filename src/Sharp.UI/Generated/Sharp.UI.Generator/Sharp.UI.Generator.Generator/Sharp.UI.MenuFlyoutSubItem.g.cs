@@ -21,11 +21,13 @@ namespace Sharp.UI
             menuFlyoutSubItem = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public MenuFlyoutSubItem(System.Action<MenuFlyoutSubItem> configure) 
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public MenuFlyoutSubItem(out MenuFlyoutSubItem menuFlyoutSubItem, System.Action<MenuFlyoutSubItem> configure) 
         {
             menuFlyoutSubItem = this;
@@ -37,16 +39,20 @@ namespace Sharp.UI
             menuFlyoutSubItem = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public MenuFlyoutSubItem(string text, System.Action<MenuFlyoutSubItem> configure) : this(text)
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public MenuFlyoutSubItem(string text, out MenuFlyoutSubItem menuFlyoutSubItem, System.Action<MenuFlyoutSubItem> configure) : this(text)
         {
             menuFlyoutSubItem = this;
             configure(this);
         }
+
+        public void Add(Func<Sharp.UI.MenuFlyoutSubItem, Sharp.UI.MenuFlyoutSubItem> configure) { configure(this); }
 
         // ----- properties / events -----
 

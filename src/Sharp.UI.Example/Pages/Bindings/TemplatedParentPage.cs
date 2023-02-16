@@ -48,8 +48,10 @@ public class TemplatedParentPage : ContentPage
     {
         var controlTemplate = new ControlTemplate(typeof(CardViewTemplateView));
 
-        this.Content = new ScrollView(e => e.Margin(new Thickness(0,30,0,0)))
+        this.Content = new ScrollView
         {
+            e => e.Margin(new Thickness(0,30,0,0)),
+
             new VStack
             {
                 new Slider(1,100, out var slider)

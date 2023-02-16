@@ -25,11 +25,13 @@ namespace Sharp.UI
             tabbedPage = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public TabbedPage(System.Action<TabbedPage> configure) 
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public TabbedPage(out TabbedPage tabbedPage, System.Action<TabbedPage> configure) 
         {
             tabbedPage = this;
@@ -51,6 +53,8 @@ namespace Sharp.UI
         public bool Remove(Microsoft.Maui.Controls.Page item) => this.Children.Remove(item);
         public void RemoveAt(int index) => this.Children.RemoveAt(index);
         IEnumerator IEnumerable.GetEnumerator() => this.Children.GetEnumerator();
+
+        public void Add(Func<Sharp.UI.TabbedPage, Sharp.UI.TabbedPage> configure) { configure(this); }
 
         // ----- properties / events -----
 

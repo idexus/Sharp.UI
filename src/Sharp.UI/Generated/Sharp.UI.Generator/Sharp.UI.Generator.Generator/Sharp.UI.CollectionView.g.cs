@@ -25,11 +25,13 @@ namespace Sharp.UI
             collectionView = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public CollectionView(System.Action<CollectionView> configure) 
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public CollectionView(out CollectionView collectionView, System.Action<CollectionView> configure) 
         {
             collectionView = this;
@@ -40,6 +42,8 @@ namespace Sharp.UI
 
         public IEnumerator GetEnumerator() { yield return this.ItemTemplate; }
         public void Add(Microsoft.Maui.Controls.DataTemplate itemtemplate) => this.ItemTemplate = itemtemplate;
+
+        public void Add(Func<Sharp.UI.CollectionView, Sharp.UI.CollectionView> configure) { configure(this); }
 
         // ----- properties / events -----
 

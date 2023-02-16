@@ -21,16 +21,20 @@ namespace Sharp.UI
             visualStateGroupList = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public VisualStateGroupList(System.Action<VisualStateGroupList> configure) 
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public VisualStateGroupList(out VisualStateGroupList visualStateGroupList, System.Action<VisualStateGroupList> configure) 
         {
             visualStateGroupList = this;
             configure(this);
         }
+
+        public void Add(Func<Sharp.UI.VisualStateGroupList, Sharp.UI.VisualStateGroupList> configure) { configure(this); }
 
         // ----- properties / events -----
 

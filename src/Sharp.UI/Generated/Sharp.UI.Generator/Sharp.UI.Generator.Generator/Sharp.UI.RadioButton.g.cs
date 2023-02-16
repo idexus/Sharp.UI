@@ -25,11 +25,13 @@ namespace Sharp.UI
             radioButton = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public RadioButton(System.Action<RadioButton> configure) 
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public RadioButton(out RadioButton radioButton, System.Action<RadioButton> configure) 
         {
             radioButton = this;
@@ -40,6 +42,8 @@ namespace Sharp.UI
 
         public IEnumerator GetEnumerator() { yield return this.Content; }
         public void Add(object content) => this.Content = content;
+
+        public void Add(Func<Sharp.UI.RadioButton, Sharp.UI.RadioButton> configure) { configure(this); }
 
         // ----- properties / events -----
 

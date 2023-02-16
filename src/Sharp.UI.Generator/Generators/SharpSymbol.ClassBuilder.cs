@@ -127,6 +127,7 @@ namespace {nameSpaceString}
                 GenerateOperatorsForSealedType();
                 GenerateSingleItemContainer();
                 GenerateCollectionContainer();
+                GenerateContainerConfigureAddMethod();
                 GenerateBindableProperties();
                 GenerateAttachedProperties();
                 GenerateConsumedAttachedProperties();
@@ -139,6 +140,7 @@ namespace {nameSpaceString}
                 GenerateConstructors();
                 GenerateSingleItemContainer();
                 GenerateCollectionContainer();
+                GenerateContainerConfigureAddMethod();
                 GenerateAttachedProperties();
                 if (IsBindable())
                 {
@@ -234,11 +236,13 @@ namespace {nameSpaceString}
 
                 if (containerOfTypeName != null || isAlreadyContainerOfThis)
                     builder.AppendLine($@"
+        [Obsolete(""This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces."")]
         public {mainSymbol.Name}({argsString}System.Action<{mainSymbol.Name}> configure) {thisTail}
         {{
             configure(this);
         }}
 
+        [Obsolete(""This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces."")]
         public {mainSymbol.Name}({argsString}out {mainSymbol.Name} {Helpers.CamelCase(mainSymbol.Name)}, System.Action<{mainSymbol.Name}> configure) {thisTail}
         {{
             {Helpers.CamelCase(mainSymbol.Name)} = this;
@@ -465,12 +469,14 @@ namespace {nameSpaceString}
             if (containerOfTypeName != null && singleItemContainer == true)
             {
                 var newPrefix = isNewContainer ? " new" : "";
+                var typeName = mainSymbol.ToDisplayString();
 
                 builder.AppendLine($@"
         // ----- single item container -----
 
         public{newPrefix} IEnumerator GetEnumerator() {{ yield return this.{containerPropertyName}; }}
         public{newPrefix} void Add({containerOfTypeName} {containerPropertyName.ToLower()}) => this.{containerPropertyName} = {containerPropertyName.ToLower()};");
+
             }
         }
 
@@ -482,9 +488,10 @@ namespace {nameSpaceString}
         {
             if (containerOfTypeName != null && singleItemContainer == false)
             {
+                var newPrefix = isNewContainer ? " new" : "";
+
                 if (IsWrappedSealedType || !isAlreadyContainerOfThis)
                 {
-                    var newPrefix = isNewContainer ? " new" : "";
 
                     var prefix = IsWrappedSealedType ?
                         (isAlreadyContainerOfThis ? "this.MauiObject" : $"this.MauiObject.{containerPropertyName}") :
@@ -509,6 +516,17 @@ namespace {nameSpaceString}
         public void RemoveAt(int index) => {prefix}.RemoveAt(index);
         IEnumerator IEnumerable.GetEnumerator() => {prefix}.GetEnumerator();");
                 }
+            }
+        }
+
+        void GenerateContainerConfigureAddMethod()
+        {
+            if (containerOfTypeName != null || isAlreadyContainerOfThis)
+            {
+                var typeName = mainSymbol.ToDisplayString();
+
+                builder.AppendLine($@"
+        public void Add(Func<{typeName}, {typeName}> configure) {{ configure(this); }}");
             }
         }
 

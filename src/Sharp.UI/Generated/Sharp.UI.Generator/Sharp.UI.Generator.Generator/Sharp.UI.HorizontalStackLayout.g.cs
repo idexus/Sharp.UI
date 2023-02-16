@@ -21,16 +21,20 @@ namespace Sharp.UI
             horizontalStackLayout = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public HorizontalStackLayout(System.Action<HorizontalStackLayout> configure) 
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public HorizontalStackLayout(out HorizontalStackLayout horizontalStackLayout, System.Action<HorizontalStackLayout> configure) 
         {
             horizontalStackLayout = this;
             configure(this);
         }
+
+        public void Add(Func<Sharp.UI.HorizontalStackLayout, Sharp.UI.HorizontalStackLayout> configure) { configure(this); }
 
         // ----- properties / events -----
 

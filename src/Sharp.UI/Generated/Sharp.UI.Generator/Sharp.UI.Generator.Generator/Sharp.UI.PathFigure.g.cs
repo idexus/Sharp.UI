@@ -40,11 +40,13 @@ namespace Sharp.UI
             pathFigure = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public PathFigure(System.Action<PathFigure> configure) : this()
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public PathFigure(out PathFigure pathFigure, System.Action<PathFigure> configure) : this()
         {
             pathFigure = this;
@@ -56,11 +58,13 @@ namespace Sharp.UI
             pathFigure = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public PathFigure(double x, double y, System.Action<PathFigure> configure) : this(x, y)
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public PathFigure(double x, double y, out PathFigure pathFigure, System.Action<PathFigure> configure) : this(x, y)
         {
             pathFigure = this;
@@ -87,6 +91,8 @@ namespace Sharp.UI
         public bool Remove(Microsoft.Maui.Controls.Shapes.PathSegment item) => this.MauiObject.Segments.Remove(item);
         public void RemoveAt(int index) => this.MauiObject.Segments.RemoveAt(index);
         IEnumerator IEnumerable.GetEnumerator() => this.MauiObject.Segments.GetEnumerator();
+
+        public void Add(Func<Sharp.UI.PathFigure, Sharp.UI.PathFigure> configure) { configure(this); }
 
         // ----- sealed bindable properties -----
 

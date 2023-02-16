@@ -26,11 +26,13 @@ namespace Sharp.UI
             label = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public Label(System.Action<Label> configure) 
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public Label(out Label label, System.Action<Label> configure) 
         {
             label = this;
@@ -42,11 +44,13 @@ namespace Sharp.UI
             label = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public Label(string text, System.Action<Label> configure) : this(text)
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public Label(string text, out Label label, System.Action<Label> configure) : this(text)
         {
             label = this;
@@ -57,6 +61,8 @@ namespace Sharp.UI
 
         public IEnumerator GetEnumerator() { yield return this.Text; }
         public void Add(string text) => this.Text = text;
+
+        public void Add(Func<Sharp.UI.Label, Sharp.UI.Label> configure) { configure(this); }
 
         // ----- properties / events -----
 

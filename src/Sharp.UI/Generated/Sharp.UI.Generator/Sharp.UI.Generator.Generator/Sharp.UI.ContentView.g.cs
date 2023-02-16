@@ -26,11 +26,13 @@ namespace Sharp.UI
             contentView = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public ContentView(System.Action<ContentView> configure) 
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public ContentView(out ContentView contentView, System.Action<ContentView> configure) 
         {
             contentView = this;
@@ -41,6 +43,8 @@ namespace Sharp.UI
 
         public IEnumerator GetEnumerator() { yield return this.Content; }
         public void Add(Microsoft.Maui.Controls.View content) => this.Content = content;
+
+        public void Add(Func<Sharp.UI.ContentView, Sharp.UI.ContentView> configure) { configure(this); }
 
         // ----- properties / events -----
 

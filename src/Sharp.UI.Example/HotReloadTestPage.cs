@@ -14,12 +14,14 @@ namespace ExampleApp
             Resources = AppResources.Default;
 
             Content =
-                new VStack(e => e
-                    .BackgroundColor(Colors.Black)
-                    .Margin(new Thickness(0,30,0,0))
-                    .VerticalOptions(LayoutOptions.Center)
-                    .HorizontalOptions(LayoutOptions.Center))
+                new VStack
                 {
+                    e => e
+                        .BackgroundColor(Colors.Black)
+                        .Margin(new Thickness(0,30,0,0))
+                        .VerticalOptions(LayoutOptions.Center)
+                        .HorizontalOptions(LayoutOptions.Center),
+
                     new Label("Hot Reload :)")
                         .FontSize(e => e.Default(40).OnDesktop(70))
                         .TextColor(Colors.Red)
@@ -30,14 +32,18 @@ namespace ExampleApp
                         .Margin(new Thickness(50, 30))
                         .WidthRequest(400),
 
-                    new Border(e => e
-                        .WidthRequest(e => e.Default(220).OnDesktop(300))
-                        .HeightRequest(e => e.Default(350).OnDesktop(500))
-                        .StrokeShape(new RoundRectangle().CornerRadius(40))
-                        .BackgroundColor(AppColors.Gray950))
+                    new Border
                     {
-                        new Grid(e => e.RowDefinitions(e => e.Star().Star(2).Star()))
+                        e => e
+                            .WidthRequest(e => e.Default(220).OnDesktop(300))
+                            .HeightRequest(e => e.Default(350).OnDesktop(500))
+                            .StrokeShape(new RoundRectangle().CornerRadius(40))
+                            .BackgroundColor(AppColors.Gray950),
+
+                        new Grid
                         {
+                            e => e.RowDefinitions(e => e.Star().Star(2).Star()),
+
                             new Label()
                                 .FontSize(30)
                                 .Text(e => e.Path("Value").Source(slider).StringFormat("Value : {0:F2}"))
@@ -72,4 +78,3 @@ namespace ExampleApp
         }
     }
 }
-

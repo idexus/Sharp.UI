@@ -13,10 +13,14 @@ public partial class App : Application
         
         MainPage = new Shell
         {
-            new FlyoutItem(FlyoutDisplayOptions.AsMultipleItems, e => e.Route("top"))
+            new FlyoutItem(FlyoutDisplayOptions.AsMultipleItems)
             {
-                new Tab("Main", e => e.Route("main"))
+                e => e.Route("top"),
+
+                new Tab("Main")
                 {
+                    e => e.Route("main"),
+
                     new ShellContent<HelloWorldPage>("Hello Page"),
                     new ShellContent<HotReloadTestPage>("TestPage"),
                     new ShellContent<GridPage>("Grid").Route("grid"),

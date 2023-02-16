@@ -25,18 +25,22 @@ public partial class CardView : ContentView, ICardViewProperties
         BindingContext = this; 
 
         Content =
-            new Border(e => e
-                .StrokeShape(new RoundRectangle().CornerRadius(20))
-                .Stroke(e => e.Path(nameof(BorderColor)))
-                .BackgroundColor(e => e.Path(nameof(CardColor)))
-                .SizeRequest(250, 350)
-                .Margin(50)
-                .Padding(25))
-            {             
-                new Grid(e => e
-                    .RowDefinitions(e => e.Star(1).Star(2).Star(0.7)) 
-                    .RowSpacing(10))
+            new Border
+            {
+                e => e
+                    .StrokeShape(new RoundRectangle().CornerRadius(20))
+                    .Stroke(e => e.Path(nameof(BorderColor)))
+                    .BackgroundColor(e => e.Path(nameof(CardColor)))
+                    .SizeRequest(250, 350)
+                    .Margin(50)
+                    .Padding(25),
+
+                new Grid
                 {
+                    e => e
+                        .RowDefinitions(e => e.Star(1).Star(2).Star(0.7))
+                        .RowSpacing(10),
+
                     new VStack 
                     {
                         new Label()

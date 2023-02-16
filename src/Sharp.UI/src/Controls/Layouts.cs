@@ -158,6 +158,7 @@
             foreach (var view in views)
                 this.Children.Add(view);
         }
+
     }
 
     [SharpObject(typeof(Microsoft.Maui.Controls.ContentPresenter))] 

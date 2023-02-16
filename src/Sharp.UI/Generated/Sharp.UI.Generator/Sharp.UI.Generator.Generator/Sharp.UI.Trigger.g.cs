@@ -35,11 +35,13 @@ namespace Sharp.UI
             trigger = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public Trigger(Microsoft.Maui.Controls.BindableProperty property, object value, System.Action<Trigger> configure) : this(property, value)
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public Trigger(Microsoft.Maui.Controls.BindableProperty property, object value, out Trigger trigger, System.Action<Trigger> configure) : this(property, value)
         {
             trigger = this;
@@ -66,6 +68,8 @@ namespace Sharp.UI
         public bool Remove(Microsoft.Maui.Controls.Setter item) => this.MauiObject.Setters.Remove(item);
         public void RemoveAt(int index) => this.MauiObject.Setters.RemoveAt(index);
         IEnumerator IEnumerable.GetEnumerator() => this.MauiObject.Setters.GetEnumerator();
+
+        public void Add(Func<Sharp.UI.Trigger, Sharp.UI.Trigger> configure) { configure(this); }
 
         // ----- sealed bindable properties -----
 

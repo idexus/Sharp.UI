@@ -40,11 +40,13 @@ namespace Sharp.UI
             visualStateGroup = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public VisualStateGroup(System.Action<VisualStateGroup> configure) : this()
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public VisualStateGroup(out VisualStateGroup visualStateGroup, System.Action<VisualStateGroup> configure) : this()
         {
             visualStateGroup = this;
@@ -56,11 +58,13 @@ namespace Sharp.UI
             visualStateGroup = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public VisualStateGroup(string name, System.Action<VisualStateGroup> configure) : this(name)
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public VisualStateGroup(string name, out VisualStateGroup visualStateGroup, System.Action<VisualStateGroup> configure) : this(name)
         {
             visualStateGroup = this;
@@ -87,6 +91,8 @@ namespace Sharp.UI
         public bool Remove(Microsoft.Maui.Controls.VisualState item) => this.MauiObject.States.Remove(item);
         public void RemoveAt(int index) => this.MauiObject.States.RemoveAt(index);
         IEnumerator IEnumerable.GetEnumerator() => this.MauiObject.States.GetEnumerator();
+
+        public void Add(Func<Sharp.UI.VisualStateGroup, Sharp.UI.VisualStateGroup> configure) { configure(this); }
 
         // ----- properties / events -----
 

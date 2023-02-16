@@ -35,11 +35,13 @@ namespace Sharp.UI
             style = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public Style(System.Type type, System.Action<Style> configure) : this(type)
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public Style(System.Type type, out Style style, System.Action<Style> configure) : this(type)
         {
             style = this;
@@ -51,11 +53,13 @@ namespace Sharp.UI
             style = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public Style(System.Type type, bool applyToDerivedTypes, System.Action<Style> configure) : this(type, applyToDerivedTypes)
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public Style(System.Type type, bool applyToDerivedTypes, out Style style, System.Action<Style> configure) : this(type, applyToDerivedTypes)
         {
             style = this;
@@ -82,6 +86,8 @@ namespace Sharp.UI
         public bool Remove(Microsoft.Maui.Controls.Setter item) => this.MauiObject.Setters.Remove(item);
         public void RemoveAt(int index) => this.MauiObject.Setters.RemoveAt(index);
         IEnumerator IEnumerable.GetEnumerator() => this.MauiObject.Setters.GetEnumerator();
+
+        public void Add(Func<Sharp.UI.Style, Sharp.UI.Style> configure) { configure(this); }
 
         // ----- properties / events -----
 

@@ -40,11 +40,13 @@ namespace Sharp.UI
             eventTrigger = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public EventTrigger(System.Action<EventTrigger> configure) : this()
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public EventTrigger(out EventTrigger eventTrigger, System.Action<EventTrigger> configure) : this()
         {
             eventTrigger = this;
@@ -56,11 +58,13 @@ namespace Sharp.UI
             eventTrigger = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public EventTrigger(string @event, System.Action<EventTrigger> configure) : this(@event)
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public EventTrigger(string @event, out EventTrigger eventTrigger, System.Action<EventTrigger> configure) : this(@event)
         {
             eventTrigger = this;
@@ -87,6 +91,8 @@ namespace Sharp.UI
         public bool Remove(Microsoft.Maui.Controls.TriggerAction item) => this.MauiObject.Actions.Remove(item);
         public void RemoveAt(int index) => this.MauiObject.Actions.RemoveAt(index);
         IEnumerator IEnumerable.GetEnumerator() => this.MauiObject.Actions.GetEnumerator();
+
+        public void Add(Func<Sharp.UI.EventTrigger, Sharp.UI.EventTrigger> configure) { configure(this); }
 
         // ----- sealed bindable properties -----
 

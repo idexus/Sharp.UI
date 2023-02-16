@@ -21,16 +21,20 @@ namespace Sharp.UI
             absoluteLayout = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public AbsoluteLayout(System.Action<AbsoluteLayout> configure) 
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public AbsoluteLayout(out AbsoluteLayout absoluteLayout, System.Action<AbsoluteLayout> configure) 
         {
             absoluteLayout = this;
             configure(this);
         }
+
+        public void Add(Func<Sharp.UI.AbsoluteLayout, Sharp.UI.AbsoluteLayout> configure) { configure(this); }
 
         // ----- properties / events -----
 

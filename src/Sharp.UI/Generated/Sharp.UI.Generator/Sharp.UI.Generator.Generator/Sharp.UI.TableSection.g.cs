@@ -40,11 +40,13 @@ namespace Sharp.UI
             tableSection = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public TableSection(System.Action<TableSection> configure) : this()
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public TableSection(out TableSection tableSection, System.Action<TableSection> configure) : this()
         {
             tableSection = this;
@@ -56,11 +58,13 @@ namespace Sharp.UI
             tableSection = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public TableSection(string title, System.Action<TableSection> configure) : this(title)
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public TableSection(string title, out TableSection tableSection, System.Action<TableSection> configure) : this(title)
         {
             tableSection = this;
@@ -87,6 +91,8 @@ namespace Sharp.UI
         public bool Remove(Microsoft.Maui.Controls.Cell item) => this.MauiObject.Remove(item);
         public void RemoveAt(int index) => this.MauiObject.RemoveAt(index);
         IEnumerator IEnumerable.GetEnumerator() => this.MauiObject.GetEnumerator();
+
+        public void Add(Func<Sharp.UI.TableSection, Sharp.UI.TableSection> configure) { configure(this); }
 
         // ----- sealed bindable properties -----
 

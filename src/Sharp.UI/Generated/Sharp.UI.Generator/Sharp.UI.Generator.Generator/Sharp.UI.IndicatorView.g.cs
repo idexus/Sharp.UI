@@ -26,11 +26,13 @@ namespace Sharp.UI
             indicatorView = this;
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public IndicatorView(System.Action<IndicatorView> configure) 
         {
             configure(this);
         }
 
+        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public IndicatorView(out IndicatorView indicatorView, System.Action<IndicatorView> configure) 
         {
             indicatorView = this;
@@ -41,6 +43,8 @@ namespace Sharp.UI
 
         public IEnumerator GetEnumerator() { yield return this.IndicatorLayout; }
         public void Add(Microsoft.Maui.Controls.IBindableLayout indicatorlayout) => this.IndicatorLayout = indicatorlayout;
+
+        public void Add(Func<Sharp.UI.IndicatorView, Sharp.UI.IndicatorView> configure) { configure(this); }
 
         // ----- properties / events -----
 
