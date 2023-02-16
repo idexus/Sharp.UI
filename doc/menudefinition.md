@@ -58,12 +58,7 @@ public class MenuPage : ContentPage
             }
         });
 
-        Content = new Grid(out var grid)
-        {
-            new Label("Menu bar test").FontSize(50)
-        }
-        .VerticalOptions(LayoutOptions.Center)
-        .HorizontalOptions(LayoutOptions.Center);
+        ...
     }
 }
 ```

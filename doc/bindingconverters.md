@@ -16,6 +16,9 @@ public class AlternativeBackroundPage : ContentPage
         {
             new CollectionView
             {
+                e => e.ItemsSource(Numbers),
+
+                // item template
                 () => new Label()
                     .FontSize(30)
                     .Text(e => e.Path("."))
@@ -25,7 +28,6 @@ public class AlternativeBackroundPage : ContentPage
                         .Convert((int n) => n % 2 == 0 ? Colors.White : Colors.Black)
                     )
             }
-            .ItemsSource(Numbers)
         };
     }
 }

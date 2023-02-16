@@ -32,9 +32,11 @@ public class TemplatedParentPage : ContentPage
     public TemplatedParentPage()
     {
         var controlTemplate = new ControlTemplate(typeof(CardViewTemplateView));
-
+        
         this.Content = new VStack
         {
+            e => e.VerticalOptions(LayoutOptions.Center),
+
             new Slider(1,100, out var slider),
 
             new CardView()
@@ -54,8 +56,7 @@ public class TemplatedParentPage : ContentPage
                 .BorderColor(Colors.Blue)
                 .ControlTemplate(controlTemplate),
 
-        }
-        .VerticalOptions(LayoutOptions.Center);
+        };
     }
 }
 ```

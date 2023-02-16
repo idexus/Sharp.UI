@@ -71,6 +71,8 @@ public class AngleViewModelPage : ContentPage
         this.BindingContext = viewModel;
         this.Content = new VStack
         {
+            e => e.VerticalOptions(LayoutOptions.Center),
+
             new Slider(0, 500)
                 .Value(e => e.Path("RawAngle")),
 
@@ -83,8 +85,7 @@ public class AngleViewModelPage : ContentPage
                 .Rotation(e => e.Path("Angle"))
                 .FontSize(30)
 
-        }
-        .VerticalOptions(LayoutOptions.Center);
+        };
     }
 }
 ```

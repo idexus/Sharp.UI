@@ -71,19 +71,19 @@ public class AttachedBehaviorPage : ContentPage
 {
     public AttachedBehaviorPage()
     {
-	Resources = new ResourceDictionary
-	{
-	    new Style<Entry>
-	    {
-		NumericValidationStyleBehavior.AttachedProperty.Set(true)
-	    }
-	};
+        Resources = new ResourceDictionary
+        {
+            new Style<Entry>
+            {
+                NumericValidationStyleBehavior.AttachedProperty.Set(true)
+            }
+        };
 
-	Content = new VStack
-	{
-		new Entry("Enter text...", out var entry).Text("")
-	}
-	.VerticalOptions(LayoutOptions.Center);
+        Content = new VStack
+        {
+            new Entry("Enter text...", out var entry).Text("")
+        }
+        .VerticalOptions(LayoutOptions.Center);
     }
 }
 ```
