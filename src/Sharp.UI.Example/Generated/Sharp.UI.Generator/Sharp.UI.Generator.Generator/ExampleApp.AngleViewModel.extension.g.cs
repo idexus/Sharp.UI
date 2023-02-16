@@ -31,16 +31,6 @@ namespace ExampleApp
         }
         
         public static T RawAngle<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : ExampleApp.AngleViewModel
-        {
-            var mauiObject = MauiWrapper.Value<ExampleApp.AngleViewModel>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.AngleViewModel.RawAngleProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T RawAngle<T>(this T obj,
             System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : ExampleApp.AngleViewModel
         {
@@ -70,16 +60,6 @@ namespace ExampleApp
         }
         
         public static T Angle<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : ExampleApp.AngleViewModel
-        {
-            var mauiObject = MauiWrapper.Value<ExampleApp.AngleViewModel>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.AngleViewModel.AngleProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T Angle<T>(this T obj,
             System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : ExampleApp.AngleViewModel
         {
@@ -104,16 +84,6 @@ namespace ExampleApp
         {
             var mauiObject = MauiWrapper.Value<ExampleApp.AngleViewModel>(obj);
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.AngleViewModel.MaximumAngleProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T MaximumAngle<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : ExampleApp.AngleViewModel
-        {
-            var mauiObject = MauiWrapper.Value<ExampleApp.AngleViewModel>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
             if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.AngleViewModel.MaximumAngleProperty, builder.GetValue());
             return obj;
         }

@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T IsRefreshing<T>(this T obj,
-            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
-            where T : Sharp.UI.IRefreshView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RefreshView>(obj);
-            var builder = buildValue(new LazyValueBuilder<bool>());
-            if (builder.ValueIsSet()) mauiObject.IsRefreshing = builder.GetValue();
-            return obj;
-        }
-        
-        public static T IsRefreshing<T>(this T obj,
             System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Sharp.UI.IRefreshView
         {
@@ -63,16 +53,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RefreshView>(obj);
             var builder = buildValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) mauiObject.Command = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Command<T>(this T obj,
-            System.Func<LazyValueBuilder<System.Windows.Input.ICommand>, LazyValueBuilder<System.Windows.Input.ICommand>> buildValue)
-            where T : Sharp.UI.IRefreshView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RefreshView>(obj);
-            var builder = buildValue(new LazyValueBuilder<System.Windows.Input.ICommand>());
             if (builder.ValueIsSet()) mauiObject.Command = builder.GetValue();
             return obj;
         }
@@ -107,16 +87,6 @@ namespace Sharp.UI
         }
         
         public static T CommandParameter<T>(this T obj,
-            System.Func<LazyValueBuilder<object>, LazyValueBuilder<object>> buildValue)
-            where T : Sharp.UI.IRefreshView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RefreshView>(obj);
-            var builder = buildValue(new LazyValueBuilder<object>());
-            if (builder.ValueIsSet()) mauiObject.CommandParameter = builder.GetValue();
-            return obj;
-        }
-        
-        public static T CommandParameter<T>(this T obj,
             System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
             where T : Sharp.UI.IRefreshView
         {
@@ -141,16 +111,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RefreshView>(obj);
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) mauiObject.RefreshColor = builder.GetValue();
-            return obj;
-        }
-        
-        public static T RefreshColor<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Color>, LazyValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
-            where T : Sharp.UI.IRefreshView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RefreshView>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Color>());
             if (builder.ValueIsSet()) mauiObject.RefreshColor = builder.GetValue();
             return obj;
         }

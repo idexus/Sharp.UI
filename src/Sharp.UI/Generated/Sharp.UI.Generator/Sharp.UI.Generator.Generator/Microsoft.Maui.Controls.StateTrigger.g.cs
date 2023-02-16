@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T IsActive<T>(this T obj,
-            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
-            where T : Sharp.UI.IStateTrigger
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StateTrigger>(obj);
-            var builder = buildValue(new LazyValueBuilder<bool>());
-            if (builder.ValueIsSet()) mauiObject.IsActive = builder.GetValue();
-            return obj;
-        }
-        
-        public static T IsActive<T>(this T obj,
             System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Sharp.UI.IStateTrigger
         {

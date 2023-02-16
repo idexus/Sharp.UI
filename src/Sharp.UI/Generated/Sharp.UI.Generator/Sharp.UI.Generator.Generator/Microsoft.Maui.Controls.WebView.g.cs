@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T Cookies<T>(this T obj,
-            System.Func<LazyValueBuilder<System.Net.CookieContainer>, LazyValueBuilder<System.Net.CookieContainer>> buildValue)
-            where T : Sharp.UI.IWebView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.WebView>(obj);
-            var builder = buildValue(new LazyValueBuilder<System.Net.CookieContainer>());
-            if (builder.ValueIsSet()) mauiObject.Cookies = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Cookies<T>(this T obj,
             System.Func<BindingBuilder<System.Net.CookieContainer>, BindingBuilder<System.Net.CookieContainer>> buildBinding)
             where T : Sharp.UI.IWebView
         {
@@ -63,16 +53,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.WebView>(obj);
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.WebViewSource>());
-            if (builder.ValueIsSet()) mauiObject.Source = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Source<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.WebViewSource>, LazyValueBuilder<Microsoft.Maui.Controls.WebViewSource>> buildValue)
-            where T : Sharp.UI.IWebView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.WebView>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.WebViewSource>());
             if (builder.ValueIsSet()) mauiObject.Source = builder.GetValue();
             return obj;
         }

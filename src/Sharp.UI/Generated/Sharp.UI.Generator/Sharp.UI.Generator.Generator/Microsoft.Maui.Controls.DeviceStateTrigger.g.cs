@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T Device<T>(this T obj,
-            System.Func<LazyValueBuilder<string>, LazyValueBuilder<string>> buildValue)
-            where T : Sharp.UI.IDeviceStateTrigger
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DeviceStateTrigger>(obj);
-            var builder = buildValue(new LazyValueBuilder<string>());
-            if (builder.ValueIsSet()) mauiObject.Device = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Device<T>(this T obj,
             System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
             where T : Sharp.UI.IDeviceStateTrigger
         {

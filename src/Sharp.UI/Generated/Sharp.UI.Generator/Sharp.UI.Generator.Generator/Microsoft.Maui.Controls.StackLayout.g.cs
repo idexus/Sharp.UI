@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T Orientation<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.StackOrientation>, LazyValueBuilder<Microsoft.Maui.Controls.StackOrientation>> buildValue)
-            where T : Sharp.UI.IStackLayout
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StackLayout>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.StackOrientation>());
-            if (builder.ValueIsSet()) mauiObject.Orientation = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Orientation<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Controls.StackOrientation>, BindingBuilder<Microsoft.Maui.Controls.StackOrientation>> buildBinding)
             where T : Sharp.UI.IStackLayout
         {

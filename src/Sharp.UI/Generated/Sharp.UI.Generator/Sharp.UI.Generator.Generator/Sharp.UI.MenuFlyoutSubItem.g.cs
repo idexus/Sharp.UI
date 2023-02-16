@@ -31,7 +31,7 @@ namespace Sharp.UI
             configure(this);
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
+        [Obsolete("This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces.")]
         public MenuFlyoutSubItem(out MenuFlyoutSubItem menuFlyoutSubItem, System.Action<MenuFlyoutSubItem> configure) 
         {
             menuFlyoutSubItem = this;
@@ -49,7 +49,7 @@ namespace Sharp.UI
             configure(this);
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
+        [Obsolete("This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces.")]
         public MenuFlyoutSubItem(string text, out MenuFlyoutSubItem menuFlyoutSubItem, System.Action<MenuFlyoutSubItem> configure) : this(text)
         {
             menuFlyoutSubItem = this;
@@ -57,13 +57,6 @@ namespace Sharp.UI
         }
 
         public void Add(Func<Sharp.UI.MenuFlyoutSubItem, Sharp.UI.MenuFlyoutSubItem> configure) { configure(this); }
-
-        public void Add(Func<IEnumerable<Microsoft.Maui.IMenuElement>> builder)
-        {
-            var items = builder();
-            foreach (var item in items)
-                base.Add(item);
-        }
 
         public void Add(Action<IList<Microsoft.Maui.IMenuElement>> builder)
         {

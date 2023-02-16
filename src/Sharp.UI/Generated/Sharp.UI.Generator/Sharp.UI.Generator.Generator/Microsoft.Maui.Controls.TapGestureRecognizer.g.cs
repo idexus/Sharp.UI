@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T Command<T>(this T obj,
-            System.Func<LazyValueBuilder<System.Windows.Input.ICommand?>, LazyValueBuilder<System.Windows.Input.ICommand?>> buildValue)
-            where T : Sharp.UI.ITapGestureRecognizer
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TapGestureRecognizer>(obj);
-            var builder = buildValue(new LazyValueBuilder<System.Windows.Input.ICommand?>());
-            if (builder.ValueIsSet()) mauiObject.Command = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Command<T>(this T obj,
             System.Func<BindingBuilder<System.Windows.Input.ICommand?>, BindingBuilder<System.Windows.Input.ICommand?>> buildBinding)
             where T : Sharp.UI.ITapGestureRecognizer
         {
@@ -63,16 +53,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TapGestureRecognizer>(obj);
             var builder = buildValue(new ValueBuilder<object?>());
-            if (builder.ValueIsSet()) mauiObject.CommandParameter = builder.GetValue();
-            return obj;
-        }
-        
-        public static T CommandParameter<T>(this T obj,
-            System.Func<LazyValueBuilder<object?>, LazyValueBuilder<object?>> buildValue)
-            where T : Sharp.UI.ITapGestureRecognizer
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TapGestureRecognizer>(obj);
-            var builder = buildValue(new LazyValueBuilder<object?>());
             if (builder.ValueIsSet()) mauiObject.CommandParameter = builder.GetValue();
             return obj;
         }
@@ -107,16 +87,6 @@ namespace Sharp.UI
         }
         
         public static T NumberOfTapsRequired<T>(this T obj,
-            System.Func<LazyValueBuilder<int>, LazyValueBuilder<int>> buildValue)
-            where T : Sharp.UI.ITapGestureRecognizer
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TapGestureRecognizer>(obj);
-            var builder = buildValue(new LazyValueBuilder<int>());
-            if (builder.ValueIsSet()) mauiObject.NumberOfTapsRequired = builder.GetValue();
-            return obj;
-        }
-        
-        public static T NumberOfTapsRequired<T>(this T obj,
             System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
             where T : Sharp.UI.ITapGestureRecognizer
         {
@@ -141,16 +111,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TapGestureRecognizer>(obj);
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ButtonsMask>());
-            if (builder.ValueIsSet()) mauiObject.Buttons = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Buttons<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.ButtonsMask>, LazyValueBuilder<Microsoft.Maui.Controls.ButtonsMask>> buildValue)
-            where T : Sharp.UI.ITapGestureRecognizer
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TapGestureRecognizer>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.ButtonsMask>());
             if (builder.ValueIsSet()) mauiObject.Buttons = builder.GetValue();
             return obj;
         }

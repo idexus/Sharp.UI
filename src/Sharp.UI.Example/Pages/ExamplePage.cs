@@ -38,7 +38,7 @@ public class ExamplePage : ContentPage
                             label1.Text = $"Counter : {counter}";
                         }),
 
-                    () => Enumerable.Range(1, 100).Select(e => new Label($"Label id: {e}").FontSize(20))
+                    Enumerable.Range(1, 100).Select(e => new Label($"Label id: {e}").FontSize(20))
                 }
             }
             .Margin(new Thickness(0, 50, 0, 0));

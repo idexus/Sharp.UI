@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T ItemsSource<T>(this T obj,
-            System.Func<LazyValueBuilder<System.Collections.IEnumerable>, LazyValueBuilder<System.Collections.IEnumerable>> buildValue)
-            where T : Sharp.UI.IMultiPagePage
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>>(obj);
-            var builder = buildValue(new LazyValueBuilder<System.Collections.IEnumerable>());
-            if (builder.ValueIsSet()) mauiObject.ItemsSource = builder.GetValue();
-            return obj;
-        }
-        
-        public static T ItemsSource<T>(this T obj,
             System.Func<BindingBuilder<System.Collections.IEnumerable>, BindingBuilder<System.Collections.IEnumerable>> buildBinding)
             where T : Sharp.UI.IMultiPagePage
         {
@@ -63,16 +53,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>>(obj);
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
-            if (builder.ValueIsSet()) mauiObject.ItemTemplate = builder.GetValue();
-            return obj;
-        }
-        
-        public static T ItemTemplate<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.DataTemplate>, LazyValueBuilder<Microsoft.Maui.Controls.DataTemplate>> buildValue)
-            where T : Sharp.UI.IMultiPagePage
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
             if (builder.ValueIsSet()) mauiObject.ItemTemplate = builder.GetValue();
             return obj;
         }
@@ -114,16 +94,6 @@ namespace Sharp.UI
         }
         
         public static T SelectedItem<T>(this T obj,
-            System.Func<LazyValueBuilder<object>, LazyValueBuilder<object>> buildValue)
-            where T : Sharp.UI.IMultiPagePage
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>>(obj);
-            var builder = buildValue(new LazyValueBuilder<object>());
-            if (builder.ValueIsSet()) mauiObject.SelectedItem = builder.GetValue();
-            return obj;
-        }
-        
-        public static T SelectedItem<T>(this T obj,
             System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
             where T : Sharp.UI.IMultiPagePage
         {
@@ -152,16 +122,6 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T CurrentPage<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.Page>, LazyValueBuilder<Microsoft.Maui.Controls.Page>> buildValue)
-            where T : Sharp.UI.IMultiPagePage
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.Page>());
-            if (builder.ValueIsSet()) mauiObject.CurrentPage = builder.GetValue();
-            return obj;
-        }
-        
         public static T Children<T>(this T obj,
             System.Collections.Generic.IList<Microsoft.Maui.Controls.Page> children)
             where T : Sharp.UI.IMultiPagePage
@@ -184,24 +144,6 @@ namespace Sharp.UI
             {
                 var mauiItem = MauiWrapper.Value<Microsoft.Maui.Controls.Page>(item);
                 mauiObject.Children.Add(mauiItem);
-            }
-            return obj;
-        }
-
-        public static T Children<T>(this T obj,
-            System.Func<LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.Page>>, LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.Page>>> buildValue)
-            where T : Sharp.UI.IMultiPagePage
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>>(obj);
-            var builder = buildValue(new LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.Page>>());
-            if (builder.ValueIsSet())
-            {
-                var items = builder.GetValue();
-                foreach (var item in items) 
-                {
-                    var mauiItem = MauiWrapper.Value<Microsoft.Maui.Controls.Page>(item);
-                    mauiObject.Children.Add(mauiItem);
-                }
             }
             return obj;
         }

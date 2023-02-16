@@ -34,24 +34,6 @@ namespace Sharp.UI
             }
             return obj;
         }
-
-        public static T Children<T>(this T obj,
-            System.Func<LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.IView>>, LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.IView>>> buildValue)
-            where T : Sharp.UI.ILayout
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Layout>(obj);
-            var builder = buildValue(new LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.IView>>());
-            if (builder.ValueIsSet())
-            {
-                var items = builder.GetValue();
-                foreach (var item in items) 
-                {
-                    var mauiItem = MauiWrapper.Value<Microsoft.Maui.IView>(item);
-                    mauiObject.Children.Add(mauiItem);
-                }
-            }
-            return obj;
-        }
         
         public static T IsClippedToBounds<T>(this T obj,
             bool isClippedToBounds)
@@ -68,16 +50,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Layout>(obj);
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) mauiObject.IsClippedToBounds = builder.GetValue();
-            return obj;
-        }
-        
-        public static T IsClippedToBounds<T>(this T obj,
-            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
-            where T : Sharp.UI.ILayout
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Layout>(obj);
-            var builder = buildValue(new LazyValueBuilder<bool>());
             if (builder.ValueIsSet()) mauiObject.IsClippedToBounds = builder.GetValue();
             return obj;
         }
@@ -112,16 +84,6 @@ namespace Sharp.UI
         }
         
         public static T Padding<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Thickness>, LazyValueBuilder<Microsoft.Maui.Thickness>> buildValue)
-            where T : Sharp.UI.ILayout
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Layout>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Thickness>());
-            if (builder.ValueIsSet()) mauiObject.Padding = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Padding<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Thickness>, BindingBuilder<Microsoft.Maui.Thickness>> buildBinding)
             where T : Sharp.UI.ILayout
         {
@@ -150,16 +112,6 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T IgnoreSafeArea<T>(this T obj,
-            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
-            where T : Sharp.UI.ILayout
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Layout>(obj);
-            var builder = buildValue(new LazyValueBuilder<bool>());
-            if (builder.ValueIsSet()) mauiObject.IgnoreSafeArea = builder.GetValue();
-            return obj;
-        }
-        
         public static T CascadeInputTransparent<T>(this T obj,
             bool cascadeInputTransparent)
             where T : Sharp.UI.ILayout
@@ -175,16 +127,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Layout>(obj);
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) mauiObject.CascadeInputTransparent = builder.GetValue();
-            return obj;
-        }
-        
-        public static T CascadeInputTransparent<T>(this T obj,
-            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
-            where T : Sharp.UI.ILayout
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Layout>(obj);
-            var builder = buildValue(new LazyValueBuilder<bool>());
             if (builder.ValueIsSet()) mauiObject.CascadeInputTransparent = builder.GetValue();
             return obj;
         }

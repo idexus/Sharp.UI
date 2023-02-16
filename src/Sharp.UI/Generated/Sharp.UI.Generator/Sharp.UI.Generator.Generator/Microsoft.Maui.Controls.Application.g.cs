@@ -28,16 +28,6 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T Current<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.Application?>, LazyValueBuilder<Microsoft.Maui.Controls.Application?>> buildValue)
-            where T : Sharp.UI.IApplication
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Application>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.Application?>());
-            if (builder.ValueIsSet()) Microsoft.Maui.Controls.Application.Current = builder.GetValue();
-            return obj;
-        }
-        
         public static T MainPage<T>(this T obj,
             Microsoft.Maui.Controls.Page? mainPage)
             where T : Sharp.UI.IApplication
@@ -53,16 +43,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Application>(obj);
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Page?>());
-            if (builder.ValueIsSet()) mauiObject.MainPage = builder.GetValue();
-            return obj;
-        }
-        
-        public static T MainPage<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.Page?>, LazyValueBuilder<Microsoft.Maui.Controls.Page?>> buildValue)
-            where T : Sharp.UI.IApplication
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Application>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.Page?>());
             if (builder.ValueIsSet()) mauiObject.MainPage = builder.GetValue();
             return obj;
         }
@@ -86,16 +66,6 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T Resources<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.ResourceDictionary>, LazyValueBuilder<Microsoft.Maui.Controls.ResourceDictionary>> buildValue)
-            where T : Sharp.UI.IApplication
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Application>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.ResourceDictionary>());
-            if (builder.ValueIsSet()) mauiObject.Resources = builder.GetValue();
-            return obj;
-        }
-        
         public static T UserAppTheme<T>(this T obj,
             Microsoft.Maui.ApplicationModel.AppTheme userAppTheme)
             where T : Sharp.UI.IApplication
@@ -115,16 +85,6 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T UserAppTheme<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.ApplicationModel.AppTheme>, LazyValueBuilder<Microsoft.Maui.ApplicationModel.AppTheme>> buildValue)
-            where T : Sharp.UI.IApplication
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Application>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.ApplicationModel.AppTheme>());
-            if (builder.ValueIsSet()) mauiObject.UserAppTheme = builder.GetValue();
-            return obj;
-        }
-        
         public static T AccentColor<T>(this T obj,
             Microsoft.Maui.Graphics.Color? accentColor)
             where T : Sharp.UI.IApplication
@@ -140,16 +100,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Application>(obj);
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color?>());
-            if (builder.ValueIsSet()) Microsoft.Maui.Controls.Application.AccentColor = builder.GetValue();
-            return obj;
-        }
-        
-        public static T AccentColor<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Color?>, LazyValueBuilder<Microsoft.Maui.Graphics.Color?>> buildValue)
-            where T : Sharp.UI.IApplication
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Application>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Color?>());
             if (builder.ValueIsSet()) Microsoft.Maui.Controls.Application.AccentColor = builder.GetValue();
             return obj;
         }

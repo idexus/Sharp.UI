@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T Aspect<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Aspect>, LazyValueBuilder<Microsoft.Maui.Aspect>> buildValue)
-            where T : Sharp.UI.IImage
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Image>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Aspect>());
-            if (builder.ValueIsSet()) mauiObject.Aspect = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Aspect<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Aspect>, BindingBuilder<Microsoft.Maui.Aspect>> buildBinding)
             where T : Sharp.UI.IImage
         {
@@ -63,16 +53,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Image>(obj);
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) mauiObject.IsOpaque = builder.GetValue();
-            return obj;
-        }
-        
-        public static T IsOpaque<T>(this T obj,
-            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
-            where T : Sharp.UI.IImage
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Image>(obj);
-            var builder = buildValue(new LazyValueBuilder<bool>());
             if (builder.ValueIsSet()) mauiObject.IsOpaque = builder.GetValue();
             return obj;
         }
@@ -107,16 +87,6 @@ namespace Sharp.UI
         }
         
         public static T IsAnimationPlaying<T>(this T obj,
-            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
-            where T : Sharp.UI.IImage
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Image>(obj);
-            var builder = buildValue(new LazyValueBuilder<bool>());
-            if (builder.ValueIsSet()) mauiObject.IsAnimationPlaying = builder.GetValue();
-            return obj;
-        }
-        
-        public static T IsAnimationPlaying<T>(this T obj,
             System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Sharp.UI.IImage
         {
@@ -141,16 +111,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Image>(obj);
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
-            if (builder.ValueIsSet()) mauiObject.Source = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Source<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.ImageSource>, LazyValueBuilder<Microsoft.Maui.Controls.ImageSource>> buildValue)
-            where T : Sharp.UI.IImage
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Image>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.ImageSource>());
             if (builder.ValueIsSet()) mauiObject.Source = builder.GetValue();
             return obj;
         }

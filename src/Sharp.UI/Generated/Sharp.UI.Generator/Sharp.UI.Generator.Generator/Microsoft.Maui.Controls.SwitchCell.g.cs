@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T OnColor<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Color>, LazyValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
-            where T : Sharp.UI.ISwitchCell
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwitchCell>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) mauiObject.OnColor = builder.GetValue();
-            return obj;
-        }
-        
-        public static T OnColor<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
             where T : Sharp.UI.ISwitchCell
         {
@@ -68,16 +58,6 @@ namespace Sharp.UI
         }
         
         public static T On<T>(this T obj,
-            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
-            where T : Sharp.UI.ISwitchCell
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwitchCell>(obj);
-            var builder = buildValue(new LazyValueBuilder<bool>());
-            if (builder.ValueIsSet()) mauiObject.On = builder.GetValue();
-            return obj;
-        }
-        
-        public static T On<T>(this T obj,
             System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Sharp.UI.ISwitchCell
         {
@@ -102,16 +82,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwitchCell>(obj);
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) mauiObject.Text = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Text<T>(this T obj,
-            System.Func<LazyValueBuilder<string>, LazyValueBuilder<string>> buildValue)
-            where T : Sharp.UI.ISwitchCell
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwitchCell>(obj);
-            var builder = buildValue(new LazyValueBuilder<string>());
             if (builder.ValueIsSet()) mauiObject.Text = builder.GetValue();
             return obj;
         }

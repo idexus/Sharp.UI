@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T Rect<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Rect>, LazyValueBuilder<Microsoft.Maui.Graphics.Rect>> buildValue)
-            where T : Sharp.UI.IRectangleGeometry
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.RectangleGeometry>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Rect>());
-            if (builder.ValueIsSet()) mauiObject.Rect = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Rect<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Graphics.Rect>, BindingBuilder<Microsoft.Maui.Graphics.Rect>> buildBinding)
             where T : Sharp.UI.IRectangleGeometry
         {

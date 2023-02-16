@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T BackgroundImageSource<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.ImageSource>, LazyValueBuilder<Microsoft.Maui.Controls.ImageSource>> buildValue)
-            where T : Sharp.UI.IPage
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Page>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.ImageSource>());
-            if (builder.ValueIsSet()) mauiObject.BackgroundImageSource = builder.GetValue();
-            return obj;
-        }
-        
-        public static T BackgroundImageSource<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Controls.ImageSource>, BindingBuilder<Microsoft.Maui.Controls.ImageSource>> buildBinding)
             where T : Sharp.UI.IPage
         {
@@ -63,16 +53,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Page>(obj);
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
-            if (builder.ValueIsSet()) mauiObject.IconImageSource = builder.GetValue();
-            return obj;
-        }
-        
-        public static T IconImageSource<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.ImageSource>, LazyValueBuilder<Microsoft.Maui.Controls.ImageSource>> buildValue)
-            where T : Sharp.UI.IPage
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Page>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.ImageSource>());
             if (builder.ValueIsSet()) mauiObject.IconImageSource = builder.GetValue();
             return obj;
         }
@@ -107,16 +87,6 @@ namespace Sharp.UI
         }
         
         public static T IsBusy<T>(this T obj,
-            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
-            where T : Sharp.UI.IPage
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Page>(obj);
-            var builder = buildValue(new LazyValueBuilder<bool>());
-            if (builder.ValueIsSet()) mauiObject.IsBusy = builder.GetValue();
-            return obj;
-        }
-        
-        public static T IsBusy<T>(this T obj,
             System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Sharp.UI.IPage
         {
@@ -146,16 +116,6 @@ namespace Sharp.UI
         }
         
         public static T Padding<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Thickness>, LazyValueBuilder<Microsoft.Maui.Thickness>> buildValue)
-            where T : Sharp.UI.IPage
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Page>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Thickness>());
-            if (builder.ValueIsSet()) mauiObject.Padding = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Padding<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Thickness>, BindingBuilder<Microsoft.Maui.Thickness>> buildBinding)
             where T : Sharp.UI.IPage
         {
@@ -180,16 +140,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Page>(obj);
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) mauiObject.Title = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Title<T>(this T obj,
-            System.Func<LazyValueBuilder<string>, LazyValueBuilder<string>> buildValue)
-            where T : Sharp.UI.IPage
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Page>(obj);
-            var builder = buildValue(new LazyValueBuilder<string>());
             if (builder.ValueIsSet()) mauiObject.Title = builder.GetValue();
             return obj;
         }
@@ -229,24 +179,6 @@ namespace Sharp.UI
             }
             return obj;
         }
-
-        public static T ToolbarItems<T>(this T obj,
-            System.Func<LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.ToolbarItem>>, LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.ToolbarItem>>> buildValue)
-            where T : Sharp.UI.IPage
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Page>(obj);
-            var builder = buildValue(new LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.ToolbarItem>>());
-            if (builder.ValueIsSet())
-            {
-                var items = builder.GetValue();
-                foreach (var item in items) 
-                {
-                    var mauiItem = MauiWrapper.Value<Microsoft.Maui.Controls.ToolbarItem>(item);
-                    mauiObject.ToolbarItems.Add(mauiItem);
-                }
-            }
-            return obj;
-        }
         
         public static T MenuBarItems<T>(this T obj,
             System.Collections.Generic.IList<Microsoft.Maui.Controls.MenuBarItem> menuBarItems)
@@ -273,24 +205,6 @@ namespace Sharp.UI
             }
             return obj;
         }
-
-        public static T MenuBarItems<T>(this T obj,
-            System.Func<LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.MenuBarItem>>, LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.MenuBarItem>>> buildValue)
-            where T : Sharp.UI.IPage
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Page>(obj);
-            var builder = buildValue(new LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.MenuBarItem>>());
-            if (builder.ValueIsSet())
-            {
-                var items = builder.GetValue();
-                foreach (var item in items) 
-                {
-                    var mauiItem = MauiWrapper.Value<Microsoft.Maui.Controls.MenuBarItem>(item);
-                    mauiObject.MenuBarItems.Add(mauiItem);
-                }
-            }
-            return obj;
-        }
         
         public static T ContainerArea<T>(this T obj,
             Microsoft.Maui.Graphics.Rect containerArea)
@@ -311,16 +225,6 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T ContainerArea<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Rect>, LazyValueBuilder<Microsoft.Maui.Graphics.Rect>> buildValue)
-            where T : Sharp.UI.IPage
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Page>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Rect>());
-            if (builder.ValueIsSet()) mauiObject.ContainerArea = builder.GetValue();
-            return obj;
-        }
-        
         public static T IgnoresContainerArea<T>(this T obj,
             bool ignoresContainerArea)
             where T : Sharp.UI.IPage
@@ -336,16 +240,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Page>(obj);
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) mauiObject.IgnoresContainerArea = builder.GetValue();
-            return obj;
-        }
-        
-        public static T IgnoresContainerArea<T>(this T obj,
-            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
-            where T : Sharp.UI.IPage
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Page>(obj);
-            var builder = buildValue(new LazyValueBuilder<bool>());
             if (builder.ValueIsSet()) mauiObject.IgnoresContainerArea = builder.GetValue();
             return obj;
         }
@@ -372,24 +266,6 @@ namespace Sharp.UI
             {
                 var mauiItem = MauiWrapper.Value<Microsoft.Maui.Controls.Element>(item);
                 mauiObject.InternalChildren.Add(mauiItem);
-            }
-            return obj;
-        }
-
-        public static T InternalChildren<T>(this T obj,
-            System.Func<LazyValueBuilder<System.Collections.ObjectModel.ObservableCollection<Microsoft.Maui.Controls.Element>>, LazyValueBuilder<System.Collections.ObjectModel.ObservableCollection<Microsoft.Maui.Controls.Element>>> buildValue)
-            where T : Sharp.UI.IPage
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Page>(obj);
-            var builder = buildValue(new LazyValueBuilder<System.Collections.ObjectModel.ObservableCollection<Microsoft.Maui.Controls.Element>>());
-            if (builder.ValueIsSet())
-            {
-                var items = builder.GetValue();
-                foreach (var item in items) 
-                {
-                    var mauiItem = MauiWrapper.Value<Microsoft.Maui.Controls.Element>(item);
-                    mauiObject.InternalChildren.Add(mauiItem);
-                }
             }
             return obj;
         }

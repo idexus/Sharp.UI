@@ -31,7 +31,7 @@ namespace Sharp.UI
             configure(this);
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
+        [Obsolete("This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces.")]
         public VisualStateGroupList(out VisualStateGroupList visualStateGroupList, System.Action<VisualStateGroupList> configure) 
         {
             visualStateGroupList = this;
@@ -39,13 +39,6 @@ namespace Sharp.UI
         }
 
         public void Add(Func<Sharp.UI.VisualStateGroupList, Sharp.UI.VisualStateGroupList> configure) { configure(this); }
-
-        public void Add(Func<IEnumerable<Microsoft.Maui.Controls.VisualStateGroup>> builder)
-        {
-            var items = builder();
-            foreach (var item in items)
-                base.Add(item);
-        }
 
         public void Add(Action<IList<Microsoft.Maui.Controls.VisualStateGroup>> builder)
         {

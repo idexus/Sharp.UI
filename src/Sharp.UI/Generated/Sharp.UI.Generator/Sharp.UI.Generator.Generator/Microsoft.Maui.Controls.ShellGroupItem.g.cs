@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T FlyoutDisplayOptions<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.FlyoutDisplayOptions>, LazyValueBuilder<Microsoft.Maui.Controls.FlyoutDisplayOptions>> buildValue)
-            where T : Sharp.UI.IShellGroupItem
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ShellGroupItem>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.FlyoutDisplayOptions>());
-            if (builder.ValueIsSet()) mauiObject.FlyoutDisplayOptions = builder.GetValue();
-            return obj;
-        }
-        
-        public static T FlyoutDisplayOptions<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Controls.FlyoutDisplayOptions>, BindingBuilder<Microsoft.Maui.Controls.FlyoutDisplayOptions>> buildBinding)
             where T : Sharp.UI.IShellGroupItem
         {

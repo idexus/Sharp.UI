@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T RadiusX<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.IRectangle
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Rectangle>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.RadiusX = builder.GetValue();
-            return obj;
-        }
-        
-        public static T RadiusX<T>(this T obj,
             System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Sharp.UI.IRectangle
         {
@@ -63,16 +53,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Rectangle>(obj);
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.RadiusY = builder.GetValue();
-            return obj;
-        }
-        
-        public static T RadiusY<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.IRectangle
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.Rectangle>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
             if (builder.ValueIsSet()) mauiObject.RadiusY = builder.GetValue();
             return obj;
         }

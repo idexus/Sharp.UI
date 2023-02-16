@@ -59,13 +59,6 @@ namespace Sharp.UI
 
         public void Add(Microsoft.Maui.Controls.VisualState visualState) => this.MauiObject.States.Add(visualState);
 
-        public void Add(Func<IEnumerable<Microsoft.Maui.Controls.VisualState>> builder)
-        {
-            var items = builder();
-            foreach (var item in items)
-                this.MauiObject.States.Add(item);
-        }
-
         public void Add(Action<IList<Microsoft.Maui.Controls.VisualState>> builder)
         {
             List<Microsoft.Maui.Controls.VisualState> items = new List<Microsoft.Maui.Controls.VisualState>();

@@ -31,16 +31,6 @@ namespace ExampleApp
         }
         
         public static T Title<T>(this T obj,
-            System.Func<LazyValueBuilder<string>, LazyValueBuilder<string>> buildValue)
-            where T : ExampleApp.SecondPageViewModel
-        {
-            var mauiObject = MauiWrapper.Value<ExampleApp.SecondPageViewModel>(obj);
-            var builder = buildValue(new LazyValueBuilder<string>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.SecondPageViewModel.TitleProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T Title<T>(this T obj,
             System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
             where T : ExampleApp.SecondPageViewModel
         {
@@ -65,16 +55,6 @@ namespace ExampleApp
         {
             var mauiObject = MauiWrapper.Value<ExampleApp.SecondPageViewModel>(obj);
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.SecondPageViewModel.AuthorProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T Author<T>(this T obj,
-            System.Func<LazyValueBuilder<string>, LazyValueBuilder<string>> buildValue)
-            where T : ExampleApp.SecondPageViewModel
-        {
-            var mauiObject = MauiWrapper.Value<ExampleApp.SecondPageViewModel>(obj);
-            var builder = buildValue(new LazyValueBuilder<string>());
             if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.SecondPageViewModel.AuthorProperty, builder.GetValue());
             return obj;
         }

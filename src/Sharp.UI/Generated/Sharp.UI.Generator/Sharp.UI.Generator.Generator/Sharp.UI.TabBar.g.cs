@@ -31,7 +31,7 @@ namespace Sharp.UI
             configure(this);
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
+        [Obsolete("This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces.")]
         public TabBar(out TabBar tabBar, System.Action<TabBar> configure) 
         {
             tabBar = this;
@@ -56,13 +56,6 @@ namespace Sharp.UI
         public void Add(Func<Sharp.UI.TabBar, Sharp.UI.TabBar> configure) { configure(this); }
 
         public void Add(Microsoft.Maui.Controls.ShellSection shellSection) => this.Items.Add(shellSection);
-
-        public void Add(Func<IEnumerable<Microsoft.Maui.Controls.ShellSection>> builder)
-        {
-            var items = builder();
-            foreach (var item in items)
-                this.Items.Add(item);
-        }
 
         public void Add(Action<IList<Microsoft.Maui.Controls.ShellSection>> builder)
         {

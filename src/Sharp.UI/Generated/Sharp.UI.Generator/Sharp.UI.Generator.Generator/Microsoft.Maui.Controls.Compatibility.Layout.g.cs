@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T IsClippedToBounds<T>(this T obj,
-            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
-            where T : Sharp.UI.ICompatibilityLayout
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Compatibility.Layout>(obj);
-            var builder = buildValue(new LazyValueBuilder<bool>());
-            if (builder.ValueIsSet()) mauiObject.IsClippedToBounds = builder.GetValue();
-            return obj;
-        }
-        
-        public static T IsClippedToBounds<T>(this T obj,
             System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Sharp.UI.ICompatibilityLayout
         {
@@ -68,16 +58,6 @@ namespace Sharp.UI
         }
         
         public static T Padding<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Thickness>, LazyValueBuilder<Microsoft.Maui.Thickness>> buildValue)
-            where T : Sharp.UI.ICompatibilityLayout
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Compatibility.Layout>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Thickness>());
-            if (builder.ValueIsSet()) mauiObject.Padding = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Padding<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Thickness>, BindingBuilder<Microsoft.Maui.Thickness>> buildBinding)
             where T : Sharp.UI.ICompatibilityLayout
         {
@@ -102,16 +82,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Compatibility.Layout>(obj);
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) mauiObject.CascadeInputTransparent = builder.GetValue();
-            return obj;
-        }
-        
-        public static T CascadeInputTransparent<T>(this T obj,
-            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
-            where T : Sharp.UI.ICompatibilityLayout
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Compatibility.Layout>(obj);
-            var builder = buildValue(new LazyValueBuilder<bool>());
             if (builder.ValueIsSet()) mauiObject.CascadeInputTransparent = builder.GetValue();
             return obj;
         }

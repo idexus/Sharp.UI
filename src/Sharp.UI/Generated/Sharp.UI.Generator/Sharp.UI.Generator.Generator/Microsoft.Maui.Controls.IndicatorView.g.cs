@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T IndicatorsShape<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.IndicatorShape>, LazyValueBuilder<Microsoft.Maui.Controls.IndicatorShape>> buildValue)
-            where T : Sharp.UI.IIndicatorView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.IndicatorShape>());
-            if (builder.ValueIsSet()) mauiObject.IndicatorsShape = builder.GetValue();
-            return obj;
-        }
-        
-        public static T IndicatorsShape<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Controls.IndicatorShape>, BindingBuilder<Microsoft.Maui.Controls.IndicatorShape>> buildBinding)
             where T : Sharp.UI.IIndicatorView
         {
@@ -67,16 +57,6 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T IndicatorLayout<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.IBindableLayout>, LazyValueBuilder<Microsoft.Maui.Controls.IBindableLayout>> buildValue)
-            where T : Sharp.UI.IIndicatorView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.IBindableLayout>());
-            if (builder.ValueIsSet()) mauiObject.IndicatorLayout = builder.GetValue();
-            return obj;
-        }
-        
         public static T Position<T>(this T obj,
             int position)
             where T : Sharp.UI.IIndicatorView
@@ -92,16 +72,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
             var builder = buildValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) mauiObject.Position = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Position<T>(this T obj,
-            System.Func<LazyValueBuilder<int>, LazyValueBuilder<int>> buildValue)
-            where T : Sharp.UI.IIndicatorView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
-            var builder = buildValue(new LazyValueBuilder<int>());
             if (builder.ValueIsSet()) mauiObject.Position = builder.GetValue();
             return obj;
         }
@@ -136,16 +106,6 @@ namespace Sharp.UI
         }
         
         public static T Count<T>(this T obj,
-            System.Func<LazyValueBuilder<int>, LazyValueBuilder<int>> buildValue)
-            where T : Sharp.UI.IIndicatorView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
-            var builder = buildValue(new LazyValueBuilder<int>());
-            if (builder.ValueIsSet()) mauiObject.Count = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Count<T>(this T obj,
             System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
             where T : Sharp.UI.IIndicatorView
         {
@@ -175,16 +135,6 @@ namespace Sharp.UI
         }
         
         public static T MaximumVisible<T>(this T obj,
-            System.Func<LazyValueBuilder<int>, LazyValueBuilder<int>> buildValue)
-            where T : Sharp.UI.IIndicatorView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
-            var builder = buildValue(new LazyValueBuilder<int>());
-            if (builder.ValueIsSet()) mauiObject.MaximumVisible = builder.GetValue();
-            return obj;
-        }
-        
-        public static T MaximumVisible<T>(this T obj,
             System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
             where T : Sharp.UI.IIndicatorView
         {
@@ -209,16 +159,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
-            if (builder.ValueIsSet()) mauiObject.IndicatorTemplate = builder.GetValue();
-            return obj;
-        }
-        
-        public static T IndicatorTemplate<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.DataTemplate>, LazyValueBuilder<Microsoft.Maui.Controls.DataTemplate>> buildValue)
-            where T : Sharp.UI.IIndicatorView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
             if (builder.ValueIsSet()) mauiObject.IndicatorTemplate = builder.GetValue();
             return obj;
         }
@@ -260,16 +200,6 @@ namespace Sharp.UI
         }
         
         public static T HideSingle<T>(this T obj,
-            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
-            where T : Sharp.UI.IIndicatorView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
-            var builder = buildValue(new LazyValueBuilder<bool>());
-            if (builder.ValueIsSet()) mauiObject.HideSingle = builder.GetValue();
-            return obj;
-        }
-        
-        public static T HideSingle<T>(this T obj,
             System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Sharp.UI.IIndicatorView
         {
@@ -294,16 +224,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) mauiObject.IndicatorColor = builder.GetValue();
-            return obj;
-        }
-        
-        public static T IndicatorColor<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Color>, LazyValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
-            where T : Sharp.UI.IIndicatorView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Color>());
             if (builder.ValueIsSet()) mauiObject.IndicatorColor = builder.GetValue();
             return obj;
         }
@@ -338,16 +258,6 @@ namespace Sharp.UI
         }
         
         public static T SelectedIndicatorColor<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Color>, LazyValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
-            where T : Sharp.UI.IIndicatorView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) mauiObject.SelectedIndicatorColor = builder.GetValue();
-            return obj;
-        }
-        
-        public static T SelectedIndicatorColor<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
             where T : Sharp.UI.IIndicatorView
         {
@@ -377,16 +287,6 @@ namespace Sharp.UI
         }
         
         public static T IndicatorSize<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.IIndicatorView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.IndicatorSize = builder.GetValue();
-            return obj;
-        }
-        
-        public static T IndicatorSize<T>(this T obj,
             System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Sharp.UI.IIndicatorView
         {
@@ -411,16 +311,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
             var builder = buildValue(new ValueBuilder<System.Collections.IEnumerable>());
-            if (builder.ValueIsSet()) mauiObject.ItemsSource = builder.GetValue();
-            return obj;
-        }
-        
-        public static T ItemsSource<T>(this T obj,
-            System.Func<LazyValueBuilder<System.Collections.IEnumerable>, LazyValueBuilder<System.Collections.IEnumerable>> buildValue)
-            where T : Sharp.UI.IIndicatorView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.IndicatorView>(obj);
-            var builder = buildValue(new LazyValueBuilder<System.Collections.IEnumerable>());
             if (builder.ValueIsSet()) mauiObject.ItemsSource = builder.GetValue();
             return obj;
         }

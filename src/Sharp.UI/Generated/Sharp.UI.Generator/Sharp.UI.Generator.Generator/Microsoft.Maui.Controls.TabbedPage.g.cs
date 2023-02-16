@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T BarBackgroundColor<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Color>, LazyValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
-            where T : Sharp.UI.ITabbedPage
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TabbedPage>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) mauiObject.BarBackgroundColor = builder.GetValue();
-            return obj;
-        }
-        
-        public static T BarBackgroundColor<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
             where T : Sharp.UI.ITabbedPage
         {
@@ -63,16 +53,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TabbedPage>(obj);
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Brush>());
-            if (builder.ValueIsSet()) mauiObject.BarBackground = builder.GetValue();
-            return obj;
-        }
-        
-        public static T BarBackground<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.Brush>, LazyValueBuilder<Microsoft.Maui.Controls.Brush>> buildValue)
-            where T : Sharp.UI.ITabbedPage
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TabbedPage>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.Brush>());
             if (builder.ValueIsSet()) mauiObject.BarBackground = builder.GetValue();
             return obj;
         }
@@ -107,16 +87,6 @@ namespace Sharp.UI
         }
         
         public static T BarTextColor<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Color>, LazyValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
-            where T : Sharp.UI.ITabbedPage
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TabbedPage>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) mauiObject.BarTextColor = builder.GetValue();
-            return obj;
-        }
-        
-        public static T BarTextColor<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
             where T : Sharp.UI.ITabbedPage
         {
@@ -146,16 +116,6 @@ namespace Sharp.UI
         }
         
         public static T UnselectedTabColor<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Color>, LazyValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
-            where T : Sharp.UI.ITabbedPage
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TabbedPage>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) mauiObject.UnselectedTabColor = builder.GetValue();
-            return obj;
-        }
-        
-        public static T UnselectedTabColor<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
             where T : Sharp.UI.ITabbedPage
         {
@@ -180,16 +140,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TabbedPage>(obj);
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) mauiObject.SelectedTabColor = builder.GetValue();
-            return obj;
-        }
-        
-        public static T SelectedTabColor<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Color>, LazyValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
-            where T : Sharp.UI.ITabbedPage
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.TabbedPage>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Color>());
             if (builder.ValueIsSet()) mauiObject.SelectedTabColor = builder.GetValue();
             return obj;
         }

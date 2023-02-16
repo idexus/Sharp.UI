@@ -31,7 +31,7 @@ namespace Sharp.UI
             configure(this);
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
+        [Obsolete("This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces.")]
         public GeometryGroup(out GeometryGroup geometryGroup, System.Action<GeometryGroup> configure) 
         {
             geometryGroup = this;
@@ -56,13 +56,6 @@ namespace Sharp.UI
         public void Add(Func<Sharp.UI.GeometryGroup, Sharp.UI.GeometryGroup> configure) { configure(this); }
 
         public void Add(Microsoft.Maui.Controls.Shapes.Geometry geometry) => this.Children.Add(geometry);
-
-        public void Add(Func<IEnumerable<Microsoft.Maui.Controls.Shapes.Geometry>> builder)
-        {
-            var items = builder();
-            foreach (var item in items)
-                this.Children.Add(item);
-        }
 
         public void Add(Action<IList<Microsoft.Maui.Controls.Shapes.Geometry>> builder)
         {

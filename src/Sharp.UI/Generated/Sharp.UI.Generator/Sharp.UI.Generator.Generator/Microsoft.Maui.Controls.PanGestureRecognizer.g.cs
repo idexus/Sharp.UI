@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T TouchPoints<T>(this T obj,
-            System.Func<LazyValueBuilder<int>, LazyValueBuilder<int>> buildValue)
-            where T : Sharp.UI.IPanGestureRecognizer
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.PanGestureRecognizer>(obj);
-            var builder = buildValue(new LazyValueBuilder<int>());
-            if (builder.ValueIsSet()) mauiObject.TouchPoints = builder.GetValue();
-            return obj;
-        }
-        
-        public static T TouchPoints<T>(this T obj,
             System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
             where T : Sharp.UI.IPanGestureRecognizer
         {

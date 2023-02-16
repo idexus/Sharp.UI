@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T CornerRadius<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.CornerRadius>, LazyValueBuilder<Microsoft.Maui.CornerRadius>> buildValue)
-            where T : Sharp.UI.IRoundRectangle
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.RoundRectangle>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.CornerRadius>());
-            if (builder.ValueIsSet()) mauiObject.CornerRadius = builder.GetValue();
-            return obj;
-        }
-        
-        public static T CornerRadius<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.CornerRadius>, BindingBuilder<Microsoft.Maui.CornerRadius>> buildBinding)
             where T : Sharp.UI.IRoundRectangle
         {

@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T CanDrag<T>(this T obj,
-            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
-            where T : Sharp.UI.IDragGestureRecognizer
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DragGestureRecognizer>(obj);
-            var builder = buildValue(new LazyValueBuilder<bool>());
-            if (builder.ValueIsSet()) mauiObject.CanDrag = builder.GetValue();
-            return obj;
-        }
-        
-        public static T CanDrag<T>(this T obj,
             System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Sharp.UI.IDragGestureRecognizer
         {
@@ -63,16 +53,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DragGestureRecognizer>(obj);
             var builder = buildValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) mauiObject.DropCompletedCommand = builder.GetValue();
-            return obj;
-        }
-        
-        public static T DropCompletedCommand<T>(this T obj,
-            System.Func<LazyValueBuilder<System.Windows.Input.ICommand>, LazyValueBuilder<System.Windows.Input.ICommand>> buildValue)
-            where T : Sharp.UI.IDragGestureRecognizer
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DragGestureRecognizer>(obj);
-            var builder = buildValue(new LazyValueBuilder<System.Windows.Input.ICommand>());
             if (builder.ValueIsSet()) mauiObject.DropCompletedCommand = builder.GetValue();
             return obj;
         }
@@ -107,16 +87,6 @@ namespace Sharp.UI
         }
         
         public static T DropCompletedCommandParameter<T>(this T obj,
-            System.Func<LazyValueBuilder<object>, LazyValueBuilder<object>> buildValue)
-            where T : Sharp.UI.IDragGestureRecognizer
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DragGestureRecognizer>(obj);
-            var builder = buildValue(new LazyValueBuilder<object>());
-            if (builder.ValueIsSet()) mauiObject.DropCompletedCommandParameter = builder.GetValue();
-            return obj;
-        }
-        
-        public static T DropCompletedCommandParameter<T>(this T obj,
             System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
             where T : Sharp.UI.IDragGestureRecognizer
         {
@@ -146,16 +116,6 @@ namespace Sharp.UI
         }
         
         public static T DragStartingCommand<T>(this T obj,
-            System.Func<LazyValueBuilder<System.Windows.Input.ICommand>, LazyValueBuilder<System.Windows.Input.ICommand>> buildValue)
-            where T : Sharp.UI.IDragGestureRecognizer
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DragGestureRecognizer>(obj);
-            var builder = buildValue(new LazyValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) mauiObject.DragStartingCommand = builder.GetValue();
-            return obj;
-        }
-        
-        public static T DragStartingCommand<T>(this T obj,
             System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buildBinding)
             where T : Sharp.UI.IDragGestureRecognizer
         {
@@ -180,16 +140,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DragGestureRecognizer>(obj);
             var builder = buildValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) mauiObject.DragStartingCommandParameter = builder.GetValue();
-            return obj;
-        }
-        
-        public static T DragStartingCommandParameter<T>(this T obj,
-            System.Func<LazyValueBuilder<object>, LazyValueBuilder<object>> buildValue)
-            where T : Sharp.UI.IDragGestureRecognizer
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.DragGestureRecognizer>(obj);
-            var builder = buildValue(new LazyValueBuilder<object>());
             if (builder.ValueIsSet()) mauiObject.DragStartingCommandParameter = builder.GetValue();
             return obj;
         }

@@ -13,6 +13,12 @@ public partial class App : Application
                 
         MainPage = new Shell
         {
+            e => e
+                .ItemTemplate(() => new ShellItemTemplate())
+                .FlyoutHeaderTemplate(() => new FlyoutHeaderTemplate())
+                .Resources(AppResources.Default)
+                .FlyoutBackgroundColor(AppColors.Gray950),
+
             new FlyoutItem(FlyoutDisplayOptions.AsMultipleItems)
             {
                 e => e.Route("top"),
@@ -80,14 +86,9 @@ public partial class App : Application
                     new ShellContent<PathPage>("Path"),
                     new ShellContent<ExamplePage>("Scroll View"),
                     new ShellContent<SwipeViewPage>("Swipe"),
-                    new ShellContent<DefExamplePage>("Platform Def")
+                    new ShellContent<DeviceIdiomPage>("Idiom Page")
                 }
             }
-        }
-        .ItemTemplate(() => new ShellItemTemplate())
-        .FlyoutHeaderTemplate(() => new FlyoutHeaderTemplate())
-        .Resources(AppResources.Default)
-        .FlyoutBackgroundColor(AppColors.Gray950);
-        
+        };
     }
 }

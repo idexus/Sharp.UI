@@ -54,13 +54,6 @@ namespace Sharp.UI
 
         public void Add(Microsoft.Maui.Controls.Setter setter) => this.MauiObject.Setters.Add(setter);
 
-        public void Add(Func<IEnumerable<Microsoft.Maui.Controls.Setter>> builder)
-        {
-            var items = builder();
-            foreach (var item in items)
-                this.MauiObject.Setters.Add(item);
-        }
-
         public void Add(Action<IList<Microsoft.Maui.Controls.Setter>> builder)
         {
             List<Microsoft.Maui.Controls.Setter> items = new List<Microsoft.Maui.Controls.Setter>();

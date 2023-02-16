@@ -34,24 +34,6 @@ namespace Sharp.UI
             }
             return obj;
         }
-
-        public static T MenuItems<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.MenuItemCollection>, LazyValueBuilder<Microsoft.Maui.Controls.MenuItemCollection>> buildValue)
-            where T : Sharp.UI.IShellContent
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ShellContent>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.MenuItemCollection>());
-            if (builder.ValueIsSet())
-            {
-                var items = builder.GetValue();
-                foreach (var item in items) 
-                {
-                    var mauiItem = MauiWrapper.Value<Microsoft.Maui.Controls.MenuItem>(item);
-                    mauiObject.MenuItems.Add(mauiItem);
-                }
-            }
-            return obj;
-        }
         
         public static T Content<T>(this T obj,
             object content)
@@ -68,16 +50,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ShellContent>(obj);
             var builder = buildValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) mauiObject.Content = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Content<T>(this T obj,
-            System.Func<LazyValueBuilder<object>, LazyValueBuilder<object>> buildValue)
-            where T : Sharp.UI.IShellContent
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ShellContent>(obj);
-            var builder = buildValue(new LazyValueBuilder<object>());
             if (builder.ValueIsSet()) mauiObject.Content = builder.GetValue();
             return obj;
         }
@@ -107,16 +79,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ShellContent>(obj);
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
-            if (builder.ValueIsSet()) mauiObject.ContentTemplate = builder.GetValue();
-            return obj;
-        }
-        
-        public static T ContentTemplate<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.DataTemplate>, LazyValueBuilder<Microsoft.Maui.Controls.DataTemplate>> buildValue)
-            where T : Sharp.UI.IShellContent
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ShellContent>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
             if (builder.ValueIsSet()) mauiObject.ContentTemplate = builder.GetValue();
             return obj;
         }

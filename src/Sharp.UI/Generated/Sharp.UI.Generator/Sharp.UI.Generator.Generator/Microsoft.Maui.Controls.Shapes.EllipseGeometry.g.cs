@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T Center<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Point>, LazyValueBuilder<Microsoft.Maui.Graphics.Point>> buildValue)
-            where T : Sharp.UI.IEllipseGeometry
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.EllipseGeometry>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Point>());
-            if (builder.ValueIsSet()) mauiObject.Center = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Center<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Graphics.Point>, BindingBuilder<Microsoft.Maui.Graphics.Point>> buildBinding)
             where T : Sharp.UI.IEllipseGeometry
         {
@@ -68,16 +58,6 @@ namespace Sharp.UI
         }
         
         public static T RadiusX<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.IEllipseGeometry
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.EllipseGeometry>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.RadiusX = builder.GetValue();
-            return obj;
-        }
-        
-        public static T RadiusX<T>(this T obj,
             System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Sharp.UI.IEllipseGeometry
         {
@@ -102,16 +82,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.EllipseGeometry>(obj);
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.RadiusY = builder.GetValue();
-            return obj;
-        }
-        
-        public static T RadiusY<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.IEllipseGeometry
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.EllipseGeometry>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
             if (builder.ValueIsSet()) mauiObject.RadiusY = builder.GetValue();
             return obj;
         }

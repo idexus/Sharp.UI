@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T StartPoint<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Point>, LazyValueBuilder<Microsoft.Maui.Graphics.Point>> buildValue)
-            where T : Sharp.UI.ILineGeometry
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.LineGeometry>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Point>());
-            if (builder.ValueIsSet()) mauiObject.StartPoint = builder.GetValue();
-            return obj;
-        }
-        
-        public static T StartPoint<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Graphics.Point>, BindingBuilder<Microsoft.Maui.Graphics.Point>> buildBinding)
             where T : Sharp.UI.ILineGeometry
         {
@@ -63,16 +53,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.LineGeometry>(obj);
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Point>());
-            if (builder.ValueIsSet()) mauiObject.EndPoint = builder.GetValue();
-            return obj;
-        }
-        
-        public static T EndPoint<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Point>, LazyValueBuilder<Microsoft.Maui.Graphics.Point>> buildValue)
-            where T : Sharp.UI.ILineGeometry
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Shapes.LineGeometry>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Point>());
             if (builder.ValueIsSet()) mauiObject.EndPoint = builder.GetValue();
             return obj;
         }

@@ -254,7 +254,6 @@ namespace {nameSpaceString}
             {
                 GenerateExtensionMethod_Value(info);
                 GenerateExtensionMethod_ValueBuilder(info);
-                GenerateExtensionMethod_LazyValueBuilder(info);
                 GenerateExtensionMethod_BindingBuilder(info);
 
                 if (info.propertyTypeName.Contains("DataTemplate"))
@@ -273,7 +272,6 @@ namespace {nameSpaceString}
                 {
                     GenerateExtensionMethod_Value(info);
                     GenerateExtensionMethod_ValueBuilder(info);
-                    GenerateExtensionMethod_LazyValueBuilder(info);
                     if (bindablePropertiesToGenerate.Contains(info.propertyName))
                         GenerateExtensionMethod_BindingBuilder(info);
 
@@ -324,22 +322,6 @@ namespace {nameSpaceString}
         {{
             var mauiObject = MauiWrapper.Value<{extensionType.ToDisplayString()}>(obj);
             var builder = buildValue(new ValueBuilder<{info.propertyTypeName}>());
-            if (builder.ValueIsSet()) {info.assignmentBuilderString};
-            return obj;
-        }}
-        ");
-        }
-
-        void GenerateExtensionMethod_LazyValueBuilder(PropertyInfo info)
-        {
-            IsExtensionMethodsGenerated = true;
-            builder.Append($@"
-        public static T {info.propertyName}<T>(this T obj,
-            System.Func<LazyValueBuilder<{info.propertyTypeName}>, LazyValueBuilder<{info.propertyTypeName}>> buildValue)
-            where T : {typeConformanceName}
-        {{
-            var mauiObject = MauiWrapper.Value<{extensionType.ToDisplayString()}>(obj);
-            var builder = buildValue(new LazyValueBuilder<{info.propertyTypeName}>());
             if (builder.ValueIsSet()) {info.assignmentBuilderString};
             return obj;
         }}
@@ -459,24 +441,6 @@ namespace {nameSpaceString}
             {{
                 var mauiItem = MauiWrapper.Value<{typeName}>(item);
                 {info.accessedWith}.{info.propertyName}.Add(mauiItem);
-            }}
-            return obj;
-        }}
-
-        public static T {info.propertyName}<T>(this T obj,
-            System.Func<LazyValueBuilder<{info.propertyTypeName}>, LazyValueBuilder<{info.propertyTypeName}>> buildValue)
-            where T : {typeConformanceName}
-        {{
-            var mauiObject = MauiWrapper.Value<{extensionType.ToDisplayString()}>(obj);
-            var builder = buildValue(new LazyValueBuilder<{info.propertyTypeName}>());
-            if (builder.ValueIsSet())
-            {{
-                var items = builder.GetValue();
-                foreach (var item in items) 
-                {{
-                    var mauiItem = MauiWrapper.Value<{typeName}>(item);
-                    {info.accessedWith}.{info.propertyName}.Add(mauiItem);
-                }}
             }}
             return obj;
         }}

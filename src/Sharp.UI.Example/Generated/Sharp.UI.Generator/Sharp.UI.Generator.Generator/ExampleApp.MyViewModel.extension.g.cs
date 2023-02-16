@@ -31,16 +31,6 @@ namespace ExampleApp
         }
         
         public static T Counter<T>(this T obj,
-            System.Func<LazyValueBuilder<int>, LazyValueBuilder<int>> buildValue)
-            where T : ExampleApp.MyViewModel
-        {
-            var mauiObject = MauiWrapper.Value<ExampleApp.MyViewModel>(obj);
-            var builder = buildValue(new LazyValueBuilder<int>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.MyViewModel.CounterProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T Counter<T>(this T obj,
             System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
             where T : ExampleApp.MyViewModel
         {
@@ -65,16 +55,6 @@ namespace ExampleApp
         {
             var mauiObject = MauiWrapper.Value<ExampleApp.MyViewModel>(obj);
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.MyViewModel.SliderValueProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T SliderValue<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : ExampleApp.MyViewModel
-        {
-            var mauiObject = MauiWrapper.Value<ExampleApp.MyViewModel>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
             if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.MyViewModel.SliderValueProperty, builder.GetValue());
             return obj;
         }

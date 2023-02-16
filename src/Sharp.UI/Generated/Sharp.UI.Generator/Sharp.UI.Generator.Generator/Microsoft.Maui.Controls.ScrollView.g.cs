@@ -28,16 +28,6 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T LayoutAreaOverride<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Rect>, LazyValueBuilder<Microsoft.Maui.Graphics.Rect>> buildValue)
-            where T : Sharp.UI.IScrollView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ScrollView>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Rect>());
-            if (builder.ValueIsSet()) mauiObject.LayoutAreaOverride = builder.GetValue();
-            return obj;
-        }
-        
         public static T Content<T>(this T obj,
             Microsoft.Maui.Controls.View content)
             where T : Sharp.UI.IScrollView
@@ -57,16 +47,6 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T Content<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.View>, LazyValueBuilder<Microsoft.Maui.Controls.View>> buildValue)
-            where T : Sharp.UI.IScrollView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ScrollView>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.View>());
-            if (builder.ValueIsSet()) mauiObject.Content = builder.GetValue();
-            return obj;
-        }
-        
         public static T Orientation<T>(this T obj,
             Microsoft.Maui.ScrollOrientation orientation)
             where T : Sharp.UI.IScrollView
@@ -82,16 +62,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ScrollView>(obj);
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.ScrollOrientation>());
-            if (builder.ValueIsSet()) mauiObject.Orientation = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Orientation<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.ScrollOrientation>, LazyValueBuilder<Microsoft.Maui.ScrollOrientation>> buildValue)
-            where T : Sharp.UI.IScrollView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ScrollView>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.ScrollOrientation>());
             if (builder.ValueIsSet()) mauiObject.Orientation = builder.GetValue();
             return obj;
         }
@@ -126,16 +96,6 @@ namespace Sharp.UI
         }
         
         public static T HorizontalScrollBarVisibility<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.ScrollBarVisibility>, LazyValueBuilder<Microsoft.Maui.ScrollBarVisibility>> buildValue)
-            where T : Sharp.UI.IScrollView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ScrollView>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.ScrollBarVisibility>());
-            if (builder.ValueIsSet()) mauiObject.HorizontalScrollBarVisibility = builder.GetValue();
-            return obj;
-        }
-        
-        public static T HorizontalScrollBarVisibility<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.ScrollBarVisibility>, BindingBuilder<Microsoft.Maui.ScrollBarVisibility>> buildBinding)
             where T : Sharp.UI.IScrollView
         {
@@ -160,16 +120,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ScrollView>(obj);
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.ScrollBarVisibility>());
-            if (builder.ValueIsSet()) mauiObject.VerticalScrollBarVisibility = builder.GetValue();
-            return obj;
-        }
-        
-        public static T VerticalScrollBarVisibility<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.ScrollBarVisibility>, LazyValueBuilder<Microsoft.Maui.ScrollBarVisibility>> buildValue)
-            where T : Sharp.UI.IScrollView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ScrollView>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.ScrollBarVisibility>());
             if (builder.ValueIsSet()) mauiObject.VerticalScrollBarVisibility = builder.GetValue();
             return obj;
         }

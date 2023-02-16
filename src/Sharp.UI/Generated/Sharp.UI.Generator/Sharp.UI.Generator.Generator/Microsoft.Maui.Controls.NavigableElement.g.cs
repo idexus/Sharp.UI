@@ -30,16 +30,6 @@ namespace Sharp.UI
         }
         
         public static T Style<T>(this T obj,
-            System.Func<LazyValueBuilder<Sharp.UI.Style>, LazyValueBuilder<Sharp.UI.Style>> buildValue)
-            where T : Sharp.UI.INavigableElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.NavigableElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<Sharp.UI.Style>());
-            if (builder.ValueIsSet()) mauiObject.Style = MauiWrapper.Value<Microsoft.Maui.Controls.Style>(builder.GetValue());
-            return obj;
-        }
-        
-        public static T Style<T>(this T obj,
             System.Func<BindingBuilder<Sharp.UI.Style>, BindingBuilder<Sharp.UI.Style>> buildBinding)
             where T : Sharp.UI.INavigableElement
         {
@@ -68,16 +58,6 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T StyleClass<T>(this T obj,
-            System.Func<LazyValueBuilder<System.Collections.Generic.IList<string>>, LazyValueBuilder<System.Collections.Generic.IList<string>>> buildValue)
-            where T : Sharp.UI.INavigableElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.NavigableElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<System.Collections.Generic.IList<string>>());
-            if (builder.ValueIsSet()) mauiObject.StyleClass = builder.GetValue();
-            return obj;
-        }
-        
         public static T @class<T>(this T obj,
             System.Collections.Generic.IList<string> @class)
             where T : Sharp.UI.INavigableElement
@@ -93,16 +73,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.NavigableElement>(obj);
             var builder = buildValue(new ValueBuilder<System.Collections.Generic.IList<string>>());
-            if (builder.ValueIsSet()) mauiObject.@class = builder.GetValue();
-            return obj;
-        }
-        
-        public static T @class<T>(this T obj,
-            System.Func<LazyValueBuilder<System.Collections.Generic.IList<string>>, LazyValueBuilder<System.Collections.Generic.IList<string>>> buildValue)
-            where T : Sharp.UI.INavigableElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.NavigableElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<System.Collections.Generic.IList<string>>());
             if (builder.ValueIsSet()) mauiObject.@class = builder.GetValue();
             return obj;
         }

@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T BindingContext<T>(this T obj,
-            System.Func<LazyValueBuilder<object>, LazyValueBuilder<object>> buildValue)
-            where T : Sharp.UI.IBindableObject
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BindableObject>(obj);
-            var builder = buildValue(new LazyValueBuilder<object>());
-            if (builder.ValueIsSet()) mauiObject.BindingContext = builder.GetValue();
-            return obj;
-        }
-        
-        public static T BindingContext<T>(this T obj,
             System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
             where T : Sharp.UI.IBindableObject
         {

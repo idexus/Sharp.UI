@@ -31,16 +31,6 @@ namespace ExampleApp
         }
         
         public static T SimpleData<T>(this T obj,
-            System.Func<LazyValueBuilder<System.Collections.Generic.List<ExampleApp.DataModel>>, LazyValueBuilder<System.Collections.Generic.List<ExampleApp.DataModel>>> buildValue)
-            where T : ExampleApp.ListViewPageViewModel
-        {
-            var mauiObject = MauiWrapper.Value<ExampleApp.ListViewPageViewModel>(obj);
-            var builder = buildValue(new LazyValueBuilder<System.Collections.Generic.List<ExampleApp.DataModel>>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(ExampleApp.ListViewPageViewModel.SimpleDataProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T SimpleData<T>(this T obj,
             System.Func<BindingBuilder<System.Collections.Generic.List<ExampleApp.DataModel>>, BindingBuilder<System.Collections.Generic.List<ExampleApp.DataModel>>> buildBinding)
             where T : ExampleApp.ListViewPageViewModel
         {

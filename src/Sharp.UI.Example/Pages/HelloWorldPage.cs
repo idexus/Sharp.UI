@@ -10,7 +10,7 @@ public partial class HelloWorldPage : ContentPage
 
     public HelloWorldPage()
 	{
-		Content = new VStack   
+        Content = new VStack   
 		{
 			e => e
 				.Spacing(25)

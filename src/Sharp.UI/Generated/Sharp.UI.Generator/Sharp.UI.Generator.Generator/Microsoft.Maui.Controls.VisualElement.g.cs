@@ -28,16 +28,6 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T Frame<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Rect>, LazyValueBuilder<Microsoft.Maui.Graphics.Rect>> buildValue)
-            where T : Sharp.UI.IVisualElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Rect>());
-            if (builder.ValueIsSet()) mauiObject.Frame = builder.GetValue();
-            return obj;
-        }
-        
         public static T Shadow<T>(this T obj,
             Microsoft.Maui.Controls.Shadow shadow)
             where T : Sharp.UI.IVisualElement
@@ -53,16 +43,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Shadow>());
-            if (builder.ValueIsSet()) mauiObject.Shadow = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Shadow<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.Shadow>, LazyValueBuilder<Microsoft.Maui.Controls.Shadow>> buildValue)
-            where T : Sharp.UI.IVisualElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.Shadow>());
             if (builder.ValueIsSet()) mauiObject.Shadow = builder.GetValue();
             return obj;
         }
@@ -97,16 +77,6 @@ namespace Sharp.UI
         }
         
         public static T ZIndex<T>(this T obj,
-            System.Func<LazyValueBuilder<int>, LazyValueBuilder<int>> buildValue)
-            where T : Sharp.UI.IVisualElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<int>());
-            if (builder.ValueIsSet()) mauiObject.ZIndex = builder.GetValue();
-            return obj;
-        }
-        
-        public static T ZIndex<T>(this T obj,
             System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
             where T : Sharp.UI.IVisualElement
         {
@@ -131,16 +101,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.IVisual>());
-            if (builder.ValueIsSet()) mauiObject.Visual = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Visual<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.IVisual>, LazyValueBuilder<Microsoft.Maui.Controls.IVisual>> buildValue)
-            where T : Sharp.UI.IVisualElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.IVisual>());
             if (builder.ValueIsSet()) mauiObject.Visual = builder.GetValue();
             return obj;
         }
@@ -175,16 +135,6 @@ namespace Sharp.UI
         }
         
         public static T FlowDirection<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.FlowDirection>, LazyValueBuilder<Microsoft.Maui.FlowDirection>> buildValue)
-            where T : Sharp.UI.IVisualElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.FlowDirection>());
-            if (builder.ValueIsSet()) mauiObject.FlowDirection = builder.GetValue();
-            return obj;
-        }
-        
-        public static T FlowDirection<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.FlowDirection>, BindingBuilder<Microsoft.Maui.FlowDirection>> buildBinding)
             where T : Sharp.UI.IVisualElement
         {
@@ -209,16 +159,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.AnchorX = builder.GetValue();
-            return obj;
-        }
-        
-        public static T AnchorX<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.IVisualElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
             if (builder.ValueIsSet()) mauiObject.AnchorX = builder.GetValue();
             return obj;
         }
@@ -253,16 +193,6 @@ namespace Sharp.UI
         }
         
         public static T AnchorY<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.IVisualElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.AnchorY = builder.GetValue();
-            return obj;
-        }
-        
-        public static T AnchorY<T>(this T obj,
             System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Sharp.UI.IVisualElement
         {
@@ -292,16 +222,6 @@ namespace Sharp.UI
         }
         
         public static T BackgroundColor<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Color>, LazyValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
-            where T : Sharp.UI.IVisualElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) mauiObject.BackgroundColor = builder.GetValue();
-            return obj;
-        }
-        
-        public static T BackgroundColor<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
             where T : Sharp.UI.IVisualElement
         {
@@ -326,16 +246,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Brush>());
-            if (builder.ValueIsSet()) mauiObject.Background = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Background<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.Brush>, LazyValueBuilder<Microsoft.Maui.Controls.Brush>> buildValue)
-            where T : Sharp.UI.IVisualElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.Brush>());
             if (builder.ValueIsSet()) mauiObject.Background = builder.GetValue();
             return obj;
         }
@@ -375,24 +285,6 @@ namespace Sharp.UI
             }
             return obj;
         }
-
-        public static T Behaviors<T>(this T obj,
-            System.Func<LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.Behavior>>, LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.Behavior>>> buildValue)
-            where T : Sharp.UI.IVisualElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.Behavior>>());
-            if (builder.ValueIsSet())
-            {
-                var items = builder.GetValue();
-                foreach (var item in items) 
-                {
-                    var mauiItem = MauiWrapper.Value<Microsoft.Maui.Controls.Behavior>(item);
-                    mauiObject.Behaviors.Add(mauiItem);
-                }
-            }
-            return obj;
-        }
         
         public static T HeightRequest<T>(this T obj,
             double heightRequest)
@@ -409,16 +301,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.HeightRequest = builder.GetValue();
-            return obj;
-        }
-        
-        public static T HeightRequest<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.IVisualElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
             if (builder.ValueIsSet()) mauiObject.HeightRequest = builder.GetValue();
             return obj;
         }
@@ -453,16 +335,6 @@ namespace Sharp.UI
         }
         
         public static T InputTransparent<T>(this T obj,
-            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
-            where T : Sharp.UI.IVisualElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<bool>());
-            if (builder.ValueIsSet()) mauiObject.InputTransparent = builder.GetValue();
-            return obj;
-        }
-        
-        public static T InputTransparent<T>(this T obj,
             System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Sharp.UI.IVisualElement
         {
@@ -487,16 +359,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) mauiObject.IsEnabled = builder.GetValue();
-            return obj;
-        }
-        
-        public static T IsEnabled<T>(this T obj,
-            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
-            where T : Sharp.UI.IVisualElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<bool>());
             if (builder.ValueIsSet()) mauiObject.IsEnabled = builder.GetValue();
             return obj;
         }
@@ -531,16 +393,6 @@ namespace Sharp.UI
         }
         
         public static T IsVisible<T>(this T obj,
-            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
-            where T : Sharp.UI.IVisualElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<bool>());
-            if (builder.ValueIsSet()) mauiObject.IsVisible = builder.GetValue();
-            return obj;
-        }
-        
-        public static T IsVisible<T>(this T obj,
             System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Sharp.UI.IVisualElement
         {
@@ -565,16 +417,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.MinimumHeightRequest = builder.GetValue();
-            return obj;
-        }
-        
-        public static T MinimumHeightRequest<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.IVisualElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
             if (builder.ValueIsSet()) mauiObject.MinimumHeightRequest = builder.GetValue();
             return obj;
         }
@@ -609,16 +451,6 @@ namespace Sharp.UI
         }
         
         public static T MinimumWidthRequest<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.IVisualElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.MinimumWidthRequest = builder.GetValue();
-            return obj;
-        }
-        
-        public static T MinimumWidthRequest<T>(this T obj,
             System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Sharp.UI.IVisualElement
         {
@@ -643,16 +475,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.MaximumHeightRequest = builder.GetValue();
-            return obj;
-        }
-        
-        public static T MaximumHeightRequest<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.IVisualElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
             if (builder.ValueIsSet()) mauiObject.MaximumHeightRequest = builder.GetValue();
             return obj;
         }
@@ -687,16 +509,6 @@ namespace Sharp.UI
         }
         
         public static T MaximumWidthRequest<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.IVisualElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.MaximumWidthRequest = builder.GetValue();
-            return obj;
-        }
-        
-        public static T MaximumWidthRequest<T>(this T obj,
             System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Sharp.UI.IVisualElement
         {
@@ -721,16 +533,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.Opacity = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Opacity<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.IVisualElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
             if (builder.ValueIsSet()) mauiObject.Opacity = builder.GetValue();
             return obj;
         }
@@ -765,16 +567,6 @@ namespace Sharp.UI
         }
         
         public static T Rotation<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.IVisualElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.Rotation = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Rotation<T>(this T obj,
             System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Sharp.UI.IVisualElement
         {
@@ -799,16 +591,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.RotationX = builder.GetValue();
-            return obj;
-        }
-        
-        public static T RotationX<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.IVisualElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
             if (builder.ValueIsSet()) mauiObject.RotationX = builder.GetValue();
             return obj;
         }
@@ -843,16 +625,6 @@ namespace Sharp.UI
         }
         
         public static T RotationY<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.IVisualElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.RotationY = builder.GetValue();
-            return obj;
-        }
-        
-        public static T RotationY<T>(this T obj,
             System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Sharp.UI.IVisualElement
         {
@@ -877,16 +649,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.Scale = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Scale<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.IVisualElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
             if (builder.ValueIsSet()) mauiObject.Scale = builder.GetValue();
             return obj;
         }
@@ -921,16 +683,6 @@ namespace Sharp.UI
         }
         
         public static T ScaleX<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.IVisualElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.ScaleX = builder.GetValue();
-            return obj;
-        }
-        
-        public static T ScaleX<T>(this T obj,
             System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Sharp.UI.IVisualElement
         {
@@ -955,16 +707,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.ScaleY = builder.GetValue();
-            return obj;
-        }
-        
-        public static T ScaleY<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.IVisualElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
             if (builder.ValueIsSet()) mauiObject.ScaleY = builder.GetValue();
             return obj;
         }
@@ -999,16 +741,6 @@ namespace Sharp.UI
         }
         
         public static T TranslationX<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.IVisualElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.TranslationX = builder.GetValue();
-            return obj;
-        }
-        
-        public static T TranslationX<T>(this T obj,
             System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Sharp.UI.IVisualElement
         {
@@ -1033,16 +765,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.TranslationY = builder.GetValue();
-            return obj;
-        }
-        
-        public static T TranslationY<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.IVisualElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
             if (builder.ValueIsSet()) mauiObject.TranslationY = builder.GetValue();
             return obj;
         }
@@ -1082,24 +804,6 @@ namespace Sharp.UI
             }
             return obj;
         }
-
-        public static T Triggers<T>(this T obj,
-            System.Func<LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerBase>>, LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerBase>>> buildValue)
-            where T : Sharp.UI.IVisualElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerBase>>());
-            if (builder.ValueIsSet())
-            {
-                var items = builder.GetValue();
-                foreach (var item in items) 
-                {
-                    var mauiItem = MauiWrapper.Value<Microsoft.Maui.Controls.TriggerBase>(item);
-                    mauiObject.Triggers.Add(mauiItem);
-                }
-            }
-            return obj;
-        }
         
         public static T WidthRequest<T>(this T obj,
             double widthRequest)
@@ -1116,16 +820,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.WidthRequest = builder.GetValue();
-            return obj;
-        }
-        
-        public static T WidthRequest<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.IVisualElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
             if (builder.ValueIsSet()) mauiObject.WidthRequest = builder.GetValue();
             return obj;
         }
@@ -1160,16 +854,6 @@ namespace Sharp.UI
         }
         
         public static T Clip<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.Shapes.Geometry>, LazyValueBuilder<Microsoft.Maui.Controls.Shapes.Geometry>> buildValue)
-            where T : Sharp.UI.IVisualElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.Shapes.Geometry>());
-            if (builder.ValueIsSet()) mauiObject.Clip = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Clip<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Controls.Shapes.Geometry>, BindingBuilder<Microsoft.Maui.Controls.Shapes.Geometry>> buildBinding)
             where T : Sharp.UI.IVisualElement
         {
@@ -1198,16 +882,6 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T DisableLayout<T>(this T obj,
-            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
-            where T : Sharp.UI.IVisualElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<bool>());
-            if (builder.ValueIsSet()) mauiObject.DisableLayout = builder.GetValue();
-            return obj;
-        }
-        
         public static T IsInPlatformLayout<T>(this T obj,
             bool isInPlatformLayout)
             where T : Sharp.UI.IVisualElement
@@ -1223,16 +897,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) mauiObject.IsInPlatformLayout = builder.GetValue();
-            return obj;
-        }
-        
-        public static T IsInPlatformLayout<T>(this T obj,
-            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
-            where T : Sharp.UI.IVisualElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<bool>());
             if (builder.ValueIsSet()) mauiObject.IsInPlatformLayout = builder.GetValue();
             return obj;
         }
@@ -1256,16 +920,6 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T IsPlatformStateConsistent<T>(this T obj,
-            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
-            where T : Sharp.UI.IVisualElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<bool>());
-            if (builder.ValueIsSet()) mauiObject.IsPlatformStateConsistent = builder.GetValue();
-            return obj;
-        }
-        
         public static T IsPlatformEnabled<T>(this T obj,
             bool isPlatformEnabled)
             where T : Sharp.UI.IVisualElement
@@ -1285,16 +939,6 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T IsPlatformEnabled<T>(this T obj,
-            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
-            where T : Sharp.UI.IVisualElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<bool>());
-            if (builder.ValueIsSet()) mauiObject.IsPlatformEnabled = builder.GetValue();
-            return obj;
-        }
-        
         public static T Resources<T>(this T obj,
             Microsoft.Maui.Controls.ResourceDictionary resources)
             where T : Sharp.UI.IVisualElement
@@ -1310,16 +954,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ResourceDictionary>());
-            if (builder.ValueIsSet()) mauiObject.Resources = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Resources<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.ResourceDictionary>, LazyValueBuilder<Microsoft.Maui.Controls.ResourceDictionary>> buildValue)
-            where T : Sharp.UI.IVisualElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.ResourceDictionary>());
             if (builder.ValueIsSet()) mauiObject.Resources = builder.GetValue();
             return obj;
         }

@@ -535,7 +535,6 @@ namespace {nameSpaceString}
                         (isAlreadyContainerOfThis ? "base" : $"this.{containerPropertyName}");
 
                     var contTypeName = containerOfTypeName == "Microsoft.Maui.IView" ? "Microsoft.Maui.Controls.View" : containerOfTypeName;
-
                     var shortName = Helpers.CamelCase(contTypeName.Split('.').Last());
 
                     if (!isAlreadyContainerOfThis || IsWrappedSealedType || containerOfTypeName == "Microsoft.Maui.IView")
@@ -543,20 +542,35 @@ namespace {nameSpaceString}
         public void Add({contTypeName} {shortName}) => {prefix}.Add({shortName});");
 
                     builder.AppendLine($@"
-        public void Add<T>(IEnumerable<T> builder)
-            where T : Microsoft.Maui.Controls.View, {contTypeName}
-        {{
-            var items = builder();
-            foreach (var item in items)
-                {prefix}.Add(item);
-        }}
-
         public void Add(Action<IList<{contTypeName}>> builder)
         {{
             List<{contTypeName}> items = new List<{contTypeName}>();
             builder(items);
             foreach (var item in items)
                 {prefix}.Add(item);
+        }}");
+
+                    if (containerOfTypeName == "Microsoft.Maui.IView")
+                        builder.AppendLine($@"
+        public void Add(Func<{contTypeName}> builder)
+        {{
+            var item = builder();
+            if (item != null)
+                {prefix}.Add(item);
+        }}
+
+        public void Add(IEnumerable<{contTypeName}> items)
+        {{
+            if (items.GetType().IsAssignableTo(typeof(Microsoft.Maui.Controls.Layout)))
+            {{
+                var item = (Microsoft.Maui.Controls.Layout)items;
+                {prefix}.Add(item);
+            }}
+            else
+            {{
+                foreach (var item in items)
+                    {prefix}.Add(item);
+            }}
         }}");
                 }
             }

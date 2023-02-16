@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T Command<T>(this T obj,
-            System.Func<LazyValueBuilder<System.Windows.Input.ICommand>, LazyValueBuilder<System.Windows.Input.ICommand>> buildValue)
-            where T : Sharp.UI.ISwipeGestureRecognizer
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeGestureRecognizer>(obj);
-            var builder = buildValue(new LazyValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) mauiObject.Command = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Command<T>(this T obj,
             System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buildBinding)
             where T : Sharp.UI.ISwipeGestureRecognizer
         {
@@ -63,16 +53,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeGestureRecognizer>(obj);
             var builder = buildValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) mauiObject.CommandParameter = builder.GetValue();
-            return obj;
-        }
-        
-        public static T CommandParameter<T>(this T obj,
-            System.Func<LazyValueBuilder<object>, LazyValueBuilder<object>> buildValue)
-            where T : Sharp.UI.ISwipeGestureRecognizer
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeGestureRecognizer>(obj);
-            var builder = buildValue(new LazyValueBuilder<object>());
             if (builder.ValueIsSet()) mauiObject.CommandParameter = builder.GetValue();
             return obj;
         }
@@ -107,16 +87,6 @@ namespace Sharp.UI
         }
         
         public static T Direction<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.SwipeDirection>, LazyValueBuilder<Microsoft.Maui.SwipeDirection>> buildValue)
-            where T : Sharp.UI.ISwipeGestureRecognizer
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeGestureRecognizer>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.SwipeDirection>());
-            if (builder.ValueIsSet()) mauiObject.Direction = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Direction<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.SwipeDirection>, BindingBuilder<Microsoft.Maui.SwipeDirection>> buildBinding)
             where T : Sharp.UI.ISwipeGestureRecognizer
         {
@@ -141,16 +111,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeGestureRecognizer>(obj);
             var builder = buildValue(new ValueBuilder<uint>());
-            if (builder.ValueIsSet()) mauiObject.Threshold = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Threshold<T>(this T obj,
-            System.Func<LazyValueBuilder<uint>, LazyValueBuilder<uint>> buildValue)
-            where T : Sharp.UI.ISwipeGestureRecognizer
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.SwipeGestureRecognizer>(obj);
-            var builder = buildValue(new LazyValueBuilder<uint>());
             if (builder.ValueIsSet()) mauiObject.Threshold = builder.GetValue();
             return obj;
         }

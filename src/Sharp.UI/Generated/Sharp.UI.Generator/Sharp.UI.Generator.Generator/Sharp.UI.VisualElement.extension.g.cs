@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T VisualStateGroups<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.VisualStateGroupList>, LazyValueBuilder<Microsoft.Maui.Controls.VisualStateGroupList>> buildValue)
-            where T : Sharp.UI.IVisualElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.VisualStateGroupList>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(Microsoft.Maui.Controls.VisualStateManager.VisualStateGroupsProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T VisualStateGroups<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Controls.VisualStateGroupList>, BindingBuilder<Microsoft.Maui.Controls.VisualStateGroupList>> buildBinding)
             where T : Sharp.UI.IVisualElement
         {
@@ -63,16 +53,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
             var builder = buildValue(new ValueBuilder<bool?>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(Microsoft.Maui.Controls.AutomationProperties.ExcludedWithChildrenProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T AutomationExcludedWithChildren<T>(this T obj,
-            System.Func<LazyValueBuilder<bool?>, LazyValueBuilder<bool?>> buildValue)
-            where T : Sharp.UI.IVisualElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<bool?>());
             if (builder.ValueIsSet()) mauiObject.SetValue(Microsoft.Maui.Controls.AutomationProperties.ExcludedWithChildrenProperty, builder.GetValue());
             return obj;
         }
@@ -107,16 +87,6 @@ namespace Sharp.UI
         }
         
         public static T AutomationIsInAccessibleTree<T>(this T obj,
-            System.Func<LazyValueBuilder<bool?>, LazyValueBuilder<bool?>> buildValue)
-            where T : Sharp.UI.IVisualElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<bool?>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(Microsoft.Maui.Controls.AutomationProperties.IsInAccessibleTreeProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T AutomationIsInAccessibleTree<T>(this T obj,
             System.Func<BindingBuilder<bool?>, BindingBuilder<bool?>> buildBinding)
             where T : Sharp.UI.IVisualElement
         {
@@ -141,16 +111,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(Microsoft.Maui.Controls.AutomationProperties.NameProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T AutomationName<T>(this T obj,
-            System.Func<LazyValueBuilder<string>, LazyValueBuilder<string>> buildValue)
-            where T : Sharp.UI.IVisualElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<string>());
             if (builder.ValueIsSet()) mauiObject.SetValue(Microsoft.Maui.Controls.AutomationProperties.NameProperty, builder.GetValue());
             return obj;
         }
@@ -185,16 +145,6 @@ namespace Sharp.UI
         }
         
         public static T AutomationHelpText<T>(this T obj,
-            System.Func<LazyValueBuilder<string>, LazyValueBuilder<string>> buildValue)
-            where T : Sharp.UI.IVisualElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<string>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(Microsoft.Maui.Controls.AutomationProperties.HelpTextProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T AutomationHelpText<T>(this T obj,
             System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
             where T : Sharp.UI.IVisualElement
         {
@@ -219,16 +169,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.VisualElement>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(Microsoft.Maui.Controls.AutomationProperties.LabeledByProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T AutomationLabeledBy<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.VisualElement>, LazyValueBuilder<Microsoft.Maui.Controls.VisualElement>> buildValue)
-            where T : Sharp.UI.IVisualElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.VisualElement>());
             if (builder.ValueIsSet()) mauiObject.SetValue(Microsoft.Maui.Controls.AutomationProperties.LabeledByProperty, builder.GetValue());
             return obj;
         }
@@ -263,16 +203,6 @@ namespace Sharp.UI
         }
         
         public static T SemanticHint<T>(this T obj,
-            System.Func<LazyValueBuilder<string>, LazyValueBuilder<string>> buildValue)
-            where T : Sharp.UI.IVisualElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<string>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(Microsoft.Maui.Controls.SemanticProperties.HintProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T SemanticHint<T>(this T obj,
             System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
             where T : Sharp.UI.IVisualElement
         {
@@ -302,16 +232,6 @@ namespace Sharp.UI
         }
         
         public static T SemanticDescription<T>(this T obj,
-            System.Func<LazyValueBuilder<string>, LazyValueBuilder<string>> buildValue)
-            where T : Sharp.UI.IVisualElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<string>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(Microsoft.Maui.Controls.SemanticProperties.DescriptionProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T SemanticDescription<T>(this T obj,
             System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
             where T : Sharp.UI.IVisualElement
         {
@@ -336,16 +256,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.SemanticHeadingLevel>());
-            if (builder.ValueIsSet()) mauiObject.SetValue(Microsoft.Maui.Controls.SemanticProperties.HeadingLevelProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T SemanticHeadingLevel<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.SemanticHeadingLevel>, LazyValueBuilder<Microsoft.Maui.SemanticHeadingLevel>> buildValue)
-            where T : Sharp.UI.IVisualElement
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.VisualElement>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.SemanticHeadingLevel>());
             if (builder.ValueIsSet()) mauiObject.SetValue(Microsoft.Maui.Controls.SemanticProperties.HeadingLevelProperty, builder.GetValue());
             return obj;
         }

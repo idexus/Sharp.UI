@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T MinWindowHeight<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.IAdaptiveTrigger
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.AdaptiveTrigger>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.MinWindowHeight = builder.GetValue();
-            return obj;
-        }
-        
-        public static T MinWindowHeight<T>(this T obj,
             System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Sharp.UI.IAdaptiveTrigger
         {
@@ -63,16 +53,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.AdaptiveTrigger>(obj);
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.MinWindowWidth = builder.GetValue();
-            return obj;
-        }
-        
-        public static T MinWindowWidth<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.IAdaptiveTrigger
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.AdaptiveTrigger>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
             if (builder.ValueIsSet()) mauiObject.MinWindowWidth = builder.GetValue();
             return obj;
         }

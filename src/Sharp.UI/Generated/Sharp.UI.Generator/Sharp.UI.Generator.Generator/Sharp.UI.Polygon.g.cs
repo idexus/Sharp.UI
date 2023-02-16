@@ -59,13 +59,6 @@ namespace Sharp.UI
 
         public void Add(Microsoft.Maui.Graphics.Point point) => this.MauiObject.Points.Add(point);
 
-        public void Add(Func<IEnumerable<Microsoft.Maui.Graphics.Point>> builder)
-        {
-            var items = builder();
-            foreach (var item in items)
-                this.MauiObject.Points.Add(item);
-        }
-
         public void Add(Action<IList<Microsoft.Maui.Graphics.Point>> builder)
         {
             List<Microsoft.Maui.Graphics.Point> items = new List<Microsoft.Maui.Graphics.Point>();

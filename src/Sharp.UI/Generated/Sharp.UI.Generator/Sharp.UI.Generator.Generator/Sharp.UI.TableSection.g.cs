@@ -59,13 +59,6 @@ namespace Sharp.UI
 
         public void Add(Microsoft.Maui.Controls.Cell cell) => this.MauiObject.Add(cell);
 
-        public void Add(Func<IEnumerable<Microsoft.Maui.Controls.Cell>> builder)
-        {
-            var items = builder();
-            foreach (var item in items)
-                this.MauiObject.Add(item);
-        }
-
         public void Add(Action<IList<Microsoft.Maui.Controls.Cell>> builder)
         {
             List<Microsoft.Maui.Controls.Cell> items = new List<Microsoft.Maui.Controls.Cell>();

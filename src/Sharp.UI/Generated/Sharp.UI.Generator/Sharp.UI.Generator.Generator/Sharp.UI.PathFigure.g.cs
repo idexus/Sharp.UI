@@ -59,13 +59,6 @@ namespace Sharp.UI
 
         public void Add(Microsoft.Maui.Controls.Shapes.PathSegment pathSegment) => this.MauiObject.Segments.Add(pathSegment);
 
-        public void Add(Func<IEnumerable<Microsoft.Maui.Controls.Shapes.PathSegment>> builder)
-        {
-            var items = builder();
-            foreach (var item in items)
-                this.MauiObject.Segments.Add(item);
-        }
-
         public void Add(Action<IList<Microsoft.Maui.Controls.Shapes.PathSegment>> builder)
         {
             List<Microsoft.Maui.Controls.Shapes.PathSegment> items = new List<Microsoft.Maui.Controls.Shapes.PathSegment>();

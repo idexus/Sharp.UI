@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T Spacing<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.IStackBase
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.StackBase>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.Spacing = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Spacing<T>(this T obj,
             System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Sharp.UI.IStackBase
         {

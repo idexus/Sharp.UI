@@ -59,13 +59,6 @@ namespace Sharp.UI
 
         public void Add(Microsoft.Maui.Controls.TriggerAction triggerAction) => this.MauiObject.Actions.Add(triggerAction);
 
-        public void Add(Func<IEnumerable<Microsoft.Maui.Controls.TriggerAction>> builder)
-        {
-            var items = builder();
-            foreach (var item in items)
-                this.MauiObject.Actions.Add(item);
-        }
-
         public void Add(Action<IList<Microsoft.Maui.Controls.TriggerAction>> builder)
         {
             List<Microsoft.Maui.Controls.TriggerAction> items = new List<Microsoft.Maui.Controls.TriggerAction>();

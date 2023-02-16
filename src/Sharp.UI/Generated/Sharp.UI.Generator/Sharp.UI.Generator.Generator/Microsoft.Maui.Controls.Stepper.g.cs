@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T Increment<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.IStepper
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Stepper>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.Increment = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Increment<T>(this T obj,
             System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Sharp.UI.IStepper
         {
@@ -63,16 +53,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Stepper>(obj);
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.Maximum = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Maximum<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.IStepper
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Stepper>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
             if (builder.ValueIsSet()) mauiObject.Maximum = builder.GetValue();
             return obj;
         }
@@ -107,16 +87,6 @@ namespace Sharp.UI
         }
         
         public static T Minimum<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.IStepper
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Stepper>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.Minimum = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Minimum<T>(this T obj,
             System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Sharp.UI.IStepper
         {
@@ -141,16 +111,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Stepper>(obj);
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.Value = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Value<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.IStepper
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Stepper>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
             if (builder.ValueIsSet()) mauiObject.Value = builder.GetValue();
             return obj;
         }

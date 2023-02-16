@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T BorderColor<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Color>, LazyValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
-            where T : Sharp.UI.IImageButton
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) mauiObject.BorderColor = builder.GetValue();
-            return obj;
-        }
-        
-        public static T BorderColor<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
             where T : Sharp.UI.IImageButton
         {
@@ -63,16 +53,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);
             var builder = buildValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) mauiObject.CornerRadius = builder.GetValue();
-            return obj;
-        }
-        
-        public static T CornerRadius<T>(this T obj,
-            System.Func<LazyValueBuilder<int>, LazyValueBuilder<int>> buildValue)
-            where T : Sharp.UI.IImageButton
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);
-            var builder = buildValue(new LazyValueBuilder<int>());
             if (builder.ValueIsSet()) mauiObject.CornerRadius = builder.GetValue();
             return obj;
         }
@@ -107,16 +87,6 @@ namespace Sharp.UI
         }
         
         public static T BorderWidth<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.IImageButton
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.BorderWidth = builder.GetValue();
-            return obj;
-        }
-        
-        public static T BorderWidth<T>(this T obj,
             System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Sharp.UI.IImageButton
         {
@@ -141,16 +111,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Aspect>());
-            if (builder.ValueIsSet()) mauiObject.Aspect = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Aspect<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Aspect>, LazyValueBuilder<Microsoft.Maui.Aspect>> buildValue)
-            where T : Sharp.UI.IImageButton
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Aspect>());
             if (builder.ValueIsSet()) mauiObject.Aspect = builder.GetValue();
             return obj;
         }
@@ -185,16 +145,6 @@ namespace Sharp.UI
         }
         
         public static T IsOpaque<T>(this T obj,
-            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
-            where T : Sharp.UI.IImageButton
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);
-            var builder = buildValue(new LazyValueBuilder<bool>());
-            if (builder.ValueIsSet()) mauiObject.IsOpaque = builder.GetValue();
-            return obj;
-        }
-        
-        public static T IsOpaque<T>(this T obj,
             System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Sharp.UI.IImageButton
         {
@@ -219,16 +169,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);
             var builder = buildValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) mauiObject.Command = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Command<T>(this T obj,
-            System.Func<LazyValueBuilder<System.Windows.Input.ICommand>, LazyValueBuilder<System.Windows.Input.ICommand>> buildValue)
-            where T : Sharp.UI.IImageButton
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);
-            var builder = buildValue(new LazyValueBuilder<System.Windows.Input.ICommand>());
             if (builder.ValueIsSet()) mauiObject.Command = builder.GetValue();
             return obj;
         }
@@ -263,16 +203,6 @@ namespace Sharp.UI
         }
         
         public static T CommandParameter<T>(this T obj,
-            System.Func<LazyValueBuilder<object>, LazyValueBuilder<object>> buildValue)
-            where T : Sharp.UI.IImageButton
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);
-            var builder = buildValue(new LazyValueBuilder<object>());
-            if (builder.ValueIsSet()) mauiObject.CommandParameter = builder.GetValue();
-            return obj;
-        }
-        
-        public static T CommandParameter<T>(this T obj,
             System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
             where T : Sharp.UI.IImageButton
         {
@@ -302,16 +232,6 @@ namespace Sharp.UI
         }
         
         public static T Source<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.ImageSource>, LazyValueBuilder<Microsoft.Maui.Controls.ImageSource>> buildValue)
-            where T : Sharp.UI.IImageButton
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.ImageSource>());
-            if (builder.ValueIsSet()) mauiObject.Source = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Source<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Controls.ImageSource>, BindingBuilder<Microsoft.Maui.Controls.ImageSource>> buildBinding)
             where T : Sharp.UI.IImageButton
         {
@@ -336,16 +256,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Thickness>());
-            if (builder.ValueIsSet()) mauiObject.Padding = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Padding<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Thickness>, LazyValueBuilder<Microsoft.Maui.Thickness>> buildValue)
-            where T : Sharp.UI.IImageButton
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageButton>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Thickness>());
             if (builder.ValueIsSet()) mauiObject.Padding = builder.GetValue();
             return obj;
         }

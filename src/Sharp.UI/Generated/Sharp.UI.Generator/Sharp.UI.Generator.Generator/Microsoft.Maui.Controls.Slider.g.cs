@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T MinimumTrackColor<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Color>, LazyValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
-            where T : Sharp.UI.ISlider
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) mauiObject.MinimumTrackColor = builder.GetValue();
-            return obj;
-        }
-        
-        public static T MinimumTrackColor<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
             where T : Sharp.UI.ISlider
         {
@@ -63,16 +53,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) mauiObject.MaximumTrackColor = builder.GetValue();
-            return obj;
-        }
-        
-        public static T MaximumTrackColor<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Color>, LazyValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
-            where T : Sharp.UI.ISlider
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Color>());
             if (builder.ValueIsSet()) mauiObject.MaximumTrackColor = builder.GetValue();
             return obj;
         }
@@ -107,16 +87,6 @@ namespace Sharp.UI
         }
         
         public static T ThumbColor<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Graphics.Color>, LazyValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
-            where T : Sharp.UI.ISlider
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) mauiObject.ThumbColor = builder.GetValue();
-            return obj;
-        }
-        
-        public static T ThumbColor<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
             where T : Sharp.UI.ISlider
         {
@@ -141,16 +111,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
-            if (builder.ValueIsSet()) mauiObject.ThumbImageSource = builder.GetValue();
-            return obj;
-        }
-        
-        public static T ThumbImageSource<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.ImageSource>, LazyValueBuilder<Microsoft.Maui.Controls.ImageSource>> buildValue)
-            where T : Sharp.UI.ISlider
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.ImageSource>());
             if (builder.ValueIsSet()) mauiObject.ThumbImageSource = builder.GetValue();
             return obj;
         }
@@ -185,16 +145,6 @@ namespace Sharp.UI
         }
         
         public static T DragStartedCommand<T>(this T obj,
-            System.Func<LazyValueBuilder<System.Windows.Input.ICommand>, LazyValueBuilder<System.Windows.Input.ICommand>> buildValue)
-            where T : Sharp.UI.ISlider
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);
-            var builder = buildValue(new LazyValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) mauiObject.DragStartedCommand = builder.GetValue();
-            return obj;
-        }
-        
-        public static T DragStartedCommand<T>(this T obj,
             System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buildBinding)
             where T : Sharp.UI.ISlider
         {
@@ -219,16 +169,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);
             var builder = buildValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) mauiObject.DragCompletedCommand = builder.GetValue();
-            return obj;
-        }
-        
-        public static T DragCompletedCommand<T>(this T obj,
-            System.Func<LazyValueBuilder<System.Windows.Input.ICommand>, LazyValueBuilder<System.Windows.Input.ICommand>> buildValue)
-            where T : Sharp.UI.ISlider
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);
-            var builder = buildValue(new LazyValueBuilder<System.Windows.Input.ICommand>());
             if (builder.ValueIsSet()) mauiObject.DragCompletedCommand = builder.GetValue();
             return obj;
         }
@@ -263,16 +203,6 @@ namespace Sharp.UI
         }
         
         public static T Maximum<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.ISlider
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.Maximum = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Maximum<T>(this T obj,
             System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Sharp.UI.ISlider
         {
@@ -302,16 +232,6 @@ namespace Sharp.UI
         }
         
         public static T Minimum<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.ISlider
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.Minimum = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Minimum<T>(this T obj,
             System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Sharp.UI.ISlider
         {
@@ -336,16 +256,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) mauiObject.Value = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Value<T>(this T obj,
-            System.Func<LazyValueBuilder<double>, LazyValueBuilder<double>> buildValue)
-            where T : Sharp.UI.ISlider
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.Slider>(obj);
-            var builder = buildValue(new LazyValueBuilder<double>());
             if (builder.ValueIsSet()) mauiObject.Value = builder.GetValue();
             return obj;
         }

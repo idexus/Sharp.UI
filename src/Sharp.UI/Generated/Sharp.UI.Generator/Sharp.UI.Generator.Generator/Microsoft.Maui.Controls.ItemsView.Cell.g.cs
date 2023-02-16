@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T ItemsSource<T>(this T obj,
-            System.Func<LazyValueBuilder<System.Collections.IEnumerable>, LazyValueBuilder<System.Collections.IEnumerable>> buildValue)
-            where T : Sharp.UI.IItemsViewCell
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>>(obj);
-            var builder = buildValue(new LazyValueBuilder<System.Collections.IEnumerable>());
-            if (builder.ValueIsSet()) mauiObject.ItemsSource = builder.GetValue();
-            return obj;
-        }
-        
-        public static T ItemsSource<T>(this T obj,
             System.Func<BindingBuilder<System.Collections.IEnumerable>, BindingBuilder<System.Collections.IEnumerable>> buildBinding)
             where T : Sharp.UI.IItemsViewCell
         {
@@ -63,16 +53,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>>(obj);
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
-            if (builder.ValueIsSet()) mauiObject.ItemTemplate = builder.GetValue();
-            return obj;
-        }
-        
-        public static T ItemTemplate<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.DataTemplate>, LazyValueBuilder<Microsoft.Maui.Controls.DataTemplate>> buildValue)
-            where T : Sharp.UI.IItemsViewCell
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
             if (builder.ValueIsSet()) mauiObject.ItemTemplate = builder.GetValue();
             return obj;
         }

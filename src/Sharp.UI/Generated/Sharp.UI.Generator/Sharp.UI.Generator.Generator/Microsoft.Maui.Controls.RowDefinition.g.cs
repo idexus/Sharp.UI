@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T Height<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.GridLength>, LazyValueBuilder<Microsoft.Maui.GridLength>> buildValue)
-            where T : Sharp.UI.IRowDefinition
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.RowDefinition>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.GridLength>());
-            if (builder.ValueIsSet()) mauiObject.Height = builder.GetValue();
-            return obj;
-        }
-        
-        public static T Height<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.GridLength>, BindingBuilder<Microsoft.Maui.GridLength>> buildBinding)
             where T : Sharp.UI.IRowDefinition
         {

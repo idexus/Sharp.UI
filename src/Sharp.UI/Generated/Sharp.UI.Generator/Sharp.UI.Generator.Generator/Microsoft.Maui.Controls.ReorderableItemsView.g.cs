@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T CanMixGroups<T>(this T obj,
-            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
-            where T : Sharp.UI.IReorderableItemsView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ReorderableItemsView>(obj);
-            var builder = buildValue(new LazyValueBuilder<bool>());
-            if (builder.ValueIsSet()) mauiObject.CanMixGroups = builder.GetValue();
-            return obj;
-        }
-        
-        public static T CanMixGroups<T>(this T obj,
             System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Sharp.UI.IReorderableItemsView
         {
@@ -63,16 +53,6 @@ namespace Sharp.UI
         {
             var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ReorderableItemsView>(obj);
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) mauiObject.CanReorderItems = builder.GetValue();
-            return obj;
-        }
-        
-        public static T CanReorderItems<T>(this T obj,
-            System.Func<LazyValueBuilder<bool>, LazyValueBuilder<bool>> buildValue)
-            where T : Sharp.UI.IReorderableItemsView
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ReorderableItemsView>(obj);
-            var builder = buildValue(new LazyValueBuilder<bool>());
             if (builder.ValueIsSet()) mauiObject.CanReorderItems = builder.GetValue();
             return obj;
         }

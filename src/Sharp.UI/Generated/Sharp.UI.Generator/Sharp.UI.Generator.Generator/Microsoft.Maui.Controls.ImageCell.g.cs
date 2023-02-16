@@ -29,16 +29,6 @@ namespace Sharp.UI
         }
         
         public static T ImageSource<T>(this T obj,
-            System.Func<LazyValueBuilder<Microsoft.Maui.Controls.ImageSource>, LazyValueBuilder<Microsoft.Maui.Controls.ImageSource>> buildValue)
-            where T : Sharp.UI.IImageCell
-        {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.ImageCell>(obj);
-            var builder = buildValue(new LazyValueBuilder<Microsoft.Maui.Controls.ImageSource>());
-            if (builder.ValueIsSet()) mauiObject.ImageSource = builder.GetValue();
-            return obj;
-        }
-        
-        public static T ImageSource<T>(this T obj,
             System.Func<BindingBuilder<Microsoft.Maui.Controls.ImageSource>, BindingBuilder<Microsoft.Maui.Controls.ImageSource>> buildBinding)
             where T : Sharp.UI.IImageCell
         {

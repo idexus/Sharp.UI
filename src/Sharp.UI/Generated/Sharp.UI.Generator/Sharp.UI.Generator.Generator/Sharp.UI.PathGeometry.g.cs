@@ -59,13 +59,6 @@ namespace Sharp.UI
 
         public void Add(Microsoft.Maui.Controls.Shapes.PathFigure pathFigure) => this.MauiObject.Figures.Add(pathFigure);
 
-        public void Add(Func<IEnumerable<Microsoft.Maui.Controls.Shapes.PathFigure>> builder)
-        {
-            var items = builder();
-            foreach (var item in items)
-                this.MauiObject.Figures.Add(item);
-        }
-
         public void Add(Action<IList<Microsoft.Maui.Controls.Shapes.PathFigure>> builder)
         {
             List<Microsoft.Maui.Controls.Shapes.PathFigure> items = new List<Microsoft.Maui.Controls.Shapes.PathFigure>();
