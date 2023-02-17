@@ -23,32 +23,32 @@ public class HelloWorldPage : ContentPage
     public HelloWorldPage()
     {
         Content =
-        new VStack(e => e
-            .Spacing(25)
-            .Padding(new Thickness(30, 0))
-            .VerticalOptions(LayoutOptions.Center))
-        {
-            new Image("dotnet_bot.png")
-                .HeightRequest(200)
-                .HorizontalOptions(LayoutOptions.Center),
+            new VStack(e => e
+                .Spacing(25)
+                .Padding(new Thickness(30, 0))
+                .VerticalOptions(LayoutOptions.Center))
+            {
+                new Image("dotnet_bot.png")
+                    .HeightRequest(200)
+                    .HorizontalOptions(LayoutOptions.Center),
 
-            new Label("Hello, World!")
-                .FontSize(32)
-                .HorizontalOptions(LayoutOptions.Center),
+                new Label("Hello, World!")
+                    .FontSize(32)
+                    .HorizontalOptions(LayoutOptions.Center),
 
-            new Label("Welcome to .NET Multi-platform App UI")
-                .FontSize(18)
-                .HorizontalOptions(LayoutOptions.Center),
+                new Label("Welcome to .NET Multi-platform App UI")
+                    .FontSize(18)
+                    .HorizontalOptions(LayoutOptions.Center),
 
-            new Button("Click me")
-                .HorizontalOptions(LayoutOptions.Center)
-                .OnClicked(button =>
-                {
-                    count++;
-                    button.Text = $"Clicked {count} ";
-                    button.Text += count == 1 ? "time" : "times";
-                })
-        };
+                new Button("Click me")
+                    .HorizontalOptions(LayoutOptions.Center)
+                    .OnClicked(button =>
+                    {
+                        count++;
+                        button.Text = $"Clicked {count} ";
+                        button.Text += count == 1 ? "time" : "times";
+                    })
+            };
     }
 }
 ```

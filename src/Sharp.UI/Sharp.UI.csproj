@@ -17,7 +17,7 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 
 		<PackageId>Sharp.UI</PackageId>
-		<Version>0.3.1-alpha.1</Version>
+		<Version>0.3.1-alpha.2</Version>
 		<Authors>Pawel Krzywdzinski</Authors>
 		<Copyright>Pawel Krzywdzinski</Copyright>
 		<PackageDescription>Wrapper Library for .NET MAUI: Code-Only UI dev with Fluent Methods, Hot Reload and No XAML</PackageDescription>
