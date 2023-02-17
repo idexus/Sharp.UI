@@ -25,13 +25,11 @@ namespace Sharp.UI
             stackLayout = this;
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public StackLayout(System.Action<StackLayout> configure) 
         {
             configure(this);
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces.")]
         public StackLayout(out StackLayout stackLayout, System.Action<StackLayout> configure) 
         {
             stackLayout = this;

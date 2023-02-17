@@ -23,13 +23,11 @@ namespace Sharp.UI
             tableView = this;
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public TableView(System.Action<TableView> configure) : this()
         {
             configure(this);
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces.")]
         public TableView(out TableView tableView, System.Action<TableView> configure) : this()
         {
             tableView = this;

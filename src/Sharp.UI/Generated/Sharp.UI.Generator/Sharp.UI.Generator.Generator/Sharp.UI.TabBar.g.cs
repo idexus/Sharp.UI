@@ -25,13 +25,11 @@ namespace Sharp.UI
             tabBar = this;
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public TabBar(System.Action<TabBar> configure) 
         {
             configure(this);
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces.")]
         public TabBar(out TabBar tabBar, System.Action<TabBar> configure) 
         {
             tabBar = this;

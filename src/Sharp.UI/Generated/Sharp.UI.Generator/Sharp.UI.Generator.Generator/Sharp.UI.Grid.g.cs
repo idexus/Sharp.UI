@@ -25,13 +25,11 @@ namespace Sharp.UI
             grid = this;
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public Grid(System.Action<Grid> configure) 
         {
             configure(this);
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces.")]
         public Grid(out Grid grid, System.Action<Grid> configure) 
         {
             grid = this;

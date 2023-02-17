@@ -24,13 +24,11 @@ namespace Sharp.UI
             contentPage = this;
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public ContentPage(System.Action<ContentPage> configure) : this()
         {
             configure(this);
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces.")]
         public ContentPage(out ContentPage contentPage, System.Action<ContentPage> configure) : this()
         {
             contentPage = this;
@@ -42,13 +40,11 @@ namespace Sharp.UI
             contentPage = this;
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public ContentPage(string title, System.Action<ContentPage> configure) : this(title)
         {
             configure(this);
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces.")]
         public ContentPage(string title, out ContentPage contentPage, System.Action<ContentPage> configure) : this(title)
         {
             contentPage = this;

@@ -25,13 +25,11 @@ namespace Sharp.UI
             geometryGroup = this;
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public GeometryGroup(System.Action<GeometryGroup> configure) 
         {
             configure(this);
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces.")]
         public GeometryGroup(out GeometryGroup geometryGroup, System.Action<GeometryGroup> configure) 
         {
             geometryGroup = this;

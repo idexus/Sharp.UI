@@ -25,13 +25,11 @@ namespace Sharp.UI
             shell = this;
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public Shell(System.Action<Shell> configure) 
         {
             configure(this);
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces.")]
         public Shell(out Shell shell, System.Action<Shell> configure) 
         {
             shell = this;

@@ -26,13 +26,11 @@ namespace Sharp.UI
             contentView = this;
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public ContentView(System.Action<ContentView> configure) 
         {
             configure(this);
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces.")]
         public ContentView(out ContentView contentView, System.Action<ContentView> configure) 
         {
             contentView = this;

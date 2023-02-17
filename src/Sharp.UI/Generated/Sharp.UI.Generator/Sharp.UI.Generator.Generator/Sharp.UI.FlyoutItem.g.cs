@@ -25,13 +25,11 @@ namespace Sharp.UI
             flyoutItem = this;
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public FlyoutItem(System.Action<FlyoutItem> configure) 
         {
             configure(this);
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces.")]
         public FlyoutItem(out FlyoutItem flyoutItem, System.Action<FlyoutItem> configure) 
         {
             flyoutItem = this;
@@ -43,13 +41,11 @@ namespace Sharp.UI
             flyoutItem = this;
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public FlyoutItem(Microsoft.Maui.Controls.FlyoutDisplayOptions displayOptions, System.Action<FlyoutItem> configure) : this(displayOptions)
         {
             configure(this);
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces.")]
         public FlyoutItem(Microsoft.Maui.Controls.FlyoutDisplayOptions displayOptions, out FlyoutItem flyoutItem, System.Action<FlyoutItem> configure) : this(displayOptions)
         {
             flyoutItem = this;

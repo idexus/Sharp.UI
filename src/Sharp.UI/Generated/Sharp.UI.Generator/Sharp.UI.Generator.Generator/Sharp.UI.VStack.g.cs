@@ -25,13 +25,11 @@ namespace Sharp.UI
             vStack = this;
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public VStack(System.Action<VStack> configure) 
         {
             configure(this);
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces.")]
         public VStack(out VStack vStack, System.Action<VStack> configure) 
         {
             vStack = this;
