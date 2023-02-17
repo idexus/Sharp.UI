@@ -25,13 +25,11 @@ namespace Sharp.UI
             menuFlyout = this;
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public MenuFlyout(System.Action<MenuFlyout> configure) 
         {
             configure(this);
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces.")]
         public MenuFlyout(out MenuFlyout menuFlyout, System.Action<MenuFlyout> configure) 
         {
             menuFlyout = this;

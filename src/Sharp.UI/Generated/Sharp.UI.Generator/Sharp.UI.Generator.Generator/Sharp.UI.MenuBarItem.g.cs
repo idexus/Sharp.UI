@@ -25,13 +25,11 @@ namespace Sharp.UI
             menuBarItem = this;
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public MenuBarItem(System.Action<MenuBarItem> configure) 
         {
             configure(this);
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces.")]
         public MenuBarItem(out MenuBarItem menuBarItem, System.Action<MenuBarItem> configure) 
         {
             menuBarItem = this;
@@ -43,13 +41,11 @@ namespace Sharp.UI
             menuBarItem = this;
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public MenuBarItem(string text, System.Action<MenuBarItem> configure) : this(text)
         {
             configure(this);
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces.")]
         public MenuBarItem(string text, out MenuBarItem menuBarItem, System.Action<MenuBarItem> configure) : this(text)
         {
             menuBarItem = this;

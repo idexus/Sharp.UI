@@ -25,13 +25,11 @@ namespace Sharp.UI
             linearGradientBrush = this;
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public LinearGradientBrush(System.Action<LinearGradientBrush> configure) 
         {
             configure(this);
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces.")]
         public LinearGradientBrush(out LinearGradientBrush linearGradientBrush, System.Action<LinearGradientBrush> configure) 
         {
             linearGradientBrush = this;
@@ -43,13 +41,11 @@ namespace Sharp.UI
             linearGradientBrush = this;
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public LinearGradientBrush(Microsoft.Maui.Graphics.Point startPoint, Microsoft.Maui.Graphics.Point endPoint, System.Action<LinearGradientBrush> configure) : this(startPoint, endPoint)
         {
             configure(this);
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces.")]
         public LinearGradientBrush(Microsoft.Maui.Graphics.Point startPoint, Microsoft.Maui.Graphics.Point endPoint, out LinearGradientBrush linearGradientBrush, System.Action<LinearGradientBrush> configure) : this(startPoint, endPoint)
         {
             linearGradientBrush = this;

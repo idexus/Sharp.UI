@@ -109,7 +109,6 @@ namespace Sharp.UI
                                         BindingContext = activePage.BindingContext;
 
                                         var parent = activePage.Parent;
-                                        var parentType = parent.GetType();
                                         if (parent is Window parentWindow)
                                         {
                                             parentWindow.Page = newContentPage;
@@ -120,6 +119,7 @@ namespace Sharp.UI
                                             shellContent.ContentTemplate = null;
                                             shellContent.Content = newContentPage;
                                             if (newContentPage.Handler == null) newContentPage.Handler = activePage.Handler;
+                                            if (newContentPage.Parent == null) newContentPage.Parent = parent;
                                             replaced = true;
                                         }
                                     }

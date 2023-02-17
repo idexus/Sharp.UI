@@ -25,13 +25,11 @@ namespace Sharp.UI
             radialGradientBrush = this;
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public RadialGradientBrush(System.Action<RadialGradientBrush> configure) 
         {
             configure(this);
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces.")]
         public RadialGradientBrush(out RadialGradientBrush radialGradientBrush, System.Action<RadialGradientBrush> configure) 
         {
             radialGradientBrush = this;
@@ -43,13 +41,11 @@ namespace Sharp.UI
             radialGradientBrush = this;
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public RadialGradientBrush(Microsoft.Maui.Graphics.Point center, System.Action<RadialGradientBrush> configure) : this(center)
         {
             configure(this);
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces.")]
         public RadialGradientBrush(Microsoft.Maui.Graphics.Point center, out RadialGradientBrush radialGradientBrush, System.Action<RadialGradientBrush> configure) : this(center)
         {
             radialGradientBrush = this;

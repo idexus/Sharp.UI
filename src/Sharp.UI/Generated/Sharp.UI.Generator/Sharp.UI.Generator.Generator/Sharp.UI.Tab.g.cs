@@ -25,13 +25,11 @@ namespace Sharp.UI
             tab = this;
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public Tab(System.Action<Tab> configure) 
         {
             configure(this);
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces.")]
         public Tab(out Tab tab, System.Action<Tab> configure) 
         {
             tab = this;
@@ -43,13 +41,11 @@ namespace Sharp.UI
             tab = this;
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public Tab(string title, System.Action<Tab> configure) : this(title)
         {
             configure(this);
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces.")]
         public Tab(string title, out Tab tab, System.Action<Tab> configure) : this(title)
         {
             tab = this;

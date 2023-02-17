@@ -26,13 +26,11 @@ namespace Sharp.UI
             shellContent = this;
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public ShellContent(System.Action<ShellContent> configure) 
         {
             configure(this);
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces.")]
         public ShellContent(out ShellContent shellContent, System.Action<ShellContent> configure) 
         {
             shellContent = this;
@@ -44,13 +42,11 @@ namespace Sharp.UI
             shellContent = this;
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public ShellContent(string title, object content, System.Action<ShellContent> configure) : this(title, content)
         {
             configure(this);
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces.")]
         public ShellContent(string title, object content, out ShellContent shellContent, System.Action<ShellContent> configure) : this(title, content)
         {
             shellContent = this;
@@ -62,13 +58,11 @@ namespace Sharp.UI
             shellContent = this;
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public ShellContent(System.Type page, System.Action<ShellContent> configure) : this(page)
         {
             configure(this);
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces.")]
         public ShellContent(System.Type page, out ShellContent shellContent, System.Action<ShellContent> configure) : this(page)
         {
             shellContent = this;

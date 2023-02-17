@@ -26,13 +26,11 @@ namespace Sharp.UI
             flyoutPage = this;
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public FlyoutPage(System.Action<FlyoutPage> configure) 
         {
             configure(this);
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces.")]
         public FlyoutPage(out FlyoutPage flyoutPage, System.Action<FlyoutPage> configure) 
         {
             flyoutPage = this;

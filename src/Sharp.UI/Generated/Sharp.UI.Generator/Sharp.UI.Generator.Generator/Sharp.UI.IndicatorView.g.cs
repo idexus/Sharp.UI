@@ -26,13 +26,11 @@ namespace Sharp.UI
             indicatorView = this;
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.FluentMethod(), inside curly braces.")]
         public IndicatorView(System.Action<IndicatorView> configure) 
         {
             configure(this);
         }
 
-        [Obsolete("This constructor is deprecated, use e=>e.Assign(out symbol).OtherFluentMethod(), inside curly braces.")]
         public IndicatorView(out IndicatorView indicatorView, System.Action<IndicatorView> configure) 
         {
             indicatorView = this;

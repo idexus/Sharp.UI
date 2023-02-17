@@ -34,8 +34,7 @@ new VStack
 
 ### Setting containers properties
 
-In `Sharp.UI`, you can set properties for containers using lambda syntax inside the curly braces of the container. The lambda function is a preferred style for setting container properties because it allows you to chain multiple property setters in a single expression, making the code more concise and readable.
-
+In `Sharp.UI`, you can set properties for containers using lambda syntax inside the curly braces of the container, or as constructor parameters. The lambda function is a preferred style for setting container properties because it allows you to chain multiple property setters in a single expression, making the code more concise and readable.
 
 ```cs
 new Grid
@@ -55,30 +54,36 @@ new Grid
 
     // container content here
 
-    new Label("Label"),
-    new Button("Count")
+    new Label("Hello, World!"),
+    new Button("Click me")
     ...
 },
+```
+
+Or like in this example:
+
+```cs
+new VStack(e => e
+    .Spacing(25)
+    .Padding(new Thickness(30, 0))
+    .VerticalOptions(LayoutOptions.Center))
+{
+    new Label("Hello, World!"),
+    new Button("Click me")
+    ...
+};
 ```
 
 You can also set the properties of a container outside the curly braces by chaining the property setters on the container object, like this:
 
 ```cs
-new Grid
+new VStack
 {
-    // container content here
-
-    new Label("Label"),
-    new Button("Count")
+    new Label("Hello, World!"),
+    new Button("Click me")
     ...
 }
-.BackgroundColor(Colors.Red)
-.AbsoluteLayoutBounds(new Rect(30,170,300,100))
-.Background(new LinearGradientBrush(new Point(0, 0), new Point(1, 1))
-{
-    new GradientStop(Colors.Yellow, 0.0),
-    new GradientStop(Colors.Red, 0.25),
-    new GradientStop(Colors.Blue, 0.75),
-    new GradientStop(Colors.LimeGreen, 1.0)
-})
+.Spacing(25)
+.Padding(new Thickness(30, 0))
+.VerticalOptions(LayoutOptions.Center)
 ```
