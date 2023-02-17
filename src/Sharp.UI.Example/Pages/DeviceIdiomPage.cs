@@ -34,7 +34,7 @@ public class DeviceIdiomPage : ContentPage
         {
             new VStack
             {
-                () => DeviceIdiom.Current switch
+                (DeviceIdiom.Current switch 
                 {
                     DeviceIdiom.Desktop =>
                         new VStack
@@ -59,7 +59,10 @@ public class DeviceIdiomPage : ContentPage
                         },
 
                     _ => null
-                }
+
+                })?
+                .BackgroundColor(AppColors.Gray900)
+                .Padding(20)
             }
         }
         .Resources(pageResources);
