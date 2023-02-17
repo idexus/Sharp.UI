@@ -42,7 +42,7 @@ new Grid
 {
     // setting properties
 
-    _=>_
+    e => e
         .BackgroundColor(Colors.Red)
         .AbsoluteLayoutBounds(new Rect(30,170,300,100))
         .Background(new LinearGradientBrush(new Point(0, 0), new Point(1, 1))
