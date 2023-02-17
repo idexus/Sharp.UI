@@ -29,24 +29,24 @@ namespace Sharp.UI
 
         // --- app theme ===
 
-        public ValueBuilder<T> OnLight(T value) { if (Application.Current?.RequestedTheme == AppTheme.Light) { this.newValue = value; this.newValueIsSet = true; } return this; }
-        public ValueBuilder<T> OnDark(T value) { if (Application.Current?.RequestedTheme == AppTheme.Dark) { this.newValue = value; this.newValueIsSet = true; } return this; }
+        public ValueBuilder<T> OnLight(T value) { if (AppTheme.Requested == AppTheme.Light) { this.newValue = value; this.newValueIsSet = true; } return this; }
+        public ValueBuilder<T> OnDark(T value) { if (AppTheme.Requested == AppTheme.Dark) { this.newValue = value; this.newValueIsSet = true; } return this; }
 
         // --- device idiom ---
 
-        public ValueBuilder<T> OnPhone(T value) { if (DeviceInfo.Idiom == DeviceIdiom.Phone) { this.newValue = value; this.newValueIsSet = true; } return this; }
-        public ValueBuilder<T> OnTablet(T value) { if (DeviceInfo.Idiom == DeviceIdiom.Tablet) { this.newValue = value; this.newValueIsSet = true; } return this; }
-        public ValueBuilder<T> OnDesktop(T value) { if (DeviceInfo.Idiom == DeviceIdiom.Desktop) { this.newValue = value; this.newValueIsSet = true; } return this; }
-        public ValueBuilder<T> OnTV(T value) { if (DeviceInfo.Idiom == DeviceIdiom.TV) { this.newValue = value; this.newValueIsSet = true; } return this; }
-        public ValueBuilder<T> OnWatch(T value) { if (DeviceInfo.Idiom == DeviceIdiom.Watch) { this.newValue = value; this.newValueIsSet = true; } return this; }
+        public ValueBuilder<T> OnPhone(T value) { if (DeviceIdiom.Current == DeviceIdiom.Phone) { this.newValue = value; this.newValueIsSet = true; } return this; }
+        public ValueBuilder<T> OnTablet(T value) { if (DeviceIdiom.Current == DeviceIdiom.Tablet) { this.newValue = value; this.newValueIsSet = true; } return this; }
+        public ValueBuilder<T> OnDesktop(T value) { if (DeviceIdiom.Current == DeviceIdiom.Desktop) { this.newValue = value; this.newValueIsSet = true; } return this; }
+        public ValueBuilder<T> OnTV(T value) { if (DeviceIdiom.Current == DeviceIdiom.TV) { this.newValue = value; this.newValueIsSet = true; } return this; }
+        public ValueBuilder<T> OnWatch(T value) { if (DeviceIdiom.Current == DeviceIdiom.Watch) { this.newValue = value; this.newValueIsSet = true; } return this; }
 
         // --- device platform ---
 
-        public ValueBuilder<T> OniOS(T value) { if (DeviceInfo.Platform == DevicePlatform.iOS) { this.newValue = value; this.newValueIsSet = true; } return this; }
-        public ValueBuilder<T> OnMacCatalyst(T value) { if (DeviceInfo.Platform == DevicePlatform.MacCatalyst) { this.newValue = value; this.newValueIsSet = true; } return this; }
-        public ValueBuilder<T> OnAndroid(T value) { if (DeviceInfo.Platform == DevicePlatform.Android) { this.newValue = value; this.newValueIsSet = true; } return this; }
-        public ValueBuilder<T> OnWinUI(T value) { if (DeviceInfo.Platform == DevicePlatform.WinUI) { this.newValue = value; this.newValueIsSet = true; } return this; }
-        public ValueBuilder<T> OnTizen(T value) { if (DeviceInfo.Platform == DevicePlatform.Tizen) { this.newValue = value; this.newValueIsSet = true; } return this; }
+        public ValueBuilder<T> OniOS(T value) { if (DevicePlatform.Current == DevicePlatform.iOS) { this.newValue = value; this.newValueIsSet = true; } return this; }
+        public ValueBuilder<T> OnMacCatalyst(T value) { if (DevicePlatform.Current == DevicePlatform.MacCatalyst) { this.newValue = value; this.newValueIsSet = true; } return this; }
+        public ValueBuilder<T> OnAndroid(T value) { if (DevicePlatform.Current == DevicePlatform.Android) { this.newValue = value; this.newValueIsSet = true; } return this; }
+        public ValueBuilder<T> OnWinUI(T value) { if (DevicePlatform.Current == DevicePlatform.WinUI) { this.newValue = value; this.newValueIsSet = true; } return this; }
+        public ValueBuilder<T> OnTizen(T value) { if (DevicePlatform.Current == DevicePlatform.Tizen) { this.newValue = value; this.newValueIsSet = true; } return this; }
 
     }
 }

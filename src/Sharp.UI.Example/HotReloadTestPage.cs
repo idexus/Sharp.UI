@@ -25,13 +25,23 @@ namespace ExampleApp
                         .FontSize(45)
                         .TextColor(AppColors.Gray200)
                         .HorizontalOptions(LayoutOptions.Center)
-                        .Configure(label =>
+                        .Configure(async label =>
                         {
-                            Task.Run(async () =>
+                            await Task.Delay(200);
+                            await label.RotateTo(360, 300);
+                        }),
+
+                    new Entry("Put text")
+                        .WidthRequest(200)
+                        .OnFocused(e =>
+                        {
+                            vStack.Animate("FadeTriggerAction", new Animation((d) =>
                             {
-                                await Task.Delay(200);
-                                await label.RotateTo(360, 300);
-                            });
+                                var val = 0;// StartsFrom == 1 ? d : 1 - d;
+                                vStack.BackgroundColor = Color.FromRgb(1, val, 1);
+                            }),
+                            length: 1000,
+                            easing: Easing.Linear);
                         }),
 
                     new Slider(1, 30, 1, out var slider)

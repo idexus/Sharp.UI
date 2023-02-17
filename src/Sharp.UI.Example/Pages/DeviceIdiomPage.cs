@@ -34,23 +34,23 @@ public class DeviceIdiomPage : ContentPage
         {
             new VStack
             {
-                () => DeviceInfo.Idiom switch
+                () => DeviceIdiom.Current switch
                 {
-                    var dev when dev == DeviceIdiom.Desktop =>
+                    DeviceIdiom.Desktop =>
                         new VStack
                         {
                             new Label("Desktop version"),
                             new Image("dotnet_bot.png"),
                         },
 
-                    var dev when dev == DeviceIdiom.Phone =>
+                    DeviceIdiom.Phone =>
                         new VStack
                         {
                             new Label("Phone version"),
                             new Image("dotnet_bot.png"),
                         },
 
-                    var dev when dev == DeviceIdiom.Tablet =>
+                    DeviceIdiom.Tablet =>
                         new VStack
                         {
                             new Label("Tablet version"),
