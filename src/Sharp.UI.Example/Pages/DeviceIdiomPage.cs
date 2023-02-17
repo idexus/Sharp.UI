@@ -32,38 +32,35 @@ public class DeviceIdiomPage : ContentPage
 	{        
         Content = new ContentView(out var contentView)
         {
-            new VStack
+            (DeviceIdiom.Current switch 
             {
-                (DeviceIdiom.Current switch 
-                {
-                    DeviceIdiom.Desktop =>
-                        new VStack
-                        {
-                            new Label("Desktop version"),
-                            new Image("dotnet_bot.png"),
-                        },
+                DeviceIdiom.Desktop =>
+                    new VStack
+                    {
+                        new Label("Desktop version"),
+                        new Image("dotnet_bot.png"),
+                    },
 
-                    DeviceIdiom.Phone =>
-                        new VStack
-                        {
-                            new Label("Phone version"),
-                            new Image("dotnet_bot.png"),
-                        },
+                DeviceIdiom.Phone =>
+                    new VStack
+                    {
+                        new Label("Phone version"),
+                        new Image("dotnet_bot.png"),
+                    },
 
-                    DeviceIdiom.Tablet =>
-                        new VStack
-                        {
-                            new Label("Tablet version"),
-                            new Label("This is a tablet version"),
-                            new Label("No images...")
-                        },
+                DeviceIdiom.Tablet =>
+                    new VStack
+                    {
+                        new Label("Tablet version"),
+                        new Label("This is a tablet version"),
+                        new Label("No images...")
+                    },
 
-                    _ => null
+                _ => null
 
-                })?
-                .BackgroundColor(AppColors.Gray900)
-                .Padding(20)
-            }
+            })?
+            .BackgroundColor(AppColors.Gray900)
+            .Padding(20)
         }
         .Resources(pageResources);
 	}
