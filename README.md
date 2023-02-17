@@ -26,7 +26,7 @@ public class HelloWorldPage : ContentPage
         {
             // properties
             
-            e => e
+            _=>_
                 .Spacing(25)
                 .Padding(new Thickness(30, 0))
                 .VerticalOptions(LayoutOptions.Center),
