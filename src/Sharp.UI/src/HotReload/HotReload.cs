@@ -109,7 +109,6 @@ namespace Sharp.UI
                                         BindingContext = activePage.BindingContext;
 
                                         var parent = activePage.Parent;
-                                        var parentType = parent.GetType();
                                         if (parent is Window parentWindow)
                                         {
                                             parentWindow.Page = newContentPage;

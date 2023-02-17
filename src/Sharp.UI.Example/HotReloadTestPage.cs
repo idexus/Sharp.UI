@@ -23,7 +23,7 @@ namespace ExampleApp
 
                 new Label("Hot Reload :)")
                     .FontSize(45)
-                    .TextColor(Colors.Red)
+                    .TextColor(AppColors.Gray200)
                     .HorizontalOptions(LayoutOptions.Center)
                     .Configure(label =>
                     {
@@ -36,12 +36,14 @@ namespace ExampleApp
 
                 new Slider(1, 30, 1, out var slider)
                     .Value(e => e.Path("SliderValue"))
-                    .Margin(new Thickness(50, 30)),
+                    .Margin(new Thickness(50, 30))
+                    .WidthRequest(400),
 
                 new Border
                 {
                     e => e
-                        .SizeRequest(270, 450)
+                        .SizeRequest(270, 430)
+                        .Margin(10)
                         .StrokeShape(new RoundRectangle().CornerRadius(40))
                         .BackgroundColor(AppColors.Gray950),
 
@@ -67,23 +69,22 @@ namespace ExampleApp
                 },
 
                 new Label()
-                    .Text(e => e.Path("Counter"))
-                    .FontSize(40)
+                    .Text(e => e.Path("Counter").StringFormat("Counter : {0}"))
+                    .FontSize(30)
                     .HorizontalOptions(LayoutOptions.Center)
-                    .Margin(10),
+                    .Margin(30),
 
-                new Button("Count")
+                new Button("Click me")
                     .BackgroundColor(AppColors.Gray950)
                     .TextColor(Colors.White)
-                    .FontSize(20)
+                    .FontSize(22)
                     .WidthRequest(270)
                     .OnClicked(async (Button sender) =>
                     {
                         viewModel.Count();
-                        await vStack.RotateYTo(15, 100);
-                        await vStack.RotateYTo(0, 100);
-                        await vStack.RotateYTo(-15, 100);
-                        await vStack.RotateYTo(0, 100);
+                        await vStack.RotateYTo(15, 50);
+                        await vStack.RotateYTo(-15, 150);
+                        await vStack.RotateYTo(0, 150);
                     })
             }
         };
