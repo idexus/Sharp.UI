@@ -27,8 +27,8 @@ public partial class App : Application
                 {
                     e => e.Route("main"),
 
-                    new ShellContent<HelloWorldPage>("Hello Page"),
                     new ShellContent<HotReloadTestPage>("TestPage"),
+                    new ShellContent<HelloWorldPage>("Hello Page"),
                     new ShellContent<GridPage>("Grid").Route("grid"),
                     new ShellContent<KeypadPage>("Keypad"),
                     new ShellContent<AbsoluteLayoutPage>("Absolute layout"),

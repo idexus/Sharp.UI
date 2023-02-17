@@ -120,6 +120,7 @@ namespace Sharp.UI
                                             shellContent.ContentTemplate = null;
                                             shellContent.Content = newContentPage;
                                             if (newContentPage.Handler == null) newContentPage.Handler = activePage.Handler;
+                                            if (newContentPage.Parent == null) newContentPage.Parent = parent;
                                             replaced = true;
                                         }
                                     }
