@@ -40,8 +40,6 @@ namespace Sharp.UI
         public IEnumerator GetEnumerator() { yield return this.Content; }
         public void Add(Microsoft.Maui.Controls.View content) => this.Content = content;
 
-        public void Add(Func<Sharp.UI.SwipeView, Sharp.UI.SwipeView> configure) { configure(this); }
-
     }
 }
 

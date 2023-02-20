@@ -23,7 +23,9 @@ namespace ExampleApp
                 {
                     e => e.VerticalOptions(LayoutOptions.Center),
 
-                    new Label("Hot Reload :)")
+                    views => {
+
+                        views.Add(new Label("Hot Reload :)")
                         .FontSize(45)
                         .TextColor(AppColors.Gray200)
                         .HorizontalOptions(LayoutOptions.Center)
@@ -31,9 +33,9 @@ namespace ExampleApp
                         {
                             await Task.Delay(200);
                             await label.RotateTo(360, 300);
-                        }),
+                        }));
 
-                    new Entry("Put text")
+                    views.Add(new Entry("Put text")
                         .WidthRequest(200)
                         .OnFocused(e =>
                         {
@@ -44,7 +46,8 @@ namespace ExampleApp
                             }),
                             length: 1000,
                             easing: Easing.Linear);
-                        }),
+                        }));
+                    },                    
 
                     new Slider(1, 30, 1, out var slider)
                         .Value(e => e.Path("SliderValue"))

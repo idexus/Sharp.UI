@@ -35,29 +35,6 @@ namespace Sharp.UI
             configure(this);
         }
 
-        public void Add(Func<Sharp.UI.Grid, Sharp.UI.Grid> configure) { configure(this); }
-
-        public void Add(Action<IList<Microsoft.Maui.IView>> builder)
-        {
-            List<Microsoft.Maui.IView> items = new List<Microsoft.Maui.IView>();
-            builder(items);
-            foreach (var item in items)
-                base.Add(item);
-        }
-
-        public void Add(Func<Microsoft.Maui.IView> builder)
-        {
-            var item = builder();
-            if (item != null)
-                base.Add(item);
-        }
-
-        public void Add(IEnumerable<Microsoft.Maui.Controls.View> items)
-        {
-            foreach (var item in items)
-                base.Add(item);
-        }
-
     }
 }
 

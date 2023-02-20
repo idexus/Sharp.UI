@@ -255,6 +255,15 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T Behaviors<T>(this T obj,
+            System.Func<BindingBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.Behavior>>, BindingBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.Behavior>>> buidBinding)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidBinding(new BindingBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.Behavior>>(obj, Microsoft.Maui.Controls.VisualElement.BehaviorsProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
         public static T HeightRequest<T>(this T obj,
             double heightRequest)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -712,6 +721,15 @@ namespace Sharp.UI
         {
             foreach (var item in triggers)
                 obj.Triggers.Add(item);
+            return obj;
+        }
+        
+        public static T Triggers<T>(this T obj,
+            System.Func<BindingBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerBase>>, BindingBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerBase>>> buidBinding)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidBinding(new BindingBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerBase>>(obj, Microsoft.Maui.Controls.VisualElement.TriggersProperty));
+            builder.BindProperty();
             return obj;
         }
         

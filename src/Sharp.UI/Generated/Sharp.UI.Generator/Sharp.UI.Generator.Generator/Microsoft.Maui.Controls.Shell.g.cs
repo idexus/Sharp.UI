@@ -486,6 +486,15 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T Items<T>(this T obj,
+            System.Func<BindingBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellItem>>, BindingBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellItem>>> buidBinding)
+            where T : Microsoft.Maui.Controls.Shell
+        {
+            var builder = buidBinding(new BindingBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellItem>>(obj, Microsoft.Maui.Controls.Shell.ItemsProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
         public static T ItemTemplate<T>(this T obj,
             Microsoft.Maui.Controls.DataTemplate itemTemplate)
             where T : Microsoft.Maui.Controls.Shell

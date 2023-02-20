@@ -49,16 +49,6 @@ namespace Sharp.UI
         IEnumerator IEnumerable.GetEnumerator() => this.Root.GetEnumerator();
         public void Add(Microsoft.Maui.Controls.TableSection item) => this.Root.Add(item);
 
-        public void Add(Func<Sharp.UI.TableView, Sharp.UI.TableView> configure) { configure(this); }
-
-        public void Add(Action<IList<Microsoft.Maui.Controls.TableSection>> builder)
-        {
-            List<Microsoft.Maui.Controls.TableSection> items = new List<Microsoft.Maui.Controls.TableSection>();
-            builder(items);
-            foreach (var item in items)
-                this.Root.Add(item);
-        }
-
     }
 }
 

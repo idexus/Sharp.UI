@@ -52,7 +52,7 @@ public class TemplatedParentPage : ContentPage
 
         this.Content = new ScrollView
         {
-            e => e.Margin(new Thickness(0,30,0,0)),
+            //e => e.Margin(new Thickness(0,30,0,0)),
 
             new VStack
             {

@@ -40,8 +40,6 @@ namespace Sharp.UI
         public IEnumerator GetEnumerator() { yield return this.View; }
         public void Add(Microsoft.Maui.Controls.View view) => this.View = view;
 
-        public void Add(Func<Sharp.UI.ViewCell, Sharp.UI.ViewCell> configure) { configure(this); }
-
     }
 }
 

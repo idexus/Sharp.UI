@@ -190,7 +190,6 @@ using System.Collections.Generic;
             GenerateConstructors();
             GenerateSingleItemContainer();
             GenerateCollectionContainer();
-            GenerateContainerConfigureAddMethod();
             GenerateBindableProperties();
         }
 
@@ -240,53 +239,6 @@ using System.Collections.Generic;
         IEnumerator IEnumerable.GetEnumerator() => {prefix}.GetEnumerator();
         public void Add({containerOfTypeName} item) => {prefix}.Add(item);");
 
-            }
-        }
-
-        // ---------------------------------
-        // ----- configure add methods -----    
-        // ---------------------------------
-
-        void GenerateContainerConfigureAddMethod()
-        {
-            if (containerOfTypeName != null || isAlreadyContainerOfThis)
-            {
-                var typeName = mainSymbol.ToDisplayString();
-
-                builder.AppendLine($@"
-        public void Add(Func<{typeName}, {typeName}> configure) {{ configure(this); }}");
-
-                if (containerOfTypeName != null && !isSingleItemContainer || isAlreadyContainerOfThis)
-                {
-                    var prefix = isAlreadyContainerOfThis ? "base" : $"this.{contentPropertyName}";
-
-                    var itemTypeNameForEnumerable = containerOfTypeName == "Microsoft.Maui.IView" ? "Microsoft.Maui.Controls.View" : containerOfTypeName;
-                    var shortName = Helpers.CamelCase(itemTypeNameForEnumerable.Split('.').Last());
-
-                    builder.AppendLine($@"
-        public void Add(Action<IList<{containerOfTypeName}>> builder)
-        {{
-            List<{containerOfTypeName}> items = new List<{containerOfTypeName}>();
-            builder(items);
-            foreach (var item in items)
-                {prefix}.Add(item);
-        }}");
-
-                    if (containerOfTypeName == "Microsoft.Maui.IView")
-                        builder.AppendLine($@"
-        public void Add(Func<{containerOfTypeName}> builder)
-        {{
-            var item = builder();
-            if (item != null)
-                {prefix}.Add(item);
-        }}
-
-        public void Add(IEnumerable<{itemTypeNameForEnumerable}> items)
-        {{
-            foreach (var item in items)
-                {prefix}.Add(item);
-        }}");
-                }
             }
         }
 

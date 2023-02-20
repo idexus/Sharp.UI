@@ -40,8 +40,6 @@ namespace Sharp.UI
         public IEnumerator GetEnumerator() { yield return this.Content; }
         public void Add(object content) => this.Content = content;
 
-        public void Add(Func<Sharp.UI.RadioButton, Sharp.UI.RadioButton> configure) { configure(this); }
-
     }
 }
 

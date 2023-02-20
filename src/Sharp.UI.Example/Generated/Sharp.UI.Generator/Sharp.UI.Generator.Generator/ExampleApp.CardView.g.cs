@@ -40,8 +40,6 @@ namespace ExampleApp
         public new IEnumerator GetEnumerator() { yield return this.ContentView; }
         public new void Add(Microsoft.Maui.Controls.View contentview) => this.ContentView = contentview;
 
-        public void Add(Func<ExampleApp.CardView, ExampleApp.CardView> configure) { configure(this); }
-
         // ----- bindable properties -----
 
         public static readonly Microsoft.Maui.Controls.BindableProperty CardTitleProperty =

@@ -51,16 +51,6 @@ namespace Sharp.UI
         IEnumerator IEnumerable.GetEnumerator() => this.Children.GetEnumerator();
         public void Add(Microsoft.Maui.Controls.Shapes.Geometry item) => this.Children.Add(item);
 
-        public void Add(Func<Sharp.UI.GeometryGroup, Sharp.UI.GeometryGroup> configure) { configure(this); }
-
-        public void Add(Action<IList<Microsoft.Maui.Controls.Shapes.Geometry>> builder)
-        {
-            List<Microsoft.Maui.Controls.Shapes.Geometry> items = new List<Microsoft.Maui.Controls.Shapes.Geometry>();
-            builder(items);
-            foreach (var item in items)
-                this.Children.Add(item);
-        }
-
     }
 }
 

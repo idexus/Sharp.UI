@@ -40,8 +40,6 @@ namespace Sharp.UI
         public IEnumerator GetEnumerator() { yield return this.Detail; }
         public void Add(Microsoft.Maui.Controls.Page detail) => this.Detail = detail;
 
-        public void Add(Func<Sharp.UI.FlyoutPage, Sharp.UI.FlyoutPage> configure) { configure(this); }
-
     }
 }
 

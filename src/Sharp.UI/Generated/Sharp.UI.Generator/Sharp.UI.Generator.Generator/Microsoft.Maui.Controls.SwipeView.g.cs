@@ -56,6 +56,15 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T LeftItems<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.SwipeItems>, BindingBuilder<Microsoft.Maui.Controls.SwipeItems>> buidBinding)
+            where T : Microsoft.Maui.Controls.SwipeView
+        {
+            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.SwipeItems>(obj, Microsoft.Maui.Controls.SwipeView.LeftItemsProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
         public static T RightItems<T>(this T obj,
             IList<Microsoft.Maui.Controls.ISwipeItem> rightItems)
             where T : Microsoft.Maui.Controls.SwipeView
@@ -71,6 +80,15 @@ namespace Sharp.UI
         {
             foreach (var item in rightItems)
                 obj.RightItems.Add(item);
+            return obj;
+        }
+        
+        public static T RightItems<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.SwipeItems>, BindingBuilder<Microsoft.Maui.Controls.SwipeItems>> buidBinding)
+            where T : Microsoft.Maui.Controls.SwipeView
+        {
+            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.SwipeItems>(obj, Microsoft.Maui.Controls.SwipeView.RightItemsProperty));
+            builder.BindProperty();
             return obj;
         }
         
@@ -92,6 +110,15 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T TopItems<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.SwipeItems>, BindingBuilder<Microsoft.Maui.Controls.SwipeItems>> buidBinding)
+            where T : Microsoft.Maui.Controls.SwipeView
+        {
+            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.SwipeItems>(obj, Microsoft.Maui.Controls.SwipeView.TopItemsProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
         public static T BottomItems<T>(this T obj,
             IList<Microsoft.Maui.Controls.ISwipeItem> bottomItems)
             where T : Microsoft.Maui.Controls.SwipeView
@@ -107,6 +134,15 @@ namespace Sharp.UI
         {
             foreach (var item in bottomItems)
                 obj.BottomItems.Add(item);
+            return obj;
+        }
+        
+        public static T BottomItems<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.SwipeItems>, BindingBuilder<Microsoft.Maui.Controls.SwipeItems>> buidBinding)
+            where T : Microsoft.Maui.Controls.SwipeView
+        {
+            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.SwipeItems>(obj, Microsoft.Maui.Controls.SwipeView.BottomItemsProperty));
+            builder.BindProperty();
             return obj;
         }
         

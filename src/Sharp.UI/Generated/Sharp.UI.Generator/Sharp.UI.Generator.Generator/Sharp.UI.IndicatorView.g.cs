@@ -40,8 +40,6 @@ namespace Sharp.UI
         public IEnumerator GetEnumerator() { yield return this.IndicatorLayout; }
         public void Add(Microsoft.Maui.Controls.IBindableLayout indicatorlayout) => this.IndicatorLayout = indicatorlayout;
 
-        public void Add(Func<Sharp.UI.IndicatorView, Sharp.UI.IndicatorView> configure) { configure(this); }
-
     }
 }
 

@@ -40,8 +40,6 @@ namespace Sharp.UI
         public IEnumerator GetEnumerator() { yield return this.ItemTemplate; }
         public void Add(Microsoft.Maui.Controls.DataTemplate itemtemplate) => this.ItemTemplate = itemtemplate;
 
-        public void Add(Func<Sharp.UI.ListView, Sharp.UI.ListView> configure) { configure(this); }
-
     }
 }
 

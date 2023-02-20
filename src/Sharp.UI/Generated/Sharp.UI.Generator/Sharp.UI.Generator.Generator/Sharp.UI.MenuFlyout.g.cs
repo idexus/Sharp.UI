@@ -35,16 +35,6 @@ namespace Sharp.UI
             configure(this);
         }
 
-        public void Add(Func<Sharp.UI.MenuFlyout, Sharp.UI.MenuFlyout> configure) { configure(this); }
-
-        public void Add(Action<IList<Microsoft.Maui.IMenuElement>> builder)
-        {
-            List<Microsoft.Maui.IMenuElement> items = new List<Microsoft.Maui.IMenuElement>();
-            builder(items);
-            foreach (var item in items)
-                base.Add(item);
-        }
-
     }
 }
 

@@ -67,16 +67,6 @@ namespace Sharp.UI
         IEnumerator IEnumerable.GetEnumerator() => this.GradientStops.GetEnumerator();
         public void Add(Microsoft.Maui.Controls.GradientStop item) => this.GradientStops.Add(item);
 
-        public void Add(Func<Sharp.UI.LinearGradientBrush, Sharp.UI.LinearGradientBrush> configure) { configure(this); }
-
-        public void Add(Action<IList<Microsoft.Maui.Controls.GradientStop>> builder)
-        {
-            List<Microsoft.Maui.Controls.GradientStop> items = new List<Microsoft.Maui.Controls.GradientStop>();
-            builder(items);
-            foreach (var item in items)
-                this.GradientStops.Add(item);
-        }
-
     }
 }
 

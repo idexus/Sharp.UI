@@ -56,8 +56,6 @@ namespace Sharp.UI
         public IEnumerator GetEnumerator() { yield return this.Text; }
         public void Add(string text) => this.Text = text;
 
-        public void Add(Func<Sharp.UI.Label, Sharp.UI.Label> configure) { configure(this); }
-
     }
 }
 

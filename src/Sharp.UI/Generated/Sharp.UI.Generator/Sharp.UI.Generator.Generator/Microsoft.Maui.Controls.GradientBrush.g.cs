@@ -30,6 +30,15 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T GradientStops<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.GradientStopCollection>, BindingBuilder<Microsoft.Maui.Controls.GradientStopCollection>> buidBinding)
+            where T : Microsoft.Maui.Controls.GradientBrush
+        {
+            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.GradientStopCollection>(obj, Microsoft.Maui.Controls.GradientBrush.GradientStopsProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
         public static T OnInvalidateGradientBrushRequested<T>(this T obj, System.EventHandler handler)
             where T : Microsoft.Maui.Controls.GradientBrush
         {

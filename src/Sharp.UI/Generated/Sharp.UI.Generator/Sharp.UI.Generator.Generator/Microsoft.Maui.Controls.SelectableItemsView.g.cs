@@ -56,6 +56,15 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T SelectedItems<T>(this T obj,
+            System.Func<BindingBuilder<System.Collections.Generic.IList<object>>, BindingBuilder<System.Collections.Generic.IList<object>>> buidBinding)
+            where T : Microsoft.Maui.Controls.SelectableItemsView
+        {
+            var builder = buidBinding(new BindingBuilder<System.Collections.Generic.IList<object>>(obj, Microsoft.Maui.Controls.SelectableItemsView.SelectedItemsProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
         public static T SelectionChangedCommand<T>(this T obj,
             System.Windows.Input.ICommand selectionChangedCommand)
             where T : Microsoft.Maui.Controls.SelectableItemsView

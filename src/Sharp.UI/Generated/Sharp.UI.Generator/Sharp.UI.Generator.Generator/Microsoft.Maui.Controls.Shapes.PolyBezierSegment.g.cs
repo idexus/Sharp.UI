@@ -28,6 +28,14 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static Microsoft.Maui.Controls.Shapes.PolyBezierSegment Points(this Microsoft.Maui.Controls.Shapes.PolyBezierSegment obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.PointCollection>, BindingBuilder<Microsoft.Maui.Controls.PointCollection>> buidBinding)
+        {
+            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.PointCollection>(obj, Microsoft.Maui.Controls.Shapes.PolyBezierSegment.PointsProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
     }
 }
 

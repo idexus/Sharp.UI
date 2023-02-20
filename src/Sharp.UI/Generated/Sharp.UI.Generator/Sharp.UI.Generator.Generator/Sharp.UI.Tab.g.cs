@@ -67,16 +67,6 @@ namespace Sharp.UI
         IEnumerator IEnumerable.GetEnumerator() => this.Items.GetEnumerator();
         public void Add(Microsoft.Maui.Controls.ShellContent item) => this.Items.Add(item);
 
-        public void Add(Func<Sharp.UI.Tab, Sharp.UI.Tab> configure) { configure(this); }
-
-        public void Add(Action<IList<Microsoft.Maui.Controls.ShellContent>> builder)
-        {
-            List<Microsoft.Maui.Controls.ShellContent> items = new List<Microsoft.Maui.Controls.ShellContent>();
-            builder(items);
-            foreach (var item in items)
-                this.Items.Add(item);
-        }
-
     }
 }
 

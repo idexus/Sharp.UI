@@ -28,6 +28,14 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static Microsoft.Maui.Controls.Shapes.PathFigure Segments(this Microsoft.Maui.Controls.Shapes.PathFigure obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.Shapes.PathSegmentCollection>, BindingBuilder<Microsoft.Maui.Controls.Shapes.PathSegmentCollection>> buidBinding)
+        {
+            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.Shapes.PathSegmentCollection>(obj, Microsoft.Maui.Controls.Shapes.PathFigure.SegmentsProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
         public static Microsoft.Maui.Controls.Shapes.PathFigure StartPoint(this Microsoft.Maui.Controls.Shapes.PathFigure obj,
             Microsoft.Maui.Graphics.Point startPoint)
         {

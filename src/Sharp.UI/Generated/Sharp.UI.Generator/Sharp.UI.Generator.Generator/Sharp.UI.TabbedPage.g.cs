@@ -51,16 +51,6 @@ namespace Sharp.UI
         IEnumerator IEnumerable.GetEnumerator() => this.Children.GetEnumerator();
         public void Add(Microsoft.Maui.Controls.Page item) => this.Children.Add(item);
 
-        public void Add(Func<Sharp.UI.TabbedPage, Sharp.UI.TabbedPage> configure) { configure(this); }
-
-        public void Add(Action<IList<Microsoft.Maui.Controls.Page>> builder)
-        {
-            List<Microsoft.Maui.Controls.Page> items = new List<Microsoft.Maui.Controls.Page>();
-            builder(items);
-            foreach (var item in items)
-                this.Children.Add(item);
-        }
-
     }
 }
 

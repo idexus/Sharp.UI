@@ -28,6 +28,14 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static Microsoft.Maui.Controls.Shapes.Polygon Points(this Microsoft.Maui.Controls.Shapes.Polygon obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.PointCollection>, BindingBuilder<Microsoft.Maui.Controls.PointCollection>> buidBinding)
+        {
+            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.PointCollection>(obj, Microsoft.Maui.Controls.Shapes.Polygon.PointsProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
         public static Microsoft.Maui.Controls.Shapes.Polygon FillRule(this Microsoft.Maui.Controls.Shapes.Polygon obj,
             Microsoft.Maui.Controls.Shapes.FillRule fillRule)
         {

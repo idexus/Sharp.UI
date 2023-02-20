@@ -108,6 +108,15 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T StrokeDashArray<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.DoubleCollection>, BindingBuilder<Microsoft.Maui.Controls.DoubleCollection>> buidBinding)
+            where T : Microsoft.Maui.Controls.Shapes.Shape
+        {
+            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.DoubleCollection>(obj, Microsoft.Maui.Controls.Shapes.Shape.StrokeDashArrayProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
         public static T StrokeDashOffset<T>(this T obj,
             double strokeDashOffset)
             where T : Microsoft.Maui.Controls.Shapes.Shape

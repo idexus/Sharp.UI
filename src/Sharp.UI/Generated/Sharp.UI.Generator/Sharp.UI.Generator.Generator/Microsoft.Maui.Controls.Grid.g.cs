@@ -30,6 +30,15 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T ColumnDefinitions<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.ColumnDefinitionCollection>, BindingBuilder<Microsoft.Maui.Controls.ColumnDefinitionCollection>> buidBinding)
+            where T : Microsoft.Maui.Controls.Grid
+        {
+            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.ColumnDefinitionCollection>(obj, Microsoft.Maui.Controls.Grid.ColumnDefinitionsProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
         public static T RowDefinitions<T>(this T obj,
             IList<Microsoft.Maui.Controls.RowDefinition> rowDefinitions)
             where T : Microsoft.Maui.Controls.Grid
@@ -45,6 +54,15 @@ namespace Sharp.UI
         {
             foreach (var item in rowDefinitions)
                 obj.RowDefinitions.Add(item);
+            return obj;
+        }
+        
+        public static T RowDefinitions<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.RowDefinitionCollection>, BindingBuilder<Microsoft.Maui.Controls.RowDefinitionCollection>> buidBinding)
+            where T : Microsoft.Maui.Controls.Grid
+        {
+            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.RowDefinitionCollection>(obj, Microsoft.Maui.Controls.Grid.RowDefinitionsProperty));
+            builder.BindProperty();
             return obj;
         }
         

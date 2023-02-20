@@ -1,4 +1,6 @@
-﻿namespace Sharp.UI
+﻿using System.Collections;
+
+namespace Sharp.UI
 {
     public static partial class ViewExtension
     {

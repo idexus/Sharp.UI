@@ -82,6 +82,15 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T VisibleViews<T>(this T obj,
+            System.Func<BindingBuilder<System.Collections.ObjectModel.ObservableCollection<Microsoft.Maui.Controls.View>>, BindingBuilder<System.Collections.ObjectModel.ObservableCollection<Microsoft.Maui.Controls.View>>> buidBinding)
+            where T : Microsoft.Maui.Controls.CarouselView
+        {
+            var builder = buidBinding(new BindingBuilder<System.Collections.ObjectModel.ObservableCollection<Microsoft.Maui.Controls.View>>(obj, Microsoft.Maui.Controls.CarouselView.VisibleViewsProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
         public static T IsBounceEnabled<T>(this T obj,
             bool isBounceEnabled)
             where T : Microsoft.Maui.Controls.CarouselView

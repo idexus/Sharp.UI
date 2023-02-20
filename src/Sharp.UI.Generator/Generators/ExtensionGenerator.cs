@@ -213,6 +213,8 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
                     !ExistInBaseClasses(info.propertyName, getterAndSetter: false))
                 {
                     GenerateExtensionMethod_List(info, elementType.ToDisplayString());
+                    if (extensionBindablePropertiesGenerated.Contains(info.propertyName))
+                        GenerateExtensionMethod_BindingBuilder(info);
                 }
             }
         }

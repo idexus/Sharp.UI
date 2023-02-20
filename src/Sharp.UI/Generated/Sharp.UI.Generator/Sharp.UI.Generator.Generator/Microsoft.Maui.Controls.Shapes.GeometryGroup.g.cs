@@ -30,6 +30,15 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T Children<T>(this T obj,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.Shapes.GeometryCollection>, BindingBuilder<Microsoft.Maui.Controls.Shapes.GeometryCollection>> buidBinding)
+            where T : Microsoft.Maui.Controls.Shapes.GeometryGroup
+        {
+            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.Shapes.GeometryCollection>(obj, Microsoft.Maui.Controls.Shapes.GeometryGroup.ChildrenProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
         public static T FillRule<T>(this T obj,
             Microsoft.Maui.Controls.Shapes.FillRule fillRule)
             where T : Microsoft.Maui.Controls.Shapes.GeometryGroup
