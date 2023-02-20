@@ -2,9 +2,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharp.UI", "main\Sharp.UI\Sharp.UI.csproj", "{FB396864-6EFC-4A20-A9A7-30CF1B0245CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sharp.UI", "main\Sharp.UI\Sharp.UI.csproj", "{FB396864-6EFC-4A20-A9A7-30CF1B0245CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharp.UI.Generator.SharpObjects", "generators\Sharp.UI.Generator.SharpObjects\Sharp.UI.Generator.SharpObjects.csproj", "{DB13FDDD-8B03-44F4-A017-4CEAC318A148}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sharp.UI.Generator.SharpObjects", "generators\Sharp.UI.Generator.SharpObjects\Sharp.UI.Generator.SharpObjects.csproj", "{DB13FDDD-8B03-44F4-A017-4CEAC318A148}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_libs", "_libs", "{5EAB34D2-9270-4CE3-AE54-DA18E08B6218}"
 EndProject
@@ -12,9 +12,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotReloadKit", "..\libs\Hot
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SlimTcpServer", "..\libs\HotReloadKit\libs\SlimTcpServer\src\SlimTcpServer\SlimTcpServer.csproj", "{7D6B154D-94E6-48AB-B892-5AACE948A616}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotReloadKit.Generator", "..\libs\HotReloadKit\src\HotReloadKit.Generator\HotReloadKit.Generator.csproj", "{2A41FCAE-6FEB-4DA9-A551-4AEDE489E568}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotReloadKit.Generator", "..\libs\HotReloadKit\src\HotReloadKit.Generator\HotReloadKit.Generator.csproj", "{2A41FCAE-6FEB-4DA9-A551-4AEDE489E568}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharp.UI.Extensions", "main\Sharp.UI.Extensions\Sharp.UI.Extensions.csproj", "{6E99D394-849C-4E1C-B759-915BA9EB36A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sharp.UI.Extensions", "main\Sharp.UI.Extensions\Sharp.UI.Extensions.csproj", "{6E99D394-849C-4E1C-B759-915BA9EB36A6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "generators", "generators", "{0C615F9A-4826-4C47-A845-5CB52CBA5AD1}"
 EndProject
@@ -22,16 +22,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "main", "main", "{243EF759-3
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{E50BEB58-0BF4-42B4-BAAA-12F956FFB290}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleApp", "samples\ExampleApp\ExampleApp.csproj", "{8C961A5F-EFF4-47FC-86E6-3114C5122297}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExampleApp", "samples\ExampleApp\ExampleApp.csproj", "{8C961A5F-EFF4-47FC-86E6-3114C5122297}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharp.UI.Core", "main\Sharp.UI.Core\Sharp.UI.Core.csproj", "{72368927-D797-42DC-BC17-D6562B55B98A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sharp.UI.Core", "main\Sharp.UI.Core\Sharp.UI.Core.csproj", "{72368927-D797-42DC-BC17-D6562B55B98A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharp.UI.Generator.Extensions", "generators\Sharp.UI.Generator.Extensions\Sharp.UI.Generator.Extensions.csproj", "{48EB73BD-2AD7-4F51-B44E-C538F1E92849}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sharp.UI.Generator.Extensions", "generators\Sharp.UI.Generator.Extensions\Sharp.UI.Generator.Extensions.csproj", "{48EB73BD-2AD7-4F51-B44E-C538F1E92849}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_docs", "_docs", "{EBEF87B9-CBCC-47E7-B35D-2786A76CD608}"
 	ProjectSection(SolutionItems) = preProject
-		..\README.md = ..\README.md
 		..\.gitignore = ..\.gitignore
+		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{B7D0A8ED-E017-4BEB-A222-DA59B2040CD7}"
@@ -50,12 +50,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{B7D0A8ED-E01
 		..\doc\gradients.md = ..\doc\gradients.md
 		..\doc\griddefinition.md = ..\doc\griddefinition.md
 		..\doc\menudefinition.md = ..\doc\menudefinition.md
+		..\doc\projectref.md = ..\doc\projectref.md
 		..\doc\properties.md = ..\doc\properties.md
 		..\doc\propertybindings.md = ..\doc\propertybindings.md
 		..\doc\shellapplication.md = ..\doc\shellapplication.md
 		..\doc\styledefinition.md = ..\doc\styledefinition.md
 		..\doc\triggers.md = ..\doc\triggers.md
-		..\doc\projectref.md = ..\doc\projectref.md
 	EndProjectSection
 EndProject
 Global
@@ -90,6 +90,7 @@ Global
 		{6E99D394-849C-4E1C-B759-915BA9EB36A6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8C961A5F-EFF4-47FC-86E6-3114C5122297}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8C961A5F-EFF4-47FC-86E6-3114C5122297}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C961A5F-EFF4-47FC-86E6-3114C5122297}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{8C961A5F-EFF4-47FC-86E6-3114C5122297}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C961A5F-EFF4-47FC-86E6-3114C5122297}.Release|Any CPU.Build.0 = Release|Any CPU
 		{72368927-D797-42DC-BC17-D6562B55B98A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -105,11 +106,11 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{FB396864-6EFC-4A20-A9A7-30CF1B0245CC} = {243EF759-3A44-43B1-B430-15BD51692EC7}
+		{DB13FDDD-8B03-44F4-A017-4CEAC318A148} = {0C615F9A-4826-4C47-A845-5CB52CBA5AD1}
 		{EB58844E-9852-4808-B31C-329F5F4D4CF9} = {5EAB34D2-9270-4CE3-AE54-DA18E08B6218}
 		{7D6B154D-94E6-48AB-B892-5AACE948A616} = {5EAB34D2-9270-4CE3-AE54-DA18E08B6218}
 		{2A41FCAE-6FEB-4DA9-A551-4AEDE489E568} = {5EAB34D2-9270-4CE3-AE54-DA18E08B6218}
-		{DB13FDDD-8B03-44F4-A017-4CEAC318A148} = {0C615F9A-4826-4C47-A845-5CB52CBA5AD1}
-		{FB396864-6EFC-4A20-A9A7-30CF1B0245CC} = {243EF759-3A44-43B1-B430-15BD51692EC7}
 		{6E99D394-849C-4E1C-B759-915BA9EB36A6} = {243EF759-3A44-43B1-B430-15BD51692EC7}
 		{8C961A5F-EFF4-47FC-86E6-3114C5122297} = {E50BEB58-0BF4-42B4-BAAA-12F956FFB290}
 		{72368927-D797-42DC-BC17-D6562B55B98A} = {243EF759-3A44-43B1-B430-15BD51692EC7}
