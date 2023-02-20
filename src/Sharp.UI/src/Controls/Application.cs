@@ -1,7 +1,7 @@
 namespace Sharp.UI
 {
-    [SharpObject(typeof(Microsoft.Maui.Controls.Application))]
-    public partial class Application
+    [SharpObject]
+    public partial class Application : Microsoft.Maui.Controls.Application
     {
         public static IServiceProvider Services { get; internal set; }
         public static bool HotReloadIsEnabled { get; internal set; } = false;

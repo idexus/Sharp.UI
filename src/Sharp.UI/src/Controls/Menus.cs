@@ -1,39 +1,39 @@
 ﻿namespace Sharp.UI
 {
-    [SharpObject(typeof(Microsoft.Maui.Controls.MenuFlyout))]
-    public partial class MenuFlyout { }
+    [SharpObject]
+    public partial class MenuFlyout : Microsoft.Maui.Controls.MenuFlyout { }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.MenuFlyoutItem))]
-    public partial class MenuFlyoutItem
+    [SharpObject]
+    public partial class MenuFlyoutItem : Microsoft.Maui.Controls.MenuFlyoutItem
     {
-        public MenuFlyoutItem(string text) : this()
+        public MenuFlyoutItem(string text)
         {
             this.Text = text;
         }
     }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.MenuFlyoutSubItem))]
-    public partial class MenuFlyoutSubItem
+    [SharpObject]
+    public partial class MenuFlyoutSubItem : Microsoft.Maui.Controls.MenuFlyoutSubItem
     {
-        public MenuFlyoutSubItem(string text) : this()
+        public MenuFlyoutSubItem(string text)
         {
             this.Text = text;
         }
     }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.FontImageSource))]
-    public partial class FontImageSource
+    [SharpObject]
+    public partial class FontImageSource : Microsoft.Maui.Controls.FontImageSource
     {
-        public FontImageSource(string glyph, string fontFamily) : this()
+        public FontImageSource(string glyph, string fontFamily)
         {
             this.Glyph = glyph; this.FontFamily = fontFamily;
         }
     }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.MenuBarItem))]
-    public partial class MenuBarItem
+    [SharpObject]
+    public partial class MenuBarItem : Microsoft.Maui.Controls.MenuBarItem
     {
-        public MenuBarItem(string text) : this()
+        public MenuBarItem(string text)
         {
             this.Text = text;
         }

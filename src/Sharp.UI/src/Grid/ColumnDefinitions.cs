@@ -2,49 +2,31 @@
 
 namespace Sharp.UI
 {
-    [SharpObject(typeof(Microsoft.Maui.Controls.ColumnDefinition))]
-    public partial class ColumnDefinition
-    {
-        public static ColumnDefinition Auto = new ColumnDefinition(0, GridUnitType.Auto);
-        public static ColumnDefinition Star(double width = 1) => new ColumnDefinition(width, GridUnitType.Star);
-        public static ColumnDefinition Absolute(double width) => new ColumnDefinition(width, GridUnitType.Absolute);
-
-        public ColumnDefinition(double width) : this()
-        {
-            this.Width = new GridLength(width);
-        }
-
-        public ColumnDefinition(double width, GridUnitType unitType) : this()
-        {
-            this.Width = new GridLength(width, unitType);
-        }
-    }
-
-    public class ColumnDefinitions : IEnumerable<ColumnDefinition>
+    public class ColumnDefinitionBuilder : IEnumerable<ColumnDefinition>
     {
         List<ColumnDefinition> items = new List<ColumnDefinition>();
 
         public IEnumerator<ColumnDefinition> GetEnumerator() => items.GetEnumerator();
         IEnumerator IEnumerable.GetEnumerator() => items.GetEnumerator();
 
-        public ColumnDefinitions Auto(int count = 1)
+        public ColumnDefinitionBuilder Auto(int count = 1)
         {
             for (int i = 0; i < count; i++)
-                items.Add(ColumnDefinition.Auto);
+                items.Add(new ColumnDefinition(new GridLength (0, GridUnitType.Auto)));
             return this;
         }
 
-        public ColumnDefinitions Star(double width = 1, int count = 1)
+        public ColumnDefinitionBuilder Star(double width = 1, int count = 1)
         {
-            for(int i = 0; i < count; i++)
-                items.Add(ColumnDefinition.Star(width));
+            for (int i = 0; i < count; i++)
+                items.Add(new ColumnDefinition(new GridLength(width, GridUnitType.Star)));
             return this;
         }
 
-        public ColumnDefinitions Absolute(double width, int count = 1)
+        public ColumnDefinitionBuilder Absolute(double width, int count = 1)
         {
             for (int i = 0; i < count; i++)
-                items.Add(ColumnDefinition.Absolute(width));
+                items.Add(new ColumnDefinition(new GridLength(width, GridUnitType.Absolute)));
             return this;
         }
     }

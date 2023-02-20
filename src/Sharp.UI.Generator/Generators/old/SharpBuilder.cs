@@ -11,7 +11,7 @@ using System.Net;
 using System.Text;
 using Microsoft.CodeAnalysis;
 
-namespace Sharp.UI.Generator;
+namespace Sharp.UI.Generator.Old;
 
 public class SharpBuilder
 {

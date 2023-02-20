@@ -1,33 +1,43 @@
 ﻿using System;
+using System.Collections;
 using Microsoft.Maui.Controls;
 
 namespace Sharp.UI
 {
-    [SharpObject(typeof(Microsoft.Maui.Controls.VisualStateGroupList))]
-    public partial class VisualStateGroupList { }
-
-    [SharpObject(typeof(Microsoft.Maui.Controls.VisualStateGroup))]
-    public partial class VisualStateGroup
+    public partial class VisualStateGroup : IEnumerable // TODO: sealed
     {
+        Microsoft.Maui.Controls.VisualStateGroup mauiVisualStateGroup;
+        public static implicit operator Microsoft.Maui.Controls.VisualStateGroup(VisualStateGroup visualState) => visualState.mauiVisualStateGroup;
+
+        IEnumerator IEnumerable.GetEnumerator() => mauiVisualStateGroup.States.GetEnumerator();
+        public void Add(VisualState visualState) => this.mauiVisualStateGroup.States.Add(visualState);
+
+
         public VisualStateGroup(string name = VisualStateGroup.CommonStates)
-            : this(new Microsoft.Maui.Controls.VisualStateGroup())
         {
+            this.mauiVisualStateGroup = new Microsoft.Maui.Controls.VisualStateGroup();
             if (string.IsNullOrEmpty(name)) name = Guid.NewGuid().ToString();
-            this.Name = name;
+            this.mauiVisualStateGroup.Name = name;
         }
 
         public const string CommonStates = "CommonStates";
     }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.VisualState))]
-    [ContentProperty("Setters")]
-    public partial class VisualState
+    public partial class VisualState : IEnumerable  // TODO: sealed
     {
+        Microsoft.Maui.Controls.VisualState mauiVisualState;
+        public static implicit operator Microsoft.Maui.Controls.VisualState(VisualState visualState) => visualState.mauiVisualState;
+
+        IEnumerator IEnumerable.GetEnumerator() => mauiVisualState.Setters.GetEnumerator();
+        public void Add(Setter setter) => this.mauiVisualState.Setters.Add(setter);
+        public void Add(Microsoft.Maui.Controls.StateTriggerBase triggerBase) => this.mauiVisualState.StateTriggers.Add(triggerBase);
+
         public VisualState() : this(Guid.NewGuid().ToString()) { }
 
-        public VisualState(string name) : this(new Microsoft.Maui.Controls.VisualState())
+        public VisualState(string name)
         {
-            this.Name = name;
+            this.mauiVisualState = new Microsoft.Maui.Controls.VisualState();
+            this.mauiVisualState.Name = name;
         }
 
         //------ consts -------
@@ -78,7 +88,7 @@ namespace Sharp.UI
         public class Button : VisualElement
         {
             public const string Pressed = "Pressed";
-        }
+        }        
     }
 }
 

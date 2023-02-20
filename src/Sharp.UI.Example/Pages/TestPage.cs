@@ -89,7 +89,8 @@ namespace ExampleApp
 
                     new ContentView(out var contentView)
                     {
-                        new Ellipse(100, 50)
+                        new Ellipse()
+                            .SizeRequest(100, 50)
                             .Fill(Colors.Red)
                     },
 
@@ -178,30 +179,31 @@ namespace ExampleApp
                         .ItemsSource(data)
                         .OnSelectedIndexChanged(OnChanged),
 
-                    new Polygon
-                    {
-                        new Point(40,10),
-                        new Point(70,80),
-                        new Point(10,50)
-                    }
-                    .Fill(Colors.AliceBlue)
-                    .Stroke(Colors.Green)
-                    .StrokeThickness(5),
+                    //new Polygon()
+                    //    .Fill(Colors.AliceBlue)
+                    //    .Stroke(Colors.Green)
+                    //    .StrokeThickness(5)
+                    //    .Points(                   
+                    //        new Point(40,10),
+                    //        new Point(70,80),
+                    //        new Point(10,50)
+                    //    )
+                    //,
 
-                    new Polyline
-                    {
-                        new Point(0,0),
-                        new Point(10,30),
-                        new Point(15,0),
-                        new Point(18,60),
-                        new Point(23,30),
-                        new Point(35,30),
-                        new Point(40,0),
-                        new Point(43,60),
-                        new Point(48,30),
-                        new Point(100,30)
-                    }
-                    .Stroke(Colors.Red),
+                    //new Polyline
+                    //{
+                    //    new Point(0,0),
+                    //    new Point(10,30),
+                    //    new Point(15,0),
+                    //    new Point(18,60),
+                    //    new Point(23,30),
+                    //    new Point(35,30),
+                    //    new Point(40,0),
+                    //    new Point(43,60),
+                    //    new Point(48,30),
+                    //    new Point(100,30)
+                    //}
+                    //.Stroke(Colors.Red),
 
                     new ProgressBar(0.5)
                         .ProgressColor(Colors.BlueViolet),
@@ -231,12 +233,16 @@ namespace ExampleApp
                         new RadioButton { "Monkey" },
                     },
 
-                    new Rectangle(100, 100)
+                    new Rectangle()
+                        .SizeRequest(100, 100)
                         .Assign(out var rect)
                         .Stroke(Colors.Wheat)
                         .StrokeThickness(10),
 
-                    new RoundRectangle(100, 100, 10).Stroke(Colors.Pink).StrokeThickness(10),
+                    new RoundRectangle()
+                        .SizeRequest(100, 100)
+                        .CornerRadius(10)
+                        .Stroke(Colors.Pink).StrokeThickness(10),
 
                     new Label("Wait...", out label3).FontSize(30).TextColor(Colors.Violet),
                     new SearchBar("Search...").OnTextChanged(OnSearch),

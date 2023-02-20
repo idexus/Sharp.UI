@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.CodeAnalysis;
 
-namespace Sharp.UI.Generator
+namespace Sharp.UI.Generator.Old
 {
 	public partial class SharpSymbol
 	{
@@ -290,7 +290,7 @@ namespace {nameSpaceString}
                             isGenericIList &&
                             !ExistInBaseClasses(info.propertyName, getterAndSetter: false))
                         {
-                            GenerateExtensionMethod_List(info, typeName);
+                            GenerateExtensionMethod_List(info, typeName.Name);
                         }
                     }
                 }

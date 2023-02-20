@@ -1,29 +1,29 @@
 ﻿namespace Sharp.UI
 {
-    [SharpObject(typeof(Microsoft.Maui.Controls.AbsoluteLayout))]
-    public partial class AbsoluteLayout { }
+    [SharpObject]
+    public partial class AbsoluteLayout : Microsoft.Maui.Controls.AbsoluteLayout { }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.FlexLayout))]
-    public partial class FlexLayout { }
+    [SharpObject]
+    public partial class FlexLayout : Microsoft.Maui.Controls.FlexLayout { }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.Grid))]
-    public partial class Grid { }
+    [SharpObject]
+    public partial class Grid : Microsoft.Maui.Controls.Grid { }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.HorizontalStackLayout))]
-    public partial class HStack { }
+    [SharpObject]
+    public partial class HStack : Microsoft.Maui.Controls.HorizontalStackLayout { }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.HorizontalStackLayout))]
-    public partial class HorizontalStackLayout { }
+    [SharpObject]
+    public partial class HorizontalStackLayout : Microsoft.Maui.Controls.HorizontalStackLayout { }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.StackLayout))]
-    public partial class StackLayout { }
+    [SharpObject]
+    public partial class StackLayout : Microsoft.Maui.Controls.StackLayout { }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.VerticalStackLayout))]
-    public partial class VStack { }
+    [SharpObject]
+    public partial class VStack : Microsoft.Maui.Controls.VerticalStackLayout { }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.VerticalStackLayout))]
-    public partial class VerticalStackLayout { }
+    [SharpObject]
+    public partial class VerticalStackLayout : Microsoft.Maui.Controls.VerticalStackLayout { }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.ContentPresenter))] 
-    public partial class ContentPresenter { }
+    [SharpObject] 
+    public partial class ContentPresenter : Microsoft.Maui.Controls.ContentPresenter { }
 }

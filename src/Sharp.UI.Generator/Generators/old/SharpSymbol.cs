@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.CodeAnalysis;
 
-namespace Sharp.UI.Generator
+namespace Sharp.UI.Generator.Old
 {
 	public partial class SharpSymbol
 	{
@@ -99,7 +99,7 @@ namespace Sharp.UI.Generator
 
             if (isAlreadyContainerOfThis)
             {
-                this.containerOfTypeName = containerType;
+                this.containerOfTypeName = containerType.ToDisplayString();
                 this.containerPropertyName = "this";
                 this.isSingleItemContainer = false;
             }
@@ -129,7 +129,7 @@ namespace Sharp.UI.Generator
                     var mauiContainerType = (INamedTypeSymbol)((propertySymbol).Type);
                     if (Helpers.IsGenericIList(mauiContainerType, out var ofTypeName))
                     {
-                        this.containerOfTypeName = ofTypeName;
+                        this.containerOfTypeName = ofTypeName.Name;
                         this.isSingleItemContainer = false;
                     }
                     else

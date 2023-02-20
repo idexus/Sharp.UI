@@ -1,16 +1,12 @@
 ﻿namespace Sharp.UI
 {
-    [AttachedProperties(typeof(Microsoft.Maui.Controls.FlyoutBase))]
-    public interface IElementFlyoutBaseAttachedProperties
+    public static partial class ElementExtension
     {
-        MenuFlyout ContextFlyout { get; set; }
-    }
-
-    [SharpObject(typeof(Microsoft.Maui.Controls.Element))]
-    [AttachedInterfaces(new[] { typeof(IElementFlyoutBaseAttachedProperties) })]
-    public static class ElementExtension
-    {
-
+        public static T ContextFlyout<T>(this T obj, MenuFlyout contextFlyout) where T : Element
+        {
+            obj.SetValue(FlyoutBase.ContextFlyoutProperty, contextFlyout);
+            return obj;
+        }
     }
 }
 

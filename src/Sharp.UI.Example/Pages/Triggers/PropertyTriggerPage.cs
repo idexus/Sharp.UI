@@ -13,11 +13,12 @@ public class PropertyTriggerPage : ContentPage
 				Entry.BackgroundColorProperty.Set(Colors.Black),
 				Entry.TextColorProperty.Set(Colors.White),
 
-				new Trigger(Entry.IsFocusedProperty, true)
-				{
-					Entry.BackgroundColorProperty.Set(Colors.Yellow),
-					Entry.TextColorProperty.Set(Colors.Black)
-				},
+				new Trigger(typeof(Entry))
+					.Property(Entry.IsFocusedProperty).Value(true)
+					.Setters(
+						Entry.BackgroundColorProperty.Set(Colors.Yellow),
+						Entry.TextColorProperty.Set(Colors.Black)
+					),
 			}
 		};
 

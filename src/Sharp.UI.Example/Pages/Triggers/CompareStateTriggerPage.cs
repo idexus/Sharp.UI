@@ -18,15 +18,16 @@ public class CompareStateTriggerPage : ContentPage
         {
             new VisualState()
             {
-                VisualElement.BackgroundColorProperty.Set(Colors.Black),
-            }
-            .StateTriggers(new CompareStateTrigger(e => e.Path("IsToggled").Source(testSwitch), true)),
+                new CompareStateTrigger().Binding(e => e.Path("IsToggled").Source(testSwitch)).Value(true),
 
+                VisualElement.BackgroundColorProperty.Set(Colors.Black)
+            },
             new VisualState()
             {
+                new CompareStateTrigger().Binding(e => e.Path("IsToggled").Source(testSwitch)).Value(false),
+
                 VisualElement.BackgroundColorProperty.Set(Colors.White),
             }
-            .StateTriggers(new CompareStateTrigger(e => e.Path("IsToggled").Source(testSwitch), false)),
         });
     }
 }

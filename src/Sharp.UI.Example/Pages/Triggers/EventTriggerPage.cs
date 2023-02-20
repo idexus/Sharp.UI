@@ -19,13 +19,10 @@ public class EventTriggerPage : ContentPage
 		Content = new VStack
 		{
 			new Entry("Enter text...", out var entry).Text("")
-                .Triggers(new List<TriggerBase>
-                {
-                    new EventTrigger("TextChanged")
-                    {
-                        new NumericValidationTriggerAction()
-                    }
-                })
+                .Triggers(
+                    new EventTrigger()
+                        .Event("TextChanged")
+                        .Actions(new NumericValidationTriggerAction()))
         }
 		.VerticalOptions(LayoutOptions.Center);
 	}

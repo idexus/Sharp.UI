@@ -1,4 +1,6 @@
-﻿
+﻿using Microsoft.Maui.Controls.Shapes;
+using Path = Microsoft.Maui.Controls.Shapes.Path;
+
 namespace ExampleApp
 {
     using Sharp.UI;
@@ -14,18 +16,14 @@ namespace ExampleApp
 
                     new VStack(out var vstack)
                     {
-                        new Path
-                        {
-                            e => e
-                                .Fill(Colors.Blue)
-                                .Stroke(Colors.Red)
-                                .WidthRequest(200).HeightRequest(200),
-
-                            new EllipseGeometry()
+                        new Path()
+                            .Fill(Colors.Blue)
+                            .Stroke(Colors.Red)
+                            .WidthRequest(200).HeightRequest(200)
+                            .Data(new EllipseGeometry()
                                 .Center(new Point(100,100))
                                 .RadiusX(100)
-                                .RadiusY(50)
-                        },
+                                .RadiusY(50)),
 
                         new Path()
                             .Stroke(Colors.White)
@@ -38,48 +36,40 @@ namespace ExampleApp
                             .HeightRequest(300)
                             .Clip(new EllipseGeometry().RadiusX(80).RadiusY(80).Center(new Point(140, 120))),
 
-                        new Path
-                        {
-                            e => e
-                                .WidthRequest(200).HeightRequest(200)
-                                .Stroke(Colors.Red),
-
-                            new GeometryGroup
+                        new Path()
+                            .WidthRequest(200).HeightRequest(200)
+                            .Stroke(Colors.Red)
+                            .Data(new GeometryGroup
                             {
                                 new RectangleGeometry().Rect(new Rect(0,0,170,100)),
 
                                 new LineGeometry()
                                     .StartPoint(new Point(0,0))
                                     .EndPoint(new Point(170,100))
-                            }
-                        },
+                            }),
 
-                        new Path
-                        {
-                            e => e
-                                .Stroke(Colors.Yellow)
-                                .Fill(Colors.Red)
-                                .HorizontalOptions(LayoutOptions.Center),
-
-                            new GeometryGroup
+                        new Path()
+                            .Stroke(Colors.Yellow)
+                            .Fill(Colors.Red)
+                            .HorizontalOptions(LayoutOptions.Center)
+                            .Data(new GeometryGroup
                             {
-                                new PathGeometry
-                                {
-                                    new PathFigure(15, 50)
-                                    {
-                                        new LineSegment(100,100),
-                                        new LineSegment(200,50)
-                                    }
-                                },
+                                new PathGeometry()
+                                    .Figures(
+                                        new PathFigure()
+                                            .StartPoint(new Point(15, 50))
+                                            .Segments(
+                                                new LineSegment(100,100),
+                                                new LineSegment(200,50)
+                                            )
+                                    ),
 
                                 new EllipseGeometry()
                                     .Center(new Point(50,70))
                                     .RadiusX(10)
-                                    .RadiusY(50),
-                            }
-                        },
-                    }
-                
+                                    .RadiusY(50)
+                            })
+                    }            
                 };
         }
     }

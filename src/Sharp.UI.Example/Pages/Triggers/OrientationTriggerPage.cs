@@ -12,19 +12,20 @@ public class OrientationTriggerPage : ContentPage
         }
         .VerticalOptions(LayoutOptions.Center)
         .HorizontalOptions(LayoutOptions.Center)
-        .Style(new Style<StackLayout>
+        .Style(new Style<VStack>
         {
             new VisualState()
             {
-                StackLayout.BackgroundColorProperty.Set(Colors.Blue)
-            }
-            .StateTriggers(new OrientationStateTrigger().Orientation(DisplayOrientation.Portrait)),
+                new OrientationStateTrigger().Orientation(DisplayOrientation.Portrait),
 
+                StackLayout.BackgroundColorProperty.Set(Colors.Blue),                
+            },
             new VisualState()
             {
+                new OrientationStateTrigger().Orientation(DisplayOrientation.Landscape),
+
                 StackLayout.BackgroundColorProperty.Set(Colors.Red)
-            }
-            .StateTriggers(new OrientationStateTrigger().Orientation(DisplayOrientation.Landscape)),
+            },
         });
     }
 }

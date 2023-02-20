@@ -2,8 +2,8 @@
 
 namespace Sharp.UI
 {
-    [SharpObject(typeof(Microsoft.Maui.Controls.DataTemplate))]
-    public partial class DataTemplate : IEnumerable
+    [SharpObject]
+    public partial class DataTemplate : Microsoft.Maui.Controls.DataTemplate, IEnumerable
     {
         static object getValue(System.Func<object> loadValue)
         {
@@ -16,7 +16,7 @@ namespace Sharp.UI
                     value = ActivatorUtilities.CreateInstance(Application.Services, replacedType);
                 }
             }
-            return MauiWrapper.Value<object>(value);
+            return value;
         }
 
         public new System.Func<object> LoadTemplate
@@ -44,7 +44,7 @@ namespace Sharp.UI
                 }
 
                 var value = ActivatorUtilities.CreateInstance(Application.Services, type);
-                return MauiWrapper.Value<object>(value);
+                return value;
             };
         }
 

@@ -22,6 +22,7 @@ namespace ExampleApp
 			Content =
 				new Grid
 				{
+					/*
                     e => e
 						.BackgroundColor(Colors.Cyan)
 						.Padding(50)
@@ -182,6 +183,7 @@ namespace ExampleApp
 							}
 						}					
 					}
+					*/
 				};
 		}
 	}

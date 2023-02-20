@@ -1,4 +1,6 @@
-﻿namespace ExampleApp;
+﻿using Microsoft.Maui.Controls.Shapes;
+
+namespace ExampleApp;
 
 using Sharp.UI;
 
@@ -11,8 +13,8 @@ public class AbsoluteLayoutPage : ContentPage
     public AbsoluteLayoutPage()
 	{
 		Content = new AbsoluteLayout
-		{   
-			new Grid(out grid)
+		{
+            new Grid(out grid)
             {
                 e => e
                     .BackgroundColor(Colors.Red)
@@ -31,14 +33,12 @@ public class AbsoluteLayoutPage : ContentPage
                     .VerticalOptions(LayoutOptions.Center)
             },
 
-            new Border(out border)
+            new Border(out border, e => e
+                .AbsoluteLayoutBounds(new Rect(100,400,300,200))
+                .Stroke(Colors.Blue)
+                .StrokeThickness(4)
+                .StrokeShape(new RoundRectangle().CornerRadius(40)))
             {
-                e => e
-                    .AbsoluteLayoutBounds(new Rect(100,400,300,200))
-                    .Stroke(Colors.Blue)
-                    .StrokeThickness(4)
-                    .StrokeShape(new RoundRectangle().CornerRadius(40)),
-
                 new Label("This is a test", out var label)
                     .Padding(20)
                     .FontSize(40)

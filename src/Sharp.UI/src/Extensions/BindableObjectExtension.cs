@@ -3,15 +3,11 @@ using Microsoft.Maui.Controls.Internals;
 
 namespace Sharp.UI
 {
-    public static class BindableObjectExtension
+    public static partial class BindableObjectExtension
     {
-        public static T SetProperty<T>(this T obj,
-            BindableProperty property,
-            object value)
-            where T : IBindableObject
+        public static T SetProperty<T>(this T obj, BindableProperty property, object value) where T : BindableObject
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BindableObject>(obj);
-            mauiObject.SetValue(property, value);
+            obj.SetValue(property, value);
             return obj;
         }
 
@@ -22,10 +18,9 @@ namespace Sharp.UI
             IValueConverter converter = null,
             string converterParameter = null,
             string stringFormat = null,
-            object source = null) where T : IBindableObject
+            object source = null) where T : BindableObject
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BindableObject>(obj);
-            mauiObject.SetBinding(
+            obj.SetBinding(
                 targetProperty: property,
                 binding: new Microsoft.Maui.Controls.Binding(
                     path: sourcePath,
@@ -43,10 +38,9 @@ namespace Sharp.UI
             BindingMode mode = BindingMode.Default,
             IValueConverter converter = null,
             string converterParameter = null,
-            string stringFormat = null) where T : IBindableObject
+            string stringFormat = null) where T : BindableObject
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BindableObject>(obj);
-            mauiObject.SetBinding(
+            obj.SetBinding(
                 targetProperty: property,
                 binding: new Microsoft.Maui.Controls.Binding(
                     path: sourcePath,
@@ -58,19 +52,15 @@ namespace Sharp.UI
             return obj;
         }
 
-        public static T RegisterName<T>(this T obj, string name, IBindableObject scopedElement)
-            where T : IBindableObject
+        public static T RegisterName<T>(this T obj, string name, BindableObject scopedElement) where T : BindableObject
         {
-            var mauiObject = MauiWrapper.Value<Microsoft.Maui.Controls.BindableObject>(obj);
-            var mauiScopedElement = MauiWrapper.Value<Microsoft.Maui.Controls.BindableObject>(scopedElement);
-
-            var nameScope = NameScope.GetNameScope(mauiScopedElement);
+            var nameScope = NameScope.GetNameScope(scopedElement);
             if (nameScope == null)
             {
                 nameScope = new NameScope();
-                NameScope.SetNameScope(mauiScopedElement, nameScope);
+                NameScope.SetNameScope(scopedElement, nameScope);
             }
-            nameScope.RegisterName(name, mauiObject);
+            nameScope.RegisterName(name, obj);
             return obj;
         }
     }

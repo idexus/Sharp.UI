@@ -1,68 +1,51 @@
 ﻿namespace Sharp.UI
 {
-    [SharpObject(typeof(Microsoft.Maui.Controls.Shapes.Geometry))] 
-    public abstract partial class Geometry { }
-
-    [SharpObject(typeof(Microsoft.Maui.Controls.Shapes.EllipseGeometry))] 
-    public partial class EllipseGeometry
+    [SharpObject] 
+    public partial class EllipseGeometry : Microsoft.Maui.Controls.Shapes.EllipseGeometry
     {
-        public EllipseGeometry(double radiusX, double radiusY, Point center) : this()
+        public EllipseGeometry(double radiusX, double radiusY, Point center)
         {
             this.RadiusX = radiusX; this.RadiusY = radiusY; this.Center = center;
         }
     }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.Shapes.LineGeometry))] 
-    public partial class LineGeometry { }
+    [SharpObject] 
+    public partial class LineGeometry : Microsoft.Maui.Controls.Shapes.LineGeometry { }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.Shapes.RectangleGeometry))] 
-    public partial class RectangleGeometry
+    [SharpObject] 
+    public partial class RectangleGeometry : Microsoft.Maui.Controls.Shapes.RectangleGeometry
     {
-        public RectangleGeometry(double x, double y, double width, double height) : this()
+        public RectangleGeometry(double x, double y, double width, double height)
         {
             this.Rect = new Rect(x, y, width, height);
         }
     }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.Shapes.GeometryGroup))] 
-    public partial class GeometryGroup { }
+    [SharpObject] 
+    public partial class GeometryGroup : Microsoft.Maui.Controls.Shapes.GeometryGroup { }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.Shapes.PathGeometry))] 
-    public partial class PathGeometry { }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.Shapes.PathFigure))]
-    public partial class PathFigure
+    [SharpObject]
+    public partial class ArcSegment : Microsoft.Maui.Controls.Shapes.ArcSegment { }
+
+    [SharpObject]
+    public partial class BezierSegment : Microsoft.Maui.Controls.Shapes.BezierSegment { }
+
+    [SharpObject] 
+    public partial class LineSegment : Microsoft.Maui.Controls.Shapes.LineSegment
     {
-        public PathFigure(double x, double y) : this()
-        {
-            this.StartPoint = new Point(x, y);
-        }
-    }
-
-    [SharpObject(typeof(Microsoft.Maui.Controls.Shapes.ArcSegment))]
-    public partial class ArcSegment { }
-
-    [SharpObject(typeof(Microsoft.Maui.Controls.Shapes.BezierSegment))]
-    public partial class BezierSegment { }
-
-    [SharpObject(typeof(Microsoft.Maui.Controls.Shapes.LineSegment))] 
-    public partial class LineSegment
-    {
-        public LineSegment(double x, double y) : this()
+        public LineSegment(double x, double y)
         {
             this.Point = new Point(x, y);
         }
     }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.Shapes.PolyBezierSegment))]
-    public partial class PolyBezierSegment { }
+    [SharpObject]
+    public partial class PolyLineSegment : Microsoft.Maui.Controls.Shapes.PolyLineSegment { }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.Shapes.PolyLineSegment))]
-    public partial class PolyLineSegment { }
+    [SharpObject]
+    public partial class PolyQuadraticBezierSegment : Microsoft.Maui.Controls.Shapes.PolyQuadraticBezierSegment { }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.Shapes.PolyQuadraticBezierSegment))]
-    public partial class PolyQuadraticBezierSegment { }
-
-    [SharpObject(typeof(Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment))]
-    public partial class QuadraticBezierSegment { }
+    [SharpObject]
+    public partial class QuadraticBezierSegment : Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment { }
 }

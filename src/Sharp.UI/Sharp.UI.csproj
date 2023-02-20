@@ -40,6 +40,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="src\Symbols\" />
+	</ItemGroup>
+	<ItemGroup>
 		<None Include="..\Sharp.UI.Generator\bin\$(Configuration)\netstandard2.0\Sharp.UI.Generator.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
 	</ItemGroup>
 
@@ -52,5 +55,8 @@
 	    <None Include="$(CompilerGeneratedFilesOutputPath)/Sharp.UI.Generator/**/*.cs" />
 	    <None Include="$(CompilerGeneratedFilesOutputPath)/HotReloadKit.Generator/**/*.cs" />
 		<None Include="docs\README.md" Pack="true" PackagePath="\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="src\Symbols\" />
 	</ItemGroup>
 </Project>

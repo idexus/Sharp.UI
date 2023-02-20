@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.CodeAnalysis;
 
-namespace Sharp.UI.Generator
+namespace Sharp.UI.Generator.Old
 {
     public partial class SharpSymbol
 	{

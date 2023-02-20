@@ -13,60 +13,106 @@ using System.Threading.Tasks;
 
 namespace Sharp.UI.Generator
 {
-	public static class Helpers
-	{
+    public static class Helpers
+    {
+        static string[] keywords = { "class", "switch", "event" };
+
         public static void WaitForDebugger(CancellationToken cancellationToken)
         {
 #if DEBUG
-            while (!Debugger.IsAttached && !cancellationToken.IsCancellationRequested) Task.Delay(1000).Wait(cancellationToken);
+            while (!Debugger.IsAttached && !cancellationToken.IsCancellationRequested)
+                Task.Delay(1000).Wait(cancellationToken);
 #endif
         }
 
         public static string CamelCase(string str)
         {
             var camelCaseName = $"{str.Substring(0, 1).ToLower()}{str.Substring(1)}";
-            camelCaseName = camelCaseName.Equals("class") ? "@class" : camelCaseName;
-            camelCaseName = camelCaseName.Equals("switch") ? "@switch" : camelCaseName;
-            camelCaseName = camelCaseName.Equals("event") ? "@event" : camelCaseName;
+            if (keywords.Contains(camelCaseName)) camelCaseName = $"@{camelCaseName}";
             return camelCaseName;
-        }
-
-        public static bool IsGenericIList(INamedTypeSymbol symbol, out string typeName)
-        {
-            if (symbol.Name.Equals("IList") && symbol.IsGenericType)
-            {
-                typeName = symbol.TypeArguments.First().ToDisplayString();
-                return true;
-            }
-
-            var type = symbol;
-            do
-            {
-                foreach (var inter in type.Interfaces)
-                    if (inter.Name.Equals("IList") && inter.IsGenericType)
-                    {
-
-                        typeName = inter.TypeArguments.First().ToDisplayString();
-                        return true;
-                    }
-
-                type = type.BaseType;
-            }
-            while (type != null && !type.Name.Equals("Object"));
-
-            typeName = null;
-            return false;
         }
 
         public static void LoopDownToObject(INamedTypeSymbol symbol, Func<INamedTypeSymbol, bool> func)
         {
             var type = symbol;
             var endLoop = false;
-            while (!endLoop && !type.Name.Equals("Object"))
+            while (!endLoop && type != null && !type.Name.Equals("Object", StringComparison.Ordinal))
             {
                 endLoop = func(type);
                 type = type.BaseType;
             }
+        }
+
+        public static bool IsGenericIList(ISymbol symbol, out ITypeSymbol elementType)
+        {
+            elementType = null;
+            var namedTypeSymbol = symbol as INamedTypeSymbol;
+            if (namedTypeSymbol == null) return false;
+
+            if (namedTypeSymbol.Name.Equals("IList", StringComparison.Ordinal) && namedTypeSymbol.IsGenericType)
+            {
+                elementType = namedTypeSymbol.TypeArguments.First();
+                return true;
+            }
+
+            ITypeSymbol _elementType = null;
+            LoopDownToObject(namedTypeSymbol, type =>
+            {
+                foreach (var inter in type.AllInterfaces)
+                    if (inter.Name.Equals("IList", StringComparison.Ordinal) && inter.IsGenericType)
+                    {
+
+                        _elementType = inter.TypeArguments.First();
+                        return true;
+                    }
+                return false;
+            });
+
+            elementType = _elementType;
+            return _elementType != null;
+        }
+
+        public static bool IsIEnumerable(INamedTypeSymbol symbol)
+        {
+            bool isIEnumerable = false;
+            LoopDownToObject(symbol, type =>
+            {
+                foreach (var inter in type.AllInterfaces)
+                    if (inter.Name.Equals("IEnumerable", StringComparison.Ordinal) && !inter.IsGenericType)
+                    {
+                        isIEnumerable = true;
+                        return true;
+                    }
+                return false;
+            });
+            return isIEnumerable;
+        }
+
+        public static string GetNormalizedFileName(INamedTypeSymbol type)
+        {
+            var tail = type.IsGenericType ? $".{type.TypeArguments.FirstOrDefault().Name}" : "";
+            return $"{type.Name}{tail}";
+        }
+
+        public static string GetNormalizedClassName(INamedTypeSymbol type)
+        {
+            var tail = type.IsGenericType ? $"Of{type.TypeArguments.FirstOrDefault().Name}" : "";
+            var prefix = type.ToDisplayString().Contains(".Shapes.") ? "Shapes" : "";
+            prefix = type.ToDisplayString().Contains(".Compatibility.") ? "Compatibility" : "";
+            return $"{prefix}{type.Name}{tail}";
+        }
+
+        public static bool IsBindable(INamedTypeSymbol symbol)
+        {
+            var isBindable = false;
+
+            LoopDownToObject(symbol, type =>
+            {
+                if (type.ToDisplayString().Equals("Microsoft.Maui.Controls.BindableObject", StringComparison.Ordinal)) isBindable = true;
+                return isBindable;
+            });
+
+            return isBindable;
         }
     }
 }

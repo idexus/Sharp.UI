@@ -14,7 +14,8 @@ namespace ExampleApp
         {
             Content = new CollectionView
             {
-                e=>e.Margin(new Thickness(0, 30, 0, 0))
+                e => e
+                    .Margin(new Thickness(0, 30, 0, 0))
                     .ItemsSource(Numbers),
 
                 () => new Label()

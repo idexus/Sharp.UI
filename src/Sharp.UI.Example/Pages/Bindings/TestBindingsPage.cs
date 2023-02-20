@@ -1,24 +1,27 @@
-﻿namespace ExampleApp;
+﻿using Microsoft.Maui.Controls.Shapes;
 
-using Sharp.UI;
-
-public class TestBindingsPage : ContentPage
+namespace ExampleApp
 {
-	ResourceDictionary localResources => new ResourceDictionary
-	{
-		new Style<Ellipse>
-		{
-			Ellipse.FillProperty.Set(Colors.Red),
-		},
-	};
+	using Sharp.UI;
 
-	public TestBindingsPage()
+	public class TestBindingsPage : ContentPage
 	{
-		Resources = localResources;
-		Content = new VStack
+		ResourceDictionary localResources => new ResourceDictionary
 		{
-			new Rectangle(200, 200)
-				.Assign(out var rect)				
+			new Style<Ellipse>
+			{
+				Ellipse.FillProperty.Set(Colors.Red),
+			},
+		};
+
+		public TestBindingsPage()
+		{
+			Resources = localResources;
+			Content = new VStack
+		{
+			new Rectangle()
+				.SizeRequest(200,200)
+				.Assign(out var rect)
 				.Stroke(Colors.Blue)
 				.StrokeThickness(10)
 				.Margin(50),
@@ -38,17 +41,18 @@ public class TestBindingsPage : ContentPage
 				{
 					if (rect.Rotation < 180)
 					{
-						rect.MauiObject.RotateTo(360, 2000);
-						ellipse.MauiObject.RotateTo(360, 1000);
+						rect.RotateTo(360, 2000);
+						ellipse.RotateTo(360, 1000);
 					}
 					else
 					{
-						ellipse.MauiObject.RotateTo(0, 1000);
-						rect.MauiObject.RotateTo(0, 2000);
+						ellipse.RotateTo(0, 1000);
+						rect.RotateTo(0, 2000);
 					}
 				})
 		}
-        .HorizontalOptions(LayoutOptions.Center)
-        .VerticalOptions(LayoutOptions.Center);
+			.HorizontalOptions(LayoutOptions.Center)
+			.VerticalOptions(LayoutOptions.Center);
+		}
 	}
 }

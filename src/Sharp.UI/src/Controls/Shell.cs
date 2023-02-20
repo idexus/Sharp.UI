@@ -1,13 +1,13 @@
 ﻿namespace Sharp.UI
 {
-    [SharpObject(typeof(Microsoft.Maui.Controls.Shell))]
-    public partial class Shell { }
+    [SharpObject]
+    public partial class Shell : Microsoft.Maui.Controls.Shell { }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.TabBar))]
-    public partial class TabBar { }
+    [SharpObject]
+    public partial class TabBar : Microsoft.Maui.Controls.TabBar { }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.FlyoutItem))]
-    public partial class FlyoutItem
+    [SharpObject]
+    public partial class FlyoutItem : Microsoft.Maui.Controls.FlyoutItem
     {
         public FlyoutItem(FlyoutDisplayOptions displayOptions)
         {
@@ -15,24 +15,24 @@
         }
     }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.Tab))]
-    public partial class Tab
+    [SharpObject]
+    public partial class Tab : Microsoft.Maui.Controls.Tab
     {
-        public Tab(string title) : this()
+        public Tab(string title) 
         {
             this.Title = title;
         }
     }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.ShellContent))]
-    public partial class ShellContent
+    [SharpObject]
+    public partial class ShellContent : Microsoft.Maui.Controls.ShellContent
     {
-        public ShellContent(string title, object content) : this()
+        public ShellContent(string title, object content) 
         {
             this.Title = title; this.Content = content;
         }
 
-        protected ShellContent(Type page) : this()
+        protected ShellContent(Type page) 
         {
             this.ContentTemplate = new DataTemplate(page);
         }

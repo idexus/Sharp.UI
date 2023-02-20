@@ -1,16 +1,11 @@
 ﻿namespace Sharp.UI
 {
-    [AttachedProperties(typeof(Microsoft.Maui.Controls.Shell))]
-    public interface IBaseShellItemShellAttachedProperties
+    public static partial class BaseShellItemExtension
     {
-        [AttachedName("ItemTemplate")]
-        DataTemplate ShellItemTemplate { get; set; }
-    }
-
-    [SharpObject(typeof(Microsoft.Maui.Controls.BaseShellItem))]
-    [AttachedInterfaces(new[] {typeof(IBaseShellItemShellAttachedProperties) })]
-    public static class BaseShellItemExtension
-    {
-
+        public static T ShellItemTemplate<T>(this T obj, DataTemplate dataTemplate) where T : Element
+        {
+            obj.SetValue(Microsoft.Maui.Controls.Shell.ItemTemplateProperty, dataTemplate);
+            return obj;
+        }
     }
 }

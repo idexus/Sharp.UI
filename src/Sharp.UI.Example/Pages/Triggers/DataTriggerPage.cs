@@ -12,11 +12,11 @@ public class DataTriggerPage : ContentPage
 			new Entry("Enter text...", out var entry).Text(""),
 			new Button("Save")
                 .Triggers(
-					new DataTrigger<Button>(e => e.Path("Text.Length").Source(entry), 0)
-                    {
-                        Entry.IsEnabledProperty.Set(false)
-                    }),
-
+					new DataTrigger(typeof(Button))
+						.Binding(e => e.Path("Text.Length").Source(entry))
+						.Value(0)
+						.Setters(Entry.IsEnabledProperty.Set(false))
+                    ),
         }
 		.VerticalOptions(LayoutOptions.Center);
 	}

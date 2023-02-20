@@ -1,29 +1,29 @@
 ﻿namespace Sharp.UI
 {
-    [SharpObject(typeof(Microsoft.Maui.Controls.TextCell))] 
-    public partial class TextCell
+    [SharpObject]
+    public partial class TextCell : Microsoft.Maui.Controls.TextCell
     {
-        public TextCell(string text) : this()
+        public TextCell(string text)
         {
             this.Text = text;
         }
     }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.ImageCell))] 
-    public partial class ImageCell { }
+    [SharpObject] 
+    public partial class ImageCell : Microsoft.Maui.Controls.ImageCell { }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.SwitchCell))] 
-    public partial class SwitchCell { }
+    [SharpObject] 
+    public partial class SwitchCell : Microsoft.Maui.Controls.SwitchCell { }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.EntryCell))] 
-    public partial class EntryCell
+    [SharpObject] 
+    public partial class EntryCell : Microsoft.Maui.Controls.EntryCell
     {
-        public EntryCell(string placeholder) : this()
+        public EntryCell(string placeholder)
         {
             this.Placeholder = placeholder;
         }
     }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.ViewCell))] 
-    public partial class ViewCell { }
+    [SharpObject] 
+    public partial class ViewCell : Microsoft.Maui.Controls.ViewCell { }
 }

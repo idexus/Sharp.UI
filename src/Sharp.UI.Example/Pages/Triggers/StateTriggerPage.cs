@@ -21,20 +21,20 @@ public partial class StateTriggerPage : ContentPage
             new VisualState()
             { 
                 VisualElement.BackgroundColorProperty.Set(Colors.Black),
-            }
-            .StateTriggers(
+
                 new StateTrigger()
                     .IsActive(e => e.Path("IsToggled").Source(testSwitch))
-                    .OnIsActiveChanged(OnCheckedStateIsActiveChanged)),
+                    .OnIsActiveChanged(OnCheckedStateIsActiveChanged)
+            },
 
             new VisualState()
             {
                 VisualElement.BackgroundColorProperty.Set(Colors.White),
-            }
-            .StateTriggers(
+
                 new StateTrigger()
                     .IsActive(e => e.Path("IsToggled").Source(testSwitch).Converter(new NegateConverter()))
-                    .OnIsActiveChanged(OnUncheckedStateIsActiveChanged)),
+                    .OnIsActiveChanged(OnUncheckedStateIsActiveChanged)
+            },
         });
 	}
 

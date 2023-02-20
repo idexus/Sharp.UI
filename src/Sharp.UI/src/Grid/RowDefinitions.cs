@@ -2,49 +2,31 @@
 
 namespace Sharp.UI
 {
-    [SharpObject(typeof(Microsoft.Maui.Controls.RowDefinition))]
-    public partial class RowDefinition
-    {
-        public static RowDefinition Auto = new RowDefinition(0, GridUnitType.Auto);
-        public static RowDefinition Star(double height = 1) => new RowDefinition(height, GridUnitType.Star);
-        public static RowDefinition Absolute(double height) => new RowDefinition(height, GridUnitType.Absolute);
-
-        public RowDefinition(double height) : this()
-        {
-            this.Height = new GridLength(height);
-        }
-
-        public RowDefinition(double height, GridUnitType unitType) : this()
-        {
-            this.Height = new GridLength(height, unitType);
-        }
-    }
-
-    public class RowDefinitions : IEnumerable<RowDefinition>
+    public class RowDefinitionBuilder : IEnumerable<RowDefinition>
     {
         List<RowDefinition> items = new List<RowDefinition>();
 
         public IEnumerator<RowDefinition> GetEnumerator() => items.GetEnumerator();
         IEnumerator IEnumerable.GetEnumerator() => items.GetEnumerator();
 
-        public RowDefinitions Auto(int count = 1)
+        public RowDefinitionBuilder Auto(int count = 1)
         {
             for (int i = 0; i < count; i++)
-                items.Add(RowDefinition.Auto);
+                items.Add(new RowDefinition(new GridLength(0, GridUnitType.Auto)));
             return this;
         }
 
-        public RowDefinitions Star(double height = 1, int count = 1)
+        public RowDefinitionBuilder Star(double height = 1, int count = 1)
         {
             for (int i = 0; i < count; i++)
-                items.Add(RowDefinition.Star(height));
+                items.Add(new RowDefinition(new GridLength(height, GridUnitType.Star)));
             return this;
         }
 
-        public RowDefinitions Absolute(double height, int count = 1)
+        public RowDefinitionBuilder Absolute(double height, int count = 1)
         {
             for (int i = 0; i < count; i++)
-                items.Add(RowDefinition.Absolute(height));
+                items.Add(new RowDefinition(new GridLength(height, GridUnitType.Absolute)));
             return this;
         }
     }

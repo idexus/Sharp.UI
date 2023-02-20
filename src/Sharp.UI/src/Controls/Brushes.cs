@@ -1,27 +1,26 @@
 ﻿using System;
 namespace Sharp.UI
 {
-    [SharpObject(typeof(Microsoft.Maui.Controls.LinearGradientBrush))]
-    public partial class LinearGradientBrush
+    [SharpObject]
+    public partial class LinearGradientBrush : Microsoft.Maui.Controls.LinearGradientBrush
     {
-        public LinearGradientBrush(Point startPoint, Point endPoint) : this()
+        public LinearGradientBrush(Point startPoint, Point endPoint)
         {
             StartPoint = startPoint; EndPoint = endPoint;
         }
     }
 
-
-    [SharpObject(typeof(Microsoft.Maui.Controls.RadialGradientBrush))]
-    public partial class RadialGradientBrush
+    [SharpObject]
+    public partial class RadialGradientBrush : Microsoft.Maui.Controls.RadialGradientBrush
     {
-        public RadialGradientBrush(Point center) : this()
+        public RadialGradientBrush(Point center)
         {
             Center = center;
         }
     }
 
-    [SharpObject(typeof(Microsoft.Maui.Controls.GradientStop))]
-    public partial class GradientStop
+    [SharpObject]
+    public partial class GradientStop : Microsoft.Maui.Controls.GradientStop
     {
         public GradientStop(Color color, double offset)
             : base(color, (float)offset) { }

@@ -12,13 +12,21 @@ public class MultiTriggerPage : ContentPage
             new Entry("phone", out var phone).Text(""),
             new Button("Save")
                 .Triggers(
-                    new MultiTrigger<Button>()
-                    {
-                        Entry.IsEnabledProperty.Set(false)
-                    }
-                    .Conditions(
-                        new BindingCondition(e => e.Path("Text.Length").Source(email), 0),
-                        new BindingCondition(e => e.Path("Text.Length").Source(phone), 0))
+                    new MultiTrigger(typeof(Button))
+                        .Conditions(new Condition[]
+                        {
+                            new BindingCondition()
+                                .Binding(e => e.Path("Text.Length").Source(email))
+                                .Value(0),
+
+                            new BindingCondition()
+                                .Binding(e => e.Path("Text.Length").Source(phone))
+                                .Value(0)
+                        })
+                        .Setters(new Setter[]
+                        {
+                            Entry.IsEnabledProperty.Set(false)
+                        })                   
                 )
         }
         .WidthRequest(400)
