@@ -2,7 +2,8 @@
 
 Sharp.UI is a .NET Multi-platform App User Interface (MAUI) library that allows you to build user interfaces declaratively in C# code using fluent methods. You do not need to use XAML to create your interfaces. The library comes with Hot Reload Support, which means you can make changes to your UI in real-time and see the results without having to rebuild the entire application. The hot reload feature is supported in Visual Studio 2022 for both Windows and Mac using the [HotReloadKit library](https://github.com/idexus/HotReloadKit.git).
 
-Sharp.UI is a wrapper library, mostly auto-generated, and it replaces the standard MAUI classes.
+Sharp.UI is mostly an auto-generated library, and it replaces the standard MAUI classes, but you can also add only the generated fluent methods for classes from .Net MAUI to your project.
+
 
 <a href="https://youtu.be/w5863t1E5tg" target="_blank">
  <img src="https://github.com/idexus/Sharp.UI/raw/main/doc/assets/ytscreen.jpg" alt="Hot Reload Support" width="640" border="0" />
@@ -77,10 +78,16 @@ namespace ExampleApp
 To add the Sharp.UI library to your project, run the following command:
 
 ```
-dotnet add package Sharp.UI --version 0.3.1-alpha.2
+dotnet add package Sharp.UI --version 0.4.0-alpha
 ```
 
-You can also add the library to your project by adding a project reference to the Sharp.UI library. For more information, see the [Adding the Library by VS Project Reference](./doc/howtostart.md) document.
+You can also add only the generated fluent methods for classes from .Net MAUI to your project.
+
+```
+dotnet add package Sharp.UI.Extensions --version 0.4.0-alpha
+```
+
+You can also add the library to your project by adding a project reference to the Sharp.UI library. For more information, see the [Adding the Library by VS Project Reference](./doc/projectref.md) document.
 
 # Hot Reload
 
@@ -164,7 +171,6 @@ public class ViewPage : ContentPage
 There are also advanced scenarios that you can explore
 
 - [Callbacks and default values](./doc/advbindablepoperties.md)
-- [Attached properties generation](./doc/attachedpropertiesgeneration.md)
 
 Custom controls can also be created using the auto-generated properties and event handler helper methods. The following links provide more information:
 

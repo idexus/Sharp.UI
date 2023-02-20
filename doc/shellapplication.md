@@ -40,10 +40,8 @@ public class ShellItemTemplate : ContentView
 {
     public ShellItemTemplate()
     {
-        Content = new Grid
+        Content = new Grid(e => e.ColumnDefinitions(e => e.Star(0.2).Star(0.8)))
         {
-            e => e.ColumnDefinitions(e => e.Star(0.2).Star(0.8)),
-            
             new Image()
                 .Source(e => e.Path("FlyoutIcon"))
                 .Margin(5)
