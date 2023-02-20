@@ -2,9 +2,7 @@
 
 Sharp.UI is a .NET Multi-platform App User Interface (MAUI) library that allows you to build user interfaces declaratively in C# code using fluent methods. You do not need to use XAML to create your interfaces. The library comes with Hot Reload Support, which means you can make changes to your UI in real-time and see the results without having to rebuild the entire application. The hot reload feature is supported in Visual Studio 2022 for both Windows and Mac using the [HotReloadKit library](https://github.com/idexus/HotReloadKit.git).
 
-Sharp.UI is mostly an auto-generated library that replaces the default implementation of some .Net MAUI classes.
-
-You can also add the generated fluent methods for .NET MAUI classes to your project without using the __Sharp.UI__ classes.
+Sharp.UI is mostly an auto-generated library that replaces the default implementation of some .Net MAUI classes. You can also add the generated fluent methods for .NET MAUI classes to your project without using the __Sharp.UI__ classes.
 
 <a href="https://youtu.be/w5863t1E5tg" target="_blank">
  <img src="https://github.com/idexus/Sharp.UI/raw/main/doc/assets/ytscreen.jpg" alt="Hot Reload Support" width="640" border="0" />
