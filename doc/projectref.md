@@ -1,5 +1,5 @@
 
-# Project Reference
+#  Adding the Library by VS Project Reference
 
 To use the `Sharp.UI` library in your project, you can add a project reference in Visual Studio.
 
