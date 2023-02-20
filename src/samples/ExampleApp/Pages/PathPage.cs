@@ -37,18 +37,6 @@ namespace ExampleApp
                             .Clip(new EllipseGeometry().RadiusX(80).RadiusY(80).Center(new Point(140, 120))),
 
                         new Path()
-                            .WidthRequest(200).HeightRequest(200)
-                            .Stroke(Colors.Red)
-                            .Data(new GeometryGroup
-                            {
-                                new RectangleGeometry().Rect(new Rect(0,0,170,100)),
-
-                                new LineGeometry()
-                                    .StartPoint(new Point(0,0))
-                                    .EndPoint(new Point(170,100))
-                            }),
-
-                        new Path()
                             .Stroke(Colors.Yellow)
                             .Fill(Colors.Red)
                             .HorizontalOptions(LayoutOptions.Center)
