@@ -14,4 +14,4 @@ Add the following code to your `.csproj` file:
 </ItemGroup> 
 ```
 
-By adding this code, you will reference the main `Sharp.UI` project, the `Sharp.UI.Generator` project and the `HotReloadKit.Generator` project. This will allow you to use the Sharp.UI library in your project and access its features and functionalities.
+By adding this code, you will reference the main `Sharp.UI` project, the `Sharp.UI.Generator.Extensions` project, the `Sharp.UI.Generator.SharpObjects` project and the `HotReloadKit.Generator` project. This will allow you to use the Sharp.UI library in your project and access its features and functionalities.
