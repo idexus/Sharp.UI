@@ -206,7 +206,7 @@ using System.Collections.Generic;
                 builder.AppendLine($@"
         // ----- single item container -----
 
-        public{newPrefix} IEnumerator GetEnumerator() {{ yield return this.{contentPropertyName}; }}
+        IEnumerator IEnumerable.GetEnumerator() {{ yield return this.{contentPropertyName}; }}
         public{newPrefix} void Add({containerOfTypeName} {contentPropertyName.ToLower()}) => this.{contentPropertyName} = {contentPropertyName.ToLower()};");
             }
         }

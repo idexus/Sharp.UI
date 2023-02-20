@@ -53,7 +53,7 @@ namespace Sharp.UI
 
         // ----- single item container -----
 
-        public IEnumerator GetEnumerator() { yield return this.Text; }
+        IEnumerator IEnumerable.GetEnumerator() { yield return this.Text; }
         public void Add(string text) => this.Text = text;
 
     }

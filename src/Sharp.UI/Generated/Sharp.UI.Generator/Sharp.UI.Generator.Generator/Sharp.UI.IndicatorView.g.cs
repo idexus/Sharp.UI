@@ -37,7 +37,7 @@ namespace Sharp.UI
 
         // ----- single item container -----
 
-        public IEnumerator GetEnumerator() { yield return this.IndicatorLayout; }
+        IEnumerator IEnumerable.GetEnumerator() { yield return this.IndicatorLayout; }
         public void Add(Microsoft.Maui.Controls.IBindableLayout indicatorlayout) => this.IndicatorLayout = indicatorlayout;
 
     }

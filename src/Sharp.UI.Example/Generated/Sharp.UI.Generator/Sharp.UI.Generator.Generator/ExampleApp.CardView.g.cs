@@ -37,7 +37,7 @@ namespace ExampleApp
 
         // ----- single item container -----
 
-        public new IEnumerator GetEnumerator() { yield return this.ContentView; }
+        IEnumerator IEnumerable.GetEnumerator() { yield return this.ContentView; }
         public new void Add(Microsoft.Maui.Controls.View contentview) => this.ContentView = contentview;
 
         // ----- bindable properties -----

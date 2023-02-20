@@ -37,7 +37,7 @@ namespace Sharp.UI
 
         // ----- single item container -----
 
-        public IEnumerator GetEnumerator() { yield return this.View; }
+        IEnumerator IEnumerable.GetEnumerator() { yield return this.View; }
         public void Add(Microsoft.Maui.Controls.View view) => this.View = view;
 
     }
