@@ -52,8 +52,17 @@ public class HelloWorldPage : ContentPage
     }
 }
 ```
+# Using Sharp.UI
 
-### Nuget Package
+## Using this repository
+
+This project uses submodules. You have to init them.
+
+```
+git submodule update --init --recursive
+```
+
+## Nuget Package
 
 To add the Sharp.UI library to your project, run the following command:
 
@@ -66,10 +75,11 @@ You can also add the core generated fluent methods for classes from .Net MAUI to
 ```
 dotnet add package Sharp.UI.Extensions --version 0.4.1-alpha
 ```
+## Project Reference
 
 You can also add the library to your project by adding a project reference to the Sharp.UI library. For more information, see the [Adding the Library by VS Project Reference](./doc/projectref.md) document.
 
-# Using Sharp.UI
+## In Your Project
 
 To use Sharp.UI in your projects, you need to include the `using Sharp.UI` statement inside your app namespace.
 
@@ -90,7 +100,7 @@ namespace ExampleApp
 
 # Hot Reload
 
-The hot reload feature allows you to see changes to your UI in real-time without having to rebuild the entire application. To use hot reload in Sharp.UI, you will need to use the [HotReloadKit](https://github.com/idexus/HotReloadKit.git) library and add `SharpUIApplication` in your `CreateMauiApp` class.
+The hot reload feature allows you to see changes to your UI in real-time without having to rebuild the entire application. To use hot reload in Sharp.UI, you will need to use the [HotReloadKit](https://github.com/idexus/HotReloadKit.git) library and add `SharpUIApplication<App>(HotReloadSupport.IdeIPs)` extension method in your `MauiApp` builder.
 
 ```cs
 public static MauiApp CreateMauiApp()
@@ -109,9 +119,9 @@ Visual Studio 2022 extensions for both Windows and Mac are available for downloa
 
 # Examples
 
-### Using fluent methods for styling
+## Using fluent methods for styling
 
-__Sharp.UI__ provides a way to define the styles of elements using the `Style<T>` class. Here's an example of how to define the style of a button:
+__Sharp.UI__ provides a way to define the styles of elements using the `Style<T>` class and extension methods. Here's an example of how to define the style of a button:
 
 ```cs
 new Style<Button>(e => e
@@ -125,7 +135,7 @@ new Style<Button>(e => e
     .MinimumWidthRequest(44))
 ```
 
-### Auto-generated code
+## Auto-generated code
 
 __Sharp.UI__ library has a feature of automatically generating bindable properties and their fluent helper methods. To use this feature, you need to define the __view-model__ as follows:
  
@@ -180,7 +190,7 @@ public class ViewPage : ContentPage
 }
 ```
 
-### Other Examples
+## Other Examples
 
 Here are some examples showing how to use the __Sharp.UI__ library
 
@@ -204,13 +214,6 @@ Here are some examples showing how to use the __Sharp.UI__ library
 - [Creating custom controls](./doc/customcontentview.md)
 - [Control template](./doc/autogenbindableproperties.md)
 
-# Using this repository
-
-This project uses submodules. You have to init them.
-
-```
-git submodule update --init --recursive
-```
 
 # Disclaimer
 
