@@ -43,11 +43,11 @@ public class AppResources
                 .MinimumHeightRequest(44)
                 .MinimumWidthRequest(44))
             {
-                new VisualState<Button> (VisualStateEnum.VisualElement.Normal, e => e
+                new VisualState<Button> (VisualStates.VisualElement.Normal, e => e
                     .TextColor(e => e.OnLight(Colors.White).OnDark(AppColors.Primary))
                     .BackgroundColor(e => e.OnLight(AppColors.Primary).OnDark(Colors.White))),
 
-                new VisualState<Button> (VisualStateEnum.VisualElement.Disabled, e => e
+                new VisualState<Button> (VisualStates.VisualElement.Disabled, e => e
                     .TextColor(e => e.OnLight(AppColors.Gray950).OnDark(AppColors.Gray200))
                     .BackgroundColor(e => e.OnLight(AppColors.Gray200).OnDark(AppColors.Gray600)))
             },
@@ -59,8 +59,8 @@ public class AppResources
                 .MinimumHeightRequest(44)
                 .MinimumWidthRequest(44))
             {
-                new VisualState<CheckBox>(VisualStateEnum.VisualElement.Normal),
-                new VisualState<CheckBox>(VisualStateEnum.VisualElement.Disabled, e => e
+                new VisualState<CheckBox>(VisualStates.VisualElement.Normal),
+                new VisualState<CheckBox>(VisualStates.VisualElement.Disabled, e => e
                     .Color(e => e.OnLight(AppColors.Gray300).OnDark(AppColors.Gray600))),
             },
 
@@ -74,8 +74,8 @@ public class AppResources
                 .MinimumHeightRequest(44)
                 .MinimumWidthRequest(44))
             {
-                new VisualState<DatePicker>(VisualStateEnum.VisualElement.Normal),
-                new VisualState<DatePicker>(VisualStateEnum.VisualElement.Disabled, e => e
+                new VisualState<DatePicker>(VisualStates.VisualElement.Normal),
+                new VisualState<DatePicker>(VisualStates.VisualElement.Disabled, e => e
                     .TextColor(e => e.OnLight(AppColors.Gray200).OnDark(AppColors.Gray500)))
             },
             
@@ -90,8 +90,8 @@ public class AppResources
                 .MinimumHeightRequest(44)
                 .MinimumWidthRequest(44))
             {
-                new VisualState<Editor>(VisualStateEnum.VisualElement.Normal),
-                new VisualState<Editor>(VisualStateEnum.VisualElement.Disabled, e => e
+                new VisualState<Editor>(VisualStates.VisualElement.Normal),
+                new VisualState<Editor>(VisualStates.VisualElement.Disabled, e => e
                     .TextColor(e => e.OnLight(AppColors.Gray300).OnDark(AppColors.Gray600)))
             },  
             
@@ -107,8 +107,8 @@ public class AppResources
                 .MinimumHeightRequest(44)
                 .MinimumWidthRequest(44))
             {
-                new VisualState<Entry>(VisualStateEnum.VisualElement.Normal),
-                new VisualState<Entry>(VisualStateEnum.VisualElement.Disabled, e => e
+                new VisualState<Entry>(VisualStates.VisualElement.Normal),
+                new VisualState<Entry>(VisualStates.VisualElement.Disabled, e => e
                     .TextColor(e => e.OnLight(AppColors.Gray300).OnDark(AppColors.Gray600)))
             },              
 
@@ -129,8 +129,8 @@ public class AppResources
                 .MinimumHeightRequest(44)
                 .MinimumWidthRequest(44))
             {
-                new VisualState<ImageButton>(VisualStateEnum.VisualElement.Normal),
-                new VisualState<ImageButton>(VisualStateEnum.VisualElement.Disabled, e => e
+                new VisualState<ImageButton>(VisualStates.VisualElement.Normal),
+                new VisualState<ImageButton>(VisualStates.VisualElement.Disabled, e => e
                     .Opacity(0.5))
             },         
             
@@ -143,8 +143,8 @@ public class AppResources
                 .FontFamily("OpenSansRegular")
                 .FontSize(14))
             {
-                new VisualState<Label>(VisualStateEnum.VisualElement.Normal),
-                new VisualState<Label>(VisualStateEnum.VisualElement.Disabled, e => e
+                new VisualState<Label>(VisualStates.VisualElement.Normal),
+                new VisualState<Label>(VisualStates.VisualElement.Disabled, e => e
                     .TextColor(e => e.OnLight(AppColors.Gray300).OnDark(AppColors.Gray600)))
             },
 
@@ -165,8 +165,8 @@ public class AppResources
                 .MinimumHeightRequest(44)
                 .MinimumWidthRequest(44))
             {
-                new VisualState<Picker>(VisualStateEnum.VisualElement.Normal),
-                new VisualState<Picker>(VisualStateEnum.VisualElement.Disabled, e => e
+                new VisualState<Picker>(VisualStates.VisualElement.Normal),
+                new VisualState<Picker>(VisualStates.VisualElement.Disabled, e => e
                     .TextColor(e => e.OnLight(AppColors.Gray300).OnDark(AppColors.Gray600))
                     .TitleColor(e => e.OnLight(AppColors.Gray300).OnDark(AppColors.Gray600)))
             },  
@@ -177,8 +177,8 @@ public class AppResources
             new Style<ProgressBar>(e => e
                 .ProgressColor(e => e.OnLight(AppColors.Primary).OnDark(Colors.White)))
             {
-                new VisualState<ProgressBar>(VisualStateEnum.VisualElement.Normal),
-                new VisualState<ProgressBar>(VisualStateEnum.VisualElement.Disabled, e => e
+                new VisualState<ProgressBar>(VisualStates.VisualElement.Normal),
+                new VisualState<ProgressBar>(VisualStates.VisualElement.Disabled, e => e
                     .ProgressColor(e => e.OnLight(AppColors.Gray300).OnDark(AppColors.Gray600)))
             },
             
@@ -192,8 +192,8 @@ public class AppResources
                 .MinimumHeightRequest(44)
                 .MinimumWidthRequest(44))
             {
-                new VisualState<RadioButton>(VisualStateEnum.VisualElement.Normal),
-                new VisualState<RadioButton>(VisualStateEnum.VisualElement.Disabled, e => e
+                new VisualState<RadioButton>(VisualStates.VisualElement.Normal),
+                new VisualState<RadioButton>(VisualStates.VisualElement.Disabled, e => e
                     .TextColor(e => e.OnLight(AppColors.Gray300).OnDark(AppColors.Gray600)))
             },            
 
@@ -212,8 +212,8 @@ public class AppResources
                 .FontFamily("OpenSansRegular")
                 .FontSize(14))
             {
-                new VisualState<SearchBar>(VisualStateEnum.VisualElement.Normal),
-                new VisualState<SearchBar>(VisualStateEnum.VisualElement.Disabled, e => e
+                new VisualState<SearchBar>(VisualStates.VisualElement.Normal),
+                new VisualState<SearchBar>(VisualStates.VisualElement.Disabled, e => e
                     .TextColor(e => e.OnLight(AppColors.Gray300).OnDark(AppColors.Gray600))
                     .PlaceholderColor(e => e.OnLight(AppColors.Gray300).OnDark(AppColors.Gray600)))
             },      
@@ -227,8 +227,8 @@ public class AppResources
                 .FontFamily("OpenSansRegular")
                 .FontSize(14))
             {
-                new VisualState<SearchHandler>(VisualStateEnum.VisualElement.Normal),
-                new VisualState<SearchHandler>(VisualStateEnum.VisualElement.Disabled, e => e
+                new VisualState<SearchHandler>(VisualStates.VisualElement.Normal),
+                new VisualState<SearchHandler>(VisualStates.VisualElement.Disabled, e => e
                     .TextColor(e => e.OnLight(AppColors.Gray300).OnDark(AppColors.Gray600))
                     .PlaceholderColor(e => e.OnLight(AppColors.Gray300).OnDark(AppColors.Gray600)))
             },            
@@ -248,8 +248,8 @@ public class AppResources
                 .MaximumTrackColor(e => e.OnLight(AppColors.Gray200).OnDark(AppColors.Gray600))
                 .ThumbColor(e => e.OnLight(AppColors.Primary).OnDark(Colors.White)))
             {
-                new VisualState<Slider>(VisualStateEnum.VisualElement.Normal),
-                new VisualState<Slider>(VisualStateEnum.VisualElement.Disabled, e => e
+                new VisualState<Slider>(VisualStates.VisualElement.Normal),
+                new VisualState<Slider>(VisualStates.VisualElement.Disabled, e => e
                     .MinimumTrackColor(e => e.OnLight(AppColors.Gray300).OnDark(AppColors.Gray600))
                     .MaximumTrackColor(e => e.OnLight(AppColors.Gray300).OnDark(AppColors.Gray600))
                     .ThumbColor(e => e.OnLight(AppColors.Gray300).OnDark(AppColors.Gray600)))
@@ -266,17 +266,17 @@ public class AppResources
                 .OnColor(e => e.OnLight(AppColors.Primary).OnDark(Colors.White))
                 .ThumbColor(e => e.OnLight(AppColors.Gray400).OnDark(AppColors.Gray500)))
             {
-                new VisualState<Switch>(VisualStateEnum.Switch.Normal),
+                new VisualState<Switch>(VisualStates.Switch.Normal),
 
-                new VisualState<Switch>(VisualStateEnum.Switch.Disabled, e => e
+                new VisualState<Switch>(VisualStates.Switch.Disabled, e => e
                     .OnColor(e => e.OnLight(AppColors.Gray300).OnDark(AppColors.Gray600))
                     .ThumbColor(e => e.OnLight(AppColors.Gray300).OnDark(AppColors.Gray600))),
 
-                new VisualState<Switch>(VisualStateEnum.Switch.On, e => e
+                new VisualState<Switch>(VisualStates.Switch.On, e => e
                     .OnColor(e => e.OnLight(AppColors.Secondary).OnDark(AppColors.Gray200))
                     .ThumbColor(e => e.OnLight(AppColors.Primary).OnDark(Colors.White))),
 
-                new VisualState<Switch>(VisualStateEnum.Switch.Off, e => e
+                new VisualState<Switch>(VisualStates.Switch.Off, e => e
                     .OnColor(e => e.OnLight(AppColors.Primary).OnDark(Colors.White))
                     .ThumbColor(e => e.OnLight(AppColors.Gray400).OnDark(AppColors.Gray500)))
             },
@@ -291,8 +291,8 @@ public class AppResources
                 .MinimumHeightRequest(44)
                 .MinimumWidthRequest(44))
             {
-                new VisualState<TimePicker>(VisualStateEnum.VisualElement.Normal),
-                new VisualState<TimePicker>(VisualStateEnum.VisualElement.Disabled, e => e
+                new VisualState<TimePicker>(VisualStates.VisualElement.Normal),
+                new VisualState<TimePicker>(VisualStates.VisualElement.Disabled, e => e
                     .TextColor(e => e.OnLight(AppColors.Gray300).OnDark(AppColors.Gray600)))
             },            
 

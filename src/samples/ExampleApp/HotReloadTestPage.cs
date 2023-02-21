@@ -20,37 +20,27 @@ namespace ExampleApp
             BindingContext = viewModel;
             Resources = new ResourceDictionary
             {
-                new Style<Label>(e => e
-                    .FontSize(50)
-                    .TextColor(Colors.Red)),
+                new Style<Label>(e => e.FontSize(60)),
+
+                new Style<Button>(e => e
+                    .FontSize(40))
+                {
+                    new VisualState<Button>(VisualStates.Button.Normal, e => e
+                        .FontSize(40)
+                        .TextColor(Colors.Blue)
+                        .SizeRequest(200,80)),
+
+                    new VisualState<Button>(VisualStates.Button.Disabled, e => e
+                        .FontSize(60)
+                        .TextColor(Colors.Gray)
+                        .SizeRequest(280,130))
+                }
             };
 
             Content = new Grid(e => e.BackgroundColor(Colors.Black))
             {
                 new VStack(out var vStack, e => e.VerticalOptions(LayoutOptions.Center))
                 {
-                    e => e.Configure(e =>
-                    {
-                        e.Resources = new ResourceDictionary
-                        {
-                            new Style<Label>(e => e.FontSize(70)),
-
-                            new Style<Button>(e => e
-                                .FontSize(40))
-                            {
-                                new VisualState<Button>(VisualStateEnum.VisualElement.Normal, e => e
-                                    .FontSize(40)
-                                    .TextColor(Colors.Blue)
-                                    .SizeRequest(200,80)),
-
-                                new VisualState<Button>(VisualStateEnum.VisualElement.Disabled, e => e
-                                    .FontSize(60)
-                                    .TextColor(Colors.Gray)
-                                    .SizeRequest(280,130))
-                            }
-                        };
-                    }),
-
                     new Label("Hot Reload :)")
                         .TextColor(AppColors.Gray500)
                         .HorizontalOptions(LayoutOptions.Center),

@@ -50,14 +50,14 @@ namespace ExampleApp
             this.VisualStateGroups(new VisualStateGroupList
             {
                 new VisualState()
-                    .Name(VisualStateEnum.RadioButton.Checked)
+                    .Name(VisualStates.RadioButton.Checked)
                     .Setters(
                         new Setter<VisualElement>(e => e.BackgroundColor(Colors.Red)),
                         new Setter<Ellipse>(e => e.Fill(Colors.Red)).TargetName("Check")
                     ),
 
                 new VisualState()
-                    .Name(VisualStateEnum.RadioButton.Unchecked)
+                    .Name(VisualStates.RadioButton.Unchecked)
                     .Setters(
                         new Setter<VisualElement>(e => e.BackgroundColor(Colors.Blue)),
                         new Setter<Ellipse>(e => e.Fill(Colors.Yellow)).TargetName("Check")
