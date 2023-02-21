@@ -23,16 +23,16 @@ namespace ExampleApp
                 new Style<Label>(e => e.FontSize(60)),
 
                 new Style<Button>(e => e
-                    .FontSize(40))
+                    .BackgroundColor(AppColors.Gray950))
                 {
                     new VisualState<Button>(VisualStates.Button.Normal, e => e
-                        .FontSize(40)
-                        .TextColor(Colors.Blue)
-                        .SizeRequest(200,80)),
+                        .FontSize(35)
+                        .TextColor(AppColors.Gray200)
+                        .SizeRequest(180,80)),
 
                     new VisualState<Button>(VisualStates.Button.Disabled, e => e
                         .FontSize(60)
-                        .TextColor(Colors.Gray)
+                        .TextColor(Colors.Red)
                         .SizeRequest(280,130))
                 }
             };
@@ -86,8 +86,6 @@ namespace ExampleApp
                         .Margin(30),
 
                     new Button("Click me", out button)
-                        .BackgroundColor(AppColors.Gray950)
-                        .TextColor(Colors.Yellow)
                         .OnClicked(async (Button sender) =>
                         {
                             viewModel.Count();
