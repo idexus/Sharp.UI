@@ -20,7 +20,7 @@
 		<Version>0.4.1-alpha</Version>
 		<Authors>Pawel Krzywdzinski</Authors>
 		<Copyright>Pawel Krzywdzinski</Copyright>
-		<PackageDescription>Library for .NET MAUI: Fluent Method Extensions Package</PackageDescription>
+		<PackageDescription>Library for .NET MAUI: Fluent Extension Methods</PackageDescription>
 		<Company></Company>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
