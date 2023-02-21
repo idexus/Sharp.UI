@@ -16,26 +16,23 @@ public partial class StateTriggerPage : ContentPage
                 .VerticalOptions(LayoutOptions.Center)
                 .HorizontalOptions(LayoutOptions.Center)
         }
-        .Style(new Style<Grid>
-        {
-            new VisualState()
-            { 
-                VisualElement.BackgroundColorProperty.Set(Colors.Black),
-
-                new StateTrigger()
-                    .IsActive(e => e.Path("IsToggled").Source(testSwitch))
-                    .OnIsActiveChanged(OnCheckedStateIsActiveChanged)
-            },
-
-            new VisualState()
+        .Style(
+            new Style<Grid>
             {
-                VisualElement.BackgroundColorProperty.Set(Colors.White),
+                new VisualState<Grid>(e => e.Background(Colors.Black))
+                {
+                    new StateTrigger()
+                        .IsActive(e => e.Path("IsToggled").Source(testSwitch))
+                        .OnIsActiveChanged(OnCheckedStateIsActiveChanged)
+                },
 
-                new StateTrigger()
-                    .IsActive(e => e.Path("IsToggled").Source(testSwitch).Converter(new NegateConverter()))
-                    .OnIsActiveChanged(OnUncheckedStateIsActiveChanged)
-            },
-        });
+                new VisualState<Grid>(e => e.BackgroundColor(Colors.White))
+                {
+                    new StateTrigger()
+                        .IsActive(e => e.Path("IsToggled").Source(testSwitch).Convert<bool>(e => !e).ConvertBack<bool>(e => !e))
+                        .OnIsActiveChanged(OnUncheckedStateIsActiveChanged)
+                },
+            });
 	}
 
     void OnCheckedStateIsActiveChanged(StateTrigger sender)

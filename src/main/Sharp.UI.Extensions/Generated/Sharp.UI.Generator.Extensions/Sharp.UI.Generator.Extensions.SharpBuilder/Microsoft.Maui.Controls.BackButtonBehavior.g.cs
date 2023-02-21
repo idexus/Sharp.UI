@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class BackButtonBehaviorExtension
     {
         public static T Command<T>(this T obj,
             System.Windows.Input.ICommand command)
             where T : Microsoft.Maui.Controls.BackButtonBehavior
         {
-            obj.Command = command;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.BackButtonBehavior.CommandProperty, command);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.BackButtonBehavior
         {
             var builder = buidValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) obj.Command = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.BackButtonBehavior.CommandProperty, builder.GetValue());
             return obj;
         }
         
@@ -42,7 +44,7 @@ namespace Sharp.UI
             object commandParameter)
             where T : Microsoft.Maui.Controls.BackButtonBehavior
         {
-            obj.CommandParameter = commandParameter;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.BackButtonBehavior.CommandParameterProperty, commandParameter);
             return obj;
         }
         
@@ -51,7 +53,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.BackButtonBehavior
         {
             var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.CommandParameter = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.BackButtonBehavior.CommandParameterProperty, builder.GetValue());
             return obj;
         }
         
@@ -68,7 +70,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.ImageSource iconOverride)
             where T : Microsoft.Maui.Controls.BackButtonBehavior
         {
-            obj.IconOverride = iconOverride;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.BackButtonBehavior.IconOverrideProperty, iconOverride);
             return obj;
         }
         
@@ -77,7 +79,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.BackButtonBehavior
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
-            if (builder.ValueIsSet()) obj.IconOverride = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.BackButtonBehavior.IconOverrideProperty, builder.GetValue());
             return obj;
         }
         
@@ -94,7 +96,7 @@ namespace Sharp.UI
             bool isEnabled)
             where T : Microsoft.Maui.Controls.BackButtonBehavior
         {
-            obj.IsEnabled = isEnabled;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.BackButtonBehavior.IsEnabledProperty, isEnabled);
             return obj;
         }
         
@@ -103,7 +105,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.BackButtonBehavior
         {
             var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.IsEnabled = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.BackButtonBehavior.IsEnabledProperty, builder.GetValue());
             return obj;
         }
         
@@ -120,7 +122,7 @@ namespace Sharp.UI
             bool isVisible)
             where T : Microsoft.Maui.Controls.BackButtonBehavior
         {
-            obj.IsVisible = isVisible;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.BackButtonBehavior.IsVisibleProperty, isVisible);
             return obj;
         }
         
@@ -129,7 +131,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.BackButtonBehavior
         {
             var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.IsVisible = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.BackButtonBehavior.IsVisibleProperty, builder.GetValue());
             return obj;
         }
         
@@ -146,7 +148,7 @@ namespace Sharp.UI
             string textOverride)
             where T : Microsoft.Maui.Controls.BackButtonBehavior
         {
-            obj.TextOverride = textOverride;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.BackButtonBehavior.TextOverrideProperty, textOverride);
             return obj;
         }
         
@@ -155,7 +157,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.BackButtonBehavior
         {
             var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.TextOverride = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.BackButtonBehavior.TextOverrideProperty, builder.GetValue());
             return obj;
         }
         

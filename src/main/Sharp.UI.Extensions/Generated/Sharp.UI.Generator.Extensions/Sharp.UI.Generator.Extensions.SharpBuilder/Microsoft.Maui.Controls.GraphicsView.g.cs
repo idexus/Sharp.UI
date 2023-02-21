@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class GraphicsViewExtension
     {
         public static T Drawable<T>(this T obj,
             Microsoft.Maui.Graphics.IDrawable drawable)
             where T : Microsoft.Maui.Controls.GraphicsView
         {
-            obj.Drawable = drawable;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.GraphicsView.DrawableProperty, drawable);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.GraphicsView
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.IDrawable>());
-            if (builder.ValueIsSet()) obj.Drawable = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.GraphicsView.DrawableProperty, builder.GetValue());
             return obj;
         }
         

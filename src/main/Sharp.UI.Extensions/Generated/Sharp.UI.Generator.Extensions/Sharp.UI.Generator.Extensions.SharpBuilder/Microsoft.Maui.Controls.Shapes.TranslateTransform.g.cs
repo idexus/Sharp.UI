@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class TranslateTransformExtension
     {
         public static T X<T>(this T obj,
             double x)
             where T : Microsoft.Maui.Controls.Shapes.TranslateTransform
         {
-            obj.X = x;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.TranslateTransform.XProperty, x);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shapes.TranslateTransform
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.X = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.TranslateTransform.XProperty, builder.GetValue());
             return obj;
         }
         
@@ -42,7 +44,7 @@ namespace Sharp.UI
             double y)
             where T : Microsoft.Maui.Controls.Shapes.TranslateTransform
         {
-            obj.Y = y;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.TranslateTransform.YProperty, y);
             return obj;
         }
         
@@ -51,7 +53,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shapes.TranslateTransform
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.Y = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.TranslateTransform.YProperty, builder.GetValue());
             return obj;
         }
         

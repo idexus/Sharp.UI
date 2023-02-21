@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class StreamImageSourceExtension
     {
         public static T Stream<T>(this T obj,
             System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<System.IO.Stream>> stream)
             where T : Microsoft.Maui.Controls.StreamImageSource
         {
-            obj.Stream = stream;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.StreamImageSource.StreamProperty, stream);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.StreamImageSource
         {
             var builder = buidValue(new ValueBuilder<System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<System.IO.Stream>>>());
-            if (builder.ValueIsSet()) obj.Stream = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.StreamImageSource.StreamProperty, builder.GetValue());
             return obj;
         }
         

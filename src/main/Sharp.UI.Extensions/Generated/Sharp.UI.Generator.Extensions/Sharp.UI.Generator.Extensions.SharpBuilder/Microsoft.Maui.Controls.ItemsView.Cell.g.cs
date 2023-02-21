@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class ItemsViewOfCellExtension
     {
         public static T ItemsSource<T>(this T obj,
             System.Collections.IEnumerable itemsSource)
             where T : Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>
         {
-            obj.ItemsSource = itemsSource;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>.ItemsSourceProperty, itemsSource);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>
         {
             var builder = buidValue(new ValueBuilder<System.Collections.IEnumerable>());
-            if (builder.ValueIsSet()) obj.ItemsSource = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>.ItemsSourceProperty, builder.GetValue());
             return obj;
         }
         
@@ -42,7 +44,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.DataTemplate itemTemplate)
             where T : Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>
         {
-            obj.ItemTemplate = itemTemplate;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>.ItemTemplateProperty, itemTemplate);
             return obj;
         }
         
@@ -51,7 +53,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
-            if (builder.ValueIsSet()) obj.ItemTemplate = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>.ItemTemplateProperty, builder.GetValue());
             return obj;
         }
         

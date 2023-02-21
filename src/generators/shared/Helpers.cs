@@ -88,6 +88,19 @@ namespace Sharp.UI.Generator
             return isIEnumerable;
         }
 
+        public static bool IsNavigableElement(INamedTypeSymbol symbol)
+        {
+            var isNavigableElement = false;
+
+            LoopDownToObject(symbol, type =>
+            {
+                if (type.ToDisplayString().Equals("Microsoft.Maui.Controls.NavigableElement", StringComparison.Ordinal)) isNavigableElement = true;
+                return isNavigableElement;
+            });
+
+            return isNavigableElement;
+        }
+
         public static string GetNormalizedFileName(INamedTypeSymbol type)
         {
             var tail = type.IsGenericType ? $".{type.TypeArguments.FirstOrDefault().Name}" : "";

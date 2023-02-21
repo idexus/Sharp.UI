@@ -10,12 +10,14 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class LineExtension
     {
         public static Microsoft.Maui.Controls.Shapes.Line X1(this Microsoft.Maui.Controls.Shapes.Line obj,
             double x1)
         {
-            obj.X1 = x1;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Line.X1Property, x1);
             return obj;
         }
         
@@ -23,7 +25,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.X1 = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Line.X1Property, builder.GetValue());
             return obj;
         }
         
@@ -38,7 +40,7 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.Shapes.Line Y1(this Microsoft.Maui.Controls.Shapes.Line obj,
             double y1)
         {
-            obj.Y1 = y1;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Line.Y1Property, y1);
             return obj;
         }
         
@@ -46,7 +48,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.Y1 = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Line.Y1Property, builder.GetValue());
             return obj;
         }
         
@@ -61,7 +63,7 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.Shapes.Line X2(this Microsoft.Maui.Controls.Shapes.Line obj,
             double x2)
         {
-            obj.X2 = x2;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Line.X2Property, x2);
             return obj;
         }
         
@@ -69,7 +71,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.X2 = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Line.X2Property, builder.GetValue());
             return obj;
         }
         
@@ -84,7 +86,7 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.Shapes.Line Y2(this Microsoft.Maui.Controls.Shapes.Line obj,
             double y2)
         {
-            obj.Y2 = y2;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Line.Y2Property, y2);
             return obj;
         }
         
@@ -92,7 +94,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.Y2 = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Line.Y2Property, builder.GetValue());
             return obj;
         }
         

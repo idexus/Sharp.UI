@@ -7,20 +7,16 @@ namespace ExampleApp
 	{
         ResourceDictionary localResources => new ResourceDictionary
         {
-            new Style<RadioButton>(applyToDerivedTypes: true)
-            {
-                RadioButton.ControlTemplateProperty.Set(new ControlTemplate(typeof(RadioButtonTemplate)))
-            },
-            new Style<VStack>
-            {
-                VStack.VerticalOptionsProperty.Set(LayoutOptions.Center),
-                VStack.HorizontalOptionsProperty.Set(LayoutOptions.Center)
-            },
-            new Style<HStack>
-            {
-                HStack.VerticalOptionsProperty.Set(LayoutOptions.Center),
-                HStack.HorizontalOptionsProperty.Set(LayoutOptions.Center)
-            },            
+            new Style<RadioButton>(applyToDerivedTypes: true, e => e
+                .ControlTemplate(new ControlTemplate(typeof(RadioButtonTemplate)))),
+                
+            new Style<VStack>(e => e
+                .VerticalOptions(LayoutOptions.Center)
+                .HorizontalOptions(LayoutOptions.Center)),
+            
+            new Style<HStack>(e => e
+                .VerticalOptions(LayoutOptions.Center)
+                .HorizontalOptions(LayoutOptions.Center))
         };
     }
 }

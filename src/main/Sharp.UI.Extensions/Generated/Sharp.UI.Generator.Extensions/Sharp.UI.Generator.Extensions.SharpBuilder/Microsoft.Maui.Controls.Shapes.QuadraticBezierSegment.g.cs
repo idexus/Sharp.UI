@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class QuadraticBezierSegmentExtension
     {
         public static T Point1<T>(this T obj,
             Microsoft.Maui.Graphics.Point point1)
             where T : Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment
         {
-            obj.Point1 = point1;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment.Point1Property, point1);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Point>());
-            if (builder.ValueIsSet()) obj.Point1 = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment.Point1Property, builder.GetValue());
             return obj;
         }
         
@@ -42,7 +44,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Point point2)
             where T : Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment
         {
-            obj.Point2 = point2;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment.Point2Property, point2);
             return obj;
         }
         
@@ -51,7 +53,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Point>());
-            if (builder.ValueIsSet()) obj.Point2 = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment.Point2Property, builder.GetValue());
             return obj;
         }
         

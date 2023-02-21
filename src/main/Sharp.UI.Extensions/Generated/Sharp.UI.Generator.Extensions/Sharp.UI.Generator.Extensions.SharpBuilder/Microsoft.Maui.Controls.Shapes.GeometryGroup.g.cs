@@ -10,6 +10,8 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class GeometryGroupExtension
     {
         public static T Children<T>(this T obj,
@@ -43,7 +45,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.Shapes.FillRule fillRule)
             where T : Microsoft.Maui.Controls.Shapes.GeometryGroup
         {
-            obj.FillRule = fillRule;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.GeometryGroup.FillRuleProperty, fillRule);
             return obj;
         }
         
@@ -52,7 +54,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shapes.GeometryGroup
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.Shapes.FillRule>());
-            if (builder.ValueIsSet()) obj.FillRule = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.GeometryGroup.FillRuleProperty, builder.GetValue());
             return obj;
         }
         

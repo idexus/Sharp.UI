@@ -10,12 +10,14 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class FileImageSourceExtension
     {
         public static Microsoft.Maui.Controls.FileImageSource File(this Microsoft.Maui.Controls.FileImageSource obj,
             string file)
         {
-            obj.File = file;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.FileImageSource.FileProperty, file);
             return obj;
         }
         
@@ -23,7 +25,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<string>, ValueBuilder<string>> buidValue)
         {
             var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.File = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.FileImageSource.FileProperty, builder.GetValue());
             return obj;
         }
         

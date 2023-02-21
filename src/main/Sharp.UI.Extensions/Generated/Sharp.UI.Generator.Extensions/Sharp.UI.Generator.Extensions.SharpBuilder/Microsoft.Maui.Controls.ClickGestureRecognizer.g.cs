@@ -10,12 +10,14 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class ClickGestureRecognizerExtension
     {
         public static Microsoft.Maui.Controls.ClickGestureRecognizer Command(this Microsoft.Maui.Controls.ClickGestureRecognizer obj,
             System.Windows.Input.ICommand command)
         {
-            obj.Command = command;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.ClickGestureRecognizer.CommandProperty, command);
             return obj;
         }
         
@@ -23,7 +25,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<System.Windows.Input.ICommand>, ValueBuilder<System.Windows.Input.ICommand>> buidValue)
         {
             var builder = buidValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) obj.Command = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ClickGestureRecognizer.CommandProperty, builder.GetValue());
             return obj;
         }
         
@@ -38,7 +40,7 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.ClickGestureRecognizer CommandParameter(this Microsoft.Maui.Controls.ClickGestureRecognizer obj,
             object commandParameter)
         {
-            obj.CommandParameter = commandParameter;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.ClickGestureRecognizer.CommandParameterProperty, commandParameter);
             return obj;
         }
         
@@ -46,7 +48,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
         {
             var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.CommandParameter = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ClickGestureRecognizer.CommandParameterProperty, builder.GetValue());
             return obj;
         }
         
@@ -61,7 +63,7 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.ClickGestureRecognizer NumberOfClicksRequired(this Microsoft.Maui.Controls.ClickGestureRecognizer obj,
             int numberOfClicksRequired)
         {
-            obj.NumberOfClicksRequired = numberOfClicksRequired;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.ClickGestureRecognizer.NumberOfClicksRequiredProperty, numberOfClicksRequired);
             return obj;
         }
         
@@ -69,7 +71,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<int>, ValueBuilder<int>> buidValue)
         {
             var builder = buidValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) obj.NumberOfClicksRequired = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ClickGestureRecognizer.NumberOfClicksRequiredProperty, builder.GetValue());
             return obj;
         }
         
@@ -84,7 +86,7 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.ClickGestureRecognizer Buttons(this Microsoft.Maui.Controls.ClickGestureRecognizer obj,
             Microsoft.Maui.Controls.ButtonsMask buttons)
         {
-            obj.Buttons = buttons;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.ClickGestureRecognizer.ButtonsProperty, buttons);
             return obj;
         }
         
@@ -92,7 +94,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<Microsoft.Maui.Controls.ButtonsMask>, ValueBuilder<Microsoft.Maui.Controls.ButtonsMask>> buidValue)
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.ButtonsMask>());
-            if (builder.ValueIsSet()) obj.Buttons = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ClickGestureRecognizer.ButtonsProperty, builder.GetValue());
             return obj;
         }
         

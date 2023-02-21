@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class StepperExtension
     {
         public static T Increment<T>(this T obj,
             double increment)
             where T : Microsoft.Maui.Controls.Stepper
         {
-            obj.Increment = increment;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Stepper.IncrementProperty, increment);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Stepper
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.Increment = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Stepper.IncrementProperty, builder.GetValue());
             return obj;
         }
         
@@ -42,7 +44,7 @@ namespace Sharp.UI
             double maximum)
             where T : Microsoft.Maui.Controls.Stepper
         {
-            obj.Maximum = maximum;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Stepper.MaximumProperty, maximum);
             return obj;
         }
         
@@ -51,7 +53,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Stepper
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.Maximum = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Stepper.MaximumProperty, builder.GetValue());
             return obj;
         }
         
@@ -68,7 +70,7 @@ namespace Sharp.UI
             double minimum)
             where T : Microsoft.Maui.Controls.Stepper
         {
-            obj.Minimum = minimum;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Stepper.MinimumProperty, minimum);
             return obj;
         }
         
@@ -77,7 +79,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Stepper
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.Minimum = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Stepper.MinimumProperty, builder.GetValue());
             return obj;
         }
         
@@ -94,7 +96,7 @@ namespace Sharp.UI
             double value)
             where T : Microsoft.Maui.Controls.Stepper
         {
-            obj.Value = value;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Stepper.ValueProperty, value);
             return obj;
         }
         
@@ -103,7 +105,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Stepper
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.Value = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Stepper.ValueProperty, builder.GetValue());
             return obj;
         }
         

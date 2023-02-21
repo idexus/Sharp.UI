@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class ShellGroupItemExtension
     {
         public static T FlyoutDisplayOptions<T>(this T obj,
             Microsoft.Maui.Controls.FlyoutDisplayOptions flyoutDisplayOptions)
             where T : Microsoft.Maui.Controls.ShellGroupItem
         {
-            obj.FlyoutDisplayOptions = flyoutDisplayOptions;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.ShellGroupItem.FlyoutDisplayOptionsProperty, flyoutDisplayOptions);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ShellGroupItem
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.FlyoutDisplayOptions>());
-            if (builder.ValueIsSet()) obj.FlyoutDisplayOptions = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ShellGroupItem.FlyoutDisplayOptionsProperty, builder.GetValue());
             return obj;
         }
         

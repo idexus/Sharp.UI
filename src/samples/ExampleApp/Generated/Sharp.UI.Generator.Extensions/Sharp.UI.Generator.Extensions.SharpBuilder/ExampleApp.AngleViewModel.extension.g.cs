@@ -10,13 +10,15 @@ namespace ExampleApp
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class AngleViewModelExtension
     {
         public static T RawAngle<T>(this T obj,
             double rawAngle)
             where T : ExampleApp.AngleViewModel
         {
-            obj.RawAngle = rawAngle;
+            obj.SetValueOrSetter(ExampleApp.AngleViewModel.RawAngleProperty, rawAngle);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace ExampleApp
             where T : ExampleApp.AngleViewModel
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.RawAngle = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(ExampleApp.AngleViewModel.RawAngleProperty, builder.GetValue());
             return obj;
         }
         
@@ -42,7 +44,7 @@ namespace ExampleApp
             double angle)
             where T : ExampleApp.AngleViewModel
         {
-            obj.Angle = angle;
+            obj.SetValueOrSetter(ExampleApp.AngleViewModel.AngleProperty, angle);
             return obj;
         }
         
@@ -51,7 +53,7 @@ namespace ExampleApp
             where T : ExampleApp.AngleViewModel
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.Angle = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(ExampleApp.AngleViewModel.AngleProperty, builder.GetValue());
             return obj;
         }
         
@@ -68,7 +70,7 @@ namespace ExampleApp
             double maximumAngle)
             where T : ExampleApp.AngleViewModel
         {
-            obj.MaximumAngle = maximumAngle;
+            obj.SetValueOrSetter(ExampleApp.AngleViewModel.MaximumAngleProperty, maximumAngle);
             return obj;
         }
         
@@ -77,7 +79,7 @@ namespace ExampleApp
             where T : ExampleApp.AngleViewModel
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.MaximumAngle = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(ExampleApp.AngleViewModel.MaximumAngleProperty, builder.GetValue());
             return obj;
         }
         

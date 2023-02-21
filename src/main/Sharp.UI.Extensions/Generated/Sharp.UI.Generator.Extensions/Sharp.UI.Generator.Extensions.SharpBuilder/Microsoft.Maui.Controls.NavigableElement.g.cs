@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class NavigableElementExtension
     {
         public static T Style<T>(this T obj,
             Microsoft.Maui.Controls.Style style)
             where T : Microsoft.Maui.Controls.NavigableElement
         {
-            obj.Style = style;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.NavigableElement.StyleProperty, style);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.NavigableElement
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.Style>());
-            if (builder.ValueIsSet()) obj.Style = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.NavigableElement.StyleProperty, builder.GetValue());
             return obj;
         }
         

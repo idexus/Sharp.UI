@@ -1,13 +1,18 @@
 ﻿using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.Internals;
+using Sharp.UI.Internal;
 
 namespace Sharp.UI
-{
+{    
     public static partial class BindableObjectExtension
     {
-        public static T SetProperty<T>(this T obj, BindableProperty property, object value) where T : BindableObject
+        public static T SetValueOrSetter<T>(this T obj, BindableProperty property, object value) where T : BindableObject
         {
-            obj.SetValue(property, value);
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null)
+                setters.Add(new Setter { Property = property, Value = value });
+            else
+                obj.SetValue(property, value);
             return obj;
         }
 

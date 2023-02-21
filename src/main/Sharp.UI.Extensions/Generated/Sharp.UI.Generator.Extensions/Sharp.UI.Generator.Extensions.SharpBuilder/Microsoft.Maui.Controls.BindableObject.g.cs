@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class BindableObjectExtension
     {
         public static T BindingContext<T>(this T obj,
             object bindingContext)
             where T : Microsoft.Maui.Controls.BindableObject
         {
-            obj.BindingContext = bindingContext;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.BindableObject.BindingContextProperty, bindingContext);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.BindableObject
         {
             var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.BindingContext = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.BindableObject.BindingContextProperty, builder.GetValue());
             return obj;
         }
         

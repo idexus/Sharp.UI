@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class DragGestureRecognizerExtension
     {
         public static T CanDrag<T>(this T obj,
             bool canDrag)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
         {
-            obj.CanDrag = canDrag;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.DragGestureRecognizer.CanDragProperty, canDrag);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
         {
             var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.CanDrag = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.DragGestureRecognizer.CanDragProperty, builder.GetValue());
             return obj;
         }
         
@@ -42,7 +44,7 @@ namespace Sharp.UI
             System.Windows.Input.ICommand dropCompletedCommand)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
         {
-            obj.DropCompletedCommand = dropCompletedCommand;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.DragGestureRecognizer.DropCompletedCommandProperty, dropCompletedCommand);
             return obj;
         }
         
@@ -51,7 +53,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
         {
             var builder = buidValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) obj.DropCompletedCommand = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.DragGestureRecognizer.DropCompletedCommandProperty, builder.GetValue());
             return obj;
         }
         
@@ -68,7 +70,7 @@ namespace Sharp.UI
             object dropCompletedCommandParameter)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
         {
-            obj.DropCompletedCommandParameter = dropCompletedCommandParameter;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.DragGestureRecognizer.DropCompletedCommandParameterProperty, dropCompletedCommandParameter);
             return obj;
         }
         
@@ -77,7 +79,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
         {
             var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.DropCompletedCommandParameter = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.DragGestureRecognizer.DropCompletedCommandParameterProperty, builder.GetValue());
             return obj;
         }
         
@@ -94,7 +96,7 @@ namespace Sharp.UI
             System.Windows.Input.ICommand dragStartingCommand)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
         {
-            obj.DragStartingCommand = dragStartingCommand;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.DragGestureRecognizer.DragStartingCommandProperty, dragStartingCommand);
             return obj;
         }
         
@@ -103,7 +105,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
         {
             var builder = buidValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) obj.DragStartingCommand = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.DragGestureRecognizer.DragStartingCommandProperty, builder.GetValue());
             return obj;
         }
         
@@ -120,7 +122,7 @@ namespace Sharp.UI
             object dragStartingCommandParameter)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
         {
-            obj.DragStartingCommandParameter = dragStartingCommandParameter;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.DragGestureRecognizer.DragStartingCommandParameterProperty, dragStartingCommandParameter);
             return obj;
         }
         
@@ -129,7 +131,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
         {
             var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.DragStartingCommandParameter = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.DragGestureRecognizer.DragStartingCommandParameterProperty, builder.GetValue());
             return obj;
         }
         

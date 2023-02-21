@@ -8,24 +8,20 @@ public class DeviceIdiomPage : ContentPage
 
     ResourceDictionary pageResources => new ResourceDictionary
     {
-        new Style<Label>
-        {
-            Label.TextColorProperty.Set().OnLight(Colors.Red).OnDark(Colors.Blue),
-            Label.FontSizeProperty.Set(50.0),
-            Label.HorizontalOptionsProperty.Set(LayoutOptions.Center),
-            Label.VerticalOptionsProperty.Set(LayoutOptions.Center),
-            Label.MarginProperty.Set(new Thickness(10,0)),
-        },
-        new Style<Image>
-        {
-            Image.HorizontalOptionsProperty.Set(LayoutOptions.Center),
-            Image.HeightRequestProperty.Set(60),
-        },
-        new Style<VStack>
-        {
-            VStack.HorizontalOptionsProperty.Set(LayoutOptions.Center),
-            VStack.MarginProperty.Set(new Thickness(0,30,0,0))
-        }
+        new Style<Label>(e => e
+            .TextColor(e => e.OnLight(Colors.Red).OnDark(Colors.Blue))
+            .FontSize(50.0)
+            .HorizontalOptions(LayoutOptions.Center)
+            .VerticalOptions(LayoutOptions.Center)
+            .Margin(new Thickness(10,0))),
+        
+        new Style<Image>(e => e
+            .HorizontalOptions(LayoutOptions.Center)
+            .HeightRequest(60)),
+        
+        new Style<VStack>(e => e
+            .HorizontalOptions(LayoutOptions.Center)
+            .Margin(new Thickness(0,30,0,0)))        
     };
 
     public DeviceIdiomPage()

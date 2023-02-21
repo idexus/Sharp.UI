@@ -10,6 +10,8 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class ViewCellExtension
     {
         public static T View<T>(this T obj,

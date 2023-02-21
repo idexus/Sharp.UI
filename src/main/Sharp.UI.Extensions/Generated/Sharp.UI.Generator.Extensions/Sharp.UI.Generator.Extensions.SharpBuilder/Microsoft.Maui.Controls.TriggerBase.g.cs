@@ -10,6 +10,8 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class TriggerBaseExtension
     {
         public static T EnterActions<T>(this T obj,

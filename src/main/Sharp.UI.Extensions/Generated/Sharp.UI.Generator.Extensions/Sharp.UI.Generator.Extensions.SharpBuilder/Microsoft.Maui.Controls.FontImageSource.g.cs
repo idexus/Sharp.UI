@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class FontImageSourceExtension
     {
         public static T Color<T>(this T obj,
             Microsoft.Maui.Graphics.Color color)
             where T : Microsoft.Maui.Controls.FontImageSource
         {
-            obj.Color = color;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.FontImageSource.ColorProperty, color);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.FontImageSource
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) obj.Color = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.FontImageSource.ColorProperty, builder.GetValue());
             return obj;
         }
         
@@ -42,7 +44,7 @@ namespace Sharp.UI
             string fontFamily)
             where T : Microsoft.Maui.Controls.FontImageSource
         {
-            obj.FontFamily = fontFamily;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.FontImageSource.FontFamilyProperty, fontFamily);
             return obj;
         }
         
@@ -51,7 +53,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.FontImageSource
         {
             var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.FontFamily = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.FontImageSource.FontFamilyProperty, builder.GetValue());
             return obj;
         }
         
@@ -68,7 +70,7 @@ namespace Sharp.UI
             string glyph)
             where T : Microsoft.Maui.Controls.FontImageSource
         {
-            obj.Glyph = glyph;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.FontImageSource.GlyphProperty, glyph);
             return obj;
         }
         
@@ -77,7 +79,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.FontImageSource
         {
             var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.Glyph = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.FontImageSource.GlyphProperty, builder.GetValue());
             return obj;
         }
         
@@ -94,7 +96,7 @@ namespace Sharp.UI
             double size)
             where T : Microsoft.Maui.Controls.FontImageSource
         {
-            obj.Size = size;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.FontImageSource.SizeProperty, size);
             return obj;
         }
         
@@ -103,7 +105,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.FontImageSource
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.Size = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.FontImageSource.SizeProperty, builder.GetValue());
             return obj;
         }
         
@@ -120,7 +122,7 @@ namespace Sharp.UI
             bool fontAutoScalingEnabled)
             where T : Microsoft.Maui.Controls.FontImageSource
         {
-            obj.FontAutoScalingEnabled = fontAutoScalingEnabled;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.FontImageSource.FontAutoScalingEnabledProperty, fontAutoScalingEnabled);
             return obj;
         }
         
@@ -129,7 +131,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.FontImageSource
         {
             var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.FontAutoScalingEnabled = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.FontImageSource.FontAutoScalingEnabledProperty, builder.GetValue());
             return obj;
         }
         

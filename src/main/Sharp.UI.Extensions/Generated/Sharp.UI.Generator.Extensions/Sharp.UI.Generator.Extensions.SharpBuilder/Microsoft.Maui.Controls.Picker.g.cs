@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class PickerExtension
     {
         public static T FontAttributes<T>(this T obj,
             Microsoft.Maui.Controls.FontAttributes fontAttributes)
             where T : Microsoft.Maui.Controls.Picker
         {
-            obj.FontAttributes = fontAttributes;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.FontAttributesProperty, fontAttributes);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Picker
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.FontAttributes>());
-            if (builder.ValueIsSet()) obj.FontAttributes = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.FontAttributesProperty, builder.GetValue());
             return obj;
         }
         
@@ -42,7 +44,7 @@ namespace Sharp.UI
             string fontFamily)
             where T : Microsoft.Maui.Controls.Picker
         {
-            obj.FontFamily = fontFamily;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.FontFamilyProperty, fontFamily);
             return obj;
         }
         
@@ -51,7 +53,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Picker
         {
             var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.FontFamily = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.FontFamilyProperty, builder.GetValue());
             return obj;
         }
         
@@ -68,7 +70,7 @@ namespace Sharp.UI
             double fontSize)
             where T : Microsoft.Maui.Controls.Picker
         {
-            obj.FontSize = fontSize;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.FontSizeProperty, fontSize);
             return obj;
         }
         
@@ -77,7 +79,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Picker
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.FontSize = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.FontSizeProperty, builder.GetValue());
             return obj;
         }
         
@@ -94,7 +96,7 @@ namespace Sharp.UI
             bool fontAutoScalingEnabled)
             where T : Microsoft.Maui.Controls.Picker
         {
-            obj.FontAutoScalingEnabled = fontAutoScalingEnabled;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.FontAutoScalingEnabledProperty, fontAutoScalingEnabled);
             return obj;
         }
         
@@ -103,7 +105,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Picker
         {
             var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.FontAutoScalingEnabled = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.FontAutoScalingEnabledProperty, builder.GetValue());
             return obj;
         }
         
@@ -138,7 +140,7 @@ namespace Sharp.UI
             System.Collections.IList itemsSource)
             where T : Microsoft.Maui.Controls.Picker
         {
-            obj.ItemsSource = itemsSource;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.ItemsSourceProperty, itemsSource);
             return obj;
         }
         
@@ -147,7 +149,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Picker
         {
             var builder = buidValue(new ValueBuilder<System.Collections.IList>());
-            if (builder.ValueIsSet()) obj.ItemsSource = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.ItemsSourceProperty, builder.GetValue());
             return obj;
         }
         
@@ -164,7 +166,7 @@ namespace Sharp.UI
             int selectedIndex)
             where T : Microsoft.Maui.Controls.Picker
         {
-            obj.SelectedIndex = selectedIndex;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.SelectedIndexProperty, selectedIndex);
             return obj;
         }
         
@@ -173,7 +175,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Picker
         {
             var builder = buidValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) obj.SelectedIndex = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.SelectedIndexProperty, builder.GetValue());
             return obj;
         }
         
@@ -190,7 +192,7 @@ namespace Sharp.UI
             object selectedItem)
             where T : Microsoft.Maui.Controls.Picker
         {
-            obj.SelectedItem = selectedItem;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.SelectedItemProperty, selectedItem);
             return obj;
         }
         
@@ -199,7 +201,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Picker
         {
             var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SelectedItem = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.SelectedItemProperty, builder.GetValue());
             return obj;
         }
         
@@ -216,7 +218,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color textColor)
             where T : Microsoft.Maui.Controls.Picker
         {
-            obj.TextColor = textColor;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.TextColorProperty, textColor);
             return obj;
         }
         
@@ -225,7 +227,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Picker
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) obj.TextColor = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.TextColorProperty, builder.GetValue());
             return obj;
         }
         
@@ -242,7 +244,7 @@ namespace Sharp.UI
             double characterSpacing)
             where T : Microsoft.Maui.Controls.Picker
         {
-            obj.CharacterSpacing = characterSpacing;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.CharacterSpacingProperty, characterSpacing);
             return obj;
         }
         
@@ -251,7 +253,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Picker
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.CharacterSpacing = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.CharacterSpacingProperty, builder.GetValue());
             return obj;
         }
         
@@ -268,7 +270,7 @@ namespace Sharp.UI
             string title)
             where T : Microsoft.Maui.Controls.Picker
         {
-            obj.Title = title;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.TitleProperty, title);
             return obj;
         }
         
@@ -277,7 +279,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Picker
         {
             var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.Title = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.TitleProperty, builder.GetValue());
             return obj;
         }
         
@@ -294,7 +296,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color titleColor)
             where T : Microsoft.Maui.Controls.Picker
         {
-            obj.TitleColor = titleColor;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.TitleColorProperty, titleColor);
             return obj;
         }
         
@@ -303,7 +305,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Picker
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) obj.TitleColor = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.TitleColorProperty, builder.GetValue());
             return obj;
         }
         
@@ -320,7 +322,7 @@ namespace Sharp.UI
             Microsoft.Maui.TextAlignment horizontalTextAlignment)
             where T : Microsoft.Maui.Controls.Picker
         {
-            obj.HorizontalTextAlignment = horizontalTextAlignment;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.HorizontalTextAlignmentProperty, horizontalTextAlignment);
             return obj;
         }
         
@@ -329,7 +331,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Picker
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.TextAlignment>());
-            if (builder.ValueIsSet()) obj.HorizontalTextAlignment = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.HorizontalTextAlignmentProperty, builder.GetValue());
             return obj;
         }
         
@@ -346,7 +348,7 @@ namespace Sharp.UI
             Microsoft.Maui.TextAlignment verticalTextAlignment)
             where T : Microsoft.Maui.Controls.Picker
         {
-            obj.VerticalTextAlignment = verticalTextAlignment;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.VerticalTextAlignmentProperty, verticalTextAlignment);
             return obj;
         }
         
@@ -355,7 +357,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Picker
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.TextAlignment>());
-            if (builder.ValueIsSet()) obj.VerticalTextAlignment = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.VerticalTextAlignmentProperty, builder.GetValue());
             return obj;
         }
         

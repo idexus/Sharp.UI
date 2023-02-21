@@ -22,6 +22,11 @@ namespace Sharp.UI
             style = this;
         }
 
+        public Style(System.Action<T> configure, out Style<T> style) : this(configure)
+        {
+            style = this;
+        }
+
     }
 }
 

@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class UrlWebViewSourceExtension
     {
         public static T Url<T>(this T obj,
             string url)
             where T : Microsoft.Maui.Controls.UrlWebViewSource
         {
-            obj.Url = url;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.UrlWebViewSource.UrlProperty, url);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.UrlWebViewSource
         {
             var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.Url = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.UrlWebViewSource.UrlProperty, builder.GetValue());
             return obj;
         }
         

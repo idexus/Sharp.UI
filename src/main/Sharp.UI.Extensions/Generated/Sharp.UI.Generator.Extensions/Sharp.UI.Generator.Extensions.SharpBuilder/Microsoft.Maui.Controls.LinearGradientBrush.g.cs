@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class LinearGradientBrushExtension
     {
         public static T StartPoint<T>(this T obj,
             Microsoft.Maui.Graphics.Point startPoint)
             where T : Microsoft.Maui.Controls.LinearGradientBrush
         {
-            obj.StartPoint = startPoint;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.LinearGradientBrush.StartPointProperty, startPoint);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.LinearGradientBrush
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Point>());
-            if (builder.ValueIsSet()) obj.StartPoint = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.LinearGradientBrush.StartPointProperty, builder.GetValue());
             return obj;
         }
         
@@ -42,7 +44,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Point endPoint)
             where T : Microsoft.Maui.Controls.LinearGradientBrush
         {
-            obj.EndPoint = endPoint;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.LinearGradientBrush.EndPointProperty, endPoint);
             return obj;
         }
         
@@ -51,7 +53,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.LinearGradientBrush
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Point>());
-            if (builder.ValueIsSet()) obj.EndPoint = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.LinearGradientBrush.EndPointProperty, builder.GetValue());
             return obj;
         }
         

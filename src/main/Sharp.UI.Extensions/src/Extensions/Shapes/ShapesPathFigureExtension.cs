@@ -5,7 +5,7 @@
         public static Microsoft.Maui.Controls.Shapes.PathFigure StartPoint(this Microsoft.Maui.Controls.Shapes.PathFigure obj,
             double x, double y)
         {
-            obj.StartPoint = new Point(x, y);
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.PathFigure.StartPointProperty, new Point(x, y));
             return obj;
         }
     }

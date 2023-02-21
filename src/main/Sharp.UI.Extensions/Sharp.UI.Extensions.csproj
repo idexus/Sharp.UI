@@ -17,10 +17,10 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 
 		<PackageId>Sharp.UI.Extensions</PackageId>
-		<Version>0.4.0-alpha</Version>
+		<Version>0.4.1-alpha</Version>
 		<Authors>Pawel Krzywdzinski</Authors>
 		<Copyright>Pawel Krzywdzinski</Copyright>
-		<PackageDescription>Library for .NET MAUI: Fluent Method Extensions Package</PackageDescription>
+		<PackageDescription>Library for .NET MAUI: Fluent Extension Methods</PackageDescription>
 		<Company></Company>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
@@ -34,13 +34,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	    <ProjectReference Include="..\Sharp.UI.Core\Sharp.UI.Core.csproj" />
 		<ProjectReference Include="..\..\generators\Sharp.UI.Generator.Extensions\Sharp.UI.Generator.Extensions.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
 	</ItemGroup>
-
-	<ItemGroup>
-        <None Include="..\..\generators\Sharp.UI.Generator.Extensions\bin\$(Configuration)\netstandard2.0\Sharp.UI.Generator.Extensions.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
-    </ItemGroup>
 
 	<PropertyGroup>
 		<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
@@ -54,4 +49,5 @@
 	<ItemGroup>
 	  <None Include="README.md" Pack="true" PackagePath="\" />
 	</ItemGroup>
+
 </Project>

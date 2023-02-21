@@ -11,8 +11,8 @@ namespace ExampleApp
         {
             public int Id { get; set; }
             public object DataModel { get; set; }
-            public Style LabelStyle => new Style<Label> { Label.TextColorProperty.Set(Id % 2 == 0 ? Colors.DarkSlateGray : Colors.LightGray) };
-            public Style GridStyle => new Style<Grid> { Grid.BackgroundProperty.Set(Id % 2 == 0 ? Colors.LightGray : Colors.DarkSlateGray) };
+            public Style LabelStyle => new Style<Label>(e => e.TextColor(Id % 2 == 0 ? Colors.DarkSlateGray : Colors.LightGray));
+            public Style GridStyle => new Style<Grid>(e => e.Background(Id % 2 == 0 ? Colors.LightGray : Colors.DarkSlateGray));
         }
 
         public AlternateCollectionPage()

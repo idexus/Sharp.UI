@@ -10,13 +10,15 @@ namespace ExampleApp
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class MyViewModelExtension
     {
         public static T Counter<T>(this T obj,
             int counter)
             where T : ExampleApp.MyViewModel
         {
-            obj.Counter = counter;
+            obj.SetValueOrSetter(ExampleApp.MyViewModel.CounterProperty, counter);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace ExampleApp
             where T : ExampleApp.MyViewModel
         {
             var builder = buidValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) obj.Counter = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(ExampleApp.MyViewModel.CounterProperty, builder.GetValue());
             return obj;
         }
         
@@ -42,7 +44,7 @@ namespace ExampleApp
             double sliderValue)
             where T : ExampleApp.MyViewModel
         {
-            obj.SliderValue = sliderValue;
+            obj.SetValueOrSetter(ExampleApp.MyViewModel.SliderValueProperty, sliderValue);
             return obj;
         }
         
@@ -51,7 +53,7 @@ namespace ExampleApp
             where T : ExampleApp.MyViewModel
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SliderValue = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(ExampleApp.MyViewModel.SliderValueProperty, builder.GetValue());
             return obj;
         }
         

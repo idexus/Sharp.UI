@@ -10,6 +10,8 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class TriggerExtension
     {
         public static Microsoft.Maui.Controls.Trigger Property(this Microsoft.Maui.Controls.Trigger obj,

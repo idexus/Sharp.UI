@@ -10,12 +10,14 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class AdaptiveTriggerExtension
     {
         public static Microsoft.Maui.Controls.AdaptiveTrigger MinWindowHeight(this Microsoft.Maui.Controls.AdaptiveTrigger obj,
             double minWindowHeight)
         {
-            obj.MinWindowHeight = minWindowHeight;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.AdaptiveTrigger.MinWindowHeightProperty, minWindowHeight);
             return obj;
         }
         
@@ -23,7 +25,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.MinWindowHeight = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.AdaptiveTrigger.MinWindowHeightProperty, builder.GetValue());
             return obj;
         }
         
@@ -38,7 +40,7 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.AdaptiveTrigger MinWindowWidth(this Microsoft.Maui.Controls.AdaptiveTrigger obj,
             double minWindowWidth)
         {
-            obj.MinWindowWidth = minWindowWidth;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.AdaptiveTrigger.MinWindowWidthProperty, minWindowWidth);
             return obj;
         }
         
@@ -46,7 +48,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.MinWindowWidth = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.AdaptiveTrigger.MinWindowWidthProperty, builder.GetValue());
             return obj;
         }
         

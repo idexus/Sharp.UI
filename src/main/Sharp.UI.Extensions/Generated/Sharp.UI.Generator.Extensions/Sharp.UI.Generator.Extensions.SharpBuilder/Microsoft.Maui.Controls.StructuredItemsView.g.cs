@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class StructuredItemsViewExtension
     {
         public static T Header<T>(this T obj,
             object header)
             where T : Microsoft.Maui.Controls.StructuredItemsView
         {
-            obj.Header = header;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.StructuredItemsView.HeaderProperty, header);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.StructuredItemsView
         {
             var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.Header = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.StructuredItemsView.HeaderProperty, builder.GetValue());
             return obj;
         }
         
@@ -42,7 +44,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.DataTemplate headerTemplate)
             where T : Microsoft.Maui.Controls.StructuredItemsView
         {
-            obj.HeaderTemplate = headerTemplate;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.StructuredItemsView.HeaderTemplateProperty, headerTemplate);
             return obj;
         }
         
@@ -51,7 +53,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.StructuredItemsView
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
-            if (builder.ValueIsSet()) obj.HeaderTemplate = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.StructuredItemsView.HeaderTemplateProperty, builder.GetValue());
             return obj;
         }
         
@@ -75,7 +77,7 @@ namespace Sharp.UI
             object footer)
             where T : Microsoft.Maui.Controls.StructuredItemsView
         {
-            obj.Footer = footer;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.StructuredItemsView.FooterProperty, footer);
             return obj;
         }
         
@@ -84,7 +86,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.StructuredItemsView
         {
             var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.Footer = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.StructuredItemsView.FooterProperty, builder.GetValue());
             return obj;
         }
         
@@ -101,7 +103,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.DataTemplate footerTemplate)
             where T : Microsoft.Maui.Controls.StructuredItemsView
         {
-            obj.FooterTemplate = footerTemplate;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.StructuredItemsView.FooterTemplateProperty, footerTemplate);
             return obj;
         }
         
@@ -110,7 +112,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.StructuredItemsView
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
-            if (builder.ValueIsSet()) obj.FooterTemplate = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.StructuredItemsView.FooterTemplateProperty, builder.GetValue());
             return obj;
         }
         
@@ -134,7 +136,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.IItemsLayout itemsLayout)
             where T : Microsoft.Maui.Controls.StructuredItemsView
         {
-            obj.ItemsLayout = itemsLayout;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.StructuredItemsView.ItemsLayoutProperty, itemsLayout);
             return obj;
         }
         
@@ -143,7 +145,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.StructuredItemsView
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.IItemsLayout>());
-            if (builder.ValueIsSet()) obj.ItemsLayout = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.StructuredItemsView.ItemsLayoutProperty, builder.GetValue());
             return obj;
         }
         
@@ -160,7 +162,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.ItemSizingStrategy itemSizingStrategy)
             where T : Microsoft.Maui.Controls.StructuredItemsView
         {
-            obj.ItemSizingStrategy = itemSizingStrategy;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.StructuredItemsView.ItemSizingStrategyProperty, itemSizingStrategy);
             return obj;
         }
         
@@ -169,7 +171,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.StructuredItemsView
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.ItemSizingStrategy>());
-            if (builder.ValueIsSet()) obj.ItemSizingStrategy = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.StructuredItemsView.ItemSizingStrategyProperty, builder.GetValue());
             return obj;
         }
         

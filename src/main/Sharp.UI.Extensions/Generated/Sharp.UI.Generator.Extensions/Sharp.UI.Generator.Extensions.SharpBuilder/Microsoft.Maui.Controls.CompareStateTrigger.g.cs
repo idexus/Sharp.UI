@@ -10,12 +10,14 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class CompareStateTriggerExtension
     {
         public static Microsoft.Maui.Controls.CompareStateTrigger Property(this Microsoft.Maui.Controls.CompareStateTrigger obj,
             object property)
         {
-            obj.Property = property;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.CompareStateTrigger.PropertyProperty, property);
             return obj;
         }
         
@@ -23,7 +25,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
         {
             var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.Property = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.CompareStateTrigger.PropertyProperty, builder.GetValue());
             return obj;
         }
         
@@ -38,7 +40,7 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.CompareStateTrigger Value(this Microsoft.Maui.Controls.CompareStateTrigger obj,
             object value)
         {
-            obj.Value = value;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.CompareStateTrigger.ValueProperty, value);
             return obj;
         }
         
@@ -46,7 +48,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
         {
             var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.Value = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.CompareStateTrigger.ValueProperty, builder.GetValue());
             return obj;
         }
         

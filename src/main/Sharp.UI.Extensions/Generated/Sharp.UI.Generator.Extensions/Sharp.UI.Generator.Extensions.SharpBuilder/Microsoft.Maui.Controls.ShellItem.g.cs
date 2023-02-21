@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class ShellItemExtension
     {
         public static T CurrentItem<T>(this T obj,
             Microsoft.Maui.Controls.ShellSection currentItem)
             where T : Microsoft.Maui.Controls.ShellItem
         {
-            obj.CurrentItem = currentItem;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.ShellItem.CurrentItemProperty, currentItem);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ShellItem
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.ShellSection>());
-            if (builder.ValueIsSet()) obj.CurrentItem = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ShellItem.CurrentItemProperty, builder.GetValue());
             return obj;
         }
         

@@ -10,6 +10,8 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class PolylineExtension
     {
         public static Microsoft.Maui.Controls.Shapes.Polyline Points(this Microsoft.Maui.Controls.Shapes.Polyline obj,
@@ -39,7 +41,7 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.Shapes.Polyline FillRule(this Microsoft.Maui.Controls.Shapes.Polyline obj,
             Microsoft.Maui.Controls.Shapes.FillRule fillRule)
         {
-            obj.FillRule = fillRule;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Polyline.FillRuleProperty, fillRule);
             return obj;
         }
         
@@ -47,7 +49,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<Microsoft.Maui.Controls.Shapes.FillRule>, ValueBuilder<Microsoft.Maui.Controls.Shapes.FillRule>> buidValue)
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.Shapes.FillRule>());
-            if (builder.ValueIsSet()) obj.FillRule = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Polyline.FillRuleProperty, builder.GetValue());
             return obj;
         }
         

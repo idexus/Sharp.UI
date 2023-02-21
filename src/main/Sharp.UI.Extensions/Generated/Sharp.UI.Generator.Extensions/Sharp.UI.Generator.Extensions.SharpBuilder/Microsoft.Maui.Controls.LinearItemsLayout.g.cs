@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class LinearItemsLayoutExtension
     {
         public static T ItemSpacing<T>(this T obj,
             double itemSpacing)
             where T : Microsoft.Maui.Controls.LinearItemsLayout
         {
-            obj.ItemSpacing = itemSpacing;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.LinearItemsLayout.ItemSpacingProperty, itemSpacing);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.LinearItemsLayout
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.ItemSpacing = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.LinearItemsLayout.ItemSpacingProperty, builder.GetValue());
             return obj;
         }
         

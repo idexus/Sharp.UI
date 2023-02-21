@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class StackBaseExtension
     {
         public static T Spacing<T>(this T obj,
             double spacing)
             where T : Microsoft.Maui.Controls.StackBase
         {
-            obj.Spacing = spacing;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.StackBase.SpacingProperty, spacing);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.StackBase
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.Spacing = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.StackBase.SpacingProperty, builder.GetValue());
             return obj;
         }
         

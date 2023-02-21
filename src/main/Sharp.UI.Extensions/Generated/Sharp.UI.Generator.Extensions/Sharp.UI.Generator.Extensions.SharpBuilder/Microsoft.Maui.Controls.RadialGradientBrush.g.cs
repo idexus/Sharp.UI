@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class RadialGradientBrushExtension
     {
         public static T Center<T>(this T obj,
             Microsoft.Maui.Graphics.Point center)
             where T : Microsoft.Maui.Controls.RadialGradientBrush
         {
-            obj.Center = center;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.RadialGradientBrush.CenterProperty, center);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.RadialGradientBrush
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Point>());
-            if (builder.ValueIsSet()) obj.Center = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.RadialGradientBrush.CenterProperty, builder.GetValue());
             return obj;
         }
         
@@ -42,7 +44,7 @@ namespace Sharp.UI
             double radius)
             where T : Microsoft.Maui.Controls.RadialGradientBrush
         {
-            obj.Radius = radius;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.RadialGradientBrush.RadiusProperty, radius);
             return obj;
         }
         
@@ -51,7 +53,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.RadialGradientBrush
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.Radius = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.RadialGradientBrush.RadiusProperty, builder.GetValue());
             return obj;
         }
         

@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class SearchBarExtension
     {
         public static T CancelButtonColor<T>(this T obj,
             Microsoft.Maui.Graphics.Color cancelButtonColor)
             where T : Microsoft.Maui.Controls.SearchBar
         {
-            obj.CancelButtonColor = cancelButtonColor;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchBar.CancelButtonColorProperty, cancelButtonColor);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchBar
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) obj.CancelButtonColor = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchBar.CancelButtonColorProperty, builder.GetValue());
             return obj;
         }
         
@@ -42,7 +44,7 @@ namespace Sharp.UI
             Microsoft.Maui.TextAlignment horizontalTextAlignment)
             where T : Microsoft.Maui.Controls.SearchBar
         {
-            obj.HorizontalTextAlignment = horizontalTextAlignment;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchBar.HorizontalTextAlignmentProperty, horizontalTextAlignment);
             return obj;
         }
         
@@ -51,7 +53,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchBar
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.TextAlignment>());
-            if (builder.ValueIsSet()) obj.HorizontalTextAlignment = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchBar.HorizontalTextAlignmentProperty, builder.GetValue());
             return obj;
         }
         
@@ -68,7 +70,7 @@ namespace Sharp.UI
             Microsoft.Maui.TextAlignment verticalTextAlignment)
             where T : Microsoft.Maui.Controls.SearchBar
         {
-            obj.VerticalTextAlignment = verticalTextAlignment;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchBar.VerticalTextAlignmentProperty, verticalTextAlignment);
             return obj;
         }
         
@@ -77,7 +79,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchBar
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.TextAlignment>());
-            if (builder.ValueIsSet()) obj.VerticalTextAlignment = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchBar.VerticalTextAlignmentProperty, builder.GetValue());
             return obj;
         }
         
@@ -94,7 +96,7 @@ namespace Sharp.UI
             System.Windows.Input.ICommand searchCommand)
             where T : Microsoft.Maui.Controls.SearchBar
         {
-            obj.SearchCommand = searchCommand;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchBar.SearchCommandProperty, searchCommand);
             return obj;
         }
         
@@ -103,7 +105,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchBar
         {
             var builder = buidValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) obj.SearchCommand = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchBar.SearchCommandProperty, builder.GetValue());
             return obj;
         }
         
@@ -120,7 +122,7 @@ namespace Sharp.UI
             object searchCommandParameter)
             where T : Microsoft.Maui.Controls.SearchBar
         {
-            obj.SearchCommandParameter = searchCommandParameter;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchBar.SearchCommandParameterProperty, searchCommandParameter);
             return obj;
         }
         
@@ -129,7 +131,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchBar
         {
             var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SearchCommandParameter = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchBar.SearchCommandParameterProperty, builder.GetValue());
             return obj;
         }
         
@@ -146,7 +148,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.FontAttributes fontAttributes)
             where T : Microsoft.Maui.Controls.SearchBar
         {
-            obj.FontAttributes = fontAttributes;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchBar.FontAttributesProperty, fontAttributes);
             return obj;
         }
         
@@ -155,7 +157,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchBar
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.FontAttributes>());
-            if (builder.ValueIsSet()) obj.FontAttributes = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchBar.FontAttributesProperty, builder.GetValue());
             return obj;
         }
         
@@ -172,7 +174,7 @@ namespace Sharp.UI
             bool isTextPredictionEnabled)
             where T : Microsoft.Maui.Controls.SearchBar
         {
-            obj.IsTextPredictionEnabled = isTextPredictionEnabled;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchBar.IsTextPredictionEnabledProperty, isTextPredictionEnabled);
             return obj;
         }
         
@@ -181,7 +183,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchBar
         {
             var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.IsTextPredictionEnabled = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchBar.IsTextPredictionEnabledProperty, builder.GetValue());
             return obj;
         }
         
@@ -198,7 +200,7 @@ namespace Sharp.UI
             int cursorPosition)
             where T : Microsoft.Maui.Controls.SearchBar
         {
-            obj.CursorPosition = cursorPosition;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchBar.CursorPositionProperty, cursorPosition);
             return obj;
         }
         
@@ -207,7 +209,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchBar
         {
             var builder = buidValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) obj.CursorPosition = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchBar.CursorPositionProperty, builder.GetValue());
             return obj;
         }
         
@@ -224,7 +226,7 @@ namespace Sharp.UI
             int selectionLength)
             where T : Microsoft.Maui.Controls.SearchBar
         {
-            obj.SelectionLength = selectionLength;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchBar.SelectionLengthProperty, selectionLength);
             return obj;
         }
         
@@ -233,7 +235,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchBar
         {
             var builder = buidValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) obj.SelectionLength = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchBar.SelectionLengthProperty, builder.GetValue());
             return obj;
         }
         
@@ -250,7 +252,7 @@ namespace Sharp.UI
             string fontFamily)
             where T : Microsoft.Maui.Controls.SearchBar
         {
-            obj.FontFamily = fontFamily;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchBar.FontFamilyProperty, fontFamily);
             return obj;
         }
         
@@ -259,7 +261,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchBar
         {
             var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.FontFamily = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchBar.FontFamilyProperty, builder.GetValue());
             return obj;
         }
         
@@ -276,7 +278,7 @@ namespace Sharp.UI
             double fontSize)
             where T : Microsoft.Maui.Controls.SearchBar
         {
-            obj.FontSize = fontSize;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchBar.FontSizeProperty, fontSize);
             return obj;
         }
         
@@ -285,7 +287,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchBar
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.FontSize = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchBar.FontSizeProperty, builder.GetValue());
             return obj;
         }
         
@@ -302,7 +304,7 @@ namespace Sharp.UI
             bool fontAutoScalingEnabled)
             where T : Microsoft.Maui.Controls.SearchBar
         {
-            obj.FontAutoScalingEnabled = fontAutoScalingEnabled;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchBar.FontAutoScalingEnabledProperty, fontAutoScalingEnabled);
             return obj;
         }
         
@@ -311,7 +313,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchBar
         {
             var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.FontAutoScalingEnabled = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchBar.FontAutoScalingEnabledProperty, builder.GetValue());
             return obj;
         }
         

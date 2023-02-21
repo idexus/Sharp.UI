@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class ButtonExtension
     {
         public static T Padding<T>(this T obj,
             Microsoft.Maui.Thickness padding)
             where T : Microsoft.Maui.Controls.Button
         {
-            obj.Padding = padding;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.PaddingProperty, padding);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Button
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Thickness>());
-            if (builder.ValueIsSet()) obj.Padding = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.PaddingProperty, builder.GetValue());
             return obj;
         }
         
@@ -42,7 +44,7 @@ namespace Sharp.UI
             Microsoft.Maui.LineBreakMode lineBreakMode)
             where T : Microsoft.Maui.Controls.Button
         {
-            obj.LineBreakMode = lineBreakMode;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.LineBreakModeProperty, lineBreakMode);
             return obj;
         }
         
@@ -51,7 +53,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Button
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.LineBreakMode>());
-            if (builder.ValueIsSet()) obj.LineBreakMode = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.LineBreakModeProperty, builder.GetValue());
             return obj;
         }
         
@@ -68,7 +70,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color borderColor)
             where T : Microsoft.Maui.Controls.Button
         {
-            obj.BorderColor = borderColor;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.BorderColorProperty, borderColor);
             return obj;
         }
         
@@ -77,7 +79,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Button
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) obj.BorderColor = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.BorderColorProperty, builder.GetValue());
             return obj;
         }
         
@@ -94,7 +96,7 @@ namespace Sharp.UI
             int cornerRadius)
             where T : Microsoft.Maui.Controls.Button
         {
-            obj.CornerRadius = cornerRadius;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.CornerRadiusProperty, cornerRadius);
             return obj;
         }
         
@@ -103,7 +105,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Button
         {
             var builder = buidValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) obj.CornerRadius = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.CornerRadiusProperty, builder.GetValue());
             return obj;
         }
         
@@ -120,7 +122,7 @@ namespace Sharp.UI
             double borderWidth)
             where T : Microsoft.Maui.Controls.Button
         {
-            obj.BorderWidth = borderWidth;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.BorderWidthProperty, borderWidth);
             return obj;
         }
         
@@ -129,7 +131,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Button
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.BorderWidth = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.BorderWidthProperty, builder.GetValue());
             return obj;
         }
         
@@ -146,7 +148,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.Button.ButtonContentLayout contentLayout)
             where T : Microsoft.Maui.Controls.Button
         {
-            obj.ContentLayout = contentLayout;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.ContentLayoutProperty, contentLayout);
             return obj;
         }
         
@@ -155,7 +157,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Button
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.Button.ButtonContentLayout>());
-            if (builder.ValueIsSet()) obj.ContentLayout = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.ContentLayoutProperty, builder.GetValue());
             return obj;
         }
         
@@ -172,7 +174,7 @@ namespace Sharp.UI
             System.Windows.Input.ICommand command)
             where T : Microsoft.Maui.Controls.Button
         {
-            obj.Command = command;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.CommandProperty, command);
             return obj;
         }
         
@@ -181,7 +183,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Button
         {
             var builder = buidValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) obj.Command = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.CommandProperty, builder.GetValue());
             return obj;
         }
         
@@ -198,7 +200,7 @@ namespace Sharp.UI
             object commandParameter)
             where T : Microsoft.Maui.Controls.Button
         {
-            obj.CommandParameter = commandParameter;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.CommandParameterProperty, commandParameter);
             return obj;
         }
         
@@ -207,7 +209,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Button
         {
             var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.CommandParameter = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.CommandParameterProperty, builder.GetValue());
             return obj;
         }
         
@@ -224,7 +226,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.ImageSource imageSource)
             where T : Microsoft.Maui.Controls.Button
         {
-            obj.ImageSource = imageSource;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.ImageSourceProperty, imageSource);
             return obj;
         }
         
@@ -233,7 +235,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Button
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
-            if (builder.ValueIsSet()) obj.ImageSource = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.ImageSourceProperty, builder.GetValue());
             return obj;
         }
         
@@ -250,7 +252,7 @@ namespace Sharp.UI
             string text)
             where T : Microsoft.Maui.Controls.Button
         {
-            obj.Text = text;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.TextProperty, text);
             return obj;
         }
         
@@ -259,7 +261,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Button
         {
             var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.Text = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.TextProperty, builder.GetValue());
             return obj;
         }
         
@@ -276,7 +278,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color textColor)
             where T : Microsoft.Maui.Controls.Button
         {
-            obj.TextColor = textColor;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.TextColorProperty, textColor);
             return obj;
         }
         
@@ -285,7 +287,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Button
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) obj.TextColor = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.TextColorProperty, builder.GetValue());
             return obj;
         }
         
@@ -302,7 +304,7 @@ namespace Sharp.UI
             double characterSpacing)
             where T : Microsoft.Maui.Controls.Button
         {
-            obj.CharacterSpacing = characterSpacing;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.CharacterSpacingProperty, characterSpacing);
             return obj;
         }
         
@@ -311,7 +313,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Button
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.CharacterSpacing = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.CharacterSpacingProperty, builder.GetValue());
             return obj;
         }
         
@@ -328,7 +330,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.FontAttributes fontAttributes)
             where T : Microsoft.Maui.Controls.Button
         {
-            obj.FontAttributes = fontAttributes;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.FontAttributesProperty, fontAttributes);
             return obj;
         }
         
@@ -337,7 +339,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Button
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.FontAttributes>());
-            if (builder.ValueIsSet()) obj.FontAttributes = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.FontAttributesProperty, builder.GetValue());
             return obj;
         }
         
@@ -354,7 +356,7 @@ namespace Sharp.UI
             string fontFamily)
             where T : Microsoft.Maui.Controls.Button
         {
-            obj.FontFamily = fontFamily;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.FontFamilyProperty, fontFamily);
             return obj;
         }
         
@@ -363,7 +365,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Button
         {
             var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.FontFamily = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.FontFamilyProperty, builder.GetValue());
             return obj;
         }
         
@@ -380,7 +382,7 @@ namespace Sharp.UI
             double fontSize)
             where T : Microsoft.Maui.Controls.Button
         {
-            obj.FontSize = fontSize;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.FontSizeProperty, fontSize);
             return obj;
         }
         
@@ -389,7 +391,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Button
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.FontSize = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.FontSizeProperty, builder.GetValue());
             return obj;
         }
         
@@ -406,7 +408,7 @@ namespace Sharp.UI
             bool fontAutoScalingEnabled)
             where T : Microsoft.Maui.Controls.Button
         {
-            obj.FontAutoScalingEnabled = fontAutoScalingEnabled;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.FontAutoScalingEnabledProperty, fontAutoScalingEnabled);
             return obj;
         }
         
@@ -415,7 +417,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Button
         {
             var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.FontAutoScalingEnabled = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.FontAutoScalingEnabledProperty, builder.GetValue());
             return obj;
         }
         
@@ -432,7 +434,7 @@ namespace Sharp.UI
             Microsoft.Maui.TextTransform textTransform)
             where T : Microsoft.Maui.Controls.Button
         {
-            obj.TextTransform = textTransform;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.TextTransformProperty, textTransform);
             return obj;
         }
         
@@ -441,7 +443,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Button
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.TextTransform>());
-            if (builder.ValueIsSet()) obj.TextTransform = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.TextTransformProperty, builder.GetValue());
             return obj;
         }
         

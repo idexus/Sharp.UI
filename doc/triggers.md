@@ -23,10 +23,12 @@ public class PropertyTriggerPage : ContentPage
                 Entry.TextColorProperty.Set(Colors.White),
 
                 new Trigger(typeof(Entry))
-                    .Property(Entry.IsFocusedProperty).Value(true)
+                    .Property(Entry.IsFocusedProperty)
+                    .Value(true)
                     .Setters(
-                        Entry.BackgroundColorProperty.Set(Colors.Yellow),
-                        Entry.TextColorProperty.Set(Colors.Black)
+                        new Setter<Entry>(e => e
+                            .BackgroundColor(Colors.Yellow)
+                            .TextColor(Colors.Black))
                     ),
             }
         };
@@ -56,7 +58,7 @@ Content = new VStack
             new DataTrigger(typeof(Button))
                 .Binding(e => e.Path("Text.Length").Source(entry))
                 .Value(0)
-                .Setters(Entry.IsEnabledProperty.Set(false))
+                .Setters(new Setter<Entry>(e => e.IsEnabled(false)))
             ),
 }
 ```

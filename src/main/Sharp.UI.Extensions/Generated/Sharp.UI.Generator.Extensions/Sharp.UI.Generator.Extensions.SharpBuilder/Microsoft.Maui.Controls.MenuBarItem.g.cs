@@ -10,6 +10,8 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class MenuBarItemExtension
     {
         public static T Priority<T>(this T obj,
@@ -33,7 +35,7 @@ namespace Sharp.UI
             bool isEnabled)
             where T : Microsoft.Maui.Controls.MenuBarItem
         {
-            obj.IsEnabled = isEnabled;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.MenuBarItem.IsEnabledProperty, isEnabled);
             return obj;
         }
         
@@ -42,7 +44,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.MenuBarItem
         {
             var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.IsEnabled = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.MenuBarItem.IsEnabledProperty, builder.GetValue());
             return obj;
         }
         
@@ -59,7 +61,7 @@ namespace Sharp.UI
             string text)
             where T : Microsoft.Maui.Controls.MenuBarItem
         {
-            obj.Text = text;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.MenuBarItem.TextProperty, text);
             return obj;
         }
         
@@ -68,7 +70,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.MenuBarItem
         {
             var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.Text = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.MenuBarItem.TextProperty, builder.GetValue());
             return obj;
         }
         

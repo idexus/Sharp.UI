@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class SolidColorBrushExtension
     {
         public static T Color<T>(this T obj,
             Microsoft.Maui.Graphics.Color color)
             where T : Microsoft.Maui.Controls.SolidColorBrush
         {
-            obj.Color = color;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SolidColorBrush.ColorProperty, color);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SolidColorBrush
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) obj.Color = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SolidColorBrush.ColorProperty, builder.GetValue());
             return obj;
         }
         

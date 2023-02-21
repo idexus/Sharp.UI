@@ -4,7 +4,7 @@
     {
         public static T ContextFlyout<T>(this T obj, MenuFlyout contextFlyout) where T : Element
         {
-            obj.SetValue(FlyoutBase.ContextFlyoutProperty, contextFlyout);
+            obj.SetValueOrSetter(FlyoutBase.ContextFlyoutProperty, contextFlyout);
             return obj;
         }
     }

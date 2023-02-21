@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class TableSectionBaseExtension
     {
         public static T Title<T>(this T obj,
             string title)
             where T : Microsoft.Maui.Controls.TableSectionBase
         {
-            obj.Title = title;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.TableSectionBase.TitleProperty, title);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.TableSectionBase
         {
             var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.Title = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.TableSectionBase.TitleProperty, builder.GetValue());
             return obj;
         }
         
@@ -42,7 +44,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color textColor)
             where T : Microsoft.Maui.Controls.TableSectionBase
         {
-            obj.TextColor = textColor;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.TableSectionBase.TextColorProperty, textColor);
             return obj;
         }
         
@@ -51,7 +53,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.TableSectionBase
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) obj.TextColor = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.TableSectionBase.TextColorProperty, builder.GetValue());
             return obj;
         }
         

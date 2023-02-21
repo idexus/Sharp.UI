@@ -3,37 +3,57 @@ using Microsoft.Maui.Controls.Shapes;
 
 namespace ExampleApp
 {
+    using System.ComponentModel;
     using Sharp.UI;
+
+
 
     [SharpObject]
     public partial class HotReloadTestPage : ContentPage
     {
+        private readonly Button button;
+
         MyViewModel viewModel => BindingContext as MyViewModel;
 
         public HotReloadTestPage(MyViewModel viewModel)
         {
             BindingContext = viewModel;
-            Resources = AppResources.Default;
+            Resources = new ResourceDictionary
+            {
+                new Style<Label>(e => e.FontSize(60)),
+
+                new Style<Button>(e => e
+                    .BackgroundColor(AppColors.Gray950))
+                {
+                    new VisualState<Button>(VisualStates.Button.Normal, e => e
+                        .FontSize(35)
+                        .TextColor(AppColors.Gray200)
+                        .SizeRequest(180,80)),
+
+                    new VisualState<Button>(VisualStates.Button.Disabled, e => e
+                        .FontSize(60)
+                        .TextColor(Colors.Red)
+                        .SizeRequest(280,130))
+                }
+            };
 
             Content = new Grid(e => e.BackgroundColor(Colors.Black))
             {
                 new VStack(out var vStack, e => e.VerticalOptions(LayoutOptions.Center))
                 {
                     new Label("Hot Reload :)")
-                        .FontSize(45)
-                        .TextColor(AppColors.Gray200)
-                        .HorizontalOptions(LayoutOptions.Center)
-                        .Configure(async label =>
-                        {
-                            await Task.Delay(100);
-                            await label.RotateTo(360, 300);
-                        }),
+                        .TextColor(AppColors.Gray500)
+                        .HorizontalOptions(LayoutOptions.Center),
 
                     new Slider(1, 30, 1, out var slider)
                         .Value(e => e.Path("SliderValue"))
                         .Margin(new Thickness(50, 30))
-                        .WidthRequest(400),
-
+                        .WidthRequest(400)
+                        .OnValueChanged(s =>
+                        {
+                            button.IsEnabled = s.Value < 10;
+                        }),
+                    
                     new Border(e => e
                         .SizeRequest(270, 430)
                         .Margin(10)
@@ -65,11 +85,7 @@ namespace ExampleApp
                         .HorizontalOptions(LayoutOptions.Center)
                         .Margin(30),
 
-                    new Button("Click me")
-                        .BackgroundColor(AppColors.Gray950)
-                        .TextColor(Colors.White)
-                        .FontSize(22)
-                        .WidthRequest(270)
+                    new Button("Click me", out button)
                         .OnClicked(async (Button sender) =>
                         {
                             viewModel.Count();

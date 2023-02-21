@@ -23,10 +23,7 @@ public class MultiTriggerPage : ContentPage
                                 .Binding(e => e.Path("Text.Length").Source(phone))
                                 .Value(0)
                         })
-                        .Setters(new Setter[]
-                        {
-                            Entry.IsEnabledProperty.Set(false)
-                        })                   
+                        .Setters(new Setter<Entry>(e => e.IsEnabled(false)))                   
                 )
         }
         .WidthRequest(400)
