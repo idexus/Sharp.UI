@@ -22,12 +22,14 @@ public class PropertyTriggerPage : ContentPage
                 Entry.BackgroundColorProperty.Set(Colors.Black),
                 Entry.TextColorProperty.Set(Colors.White),
 
-                new Trigger(typeof(Entry))
-                    .Property(Entry.IsFocusedProperty).Value(true)
-                    .Setters(
-                        Entry.BackgroundColorProperty.Set(Colors.Yellow),
-                        Entry.TextColorProperty.Set(Colors.Black)
-                    ),
+			    new Trigger(typeof(Entry))
+				    .Property(Entry.IsFocusedProperty)
+				    .Value(true)
+				    .Setters(
+					    new Setter<Entry>(e => e
+						    .BackgroundColor(Colors.Yellow)
+						    .TextColor(Colors.Black))
+				    ),
             }
         };
 
@@ -51,12 +53,12 @@ Here is an example of using a data trigger to disable a button if the text lengt
 Content = new VStack
 {
     new Entry("Enter text...", out var entry).Text(""),
-    new Button("Save")
+	new Button("Save")
         .Triggers(
-            new DataTrigger(typeof(Button))
-                .Binding(e => e.Path("Text.Length").Source(entry))
-                .Value(0)
-                .Setters(Entry.IsEnabledProperty.Set(false))
+			new DataTrigger(typeof(Button))
+				.Binding(e => e.Path("Text.Length").Source(entry))
+				.Value(0)
+				.Setters(new Setter<Entry>(e => e.IsEnabled(false)))
             ),
 }
 ```
@@ -70,7 +72,7 @@ Here is an example of using an event trigger to validate the input of an `Entry`
 ```cs
 Content = new VStack
 {
-    new Entry("Enter text...", out var entry).Text("")
+	new Entry("Enter text...", out var entry).Text("")
         .Triggers(
             new EventTrigger()
                 .Event("TextChanged")

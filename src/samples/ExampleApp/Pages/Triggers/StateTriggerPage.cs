@@ -29,7 +29,7 @@ public partial class StateTriggerPage : ContentPage
                 new VisualState<Grid>(e => e.BackgroundColor(Colors.White))
                 {
                     new StateTrigger()
-                        .IsActive(e => e.Path("IsToggled").Source(testSwitch).Converter(new NegateConverter()))
+                        .IsActive(e => e.Path("IsToggled").Source(testSwitch).Convert<bool>(e => !e).ConvertBack<bool>(e => !e))
                         .OnIsActiveChanged(OnUncheckedStateIsActiveChanged)
                 },
             });

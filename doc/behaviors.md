@@ -74,8 +74,8 @@ public class AttachedBehaviorPage : ContentPage
         Resources = new ResourceDictionary
         {
             new Style<Entry>
-            {
-                NumericValidationStyleBehavior.AttachedProperty.Set(true)
+            {                
+                NumericValidationStyleBehavior.Enable(true)
             }
         };
 

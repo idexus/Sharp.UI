@@ -53,6 +53,22 @@ public class HelloWorldPage : ContentPage
 }
 ```
 
+### Nuget Package
+
+To add the Sharp.UI library to your project, run the following command:
+
+```
+dotnet add package Sharp.UI --version 0.4.1-alpha
+```
+
+You can also add only the generated fluent methods for classes from .Net MAUI to your project.
+
+```
+dotnet add package Sharp.UI.Extensions --version 0.4.1-alpha
+```
+
+You can also add the library to your project by adding a project reference to the Sharp.UI library. For more information, see the [Adding the Library by VS Project Reference](./doc/projectref.md) document.
+
 # Using Sharp.UI
 
 To use Sharp.UI in your projects, you need to include the `using Sharp.UI` statement inside your app namespace.
@@ -72,48 +88,44 @@ namespace ExampleApp
 }
 ```
 
-### Nuget Package
-
-To add the Sharp.UI library to your project, run the following command:
-
-```
-dotnet add package Sharp.UI --version 0.4.0-alpha
-```
-
-You can also add only the generated fluent methods for classes from .Net MAUI to your project.
-
-```
-dotnet add package Sharp.UI.Extensions --version 0.4.0-alpha
-```
-
-You can also add the library to your project by adding a project reference to the Sharp.UI library. For more information, see the [Adding the Library by VS Project Reference](./doc/projectref.md) document.
-
 # Hot Reload
 
-The hot reload feature allows you to see changes to your UI in real-time without having to rebuild the entire application. To use hot reload in Sharp.UI, you will need to use the [HotReloadKit](https://github.com/idexus/HotReloadKit.git) library. Visual Studio 2022 extensions for both Windows and Mac are available for download from the [HotReloadKit releases page](https://github.com/idexus/HotReloadKit/releases). Please note that this is a proof of concept and there is no official support. Use it at your own risk.
+The hot reload feature allows you to see changes to your UI in real-time without having to rebuild the entire application. To use hot reload in Sharp.UI, you will need to use the [HotReloadKit](https://github.com/idexus/HotReloadKit.git) library and add `SharpUIApplication` in your `CreateMauiApp` class.
 
-# Basic Examples
+```cs
+public static MauiApp CreateMauiApp()
+{
+    var builder = MauiApp.CreateBuilder();
+    builder
+        .SharpUIApplication<App>(HotReloadSupport.IdeIPs)   // to enable Hot Reload
+        .UseMauiApp<App>()
+        ...
 
-Here are some examples showing how to use the Sharp.UI library
+    return builder.Build();
+}
+```
 
-- [Properties and fluent methods](./doc/properties.md)
-- [Object references assignment](./doc/assign.md)
-- [Object containers](./doc/containers.md)
-- [Property bindings](./doc/propertybindings.md)
-- [Binding converters](./doc/bindingconverters.md)
-- [Attached properties](./doc/attachedproperties.md)
-- [Event handlers](./doc/eventhandlers.md)
-- [Grid definition](./doc/griddefinition.md)
-- [Absolute layout](./doc/absolutelayout.md)
-- [Menu definition](./doc/menudefinition.md)
-- [Gradient example](./doc/gradients.md)
-- [Gesture recognizers](./doc/gesturerecognizers.md)
-- [Application styling](./doc/styledefinition.md)
-- [Triggers](./doc/triggers.md)
-- [Behaviors](./doc/behaviors.md)
-- [Application shell](./doc/shellapplication.md)
+Visual Studio 2022 extensions for both Windows and Mac are available for download from the [HotReloadKit releases page](https://github.com/idexus/HotReloadKit/releases). Please note that this is a proof of concept and there is no official support. Use it at your own risk.
 
-# Auto-generated code
+# Examples
+
+### Using fluent methods for styling
+
+__Sharp.UI__ provides a way to define the styles of elements using the `Style<T>` class. Here's an example of how to define the style of a button:
+
+```cs
+new Style<Button>(e => e
+    .TextColor(e => e.OnLight(Colors.White).OnDark(AppColors.Primary))
+    .BackgroundColor(e => e.OnLight(AppColors.Primary).OnDark(Colors.White))
+    .FontFamily("OpenSansRegular")
+    .FontSize(14)
+    .CornerRadius(8)
+    .Padding(new Thickness(14,10))
+    .MinimumHeightRequest(44)
+    .MinimumWidthRequest(44))
+```
+
+### Auto-generated code
 
 __Sharp.UI__ library has a feature of automatically generating bindable properties and their fluent helper methods. To use this feature, you need to define the __view-model__ as follows:
  
@@ -167,12 +179,28 @@ public class ViewPage : ContentPage
     }
 }
 ```
-There are also advanced scenarios that you can explore
 
+### Other Examples
+
+Here are some examples showing how to use the __Sharp.UI__ library
+
+- [Properties and fluent methods](./doc/properties.md)
+- [Object references assignment](./doc/assign.md)
+- [Object containers](./doc/containers.md)
+- [Property bindings](./doc/propertybindings.md)
+- [Binding converters](./doc/bindingconverters.md)
+- [Attached properties](./doc/attachedproperties.md)
+- [Event handlers](./doc/eventhandlers.md)
+- [Grid definition](./doc/griddefinition.md)
+- [Absolute layout](./doc/absolutelayout.md)
+- [Menu definition](./doc/menudefinition.md)
+- [Gradient example](./doc/gradients.md)
+- [Gesture recognizers](./doc/gesturerecognizers.md)
+- [Application styling](./doc/styledefinition.md)
+- [Triggers](./doc/triggers.md)
+- [Behaviors](./doc/behaviors.md)
+- [Application shell](./doc/shellapplication.md)
 - [Callbacks and default values](./doc/advbindablepoperties.md)
-
-Custom controls can also be created using the auto-generated properties and event handler helper methods. The following links provide more information:
-
 - [Creating custom controls](./doc/customcontentview.md)
 - [Control template](./doc/autogenbindableproperties.md)
 

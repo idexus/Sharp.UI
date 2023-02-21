@@ -131,7 +131,7 @@ public class AppResources
             {
                 new VisualState<ImageButton>(VisualStateEnum.VisualElement.Normal),
                 new VisualState<ImageButton>(VisualStateEnum.VisualElement.Disabled, e => e
-                        .Opacity(0.5))
+                    .Opacity(0.5))
             },         
             
 
@@ -145,7 +145,7 @@ public class AppResources
             {
                 new VisualState<Label>(VisualStateEnum.VisualElement.Normal),
                 new VisualState<Label>(VisualStateEnum.VisualElement.Disabled, e => e
-                        .TextColor(e => e.OnLight(AppColors.Gray300).OnDark(AppColors.Gray600)))
+                    .TextColor(e => e.OnLight(AppColors.Gray300).OnDark(AppColors.Gray600)))
             },
 
             // "ListView"
@@ -167,8 +167,8 @@ public class AppResources
             {
                 new VisualState<Picker>(VisualStateEnum.VisualElement.Normal),
                 new VisualState<Picker>(VisualStateEnum.VisualElement.Disabled, e => e
-                        .TextColor(e => e.OnLight(AppColors.Gray300).OnDark(AppColors.Gray600))
-                        .TitleColor(e => e.OnLight(AppColors.Gray300).OnDark(AppColors.Gray600)))
+                    .TextColor(e => e.OnLight(AppColors.Gray300).OnDark(AppColors.Gray600))
+                    .TitleColor(e => e.OnLight(AppColors.Gray300).OnDark(AppColors.Gray600)))
             },  
             
 
@@ -179,7 +179,7 @@ public class AppResources
             {
                 new VisualState<ProgressBar>(VisualStateEnum.VisualElement.Normal),
                 new VisualState<ProgressBar>(VisualStateEnum.VisualElement.Disabled, e => e
-                        .ProgressColor(e => e.OnLight(AppColors.Gray300).OnDark(AppColors.Gray600)))
+                    .ProgressColor(e => e.OnLight(AppColors.Gray300).OnDark(AppColors.Gray600)))
             },
             
             // "RadioButton"
@@ -194,7 +194,7 @@ public class AppResources
             {
                 new VisualState<RadioButton>(VisualStateEnum.VisualElement.Normal),
                 new VisualState<RadioButton>(VisualStateEnum.VisualElement.Disabled, e => e
-                        .TextColor(e => e.OnLight(AppColors.Gray300).OnDark(AppColors.Gray600)))
+                    .TextColor(e => e.OnLight(AppColors.Gray300).OnDark(AppColors.Gray600)))
             },            
 
             // "RefreshView"
@@ -214,8 +214,8 @@ public class AppResources
             {
                 new VisualState<SearchBar>(VisualStateEnum.VisualElement.Normal),
                 new VisualState<SearchBar>(VisualStateEnum.VisualElement.Disabled, e => e
-                        .TextColor(e => e.OnLight(AppColors.Gray300).OnDark(AppColors.Gray600))
-                        .PlaceholderColor(e => e.OnLight(AppColors.Gray300).OnDark(AppColors.Gray600)))
+                    .TextColor(e => e.OnLight(AppColors.Gray300).OnDark(AppColors.Gray600))
+                    .PlaceholderColor(e => e.OnLight(AppColors.Gray300).OnDark(AppColors.Gray600)))
             },      
 
             // "SearchHandler"
@@ -266,9 +266,9 @@ public class AppResources
                 .OnColor(e => e.OnLight(AppColors.Primary).OnDark(Colors.White))
                 .ThumbColor(e => e.OnLight(AppColors.Gray400).OnDark(AppColors.Gray500)))
             {
-                new VisualState<Switch>(VisualStateEnum.VisualElement.Normal),
+                new VisualState<Switch>(VisualStateEnum.Switch.Normal),
 
-                new VisualState<Switch>(VisualStateEnum.VisualElement.Disabled, e => e
+                new VisualState<Switch>(VisualStateEnum.Switch.Disabled, e => e
                     .OnColor(e => e.OnLight(AppColors.Gray300).OnDark(AppColors.Gray600))
                     .ThumbColor(e => e.OnLight(AppColors.Gray300).OnDark(AppColors.Gray600))),
 
