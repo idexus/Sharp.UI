@@ -61,7 +61,7 @@ To add the Sharp.UI library to your project, run the following command:
 dotnet add package Sharp.UI --version 0.4.1-alpha
 ```
 
-You can also add only the generated fluent methods for classes from .Net MAUI to your project.
+You can also add the core generated fluent methods for classes from .Net MAUI to your project.
 
 ```
 dotnet add package Sharp.UI.Extensions --version 0.4.1-alpha
