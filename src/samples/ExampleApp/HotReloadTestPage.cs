@@ -20,20 +20,26 @@ namespace ExampleApp
             BindingContext = viewModel;
             Resources = new ResourceDictionary
             {
-                new Style<Label>(e => e.FontSize(60)),
+                new Style<Label>(e => e
+                    .FontSize(35)
+                    .TextColor(AppColors.Gray200)
+                    .HorizontalOptions(LayoutOptions.Center)
+                    .VerticalOptions(LayoutOptions.Center)),
 
                 new Style<Button>(e => e
-                    .BackgroundColor(AppColors.Gray950))
+                    .BackgroundColor(AppColors.Gray950)
+                    .Padding(20)
+                    .CornerRadius(10))
                 {
                     new VisualState<Button>(VisualStates.Button.Normal, e => e
-                        .FontSize(35)
+                        .FontSize(33)
                         .TextColor(AppColors.Gray200)
-                        .SizeRequest(180,80)),
+                        .SizeRequest(270,110)),
 
                     new VisualState<Button>(VisualStates.Button.Disabled, e => e
-                        .FontSize(60)
-                        .TextColor(Colors.Red)
-                        .SizeRequest(280,130))
+                        .FontSize(20)
+                        .TextColor(AppColors.Gray600)
+                        .SizeRequest(180,80))
                 }
             };
 
@@ -41,13 +47,11 @@ namespace ExampleApp
             {
                 new VStack(out var vStack, e => e.VerticalOptions(LayoutOptions.Center))
                 {
-                    new Label("Hot Reload :)")
-                        .TextColor(AppColors.Gray500)
-                        .HorizontalOptions(LayoutOptions.Center),
+                    new Label("Hot Reload :)"),
 
                     new Slider(1, 30, 1, out var slider)
                         .Value(e => e.Path("SliderValue"))
-                        .Margin(new Thickness(50, 30))
+                        .Margin(new Thickness(50, 20))
                         .WidthRequest(400)
                         .OnValueChanged(s =>
                         {
@@ -56,7 +60,6 @@ namespace ExampleApp
                     
                     new Border(e => e
                         .SizeRequest(270, 430)
-                        .Margin(10)
                         .StrokeShape(new RoundRectangle().CornerRadius(40))
                         .BackgroundColor(AppColors.Gray950))
                     {
@@ -64,26 +67,18 @@ namespace ExampleApp
                         {
                             new Label()
                                 .Text(e => e.Path("Value").Source(slider).StringFormat("Value : {0:F1}"))
-                                .FontSize(40)
-                                .TextColor(Colors.DarkGray)
-                                .HorizontalOptions(LayoutOptions.Center)
-                                .VerticalOptions(LayoutOptions.Center),
+                                .FontSize(40),
 
                             new Image("dotnet_bot.png").Row(1),
 
                             new Label("Hello, World!").Row(2)
-                                .FontSize(30)
-                                .TextColor(Colors.DarkGray)
-                                .HorizontalOptions(LayoutOptions.Center)
-                                .VerticalOptions(LayoutOptions.Center),
+                                .FontSize(30),
                         }
                     },
 
                     new Label()
                         .Text(e => e.Path("Counter").StringFormat("Counter : {0}"))
-                        .FontSize(30)
-                        .HorizontalOptions(LayoutOptions.Center)
-                        .Margin(30),
+                        .Margin(20),
 
                     new Button("Click me", out button)
                         .OnClicked(async (Button sender) =>
