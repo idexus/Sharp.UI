@@ -39,7 +39,7 @@ Finally, all defined styles can be placed in a `ResourceDictionary`:
 new ResourceDictionary
 {
     ...
-    
+
     new Style<Button>(e => e
         .TextColor(e => e.OnLight(Colors.White).OnDark(AppColors.Primary))
         .BackgroundColor(e => e.OnLight(AppColors.Primary).OnDark(Colors.White))
@@ -58,7 +58,7 @@ new ResourceDictionary
             .TextColor(e => e.OnLight(AppColors.Gray950).OnDark(AppColors.Gray200))
             .BackgroundColor(e => e.OnLight(AppColors.Gray200).OnDark(AppColors.Gray600)))
     },      
-      
+        
     new Style<Frame>(e => e
         .HasShadow(false)
         .BorderColor(e => e.OnLight(AppColors.Gray200).OnDark(AppColors.Gray950))

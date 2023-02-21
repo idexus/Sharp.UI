@@ -14,10 +14,10 @@ using Sharp.UI;
 public class AbsoluteLayoutPage : ContentPage
 {
     public AbsoluteLayoutPage()
-	{
-		Content = new AbsoluteLayout
-		{   
-			new Grid
+    {
+        Content = new AbsoluteLayout
+        {   
+            new Grid
             {
                 e => e
                     .BackgroundColor(Colors.Red)
