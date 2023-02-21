@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class ImageExtension
     {
         public static T Aspect<T>(this T obj,
             Microsoft.Maui.Aspect aspect)
             where T : Microsoft.Maui.Controls.Image
         {
-            obj.Aspect = aspect;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Image.AspectProperty, aspect);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Image
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Aspect>());
-            if (builder.ValueIsSet()) obj.Aspect = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Image.AspectProperty, builder.GetValue());
             return obj;
         }
         
@@ -42,7 +44,7 @@ namespace Sharp.UI
             bool isOpaque)
             where T : Microsoft.Maui.Controls.Image
         {
-            obj.IsOpaque = isOpaque;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Image.IsOpaqueProperty, isOpaque);
             return obj;
         }
         
@@ -51,7 +53,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Image
         {
             var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.IsOpaque = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Image.IsOpaqueProperty, builder.GetValue());
             return obj;
         }
         
@@ -68,7 +70,7 @@ namespace Sharp.UI
             bool isAnimationPlaying)
             where T : Microsoft.Maui.Controls.Image
         {
-            obj.IsAnimationPlaying = isAnimationPlaying;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Image.IsAnimationPlayingProperty, isAnimationPlaying);
             return obj;
         }
         
@@ -77,7 +79,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Image
         {
             var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.IsAnimationPlaying = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Image.IsAnimationPlayingProperty, builder.GetValue());
             return obj;
         }
         
@@ -94,7 +96,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.ImageSource source)
             where T : Microsoft.Maui.Controls.Image
         {
-            obj.Source = source;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Image.SourceProperty, source);
             return obj;
         }
         
@@ -103,7 +105,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Image
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
-            if (builder.ValueIsSet()) obj.Source = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Image.SourceProperty, builder.GetValue());
             return obj;
         }
         

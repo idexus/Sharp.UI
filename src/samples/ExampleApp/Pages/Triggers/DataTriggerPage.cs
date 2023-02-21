@@ -15,7 +15,7 @@ public class DataTriggerPage : ContentPage
 					new DataTrigger(typeof(Button))
 						.Binding(e => e.Path("Text.Length").Source(entry))
 						.Value(0)
-						.Setters(Entry.IsEnabledProperty.Set(false))
+						.Setters(new Setter<Entry>(e => e.IsEnabled(false)))
                     ),
         }
 		.VerticalOptions(LayoutOptions.Center);

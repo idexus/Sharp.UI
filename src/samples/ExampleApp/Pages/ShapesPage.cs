@@ -11,11 +11,9 @@ namespace ExampleApp
 		{
 			Resources = new ResourceDictionary
 			{
-				new Style<ContentView>
-				{
-					ContentView.VerticalOptionsProperty.Set(LayoutOptions.Center),
-					ContentView.HorizontalOptionsProperty.Set(LayoutOptions.Center)
-				}
+				new Style<ContentView>(e => e
+					.VerticalOptions(LayoutOptions.Center)
+					.HorizontalOptions(LayoutOptions.Center))				
 			};
 
 			this.BackgroundColor(Colors.White);

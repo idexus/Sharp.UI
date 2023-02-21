@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class SwitchCellExtension
     {
         public static T OnColor<T>(this T obj,
             Microsoft.Maui.Graphics.Color onColor)
             where T : Microsoft.Maui.Controls.SwitchCell
         {
-            obj.OnColor = onColor;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SwitchCell.OnColorProperty, onColor);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SwitchCell
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) obj.OnColor = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SwitchCell.OnColorProperty, builder.GetValue());
             return obj;
         }
         
@@ -42,7 +44,7 @@ namespace Sharp.UI
             bool on)
             where T : Microsoft.Maui.Controls.SwitchCell
         {
-            obj.On = on;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SwitchCell.OnProperty, on);
             return obj;
         }
         
@@ -51,7 +53,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SwitchCell
         {
             var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.On = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SwitchCell.OnProperty, builder.GetValue());
             return obj;
         }
         
@@ -68,7 +70,7 @@ namespace Sharp.UI
             string text)
             where T : Microsoft.Maui.Controls.SwitchCell
         {
-            obj.Text = text;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SwitchCell.TextProperty, text);
             return obj;
         }
         
@@ -77,7 +79,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SwitchCell
         {
             var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.Text = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SwitchCell.TextProperty, builder.GetValue());
             return obj;
         }
         

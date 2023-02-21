@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class SkewTransformExtension
     {
         public static T AngleX<T>(this T obj,
             double angleX)
             where T : Microsoft.Maui.Controls.Shapes.SkewTransform
         {
-            obj.AngleX = angleX;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.SkewTransform.AngleXProperty, angleX);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shapes.SkewTransform
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.AngleX = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.SkewTransform.AngleXProperty, builder.GetValue());
             return obj;
         }
         
@@ -42,7 +44,7 @@ namespace Sharp.UI
             double angleY)
             where T : Microsoft.Maui.Controls.Shapes.SkewTransform
         {
-            obj.AngleY = angleY;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.SkewTransform.AngleYProperty, angleY);
             return obj;
         }
         
@@ -51,7 +53,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shapes.SkewTransform
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.AngleY = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.SkewTransform.AngleYProperty, builder.GetValue());
             return obj;
         }
         
@@ -68,7 +70,7 @@ namespace Sharp.UI
             double centerX)
             where T : Microsoft.Maui.Controls.Shapes.SkewTransform
         {
-            obj.CenterX = centerX;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.SkewTransform.CenterXProperty, centerX);
             return obj;
         }
         
@@ -77,7 +79,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shapes.SkewTransform
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.CenterX = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.SkewTransform.CenterXProperty, builder.GetValue());
             return obj;
         }
         
@@ -94,7 +96,7 @@ namespace Sharp.UI
             double centerY)
             where T : Microsoft.Maui.Controls.Shapes.SkewTransform
         {
-            obj.CenterY = centerY;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.SkewTransform.CenterYProperty, centerY);
             return obj;
         }
         
@@ -103,7 +105,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shapes.SkewTransform
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.CenterY = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.SkewTransform.CenterYProperty, builder.GetValue());
             return obj;
         }
         

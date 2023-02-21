@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class SwipeItemsExtension
     {
         public static T Mode<T>(this T obj,
             Microsoft.Maui.SwipeMode mode)
             where T : Microsoft.Maui.Controls.SwipeItems
         {
-            obj.Mode = mode;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SwipeItems.ModeProperty, mode);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SwipeItems
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.SwipeMode>());
-            if (builder.ValueIsSet()) obj.Mode = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SwipeItems.ModeProperty, builder.GetValue());
             return obj;
         }
         
@@ -42,7 +44,7 @@ namespace Sharp.UI
             Microsoft.Maui.SwipeBehaviorOnInvoked swipeBehaviorOnInvoked)
             where T : Microsoft.Maui.Controls.SwipeItems
         {
-            obj.SwipeBehaviorOnInvoked = swipeBehaviorOnInvoked;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SwipeItems.SwipeBehaviorOnInvokedProperty, swipeBehaviorOnInvoked);
             return obj;
         }
         
@@ -51,7 +53,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SwipeItems
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.SwipeBehaviorOnInvoked>());
-            if (builder.ValueIsSet()) obj.SwipeBehaviorOnInvoked = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SwipeItems.SwipeBehaviorOnInvokedProperty, builder.GetValue());
             return obj;
         }
         

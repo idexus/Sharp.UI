@@ -7,8 +7,8 @@ namespace Sharp.UI
     {
         public static Microsoft.Maui.Controls.CompareStateTrigger Binding(this Microsoft.Maui.Controls.CompareStateTrigger obj,
             Func<Binding, Binding> bindingBuilder)
-        {
-            obj.Property = bindingBuilder(new Binding());
+        {            
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.CompareStateTrigger.PropertyProperty, bindingBuilder(new Binding()));
             return obj;
         }
     }

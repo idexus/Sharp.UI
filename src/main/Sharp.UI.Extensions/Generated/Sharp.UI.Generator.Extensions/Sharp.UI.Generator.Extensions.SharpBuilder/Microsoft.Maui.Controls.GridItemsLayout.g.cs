@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class GridItemsLayoutExtension
     {
         public static T Span<T>(this T obj,
             int span)
             where T : Microsoft.Maui.Controls.GridItemsLayout
         {
-            obj.Span = span;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.GridItemsLayout.SpanProperty, span);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.GridItemsLayout
         {
             var builder = buidValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) obj.Span = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.GridItemsLayout.SpanProperty, builder.GetValue());
             return obj;
         }
         
@@ -42,7 +44,7 @@ namespace Sharp.UI
             double verticalItemSpacing)
             where T : Microsoft.Maui.Controls.GridItemsLayout
         {
-            obj.VerticalItemSpacing = verticalItemSpacing;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.GridItemsLayout.VerticalItemSpacingProperty, verticalItemSpacing);
             return obj;
         }
         
@@ -51,7 +53,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.GridItemsLayout
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.VerticalItemSpacing = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.GridItemsLayout.VerticalItemSpacingProperty, builder.GetValue());
             return obj;
         }
         
@@ -68,7 +70,7 @@ namespace Sharp.UI
             double horizontalItemSpacing)
             where T : Microsoft.Maui.Controls.GridItemsLayout
         {
-            obj.HorizontalItemSpacing = horizontalItemSpacing;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.GridItemsLayout.HorizontalItemSpacingProperty, horizontalItemSpacing);
             return obj;
         }
         
@@ -77,7 +79,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.GridItemsLayout
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.HorizontalItemSpacing = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.GridItemsLayout.HorizontalItemSpacingProperty, builder.GetValue());
             return obj;
         }
         

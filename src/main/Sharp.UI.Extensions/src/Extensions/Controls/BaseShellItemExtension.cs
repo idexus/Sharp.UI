@@ -4,7 +4,7 @@
     {
         public static T ShellItemTemplate<T>(this T obj, DataTemplate dataTemplate) where T : Element
         {
-            obj.SetValue(Microsoft.Maui.Controls.Shell.ItemTemplateProperty, dataTemplate);
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shell.ItemTemplateProperty, dataTemplate);
             return obj;
         }
     }

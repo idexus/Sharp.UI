@@ -10,6 +10,8 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class EventTriggerExtension
     {
         public static Microsoft.Maui.Controls.EventTrigger Actions(this Microsoft.Maui.Controls.EventTrigger obj,

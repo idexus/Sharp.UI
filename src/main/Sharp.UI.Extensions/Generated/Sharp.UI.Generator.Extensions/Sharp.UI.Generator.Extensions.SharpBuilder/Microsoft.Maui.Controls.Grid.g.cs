@@ -10,6 +10,8 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class GridExtension
     {
         public static T ColumnDefinitions<T>(this T obj,
@@ -70,7 +72,7 @@ namespace Sharp.UI
             double rowSpacing)
             where T : Microsoft.Maui.Controls.Grid
         {
-            obj.RowSpacing = rowSpacing;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Grid.RowSpacingProperty, rowSpacing);
             return obj;
         }
         
@@ -79,7 +81,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Grid
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.RowSpacing = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Grid.RowSpacingProperty, builder.GetValue());
             return obj;
         }
         
@@ -96,7 +98,7 @@ namespace Sharp.UI
             double columnSpacing)
             where T : Microsoft.Maui.Controls.Grid
         {
-            obj.ColumnSpacing = columnSpacing;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Grid.ColumnSpacingProperty, columnSpacing);
             return obj;
         }
         
@@ -105,7 +107,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Grid
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.ColumnSpacing = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Grid.ColumnSpacingProperty, builder.GetValue());
             return obj;
         }
         

@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class FrameExtension
     {
         public static T HasShadow<T>(this T obj,
             bool hasShadow)
             where T : Microsoft.Maui.Controls.Frame
         {
-            obj.HasShadow = hasShadow;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Frame.HasShadowProperty, hasShadow);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Frame
         {
             var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.HasShadow = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Frame.HasShadowProperty, builder.GetValue());
             return obj;
         }
         
@@ -42,7 +44,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color borderColor)
             where T : Microsoft.Maui.Controls.Frame
         {
-            obj.BorderColor = borderColor;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Frame.BorderColorProperty, borderColor);
             return obj;
         }
         
@@ -51,7 +53,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Frame
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) obj.BorderColor = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Frame.BorderColorProperty, builder.GetValue());
             return obj;
         }
         
@@ -68,7 +70,7 @@ namespace Sharp.UI
             float cornerRadius)
             where T : Microsoft.Maui.Controls.Frame
         {
-            obj.CornerRadius = cornerRadius;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Frame.CornerRadiusProperty, cornerRadius);
             return obj;
         }
         
@@ -77,7 +79,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Frame
         {
             var builder = buidValue(new ValueBuilder<float>());
-            if (builder.ValueIsSet()) obj.CornerRadius = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Frame.CornerRadiusProperty, builder.GetValue());
             return obj;
         }
         

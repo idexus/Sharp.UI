@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class SelectableItemsViewExtension
     {
         public static T SelectedItem<T>(this T obj,
             object selectedItem)
             where T : Microsoft.Maui.Controls.SelectableItemsView
         {
-            obj.SelectedItem = selectedItem;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SelectableItemsView.SelectedItemProperty, selectedItem);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SelectableItemsView
         {
             var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SelectedItem = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SelectableItemsView.SelectedItemProperty, builder.GetValue());
             return obj;
         }
         
@@ -69,7 +71,7 @@ namespace Sharp.UI
             System.Windows.Input.ICommand selectionChangedCommand)
             where T : Microsoft.Maui.Controls.SelectableItemsView
         {
-            obj.SelectionChangedCommand = selectionChangedCommand;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SelectableItemsView.SelectionChangedCommandProperty, selectionChangedCommand);
             return obj;
         }
         
@@ -78,7 +80,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SelectableItemsView
         {
             var builder = buidValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) obj.SelectionChangedCommand = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SelectableItemsView.SelectionChangedCommandProperty, builder.GetValue());
             return obj;
         }
         
@@ -95,7 +97,7 @@ namespace Sharp.UI
             object selectionChangedCommandParameter)
             where T : Microsoft.Maui.Controls.SelectableItemsView
         {
-            obj.SelectionChangedCommandParameter = selectionChangedCommandParameter;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SelectableItemsView.SelectionChangedCommandParameterProperty, selectionChangedCommandParameter);
             return obj;
         }
         
@@ -104,7 +106,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SelectableItemsView
         {
             var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SelectionChangedCommandParameter = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SelectableItemsView.SelectionChangedCommandParameterProperty, builder.GetValue());
             return obj;
         }
         
@@ -121,7 +123,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.SelectionMode selectionMode)
             where T : Microsoft.Maui.Controls.SelectableItemsView
         {
-            obj.SelectionMode = selectionMode;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SelectableItemsView.SelectionModeProperty, selectionMode);
             return obj;
         }
         
@@ -130,7 +132,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SelectableItemsView
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.SelectionMode>());
-            if (builder.ValueIsSet()) obj.SelectionMode = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SelectableItemsView.SelectionModeProperty, builder.GetValue());
             return obj;
         }
         

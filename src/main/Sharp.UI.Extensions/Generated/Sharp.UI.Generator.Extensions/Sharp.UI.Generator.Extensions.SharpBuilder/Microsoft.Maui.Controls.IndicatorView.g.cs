@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class IndicatorViewExtension
     {
         public static T IndicatorsShape<T>(this T obj,
             Microsoft.Maui.Controls.IndicatorShape indicatorsShape)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            obj.IndicatorsShape = indicatorsShape;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.IndicatorsShapeProperty, indicatorsShape);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.IndicatorView
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.IndicatorShape>());
-            if (builder.ValueIsSet()) obj.IndicatorsShape = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.IndicatorsShapeProperty, builder.GetValue());
             return obj;
         }
         
@@ -59,7 +61,7 @@ namespace Sharp.UI
             int position)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            obj.Position = position;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.PositionProperty, position);
             return obj;
         }
         
@@ -68,7 +70,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.IndicatorView
         {
             var builder = buidValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) obj.Position = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.PositionProperty, builder.GetValue());
             return obj;
         }
         
@@ -85,7 +87,7 @@ namespace Sharp.UI
             int count)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            obj.Count = count;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.CountProperty, count);
             return obj;
         }
         
@@ -94,7 +96,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.IndicatorView
         {
             var builder = buidValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) obj.Count = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.CountProperty, builder.GetValue());
             return obj;
         }
         
@@ -111,7 +113,7 @@ namespace Sharp.UI
             int maximumVisible)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            obj.MaximumVisible = maximumVisible;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.MaximumVisibleProperty, maximumVisible);
             return obj;
         }
         
@@ -120,7 +122,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.IndicatorView
         {
             var builder = buidValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) obj.MaximumVisible = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.MaximumVisibleProperty, builder.GetValue());
             return obj;
         }
         
@@ -137,7 +139,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.DataTemplate indicatorTemplate)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            obj.IndicatorTemplate = indicatorTemplate;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.IndicatorTemplateProperty, indicatorTemplate);
             return obj;
         }
         
@@ -146,7 +148,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.IndicatorView
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
-            if (builder.ValueIsSet()) obj.IndicatorTemplate = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.IndicatorTemplateProperty, builder.GetValue());
             return obj;
         }
         
@@ -170,7 +172,7 @@ namespace Sharp.UI
             bool hideSingle)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            obj.HideSingle = hideSingle;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.HideSingleProperty, hideSingle);
             return obj;
         }
         
@@ -179,7 +181,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.IndicatorView
         {
             var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.HideSingle = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.HideSingleProperty, builder.GetValue());
             return obj;
         }
         
@@ -196,7 +198,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color indicatorColor)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            obj.IndicatorColor = indicatorColor;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.IndicatorColorProperty, indicatorColor);
             return obj;
         }
         
@@ -205,7 +207,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.IndicatorView
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) obj.IndicatorColor = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.IndicatorColorProperty, builder.GetValue());
             return obj;
         }
         
@@ -222,7 +224,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color selectedIndicatorColor)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            obj.SelectedIndicatorColor = selectedIndicatorColor;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.SelectedIndicatorColorProperty, selectedIndicatorColor);
             return obj;
         }
         
@@ -231,7 +233,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.IndicatorView
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) obj.SelectedIndicatorColor = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.SelectedIndicatorColorProperty, builder.GetValue());
             return obj;
         }
         
@@ -248,7 +250,7 @@ namespace Sharp.UI
             double indicatorSize)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            obj.IndicatorSize = indicatorSize;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.IndicatorSizeProperty, indicatorSize);
             return obj;
         }
         
@@ -257,7 +259,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.IndicatorView
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.IndicatorSize = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.IndicatorSizeProperty, builder.GetValue());
             return obj;
         }
         
@@ -274,7 +276,7 @@ namespace Sharp.UI
             System.Collections.IEnumerable itemsSource)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            obj.ItemsSource = itemsSource;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.ItemsSourceProperty, itemsSource);
             return obj;
         }
         
@@ -283,7 +285,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.IndicatorView
         {
             var builder = buidValue(new ValueBuilder<System.Collections.IEnumerable>());
-            if (builder.ValueIsSet()) obj.ItemsSource = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.ItemsSourceProperty, builder.GetValue());
             return obj;
         }
         

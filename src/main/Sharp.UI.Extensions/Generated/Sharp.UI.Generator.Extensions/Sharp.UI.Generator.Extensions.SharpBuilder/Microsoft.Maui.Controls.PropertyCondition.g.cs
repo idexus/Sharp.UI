@@ -10,6 +10,8 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class PropertyConditionExtension
     {
         public static Microsoft.Maui.Controls.PropertyCondition Property(this Microsoft.Maui.Controls.PropertyCondition obj,

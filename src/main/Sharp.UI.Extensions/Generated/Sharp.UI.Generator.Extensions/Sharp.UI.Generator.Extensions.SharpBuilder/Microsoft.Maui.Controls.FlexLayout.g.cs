@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class FlexLayoutExtension
     {
         public static T Direction<T>(this T obj,
             Microsoft.Maui.Layouts.FlexDirection direction)
             where T : Microsoft.Maui.Controls.FlexLayout
         {
-            obj.Direction = direction;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.FlexLayout.DirectionProperty, direction);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.FlexLayout
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Layouts.FlexDirection>());
-            if (builder.ValueIsSet()) obj.Direction = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.FlexLayout.DirectionProperty, builder.GetValue());
             return obj;
         }
         
@@ -42,7 +44,7 @@ namespace Sharp.UI
             Microsoft.Maui.Layouts.FlexJustify justifyContent)
             where T : Microsoft.Maui.Controls.FlexLayout
         {
-            obj.JustifyContent = justifyContent;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.FlexLayout.JustifyContentProperty, justifyContent);
             return obj;
         }
         
@@ -51,7 +53,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.FlexLayout
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Layouts.FlexJustify>());
-            if (builder.ValueIsSet()) obj.JustifyContent = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.FlexLayout.JustifyContentProperty, builder.GetValue());
             return obj;
         }
         
@@ -68,7 +70,7 @@ namespace Sharp.UI
             Microsoft.Maui.Layouts.FlexAlignContent alignContent)
             where T : Microsoft.Maui.Controls.FlexLayout
         {
-            obj.AlignContent = alignContent;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.FlexLayout.AlignContentProperty, alignContent);
             return obj;
         }
         
@@ -77,7 +79,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.FlexLayout
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Layouts.FlexAlignContent>());
-            if (builder.ValueIsSet()) obj.AlignContent = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.FlexLayout.AlignContentProperty, builder.GetValue());
             return obj;
         }
         
@@ -94,7 +96,7 @@ namespace Sharp.UI
             Microsoft.Maui.Layouts.FlexAlignItems alignItems)
             where T : Microsoft.Maui.Controls.FlexLayout
         {
-            obj.AlignItems = alignItems;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.FlexLayout.AlignItemsProperty, alignItems);
             return obj;
         }
         
@@ -103,7 +105,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.FlexLayout
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Layouts.FlexAlignItems>());
-            if (builder.ValueIsSet()) obj.AlignItems = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.FlexLayout.AlignItemsProperty, builder.GetValue());
             return obj;
         }
         
@@ -120,7 +122,7 @@ namespace Sharp.UI
             Microsoft.Maui.Layouts.FlexPosition position)
             where T : Microsoft.Maui.Controls.FlexLayout
         {
-            obj.Position = position;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.FlexLayout.PositionProperty, position);
             return obj;
         }
         
@@ -129,7 +131,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.FlexLayout
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Layouts.FlexPosition>());
-            if (builder.ValueIsSet()) obj.Position = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.FlexLayout.PositionProperty, builder.GetValue());
             return obj;
         }
         
@@ -146,7 +148,7 @@ namespace Sharp.UI
             Microsoft.Maui.Layouts.FlexWrap wrap)
             where T : Microsoft.Maui.Controls.FlexLayout
         {
-            obj.Wrap = wrap;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.FlexLayout.WrapProperty, wrap);
             return obj;
         }
         
@@ -155,7 +157,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.FlexLayout
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Layouts.FlexWrap>());
-            if (builder.ValueIsSet()) obj.Wrap = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.FlexLayout.WrapProperty, builder.GetValue());
             return obj;
         }
         

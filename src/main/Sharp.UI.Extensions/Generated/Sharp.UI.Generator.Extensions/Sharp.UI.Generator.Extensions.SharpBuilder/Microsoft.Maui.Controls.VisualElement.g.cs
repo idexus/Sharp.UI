@@ -10,6 +10,8 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class VisualElementExtension
     {
         public static T Frame<T>(this T obj,
@@ -33,7 +35,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.Shadow shadow)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            obj.Shadow = shadow;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.ShadowProperty, shadow);
             return obj;
         }
         
@@ -42,7 +44,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.Shadow>());
-            if (builder.ValueIsSet()) obj.Shadow = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.ShadowProperty, builder.GetValue());
             return obj;
         }
         
@@ -59,7 +61,7 @@ namespace Sharp.UI
             int zIndex)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            obj.ZIndex = zIndex;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.ZIndexProperty, zIndex);
             return obj;
         }
         
@@ -68,7 +70,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var builder = buidValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) obj.ZIndex = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.ZIndexProperty, builder.GetValue());
             return obj;
         }
         
@@ -85,7 +87,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.IVisual visual)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            obj.Visual = visual;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.VisualProperty, visual);
             return obj;
         }
         
@@ -94,7 +96,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.IVisual>());
-            if (builder.ValueIsSet()) obj.Visual = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.VisualProperty, builder.GetValue());
             return obj;
         }
         
@@ -111,7 +113,7 @@ namespace Sharp.UI
             Microsoft.Maui.FlowDirection flowDirection)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            obj.FlowDirection = flowDirection;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.FlowDirectionProperty, flowDirection);
             return obj;
         }
         
@@ -120,7 +122,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.FlowDirection>());
-            if (builder.ValueIsSet()) obj.FlowDirection = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.FlowDirectionProperty, builder.GetValue());
             return obj;
         }
         
@@ -137,7 +139,7 @@ namespace Sharp.UI
             double anchorX)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            obj.AnchorX = anchorX;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.AnchorXProperty, anchorX);
             return obj;
         }
         
@@ -146,7 +148,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.AnchorX = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.AnchorXProperty, builder.GetValue());
             return obj;
         }
         
@@ -163,7 +165,7 @@ namespace Sharp.UI
             double anchorY)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            obj.AnchorY = anchorY;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.AnchorYProperty, anchorY);
             return obj;
         }
         
@@ -172,7 +174,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.AnchorY = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.AnchorYProperty, builder.GetValue());
             return obj;
         }
         
@@ -189,7 +191,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color backgroundColor)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            obj.BackgroundColor = backgroundColor;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.BackgroundColorProperty, backgroundColor);
             return obj;
         }
         
@@ -198,7 +200,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) obj.BackgroundColor = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.BackgroundColorProperty, builder.GetValue());
             return obj;
         }
         
@@ -215,7 +217,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.Brush background)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            obj.Background = background;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.BackgroundProperty, background);
             return obj;
         }
         
@@ -224,7 +226,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.Brush>());
-            if (builder.ValueIsSet()) obj.Background = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.BackgroundProperty, builder.GetValue());
             return obj;
         }
         
@@ -268,7 +270,7 @@ namespace Sharp.UI
             double heightRequest)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            obj.HeightRequest = heightRequest;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.HeightRequestProperty, heightRequest);
             return obj;
         }
         
@@ -277,7 +279,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.HeightRequest = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.HeightRequestProperty, builder.GetValue());
             return obj;
         }
         
@@ -294,7 +296,7 @@ namespace Sharp.UI
             bool inputTransparent)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            obj.InputTransparent = inputTransparent;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.InputTransparentProperty, inputTransparent);
             return obj;
         }
         
@@ -303,7 +305,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.InputTransparent = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.InputTransparentProperty, builder.GetValue());
             return obj;
         }
         
@@ -320,7 +322,7 @@ namespace Sharp.UI
             bool isEnabled)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            obj.IsEnabled = isEnabled;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.IsEnabledProperty, isEnabled);
             return obj;
         }
         
@@ -329,7 +331,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.IsEnabled = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.IsEnabledProperty, builder.GetValue());
             return obj;
         }
         
@@ -346,7 +348,7 @@ namespace Sharp.UI
             bool isVisible)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            obj.IsVisible = isVisible;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.IsVisibleProperty, isVisible);
             return obj;
         }
         
@@ -355,7 +357,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.IsVisible = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.IsVisibleProperty, builder.GetValue());
             return obj;
         }
         
@@ -372,7 +374,7 @@ namespace Sharp.UI
             double minimumHeightRequest)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            obj.MinimumHeightRequest = minimumHeightRequest;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.MinimumHeightRequestProperty, minimumHeightRequest);
             return obj;
         }
         
@@ -381,7 +383,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.MinimumHeightRequest = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.MinimumHeightRequestProperty, builder.GetValue());
             return obj;
         }
         
@@ -398,7 +400,7 @@ namespace Sharp.UI
             double minimumWidthRequest)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            obj.MinimumWidthRequest = minimumWidthRequest;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.MinimumWidthRequestProperty, minimumWidthRequest);
             return obj;
         }
         
@@ -407,7 +409,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.MinimumWidthRequest = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.MinimumWidthRequestProperty, builder.GetValue());
             return obj;
         }
         
@@ -424,7 +426,7 @@ namespace Sharp.UI
             double maximumHeightRequest)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            obj.MaximumHeightRequest = maximumHeightRequest;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.MaximumHeightRequestProperty, maximumHeightRequest);
             return obj;
         }
         
@@ -433,7 +435,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.MaximumHeightRequest = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.MaximumHeightRequestProperty, builder.GetValue());
             return obj;
         }
         
@@ -450,7 +452,7 @@ namespace Sharp.UI
             double maximumWidthRequest)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            obj.MaximumWidthRequest = maximumWidthRequest;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.MaximumWidthRequestProperty, maximumWidthRequest);
             return obj;
         }
         
@@ -459,7 +461,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.MaximumWidthRequest = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.MaximumWidthRequestProperty, builder.GetValue());
             return obj;
         }
         
@@ -476,7 +478,7 @@ namespace Sharp.UI
             double opacity)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            obj.Opacity = opacity;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.OpacityProperty, opacity);
             return obj;
         }
         
@@ -485,7 +487,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.Opacity = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.OpacityProperty, builder.GetValue());
             return obj;
         }
         
@@ -502,7 +504,7 @@ namespace Sharp.UI
             double rotation)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            obj.Rotation = rotation;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.RotationProperty, rotation);
             return obj;
         }
         
@@ -511,7 +513,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.Rotation = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.RotationProperty, builder.GetValue());
             return obj;
         }
         
@@ -528,7 +530,7 @@ namespace Sharp.UI
             double rotationX)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            obj.RotationX = rotationX;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.RotationXProperty, rotationX);
             return obj;
         }
         
@@ -537,7 +539,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.RotationX = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.RotationXProperty, builder.GetValue());
             return obj;
         }
         
@@ -554,7 +556,7 @@ namespace Sharp.UI
             double rotationY)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            obj.RotationY = rotationY;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.RotationYProperty, rotationY);
             return obj;
         }
         
@@ -563,7 +565,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.RotationY = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.RotationYProperty, builder.GetValue());
             return obj;
         }
         
@@ -580,7 +582,7 @@ namespace Sharp.UI
             double scale)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            obj.Scale = scale;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.ScaleProperty, scale);
             return obj;
         }
         
@@ -589,7 +591,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.Scale = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.ScaleProperty, builder.GetValue());
             return obj;
         }
         
@@ -606,7 +608,7 @@ namespace Sharp.UI
             double scaleX)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            obj.ScaleX = scaleX;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.ScaleXProperty, scaleX);
             return obj;
         }
         
@@ -615,7 +617,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.ScaleX = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.ScaleXProperty, builder.GetValue());
             return obj;
         }
         
@@ -632,7 +634,7 @@ namespace Sharp.UI
             double scaleY)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            obj.ScaleY = scaleY;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.ScaleYProperty, scaleY);
             return obj;
         }
         
@@ -641,7 +643,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.ScaleY = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.ScaleYProperty, builder.GetValue());
             return obj;
         }
         
@@ -658,7 +660,7 @@ namespace Sharp.UI
             double translationX)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            obj.TranslationX = translationX;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.TranslationXProperty, translationX);
             return obj;
         }
         
@@ -667,7 +669,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.TranslationX = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.TranslationXProperty, builder.GetValue());
             return obj;
         }
         
@@ -684,7 +686,7 @@ namespace Sharp.UI
             double translationY)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            obj.TranslationY = translationY;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.TranslationYProperty, translationY);
             return obj;
         }
         
@@ -693,7 +695,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.TranslationY = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.TranslationYProperty, builder.GetValue());
             return obj;
         }
         
@@ -737,7 +739,7 @@ namespace Sharp.UI
             double widthRequest)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            obj.WidthRequest = widthRequest;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.WidthRequestProperty, widthRequest);
             return obj;
         }
         
@@ -746,7 +748,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.WidthRequest = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.WidthRequestProperty, builder.GetValue());
             return obj;
         }
         
@@ -763,7 +765,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.Shapes.Geometry clip)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            obj.Clip = clip;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.ClipProperty, clip);
             return obj;
         }
         
@@ -772,7 +774,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.Shapes.Geometry>());
-            if (builder.ValueIsSet()) obj.Clip = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.ClipProperty, builder.GetValue());
             return obj;
         }
         

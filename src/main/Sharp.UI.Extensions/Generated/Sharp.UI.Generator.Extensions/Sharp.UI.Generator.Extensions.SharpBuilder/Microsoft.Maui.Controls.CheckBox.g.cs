@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class CheckBoxExtension
     {
         public static T Color<T>(this T obj,
             Microsoft.Maui.Graphics.Color color)
             where T : Microsoft.Maui.Controls.CheckBox
         {
-            obj.Color = color;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.CheckBox.ColorProperty, color);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.CheckBox
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) obj.Color = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.CheckBox.ColorProperty, builder.GetValue());
             return obj;
         }
         
@@ -42,7 +44,7 @@ namespace Sharp.UI
             bool isChecked)
             where T : Microsoft.Maui.Controls.CheckBox
         {
-            obj.IsChecked = isChecked;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.CheckBox.IsCheckedProperty, isChecked);
             return obj;
         }
         
@@ -51,7 +53,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.CheckBox
         {
             var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.IsChecked = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.CheckBox.IsCheckedProperty, builder.GetValue());
             return obj;
         }
         

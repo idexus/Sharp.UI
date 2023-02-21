@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class WebViewExtension
     {
         public static T Cookies<T>(this T obj,
             System.Net.CookieContainer cookies)
             where T : Microsoft.Maui.Controls.WebView
         {
-            obj.Cookies = cookies;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.WebView.CookiesProperty, cookies);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.WebView
         {
             var builder = buidValue(new ValueBuilder<System.Net.CookieContainer>());
-            if (builder.ValueIsSet()) obj.Cookies = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.WebView.CookiesProperty, builder.GetValue());
             return obj;
         }
         
@@ -42,7 +44,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.WebViewSource source)
             where T : Microsoft.Maui.Controls.WebView
         {
-            obj.Source = source;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.WebView.SourceProperty, source);
             return obj;
         }
         
@@ -51,7 +53,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.WebView
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.WebViewSource>());
-            if (builder.ValueIsSet()) obj.Source = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.WebView.SourceProperty, builder.GetValue());
             return obj;
         }
         

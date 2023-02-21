@@ -10,12 +10,14 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class PathExtension
     {
         public static Microsoft.Maui.Controls.Shapes.Path Data(this Microsoft.Maui.Controls.Shapes.Path obj,
             Microsoft.Maui.Controls.Shapes.Geometry data)
         {
-            obj.Data = data;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Path.DataProperty, data);
             return obj;
         }
         
@@ -23,7 +25,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<Microsoft.Maui.Controls.Shapes.Geometry>, ValueBuilder<Microsoft.Maui.Controls.Shapes.Geometry>> buidValue)
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.Shapes.Geometry>());
-            if (builder.ValueIsSet()) obj.Data = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Path.DataProperty, builder.GetValue());
             return obj;
         }
         
@@ -38,7 +40,7 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.Shapes.Path RenderTransform(this Microsoft.Maui.Controls.Shapes.Path obj,
             Microsoft.Maui.Controls.Shapes.Transform renderTransform)
         {
-            obj.RenderTransform = renderTransform;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Path.RenderTransformProperty, renderTransform);
             return obj;
         }
         
@@ -46,7 +48,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<Microsoft.Maui.Controls.Shapes.Transform>, ValueBuilder<Microsoft.Maui.Controls.Shapes.Transform>> buidValue)
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.Shapes.Transform>());
-            if (builder.ValueIsSet()) obj.RenderTransform = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Path.RenderTransformProperty, builder.GetValue());
             return obj;
         }
         

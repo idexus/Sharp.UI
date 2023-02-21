@@ -6,11 +6,7 @@ public partial class CardViewPage : ContentPage
 {    
     public CardViewPage()
     {
-        var labelStyle = new Style<Label>
-        {
-            Label.TextColorProperty.Set(Colors.Blue),
-            Label.FontSizeProperty.Set(21)
-        };
+        var labelStyle = new Style<Label>(e => e.TextColor(Colors.Blue).FontSize(21));
 
         this.Content = new ScrollView
         {

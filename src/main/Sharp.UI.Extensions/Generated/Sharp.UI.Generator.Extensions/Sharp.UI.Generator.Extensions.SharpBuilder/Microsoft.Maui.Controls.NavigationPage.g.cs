@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class NavigationPageExtension
     {
         public static T BarBackgroundColor<T>(this T obj,
             Microsoft.Maui.Graphics.Color barBackgroundColor)
             where T : Microsoft.Maui.Controls.NavigationPage
         {
-            obj.BarBackgroundColor = barBackgroundColor;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.NavigationPage.BarBackgroundColorProperty, barBackgroundColor);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.NavigationPage
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) obj.BarBackgroundColor = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.NavigationPage.BarBackgroundColorProperty, builder.GetValue());
             return obj;
         }
         
@@ -42,7 +44,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.Brush barBackground)
             where T : Microsoft.Maui.Controls.NavigationPage
         {
-            obj.BarBackground = barBackground;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.NavigationPage.BarBackgroundProperty, barBackground);
             return obj;
         }
         
@@ -51,7 +53,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.NavigationPage
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.Brush>());
-            if (builder.ValueIsSet()) obj.BarBackground = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.NavigationPage.BarBackgroundProperty, builder.GetValue());
             return obj;
         }
         
@@ -68,7 +70,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color barTextColor)
             where T : Microsoft.Maui.Controls.NavigationPage
         {
-            obj.BarTextColor = barTextColor;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.NavigationPage.BarTextColorProperty, barTextColor);
             return obj;
         }
         
@@ -77,7 +79,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.NavigationPage
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) obj.BarTextColor = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.NavigationPage.BarTextColorProperty, builder.GetValue());
             return obj;
         }
         

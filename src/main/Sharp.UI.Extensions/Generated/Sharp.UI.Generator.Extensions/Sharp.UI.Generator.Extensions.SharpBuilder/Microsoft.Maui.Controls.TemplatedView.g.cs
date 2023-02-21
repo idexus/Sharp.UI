@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class TemplatedViewExtension
     {
         public static T ControlTemplate<T>(this T obj,
             Microsoft.Maui.Controls.ControlTemplate controlTemplate)
             where T : Microsoft.Maui.Controls.TemplatedView
         {
-            obj.ControlTemplate = controlTemplate;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.TemplatedView.ControlTemplateProperty, controlTemplate);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.TemplatedView
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.ControlTemplate>());
-            if (builder.ValueIsSet()) obj.ControlTemplate = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.TemplatedView.ControlTemplateProperty, builder.GetValue());
             return obj;
         }
         

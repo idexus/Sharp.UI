@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class ImageCellExtension
     {
         public static T ImageSource<T>(this T obj,
             Microsoft.Maui.Controls.ImageSource imageSource)
             where T : Microsoft.Maui.Controls.ImageCell
         {
-            obj.ImageSource = imageSource;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.ImageCell.ImageSourceProperty, imageSource);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ImageCell
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
-            if (builder.ValueIsSet()) obj.ImageSource = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ImageCell.ImageSourceProperty, builder.GetValue());
             return obj;
         }
         

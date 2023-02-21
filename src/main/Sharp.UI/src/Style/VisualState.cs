@@ -1,38 +1,19 @@
 ﻿using System;
 using System.Collections;
 using Microsoft.Maui.Controls;
+using Sharp.UI.Internal;
 
 namespace Sharp.UI
 {
-    public partial class VisualStateGroup : IEnumerable // TODO: sealed
-    {
-        Microsoft.Maui.Controls.VisualStateGroup mauiVisualStateGroup;
-        public static implicit operator Microsoft.Maui.Controls.VisualStateGroup(VisualStateGroup visualState) => visualState.mauiVisualStateGroup;
-
-        IEnumerator IEnumerable.GetEnumerator() => mauiVisualStateGroup.States.GetEnumerator();
-        public void Add(VisualState visualState) => this.mauiVisualStateGroup.States.Add(visualState);
-
-
-        public VisualStateGroup(string name = VisualStateGroup.CommonStates)
-        {
-            this.mauiVisualStateGroup = new Microsoft.Maui.Controls.VisualStateGroup();
-            if (string.IsNullOrEmpty(name)) name = Guid.NewGuid().ToString();
-            this.mauiVisualStateGroup.Name = name;
-        }
-
-        public const string CommonStates = "CommonStates";
-    }
-
-    public partial class VisualState : IEnumerable  // TODO: sealed
+    public partial class VisualState<T> : IEnumerable
+        where T : BindableObject
     {
         Microsoft.Maui.Controls.VisualState mauiVisualState;
-        public static implicit operator Microsoft.Maui.Controls.VisualState(VisualState visualState) => visualState.mauiVisualState;
+        public static implicit operator Microsoft.Maui.Controls.VisualState(VisualState<T> visualState) => visualState.mauiVisualState;
 
         IEnumerator IEnumerable.GetEnumerator() => mauiVisualState.Setters.GetEnumerator();
         public void Add(Setter setter) => this.mauiVisualState.Setters.Add(setter);
         public void Add(Microsoft.Maui.Controls.StateTriggerBase triggerBase) => this.mauiVisualState.StateTriggers.Add(triggerBase);
-
-        public VisualState() : this(Guid.NewGuid().ToString()) { }
 
         public VisualState(string name)
         {
@@ -40,6 +21,32 @@ namespace Sharp.UI
             this.mauiVisualState.Name = name;
         }
 
+        public VisualState() : this(Guid.NewGuid().ToString()) { }
+
+        public VisualState(Action<T> configure) : this()
+        {
+            ConfigureSetters(configure);
+        }
+
+        public VisualState(string name, Action<T> configure) : this(name)
+        {
+            ConfigureSetters(configure);
+        }
+
+        void ConfigureSetters(Action<T> configure)
+        {
+            MainThread.BeginInvokeOnMainThread(() =>
+            {
+                FluentStyling.Setters = mauiVisualState.Setters;
+                configure?.Invoke(null);
+                FluentStyling.Setters = null;
+            });
+        }
+    }
+
+
+    public partial class VisualStateEnum  // TODO: sealed
+    {
         //------ consts -------
 
         public class VisualElement

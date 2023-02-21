@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class MenuBarExtension
     {
         public static T IsEnabled<T>(this T obj,
             bool isEnabled)
             where T : Microsoft.Maui.Controls.MenuBar
         {
-            obj.IsEnabled = isEnabled;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.MenuBar.IsEnabledProperty, isEnabled);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.MenuBar
         {
             var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.IsEnabled = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.MenuBar.IsEnabledProperty, builder.GetValue());
             return obj;
         }
         

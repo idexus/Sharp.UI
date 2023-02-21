@@ -49,19 +49,19 @@ namespace ExampleApp
 
             this.VisualStateGroups(new VisualStateGroupList
             {
-                new VisualStateGroup(VisualStateGroup.CommonStates)
-                {
-                    new VisualState(VisualState.RadioButton.Checked)
-                    {
-                        VisualElement.BackgroundColorProperty.Set(Colors.Red),
-                        Ellipse.FillProperty.Set(Colors.Red).TargetName("Check")
-                    },
-                    new VisualState(VisualState.RadioButton.Unchecked)
-                    {
-                        VisualElement.BackgroundColorProperty.Set(Colors.Blue),
-                        Ellipse.FillProperty.Set(Colors.Yellow).TargetName("Check")
-                    }
-                }
+                new VisualState()
+                    .Name(VisualStateEnum.RadioButton.Checked)
+                    .Setters(
+                        new Setter<VisualElement>(e => e.BackgroundColor(Colors.Red)),
+                        new Setter<Ellipse>(e => e.Fill(Colors.Red)).TargetName("Check")
+                    ),
+
+                new VisualState()
+                    .Name(VisualStateEnum.RadioButton.Unchecked)
+                    .Setters(
+                        new Setter<VisualElement>(e => e.BackgroundColor(Colors.Blue)),
+                        new Setter<Ellipse>(e => e.Fill(Colors.Yellow)).TargetName("Check")
+                    )
             });
         }
     }

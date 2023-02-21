@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class ElementExtension
     {
         public static T AutomationId<T>(this T obj,
             string automationId)
             where T : Microsoft.Maui.Controls.Element
         {
-            obj.AutomationId = automationId;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Element.AutomationIdProperty, automationId);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Element
         {
             var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.AutomationId = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Element.AutomationIdProperty, builder.GetValue());
             return obj;
         }
         
@@ -42,7 +44,7 @@ namespace Sharp.UI
             string classId)
             where T : Microsoft.Maui.Controls.Element
         {
-            obj.ClassId = classId;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Element.ClassIdProperty, classId);
             return obj;
         }
         
@@ -51,7 +53,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Element
         {
             var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.ClassId = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Element.ClassIdProperty, builder.GetValue());
             return obj;
         }
         

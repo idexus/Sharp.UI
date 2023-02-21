@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class SwipeViewExtension
     {
         public static T Threshold<T>(this T obj,
             double threshold)
             where T : Microsoft.Maui.Controls.SwipeView
         {
-            obj.Threshold = threshold;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SwipeView.ThresholdProperty, threshold);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SwipeView
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.Threshold = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SwipeView.ThresholdProperty, builder.GetValue());
             return obj;
         }
         

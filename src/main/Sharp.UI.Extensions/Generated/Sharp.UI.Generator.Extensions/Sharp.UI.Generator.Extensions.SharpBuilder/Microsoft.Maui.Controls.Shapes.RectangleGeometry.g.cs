@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class RectangleGeometryExtension
     {
         public static T Rect<T>(this T obj,
             Microsoft.Maui.Graphics.Rect rect)
             where T : Microsoft.Maui.Controls.Shapes.RectangleGeometry
         {
-            obj.Rect = rect;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.RectangleGeometry.RectProperty, rect);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shapes.RectangleGeometry
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Rect>());
-            if (builder.ValueIsSet()) obj.Rect = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.RectangleGeometry.RectProperty, builder.GetValue());
             return obj;
         }
         

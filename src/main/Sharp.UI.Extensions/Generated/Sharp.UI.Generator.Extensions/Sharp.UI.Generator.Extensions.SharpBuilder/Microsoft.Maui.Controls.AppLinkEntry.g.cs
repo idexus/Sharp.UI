@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class AppLinkEntryExtension
     {
         public static T AppLinkUri<T>(this T obj,
             System.Uri appLinkUri)
             where T : Microsoft.Maui.Controls.AppLinkEntry
         {
-            obj.AppLinkUri = appLinkUri;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.AppLinkEntry.AppLinkUriProperty, appLinkUri);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.AppLinkEntry
         {
             var builder = buidValue(new ValueBuilder<System.Uri>());
-            if (builder.ValueIsSet()) obj.AppLinkUri = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.AppLinkEntry.AppLinkUriProperty, builder.GetValue());
             return obj;
         }
         
@@ -42,7 +44,7 @@ namespace Sharp.UI
             string description)
             where T : Microsoft.Maui.Controls.AppLinkEntry
         {
-            obj.Description = description;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.AppLinkEntry.DescriptionProperty, description);
             return obj;
         }
         
@@ -51,7 +53,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.AppLinkEntry
         {
             var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.Description = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.AppLinkEntry.DescriptionProperty, builder.GetValue());
             return obj;
         }
         
@@ -68,7 +70,7 @@ namespace Sharp.UI
             bool isLinkActive)
             where T : Microsoft.Maui.Controls.AppLinkEntry
         {
-            obj.IsLinkActive = isLinkActive;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.AppLinkEntry.IsLinkActiveProperty, isLinkActive);
             return obj;
         }
         
@@ -77,7 +79,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.AppLinkEntry
         {
             var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.IsLinkActive = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.AppLinkEntry.IsLinkActiveProperty, builder.GetValue());
             return obj;
         }
         
@@ -94,7 +96,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.ImageSource thumbnail)
             where T : Microsoft.Maui.Controls.AppLinkEntry
         {
-            obj.Thumbnail = thumbnail;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.AppLinkEntry.ThumbnailProperty, thumbnail);
             return obj;
         }
         
@@ -103,7 +105,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.AppLinkEntry
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
-            if (builder.ValueIsSet()) obj.Thumbnail = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.AppLinkEntry.ThumbnailProperty, builder.GetValue());
             return obj;
         }
         
@@ -120,7 +122,7 @@ namespace Sharp.UI
             string title)
             where T : Microsoft.Maui.Controls.AppLinkEntry
         {
-            obj.Title = title;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.AppLinkEntry.TitleProperty, title);
             return obj;
         }
         
@@ -129,7 +131,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.AppLinkEntry
         {
             var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.Title = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.AppLinkEntry.TitleProperty, builder.GetValue());
             return obj;
         }
         

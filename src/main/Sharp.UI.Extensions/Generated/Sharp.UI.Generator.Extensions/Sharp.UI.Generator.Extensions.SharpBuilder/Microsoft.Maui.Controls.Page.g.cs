@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class PageExtension
     {
         public static T BackgroundImageSource<T>(this T obj,
             Microsoft.Maui.Controls.ImageSource backgroundImageSource)
             where T : Microsoft.Maui.Controls.Page
         {
-            obj.BackgroundImageSource = backgroundImageSource;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Page.BackgroundImageSourceProperty, backgroundImageSource);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Page
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
-            if (builder.ValueIsSet()) obj.BackgroundImageSource = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Page.BackgroundImageSourceProperty, builder.GetValue());
             return obj;
         }
         
@@ -42,7 +44,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.ImageSource iconImageSource)
             where T : Microsoft.Maui.Controls.Page
         {
-            obj.IconImageSource = iconImageSource;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Page.IconImageSourceProperty, iconImageSource);
             return obj;
         }
         
@@ -51,7 +53,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Page
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
-            if (builder.ValueIsSet()) obj.IconImageSource = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Page.IconImageSourceProperty, builder.GetValue());
             return obj;
         }
         
@@ -68,7 +70,7 @@ namespace Sharp.UI
             bool isBusy)
             where T : Microsoft.Maui.Controls.Page
         {
-            obj.IsBusy = isBusy;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Page.IsBusyProperty, isBusy);
             return obj;
         }
         
@@ -77,7 +79,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Page
         {
             var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.IsBusy = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Page.IsBusyProperty, builder.GetValue());
             return obj;
         }
         
@@ -94,7 +96,7 @@ namespace Sharp.UI
             Microsoft.Maui.Thickness padding)
             where T : Microsoft.Maui.Controls.Page
         {
-            obj.Padding = padding;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Page.PaddingProperty, padding);
             return obj;
         }
         
@@ -103,7 +105,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Page
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Thickness>());
-            if (builder.ValueIsSet()) obj.Padding = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Page.PaddingProperty, builder.GetValue());
             return obj;
         }
         
@@ -120,7 +122,7 @@ namespace Sharp.UI
             string title)
             where T : Microsoft.Maui.Controls.Page
         {
-            obj.Title = title;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Page.TitleProperty, title);
             return obj;
         }
         
@@ -129,7 +131,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Page
         {
             var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.Title = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Page.TitleProperty, builder.GetValue());
             return obj;
         }
         

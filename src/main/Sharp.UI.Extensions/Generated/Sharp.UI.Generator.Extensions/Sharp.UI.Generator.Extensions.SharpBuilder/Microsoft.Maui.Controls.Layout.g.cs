@@ -10,6 +10,8 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class LayoutExtension
     {
         public static T Children<T>(this T obj,
@@ -34,7 +36,7 @@ namespace Sharp.UI
             bool isClippedToBounds)
             where T : Microsoft.Maui.Controls.Layout
         {
-            obj.IsClippedToBounds = isClippedToBounds;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Layout.IsClippedToBoundsProperty, isClippedToBounds);
             return obj;
         }
         
@@ -43,7 +45,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Layout
         {
             var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.IsClippedToBounds = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Layout.IsClippedToBoundsProperty, builder.GetValue());
             return obj;
         }
         
@@ -60,7 +62,7 @@ namespace Sharp.UI
             Microsoft.Maui.Thickness padding)
             where T : Microsoft.Maui.Controls.Layout
         {
-            obj.Padding = padding;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Layout.PaddingProperty, padding);
             return obj;
         }
         
@@ -69,7 +71,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Layout
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Thickness>());
-            if (builder.ValueIsSet()) obj.Padding = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Layout.PaddingProperty, builder.GetValue());
             return obj;
         }
         
@@ -103,7 +105,7 @@ namespace Sharp.UI
             bool cascadeInputTransparent)
             where T : Microsoft.Maui.Controls.Layout
         {
-            obj.CascadeInputTransparent = cascadeInputTransparent;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Layout.CascadeInputTransparentProperty, cascadeInputTransparent);
             return obj;
         }
         
@@ -112,7 +114,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Layout
         {
             var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.CascadeInputTransparent = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Layout.CascadeInputTransparentProperty, builder.GetValue());
             return obj;
         }
         

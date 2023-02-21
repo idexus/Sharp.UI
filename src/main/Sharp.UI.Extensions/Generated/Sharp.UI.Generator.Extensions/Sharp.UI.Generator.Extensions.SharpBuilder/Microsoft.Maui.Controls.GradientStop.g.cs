@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class GradientStopExtension
     {
         public static T Color<T>(this T obj,
             Microsoft.Maui.Graphics.Color color)
             where T : Microsoft.Maui.Controls.GradientStop
         {
-            obj.Color = color;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.GradientStop.ColorProperty, color);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.GradientStop
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) obj.Color = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.GradientStop.ColorProperty, builder.GetValue());
             return obj;
         }
         
@@ -42,7 +44,7 @@ namespace Sharp.UI
             float offset)
             where T : Microsoft.Maui.Controls.GradientStop
         {
-            obj.Offset = offset;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.GradientStop.OffsetProperty, offset);
             return obj;
         }
         
@@ -51,7 +53,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.GradientStop
         {
             var builder = buidValue(new ValueBuilder<float>());
-            if (builder.ValueIsSet()) obj.Offset = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.GradientStop.OffsetProperty, builder.GetValue());
             return obj;
         }
         

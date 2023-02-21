@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class ActivityIndicatorExtension
     {
         public static T Color<T>(this T obj,
             Microsoft.Maui.Graphics.Color color)
             where T : Microsoft.Maui.Controls.ActivityIndicator
         {
-            obj.Color = color;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.ActivityIndicator.ColorProperty, color);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ActivityIndicator
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) obj.Color = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ActivityIndicator.ColorProperty, builder.GetValue());
             return obj;
         }
         
@@ -42,7 +44,7 @@ namespace Sharp.UI
             bool isRunning)
             where T : Microsoft.Maui.Controls.ActivityIndicator
         {
-            obj.IsRunning = isRunning;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.ActivityIndicator.IsRunningProperty, isRunning);
             return obj;
         }
         
@@ -51,7 +53,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ActivityIndicator
         {
             var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.IsRunning = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ActivityIndicator.IsRunningProperty, builder.GetValue());
             return obj;
         }
         

@@ -10,13 +10,15 @@ namespace ExampleApp
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class SecondPageViewModelExtension
     {
         public static T Title<T>(this T obj,
             string title)
             where T : ExampleApp.SecondPageViewModel
         {
-            obj.Title = title;
+            obj.SetValueOrSetter(ExampleApp.SecondPageViewModel.TitleProperty, title);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace ExampleApp
             where T : ExampleApp.SecondPageViewModel
         {
             var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.Title = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(ExampleApp.SecondPageViewModel.TitleProperty, builder.GetValue());
             return obj;
         }
         
@@ -42,7 +44,7 @@ namespace ExampleApp
             string author)
             where T : ExampleApp.SecondPageViewModel
         {
-            obj.Author = author;
+            obj.SetValueOrSetter(ExampleApp.SecondPageViewModel.AuthorProperty, author);
             return obj;
         }
         
@@ -51,7 +53,7 @@ namespace ExampleApp
             where T : ExampleApp.SecondPageViewModel
         {
             var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.Author = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(ExampleApp.SecondPageViewModel.AuthorProperty, builder.GetValue());
             return obj;
         }
         

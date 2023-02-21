@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class RoundRectangleGeometryExtension
     {
         public static T Rect<T>(this T obj,
             Microsoft.Maui.Graphics.Rect rect)
             where T : Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry
         {
-            obj.Rect = rect;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry.RectProperty, rect);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Rect>());
-            if (builder.ValueIsSet()) obj.Rect = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry.RectProperty, builder.GetValue());
             return obj;
         }
         
@@ -42,7 +44,7 @@ namespace Sharp.UI
             Microsoft.Maui.CornerRadius cornerRadius)
             where T : Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry
         {
-            obj.CornerRadius = cornerRadius;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry.CornerRadiusProperty, cornerRadius);
             return obj;
         }
         
@@ -51,7 +53,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.CornerRadius>());
-            if (builder.ValueIsSet()) obj.CornerRadius = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry.CornerRadiusProperty, builder.GetValue());
             return obj;
         }
         

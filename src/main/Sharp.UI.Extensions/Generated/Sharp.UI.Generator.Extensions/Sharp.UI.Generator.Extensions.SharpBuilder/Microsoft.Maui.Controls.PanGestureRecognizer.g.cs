@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class PanGestureRecognizerExtension
     {
         public static T TouchPoints<T>(this T obj,
             int touchPoints)
             where T : Microsoft.Maui.Controls.PanGestureRecognizer
         {
-            obj.TouchPoints = touchPoints;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.PanGestureRecognizer.TouchPointsProperty, touchPoints);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.PanGestureRecognizer
         {
             var builder = buidValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) obj.TouchPoints = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.PanGestureRecognizer.TouchPointsProperty, builder.GetValue());
             return obj;
         }
         

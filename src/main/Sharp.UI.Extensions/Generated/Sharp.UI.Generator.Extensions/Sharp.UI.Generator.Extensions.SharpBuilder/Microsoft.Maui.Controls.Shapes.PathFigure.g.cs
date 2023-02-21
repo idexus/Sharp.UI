@@ -10,6 +10,8 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class PathFigureExtension
     {
         public static Microsoft.Maui.Controls.Shapes.PathFigure Segments(this Microsoft.Maui.Controls.Shapes.PathFigure obj,
@@ -39,7 +41,7 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.Shapes.PathFigure StartPoint(this Microsoft.Maui.Controls.Shapes.PathFigure obj,
             Microsoft.Maui.Graphics.Point startPoint)
         {
-            obj.StartPoint = startPoint;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.PathFigure.StartPointProperty, startPoint);
             return obj;
         }
         
@@ -47,7 +49,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<Microsoft.Maui.Graphics.Point>, ValueBuilder<Microsoft.Maui.Graphics.Point>> buidValue)
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Point>());
-            if (builder.ValueIsSet()) obj.StartPoint = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.PathFigure.StartPointProperty, builder.GetValue());
             return obj;
         }
         
@@ -62,7 +64,7 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.Shapes.PathFigure IsClosed(this Microsoft.Maui.Controls.Shapes.PathFigure obj,
             bool isClosed)
         {
-            obj.IsClosed = isClosed;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.PathFigure.IsClosedProperty, isClosed);
             return obj;
         }
         
@@ -70,7 +72,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
         {
             var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.IsClosed = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.PathFigure.IsClosedProperty, builder.GetValue());
             return obj;
         }
         
@@ -85,7 +87,7 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.Shapes.PathFigure IsFilled(this Microsoft.Maui.Controls.Shapes.PathFigure obj,
             bool isFilled)
         {
-            obj.IsFilled = isFilled;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.PathFigure.IsFilledProperty, isFilled);
             return obj;
         }
         
@@ -93,7 +95,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
         {
             var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.IsFilled = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.PathFigure.IsFilledProperty, builder.GetValue());
             return obj;
         }
         

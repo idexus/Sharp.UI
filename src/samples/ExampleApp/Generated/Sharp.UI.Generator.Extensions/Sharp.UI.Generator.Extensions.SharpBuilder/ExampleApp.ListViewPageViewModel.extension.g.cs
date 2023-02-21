@@ -10,13 +10,15 @@ namespace ExampleApp
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class ListViewPageViewModelExtension
     {
         public static T SimpleData<T>(this T obj,
             System.Collections.Generic.List<ExampleApp.DataModel> simpleData)
             where T : ExampleApp.ListViewPageViewModel
         {
-            obj.SimpleData = simpleData;
+            obj.SetValueOrSetter(ExampleApp.ListViewPageViewModel.SimpleDataProperty, simpleData);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace ExampleApp
             where T : ExampleApp.ListViewPageViewModel
         {
             var builder = buidValue(new ValueBuilder<System.Collections.Generic.List<ExampleApp.DataModel>>());
-            if (builder.ValueIsSet()) obj.SimpleData = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(ExampleApp.ListViewPageViewModel.SimpleDataProperty, builder.GetValue());
             return obj;
         }
         

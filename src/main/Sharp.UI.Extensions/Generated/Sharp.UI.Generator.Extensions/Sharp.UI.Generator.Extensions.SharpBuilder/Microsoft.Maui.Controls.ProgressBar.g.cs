@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class ProgressBarExtension
     {
         public static T ProgressColor<T>(this T obj,
             Microsoft.Maui.Graphics.Color progressColor)
             where T : Microsoft.Maui.Controls.ProgressBar
         {
-            obj.ProgressColor = progressColor;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.ProgressBar.ProgressColorProperty, progressColor);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ProgressBar
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) obj.ProgressColor = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ProgressBar.ProgressColorProperty, builder.GetValue());
             return obj;
         }
         
@@ -42,7 +44,7 @@ namespace Sharp.UI
             double progress)
             where T : Microsoft.Maui.Controls.ProgressBar
         {
-            obj.Progress = progress;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.ProgressBar.ProgressProperty, progress);
             return obj;
         }
         
@@ -51,7 +53,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ProgressBar
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.Progress = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ProgressBar.ProgressProperty, builder.GetValue());
             return obj;
         }
         

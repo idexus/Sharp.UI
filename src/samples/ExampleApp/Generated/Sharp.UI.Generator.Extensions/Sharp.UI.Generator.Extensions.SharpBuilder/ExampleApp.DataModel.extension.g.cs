@@ -10,13 +10,15 @@ namespace ExampleApp
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class DataModelExtension
     {
         public static T Id<T>(this T obj,
             int id)
             where T : ExampleApp.DataModel
         {
-            obj.Id = id;
+            obj.SetValueOrSetter(ExampleApp.DataModel.IdProperty, id);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace ExampleApp
             where T : ExampleApp.DataModel
         {
             var builder = buidValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) obj.Id = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(ExampleApp.DataModel.IdProperty, builder.GetValue());
             return obj;
         }
         
@@ -42,7 +44,7 @@ namespace ExampleApp
             string name)
             where T : ExampleApp.DataModel
         {
-            obj.Name = name;
+            obj.SetValueOrSetter(ExampleApp.DataModel.NameProperty, name);
             return obj;
         }
         
@@ -51,7 +53,7 @@ namespace ExampleApp
             where T : ExampleApp.DataModel
         {
             var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.Name = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(ExampleApp.DataModel.NameProperty, builder.GetValue());
             return obj;
         }
         
@@ -68,7 +70,7 @@ namespace ExampleApp
             bool admin)
             where T : ExampleApp.DataModel
         {
-            obj.Admin = admin;
+            obj.SetValueOrSetter(ExampleApp.DataModel.AdminProperty, admin);
             return obj;
         }
         
@@ -77,7 +79,7 @@ namespace ExampleApp
             where T : ExampleApp.DataModel
         {
             var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.Admin = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(ExampleApp.DataModel.AdminProperty, builder.GetValue());
             return obj;
         }
         

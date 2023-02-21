@@ -1,9 +1,12 @@
 ﻿using System.Collections;
+using Microsoft.Maui.Controls;
+using Sharp.UI.Internal;
 
 namespace Sharp.UI
 {
-    [SharpObject]
-    public partial class Style<T> : IEnumerable // TODO: sealed
+
+    public partial class Style<T> : IEnumerable
+        where T : BindableObject
     {
         Microsoft.Maui.Controls.Style mauiStyle;
         public static implicit operator Style(Style<T> style) => style.mauiStyle;
@@ -13,54 +16,45 @@ namespace Sharp.UI
             mauiStyle = new Microsoft.Maui.Controls.Style(typeof(T));
         }
 
-        public Style(bool applyToDerivedTypes) : this() { }
-        
-        Microsoft.Maui.Controls.VisualStateGroupList GetVisualStateGroupList()
+        public Style(bool applyToDerivedTypes) : this()
         {
-            Microsoft.Maui.Controls.VisualStateGroupList groupList = null;
-            var groupListSetter = this.mauiStyle.Setters.FirstOrDefault(e => e.Property == VisualStateManager.VisualStateGroupsProperty);
-            if (groupListSetter != null)
-            {
-                groupList = groupListSetter.Value as Microsoft.Maui.Controls.VisualStateGroupList;
-            }
-            if (groupList == null)
-            {
-                groupList = new VisualStateGroupList();
-                var setter = new Setter { Property = VisualStateManager.VisualStateGroupsProperty, Value = groupList };
-                this.mauiStyle.Setters.Add(setter);
-            }
-            return groupList;
+            mauiStyle.ApplyToDerivedTypes = applyToDerivedTypes;
         }
 
-        Microsoft.Maui.Controls.VisualStateGroup GetCommonStatesVisualStateGroup(Microsoft.Maui.Controls.VisualStateGroupList visualStateGroupList)
+        public Style(Action<T> configure) : this()
         {
-            var visualStateGroup = visualStateGroupList.FirstOrDefault(e => e.Name.Equals(VisualStateGroup.CommonStates));
-            if (visualStateGroup == null)
+            ConfigureSetters(configure);
+        }
+
+        public Style(bool applyToDerivedTypes, Action<T> configure) : this()
+        {
+            mauiStyle.ApplyToDerivedTypes = applyToDerivedTypes;
+            ConfigureSetters(configure);
+        }
+
+        void ConfigureSetters(Action<T> configure)
+        {
+            MainThread.BeginInvokeOnMainThread(() =>
             {
-                visualStateGroup = new Microsoft.Maui.Controls.VisualStateGroup { Name = VisualStateGroup.CommonStates };
-                visualStateGroupList.Add(visualStateGroup);
-            }
-            return visualStateGroup;
+                FluentStyling.Setters = mauiStyle.Setters;
+                configure?.Invoke(null);
+                FluentStyling.Setters = null;
+            });
         }
 
         public void Add(Setter setter) => this.mauiStyle.Setters.Add(setter);
         public void Add(Trigger trigger) => this.mauiStyle.Triggers.Add(trigger);
         public void Add(DataTrigger trigger) => this.mauiStyle.Triggers.Add(trigger);
-        public void Add(VisualStateGroupList groupList)
+
+        public void Add(Microsoft.Maui.Controls.VisualStateGroup group)
         {
-            var setter = new Setter { Property = VisualStateManager.VisualStateGroupsProperty, Value = groupList };
-            this.mauiStyle.Setters.Add(setter);
+            mauiStyle.GetVisualStateGroupList().Add(group);
         }
 
-        public void Add(VisualStateGroup group)
+        public void Add(Microsoft.Maui.Controls.VisualState visualState)
         {
-            GetVisualStateGroupList().Add(group);
-        }
-
-        public void Add(VisualState visualState)
-        {
-            var visualStateGroupList = GetVisualStateGroupList();
-            GetCommonStatesVisualStateGroup(visualStateGroupList).States.Add(visualState);
+            var visualStateGroupList = mauiStyle.GetVisualStateGroupList();
+            visualStateGroupList.GetCommonStatesVisualStateGroup().States.Add(visualState);
         }
 
         IEnumerator IEnumerable.GetEnumerator() => mauiStyle.Setters.GetEnumerator();

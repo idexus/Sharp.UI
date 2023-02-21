@@ -12,13 +12,11 @@ public class ExamplePage : ContentPage
     public ExamplePage()
     {
         Resources = new ResourceDictionary {
-            new Style<Label>
-            {
-                Label.TextColorProperty.Set().OnDark(Colors.LightCyan),
-                Label.FontSizeProperty.Set(20),
-                Label.HorizontalOptionsProperty.Set(LayoutOptions.Center),
-                Label.PaddingProperty.Set().OniOS(20)
-            }
+            new Style<Label>(e => e
+                .TextColor(e => e.OnDark(Colors.LightCyan))
+                .FontSize(20)
+                .HorizontalOptions(LayoutOptions.Center)
+                .Padding(e => e.OniOS(20)))            
         };
 
         Content =

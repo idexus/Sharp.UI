@@ -10,6 +10,8 @@ namespace ExampleApp
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class CardViewExtension
     {
         public static T OnClicked<T>(this T obj, System.EventHandler handler)
@@ -30,7 +32,7 @@ namespace ExampleApp
             string cardTitle)
             where T : ExampleApp.CardView
         {
-            obj.CardTitle = cardTitle;
+            obj.SetValueOrSetter(ExampleApp.CardView.CardTitleProperty, cardTitle);
             return obj;
         }
         
@@ -39,7 +41,7 @@ namespace ExampleApp
             where T : ExampleApp.CardView
         {
             var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.CardTitle = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(ExampleApp.CardView.CardTitleProperty, builder.GetValue());
             return obj;
         }
         
@@ -56,7 +58,7 @@ namespace ExampleApp
             string cardDescription)
             where T : ExampleApp.CardView
         {
-            obj.CardDescription = cardDescription;
+            obj.SetValueOrSetter(ExampleApp.CardView.CardDescriptionProperty, cardDescription);
             return obj;
         }
         
@@ -65,7 +67,7 @@ namespace ExampleApp
             where T : ExampleApp.CardView
         {
             var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.CardDescription = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(ExampleApp.CardView.CardDescriptionProperty, builder.GetValue());
             return obj;
         }
         
@@ -82,7 +84,7 @@ namespace ExampleApp
             Microsoft.Maui.Graphics.Color cardColor)
             where T : ExampleApp.CardView
         {
-            obj.CardColor = cardColor;
+            obj.SetValueOrSetter(ExampleApp.CardView.CardColorProperty, cardColor);
             return obj;
         }
         
@@ -91,7 +93,7 @@ namespace ExampleApp
             where T : ExampleApp.CardView
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) obj.CardColor = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(ExampleApp.CardView.CardColorProperty, builder.GetValue());
             return obj;
         }
         
@@ -108,7 +110,7 @@ namespace ExampleApp
             Microsoft.Maui.Graphics.Color borderColor)
             where T : ExampleApp.CardView
         {
-            obj.BorderColor = borderColor;
+            obj.SetValueOrSetter(ExampleApp.CardView.BorderColorProperty, borderColor);
             return obj;
         }
         
@@ -117,7 +119,7 @@ namespace ExampleApp
             where T : ExampleApp.CardView
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) obj.BorderColor = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(ExampleApp.CardView.BorderColorProperty, builder.GetValue());
             return obj;
         }
         
@@ -134,7 +136,7 @@ namespace ExampleApp
             Microsoft.Maui.Controls.Style descriptionStyle)
             where T : ExampleApp.CardView
         {
-            obj.DescriptionStyle = descriptionStyle;
+            obj.SetValueOrSetter(ExampleApp.CardView.DescriptionStyleProperty, descriptionStyle);
             return obj;
         }
         
@@ -143,7 +145,7 @@ namespace ExampleApp
             where T : ExampleApp.CardView
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.Style>());
-            if (builder.ValueIsSet()) obj.DescriptionStyle = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(ExampleApp.CardView.DescriptionStyleProperty, builder.GetValue());
             return obj;
         }
         
@@ -160,7 +162,7 @@ namespace ExampleApp
             Microsoft.Maui.Controls.View contentView)
             where T : ExampleApp.CardView
         {
-            obj.ContentView = contentView;
+            obj.SetValueOrSetter(ExampleApp.CardView.ContentViewProperty, contentView);
             return obj;
         }
         
@@ -169,7 +171,7 @@ namespace ExampleApp
             where T : ExampleApp.CardView
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.View>());
-            if (builder.ValueIsSet()) obj.ContentView = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(ExampleApp.CardView.ContentViewProperty, builder.GetValue());
             return obj;
         }
         
@@ -186,7 +188,7 @@ namespace ExampleApp
             string buttonTitle)
             where T : ExampleApp.CardView
         {
-            obj.ButtonTitle = buttonTitle;
+            obj.SetValueOrSetter(ExampleApp.CardView.ButtonTitleProperty, buttonTitle);
             return obj;
         }
         
@@ -195,7 +197,7 @@ namespace ExampleApp
             where T : ExampleApp.CardView
         {
             var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.ButtonTitle = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(ExampleApp.CardView.ButtonTitleProperty, builder.GetValue());
             return obj;
         }
         

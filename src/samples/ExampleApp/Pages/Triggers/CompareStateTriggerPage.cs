@@ -16,17 +16,13 @@ public class CompareStateTriggerPage : ContentPage
         }
         .Style(new Style<Grid>
         {
-            new VisualState()
+            new VisualState<Grid>(e => e.BackgroundColor(Colors.Black))
             {
                 new CompareStateTrigger().Binding(e => e.Path("IsToggled").Source(testSwitch)).Value(true),
-
-                VisualElement.BackgroundColorProperty.Set(Colors.Black)
             },
-            new VisualState()
+            new VisualState<Grid>(e => e.BackgroundColor(Colors.White))
             {
                 new CompareStateTrigger().Binding(e => e.Path("IsToggled").Source(testSwitch)).Value(false),
-
-                VisualElement.BackgroundColorProperty.Set(Colors.White),
             }
         });
     }

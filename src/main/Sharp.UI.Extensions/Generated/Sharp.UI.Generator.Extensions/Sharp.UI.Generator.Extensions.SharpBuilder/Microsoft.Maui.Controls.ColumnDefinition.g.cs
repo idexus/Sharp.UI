@@ -10,12 +10,14 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class ColumnDefinitionExtension
     {
         public static Microsoft.Maui.Controls.ColumnDefinition Width(this Microsoft.Maui.Controls.ColumnDefinition obj,
             Microsoft.Maui.GridLength width)
         {
-            obj.Width = width;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.ColumnDefinition.WidthProperty, width);
             return obj;
         }
         
@@ -23,7 +25,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<Microsoft.Maui.GridLength>, ValueBuilder<Microsoft.Maui.GridLength>> buidValue)
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.GridLength>());
-            if (builder.ValueIsSet()) obj.Width = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ColumnDefinition.WidthProperty, builder.GetValue());
             return obj;
         }
         

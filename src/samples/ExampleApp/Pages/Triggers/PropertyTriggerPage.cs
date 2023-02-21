@@ -8,16 +8,17 @@ public class PropertyTriggerPage : ContentPage
 	{
 		Resources = new ResourceDictionary
 		{
-			new Style<Entry>
+			new Style<Entry>(e => e
+				.BackgroundColor(Colors.Black)
+				.TextColor(Colors.White))
 			{
-				Entry.BackgroundColorProperty.Set(Colors.Black),
-				Entry.TextColorProperty.Set(Colors.White),
-
 				new Trigger(typeof(Entry))
-					.Property(Entry.IsFocusedProperty).Value(true)
+					.Property(Entry.IsFocusedProperty)
+					.Value(true)
 					.Setters(
-						Entry.BackgroundColorProperty.Set(Colors.Yellow),
-						Entry.TextColorProperty.Set(Colors.Black)
+						new Setter<Entry>(e => e
+							.BackgroundColor(Colors.Yellow)
+							.TextColor(Colors.Black))
 					),
 			}
 		};

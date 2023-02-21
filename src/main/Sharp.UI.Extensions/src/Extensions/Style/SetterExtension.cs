@@ -1,7 +1,15 @@
 ﻿namespace Sharp.UI
 {
-    public static class SetterExtension
+    public static partial class SetterExtension
     {
+        public static T TargetName<T>(this T setters, string targetName)
+            where T : IList<Setter>
+        {
+            foreach (var setter in setters)
+                setter.TargetName = targetName;
+            return setters;
+        }
+
         public static Setter OnLight(this Setter setter, object value) { if (Application.Current?.RequestedTheme == AppTheme.Light) setter.Value = value; return setter; }
         public static Setter OnDark(this Setter setter, object value) { if (Application.Current?.RequestedTheme == AppTheme.Dark) setter.Value = value; return setter; }
 
@@ -16,7 +24,5 @@
         public static Setter OnAndroid(this Setter setter, object value) { if (DeviceInfo.Platform == DevicePlatform.Android) setter.Value = value; return setter; }
         public static Setter OnWinUI(this Setter setter, object value) { if (DeviceInfo.Platform == DevicePlatform.WinUI) setter.Value = value; return setter; }
         public static Setter OnTizen(this Setter setter, object value) { if (DeviceInfo.Platform == DevicePlatform.Tizen) setter.Value = value; return setter; }
-
-        public static Setter TargetName(this Setter setter, string targetName) { setter.TargetName = targetName; return setter; }
     }
 }

@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class HtmlWebViewSourceExtension
     {
         public static T BaseUrl<T>(this T obj,
             string baseUrl)
             where T : Microsoft.Maui.Controls.HtmlWebViewSource
         {
-            obj.BaseUrl = baseUrl;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.HtmlWebViewSource.BaseUrlProperty, baseUrl);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.HtmlWebViewSource
         {
             var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.BaseUrl = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.HtmlWebViewSource.BaseUrlProperty, builder.GetValue());
             return obj;
         }
         
@@ -42,7 +44,7 @@ namespace Sharp.UI
             string html)
             where T : Microsoft.Maui.Controls.HtmlWebViewSource
         {
-            obj.Html = html;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.HtmlWebViewSource.HtmlProperty, html);
             return obj;
         }
         
@@ -51,7 +53,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.HtmlWebViewSource
         {
             var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.Html = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.HtmlWebViewSource.HtmlProperty, builder.GetValue());
             return obj;
         }
         

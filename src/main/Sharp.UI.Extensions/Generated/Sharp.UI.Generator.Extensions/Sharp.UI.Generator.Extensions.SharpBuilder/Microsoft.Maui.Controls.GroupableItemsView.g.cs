@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class GroupableItemsViewExtension
     {
         public static T IsGrouped<T>(this T obj,
             bool isGrouped)
             where T : Microsoft.Maui.Controls.GroupableItemsView
         {
-            obj.IsGrouped = isGrouped;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.GroupableItemsView.IsGroupedProperty, isGrouped);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.GroupableItemsView
         {
             var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.IsGrouped = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.GroupableItemsView.IsGroupedProperty, builder.GetValue());
             return obj;
         }
         
@@ -42,7 +44,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.DataTemplate groupHeaderTemplate)
             where T : Microsoft.Maui.Controls.GroupableItemsView
         {
-            obj.GroupHeaderTemplate = groupHeaderTemplate;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.GroupableItemsView.GroupHeaderTemplateProperty, groupHeaderTemplate);
             return obj;
         }
         
@@ -51,7 +53,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.GroupableItemsView
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
-            if (builder.ValueIsSet()) obj.GroupHeaderTemplate = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.GroupableItemsView.GroupHeaderTemplateProperty, builder.GetValue());
             return obj;
         }
         
@@ -75,7 +77,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.DataTemplate groupFooterTemplate)
             where T : Microsoft.Maui.Controls.GroupableItemsView
         {
-            obj.GroupFooterTemplate = groupFooterTemplate;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.GroupableItemsView.GroupFooterTemplateProperty, groupFooterTemplate);
             return obj;
         }
         
@@ -84,7 +86,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.GroupableItemsView
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
-            if (builder.ValueIsSet()) obj.GroupFooterTemplate = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.GroupableItemsView.GroupFooterTemplateProperty, builder.GetValue());
             return obj;
         }
         

@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class LineSegmentExtension
     {
         public static T Point<T>(this T obj,
             Microsoft.Maui.Graphics.Point point)
             where T : Microsoft.Maui.Controls.Shapes.LineSegment
         {
-            obj.Point = point;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.LineSegment.PointProperty, point);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shapes.LineSegment
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Point>());
-            if (builder.ValueIsSet()) obj.Point = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.LineSegment.PointProperty, builder.GetValue());
             return obj;
         }
         

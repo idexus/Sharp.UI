@@ -4,8 +4,10 @@ public class AttachedBehavior<TView, TBehavior> :  Behavior<TView>
     where TView : Microsoft.Maui.Controls.View
     where TBehavior : Behavior<TView>, new()
 {
-    public static readonly BindableProperty AttachedProperty =
+    static readonly BindableProperty AttachedProperty =
     BindableProperty.CreateAttached("Attached", typeof(bool), typeof(TBehavior), false, propertyChanged: OnAttachedBehaviorChanged);
+
+    public static Setter Enable(bool enable) => new Setter { Property = AttachedProperty, Value = enable };
 
     static void OnAttachedBehaviorChanged(BindableObject obj, object oldValue, object newValue)
     {

@@ -14,8 +14,9 @@ namespace Sharp.UI.Generator.Extensions
 {
     public class ExtensionGenerator
     {
-        GeneratorExecutionContext context;
-        INamedTypeSymbol mainSymbol;
+        readonly GeneratorExecutionContext context;
+        readonly INamedTypeSymbol mainSymbol;
+        readonly bool isBindableObject;
 
         StringBuilder builder;
         bool isExtensionMethodsGenerated;
@@ -24,6 +25,7 @@ namespace Sharp.UI.Generator.Extensions
         {
             this.context = context;
             this.mainSymbol = symbol;
+            this.isBindableObject = Helpers.IsBindable(mainSymbol);
         }
 
         public void Build()
@@ -58,7 +60,9 @@ namespace Sharp.UI.Generator.Extensions
             builder.Append($@"
 namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microsoft.Maui") ? "Sharp.UI" : mainSymbol.ContainingNamespace.ToDisplayString())}
 {{
-    {Shared.GetUsingString(mainSymbol)}public static partial class {Helpers.GetNormalizedClassName(mainSymbol)}Extension
+    {Shared.GetUsingString(mainSymbol)}using Sharp.UI.Internal;
+
+    public static partial class {Helpers.GetNormalizedClassName(mainSymbol)}Extension
     {{");
             GenerateClassExtensionBody();
             builder.AppendLine($@"
@@ -102,25 +106,50 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
 
         class PropertyInfo
         {
-            public IPropertySymbol propertySymbol;
-            public readonly string propertyName;
-            public readonly string bindablePropertyName;
-            public readonly string accessedWith;
-            public readonly string propertyTypeName;
-            public readonly string camelCaseName;
-            public readonly string symbolTypeName;
+            public INamedTypeSymbol MainSymbol { get; set; }
+            public IPropertySymbol PropertySymbol { get; set; }
+            public List<string> BindableProperties { get; set; }
+            public bool IsBindableObject { get; set; }
+            public bool IsBindableProperty { get; set; }
 
-            public PropertyInfo(INamedTypeSymbol type, IPropertySymbol propertySymbol)
+            public string propertyName;
+            public string bindablePropertyName;
+            public string accessedWith;
+            public string propertyTypeName;
+            public string camelCaseName;
+            public string symbolTypeName;
+            public string valueAssignmentString;
+            public string valueBuilderAssignmentString;
+            public string fluentStylingCheckString;
+
+            public void Build()
             {
-                this.propertySymbol = propertySymbol;
+                this.PropertySymbol = PropertySymbol;
 
-                propertyName = propertySymbol.Name.Split(new[] { "." }, StringSplitOptions.None).Last();
+                propertyName = PropertySymbol.Name.Split(new[] { "." }, StringSplitOptions.None).Last();
                 propertyName = propertyName.Equals("class", StringComparison.Ordinal) ? "@class" : propertyName;
-                accessedWith = propertySymbol.IsStatic ? $"{type.ToDisplayString()}" : "obj";
-                propertyTypeName = propertySymbol.Type.ToDisplayString();
+
+                if (BindableProperties != null) IsBindableProperty = BindableProperties.Contains(propertyName);
+
+                accessedWith = PropertySymbol.IsStatic ? $"{MainSymbol.ToDisplayString()}" : "obj";
+                propertyTypeName = PropertySymbol.Type.ToDisplayString();
                 camelCaseName = Helpers.CamelCase(propertyName);
-                bindablePropertyName = $"{type.ToDisplayString()}.{propertyName}Property";
-                symbolTypeName = $"{type.ToDisplayString()}";
+                bindablePropertyName = $"{MainSymbol.ToDisplayString()}.{propertyName}Property";
+                symbolTypeName = $"{MainSymbol.ToDisplayString()}";
+
+                valueAssignmentString = IsBindableProperty  ?
+                    $@"obj.SetValueOrSetter({bindablePropertyName}, {camelCaseName});" :
+                    $"{accessedWith}.{propertyName} = {camelCaseName};";
+
+                valueBuilderAssignmentString = IsBindableProperty ?
+                    $@"if (builder.ValueIsSet()) obj.SetValueOrSetter({bindablePropertyName}, builder.GetValue());" :
+                    $@"if (builder.ValueIsSet()) obj.{propertyName} = builder.GetValue();";
+
+            //    fluentStylingCheckString =  IsBindableObject && !IsBindableProperty ?
+            //$@"bool isStyling = (bool)obj.GetValue(FluentStyling.IsStyling);
+            //if (isStyling) throw new ArgumentException(""Fluent styling not available for property {propertyName}"");
+            //" : "";
+
             }
         }
 
@@ -170,7 +199,15 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
 
         void GenerateExtensionMethodForBindable(IPropertySymbol propertySymbol)
         {
-            var info = new PropertyInfo(mainSymbol, propertySymbol);
+            var info = new PropertyInfo
+            {
+                MainSymbol = mainSymbol,
+                PropertySymbol = propertySymbol,
+                IsBindableProperty = true,
+                IsBindableObject = isBindableObject
+            };
+            info.Build();
+
             if (!Shared.NotGenerateList.Contains(info.propertyName))
             {
                 GenerateExtensionMethod_Value(info);
@@ -188,37 +225,40 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
 
         void GenerateExtensionMethod(IPropertySymbol property)
         {
-            var info = new PropertyInfo(mainSymbol, property);
-            var propertyType = info.propertySymbol.Type as INamedTypeSymbol;
-            var isGenericIList = Helpers.IsGenericIList(propertyType, out var elementType);
-
-            if (mainSymbol.Name == "NavigableElement")
+            var info = new PropertyInfo
             {
+                MainSymbol = mainSymbol,
+                PropertySymbol = property,
+                BindableProperties = extensionBindablePropertiesGenerated,
+                IsBindableObject = isBindableObject
+            };
+            info.Build();
 
-            }
+            var propertyType = info.PropertySymbol.Type as INamedTypeSymbol;
+            var isGenericIList = Helpers.IsGenericIList(propertyType, out var elementType);
 
             if (!Shared.NotGenerateList.Contains(info.propertyName))
             {
                 if (!isGenericIList &&
-                    info.propertySymbol.SetMethod != null &&
-                    info.propertySymbol.SetMethod.DeclaredAccessibility == Accessibility.Public &&
+                    info.PropertySymbol.SetMethod != null &&
+                    info.PropertySymbol.SetMethod.DeclaredAccessibility == Accessibility.Public &&
                     !ExistInBaseClasses(info.propertyName, getterAndSetter: true))
                 {
                     GenerateExtensionMethod_Value(info);
                     GenerateExtensionMethod_ValueBuilder(info);
-                    if (extensionBindablePropertiesGenerated.Contains(info.propertyName))
+                    if (info.IsBindableProperty)
                         GenerateExtensionMethod_BindingBuilder(info);
 
                     if (info.propertyTypeName.Contains("DataTemplate"))
                         GenerateExtensionMethod_DataTemplate(info);
                 }
                 else if (isGenericIList &&
-                    info.propertySymbol.GetMethod != null &&
-                    info.propertySymbol.GetMethod.DeclaredAccessibility == Accessibility.Public &&
+                    info.PropertySymbol.GetMethod != null &&
+                    info.PropertySymbol.GetMethod.DeclaredAccessibility == Accessibility.Public &&
                     !ExistInBaseClasses(info.propertyName, getterAndSetter: false))
                 {
                     GenerateExtensionMethod_List(info, elementType.ToDisplayString());
-                    if (extensionBindablePropertiesGenerated.Contains(info.propertyName))
+                    if (info.IsBindableProperty)
                         GenerateExtensionMethod_BindingBuilder(info);
                 }
             }
@@ -239,7 +279,7 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
         public static {info.symbolTypeName} {info.propertyName}(this {info.symbolTypeName} obj,
             {info.propertyTypeName} {info.camelCaseName})
         {{
-            {info.accessedWith}.{info.propertyName} = {info.camelCaseName};
+            {info.fluentStylingCheckString}{info.valueAssignmentString}
             return obj;
         }}
         ");
@@ -253,7 +293,7 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
             {info.propertyTypeName} {info.camelCaseName})
             where T : {info.symbolTypeName}
         {{
-            {info.accessedWith}.{info.propertyName} = {info.camelCaseName};
+            {info.fluentStylingCheckString}{info.valueAssignmentString}
             return obj;
         }}
         ");
@@ -311,8 +351,8 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
         public static {info.symbolTypeName} {info.propertyName}(this {info.symbolTypeName} obj,
             System.Func<ValueBuilder<{info.propertyTypeName}>, ValueBuilder<{info.propertyTypeName}>> buidValue)
         {{
-            var builder = buidValue(new ValueBuilder<{info.propertyTypeName}>());
-            if (builder.ValueIsSet()) obj.{info.propertyName} = builder.GetValue();
+            {info.fluentStylingCheckString}var builder = buidValue(new ValueBuilder<{info.propertyTypeName}>());
+            {info.valueBuilderAssignmentString}
             return obj;
         }}
         ");
@@ -326,8 +366,8 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
             System.Func<ValueBuilder<{info.propertyTypeName}>, ValueBuilder<{info.propertyTypeName}>> buidValue)
             where T : {info.symbolTypeName}
         {{
-            var builder = buidValue(new ValueBuilder<{info.propertyTypeName}>());
-            if (builder.ValueIsSet()) obj.{info.propertyName} = builder.GetValue();
+            {info.fluentStylingCheckString}var builder = buidValue(new ValueBuilder<{info.propertyTypeName}>());
+            {info.valueBuilderAssignmentString}
             return obj;
         }}
         ");

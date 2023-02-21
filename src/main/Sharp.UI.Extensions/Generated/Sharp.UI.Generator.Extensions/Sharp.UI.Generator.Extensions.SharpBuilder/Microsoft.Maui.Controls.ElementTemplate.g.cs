@@ -10,6 +10,8 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class ElementTemplateExtension
     {
         public static T LoadTemplate<T>(this T obj,

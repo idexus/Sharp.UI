@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class ItemsViewExtension
     {
         public static T EmptyView<T>(this T obj,
             object emptyView)
             where T : Microsoft.Maui.Controls.ItemsView
         {
-            obj.EmptyView = emptyView;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.ItemsView.EmptyViewProperty, emptyView);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ItemsView
         {
             var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.EmptyView = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ItemsView.EmptyViewProperty, builder.GetValue());
             return obj;
         }
         
@@ -42,7 +44,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.DataTemplate emptyViewTemplate)
             where T : Microsoft.Maui.Controls.ItemsView
         {
-            obj.EmptyViewTemplate = emptyViewTemplate;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.ItemsView.EmptyViewTemplateProperty, emptyViewTemplate);
             return obj;
         }
         
@@ -51,7 +53,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ItemsView
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
-            if (builder.ValueIsSet()) obj.EmptyViewTemplate = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ItemsView.EmptyViewTemplateProperty, builder.GetValue());
             return obj;
         }
         
@@ -75,7 +77,7 @@ namespace Sharp.UI
             System.Collections.IEnumerable itemsSource)
             where T : Microsoft.Maui.Controls.ItemsView
         {
-            obj.ItemsSource = itemsSource;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.ItemsView.ItemsSourceProperty, itemsSource);
             return obj;
         }
         
@@ -84,7 +86,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ItemsView
         {
             var builder = buidValue(new ValueBuilder<System.Collections.IEnumerable>());
-            if (builder.ValueIsSet()) obj.ItemsSource = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ItemsView.ItemsSourceProperty, builder.GetValue());
             return obj;
         }
         
@@ -101,7 +103,7 @@ namespace Sharp.UI
             System.Windows.Input.ICommand remainingItemsThresholdReachedCommand)
             where T : Microsoft.Maui.Controls.ItemsView
         {
-            obj.RemainingItemsThresholdReachedCommand = remainingItemsThresholdReachedCommand;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.ItemsView.RemainingItemsThresholdReachedCommandProperty, remainingItemsThresholdReachedCommand);
             return obj;
         }
         
@@ -110,7 +112,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ItemsView
         {
             var builder = buidValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) obj.RemainingItemsThresholdReachedCommand = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ItemsView.RemainingItemsThresholdReachedCommandProperty, builder.GetValue());
             return obj;
         }
         
@@ -127,7 +129,7 @@ namespace Sharp.UI
             object remainingItemsThresholdReachedCommandParameter)
             where T : Microsoft.Maui.Controls.ItemsView
         {
-            obj.RemainingItemsThresholdReachedCommandParameter = remainingItemsThresholdReachedCommandParameter;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.ItemsView.RemainingItemsThresholdReachedCommandParameterProperty, remainingItemsThresholdReachedCommandParameter);
             return obj;
         }
         
@@ -136,7 +138,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ItemsView
         {
             var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.RemainingItemsThresholdReachedCommandParameter = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ItemsView.RemainingItemsThresholdReachedCommandParameterProperty, builder.GetValue());
             return obj;
         }
         
@@ -153,7 +155,7 @@ namespace Sharp.UI
             Microsoft.Maui.ScrollBarVisibility horizontalScrollBarVisibility)
             where T : Microsoft.Maui.Controls.ItemsView
         {
-            obj.HorizontalScrollBarVisibility = horizontalScrollBarVisibility;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.ItemsView.HorizontalScrollBarVisibilityProperty, horizontalScrollBarVisibility);
             return obj;
         }
         
@@ -162,7 +164,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ItemsView
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.ScrollBarVisibility>());
-            if (builder.ValueIsSet()) obj.HorizontalScrollBarVisibility = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ItemsView.HorizontalScrollBarVisibilityProperty, builder.GetValue());
             return obj;
         }
         
@@ -179,7 +181,7 @@ namespace Sharp.UI
             Microsoft.Maui.ScrollBarVisibility verticalScrollBarVisibility)
             where T : Microsoft.Maui.Controls.ItemsView
         {
-            obj.VerticalScrollBarVisibility = verticalScrollBarVisibility;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.ItemsView.VerticalScrollBarVisibilityProperty, verticalScrollBarVisibility);
             return obj;
         }
         
@@ -188,7 +190,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ItemsView
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.ScrollBarVisibility>());
-            if (builder.ValueIsSet()) obj.VerticalScrollBarVisibility = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ItemsView.VerticalScrollBarVisibilityProperty, builder.GetValue());
             return obj;
         }
         
@@ -205,7 +207,7 @@ namespace Sharp.UI
             int remainingItemsThreshold)
             where T : Microsoft.Maui.Controls.ItemsView
         {
-            obj.RemainingItemsThreshold = remainingItemsThreshold;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.ItemsView.RemainingItemsThresholdProperty, remainingItemsThreshold);
             return obj;
         }
         
@@ -214,7 +216,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ItemsView
         {
             var builder = buidValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) obj.RemainingItemsThreshold = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ItemsView.RemainingItemsThresholdProperty, builder.GetValue());
             return obj;
         }
         
@@ -231,7 +233,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.DataTemplate itemTemplate)
             where T : Microsoft.Maui.Controls.ItemsView
         {
-            obj.ItemTemplate = itemTemplate;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.ItemsView.ItemTemplateProperty, itemTemplate);
             return obj;
         }
         
@@ -240,7 +242,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ItemsView
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
-            if (builder.ValueIsSet()) obj.ItemTemplate = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ItemsView.ItemTemplateProperty, builder.GetValue());
             return obj;
         }
         
@@ -264,7 +266,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.ItemsUpdatingScrollMode itemsUpdatingScrollMode)
             where T : Microsoft.Maui.Controls.ItemsView
         {
-            obj.ItemsUpdatingScrollMode = itemsUpdatingScrollMode;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.ItemsView.ItemsUpdatingScrollModeProperty, itemsUpdatingScrollMode);
             return obj;
         }
         
@@ -273,7 +275,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ItemsView
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.ItemsUpdatingScrollMode>());
-            if (builder.ValueIsSet()) obj.ItemsUpdatingScrollMode = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ItemsView.ItemsUpdatingScrollModeProperty, builder.GetValue());
             return obj;
         }
         

@@ -10,12 +10,14 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class StateTriggerExtension
     {
         public static Microsoft.Maui.Controls.StateTrigger IsActive(this Microsoft.Maui.Controls.StateTrigger obj,
             bool isActive)
         {
-            obj.IsActive = isActive;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.StateTrigger.IsActiveProperty, isActive);
             return obj;
         }
         
@@ -23,7 +25,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
         {
             var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.IsActive = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.StateTrigger.IsActiveProperty, builder.GetValue());
             return obj;
         }
         

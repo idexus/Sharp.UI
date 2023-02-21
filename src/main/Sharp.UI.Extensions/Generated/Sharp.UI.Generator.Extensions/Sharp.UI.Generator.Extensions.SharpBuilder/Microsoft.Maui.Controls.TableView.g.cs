@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class TableViewExtension
     {
         public static T HasUnevenRows<T>(this T obj,
             bool hasUnevenRows)
             where T : Microsoft.Maui.Controls.TableView
         {
-            obj.HasUnevenRows = hasUnevenRows;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.TableView.HasUnevenRowsProperty, hasUnevenRows);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.TableView
         {
             var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.HasUnevenRows = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.TableView.HasUnevenRowsProperty, builder.GetValue());
             return obj;
         }
         
@@ -77,7 +79,7 @@ namespace Sharp.UI
             int rowHeight)
             where T : Microsoft.Maui.Controls.TableView
         {
-            obj.RowHeight = rowHeight;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.TableView.RowHeightProperty, rowHeight);
             return obj;
         }
         
@@ -86,7 +88,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.TableView
         {
             var builder = buidValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) obj.RowHeight = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.TableView.RowHeightProperty, builder.GetValue());
             return obj;
         }
         

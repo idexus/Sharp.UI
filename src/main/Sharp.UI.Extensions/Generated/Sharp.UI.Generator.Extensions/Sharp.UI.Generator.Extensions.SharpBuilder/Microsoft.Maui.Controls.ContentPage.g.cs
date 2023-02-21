@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class ContentPageExtension
     {
         public static T Content<T>(this T obj,
             Microsoft.Maui.Controls.View content)
             where T : Microsoft.Maui.Controls.ContentPage
         {
-            obj.Content = content;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.ContentPage.ContentProperty, content);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ContentPage
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.View>());
-            if (builder.ValueIsSet()) obj.Content = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ContentPage.ContentProperty, builder.GetValue());
             return obj;
         }
         

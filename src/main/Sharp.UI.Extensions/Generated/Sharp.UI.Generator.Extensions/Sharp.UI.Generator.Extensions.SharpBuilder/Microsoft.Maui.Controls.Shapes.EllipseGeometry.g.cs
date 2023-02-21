@@ -10,13 +10,15 @@ namespace Sharp.UI
 {
     using Sharp.UI;
 
+    using Sharp.UI.Internal;
+
     public static partial class EllipseGeometryExtension
     {
         public static T Center<T>(this T obj,
             Microsoft.Maui.Graphics.Point center)
             where T : Microsoft.Maui.Controls.Shapes.EllipseGeometry
         {
-            obj.Center = center;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.EllipseGeometry.CenterProperty, center);
             return obj;
         }
         
@@ -25,7 +27,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shapes.EllipseGeometry
         {
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Point>());
-            if (builder.ValueIsSet()) obj.Center = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.EllipseGeometry.CenterProperty, builder.GetValue());
             return obj;
         }
         
@@ -42,7 +44,7 @@ namespace Sharp.UI
             double radiusX)
             where T : Microsoft.Maui.Controls.Shapes.EllipseGeometry
         {
-            obj.RadiusX = radiusX;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.EllipseGeometry.RadiusXProperty, radiusX);
             return obj;
         }
         
@@ -51,7 +53,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shapes.EllipseGeometry
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.RadiusX = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.EllipseGeometry.RadiusXProperty, builder.GetValue());
             return obj;
         }
         
@@ -68,7 +70,7 @@ namespace Sharp.UI
             double radiusY)
             where T : Microsoft.Maui.Controls.Shapes.EllipseGeometry
         {
-            obj.RadiusY = radiusY;
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.EllipseGeometry.RadiusYProperty, radiusY);
             return obj;
         }
         
@@ -77,7 +79,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shapes.EllipseGeometry
         {
             var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.RadiusY = builder.GetValue();
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.EllipseGeometry.RadiusYProperty, builder.GetValue());
             return obj;
         }
         

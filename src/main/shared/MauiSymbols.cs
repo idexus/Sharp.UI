@@ -10,6 +10,8 @@ namespace Sharp.UI.Internal
         Microsoft.Maui.Controls.PropertyCondition propertyCondition;
         Microsoft.Maui.Controls.BindingCondition bindingCondition;
 
+        Microsoft.Maui.Controls.VisualState visualState;
+
         // Count 126
 
         Microsoft.Maui.Controls.AbsoluteLayout absoluteLayout;
