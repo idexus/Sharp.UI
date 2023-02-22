@@ -187,6 +187,66 @@ Resources = new ResourceDictionary
 };
 ```
 
+## Animations
+
+In Sharp.UI, you can use async methods with the naming convention `Animate{PropertyName}To` to animate any `double` or `Color` bindable property.
+
+For example, to animate the `BackgroundColor` property, you can use the `AnimateBackgroundColorTo` async method.
+
+```cs
+await border.AnimateBackgroundColorTo(Colors.Red, 500);  // 500ms
+```
+
+#### Usage
+You can use animations inside event handlers:
+
+```cs
+new Button()
+    .Text("Click me")
+    .OnClicked(async (Button button) =>
+    {
+        count++;
+        button.Text = $"Clicked {count} ";
+        button.Text += count == 1 ? "time" : "times";
+
+        _ = button.AnimateBackgroundColorTo(count % 1 == 0 ? Colors.Red : Colors.Blue, 500);
+        await button.AnimateFontSizeTo(count % 1 == 0 ? Colors.Red : Colors.Blue);
+        await button.RotateTo(360 * (count % 2), 300);
+    })
+```
+
+You can also use visual states to define animations:
+
+```cs
+new Border
+{
+    new Label("Hello, World!", out var label)
+        .FontSize(28),
+
+    new Switch(out var testSwitch)    
+}
+.VisualStateGroups(new VisualStateGroupList
+{
+    new VisualState<Border> {
+        async border => {
+            await border.AnimateBackgroundColorTo(Colors.Red, 500);
+            await label.RotateXTo(360, 400);
+        },
+        new StateTrigger().IsActive(e => e.Path("IsToggled").Source(testSwitch))
+    },
+
+    new VisualState<Border> {
+        async border => {
+            await border.AnimateBackgroundColorTo(AppColors.Gray950, 500);
+            await label.RotateXTo(0, 400);
+        },
+        new StateTrigger().IsActive(e => e.Path("IsToggled").Source(testSwitch).Negate())
+    }
+})
+```
+
+You can also add animations using visual states inside the `Style<T>` class.
+
 ## Auto-generated code
 
 __Sharp.UI__ library has a feature of automatically generating bindable properties and their fluent helper methods. To use this feature, you need to define the __view-model__ as follows:
