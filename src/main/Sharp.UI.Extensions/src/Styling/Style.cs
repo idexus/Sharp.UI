@@ -42,6 +42,11 @@ namespace Sharp.UI
             });
         }
 
+        public void Add(Action<T> configure)
+        {
+            ConfigureSetters(configure);
+        }
+
         public void Add(Setter setter) => this.mauiStyle.Setters.Add(setter);
         public void Add(Trigger trigger) => this.mauiStyle.Triggers.Add(trigger);
         public void Add(DataTrigger trigger) => this.mauiStyle.Triggers.Add(trigger);
