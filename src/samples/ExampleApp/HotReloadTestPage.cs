@@ -63,8 +63,8 @@ namespace ExampleApp
                         .OnClicked(async (Button sender) =>
                         {
                             viewModel.Count();
-                            _ = sender.AnimateFontSizeTo((viewModel.Counter % 2 == 1 ? 30 : 50));
-                            await vStack.RotateYTo(((viewModel.Counter%4) switch { 0 => 20, 1 => 0, 2 => -20, _ => 0 }));
+                            _ = sender.AnimateFontSizeTo((viewModel.Counter % 2 == 0 ? 30 : 50));
+                            await vStack.RotateYTo(((viewModel.Counter%4) switch { 0 => 0, 1 => 20, 2 => 0, _ => -20 }));
                         })
                 }
             };
@@ -105,22 +105,16 @@ namespace ExampleApp
                         .Padding(20)
                         .FontSize(30)
                         .CornerRadius(10)
-                        .SizeRequest(180,60),
+                        .SizeRequest(270, 90),
 
                     new VisualState<Button>(VisualStates.Button.Normal)
                     {
-                        button => {
-                            button.AnimateSizeRequestTo(270, 90);
-                            button.RotateTo(0);
-                        }
+                        button => button.RotateTo(0)
                     },
 
                     new VisualState<Button>(VisualStates.Button.Disabled)
                     {
-                        button => {
-                            button.AnimateSizeRequestTo(180,60);
-                            button.RotateTo(180);
-                        }
+                        button => button.RotateTo(180)
                     }
                 }
             };
