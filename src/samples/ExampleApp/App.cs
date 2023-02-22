@@ -9,7 +9,7 @@ public partial class App : Application
 {
     public App()
     {
-        //MainPage = ActivatorUtilities.GetServiceOrCreateInstance<HelloWorldPage>(Application.Services);
+        //MainPage = ActivatorUtilities.GetServiceOrCreateInstance<HotReloadTestPage>(Application.Services);
                 
         MainPage = new Shell
         {
@@ -90,5 +90,6 @@ public partial class App : Application
                 }
             }
         };
+                
     }
 }

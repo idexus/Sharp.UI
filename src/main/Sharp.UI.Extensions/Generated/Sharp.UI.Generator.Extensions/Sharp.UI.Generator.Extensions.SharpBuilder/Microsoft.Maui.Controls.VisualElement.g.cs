@@ -9,7 +9,6 @@
 namespace Sharp.UI
 {
     using Sharp.UI;
-
     using Sharp.UI.Internal;
 
     public static partial class VisualElementExtension
@@ -18,6 +17,8 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Rect frame)
             where T : Microsoft.Maui.Controls.VisualElement
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property Frame");
             obj.Frame = frame;
             return obj;
         }
@@ -26,6 +27,8 @@ namespace Sharp.UI
             System.Func<ValueBuilder<Microsoft.Maui.Graphics.Rect>, ValueBuilder<Microsoft.Maui.Graphics.Rect>> buidValue)
             where T : Microsoft.Maui.Controls.VisualElement
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property Frame");
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Rect>());
             if (builder.ValueIsSet()) obj.Frame = builder.GetValue();
             return obj;
@@ -161,6 +164,15 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static Task<bool> AnimateAnchorXTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            double fromValue = self.AnchorX;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.AnchorX = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateAnchorXTo", transform, callback, length, easing);
+        }
+        
         public static T AnchorY<T>(this T obj,
             double anchorY)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -187,6 +199,15 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static Task<bool> AnimateAnchorYTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            double fromValue = self.AnchorY;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.AnchorY = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateAnchorYTo", transform, callback, length, easing);
+        }
+        
         public static T BackgroundColor<T>(this T obj,
             Microsoft.Maui.Graphics.Color backgroundColor)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -211,6 +232,16 @@ namespace Sharp.UI
             var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(obj, Microsoft.Maui.Controls.VisualElement.BackgroundColorProperty));
             builder.BindProperty();
             return obj;
+        }
+        
+        public static Task<bool> AnimateBackgroundColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            Microsoft.Maui.Graphics.Color fromValue = self.BackgroundColor;
+            if (fromValue == null) throw new NullReferenceException($"{nameof(self.BackgroundColor)} is null, can not animate from null value");
+            var transform = (double t) => Transformations.ColorTransform(fromValue, value, t);
+            var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.BackgroundColor = actValue; };
+            return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateBackgroundColorTo", transform, callback, length, easing);
         }
         
         public static T Background<T>(this T obj,
@@ -290,6 +321,15 @@ namespace Sharp.UI
             var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.VisualElement.HeightRequestProperty));
             builder.BindProperty();
             return obj;
+        }
+        
+        public static Task<bool> AnimateHeightRequestTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            double fromValue = self.HeightRequest;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.HeightRequest = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateHeightRequestTo", transform, callback, length, easing);
         }
         
         public static T InputTransparent<T>(this T obj,
@@ -396,6 +436,15 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static Task<bool> AnimateMinimumHeightRequestTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            double fromValue = self.MinimumHeightRequest;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.MinimumHeightRequest = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateMinimumHeightRequestTo", transform, callback, length, easing);
+        }
+        
         public static T MinimumWidthRequest<T>(this T obj,
             double minimumWidthRequest)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -420,6 +469,15 @@ namespace Sharp.UI
             var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.VisualElement.MinimumWidthRequestProperty));
             builder.BindProperty();
             return obj;
+        }
+        
+        public static Task<bool> AnimateMinimumWidthRequestTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            double fromValue = self.MinimumWidthRequest;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.MinimumWidthRequest = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateMinimumWidthRequestTo", transform, callback, length, easing);
         }
         
         public static T MaximumHeightRequest<T>(this T obj,
@@ -448,6 +506,15 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static Task<bool> AnimateMaximumHeightRequestTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            double fromValue = self.MaximumHeightRequest;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.MaximumHeightRequest = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateMaximumHeightRequestTo", transform, callback, length, easing);
+        }
+        
         public static T MaximumWidthRequest<T>(this T obj,
             double maximumWidthRequest)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -472,6 +539,15 @@ namespace Sharp.UI
             var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.VisualElement.MaximumWidthRequestProperty));
             builder.BindProperty();
             return obj;
+        }
+        
+        public static Task<bool> AnimateMaximumWidthRequestTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            double fromValue = self.MaximumWidthRequest;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.MaximumWidthRequest = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateMaximumWidthRequestTo", transform, callback, length, easing);
         }
         
         public static T Opacity<T>(this T obj,
@@ -500,6 +576,15 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static Task<bool> AnimateOpacityTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            double fromValue = self.Opacity;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.Opacity = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateOpacityTo", transform, callback, length, easing);
+        }
+        
         public static T Rotation<T>(this T obj,
             double rotation)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -524,6 +609,15 @@ namespace Sharp.UI
             var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.VisualElement.RotationProperty));
             builder.BindProperty();
             return obj;
+        }
+        
+        public static Task<bool> AnimateRotationTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            double fromValue = self.Rotation;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.Rotation = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateRotationTo", transform, callback, length, easing);
         }
         
         public static T RotationX<T>(this T obj,
@@ -552,6 +646,15 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static Task<bool> AnimateRotationXTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            double fromValue = self.RotationX;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.RotationX = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateRotationXTo", transform, callback, length, easing);
+        }
+        
         public static T RotationY<T>(this T obj,
             double rotationY)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -576,6 +679,15 @@ namespace Sharp.UI
             var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.VisualElement.RotationYProperty));
             builder.BindProperty();
             return obj;
+        }
+        
+        public static Task<bool> AnimateRotationYTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            double fromValue = self.RotationY;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.RotationY = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateRotationYTo", transform, callback, length, easing);
         }
         
         public static T Scale<T>(this T obj,
@@ -604,6 +716,15 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static Task<bool> AnimateScaleTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            double fromValue = self.Scale;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.Scale = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateScaleTo", transform, callback, length, easing);
+        }
+        
         public static T ScaleX<T>(this T obj,
             double scaleX)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -628,6 +749,15 @@ namespace Sharp.UI
             var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.VisualElement.ScaleXProperty));
             builder.BindProperty();
             return obj;
+        }
+        
+        public static Task<bool> AnimateScaleXTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            double fromValue = self.ScaleX;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.ScaleX = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateScaleXTo", transform, callback, length, easing);
         }
         
         public static T ScaleY<T>(this T obj,
@@ -656,6 +786,15 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static Task<bool> AnimateScaleYTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            double fromValue = self.ScaleY;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.ScaleY = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateScaleYTo", transform, callback, length, easing);
+        }
+        
         public static T TranslationX<T>(this T obj,
             double translationX)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -682,6 +821,15 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static Task<bool> AnimateTranslationXTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            double fromValue = self.TranslationX;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.TranslationX = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateTranslationXTo", transform, callback, length, easing);
+        }
+        
         public static T TranslationY<T>(this T obj,
             double translationY)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -706,6 +854,15 @@ namespace Sharp.UI
             var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.VisualElement.TranslationYProperty));
             builder.BindProperty();
             return obj;
+        }
+        
+        public static Task<bool> AnimateTranslationYTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            double fromValue = self.TranslationY;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.TranslationY = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateTranslationYTo", transform, callback, length, easing);
         }
         
         public static T Triggers<T>(this T obj,
@@ -761,6 +918,15 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static Task<bool> AnimateWidthRequestTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            double fromValue = self.WidthRequest;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.WidthRequest = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateWidthRequestTo", transform, callback, length, easing);
+        }
+        
         public static T Clip<T>(this T obj,
             Microsoft.Maui.Controls.Shapes.Geometry clip)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -791,6 +957,8 @@ namespace Sharp.UI
             bool disableLayout)
             where T : Microsoft.Maui.Controls.VisualElement
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property DisableLayout");
             obj.DisableLayout = disableLayout;
             return obj;
         }
@@ -799,6 +967,8 @@ namespace Sharp.UI
             System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
             where T : Microsoft.Maui.Controls.VisualElement
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property DisableLayout");
             var builder = buidValue(new ValueBuilder<bool>());
             if (builder.ValueIsSet()) obj.DisableLayout = builder.GetValue();
             return obj;
@@ -808,6 +978,8 @@ namespace Sharp.UI
             bool isInPlatformLayout)
             where T : Microsoft.Maui.Controls.VisualElement
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property IsInPlatformLayout");
             obj.IsInPlatformLayout = isInPlatformLayout;
             return obj;
         }
@@ -816,6 +988,8 @@ namespace Sharp.UI
             System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
             where T : Microsoft.Maui.Controls.VisualElement
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property IsInPlatformLayout");
             var builder = buidValue(new ValueBuilder<bool>());
             if (builder.ValueIsSet()) obj.IsInPlatformLayout = builder.GetValue();
             return obj;
@@ -825,6 +999,8 @@ namespace Sharp.UI
             bool isPlatformStateConsistent)
             where T : Microsoft.Maui.Controls.VisualElement
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property IsPlatformStateConsistent");
             obj.IsPlatformStateConsistent = isPlatformStateConsistent;
             return obj;
         }
@@ -833,6 +1009,8 @@ namespace Sharp.UI
             System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
             where T : Microsoft.Maui.Controls.VisualElement
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property IsPlatformStateConsistent");
             var builder = buidValue(new ValueBuilder<bool>());
             if (builder.ValueIsSet()) obj.IsPlatformStateConsistent = builder.GetValue();
             return obj;
@@ -842,6 +1020,8 @@ namespace Sharp.UI
             bool isPlatformEnabled)
             where T : Microsoft.Maui.Controls.VisualElement
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property IsPlatformEnabled");
             obj.IsPlatformEnabled = isPlatformEnabled;
             return obj;
         }
@@ -850,6 +1030,8 @@ namespace Sharp.UI
             System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
             where T : Microsoft.Maui.Controls.VisualElement
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property IsPlatformEnabled");
             var builder = buidValue(new ValueBuilder<bool>());
             if (builder.ValueIsSet()) obj.IsPlatformEnabled = builder.GetValue();
             return obj;
@@ -859,6 +1041,8 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.ResourceDictionary resources)
             where T : Microsoft.Maui.Controls.VisualElement
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property Resources");
             obj.Resources = resources;
             return obj;
         }
@@ -867,6 +1051,8 @@ namespace Sharp.UI
             System.Func<ValueBuilder<Microsoft.Maui.Controls.ResourceDictionary>, ValueBuilder<Microsoft.Maui.Controls.ResourceDictionary>> buidValue)
             where T : Microsoft.Maui.Controls.VisualElement
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property Resources");
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.ResourceDictionary>());
             if (builder.ValueIsSet()) obj.Resources = builder.GetValue();
             return obj;

@@ -9,7 +9,6 @@
 namespace Sharp.UI
 {
     using Sharp.UI;
-
     using Sharp.UI.Internal;
 
     public static partial class LineExtension
@@ -37,6 +36,14 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static Task<bool> AnimateX1To(this Microsoft.Maui.Controls.Shapes.Line self, double value, uint length = 250, Easing? easing = null)
+        {
+            double fromValue = self.X1;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.X1 = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateX1To", transform, callback, length, easing);
+        }
+        
         public static Microsoft.Maui.Controls.Shapes.Line Y1(this Microsoft.Maui.Controls.Shapes.Line obj,
             double y1)
         {
@@ -58,6 +65,14 @@ namespace Sharp.UI
             var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Shapes.Line.Y1Property));
             builder.BindProperty();
             return obj;
+        }
+        
+        public static Task<bool> AnimateY1To(this Microsoft.Maui.Controls.Shapes.Line self, double value, uint length = 250, Easing? easing = null)
+        {
+            double fromValue = self.Y1;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.Y1 = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateY1To", transform, callback, length, easing);
         }
         
         public static Microsoft.Maui.Controls.Shapes.Line X2(this Microsoft.Maui.Controls.Shapes.Line obj,
@@ -83,6 +98,14 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static Task<bool> AnimateX2To(this Microsoft.Maui.Controls.Shapes.Line self, double value, uint length = 250, Easing? easing = null)
+        {
+            double fromValue = self.X2;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.X2 = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateX2To", transform, callback, length, easing);
+        }
+        
         public static Microsoft.Maui.Controls.Shapes.Line Y2(this Microsoft.Maui.Controls.Shapes.Line obj,
             double y2)
         {
@@ -104,6 +127,14 @@ namespace Sharp.UI
             var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Shapes.Line.Y2Property));
             builder.BindProperty();
             return obj;
+        }
+        
+        public static Task<bool> AnimateY2To(this Microsoft.Maui.Controls.Shapes.Line self, double value, uint length = 250, Easing? easing = null)
+        {
+            double fromValue = self.Y2;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.Y2 = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateY2To", transform, callback, length, easing);
         }
         
     }

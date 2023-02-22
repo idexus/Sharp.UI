@@ -9,7 +9,6 @@
 namespace Sharp.UI
 {
     using Sharp.UI;
-
     using Sharp.UI.Internal;
 
     public static partial class InputViewExtension
@@ -196,6 +195,16 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static Task<bool> AnimatePlaceholderColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            Microsoft.Maui.Graphics.Color fromValue = self.PlaceholderColor;
+            if (fromValue == null) throw new NullReferenceException($"{nameof(self.PlaceholderColor)} is null, can not animate from null value");
+            var transform = (double t) => Transformations.ColorTransform(fromValue, value, t);
+            var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.PlaceholderColor = actValue; };
+            return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimatePlaceholderColorTo", transform, callback, length, easing);
+        }
+        
         public static T TextColor<T>(this T obj,
             Microsoft.Maui.Graphics.Color textColor)
             where T : Microsoft.Maui.Controls.InputView
@@ -222,6 +231,16 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static Task<bool> AnimateTextColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            Microsoft.Maui.Graphics.Color fromValue = self.TextColor;
+            if (fromValue == null) throw new NullReferenceException($"{nameof(self.TextColor)} is null, can not animate from null value");
+            var transform = (double t) => Transformations.ColorTransform(fromValue, value, t);
+            var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.TextColor = actValue; };
+            return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateTextColorTo", transform, callback, length, easing);
+        }
+        
         public static T CharacterSpacing<T>(this T obj,
             double characterSpacing)
             where T : Microsoft.Maui.Controls.InputView
@@ -246,6 +265,15 @@ namespace Sharp.UI
             var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.InputView.CharacterSpacingProperty));
             builder.BindProperty();
             return obj;
+        }
+        
+        public static Task<bool> AnimateCharacterSpacingTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            double fromValue = self.CharacterSpacing;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.CharacterSpacing = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateCharacterSpacingTo", transform, callback, length, easing);
         }
         
         public static T TextTransform<T>(this T obj,

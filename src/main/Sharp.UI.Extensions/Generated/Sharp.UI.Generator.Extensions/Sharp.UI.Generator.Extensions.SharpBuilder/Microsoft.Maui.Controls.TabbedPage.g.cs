@@ -9,7 +9,6 @@
 namespace Sharp.UI
 {
     using Sharp.UI;
-
     using Sharp.UI.Internal;
 
     public static partial class TabbedPageExtension
@@ -38,6 +37,16 @@ namespace Sharp.UI
             var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(obj, Microsoft.Maui.Controls.TabbedPage.BarBackgroundColorProperty));
             builder.BindProperty();
             return obj;
+        }
+        
+        public static Task<bool> AnimateBarBackgroundColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.TabbedPage
+        {
+            Microsoft.Maui.Graphics.Color fromValue = self.BarBackgroundColor;
+            if (fromValue == null) throw new NullReferenceException($"{nameof(self.BarBackgroundColor)} is null, can not animate from null value");
+            var transform = (double t) => Transformations.ColorTransform(fromValue, value, t);
+            var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.BarBackgroundColor = actValue; };
+            return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateBarBackgroundColorTo", transform, callback, length, easing);
         }
         
         public static T BarBackground<T>(this T obj,
@@ -92,6 +101,16 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static Task<bool> AnimateBarTextColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.TabbedPage
+        {
+            Microsoft.Maui.Graphics.Color fromValue = self.BarTextColor;
+            if (fromValue == null) throw new NullReferenceException($"{nameof(self.BarTextColor)} is null, can not animate from null value");
+            var transform = (double t) => Transformations.ColorTransform(fromValue, value, t);
+            var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.BarTextColor = actValue; };
+            return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateBarTextColorTo", transform, callback, length, easing);
+        }
+        
         public static T UnselectedTabColor<T>(this T obj,
             Microsoft.Maui.Graphics.Color unselectedTabColor)
             where T : Microsoft.Maui.Controls.TabbedPage
@@ -118,6 +137,16 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static Task<bool> AnimateUnselectedTabColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.TabbedPage
+        {
+            Microsoft.Maui.Graphics.Color fromValue = self.UnselectedTabColor;
+            if (fromValue == null) throw new NullReferenceException($"{nameof(self.UnselectedTabColor)} is null, can not animate from null value");
+            var transform = (double t) => Transformations.ColorTransform(fromValue, value, t);
+            var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.UnselectedTabColor = actValue; };
+            return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateUnselectedTabColorTo", transform, callback, length, easing);
+        }
+        
         public static T SelectedTabColor<T>(this T obj,
             Microsoft.Maui.Graphics.Color selectedTabColor)
             where T : Microsoft.Maui.Controls.TabbedPage
@@ -142,6 +171,16 @@ namespace Sharp.UI
             var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(obj, Microsoft.Maui.Controls.TabbedPage.SelectedTabColorProperty));
             builder.BindProperty();
             return obj;
+        }
+        
+        public static Task<bool> AnimateSelectedTabColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.TabbedPage
+        {
+            Microsoft.Maui.Graphics.Color fromValue = self.SelectedTabColor;
+            if (fromValue == null) throw new NullReferenceException($"{nameof(self.SelectedTabColor)} is null, can not animate from null value");
+            var transform = (double t) => Transformations.ColorTransform(fromValue, value, t);
+            var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.SelectedTabColor = actValue; };
+            return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateSelectedTabColorTo", transform, callback, length, easing);
         }
         
     }

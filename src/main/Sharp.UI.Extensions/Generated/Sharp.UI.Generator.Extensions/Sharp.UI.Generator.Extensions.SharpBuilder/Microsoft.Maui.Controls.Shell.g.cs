@@ -9,7 +9,6 @@
 namespace Sharp.UI
 {
     using Sharp.UI;
-
     using Sharp.UI.Internal;
 
     public static partial class ShellExtension
@@ -170,6 +169,16 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static Task<bool> AnimateFlyoutBackgroundColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.Shell
+        {
+            Microsoft.Maui.Graphics.Color fromValue = self.FlyoutBackgroundColor;
+            if (fromValue == null) throw new NullReferenceException($"{nameof(self.FlyoutBackgroundColor)} is null, can not animate from null value");
+            var transform = (double t) => Transformations.ColorTransform(fromValue, value, t);
+            var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.FlyoutBackgroundColor = actValue; };
+            return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateFlyoutBackgroundColorTo", transform, callback, length, easing);
+        }
+        
         public static T FlyoutBackground<T>(this T obj,
             Microsoft.Maui.Controls.Brush flyoutBackground)
             where T : Microsoft.Maui.Controls.Shell
@@ -248,6 +257,15 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static Task<bool> AnimateFlyoutWidthTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.Shell
+        {
+            double fromValue = self.FlyoutWidth;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.FlyoutWidth = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateFlyoutWidthTo", transform, callback, length, easing);
+        }
+        
         public static T FlyoutHeight<T>(this T obj,
             double flyoutHeight)
             where T : Microsoft.Maui.Controls.Shell
@@ -272,6 +290,15 @@ namespace Sharp.UI
             var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Shell.FlyoutHeightProperty));
             builder.BindProperty();
             return obj;
+        }
+        
+        public static Task<bool> AnimateFlyoutHeightTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.Shell
+        {
+            double fromValue = self.FlyoutHeight;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.FlyoutHeight = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateFlyoutHeightTo", transform, callback, length, easing);
         }
         
         public static T FlyoutBehavior<T>(this T obj,

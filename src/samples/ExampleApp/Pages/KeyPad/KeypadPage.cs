@@ -37,10 +37,21 @@ public class KeypadPage : ContentPage
 
 			// using LINQ inside
 
-			labels.Select((label, i) =>
-				new Button(label)
-                    .Row(i/3+1).Column(i%3)
-                    .Command(vm.AddCharCommand).CommandParameter(label))
+			grid =>
+			{
+				for(int i = 0; i < labels.Length; i++)
+				{
+					var label = labels[i];
+					grid.Add(new Button(label)
+						.Row(i/3+1).Column(i%3)
+						.Command(vm.AddCharCommand).CommandParameter(label));
+				}
+			}
+
+			//labels.Select((label, i) =>
+			//	new Button(label)
+   //                 .Row(i/3+1).Column(i%3)
+   //                 .Command(vm.AddCharCommand).CommandParameter(label))
 		};
 	}
 }

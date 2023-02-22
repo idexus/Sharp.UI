@@ -9,7 +9,6 @@
 namespace Sharp.UI
 {
     using Sharp.UI;
-
     using Sharp.UI.Internal;
 
     public static partial class MenuBarItemExtension
@@ -18,6 +17,8 @@ namespace Sharp.UI
             int priority)
             where T : Microsoft.Maui.Controls.MenuBarItem
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property Priority");
             obj.Priority = priority;
             return obj;
         }
@@ -26,6 +27,8 @@ namespace Sharp.UI
             System.Func<ValueBuilder<int>, ValueBuilder<int>> buidValue)
             where T : Microsoft.Maui.Controls.MenuBarItem
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property Priority");
             var builder = buidValue(new ValueBuilder<int>());
             if (builder.ValueIsSet()) obj.Priority = builder.GetValue();
             return obj;

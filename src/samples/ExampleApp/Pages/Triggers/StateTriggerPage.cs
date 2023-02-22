@@ -19,17 +19,27 @@ public partial class StateTriggerPage : ContentPage
         .Style(
             new Style<Grid>
             {
-                new VisualState<Grid>(e => e.Background(Colors.Black))
+                e => e.BackgroundColor(Colors.Red),
+
+                new VisualState<Grid>
                 {
+                    async e => {
+                        await e.AnimateBackgroundColorTo(Colors.Blue, 1000);
+                    },
+
                     new StateTrigger()
                         .IsActive(e => e.Path("IsToggled").Source(testSwitch))
                         .OnIsActiveChanged(OnCheckedStateIsActiveChanged)
                 },
 
-                new VisualState<Grid>(e => e.BackgroundColor(Colors.White))
+                new VisualState<Grid>
                 {
+                    async e => {
+                        await e.AnimateBackgroundColorTo(Colors.Yellow, 300);
+                    },
+
                     new StateTrigger()
-                        .IsActive(e => e.Path("IsToggled").Source(testSwitch).Convert<bool>(e => !e).ConvertBack<bool>(e => !e))
+                        .IsActive(e => e.Path("IsToggled").Source(testSwitch).Negate())
                         .OnIsActiveChanged(OnUncheckedStateIsActiveChanged)
                 },
             });

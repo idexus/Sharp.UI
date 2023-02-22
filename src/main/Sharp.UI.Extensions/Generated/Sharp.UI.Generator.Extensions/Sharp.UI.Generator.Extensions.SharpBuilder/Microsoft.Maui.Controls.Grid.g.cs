@@ -9,7 +9,6 @@
 namespace Sharp.UI
 {
     using Sharp.UI;
-
     using Sharp.UI.Internal;
 
     public static partial class GridExtension
@@ -94,6 +93,15 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static Task<bool> AnimateRowSpacingTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.Grid
+        {
+            double fromValue = self.RowSpacing;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.RowSpacing = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateRowSpacingTo", transform, callback, length, easing);
+        }
+        
         public static T ColumnSpacing<T>(this T obj,
             double columnSpacing)
             where T : Microsoft.Maui.Controls.Grid
@@ -118,6 +126,15 @@ namespace Sharp.UI
             var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Grid.ColumnSpacingProperty));
             builder.BindProperty();
             return obj;
+        }
+        
+        public static Task<bool> AnimateColumnSpacingTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.Grid
+        {
+            double fromValue = self.ColumnSpacing;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.ColumnSpacing = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateColumnSpacingTo", transform, callback, length, easing);
         }
         
     }

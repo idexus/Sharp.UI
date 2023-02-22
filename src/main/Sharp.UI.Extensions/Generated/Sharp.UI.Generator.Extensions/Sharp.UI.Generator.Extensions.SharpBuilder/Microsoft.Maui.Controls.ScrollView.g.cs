@@ -9,7 +9,6 @@
 namespace Sharp.UI
 {
     using Sharp.UI;
-
     using Sharp.UI.Internal;
 
     public static partial class ScrollViewExtension
@@ -18,6 +17,8 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Rect layoutAreaOverride)
             where T : Microsoft.Maui.Controls.ScrollView
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property LayoutAreaOverride");
             obj.LayoutAreaOverride = layoutAreaOverride;
             return obj;
         }
@@ -26,6 +27,8 @@ namespace Sharp.UI
             System.Func<ValueBuilder<Microsoft.Maui.Graphics.Rect>, ValueBuilder<Microsoft.Maui.Graphics.Rect>> buidValue)
             where T : Microsoft.Maui.Controls.ScrollView
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property LayoutAreaOverride");
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Rect>());
             if (builder.ValueIsSet()) obj.LayoutAreaOverride = builder.GetValue();
             return obj;
@@ -35,6 +38,8 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.View content)
             where T : Microsoft.Maui.Controls.ScrollView
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property Content");
             obj.Content = content;
             return obj;
         }
@@ -43,6 +48,8 @@ namespace Sharp.UI
             System.Func<ValueBuilder<Microsoft.Maui.Controls.View>, ValueBuilder<Microsoft.Maui.Controls.View>> buidValue)
             where T : Microsoft.Maui.Controls.ScrollView
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property Content");
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.View>());
             if (builder.ValueIsSet()) obj.Content = builder.GetValue();
             return obj;

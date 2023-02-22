@@ -9,7 +9,6 @@
 namespace Sharp.UI
 {
     using Sharp.UI;
-
     using Sharp.UI.Internal;
 
     public static partial class StepperExtension
@@ -40,6 +39,15 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static Task<bool> AnimateIncrementTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.Stepper
+        {
+            double fromValue = self.Increment;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.Increment = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateIncrementTo", transform, callback, length, easing);
+        }
+        
         public static T Maximum<T>(this T obj,
             double maximum)
             where T : Microsoft.Maui.Controls.Stepper
@@ -64,6 +72,15 @@ namespace Sharp.UI
             var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Stepper.MaximumProperty));
             builder.BindProperty();
             return obj;
+        }
+        
+        public static Task<bool> AnimateMaximumTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.Stepper
+        {
+            double fromValue = self.Maximum;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.Maximum = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateMaximumTo", transform, callback, length, easing);
         }
         
         public static T Minimum<T>(this T obj,
@@ -92,6 +109,15 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static Task<bool> AnimateMinimumTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.Stepper
+        {
+            double fromValue = self.Minimum;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.Minimum = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateMinimumTo", transform, callback, length, easing);
+        }
+        
         public static T Value<T>(this T obj,
             double value)
             where T : Microsoft.Maui.Controls.Stepper
@@ -116,6 +142,15 @@ namespace Sharp.UI
             var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Stepper.ValueProperty));
             builder.BindProperty();
             return obj;
+        }
+        
+        public static Task<bool> AnimateValueTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.Stepper
+        {
+            double fromValue = self.Value;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.Value = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateValueTo", transform, callback, length, easing);
         }
         
         public static T OnValueChanged<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.ValueChangedEventArgs> handler)

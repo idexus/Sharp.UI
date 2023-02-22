@@ -9,7 +9,6 @@
 namespace Sharp.UI
 {
     using Sharp.UI;
-
     using Sharp.UI.Internal;
 
     public static partial class SliderExtension
@@ -40,6 +39,16 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static Task<bool> AnimateMinimumTrackColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            Microsoft.Maui.Graphics.Color fromValue = self.MinimumTrackColor;
+            if (fromValue == null) throw new NullReferenceException($"{nameof(self.MinimumTrackColor)} is null, can not animate from null value");
+            var transform = (double t) => Transformations.ColorTransform(fromValue, value, t);
+            var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.MinimumTrackColor = actValue; };
+            return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateMinimumTrackColorTo", transform, callback, length, easing);
+        }
+        
         public static T MaximumTrackColor<T>(this T obj,
             Microsoft.Maui.Graphics.Color maximumTrackColor)
             where T : Microsoft.Maui.Controls.Slider
@@ -66,6 +75,16 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static Task<bool> AnimateMaximumTrackColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            Microsoft.Maui.Graphics.Color fromValue = self.MaximumTrackColor;
+            if (fromValue == null) throw new NullReferenceException($"{nameof(self.MaximumTrackColor)} is null, can not animate from null value");
+            var transform = (double t) => Transformations.ColorTransform(fromValue, value, t);
+            var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.MaximumTrackColor = actValue; };
+            return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateMaximumTrackColorTo", transform, callback, length, easing);
+        }
+        
         public static T ThumbColor<T>(this T obj,
             Microsoft.Maui.Graphics.Color thumbColor)
             where T : Microsoft.Maui.Controls.Slider
@@ -90,6 +109,16 @@ namespace Sharp.UI
             var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(obj, Microsoft.Maui.Controls.Slider.ThumbColorProperty));
             builder.BindProperty();
             return obj;
+        }
+        
+        public static Task<bool> AnimateThumbColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            Microsoft.Maui.Graphics.Color fromValue = self.ThumbColor;
+            if (fromValue == null) throw new NullReferenceException($"{nameof(self.ThumbColor)} is null, can not animate from null value");
+            var transform = (double t) => Transformations.ColorTransform(fromValue, value, t);
+            var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.ThumbColor = actValue; };
+            return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateThumbColorTo", transform, callback, length, easing);
         }
         
         public static T ThumbImageSource<T>(this T obj,
@@ -196,6 +225,15 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static Task<bool> AnimateMaximumTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            double fromValue = self.Maximum;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.Maximum = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateMaximumTo", transform, callback, length, easing);
+        }
+        
         public static T Minimum<T>(this T obj,
             double minimum)
             where T : Microsoft.Maui.Controls.Slider
@@ -222,6 +260,15 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static Task<bool> AnimateMinimumTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            double fromValue = self.Minimum;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.Minimum = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateMinimumTo", transform, callback, length, easing);
+        }
+        
         public static T Value<T>(this T obj,
             double value)
             where T : Microsoft.Maui.Controls.Slider
@@ -246,6 +293,15 @@ namespace Sharp.UI
             var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Slider.ValueProperty));
             builder.BindProperty();
             return obj;
+        }
+        
+        public static Task<bool> AnimateValueTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            double fromValue = self.Value;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.Value = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateValueTo", transform, callback, length, easing);
         }
         
         public static T OnValueChanged<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.ValueChangedEventArgs> handler)

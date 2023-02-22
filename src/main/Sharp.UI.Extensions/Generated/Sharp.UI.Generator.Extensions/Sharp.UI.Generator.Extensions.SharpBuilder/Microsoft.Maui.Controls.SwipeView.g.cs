@@ -9,7 +9,6 @@
 namespace Sharp.UI
 {
     using Sharp.UI;
-
     using Sharp.UI.Internal;
 
     public static partial class SwipeViewExtension
@@ -38,6 +37,15 @@ namespace Sharp.UI
             var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.SwipeView.ThresholdProperty));
             builder.BindProperty();
             return obj;
+        }
+        
+        public static Task<bool> AnimateThresholdTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.SwipeView
+        {
+            double fromValue = self.Threshold;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.Threshold = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateThresholdTo", transform, callback, length, easing);
         }
         
         public static T LeftItems<T>(this T obj,

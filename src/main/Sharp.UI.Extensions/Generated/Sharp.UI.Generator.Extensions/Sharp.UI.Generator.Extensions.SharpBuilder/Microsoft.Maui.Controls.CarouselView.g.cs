@@ -9,7 +9,6 @@
 namespace Sharp.UI
 {
     using Sharp.UI;
-
     using Sharp.UI.Internal;
 
     public static partial class CarouselViewExtension
@@ -357,6 +356,8 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.IndicatorView indicatorView)
             where T : Microsoft.Maui.Controls.CarouselView
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property IndicatorView");
             obj.IndicatorView = indicatorView;
             return obj;
         }
@@ -365,6 +366,8 @@ namespace Sharp.UI
             System.Func<ValueBuilder<Microsoft.Maui.Controls.IndicatorView>, ValueBuilder<Microsoft.Maui.Controls.IndicatorView>> buidValue)
             where T : Microsoft.Maui.Controls.CarouselView
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property IndicatorView");
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.IndicatorView>());
             if (builder.ValueIsSet()) obj.IndicatorView = builder.GetValue();
             return obj;
@@ -374,6 +377,8 @@ namespace Sharp.UI
             bool isScrolling)
             where T : Microsoft.Maui.Controls.CarouselView
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property IsScrolling");
             obj.IsScrolling = isScrolling;
             return obj;
         }
@@ -382,6 +387,8 @@ namespace Sharp.UI
             System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
             where T : Microsoft.Maui.Controls.CarouselView
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property IsScrolling");
             var builder = buidValue(new ValueBuilder<bool>());
             if (builder.ValueIsSet()) obj.IsScrolling = builder.GetValue();
             return obj;

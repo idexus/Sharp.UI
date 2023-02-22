@@ -9,7 +9,6 @@
 namespace Sharp.UI
 {
     using Sharp.UI;
-
     using Sharp.UI.Internal;
 
     public static partial class RefreshViewExtension
@@ -116,6 +115,16 @@ namespace Sharp.UI
             var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(obj, Microsoft.Maui.Controls.RefreshView.RefreshColorProperty));
             builder.BindProperty();
             return obj;
+        }
+        
+        public static Task<bool> AnimateRefreshColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.RefreshView
+        {
+            Microsoft.Maui.Graphics.Color fromValue = self.RefreshColor;
+            if (fromValue == null) throw new NullReferenceException($"{nameof(self.RefreshColor)} is null, can not animate from null value");
+            var transform = (double t) => Transformations.ColorTransform(fromValue, value, t);
+            var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.RefreshColor = actValue; };
+            return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateRefreshColorTo", transform, callback, length, easing);
         }
         
         public static T OnRefreshing<T>(this T obj, System.EventHandler handler)

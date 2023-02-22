@@ -9,7 +9,6 @@
 namespace Sharp.UI
 {
     using Sharp.UI;
-
     using Sharp.UI.Internal;
 
     public static partial class PickerExtension
@@ -90,6 +89,15 @@ namespace Sharp.UI
             var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Picker.FontSizeProperty));
             builder.BindProperty();
             return obj;
+        }
+        
+        public static Task<bool> AnimateFontSizeTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            double fromValue = self.FontSize;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.FontSize = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateFontSizeTo", transform, callback, length, easing);
         }
         
         public static T FontAutoScalingEnabled<T>(this T obj,
@@ -240,6 +248,16 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static Task<bool> AnimateTextColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            Microsoft.Maui.Graphics.Color fromValue = self.TextColor;
+            if (fromValue == null) throw new NullReferenceException($"{nameof(self.TextColor)} is null, can not animate from null value");
+            var transform = (double t) => Transformations.ColorTransform(fromValue, value, t);
+            var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.TextColor = actValue; };
+            return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateTextColorTo", transform, callback, length, easing);
+        }
+        
         public static T CharacterSpacing<T>(this T obj,
             double characterSpacing)
             where T : Microsoft.Maui.Controls.Picker
@@ -264,6 +282,15 @@ namespace Sharp.UI
             var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Picker.CharacterSpacingProperty));
             builder.BindProperty();
             return obj;
+        }
+        
+        public static Task<bool> AnimateCharacterSpacingTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            double fromValue = self.CharacterSpacing;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.CharacterSpacing = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateCharacterSpacingTo", transform, callback, length, easing);
         }
         
         public static T Title<T>(this T obj,
@@ -316,6 +343,16 @@ namespace Sharp.UI
             var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(obj, Microsoft.Maui.Controls.Picker.TitleColorProperty));
             builder.BindProperty();
             return obj;
+        }
+        
+        public static Task<bool> AnimateTitleColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            Microsoft.Maui.Graphics.Color fromValue = self.TitleColor;
+            if (fromValue == null) throw new NullReferenceException($"{nameof(self.TitleColor)} is null, can not animate from null value");
+            var transform = (double t) => Transformations.ColorTransform(fromValue, value, t);
+            var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.TitleColor = actValue; };
+            return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateTitleColorTo", transform, callback, length, easing);
         }
         
         public static T HorizontalTextAlignment<T>(this T obj,
@@ -374,6 +411,8 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.BindingBase itemDisplayBinding)
             where T : Microsoft.Maui.Controls.Picker
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property ItemDisplayBinding");
             obj.ItemDisplayBinding = itemDisplayBinding;
             return obj;
         }
@@ -382,6 +421,8 @@ namespace Sharp.UI
             System.Func<ValueBuilder<Microsoft.Maui.Controls.BindingBase>, ValueBuilder<Microsoft.Maui.Controls.BindingBase>> buidValue)
             where T : Microsoft.Maui.Controls.Picker
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property ItemDisplayBinding");
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.BindingBase>());
             if (builder.ValueIsSet()) obj.ItemDisplayBinding = builder.GetValue();
             return obj;

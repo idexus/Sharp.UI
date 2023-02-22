@@ -9,7 +9,6 @@
 namespace Sharp.UI
 {
     using Sharp.UI;
-
     using Sharp.UI.Internal;
 
     public static partial class SearchBarExtension
@@ -38,6 +37,16 @@ namespace Sharp.UI
             var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(obj, Microsoft.Maui.Controls.SearchBar.CancelButtonColorProperty));
             builder.BindProperty();
             return obj;
+        }
+        
+        public static Task<bool> AnimateCancelButtonColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.SearchBar
+        {
+            Microsoft.Maui.Graphics.Color fromValue = self.CancelButtonColor;
+            if (fromValue == null) throw new NullReferenceException($"{nameof(self.CancelButtonColor)} is null, can not animate from null value");
+            var transform = (double t) => Transformations.ColorTransform(fromValue, value, t);
+            var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.CancelButtonColor = actValue; };
+            return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateCancelButtonColorTo", transform, callback, length, easing);
         }
         
         public static T HorizontalTextAlignment<T>(this T obj,
@@ -298,6 +307,15 @@ namespace Sharp.UI
             var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.SearchBar.FontSizeProperty));
             builder.BindProperty();
             return obj;
+        }
+        
+        public static Task<bool> AnimateFontSizeTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.SearchBar
+        {
+            double fromValue = self.FontSize;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.FontSize = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateFontSizeTo", transform, callback, length, easing);
         }
         
         public static T FontAutoScalingEnabled<T>(this T obj,

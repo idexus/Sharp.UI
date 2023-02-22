@@ -9,7 +9,6 @@
 namespace Sharp.UI
 {
     using Sharp.UI;
-
     using Sharp.UI.Internal;
 
     public static partial class ApplicationExtension
@@ -18,6 +17,8 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.Page? mainPage)
             where T : Microsoft.Maui.Controls.Application
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property MainPage");
             obj.MainPage = mainPage;
             return obj;
         }
@@ -26,6 +27,8 @@ namespace Sharp.UI
             System.Func<ValueBuilder<Microsoft.Maui.Controls.Page?>, ValueBuilder<Microsoft.Maui.Controls.Page?>> buidValue)
             where T : Microsoft.Maui.Controls.Application
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property MainPage");
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.Page?>());
             if (builder.ValueIsSet()) obj.MainPage = builder.GetValue();
             return obj;
@@ -35,6 +38,8 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.ResourceDictionary resources)
             where T : Microsoft.Maui.Controls.Application
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property Resources");
             obj.Resources = resources;
             return obj;
         }
@@ -43,6 +48,8 @@ namespace Sharp.UI
             System.Func<ValueBuilder<Microsoft.Maui.Controls.ResourceDictionary>, ValueBuilder<Microsoft.Maui.Controls.ResourceDictionary>> buidValue)
             where T : Microsoft.Maui.Controls.Application
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property Resources");
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.ResourceDictionary>());
             if (builder.ValueIsSet()) obj.Resources = builder.GetValue();
             return obj;
@@ -52,6 +59,8 @@ namespace Sharp.UI
             Microsoft.Maui.ApplicationModel.AppTheme userAppTheme)
             where T : Microsoft.Maui.Controls.Application
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property UserAppTheme");
             obj.UserAppTheme = userAppTheme;
             return obj;
         }
@@ -60,6 +69,8 @@ namespace Sharp.UI
             System.Func<ValueBuilder<Microsoft.Maui.ApplicationModel.AppTheme>, ValueBuilder<Microsoft.Maui.ApplicationModel.AppTheme>> buidValue)
             where T : Microsoft.Maui.Controls.Application
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property UserAppTheme");
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.ApplicationModel.AppTheme>());
             if (builder.ValueIsSet()) obj.UserAppTheme = builder.GetValue();
             return obj;

@@ -9,7 +9,6 @@
 namespace Sharp.UI
 {
     using Sharp.UI;
-
     using Sharp.UI.Internal;
 
     public static partial class CellExtension
@@ -36,6 +35,8 @@ namespace Sharp.UI
             bool isContextActionsLegacyModeEnabled)
             where T : Microsoft.Maui.Controls.Cell
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property IsContextActionsLegacyModeEnabled");
             obj.IsContextActionsLegacyModeEnabled = isContextActionsLegacyModeEnabled;
             return obj;
         }
@@ -44,6 +45,8 @@ namespace Sharp.UI
             System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
             where T : Microsoft.Maui.Controls.Cell
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property IsContextActionsLegacyModeEnabled");
             var builder = buidValue(new ValueBuilder<bool>());
             if (builder.ValueIsSet()) obj.IsContextActionsLegacyModeEnabled = builder.GetValue();
             return obj;
@@ -53,6 +56,8 @@ namespace Sharp.UI
             double height)
             where T : Microsoft.Maui.Controls.Cell
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property Height");
             obj.Height = height;
             return obj;
         }
@@ -61,6 +66,8 @@ namespace Sharp.UI
             System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
             where T : Microsoft.Maui.Controls.Cell
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property Height");
             var builder = buidValue(new ValueBuilder<double>());
             if (builder.ValueIsSet()) obj.Height = builder.GetValue();
             return obj;

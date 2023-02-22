@@ -9,7 +9,6 @@
 namespace Sharp.UI
 {
     using Sharp.UI;
-
     using Sharp.UI.Internal;
 
     public static partial class ListViewExtension
@@ -77,6 +76,8 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.BindingBase groupDisplayBinding)
             where T : Microsoft.Maui.Controls.ListView
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property GroupDisplayBinding");
             obj.GroupDisplayBinding = groupDisplayBinding;
             return obj;
         }
@@ -85,6 +86,8 @@ namespace Sharp.UI
             System.Func<ValueBuilder<Microsoft.Maui.Controls.BindingBase>, ValueBuilder<Microsoft.Maui.Controls.BindingBase>> buidValue)
             where T : Microsoft.Maui.Controls.ListView
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property GroupDisplayBinding");
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.BindingBase>());
             if (builder.ValueIsSet()) obj.GroupDisplayBinding = builder.GetValue();
             return obj;
@@ -127,6 +130,8 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.BindingBase groupShortNameBinding)
             where T : Microsoft.Maui.Controls.ListView
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property GroupShortNameBinding");
             obj.GroupShortNameBinding = groupShortNameBinding;
             return obj;
         }
@@ -135,6 +140,8 @@ namespace Sharp.UI
             System.Func<ValueBuilder<Microsoft.Maui.Controls.BindingBase>, ValueBuilder<Microsoft.Maui.Controls.BindingBase>> buidValue)
             where T : Microsoft.Maui.Controls.ListView
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property GroupShortNameBinding");
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.BindingBase>());
             if (builder.ValueIsSet()) obj.GroupShortNameBinding = builder.GetValue();
             return obj;
@@ -433,6 +440,16 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static Task<bool> AnimateSeparatorColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.ListView
+        {
+            Microsoft.Maui.Graphics.Color fromValue = self.SeparatorColor;
+            if (fromValue == null) throw new NullReferenceException($"{nameof(self.SeparatorColor)} is null, can not animate from null value");
+            var transform = (double t) => Transformations.ColorTransform(fromValue, value, t);
+            var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.SeparatorColor = actValue; };
+            return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateSeparatorColorTo", transform, callback, length, easing);
+        }
+        
         public static T RefreshControlColor<T>(this T obj,
             Microsoft.Maui.Graphics.Color refreshControlColor)
             where T : Microsoft.Maui.Controls.ListView
@@ -457,6 +474,16 @@ namespace Sharp.UI
             var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(obj, Microsoft.Maui.Controls.ListView.RefreshControlColorProperty));
             builder.BindProperty();
             return obj;
+        }
+        
+        public static Task<bool> AnimateRefreshControlColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.ListView
+        {
+            Microsoft.Maui.Graphics.Color fromValue = self.RefreshControlColor;
+            if (fromValue == null) throw new NullReferenceException($"{nameof(self.RefreshControlColor)} is null, can not animate from null value");
+            var transform = (double t) => Transformations.ColorTransform(fromValue, value, t);
+            var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.RefreshControlColor = actValue; };
+            return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateRefreshControlColorTo", transform, callback, length, easing);
         }
         
         public static T SeparatorVisibility<T>(this T obj,
@@ -541,6 +568,8 @@ namespace Sharp.UI
             bool refreshAllowed)
             where T : Microsoft.Maui.Controls.ListView
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property RefreshAllowed");
             obj.RefreshAllowed = refreshAllowed;
             return obj;
         }
@@ -549,6 +578,8 @@ namespace Sharp.UI
             System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
             where T : Microsoft.Maui.Controls.ListView
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property RefreshAllowed");
             var builder = buidValue(new ValueBuilder<bool>());
             if (builder.ValueIsSet()) obj.RefreshAllowed = builder.GetValue();
             return obj;

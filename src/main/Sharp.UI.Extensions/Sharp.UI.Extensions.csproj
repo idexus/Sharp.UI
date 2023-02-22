@@ -47,7 +47,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="src\Extensions\Builders\" />
+	  <None Remove="src\Animation\" />
+	</ItemGroup>
+	<ItemGroup>
 	  <None Include="README.md" Pack="true" PackagePath="\" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="src\Extensions\Builders\" />
+	  <Folder Include="src\Animation\" />
+	</ItemGroup>
 </Project>

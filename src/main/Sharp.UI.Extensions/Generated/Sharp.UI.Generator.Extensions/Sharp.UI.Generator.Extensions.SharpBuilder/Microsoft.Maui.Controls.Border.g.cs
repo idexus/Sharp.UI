@@ -9,7 +9,6 @@
 namespace Sharp.UI
 {
     using Sharp.UI;
-
     using Sharp.UI.Internal;
 
     public static partial class BorderExtension
@@ -144,6 +143,15 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static Task<bool> AnimateStrokeThicknessTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.Border
+        {
+            double fromValue = self.StrokeThickness;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.StrokeThickness = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateStrokeThicknessTo", transform, callback, length, easing);
+        }
+        
         public static T StrokeDashArray<T>(this T obj,
             IList<double> strokeDashArray)
             where T : Microsoft.Maui.Controls.Border
@@ -195,6 +203,15 @@ namespace Sharp.UI
             var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Border.StrokeDashOffsetProperty));
             builder.BindProperty();
             return obj;
+        }
+        
+        public static Task<bool> AnimateStrokeDashOffsetTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.Border
+        {
+            double fromValue = self.StrokeDashOffset;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.StrokeDashOffset = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateStrokeDashOffsetTo", transform, callback, length, easing);
         }
         
         public static T StrokeLineCap<T>(this T obj,
@@ -273,6 +290,15 @@ namespace Sharp.UI
             var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Border.StrokeMiterLimitProperty));
             builder.BindProperty();
             return obj;
+        }
+        
+        public static Task<bool> AnimateStrokeMiterLimitTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.Border
+        {
+            double fromValue = self.StrokeMiterLimit;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.StrokeMiterLimit = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateStrokeMiterLimitTo", transform, callback, length, easing);
         }
         
     }

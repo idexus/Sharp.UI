@@ -88,13 +88,13 @@ namespace Sharp.UI.Generator
             return isIEnumerable;
         }
 
-        public static bool IsNavigableElement(INamedTypeSymbol symbol)
+        public static bool IsVisualElement(INamedTypeSymbol symbol)
         {
             var isNavigableElement = false;
 
             LoopDownToObject(symbol, type =>
             {
-                if (type.ToDisplayString().Equals("Microsoft.Maui.Controls.NavigableElement", StringComparison.Ordinal)) isNavigableElement = true;
+                if (type.ToDisplayString().Equals("Microsoft.Maui.Controls.VisualElement", StringComparison.Ordinal)) isNavigableElement = true;
                 return isNavigableElement;
             });
 
@@ -115,7 +115,7 @@ namespace Sharp.UI.Generator
             return $"{prefix}{type.Name}{tail}";
         }
 
-        public static bool IsBindable(INamedTypeSymbol symbol)
+        public static bool IsBindableObject(INamedTypeSymbol symbol)
         {
             var isBindable = false;
 

@@ -165,13 +165,15 @@ Resources = new ResourceDictionary
         .FontSize(35)
         .TextColor(AppColors.Gray200)
         .HorizontalOptions(LayoutOptions.Center)
-        .VerticalOptions(LayoutOptions.Center)),
+        .VerticalOptions(LayoutOptions.Center)),                
 
-    new Style<Button>(e => e
-        .BackgroundColor(AppColors.Gray950)
-        .Padding(20)
-        .CornerRadius(10))
+    new Style<Button>
     {
+        e => e
+            .BackgroundColor(AppColors.Gray950)
+            .Padding(20)
+            .CornerRadius(10),
+
         new VisualState<Button>(VisualStates.Button.Normal, e => e
             .FontSize(33)
             .TextColor(AppColors.Gray200)
