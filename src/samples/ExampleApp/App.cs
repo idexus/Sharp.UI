@@ -27,7 +27,7 @@ public partial class App : Application
                 {
                     e => e.Route("main"),
 
-                    new ShellContent<HotReloadTestPage>("TestPage"),
+                    new ShellContent<TestPage>("TestPage"),
                     new ShellContent<HelloWorldPage>("Hello Page"),
                     new ShellContent<GridPage>("Grid").Route("grid"),
                     new ShellContent<KeypadPage>("Keypad"),
@@ -82,7 +82,7 @@ public partial class App : Application
                     new ShellContent<StyleTestPage>("Style"),
                     new ShellContent<BehaviorTestPage>("Behaviours"),
                     new ShellContent<AttachedBehaviorPage>("Attached behaviours"),
-                    new ShellContent<TestPage>("Test Page"),
+                    new ShellContent<CustomPage>("Custom Page"),
                     new ShellContent<PathPage>("Path"),
                     new ShellContent<ExamplePage>("Scroll View"),
                     new ShellContent<SwipeViewPage>("Swipe"),

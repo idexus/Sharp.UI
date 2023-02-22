@@ -20,7 +20,6 @@ namespace ExampleApp
 
             builder.Services.AddSingleton<ListViewPageViewModel>();
             builder.Services.AddSingleton<SecondPageViewModel>();
-            builder.Services.AddSingleton<MyViewModel>();
             builder.Services.AddSingleton<KeypadViewModel>();
 
             builder.Services.AddSingleton<ListViewPage>(); 

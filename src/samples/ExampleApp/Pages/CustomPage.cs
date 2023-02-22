@@ -6,7 +6,7 @@ namespace ExampleApp
 {
     using Sharp.UI;
 
-    public class TestPage : ContentPage
+    public class CustomPage : ContentPage
     {
         public class GraphicsDrawable : IDrawable
         {
@@ -27,7 +27,7 @@ namespace ExampleApp
         private readonly Label label2;
         private readonly Label label3;
 
-        public TestPage()
+        public CustomPage()
         {
             Title = "Test Page";
 
