@@ -1,8 +1,8 @@
 # Overview
 
-Sharp.UI is a .NET Multi-platform App User Interface (MAUI) library that allows you to build user interfaces declaratively in C# code using fluent methods. You do not need to use XAML to create your interfaces. The library comes with Hot Reload Support, which means you can make changes to your UI in real-time and see the results without having to rebuild the entire application. The hot reload feature is supported in Visual Studio 2022 for both Windows and Mac using the [HotReloadKit library](https://github.com/idexus/HotReloadKit.git).
+__Sharp.UI__ is a .NET Multi-platform App User Interface (MAUI) library that allows you to build user interfaces declaratively in C# code using fluent methods. You do not need to use XAML to create your interfaces. The library comes with a hot reload support. The hot reload feature is supported in Visual Studio 2022 for both Windows and Mac using the [HotReloadKit library](https://github.com/idexus/HotReloadKit.git).
 
-Sharp.UI is mostly an auto-generated library that replaces the default implementation of some .Net MAUI classes. You can also add only the generated fluent methods for .NET MAUI classes to your project without using the __Sharp.UI__ classes.
+__Sharp.UI__ is mostly an auto-generated library that replaces the default implementation of some .Net MAUI classes. You can also add only the generated fluent methods for .NET MAUI classes to your project without using the __Sharp.UI__ classes.
 
 <a href="https://youtu.be/w5863t1E5tg" target="_blank">
  <img src="https://github.com/idexus/Sharp.UI/raw/main/doc/assets/ytscreen.jpg" alt="Hot Reload Support" width="640" border="0" />
@@ -53,12 +53,20 @@ public class HelloWorldPage : ContentPage
 ```
 # Using Sharp.UI
 
-## Using this repository
+## Repository
 
-This project uses submodules. You have to init them.
+This project uses submodules, which means that it depends on other external projects to function properly. To ensure that these dependencies are properly included, you'll need to initialize the submodules when you first clone the repository.
+
+To do this, use the following command:
 
 ```
 git submodule update --init --recursive
+```
+
+If you ever update your clone of the repository, you may need to update the submodules as well to ensure that you have the latest version of all dependencies. To do this, you can use the following command:
+
+```
+git submodule update --recursive
 ```
 
 ## Nuget Package
@@ -99,7 +107,7 @@ namespace ExampleApp
 
 # Hot Reload
 
-The hot reload feature allows you to see changes to your UI in real-time without having to rebuild the entire application. To use hot reload in Sharp.UI, you will need to use the [HotReloadKit](https://github.com/idexus/HotReloadKit.git) library and add `SharpUIApplication<App>(HotReloadSupport.IdeIPs)` extension method in your `MauiApp` builder.
+The hot reload feature allows you to see changes to your UI in real-time without having to rebuild the entire application. To use hot reload in __Sharp.UI__, you will need to use the [HotReloadKit](https://github.com/idexus/HotReloadKit.git) library and add `SharpUIApplication<App>(HotReloadSupport.IdeIPs)` extension method in your `MauiApp` builder.
 
 ```cs
 public static MauiApp CreateMauiApp()
@@ -118,20 +126,65 @@ Visual Studio 2022 extensions for both Windows and Mac are available for downloa
 
 # Examples
 
-## Using fluent methods for styling
+Here are some examples showing how to use the __Sharp.UI__ library
 
-__Sharp.UI__ provides a way to define the styles of elements using the `Style<T>` class and extension methods. Here's an example of how to define the style of a button:
+## Property Bindings
+
+__Sharp.UI__ provides a simple way to bind properties of an element to a source, so that when the source changes, the property changes as well. You can bind a property by using the fluent method e.g. `Text()`, `TextColor()` etc. and then using lambda call the method `Path()` to specify the property you want to bind to.
+
 
 ```cs
-new Style<Button>(e => e
-    .TextColor(e => e.OnLight(Colors.White).OnDark(AppColors.Primary))
-    .BackgroundColor(e => e.OnLight(AppColors.Primary).OnDark(Colors.White))
-    .FontFamily("OpenSansRegular")
-    .FontSize(14)
-    .CornerRadius(8)
-    .Padding(new Thickness(14,10))
-    .MinimumHeightRequest(44)
-    .MinimumWidthRequest(44))
+public class SimpleBindings : ContentPage
+{
+    public SimpleBindings()
+    {
+        this.Content = new VStack
+        {
+            new Slider(out var slider)
+                .Minimum(1)
+                .Maximum(20),
+
+            new Label()
+                .Text(e => e.Path("Value").Source(slider).StringFormat("Slider value: {0}"))
+                .FontSize(28)
+        };
+    }
+}
+``` 
+
+In this example, the text property of the label is bound to the `Value` property of a `Slider` element named `slider`. When the value of the slider changes, the text of the label will automatically update to reflect the new value.
+
+You can also bind a property to an object that is not part of the visual tree. This is useful when you have a separate data source, such as a model or a view model, that you want to bind to a visual element.
+
+## Using fluent methods for styling
+
+__Sharp.UI__ provides a way to define the styles of elements using the `Style<T>` class and extension methods. Here's an example of how you can define the styles for a `Label` and a `Button`:
+
+```cs
+Resources = new ResourceDictionary
+{
+    new Style<Label>(e => e
+        .FontSize(35)
+        .TextColor(AppColors.Gray200)
+        .HorizontalOptions(LayoutOptions.Center)
+        .VerticalOptions(LayoutOptions.Center)),
+
+    new Style<Button>(e => e
+        .BackgroundColor(AppColors.Gray950)
+        .Padding(20)
+        .CornerRadius(10))
+    {
+        new VisualState<Button>(VisualStates.Button.Normal, e => e
+            .FontSize(33)
+            .TextColor(AppColors.Gray200)
+            .SizeRequest(270,110)),
+
+        new VisualState<Button>(VisualStates.Button.Disabled, e => e
+            .FontSize(20)
+            .TextColor(AppColors.Gray600)
+            .SizeRequest(180,80))
+    }
+};
 ```
 
 ## Auto-generated code
@@ -191,12 +244,9 @@ public class ViewPage : ContentPage
 
 ## Other Examples
 
-Here are some examples showing how to use the __Sharp.UI__ library
-
 - [Properties and fluent methods](./doc/properties.md)
 - [Object references assignment](./doc/assign.md)
 - [Object containers](./doc/containers.md)
-- [Property bindings](./doc/propertybindings.md)
 - [Binding converters](./doc/bindingconverters.md)
 - [Attached properties](./doc/attachedproperties.md)
 - [Event handlers](./doc/eventhandlers.md)
