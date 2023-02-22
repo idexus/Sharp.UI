@@ -43,7 +43,6 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Switch
         {
             Microsoft.Maui.Graphics.Color fromValue = self.OnColor;
-            if (fromValue == null) throw new NullReferenceException($"{nameof(self.OnColor)} is null, can not animate from null value");
             var transform = (double t) => Transformations.ColorTransform(fromValue, value, t);
             var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.OnColor = actValue; };
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateOnColorTo", transform, callback, length, easing);
@@ -79,7 +78,6 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Switch
         {
             Microsoft.Maui.Graphics.Color fromValue = self.ThumbColor;
-            if (fromValue == null) throw new NullReferenceException($"{nameof(self.ThumbColor)} is null, can not animate from null value");
             var transform = (double t) => Transformations.ColorTransform(fromValue, value, t);
             var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.ThumbColor = actValue; };
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateThumbColorTo", transform, callback, length, easing);

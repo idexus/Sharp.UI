@@ -43,7 +43,6 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ProgressBar
         {
             Microsoft.Maui.Graphics.Color fromValue = self.ProgressColor;
-            if (fromValue == null) throw new NullReferenceException($"{nameof(self.ProgressColor)} is null, can not animate from null value");
             var transform = (double t) => Transformations.ColorTransform(fromValue, value, t);
             var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.ProgressColor = actValue; };
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateProgressColorTo", transform, callback, length, easing);

@@ -83,15 +83,15 @@ namespace ExampleApp
 
                     new VisualState<Border> {
                         async border => {
-                            await border.AnimateBackgroundColorTo(Colors.Red, 700);
+                            await border.AnimateBackgroundColorTo(Colors.Red, 500);
                             await label.RotateXTo(360, 400);
                         },
                         new StateTrigger().IsActive(e => e.Path("IsToggled").Source(testSwitch))
                     },
-
+                     
                     new VisualState<Border> {
                         async border => {
-                            await border.AnimateBackgroundColorTo(AppColors.Gray950, 700);
+                            await border.AnimateBackgroundColorTo(AppColors.Gray950, 500);
                             await label.RotateXTo(0, 400);
                         },
                         new StateTrigger().IsActive(e => e.Path("IsToggled").Source(testSwitch).Negate())

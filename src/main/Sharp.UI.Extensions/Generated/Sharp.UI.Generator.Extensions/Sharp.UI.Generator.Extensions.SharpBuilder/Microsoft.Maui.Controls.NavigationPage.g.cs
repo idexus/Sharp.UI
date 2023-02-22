@@ -43,7 +43,6 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.NavigationPage
         {
             Microsoft.Maui.Graphics.Color fromValue = self.BarBackgroundColor;
-            if (fromValue == null) throw new NullReferenceException($"{nameof(self.BarBackgroundColor)} is null, can not animate from null value");
             var transform = (double t) => Transformations.ColorTransform(fromValue, value, t);
             var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.BarBackgroundColor = actValue; };
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateBarBackgroundColorTo", transform, callback, length, easing);
@@ -105,7 +104,6 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.NavigationPage
         {
             Microsoft.Maui.Graphics.Color fromValue = self.BarTextColor;
-            if (fromValue == null) throw new NullReferenceException($"{nameof(self.BarTextColor)} is null, can not animate from null value");
             var transform = (double t) => Transformations.ColorTransform(fromValue, value, t);
             var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.BarTextColor = actValue; };
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateBarTextColorTo", transform, callback, length, easing);

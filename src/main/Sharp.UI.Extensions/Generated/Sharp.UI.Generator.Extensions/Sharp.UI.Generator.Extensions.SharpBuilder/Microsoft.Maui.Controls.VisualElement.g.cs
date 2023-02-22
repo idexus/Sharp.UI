@@ -238,7 +238,6 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.VisualElement
         {
             Microsoft.Maui.Graphics.Color fromValue = self.BackgroundColor;
-            if (fromValue == null) throw new NullReferenceException($"{nameof(self.BackgroundColor)} is null, can not animate from null value");
             var transform = (double t) => Transformations.ColorTransform(fromValue, value, t);
             var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.BackgroundColor = actValue; };
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateBackgroundColorTo", transform, callback, length, easing);

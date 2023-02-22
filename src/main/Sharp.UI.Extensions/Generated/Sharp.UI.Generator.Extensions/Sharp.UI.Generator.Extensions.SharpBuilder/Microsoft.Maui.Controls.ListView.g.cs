@@ -444,7 +444,6 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ListView
         {
             Microsoft.Maui.Graphics.Color fromValue = self.SeparatorColor;
-            if (fromValue == null) throw new NullReferenceException($"{nameof(self.SeparatorColor)} is null, can not animate from null value");
             var transform = (double t) => Transformations.ColorTransform(fromValue, value, t);
             var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.SeparatorColor = actValue; };
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateSeparatorColorTo", transform, callback, length, easing);
@@ -480,7 +479,6 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ListView
         {
             Microsoft.Maui.Graphics.Color fromValue = self.RefreshControlColor;
-            if (fromValue == null) throw new NullReferenceException($"{nameof(self.RefreshControlColor)} is null, can not animate from null value");
             var transform = (double t) => Transformations.ColorTransform(fromValue, value, t);
             var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.RefreshControlColor = actValue; };
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateRefreshControlColorTo", transform, callback, length, easing);

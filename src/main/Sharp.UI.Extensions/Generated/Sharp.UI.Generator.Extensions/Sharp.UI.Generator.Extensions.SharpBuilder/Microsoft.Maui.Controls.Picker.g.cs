@@ -252,7 +252,6 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Picker
         {
             Microsoft.Maui.Graphics.Color fromValue = self.TextColor;
-            if (fromValue == null) throw new NullReferenceException($"{nameof(self.TextColor)} is null, can not animate from null value");
             var transform = (double t) => Transformations.ColorTransform(fromValue, value, t);
             var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.TextColor = actValue; };
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateTextColorTo", transform, callback, length, easing);
@@ -349,7 +348,6 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Picker
         {
             Microsoft.Maui.Graphics.Color fromValue = self.TitleColor;
-            if (fromValue == null) throw new NullReferenceException($"{nameof(self.TitleColor)} is null, can not animate from null value");
             var transform = (double t) => Transformations.ColorTransform(fromValue, value, t);
             var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.TitleColor = actValue; };
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateTitleColorTo", transform, callback, length, easing);

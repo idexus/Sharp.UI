@@ -227,7 +227,6 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.IndicatorView
         {
             Microsoft.Maui.Graphics.Color fromValue = self.IndicatorColor;
-            if (fromValue == null) throw new NullReferenceException($"{nameof(self.IndicatorColor)} is null, can not animate from null value");
             var transform = (double t) => Transformations.ColorTransform(fromValue, value, t);
             var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.IndicatorColor = actValue; };
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateIndicatorColorTo", transform, callback, length, easing);
@@ -263,7 +262,6 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.IndicatorView
         {
             Microsoft.Maui.Graphics.Color fromValue = self.SelectedIndicatorColor;
-            if (fromValue == null) throw new NullReferenceException($"{nameof(self.SelectedIndicatorColor)} is null, can not animate from null value");
             var transform = (double t) => Transformations.ColorTransform(fromValue, value, t);
             var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.SelectedIndicatorColor = actValue; };
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateSelectedIndicatorColorTo", transform, callback, length, easing);

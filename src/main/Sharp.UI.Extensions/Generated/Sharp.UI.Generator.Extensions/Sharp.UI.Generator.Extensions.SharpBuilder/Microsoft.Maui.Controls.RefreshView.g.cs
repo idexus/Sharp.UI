@@ -121,7 +121,6 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.RefreshView
         {
             Microsoft.Maui.Graphics.Color fromValue = self.RefreshColor;
-            if (fromValue == null) throw new NullReferenceException($"{nameof(self.RefreshColor)} is null, can not animate from null value");
             var transform = (double t) => Transformations.ColorTransform(fromValue, value, t);
             var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.RefreshColor = actValue; };
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateRefreshColorTo", transform, callback, length, easing);

@@ -43,7 +43,6 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Slider
         {
             Microsoft.Maui.Graphics.Color fromValue = self.MinimumTrackColor;
-            if (fromValue == null) throw new NullReferenceException($"{nameof(self.MinimumTrackColor)} is null, can not animate from null value");
             var transform = (double t) => Transformations.ColorTransform(fromValue, value, t);
             var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.MinimumTrackColor = actValue; };
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateMinimumTrackColorTo", transform, callback, length, easing);
@@ -79,7 +78,6 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Slider
         {
             Microsoft.Maui.Graphics.Color fromValue = self.MaximumTrackColor;
-            if (fromValue == null) throw new NullReferenceException($"{nameof(self.MaximumTrackColor)} is null, can not animate from null value");
             var transform = (double t) => Transformations.ColorTransform(fromValue, value, t);
             var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.MaximumTrackColor = actValue; };
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateMaximumTrackColorTo", transform, callback, length, easing);
@@ -115,7 +113,6 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Slider
         {
             Microsoft.Maui.Graphics.Color fromValue = self.ThumbColor;
-            if (fromValue == null) throw new NullReferenceException($"{nameof(self.ThumbColor)} is null, can not animate from null value");
             var transform = (double t) => Transformations.ColorTransform(fromValue, value, t);
             var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.ThumbColor = actValue; };
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateThumbColorTo", transform, callback, length, easing);
