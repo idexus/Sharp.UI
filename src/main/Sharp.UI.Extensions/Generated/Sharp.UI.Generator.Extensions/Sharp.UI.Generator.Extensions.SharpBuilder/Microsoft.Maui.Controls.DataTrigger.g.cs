@@ -9,7 +9,6 @@
 namespace Sharp.UI
 {
     using Sharp.UI;
-
     using Sharp.UI.Internal;
 
     public static partial class DataTriggerExtension
@@ -17,6 +16,8 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.DataTrigger Binding(this Microsoft.Maui.Controls.DataTrigger obj,
             Microsoft.Maui.Controls.BindingBase binding)
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property Binding");
             obj.Binding = binding;
             return obj;
         }
@@ -24,6 +25,8 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.DataTrigger Binding(this Microsoft.Maui.Controls.DataTrigger obj,
             System.Func<ValueBuilder<Microsoft.Maui.Controls.BindingBase>, ValueBuilder<Microsoft.Maui.Controls.BindingBase>> buidValue)
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property Binding");
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.BindingBase>());
             if (builder.ValueIsSet()) obj.Binding = builder.GetValue();
             return obj;
@@ -48,6 +51,8 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.DataTrigger Value(this Microsoft.Maui.Controls.DataTrigger obj,
             object value)
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property Value");
             obj.Value = value;
             return obj;
         }
@@ -55,6 +60,8 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.DataTrigger Value(this Microsoft.Maui.Controls.DataTrigger obj,
             System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property Value");
             var builder = buidValue(new ValueBuilder<object>());
             if (builder.ValueIsSet()) obj.Value = builder.GetValue();
             return obj;

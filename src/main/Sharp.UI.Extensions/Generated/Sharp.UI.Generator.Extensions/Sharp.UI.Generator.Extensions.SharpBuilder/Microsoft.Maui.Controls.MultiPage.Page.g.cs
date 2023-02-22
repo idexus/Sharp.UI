@@ -9,7 +9,6 @@
 namespace Sharp.UI
 {
     using Sharp.UI;
-
     using Sharp.UI.Internal;
 
     public static partial class MultiPageOfPageExtension
@@ -103,6 +102,8 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.Page currentPage)
             where T : Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property CurrentPage");
             obj.CurrentPage = currentPage;
             return obj;
         }
@@ -111,6 +112,8 @@ namespace Sharp.UI
             System.Func<ValueBuilder<Microsoft.Maui.Controls.Page>, ValueBuilder<Microsoft.Maui.Controls.Page>> buidValue)
             where T : Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property CurrentPage");
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.Page>());
             if (builder.ValueIsSet()) obj.CurrentPage = builder.GetValue();
             return obj;

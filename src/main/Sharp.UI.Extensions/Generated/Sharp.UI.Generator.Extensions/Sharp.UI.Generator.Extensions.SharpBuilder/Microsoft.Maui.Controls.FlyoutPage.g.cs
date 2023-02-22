@@ -9,7 +9,6 @@
 namespace Sharp.UI
 {
     using Sharp.UI;
-
     using Sharp.UI.Internal;
 
     public static partial class FlyoutPageExtension
@@ -18,6 +17,8 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.Page detail)
             where T : Microsoft.Maui.Controls.FlyoutPage
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property Detail");
             obj.Detail = detail;
             return obj;
         }
@@ -26,6 +27,8 @@ namespace Sharp.UI
             System.Func<ValueBuilder<Microsoft.Maui.Controls.Page>, ValueBuilder<Microsoft.Maui.Controls.Page>> buidValue)
             where T : Microsoft.Maui.Controls.FlyoutPage
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property Detail");
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.Page>());
             if (builder.ValueIsSet()) obj.Detail = builder.GetValue();
             return obj;
@@ -87,6 +90,8 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.Page flyout)
             where T : Microsoft.Maui.Controls.FlyoutPage
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property Flyout");
             obj.Flyout = flyout;
             return obj;
         }
@@ -95,6 +100,8 @@ namespace Sharp.UI
             System.Func<ValueBuilder<Microsoft.Maui.Controls.Page>, ValueBuilder<Microsoft.Maui.Controls.Page>> buidValue)
             where T : Microsoft.Maui.Controls.FlyoutPage
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property Flyout");
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.Page>());
             if (builder.ValueIsSet()) obj.Flyout = builder.GetValue();
             return obj;

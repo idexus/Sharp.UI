@@ -9,7 +9,6 @@
 namespace Sharp.UI
 {
     using Sharp.UI;
-
     using Sharp.UI.Internal;
 
     public static partial class IndicatorViewExtension
@@ -44,6 +43,8 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.IBindableLayout indicatorLayout)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property IndicatorLayout");
             obj.IndicatorLayout = indicatorLayout;
             return obj;
         }
@@ -52,6 +53,8 @@ namespace Sharp.UI
             System.Func<ValueBuilder<Microsoft.Maui.Controls.IBindableLayout>, ValueBuilder<Microsoft.Maui.Controls.IBindableLayout>> buidValue)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property IndicatorLayout");
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.IBindableLayout>());
             if (builder.ValueIsSet()) obj.IndicatorLayout = builder.GetValue();
             return obj;
@@ -220,6 +223,15 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static Task<bool> AnimateIndicatorColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.IndicatorView
+        {
+            Microsoft.Maui.Graphics.Color fromValue = self.IndicatorColor;
+            var transform = (double t) => Transformations.ColorTransform(fromValue, value, t);
+            var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.IndicatorColor = actValue; };
+            return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateIndicatorColorTo", transform, callback, length, easing);
+        }
+        
         public static T SelectedIndicatorColor<T>(this T obj,
             Microsoft.Maui.Graphics.Color selectedIndicatorColor)
             where T : Microsoft.Maui.Controls.IndicatorView
@@ -246,6 +258,15 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static Task<bool> AnimateSelectedIndicatorColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.IndicatorView
+        {
+            Microsoft.Maui.Graphics.Color fromValue = self.SelectedIndicatorColor;
+            var transform = (double t) => Transformations.ColorTransform(fromValue, value, t);
+            var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.SelectedIndicatorColor = actValue; };
+            return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateSelectedIndicatorColorTo", transform, callback, length, easing);
+        }
+        
         public static T IndicatorSize<T>(this T obj,
             double indicatorSize)
             where T : Microsoft.Maui.Controls.IndicatorView
@@ -270,6 +291,15 @@ namespace Sharp.UI
             var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.IndicatorView.IndicatorSizeProperty));
             builder.BindProperty();
             return obj;
+        }
+        
+        public static Task<bool> AnimateIndicatorSizeTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.IndicatorView
+        {
+            double fromValue = self.IndicatorSize;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.IndicatorSize = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateIndicatorSizeTo", transform, callback, length, easing);
         }
         
         public static T ItemsSource<T>(this T obj,

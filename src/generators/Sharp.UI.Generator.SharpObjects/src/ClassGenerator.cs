@@ -381,7 +381,7 @@ using System.Collections.Generic;
 
         IPropertySymbol GetPropertyFromInterface(string name)
         {
-            if (Helpers.IsBindable(mainSymbol))
+            if (Helpers.IsBindableObject(mainSymbol))
             {
                 var bindableInterfaces = mainSymbol
                     .Interfaces
@@ -405,7 +405,7 @@ using System.Collections.Generic;
 
         void GenerateBindableProperties()
         {
-            if (Helpers.IsBindable(mainSymbol))
+            if (Helpers.IsBindableObject(mainSymbol))
             {
                 var bindableInterfaces = mainSymbol
                     .Interfaces

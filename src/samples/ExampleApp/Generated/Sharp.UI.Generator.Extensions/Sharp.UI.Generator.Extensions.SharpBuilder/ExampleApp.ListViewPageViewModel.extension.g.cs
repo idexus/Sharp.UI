@@ -9,7 +9,6 @@
 namespace ExampleApp
 {
     using Sharp.UI;
-
     using Sharp.UI.Internal;
 
     public static partial class ListViewPageViewModelExtension

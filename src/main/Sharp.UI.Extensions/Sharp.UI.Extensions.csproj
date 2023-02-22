@@ -17,7 +17,7 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 
 		<PackageId>Sharp.UI.Extensions</PackageId>
-		<Version>0.4.1-alpha</Version>
+		<Version>0.4.2-alpha</Version>
 		<Authors>Pawel Krzywdzinski</Authors>
 		<Copyright>Pawel Krzywdzinski</Copyright>
 		<PackageDescription>Library for .NET MAUI: Fluent Extension Methods</PackageDescription>
@@ -47,7 +47,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="src\Extensions\Builders\" />
+	  <None Remove="src\Animation\" />
+	</ItemGroup>
+	<ItemGroup>
 	  <None Include="README.md" Pack="true" PackagePath="\" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="src\Extensions\Builders\" />
+	  <Folder Include="src\Animation\" />
+	</ItemGroup>
 </Project>

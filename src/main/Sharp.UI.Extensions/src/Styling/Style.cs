@@ -4,10 +4,18 @@ using Sharp.UI.Internal;
 
 namespace Sharp.UI
 {
-
     public partial class Style<T> : IEnumerable
         where T : BindableObject
     {
+        readonly static BindableProperty AttachedStyleInvokeProperty =
+            BindableProperty.CreateAttached($"{nameof(Style<T>)}.AttachedInvokeProperty", typeof(Action<T>), typeof(Style<T>), null, propertyChanged: OnAttachedInvokeChanged);
+
+        static void OnAttachedInvokeChanged(BindableObject obj, object oldValue, object newValue)
+        {
+            var action = newValue as Action<T>;            
+            action?.Invoke(obj as T);
+        }
+
         Microsoft.Maui.Controls.Style mauiStyle;
         public static implicit operator Style(Style<T> style) => style.mauiStyle;
 
@@ -21,37 +29,46 @@ namespace Sharp.UI
             mauiStyle.ApplyToDerivedTypes = applyToDerivedTypes;
         }
 
-        public Style(Action<T> configure) : this()
+        public Style(Action<T> settersBuilder) : this()
         {
-            ConfigureSetters(configure);
+            BuildSetters(settersBuilder);
         }
 
-        public Style(bool applyToDerivedTypes, Action<T> configure) : this()
+        public Style(bool applyToDerivedTypes, Action<T> settersBuilder) : this()
         {
             mauiStyle.ApplyToDerivedTypes = applyToDerivedTypes;
-            ConfigureSetters(configure);
+            BuildSetters(settersBuilder);
         }
 
-        void ConfigureSetters(Action<T> configure)
+        void BuildSetters(Action<T> settersBuilder)
         {
             MainThread.BeginInvokeOnMainThread(() =>
             {
                 FluentStyling.Setters = mauiStyle.Setters;
-                configure?.Invoke(null);
+                settersBuilder?.Invoke(null);
                 FluentStyling.Setters = null;
             });
         }
 
-        public void Add(Setter setter) => this.mauiStyle.Setters.Add(setter);
-        public void Add(Trigger trigger) => this.mauiStyle.Triggers.Add(trigger);
-        public void Add(DataTrigger trigger) => this.mauiStyle.Triggers.Add(trigger);
+        public void Add(Action<T> action)
+        {
+            mauiStyle.Setters.Add(new Setter { Property = AttachedStyleInvokeProperty, Value = action });
+        }
 
-        public void Add(Microsoft.Maui.Controls.VisualStateGroup group)
+        public void Add(Func<T, T> settersBuilder)
+        {
+            BuildSetters(e => settersBuilder(e));
+        }
+
+        public void Add(Setter setter) => this.mauiStyle.Setters.Add(setter);
+        public void Add(TriggerBase trigger) => this.mauiStyle.Triggers.Add(trigger);
+
+        public void Add(VisualStateGroup group)
         {
             mauiStyle.GetVisualStateGroupList().Add(group);
         }
 
-        public void Add(Microsoft.Maui.Controls.VisualState visualState)
+        public void Add(VisualState visualState)
         {
             var visualStateGroupList = mauiStyle.GetVisualStateGroupList();
             visualStateGroupList.GetCommonStatesVisualStateGroup().States.Add(visualState);

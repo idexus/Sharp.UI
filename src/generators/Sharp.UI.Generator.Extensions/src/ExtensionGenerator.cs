@@ -12,11 +12,12 @@ using Microsoft.CodeAnalysis;
 
 namespace Sharp.UI.Generator.Extensions
 {
-    public class ExtensionGenerator
+    public partial class ExtensionGenerator
     {
         readonly GeneratorExecutionContext context;
         readonly INamedTypeSymbol mainSymbol;
         readonly bool isBindableObject;
+        readonly bool isVisualElement;
 
         StringBuilder builder;
         bool isExtensionMethodsGenerated;
@@ -25,7 +26,8 @@ namespace Sharp.UI.Generator.Extensions
         {
             this.context = context;
             this.mainSymbol = symbol;
-            this.isBindableObject = Helpers.IsBindable(mainSymbol);
+            this.isBindableObject = Helpers.IsBindableObject(mainSymbol);
+            this.isVisualElement = Helpers.IsVisualElement(mainSymbol);
         }
 
         public void Build()
@@ -145,10 +147,10 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
                     $@"if (builder.ValueIsSet()) obj.SetValueOrSetter({bindablePropertyName}, builder.GetValue());" :
                     $@"if (builder.ValueIsSet()) obj.{propertyName} = builder.GetValue();";
 
-            //    fluentStylingCheckString =  IsBindableObject && !IsBindableProperty ?
-            //$@"bool isStyling = (bool)obj.GetValue(FluentStyling.IsStyling);
-            //if (isStyling) throw new ArgumentException(""Fluent styling not available for property {propertyName}"");
-            //" : "";
+                fluentStylingCheckString = IsBindableObject && !IsBindableProperty ?
+            $@"var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException(""Fluent styling not available for property {propertyName}"");
+            " : "";
 
             }
         }
@@ -249,8 +251,17 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
                     if (info.IsBindableProperty)
                         GenerateExtensionMethod_BindingBuilder(info);
 
-                    if (info.propertyTypeName.Contains("DataTemplate"))
+                    if (info.propertyTypeName.Equals("Microsoft.Maui.Controls.DataTemplate"))
                         GenerateExtensionMethod_DataTemplate(info);
+
+                    if (isVisualElement)
+                    {
+                        if (info.propertyTypeName.Equals("double"))
+                            GenerateExtensionMethod_AnimateTo(info, "DoubleTransform");
+
+                        if (info.propertyTypeName.Equals("Microsoft.Maui.Graphics.Color"))
+                            GenerateExtensionMethod_AnimateTo(info, "ColorTransform");
+                    }
                 }
                 else if (isGenericIList &&
                     info.PropertySymbol.GetMethod != null &&
@@ -299,6 +310,33 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
         ");
         }
 
+        // Animate To
+
+        void GenerateExtensionMethod_AnimateTo(PropertyInfo info, string transformationName)
+        {
+            isExtensionMethodsGenerated = true;
+
+            if (mainSymbol.IsSealed)
+                builder.Append($@"
+        public static Task<bool> Animate{info.propertyName}To(this {info.symbolTypeName} self, {info.propertyTypeName} value, uint length = 250, Easing? easing = null)");
+            else
+                builder.Append($@"
+        public static Task<bool> Animate{info.propertyName}To<T>(this T self, {info.propertyTypeName} value, uint length = 250, Easing? easing = null)
+            where T : {info.symbolTypeName}");
+
+
+            builder.Append($@"
+        {{
+            {info.propertyTypeName} fromValue = self.{info.propertyName};
+            var transform = (double t) => Transformations.{transformationName}(fromValue, value, t);
+            var callback = ({info.propertyTypeName} actValue) => {{ self.{info.propertyName} = actValue; }};
+            return Transformations.AnimateAsync<{info.propertyTypeName}>(self, ""Animate{info.propertyName}To"", transform, callback, length, easing);
+        }}
+        ");
+        }
+
+        // binding builder
+
         void GenerateExtensionMethod_BindingBuilder(PropertyInfo info)
         {
             if (mainSymbol.IsSealed)
@@ -335,6 +373,8 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
         }}
         ");
         }
+
+        // value builder
 
         void GenerateExtensionMethod_ValueBuilder(PropertyInfo info)
         {

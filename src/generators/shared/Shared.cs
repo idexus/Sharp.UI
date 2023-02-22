@@ -15,7 +15,6 @@ namespace Sharp.UI.Generator
         {
             if (!symbol.ContainingNamespace.ToDisplayString().Equals("Sharp.UI"))
                 return $@"using Sharp.UI;
-
     ";
             return "";
         }

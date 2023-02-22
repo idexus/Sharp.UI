@@ -9,7 +9,6 @@
 namespace Sharp.UI
 {
     using Sharp.UI;
-
     using Sharp.UI.Internal;
 
     public static partial class ToolbarItemExtension
@@ -18,6 +17,8 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.ToolbarItemOrder order)
             where T : Microsoft.Maui.Controls.ToolbarItem
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property Order");
             obj.Order = order;
             return obj;
         }
@@ -26,6 +27,8 @@ namespace Sharp.UI
             System.Func<ValueBuilder<Microsoft.Maui.Controls.ToolbarItemOrder>, ValueBuilder<Microsoft.Maui.Controls.ToolbarItemOrder>> buidValue)
             where T : Microsoft.Maui.Controls.ToolbarItem
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property Order");
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.ToolbarItemOrder>());
             if (builder.ValueIsSet()) obj.Order = builder.GetValue();
             return obj;
@@ -35,6 +38,8 @@ namespace Sharp.UI
             int priority)
             where T : Microsoft.Maui.Controls.ToolbarItem
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property Priority");
             obj.Priority = priority;
             return obj;
         }
@@ -43,6 +48,8 @@ namespace Sharp.UI
             System.Func<ValueBuilder<int>, ValueBuilder<int>> buidValue)
             where T : Microsoft.Maui.Controls.ToolbarItem
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property Priority");
             var builder = buidValue(new ValueBuilder<int>());
             if (builder.ValueIsSet()) obj.Priority = builder.GetValue();
             return obj;

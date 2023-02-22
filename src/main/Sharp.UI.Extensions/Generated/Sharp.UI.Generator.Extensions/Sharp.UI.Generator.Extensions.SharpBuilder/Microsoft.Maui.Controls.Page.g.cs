@@ -9,7 +9,6 @@
 namespace Sharp.UI
 {
     using Sharp.UI;
-
     using Sharp.UI.Internal;
 
     public static partial class PageExtension
@@ -184,6 +183,8 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Rect containerArea)
             where T : Microsoft.Maui.Controls.Page
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property ContainerArea");
             obj.ContainerArea = containerArea;
             return obj;
         }
@@ -192,6 +193,8 @@ namespace Sharp.UI
             System.Func<ValueBuilder<Microsoft.Maui.Graphics.Rect>, ValueBuilder<Microsoft.Maui.Graphics.Rect>> buidValue)
             where T : Microsoft.Maui.Controls.Page
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property ContainerArea");
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Rect>());
             if (builder.ValueIsSet()) obj.ContainerArea = builder.GetValue();
             return obj;
@@ -201,6 +204,8 @@ namespace Sharp.UI
             bool ignoresContainerArea)
             where T : Microsoft.Maui.Controls.Page
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property IgnoresContainerArea");
             obj.IgnoresContainerArea = ignoresContainerArea;
             return obj;
         }
@@ -209,6 +214,8 @@ namespace Sharp.UI
             System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
             where T : Microsoft.Maui.Controls.Page
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property IgnoresContainerArea");
             var builder = buidValue(new ValueBuilder<bool>());
             if (builder.ValueIsSet()) obj.IgnoresContainerArea = builder.GetValue();
             return obj;

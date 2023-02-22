@@ -9,7 +9,6 @@
 namespace Sharp.UI
 {
     using Sharp.UI;
-
     using Sharp.UI.Internal;
 
     public static partial class RadioButtonExtension
@@ -144,6 +143,15 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static Task<bool> AnimateTextColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.RadioButton
+        {
+            Microsoft.Maui.Graphics.Color fromValue = self.TextColor;
+            var transform = (double t) => Transformations.ColorTransform(fromValue, value, t);
+            var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.TextColor = actValue; };
+            return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateTextColorTo", transform, callback, length, easing);
+        }
+        
         public static T CharacterSpacing<T>(this T obj,
             double characterSpacing)
             where T : Microsoft.Maui.Controls.RadioButton
@@ -168,6 +176,15 @@ namespace Sharp.UI
             var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.RadioButton.CharacterSpacingProperty));
             builder.BindProperty();
             return obj;
+        }
+        
+        public static Task<bool> AnimateCharacterSpacingTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.RadioButton
+        {
+            double fromValue = self.CharacterSpacing;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.CharacterSpacing = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateCharacterSpacingTo", transform, callback, length, easing);
         }
         
         public static T TextTransform<T>(this T obj,
@@ -274,6 +291,15 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static Task<bool> AnimateFontSizeTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.RadioButton
+        {
+            double fromValue = self.FontSize;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.FontSize = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateFontSizeTo", transform, callback, length, easing);
+        }
+        
         public static T FontAutoScalingEnabled<T>(this T obj,
             bool fontAutoScalingEnabled)
             where T : Microsoft.Maui.Controls.RadioButton
@@ -326,6 +352,15 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static Task<bool> AnimateBorderWidthTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.RadioButton
+        {
+            double fromValue = self.BorderWidth;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.BorderWidth = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateBorderWidthTo", transform, callback, length, easing);
+        }
+        
         public static T BorderColor<T>(this T obj,
             Microsoft.Maui.Graphics.Color borderColor)
             where T : Microsoft.Maui.Controls.RadioButton
@@ -350,6 +385,15 @@ namespace Sharp.UI
             var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(obj, Microsoft.Maui.Controls.RadioButton.BorderColorProperty));
             builder.BindProperty();
             return obj;
+        }
+        
+        public static Task<bool> AnimateBorderColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.RadioButton
+        {
+            Microsoft.Maui.Graphics.Color fromValue = self.BorderColor;
+            var transform = (double t) => Transformations.ColorTransform(fromValue, value, t);
+            var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.BorderColor = actValue; };
+            return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateBorderColorTo", transform, callback, length, easing);
         }
         
         public static T CornerRadius<T>(this T obj,

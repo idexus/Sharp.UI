@@ -9,7 +9,6 @@
 namespace Sharp.UI
 {
     using Sharp.UI;
-
     using Sharp.UI.Internal;
 
     public static partial class SwitchExtension
@@ -40,6 +39,15 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static Task<bool> AnimateOnColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.Switch
+        {
+            Microsoft.Maui.Graphics.Color fromValue = self.OnColor;
+            var transform = (double t) => Transformations.ColorTransform(fromValue, value, t);
+            var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.OnColor = actValue; };
+            return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateOnColorTo", transform, callback, length, easing);
+        }
+        
         public static T ThumbColor<T>(this T obj,
             Microsoft.Maui.Graphics.Color thumbColor)
             where T : Microsoft.Maui.Controls.Switch
@@ -64,6 +72,15 @@ namespace Sharp.UI
             var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(obj, Microsoft.Maui.Controls.Switch.ThumbColorProperty));
             builder.BindProperty();
             return obj;
+        }
+        
+        public static Task<bool> AnimateThumbColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.Switch
+        {
+            Microsoft.Maui.Graphics.Color fromValue = self.ThumbColor;
+            var transform = (double t) => Transformations.ColorTransform(fromValue, value, t);
+            var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.ThumbColor = actValue; };
+            return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateThumbColorTo", transform, callback, length, easing);
         }
         
         public static T IsToggled<T>(this T obj,

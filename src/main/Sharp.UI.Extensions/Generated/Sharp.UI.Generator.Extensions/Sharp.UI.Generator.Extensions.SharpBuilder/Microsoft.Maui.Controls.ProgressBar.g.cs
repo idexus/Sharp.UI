@@ -9,7 +9,6 @@
 namespace Sharp.UI
 {
     using Sharp.UI;
-
     using Sharp.UI.Internal;
 
     public static partial class ProgressBarExtension
@@ -40,6 +39,15 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static Task<bool> AnimateProgressColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.ProgressBar
+        {
+            Microsoft.Maui.Graphics.Color fromValue = self.ProgressColor;
+            var transform = (double t) => Transformations.ColorTransform(fromValue, value, t);
+            var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.ProgressColor = actValue; };
+            return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateProgressColorTo", transform, callback, length, easing);
+        }
+        
         public static T Progress<T>(this T obj,
             double progress)
             where T : Microsoft.Maui.Controls.ProgressBar
@@ -64,6 +72,15 @@ namespace Sharp.UI
             var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.ProgressBar.ProgressProperty));
             builder.BindProperty();
             return obj;
+        }
+        
+        public static Task<bool> AnimateProgressTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.ProgressBar
+        {
+            double fromValue = self.Progress;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.Progress = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateProgressTo", transform, callback, length, easing);
         }
         
     }

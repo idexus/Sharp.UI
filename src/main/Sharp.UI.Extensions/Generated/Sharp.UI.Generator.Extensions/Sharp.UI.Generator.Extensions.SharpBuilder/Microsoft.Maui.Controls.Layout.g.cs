@@ -9,7 +9,6 @@
 namespace Sharp.UI
 {
     using Sharp.UI;
-
     using Sharp.UI.Internal;
 
     public static partial class LayoutExtension
@@ -88,6 +87,8 @@ namespace Sharp.UI
             bool ignoreSafeArea)
             where T : Microsoft.Maui.Controls.Layout
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property IgnoreSafeArea");
             obj.IgnoreSafeArea = ignoreSafeArea;
             return obj;
         }
@@ -96,6 +97,8 @@ namespace Sharp.UI
             System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
             where T : Microsoft.Maui.Controls.Layout
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property IgnoreSafeArea");
             var builder = buidValue(new ValueBuilder<bool>());
             if (builder.ValueIsSet()) obj.IgnoreSafeArea = builder.GetValue();
             return obj;

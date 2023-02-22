@@ -13,7 +13,6 @@ using System.Collections.Generic;
 namespace ExampleApp
 {
 	using Sharp.UI;
-
     public partial class CardView : IEnumerable
 	{
 

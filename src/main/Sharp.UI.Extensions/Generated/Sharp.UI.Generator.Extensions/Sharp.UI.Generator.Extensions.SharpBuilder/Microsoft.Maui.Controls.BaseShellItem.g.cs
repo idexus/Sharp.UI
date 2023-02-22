@@ -9,7 +9,6 @@
 namespace Sharp.UI
 {
     using Sharp.UI;
-
     using Sharp.UI.Internal;
 
     public static partial class BaseShellItemExtension
@@ -96,6 +95,8 @@ namespace Sharp.UI
             string route)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property Route");
             obj.Route = route;
             return obj;
         }
@@ -104,6 +105,8 @@ namespace Sharp.UI
             System.Func<ValueBuilder<string>, ValueBuilder<string>> buidValue)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property Route");
             var builder = buidValue(new ValueBuilder<string>());
             if (builder.ValueIsSet()) obj.Route = builder.GetValue();
             return obj;
@@ -165,6 +168,8 @@ namespace Sharp.UI
             bool flyoutItemIsVisible)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property FlyoutItemIsVisible");
             obj.FlyoutItemIsVisible = flyoutItemIsVisible;
             return obj;
         }
@@ -173,6 +178,8 @@ namespace Sharp.UI
             System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property FlyoutItemIsVisible");
             var builder = buidValue(new ValueBuilder<bool>());
             if (builder.ValueIsSet()) obj.FlyoutItemIsVisible = builder.GetValue();
             return obj;

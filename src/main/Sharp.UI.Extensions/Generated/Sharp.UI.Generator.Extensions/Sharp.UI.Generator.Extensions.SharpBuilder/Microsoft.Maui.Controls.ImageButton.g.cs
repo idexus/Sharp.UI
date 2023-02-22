@@ -9,7 +9,6 @@
 namespace Sharp.UI
 {
     using Sharp.UI;
-
     using Sharp.UI.Internal;
 
     public static partial class ImageButtonExtension
@@ -38,6 +37,15 @@ namespace Sharp.UI
             var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(obj, Microsoft.Maui.Controls.ImageButton.BorderColorProperty));
             builder.BindProperty();
             return obj;
+        }
+        
+        public static Task<bool> AnimateBorderColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.ImageButton
+        {
+            Microsoft.Maui.Graphics.Color fromValue = self.BorderColor;
+            var transform = (double t) => Transformations.ColorTransform(fromValue, value, t);
+            var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.BorderColor = actValue; };
+            return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateBorderColorTo", transform, callback, length, easing);
         }
         
         public static T CornerRadius<T>(this T obj,
@@ -90,6 +98,15 @@ namespace Sharp.UI
             var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.ImageButton.BorderWidthProperty));
             builder.BindProperty();
             return obj;
+        }
+        
+        public static Task<bool> AnimateBorderWidthTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.ImageButton
+        {
+            double fromValue = self.BorderWidth;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.BorderWidth = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateBorderWidthTo", transform, callback, length, easing);
         }
         
         public static T Aspect<T>(this T obj,

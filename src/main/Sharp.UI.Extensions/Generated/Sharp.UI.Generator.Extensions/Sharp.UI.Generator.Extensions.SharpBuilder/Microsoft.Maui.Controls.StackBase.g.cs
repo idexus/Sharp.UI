@@ -9,7 +9,6 @@
 namespace Sharp.UI
 {
     using Sharp.UI;
-
     using Sharp.UI.Internal;
 
     public static partial class StackBaseExtension
@@ -38,6 +37,15 @@ namespace Sharp.UI
             var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.StackBase.SpacingProperty));
             builder.BindProperty();
             return obj;
+        }
+        
+        public static Task<bool> AnimateSpacingTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.StackBase
+        {
+            double fromValue = self.Spacing;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.Spacing = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateSpacingTo", transform, callback, length, easing);
         }
         
     }

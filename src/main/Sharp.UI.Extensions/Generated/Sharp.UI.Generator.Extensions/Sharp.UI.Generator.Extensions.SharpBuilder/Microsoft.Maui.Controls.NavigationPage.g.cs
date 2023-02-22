@@ -9,7 +9,6 @@
 namespace Sharp.UI
 {
     using Sharp.UI;
-
     using Sharp.UI.Internal;
 
     public static partial class NavigationPageExtension
@@ -38,6 +37,15 @@ namespace Sharp.UI
             var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(obj, Microsoft.Maui.Controls.NavigationPage.BarBackgroundColorProperty));
             builder.BindProperty();
             return obj;
+        }
+        
+        public static Task<bool> AnimateBarBackgroundColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.NavigationPage
+        {
+            Microsoft.Maui.Graphics.Color fromValue = self.BarBackgroundColor;
+            var transform = (double t) => Transformations.ColorTransform(fromValue, value, t);
+            var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.BarBackgroundColor = actValue; };
+            return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateBarBackgroundColorTo", transform, callback, length, easing);
         }
         
         public static T BarBackground<T>(this T obj,
@@ -90,6 +98,15 @@ namespace Sharp.UI
             var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(obj, Microsoft.Maui.Controls.NavigationPage.BarTextColorProperty));
             builder.BindProperty();
             return obj;
+        }
+        
+        public static Task<bool> AnimateBarTextColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.NavigationPage
+        {
+            Microsoft.Maui.Graphics.Color fromValue = self.BarTextColor;
+            var transform = (double t) => Transformations.ColorTransform(fromValue, value, t);
+            var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.BarTextColor = actValue; };
+            return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateBarTextColorTo", transform, callback, length, easing);
         }
         
         public static T OnPopped<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.NavigationEventArgs> handler)

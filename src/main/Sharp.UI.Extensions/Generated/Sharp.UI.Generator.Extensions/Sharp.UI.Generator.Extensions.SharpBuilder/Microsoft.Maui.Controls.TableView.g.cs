@@ -9,7 +9,6 @@
 namespace Sharp.UI
 {
     using Sharp.UI;
-
     using Sharp.UI.Internal;
 
     public static partial class TableViewExtension
@@ -44,6 +43,8 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.TableIntent intent)
             where T : Microsoft.Maui.Controls.TableView
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property Intent");
             obj.Intent = intent;
             return obj;
         }
@@ -52,6 +53,8 @@ namespace Sharp.UI
             System.Func<ValueBuilder<Microsoft.Maui.Controls.TableIntent>, ValueBuilder<Microsoft.Maui.Controls.TableIntent>> buidValue)
             where T : Microsoft.Maui.Controls.TableView
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property Intent");
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.TableIntent>());
             if (builder.ValueIsSet()) obj.Intent = builder.GetValue();
             return obj;
@@ -105,6 +108,8 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.Internals.TableModel model)
             where T : Microsoft.Maui.Controls.TableView
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property Model");
             obj.Model = model;
             return obj;
         }
@@ -113,6 +118,8 @@ namespace Sharp.UI
             System.Func<ValueBuilder<Microsoft.Maui.Controls.Internals.TableModel>, ValueBuilder<Microsoft.Maui.Controls.Internals.TableModel>> buidValue)
             where T : Microsoft.Maui.Controls.TableView
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property Model");
             var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.Internals.TableModel>());
             if (builder.ValueIsSet()) obj.Model = builder.GetValue();
             return obj;

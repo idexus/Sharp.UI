@@ -9,7 +9,6 @@
 namespace Sharp.UI
 {
     using Sharp.UI;
-
     using Sharp.UI.Internal;
 
     public static partial class EventTriggerExtension
@@ -33,6 +32,8 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.EventTrigger Event(this Microsoft.Maui.Controls.EventTrigger obj,
             string @event)
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property Event");
             obj.Event = @event;
             return obj;
         }
@@ -40,6 +41,8 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.EventTrigger Event(this Microsoft.Maui.Controls.EventTrigger obj,
             System.Func<ValueBuilder<string>, ValueBuilder<string>> buidValue)
         {
+            var setters = FluentStyling.Setters as IList<Setter>;
+            if (setters != null) throw new ArgumentException("Fluent styling not available for property Event");
             var builder = buidValue(new ValueBuilder<string>());
             if (builder.ValueIsSet()) obj.Event = builder.GetValue();
             return obj;

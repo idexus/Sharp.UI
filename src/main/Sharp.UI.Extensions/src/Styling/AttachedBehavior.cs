@@ -1,11 +1,11 @@
 ﻿namespace Sharp.UI;
 
 public class AttachedBehavior<TView, TBehavior> :  Behavior<TView>
-    where TView : Microsoft.Maui.Controls.View
+    where TView : Microsoft.Maui.Controls.VisualElement
     where TBehavior : Behavior<TView>, new()
 {
     static readonly BindableProperty AttachedProperty =
-    BindableProperty.CreateAttached("Attached", typeof(bool), typeof(TBehavior), false, propertyChanged: OnAttachedBehaviorChanged);
+        BindableProperty.CreateAttached("Attached", typeof(bool), typeof(TBehavior), false, propertyChanged: OnAttachedBehaviorChanged);
 
     public static Setter Enable(bool enable) => new Setter { Property = AttachedProperty, Value = enable };
 

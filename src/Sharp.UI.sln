@@ -50,7 +50,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{B7D0A8ED-E01
 		..\doc\menudefinition.md = ..\doc\menudefinition.md
 		..\doc\projectref.md = ..\doc\projectref.md
 		..\doc\properties.md = ..\doc\properties.md
-		..\doc\propertybindings.md = ..\doc\propertybindings.md
 		..\doc\shellapplication.md = ..\doc\shellapplication.md
 		..\doc\styledefinition.md = ..\doc\styledefinition.md
 		..\doc\triggers.md = ..\doc\triggers.md

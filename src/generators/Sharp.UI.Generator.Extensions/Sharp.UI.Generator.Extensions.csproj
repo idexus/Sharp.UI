@@ -32,4 +32,7 @@
     </Compile>
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="src\Animation.Color" />
+  </ItemGroup>
 </Project>
