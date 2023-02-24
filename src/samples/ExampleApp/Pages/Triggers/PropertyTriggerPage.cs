@@ -30,6 +30,6 @@ public class PropertyTriggerPage : ContentPage
 			new Entry("Enter address")
 		}
 		.WidthRequest(300)
-        .VerticalOptions(LayoutOptions.Center);
+        .CenterVertically();
 	}
 }

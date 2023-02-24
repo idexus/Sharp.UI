@@ -82,12 +82,8 @@ public class PointerGesturePage : ContentPage
 {
     public PointerGesturePage()
     {
-        Content = new VStack
+        Content = new VStack(e => e.CenterInParent())
         {
-            e => e
-                .HorizontalOptions(LayoutOptions.Center)
-                .VerticalOptions(LayoutOptions.Center),
-
             new Label(out var label).FontSize(20),
             new Label(out var enterExitLabel).FontSize(20).TextColor(Colors.Blue),
             new Image("dotnet_bot.png", out var image)

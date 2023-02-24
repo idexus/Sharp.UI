@@ -14,38 +14,37 @@ Here is an example of how you could create a simple "Hello, World!" page in Shar
 namespace ExampleApp;
 using Sharp.UI;
 
-public class HelloWorldPage : ContentPage
+public partial class HelloWorldPage : ContentPage 
 {
-    int count = 0;
+    int count = 0; 
 
     public HelloWorldPage()
     {
-        Content = new VStack(e => e
+        Content =
+
+        new VStack(e => e
             .Spacing(25)
             .Padding(new Thickness(30, 0))
-            .VerticalOptions(LayoutOptions.Center))
+            .CenterVertically())
         {
-            new Image("dotnet_bot.png")
-                .HeightRequest(200)
-                .HorizontalOptions(LayoutOptions.Center),
-
-            new Label("Hello, World!")
-                .FontSize(32)
-                .HorizontalOptions(LayoutOptions.Center),
+            new Image("dotnet_bot.png", out var image)        
+                .HeightRequest(280) 
+                .CenterHorizontally(),
 
             new Label("Welcome to .NET Multi-platform App UI")
-                .FontSize(18)
-                .HorizontalOptions(LayoutOptions.Center),
+                .FontSize(e => e.Default(30).OnPhone(16))
+                .CenterHorizontally(),
 
             new Button("Click me")
-                .HorizontalOptions(LayoutOptions.Center)
+                .FontSize(20)
+                .CenterHorizontally()
                 .OnClicked(button =>
                 {
                     count++;
                     button.Text = $"Clicked {count} ";
                     button.Text += count == 1 ? "time" : "times";
                 })
-        };
+        }; 
     }
 }
 ```
@@ -72,13 +71,13 @@ git submodule update --recursive
 To add __Sharp.UI__ to your project, along with all its functionality, you can use the following command:
 
 ```
-dotnet add package Sharp.UI --version 0.4.2-alpha
+dotnet add package Sharp.UI --version 0.4.3-alpha
 ```
 
 __Sharp.UI__ replaces some standard MAUI classes by subclassing them and adding new constructors, which e.g. enables hot reload functionality. However, if you prefer not to use subclassed controls, it's possible to add the core generated fluent methods for the .Net MAUI framework to your project instead.
 
 ```
-dotnet add package Sharp.UI.Extensions --version 0.4.2-alpha
+dotnet add package Sharp.UI.Extensions --version 0.4.3-alpha
 ```
 ## Project Reference
 
@@ -126,6 +125,38 @@ Visual Studio 2022 extensions for both Windows and Mac are available for downloa
 
 Here are some examples showing how to use the __Sharp.UI__ library
 
+## Properties and Fluent Methods
+
+`Sharp.UI` provides a convenient way to set properties for UI elements by matching properties with fluent helper methods. This makes it easier and more readable to define the interface of your application.
+
+Here is an example of using fluent methods to set properties on a `Label`:
+
+```cs
+new Label()
+    .Text("This is a test")
+    .Padding(20)
+    .FontSize(30)
+    .CenterInParent())
+```
+
+Additionally, some common properties can be set directly as constructor arguments for even faster definition of the interface. Here is an example using a constructor argument to set the text property on a `Label`:
+
+```cs
+new Label("This is a test")
+```
+
+## How to assign object references
+
+There are two main ways to assign objects in `Sharp.UI`: 
+
+```cs
+new Label(out label)
+```
+Or:
+```cs
+new Label().Assign(out label)
+```
+
 ## Property Bindings
 
 __Sharp.UI__ provides a simple way to bind properties of an element to a source, so that when the source changes, the property changes as well. You can bind a property by using the fluent method e.g. `Text()`, `TextColor()` etc. and then using lambda call the method `Path()` to specify the property you want to bind to.
@@ -164,8 +195,7 @@ Resources = new ResourceDictionary
     new Style<Label>(e => e
         .FontSize(35)
         .TextColor(AppColors.Gray200)
-        .HorizontalOptions(LayoutOptions.Center)
-        .VerticalOptions(LayoutOptions.Center)),                
+        .CenterInParent()),                
 
     new Style<Button>
     {
@@ -189,7 +219,7 @@ Resources = new ResourceDictionary
 
 ## Animations
 
-In Sharp.UI, you can use async methods with the naming convention `Animate{PropertyName}To` to animate any `double` or `Color` bindable property.
+In __Sharp.UI__, you can use async methods with the naming convention `Animate{PropertyName}To` to animate any `double` or `Color` bindable property.
 
 For example, to animate the `BackgroundColor` property, you can use the `AnimateBackgroundColorTo` async method.
 
@@ -197,8 +227,9 @@ For example, to animate the `BackgroundColor` property, you can use the `Animate
 await border.AnimateBackgroundColorTo(Colors.Red, 500);  // 500ms
 ```
 
-#### Usage
-You can use animations inside event handlers:
+#### Example Usage
+
+You can use animations inside event handlers. For example, to animate a `Button` when it's clicked:
 
 ```cs
 new Button()
@@ -215,37 +246,7 @@ new Button()
     })
 ```
 
-You can also use visual states to define animations:
-
-```cs
-new Border
-{
-    new Label("Hello, World!", out var label)
-        .FontSize(28),
-
-    new Switch(out var testSwitch)    
-}
-.VisualStateGroups(new VisualStateGroupList
-{
-    new VisualState<Border> {
-        async border => {
-            await border.AnimateBackgroundColorTo(Colors.Red, 500);
-            await label.RotateXTo(360, 400);
-        },
-        new StateTrigger().IsActive(e => e.Path("IsToggled").Source(testSwitch))
-    },
-
-    new VisualState<Border> {
-        async border => {
-            await border.AnimateBackgroundColorTo(AppColors.Gray950, 500);
-            await label.RotateXTo(0, 400);
-        },
-        new StateTrigger().IsActive(e => e.Path("IsToggled").Source(testSwitch).Negate())
-    }
-})
-```
-
-You can also add animations using visual states inside the `Style<T>` class.
+You can also use visual states inside Style<T> to define animations. See the [documentation on Style\<T\>](./doc/styledefinition.md) for more information.
 
 ## Auto-generated code
 
@@ -282,19 +283,9 @@ public class ViewPage : ContentPage
         BindingContext = viewModel;
         Content = new VStack
         {
-            new HStack
-            {
-                new Label("author:"),
-                new Label().Text(e => e.Path("Author"))
-            },
-
-            new HStack
-            {
-                new Label("title:"),
-                new Label().Text(e => e.Path("Title"))
-            },
-
-            new Button("Test")
+            new Label().Text(e => e.Path("Author"))
+            new Label().Text(e => e.Path("Title"))
+            new Button("Click Me")
                 .FontSize(100)
                 .OnClicked(viewModel.SetAuthor)
         };
@@ -307,6 +298,8 @@ public class ViewPage : ContentPage
 - [Properties and fluent methods](./doc/properties.md)
 - [Object references assignment](./doc/assign.md)
 - [Object containers](./doc/containers.md)
+- [Layout options extension methods](./doc/layoutoptions.md)
+- [ITextAlignment interface extension methods](./doc/itextalignment.md)
 - [Binding converters](./doc/bindingconverters.md)
 - [Attached properties](./doc/attachedproperties.md)
 - [Event handlers](./doc/eventhandlers.md)
@@ -323,6 +316,22 @@ public class ViewPage : ContentPage
 - [Creating custom controls](./doc/customcontentview.md)
 - [Control template](./doc/autogenbindableproperties.md)
 
+# User defined extension methods
+
+In __Sharp.UI__, you can create your own extension methods by defining a static method within a static class.
+
+Here's an example of an extension method that centers a view vertically:
+
+```cs
+public static T CenterVertically<T>(this T obj)
+    where T : Microsoft.Maui.Controls.View
+{
+    obj.SetValueOrSetter(Microsoft.Maui.Controls.View.VerticalOptionsProperty, LayoutOptions.Center);
+    return obj;
+}
+```
+
+In the extension methods, it's important to use the `SetValueOrSetter` method instead of setting the properties directly. `SetValueOrSetter` sets the value of the property if the property is used in a standard context, such as in object creation, or creates a new `Setter` when you use the method to create a setter for a style definition.
 
 # Disclaimer
 

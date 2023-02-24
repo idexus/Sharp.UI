@@ -34,5 +34,111 @@ namespace Sharp.UI
             obj.SetValueOrSetter(Microsoft.Maui.Controls.Grid.RowSpanProperty, row);
             return obj;
         }
+
+        // Layout
+
+        public static T CenterHorizontally<T>(this T obj)
+            where T : Microsoft.Maui.Controls.View
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.View.HorizontalOptionsProperty, LayoutOptions.Center);
+            return obj;
+        }
+
+        public static T CenterVertically<T>(this T obj)
+            where T : Microsoft.Maui.Controls.View
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.View.VerticalOptionsProperty, LayoutOptions.Center);
+            return obj;
+        }
+
+        public static T CenterInParent<T>(this T obj)
+            where T : Microsoft.Maui.Controls.View
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.View.HorizontalOptionsProperty, LayoutOptions.Center);
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.View.VerticalOptionsProperty, LayoutOptions.Center);
+            return obj;
+        }
+
+        public static T AlignTop<T>(this T obj)
+            where T : Microsoft.Maui.Controls.View
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.View.VerticalOptionsProperty, LayoutOptions.Start);
+            return obj;
+        }
+
+        public static T AlignTopStart<T>(this T obj)
+            where T : Microsoft.Maui.Controls.View
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.View.HorizontalOptionsProperty, LayoutOptions.Start);
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.View.VerticalOptionsProperty, LayoutOptions.Start);
+            return obj;
+        }
+
+        public static T AlignTopEnd<T>(this T obj)
+            where T : Microsoft.Maui.Controls.View
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.View.HorizontalOptionsProperty, LayoutOptions.End);
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.View.VerticalOptionsProperty, LayoutOptions.Start);
+            return obj;
+        }
+
+        public static T AlignBottom<T>(this T obj)
+            where T : Microsoft.Maui.Controls.View
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.View.VerticalOptionsProperty, LayoutOptions.End);
+            return obj;
+        }
+
+        public static T AlignBottomStart<T>(this T obj)
+            where T : Microsoft.Maui.Controls.View
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.View.HorizontalOptionsProperty, LayoutOptions.Start);
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.View.VerticalOptionsProperty, LayoutOptions.End);
+            return obj;
+        }
+
+        public static T AlignBottomEnd<T>(this T obj)
+            where T : Microsoft.Maui.Controls.View
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.View.HorizontalOptionsProperty, LayoutOptions.End);
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.View.VerticalOptionsProperty, LayoutOptions.End);
+            return obj;
+        }
+
+        public static T AlignStart<T>(this T obj)
+            where T : Microsoft.Maui.Controls.View
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.View.HorizontalOptionsProperty, LayoutOptions.Start);
+            return obj;
+        }
+
+        public static T AlignEnd<T>(this T obj)
+            where T : Microsoft.Maui.Controls.View
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.View.HorizontalOptionsProperty, LayoutOptions.End);
+            return obj;
+        }
+
+        public static T FillHorizontally<T>(this T obj)
+            where T : Microsoft.Maui.Controls.View
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.View.HorizontalOptionsProperty, LayoutOptions.Fill);
+            return obj;
+        }
+
+        public static T FillVertically<T>(this T obj)
+            where T : Microsoft.Maui.Controls.View
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.View.VerticalOptionsProperty, LayoutOptions.Fill);
+            return obj;
+        }
+
+        public static T FillBothDirections<T>(this T obj)
+            where T : Microsoft.Maui.Controls.View
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.View.HorizontalOptionsProperty, LayoutOptions.Fill);
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.View.VerticalOptionsProperty, LayoutOptions.Fill);
+            return obj;
+        }
     }
 }

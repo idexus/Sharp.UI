@@ -33,6 +33,6 @@ public class BehaviorTestPage : ContentPage
             new Entry("Enter text...", out var entry).Text("")
                 .Behaviors(new NumericValidationBehavior())
         }
-        .VerticalOptions(LayoutOptions.Center);
+        .CenterVertically();
     }
 }

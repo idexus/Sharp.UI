@@ -2,7 +2,6 @@
 
 using Sharp.UI;
 
-[SharpObject]
 public partial class HelloWorldPage : ContentPage 
 {
     int count = 0; 
@@ -14,20 +13,20 @@ public partial class HelloWorldPage : ContentPage
         new VStack(e => e
             .Spacing(25)
             .Padding(new Thickness(30, 0))
-            .VerticalOptions(LayoutOptions.Center))
+            .CenterVertically())
 	    {
             new Image("dotnet_bot.png", out var image)        
 			    .HeightRequest(280) 
-			    .HorizontalOptions(LayoutOptions.Center),
+			    .CenterHorizontally(),
 
 		    new Label("Welcome to .NET Multi-platform App UI")
                 .FontSize(e => e.Default(30).OnPhone(16))
-                .HorizontalOptions(LayoutOptions.Center),
+                .CenterHorizontally(),
 
             new Button("Click me")
-			    .HorizontalOptions(LayoutOptions.Center)
 			    .FontSize(20)
-			    .OnClicked(button =>
+                .CenterHorizontally()
+                .OnClicked(button =>
 			    {
                     count++;
 				    button.Text = $"Clicked {count} ";

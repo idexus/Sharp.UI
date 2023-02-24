@@ -24,6 +24,6 @@ public class EventTriggerPage : ContentPage
                         .Event("TextChanged")
                         .Actions(new NumericValidationTriggerAction()))
         }
-		.VerticalOptions(LayoutOptions.Center);
+		.CenterVertically();
 	}
 }

@@ -58,8 +58,8 @@ public partial class CardView : ContentView, ICardViewProperties
                     new ContentView()
                         .Row(1)
                         .Content(e => e.Path(nameof(ContentView)))
-                        .HorizontalOptions(LayoutOptions.Center)
-                        .VerticalOptions(LayoutOptions.Center)
+                        .CenterHorizontally()
+                        .CenterVertically()
                         .SizeRequest(120,120),
 
                     new Button()

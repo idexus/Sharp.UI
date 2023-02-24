@@ -11,12 +11,12 @@ namespace ExampleApp
                 .ControlTemplate(new ControlTemplate(typeof(RadioButtonTemplate)))),
                 
             new Style<VStack>(e => e
-                .VerticalOptions(LayoutOptions.Center)
-                .HorizontalOptions(LayoutOptions.Center)),
+                .CenterVertically()
+                .CenterHorizontally()),
             
             new Style<HStack>(e => e
-                .VerticalOptions(LayoutOptions.Center)
-                .HorizontalOptions(LayoutOptions.Center))
+                .CenterVertically()
+                .CenterHorizontally())
         };
     }
 }

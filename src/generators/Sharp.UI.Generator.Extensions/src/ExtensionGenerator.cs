@@ -72,25 +72,29 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
 }}");
         }
 
-        List<string> extensionBindablePropertiesGenerated;
+        List<string> bindablePropertyNames;
 
         void GenerateClassExtensionBody()
         {
-            extensionBindablePropertiesGenerated = new List<string>();
+            bindablePropertyNames = new List<string>();
             var bindableProperties = mainSymbol
                     .GetMembers()
                     .Where(e => e.IsStatic && e.Name.EndsWith("Property") && e.DeclaredAccessibility == Accessibility.Public).ToList();
 
-            extensionBindablePropertiesGenerated.Clear();
+            bindablePropertyNames.Clear();
             foreach (var prop in bindableProperties)
             {
                 var name = prop.Name.Substring(0, prop.Name.Length - "Property".Length);
-                extensionBindablePropertiesGenerated.Add(name);
+                bindablePropertyNames.Add(name);
             }
 
             var properties = mainSymbol
                 .GetMembers()
                 .Where(e => e.Kind == SymbolKind.Property && e.DeclaredAccessibility == Accessibility.Public && !e.IsStatic);
+
+            var uknownTypeProperties = bindablePropertyNames.ToList();
+            foreach (var propName in properties.Select(e => e.ToDisplayString()))
+                uknownTypeProperties.Remove(propName);
 
             var events = mainSymbol
                 .GetMembers()
@@ -101,6 +105,9 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
 
             foreach (var @event in events)
                 GenerateEventMethod(@event);
+
+            if (Helpers.IsBaseImplementationOfInterface(mainSymbol, "ITextAlignment"))
+                GenerateExtensionMethods_ITextAlignment(mainSymbol);
 
             GenerateBindablePropertiesExtension();
         }
@@ -231,7 +238,7 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
             {
                 MainSymbol = mainSymbol,
                 PropertySymbol = property,
-                BindableProperties = extensionBindablePropertiesGenerated,
+                BindableProperties = bindablePropertyNames,
                 IsBindableObject = isBindableObject
             };
             info.Build();

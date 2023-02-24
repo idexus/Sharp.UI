@@ -29,8 +29,7 @@ public class AbsoluteLayoutPage : ContentPage
 
                 new Label("Absolute Layout")
                     .FontSize(30)
-                    .HorizontalOptions(LayoutOptions.Center)
-                    .VerticalOptions(LayoutOptions.Center)
+                    .CenterInParent()
             },
 
             new Border(out border, e => e
@@ -42,8 +41,7 @@ public class AbsoluteLayoutPage : ContentPage
                 new Label("This is a test", out var label)
                     .Padding(20)
                     .FontSize(40)
-                    .HorizontalOptions(LayoutOptions.Center)
-                    .VerticalOptions(LayoutOptions.Center)
+                    .CenterInParent()
             }
         };
     }

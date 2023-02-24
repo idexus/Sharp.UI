@@ -491,6 +491,97 @@ namespace Sharp.UI
             return obj;
         }
         
+
+        public static T CenterTextHorizontally<T>(this T obj)
+            where T : Microsoft.Maui.Controls.Label
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Label.HorizontalTextAlignmentProperty, HorizontalAlignment.Center);
+            return obj;
+        }
+
+        public static T CenterTextVertically<T>(this T obj)
+            where T : Microsoft.Maui.Controls.Label
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Label.VerticalTextAlignmentProperty, VerticalAlignment.Center);
+            return obj;
+        }
+
+        public static T CenterText<T>(this T obj)
+            where T : Microsoft.Maui.Controls.Label
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Label.HorizontalTextAlignmentProperty, HorizontalAlignment.Center);
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Label.VerticalTextAlignmentProperty, VerticalAlignment.Center);
+            return obj;
+        }
+
+        public static T AlignTextTop<T>(this T obj)
+            where T : Microsoft.Maui.Controls.Label
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Label.VerticalTextAlignmentProperty, VerticalAlignment.Top);
+            return obj;
+        }
+
+        public static T AlignTextBottom<T>(this T obj)
+            where T : Microsoft.Maui.Controls.Label, Microsoft.Maui.ITextAlignment
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Label.VerticalTextAlignmentProperty, VerticalAlignment.Bottom);
+            return obj;
+        }
+
+        public static T AlignTextTopLeft<T>(this T obj)
+            where T : Microsoft.Maui.Controls.Label
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Label.VerticalTextAlignmentProperty, VerticalAlignment.Top);
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Label.HorizontalTextAlignmentProperty, HorizontalAlignment.Left);
+            return obj;
+        }
+
+        public static T AlignTextBottomLeft<T>(this T obj)
+            where T : Microsoft.Maui.Controls.Label
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Label.VerticalTextAlignmentProperty, VerticalAlignment.Bottom);
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Label.HorizontalTextAlignmentProperty, HorizontalAlignment.Left);
+            return obj;
+        }
+
+        public static T AlignTextTopRight<T>(this T obj)
+            where T : Microsoft.Maui.Controls.Label
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Label.VerticalTextAlignmentProperty, VerticalAlignment.Top);
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Label.HorizontalTextAlignmentProperty, HorizontalAlignment.Right);
+            return obj;
+        }
+
+        public static T AlignTextBottomRight<T>(this T obj)
+            where T : Microsoft.Maui.Controls.Label
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Label.VerticalTextAlignmentProperty, VerticalAlignment.Bottom);
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Label.HorizontalTextAlignmentProperty, HorizontalAlignment.Right);
+            return obj;
+        }
+
+        public static T AlignTextLeft<T>(this T obj)
+            where T : Microsoft.Maui.Controls.Label
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Label.HorizontalTextAlignmentProperty, HorizontalAlignment.Left);
+            return obj;
+        }
+
+        public static T AlignTextRight<T>(this T obj)
+            where T : Microsoft.Maui.Controls.Label
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Label.HorizontalTextAlignmentProperty, HorizontalAlignment.Right);
+            return obj;
+        }
+
+        public static T AlignTextJustified<T>(this T obj)
+            where T : Microsoft.Maui.Controls.Label
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Label.HorizontalTextAlignmentProperty, HorizontalAlignment.Justified);
+            return obj;
+        }
+
+        
     }
 }
 

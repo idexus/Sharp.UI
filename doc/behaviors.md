@@ -83,7 +83,7 @@ public class AttachedBehaviorPage : ContentPage
         {
             new Entry("Enter text...", out var entry).Text("")
         }
-        .VerticalOptions(LayoutOptions.Center);
+        .CenterVertically());
     }
 }
 ```

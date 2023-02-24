@@ -52,7 +52,7 @@ public class ShellItemTemplate : ContentView
                 .Text(e => e.Path("Title"))
                 .FontSize(20)
                 .FontAttributes(FontAttributes.Italic)
-                .VerticalTextAlignment(TextAlignment.Center)
+                .CenterVertically()
         };
     }
 }

@@ -17,8 +17,7 @@ public partial class TestPage : ContentPage
         {
             new Style<Label>(e => e
                 .TextColor(AppColors.Gray200)
-                .HorizontalOptions(LayoutOptions.Center)
-                .VerticalOptions(LayoutOptions.Center)),
+                .CenterInParent()),
 
             new Style<Button>(e => e
                 .BackgroundColor(AppColors.Gray950)
@@ -78,8 +77,7 @@ public partial class TestPage : ContentPage
                             .TextColor(Colors.DarkGray),
 
                         new Switch(out testSwitch).Row(3)
-                            .VerticalOptions(LayoutOptions.Center)
-                            .HorizontalOptions(LayoutOptions.Center)
+                            .CenterInParent()
                     },
 
                     e => e
