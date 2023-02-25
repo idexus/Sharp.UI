@@ -136,7 +136,6 @@ new Label()
     .Text("This is a test")
     .Padding(20)
     .FontSize(30)
-    .CenterInParent())
 ```
 
 Additionally, some common properties can be set directly as constructor arguments for even faster definition of the interface. Here is an example using a constructor argument to set the text property on a `Label`:
