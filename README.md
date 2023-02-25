@@ -24,7 +24,7 @@ public partial class HelloWorldPage : ContentPage
 
         new VStack(e => e
             .Spacing(25)
-            .Padding(new Thickness(30, 0))
+            .Padding(30, 0)
             .CenterVertically())
         {
             new Image("dotnet_bot.png", out var image)        
