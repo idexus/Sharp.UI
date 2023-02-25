@@ -11,6 +11,7 @@ TestApp
 *.HotReloadSupport.g.cs
 Microsoft.Interop.JavaScript.JSImportGenerator
 Microsoft.Interop.LibraryImportGenerator
+Assembly.cs
 
 # vscode
 .vscode
