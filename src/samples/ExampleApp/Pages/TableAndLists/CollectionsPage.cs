@@ -24,7 +24,7 @@ namespace ExampleApp
                 {
                     () =>
                     new HStack(e => e
-                            .AlignCenterVertical()
+                            .CenterVertically()
                             .Padding(new Thickness(10))
                             .Assign(out var hStack))
                     {

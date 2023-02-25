@@ -17,15 +17,15 @@ namespace ExampleApp
                             .Stroke(Colors.Blue)
                             .Fill(Colors.Wheat)
                             .SizeRequest(16,16)
-                            .AlignCenterHorizontal()
-                            .AlignCenterVertical(),
+                            .CenterHorizontally()
+                            .CenterVertically(),
 
                         new Ellipse()
                             .RegisterName("Check", scopedElement: this)
                             .Fill(Colors.Yellow)
                             .SizeRequest(12,12)
-                            .AlignCenterHorizontal()
-                            .AlignCenterVertical()
+                            .CenterHorizontally()
+                            .CenterVertically()
                     }
                     .WidthRequest(18)
                     .HeightRequest(10)

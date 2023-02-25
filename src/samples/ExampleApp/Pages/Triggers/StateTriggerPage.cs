@@ -13,8 +13,8 @@ public partial class StateTriggerPage : ContentPage
         Content = new Grid
         {
             new Switch(out testSwitch)
-                .AlignCenterVertical()
-                .AlignCenterHorizontal()
+                .CenterVertically()
+                .CenterHorizontally()
         }
         .Style(
             new Style<Grid>

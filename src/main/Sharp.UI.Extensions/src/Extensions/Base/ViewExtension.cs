@@ -34,21 +34,21 @@ namespace Sharp.UI
 
         // Layout
 
-        public static T AlignCenterHorizontal<T>(this T self)
+        public static T CenterHorizontally<T>(this T self)
             where T : Microsoft.Maui.Controls.View
         {
             self.SetValueOrAddSetter(Microsoft.Maui.Controls.View.HorizontalOptionsProperty, LayoutOptions.Center);
             return self;
         }
 
-        public static T AlignCenterVertical<T>(this T self)
+        public static T CenterVertically<T>(this T self)
             where T : Microsoft.Maui.Controls.View
         {
             self.SetValueOrAddSetter(Microsoft.Maui.Controls.View.VerticalOptionsProperty, LayoutOptions.Center);
             return self;
         }
 
-        public static T AlignCenter<T>(this T self)
+        public static T CenterInContainer<T>(this T self)
             where T : Microsoft.Maui.Controls.View
         {
             self.SetValueOrAddSetter(Microsoft.Maui.Controls.View.HorizontalOptionsProperty, LayoutOptions.Center);
@@ -116,21 +116,21 @@ namespace Sharp.UI
             return self;
         }
 
-        public static T AlignFillHorizontal<T>(this T self)
+        public static T FillHorizontally<T>(this T self)
             where T : Microsoft.Maui.Controls.View
         {
             self.SetValueOrAddSetter(Microsoft.Maui.Controls.View.HorizontalOptionsProperty, LayoutOptions.Fill);
             return self;
         }
 
-        public static T AlignFillVertical<T>(this T self)
+        public static T FillVertically<T>(this T self)
             where T : Microsoft.Maui.Controls.View
         {
             self.SetValueOrAddSetter(Microsoft.Maui.Controls.View.VerticalOptionsProperty, LayoutOptions.Fill);
             return self;
         }
 
-        public static T AlignFill<T>(this T self)
+        public static T FillBothDirections<T>(this T self)
             where T : Microsoft.Maui.Controls.View
         {
             self.SetValueOrAddSetter(Microsoft.Maui.Controls.View.HorizontalOptionsProperty, LayoutOptions.Fill);

@@ -14,8 +14,8 @@ public class SwipeViewPage : ContentPage
 				new Grid
 				{
 					new Label("Swipe right")
-						.AlignCenterHorizontal()
-						.AlignCenterVertical()
+						.CenterHorizontally()
+						.CenterVertically()
 				}
                 .HeightRequest(80)
                 .BackgroundColor(Colors.LightGray)
@@ -39,8 +39,8 @@ public class SwipeViewPage : ContentPage
 				new Grid
                 {
                     new Label("Swipe to answer")
-                        .AlignCenterHorizontal()
-                        .AlignCenterVertical()
+                        .CenterHorizontally()
+                        .CenterVertically()
                 }
                 .HeightRequest(80)
                 .BackgroundColor(Colors.Blue)
@@ -52,11 +52,11 @@ public class SwipeViewPage : ContentPage
 					new StackLayout
 					{
 						new Entry("Enter answer")
-							.AlignCenterHorizontal()
+							.CenterHorizontally()
 							.WidthRequest(200),
 						new Label("Check")
 							.FontAttributes(FontAttributes.Bold)
-							.AlignCenterHorizontal()
+							.CenterHorizontally()
                             .TextColor(Colors.White)
                     }
 					.WidthRequest(300)

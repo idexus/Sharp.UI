@@ -11,16 +11,16 @@ public class DeviceIdiomPage : ContentPage
         new Style<Label>(e => e
             .TextColor(e => e.OnLight(Colors.Red).OnDark(Colors.Blue))
             .FontSize(50.0)
-            .AlignCenterHorizontal()
-            .AlignCenterVertical()
+            .CenterHorizontally()
+            .CenterVertically()
             .Margin(new Thickness(10,0))),
         
         new Style<Image>(e => e
-            .AlignCenterHorizontal()
+            .CenterHorizontally()
             .HeightRequest(60)),
         
         new Style<VStack>(e => e
-            .AlignCenterHorizontal()
+            .CenterHorizontally()
             .Margin(new Thickness(0,30,0,0)))        
     };
 

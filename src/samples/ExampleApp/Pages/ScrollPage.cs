@@ -29,8 +29,8 @@ public class ScrollPage : ContentPage
                         new Label()
                             .Margin(50)
                             .Text(e => e.Path("Id"))
-                            .AlignCenterHorizontal()
-                            .AlignCenterVertical()
+                            .CenterHorizontally()
+                            .CenterVertically()
                             .FontSize(50)
                             .TextColor(Colors.Blue)
                             .HeightRequest(50),

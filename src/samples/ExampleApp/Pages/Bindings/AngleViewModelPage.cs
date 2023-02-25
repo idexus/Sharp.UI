@@ -46,7 +46,7 @@ public class AngleViewModelPage : ContentPage
         this.BindingContext = viewModel;
         this.Content = new VStack
         {
-            e => e.AlignCenterVertical(),
+            e => e.CenterVertically(),
 
             new Slider(0, 500)
                 .Value(e => e.Path("RawAngle")),

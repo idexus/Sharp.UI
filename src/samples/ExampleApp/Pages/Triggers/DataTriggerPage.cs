@@ -17,6 +17,6 @@ public class DataTriggerPage : ContentPage
 						.Value(0)
 						.Setters(new Setters<Button>(e => e.IsEnabled(false)))),
         }
-		.AlignCenterVertical();
+		.CenterVertically();
 	}
 }

@@ -48,8 +48,8 @@ namespace ExampleApp
 						}
 					})
 			}
-			.AlignCenterHorizontal()
-			.AlignCenterVertical();
+			.CenterHorizontally()
+			.CenterVertically();
 		}
 	}
 }

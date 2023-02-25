@@ -12,8 +12,8 @@ namespace ExampleApp
 			Resources = new ResourceDictionary
 			{
 				new Style<ContentView>(e => e
-					.AlignCenterVertical()
-					.AlignCenterHorizontal())				
+					.CenterVertically()
+					.CenterHorizontally())				
 			};
 
 			this.BackgroundColor(Colors.White);

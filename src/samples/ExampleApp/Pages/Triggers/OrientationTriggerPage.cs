@@ -10,8 +10,8 @@ public class OrientationTriggerPage : ContentPage
         {
             new Label("Change orientation").FontSize(40)            
         }
-        .AlignCenterVertical()
-        .AlignCenterHorizontal()
+        .CenterVertically()
+        .CenterHorizontally()
         .Style(new Style<VStack>
         {
             new VisualState<VStack>(e => e.BackgroundColor(Colors.Blue))

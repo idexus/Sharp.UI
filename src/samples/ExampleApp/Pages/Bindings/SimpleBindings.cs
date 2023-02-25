@@ -21,8 +21,8 @@ public class SimpleBindings : ContentPage
                 )
                 .FontSize(28)
                 .TextColor(Colors.Blue)
-                .AlignCenterHorizontal()
+                .CenterHorizontally()
         }
-        .AlignCenterVertical();
+        .CenterVertically();
     }
 }

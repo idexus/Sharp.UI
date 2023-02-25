@@ -38,6 +38,6 @@ public class EnterExitActionsPage : ContentPage
                         .EnterActions(new FadeTriggerAction(startsFrom: 0))
                         .ExitActions(new FadeTriggerAction(startsFrom: 1)))
         }
-        .AlignCenterVertical();
+        .CenterVertically();
     }
 }

@@ -27,6 +27,6 @@ public class MultiTriggerPage : ContentPage
                 )
         }
         .WidthRequest(400)
-        .AlignCenterVertical();
+        .CenterVertically();
     }
 }
