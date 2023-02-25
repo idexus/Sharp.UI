@@ -531,6 +531,344 @@ namespace Sharp.UI
         }
 
         
+        public static T TextColor<T>(this T obj,
+            object textColor)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.TextColorProperty, textColor);
+            return obj;
+        }
+        
+        public static T TextColor<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.TextColorProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T TextColor<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Picker.TextColorProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T CharacterSpacing<T>(this T obj,
+            object characterSpacing)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.CharacterSpacingProperty, characterSpacing);
+            return obj;
+        }
+        
+        public static T CharacterSpacing<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.CharacterSpacingProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T CharacterSpacing<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Picker.CharacterSpacingProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T Title<T>(this T obj,
+            object title)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.TitleProperty, title);
+            return obj;
+        }
+        
+        public static T Title<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.TitleProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Title<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Picker.TitleProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T TitleColor<T>(this T obj,
+            object titleColor)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.TitleColorProperty, titleColor);
+            return obj;
+        }
+        
+        public static T TitleColor<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.TitleColorProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T TitleColor<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Picker.TitleColorProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T SelectedIndex<T>(this T obj,
+            object selectedIndex)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.SelectedIndexProperty, selectedIndex);
+            return obj;
+        }
+        
+        public static T SelectedIndex<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.SelectedIndexProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T SelectedIndex<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Picker.SelectedIndexProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T ItemsSource<T>(this T obj,
+            object itemsSource)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.ItemsSourceProperty, itemsSource);
+            return obj;
+        }
+        
+        public static T ItemsSource<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.ItemsSourceProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T ItemsSource<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Picker.ItemsSourceProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T SelectedItem<T>(this T obj,
+            object selectedItem)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.SelectedItemProperty, selectedItem);
+            return obj;
+        }
+        
+        public static T SelectedItem<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.SelectedItemProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T SelectedItem<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Picker.SelectedItemProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T FontFamily<T>(this T obj,
+            object fontFamily)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.FontFamilyProperty, fontFamily);
+            return obj;
+        }
+        
+        public static T FontFamily<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.FontFamilyProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T FontFamily<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Picker.FontFamilyProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T FontSize<T>(this T obj,
+            object fontSize)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.FontSizeProperty, fontSize);
+            return obj;
+        }
+        
+        public static T FontSize<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.FontSizeProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T FontSize<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Picker.FontSizeProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T FontAttributes<T>(this T obj,
+            object fontAttributes)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.FontAttributesProperty, fontAttributes);
+            return obj;
+        }
+        
+        public static T FontAttributes<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.FontAttributesProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T FontAttributes<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Picker.FontAttributesProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T FontAutoScalingEnabled<T>(this T obj,
+            object fontAutoScalingEnabled)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.FontAutoScalingEnabledProperty, fontAutoScalingEnabled);
+            return obj;
+        }
+        
+        public static T FontAutoScalingEnabled<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.FontAutoScalingEnabledProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T FontAutoScalingEnabled<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Picker.FontAutoScalingEnabledProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T HorizontalTextAlignment<T>(this T obj,
+            object horizontalTextAlignment)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.HorizontalTextAlignmentProperty, horizontalTextAlignment);
+            return obj;
+        }
+        
+        public static T HorizontalTextAlignment<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.HorizontalTextAlignmentProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T HorizontalTextAlignment<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Picker.HorizontalTextAlignmentProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T VerticalTextAlignment<T>(this T obj,
+            object verticalTextAlignment)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.VerticalTextAlignmentProperty, verticalTextAlignment);
+            return obj;
+        }
+        
+        public static T VerticalTextAlignment<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Picker.VerticalTextAlignmentProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T VerticalTextAlignment<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Picker.VerticalTextAlignmentProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
     }
 }
 

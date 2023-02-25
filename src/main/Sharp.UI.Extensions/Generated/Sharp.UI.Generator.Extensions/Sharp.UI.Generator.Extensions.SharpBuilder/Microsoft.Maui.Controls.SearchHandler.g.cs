@@ -998,6 +998,994 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T IsFocused<T>(this T obj,
+            object isFocused)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.IsFocusedProperty, isFocused);
+            return obj;
+        }
+        
+        public static T IsFocused<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.IsFocusedProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T IsFocused<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.SearchHandler.IsFocusedProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T Keyboard<T>(this T obj,
+            object keyboard)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.KeyboardProperty, keyboard);
+            return obj;
+        }
+        
+        public static T Keyboard<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.KeyboardProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Keyboard<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.SearchHandler.KeyboardProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T HorizontalTextAlignment<T>(this T obj,
+            object horizontalTextAlignment)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.HorizontalTextAlignmentProperty, horizontalTextAlignment);
+            return obj;
+        }
+        
+        public static T HorizontalTextAlignment<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.HorizontalTextAlignmentProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T HorizontalTextAlignment<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.SearchHandler.HorizontalTextAlignmentProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T VerticalTextAlignment<T>(this T obj,
+            object verticalTextAlignment)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.VerticalTextAlignmentProperty, verticalTextAlignment);
+            return obj;
+        }
+        
+        public static T VerticalTextAlignment<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.VerticalTextAlignmentProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T VerticalTextAlignment<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.SearchHandler.VerticalTextAlignmentProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T TextColor<T>(this T obj,
+            object textColor)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.TextColorProperty, textColor);
+            return obj;
+        }
+        
+        public static T TextColor<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.TextColorProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T TextColor<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.SearchHandler.TextColorProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T CharacterSpacing<T>(this T obj,
+            object characterSpacing)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.CharacterSpacingProperty, characterSpacing);
+            return obj;
+        }
+        
+        public static T CharacterSpacing<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.CharacterSpacingProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T CharacterSpacing<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.SearchHandler.CharacterSpacingProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T CancelButtonColor<T>(this T obj,
+            object cancelButtonColor)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.CancelButtonColorProperty, cancelButtonColor);
+            return obj;
+        }
+        
+        public static T CancelButtonColor<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.CancelButtonColorProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T CancelButtonColor<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.SearchHandler.CancelButtonColorProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T FontFamily<T>(this T obj,
+            object fontFamily)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.FontFamilyProperty, fontFamily);
+            return obj;
+        }
+        
+        public static T FontFamily<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.FontFamilyProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T FontFamily<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.SearchHandler.FontFamilyProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T FontSize<T>(this T obj,
+            object fontSize)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.FontSizeProperty, fontSize);
+            return obj;
+        }
+        
+        public static T FontSize<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.FontSizeProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T FontSize<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.SearchHandler.FontSizeProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T FontAttributes<T>(this T obj,
+            object fontAttributes)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.FontAttributesProperty, fontAttributes);
+            return obj;
+        }
+        
+        public static T FontAttributes<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.FontAttributesProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T FontAttributes<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.SearchHandler.FontAttributesProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T FontAutoScalingEnabled<T>(this T obj,
+            object fontAutoScalingEnabled)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.FontAutoScalingEnabledProperty, fontAutoScalingEnabled);
+            return obj;
+        }
+        
+        public static T FontAutoScalingEnabled<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.FontAutoScalingEnabledProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T FontAutoScalingEnabled<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.SearchHandler.FontAutoScalingEnabledProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T Placeholder<T>(this T obj,
+            object placeholder)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.PlaceholderProperty, placeholder);
+            return obj;
+        }
+        
+        public static T Placeholder<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.PlaceholderProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Placeholder<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.SearchHandler.PlaceholderProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T PlaceholderColor<T>(this T obj,
+            object placeholderColor)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.PlaceholderColorProperty, placeholderColor);
+            return obj;
+        }
+        
+        public static T PlaceholderColor<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.PlaceholderColorProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T PlaceholderColor<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.SearchHandler.PlaceholderColorProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T TextTransform<T>(this T obj,
+            object textTransform)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.TextTransformProperty, textTransform);
+            return obj;
+        }
+        
+        public static T TextTransform<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.TextTransformProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T TextTransform<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.SearchHandler.TextTransformProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T BackgroundColor<T>(this T obj,
+            object backgroundColor)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.BackgroundColorProperty, backgroundColor);
+            return obj;
+        }
+        
+        public static T BackgroundColor<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.BackgroundColorProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T BackgroundColor<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.SearchHandler.BackgroundColorProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T AutomationId<T>(this T obj,
+            object automationId)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.AutomationIdProperty, automationId);
+            return obj;
+        }
+        
+        public static T AutomationId<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.AutomationIdProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T AutomationId<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.SearchHandler.AutomationIdProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T ClearIconHelpText<T>(this T obj,
+            object clearIconHelpText)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ClearIconHelpTextProperty, clearIconHelpText);
+            return obj;
+        }
+        
+        public static T ClearIconHelpText<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ClearIconHelpTextProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T ClearIconHelpText<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.SearchHandler.ClearIconHelpTextProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T ClearIconName<T>(this T obj,
+            object clearIconName)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ClearIconNameProperty, clearIconName);
+            return obj;
+        }
+        
+        public static T ClearIconName<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ClearIconNameProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T ClearIconName<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.SearchHandler.ClearIconNameProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T ClearIcon<T>(this T obj,
+            object clearIcon)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ClearIconProperty, clearIcon);
+            return obj;
+        }
+        
+        public static T ClearIcon<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ClearIconProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T ClearIcon<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.SearchHandler.ClearIconProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T ClearPlaceholderCommandParameter<T>(this T obj,
+            object clearPlaceholderCommandParameter)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderCommandParameterProperty, clearPlaceholderCommandParameter);
+            return obj;
+        }
+        
+        public static T ClearPlaceholderCommandParameter<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderCommandParameterProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T ClearPlaceholderCommandParameter<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderCommandParameterProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T ClearPlaceholderCommand<T>(this T obj,
+            object clearPlaceholderCommand)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderCommandProperty, clearPlaceholderCommand);
+            return obj;
+        }
+        
+        public static T ClearPlaceholderCommand<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderCommandProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T ClearPlaceholderCommand<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderCommandProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T ClearPlaceholderEnabled<T>(this T obj,
+            object clearPlaceholderEnabled)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderEnabledProperty, clearPlaceholderEnabled);
+            return obj;
+        }
+        
+        public static T ClearPlaceholderEnabled<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderEnabledProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T ClearPlaceholderEnabled<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderEnabledProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T ClearPlaceholderHelpText<T>(this T obj,
+            object clearPlaceholderHelpText)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderHelpTextProperty, clearPlaceholderHelpText);
+            return obj;
+        }
+        
+        public static T ClearPlaceholderHelpText<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderHelpTextProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T ClearPlaceholderHelpText<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderHelpTextProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T ClearPlaceholderIcon<T>(this T obj,
+            object clearPlaceholderIcon)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderIconProperty, clearPlaceholderIcon);
+            return obj;
+        }
+        
+        public static T ClearPlaceholderIcon<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderIconProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T ClearPlaceholderIcon<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderIconProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T ClearPlaceholderName<T>(this T obj,
+            object clearPlaceholderName)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderNameProperty, clearPlaceholderName);
+            return obj;
+        }
+        
+        public static T ClearPlaceholderName<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderNameProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T ClearPlaceholderName<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderNameProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T CommandParameter<T>(this T obj,
+            object commandParameter)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.CommandParameterProperty, commandParameter);
+            return obj;
+        }
+        
+        public static T CommandParameter<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.CommandParameterProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T CommandParameter<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.SearchHandler.CommandParameterProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T Command<T>(this T obj,
+            object command)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.CommandProperty, command);
+            return obj;
+        }
+        
+        public static T Command<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.CommandProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Command<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.SearchHandler.CommandProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T DisplayMemberName<T>(this T obj,
+            object displayMemberName)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.DisplayMemberNameProperty, displayMemberName);
+            return obj;
+        }
+        
+        public static T DisplayMemberName<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.DisplayMemberNameProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T DisplayMemberName<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.SearchHandler.DisplayMemberNameProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T IsSearchEnabled<T>(this T obj,
+            object isSearchEnabled)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.IsSearchEnabledProperty, isSearchEnabled);
+            return obj;
+        }
+        
+        public static T IsSearchEnabled<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.IsSearchEnabledProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T IsSearchEnabled<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.SearchHandler.IsSearchEnabledProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T ItemsSource<T>(this T obj,
+            object itemsSource)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ItemsSourceProperty, itemsSource);
+            return obj;
+        }
+        
+        public static T ItemsSource<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ItemsSourceProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T ItemsSource<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.SearchHandler.ItemsSourceProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T ItemTemplate<T>(this T obj,
+            object itemTemplate)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ItemTemplateProperty, itemTemplate);
+            return obj;
+        }
+        
+        public static T ItemTemplate<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ItemTemplateProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T ItemTemplate<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.SearchHandler.ItemTemplateProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T QueryIconHelpText<T>(this T obj,
+            object queryIconHelpText)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.QueryIconHelpTextProperty, queryIconHelpText);
+            return obj;
+        }
+        
+        public static T QueryIconHelpText<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.QueryIconHelpTextProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T QueryIconHelpText<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.SearchHandler.QueryIconHelpTextProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T QueryIconName<T>(this T obj,
+            object queryIconName)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.QueryIconNameProperty, queryIconName);
+            return obj;
+        }
+        
+        public static T QueryIconName<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.QueryIconNameProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T QueryIconName<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.SearchHandler.QueryIconNameProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T QueryIcon<T>(this T obj,
+            object queryIcon)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.QueryIconProperty, queryIcon);
+            return obj;
+        }
+        
+        public static T QueryIcon<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.QueryIconProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T QueryIcon<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.SearchHandler.QueryIconProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T Query<T>(this T obj,
+            object query)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.QueryProperty, query);
+            return obj;
+        }
+        
+        public static T Query<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.QueryProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Query<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.SearchHandler.QueryProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T SearchBoxVisibility<T>(this T obj,
+            object searchBoxVisibility)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.SearchBoxVisibilityProperty, searchBoxVisibility);
+            return obj;
+        }
+        
+        public static T SearchBoxVisibility<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.SearchBoxVisibilityProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T SearchBoxVisibility<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.SearchHandler.SearchBoxVisibilityProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T SelectedItem<T>(this T obj,
+            object selectedItem)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.SelectedItemProperty, selectedItem);
+            return obj;
+        }
+        
+        public static T SelectedItem<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.SelectedItemProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T SelectedItem<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.SearchHandler.SelectedItemProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T ShowsResults<T>(this T obj,
+            object showsResults)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ShowsResultsProperty, showsResults);
+            return obj;
+        }
+        
+        public static T ShowsResults<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ShowsResultsProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T ShowsResults<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.SearchHandler.ShowsResultsProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
     }
 }
 

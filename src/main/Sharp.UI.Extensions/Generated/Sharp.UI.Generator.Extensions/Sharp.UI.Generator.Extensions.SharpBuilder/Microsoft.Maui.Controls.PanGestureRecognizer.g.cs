@@ -53,6 +53,32 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T TouchPoints<T>(this T obj,
+            object touchPoints)
+            where T : Microsoft.Maui.Controls.PanGestureRecognizer
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.PanGestureRecognizer.TouchPointsProperty, touchPoints);
+            return obj;
+        }
+        
+        public static T TouchPoints<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.PanGestureRecognizer
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.PanGestureRecognizer.TouchPointsProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T TouchPoints<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.PanGestureRecognizer
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.PanGestureRecognizer.TouchPointsProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
     }
 }
 

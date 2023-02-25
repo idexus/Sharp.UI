@@ -187,6 +187,144 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static Microsoft.Maui.Controls.PointerGestureRecognizer PointerEnteredCommand(this Microsoft.Maui.Controls.PointerGestureRecognizer obj,
+            object pointerEnteredCommand)
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.PointerGestureRecognizer.PointerEnteredCommandProperty, pointerEnteredCommand);
+            return obj;
+        }
+        
+        public static Microsoft.Maui.Controls.PointerGestureRecognizer PointerEnteredCommand(this Microsoft.Maui.Controls.PointerGestureRecognizer obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.PointerGestureRecognizer.PointerEnteredCommandProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static Microsoft.Maui.Controls.PointerGestureRecognizer PointerEnteredCommand(this Microsoft.Maui.Controls.PointerGestureRecognizer obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.PointerGestureRecognizer.PointerEnteredCommandProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static Microsoft.Maui.Controls.PointerGestureRecognizer PointerEnteredCommandParameter(this Microsoft.Maui.Controls.PointerGestureRecognizer obj,
+            object pointerEnteredCommandParameter)
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.PointerGestureRecognizer.PointerEnteredCommandParameterProperty, pointerEnteredCommandParameter);
+            return obj;
+        }
+        
+        public static Microsoft.Maui.Controls.PointerGestureRecognizer PointerEnteredCommandParameter(this Microsoft.Maui.Controls.PointerGestureRecognizer obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.PointerGestureRecognizer.PointerEnteredCommandParameterProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static Microsoft.Maui.Controls.PointerGestureRecognizer PointerEnteredCommandParameter(this Microsoft.Maui.Controls.PointerGestureRecognizer obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.PointerGestureRecognizer.PointerEnteredCommandParameterProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static Microsoft.Maui.Controls.PointerGestureRecognizer PointerExitedCommand(this Microsoft.Maui.Controls.PointerGestureRecognizer obj,
+            object pointerExitedCommand)
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.PointerGestureRecognizer.PointerExitedCommandProperty, pointerExitedCommand);
+            return obj;
+        }
+        
+        public static Microsoft.Maui.Controls.PointerGestureRecognizer PointerExitedCommand(this Microsoft.Maui.Controls.PointerGestureRecognizer obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.PointerGestureRecognizer.PointerExitedCommandProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static Microsoft.Maui.Controls.PointerGestureRecognizer PointerExitedCommand(this Microsoft.Maui.Controls.PointerGestureRecognizer obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.PointerGestureRecognizer.PointerExitedCommandProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static Microsoft.Maui.Controls.PointerGestureRecognizer PointerExitedCommandParameter(this Microsoft.Maui.Controls.PointerGestureRecognizer obj,
+            object pointerExitedCommandParameter)
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.PointerGestureRecognizer.PointerExitedCommandParameterProperty, pointerExitedCommandParameter);
+            return obj;
+        }
+        
+        public static Microsoft.Maui.Controls.PointerGestureRecognizer PointerExitedCommandParameter(this Microsoft.Maui.Controls.PointerGestureRecognizer obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.PointerGestureRecognizer.PointerExitedCommandParameterProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static Microsoft.Maui.Controls.PointerGestureRecognizer PointerExitedCommandParameter(this Microsoft.Maui.Controls.PointerGestureRecognizer obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.PointerGestureRecognizer.PointerExitedCommandParameterProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static Microsoft.Maui.Controls.PointerGestureRecognizer PointerMovedCommand(this Microsoft.Maui.Controls.PointerGestureRecognizer obj,
+            object pointerMovedCommand)
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.PointerGestureRecognizer.PointerMovedCommandProperty, pointerMovedCommand);
+            return obj;
+        }
+        
+        public static Microsoft.Maui.Controls.PointerGestureRecognizer PointerMovedCommand(this Microsoft.Maui.Controls.PointerGestureRecognizer obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.PointerGestureRecognizer.PointerMovedCommandProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static Microsoft.Maui.Controls.PointerGestureRecognizer PointerMovedCommand(this Microsoft.Maui.Controls.PointerGestureRecognizer obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.PointerGestureRecognizer.PointerMovedCommandProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static Microsoft.Maui.Controls.PointerGestureRecognizer PointerMovedCommandParameter(this Microsoft.Maui.Controls.PointerGestureRecognizer obj,
+            object pointerMovedCommandParameter)
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.PointerGestureRecognizer.PointerMovedCommandParameterProperty, pointerMovedCommandParameter);
+            return obj;
+        }
+        
+        public static Microsoft.Maui.Controls.PointerGestureRecognizer PointerMovedCommandParameter(this Microsoft.Maui.Controls.PointerGestureRecognizer obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.PointerGestureRecognizer.PointerMovedCommandParameterProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static Microsoft.Maui.Controls.PointerGestureRecognizer PointerMovedCommandParameter(this Microsoft.Maui.Controls.PointerGestureRecognizer obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.PointerGestureRecognizer.PointerMovedCommandParameterProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
     }
 }
 

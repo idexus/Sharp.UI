@@ -248,6 +248,214 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T Format<T>(this T obj,
+            object format)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.TimePicker.FormatProperty, format);
+            return obj;
+        }
+        
+        public static T Format<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.TimePicker.FormatProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Format<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.TimePicker.FormatProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T TextColor<T>(this T obj,
+            object textColor)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.TimePicker.TextColorProperty, textColor);
+            return obj;
+        }
+        
+        public static T TextColor<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.TimePicker.TextColorProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T TextColor<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.TimePicker.TextColorProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T CharacterSpacing<T>(this T obj,
+            object characterSpacing)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.TimePicker.CharacterSpacingProperty, characterSpacing);
+            return obj;
+        }
+        
+        public static T CharacterSpacing<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.TimePicker.CharacterSpacingProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T CharacterSpacing<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.TimePicker.CharacterSpacingProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T Time<T>(this T obj,
+            object time)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.TimePicker.TimeProperty, time);
+            return obj;
+        }
+        
+        public static T Time<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.TimePicker.TimeProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Time<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.TimePicker.TimeProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T FontFamily<T>(this T obj,
+            object fontFamily)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.TimePicker.FontFamilyProperty, fontFamily);
+            return obj;
+        }
+        
+        public static T FontFamily<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.TimePicker.FontFamilyProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T FontFamily<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.TimePicker.FontFamilyProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T FontSize<T>(this T obj,
+            object fontSize)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.TimePicker.FontSizeProperty, fontSize);
+            return obj;
+        }
+        
+        public static T FontSize<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.TimePicker.FontSizeProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T FontSize<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.TimePicker.FontSizeProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T FontAttributes<T>(this T obj,
+            object fontAttributes)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.TimePicker.FontAttributesProperty, fontAttributes);
+            return obj;
+        }
+        
+        public static T FontAttributes<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.TimePicker.FontAttributesProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T FontAttributes<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.TimePicker.FontAttributesProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T FontAutoScalingEnabled<T>(this T obj,
+            object fontAutoScalingEnabled)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.TimePicker.FontAutoScalingEnabledProperty, fontAutoScalingEnabled);
+            return obj;
+        }
+        
+        public static T FontAutoScalingEnabled<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.TimePicker.FontAutoScalingEnabledProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T FontAutoScalingEnabled<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.TimePicker.FontAutoScalingEnabledProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
     }
 }
 

@@ -219,6 +219,188 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T Accelerator<T>(this T obj,
+            object accelerator)
+            where T : Microsoft.Maui.Controls.MenuItem
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.MenuItem.AcceleratorProperty, accelerator);
+            return obj;
+        }
+        
+        public static T Accelerator<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.MenuItem
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.MenuItem.AcceleratorProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Accelerator<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.MenuItem
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.MenuItem.AcceleratorProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T Command<T>(this T obj,
+            object command)
+            where T : Microsoft.Maui.Controls.MenuItem
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.MenuItem.CommandProperty, command);
+            return obj;
+        }
+        
+        public static T Command<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.MenuItem
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.MenuItem.CommandProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Command<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.MenuItem
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.MenuItem.CommandProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T CommandParameter<T>(this T obj,
+            object commandParameter)
+            where T : Microsoft.Maui.Controls.MenuItem
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.MenuItem.CommandParameterProperty, commandParameter);
+            return obj;
+        }
+        
+        public static T CommandParameter<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.MenuItem
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.MenuItem.CommandParameterProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T CommandParameter<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.MenuItem
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.MenuItem.CommandParameterProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T IsDestructive<T>(this T obj,
+            object isDestructive)
+            where T : Microsoft.Maui.Controls.MenuItem
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.MenuItem.IsDestructiveProperty, isDestructive);
+            return obj;
+        }
+        
+        public static T IsDestructive<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.MenuItem
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.MenuItem.IsDestructiveProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T IsDestructive<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.MenuItem
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.MenuItem.IsDestructiveProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T IconImageSource<T>(this T obj,
+            object iconImageSource)
+            where T : Microsoft.Maui.Controls.MenuItem
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.MenuItem.IconImageSourceProperty, iconImageSource);
+            return obj;
+        }
+        
+        public static T IconImageSource<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.MenuItem
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.MenuItem.IconImageSourceProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T IconImageSource<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.MenuItem
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.MenuItem.IconImageSourceProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T IsEnabled<T>(this T obj,
+            object isEnabled)
+            where T : Microsoft.Maui.Controls.MenuItem
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.MenuItem.IsEnabledProperty, isEnabled);
+            return obj;
+        }
+        
+        public static T IsEnabled<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.MenuItem
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.MenuItem.IsEnabledProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T IsEnabled<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.MenuItem
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.MenuItem.IsEnabledProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T Text<T>(this T obj,
+            object text)
+            where T : Microsoft.Maui.Controls.MenuItem
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.MenuItem.TextProperty, text);
+            return obj;
+        }
+        
+        public static T Text<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.MenuItem
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.MenuItem.TextProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Text<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.MenuItem
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.MenuItem.TextProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
     }
 }
 

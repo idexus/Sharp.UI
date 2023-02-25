@@ -59,6 +59,52 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static Microsoft.Maui.Controls.AdaptiveTrigger MinWindowHeight(this Microsoft.Maui.Controls.AdaptiveTrigger obj,
+            object minWindowHeight)
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.AdaptiveTrigger.MinWindowHeightProperty, minWindowHeight);
+            return obj;
+        }
+        
+        public static Microsoft.Maui.Controls.AdaptiveTrigger MinWindowHeight(this Microsoft.Maui.Controls.AdaptiveTrigger obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.AdaptiveTrigger.MinWindowHeightProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static Microsoft.Maui.Controls.AdaptiveTrigger MinWindowHeight(this Microsoft.Maui.Controls.AdaptiveTrigger obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.AdaptiveTrigger.MinWindowHeightProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static Microsoft.Maui.Controls.AdaptiveTrigger MinWindowWidth(this Microsoft.Maui.Controls.AdaptiveTrigger obj,
+            object minWindowWidth)
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.AdaptiveTrigger.MinWindowWidthProperty, minWindowWidth);
+            return obj;
+        }
+        
+        public static Microsoft.Maui.Controls.AdaptiveTrigger MinWindowWidth(this Microsoft.Maui.Controls.AdaptiveTrigger obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.AdaptiveTrigger.MinWindowWidthProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static Microsoft.Maui.Controls.AdaptiveTrigger MinWindowWidth(this Microsoft.Maui.Controls.AdaptiveTrigger obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.AdaptiveTrigger.MinWindowWidthProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
     }
 }
 

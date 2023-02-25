@@ -117,6 +117,98 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static Microsoft.Maui.Controls.TapGestureRecognizer Command(this Microsoft.Maui.Controls.TapGestureRecognizer obj,
+            object command)
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.TapGestureRecognizer.CommandProperty, command);
+            return obj;
+        }
+        
+        public static Microsoft.Maui.Controls.TapGestureRecognizer Command(this Microsoft.Maui.Controls.TapGestureRecognizer obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.TapGestureRecognizer.CommandProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static Microsoft.Maui.Controls.TapGestureRecognizer Command(this Microsoft.Maui.Controls.TapGestureRecognizer obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.TapGestureRecognizer.CommandProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static Microsoft.Maui.Controls.TapGestureRecognizer CommandParameter(this Microsoft.Maui.Controls.TapGestureRecognizer obj,
+            object commandParameter)
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.TapGestureRecognizer.CommandParameterProperty, commandParameter);
+            return obj;
+        }
+        
+        public static Microsoft.Maui.Controls.TapGestureRecognizer CommandParameter(this Microsoft.Maui.Controls.TapGestureRecognizer obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.TapGestureRecognizer.CommandParameterProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static Microsoft.Maui.Controls.TapGestureRecognizer CommandParameter(this Microsoft.Maui.Controls.TapGestureRecognizer obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.TapGestureRecognizer.CommandParameterProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static Microsoft.Maui.Controls.TapGestureRecognizer NumberOfTapsRequired(this Microsoft.Maui.Controls.TapGestureRecognizer obj,
+            object numberOfTapsRequired)
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.TapGestureRecognizer.NumberOfTapsRequiredProperty, numberOfTapsRequired);
+            return obj;
+        }
+        
+        public static Microsoft.Maui.Controls.TapGestureRecognizer NumberOfTapsRequired(this Microsoft.Maui.Controls.TapGestureRecognizer obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.TapGestureRecognizer.NumberOfTapsRequiredProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static Microsoft.Maui.Controls.TapGestureRecognizer NumberOfTapsRequired(this Microsoft.Maui.Controls.TapGestureRecognizer obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.TapGestureRecognizer.NumberOfTapsRequiredProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static Microsoft.Maui.Controls.TapGestureRecognizer Buttons(this Microsoft.Maui.Controls.TapGestureRecognizer obj,
+            object buttons)
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.TapGestureRecognizer.ButtonsProperty, buttons);
+            return obj;
+        }
+        
+        public static Microsoft.Maui.Controls.TapGestureRecognizer Buttons(this Microsoft.Maui.Controls.TapGestureRecognizer obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.TapGestureRecognizer.ButtonsProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static Microsoft.Maui.Controls.TapGestureRecognizer Buttons(this Microsoft.Maui.Controls.TapGestureRecognizer obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.TapGestureRecognizer.ButtonsProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
     }
 }
 

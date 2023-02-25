@@ -213,6 +213,188 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T FlyoutIcon<T>(this T obj,
+            object flyoutIcon)
+            where T : Microsoft.Maui.Controls.BaseShellItem
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.BaseShellItem.FlyoutIconProperty, flyoutIcon);
+            return obj;
+        }
+        
+        public static T FlyoutIcon<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.BaseShellItem
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.BaseShellItem.FlyoutIconProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T FlyoutIcon<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.BaseShellItem
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.BaseShellItem.FlyoutIconProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T Icon<T>(this T obj,
+            object icon)
+            where T : Microsoft.Maui.Controls.BaseShellItem
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.BaseShellItem.IconProperty, icon);
+            return obj;
+        }
+        
+        public static T Icon<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.BaseShellItem
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.BaseShellItem.IconProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Icon<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.BaseShellItem
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.BaseShellItem.IconProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T IsChecked<T>(this T obj,
+            object isChecked)
+            where T : Microsoft.Maui.Controls.BaseShellItem
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.BaseShellItem.IsCheckedProperty, isChecked);
+            return obj;
+        }
+        
+        public static T IsChecked<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.BaseShellItem
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.BaseShellItem.IsCheckedProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T IsChecked<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.BaseShellItem
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.BaseShellItem.IsCheckedProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T IsEnabled<T>(this T obj,
+            object isEnabled)
+            where T : Microsoft.Maui.Controls.BaseShellItem
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.BaseShellItem.IsEnabledProperty, isEnabled);
+            return obj;
+        }
+        
+        public static T IsEnabled<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.BaseShellItem
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.BaseShellItem.IsEnabledProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T IsEnabled<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.BaseShellItem
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.BaseShellItem.IsEnabledProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T Title<T>(this T obj,
+            object title)
+            where T : Microsoft.Maui.Controls.BaseShellItem
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.BaseShellItem.TitleProperty, title);
+            return obj;
+        }
+        
+        public static T Title<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.BaseShellItem
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.BaseShellItem.TitleProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Title<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.BaseShellItem
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.BaseShellItem.TitleProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T IsVisible<T>(this T obj,
+            object isVisible)
+            where T : Microsoft.Maui.Controls.BaseShellItem
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.BaseShellItem.IsVisibleProperty, isVisible);
+            return obj;
+        }
+        
+        public static T IsVisible<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.BaseShellItem
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.BaseShellItem.IsVisibleProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T IsVisible<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.BaseShellItem
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.BaseShellItem.IsVisibleProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T Window<T>(this T obj,
+            object window)
+            where T : Microsoft.Maui.Controls.BaseShellItem
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.BaseShellItem.WindowProperty, window);
+            return obj;
+        }
+        
+        public static T Window<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.BaseShellItem
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.BaseShellItem.WindowProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Window<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.BaseShellItem
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.BaseShellItem.WindowProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
     }
 }
 

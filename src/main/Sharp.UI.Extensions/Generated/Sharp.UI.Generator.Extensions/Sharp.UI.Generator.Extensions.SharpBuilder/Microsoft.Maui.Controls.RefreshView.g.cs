@@ -140,6 +140,110 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T IsRefreshing<T>(this T obj,
+            object isRefreshing)
+            where T : Microsoft.Maui.Controls.RefreshView
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.RefreshView.IsRefreshingProperty, isRefreshing);
+            return obj;
+        }
+        
+        public static T IsRefreshing<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.RefreshView
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.RefreshView.IsRefreshingProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T IsRefreshing<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.RefreshView
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.RefreshView.IsRefreshingProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T Command<T>(this T obj,
+            object command)
+            where T : Microsoft.Maui.Controls.RefreshView
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.RefreshView.CommandProperty, command);
+            return obj;
+        }
+        
+        public static T Command<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.RefreshView
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.RefreshView.CommandProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Command<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.RefreshView
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.RefreshView.CommandProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T CommandParameter<T>(this T obj,
+            object commandParameter)
+            where T : Microsoft.Maui.Controls.RefreshView
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.RefreshView.CommandParameterProperty, commandParameter);
+            return obj;
+        }
+        
+        public static T CommandParameter<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.RefreshView
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.RefreshView.CommandParameterProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T CommandParameter<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.RefreshView
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.RefreshView.CommandParameterProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T RefreshColor<T>(this T obj,
+            object refreshColor)
+            where T : Microsoft.Maui.Controls.RefreshView
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.RefreshView.RefreshColorProperty, refreshColor);
+            return obj;
+        }
+        
+        public static T RefreshColor<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.RefreshView
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.RefreshView.RefreshColorProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T RefreshColor<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.RefreshView
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.RefreshView.RefreshColorProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
     }
 }
 

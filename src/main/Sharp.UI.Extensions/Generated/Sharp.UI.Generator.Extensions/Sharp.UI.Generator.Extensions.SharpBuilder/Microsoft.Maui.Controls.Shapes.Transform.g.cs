@@ -39,6 +39,32 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T Value<T>(this T obj,
+            object value)
+            where T : Microsoft.Maui.Controls.Shapes.Transform
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Transform.ValueProperty, value);
+            return obj;
+        }
+        
+        public static T Value<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.Shapes.Transform
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Transform.ValueProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Value<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.Shapes.Transform
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Shapes.Transform.ValueProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
     }
 }
 

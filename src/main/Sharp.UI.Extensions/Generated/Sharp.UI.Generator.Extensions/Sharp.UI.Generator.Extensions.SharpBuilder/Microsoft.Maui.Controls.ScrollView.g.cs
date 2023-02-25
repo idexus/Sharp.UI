@@ -161,6 +161,162 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T Orientation<T>(this T obj,
+            object orientation)
+            where T : Microsoft.Maui.Controls.ScrollView
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.ScrollView.OrientationProperty, orientation);
+            return obj;
+        }
+        
+        public static T Orientation<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.ScrollView
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ScrollView.OrientationProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Orientation<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.ScrollView
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.ScrollView.OrientationProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T ScrollX<T>(this T obj,
+            object scrollX)
+            where T : Microsoft.Maui.Controls.ScrollView
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.ScrollView.ScrollXProperty, scrollX);
+            return obj;
+        }
+        
+        public static T ScrollX<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.ScrollView
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ScrollView.ScrollXProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T ScrollX<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.ScrollView
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.ScrollView.ScrollXProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T ScrollY<T>(this T obj,
+            object scrollY)
+            where T : Microsoft.Maui.Controls.ScrollView
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.ScrollView.ScrollYProperty, scrollY);
+            return obj;
+        }
+        
+        public static T ScrollY<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.ScrollView
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ScrollView.ScrollYProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T ScrollY<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.ScrollView
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.ScrollView.ScrollYProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T ContentSize<T>(this T obj,
+            object contentSize)
+            where T : Microsoft.Maui.Controls.ScrollView
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.ScrollView.ContentSizeProperty, contentSize);
+            return obj;
+        }
+        
+        public static T ContentSize<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.ScrollView
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ScrollView.ContentSizeProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T ContentSize<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.ScrollView
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.ScrollView.ContentSizeProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T HorizontalScrollBarVisibility<T>(this T obj,
+            object horizontalScrollBarVisibility)
+            where T : Microsoft.Maui.Controls.ScrollView
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.ScrollView.HorizontalScrollBarVisibilityProperty, horizontalScrollBarVisibility);
+            return obj;
+        }
+        
+        public static T HorizontalScrollBarVisibility<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.ScrollView
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ScrollView.HorizontalScrollBarVisibilityProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T HorizontalScrollBarVisibility<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.ScrollView
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.ScrollView.HorizontalScrollBarVisibilityProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T VerticalScrollBarVisibility<T>(this T obj,
+            object verticalScrollBarVisibility)
+            where T : Microsoft.Maui.Controls.ScrollView
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.ScrollView.VerticalScrollBarVisibilityProperty, verticalScrollBarVisibility);
+            return obj;
+        }
+        
+        public static T VerticalScrollBarVisibility<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.ScrollView
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ScrollView.VerticalScrollBarVisibilityProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T VerticalScrollBarVisibility<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.ScrollView
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.ScrollView.VerticalScrollBarVisibilityProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
     }
 }
 

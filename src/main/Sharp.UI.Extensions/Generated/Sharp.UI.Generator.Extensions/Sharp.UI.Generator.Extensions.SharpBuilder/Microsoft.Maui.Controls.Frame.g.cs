@@ -100,6 +100,84 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T BorderColor<T>(this T obj,
+            object borderColor)
+            where T : Microsoft.Maui.Controls.Frame
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Frame.BorderColorProperty, borderColor);
+            return obj;
+        }
+        
+        public static T BorderColor<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.Frame
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Frame.BorderColorProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T BorderColor<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.Frame
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Frame.BorderColorProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T HasShadow<T>(this T obj,
+            object hasShadow)
+            where T : Microsoft.Maui.Controls.Frame
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Frame.HasShadowProperty, hasShadow);
+            return obj;
+        }
+        
+        public static T HasShadow<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.Frame
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Frame.HasShadowProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T HasShadow<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.Frame
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Frame.HasShadowProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T CornerRadius<T>(this T obj,
+            object cornerRadius)
+            where T : Microsoft.Maui.Controls.Frame
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Frame.CornerRadiusProperty, cornerRadius);
+            return obj;
+        }
+        
+        public static T CornerRadius<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.Frame
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Frame.CornerRadiusProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T CornerRadius<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.Frame
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Frame.CornerRadiusProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
     }
 }
 

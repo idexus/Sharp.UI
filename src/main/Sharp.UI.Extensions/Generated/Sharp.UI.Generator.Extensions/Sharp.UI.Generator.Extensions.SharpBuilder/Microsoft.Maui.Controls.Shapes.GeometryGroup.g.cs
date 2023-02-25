@@ -80,6 +80,58 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T Children<T>(this T obj,
+            object children)
+            where T : Microsoft.Maui.Controls.Shapes.GeometryGroup
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.GeometryGroup.ChildrenProperty, children);
+            return obj;
+        }
+        
+        public static T Children<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.Shapes.GeometryGroup
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.GeometryGroup.ChildrenProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Children<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.Shapes.GeometryGroup
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Shapes.GeometryGroup.ChildrenProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T FillRule<T>(this T obj,
+            object fillRule)
+            where T : Microsoft.Maui.Controls.Shapes.GeometryGroup
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.GeometryGroup.FillRuleProperty, fillRule);
+            return obj;
+        }
+        
+        public static T FillRule<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.Shapes.GeometryGroup
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.GeometryGroup.FillRuleProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T FillRule<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.Shapes.GeometryGroup
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Shapes.GeometryGroup.FillRuleProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
     }
 }
 

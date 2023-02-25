@@ -139,6 +139,58 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T RowHeight<T>(this T obj,
+            object rowHeight)
+            where T : Microsoft.Maui.Controls.TableView
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.TableView.RowHeightProperty, rowHeight);
+            return obj;
+        }
+        
+        public static T RowHeight<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.TableView
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.TableView.RowHeightProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T RowHeight<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.TableView
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.TableView.RowHeightProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T HasUnevenRows<T>(this T obj,
+            object hasUnevenRows)
+            where T : Microsoft.Maui.Controls.TableView
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.TableView.HasUnevenRowsProperty, hasUnevenRows);
+            return obj;
+        }
+        
+        public static T HasUnevenRows<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.TableView
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.TableView.HasUnevenRowsProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T HasUnevenRows<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.TableView
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.TableView.HasUnevenRowsProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
     }
 }
 

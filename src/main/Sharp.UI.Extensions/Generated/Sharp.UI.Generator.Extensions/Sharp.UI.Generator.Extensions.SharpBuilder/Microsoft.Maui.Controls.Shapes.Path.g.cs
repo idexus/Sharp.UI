@@ -59,6 +59,52 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static Microsoft.Maui.Controls.Shapes.Path Data(this Microsoft.Maui.Controls.Shapes.Path obj,
+            object data)
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Path.DataProperty, data);
+            return obj;
+        }
+        
+        public static Microsoft.Maui.Controls.Shapes.Path Data(this Microsoft.Maui.Controls.Shapes.Path obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Path.DataProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static Microsoft.Maui.Controls.Shapes.Path Data(this Microsoft.Maui.Controls.Shapes.Path obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Shapes.Path.DataProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static Microsoft.Maui.Controls.Shapes.Path RenderTransform(this Microsoft.Maui.Controls.Shapes.Path obj,
+            object renderTransform)
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Path.RenderTransformProperty, renderTransform);
+            return obj;
+        }
+        
+        public static Microsoft.Maui.Controls.Shapes.Path RenderTransform(this Microsoft.Maui.Controls.Shapes.Path obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Path.RenderTransformProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static Microsoft.Maui.Controls.Shapes.Path RenderTransform(this Microsoft.Maui.Controls.Shapes.Path obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Shapes.Path.RenderTransformProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
     }
 }
 

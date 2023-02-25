@@ -91,6 +91,84 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T Point1<T>(this T obj,
+            object point1)
+            where T : Microsoft.Maui.Controls.Shapes.BezierSegment
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.BezierSegment.Point1Property, point1);
+            return obj;
+        }
+        
+        public static T Point1<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.Shapes.BezierSegment
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.BezierSegment.Point1Property, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Point1<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.Shapes.BezierSegment
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Shapes.BezierSegment.Point1Property));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T Point2<T>(this T obj,
+            object point2)
+            where T : Microsoft.Maui.Controls.Shapes.BezierSegment
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.BezierSegment.Point2Property, point2);
+            return obj;
+        }
+        
+        public static T Point2<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.Shapes.BezierSegment
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.BezierSegment.Point2Property, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Point2<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.Shapes.BezierSegment
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Shapes.BezierSegment.Point2Property));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T Point3<T>(this T obj,
+            object point3)
+            where T : Microsoft.Maui.Controls.Shapes.BezierSegment
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.BezierSegment.Point3Property, point3);
+            return obj;
+        }
+        
+        public static T Point3<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.Shapes.BezierSegment
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.BezierSegment.Point3Property, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Point3<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.Shapes.BezierSegment
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Shapes.BezierSegment.Point3Property));
+            builder.BindProperty();
+            return obj;
+        }
+        
     }
 }
 

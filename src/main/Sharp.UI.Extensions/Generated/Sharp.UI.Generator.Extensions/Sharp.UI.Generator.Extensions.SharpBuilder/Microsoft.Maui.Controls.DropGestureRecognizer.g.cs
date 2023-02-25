@@ -237,6 +237,188 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T AllowDrop<T>(this T obj,
+            object allowDrop)
+            where T : Microsoft.Maui.Controls.DropGestureRecognizer
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.DropGestureRecognizer.AllowDropProperty, allowDrop);
+            return obj;
+        }
+        
+        public static T AllowDrop<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.DropGestureRecognizer
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.DropGestureRecognizer.AllowDropProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T AllowDrop<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.DropGestureRecognizer
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.DropGestureRecognizer.AllowDropProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T DragOverCommand<T>(this T obj,
+            object dragOverCommand)
+            where T : Microsoft.Maui.Controls.DropGestureRecognizer
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.DropGestureRecognizer.DragOverCommandProperty, dragOverCommand);
+            return obj;
+        }
+        
+        public static T DragOverCommand<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.DropGestureRecognizer
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.DropGestureRecognizer.DragOverCommandProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T DragOverCommand<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.DropGestureRecognizer
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.DropGestureRecognizer.DragOverCommandProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T DragOverCommandParameter<T>(this T obj,
+            object dragOverCommandParameter)
+            where T : Microsoft.Maui.Controls.DropGestureRecognizer
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.DropGestureRecognizer.DragOverCommandParameterProperty, dragOverCommandParameter);
+            return obj;
+        }
+        
+        public static T DragOverCommandParameter<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.DropGestureRecognizer
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.DropGestureRecognizer.DragOverCommandParameterProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T DragOverCommandParameter<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.DropGestureRecognizer
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.DropGestureRecognizer.DragOverCommandParameterProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T DragLeaveCommand<T>(this T obj,
+            object dragLeaveCommand)
+            where T : Microsoft.Maui.Controls.DropGestureRecognizer
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.DropGestureRecognizer.DragLeaveCommandProperty, dragLeaveCommand);
+            return obj;
+        }
+        
+        public static T DragLeaveCommand<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.DropGestureRecognizer
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.DropGestureRecognizer.DragLeaveCommandProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T DragLeaveCommand<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.DropGestureRecognizer
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.DropGestureRecognizer.DragLeaveCommandProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T DragLeaveCommandParameter<T>(this T obj,
+            object dragLeaveCommandParameter)
+            where T : Microsoft.Maui.Controls.DropGestureRecognizer
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.DropGestureRecognizer.DragLeaveCommandParameterProperty, dragLeaveCommandParameter);
+            return obj;
+        }
+        
+        public static T DragLeaveCommandParameter<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.DropGestureRecognizer
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.DropGestureRecognizer.DragLeaveCommandParameterProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T DragLeaveCommandParameter<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.DropGestureRecognizer
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.DropGestureRecognizer.DragLeaveCommandParameterProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T DropCommand<T>(this T obj,
+            object dropCommand)
+            where T : Microsoft.Maui.Controls.DropGestureRecognizer
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.DropGestureRecognizer.DropCommandProperty, dropCommand);
+            return obj;
+        }
+        
+        public static T DropCommand<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.DropGestureRecognizer
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.DropGestureRecognizer.DropCommandProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T DropCommand<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.DropGestureRecognizer
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.DropGestureRecognizer.DropCommandProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T DropCommandParameter<T>(this T obj,
+            object dropCommandParameter)
+            where T : Microsoft.Maui.Controls.DropGestureRecognizer
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.DropGestureRecognizer.DropCommandParameterProperty, dropCommandParameter);
+            return obj;
+        }
+        
+        public static T DropCommandParameter<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.DropGestureRecognizer
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.DropGestureRecognizer.DropCommandParameterProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T DropCommandParameter<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.DropGestureRecognizer
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.DropGestureRecognizer.DropCommandParameterProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
     }
 }
 

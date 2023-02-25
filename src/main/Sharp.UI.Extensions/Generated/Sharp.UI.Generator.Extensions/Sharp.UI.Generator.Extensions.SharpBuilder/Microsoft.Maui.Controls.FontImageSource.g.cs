@@ -143,6 +143,136 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T Color<T>(this T obj,
+            object color)
+            where T : Microsoft.Maui.Controls.FontImageSource
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.FontImageSource.ColorProperty, color);
+            return obj;
+        }
+        
+        public static T Color<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.FontImageSource
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.FontImageSource.ColorProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Color<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.FontImageSource
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.FontImageSource.ColorProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T FontFamily<T>(this T obj,
+            object fontFamily)
+            where T : Microsoft.Maui.Controls.FontImageSource
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.FontImageSource.FontFamilyProperty, fontFamily);
+            return obj;
+        }
+        
+        public static T FontFamily<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.FontImageSource
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.FontImageSource.FontFamilyProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T FontFamily<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.FontImageSource
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.FontImageSource.FontFamilyProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T Glyph<T>(this T obj,
+            object glyph)
+            where T : Microsoft.Maui.Controls.FontImageSource
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.FontImageSource.GlyphProperty, glyph);
+            return obj;
+        }
+        
+        public static T Glyph<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.FontImageSource
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.FontImageSource.GlyphProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Glyph<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.FontImageSource
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.FontImageSource.GlyphProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T Size<T>(this T obj,
+            object size)
+            where T : Microsoft.Maui.Controls.FontImageSource
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.FontImageSource.SizeProperty, size);
+            return obj;
+        }
+        
+        public static T Size<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.FontImageSource
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.FontImageSource.SizeProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Size<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.FontImageSource
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.FontImageSource.SizeProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T FontAutoScalingEnabled<T>(this T obj,
+            object fontAutoScalingEnabled)
+            where T : Microsoft.Maui.Controls.FontImageSource
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.FontImageSource.FontAutoScalingEnabledProperty, fontAutoScalingEnabled);
+            return obj;
+        }
+        
+        public static T FontAutoScalingEnabled<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.FontImageSource
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.FontImageSource.FontAutoScalingEnabledProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T FontAutoScalingEnabled<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.FontImageSource
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.FontImageSource.FontAutoScalingEnabledProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
     }
 }
 

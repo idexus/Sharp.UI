@@ -65,6 +65,58 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T X<T>(this T obj,
+            object x)
+            where T : Microsoft.Maui.Controls.Shapes.TranslateTransform
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.TranslateTransform.XProperty, x);
+            return obj;
+        }
+        
+        public static T X<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.Shapes.TranslateTransform
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.TranslateTransform.XProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T X<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.Shapes.TranslateTransform
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Shapes.TranslateTransform.XProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T Y<T>(this T obj,
+            object y)
+            where T : Microsoft.Maui.Controls.Shapes.TranslateTransform
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.TranslateTransform.YProperty, y);
+            return obj;
+        }
+        
+        public static T Y<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.Shapes.TranslateTransform
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.TranslateTransform.YProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Y<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.Shapes.TranslateTransform
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Shapes.TranslateTransform.YProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
     }
 }
 

@@ -79,6 +79,58 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T CanMixGroups<T>(this T obj,
+            object canMixGroups)
+            where T : Microsoft.Maui.Controls.ReorderableItemsView
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.ReorderableItemsView.CanMixGroupsProperty, canMixGroups);
+            return obj;
+        }
+        
+        public static T CanMixGroups<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.ReorderableItemsView
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ReorderableItemsView.CanMixGroupsProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T CanMixGroups<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.ReorderableItemsView
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.ReorderableItemsView.CanMixGroupsProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T CanReorderItems<T>(this T obj,
+            object canReorderItems)
+            where T : Microsoft.Maui.Controls.ReorderableItemsView
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.ReorderableItemsView.CanReorderItemsProperty, canReorderItems);
+            return obj;
+        }
+        
+        public static T CanReorderItems<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.ReorderableItemsView
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ReorderableItemsView.CanReorderItemsProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T CanReorderItems<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.ReorderableItemsView
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.ReorderableItemsView.CanReorderItemsProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
     }
 }
 

@@ -65,6 +65,58 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T Rect<T>(this T obj,
+            object rect)
+            where T : Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry.RectProperty, rect);
+            return obj;
+        }
+        
+        public static T Rect<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry.RectProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Rect<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry.RectProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T CornerRadius<T>(this T obj,
+            object cornerRadius)
+            where T : Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry.CornerRadiusProperty, cornerRadius);
+            return obj;
+        }
+        
+        public static T CornerRadius<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry.CornerRadiusProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T CornerRadius<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry.CornerRadiusProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
     }
 }
 

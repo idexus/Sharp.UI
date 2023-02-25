@@ -161,6 +161,84 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T IsGestureEnabled<T>(this T obj,
+            object isGestureEnabled)
+            where T : Microsoft.Maui.Controls.FlyoutPage
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.FlyoutPage.IsGestureEnabledProperty, isGestureEnabled);
+            return obj;
+        }
+        
+        public static T IsGestureEnabled<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.FlyoutPage
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.FlyoutPage.IsGestureEnabledProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T IsGestureEnabled<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.FlyoutPage
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.FlyoutPage.IsGestureEnabledProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T IsPresented<T>(this T obj,
+            object isPresented)
+            where T : Microsoft.Maui.Controls.FlyoutPage
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.FlyoutPage.IsPresentedProperty, isPresented);
+            return obj;
+        }
+        
+        public static T IsPresented<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.FlyoutPage
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.FlyoutPage.IsPresentedProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T IsPresented<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.FlyoutPage
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.FlyoutPage.IsPresentedProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T FlyoutLayoutBehavior<T>(this T obj,
+            object flyoutLayoutBehavior)
+            where T : Microsoft.Maui.Controls.FlyoutPage
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.FlyoutPage.FlyoutLayoutBehaviorProperty, flyoutLayoutBehavior);
+            return obj;
+        }
+        
+        public static T FlyoutLayoutBehavior<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.FlyoutPage
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.FlyoutPage.FlyoutLayoutBehaviorProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T FlyoutLayoutBehavior<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.FlyoutPage
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.FlyoutPage.FlyoutLayoutBehaviorProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
     }
 }
 

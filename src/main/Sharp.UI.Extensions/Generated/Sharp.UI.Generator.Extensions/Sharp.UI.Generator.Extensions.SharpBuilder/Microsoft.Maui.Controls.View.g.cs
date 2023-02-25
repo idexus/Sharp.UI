@@ -109,6 +109,84 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T VerticalOptions<T>(this T obj,
+            object verticalOptions)
+            where T : Microsoft.Maui.Controls.View
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.View.VerticalOptionsProperty, verticalOptions);
+            return obj;
+        }
+        
+        public static T VerticalOptions<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.View
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.View.VerticalOptionsProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T VerticalOptions<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.View
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.View.VerticalOptionsProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T HorizontalOptions<T>(this T obj,
+            object horizontalOptions)
+            where T : Microsoft.Maui.Controls.View
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.View.HorizontalOptionsProperty, horizontalOptions);
+            return obj;
+        }
+        
+        public static T HorizontalOptions<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.View
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.View.HorizontalOptionsProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T HorizontalOptions<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.View
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.View.HorizontalOptionsProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T Margin<T>(this T obj,
+            object margin)
+            where T : Microsoft.Maui.Controls.View
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.View.MarginProperty, margin);
+            return obj;
+        }
+        
+        public static T Margin<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.View
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.View.MarginProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Margin<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.View
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.View.MarginProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
     }
 }
 

@@ -155,6 +155,32 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T IsEnabled<T>(this T obj,
+            object isEnabled)
+            where T : Microsoft.Maui.Controls.Cell
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Cell.IsEnabledProperty, isEnabled);
+            return obj;
+        }
+        
+        public static T IsEnabled<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.Cell
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Cell.IsEnabledProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T IsEnabled<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.Cell
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Cell.IsEnabledProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
     }
 }
 

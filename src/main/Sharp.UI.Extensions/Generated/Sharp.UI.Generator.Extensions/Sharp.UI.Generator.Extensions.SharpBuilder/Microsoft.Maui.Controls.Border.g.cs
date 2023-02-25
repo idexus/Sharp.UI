@@ -301,6 +301,266 @@ namespace Sharp.UI
             return Transformations.AnimateAsync<double>(self, "AnimateStrokeMiterLimitTo", transform, callback, length, easing);
         }
         
+        public static T Content<T>(this T obj,
+            object content)
+            where T : Microsoft.Maui.Controls.Border
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Border.ContentProperty, content);
+            return obj;
+        }
+        
+        public static T Content<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.Border
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Border.ContentProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Content<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.Border
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Border.ContentProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T Padding<T>(this T obj,
+            object padding)
+            where T : Microsoft.Maui.Controls.Border
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Border.PaddingProperty, padding);
+            return obj;
+        }
+        
+        public static T Padding<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.Border
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Border.PaddingProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Padding<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.Border
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Border.PaddingProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T StrokeShape<T>(this T obj,
+            object strokeShape)
+            where T : Microsoft.Maui.Controls.Border
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Border.StrokeShapeProperty, strokeShape);
+            return obj;
+        }
+        
+        public static T StrokeShape<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.Border
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Border.StrokeShapeProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T StrokeShape<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.Border
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Border.StrokeShapeProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T Stroke<T>(this T obj,
+            object stroke)
+            where T : Microsoft.Maui.Controls.Border
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Border.StrokeProperty, stroke);
+            return obj;
+        }
+        
+        public static T Stroke<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.Border
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Border.StrokeProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Stroke<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.Border
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Border.StrokeProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T StrokeThickness<T>(this T obj,
+            object strokeThickness)
+            where T : Microsoft.Maui.Controls.Border
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Border.StrokeThicknessProperty, strokeThickness);
+            return obj;
+        }
+        
+        public static T StrokeThickness<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.Border
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Border.StrokeThicknessProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T StrokeThickness<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.Border
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Border.StrokeThicknessProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T StrokeDashArray<T>(this T obj,
+            object strokeDashArray)
+            where T : Microsoft.Maui.Controls.Border
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Border.StrokeDashArrayProperty, strokeDashArray);
+            return obj;
+        }
+        
+        public static T StrokeDashArray<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.Border
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Border.StrokeDashArrayProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T StrokeDashArray<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.Border
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Border.StrokeDashArrayProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T StrokeDashOffset<T>(this T obj,
+            object strokeDashOffset)
+            where T : Microsoft.Maui.Controls.Border
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Border.StrokeDashOffsetProperty, strokeDashOffset);
+            return obj;
+        }
+        
+        public static T StrokeDashOffset<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.Border
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Border.StrokeDashOffsetProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T StrokeDashOffset<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.Border
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Border.StrokeDashOffsetProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T StrokeLineCap<T>(this T obj,
+            object strokeLineCap)
+            where T : Microsoft.Maui.Controls.Border
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Border.StrokeLineCapProperty, strokeLineCap);
+            return obj;
+        }
+        
+        public static T StrokeLineCap<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.Border
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Border.StrokeLineCapProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T StrokeLineCap<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.Border
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Border.StrokeLineCapProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T StrokeLineJoin<T>(this T obj,
+            object strokeLineJoin)
+            where T : Microsoft.Maui.Controls.Border
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Border.StrokeLineJoinProperty, strokeLineJoin);
+            return obj;
+        }
+        
+        public static T StrokeLineJoin<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.Border
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Border.StrokeLineJoinProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T StrokeLineJoin<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.Border
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Border.StrokeLineJoinProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T StrokeMiterLimit<T>(this T obj,
+            object strokeMiterLimit)
+            where T : Microsoft.Maui.Controls.Border
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Border.StrokeMiterLimitProperty, strokeMiterLimit);
+            return obj;
+        }
+        
+        public static T StrokeMiterLimit<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.Border
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Border.StrokeMiterLimitProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T StrokeMiterLimit<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.Border
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Border.StrokeMiterLimitProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
     }
 }
 

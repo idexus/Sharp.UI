@@ -65,6 +65,58 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T StartPoint<T>(this T obj,
+            object startPoint)
+            where T : Microsoft.Maui.Controls.LinearGradientBrush
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.LinearGradientBrush.StartPointProperty, startPoint);
+            return obj;
+        }
+        
+        public static T StartPoint<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.LinearGradientBrush
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.LinearGradientBrush.StartPointProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T StartPoint<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.LinearGradientBrush
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.LinearGradientBrush.StartPointProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T EndPoint<T>(this T obj,
+            object endPoint)
+            where T : Microsoft.Maui.Controls.LinearGradientBrush
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.LinearGradientBrush.EndPointProperty, endPoint);
+            return obj;
+        }
+        
+        public static T EndPoint<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.LinearGradientBrush
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.LinearGradientBrush.EndPointProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T EndPoint<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.LinearGradientBrush
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.LinearGradientBrush.EndPointProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
     }
 }
 

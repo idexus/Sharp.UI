@@ -36,6 +36,29 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static Microsoft.Maui.Controls.FileImageSource File(this Microsoft.Maui.Controls.FileImageSource obj,
+            object file)
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.FileImageSource.FileProperty, file);
+            return obj;
+        }
+        
+        public static Microsoft.Maui.Controls.FileImageSource File(this Microsoft.Maui.Controls.FileImageSource obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.FileImageSource.FileProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static Microsoft.Maui.Controls.FileImageSource File(this Microsoft.Maui.Controls.FileImageSource obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.FileImageSource.FileProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
     }
 }
 

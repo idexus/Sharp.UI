@@ -40,6 +40,32 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T Points<T>(this T obj,
+            object points)
+            where T : Microsoft.Maui.Controls.Shapes.PolyLineSegment
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.PolyLineSegment.PointsProperty, points);
+            return obj;
+        }
+        
+        public static T Points<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.Shapes.PolyLineSegment
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.PolyLineSegment.PointsProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Points<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.Shapes.PolyLineSegment
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Shapes.PolyLineSegment.PointsProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
     }
 }
 

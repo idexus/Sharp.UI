@@ -343,6 +343,240 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T Minimum<T>(this T obj,
+            object minimum)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Slider.MinimumProperty, minimum);
+            return obj;
+        }
+        
+        public static T Minimum<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Slider.MinimumProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Minimum<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Slider.MinimumProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T Maximum<T>(this T obj,
+            object maximum)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Slider.MaximumProperty, maximum);
+            return obj;
+        }
+        
+        public static T Maximum<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Slider.MaximumProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Maximum<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Slider.MaximumProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T Value<T>(this T obj,
+            object value)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Slider.ValueProperty, value);
+            return obj;
+        }
+        
+        public static T Value<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Slider.ValueProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Value<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Slider.ValueProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T MinimumTrackColor<T>(this T obj,
+            object minimumTrackColor)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Slider.MinimumTrackColorProperty, minimumTrackColor);
+            return obj;
+        }
+        
+        public static T MinimumTrackColor<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Slider.MinimumTrackColorProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T MinimumTrackColor<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Slider.MinimumTrackColorProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T MaximumTrackColor<T>(this T obj,
+            object maximumTrackColor)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Slider.MaximumTrackColorProperty, maximumTrackColor);
+            return obj;
+        }
+        
+        public static T MaximumTrackColor<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Slider.MaximumTrackColorProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T MaximumTrackColor<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Slider.MaximumTrackColorProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T ThumbColor<T>(this T obj,
+            object thumbColor)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Slider.ThumbColorProperty, thumbColor);
+            return obj;
+        }
+        
+        public static T ThumbColor<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Slider.ThumbColorProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T ThumbColor<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Slider.ThumbColorProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T ThumbImageSource<T>(this T obj,
+            object thumbImageSource)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Slider.ThumbImageSourceProperty, thumbImageSource);
+            return obj;
+        }
+        
+        public static T ThumbImageSource<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Slider.ThumbImageSourceProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T ThumbImageSource<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Slider.ThumbImageSourceProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T DragStartedCommand<T>(this T obj,
+            object dragStartedCommand)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Slider.DragStartedCommandProperty, dragStartedCommand);
+            return obj;
+        }
+        
+        public static T DragStartedCommand<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Slider.DragStartedCommandProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T DragStartedCommand<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Slider.DragStartedCommandProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T DragCompletedCommand<T>(this T obj,
+            object dragCompletedCommand)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.Slider.DragCompletedCommandProperty, dragCompletedCommand);
+            return obj;
+        }
+        
+        public static T DragCompletedCommand<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Slider.DragCompletedCommandProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T DragCompletedCommand<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Slider.DragCompletedCommandProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
     }
 }
 

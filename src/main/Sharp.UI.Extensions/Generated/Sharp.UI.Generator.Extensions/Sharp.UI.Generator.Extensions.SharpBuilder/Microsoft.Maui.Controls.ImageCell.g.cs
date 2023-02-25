@@ -39,6 +39,32 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T ImageSource<T>(this T obj,
+            object imageSource)
+            where T : Microsoft.Maui.Controls.ImageCell
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.ImageCell.ImageSourceProperty, imageSource);
+            return obj;
+        }
+        
+        public static T ImageSource<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.ImageCell
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ImageCell.ImageSourceProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T ImageSource<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.ImageCell
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.ImageCell.ImageSourceProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
     }
 }
 

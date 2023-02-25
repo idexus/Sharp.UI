@@ -39,6 +39,32 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T Stream<T>(this T obj,
+            object stream)
+            where T : Microsoft.Maui.Controls.StreamImageSource
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.StreamImageSource.StreamProperty, stream);
+            return obj;
+        }
+        
+        public static T Stream<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.StreamImageSource
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.StreamImageSource.StreamProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Stream<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.StreamImageSource
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.StreamImageSource.StreamProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
     }
 }
 

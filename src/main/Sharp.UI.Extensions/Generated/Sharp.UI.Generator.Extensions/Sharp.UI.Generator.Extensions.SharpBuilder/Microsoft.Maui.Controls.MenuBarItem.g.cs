@@ -86,6 +86,58 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T Text<T>(this T obj,
+            object text)
+            where T : Microsoft.Maui.Controls.MenuBarItem
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.MenuBarItem.TextProperty, text);
+            return obj;
+        }
+        
+        public static T Text<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.MenuBarItem
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.MenuBarItem.TextProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Text<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.MenuBarItem
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.MenuBarItem.TextProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T IsEnabled<T>(this T obj,
+            object isEnabled)
+            where T : Microsoft.Maui.Controls.MenuBarItem
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.MenuBarItem.IsEnabledProperty, isEnabled);
+            return obj;
+        }
+        
+        public static T IsEnabled<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.MenuBarItem
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.MenuBarItem.IsEnabledProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T IsEnabled<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.MenuBarItem
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.MenuBarItem.IsEnabledProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
     }
 }
 

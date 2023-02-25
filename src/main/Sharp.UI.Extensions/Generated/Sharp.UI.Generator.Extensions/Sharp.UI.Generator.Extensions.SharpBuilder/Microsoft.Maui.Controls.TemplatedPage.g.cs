@@ -39,6 +39,32 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T ControlTemplate<T>(this T obj,
+            object controlTemplate)
+            where T : Microsoft.Maui.Controls.TemplatedPage
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.TemplatedPage.ControlTemplateProperty, controlTemplate);
+            return obj;
+        }
+        
+        public static T ControlTemplate<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.TemplatedPage
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.TemplatedPage.ControlTemplateProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T ControlTemplate<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.TemplatedPage
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.TemplatedPage.ControlTemplateProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
     }
 }
 

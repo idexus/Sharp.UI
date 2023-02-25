@@ -300,6 +300,188 @@ namespace Sharp.UI
         }
 
         
+        public static T Text<T>(this T obj,
+            object text)
+            where T : Microsoft.Maui.Controls.EntryCell
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.EntryCell.TextProperty, text);
+            return obj;
+        }
+        
+        public static T Text<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.EntryCell
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.EntryCell.TextProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Text<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.EntryCell
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.EntryCell.TextProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T Label<T>(this T obj,
+            object label)
+            where T : Microsoft.Maui.Controls.EntryCell
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.EntryCell.LabelProperty, label);
+            return obj;
+        }
+        
+        public static T Label<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.EntryCell
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.EntryCell.LabelProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Label<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.EntryCell
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.EntryCell.LabelProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T Placeholder<T>(this T obj,
+            object placeholder)
+            where T : Microsoft.Maui.Controls.EntryCell
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.EntryCell.PlaceholderProperty, placeholder);
+            return obj;
+        }
+        
+        public static T Placeholder<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.EntryCell
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.EntryCell.PlaceholderProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Placeholder<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.EntryCell
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.EntryCell.PlaceholderProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T LabelColor<T>(this T obj,
+            object labelColor)
+            where T : Microsoft.Maui.Controls.EntryCell
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.EntryCell.LabelColorProperty, labelColor);
+            return obj;
+        }
+        
+        public static T LabelColor<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.EntryCell
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.EntryCell.LabelColorProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T LabelColor<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.EntryCell
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.EntryCell.LabelColorProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T Keyboard<T>(this T obj,
+            object keyboard)
+            where T : Microsoft.Maui.Controls.EntryCell
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.EntryCell.KeyboardProperty, keyboard);
+            return obj;
+        }
+        
+        public static T Keyboard<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.EntryCell
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.EntryCell.KeyboardProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Keyboard<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.EntryCell
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.EntryCell.KeyboardProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T HorizontalTextAlignment<T>(this T obj,
+            object horizontalTextAlignment)
+            where T : Microsoft.Maui.Controls.EntryCell
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.EntryCell.HorizontalTextAlignmentProperty, horizontalTextAlignment);
+            return obj;
+        }
+        
+        public static T HorizontalTextAlignment<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.EntryCell
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.EntryCell.HorizontalTextAlignmentProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T HorizontalTextAlignment<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.EntryCell
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.EntryCell.HorizontalTextAlignmentProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T VerticalTextAlignment<T>(this T obj,
+            object verticalTextAlignment)
+            where T : Microsoft.Maui.Controls.EntryCell
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.EntryCell.VerticalTextAlignmentProperty, verticalTextAlignment);
+            return obj;
+        }
+        
+        public static T VerticalTextAlignment<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.EntryCell
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.EntryCell.VerticalTextAlignmentProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T VerticalTextAlignment<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.EntryCell
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.EntryCell.VerticalTextAlignmentProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
     }
 }
 

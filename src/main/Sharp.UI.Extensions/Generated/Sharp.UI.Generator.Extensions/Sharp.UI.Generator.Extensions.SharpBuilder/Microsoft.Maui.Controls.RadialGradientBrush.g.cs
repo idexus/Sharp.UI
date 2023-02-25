@@ -65,6 +65,58 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T Center<T>(this T obj,
+            object center)
+            where T : Microsoft.Maui.Controls.RadialGradientBrush
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.RadialGradientBrush.CenterProperty, center);
+            return obj;
+        }
+        
+        public static T Center<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.RadialGradientBrush
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.RadialGradientBrush.CenterProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Center<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.RadialGradientBrush
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.RadialGradientBrush.CenterProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T Radius<T>(this T obj,
+            object radius)
+            where T : Microsoft.Maui.Controls.RadialGradientBrush
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.RadialGradientBrush.RadiusProperty, radius);
+            return obj;
+        }
+        
+        public static T Radius<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.RadialGradientBrush
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.RadialGradientBrush.RadiusProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Radius<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.RadialGradientBrush
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.RadialGradientBrush.RadiusProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
     }
 }
 

@@ -93,6 +93,110 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T Source<T>(this T obj,
+            object source)
+            where T : Microsoft.Maui.Controls.WebView
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.WebView.SourceProperty, source);
+            return obj;
+        }
+        
+        public static T Source<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.WebView
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.WebView.SourceProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Source<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.WebView
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.WebView.SourceProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T CanGoBack<T>(this T obj,
+            object canGoBack)
+            where T : Microsoft.Maui.Controls.WebView
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.WebView.CanGoBackProperty, canGoBack);
+            return obj;
+        }
+        
+        public static T CanGoBack<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.WebView
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.WebView.CanGoBackProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T CanGoBack<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.WebView
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.WebView.CanGoBackProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T CanGoForward<T>(this T obj,
+            object canGoForward)
+            where T : Microsoft.Maui.Controls.WebView
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.WebView.CanGoForwardProperty, canGoForward);
+            return obj;
+        }
+        
+        public static T CanGoForward<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.WebView
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.WebView.CanGoForwardProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T CanGoForward<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.WebView
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.WebView.CanGoForwardProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T Cookies<T>(this T obj,
+            object cookies)
+            where T : Microsoft.Maui.Controls.WebView
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.WebView.CookiesProperty, cookies);
+            return obj;
+        }
+        
+        public static T Cookies<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.WebView
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.WebView.CookiesProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Cookies<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.WebView
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.WebView.CookiesProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
     }
 }
 

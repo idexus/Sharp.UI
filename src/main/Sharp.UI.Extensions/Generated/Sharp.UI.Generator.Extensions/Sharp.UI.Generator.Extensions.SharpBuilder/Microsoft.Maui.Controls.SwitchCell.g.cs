@@ -105,6 +105,84 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T On<T>(this T obj,
+            object on)
+            where T : Microsoft.Maui.Controls.SwitchCell
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SwitchCell.OnProperty, on);
+            return obj;
+        }
+        
+        public static T On<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.SwitchCell
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SwitchCell.OnProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T On<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.SwitchCell
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.SwitchCell.OnProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T Text<T>(this T obj,
+            object text)
+            where T : Microsoft.Maui.Controls.SwitchCell
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SwitchCell.TextProperty, text);
+            return obj;
+        }
+        
+        public static T Text<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.SwitchCell
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SwitchCell.TextProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Text<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.SwitchCell
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.SwitchCell.TextProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T OnColor<T>(this T obj,
+            object onColor)
+            where T : Microsoft.Maui.Controls.SwitchCell
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.SwitchCell.OnColorProperty, onColor);
+            return obj;
+        }
+        
+        public static T OnColor<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.SwitchCell
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SwitchCell.OnColorProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T OnColor<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.SwitchCell
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.SwitchCell.OnColorProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
     }
 }
 

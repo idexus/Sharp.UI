@@ -105,6 +105,84 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T IsGrouped<T>(this T obj,
+            object isGrouped)
+            where T : Microsoft.Maui.Controls.GroupableItemsView
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.GroupableItemsView.IsGroupedProperty, isGrouped);
+            return obj;
+        }
+        
+        public static T IsGrouped<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.GroupableItemsView
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.GroupableItemsView.IsGroupedProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T IsGrouped<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.GroupableItemsView
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.GroupableItemsView.IsGroupedProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T GroupHeaderTemplate<T>(this T obj,
+            object groupHeaderTemplate)
+            where T : Microsoft.Maui.Controls.GroupableItemsView
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.GroupableItemsView.GroupHeaderTemplateProperty, groupHeaderTemplate);
+            return obj;
+        }
+        
+        public static T GroupHeaderTemplate<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.GroupableItemsView
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.GroupableItemsView.GroupHeaderTemplateProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T GroupHeaderTemplate<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.GroupableItemsView
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.GroupableItemsView.GroupHeaderTemplateProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T GroupFooterTemplate<T>(this T obj,
+            object groupFooterTemplate)
+            where T : Microsoft.Maui.Controls.GroupableItemsView
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.GroupableItemsView.GroupFooterTemplateProperty, groupFooterTemplate);
+            return obj;
+        }
+        
+        public static T GroupFooterTemplate<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.GroupableItemsView
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.GroupableItemsView.GroupFooterTemplateProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T GroupFooterTemplate<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.GroupableItemsView
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.GroupableItemsView.GroupFooterTemplateProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
     }
 }
 

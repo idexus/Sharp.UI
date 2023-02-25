@@ -1183,6 +1183,968 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static T Shadow<T>(this T obj,
+            object shadow)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.ShadowProperty, shadow);
+            return obj;
+        }
+        
+        public static T Shadow<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.ShadowProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Shadow<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.VisualElement.ShadowProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T ZIndex<T>(this T obj,
+            object zIndex)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.ZIndexProperty, zIndex);
+            return obj;
+        }
+        
+        public static T ZIndex<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.ZIndexProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T ZIndex<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.VisualElement.ZIndexProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T Navigation<T>(this T obj,
+            object navigation)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.NavigationProperty, navigation);
+            return obj;
+        }
+        
+        public static T Navigation<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.NavigationProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Navigation<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.VisualElement.NavigationProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T Style<T>(this T obj,
+            object style)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.StyleProperty, style);
+            return obj;
+        }
+        
+        public static T Style<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.StyleProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Style<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.VisualElement.StyleProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T InputTransparent<T>(this T obj,
+            object inputTransparent)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.InputTransparentProperty, inputTransparent);
+            return obj;
+        }
+        
+        public static T InputTransparent<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.InputTransparentProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T InputTransparent<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.VisualElement.InputTransparentProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T IsEnabled<T>(this T obj,
+            object isEnabled)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.IsEnabledProperty, isEnabled);
+            return obj;
+        }
+        
+        public static T IsEnabled<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.IsEnabledProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T IsEnabled<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.VisualElement.IsEnabledProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T X<T>(this T obj,
+            object x)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.XProperty, x);
+            return obj;
+        }
+        
+        public static T X<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.XProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T X<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.VisualElement.XProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T Y<T>(this T obj,
+            object y)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.YProperty, y);
+            return obj;
+        }
+        
+        public static T Y<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.YProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Y<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.VisualElement.YProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T AnchorX<T>(this T obj,
+            object anchorX)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.AnchorXProperty, anchorX);
+            return obj;
+        }
+        
+        public static T AnchorX<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.AnchorXProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T AnchorX<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.VisualElement.AnchorXProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T AnchorY<T>(this T obj,
+            object anchorY)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.AnchorYProperty, anchorY);
+            return obj;
+        }
+        
+        public static T AnchorY<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.AnchorYProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T AnchorY<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.VisualElement.AnchorYProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T TranslationX<T>(this T obj,
+            object translationX)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.TranslationXProperty, translationX);
+            return obj;
+        }
+        
+        public static T TranslationX<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.TranslationXProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T TranslationX<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.VisualElement.TranslationXProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T TranslationY<T>(this T obj,
+            object translationY)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.TranslationYProperty, translationY);
+            return obj;
+        }
+        
+        public static T TranslationY<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.TranslationYProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T TranslationY<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.VisualElement.TranslationYProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T Width<T>(this T obj,
+            object width)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.WidthProperty, width);
+            return obj;
+        }
+        
+        public static T Width<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.WidthProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Width<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.VisualElement.WidthProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T Height<T>(this T obj,
+            object height)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.HeightProperty, height);
+            return obj;
+        }
+        
+        public static T Height<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.HeightProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Height<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.VisualElement.HeightProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T Rotation<T>(this T obj,
+            object rotation)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.RotationProperty, rotation);
+            return obj;
+        }
+        
+        public static T Rotation<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.RotationProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Rotation<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.VisualElement.RotationProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T RotationX<T>(this T obj,
+            object rotationX)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.RotationXProperty, rotationX);
+            return obj;
+        }
+        
+        public static T RotationX<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.RotationXProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T RotationX<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.VisualElement.RotationXProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T RotationY<T>(this T obj,
+            object rotationY)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.RotationYProperty, rotationY);
+            return obj;
+        }
+        
+        public static T RotationY<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.RotationYProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T RotationY<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.VisualElement.RotationYProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T Scale<T>(this T obj,
+            object scale)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.ScaleProperty, scale);
+            return obj;
+        }
+        
+        public static T Scale<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.ScaleProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Scale<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.VisualElement.ScaleProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T ScaleX<T>(this T obj,
+            object scaleX)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.ScaleXProperty, scaleX);
+            return obj;
+        }
+        
+        public static T ScaleX<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.ScaleXProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T ScaleX<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.VisualElement.ScaleXProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T ScaleY<T>(this T obj,
+            object scaleY)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.ScaleYProperty, scaleY);
+            return obj;
+        }
+        
+        public static T ScaleY<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.ScaleYProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T ScaleY<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.VisualElement.ScaleYProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T Clip<T>(this T obj,
+            object clip)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.ClipProperty, clip);
+            return obj;
+        }
+        
+        public static T Clip<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.ClipProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Clip<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.VisualElement.ClipProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T Visual<T>(this T obj,
+            object visual)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.VisualProperty, visual);
+            return obj;
+        }
+        
+        public static T Visual<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.VisualProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Visual<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.VisualElement.VisualProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T IsVisible<T>(this T obj,
+            object isVisible)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.IsVisibleProperty, isVisible);
+            return obj;
+        }
+        
+        public static T IsVisible<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.IsVisibleProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T IsVisible<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.VisualElement.IsVisibleProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T Opacity<T>(this T obj,
+            object opacity)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.OpacityProperty, opacity);
+            return obj;
+        }
+        
+        public static T Opacity<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.OpacityProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Opacity<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.VisualElement.OpacityProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T BackgroundColor<T>(this T obj,
+            object backgroundColor)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.BackgroundColorProperty, backgroundColor);
+            return obj;
+        }
+        
+        public static T BackgroundColor<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.BackgroundColorProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T BackgroundColor<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.VisualElement.BackgroundColorProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T Background<T>(this T obj,
+            object background)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.BackgroundProperty, background);
+            return obj;
+        }
+        
+        public static T Background<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.BackgroundProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Background<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.VisualElement.BackgroundProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T Behaviors<T>(this T obj,
+            object behaviors)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.BehaviorsProperty, behaviors);
+            return obj;
+        }
+        
+        public static T Behaviors<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.BehaviorsProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Behaviors<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.VisualElement.BehaviorsProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T Triggers<T>(this T obj,
+            object triggers)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.TriggersProperty, triggers);
+            return obj;
+        }
+        
+        public static T Triggers<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.TriggersProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Triggers<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.VisualElement.TriggersProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T WidthRequest<T>(this T obj,
+            object widthRequest)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.WidthRequestProperty, widthRequest);
+            return obj;
+        }
+        
+        public static T WidthRequest<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.WidthRequestProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T WidthRequest<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.VisualElement.WidthRequestProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T HeightRequest<T>(this T obj,
+            object heightRequest)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.HeightRequestProperty, heightRequest);
+            return obj;
+        }
+        
+        public static T HeightRequest<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.HeightRequestProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T HeightRequest<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.VisualElement.HeightRequestProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T MinimumWidthRequest<T>(this T obj,
+            object minimumWidthRequest)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.MinimumWidthRequestProperty, minimumWidthRequest);
+            return obj;
+        }
+        
+        public static T MinimumWidthRequest<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.MinimumWidthRequestProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T MinimumWidthRequest<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.VisualElement.MinimumWidthRequestProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T MinimumHeightRequest<T>(this T obj,
+            object minimumHeightRequest)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.MinimumHeightRequestProperty, minimumHeightRequest);
+            return obj;
+        }
+        
+        public static T MinimumHeightRequest<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.MinimumHeightRequestProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T MinimumHeightRequest<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.VisualElement.MinimumHeightRequestProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T MaximumWidthRequest<T>(this T obj,
+            object maximumWidthRequest)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.MaximumWidthRequestProperty, maximumWidthRequest);
+            return obj;
+        }
+        
+        public static T MaximumWidthRequest<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.MaximumWidthRequestProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T MaximumWidthRequest<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.VisualElement.MaximumWidthRequestProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T MaximumHeightRequest<T>(this T obj,
+            object maximumHeightRequest)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.MaximumHeightRequestProperty, maximumHeightRequest);
+            return obj;
+        }
+        
+        public static T MaximumHeightRequest<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.MaximumHeightRequestProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T MaximumHeightRequest<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.VisualElement.MaximumHeightRequestProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T IsFocused<T>(this T obj,
+            object isFocused)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.IsFocusedProperty, isFocused);
+            return obj;
+        }
+        
+        public static T IsFocused<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.IsFocusedProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T IsFocused<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.VisualElement.IsFocusedProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T FlowDirection<T>(this T obj,
+            object flowDirection)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.FlowDirectionProperty, flowDirection);
+            return obj;
+        }
+        
+        public static T FlowDirection<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.FlowDirectionProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T FlowDirection<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.VisualElement.FlowDirectionProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T Window<T>(this T obj,
+            object window)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.WindowProperty, window);
+            return obj;
+        }
+        
+        public static T Window<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualElement.WindowProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Window<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.VisualElement.WindowProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
     }
 }
 

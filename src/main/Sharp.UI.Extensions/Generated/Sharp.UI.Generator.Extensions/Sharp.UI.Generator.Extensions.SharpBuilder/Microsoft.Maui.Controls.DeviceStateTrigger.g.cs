@@ -36,6 +36,29 @@ namespace Sharp.UI
             return obj;
         }
         
+        public static Microsoft.Maui.Controls.DeviceStateTrigger Device(this Microsoft.Maui.Controls.DeviceStateTrigger obj,
+            object device)
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.DeviceStateTrigger.DeviceProperty, device);
+            return obj;
+        }
+        
+        public static Microsoft.Maui.Controls.DeviceStateTrigger Device(this Microsoft.Maui.Controls.DeviceStateTrigger obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.DeviceStateTrigger.DeviceProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static Microsoft.Maui.Controls.DeviceStateTrigger Device(this Microsoft.Maui.Controls.DeviceStateTrigger obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.DeviceStateTrigger.DeviceProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
     }
 }
 

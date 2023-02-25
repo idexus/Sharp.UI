@@ -179,6 +179,136 @@ namespace Sharp.UI
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateSelectedTabColorTo", transform, callback, length, easing);
         }
         
+        public static T BarBackgroundColor<T>(this T obj,
+            object barBackgroundColor)
+            where T : Microsoft.Maui.Controls.TabbedPage
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.TabbedPage.BarBackgroundColorProperty, barBackgroundColor);
+            return obj;
+        }
+        
+        public static T BarBackgroundColor<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.TabbedPage
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.TabbedPage.BarBackgroundColorProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T BarBackgroundColor<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.TabbedPage
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.TabbedPage.BarBackgroundColorProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T BarBackground<T>(this T obj,
+            object barBackground)
+            where T : Microsoft.Maui.Controls.TabbedPage
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.TabbedPage.BarBackgroundProperty, barBackground);
+            return obj;
+        }
+        
+        public static T BarBackground<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.TabbedPage
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.TabbedPage.BarBackgroundProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T BarBackground<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.TabbedPage
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.TabbedPage.BarBackgroundProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T BarTextColor<T>(this T obj,
+            object barTextColor)
+            where T : Microsoft.Maui.Controls.TabbedPage
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.TabbedPage.BarTextColorProperty, barTextColor);
+            return obj;
+        }
+        
+        public static T BarTextColor<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.TabbedPage
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.TabbedPage.BarTextColorProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T BarTextColor<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.TabbedPage
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.TabbedPage.BarTextColorProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T UnselectedTabColor<T>(this T obj,
+            object unselectedTabColor)
+            where T : Microsoft.Maui.Controls.TabbedPage
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.TabbedPage.UnselectedTabColorProperty, unselectedTabColor);
+            return obj;
+        }
+        
+        public static T UnselectedTabColor<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.TabbedPage
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.TabbedPage.UnselectedTabColorProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T UnselectedTabColor<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.TabbedPage
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.TabbedPage.UnselectedTabColorProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
+        public static T SelectedTabColor<T>(this T obj,
+            object selectedTabColor)
+            where T : Microsoft.Maui.Controls.TabbedPage
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.TabbedPage.SelectedTabColorProperty, selectedTabColor);
+            return obj;
+        }
+        
+        public static T SelectedTabColor<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.TabbedPage
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.TabbedPage.SelectedTabColorProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T SelectedTabColor<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.TabbedPage
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.TabbedPage.SelectedTabColorProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
     }
 }
 

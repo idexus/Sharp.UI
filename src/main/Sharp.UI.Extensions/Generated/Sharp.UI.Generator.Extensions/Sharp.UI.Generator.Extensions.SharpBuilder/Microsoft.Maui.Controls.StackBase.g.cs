@@ -48,6 +48,32 @@ namespace Sharp.UI
             return Transformations.AnimateAsync<double>(self, "AnimateSpacingTo", transform, callback, length, easing);
         }
         
+        public static T Spacing<T>(this T obj,
+            object spacing)
+            where T : Microsoft.Maui.Controls.StackBase
+        {
+            obj.SetValueOrSetter(Microsoft.Maui.Controls.StackBase.SpacingProperty, spacing);
+            return obj;
+        }
+        
+        public static T Spacing<T>(this T obj,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+            where T : Microsoft.Maui.Controls.StackBase
+        {
+            var builder = buidValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.StackBase.SpacingProperty, builder.GetValue());
+            return obj;
+        }
+        
+        public static T Spacing<T>(this T obj,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+            where T : Microsoft.Maui.Controls.StackBase
+        {
+            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.StackBase.SpacingProperty));
+            builder.BindProperty();
+            return obj;
+        }
+        
     }
 }
 
