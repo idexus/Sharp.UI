@@ -25,10 +25,19 @@ namespace Sharp.UI
     [AttachedInterfaces(typeof(Microsoft.Maui.Controls.View), new[] { typeof(IViewGridAttachedProperties), typeof(IViewAbsoluteLayoutProperties) })]
     public static partial class ViewExtension
     {
-        public static T GridSpan<T>(this T self, int column = 1, int row = 1) where T : BindableObject, IView
+        public static T GridSpan<T>(this T self, int column = 1, int row = 1) where T : Microsoft.Maui.Controls.View
         {
             self.SetValueOrAddSetter(Microsoft.Maui.Controls.Grid.ColumnSpanProperty, column);
             self.SetValueOrAddSetter(Microsoft.Maui.Controls.Grid.RowSpanProperty, row);
+            return self;
+        }
+
+        // ---
+
+        public static T AbsoluteLayoutBounds<T>(this T self, double x, double y, double width, double height)
+            where T : Microsoft.Maui.Controls.View
+        {
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.AbsoluteLayout.LayoutBoundsProperty, new Rect(x, y, width, height));
             return self;
         }
 

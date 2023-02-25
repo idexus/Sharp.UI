@@ -18,7 +18,7 @@ public class AbsoluteLayoutPage : ContentPage
             {
                 e => e
                     .BackgroundColor(Colors.Red)
-                    .AbsoluteLayoutBounds(new Rect(30,170,300,100))
+                    .AbsoluteLayoutBounds(30,170,300,100)
                     .Background(new LinearGradientBrush(new Point(0, 0), new Point(1, 1))
                     {
                         new GradientStop(Colors.Yellow, 0.0),
@@ -33,7 +33,7 @@ public class AbsoluteLayoutPage : ContentPage
             },
 
             new Border(out border, e => e
-                .AbsoluteLayoutBounds(new Rect(100,400,300,200))
+                .AbsoluteLayoutBounds(100,400,300,200)
                 .Stroke(Colors.Blue)
                 .StrokeThickness(4)
                 .StrokeShape(new RoundRectangle().CornerRadius(40)))

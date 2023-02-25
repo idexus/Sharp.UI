@@ -4,7 +4,7 @@ In Sharp.UI, you can layout every view in their container using the following ex
 
 - `CenterHorizontally`
 - `CenterVertically`
-- `CenterInParent`
+- `CenterInContainer`
 - `AlignStart`
 - `AlignEnd`
 - `AlignTop`
@@ -24,7 +24,7 @@ To use the layout options, create a container view (such as `HStack` or `VStack`
 ```cs
 new VStack
 {
-    Label("Hello, World!").CenterInParent()
+    Label("Hello, World!").CenterInContainer()
 }
 ```
 
