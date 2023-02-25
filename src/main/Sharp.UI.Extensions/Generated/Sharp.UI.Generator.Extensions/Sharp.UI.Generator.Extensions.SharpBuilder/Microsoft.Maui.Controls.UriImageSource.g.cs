@@ -8,78 +8,77 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class UriImageSourceExtension
     {
-        public static Microsoft.Maui.Controls.UriImageSource CacheValidity(this Microsoft.Maui.Controls.UriImageSource obj,
+        public static Microsoft.Maui.Controls.UriImageSource CacheValidity(this Microsoft.Maui.Controls.UriImageSource self,
             System.TimeSpan cacheValidity)
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.UriImageSource.CacheValidityProperty, cacheValidity);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.UriImageSource.CacheValidityProperty, cacheValidity);
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.UriImageSource CacheValidity(this Microsoft.Maui.Controls.UriImageSource obj,
-            System.Func<ValueBuilder<System.TimeSpan>, ValueBuilder<System.TimeSpan>> buidValue)
+        public static Microsoft.Maui.Controls.UriImageSource CacheValidity(this Microsoft.Maui.Controls.UriImageSource self,
+            System.Func<ValueBuilder<System.TimeSpan>, ValueBuilder<System.TimeSpan>> buildValue)
         {
-            var builder = buidValue(new ValueBuilder<System.TimeSpan>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.UriImageSource.CacheValidityProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<System.TimeSpan>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.UriImageSource.CacheValidityProperty, builder.GetValue());
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.UriImageSource CacheValidity(this Microsoft.Maui.Controls.UriImageSource obj,
-            System.Func<BindingBuilder<System.TimeSpan>, BindingBuilder<System.TimeSpan>> buidBinding)
+        public static Microsoft.Maui.Controls.UriImageSource CacheValidity(this Microsoft.Maui.Controls.UriImageSource self,
+            System.Func<BindingBuilder<System.TimeSpan>, BindingBuilder<System.TimeSpan>> buildBinding)
         {
-            var builder = buidBinding(new BindingBuilder<System.TimeSpan>(obj, Microsoft.Maui.Controls.UriImageSource.CacheValidityProperty));
+            var builder = buildBinding(new BindingBuilder<System.TimeSpan>(self, Microsoft.Maui.Controls.UriImageSource.CacheValidityProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.UriImageSource CachingEnabled(this Microsoft.Maui.Controls.UriImageSource obj,
+        public static Microsoft.Maui.Controls.UriImageSource CachingEnabled(this Microsoft.Maui.Controls.UriImageSource self,
             bool cachingEnabled)
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.UriImageSource.CachingEnabledProperty, cachingEnabled);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.UriImageSource.CachingEnabledProperty, cachingEnabled);
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.UriImageSource CachingEnabled(this Microsoft.Maui.Controls.UriImageSource obj,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
+        public static Microsoft.Maui.Controls.UriImageSource CachingEnabled(this Microsoft.Maui.Controls.UriImageSource self,
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
         {
-            var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.UriImageSource.CachingEnabledProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.UriImageSource.CachingEnabledProperty, builder.GetValue());
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.UriImageSource CachingEnabled(this Microsoft.Maui.Controls.UriImageSource obj,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buidBinding)
+        public static Microsoft.Maui.Controls.UriImageSource CachingEnabled(this Microsoft.Maui.Controls.UriImageSource self,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
         {
-            var builder = buidBinding(new BindingBuilder<bool>(obj, Microsoft.Maui.Controls.UriImageSource.CachingEnabledProperty));
+            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.UriImageSource.CachingEnabledProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.UriImageSource Uri(this Microsoft.Maui.Controls.UriImageSource obj,
+        public static Microsoft.Maui.Controls.UriImageSource Uri(this Microsoft.Maui.Controls.UriImageSource self,
             System.Uri uri)
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.UriImageSource.UriProperty, uri);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.UriImageSource.UriProperty, uri);
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.UriImageSource Uri(this Microsoft.Maui.Controls.UriImageSource obj,
-            System.Func<ValueBuilder<System.Uri>, ValueBuilder<System.Uri>> buidValue)
+        public static Microsoft.Maui.Controls.UriImageSource Uri(this Microsoft.Maui.Controls.UriImageSource self,
+            System.Func<ValueBuilder<System.Uri>, ValueBuilder<System.Uri>> buildValue)
         {
-            var builder = buidValue(new ValueBuilder<System.Uri>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.UriImageSource.UriProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<System.Uri>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.UriImageSource.UriProperty, builder.GetValue());
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.UriImageSource Uri(this Microsoft.Maui.Controls.UriImageSource obj,
-            System.Func<BindingBuilder<System.Uri>, BindingBuilder<System.Uri>> buidBinding)
+        public static Microsoft.Maui.Controls.UriImageSource Uri(this Microsoft.Maui.Controls.UriImageSource self,
+            System.Func<BindingBuilder<System.Uri>, BindingBuilder<System.Uri>> buildBinding)
         {
-            var builder = buidBinding(new BindingBuilder<System.Uri>(obj, Microsoft.Maui.Controls.UriImageSource.UriProperty));
+            var builder = buildBinding(new BindingBuilder<System.Uri>(self, Microsoft.Maui.Controls.UriImageSource.UriProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
     }

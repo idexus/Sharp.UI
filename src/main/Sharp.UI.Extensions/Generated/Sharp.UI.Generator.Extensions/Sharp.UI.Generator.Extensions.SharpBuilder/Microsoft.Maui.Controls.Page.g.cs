@@ -8,319 +8,318 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class PageExtension
     {
-        public static T BackgroundImageSource<T>(this T obj,
+        public static T BackgroundImageSource<T>(this T self,
             Microsoft.Maui.Controls.ImageSource backgroundImageSource)
             where T : Microsoft.Maui.Controls.Page
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Page.BackgroundImageSourceProperty, backgroundImageSource);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Page.BackgroundImageSourceProperty, backgroundImageSource);
+            return self;
         }
         
-        public static T BackgroundImageSource<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.ImageSource>, ValueBuilder<Microsoft.Maui.Controls.ImageSource>> buidValue)
+        public static T BackgroundImageSource<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.ImageSource>, ValueBuilder<Microsoft.Maui.Controls.ImageSource>> buildValue)
             where T : Microsoft.Maui.Controls.Page
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Page.BackgroundImageSourceProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Page.BackgroundImageSourceProperty, builder.GetValue());
+            return self;
         }
         
-        public static T BackgroundImageSource<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.ImageSource>, BindingBuilder<Microsoft.Maui.Controls.ImageSource>> buidBinding)
+        public static T BackgroundImageSource<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.ImageSource>, BindingBuilder<Microsoft.Maui.Controls.ImageSource>> buildBinding)
             where T : Microsoft.Maui.Controls.Page
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.ImageSource>(obj, Microsoft.Maui.Controls.Page.BackgroundImageSourceProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ImageSource>(self, Microsoft.Maui.Controls.Page.BackgroundImageSourceProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T IconImageSource<T>(this T obj,
+        public static T IconImageSource<T>(this T self,
             Microsoft.Maui.Controls.ImageSource iconImageSource)
             where T : Microsoft.Maui.Controls.Page
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Page.IconImageSourceProperty, iconImageSource);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Page.IconImageSourceProperty, iconImageSource);
+            return self;
         }
         
-        public static T IconImageSource<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.ImageSource>, ValueBuilder<Microsoft.Maui.Controls.ImageSource>> buidValue)
+        public static T IconImageSource<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.ImageSource>, ValueBuilder<Microsoft.Maui.Controls.ImageSource>> buildValue)
             where T : Microsoft.Maui.Controls.Page
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Page.IconImageSourceProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Page.IconImageSourceProperty, builder.GetValue());
+            return self;
         }
         
-        public static T IconImageSource<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.ImageSource>, BindingBuilder<Microsoft.Maui.Controls.ImageSource>> buidBinding)
+        public static T IconImageSource<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.ImageSource>, BindingBuilder<Microsoft.Maui.Controls.ImageSource>> buildBinding)
             where T : Microsoft.Maui.Controls.Page
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.ImageSource>(obj, Microsoft.Maui.Controls.Page.IconImageSourceProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ImageSource>(self, Microsoft.Maui.Controls.Page.IconImageSourceProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T IsBusy<T>(this T obj,
+        public static T IsBusy<T>(this T self,
             bool isBusy)
             where T : Microsoft.Maui.Controls.Page
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Page.IsBusyProperty, isBusy);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Page.IsBusyProperty, isBusy);
+            return self;
         }
         
-        public static T IsBusy<T>(this T obj,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
+        public static T IsBusy<T>(this T self,
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Microsoft.Maui.Controls.Page
         {
-            var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Page.IsBusyProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Page.IsBusyProperty, builder.GetValue());
+            return self;
         }
         
-        public static T IsBusy<T>(this T obj,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buidBinding)
+        public static T IsBusy<T>(this T self,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Microsoft.Maui.Controls.Page
         {
-            var builder = buidBinding(new BindingBuilder<bool>(obj, Microsoft.Maui.Controls.Page.IsBusyProperty));
+            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.Page.IsBusyProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T Padding<T>(this T obj,
+        public static T Padding<T>(this T self,
             Microsoft.Maui.Thickness padding)
             where T : Microsoft.Maui.Controls.Page
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Page.PaddingProperty, padding);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Page.PaddingProperty, padding);
+            return self;
         }
         
-        public static T Padding<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Thickness>, ValueBuilder<Microsoft.Maui.Thickness>> buidValue)
+        public static T Padding<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Thickness>, ValueBuilder<Microsoft.Maui.Thickness>> buildValue)
             where T : Microsoft.Maui.Controls.Page
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Thickness>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Page.PaddingProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Thickness>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Page.PaddingProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Padding<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Thickness>, BindingBuilder<Microsoft.Maui.Thickness>> buidBinding)
+        public static T Padding<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Thickness>, BindingBuilder<Microsoft.Maui.Thickness>> buildBinding)
             where T : Microsoft.Maui.Controls.Page
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Thickness>(obj, Microsoft.Maui.Controls.Page.PaddingProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Thickness>(self, Microsoft.Maui.Controls.Page.PaddingProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T Title<T>(this T obj,
+        public static T Title<T>(this T self,
             string title)
             where T : Microsoft.Maui.Controls.Page
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Page.TitleProperty, title);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Page.TitleProperty, title);
+            return self;
         }
         
-        public static T Title<T>(this T obj,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buidValue)
+        public static T Title<T>(this T self,
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
             where T : Microsoft.Maui.Controls.Page
         {
-            var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Page.TitleProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Page.TitleProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Title<T>(this T obj,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buidBinding)
+        public static T Title<T>(this T self,
+            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
             where T : Microsoft.Maui.Controls.Page
         {
-            var builder = buidBinding(new BindingBuilder<string>(obj, Microsoft.Maui.Controls.Page.TitleProperty));
+            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.Page.TitleProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T ToolbarItems<T>(this T obj,
+        public static T ToolbarItems<T>(this T self,
             IList<Microsoft.Maui.Controls.ToolbarItem> toolbarItems)
             where T : Microsoft.Maui.Controls.Page
         {
             foreach (var item in toolbarItems)
-                obj.ToolbarItems.Add(item);
-            return obj;
+                self.ToolbarItems.Add(item);
+            return self;
         }
 
-        public static T ToolbarItems<T>(this T obj,
+        public static T ToolbarItems<T>(this T self,
             params Microsoft.Maui.Controls.ToolbarItem[] toolbarItems)
             where T : Microsoft.Maui.Controls.Page
         {
             foreach (var item in toolbarItems)
-                obj.ToolbarItems.Add(item);
-            return obj;
+                self.ToolbarItems.Add(item);
+            return self;
         }
         
-        public static T MenuBarItems<T>(this T obj,
+        public static T MenuBarItems<T>(this T self,
             IList<Microsoft.Maui.Controls.MenuBarItem> menuBarItems)
             where T : Microsoft.Maui.Controls.Page
         {
             foreach (var item in menuBarItems)
-                obj.MenuBarItems.Add(item);
-            return obj;
+                self.MenuBarItems.Add(item);
+            return self;
         }
 
-        public static T MenuBarItems<T>(this T obj,
+        public static T MenuBarItems<T>(this T self,
             params Microsoft.Maui.Controls.MenuBarItem[] menuBarItems)
             where T : Microsoft.Maui.Controls.Page
         {
             foreach (var item in menuBarItems)
-                obj.MenuBarItems.Add(item);
-            return obj;
+                self.MenuBarItems.Add(item);
+            return self;
         }
         
-        public static T ContainerArea<T>(this T obj,
+        public static T ContainerArea<T>(this T self,
             Microsoft.Maui.Graphics.Rect containerArea)
             where T : Microsoft.Maui.Controls.Page
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property ContainerArea");
-            obj.ContainerArea = containerArea;
-            return obj;
+            self.ContainerArea = containerArea;
+            return self;
         }
         
-        public static T ContainerArea<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Rect>, ValueBuilder<Microsoft.Maui.Graphics.Rect>> buidValue)
+        public static T ContainerArea<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Rect>, ValueBuilder<Microsoft.Maui.Graphics.Rect>> buildValue)
             where T : Microsoft.Maui.Controls.Page
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property ContainerArea");
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Rect>());
-            if (builder.ValueIsSet()) obj.ContainerArea = builder.GetValue();
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Rect>());
+            if (builder.ValueIsSet()) self.ContainerArea = builder.GetValue();
+            return self;
         }
         
-        public static T IgnoresContainerArea<T>(this T obj,
+        public static T IgnoresContainerArea<T>(this T self,
             bool ignoresContainerArea)
             where T : Microsoft.Maui.Controls.Page
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property IgnoresContainerArea");
-            obj.IgnoresContainerArea = ignoresContainerArea;
-            return obj;
+            self.IgnoresContainerArea = ignoresContainerArea;
+            return self;
         }
         
-        public static T IgnoresContainerArea<T>(this T obj,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
+        public static T IgnoresContainerArea<T>(this T self,
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Microsoft.Maui.Controls.Page
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property IgnoresContainerArea");
-            var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.IgnoresContainerArea = builder.GetValue();
-            return obj;
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) self.IgnoresContainerArea = builder.GetValue();
+            return self;
         }
         
-        public static T InternalChildren<T>(this T obj,
+        public static T InternalChildren<T>(this T self,
             IList<Microsoft.Maui.Controls.Element> internalChildren)
             where T : Microsoft.Maui.Controls.Page
         {
             foreach (var item in internalChildren)
-                obj.InternalChildren.Add(item);
-            return obj;
+                self.InternalChildren.Add(item);
+            return self;
         }
 
-        public static T InternalChildren<T>(this T obj,
+        public static T InternalChildren<T>(this T self,
             params Microsoft.Maui.Controls.Element[] internalChildren)
             where T : Microsoft.Maui.Controls.Page
         {
             foreach (var item in internalChildren)
-                obj.InternalChildren.Add(item);
-            return obj;
+                self.InternalChildren.Add(item);
+            return self;
         }
         
-        public static T OnNavigatedTo<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.NavigatedToEventArgs> handler)
+        public static T OnNavigatedTo<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.NavigatedToEventArgs> handler)
             where T : Microsoft.Maui.Controls.Page
         {
-            obj.NavigatedTo += handler;
-            return obj;
+            self.NavigatedTo += handler;
+            return self;
         }
         
-        public static T OnNavigatedTo<T>(this T obj, System.Action<T> action)
+        public static T OnNavigatedTo<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Page
         {
-            obj.NavigatedTo += (o, arg) => action(obj);
-            return obj;
+            self.NavigatedTo += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnNavigatingFrom<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.NavigatingFromEventArgs> handler)
+        public static T OnNavigatingFrom<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.NavigatingFromEventArgs> handler)
             where T : Microsoft.Maui.Controls.Page
         {
-            obj.NavigatingFrom += handler;
-            return obj;
+            self.NavigatingFrom += handler;
+            return self;
         }
         
-        public static T OnNavigatingFrom<T>(this T obj, System.Action<T> action)
+        public static T OnNavigatingFrom<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Page
         {
-            obj.NavigatingFrom += (o, arg) => action(obj);
-            return obj;
+            self.NavigatingFrom += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnNavigatedFrom<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.NavigatedFromEventArgs> handler)
+        public static T OnNavigatedFrom<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.NavigatedFromEventArgs> handler)
             where T : Microsoft.Maui.Controls.Page
         {
-            obj.NavigatedFrom += handler;
-            return obj;
+            self.NavigatedFrom += handler;
+            return self;
         }
         
-        public static T OnNavigatedFrom<T>(this T obj, System.Action<T> action)
+        public static T OnNavigatedFrom<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Page
         {
-            obj.NavigatedFrom += (o, arg) => action(obj);
-            return obj;
+            self.NavigatedFrom += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnLayoutChanged<T>(this T obj, System.EventHandler handler)
+        public static T OnLayoutChanged<T>(this T self, System.EventHandler handler)
             where T : Microsoft.Maui.Controls.Page
         {
-            obj.LayoutChanged += handler;
-            return obj;
+            self.LayoutChanged += handler;
+            return self;
         }
         
-        public static T OnLayoutChanged<T>(this T obj, System.Action<T> action)
+        public static T OnLayoutChanged<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Page
         {
-            obj.LayoutChanged += (o, arg) => action(obj);
-            return obj;
+            self.LayoutChanged += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnAppearing<T>(this T obj, System.EventHandler handler)
+        public static T OnAppearing<T>(this T self, System.EventHandler handler)
             where T : Microsoft.Maui.Controls.Page
         {
-            obj.Appearing += handler;
-            return obj;
+            self.Appearing += handler;
+            return self;
         }
         
-        public static T OnAppearing<T>(this T obj, System.Action<T> action)
+        public static T OnAppearing<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Page
         {
-            obj.Appearing += (o, arg) => action(obj);
-            return obj;
+            self.Appearing += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnDisappearing<T>(this T obj, System.EventHandler handler)
+        public static T OnDisappearing<T>(this T self, System.EventHandler handler)
             where T : Microsoft.Maui.Controls.Page
         {
-            obj.Disappearing += handler;
-            return obj;
+            self.Disappearing += handler;
+            return self;
         }
         
-        public static T OnDisappearing<T>(this T obj, System.Action<T> action)
+        public static T OnDisappearing<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Page
         {
-            obj.Disappearing += (o, arg) => action(obj);
-            return obj;
+            self.Disappearing += (o, arg) => action(self);
+            return self;
         }
         
     }

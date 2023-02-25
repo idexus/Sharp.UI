@@ -33,6 +33,34 @@ new Style<Button>(e => e...)
         .BackgroundColor(e => e.OnLight(AppColors.Gray200).OnDark(AppColors.Gray600))),
 },
 ```
+
+You can also use visual states to define animations:
+
+```cs
+new Style<Button>(e => e...)
+{
+    ...
+    
+    new VisualState<Button>(VisualStates.Button.Normal, e => e
+        .FontSize(33)
+        .TextColor(AppColors.Gray200))
+    {
+        async button => {
+            await button.RotateTo(0);   // create animation inside VisualState
+        }
+    },
+
+    new VisualState<Button>(VisualStates.Button.Disabled, e => e
+        .FontSize(20)
+        .TextColor(AppColors.Gray600))
+    {
+        async button => {
+            await button.RotateTo(180);
+        }
+    },
+}
+```
+
 Finally, all defined styles can be placed in a `ResourceDictionary`:
 
 ```cs

@@ -1,12 +1,12 @@
 ﻿namespace Sharp.UI
 {
-    public static partial class BindingConditionExtension // TODO: sealed
+    public static partial class BindingConditionExtension
     {
-        public static Microsoft.Maui.Controls.BindingCondition Binding(this Microsoft.Maui.Controls.BindingCondition obj,
+        public static Microsoft.Maui.Controls.BindingCondition Binding(this Microsoft.Maui.Controls.BindingCondition self,
             Func<Binding, Binding> bindingBuilder)
         {
-            obj.Binding = bindingBuilder(new Binding());
-            return obj;
+            self.Binding = bindingBuilder(new Binding());
+            return self;
         }
     }
 }

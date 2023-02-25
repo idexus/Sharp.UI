@@ -8,51 +8,50 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class ToolbarItemExtension
     {
-        public static T Order<T>(this T obj,
+        public static T Order<T>(this T self,
             Microsoft.Maui.Controls.ToolbarItemOrder order)
             where T : Microsoft.Maui.Controls.ToolbarItem
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property Order");
-            obj.Order = order;
-            return obj;
+            self.Order = order;
+            return self;
         }
         
-        public static T Order<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.ToolbarItemOrder>, ValueBuilder<Microsoft.Maui.Controls.ToolbarItemOrder>> buidValue)
+        public static T Order<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.ToolbarItemOrder>, ValueBuilder<Microsoft.Maui.Controls.ToolbarItemOrder>> buildValue)
             where T : Microsoft.Maui.Controls.ToolbarItem
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property Order");
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.ToolbarItemOrder>());
-            if (builder.ValueIsSet()) obj.Order = builder.GetValue();
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ToolbarItemOrder>());
+            if (builder.ValueIsSet()) self.Order = builder.GetValue();
+            return self;
         }
         
-        public static T Priority<T>(this T obj,
+        public static T Priority<T>(this T self,
             int priority)
             where T : Microsoft.Maui.Controls.ToolbarItem
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property Priority");
-            obj.Priority = priority;
-            return obj;
+            self.Priority = priority;
+            return self;
         }
         
-        public static T Priority<T>(this T obj,
-            System.Func<ValueBuilder<int>, ValueBuilder<int>> buidValue)
+        public static T Priority<T>(this T self,
+            System.Func<ValueBuilder<int>, ValueBuilder<int>> buildValue)
             where T : Microsoft.Maui.Controls.ToolbarItem
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property Priority");
-            var builder = buidValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) obj.Priority = builder.GetValue();
-            return obj;
+            var builder = buildValue(new ValueBuilder<int>());
+            if (builder.ValueIsSet()) self.Priority = builder.GetValue();
+            return self;
         }
         
     }

@@ -1,5 +1,5 @@
 ﻿
-namespace ExampleApp;
+namespace ExampleApp; 
 
 using Microsoft.Maui.Controls.Shapes;
 using Sharp.UI;
@@ -17,8 +17,7 @@ public partial class TestPage : ContentPage
         {
             new Style<Label>(e => e
                 .TextColor(AppColors.Gray200)
-                .HorizontalOptions(LayoutOptions.Center)
-                .VerticalOptions(LayoutOptions.Center)),
+                .CenterInContainer()),
 
             new Style<Button>(e => e
                 .BackgroundColor(AppColors.Gray950)
@@ -46,8 +45,9 @@ public partial class TestPage : ContentPage
             }
         };
 
+
         Content = new Grid(e => e.BackgroundColor(Colors.Black))
-        {
+        {            
             new VerticalStackLayout(out var vStack, e => e.VerticalOptions(LayoutOptions.Center))
             {
                 new Label(out var label)
@@ -58,7 +58,7 @@ public partial class TestPage : ContentPage
                     .Minimum(1).Maximum(30)
                     .WidthRequest(400)
                     .Value(e => e.Path("SliderValue"))
-                    .Margin(new Thickness(50, 30))
+                    .Margin(50, 30)
                     .OnValueChanged(slider => button.IsEnabled = slider.Value < 10),
 
                 new Border
@@ -78,8 +78,7 @@ public partial class TestPage : ContentPage
                             .TextColor(Colors.DarkGray),
 
                         new Switch(out testSwitch).Row(3)
-                            .VerticalOptions(LayoutOptions.Center)
-                            .HorizontalOptions(LayoutOptions.Center)
+                            .CenterInContainer()
                     },
 
                     e => e

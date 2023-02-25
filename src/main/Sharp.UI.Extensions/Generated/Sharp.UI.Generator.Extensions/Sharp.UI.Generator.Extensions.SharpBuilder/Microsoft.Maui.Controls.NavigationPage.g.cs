@@ -8,35 +8,34 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class NavigationPageExtension
     {
-        public static T BarBackgroundColor<T>(this T obj,
+        public static T BarBackgroundColor<T>(this T self,
             Microsoft.Maui.Graphics.Color barBackgroundColor)
             where T : Microsoft.Maui.Controls.NavigationPage
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.NavigationPage.BarBackgroundColorProperty, barBackgroundColor);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.NavigationPage.BarBackgroundColorProperty, barBackgroundColor);
+            return self;
         }
         
-        public static T BarBackgroundColor<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buidValue)
+        public static T BarBackgroundColor<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : Microsoft.Maui.Controls.NavigationPage
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.NavigationPage.BarBackgroundColorProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.NavigationPage.BarBackgroundColorProperty, builder.GetValue());
+            return self;
         }
         
-        public static T BarBackgroundColor<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buidBinding)
+        public static T BarBackgroundColor<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
             where T : Microsoft.Maui.Controls.NavigationPage
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(obj, Microsoft.Maui.Controls.NavigationPage.BarBackgroundColorProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.NavigationPage.BarBackgroundColorProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
         public static Task<bool> AnimateBarBackgroundColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
@@ -48,56 +47,56 @@ namespace Sharp.UI
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateBarBackgroundColorTo", transform, callback, length, easing);
         }
         
-        public static T BarBackground<T>(this T obj,
+        public static T BarBackground<T>(this T self,
             Microsoft.Maui.Controls.Brush barBackground)
             where T : Microsoft.Maui.Controls.NavigationPage
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.NavigationPage.BarBackgroundProperty, barBackground);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.NavigationPage.BarBackgroundProperty, barBackground);
+            return self;
         }
         
-        public static T BarBackground<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.Brush>, ValueBuilder<Microsoft.Maui.Controls.Brush>> buidValue)
+        public static T BarBackground<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.Brush>, ValueBuilder<Microsoft.Maui.Controls.Brush>> buildValue)
             where T : Microsoft.Maui.Controls.NavigationPage
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.Brush>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.NavigationPage.BarBackgroundProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Brush>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.NavigationPage.BarBackgroundProperty, builder.GetValue());
+            return self;
         }
         
-        public static T BarBackground<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.Brush>, BindingBuilder<Microsoft.Maui.Controls.Brush>> buidBinding)
+        public static T BarBackground<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.Brush>, BindingBuilder<Microsoft.Maui.Controls.Brush>> buildBinding)
             where T : Microsoft.Maui.Controls.NavigationPage
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.Brush>(obj, Microsoft.Maui.Controls.NavigationPage.BarBackgroundProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Brush>(self, Microsoft.Maui.Controls.NavigationPage.BarBackgroundProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T BarTextColor<T>(this T obj,
+        public static T BarTextColor<T>(this T self,
             Microsoft.Maui.Graphics.Color barTextColor)
             where T : Microsoft.Maui.Controls.NavigationPage
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.NavigationPage.BarTextColorProperty, barTextColor);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.NavigationPage.BarTextColorProperty, barTextColor);
+            return self;
         }
         
-        public static T BarTextColor<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buidValue)
+        public static T BarTextColor<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : Microsoft.Maui.Controls.NavigationPage
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.NavigationPage.BarTextColorProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.NavigationPage.BarTextColorProperty, builder.GetValue());
+            return self;
         }
         
-        public static T BarTextColor<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buidBinding)
+        public static T BarTextColor<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
             where T : Microsoft.Maui.Controls.NavigationPage
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(obj, Microsoft.Maui.Controls.NavigationPage.BarTextColorProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.NavigationPage.BarTextColorProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
         public static Task<bool> AnimateBarTextColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
@@ -109,46 +108,46 @@ namespace Sharp.UI
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateBarTextColorTo", transform, callback, length, easing);
         }
         
-        public static T OnPopped<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.NavigationEventArgs> handler)
+        public static T OnPopped<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.NavigationEventArgs> handler)
             where T : Microsoft.Maui.Controls.NavigationPage
         {
-            obj.Popped += handler;
-            return obj;
+            self.Popped += handler;
+            return self;
         }
         
-        public static T OnPopped<T>(this T obj, System.Action<T> action)
+        public static T OnPopped<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.NavigationPage
         {
-            obj.Popped += (o, arg) => action(obj);
-            return obj;
+            self.Popped += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnPoppedToRoot<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.NavigationEventArgs> handler)
+        public static T OnPoppedToRoot<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.NavigationEventArgs> handler)
             where T : Microsoft.Maui.Controls.NavigationPage
         {
-            obj.PoppedToRoot += handler;
-            return obj;
+            self.PoppedToRoot += handler;
+            return self;
         }
         
-        public static T OnPoppedToRoot<T>(this T obj, System.Action<T> action)
+        public static T OnPoppedToRoot<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.NavigationPage
         {
-            obj.PoppedToRoot += (o, arg) => action(obj);
-            return obj;
+            self.PoppedToRoot += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnPushed<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.NavigationEventArgs> handler)
+        public static T OnPushed<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.NavigationEventArgs> handler)
             where T : Microsoft.Maui.Controls.NavigationPage
         {
-            obj.Pushed += handler;
-            return obj;
+            self.Pushed += handler;
+            return self;
         }
         
-        public static T OnPushed<T>(this T obj, System.Action<T> action)
+        public static T OnPushed<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.NavigationPage
         {
-            obj.Pushed += (o, arg) => action(obj);
-            return obj;
+            self.Pushed += (o, arg) => action(self);
+            return self;
         }
         
     }

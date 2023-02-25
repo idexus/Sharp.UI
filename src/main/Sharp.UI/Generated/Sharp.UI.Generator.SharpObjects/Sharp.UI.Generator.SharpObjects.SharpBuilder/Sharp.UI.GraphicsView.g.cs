@@ -7,7 +7,9 @@
 
 namespace Sharp.UI
 {
-	public partial class GraphicsView
+	using Sharp.UI;
+
+    public partial class GraphicsView
 	{
 
         // ----- constructors -----

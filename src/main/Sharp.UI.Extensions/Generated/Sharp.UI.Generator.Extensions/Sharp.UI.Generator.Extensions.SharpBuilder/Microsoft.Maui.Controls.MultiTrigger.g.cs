@@ -8,41 +8,40 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class MultiTriggerExtension
     {
-        public static Microsoft.Maui.Controls.MultiTrigger Conditions(this Microsoft.Maui.Controls.MultiTrigger obj,
+        public static Microsoft.Maui.Controls.MultiTrigger Conditions(this Microsoft.Maui.Controls.MultiTrigger self,
             IList<Microsoft.Maui.Controls.Condition> conditions)
         {
             foreach (var item in conditions)
-                obj.Conditions.Add(item);
-            return obj;
+                self.Conditions.Add(item);
+            return self;
         }
 
-        public static Microsoft.Maui.Controls.MultiTrigger Conditions(this Microsoft.Maui.Controls.MultiTrigger obj,
+        public static Microsoft.Maui.Controls.MultiTrigger Conditions(this Microsoft.Maui.Controls.MultiTrigger self,
             params Microsoft.Maui.Controls.Condition[] conditions)
         {
             foreach (var item in conditions)
-                obj.Conditions.Add(item);
-            return obj;
+                self.Conditions.Add(item);
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.MultiTrigger Setters(this Microsoft.Maui.Controls.MultiTrigger obj,
+        public static Microsoft.Maui.Controls.MultiTrigger Setters(this Microsoft.Maui.Controls.MultiTrigger self,
             IList<Microsoft.Maui.Controls.Setter> setters)
         {
             foreach (var item in setters)
-                obj.Setters.Add(item);
-            return obj;
+                self.Setters.Add(item);
+            return self;
         }
 
-        public static Microsoft.Maui.Controls.MultiTrigger Setters(this Microsoft.Maui.Controls.MultiTrigger obj,
+        public static Microsoft.Maui.Controls.MultiTrigger Setters(this Microsoft.Maui.Controls.MultiTrigger self,
             params Microsoft.Maui.Controls.Setter[] setters)
         {
             foreach (var item in setters)
-                obj.Setters.Add(item);
-            return obj;
+                self.Setters.Add(item);
+            return self;
         }
         
     }

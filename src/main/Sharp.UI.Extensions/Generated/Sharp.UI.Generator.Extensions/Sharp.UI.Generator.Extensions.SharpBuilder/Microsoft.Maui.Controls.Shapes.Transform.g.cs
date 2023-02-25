@@ -8,35 +8,34 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class TransformExtension
     {
-        public static T Value<T>(this T obj,
+        public static T Value<T>(this T self,
             Microsoft.Maui.Controls.Shapes.Matrix value)
             where T : Microsoft.Maui.Controls.Shapes.Transform
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Transform.ValueProperty, value);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Transform.ValueProperty, value);
+            return self;
         }
         
-        public static T Value<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.Shapes.Matrix>, ValueBuilder<Microsoft.Maui.Controls.Shapes.Matrix>> buidValue)
+        public static T Value<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.Shapes.Matrix>, ValueBuilder<Microsoft.Maui.Controls.Shapes.Matrix>> buildValue)
             where T : Microsoft.Maui.Controls.Shapes.Transform
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.Shapes.Matrix>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Transform.ValueProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Shapes.Matrix>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Transform.ValueProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Value<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.Shapes.Matrix>, BindingBuilder<Microsoft.Maui.Controls.Shapes.Matrix>> buidBinding)
+        public static T Value<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.Shapes.Matrix>, BindingBuilder<Microsoft.Maui.Controls.Shapes.Matrix>> buildBinding)
             where T : Microsoft.Maui.Controls.Shapes.Transform
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.Shapes.Matrix>(obj, Microsoft.Maui.Controls.Shapes.Transform.ValueProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Shapes.Matrix>(self, Microsoft.Maui.Controls.Shapes.Transform.ValueProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
     }

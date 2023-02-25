@@ -8,165 +8,164 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class EntryExtension
     {
-        public static T HorizontalTextAlignment<T>(this T obj,
+        public static T HorizontalTextAlignment<T>(this T self,
             Microsoft.Maui.TextAlignment horizontalTextAlignment)
             where T : Microsoft.Maui.Controls.Entry
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Entry.HorizontalTextAlignmentProperty, horizontalTextAlignment);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Entry.HorizontalTextAlignmentProperty, horizontalTextAlignment);
+            return self;
         }
         
-        public static T HorizontalTextAlignment<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.TextAlignment>, ValueBuilder<Microsoft.Maui.TextAlignment>> buidValue)
+        public static T HorizontalTextAlignment<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.TextAlignment>, ValueBuilder<Microsoft.Maui.TextAlignment>> buildValue)
             where T : Microsoft.Maui.Controls.Entry
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.TextAlignment>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Entry.HorizontalTextAlignmentProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.TextAlignment>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Entry.HorizontalTextAlignmentProperty, builder.GetValue());
+            return self;
         }
         
-        public static T HorizontalTextAlignment<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.TextAlignment>, BindingBuilder<Microsoft.Maui.TextAlignment>> buidBinding)
+        public static T HorizontalTextAlignment<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.TextAlignment>, BindingBuilder<Microsoft.Maui.TextAlignment>> buildBinding)
             where T : Microsoft.Maui.Controls.Entry
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.TextAlignment>(obj, Microsoft.Maui.Controls.Entry.HorizontalTextAlignmentProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.TextAlignment>(self, Microsoft.Maui.Controls.Entry.HorizontalTextAlignmentProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T VerticalTextAlignment<T>(this T obj,
+        public static T VerticalTextAlignment<T>(this T self,
             Microsoft.Maui.TextAlignment verticalTextAlignment)
             where T : Microsoft.Maui.Controls.Entry
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Entry.VerticalTextAlignmentProperty, verticalTextAlignment);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Entry.VerticalTextAlignmentProperty, verticalTextAlignment);
+            return self;
         }
         
-        public static T VerticalTextAlignment<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.TextAlignment>, ValueBuilder<Microsoft.Maui.TextAlignment>> buidValue)
+        public static T VerticalTextAlignment<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.TextAlignment>, ValueBuilder<Microsoft.Maui.TextAlignment>> buildValue)
             where T : Microsoft.Maui.Controls.Entry
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.TextAlignment>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Entry.VerticalTextAlignmentProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.TextAlignment>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Entry.VerticalTextAlignmentProperty, builder.GetValue());
+            return self;
         }
         
-        public static T VerticalTextAlignment<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.TextAlignment>, BindingBuilder<Microsoft.Maui.TextAlignment>> buidBinding)
+        public static T VerticalTextAlignment<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.TextAlignment>, BindingBuilder<Microsoft.Maui.TextAlignment>> buildBinding)
             where T : Microsoft.Maui.Controls.Entry
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.TextAlignment>(obj, Microsoft.Maui.Controls.Entry.VerticalTextAlignmentProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.TextAlignment>(self, Microsoft.Maui.Controls.Entry.VerticalTextAlignmentProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T IsPassword<T>(this T obj,
+        public static T IsPassword<T>(this T self,
             bool isPassword)
             where T : Microsoft.Maui.Controls.Entry
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Entry.IsPasswordProperty, isPassword);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Entry.IsPasswordProperty, isPassword);
+            return self;
         }
         
-        public static T IsPassword<T>(this T obj,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
+        public static T IsPassword<T>(this T self,
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Microsoft.Maui.Controls.Entry
         {
-            var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Entry.IsPasswordProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Entry.IsPasswordProperty, builder.GetValue());
+            return self;
         }
         
-        public static T IsPassword<T>(this T obj,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buidBinding)
+        public static T IsPassword<T>(this T self,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Microsoft.Maui.Controls.Entry
         {
-            var builder = buidBinding(new BindingBuilder<bool>(obj, Microsoft.Maui.Controls.Entry.IsPasswordProperty));
+            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.Entry.IsPasswordProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T FontAttributes<T>(this T obj,
+        public static T FontAttributes<T>(this T self,
             Microsoft.Maui.Controls.FontAttributes fontAttributes)
             where T : Microsoft.Maui.Controls.Entry
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Entry.FontAttributesProperty, fontAttributes);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Entry.FontAttributesProperty, fontAttributes);
+            return self;
         }
         
-        public static T FontAttributes<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.FontAttributes>, ValueBuilder<Microsoft.Maui.Controls.FontAttributes>> buidValue)
+        public static T FontAttributes<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.FontAttributes>, ValueBuilder<Microsoft.Maui.Controls.FontAttributes>> buildValue)
             where T : Microsoft.Maui.Controls.Entry
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.FontAttributes>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Entry.FontAttributesProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.FontAttributes>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Entry.FontAttributesProperty, builder.GetValue());
+            return self;
         }
         
-        public static T FontAttributes<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.FontAttributes>, BindingBuilder<Microsoft.Maui.Controls.FontAttributes>> buidBinding)
+        public static T FontAttributes<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.FontAttributes>, BindingBuilder<Microsoft.Maui.Controls.FontAttributes>> buildBinding)
             where T : Microsoft.Maui.Controls.Entry
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.FontAttributes>(obj, Microsoft.Maui.Controls.Entry.FontAttributesProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.FontAttributes>(self, Microsoft.Maui.Controls.Entry.FontAttributesProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T FontFamily<T>(this T obj,
+        public static T FontFamily<T>(this T self,
             string fontFamily)
             where T : Microsoft.Maui.Controls.Entry
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Entry.FontFamilyProperty, fontFamily);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Entry.FontFamilyProperty, fontFamily);
+            return self;
         }
         
-        public static T FontFamily<T>(this T obj,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buidValue)
+        public static T FontFamily<T>(this T self,
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
             where T : Microsoft.Maui.Controls.Entry
         {
-            var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Entry.FontFamilyProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Entry.FontFamilyProperty, builder.GetValue());
+            return self;
         }
         
-        public static T FontFamily<T>(this T obj,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buidBinding)
+        public static T FontFamily<T>(this T self,
+            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
             where T : Microsoft.Maui.Controls.Entry
         {
-            var builder = buidBinding(new BindingBuilder<string>(obj, Microsoft.Maui.Controls.Entry.FontFamilyProperty));
+            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.Entry.FontFamilyProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T FontSize<T>(this T obj,
+        public static T FontSize<T>(this T self,
             double fontSize)
             where T : Microsoft.Maui.Controls.Entry
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Entry.FontSizeProperty, fontSize);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Entry.FontSizeProperty, fontSize);
+            return self;
         }
         
-        public static T FontSize<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T FontSize<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Microsoft.Maui.Controls.Entry
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Entry.FontSizeProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Entry.FontSizeProperty, builder.GetValue());
+            return self;
         }
         
-        public static T FontSize<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T FontSize<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Microsoft.Maui.Controls.Entry
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Entry.FontSizeProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Entry.FontSizeProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
         public static Task<bool> AnimateFontSizeTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
@@ -178,227 +177,311 @@ namespace Sharp.UI
             return Transformations.AnimateAsync<double>(self, "AnimateFontSizeTo", transform, callback, length, easing);
         }
         
-        public static T FontAutoScalingEnabled<T>(this T obj,
+        public static T FontAutoScalingEnabled<T>(this T self,
             bool fontAutoScalingEnabled)
             where T : Microsoft.Maui.Controls.Entry
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Entry.FontAutoScalingEnabledProperty, fontAutoScalingEnabled);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Entry.FontAutoScalingEnabledProperty, fontAutoScalingEnabled);
+            return self;
         }
         
-        public static T FontAutoScalingEnabled<T>(this T obj,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
+        public static T FontAutoScalingEnabled<T>(this T self,
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Microsoft.Maui.Controls.Entry
         {
-            var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Entry.FontAutoScalingEnabledProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Entry.FontAutoScalingEnabledProperty, builder.GetValue());
+            return self;
         }
         
-        public static T FontAutoScalingEnabled<T>(this T obj,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buidBinding)
+        public static T FontAutoScalingEnabled<T>(this T self,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Microsoft.Maui.Controls.Entry
         {
-            var builder = buidBinding(new BindingBuilder<bool>(obj, Microsoft.Maui.Controls.Entry.FontAutoScalingEnabledProperty));
+            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.Entry.FontAutoScalingEnabledProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T IsTextPredictionEnabled<T>(this T obj,
+        public static T IsTextPredictionEnabled<T>(this T self,
             bool isTextPredictionEnabled)
             where T : Microsoft.Maui.Controls.Entry
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Entry.IsTextPredictionEnabledProperty, isTextPredictionEnabled);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Entry.IsTextPredictionEnabledProperty, isTextPredictionEnabled);
+            return self;
         }
         
-        public static T IsTextPredictionEnabled<T>(this T obj,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
+        public static T IsTextPredictionEnabled<T>(this T self,
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Microsoft.Maui.Controls.Entry
         {
-            var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Entry.IsTextPredictionEnabledProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Entry.IsTextPredictionEnabledProperty, builder.GetValue());
+            return self;
         }
         
-        public static T IsTextPredictionEnabled<T>(this T obj,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buidBinding)
+        public static T IsTextPredictionEnabled<T>(this T self,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Microsoft.Maui.Controls.Entry
         {
-            var builder = buidBinding(new BindingBuilder<bool>(obj, Microsoft.Maui.Controls.Entry.IsTextPredictionEnabledProperty));
+            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.Entry.IsTextPredictionEnabledProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T ReturnType<T>(this T obj,
+        public static T ReturnType<T>(this T self,
             Microsoft.Maui.ReturnType returnType)
             where T : Microsoft.Maui.Controls.Entry
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Entry.ReturnTypeProperty, returnType);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Entry.ReturnTypeProperty, returnType);
+            return self;
         }
         
-        public static T ReturnType<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.ReturnType>, ValueBuilder<Microsoft.Maui.ReturnType>> buidValue)
+        public static T ReturnType<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.ReturnType>, ValueBuilder<Microsoft.Maui.ReturnType>> buildValue)
             where T : Microsoft.Maui.Controls.Entry
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.ReturnType>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Entry.ReturnTypeProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.ReturnType>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Entry.ReturnTypeProperty, builder.GetValue());
+            return self;
         }
         
-        public static T ReturnType<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.ReturnType>, BindingBuilder<Microsoft.Maui.ReturnType>> buidBinding)
+        public static T ReturnType<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.ReturnType>, BindingBuilder<Microsoft.Maui.ReturnType>> buildBinding)
             where T : Microsoft.Maui.Controls.Entry
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.ReturnType>(obj, Microsoft.Maui.Controls.Entry.ReturnTypeProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.ReturnType>(self, Microsoft.Maui.Controls.Entry.ReturnTypeProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T CursorPosition<T>(this T obj,
+        public static T CursorPosition<T>(this T self,
             int cursorPosition)
             where T : Microsoft.Maui.Controls.Entry
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Entry.CursorPositionProperty, cursorPosition);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Entry.CursorPositionProperty, cursorPosition);
+            return self;
         }
         
-        public static T CursorPosition<T>(this T obj,
-            System.Func<ValueBuilder<int>, ValueBuilder<int>> buidValue)
+        public static T CursorPosition<T>(this T self,
+            System.Func<ValueBuilder<int>, ValueBuilder<int>> buildValue)
             where T : Microsoft.Maui.Controls.Entry
         {
-            var builder = buidValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Entry.CursorPositionProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<int>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Entry.CursorPositionProperty, builder.GetValue());
+            return self;
         }
         
-        public static T CursorPosition<T>(this T obj,
-            System.Func<BindingBuilder<int>, BindingBuilder<int>> buidBinding)
+        public static T CursorPosition<T>(this T self,
+            System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
             where T : Microsoft.Maui.Controls.Entry
         {
-            var builder = buidBinding(new BindingBuilder<int>(obj, Microsoft.Maui.Controls.Entry.CursorPositionProperty));
+            var builder = buildBinding(new BindingBuilder<int>(self, Microsoft.Maui.Controls.Entry.CursorPositionProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T SelectionLength<T>(this T obj,
+        public static T SelectionLength<T>(this T self,
             int selectionLength)
             where T : Microsoft.Maui.Controls.Entry
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Entry.SelectionLengthProperty, selectionLength);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Entry.SelectionLengthProperty, selectionLength);
+            return self;
         }
         
-        public static T SelectionLength<T>(this T obj,
-            System.Func<ValueBuilder<int>, ValueBuilder<int>> buidValue)
+        public static T SelectionLength<T>(this T self,
+            System.Func<ValueBuilder<int>, ValueBuilder<int>> buildValue)
             where T : Microsoft.Maui.Controls.Entry
         {
-            var builder = buidValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Entry.SelectionLengthProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<int>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Entry.SelectionLengthProperty, builder.GetValue());
+            return self;
         }
         
-        public static T SelectionLength<T>(this T obj,
-            System.Func<BindingBuilder<int>, BindingBuilder<int>> buidBinding)
+        public static T SelectionLength<T>(this T self,
+            System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
             where T : Microsoft.Maui.Controls.Entry
         {
-            var builder = buidBinding(new BindingBuilder<int>(obj, Microsoft.Maui.Controls.Entry.SelectionLengthProperty));
+            var builder = buildBinding(new BindingBuilder<int>(self, Microsoft.Maui.Controls.Entry.SelectionLengthProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T ReturnCommand<T>(this T obj,
+        public static T ReturnCommand<T>(this T self,
             System.Windows.Input.ICommand returnCommand)
             where T : Microsoft.Maui.Controls.Entry
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Entry.ReturnCommandProperty, returnCommand);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Entry.ReturnCommandProperty, returnCommand);
+            return self;
         }
         
-        public static T ReturnCommand<T>(this T obj,
-            System.Func<ValueBuilder<System.Windows.Input.ICommand>, ValueBuilder<System.Windows.Input.ICommand>> buidValue)
+        public static T ReturnCommand<T>(this T self,
+            System.Func<ValueBuilder<System.Windows.Input.ICommand>, ValueBuilder<System.Windows.Input.ICommand>> buildValue)
             where T : Microsoft.Maui.Controls.Entry
         {
-            var builder = buidValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Entry.ReturnCommandProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<System.Windows.Input.ICommand>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Entry.ReturnCommandProperty, builder.GetValue());
+            return self;
         }
         
-        public static T ReturnCommand<T>(this T obj,
-            System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buidBinding)
+        public static T ReturnCommand<T>(this T self,
+            System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buildBinding)
             where T : Microsoft.Maui.Controls.Entry
         {
-            var builder = buidBinding(new BindingBuilder<System.Windows.Input.ICommand>(obj, Microsoft.Maui.Controls.Entry.ReturnCommandProperty));
+            var builder = buildBinding(new BindingBuilder<System.Windows.Input.ICommand>(self, Microsoft.Maui.Controls.Entry.ReturnCommandProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T ReturnCommandParameter<T>(this T obj,
+        public static T ReturnCommandParameter<T>(this T self,
             object returnCommandParameter)
             where T : Microsoft.Maui.Controls.Entry
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Entry.ReturnCommandParameterProperty, returnCommandParameter);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Entry.ReturnCommandParameterProperty, returnCommandParameter);
+            return self;
         }
         
-        public static T ReturnCommandParameter<T>(this T obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+        public static T ReturnCommandParameter<T>(this T self,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buildValue)
             where T : Microsoft.Maui.Controls.Entry
         {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Entry.ReturnCommandParameterProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Entry.ReturnCommandParameterProperty, builder.GetValue());
+            return self;
         }
         
-        public static T ReturnCommandParameter<T>(this T obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+        public static T ReturnCommandParameter<T>(this T self,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
             where T : Microsoft.Maui.Controls.Entry
         {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Entry.ReturnCommandParameterProperty));
+            var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.Entry.ReturnCommandParameterProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T ClearButtonVisibility<T>(this T obj,
+        public static T ClearButtonVisibility<T>(this T self,
             Microsoft.Maui.ClearButtonVisibility clearButtonVisibility)
             where T : Microsoft.Maui.Controls.Entry
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Entry.ClearButtonVisibilityProperty, clearButtonVisibility);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Entry.ClearButtonVisibilityProperty, clearButtonVisibility);
+            return self;
         }
         
-        public static T ClearButtonVisibility<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.ClearButtonVisibility>, ValueBuilder<Microsoft.Maui.ClearButtonVisibility>> buidValue)
+        public static T ClearButtonVisibility<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.ClearButtonVisibility>, ValueBuilder<Microsoft.Maui.ClearButtonVisibility>> buildValue)
             where T : Microsoft.Maui.Controls.Entry
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.ClearButtonVisibility>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Entry.ClearButtonVisibilityProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.ClearButtonVisibility>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Entry.ClearButtonVisibilityProperty, builder.GetValue());
+            return self;
         }
         
-        public static T ClearButtonVisibility<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.ClearButtonVisibility>, BindingBuilder<Microsoft.Maui.ClearButtonVisibility>> buidBinding)
+        public static T ClearButtonVisibility<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.ClearButtonVisibility>, BindingBuilder<Microsoft.Maui.ClearButtonVisibility>> buildBinding)
             where T : Microsoft.Maui.Controls.Entry
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.ClearButtonVisibility>(obj, Microsoft.Maui.Controls.Entry.ClearButtonVisibilityProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.ClearButtonVisibility>(self, Microsoft.Maui.Controls.Entry.ClearButtonVisibilityProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T OnCompleted<T>(this T obj, System.EventHandler handler)
+        public static T OnCompleted<T>(this T self, System.EventHandler handler)
             where T : Microsoft.Maui.Controls.Entry
         {
-            obj.Completed += handler;
-            return obj;
+            self.Completed += handler;
+            return self;
         }
         
-        public static T OnCompleted<T>(this T obj, System.Action<T> action)
+        public static T OnCompleted<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Entry
         {
-            obj.Completed += (o, arg) => action(obj);
-            return obj;
+            self.Completed += (o, arg) => action(self);
+            return self;
         }
+        
+
+        public static T TextCenterHorizontal<T>(this T self)
+            where T : Microsoft.Maui.Controls.Entry
+        {
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Entry.HorizontalTextAlignmentProperty, TextAlignment.Center);
+            return self;
+        }
+
+        public static T TextCenterVertical<T>(this T self)
+            where T : Microsoft.Maui.Controls.Entry
+        {
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Entry.VerticalTextAlignmentProperty, TextAlignment.Center);
+            return self;
+        }
+
+        public static T TextCenter<T>(this T self)
+            where T : Microsoft.Maui.Controls.Entry
+        {
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Entry.HorizontalTextAlignmentProperty, TextAlignment.Center);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Entry.VerticalTextAlignmentProperty, TextAlignment.Center);
+            return self;
+        }
+
+        public static T TextTop<T>(this T self)
+            where T : Microsoft.Maui.Controls.Entry
+        {
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Entry.VerticalTextAlignmentProperty, TextAlignment.Start);
+            return self;
+        }
+
+        public static T TextBottom<T>(this T self)
+            where T : Microsoft.Maui.Controls.Entry, Microsoft.Maui.ITextAlignment
+        {
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Entry.VerticalTextAlignmentProperty, TextAlignment.End);
+            return self;
+        }
+
+        public static T TextTopStart<T>(this T self)
+            where T : Microsoft.Maui.Controls.Entry
+        {
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Entry.VerticalTextAlignmentProperty, TextAlignment.Start);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Entry.HorizontalTextAlignmentProperty, TextAlignment.Start);
+            return self;
+        }
+
+        public static T TextBottomStart<T>(this T self)
+            where T : Microsoft.Maui.Controls.Entry
+        {
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Entry.VerticalTextAlignmentProperty, TextAlignment.End);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Entry.HorizontalTextAlignmentProperty, TextAlignment.Start);
+            return self;
+        }
+
+        public static T TextTopEnd<T>(this T self)
+            where T : Microsoft.Maui.Controls.Entry
+        {
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Entry.VerticalTextAlignmentProperty, TextAlignment.Start);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Entry.HorizontalTextAlignmentProperty, TextAlignment.End);
+            return self;
+        }
+
+        public static T TextBottomEnd<T>(this T self)
+            where T : Microsoft.Maui.Controls.Entry
+        {
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Entry.VerticalTextAlignmentProperty, TextAlignment.End);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Entry.HorizontalTextAlignmentProperty, TextAlignment.End);
+            return self;
+        }
+
+        public static T TextStart<T>(this T self)
+            where T : Microsoft.Maui.Controls.Entry
+        {
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Entry.HorizontalTextAlignmentProperty, TextAlignment.Start);
+            return self;
+        }
+
+        public static T TextEnd<T>(this T self)
+            where T : Microsoft.Maui.Controls.Entry
+        {
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Entry.HorizontalTextAlignmentProperty, TextAlignment.End);
+            return self;
+        }
+
         
     }
 }

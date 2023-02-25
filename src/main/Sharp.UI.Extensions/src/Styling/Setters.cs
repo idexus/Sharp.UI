@@ -2,10 +2,10 @@
 
 namespace Sharp.UI
 {
-    public class Setter<T> : List<Setter>
+    public class Setters<T> : List<Setter>
         where T : BindableObject
 	{
-        public Setter(Action<T> settersBuilder)
+        public Setters(Action<T> settersBuilder)
         {
             MainThread.BeginInvokeOnMainThread(() =>
             {

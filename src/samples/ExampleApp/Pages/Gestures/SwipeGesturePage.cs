@@ -16,7 +16,7 @@ public class SwipeGesturePage : ContentPage
                     .Direction(SwipeDirection.Right)
                     .OnSwiped((e, args) => label.Text = "Swiped"))
         }
-        .HorizontalOptions(LayoutOptions.Center)
-        .VerticalOptions(LayoutOptions.Center);
+        .CenterHorizontally()
+        .CenterVertically();
     }
 }

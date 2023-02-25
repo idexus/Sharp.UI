@@ -8,63 +8,62 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class DataTriggerExtension
     {
-        public static Microsoft.Maui.Controls.DataTrigger Binding(this Microsoft.Maui.Controls.DataTrigger obj,
+        public static Microsoft.Maui.Controls.DataTrigger Binding(this Microsoft.Maui.Controls.DataTrigger self,
             Microsoft.Maui.Controls.BindingBase binding)
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property Binding");
-            obj.Binding = binding;
-            return obj;
+            self.Binding = binding;
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.DataTrigger Binding(this Microsoft.Maui.Controls.DataTrigger obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.BindingBase>, ValueBuilder<Microsoft.Maui.Controls.BindingBase>> buidValue)
+        public static Microsoft.Maui.Controls.DataTrigger Binding(this Microsoft.Maui.Controls.DataTrigger self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.BindingBase>, ValueBuilder<Microsoft.Maui.Controls.BindingBase>> buildValue)
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property Binding");
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.BindingBase>());
-            if (builder.ValueIsSet()) obj.Binding = builder.GetValue();
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.BindingBase>());
+            if (builder.ValueIsSet()) self.Binding = builder.GetValue();
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.DataTrigger Setters(this Microsoft.Maui.Controls.DataTrigger obj,
+        public static Microsoft.Maui.Controls.DataTrigger Setters(this Microsoft.Maui.Controls.DataTrigger self,
             IList<Microsoft.Maui.Controls.Setter> setters)
         {
             foreach (var item in setters)
-                obj.Setters.Add(item);
-            return obj;
+                self.Setters.Add(item);
+            return self;
         }
 
-        public static Microsoft.Maui.Controls.DataTrigger Setters(this Microsoft.Maui.Controls.DataTrigger obj,
+        public static Microsoft.Maui.Controls.DataTrigger Setters(this Microsoft.Maui.Controls.DataTrigger self,
             params Microsoft.Maui.Controls.Setter[] setters)
         {
             foreach (var item in setters)
-                obj.Setters.Add(item);
-            return obj;
+                self.Setters.Add(item);
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.DataTrigger Value(this Microsoft.Maui.Controls.DataTrigger obj,
+        public static Microsoft.Maui.Controls.DataTrigger Value(this Microsoft.Maui.Controls.DataTrigger self,
             object value)
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property Value");
-            obj.Value = value;
-            return obj;
+            self.Value = value;
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.DataTrigger Value(this Microsoft.Maui.Controls.DataTrigger obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+        public static Microsoft.Maui.Controls.DataTrigger Value(this Microsoft.Maui.Controls.DataTrigger self,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buildValue)
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property Value");
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.Value = builder.GetValue();
-            return obj;
+            var builder = buildValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) self.Value = builder.GetValue();
+            return self;
         }
         
     }

@@ -7,7 +7,9 @@
 
 namespace Sharp.UI
 {
-	public partial class ImageButton
+	using Sharp.UI;
+
+    public partial class ImageButton
 	{
 
         // ----- constructors -----

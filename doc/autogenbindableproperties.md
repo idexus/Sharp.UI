@@ -35,7 +35,7 @@ public class TemplatedParentPage : ContentPage
         
         this.Content = new VStack
         {
-            e => e.VerticalOptions(LayoutOptions.Center),
+            e => e.CenterVertically(),
 
             new Slider(1,100, out var slider),
 

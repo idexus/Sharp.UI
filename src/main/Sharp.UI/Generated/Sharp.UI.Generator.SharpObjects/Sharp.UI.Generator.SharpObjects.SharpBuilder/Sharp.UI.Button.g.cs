@@ -7,7 +7,9 @@
 
 namespace Sharp.UI
 {
-	public partial class Button
+	using Sharp.UI;
+
+    public partial class Button
 	{
 
         // ----- constructors -----

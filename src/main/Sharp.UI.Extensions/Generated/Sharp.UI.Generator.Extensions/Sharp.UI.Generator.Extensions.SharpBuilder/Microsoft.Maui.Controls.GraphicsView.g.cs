@@ -8,133 +8,132 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class GraphicsViewExtension
     {
-        public static T Drawable<T>(this T obj,
+        public static T Drawable<T>(this T self,
             Microsoft.Maui.Graphics.IDrawable drawable)
             where T : Microsoft.Maui.Controls.GraphicsView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.GraphicsView.DrawableProperty, drawable);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.GraphicsView.DrawableProperty, drawable);
+            return self;
         }
         
-        public static T Drawable<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.IDrawable>, ValueBuilder<Microsoft.Maui.Graphics.IDrawable>> buidValue)
+        public static T Drawable<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.IDrawable>, ValueBuilder<Microsoft.Maui.Graphics.IDrawable>> buildValue)
             where T : Microsoft.Maui.Controls.GraphicsView
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.IDrawable>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.GraphicsView.DrawableProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.IDrawable>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.GraphicsView.DrawableProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Drawable<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.IDrawable>, BindingBuilder<Microsoft.Maui.Graphics.IDrawable>> buidBinding)
+        public static T Drawable<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.IDrawable>, BindingBuilder<Microsoft.Maui.Graphics.IDrawable>> buildBinding)
             where T : Microsoft.Maui.Controls.GraphicsView
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Graphics.IDrawable>(obj, Microsoft.Maui.Controls.GraphicsView.DrawableProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.IDrawable>(self, Microsoft.Maui.Controls.GraphicsView.DrawableProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T OnStartHoverInteraction<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.TouchEventArgs> handler)
+        public static T OnStartHoverInteraction<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.TouchEventArgs> handler)
             where T : Microsoft.Maui.Controls.GraphicsView
         {
-            obj.StartHoverInteraction += handler;
-            return obj;
+            self.StartHoverInteraction += handler;
+            return self;
         }
         
-        public static T OnStartHoverInteraction<T>(this T obj, System.Action<T> action)
+        public static T OnStartHoverInteraction<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.GraphicsView
         {
-            obj.StartHoverInteraction += (o, arg) => action(obj);
-            return obj;
+            self.StartHoverInteraction += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnMoveHoverInteraction<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.TouchEventArgs> handler)
+        public static T OnMoveHoverInteraction<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.TouchEventArgs> handler)
             where T : Microsoft.Maui.Controls.GraphicsView
         {
-            obj.MoveHoverInteraction += handler;
-            return obj;
+            self.MoveHoverInteraction += handler;
+            return self;
         }
         
-        public static T OnMoveHoverInteraction<T>(this T obj, System.Action<T> action)
+        public static T OnMoveHoverInteraction<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.GraphicsView
         {
-            obj.MoveHoverInteraction += (o, arg) => action(obj);
-            return obj;
+            self.MoveHoverInteraction += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnEndHoverInteraction<T>(this T obj, System.EventHandler handler)
+        public static T OnEndHoverInteraction<T>(this T self, System.EventHandler handler)
             where T : Microsoft.Maui.Controls.GraphicsView
         {
-            obj.EndHoverInteraction += handler;
-            return obj;
+            self.EndHoverInteraction += handler;
+            return self;
         }
         
-        public static T OnEndHoverInteraction<T>(this T obj, System.Action<T> action)
+        public static T OnEndHoverInteraction<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.GraphicsView
         {
-            obj.EndHoverInteraction += (o, arg) => action(obj);
-            return obj;
+            self.EndHoverInteraction += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnStartInteraction<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.TouchEventArgs> handler)
+        public static T OnStartInteraction<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.TouchEventArgs> handler)
             where T : Microsoft.Maui.Controls.GraphicsView
         {
-            obj.StartInteraction += handler;
-            return obj;
+            self.StartInteraction += handler;
+            return self;
         }
         
-        public static T OnStartInteraction<T>(this T obj, System.Action<T> action)
+        public static T OnStartInteraction<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.GraphicsView
         {
-            obj.StartInteraction += (o, arg) => action(obj);
-            return obj;
+            self.StartInteraction += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnDragInteraction<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.TouchEventArgs> handler)
+        public static T OnDragInteraction<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.TouchEventArgs> handler)
             where T : Microsoft.Maui.Controls.GraphicsView
         {
-            obj.DragInteraction += handler;
-            return obj;
+            self.DragInteraction += handler;
+            return self;
         }
         
-        public static T OnDragInteraction<T>(this T obj, System.Action<T> action)
+        public static T OnDragInteraction<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.GraphicsView
         {
-            obj.DragInteraction += (o, arg) => action(obj);
-            return obj;
+            self.DragInteraction += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnEndInteraction<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.TouchEventArgs> handler)
+        public static T OnEndInteraction<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.TouchEventArgs> handler)
             where T : Microsoft.Maui.Controls.GraphicsView
         {
-            obj.EndInteraction += handler;
-            return obj;
+            self.EndInteraction += handler;
+            return self;
         }
         
-        public static T OnEndInteraction<T>(this T obj, System.Action<T> action)
+        public static T OnEndInteraction<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.GraphicsView
         {
-            obj.EndInteraction += (o, arg) => action(obj);
-            return obj;
+            self.EndInteraction += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnCancelInteraction<T>(this T obj, System.EventHandler handler)
+        public static T OnCancelInteraction<T>(this T self, System.EventHandler handler)
             where T : Microsoft.Maui.Controls.GraphicsView
         {
-            obj.CancelInteraction += handler;
-            return obj;
+            self.CancelInteraction += handler;
+            return self;
         }
         
-        public static T OnCancelInteraction<T>(this T obj, System.Action<T> action)
+        public static T OnCancelInteraction<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.GraphicsView
         {
-            obj.CancelInteraction += (o, arg) => action(obj);
-            return obj;
+            self.CancelInteraction += (o, arg) => action(self);
+            return self;
         }
         
     }

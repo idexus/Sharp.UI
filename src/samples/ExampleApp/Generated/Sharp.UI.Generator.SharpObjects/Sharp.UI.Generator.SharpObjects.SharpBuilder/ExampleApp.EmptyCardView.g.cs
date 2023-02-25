@@ -7,8 +7,7 @@
 
 namespace ExampleApp
 {
-	using Sharp.UI;
-    public partial class EmptyCardView
+	public partial class EmptyCardView
 	{
 
         // ----- constructors -----

@@ -8,35 +8,34 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class ImageCellExtension
     {
-        public static T ImageSource<T>(this T obj,
+        public static T ImageSource<T>(this T self,
             Microsoft.Maui.Controls.ImageSource imageSource)
             where T : Microsoft.Maui.Controls.ImageCell
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.ImageCell.ImageSourceProperty, imageSource);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ImageCell.ImageSourceProperty, imageSource);
+            return self;
         }
         
-        public static T ImageSource<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.ImageSource>, ValueBuilder<Microsoft.Maui.Controls.ImageSource>> buidValue)
+        public static T ImageSource<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.ImageSource>, ValueBuilder<Microsoft.Maui.Controls.ImageSource>> buildValue)
             where T : Microsoft.Maui.Controls.ImageCell
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ImageCell.ImageSourceProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ImageCell.ImageSourceProperty, builder.GetValue());
+            return self;
         }
         
-        public static T ImageSource<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.ImageSource>, BindingBuilder<Microsoft.Maui.Controls.ImageSource>> buidBinding)
+        public static T ImageSource<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.ImageSource>, BindingBuilder<Microsoft.Maui.Controls.ImageSource>> buildBinding)
             where T : Microsoft.Maui.Controls.ImageCell
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.ImageSource>(obj, Microsoft.Maui.Controls.ImageCell.ImageSourceProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ImageSource>(self, Microsoft.Maui.Controls.ImageCell.ImageSourceProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
     }

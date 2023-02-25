@@ -8,139 +8,138 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class ArcSegmentExtension
     {
-        public static T Point<T>(this T obj,
+        public static T Point<T>(this T self,
             Microsoft.Maui.Graphics.Point point)
             where T : Microsoft.Maui.Controls.Shapes.ArcSegment
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.ArcSegment.PointProperty, point);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.ArcSegment.PointProperty, point);
+            return self;
         }
         
-        public static T Point<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Point>, ValueBuilder<Microsoft.Maui.Graphics.Point>> buidValue)
+        public static T Point<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Point>, ValueBuilder<Microsoft.Maui.Graphics.Point>> buildValue)
             where T : Microsoft.Maui.Controls.Shapes.ArcSegment
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Point>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.ArcSegment.PointProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Point>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.ArcSegment.PointProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Point<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Point>, BindingBuilder<Microsoft.Maui.Graphics.Point>> buidBinding)
+        public static T Point<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Point>, BindingBuilder<Microsoft.Maui.Graphics.Point>> buildBinding)
             where T : Microsoft.Maui.Controls.Shapes.ArcSegment
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Graphics.Point>(obj, Microsoft.Maui.Controls.Shapes.ArcSegment.PointProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Point>(self, Microsoft.Maui.Controls.Shapes.ArcSegment.PointProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T Size<T>(this T obj,
+        public static T Size<T>(this T self,
             Microsoft.Maui.Graphics.Size size)
             where T : Microsoft.Maui.Controls.Shapes.ArcSegment
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.ArcSegment.SizeProperty, size);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.ArcSegment.SizeProperty, size);
+            return self;
         }
         
-        public static T Size<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Size>, ValueBuilder<Microsoft.Maui.Graphics.Size>> buidValue)
+        public static T Size<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Size>, ValueBuilder<Microsoft.Maui.Graphics.Size>> buildValue)
             where T : Microsoft.Maui.Controls.Shapes.ArcSegment
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Size>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.ArcSegment.SizeProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Size>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.ArcSegment.SizeProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Size<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Size>, BindingBuilder<Microsoft.Maui.Graphics.Size>> buidBinding)
+        public static T Size<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Size>, BindingBuilder<Microsoft.Maui.Graphics.Size>> buildBinding)
             where T : Microsoft.Maui.Controls.Shapes.ArcSegment
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Graphics.Size>(obj, Microsoft.Maui.Controls.Shapes.ArcSegment.SizeProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Size>(self, Microsoft.Maui.Controls.Shapes.ArcSegment.SizeProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T RotationAngle<T>(this T obj,
+        public static T RotationAngle<T>(this T self,
             double rotationAngle)
             where T : Microsoft.Maui.Controls.Shapes.ArcSegment
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.ArcSegment.RotationAngleProperty, rotationAngle);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.ArcSegment.RotationAngleProperty, rotationAngle);
+            return self;
         }
         
-        public static T RotationAngle<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T RotationAngle<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Microsoft.Maui.Controls.Shapes.ArcSegment
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.ArcSegment.RotationAngleProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.ArcSegment.RotationAngleProperty, builder.GetValue());
+            return self;
         }
         
-        public static T RotationAngle<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T RotationAngle<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Microsoft.Maui.Controls.Shapes.ArcSegment
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Shapes.ArcSegment.RotationAngleProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.ArcSegment.RotationAngleProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T SweepDirection<T>(this T obj,
+        public static T SweepDirection<T>(this T self,
             Microsoft.Maui.Controls.SweepDirection sweepDirection)
             where T : Microsoft.Maui.Controls.Shapes.ArcSegment
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.ArcSegment.SweepDirectionProperty, sweepDirection);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.ArcSegment.SweepDirectionProperty, sweepDirection);
+            return self;
         }
         
-        public static T SweepDirection<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.SweepDirection>, ValueBuilder<Microsoft.Maui.Controls.SweepDirection>> buidValue)
+        public static T SweepDirection<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.SweepDirection>, ValueBuilder<Microsoft.Maui.Controls.SweepDirection>> buildValue)
             where T : Microsoft.Maui.Controls.Shapes.ArcSegment
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.SweepDirection>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.ArcSegment.SweepDirectionProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.SweepDirection>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.ArcSegment.SweepDirectionProperty, builder.GetValue());
+            return self;
         }
         
-        public static T SweepDirection<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.SweepDirection>, BindingBuilder<Microsoft.Maui.Controls.SweepDirection>> buidBinding)
+        public static T SweepDirection<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.SweepDirection>, BindingBuilder<Microsoft.Maui.Controls.SweepDirection>> buildBinding)
             where T : Microsoft.Maui.Controls.Shapes.ArcSegment
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.SweepDirection>(obj, Microsoft.Maui.Controls.Shapes.ArcSegment.SweepDirectionProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.SweepDirection>(self, Microsoft.Maui.Controls.Shapes.ArcSegment.SweepDirectionProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T IsLargeArc<T>(this T obj,
+        public static T IsLargeArc<T>(this T self,
             bool isLargeArc)
             where T : Microsoft.Maui.Controls.Shapes.ArcSegment
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.ArcSegment.IsLargeArcProperty, isLargeArc);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.ArcSegment.IsLargeArcProperty, isLargeArc);
+            return self;
         }
         
-        public static T IsLargeArc<T>(this T obj,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
+        public static T IsLargeArc<T>(this T self,
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Microsoft.Maui.Controls.Shapes.ArcSegment
         {
-            var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.ArcSegment.IsLargeArcProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.ArcSegment.IsLargeArcProperty, builder.GetValue());
+            return self;
         }
         
-        public static T IsLargeArc<T>(this T obj,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buidBinding)
+        public static T IsLargeArc<T>(this T self,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Microsoft.Maui.Controls.Shapes.ArcSegment
         {
-            var builder = buidBinding(new BindingBuilder<bool>(obj, Microsoft.Maui.Controls.Shapes.ArcSegment.IsLargeArcProperty));
+            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.Shapes.ArcSegment.IsLargeArcProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
     }

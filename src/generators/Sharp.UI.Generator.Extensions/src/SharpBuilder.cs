@@ -60,6 +60,18 @@ namespace Sharp.UI.Generator.Extensions
             {
                 new ExtensionGenerator(context, symbol).Build();
             }
+
+
+            // [AttachedInterfaces] symbols
+
+            var staticWithAttachedSymbols = context.Compilation.GetSymbolsWithName((s) => true, filter: SymbolFilter.Type)
+                .Where(e => e.IsStatic && e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Equals(Shared.AttachedInterfacesAttributeString)) != null)
+                .Select(e => e as INamedTypeSymbol);
+
+            foreach (var symbol in staticWithAttachedSymbols)
+            {
+                new ExtensionGenerator(context, symbol).Build();
+            }
         }
     }
 }

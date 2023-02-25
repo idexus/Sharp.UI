@@ -8,68 +8,67 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class ItemsViewOfCellExtension
     {
-        public static T ItemsSource<T>(this T obj,
+        public static T ItemsSource<T>(this T self,
             System.Collections.IEnumerable itemsSource)
             where T : Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>.ItemsSourceProperty, itemsSource);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>.ItemsSourceProperty, itemsSource);
+            return self;
         }
         
-        public static T ItemsSource<T>(this T obj,
-            System.Func<ValueBuilder<System.Collections.IEnumerable>, ValueBuilder<System.Collections.IEnumerable>> buidValue)
+        public static T ItemsSource<T>(this T self,
+            System.Func<ValueBuilder<System.Collections.IEnumerable>, ValueBuilder<System.Collections.IEnumerable>> buildValue)
             where T : Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>
         {
-            var builder = buidValue(new ValueBuilder<System.Collections.IEnumerable>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>.ItemsSourceProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<System.Collections.IEnumerable>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>.ItemsSourceProperty, builder.GetValue());
+            return self;
         }
         
-        public static T ItemsSource<T>(this T obj,
-            System.Func<BindingBuilder<System.Collections.IEnumerable>, BindingBuilder<System.Collections.IEnumerable>> buidBinding)
+        public static T ItemsSource<T>(this T self,
+            System.Func<BindingBuilder<System.Collections.IEnumerable>, BindingBuilder<System.Collections.IEnumerable>> buildBinding)
             where T : Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>
         {
-            var builder = buidBinding(new BindingBuilder<System.Collections.IEnumerable>(obj, Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>.ItemsSourceProperty));
+            var builder = buildBinding(new BindingBuilder<System.Collections.IEnumerable>(self, Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>.ItemsSourceProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T ItemTemplate<T>(this T obj,
+        public static T ItemTemplate<T>(this T self,
             Microsoft.Maui.Controls.DataTemplate itemTemplate)
             where T : Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>.ItemTemplateProperty, itemTemplate);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>.ItemTemplateProperty, itemTemplate);
+            return self;
         }
         
-        public static T ItemTemplate<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.DataTemplate>, ValueBuilder<Microsoft.Maui.Controls.DataTemplate>> buidValue)
+        public static T ItemTemplate<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.DataTemplate>, ValueBuilder<Microsoft.Maui.Controls.DataTemplate>> buildValue)
             where T : Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>.ItemTemplateProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>.ItemTemplateProperty, builder.GetValue());
+            return self;
         }
         
-        public static T ItemTemplate<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buidBinding)
+        public static T ItemTemplate<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buildBinding)
             where T : Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(obj, Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>.ItemTemplateProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>.ItemTemplateProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T ItemTemplate<T>(this T obj, System.Func<object> loadTemplate)
+        public static T ItemTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>
         {
-            obj.ItemTemplate = new DataTemplate(loadTemplate);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>.ItemTemplateProperty, new DataTemplate(loadTemplate));
+            return self;
         }
         
     }

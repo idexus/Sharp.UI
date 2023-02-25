@@ -7,8 +7,7 @@
 
 namespace ExampleApp
 {
-	using Sharp.UI;
-    public partial class AngleViewModel
+	public partial class AngleViewModel
 	{
 
         // ----- constructors -----

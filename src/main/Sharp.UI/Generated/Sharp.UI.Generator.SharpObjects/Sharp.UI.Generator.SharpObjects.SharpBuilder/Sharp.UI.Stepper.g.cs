@@ -7,7 +7,9 @@
 
 namespace Sharp.UI
 {
-	public partial class Stepper
+	using Sharp.UI;
+
+    public partial class Stepper
 	{
 
         // ----- constructors -----

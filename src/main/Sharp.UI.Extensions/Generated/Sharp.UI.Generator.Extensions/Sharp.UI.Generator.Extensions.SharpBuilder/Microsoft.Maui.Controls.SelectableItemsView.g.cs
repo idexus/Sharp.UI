@@ -8,154 +8,153 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class SelectableItemsViewExtension
     {
-        public static T SelectedItem<T>(this T obj,
+        public static T SelectedItem<T>(this T self,
             object selectedItem)
             where T : Microsoft.Maui.Controls.SelectableItemsView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.SelectableItemsView.SelectedItemProperty, selectedItem);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SelectableItemsView.SelectedItemProperty, selectedItem);
+            return self;
         }
         
-        public static T SelectedItem<T>(this T obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+        public static T SelectedItem<T>(this T self,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buildValue)
             where T : Microsoft.Maui.Controls.SelectableItemsView
         {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SelectableItemsView.SelectedItemProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SelectableItemsView.SelectedItemProperty, builder.GetValue());
+            return self;
         }
         
-        public static T SelectedItem<T>(this T obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+        public static T SelectedItem<T>(this T self,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
             where T : Microsoft.Maui.Controls.SelectableItemsView
         {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.SelectableItemsView.SelectedItemProperty));
+            var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.SelectableItemsView.SelectedItemProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T SelectedItems<T>(this T obj,
+        public static T SelectedItems<T>(this T self,
             IList<object> selectedItems)
             where T : Microsoft.Maui.Controls.SelectableItemsView
         {
             foreach (var item in selectedItems)
-                obj.SelectedItems.Add(item);
-            return obj;
+                self.SelectedItems.Add(item);
+            return self;
         }
 
-        public static T SelectedItems<T>(this T obj,
+        public static T SelectedItems<T>(this T self,
             params object[] selectedItems)
             where T : Microsoft.Maui.Controls.SelectableItemsView
         {
             foreach (var item in selectedItems)
-                obj.SelectedItems.Add(item);
-            return obj;
+                self.SelectedItems.Add(item);
+            return self;
         }
         
-        public static T SelectedItems<T>(this T obj,
-            System.Func<BindingBuilder<System.Collections.Generic.IList<object>>, BindingBuilder<System.Collections.Generic.IList<object>>> buidBinding)
+        public static T SelectedItems<T>(this T self,
+            System.Func<BindingBuilder<System.Collections.Generic.IList<object>>, BindingBuilder<System.Collections.Generic.IList<object>>> buildBinding)
             where T : Microsoft.Maui.Controls.SelectableItemsView
         {
-            var builder = buidBinding(new BindingBuilder<System.Collections.Generic.IList<object>>(obj, Microsoft.Maui.Controls.SelectableItemsView.SelectedItemsProperty));
+            var builder = buildBinding(new BindingBuilder<System.Collections.Generic.IList<object>>(self, Microsoft.Maui.Controls.SelectableItemsView.SelectedItemsProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T SelectionChangedCommand<T>(this T obj,
+        public static T SelectionChangedCommand<T>(this T self,
             System.Windows.Input.ICommand selectionChangedCommand)
             where T : Microsoft.Maui.Controls.SelectableItemsView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.SelectableItemsView.SelectionChangedCommandProperty, selectionChangedCommand);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SelectableItemsView.SelectionChangedCommandProperty, selectionChangedCommand);
+            return self;
         }
         
-        public static T SelectionChangedCommand<T>(this T obj,
-            System.Func<ValueBuilder<System.Windows.Input.ICommand>, ValueBuilder<System.Windows.Input.ICommand>> buidValue)
+        public static T SelectionChangedCommand<T>(this T self,
+            System.Func<ValueBuilder<System.Windows.Input.ICommand>, ValueBuilder<System.Windows.Input.ICommand>> buildValue)
             where T : Microsoft.Maui.Controls.SelectableItemsView
         {
-            var builder = buidValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SelectableItemsView.SelectionChangedCommandProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<System.Windows.Input.ICommand>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SelectableItemsView.SelectionChangedCommandProperty, builder.GetValue());
+            return self;
         }
         
-        public static T SelectionChangedCommand<T>(this T obj,
-            System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buidBinding)
+        public static T SelectionChangedCommand<T>(this T self,
+            System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buildBinding)
             where T : Microsoft.Maui.Controls.SelectableItemsView
         {
-            var builder = buidBinding(new BindingBuilder<System.Windows.Input.ICommand>(obj, Microsoft.Maui.Controls.SelectableItemsView.SelectionChangedCommandProperty));
+            var builder = buildBinding(new BindingBuilder<System.Windows.Input.ICommand>(self, Microsoft.Maui.Controls.SelectableItemsView.SelectionChangedCommandProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T SelectionChangedCommandParameter<T>(this T obj,
+        public static T SelectionChangedCommandParameter<T>(this T self,
             object selectionChangedCommandParameter)
             where T : Microsoft.Maui.Controls.SelectableItemsView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.SelectableItemsView.SelectionChangedCommandParameterProperty, selectionChangedCommandParameter);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SelectableItemsView.SelectionChangedCommandParameterProperty, selectionChangedCommandParameter);
+            return self;
         }
         
-        public static T SelectionChangedCommandParameter<T>(this T obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+        public static T SelectionChangedCommandParameter<T>(this T self,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buildValue)
             where T : Microsoft.Maui.Controls.SelectableItemsView
         {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SelectableItemsView.SelectionChangedCommandParameterProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SelectableItemsView.SelectionChangedCommandParameterProperty, builder.GetValue());
+            return self;
         }
         
-        public static T SelectionChangedCommandParameter<T>(this T obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+        public static T SelectionChangedCommandParameter<T>(this T self,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
             where T : Microsoft.Maui.Controls.SelectableItemsView
         {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.SelectableItemsView.SelectionChangedCommandParameterProperty));
+            var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.SelectableItemsView.SelectionChangedCommandParameterProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T SelectionMode<T>(this T obj,
+        public static T SelectionMode<T>(this T self,
             Microsoft.Maui.Controls.SelectionMode selectionMode)
             where T : Microsoft.Maui.Controls.SelectableItemsView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.SelectableItemsView.SelectionModeProperty, selectionMode);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SelectableItemsView.SelectionModeProperty, selectionMode);
+            return self;
         }
         
-        public static T SelectionMode<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.SelectionMode>, ValueBuilder<Microsoft.Maui.Controls.SelectionMode>> buidValue)
+        public static T SelectionMode<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.SelectionMode>, ValueBuilder<Microsoft.Maui.Controls.SelectionMode>> buildValue)
             where T : Microsoft.Maui.Controls.SelectableItemsView
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.SelectionMode>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SelectableItemsView.SelectionModeProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.SelectionMode>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SelectableItemsView.SelectionModeProperty, builder.GetValue());
+            return self;
         }
         
-        public static T SelectionMode<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.SelectionMode>, BindingBuilder<Microsoft.Maui.Controls.SelectionMode>> buidBinding)
+        public static T SelectionMode<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.SelectionMode>, BindingBuilder<Microsoft.Maui.Controls.SelectionMode>> buildBinding)
             where T : Microsoft.Maui.Controls.SelectableItemsView
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.SelectionMode>(obj, Microsoft.Maui.Controls.SelectableItemsView.SelectionModeProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.SelectionMode>(self, Microsoft.Maui.Controls.SelectableItemsView.SelectionModeProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T OnSelectionChanged<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.SelectionChangedEventArgs> handler)
+        public static T OnSelectionChanged<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.SelectionChangedEventArgs> handler)
             where T : Microsoft.Maui.Controls.SelectableItemsView
         {
-            obj.SelectionChanged += handler;
-            return obj;
+            self.SelectionChanged += handler;
+            return self;
         }
         
-        public static T OnSelectionChanged<T>(this T obj, System.Action<T> action)
+        public static T OnSelectionChanged<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.SelectableItemsView
         {
-            obj.SelectionChanged += (o, arg) => action(obj);
-            return obj;
+            self.SelectionChanged += (o, arg) => action(self);
+            return self;
         }
         
     }

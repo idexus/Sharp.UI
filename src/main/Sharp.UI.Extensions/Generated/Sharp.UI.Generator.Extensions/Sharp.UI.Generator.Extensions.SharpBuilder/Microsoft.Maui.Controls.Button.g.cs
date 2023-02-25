@@ -8,87 +8,86 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class ButtonExtension
     {
-        public static T Padding<T>(this T obj,
+        public static T Padding<T>(this T self,
             Microsoft.Maui.Thickness padding)
             where T : Microsoft.Maui.Controls.Button
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.PaddingProperty, padding);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.PaddingProperty, padding);
+            return self;
         }
         
-        public static T Padding<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Thickness>, ValueBuilder<Microsoft.Maui.Thickness>> buidValue)
+        public static T Padding<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Thickness>, ValueBuilder<Microsoft.Maui.Thickness>> buildValue)
             where T : Microsoft.Maui.Controls.Button
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Thickness>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.PaddingProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Thickness>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.PaddingProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Padding<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Thickness>, BindingBuilder<Microsoft.Maui.Thickness>> buidBinding)
+        public static T Padding<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Thickness>, BindingBuilder<Microsoft.Maui.Thickness>> buildBinding)
             where T : Microsoft.Maui.Controls.Button
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Thickness>(obj, Microsoft.Maui.Controls.Button.PaddingProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Thickness>(self, Microsoft.Maui.Controls.Button.PaddingProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T LineBreakMode<T>(this T obj,
+        public static T LineBreakMode<T>(this T self,
             Microsoft.Maui.LineBreakMode lineBreakMode)
             where T : Microsoft.Maui.Controls.Button
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.LineBreakModeProperty, lineBreakMode);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.LineBreakModeProperty, lineBreakMode);
+            return self;
         }
         
-        public static T LineBreakMode<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.LineBreakMode>, ValueBuilder<Microsoft.Maui.LineBreakMode>> buidValue)
+        public static T LineBreakMode<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.LineBreakMode>, ValueBuilder<Microsoft.Maui.LineBreakMode>> buildValue)
             where T : Microsoft.Maui.Controls.Button
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.LineBreakMode>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.LineBreakModeProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.LineBreakMode>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.LineBreakModeProperty, builder.GetValue());
+            return self;
         }
         
-        public static T LineBreakMode<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.LineBreakMode>, BindingBuilder<Microsoft.Maui.LineBreakMode>> buidBinding)
+        public static T LineBreakMode<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.LineBreakMode>, BindingBuilder<Microsoft.Maui.LineBreakMode>> buildBinding)
             where T : Microsoft.Maui.Controls.Button
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.LineBreakMode>(obj, Microsoft.Maui.Controls.Button.LineBreakModeProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.LineBreakMode>(self, Microsoft.Maui.Controls.Button.LineBreakModeProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T BorderColor<T>(this T obj,
+        public static T BorderColor<T>(this T self,
             Microsoft.Maui.Graphics.Color borderColor)
             where T : Microsoft.Maui.Controls.Button
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.BorderColorProperty, borderColor);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.BorderColorProperty, borderColor);
+            return self;
         }
         
-        public static T BorderColor<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buidValue)
+        public static T BorderColor<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : Microsoft.Maui.Controls.Button
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.BorderColorProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.BorderColorProperty, builder.GetValue());
+            return self;
         }
         
-        public static T BorderColor<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buidBinding)
+        public static T BorderColor<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
             where T : Microsoft.Maui.Controls.Button
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(obj, Microsoft.Maui.Controls.Button.BorderColorProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.Button.BorderColorProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
         public static Task<bool> AnimateBorderColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
@@ -100,56 +99,56 @@ namespace Sharp.UI
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateBorderColorTo", transform, callback, length, easing);
         }
         
-        public static T CornerRadius<T>(this T obj,
+        public static T CornerRadius<T>(this T self,
             int cornerRadius)
             where T : Microsoft.Maui.Controls.Button
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.CornerRadiusProperty, cornerRadius);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.CornerRadiusProperty, cornerRadius);
+            return self;
         }
         
-        public static T CornerRadius<T>(this T obj,
-            System.Func<ValueBuilder<int>, ValueBuilder<int>> buidValue)
+        public static T CornerRadius<T>(this T self,
+            System.Func<ValueBuilder<int>, ValueBuilder<int>> buildValue)
             where T : Microsoft.Maui.Controls.Button
         {
-            var builder = buidValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.CornerRadiusProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<int>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.CornerRadiusProperty, builder.GetValue());
+            return self;
         }
         
-        public static T CornerRadius<T>(this T obj,
-            System.Func<BindingBuilder<int>, BindingBuilder<int>> buidBinding)
+        public static T CornerRadius<T>(this T self,
+            System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
             where T : Microsoft.Maui.Controls.Button
         {
-            var builder = buidBinding(new BindingBuilder<int>(obj, Microsoft.Maui.Controls.Button.CornerRadiusProperty));
+            var builder = buildBinding(new BindingBuilder<int>(self, Microsoft.Maui.Controls.Button.CornerRadiusProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T BorderWidth<T>(this T obj,
+        public static T BorderWidth<T>(this T self,
             double borderWidth)
             where T : Microsoft.Maui.Controls.Button
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.BorderWidthProperty, borderWidth);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.BorderWidthProperty, borderWidth);
+            return self;
         }
         
-        public static T BorderWidth<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T BorderWidth<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Microsoft.Maui.Controls.Button
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.BorderWidthProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.BorderWidthProperty, builder.GetValue());
+            return self;
         }
         
-        public static T BorderWidth<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T BorderWidth<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Microsoft.Maui.Controls.Button
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Button.BorderWidthProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Button.BorderWidthProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
         public static Task<bool> AnimateBorderWidthTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
@@ -161,160 +160,160 @@ namespace Sharp.UI
             return Transformations.AnimateAsync<double>(self, "AnimateBorderWidthTo", transform, callback, length, easing);
         }
         
-        public static T ContentLayout<T>(this T obj,
+        public static T ContentLayout<T>(this T self,
             Microsoft.Maui.Controls.Button.ButtonContentLayout contentLayout)
             where T : Microsoft.Maui.Controls.Button
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.ContentLayoutProperty, contentLayout);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.ContentLayoutProperty, contentLayout);
+            return self;
         }
         
-        public static T ContentLayout<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.Button.ButtonContentLayout>, ValueBuilder<Microsoft.Maui.Controls.Button.ButtonContentLayout>> buidValue)
+        public static T ContentLayout<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.Button.ButtonContentLayout>, ValueBuilder<Microsoft.Maui.Controls.Button.ButtonContentLayout>> buildValue)
             where T : Microsoft.Maui.Controls.Button
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.Button.ButtonContentLayout>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.ContentLayoutProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Button.ButtonContentLayout>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.ContentLayoutProperty, builder.GetValue());
+            return self;
         }
         
-        public static T ContentLayout<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.Button.ButtonContentLayout>, BindingBuilder<Microsoft.Maui.Controls.Button.ButtonContentLayout>> buidBinding)
+        public static T ContentLayout<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.Button.ButtonContentLayout>, BindingBuilder<Microsoft.Maui.Controls.Button.ButtonContentLayout>> buildBinding)
             where T : Microsoft.Maui.Controls.Button
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.Button.ButtonContentLayout>(obj, Microsoft.Maui.Controls.Button.ContentLayoutProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Button.ButtonContentLayout>(self, Microsoft.Maui.Controls.Button.ContentLayoutProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T Command<T>(this T obj,
+        public static T Command<T>(this T self,
             System.Windows.Input.ICommand command)
             where T : Microsoft.Maui.Controls.Button
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.CommandProperty, command);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.CommandProperty, command);
+            return self;
         }
         
-        public static T Command<T>(this T obj,
-            System.Func<ValueBuilder<System.Windows.Input.ICommand>, ValueBuilder<System.Windows.Input.ICommand>> buidValue)
+        public static T Command<T>(this T self,
+            System.Func<ValueBuilder<System.Windows.Input.ICommand>, ValueBuilder<System.Windows.Input.ICommand>> buildValue)
             where T : Microsoft.Maui.Controls.Button
         {
-            var builder = buidValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.CommandProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<System.Windows.Input.ICommand>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.CommandProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Command<T>(this T obj,
-            System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buidBinding)
+        public static T Command<T>(this T self,
+            System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buildBinding)
             where T : Microsoft.Maui.Controls.Button
         {
-            var builder = buidBinding(new BindingBuilder<System.Windows.Input.ICommand>(obj, Microsoft.Maui.Controls.Button.CommandProperty));
+            var builder = buildBinding(new BindingBuilder<System.Windows.Input.ICommand>(self, Microsoft.Maui.Controls.Button.CommandProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T CommandParameter<T>(this T obj,
+        public static T CommandParameter<T>(this T self,
             object commandParameter)
             where T : Microsoft.Maui.Controls.Button
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.CommandParameterProperty, commandParameter);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.CommandParameterProperty, commandParameter);
+            return self;
         }
         
-        public static T CommandParameter<T>(this T obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+        public static T CommandParameter<T>(this T self,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buildValue)
             where T : Microsoft.Maui.Controls.Button
         {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.CommandParameterProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.CommandParameterProperty, builder.GetValue());
+            return self;
         }
         
-        public static T CommandParameter<T>(this T obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+        public static T CommandParameter<T>(this T self,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
             where T : Microsoft.Maui.Controls.Button
         {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Button.CommandParameterProperty));
+            var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.Button.CommandParameterProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T ImageSource<T>(this T obj,
+        public static T ImageSource<T>(this T self,
             Microsoft.Maui.Controls.ImageSource imageSource)
             where T : Microsoft.Maui.Controls.Button
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.ImageSourceProperty, imageSource);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.ImageSourceProperty, imageSource);
+            return self;
         }
         
-        public static T ImageSource<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.ImageSource>, ValueBuilder<Microsoft.Maui.Controls.ImageSource>> buidValue)
+        public static T ImageSource<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.ImageSource>, ValueBuilder<Microsoft.Maui.Controls.ImageSource>> buildValue)
             where T : Microsoft.Maui.Controls.Button
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.ImageSourceProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.ImageSourceProperty, builder.GetValue());
+            return self;
         }
         
-        public static T ImageSource<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.ImageSource>, BindingBuilder<Microsoft.Maui.Controls.ImageSource>> buidBinding)
+        public static T ImageSource<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.ImageSource>, BindingBuilder<Microsoft.Maui.Controls.ImageSource>> buildBinding)
             where T : Microsoft.Maui.Controls.Button
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.ImageSource>(obj, Microsoft.Maui.Controls.Button.ImageSourceProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ImageSource>(self, Microsoft.Maui.Controls.Button.ImageSourceProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T Text<T>(this T obj,
+        public static T Text<T>(this T self,
             string text)
             where T : Microsoft.Maui.Controls.Button
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.TextProperty, text);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.TextProperty, text);
+            return self;
         }
         
-        public static T Text<T>(this T obj,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buidValue)
+        public static T Text<T>(this T self,
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
             where T : Microsoft.Maui.Controls.Button
         {
-            var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.TextProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.TextProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Text<T>(this T obj,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buidBinding)
+        public static T Text<T>(this T self,
+            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
             where T : Microsoft.Maui.Controls.Button
         {
-            var builder = buidBinding(new BindingBuilder<string>(obj, Microsoft.Maui.Controls.Button.TextProperty));
+            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.Button.TextProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T TextColor<T>(this T obj,
+        public static T TextColor<T>(this T self,
             Microsoft.Maui.Graphics.Color textColor)
             where T : Microsoft.Maui.Controls.Button
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.TextColorProperty, textColor);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.TextColorProperty, textColor);
+            return self;
         }
         
-        public static T TextColor<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buidValue)
+        public static T TextColor<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : Microsoft.Maui.Controls.Button
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.TextColorProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.TextColorProperty, builder.GetValue());
+            return self;
         }
         
-        public static T TextColor<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buidBinding)
+        public static T TextColor<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
             where T : Microsoft.Maui.Controls.Button
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(obj, Microsoft.Maui.Controls.Button.TextColorProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.Button.TextColorProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
         public static Task<bool> AnimateTextColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
@@ -326,30 +325,30 @@ namespace Sharp.UI
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateTextColorTo", transform, callback, length, easing);
         }
         
-        public static T CharacterSpacing<T>(this T obj,
+        public static T CharacterSpacing<T>(this T self,
             double characterSpacing)
             where T : Microsoft.Maui.Controls.Button
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.CharacterSpacingProperty, characterSpacing);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.CharacterSpacingProperty, characterSpacing);
+            return self;
         }
         
-        public static T CharacterSpacing<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T CharacterSpacing<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Microsoft.Maui.Controls.Button
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.CharacterSpacingProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.CharacterSpacingProperty, builder.GetValue());
+            return self;
         }
         
-        public static T CharacterSpacing<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T CharacterSpacing<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Microsoft.Maui.Controls.Button
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Button.CharacterSpacingProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Button.CharacterSpacingProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
         public static Task<bool> AnimateCharacterSpacingTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
@@ -361,82 +360,82 @@ namespace Sharp.UI
             return Transformations.AnimateAsync<double>(self, "AnimateCharacterSpacingTo", transform, callback, length, easing);
         }
         
-        public static T FontAttributes<T>(this T obj,
+        public static T FontAttributes<T>(this T self,
             Microsoft.Maui.Controls.FontAttributes fontAttributes)
             where T : Microsoft.Maui.Controls.Button
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.FontAttributesProperty, fontAttributes);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.FontAttributesProperty, fontAttributes);
+            return self;
         }
         
-        public static T FontAttributes<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.FontAttributes>, ValueBuilder<Microsoft.Maui.Controls.FontAttributes>> buidValue)
+        public static T FontAttributes<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.FontAttributes>, ValueBuilder<Microsoft.Maui.Controls.FontAttributes>> buildValue)
             where T : Microsoft.Maui.Controls.Button
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.FontAttributes>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.FontAttributesProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.FontAttributes>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.FontAttributesProperty, builder.GetValue());
+            return self;
         }
         
-        public static T FontAttributes<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.FontAttributes>, BindingBuilder<Microsoft.Maui.Controls.FontAttributes>> buidBinding)
+        public static T FontAttributes<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.FontAttributes>, BindingBuilder<Microsoft.Maui.Controls.FontAttributes>> buildBinding)
             where T : Microsoft.Maui.Controls.Button
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.FontAttributes>(obj, Microsoft.Maui.Controls.Button.FontAttributesProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.FontAttributes>(self, Microsoft.Maui.Controls.Button.FontAttributesProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T FontFamily<T>(this T obj,
+        public static T FontFamily<T>(this T self,
             string fontFamily)
             where T : Microsoft.Maui.Controls.Button
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.FontFamilyProperty, fontFamily);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.FontFamilyProperty, fontFamily);
+            return self;
         }
         
-        public static T FontFamily<T>(this T obj,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buidValue)
+        public static T FontFamily<T>(this T self,
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
             where T : Microsoft.Maui.Controls.Button
         {
-            var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.FontFamilyProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.FontFamilyProperty, builder.GetValue());
+            return self;
         }
         
-        public static T FontFamily<T>(this T obj,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buidBinding)
+        public static T FontFamily<T>(this T self,
+            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
             where T : Microsoft.Maui.Controls.Button
         {
-            var builder = buidBinding(new BindingBuilder<string>(obj, Microsoft.Maui.Controls.Button.FontFamilyProperty));
+            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.Button.FontFamilyProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T FontSize<T>(this T obj,
+        public static T FontSize<T>(this T self,
             double fontSize)
             where T : Microsoft.Maui.Controls.Button
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.FontSizeProperty, fontSize);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.FontSizeProperty, fontSize);
+            return self;
         }
         
-        public static T FontSize<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T FontSize<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Microsoft.Maui.Controls.Button
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.FontSizeProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.FontSizeProperty, builder.GetValue());
+            return self;
         }
         
-        public static T FontSize<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T FontSize<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Microsoft.Maui.Controls.Button
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Button.FontSizeProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Button.FontSizeProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
         public static Task<bool> AnimateFontSizeTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
@@ -448,98 +447,98 @@ namespace Sharp.UI
             return Transformations.AnimateAsync<double>(self, "AnimateFontSizeTo", transform, callback, length, easing);
         }
         
-        public static T FontAutoScalingEnabled<T>(this T obj,
+        public static T FontAutoScalingEnabled<T>(this T self,
             bool fontAutoScalingEnabled)
             where T : Microsoft.Maui.Controls.Button
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.FontAutoScalingEnabledProperty, fontAutoScalingEnabled);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.FontAutoScalingEnabledProperty, fontAutoScalingEnabled);
+            return self;
         }
         
-        public static T FontAutoScalingEnabled<T>(this T obj,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
+        public static T FontAutoScalingEnabled<T>(this T self,
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Microsoft.Maui.Controls.Button
         {
-            var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.FontAutoScalingEnabledProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.FontAutoScalingEnabledProperty, builder.GetValue());
+            return self;
         }
         
-        public static T FontAutoScalingEnabled<T>(this T obj,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buidBinding)
+        public static T FontAutoScalingEnabled<T>(this T self,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Microsoft.Maui.Controls.Button
         {
-            var builder = buidBinding(new BindingBuilder<bool>(obj, Microsoft.Maui.Controls.Button.FontAutoScalingEnabledProperty));
+            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.Button.FontAutoScalingEnabledProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T TextTransform<T>(this T obj,
+        public static T TextTransform<T>(this T self,
             Microsoft.Maui.TextTransform textTransform)
             where T : Microsoft.Maui.Controls.Button
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.TextTransformProperty, textTransform);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.TextTransformProperty, textTransform);
+            return self;
         }
         
-        public static T TextTransform<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.TextTransform>, ValueBuilder<Microsoft.Maui.TextTransform>> buidValue)
+        public static T TextTransform<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.TextTransform>, ValueBuilder<Microsoft.Maui.TextTransform>> buildValue)
             where T : Microsoft.Maui.Controls.Button
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.TextTransform>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Button.TextTransformProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.TextTransform>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.TextTransformProperty, builder.GetValue());
+            return self;
         }
         
-        public static T TextTransform<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.TextTransform>, BindingBuilder<Microsoft.Maui.TextTransform>> buidBinding)
+        public static T TextTransform<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.TextTransform>, BindingBuilder<Microsoft.Maui.TextTransform>> buildBinding)
             where T : Microsoft.Maui.Controls.Button
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.TextTransform>(obj, Microsoft.Maui.Controls.Button.TextTransformProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.TextTransform>(self, Microsoft.Maui.Controls.Button.TextTransformProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T OnClicked<T>(this T obj, System.EventHandler handler)
+        public static T OnClicked<T>(this T self, System.EventHandler handler)
             where T : Microsoft.Maui.Controls.Button
         {
-            obj.Clicked += handler;
-            return obj;
+            self.Clicked += handler;
+            return self;
         }
         
-        public static T OnClicked<T>(this T obj, System.Action<T> action)
+        public static T OnClicked<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Button
         {
-            obj.Clicked += (o, arg) => action(obj);
-            return obj;
+            self.Clicked += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnPressed<T>(this T obj, System.EventHandler handler)
+        public static T OnPressed<T>(this T self, System.EventHandler handler)
             where T : Microsoft.Maui.Controls.Button
         {
-            obj.Pressed += handler;
-            return obj;
+            self.Pressed += handler;
+            return self;
         }
         
-        public static T OnPressed<T>(this T obj, System.Action<T> action)
+        public static T OnPressed<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Button
         {
-            obj.Pressed += (o, arg) => action(obj);
-            return obj;
+            self.Pressed += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnReleased<T>(this T obj, System.EventHandler handler)
+        public static T OnReleased<T>(this T self, System.EventHandler handler)
             where T : Microsoft.Maui.Controls.Button
         {
-            obj.Released += handler;
-            return obj;
+            self.Released += handler;
+            return self;
         }
         
-        public static T OnReleased<T>(this T obj, System.Action<T> action)
+        public static T OnReleased<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Button
         {
-            obj.Released += (o, arg) => action(obj);
-            return obj;
+            self.Released += (o, arg) => action(self);
+            return self;
         }
         
     }

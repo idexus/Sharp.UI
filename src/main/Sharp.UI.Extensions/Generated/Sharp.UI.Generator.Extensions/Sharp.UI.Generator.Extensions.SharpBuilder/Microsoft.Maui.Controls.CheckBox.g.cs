@@ -8,35 +8,34 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class CheckBoxExtension
     {
-        public static T Color<T>(this T obj,
+        public static T Color<T>(this T self,
             Microsoft.Maui.Graphics.Color color)
             where T : Microsoft.Maui.Controls.CheckBox
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.CheckBox.ColorProperty, color);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.CheckBox.ColorProperty, color);
+            return self;
         }
         
-        public static T Color<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buidValue)
+        public static T Color<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : Microsoft.Maui.Controls.CheckBox
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.CheckBox.ColorProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.CheckBox.ColorProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Color<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buidBinding)
+        public static T Color<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
             where T : Microsoft.Maui.Controls.CheckBox
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(obj, Microsoft.Maui.Controls.CheckBox.ColorProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.CheckBox.ColorProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
         public static Task<bool> AnimateColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
@@ -48,44 +47,44 @@ namespace Sharp.UI
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateColorTo", transform, callback, length, easing);
         }
         
-        public static T IsChecked<T>(this T obj,
+        public static T IsChecked<T>(this T self,
             bool isChecked)
             where T : Microsoft.Maui.Controls.CheckBox
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.CheckBox.IsCheckedProperty, isChecked);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.CheckBox.IsCheckedProperty, isChecked);
+            return self;
         }
         
-        public static T IsChecked<T>(this T obj,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
+        public static T IsChecked<T>(this T self,
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Microsoft.Maui.Controls.CheckBox
         {
-            var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.CheckBox.IsCheckedProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.CheckBox.IsCheckedProperty, builder.GetValue());
+            return self;
         }
         
-        public static T IsChecked<T>(this T obj,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buidBinding)
+        public static T IsChecked<T>(this T self,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Microsoft.Maui.Controls.CheckBox
         {
-            var builder = buidBinding(new BindingBuilder<bool>(obj, Microsoft.Maui.Controls.CheckBox.IsCheckedProperty));
+            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.CheckBox.IsCheckedProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T OnCheckedChanged<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.CheckedChangedEventArgs> handler)
+        public static T OnCheckedChanged<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.CheckedChangedEventArgs> handler)
             where T : Microsoft.Maui.Controls.CheckBox
         {
-            obj.CheckedChanged += handler;
-            return obj;
+            self.CheckedChanged += handler;
+            return self;
         }
         
-        public static T OnCheckedChanged<T>(this T obj, System.Action<T> action)
+        public static T OnCheckedChanged<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.CheckBox
         {
-            obj.CheckedChanged += (o, arg) => action(obj);
-            return obj;
+            self.CheckedChanged += (o, arg) => action(self);
+            return self;
         }
         
     }

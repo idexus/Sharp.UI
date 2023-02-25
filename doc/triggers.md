@@ -26,7 +26,7 @@ public class PropertyTriggerPage : ContentPage
                     .Property(Entry.IsFocusedProperty)
                     .Value(true)
                     .Setters(
-                        new Setter<Entry>(e => e
+                        new Setters<Entry>(e => e
                             .BackgroundColor(Colors.Yellow)
                             .TextColor(Colors.Black))
                     ),
@@ -58,7 +58,7 @@ Content = new VStack
             new DataTrigger(typeof(Button))
                 .Binding(e => e.Path("Text.Length").Source(entry))
                 .Value(0)
-                .Setters(new Setter<Entry>(e => e.IsEnabled(false)))
+                .Setters(new Setters<Entry>(e => e.IsEnabled(false)))
             ),
 }
 ```

@@ -12,7 +12,9 @@ using System.Collections.Generic;
 
 namespace Sharp.UI
 {
-	public partial class HorizontalStackLayout : IList<Microsoft.Maui.IView>
+	using Sharp.UI;
+
+    public partial class HorizontalStackLayout : IList<Microsoft.Maui.IView>
 	{
 
         // ----- constructors -----

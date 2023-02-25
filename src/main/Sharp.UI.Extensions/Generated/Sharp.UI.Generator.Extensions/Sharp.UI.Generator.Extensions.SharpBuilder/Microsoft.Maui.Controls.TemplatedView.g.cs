@@ -8,35 +8,34 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class TemplatedViewExtension
     {
-        public static T ControlTemplate<T>(this T obj,
+        public static T ControlTemplate<T>(this T self,
             Microsoft.Maui.Controls.ControlTemplate controlTemplate)
             where T : Microsoft.Maui.Controls.TemplatedView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.TemplatedView.ControlTemplateProperty, controlTemplate);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.TemplatedView.ControlTemplateProperty, controlTemplate);
+            return self;
         }
         
-        public static T ControlTemplate<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.ControlTemplate>, ValueBuilder<Microsoft.Maui.Controls.ControlTemplate>> buidValue)
+        public static T ControlTemplate<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.ControlTemplate>, ValueBuilder<Microsoft.Maui.Controls.ControlTemplate>> buildValue)
             where T : Microsoft.Maui.Controls.TemplatedView
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.ControlTemplate>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.TemplatedView.ControlTemplateProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ControlTemplate>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.TemplatedView.ControlTemplateProperty, builder.GetValue());
+            return self;
         }
         
-        public static T ControlTemplate<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.ControlTemplate>, BindingBuilder<Microsoft.Maui.Controls.ControlTemplate>> buidBinding)
+        public static T ControlTemplate<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.ControlTemplate>, BindingBuilder<Microsoft.Maui.Controls.ControlTemplate>> buildBinding)
             where T : Microsoft.Maui.Controls.TemplatedView
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.ControlTemplate>(obj, Microsoft.Maui.Controls.TemplatedView.ControlTemplateProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ControlTemplate>(self, Microsoft.Maui.Controls.TemplatedView.ControlTemplateProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
     }

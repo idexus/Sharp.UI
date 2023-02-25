@@ -2,20 +2,20 @@
 {
     public static class VisualStateGroupListExtension
     {
-        public static VisualStateGroup GetCommonStatesVisualStateGroup(this VisualStateGroupList visualStateGroupList)
+        public static VisualStateGroup GetCommonStatesVisualStateGroup(this VisualStateGroupList self)
         {
-            var visualStateGroup = visualStateGroupList.FirstOrDefault(e => e.Name.Equals("CommonStates"));
+            var visualStateGroup = self.FirstOrDefault(e => e.Name.Equals("CommonStates"));
             if (visualStateGroup == null)
             {
-                visualStateGroup = new Microsoft.Maui.Controls.VisualStateGroup { Name = "CommonStates" };
-                visualStateGroupList.Add(visualStateGroup);
+                visualStateGroup = new VisualStateGroup { Name = "CommonStates" };
+                self.Add(visualStateGroup);
             }
             return visualStateGroup;
         }
 
-        public static void Add(this VisualStateGroupList visualStateGroupList, Microsoft.Maui.Controls.VisualState visualState)
+        public static void Add(this VisualStateGroupList self, VisualState visualState)
         {
-            visualStateGroupList.GetCommonStatesVisualStateGroup().States.Add(visualState);
+            self.GetCommonStatesVisualStateGroup().States.Add(visualState);
         }
     }
 }

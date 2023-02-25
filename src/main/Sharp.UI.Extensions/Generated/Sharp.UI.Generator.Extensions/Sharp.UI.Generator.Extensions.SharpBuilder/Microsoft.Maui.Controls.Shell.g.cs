@@ -8,165 +8,164 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class ShellExtension
     {
-        public static T FlyoutVerticalScrollMode<T>(this T obj,
+        public static T FlyoutVerticalScrollMode<T>(this T self,
             Microsoft.Maui.Controls.ScrollMode flyoutVerticalScrollMode)
             where T : Microsoft.Maui.Controls.Shell
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutVerticalScrollModeProperty, flyoutVerticalScrollMode);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutVerticalScrollModeProperty, flyoutVerticalScrollMode);
+            return self;
         }
         
-        public static T FlyoutVerticalScrollMode<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.ScrollMode>, ValueBuilder<Microsoft.Maui.Controls.ScrollMode>> buidValue)
+        public static T FlyoutVerticalScrollMode<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.ScrollMode>, ValueBuilder<Microsoft.Maui.Controls.ScrollMode>> buildValue)
             where T : Microsoft.Maui.Controls.Shell
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.ScrollMode>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutVerticalScrollModeProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ScrollMode>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutVerticalScrollModeProperty, builder.GetValue());
+            return self;
         }
         
-        public static T FlyoutVerticalScrollMode<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.ScrollMode>, BindingBuilder<Microsoft.Maui.Controls.ScrollMode>> buidBinding)
+        public static T FlyoutVerticalScrollMode<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.ScrollMode>, BindingBuilder<Microsoft.Maui.Controls.ScrollMode>> buildBinding)
             where T : Microsoft.Maui.Controls.Shell
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.ScrollMode>(obj, Microsoft.Maui.Controls.Shell.FlyoutVerticalScrollModeProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ScrollMode>(self, Microsoft.Maui.Controls.Shell.FlyoutVerticalScrollModeProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T FlyoutIcon<T>(this T obj,
+        public static T FlyoutIcon<T>(this T self,
             Microsoft.Maui.Controls.ImageSource flyoutIcon)
             where T : Microsoft.Maui.Controls.Shell
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutIconProperty, flyoutIcon);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutIconProperty, flyoutIcon);
+            return self;
         }
         
-        public static T FlyoutIcon<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.ImageSource>, ValueBuilder<Microsoft.Maui.Controls.ImageSource>> buidValue)
+        public static T FlyoutIcon<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.ImageSource>, ValueBuilder<Microsoft.Maui.Controls.ImageSource>> buildValue)
             where T : Microsoft.Maui.Controls.Shell
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutIconProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutIconProperty, builder.GetValue());
+            return self;
         }
         
-        public static T FlyoutIcon<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.ImageSource>, BindingBuilder<Microsoft.Maui.Controls.ImageSource>> buidBinding)
+        public static T FlyoutIcon<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.ImageSource>, BindingBuilder<Microsoft.Maui.Controls.ImageSource>> buildBinding)
             where T : Microsoft.Maui.Controls.Shell
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.ImageSource>(obj, Microsoft.Maui.Controls.Shell.FlyoutIconProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ImageSource>(self, Microsoft.Maui.Controls.Shell.FlyoutIconProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T CurrentItem<T>(this T obj,
+        public static T CurrentItem<T>(this T self,
             Microsoft.Maui.Controls.ShellItem currentItem)
             where T : Microsoft.Maui.Controls.Shell
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shell.CurrentItemProperty, currentItem);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.CurrentItemProperty, currentItem);
+            return self;
         }
         
-        public static T CurrentItem<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.ShellItem>, ValueBuilder<Microsoft.Maui.Controls.ShellItem>> buidValue)
+        public static T CurrentItem<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.ShellItem>, ValueBuilder<Microsoft.Maui.Controls.ShellItem>> buildValue)
             where T : Microsoft.Maui.Controls.Shell
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.ShellItem>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shell.CurrentItemProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ShellItem>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.CurrentItemProperty, builder.GetValue());
+            return self;
         }
         
-        public static T CurrentItem<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.ShellItem>, BindingBuilder<Microsoft.Maui.Controls.ShellItem>> buidBinding)
+        public static T CurrentItem<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.ShellItem>, BindingBuilder<Microsoft.Maui.Controls.ShellItem>> buildBinding)
             where T : Microsoft.Maui.Controls.Shell
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.ShellItem>(obj, Microsoft.Maui.Controls.Shell.CurrentItemProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ShellItem>(self, Microsoft.Maui.Controls.Shell.CurrentItemProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T FlyoutBackgroundImage<T>(this T obj,
+        public static T FlyoutBackgroundImage<T>(this T self,
             Microsoft.Maui.Controls.ImageSource flyoutBackgroundImage)
             where T : Microsoft.Maui.Controls.Shell
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutBackgroundImageProperty, flyoutBackgroundImage);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutBackgroundImageProperty, flyoutBackgroundImage);
+            return self;
         }
         
-        public static T FlyoutBackgroundImage<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.ImageSource>, ValueBuilder<Microsoft.Maui.Controls.ImageSource>> buidValue)
+        public static T FlyoutBackgroundImage<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.ImageSource>, ValueBuilder<Microsoft.Maui.Controls.ImageSource>> buildValue)
             where T : Microsoft.Maui.Controls.Shell
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutBackgroundImageProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutBackgroundImageProperty, builder.GetValue());
+            return self;
         }
         
-        public static T FlyoutBackgroundImage<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.ImageSource>, BindingBuilder<Microsoft.Maui.Controls.ImageSource>> buidBinding)
+        public static T FlyoutBackgroundImage<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.ImageSource>, BindingBuilder<Microsoft.Maui.Controls.ImageSource>> buildBinding)
             where T : Microsoft.Maui.Controls.Shell
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.ImageSource>(obj, Microsoft.Maui.Controls.Shell.FlyoutBackgroundImageProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ImageSource>(self, Microsoft.Maui.Controls.Shell.FlyoutBackgroundImageProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T FlyoutBackgroundImageAspect<T>(this T obj,
+        public static T FlyoutBackgroundImageAspect<T>(this T self,
             Microsoft.Maui.Aspect flyoutBackgroundImageAspect)
             where T : Microsoft.Maui.Controls.Shell
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutBackgroundImageAspectProperty, flyoutBackgroundImageAspect);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutBackgroundImageAspectProperty, flyoutBackgroundImageAspect);
+            return self;
         }
         
-        public static T FlyoutBackgroundImageAspect<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Aspect>, ValueBuilder<Microsoft.Maui.Aspect>> buidValue)
+        public static T FlyoutBackgroundImageAspect<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Aspect>, ValueBuilder<Microsoft.Maui.Aspect>> buildValue)
             where T : Microsoft.Maui.Controls.Shell
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Aspect>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutBackgroundImageAspectProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Aspect>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutBackgroundImageAspectProperty, builder.GetValue());
+            return self;
         }
         
-        public static T FlyoutBackgroundImageAspect<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Aspect>, BindingBuilder<Microsoft.Maui.Aspect>> buidBinding)
+        public static T FlyoutBackgroundImageAspect<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Aspect>, BindingBuilder<Microsoft.Maui.Aspect>> buildBinding)
             where T : Microsoft.Maui.Controls.Shell
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Aspect>(obj, Microsoft.Maui.Controls.Shell.FlyoutBackgroundImageAspectProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Aspect>(self, Microsoft.Maui.Controls.Shell.FlyoutBackgroundImageAspectProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T FlyoutBackgroundColor<T>(this T obj,
+        public static T FlyoutBackgroundColor<T>(this T self,
             Microsoft.Maui.Graphics.Color flyoutBackgroundColor)
             where T : Microsoft.Maui.Controls.Shell
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutBackgroundColorProperty, flyoutBackgroundColor);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutBackgroundColorProperty, flyoutBackgroundColor);
+            return self;
         }
         
-        public static T FlyoutBackgroundColor<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buidValue)
+        public static T FlyoutBackgroundColor<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : Microsoft.Maui.Controls.Shell
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutBackgroundColorProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutBackgroundColorProperty, builder.GetValue());
+            return self;
         }
         
-        public static T FlyoutBackgroundColor<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buidBinding)
+        public static T FlyoutBackgroundColor<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
             where T : Microsoft.Maui.Controls.Shell
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(obj, Microsoft.Maui.Controls.Shell.FlyoutBackgroundColorProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.Shell.FlyoutBackgroundColorProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
         public static Task<bool> AnimateFlyoutBackgroundColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
@@ -178,82 +177,82 @@ namespace Sharp.UI
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateFlyoutBackgroundColorTo", transform, callback, length, easing);
         }
         
-        public static T FlyoutBackground<T>(this T obj,
+        public static T FlyoutBackground<T>(this T self,
             Microsoft.Maui.Controls.Brush flyoutBackground)
             where T : Microsoft.Maui.Controls.Shell
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutBackgroundProperty, flyoutBackground);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutBackgroundProperty, flyoutBackground);
+            return self;
         }
         
-        public static T FlyoutBackground<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.Brush>, ValueBuilder<Microsoft.Maui.Controls.Brush>> buidValue)
+        public static T FlyoutBackground<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.Brush>, ValueBuilder<Microsoft.Maui.Controls.Brush>> buildValue)
             where T : Microsoft.Maui.Controls.Shell
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.Brush>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutBackgroundProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Brush>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutBackgroundProperty, builder.GetValue());
+            return self;
         }
         
-        public static T FlyoutBackground<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.Brush>, BindingBuilder<Microsoft.Maui.Controls.Brush>> buidBinding)
+        public static T FlyoutBackground<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.Brush>, BindingBuilder<Microsoft.Maui.Controls.Brush>> buildBinding)
             where T : Microsoft.Maui.Controls.Shell
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.Brush>(obj, Microsoft.Maui.Controls.Shell.FlyoutBackgroundProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Brush>(self, Microsoft.Maui.Controls.Shell.FlyoutBackgroundProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T FlyoutBackdrop<T>(this T obj,
+        public static T FlyoutBackdrop<T>(this T self,
             Microsoft.Maui.Controls.Brush flyoutBackdrop)
             where T : Microsoft.Maui.Controls.Shell
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutBackdropProperty, flyoutBackdrop);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutBackdropProperty, flyoutBackdrop);
+            return self;
         }
         
-        public static T FlyoutBackdrop<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.Brush>, ValueBuilder<Microsoft.Maui.Controls.Brush>> buidValue)
+        public static T FlyoutBackdrop<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.Brush>, ValueBuilder<Microsoft.Maui.Controls.Brush>> buildValue)
             where T : Microsoft.Maui.Controls.Shell
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.Brush>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutBackdropProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Brush>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutBackdropProperty, builder.GetValue());
+            return self;
         }
         
-        public static T FlyoutBackdrop<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.Brush>, BindingBuilder<Microsoft.Maui.Controls.Brush>> buidBinding)
+        public static T FlyoutBackdrop<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.Brush>, BindingBuilder<Microsoft.Maui.Controls.Brush>> buildBinding)
             where T : Microsoft.Maui.Controls.Shell
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.Brush>(obj, Microsoft.Maui.Controls.Shell.FlyoutBackdropProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Brush>(self, Microsoft.Maui.Controls.Shell.FlyoutBackdropProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T FlyoutWidth<T>(this T obj,
+        public static T FlyoutWidth<T>(this T self,
             double flyoutWidth)
             where T : Microsoft.Maui.Controls.Shell
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutWidthProperty, flyoutWidth);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutWidthProperty, flyoutWidth);
+            return self;
         }
         
-        public static T FlyoutWidth<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T FlyoutWidth<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Microsoft.Maui.Controls.Shell
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutWidthProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutWidthProperty, builder.GetValue());
+            return self;
         }
         
-        public static T FlyoutWidth<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T FlyoutWidth<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Microsoft.Maui.Controls.Shell
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Shell.FlyoutWidthProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shell.FlyoutWidthProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
         public static Task<bool> AnimateFlyoutWidthTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
@@ -265,30 +264,30 @@ namespace Sharp.UI
             return Transformations.AnimateAsync<double>(self, "AnimateFlyoutWidthTo", transform, callback, length, easing);
         }
         
-        public static T FlyoutHeight<T>(this T obj,
+        public static T FlyoutHeight<T>(this T self,
             double flyoutHeight)
             where T : Microsoft.Maui.Controls.Shell
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutHeightProperty, flyoutHeight);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutHeightProperty, flyoutHeight);
+            return self;
         }
         
-        public static T FlyoutHeight<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T FlyoutHeight<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Microsoft.Maui.Controls.Shell
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutHeightProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutHeightProperty, builder.GetValue());
+            return self;
         }
         
-        public static T FlyoutHeight<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T FlyoutHeight<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Microsoft.Maui.Controls.Shell
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Shell.FlyoutHeightProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shell.FlyoutHeightProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
         public static Task<bool> AnimateFlyoutHeightTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
@@ -300,380 +299,380 @@ namespace Sharp.UI
             return Transformations.AnimateAsync<double>(self, "AnimateFlyoutHeightTo", transform, callback, length, easing);
         }
         
-        public static T FlyoutBehavior<T>(this T obj,
+        public static T FlyoutBehavior<T>(this T self,
             Microsoft.Maui.FlyoutBehavior flyoutBehavior)
             where T : Microsoft.Maui.Controls.Shell
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutBehaviorProperty, flyoutBehavior);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutBehaviorProperty, flyoutBehavior);
+            return self;
         }
         
-        public static T FlyoutBehavior<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.FlyoutBehavior>, ValueBuilder<Microsoft.Maui.FlyoutBehavior>> buidValue)
+        public static T FlyoutBehavior<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.FlyoutBehavior>, ValueBuilder<Microsoft.Maui.FlyoutBehavior>> buildValue)
             where T : Microsoft.Maui.Controls.Shell
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.FlyoutBehavior>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutBehaviorProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.FlyoutBehavior>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutBehaviorProperty, builder.GetValue());
+            return self;
         }
         
-        public static T FlyoutBehavior<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.FlyoutBehavior>, BindingBuilder<Microsoft.Maui.FlyoutBehavior>> buidBinding)
+        public static T FlyoutBehavior<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.FlyoutBehavior>, BindingBuilder<Microsoft.Maui.FlyoutBehavior>> buildBinding)
             where T : Microsoft.Maui.Controls.Shell
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.FlyoutBehavior>(obj, Microsoft.Maui.Controls.Shell.FlyoutBehaviorProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.FlyoutBehavior>(self, Microsoft.Maui.Controls.Shell.FlyoutBehaviorProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T FlyoutHeader<T>(this T obj,
+        public static T FlyoutHeader<T>(this T self,
             object flyoutHeader)
             where T : Microsoft.Maui.Controls.Shell
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutHeaderProperty, flyoutHeader);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutHeaderProperty, flyoutHeader);
+            return self;
         }
         
-        public static T FlyoutHeader<T>(this T obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+        public static T FlyoutHeader<T>(this T self,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buildValue)
             where T : Microsoft.Maui.Controls.Shell
         {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutHeaderProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutHeaderProperty, builder.GetValue());
+            return self;
         }
         
-        public static T FlyoutHeader<T>(this T obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+        public static T FlyoutHeader<T>(this T self,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
             where T : Microsoft.Maui.Controls.Shell
         {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Shell.FlyoutHeaderProperty));
+            var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.Shell.FlyoutHeaderProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T FlyoutFooter<T>(this T obj,
+        public static T FlyoutFooter<T>(this T self,
             object flyoutFooter)
             where T : Microsoft.Maui.Controls.Shell
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutFooterProperty, flyoutFooter);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutFooterProperty, flyoutFooter);
+            return self;
         }
         
-        public static T FlyoutFooter<T>(this T obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+        public static T FlyoutFooter<T>(this T self,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buildValue)
             where T : Microsoft.Maui.Controls.Shell
         {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutFooterProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutFooterProperty, builder.GetValue());
+            return self;
         }
         
-        public static T FlyoutFooter<T>(this T obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+        public static T FlyoutFooter<T>(this T self,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
             where T : Microsoft.Maui.Controls.Shell
         {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Shell.FlyoutFooterProperty));
+            var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.Shell.FlyoutFooterProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T FlyoutHeaderBehavior<T>(this T obj,
+        public static T FlyoutHeaderBehavior<T>(this T self,
             Microsoft.Maui.Controls.FlyoutHeaderBehavior flyoutHeaderBehavior)
             where T : Microsoft.Maui.Controls.Shell
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutHeaderBehaviorProperty, flyoutHeaderBehavior);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutHeaderBehaviorProperty, flyoutHeaderBehavior);
+            return self;
         }
         
-        public static T FlyoutHeaderBehavior<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.FlyoutHeaderBehavior>, ValueBuilder<Microsoft.Maui.Controls.FlyoutHeaderBehavior>> buidValue)
+        public static T FlyoutHeaderBehavior<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.FlyoutHeaderBehavior>, ValueBuilder<Microsoft.Maui.Controls.FlyoutHeaderBehavior>> buildValue)
             where T : Microsoft.Maui.Controls.Shell
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.FlyoutHeaderBehavior>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutHeaderBehaviorProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.FlyoutHeaderBehavior>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutHeaderBehaviorProperty, builder.GetValue());
+            return self;
         }
         
-        public static T FlyoutHeaderBehavior<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.FlyoutHeaderBehavior>, BindingBuilder<Microsoft.Maui.Controls.FlyoutHeaderBehavior>> buidBinding)
+        public static T FlyoutHeaderBehavior<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.FlyoutHeaderBehavior>, BindingBuilder<Microsoft.Maui.Controls.FlyoutHeaderBehavior>> buildBinding)
             where T : Microsoft.Maui.Controls.Shell
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.FlyoutHeaderBehavior>(obj, Microsoft.Maui.Controls.Shell.FlyoutHeaderBehaviorProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.FlyoutHeaderBehavior>(self, Microsoft.Maui.Controls.Shell.FlyoutHeaderBehaviorProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T FlyoutHeaderTemplate<T>(this T obj,
+        public static T FlyoutHeaderTemplate<T>(this T self,
             Microsoft.Maui.Controls.DataTemplate flyoutHeaderTemplate)
             where T : Microsoft.Maui.Controls.Shell
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutHeaderTemplateProperty, flyoutHeaderTemplate);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutHeaderTemplateProperty, flyoutHeaderTemplate);
+            return self;
         }
         
-        public static T FlyoutHeaderTemplate<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.DataTemplate>, ValueBuilder<Microsoft.Maui.Controls.DataTemplate>> buidValue)
+        public static T FlyoutHeaderTemplate<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.DataTemplate>, ValueBuilder<Microsoft.Maui.Controls.DataTemplate>> buildValue)
             where T : Microsoft.Maui.Controls.Shell
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutHeaderTemplateProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutHeaderTemplateProperty, builder.GetValue());
+            return self;
         }
         
-        public static T FlyoutHeaderTemplate<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buidBinding)
+        public static T FlyoutHeaderTemplate<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buildBinding)
             where T : Microsoft.Maui.Controls.Shell
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(obj, Microsoft.Maui.Controls.Shell.FlyoutHeaderTemplateProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.Shell.FlyoutHeaderTemplateProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T FlyoutHeaderTemplate<T>(this T obj, System.Func<object> loadTemplate)
+        public static T FlyoutHeaderTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.Shell
         {
-            obj.FlyoutHeaderTemplate = new DataTemplate(loadTemplate);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutHeaderTemplateProperty, new DataTemplate(loadTemplate));
+            return self;
         }
         
-        public static T FlyoutFooterTemplate<T>(this T obj,
+        public static T FlyoutFooterTemplate<T>(this T self,
             Microsoft.Maui.Controls.DataTemplate flyoutFooterTemplate)
             where T : Microsoft.Maui.Controls.Shell
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutFooterTemplateProperty, flyoutFooterTemplate);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutFooterTemplateProperty, flyoutFooterTemplate);
+            return self;
         }
         
-        public static T FlyoutFooterTemplate<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.DataTemplate>, ValueBuilder<Microsoft.Maui.Controls.DataTemplate>> buidValue)
+        public static T FlyoutFooterTemplate<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.DataTemplate>, ValueBuilder<Microsoft.Maui.Controls.DataTemplate>> buildValue)
             where T : Microsoft.Maui.Controls.Shell
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutFooterTemplateProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutFooterTemplateProperty, builder.GetValue());
+            return self;
         }
         
-        public static T FlyoutFooterTemplate<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buidBinding)
+        public static T FlyoutFooterTemplate<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buildBinding)
             where T : Microsoft.Maui.Controls.Shell
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(obj, Microsoft.Maui.Controls.Shell.FlyoutFooterTemplateProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.Shell.FlyoutFooterTemplateProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T FlyoutFooterTemplate<T>(this T obj, System.Func<object> loadTemplate)
+        public static T FlyoutFooterTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.Shell
         {
-            obj.FlyoutFooterTemplate = new DataTemplate(loadTemplate);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutFooterTemplateProperty, new DataTemplate(loadTemplate));
+            return self;
         }
         
-        public static T FlyoutIsPresented<T>(this T obj,
+        public static T FlyoutIsPresented<T>(this T self,
             bool flyoutIsPresented)
             where T : Microsoft.Maui.Controls.Shell
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutIsPresentedProperty, flyoutIsPresented);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutIsPresentedProperty, flyoutIsPresented);
+            return self;
         }
         
-        public static T FlyoutIsPresented<T>(this T obj,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
+        public static T FlyoutIsPresented<T>(this T self,
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Microsoft.Maui.Controls.Shell
         {
-            var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutIsPresentedProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutIsPresentedProperty, builder.GetValue());
+            return self;
         }
         
-        public static T FlyoutIsPresented<T>(this T obj,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buidBinding)
+        public static T FlyoutIsPresented<T>(this T self,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Microsoft.Maui.Controls.Shell
         {
-            var builder = buidBinding(new BindingBuilder<bool>(obj, Microsoft.Maui.Controls.Shell.FlyoutIsPresentedProperty));
+            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.Shell.FlyoutIsPresentedProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T Items<T>(this T obj,
+        public static T Items<T>(this T self,
             IList<Microsoft.Maui.Controls.ShellItem> items)
             where T : Microsoft.Maui.Controls.Shell
         {
             foreach (var item in items)
-                obj.Items.Add(item);
-            return obj;
+                self.Items.Add(item);
+            return self;
         }
 
-        public static T Items<T>(this T obj,
+        public static T Items<T>(this T self,
             params Microsoft.Maui.Controls.ShellItem[] items)
             where T : Microsoft.Maui.Controls.Shell
         {
             foreach (var item in items)
-                obj.Items.Add(item);
-            return obj;
+                self.Items.Add(item);
+            return self;
         }
         
-        public static T Items<T>(this T obj,
-            System.Func<BindingBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellItem>>, BindingBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellItem>>> buidBinding)
+        public static T Items<T>(this T self,
+            System.Func<BindingBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellItem>>, BindingBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellItem>>> buildBinding)
             where T : Microsoft.Maui.Controls.Shell
         {
-            var builder = buidBinding(new BindingBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellItem>>(obj, Microsoft.Maui.Controls.Shell.ItemsProperty));
+            var builder = buildBinding(new BindingBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellItem>>(self, Microsoft.Maui.Controls.Shell.ItemsProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T ItemTemplate<T>(this T obj,
+        public static T ItemTemplate<T>(this T self,
             Microsoft.Maui.Controls.DataTemplate itemTemplate)
             where T : Microsoft.Maui.Controls.Shell
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shell.ItemTemplateProperty, itemTemplate);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.ItemTemplateProperty, itemTemplate);
+            return self;
         }
         
-        public static T ItemTemplate<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.DataTemplate>, ValueBuilder<Microsoft.Maui.Controls.DataTemplate>> buidValue)
+        public static T ItemTemplate<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.DataTemplate>, ValueBuilder<Microsoft.Maui.Controls.DataTemplate>> buildValue)
             where T : Microsoft.Maui.Controls.Shell
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shell.ItemTemplateProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.ItemTemplateProperty, builder.GetValue());
+            return self;
         }
         
-        public static T ItemTemplate<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buidBinding)
+        public static T ItemTemplate<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buildBinding)
             where T : Microsoft.Maui.Controls.Shell
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(obj, Microsoft.Maui.Controls.Shell.ItemTemplateProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.Shell.ItemTemplateProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T ItemTemplate<T>(this T obj, System.Func<object> loadTemplate)
+        public static T ItemTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.Shell
         {
-            obj.ItemTemplate = new DataTemplate(loadTemplate);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.ItemTemplateProperty, new DataTemplate(loadTemplate));
+            return self;
         }
         
-        public static T MenuItemTemplate<T>(this T obj,
+        public static T MenuItemTemplate<T>(this T self,
             Microsoft.Maui.Controls.DataTemplate menuItemTemplate)
             where T : Microsoft.Maui.Controls.Shell
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shell.MenuItemTemplateProperty, menuItemTemplate);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.MenuItemTemplateProperty, menuItemTemplate);
+            return self;
         }
         
-        public static T MenuItemTemplate<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.DataTemplate>, ValueBuilder<Microsoft.Maui.Controls.DataTemplate>> buidValue)
+        public static T MenuItemTemplate<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.DataTemplate>, ValueBuilder<Microsoft.Maui.Controls.DataTemplate>> buildValue)
             where T : Microsoft.Maui.Controls.Shell
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shell.MenuItemTemplateProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.MenuItemTemplateProperty, builder.GetValue());
+            return self;
         }
         
-        public static T MenuItemTemplate<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buidBinding)
+        public static T MenuItemTemplate<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buildBinding)
             where T : Microsoft.Maui.Controls.Shell
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(obj, Microsoft.Maui.Controls.Shell.MenuItemTemplateProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.Shell.MenuItemTemplateProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T MenuItemTemplate<T>(this T obj, System.Func<object> loadTemplate)
+        public static T MenuItemTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.Shell
         {
-            obj.MenuItemTemplate = new DataTemplate(loadTemplate);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.MenuItemTemplateProperty, new DataTemplate(loadTemplate));
+            return self;
         }
         
-        public static T FlyoutContent<T>(this T obj,
+        public static T FlyoutContent<T>(this T self,
             object flyoutContent)
             where T : Microsoft.Maui.Controls.Shell
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutContentProperty, flyoutContent);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutContentProperty, flyoutContent);
+            return self;
         }
         
-        public static T FlyoutContent<T>(this T obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+        public static T FlyoutContent<T>(this T self,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buildValue)
             where T : Microsoft.Maui.Controls.Shell
         {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutContentProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutContentProperty, builder.GetValue());
+            return self;
         }
         
-        public static T FlyoutContent<T>(this T obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+        public static T FlyoutContent<T>(this T self,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
             where T : Microsoft.Maui.Controls.Shell
         {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Shell.FlyoutContentProperty));
+            var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.Shell.FlyoutContentProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T FlyoutContentTemplate<T>(this T obj,
+        public static T FlyoutContentTemplate<T>(this T self,
             Microsoft.Maui.Controls.DataTemplate flyoutContentTemplate)
             where T : Microsoft.Maui.Controls.Shell
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutContentTemplateProperty, flyoutContentTemplate);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutContentTemplateProperty, flyoutContentTemplate);
+            return self;
         }
         
-        public static T FlyoutContentTemplate<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.DataTemplate>, ValueBuilder<Microsoft.Maui.Controls.DataTemplate>> buidValue)
+        public static T FlyoutContentTemplate<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.DataTemplate>, ValueBuilder<Microsoft.Maui.Controls.DataTemplate>> buildValue)
             where T : Microsoft.Maui.Controls.Shell
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutContentTemplateProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutContentTemplateProperty, builder.GetValue());
+            return self;
         }
         
-        public static T FlyoutContentTemplate<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buidBinding)
+        public static T FlyoutContentTemplate<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buildBinding)
             where T : Microsoft.Maui.Controls.Shell
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(obj, Microsoft.Maui.Controls.Shell.FlyoutContentTemplateProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.Shell.FlyoutContentTemplateProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T FlyoutContentTemplate<T>(this T obj, System.Func<object> loadTemplate)
+        public static T FlyoutContentTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.Shell
         {
-            obj.FlyoutContentTemplate = new DataTemplate(loadTemplate);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutContentTemplateProperty, new DataTemplate(loadTemplate));
+            return self;
         }
         
-        public static T OnNavigated<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.ShellNavigatedEventArgs> handler)
+        public static T OnNavigated<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.ShellNavigatedEventArgs> handler)
             where T : Microsoft.Maui.Controls.Shell
         {
-            obj.Navigated += handler;
-            return obj;
+            self.Navigated += handler;
+            return self;
         }
         
-        public static T OnNavigated<T>(this T obj, System.Action<T> action)
+        public static T OnNavigated<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Shell
         {
-            obj.Navigated += (o, arg) => action(obj);
-            return obj;
+            self.Navigated += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnNavigating<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.ShellNavigatingEventArgs> handler)
+        public static T OnNavigating<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.ShellNavigatingEventArgs> handler)
             where T : Microsoft.Maui.Controls.Shell
         {
-            obj.Navigating += handler;
-            return obj;
+            self.Navigating += handler;
+            return self;
         }
         
-        public static T OnNavigating<T>(this T obj, System.Action<T> action)
+        public static T OnNavigating<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Shell
         {
-            obj.Navigating += (o, arg) => action(obj);
-            return obj;
+            self.Navigating += (o, arg) => action(self);
+            return self;
         }
         
     }

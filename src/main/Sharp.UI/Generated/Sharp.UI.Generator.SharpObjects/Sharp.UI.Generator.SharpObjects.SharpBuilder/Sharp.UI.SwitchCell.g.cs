@@ -7,7 +7,9 @@
 
 namespace Sharp.UI
 {
-	public partial class SwitchCell
+	using Sharp.UI;
+
+    public partial class SwitchCell
 	{
 
         // ----- constructors -----

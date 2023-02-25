@@ -8,75 +8,74 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class SwipeItemExtension
     {
-        public static T BackgroundColor<T>(this T obj,
+        public static T BackgroundColor<T>(this T self,
             Microsoft.Maui.Graphics.Color backgroundColor)
             where T : Microsoft.Maui.Controls.SwipeItem
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.SwipeItem.BackgroundColorProperty, backgroundColor);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwipeItem.BackgroundColorProperty, backgroundColor);
+            return self;
         }
         
-        public static T BackgroundColor<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buidValue)
+        public static T BackgroundColor<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : Microsoft.Maui.Controls.SwipeItem
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SwipeItem.BackgroundColorProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwipeItem.BackgroundColorProperty, builder.GetValue());
+            return self;
         }
         
-        public static T BackgroundColor<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buidBinding)
+        public static T BackgroundColor<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
             where T : Microsoft.Maui.Controls.SwipeItem
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(obj, Microsoft.Maui.Controls.SwipeItem.BackgroundColorProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.SwipeItem.BackgroundColorProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T IsVisible<T>(this T obj,
+        public static T IsVisible<T>(this T self,
             bool isVisible)
             where T : Microsoft.Maui.Controls.SwipeItem
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.SwipeItem.IsVisibleProperty, isVisible);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwipeItem.IsVisibleProperty, isVisible);
+            return self;
         }
         
-        public static T IsVisible<T>(this T obj,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
+        public static T IsVisible<T>(this T self,
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Microsoft.Maui.Controls.SwipeItem
         {
-            var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SwipeItem.IsVisibleProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwipeItem.IsVisibleProperty, builder.GetValue());
+            return self;
         }
         
-        public static T IsVisible<T>(this T obj,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buidBinding)
+        public static T IsVisible<T>(this T self,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Microsoft.Maui.Controls.SwipeItem
         {
-            var builder = buidBinding(new BindingBuilder<bool>(obj, Microsoft.Maui.Controls.SwipeItem.IsVisibleProperty));
+            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.SwipeItem.IsVisibleProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T OnInvoked<T>(this T obj, System.EventHandler<System.EventArgs> handler)
+        public static T OnInvoked<T>(this T self, System.EventHandler<System.EventArgs> handler)
             where T : Microsoft.Maui.Controls.SwipeItem
         {
-            obj.Invoked += handler;
-            return obj;
+            self.Invoked += handler;
+            return self;
         }
         
-        public static T OnInvoked<T>(this T obj, System.Action<T> action)
+        public static T OnInvoked<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.SwipeItem
         {
-            obj.Invoked += (o, arg) => action(obj);
-            return obj;
+            self.Invoked += (o, arg) => action(self);
+            return self;
         }
         
     }

@@ -8,102 +8,101 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class PathFigureExtension
     {
-        public static Microsoft.Maui.Controls.Shapes.PathFigure Segments(this Microsoft.Maui.Controls.Shapes.PathFigure obj,
+        public static Microsoft.Maui.Controls.Shapes.PathFigure Segments(this Microsoft.Maui.Controls.Shapes.PathFigure self,
             IList<Microsoft.Maui.Controls.Shapes.PathSegment> segments)
         {
             foreach (var item in segments)
-                obj.Segments.Add(item);
-            return obj;
+                self.Segments.Add(item);
+            return self;
         }
 
-        public static Microsoft.Maui.Controls.Shapes.PathFigure Segments(this Microsoft.Maui.Controls.Shapes.PathFigure obj,
+        public static Microsoft.Maui.Controls.Shapes.PathFigure Segments(this Microsoft.Maui.Controls.Shapes.PathFigure self,
             params Microsoft.Maui.Controls.Shapes.PathSegment[] segments)
         {
             foreach (var item in segments)
-                obj.Segments.Add(item);
-            return obj;
+                self.Segments.Add(item);
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.PathFigure Segments(this Microsoft.Maui.Controls.Shapes.PathFigure obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.Shapes.PathSegmentCollection>, BindingBuilder<Microsoft.Maui.Controls.Shapes.PathSegmentCollection>> buidBinding)
+        public static Microsoft.Maui.Controls.Shapes.PathFigure Segments(this Microsoft.Maui.Controls.Shapes.PathFigure self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.Shapes.PathSegmentCollection>, BindingBuilder<Microsoft.Maui.Controls.Shapes.PathSegmentCollection>> buildBinding)
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.Shapes.PathSegmentCollection>(obj, Microsoft.Maui.Controls.Shapes.PathFigure.SegmentsProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Shapes.PathSegmentCollection>(self, Microsoft.Maui.Controls.Shapes.PathFigure.SegmentsProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.PathFigure StartPoint(this Microsoft.Maui.Controls.Shapes.PathFigure obj,
+        public static Microsoft.Maui.Controls.Shapes.PathFigure StartPoint(this Microsoft.Maui.Controls.Shapes.PathFigure self,
             Microsoft.Maui.Graphics.Point startPoint)
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.PathFigure.StartPointProperty, startPoint);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.PathFigure.StartPointProperty, startPoint);
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.PathFigure StartPoint(this Microsoft.Maui.Controls.Shapes.PathFigure obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Point>, ValueBuilder<Microsoft.Maui.Graphics.Point>> buidValue)
+        public static Microsoft.Maui.Controls.Shapes.PathFigure StartPoint(this Microsoft.Maui.Controls.Shapes.PathFigure self,
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Point>, ValueBuilder<Microsoft.Maui.Graphics.Point>> buildValue)
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Point>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.PathFigure.StartPointProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Point>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.PathFigure.StartPointProperty, builder.GetValue());
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.PathFigure StartPoint(this Microsoft.Maui.Controls.Shapes.PathFigure obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Point>, BindingBuilder<Microsoft.Maui.Graphics.Point>> buidBinding)
+        public static Microsoft.Maui.Controls.Shapes.PathFigure StartPoint(this Microsoft.Maui.Controls.Shapes.PathFigure self,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Point>, BindingBuilder<Microsoft.Maui.Graphics.Point>> buildBinding)
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Graphics.Point>(obj, Microsoft.Maui.Controls.Shapes.PathFigure.StartPointProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Point>(self, Microsoft.Maui.Controls.Shapes.PathFigure.StartPointProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.PathFigure IsClosed(this Microsoft.Maui.Controls.Shapes.PathFigure obj,
+        public static Microsoft.Maui.Controls.Shapes.PathFigure IsClosed(this Microsoft.Maui.Controls.Shapes.PathFigure self,
             bool isClosed)
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.PathFigure.IsClosedProperty, isClosed);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.PathFigure.IsClosedProperty, isClosed);
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.PathFigure IsClosed(this Microsoft.Maui.Controls.Shapes.PathFigure obj,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
+        public static Microsoft.Maui.Controls.Shapes.PathFigure IsClosed(this Microsoft.Maui.Controls.Shapes.PathFigure self,
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
         {
-            var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.PathFigure.IsClosedProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.PathFigure.IsClosedProperty, builder.GetValue());
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.PathFigure IsClosed(this Microsoft.Maui.Controls.Shapes.PathFigure obj,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buidBinding)
+        public static Microsoft.Maui.Controls.Shapes.PathFigure IsClosed(this Microsoft.Maui.Controls.Shapes.PathFigure self,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
         {
-            var builder = buidBinding(new BindingBuilder<bool>(obj, Microsoft.Maui.Controls.Shapes.PathFigure.IsClosedProperty));
+            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.Shapes.PathFigure.IsClosedProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.PathFigure IsFilled(this Microsoft.Maui.Controls.Shapes.PathFigure obj,
+        public static Microsoft.Maui.Controls.Shapes.PathFigure IsFilled(this Microsoft.Maui.Controls.Shapes.PathFigure self,
             bool isFilled)
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.PathFigure.IsFilledProperty, isFilled);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.PathFigure.IsFilledProperty, isFilled);
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.PathFigure IsFilled(this Microsoft.Maui.Controls.Shapes.PathFigure obj,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
+        public static Microsoft.Maui.Controls.Shapes.PathFigure IsFilled(this Microsoft.Maui.Controls.Shapes.PathFigure self,
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
         {
-            var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.PathFigure.IsFilledProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.PathFigure.IsFilledProperty, builder.GetValue());
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.PathFigure IsFilled(this Microsoft.Maui.Controls.Shapes.PathFigure obj,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buidBinding)
+        public static Microsoft.Maui.Controls.Shapes.PathFigure IsFilled(this Microsoft.Maui.Controls.Shapes.PathFigure self,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
         {
-            var builder = buidBinding(new BindingBuilder<bool>(obj, Microsoft.Maui.Controls.Shapes.PathFigure.IsFilledProperty));
+            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.Shapes.PathFigure.IsFilledProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
     }

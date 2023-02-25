@@ -8,82 +8,81 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class MenuBarItemExtension
     {
-        public static T Priority<T>(this T obj,
+        public static T Priority<T>(this T self,
             int priority)
             where T : Microsoft.Maui.Controls.MenuBarItem
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property Priority");
-            obj.Priority = priority;
-            return obj;
+            self.Priority = priority;
+            return self;
         }
         
-        public static T Priority<T>(this T obj,
-            System.Func<ValueBuilder<int>, ValueBuilder<int>> buidValue)
+        public static T Priority<T>(this T self,
+            System.Func<ValueBuilder<int>, ValueBuilder<int>> buildValue)
             where T : Microsoft.Maui.Controls.MenuBarItem
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property Priority");
-            var builder = buidValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) obj.Priority = builder.GetValue();
-            return obj;
+            var builder = buildValue(new ValueBuilder<int>());
+            if (builder.ValueIsSet()) self.Priority = builder.GetValue();
+            return self;
         }
         
-        public static T IsEnabled<T>(this T obj,
+        public static T IsEnabled<T>(this T self,
             bool isEnabled)
             where T : Microsoft.Maui.Controls.MenuBarItem
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.MenuBarItem.IsEnabledProperty, isEnabled);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.MenuBarItem.IsEnabledProperty, isEnabled);
+            return self;
         }
         
-        public static T IsEnabled<T>(this T obj,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
+        public static T IsEnabled<T>(this T self,
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Microsoft.Maui.Controls.MenuBarItem
         {
-            var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.MenuBarItem.IsEnabledProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.MenuBarItem.IsEnabledProperty, builder.GetValue());
+            return self;
         }
         
-        public static T IsEnabled<T>(this T obj,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buidBinding)
+        public static T IsEnabled<T>(this T self,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Microsoft.Maui.Controls.MenuBarItem
         {
-            var builder = buidBinding(new BindingBuilder<bool>(obj, Microsoft.Maui.Controls.MenuBarItem.IsEnabledProperty));
+            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.MenuBarItem.IsEnabledProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T Text<T>(this T obj,
+        public static T Text<T>(this T self,
             string text)
             where T : Microsoft.Maui.Controls.MenuBarItem
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.MenuBarItem.TextProperty, text);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.MenuBarItem.TextProperty, text);
+            return self;
         }
         
-        public static T Text<T>(this T obj,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buidValue)
+        public static T Text<T>(this T self,
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
             where T : Microsoft.Maui.Controls.MenuBarItem
         {
-            var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.MenuBarItem.TextProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.MenuBarItem.TextProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Text<T>(this T obj,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buidBinding)
+        public static T Text<T>(this T self,
+            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
             where T : Microsoft.Maui.Controls.MenuBarItem
         {
-            var builder = buidBinding(new BindingBuilder<string>(obj, Microsoft.Maui.Controls.MenuBarItem.TextProperty));
+            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.MenuBarItem.TextProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
     }

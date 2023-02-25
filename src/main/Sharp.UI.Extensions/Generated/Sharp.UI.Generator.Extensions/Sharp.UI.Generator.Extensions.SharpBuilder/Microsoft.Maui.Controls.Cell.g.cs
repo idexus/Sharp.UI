@@ -8,151 +8,150 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class CellExtension
     {
-        public static T ContextActions<T>(this T obj,
+        public static T ContextActions<T>(this T self,
             IList<Microsoft.Maui.Controls.MenuItem> contextActions)
             where T : Microsoft.Maui.Controls.Cell
         {
             foreach (var item in contextActions)
-                obj.ContextActions.Add(item);
-            return obj;
+                self.ContextActions.Add(item);
+            return self;
         }
 
-        public static T ContextActions<T>(this T obj,
+        public static T ContextActions<T>(this T self,
             params Microsoft.Maui.Controls.MenuItem[] contextActions)
             where T : Microsoft.Maui.Controls.Cell
         {
             foreach (var item in contextActions)
-                obj.ContextActions.Add(item);
-            return obj;
+                self.ContextActions.Add(item);
+            return self;
         }
         
-        public static T IsContextActionsLegacyModeEnabled<T>(this T obj,
+        public static T IsContextActionsLegacyModeEnabled<T>(this T self,
             bool isContextActionsLegacyModeEnabled)
             where T : Microsoft.Maui.Controls.Cell
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property IsContextActionsLegacyModeEnabled");
-            obj.IsContextActionsLegacyModeEnabled = isContextActionsLegacyModeEnabled;
-            return obj;
+            self.IsContextActionsLegacyModeEnabled = isContextActionsLegacyModeEnabled;
+            return self;
         }
         
-        public static T IsContextActionsLegacyModeEnabled<T>(this T obj,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
+        public static T IsContextActionsLegacyModeEnabled<T>(this T self,
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Microsoft.Maui.Controls.Cell
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property IsContextActionsLegacyModeEnabled");
-            var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.IsContextActionsLegacyModeEnabled = builder.GetValue();
-            return obj;
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) self.IsContextActionsLegacyModeEnabled = builder.GetValue();
+            return self;
         }
         
-        public static T Height<T>(this T obj,
+        public static T Height<T>(this T self,
             double height)
             where T : Microsoft.Maui.Controls.Cell
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property Height");
-            obj.Height = height;
-            return obj;
+            self.Height = height;
+            return self;
         }
         
-        public static T Height<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T Height<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Microsoft.Maui.Controls.Cell
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property Height");
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.Height = builder.GetValue();
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.Height = builder.GetValue();
+            return self;
         }
         
-        public static T IsEnabled<T>(this T obj,
+        public static T IsEnabled<T>(this T self,
             bool isEnabled)
             where T : Microsoft.Maui.Controls.Cell
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Cell.IsEnabledProperty, isEnabled);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Cell.IsEnabledProperty, isEnabled);
+            return self;
         }
         
-        public static T IsEnabled<T>(this T obj,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
+        public static T IsEnabled<T>(this T self,
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Microsoft.Maui.Controls.Cell
         {
-            var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Cell.IsEnabledProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Cell.IsEnabledProperty, builder.GetValue());
+            return self;
         }
         
-        public static T IsEnabled<T>(this T obj,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buidBinding)
+        public static T IsEnabled<T>(this T self,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Microsoft.Maui.Controls.Cell
         {
-            var builder = buidBinding(new BindingBuilder<bool>(obj, Microsoft.Maui.Controls.Cell.IsEnabledProperty));
+            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.Cell.IsEnabledProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T OnAppearing<T>(this T obj, System.EventHandler handler)
+        public static T OnAppearing<T>(this T self, System.EventHandler handler)
             where T : Microsoft.Maui.Controls.Cell
         {
-            obj.Appearing += handler;
-            return obj;
+            self.Appearing += handler;
+            return self;
         }
         
-        public static T OnAppearing<T>(this T obj, System.Action<T> action)
+        public static T OnAppearing<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Cell
         {
-            obj.Appearing += (o, arg) => action(obj);
-            return obj;
+            self.Appearing += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnDisappearing<T>(this T obj, System.EventHandler handler)
+        public static T OnDisappearing<T>(this T self, System.EventHandler handler)
             where T : Microsoft.Maui.Controls.Cell
         {
-            obj.Disappearing += handler;
-            return obj;
+            self.Disappearing += handler;
+            return self;
         }
         
-        public static T OnDisappearing<T>(this T obj, System.Action<T> action)
+        public static T OnDisappearing<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Cell
         {
-            obj.Disappearing += (o, arg) => action(obj);
-            return obj;
+            self.Disappearing += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnForceUpdateSizeRequested<T>(this T obj, System.EventHandler handler)
+        public static T OnForceUpdateSizeRequested<T>(this T self, System.EventHandler handler)
             where T : Microsoft.Maui.Controls.Cell
         {
-            obj.ForceUpdateSizeRequested += handler;
-            return obj;
+            self.ForceUpdateSizeRequested += handler;
+            return self;
         }
         
-        public static T OnForceUpdateSizeRequested<T>(this T obj, System.Action<T> action)
+        public static T OnForceUpdateSizeRequested<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Cell
         {
-            obj.ForceUpdateSizeRequested += (o, arg) => action(obj);
-            return obj;
+            self.ForceUpdateSizeRequested += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnTapped<T>(this T obj, System.EventHandler handler)
+        public static T OnTapped<T>(this T self, System.EventHandler handler)
             where T : Microsoft.Maui.Controls.Cell
         {
-            obj.Tapped += handler;
-            return obj;
+            self.Tapped += handler;
+            return self;
         }
         
-        public static T OnTapped<T>(this T obj, System.Action<T> action)
+        public static T OnTapped<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Cell
         {
-            obj.Tapped += (o, arg) => action(obj);
-            return obj;
+            self.Tapped += (o, arg) => action(self);
+            return self;
         }
         
     }

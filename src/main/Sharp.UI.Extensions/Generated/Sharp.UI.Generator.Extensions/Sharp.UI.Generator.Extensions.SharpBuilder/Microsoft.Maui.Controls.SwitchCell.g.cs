@@ -8,101 +8,100 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class SwitchCellExtension
     {
-        public static T OnColor<T>(this T obj,
+        public static T OnColor<T>(this T self,
             Microsoft.Maui.Graphics.Color onColor)
             where T : Microsoft.Maui.Controls.SwitchCell
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.SwitchCell.OnColorProperty, onColor);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwitchCell.OnColorProperty, onColor);
+            return self;
         }
         
-        public static T OnColor<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buidValue)
+        public static T OnColor<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : Microsoft.Maui.Controls.SwitchCell
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SwitchCell.OnColorProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwitchCell.OnColorProperty, builder.GetValue());
+            return self;
         }
         
-        public static T OnColor<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buidBinding)
+        public static T OnColor<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
             where T : Microsoft.Maui.Controls.SwitchCell
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(obj, Microsoft.Maui.Controls.SwitchCell.OnColorProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.SwitchCell.OnColorProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T On<T>(this T obj,
+        public static T On<T>(this T self,
             bool on)
             where T : Microsoft.Maui.Controls.SwitchCell
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.SwitchCell.OnProperty, on);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwitchCell.OnProperty, on);
+            return self;
         }
         
-        public static T On<T>(this T obj,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
+        public static T On<T>(this T self,
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Microsoft.Maui.Controls.SwitchCell
         {
-            var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SwitchCell.OnProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwitchCell.OnProperty, builder.GetValue());
+            return self;
         }
         
-        public static T On<T>(this T obj,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buidBinding)
+        public static T On<T>(this T self,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Microsoft.Maui.Controls.SwitchCell
         {
-            var builder = buidBinding(new BindingBuilder<bool>(obj, Microsoft.Maui.Controls.SwitchCell.OnProperty));
+            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.SwitchCell.OnProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T Text<T>(this T obj,
+        public static T Text<T>(this T self,
             string text)
             where T : Microsoft.Maui.Controls.SwitchCell
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.SwitchCell.TextProperty, text);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwitchCell.TextProperty, text);
+            return self;
         }
         
-        public static T Text<T>(this T obj,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buidValue)
+        public static T Text<T>(this T self,
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
             where T : Microsoft.Maui.Controls.SwitchCell
         {
-            var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SwitchCell.TextProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwitchCell.TextProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Text<T>(this T obj,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buidBinding)
+        public static T Text<T>(this T self,
+            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
             where T : Microsoft.Maui.Controls.SwitchCell
         {
-            var builder = buidBinding(new BindingBuilder<string>(obj, Microsoft.Maui.Controls.SwitchCell.TextProperty));
+            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.SwitchCell.TextProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T OnOnChanged<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.ToggledEventArgs> handler)
+        public static T OnOnChanged<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.ToggledEventArgs> handler)
             where T : Microsoft.Maui.Controls.SwitchCell
         {
-            obj.OnChanged += handler;
-            return obj;
+            self.OnChanged += handler;
+            return self;
         }
         
-        public static T OnOnChanged<T>(this T obj, System.Action<T> action)
+        public static T OnOnChanged<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.SwitchCell
         {
-            obj.OnChanged += (o, arg) => action(obj);
-            return obj;
+            self.OnChanged += (o, arg) => action(self);
+            return self;
         }
         
     }

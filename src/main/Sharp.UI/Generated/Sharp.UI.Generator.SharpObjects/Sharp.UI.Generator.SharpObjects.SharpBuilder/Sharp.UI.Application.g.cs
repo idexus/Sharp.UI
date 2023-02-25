@@ -7,7 +7,9 @@
 
 namespace Sharp.UI
 {
-	public partial class Application
+	using Sharp.UI;
+
+    public partial class Application
 	{
 
         // ----- constructors -----

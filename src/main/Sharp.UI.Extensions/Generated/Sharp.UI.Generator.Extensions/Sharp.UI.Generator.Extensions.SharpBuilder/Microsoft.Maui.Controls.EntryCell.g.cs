@@ -8,206 +8,289 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class EntryCellExtension
     {
-        public static T HorizontalTextAlignment<T>(this T obj,
+        public static T HorizontalTextAlignment<T>(this T self,
             Microsoft.Maui.TextAlignment horizontalTextAlignment)
             where T : Microsoft.Maui.Controls.EntryCell
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.EntryCell.HorizontalTextAlignmentProperty, horizontalTextAlignment);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.EntryCell.HorizontalTextAlignmentProperty, horizontalTextAlignment);
+            return self;
         }
         
-        public static T HorizontalTextAlignment<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.TextAlignment>, ValueBuilder<Microsoft.Maui.TextAlignment>> buidValue)
+        public static T HorizontalTextAlignment<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.TextAlignment>, ValueBuilder<Microsoft.Maui.TextAlignment>> buildValue)
             where T : Microsoft.Maui.Controls.EntryCell
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.TextAlignment>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.EntryCell.HorizontalTextAlignmentProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.TextAlignment>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.EntryCell.HorizontalTextAlignmentProperty, builder.GetValue());
+            return self;
         }
         
-        public static T HorizontalTextAlignment<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.TextAlignment>, BindingBuilder<Microsoft.Maui.TextAlignment>> buidBinding)
+        public static T HorizontalTextAlignment<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.TextAlignment>, BindingBuilder<Microsoft.Maui.TextAlignment>> buildBinding)
             where T : Microsoft.Maui.Controls.EntryCell
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.TextAlignment>(obj, Microsoft.Maui.Controls.EntryCell.HorizontalTextAlignmentProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.TextAlignment>(self, Microsoft.Maui.Controls.EntryCell.HorizontalTextAlignmentProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T VerticalTextAlignment<T>(this T obj,
+        public static T VerticalTextAlignment<T>(this T self,
             Microsoft.Maui.TextAlignment verticalTextAlignment)
             where T : Microsoft.Maui.Controls.EntryCell
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.EntryCell.VerticalTextAlignmentProperty, verticalTextAlignment);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.EntryCell.VerticalTextAlignmentProperty, verticalTextAlignment);
+            return self;
         }
         
-        public static T VerticalTextAlignment<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.TextAlignment>, ValueBuilder<Microsoft.Maui.TextAlignment>> buidValue)
+        public static T VerticalTextAlignment<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.TextAlignment>, ValueBuilder<Microsoft.Maui.TextAlignment>> buildValue)
             where T : Microsoft.Maui.Controls.EntryCell
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.TextAlignment>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.EntryCell.VerticalTextAlignmentProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.TextAlignment>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.EntryCell.VerticalTextAlignmentProperty, builder.GetValue());
+            return self;
         }
         
-        public static T VerticalTextAlignment<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.TextAlignment>, BindingBuilder<Microsoft.Maui.TextAlignment>> buidBinding)
+        public static T VerticalTextAlignment<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.TextAlignment>, BindingBuilder<Microsoft.Maui.TextAlignment>> buildBinding)
             where T : Microsoft.Maui.Controls.EntryCell
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.TextAlignment>(obj, Microsoft.Maui.Controls.EntryCell.VerticalTextAlignmentProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.TextAlignment>(self, Microsoft.Maui.Controls.EntryCell.VerticalTextAlignmentProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T Keyboard<T>(this T obj,
+        public static T Keyboard<T>(this T self,
             Microsoft.Maui.Keyboard keyboard)
             where T : Microsoft.Maui.Controls.EntryCell
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.EntryCell.KeyboardProperty, keyboard);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.EntryCell.KeyboardProperty, keyboard);
+            return self;
         }
         
-        public static T Keyboard<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Keyboard>, ValueBuilder<Microsoft.Maui.Keyboard>> buidValue)
+        public static T Keyboard<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Keyboard>, ValueBuilder<Microsoft.Maui.Keyboard>> buildValue)
             where T : Microsoft.Maui.Controls.EntryCell
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Keyboard>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.EntryCell.KeyboardProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Keyboard>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.EntryCell.KeyboardProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Keyboard<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Keyboard>, BindingBuilder<Microsoft.Maui.Keyboard>> buidBinding)
+        public static T Keyboard<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Keyboard>, BindingBuilder<Microsoft.Maui.Keyboard>> buildBinding)
             where T : Microsoft.Maui.Controls.EntryCell
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Keyboard>(obj, Microsoft.Maui.Controls.EntryCell.KeyboardProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Keyboard>(self, Microsoft.Maui.Controls.EntryCell.KeyboardProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T Label<T>(this T obj,
+        public static T Label<T>(this T self,
             string label)
             where T : Microsoft.Maui.Controls.EntryCell
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.EntryCell.LabelProperty, label);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.EntryCell.LabelProperty, label);
+            return self;
         }
         
-        public static T Label<T>(this T obj,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buidValue)
+        public static T Label<T>(this T self,
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
             where T : Microsoft.Maui.Controls.EntryCell
         {
-            var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.EntryCell.LabelProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.EntryCell.LabelProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Label<T>(this T obj,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buidBinding)
+        public static T Label<T>(this T self,
+            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
             where T : Microsoft.Maui.Controls.EntryCell
         {
-            var builder = buidBinding(new BindingBuilder<string>(obj, Microsoft.Maui.Controls.EntryCell.LabelProperty));
+            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.EntryCell.LabelProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T LabelColor<T>(this T obj,
+        public static T LabelColor<T>(this T self,
             Microsoft.Maui.Graphics.Color labelColor)
             where T : Microsoft.Maui.Controls.EntryCell
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.EntryCell.LabelColorProperty, labelColor);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.EntryCell.LabelColorProperty, labelColor);
+            return self;
         }
         
-        public static T LabelColor<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buidValue)
+        public static T LabelColor<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : Microsoft.Maui.Controls.EntryCell
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.EntryCell.LabelColorProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.EntryCell.LabelColorProperty, builder.GetValue());
+            return self;
         }
         
-        public static T LabelColor<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buidBinding)
+        public static T LabelColor<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
             where T : Microsoft.Maui.Controls.EntryCell
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(obj, Microsoft.Maui.Controls.EntryCell.LabelColorProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.EntryCell.LabelColorProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T Placeholder<T>(this T obj,
+        public static T Placeholder<T>(this T self,
             string placeholder)
             where T : Microsoft.Maui.Controls.EntryCell
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.EntryCell.PlaceholderProperty, placeholder);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.EntryCell.PlaceholderProperty, placeholder);
+            return self;
         }
         
-        public static T Placeholder<T>(this T obj,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buidValue)
+        public static T Placeholder<T>(this T self,
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
             where T : Microsoft.Maui.Controls.EntryCell
         {
-            var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.EntryCell.PlaceholderProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.EntryCell.PlaceholderProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Placeholder<T>(this T obj,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buidBinding)
+        public static T Placeholder<T>(this T self,
+            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
             where T : Microsoft.Maui.Controls.EntryCell
         {
-            var builder = buidBinding(new BindingBuilder<string>(obj, Microsoft.Maui.Controls.EntryCell.PlaceholderProperty));
+            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.EntryCell.PlaceholderProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T Text<T>(this T obj,
+        public static T Text<T>(this T self,
             string text)
             where T : Microsoft.Maui.Controls.EntryCell
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.EntryCell.TextProperty, text);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.EntryCell.TextProperty, text);
+            return self;
         }
         
-        public static T Text<T>(this T obj,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buidValue)
+        public static T Text<T>(this T self,
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
             where T : Microsoft.Maui.Controls.EntryCell
         {
-            var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.EntryCell.TextProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.EntryCell.TextProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Text<T>(this T obj,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buidBinding)
+        public static T Text<T>(this T self,
+            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
             where T : Microsoft.Maui.Controls.EntryCell
         {
-            var builder = buidBinding(new BindingBuilder<string>(obj, Microsoft.Maui.Controls.EntryCell.TextProperty));
+            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.EntryCell.TextProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T OnCompleted<T>(this T obj, System.EventHandler handler)
+        public static T OnCompleted<T>(this T self, System.EventHandler handler)
             where T : Microsoft.Maui.Controls.EntryCell
         {
-            obj.Completed += handler;
-            return obj;
+            self.Completed += handler;
+            return self;
         }
         
-        public static T OnCompleted<T>(this T obj, System.Action<T> action)
+        public static T OnCompleted<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.EntryCell
         {
-            obj.Completed += (o, arg) => action(obj);
-            return obj;
+            self.Completed += (o, arg) => action(self);
+            return self;
         }
+        
+
+        public static T TextCenterHorizontal<T>(this T self)
+            where T : Microsoft.Maui.Controls.EntryCell
+        {
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.EntryCell.HorizontalTextAlignmentProperty, TextAlignment.Center);
+            return self;
+        }
+
+        public static T TextCenterVertical<T>(this T self)
+            where T : Microsoft.Maui.Controls.EntryCell
+        {
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.EntryCell.VerticalTextAlignmentProperty, TextAlignment.Center);
+            return self;
+        }
+
+        public static T TextCenter<T>(this T self)
+            where T : Microsoft.Maui.Controls.EntryCell
+        {
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.EntryCell.HorizontalTextAlignmentProperty, TextAlignment.Center);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.EntryCell.VerticalTextAlignmentProperty, TextAlignment.Center);
+            return self;
+        }
+
+        public static T TextTop<T>(this T self)
+            where T : Microsoft.Maui.Controls.EntryCell
+        {
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.EntryCell.VerticalTextAlignmentProperty, TextAlignment.Start);
+            return self;
+        }
+
+        public static T TextBottom<T>(this T self)
+            where T : Microsoft.Maui.Controls.EntryCell, Microsoft.Maui.ITextAlignment
+        {
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.EntryCell.VerticalTextAlignmentProperty, TextAlignment.End);
+            return self;
+        }
+
+        public static T TextTopStart<T>(this T self)
+            where T : Microsoft.Maui.Controls.EntryCell
+        {
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.EntryCell.VerticalTextAlignmentProperty, TextAlignment.Start);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.EntryCell.HorizontalTextAlignmentProperty, TextAlignment.Start);
+            return self;
+        }
+
+        public static T TextBottomStart<T>(this T self)
+            where T : Microsoft.Maui.Controls.EntryCell
+        {
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.EntryCell.VerticalTextAlignmentProperty, TextAlignment.End);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.EntryCell.HorizontalTextAlignmentProperty, TextAlignment.Start);
+            return self;
+        }
+
+        public static T TextTopEnd<T>(this T self)
+            where T : Microsoft.Maui.Controls.EntryCell
+        {
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.EntryCell.VerticalTextAlignmentProperty, TextAlignment.Start);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.EntryCell.HorizontalTextAlignmentProperty, TextAlignment.End);
+            return self;
+        }
+
+        public static T TextBottomEnd<T>(this T self)
+            where T : Microsoft.Maui.Controls.EntryCell
+        {
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.EntryCell.VerticalTextAlignmentProperty, TextAlignment.End);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.EntryCell.HorizontalTextAlignmentProperty, TextAlignment.End);
+            return self;
+        }
+
+        public static T TextStart<T>(this T self)
+            where T : Microsoft.Maui.Controls.EntryCell
+        {
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.EntryCell.HorizontalTextAlignmentProperty, TextAlignment.Start);
+            return self;
+        }
+
+        public static T TextEnd<T>(this T self)
+            where T : Microsoft.Maui.Controls.EntryCell
+        {
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.EntryCell.HorizontalTextAlignmentProperty, TextAlignment.End);
+            return self;
+        }
+
         
     }
 }

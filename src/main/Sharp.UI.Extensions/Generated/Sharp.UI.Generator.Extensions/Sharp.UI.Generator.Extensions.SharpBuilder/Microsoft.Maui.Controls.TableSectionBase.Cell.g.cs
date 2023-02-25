@@ -8,23 +8,22 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class TableSectionBaseOfCellExtension
     {
-        public static T OnCollectionChanged<T>(this T obj, System.Collections.Specialized.NotifyCollectionChangedEventHandler handler)
+        public static T OnCollectionChanged<T>(this T self, System.Collections.Specialized.NotifyCollectionChangedEventHandler handler)
             where T : Microsoft.Maui.Controls.TableSectionBase<Microsoft.Maui.Controls.Cell>
         {
-            obj.CollectionChanged += handler;
-            return obj;
+            self.CollectionChanged += handler;
+            return self;
         }
         
-        public static T OnCollectionChanged<T>(this T obj, System.Action<T> action)
+        public static T OnCollectionChanged<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.TableSectionBase<Microsoft.Maui.Controls.Cell>
         {
-            obj.CollectionChanged += (o, arg) => action(obj);
-            return obj;
+            self.CollectionChanged += (o, arg) => action(self);
+            return self;
         }
         
     }

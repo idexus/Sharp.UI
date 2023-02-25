@@ -12,7 +12,9 @@ using System.Collections.Generic;
 
 namespace Sharp.UI
 {
-	public partial class Shell : IList<Microsoft.Maui.Controls.ShellItem>
+	using Sharp.UI;
+
+    public partial class Shell : IList<Microsoft.Maui.Controls.ShellItem>
 	{
 
         // ----- constructors -----

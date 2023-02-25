@@ -2,13 +2,13 @@
 {
     public static partial class VisualStateExtension
     {
-        public static Microsoft.Maui.Controls.VisualState Setters(this Microsoft.Maui.Controls.VisualState obj,
-            params IList<Setter>[] setterGropus)
+        public static VisualState Setters(this VisualState self,
+            params IList<Setter>[] setterGroups)
         {
-            foreach (var group in setterGropus)
+            foreach (var group in setterGroups)
                 foreach (var setter in group)
-                    obj.Setters.Add(setter);
-            return obj;
+                    self.Setters.Add(setter);
+            return self;
         }
     }
 }

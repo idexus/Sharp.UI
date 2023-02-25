@@ -34,5 +34,6 @@
 
   <ItemGroup>
     <None Remove="src\Animation.Color" />
+    <None Remove="src\Generators\" />
   </ItemGroup>
 </Project>

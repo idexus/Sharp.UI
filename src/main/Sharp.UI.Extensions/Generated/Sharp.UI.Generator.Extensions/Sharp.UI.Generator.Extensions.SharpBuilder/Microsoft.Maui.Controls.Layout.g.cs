@@ -8,126 +8,125 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class LayoutExtension
     {
-        public static T Children<T>(this T obj,
+        public static T Children<T>(this T self,
             IList<Microsoft.Maui.IView> children)
             where T : Microsoft.Maui.Controls.Layout
         {
             foreach (var item in children)
-                obj.Children.Add(item);
-            return obj;
+                self.Children.Add(item);
+            return self;
         }
 
-        public static T Children<T>(this T obj,
+        public static T Children<T>(this T self,
             params Microsoft.Maui.IView[] children)
             where T : Microsoft.Maui.Controls.Layout
         {
             foreach (var item in children)
-                obj.Children.Add(item);
-            return obj;
+                self.Children.Add(item);
+            return self;
         }
         
-        public static T IsClippedToBounds<T>(this T obj,
+        public static T IsClippedToBounds<T>(this T self,
             bool isClippedToBounds)
             where T : Microsoft.Maui.Controls.Layout
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Layout.IsClippedToBoundsProperty, isClippedToBounds);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Layout.IsClippedToBoundsProperty, isClippedToBounds);
+            return self;
         }
         
-        public static T IsClippedToBounds<T>(this T obj,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
+        public static T IsClippedToBounds<T>(this T self,
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Microsoft.Maui.Controls.Layout
         {
-            var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Layout.IsClippedToBoundsProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Layout.IsClippedToBoundsProperty, builder.GetValue());
+            return self;
         }
         
-        public static T IsClippedToBounds<T>(this T obj,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buidBinding)
+        public static T IsClippedToBounds<T>(this T self,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Microsoft.Maui.Controls.Layout
         {
-            var builder = buidBinding(new BindingBuilder<bool>(obj, Microsoft.Maui.Controls.Layout.IsClippedToBoundsProperty));
+            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.Layout.IsClippedToBoundsProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T Padding<T>(this T obj,
+        public static T Padding<T>(this T self,
             Microsoft.Maui.Thickness padding)
             where T : Microsoft.Maui.Controls.Layout
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Layout.PaddingProperty, padding);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Layout.PaddingProperty, padding);
+            return self;
         }
         
-        public static T Padding<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Thickness>, ValueBuilder<Microsoft.Maui.Thickness>> buidValue)
+        public static T Padding<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Thickness>, ValueBuilder<Microsoft.Maui.Thickness>> buildValue)
             where T : Microsoft.Maui.Controls.Layout
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Thickness>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Layout.PaddingProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Thickness>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Layout.PaddingProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Padding<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Thickness>, BindingBuilder<Microsoft.Maui.Thickness>> buidBinding)
+        public static T Padding<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Thickness>, BindingBuilder<Microsoft.Maui.Thickness>> buildBinding)
             where T : Microsoft.Maui.Controls.Layout
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Thickness>(obj, Microsoft.Maui.Controls.Layout.PaddingProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Thickness>(self, Microsoft.Maui.Controls.Layout.PaddingProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T IgnoreSafeArea<T>(this T obj,
+        public static T IgnoreSafeArea<T>(this T self,
             bool ignoreSafeArea)
             where T : Microsoft.Maui.Controls.Layout
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property IgnoreSafeArea");
-            obj.IgnoreSafeArea = ignoreSafeArea;
-            return obj;
+            self.IgnoreSafeArea = ignoreSafeArea;
+            return self;
         }
         
-        public static T IgnoreSafeArea<T>(this T obj,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
+        public static T IgnoreSafeArea<T>(this T self,
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Microsoft.Maui.Controls.Layout
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property IgnoreSafeArea");
-            var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.IgnoreSafeArea = builder.GetValue();
-            return obj;
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) self.IgnoreSafeArea = builder.GetValue();
+            return self;
         }
         
-        public static T CascadeInputTransparent<T>(this T obj,
+        public static T CascadeInputTransparent<T>(this T self,
             bool cascadeInputTransparent)
             where T : Microsoft.Maui.Controls.Layout
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Layout.CascadeInputTransparentProperty, cascadeInputTransparent);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Layout.CascadeInputTransparentProperty, cascadeInputTransparent);
+            return self;
         }
         
-        public static T CascadeInputTransparent<T>(this T obj,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
+        public static T CascadeInputTransparent<T>(this T self,
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Microsoft.Maui.Controls.Layout
         {
-            var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Layout.CascadeInputTransparentProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Layout.CascadeInputTransparentProperty, builder.GetValue());
+            return self;
         }
         
-        public static T CascadeInputTransparent<T>(this T obj,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buidBinding)
+        public static T CascadeInputTransparent<T>(this T self,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Microsoft.Maui.Controls.Layout
         {
-            var builder = buidBinding(new BindingBuilder<bool>(obj, Microsoft.Maui.Controls.Layout.CascadeInputTransparentProperty));
+            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.Layout.CascadeInputTransparentProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
     }

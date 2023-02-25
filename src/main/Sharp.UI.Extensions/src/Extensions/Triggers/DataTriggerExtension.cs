@@ -1,12 +1,12 @@
 ﻿namespace Sharp.UI
 {
-    public static partial class DataTriggerExtension // TODO: sealed
+    public static partial class DataTriggerExtension
     {
-        public static Microsoft.Maui.Controls.DataTrigger Binding(this Microsoft.Maui.Controls.DataTrigger obj,
+        public static Microsoft.Maui.Controls.DataTrigger Binding(this Microsoft.Maui.Controls.DataTrigger self,
             Func<Binding, Binding> bindingBuilder)
         {
-            obj.Binding = bindingBuilder(new Binding());
-            return obj;
+            self.Binding = bindingBuilder(new Binding());
+            return self;
         }
     }
 }

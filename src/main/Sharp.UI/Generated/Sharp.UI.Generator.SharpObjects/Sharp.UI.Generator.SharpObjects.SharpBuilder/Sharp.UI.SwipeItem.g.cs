@@ -7,7 +7,9 @@
 
 namespace Sharp.UI
 {
-	public partial class SwipeItem
+	using Sharp.UI;
+
+    public partial class SwipeItem
 	{
 
         // ----- constructors -----

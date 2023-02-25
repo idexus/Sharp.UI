@@ -6,17 +6,17 @@ namespace Sharp.UI
 {    
     public static partial class BindableObjectExtension
     {
-        public static T SetValueOrSetter<T>(this T obj, BindableProperty property, object value) where T : BindableObject
+        public static T SetValueOrAddSetter<T>(this T self, BindableProperty property, object value) where T : BindableObject
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null)
                 setters.Add(new Setter { Property = property, Value = value });
             else
-                obj.SetValue(property, value);
-            return obj;
+                self.SetValue(property, value);
+            return self;
         }
 
-        public static T Bind<T>(this T obj,
+        public static T Bind<T>(this T self,
             BindableProperty property,
             string sourcePath,
             BindingMode mode = BindingMode.Default,
@@ -25,19 +25,19 @@ namespace Sharp.UI
             string stringFormat = null,
             object source = null) where T : BindableObject
         {
-            obj.SetBinding(
+            self.SetBinding(
                 targetProperty: property,
-                binding: new Microsoft.Maui.Controls.Binding(
+                binding: new Binding(
                     path: sourcePath,
                     mode: mode,
                     converter: converter,
                     converterParameter: converterParameter,
                     stringFormat: stringFormat,
                     source: source));
-            return obj;
+            return self;
         }
 
-        public static T BindTemplatedParent<T>(this T obj,
+        public static T BindTemplatedParent<T>(this T self,
             BindableProperty property,
             string sourcePath,
             BindingMode mode = BindingMode.Default,
@@ -45,19 +45,19 @@ namespace Sharp.UI
             string converterParameter = null,
             string stringFormat = null) where T : BindableObject
         {
-            obj.SetBinding(
+            self.SetBinding(
                 targetProperty: property,
-                binding: new Microsoft.Maui.Controls.Binding(
+                binding: new Binding(
                     path: sourcePath,
                     mode: mode,
                     converter: converter,
                     converterParameter: converterParameter,
                     stringFormat: stringFormat,
                     source: RelativeBindingSource.TemplatedParent));
-            return obj;
+            return self;
         }
 
-        public static T RegisterName<T>(this T obj, string name, BindableObject scopedElement) where T : BindableObject
+        public static T RegisterName<T>(this T self, string name, BindableObject scopedElement) where T : BindableObject
         {
             var nameScope = NameScope.GetNameScope(scopedElement);
             if (nameScope == null)
@@ -65,8 +65,8 @@ namespace Sharp.UI
                 nameScope = new NameScope();
                 NameScope.SetNameScope(scopedElement, nameScope);
             }
-            nameScope.RegisterName(name, obj);
-            return obj;
+            nameScope.RegisterName(name, self);
+            return self;
         }
     }
 }

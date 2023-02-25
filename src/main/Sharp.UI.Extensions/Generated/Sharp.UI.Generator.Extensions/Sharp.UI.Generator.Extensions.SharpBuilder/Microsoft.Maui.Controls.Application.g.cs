@@ -8,170 +8,169 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class ApplicationExtension
     {
-        public static T MainPage<T>(this T obj,
+        public static T MainPage<T>(this T self,
             Microsoft.Maui.Controls.Page? mainPage)
             where T : Microsoft.Maui.Controls.Application
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property MainPage");
-            obj.MainPage = mainPage;
-            return obj;
+            self.MainPage = mainPage;
+            return self;
         }
         
-        public static T MainPage<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.Page?>, ValueBuilder<Microsoft.Maui.Controls.Page?>> buidValue)
+        public static T MainPage<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.Page?>, ValueBuilder<Microsoft.Maui.Controls.Page?>> buildValue)
             where T : Microsoft.Maui.Controls.Application
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property MainPage");
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.Page?>());
-            if (builder.ValueIsSet()) obj.MainPage = builder.GetValue();
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Page?>());
+            if (builder.ValueIsSet()) self.MainPage = builder.GetValue();
+            return self;
         }
         
-        public static T Resources<T>(this T obj,
+        public static T Resources<T>(this T self,
             Microsoft.Maui.Controls.ResourceDictionary resources)
             where T : Microsoft.Maui.Controls.Application
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property Resources");
-            obj.Resources = resources;
-            return obj;
+            self.Resources = resources;
+            return self;
         }
         
-        public static T Resources<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.ResourceDictionary>, ValueBuilder<Microsoft.Maui.Controls.ResourceDictionary>> buidValue)
+        public static T Resources<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.ResourceDictionary>, ValueBuilder<Microsoft.Maui.Controls.ResourceDictionary>> buildValue)
             where T : Microsoft.Maui.Controls.Application
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property Resources");
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.ResourceDictionary>());
-            if (builder.ValueIsSet()) obj.Resources = builder.GetValue();
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ResourceDictionary>());
+            if (builder.ValueIsSet()) self.Resources = builder.GetValue();
+            return self;
         }
         
-        public static T UserAppTheme<T>(this T obj,
+        public static T UserAppTheme<T>(this T self,
             Microsoft.Maui.ApplicationModel.AppTheme userAppTheme)
             where T : Microsoft.Maui.Controls.Application
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property UserAppTheme");
-            obj.UserAppTheme = userAppTheme;
-            return obj;
+            self.UserAppTheme = userAppTheme;
+            return self;
         }
         
-        public static T UserAppTheme<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.ApplicationModel.AppTheme>, ValueBuilder<Microsoft.Maui.ApplicationModel.AppTheme>> buidValue)
+        public static T UserAppTheme<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.ApplicationModel.AppTheme>, ValueBuilder<Microsoft.Maui.ApplicationModel.AppTheme>> buildValue)
             where T : Microsoft.Maui.Controls.Application
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property UserAppTheme");
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.ApplicationModel.AppTheme>());
-            if (builder.ValueIsSet()) obj.UserAppTheme = builder.GetValue();
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.ApplicationModel.AppTheme>());
+            if (builder.ValueIsSet()) self.UserAppTheme = builder.GetValue();
+            return self;
         }
         
-        public static T OnRequestedThemeChanged<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.AppThemeChangedEventArgs> handler)
+        public static T OnRequestedThemeChanged<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.AppThemeChangedEventArgs> handler)
             where T : Microsoft.Maui.Controls.Application
         {
-            obj.RequestedThemeChanged += handler;
-            return obj;
+            self.RequestedThemeChanged += handler;
+            return self;
         }
         
-        public static T OnRequestedThemeChanged<T>(this T obj, System.Action<T> action)
+        public static T OnRequestedThemeChanged<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Application
         {
-            obj.RequestedThemeChanged += (o, arg) => action(obj);
-            return obj;
+            self.RequestedThemeChanged += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnModalPopped<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.ModalPoppedEventArgs>? handler)
+        public static T OnModalPopped<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.ModalPoppedEventArgs>? handler)
             where T : Microsoft.Maui.Controls.Application
         {
-            obj.ModalPopped += handler;
-            return obj;
+            self.ModalPopped += handler;
+            return self;
         }
         
-        public static T OnModalPopped<T>(this T obj, System.Action<T> action)
+        public static T OnModalPopped<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Application
         {
-            obj.ModalPopped += (o, arg) => action(obj);
-            return obj;
+            self.ModalPopped += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnModalPopping<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.ModalPoppingEventArgs>? handler)
+        public static T OnModalPopping<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.ModalPoppingEventArgs>? handler)
             where T : Microsoft.Maui.Controls.Application
         {
-            obj.ModalPopping += handler;
-            return obj;
+            self.ModalPopping += handler;
+            return self;
         }
         
-        public static T OnModalPopping<T>(this T obj, System.Action<T> action)
+        public static T OnModalPopping<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Application
         {
-            obj.ModalPopping += (o, arg) => action(obj);
-            return obj;
+            self.ModalPopping += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnModalPushed<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.ModalPushedEventArgs>? handler)
+        public static T OnModalPushed<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.ModalPushedEventArgs>? handler)
             where T : Microsoft.Maui.Controls.Application
         {
-            obj.ModalPushed += handler;
-            return obj;
+            self.ModalPushed += handler;
+            return self;
         }
         
-        public static T OnModalPushed<T>(this T obj, System.Action<T> action)
+        public static T OnModalPushed<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Application
         {
-            obj.ModalPushed += (o, arg) => action(obj);
-            return obj;
+            self.ModalPushed += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnModalPushing<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.ModalPushingEventArgs>? handler)
+        public static T OnModalPushing<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.ModalPushingEventArgs>? handler)
             where T : Microsoft.Maui.Controls.Application
         {
-            obj.ModalPushing += handler;
-            return obj;
+            self.ModalPushing += handler;
+            return self;
         }
         
-        public static T OnModalPushing<T>(this T obj, System.Action<T> action)
+        public static T OnModalPushing<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Application
         {
-            obj.ModalPushing += (o, arg) => action(obj);
-            return obj;
+            self.ModalPushing += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnPageAppearing<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.Page>? handler)
+        public static T OnPageAppearing<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.Page>? handler)
             where T : Microsoft.Maui.Controls.Application
         {
-            obj.PageAppearing += handler;
-            return obj;
+            self.PageAppearing += handler;
+            return self;
         }
         
-        public static T OnPageAppearing<T>(this T obj, System.Action<T> action)
+        public static T OnPageAppearing<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Application
         {
-            obj.PageAppearing += (o, arg) => action(obj);
-            return obj;
+            self.PageAppearing += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnPageDisappearing<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.Page>? handler)
+        public static T OnPageDisappearing<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.Page>? handler)
             where T : Microsoft.Maui.Controls.Application
         {
-            obj.PageDisappearing += handler;
-            return obj;
+            self.PageDisappearing += handler;
+            return self;
         }
         
-        public static T OnPageDisappearing<T>(this T obj, System.Action<T> action)
+        public static T OnPageDisappearing<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Application
         {
-            obj.PageDisappearing += (o, arg) => action(obj);
-            return obj;
+            self.PageDisappearing += (o, arg) => action(self);
+            return self;
         }
         
     }

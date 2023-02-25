@@ -7,7 +7,9 @@
 
 namespace Sharp.UI
 {
-	public partial class ActivityIndicator
+	using Sharp.UI;
+
+    public partial class ActivityIndicator
 	{
 
         // ----- constructors -----

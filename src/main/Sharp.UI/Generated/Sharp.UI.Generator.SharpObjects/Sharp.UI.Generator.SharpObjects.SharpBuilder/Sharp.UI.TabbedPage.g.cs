@@ -12,7 +12,9 @@ using System.Collections.Generic;
 
 namespace Sharp.UI
 {
-	public partial class TabbedPage : IList<Microsoft.Maui.Controls.Page>
+	using Sharp.UI;
+
+    public partial class TabbedPage : IList<Microsoft.Maui.Controls.Page>
 	{
 
         // ----- constructors -----

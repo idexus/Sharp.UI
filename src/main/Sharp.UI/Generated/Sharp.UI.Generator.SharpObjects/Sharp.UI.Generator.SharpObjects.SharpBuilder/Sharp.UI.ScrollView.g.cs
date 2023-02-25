@@ -12,7 +12,9 @@ using System.Collections.Generic;
 
 namespace Sharp.UI
 {
-	public partial class ScrollView : IEnumerable
+	using Sharp.UI;
+
+    public partial class ScrollView : IEnumerable
 	{
 
         // ----- constructors -----

@@ -7,7 +7,9 @@
 
 namespace Sharp.UI
 {
-	public partial class DataTemplate
+	using Sharp.UI;
+
+    public partial class DataTemplate
 	{
 
         // ----- constructors -----

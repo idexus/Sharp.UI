@@ -8,35 +8,34 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class ContentPresenterExtension
     {
-        public static T Content<T>(this T obj,
+        public static T Content<T>(this T self,
             Microsoft.Maui.Controls.View content)
             where T : Microsoft.Maui.Controls.ContentPresenter
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.ContentPresenter.ContentProperty, content);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ContentPresenter.ContentProperty, content);
+            return self;
         }
         
-        public static T Content<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.View>, ValueBuilder<Microsoft.Maui.Controls.View>> buidValue)
+        public static T Content<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.View>, ValueBuilder<Microsoft.Maui.Controls.View>> buildValue)
             where T : Microsoft.Maui.Controls.ContentPresenter
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.View>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ContentPresenter.ContentProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.View>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ContentPresenter.ContentProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Content<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.View>, BindingBuilder<Microsoft.Maui.Controls.View>> buidBinding)
+        public static T Content<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.View>, BindingBuilder<Microsoft.Maui.Controls.View>> buildBinding)
             where T : Microsoft.Maui.Controls.ContentPresenter
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.View>(obj, Microsoft.Maui.Controls.ContentPresenter.ContentProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.View>(self, Microsoft.Maui.Controls.ContentPresenter.ContentProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
     }

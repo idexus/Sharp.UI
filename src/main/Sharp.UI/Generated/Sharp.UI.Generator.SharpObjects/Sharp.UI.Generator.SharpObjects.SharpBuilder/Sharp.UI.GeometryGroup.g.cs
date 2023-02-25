@@ -12,7 +12,9 @@ using System.Collections.Generic;
 
 namespace Sharp.UI
 {
-	public partial class GeometryGroup : IList<Microsoft.Maui.Controls.Shapes.Geometry>
+	using Sharp.UI;
+
+    public partial class GeometryGroup : IList<Microsoft.Maui.Controls.Shapes.Geometry>
 	{
 
         // ----- constructors -----

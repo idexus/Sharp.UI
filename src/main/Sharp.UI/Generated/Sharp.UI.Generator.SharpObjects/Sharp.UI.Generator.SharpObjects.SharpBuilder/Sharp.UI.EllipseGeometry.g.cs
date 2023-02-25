@@ -7,7 +7,9 @@
 
 namespace Sharp.UI
 {
-	public partial class EllipseGeometry
+	using Sharp.UI;
+
+    public partial class EllipseGeometry
 	{
 
         // ----- constructors -----

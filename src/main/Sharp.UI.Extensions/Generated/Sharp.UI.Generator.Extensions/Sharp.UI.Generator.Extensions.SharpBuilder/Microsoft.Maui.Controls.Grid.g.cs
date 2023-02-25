@@ -8,89 +8,88 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class GridExtension
     {
-        public static T ColumnDefinitions<T>(this T obj,
+        public static T ColumnDefinitions<T>(this T self,
             IList<Microsoft.Maui.Controls.ColumnDefinition> columnDefinitions)
             where T : Microsoft.Maui.Controls.Grid
         {
             foreach (var item in columnDefinitions)
-                obj.ColumnDefinitions.Add(item);
-            return obj;
+                self.ColumnDefinitions.Add(item);
+            return self;
         }
 
-        public static T ColumnDefinitions<T>(this T obj,
+        public static T ColumnDefinitions<T>(this T self,
             params Microsoft.Maui.Controls.ColumnDefinition[] columnDefinitions)
             where T : Microsoft.Maui.Controls.Grid
         {
             foreach (var item in columnDefinitions)
-                obj.ColumnDefinitions.Add(item);
-            return obj;
+                self.ColumnDefinitions.Add(item);
+            return self;
         }
         
-        public static T ColumnDefinitions<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.ColumnDefinitionCollection>, BindingBuilder<Microsoft.Maui.Controls.ColumnDefinitionCollection>> buidBinding)
+        public static T ColumnDefinitions<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.ColumnDefinitionCollection>, BindingBuilder<Microsoft.Maui.Controls.ColumnDefinitionCollection>> buildBinding)
             where T : Microsoft.Maui.Controls.Grid
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.ColumnDefinitionCollection>(obj, Microsoft.Maui.Controls.Grid.ColumnDefinitionsProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ColumnDefinitionCollection>(self, Microsoft.Maui.Controls.Grid.ColumnDefinitionsProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T RowDefinitions<T>(this T obj,
+        public static T RowDefinitions<T>(this T self,
             IList<Microsoft.Maui.Controls.RowDefinition> rowDefinitions)
             where T : Microsoft.Maui.Controls.Grid
         {
             foreach (var item in rowDefinitions)
-                obj.RowDefinitions.Add(item);
-            return obj;
+                self.RowDefinitions.Add(item);
+            return self;
         }
 
-        public static T RowDefinitions<T>(this T obj,
+        public static T RowDefinitions<T>(this T self,
             params Microsoft.Maui.Controls.RowDefinition[] rowDefinitions)
             where T : Microsoft.Maui.Controls.Grid
         {
             foreach (var item in rowDefinitions)
-                obj.RowDefinitions.Add(item);
-            return obj;
+                self.RowDefinitions.Add(item);
+            return self;
         }
         
-        public static T RowDefinitions<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.RowDefinitionCollection>, BindingBuilder<Microsoft.Maui.Controls.RowDefinitionCollection>> buidBinding)
+        public static T RowDefinitions<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.RowDefinitionCollection>, BindingBuilder<Microsoft.Maui.Controls.RowDefinitionCollection>> buildBinding)
             where T : Microsoft.Maui.Controls.Grid
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.RowDefinitionCollection>(obj, Microsoft.Maui.Controls.Grid.RowDefinitionsProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.RowDefinitionCollection>(self, Microsoft.Maui.Controls.Grid.RowDefinitionsProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T RowSpacing<T>(this T obj,
+        public static T RowSpacing<T>(this T self,
             double rowSpacing)
             where T : Microsoft.Maui.Controls.Grid
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Grid.RowSpacingProperty, rowSpacing);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Grid.RowSpacingProperty, rowSpacing);
+            return self;
         }
         
-        public static T RowSpacing<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T RowSpacing<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Microsoft.Maui.Controls.Grid
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Grid.RowSpacingProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Grid.RowSpacingProperty, builder.GetValue());
+            return self;
         }
         
-        public static T RowSpacing<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T RowSpacing<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Microsoft.Maui.Controls.Grid
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Grid.RowSpacingProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Grid.RowSpacingProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
         public static Task<bool> AnimateRowSpacingTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
@@ -102,30 +101,30 @@ namespace Sharp.UI
             return Transformations.AnimateAsync<double>(self, "AnimateRowSpacingTo", transform, callback, length, easing);
         }
         
-        public static T ColumnSpacing<T>(this T obj,
+        public static T ColumnSpacing<T>(this T self,
             double columnSpacing)
             where T : Microsoft.Maui.Controls.Grid
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Grid.ColumnSpacingProperty, columnSpacing);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Grid.ColumnSpacingProperty, columnSpacing);
+            return self;
         }
         
-        public static T ColumnSpacing<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T ColumnSpacing<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Microsoft.Maui.Controls.Grid
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Grid.ColumnSpacingProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Grid.ColumnSpacingProperty, builder.GetValue());
+            return self;
         }
         
-        public static T ColumnSpacing<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T ColumnSpacing<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Microsoft.Maui.Controls.Grid
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Grid.ColumnSpacingProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Grid.ColumnSpacingProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
         public static Task<bool> AnimateColumnSpacingTo<T>(this T self, double value, uint length = 250, Easing? easing = null)

@@ -8,139 +8,138 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class AppLinkEntryExtension
     {
-        public static T AppLinkUri<T>(this T obj,
+        public static T AppLinkUri<T>(this T self,
             System.Uri appLinkUri)
             where T : Microsoft.Maui.Controls.AppLinkEntry
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.AppLinkEntry.AppLinkUriProperty, appLinkUri);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.AppLinkEntry.AppLinkUriProperty, appLinkUri);
+            return self;
         }
         
-        public static T AppLinkUri<T>(this T obj,
-            System.Func<ValueBuilder<System.Uri>, ValueBuilder<System.Uri>> buidValue)
+        public static T AppLinkUri<T>(this T self,
+            System.Func<ValueBuilder<System.Uri>, ValueBuilder<System.Uri>> buildValue)
             where T : Microsoft.Maui.Controls.AppLinkEntry
         {
-            var builder = buidValue(new ValueBuilder<System.Uri>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.AppLinkEntry.AppLinkUriProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<System.Uri>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.AppLinkEntry.AppLinkUriProperty, builder.GetValue());
+            return self;
         }
         
-        public static T AppLinkUri<T>(this T obj,
-            System.Func<BindingBuilder<System.Uri>, BindingBuilder<System.Uri>> buidBinding)
+        public static T AppLinkUri<T>(this T self,
+            System.Func<BindingBuilder<System.Uri>, BindingBuilder<System.Uri>> buildBinding)
             where T : Microsoft.Maui.Controls.AppLinkEntry
         {
-            var builder = buidBinding(new BindingBuilder<System.Uri>(obj, Microsoft.Maui.Controls.AppLinkEntry.AppLinkUriProperty));
+            var builder = buildBinding(new BindingBuilder<System.Uri>(self, Microsoft.Maui.Controls.AppLinkEntry.AppLinkUriProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T Description<T>(this T obj,
+        public static T Description<T>(this T self,
             string description)
             where T : Microsoft.Maui.Controls.AppLinkEntry
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.AppLinkEntry.DescriptionProperty, description);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.AppLinkEntry.DescriptionProperty, description);
+            return self;
         }
         
-        public static T Description<T>(this T obj,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buidValue)
+        public static T Description<T>(this T self,
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
             where T : Microsoft.Maui.Controls.AppLinkEntry
         {
-            var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.AppLinkEntry.DescriptionProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.AppLinkEntry.DescriptionProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Description<T>(this T obj,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buidBinding)
+        public static T Description<T>(this T self,
+            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
             where T : Microsoft.Maui.Controls.AppLinkEntry
         {
-            var builder = buidBinding(new BindingBuilder<string>(obj, Microsoft.Maui.Controls.AppLinkEntry.DescriptionProperty));
+            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.AppLinkEntry.DescriptionProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T IsLinkActive<T>(this T obj,
+        public static T IsLinkActive<T>(this T self,
             bool isLinkActive)
             where T : Microsoft.Maui.Controls.AppLinkEntry
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.AppLinkEntry.IsLinkActiveProperty, isLinkActive);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.AppLinkEntry.IsLinkActiveProperty, isLinkActive);
+            return self;
         }
         
-        public static T IsLinkActive<T>(this T obj,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
+        public static T IsLinkActive<T>(this T self,
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Microsoft.Maui.Controls.AppLinkEntry
         {
-            var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.AppLinkEntry.IsLinkActiveProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.AppLinkEntry.IsLinkActiveProperty, builder.GetValue());
+            return self;
         }
         
-        public static T IsLinkActive<T>(this T obj,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buidBinding)
+        public static T IsLinkActive<T>(this T self,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Microsoft.Maui.Controls.AppLinkEntry
         {
-            var builder = buidBinding(new BindingBuilder<bool>(obj, Microsoft.Maui.Controls.AppLinkEntry.IsLinkActiveProperty));
+            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.AppLinkEntry.IsLinkActiveProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T Thumbnail<T>(this T obj,
+        public static T Thumbnail<T>(this T self,
             Microsoft.Maui.Controls.ImageSource thumbnail)
             where T : Microsoft.Maui.Controls.AppLinkEntry
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.AppLinkEntry.ThumbnailProperty, thumbnail);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.AppLinkEntry.ThumbnailProperty, thumbnail);
+            return self;
         }
         
-        public static T Thumbnail<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.ImageSource>, ValueBuilder<Microsoft.Maui.Controls.ImageSource>> buidValue)
+        public static T Thumbnail<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.ImageSource>, ValueBuilder<Microsoft.Maui.Controls.ImageSource>> buildValue)
             where T : Microsoft.Maui.Controls.AppLinkEntry
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.AppLinkEntry.ThumbnailProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.AppLinkEntry.ThumbnailProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Thumbnail<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.ImageSource>, BindingBuilder<Microsoft.Maui.Controls.ImageSource>> buidBinding)
+        public static T Thumbnail<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.ImageSource>, BindingBuilder<Microsoft.Maui.Controls.ImageSource>> buildBinding)
             where T : Microsoft.Maui.Controls.AppLinkEntry
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.ImageSource>(obj, Microsoft.Maui.Controls.AppLinkEntry.ThumbnailProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ImageSource>(self, Microsoft.Maui.Controls.AppLinkEntry.ThumbnailProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T Title<T>(this T obj,
+        public static T Title<T>(this T self,
             string title)
             where T : Microsoft.Maui.Controls.AppLinkEntry
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.AppLinkEntry.TitleProperty, title);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.AppLinkEntry.TitleProperty, title);
+            return self;
         }
         
-        public static T Title<T>(this T obj,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buidValue)
+        public static T Title<T>(this T self,
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
             where T : Microsoft.Maui.Controls.AppLinkEntry
         {
-            var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.AppLinkEntry.TitleProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.AppLinkEntry.TitleProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Title<T>(this T obj,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buidBinding)
+        public static T Title<T>(this T self,
+            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
             where T : Microsoft.Maui.Controls.AppLinkEntry
         {
-            var builder = buidBinding(new BindingBuilder<string>(obj, Microsoft.Maui.Controls.AppLinkEntry.TitleProperty));
+            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.AppLinkEntry.TitleProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
     }

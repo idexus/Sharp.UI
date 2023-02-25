@@ -16,7 +16,7 @@ public class PropertyTriggerPage : ContentPage
 					.Property(Entry.IsFocusedProperty)
 					.Value(true)
 					.Setters(
-						new Setter<Entry>(e => e
+						new Setters<Entry>(e => e
 							.BackgroundColor(Colors.Yellow)
 							.TextColor(Colors.Black))
 					),
@@ -30,6 +30,6 @@ public class PropertyTriggerPage : ContentPage
 			new Entry("Enter address")
 		}
 		.WidthRequest(300)
-        .VerticalOptions(LayoutOptions.Center);
+        .CenterVertically();
 	}
 }

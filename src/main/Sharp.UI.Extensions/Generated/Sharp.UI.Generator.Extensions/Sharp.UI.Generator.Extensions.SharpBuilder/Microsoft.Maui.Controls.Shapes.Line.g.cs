@@ -8,32 +8,31 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class LineExtension
     {
-        public static Microsoft.Maui.Controls.Shapes.Line X1(this Microsoft.Maui.Controls.Shapes.Line obj,
+        public static Microsoft.Maui.Controls.Shapes.Line X1(this Microsoft.Maui.Controls.Shapes.Line self,
             double x1)
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Line.X1Property, x1);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Line.X1Property, x1);
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.Line X1(this Microsoft.Maui.Controls.Shapes.Line obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static Microsoft.Maui.Controls.Shapes.Line X1(this Microsoft.Maui.Controls.Shapes.Line self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Line.X1Property, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Line.X1Property, builder.GetValue());
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.Line X1(this Microsoft.Maui.Controls.Shapes.Line obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static Microsoft.Maui.Controls.Shapes.Line X1(this Microsoft.Maui.Controls.Shapes.Line self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Shapes.Line.X1Property));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.Line.X1Property));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
         public static Task<bool> AnimateX1To(this Microsoft.Maui.Controls.Shapes.Line self, double value, uint length = 250, Easing? easing = null)
@@ -44,27 +43,27 @@ namespace Sharp.UI
             return Transformations.AnimateAsync<double>(self, "AnimateX1To", transform, callback, length, easing);
         }
         
-        public static Microsoft.Maui.Controls.Shapes.Line Y1(this Microsoft.Maui.Controls.Shapes.Line obj,
+        public static Microsoft.Maui.Controls.Shapes.Line Y1(this Microsoft.Maui.Controls.Shapes.Line self,
             double y1)
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Line.Y1Property, y1);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Line.Y1Property, y1);
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.Line Y1(this Microsoft.Maui.Controls.Shapes.Line obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static Microsoft.Maui.Controls.Shapes.Line Y1(this Microsoft.Maui.Controls.Shapes.Line self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Line.Y1Property, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Line.Y1Property, builder.GetValue());
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.Line Y1(this Microsoft.Maui.Controls.Shapes.Line obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static Microsoft.Maui.Controls.Shapes.Line Y1(this Microsoft.Maui.Controls.Shapes.Line self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Shapes.Line.Y1Property));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.Line.Y1Property));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
         public static Task<bool> AnimateY1To(this Microsoft.Maui.Controls.Shapes.Line self, double value, uint length = 250, Easing? easing = null)
@@ -75,27 +74,27 @@ namespace Sharp.UI
             return Transformations.AnimateAsync<double>(self, "AnimateY1To", transform, callback, length, easing);
         }
         
-        public static Microsoft.Maui.Controls.Shapes.Line X2(this Microsoft.Maui.Controls.Shapes.Line obj,
+        public static Microsoft.Maui.Controls.Shapes.Line X2(this Microsoft.Maui.Controls.Shapes.Line self,
             double x2)
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Line.X2Property, x2);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Line.X2Property, x2);
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.Line X2(this Microsoft.Maui.Controls.Shapes.Line obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static Microsoft.Maui.Controls.Shapes.Line X2(this Microsoft.Maui.Controls.Shapes.Line self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Line.X2Property, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Line.X2Property, builder.GetValue());
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.Line X2(this Microsoft.Maui.Controls.Shapes.Line obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static Microsoft.Maui.Controls.Shapes.Line X2(this Microsoft.Maui.Controls.Shapes.Line self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Shapes.Line.X2Property));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.Line.X2Property));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
         public static Task<bool> AnimateX2To(this Microsoft.Maui.Controls.Shapes.Line self, double value, uint length = 250, Easing? easing = null)
@@ -106,27 +105,27 @@ namespace Sharp.UI
             return Transformations.AnimateAsync<double>(self, "AnimateX2To", transform, callback, length, easing);
         }
         
-        public static Microsoft.Maui.Controls.Shapes.Line Y2(this Microsoft.Maui.Controls.Shapes.Line obj,
+        public static Microsoft.Maui.Controls.Shapes.Line Y2(this Microsoft.Maui.Controls.Shapes.Line self,
             double y2)
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Line.Y2Property, y2);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Line.Y2Property, y2);
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.Line Y2(this Microsoft.Maui.Controls.Shapes.Line obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static Microsoft.Maui.Controls.Shapes.Line Y2(this Microsoft.Maui.Controls.Shapes.Line self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Line.Y2Property, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Line.Y2Property, builder.GetValue());
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.Line Y2(this Microsoft.Maui.Controls.Shapes.Line obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static Microsoft.Maui.Controls.Shapes.Line Y2(this Microsoft.Maui.Controls.Shapes.Line self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Shapes.Line.Y2Property));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.Line.Y2Property));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
         public static Task<bool> AnimateY2To(this Microsoft.Maui.Controls.Shapes.Line self, double value, uint length = 250, Easing? easing = null)

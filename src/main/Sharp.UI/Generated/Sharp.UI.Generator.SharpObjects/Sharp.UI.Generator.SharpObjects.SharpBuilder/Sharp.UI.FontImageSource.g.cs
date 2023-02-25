@@ -7,7 +7,9 @@
 
 namespace Sharp.UI
 {
-	public partial class FontImageSource
+	using Sharp.UI;
+
+    public partial class FontImageSource
 	{
 
         // ----- constructors -----

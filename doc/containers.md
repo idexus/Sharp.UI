@@ -66,7 +66,7 @@ Or like in this example:
 new VStack(e => e
     .Spacing(25)
     .Padding(new Thickness(30, 0))
-    .VerticalOptions(LayoutOptions.Center))
+    .CenterVertically())
 {
     new Label("Hello, World!"),
     new Button("Click me")
@@ -85,5 +85,5 @@ new VStack
 }
 .Spacing(25)
 .Padding(new Thickness(30, 0))
-.VerticalOptions(LayoutOptions.Center)
+.CenterVertically())
 ```

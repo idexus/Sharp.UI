@@ -7,7 +7,9 @@
 
 namespace Sharp.UI
 {
-	public partial class MenuFlyoutItem
+	using Sharp.UI;
+
+    public partial class MenuFlyoutItem
 	{
 
         // ----- constructors -----

@@ -8,35 +8,34 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class SwitchExtension
     {
-        public static T OnColor<T>(this T obj,
+        public static T OnColor<T>(this T self,
             Microsoft.Maui.Graphics.Color onColor)
             where T : Microsoft.Maui.Controls.Switch
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Switch.OnColorProperty, onColor);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Switch.OnColorProperty, onColor);
+            return self;
         }
         
-        public static T OnColor<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buidValue)
+        public static T OnColor<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : Microsoft.Maui.Controls.Switch
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Switch.OnColorProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Switch.OnColorProperty, builder.GetValue());
+            return self;
         }
         
-        public static T OnColor<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buidBinding)
+        public static T OnColor<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
             where T : Microsoft.Maui.Controls.Switch
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(obj, Microsoft.Maui.Controls.Switch.OnColorProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.Switch.OnColorProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
         public static Task<bool> AnimateOnColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
@@ -48,30 +47,30 @@ namespace Sharp.UI
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateOnColorTo", transform, callback, length, easing);
         }
         
-        public static T ThumbColor<T>(this T obj,
+        public static T ThumbColor<T>(this T self,
             Microsoft.Maui.Graphics.Color thumbColor)
             where T : Microsoft.Maui.Controls.Switch
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Switch.ThumbColorProperty, thumbColor);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Switch.ThumbColorProperty, thumbColor);
+            return self;
         }
         
-        public static T ThumbColor<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buidValue)
+        public static T ThumbColor<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : Microsoft.Maui.Controls.Switch
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Switch.ThumbColorProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Switch.ThumbColorProperty, builder.GetValue());
+            return self;
         }
         
-        public static T ThumbColor<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buidBinding)
+        public static T ThumbColor<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
             where T : Microsoft.Maui.Controls.Switch
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(obj, Microsoft.Maui.Controls.Switch.ThumbColorProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.Switch.ThumbColorProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
         public static Task<bool> AnimateThumbColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
@@ -83,44 +82,44 @@ namespace Sharp.UI
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateThumbColorTo", transform, callback, length, easing);
         }
         
-        public static T IsToggled<T>(this T obj,
+        public static T IsToggled<T>(this T self,
             bool isToggled)
             where T : Microsoft.Maui.Controls.Switch
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Switch.IsToggledProperty, isToggled);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Switch.IsToggledProperty, isToggled);
+            return self;
         }
         
-        public static T IsToggled<T>(this T obj,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
+        public static T IsToggled<T>(this T self,
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Microsoft.Maui.Controls.Switch
         {
-            var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Switch.IsToggledProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Switch.IsToggledProperty, builder.GetValue());
+            return self;
         }
         
-        public static T IsToggled<T>(this T obj,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buidBinding)
+        public static T IsToggled<T>(this T self,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Microsoft.Maui.Controls.Switch
         {
-            var builder = buidBinding(new BindingBuilder<bool>(obj, Microsoft.Maui.Controls.Switch.IsToggledProperty));
+            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.Switch.IsToggledProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T OnToggled<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.ToggledEventArgs> handler)
+        public static T OnToggled<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.ToggledEventArgs> handler)
             where T : Microsoft.Maui.Controls.Switch
         {
-            obj.Toggled += handler;
-            return obj;
+            self.Toggled += handler;
+            return self;
         }
         
-        public static T OnToggled<T>(this T obj, System.Action<T> action)
+        public static T OnToggled<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Switch
         {
-            obj.Toggled += (o, arg) => action(obj);
-            return obj;
+            self.Toggled += (o, arg) => action(self);
+            return self;
         }
         
     }

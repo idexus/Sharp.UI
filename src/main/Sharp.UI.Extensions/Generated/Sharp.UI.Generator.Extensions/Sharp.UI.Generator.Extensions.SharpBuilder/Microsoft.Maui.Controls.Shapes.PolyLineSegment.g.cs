@@ -8,36 +8,35 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class PolyLineSegmentExtension
     {
-        public static T Points<T>(this T obj,
+        public static T Points<T>(this T self,
             IList<Microsoft.Maui.Graphics.Point> points)
             where T : Microsoft.Maui.Controls.Shapes.PolyLineSegment
         {
             foreach (var item in points)
-                obj.Points.Add(item);
-            return obj;
+                self.Points.Add(item);
+            return self;
         }
 
-        public static T Points<T>(this T obj,
+        public static T Points<T>(this T self,
             params Microsoft.Maui.Graphics.Point[] points)
             where T : Microsoft.Maui.Controls.Shapes.PolyLineSegment
         {
             foreach (var item in points)
-                obj.Points.Add(item);
-            return obj;
+                self.Points.Add(item);
+            return self;
         }
         
-        public static T Points<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.PointCollection>, BindingBuilder<Microsoft.Maui.Controls.PointCollection>> buidBinding)
+        public static T Points<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.PointCollection>, BindingBuilder<Microsoft.Maui.Controls.PointCollection>> buildBinding)
             where T : Microsoft.Maui.Controls.Shapes.PolyLineSegment
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.PointCollection>(obj, Microsoft.Maui.Controls.Shapes.PolyLineSegment.PointsProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.PointCollection>(self, Microsoft.Maui.Controls.Shapes.PolyLineSegment.PointsProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
     }

@@ -11,8 +11,8 @@ public class CompareStateTriggerPage : ContentPage
         Content = new Grid
         {
             new Switch(out testSwitch)
-                .VerticalOptions(LayoutOptions.Center)
-                .HorizontalOptions(LayoutOptions.Center)
+                .CenterVertically()
+                .CenterHorizontally()
         }
         .Style(new Style<Grid>
         {

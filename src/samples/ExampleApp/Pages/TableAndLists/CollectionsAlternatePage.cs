@@ -34,7 +34,7 @@ namespace ExampleApp
                                 .Text(e => e.Path("DataModel.Name"))
                                 .Style(e => e.Path("LabelStyle"))
                                 .FontSize(28)
-                                .HorizontalOptions(LayoutOptions.Center)
+                                .CenterHorizontally()
 
                         }                        
                     }                    

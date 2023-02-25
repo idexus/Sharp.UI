@@ -8,139 +8,138 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class DatePickerExtension
     {
-        public static T Date<T>(this T obj,
+        public static T Date<T>(this T self,
             System.DateTime date)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.DatePicker.DateProperty, date);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.DatePicker.DateProperty, date);
+            return self;
         }
         
-        public static T Date<T>(this T obj,
-            System.Func<ValueBuilder<System.DateTime>, ValueBuilder<System.DateTime>> buidValue)
+        public static T Date<T>(this T self,
+            System.Func<ValueBuilder<System.DateTime>, ValueBuilder<System.DateTime>> buildValue)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            var builder = buidValue(new ValueBuilder<System.DateTime>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.DatePicker.DateProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<System.DateTime>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.DatePicker.DateProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Date<T>(this T obj,
-            System.Func<BindingBuilder<System.DateTime>, BindingBuilder<System.DateTime>> buidBinding)
+        public static T Date<T>(this T self,
+            System.Func<BindingBuilder<System.DateTime>, BindingBuilder<System.DateTime>> buildBinding)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            var builder = buidBinding(new BindingBuilder<System.DateTime>(obj, Microsoft.Maui.Controls.DatePicker.DateProperty));
+            var builder = buildBinding(new BindingBuilder<System.DateTime>(self, Microsoft.Maui.Controls.DatePicker.DateProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T Format<T>(this T obj,
+        public static T Format<T>(this T self,
             string format)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.DatePicker.FormatProperty, format);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.DatePicker.FormatProperty, format);
+            return self;
         }
         
-        public static T Format<T>(this T obj,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buidValue)
+        public static T Format<T>(this T self,
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.DatePicker.FormatProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.DatePicker.FormatProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Format<T>(this T obj,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buidBinding)
+        public static T Format<T>(this T self,
+            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            var builder = buidBinding(new BindingBuilder<string>(obj, Microsoft.Maui.Controls.DatePicker.FormatProperty));
+            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.DatePicker.FormatProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T MaximumDate<T>(this T obj,
+        public static T MaximumDate<T>(this T self,
             System.DateTime maximumDate)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.DatePicker.MaximumDateProperty, maximumDate);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.DatePicker.MaximumDateProperty, maximumDate);
+            return self;
         }
         
-        public static T MaximumDate<T>(this T obj,
-            System.Func<ValueBuilder<System.DateTime>, ValueBuilder<System.DateTime>> buidValue)
+        public static T MaximumDate<T>(this T self,
+            System.Func<ValueBuilder<System.DateTime>, ValueBuilder<System.DateTime>> buildValue)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            var builder = buidValue(new ValueBuilder<System.DateTime>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.DatePicker.MaximumDateProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<System.DateTime>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.DatePicker.MaximumDateProperty, builder.GetValue());
+            return self;
         }
         
-        public static T MaximumDate<T>(this T obj,
-            System.Func<BindingBuilder<System.DateTime>, BindingBuilder<System.DateTime>> buidBinding)
+        public static T MaximumDate<T>(this T self,
+            System.Func<BindingBuilder<System.DateTime>, BindingBuilder<System.DateTime>> buildBinding)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            var builder = buidBinding(new BindingBuilder<System.DateTime>(obj, Microsoft.Maui.Controls.DatePicker.MaximumDateProperty));
+            var builder = buildBinding(new BindingBuilder<System.DateTime>(self, Microsoft.Maui.Controls.DatePicker.MaximumDateProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T MinimumDate<T>(this T obj,
+        public static T MinimumDate<T>(this T self,
             System.DateTime minimumDate)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.DatePicker.MinimumDateProperty, minimumDate);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.DatePicker.MinimumDateProperty, minimumDate);
+            return self;
         }
         
-        public static T MinimumDate<T>(this T obj,
-            System.Func<ValueBuilder<System.DateTime>, ValueBuilder<System.DateTime>> buidValue)
+        public static T MinimumDate<T>(this T self,
+            System.Func<ValueBuilder<System.DateTime>, ValueBuilder<System.DateTime>> buildValue)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            var builder = buidValue(new ValueBuilder<System.DateTime>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.DatePicker.MinimumDateProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<System.DateTime>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.DatePicker.MinimumDateProperty, builder.GetValue());
+            return self;
         }
         
-        public static T MinimumDate<T>(this T obj,
-            System.Func<BindingBuilder<System.DateTime>, BindingBuilder<System.DateTime>> buidBinding)
+        public static T MinimumDate<T>(this T self,
+            System.Func<BindingBuilder<System.DateTime>, BindingBuilder<System.DateTime>> buildBinding)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            var builder = buidBinding(new BindingBuilder<System.DateTime>(obj, Microsoft.Maui.Controls.DatePicker.MinimumDateProperty));
+            var builder = buildBinding(new BindingBuilder<System.DateTime>(self, Microsoft.Maui.Controls.DatePicker.MinimumDateProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T TextColor<T>(this T obj,
+        public static T TextColor<T>(this T self,
             Microsoft.Maui.Graphics.Color textColor)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.DatePicker.TextColorProperty, textColor);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.DatePicker.TextColorProperty, textColor);
+            return self;
         }
         
-        public static T TextColor<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buidValue)
+        public static T TextColor<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.DatePicker.TextColorProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.DatePicker.TextColorProperty, builder.GetValue());
+            return self;
         }
         
-        public static T TextColor<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buidBinding)
+        public static T TextColor<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(obj, Microsoft.Maui.Controls.DatePicker.TextColorProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.DatePicker.TextColorProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
         public static Task<bool> AnimateTextColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
@@ -152,30 +151,30 @@ namespace Sharp.UI
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateTextColorTo", transform, callback, length, easing);
         }
         
-        public static T CharacterSpacing<T>(this T obj,
+        public static T CharacterSpacing<T>(this T self,
             double characterSpacing)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.DatePicker.CharacterSpacingProperty, characterSpacing);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.DatePicker.CharacterSpacingProperty, characterSpacing);
+            return self;
         }
         
-        public static T CharacterSpacing<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T CharacterSpacing<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.DatePicker.CharacterSpacingProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.DatePicker.CharacterSpacingProperty, builder.GetValue());
+            return self;
         }
         
-        public static T CharacterSpacing<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T CharacterSpacing<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.DatePicker.CharacterSpacingProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.DatePicker.CharacterSpacingProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
         public static Task<bool> AnimateCharacterSpacingTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
@@ -187,82 +186,82 @@ namespace Sharp.UI
             return Transformations.AnimateAsync<double>(self, "AnimateCharacterSpacingTo", transform, callback, length, easing);
         }
         
-        public static T FontAttributes<T>(this T obj,
+        public static T FontAttributes<T>(this T self,
             Microsoft.Maui.Controls.FontAttributes fontAttributes)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.DatePicker.FontAttributesProperty, fontAttributes);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.DatePicker.FontAttributesProperty, fontAttributes);
+            return self;
         }
         
-        public static T FontAttributes<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.FontAttributes>, ValueBuilder<Microsoft.Maui.Controls.FontAttributes>> buidValue)
+        public static T FontAttributes<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.FontAttributes>, ValueBuilder<Microsoft.Maui.Controls.FontAttributes>> buildValue)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.FontAttributes>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.DatePicker.FontAttributesProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.FontAttributes>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.DatePicker.FontAttributesProperty, builder.GetValue());
+            return self;
         }
         
-        public static T FontAttributes<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.FontAttributes>, BindingBuilder<Microsoft.Maui.Controls.FontAttributes>> buidBinding)
+        public static T FontAttributes<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.FontAttributes>, BindingBuilder<Microsoft.Maui.Controls.FontAttributes>> buildBinding)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.FontAttributes>(obj, Microsoft.Maui.Controls.DatePicker.FontAttributesProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.FontAttributes>(self, Microsoft.Maui.Controls.DatePicker.FontAttributesProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T FontFamily<T>(this T obj,
+        public static T FontFamily<T>(this T self,
             string fontFamily)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.DatePicker.FontFamilyProperty, fontFamily);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.DatePicker.FontFamilyProperty, fontFamily);
+            return self;
         }
         
-        public static T FontFamily<T>(this T obj,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buidValue)
+        public static T FontFamily<T>(this T self,
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.DatePicker.FontFamilyProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.DatePicker.FontFamilyProperty, builder.GetValue());
+            return self;
         }
         
-        public static T FontFamily<T>(this T obj,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buidBinding)
+        public static T FontFamily<T>(this T self,
+            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            var builder = buidBinding(new BindingBuilder<string>(obj, Microsoft.Maui.Controls.DatePicker.FontFamilyProperty));
+            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.DatePicker.FontFamilyProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T FontSize<T>(this T obj,
+        public static T FontSize<T>(this T self,
             double fontSize)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.DatePicker.FontSizeProperty, fontSize);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.DatePicker.FontSizeProperty, fontSize);
+            return self;
         }
         
-        public static T FontSize<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T FontSize<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.DatePicker.FontSizeProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.DatePicker.FontSizeProperty, builder.GetValue());
+            return self;
         }
         
-        public static T FontSize<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T FontSize<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.DatePicker.FontSizeProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.DatePicker.FontSizeProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
         public static Task<bool> AnimateFontSizeTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
@@ -274,44 +273,44 @@ namespace Sharp.UI
             return Transformations.AnimateAsync<double>(self, "AnimateFontSizeTo", transform, callback, length, easing);
         }
         
-        public static T FontAutoScalingEnabled<T>(this T obj,
+        public static T FontAutoScalingEnabled<T>(this T self,
             bool fontAutoScalingEnabled)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.DatePicker.FontAutoScalingEnabledProperty, fontAutoScalingEnabled);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.DatePicker.FontAutoScalingEnabledProperty, fontAutoScalingEnabled);
+            return self;
         }
         
-        public static T FontAutoScalingEnabled<T>(this T obj,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
+        public static T FontAutoScalingEnabled<T>(this T self,
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.DatePicker.FontAutoScalingEnabledProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.DatePicker.FontAutoScalingEnabledProperty, builder.GetValue());
+            return self;
         }
         
-        public static T FontAutoScalingEnabled<T>(this T obj,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buidBinding)
+        public static T FontAutoScalingEnabled<T>(this T self,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            var builder = buidBinding(new BindingBuilder<bool>(obj, Microsoft.Maui.Controls.DatePicker.FontAutoScalingEnabledProperty));
+            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.DatePicker.FontAutoScalingEnabledProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T OnDateSelected<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.DateChangedEventArgs> handler)
+        public static T OnDateSelected<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.DateChangedEventArgs> handler)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            obj.DateSelected += handler;
-            return obj;
+            self.DateSelected += handler;
+            return self;
         }
         
-        public static T OnDateSelected<T>(this T obj, System.Action<T> action)
+        public static T OnDateSelected<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            obj.DateSelected += (o, arg) => action(obj);
-            return obj;
+            self.DateSelected += (o, arg) => action(self);
+            return self;
         }
         
     }

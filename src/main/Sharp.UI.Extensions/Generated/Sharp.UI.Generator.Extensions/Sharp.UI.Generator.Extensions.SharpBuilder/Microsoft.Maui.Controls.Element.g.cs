@@ -8,254 +8,253 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class ElementExtension
     {
-        public static T AutomationId<T>(this T obj,
+        public static T AutomationId<T>(this T self,
             string automationId)
             where T : Microsoft.Maui.Controls.Element
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Element.AutomationIdProperty, automationId);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Element.AutomationIdProperty, automationId);
+            return self;
         }
         
-        public static T AutomationId<T>(this T obj,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buidValue)
+        public static T AutomationId<T>(this T self,
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
             where T : Microsoft.Maui.Controls.Element
         {
-            var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Element.AutomationIdProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Element.AutomationIdProperty, builder.GetValue());
+            return self;
         }
         
-        public static T AutomationId<T>(this T obj,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buidBinding)
+        public static T AutomationId<T>(this T self,
+            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
             where T : Microsoft.Maui.Controls.Element
         {
-            var builder = buidBinding(new BindingBuilder<string>(obj, Microsoft.Maui.Controls.Element.AutomationIdProperty));
+            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.Element.AutomationIdProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T ClassId<T>(this T obj,
+        public static T ClassId<T>(this T self,
             string classId)
             where T : Microsoft.Maui.Controls.Element
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Element.ClassIdProperty, classId);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Element.ClassIdProperty, classId);
+            return self;
         }
         
-        public static T ClassId<T>(this T obj,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buidValue)
+        public static T ClassId<T>(this T self,
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
             where T : Microsoft.Maui.Controls.Element
         {
-            var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Element.ClassIdProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Element.ClassIdProperty, builder.GetValue());
+            return self;
         }
         
-        public static T ClassId<T>(this T obj,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buidBinding)
+        public static T ClassId<T>(this T self,
+            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
             where T : Microsoft.Maui.Controls.Element
         {
-            var builder = buidBinding(new BindingBuilder<string>(obj, Microsoft.Maui.Controls.Element.ClassIdProperty));
+            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.Element.ClassIdProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T Effects<T>(this T obj,
+        public static T Effects<T>(this T self,
             IList<Microsoft.Maui.Controls.Effect> effects)
             where T : Microsoft.Maui.Controls.Element
         {
             foreach (var item in effects)
-                obj.Effects.Add(item);
-            return obj;
+                self.Effects.Add(item);
+            return self;
         }
 
-        public static T Effects<T>(this T obj,
+        public static T Effects<T>(this T self,
             params Microsoft.Maui.Controls.Effect[] effects)
             where T : Microsoft.Maui.Controls.Element
         {
             foreach (var item in effects)
-                obj.Effects.Add(item);
-            return obj;
+                self.Effects.Add(item);
+            return self;
         }
         
-        public static T StyleId<T>(this T obj,
+        public static T StyleId<T>(this T self,
             string styleId)
             where T : Microsoft.Maui.Controls.Element
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property StyleId");
-            obj.StyleId = styleId;
-            return obj;
+            self.StyleId = styleId;
+            return self;
         }
         
-        public static T StyleId<T>(this T obj,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buidValue)
+        public static T StyleId<T>(this T self,
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
             where T : Microsoft.Maui.Controls.Element
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property StyleId");
-            var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.StyleId = builder.GetValue();
-            return obj;
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) self.StyleId = builder.GetValue();
+            return self;
         }
         
-        public static T Parent<T>(this T obj,
+        public static T Parent<T>(this T self,
             Microsoft.Maui.Controls.Element parent)
             where T : Microsoft.Maui.Controls.Element
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property Parent");
-            obj.Parent = parent;
-            return obj;
+            self.Parent = parent;
+            return self;
         }
         
-        public static T Parent<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.Element>, ValueBuilder<Microsoft.Maui.Controls.Element>> buidValue)
+        public static T Parent<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.Element>, ValueBuilder<Microsoft.Maui.Controls.Element>> buildValue)
             where T : Microsoft.Maui.Controls.Element
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property Parent");
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.Element>());
-            if (builder.ValueIsSet()) obj.Parent = builder.GetValue();
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Element>());
+            if (builder.ValueIsSet()) self.Parent = builder.GetValue();
+            return self;
         }
         
-        public static T EffectControlProvider<T>(this T obj,
+        public static T EffectControlProvider<T>(this T self,
             Microsoft.Maui.Controls.IEffectControlProvider effectControlProvider)
             where T : Microsoft.Maui.Controls.Element
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property EffectControlProvider");
-            obj.EffectControlProvider = effectControlProvider;
-            return obj;
+            self.EffectControlProvider = effectControlProvider;
+            return self;
         }
         
-        public static T EffectControlProvider<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.IEffectControlProvider>, ValueBuilder<Microsoft.Maui.Controls.IEffectControlProvider>> buidValue)
+        public static T EffectControlProvider<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.IEffectControlProvider>, ValueBuilder<Microsoft.Maui.Controls.IEffectControlProvider>> buildValue)
             where T : Microsoft.Maui.Controls.Element
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property EffectControlProvider");
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.IEffectControlProvider>());
-            if (builder.ValueIsSet()) obj.EffectControlProvider = builder.GetValue();
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.IEffectControlProvider>());
+            if (builder.ValueIsSet()) self.EffectControlProvider = builder.GetValue();
+            return self;
         }
         
-        public static T OnChildAdded<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.ElementEventArgs> handler)
+        public static T OnChildAdded<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.ElementEventArgs> handler)
             where T : Microsoft.Maui.Controls.Element
         {
-            obj.ChildAdded += handler;
-            return obj;
+            self.ChildAdded += handler;
+            return self;
         }
         
-        public static T OnChildAdded<T>(this T obj, System.Action<T> action)
+        public static T OnChildAdded<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Element
         {
-            obj.ChildAdded += (o, arg) => action(obj);
-            return obj;
+            self.ChildAdded += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnChildRemoved<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.ElementEventArgs> handler)
+        public static T OnChildRemoved<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.ElementEventArgs> handler)
             where T : Microsoft.Maui.Controls.Element
         {
-            obj.ChildRemoved += handler;
-            return obj;
+            self.ChildRemoved += handler;
+            return self;
         }
         
-        public static T OnChildRemoved<T>(this T obj, System.Action<T> action)
+        public static T OnChildRemoved<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Element
         {
-            obj.ChildRemoved += (o, arg) => action(obj);
-            return obj;
+            self.ChildRemoved += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnDescendantAdded<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.ElementEventArgs> handler)
+        public static T OnDescendantAdded<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.ElementEventArgs> handler)
             where T : Microsoft.Maui.Controls.Element
         {
-            obj.DescendantAdded += handler;
-            return obj;
+            self.DescendantAdded += handler;
+            return self;
         }
         
-        public static T OnDescendantAdded<T>(this T obj, System.Action<T> action)
+        public static T OnDescendantAdded<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Element
         {
-            obj.DescendantAdded += (o, arg) => action(obj);
-            return obj;
+            self.DescendantAdded += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnDescendantRemoved<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.ElementEventArgs> handler)
+        public static T OnDescendantRemoved<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.ElementEventArgs> handler)
             where T : Microsoft.Maui.Controls.Element
         {
-            obj.DescendantRemoved += handler;
-            return obj;
+            self.DescendantRemoved += handler;
+            return self;
         }
         
-        public static T OnDescendantRemoved<T>(this T obj, System.Action<T> action)
+        public static T OnDescendantRemoved<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Element
         {
-            obj.DescendantRemoved += (o, arg) => action(obj);
-            return obj;
+            self.DescendantRemoved += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnParentChanging<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.ParentChangingEventArgs> handler)
+        public static T OnParentChanging<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.ParentChangingEventArgs> handler)
             where T : Microsoft.Maui.Controls.Element
         {
-            obj.ParentChanging += handler;
-            return obj;
+            self.ParentChanging += handler;
+            return self;
         }
         
-        public static T OnParentChanging<T>(this T obj, System.Action<T> action)
+        public static T OnParentChanging<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Element
         {
-            obj.ParentChanging += (o, arg) => action(obj);
-            return obj;
+            self.ParentChanging += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnParentChanged<T>(this T obj, System.EventHandler handler)
+        public static T OnParentChanged<T>(this T self, System.EventHandler handler)
             where T : Microsoft.Maui.Controls.Element
         {
-            obj.ParentChanged += handler;
-            return obj;
+            self.ParentChanged += handler;
+            return self;
         }
         
-        public static T OnParentChanged<T>(this T obj, System.Action<T> action)
+        public static T OnParentChanged<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Element
         {
-            obj.ParentChanged += (o, arg) => action(obj);
-            return obj;
+            self.ParentChanged += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnHandlerChanging<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.HandlerChangingEventArgs> handler)
+        public static T OnHandlerChanging<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.HandlerChangingEventArgs> handler)
             where T : Microsoft.Maui.Controls.Element
         {
-            obj.HandlerChanging += handler;
-            return obj;
+            self.HandlerChanging += handler;
+            return self;
         }
         
-        public static T OnHandlerChanging<T>(this T obj, System.Action<T> action)
+        public static T OnHandlerChanging<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Element
         {
-            obj.HandlerChanging += (o, arg) => action(obj);
-            return obj;
+            self.HandlerChanging += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnHandlerChanged<T>(this T obj, System.EventHandler handler)
+        public static T OnHandlerChanged<T>(this T self, System.EventHandler handler)
             where T : Microsoft.Maui.Controls.Element
         {
-            obj.HandlerChanged += handler;
-            return obj;
+            self.HandlerChanged += handler;
+            return self;
         }
         
-        public static T OnHandlerChanged<T>(this T obj, System.Action<T> action)
+        public static T OnHandlerChanged<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Element
         {
-            obj.HandlerChanged += (o, arg) => action(obj);
-            return obj;
+            self.HandlerChanged += (o, arg) => action(self);
+            return self;
         }
         
     }

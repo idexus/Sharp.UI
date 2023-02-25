@@ -7,7 +7,9 @@
 
 namespace Sharp.UI
 {
-	public partial class DatePicker
+	using Sharp.UI;
+
+    public partial class DatePicker
 	{
 
         // ----- constructors -----

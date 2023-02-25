@@ -8,44 +8,43 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class EventTriggerExtension
     {
-        public static Microsoft.Maui.Controls.EventTrigger Actions(this Microsoft.Maui.Controls.EventTrigger obj,
+        public static Microsoft.Maui.Controls.EventTrigger Actions(this Microsoft.Maui.Controls.EventTrigger self,
             IList<Microsoft.Maui.Controls.TriggerAction> actions)
         {
             foreach (var item in actions)
-                obj.Actions.Add(item);
-            return obj;
+                self.Actions.Add(item);
+            return self;
         }
 
-        public static Microsoft.Maui.Controls.EventTrigger Actions(this Microsoft.Maui.Controls.EventTrigger obj,
+        public static Microsoft.Maui.Controls.EventTrigger Actions(this Microsoft.Maui.Controls.EventTrigger self,
             params Microsoft.Maui.Controls.TriggerAction[] actions)
         {
             foreach (var item in actions)
-                obj.Actions.Add(item);
-            return obj;
+                self.Actions.Add(item);
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.EventTrigger Event(this Microsoft.Maui.Controls.EventTrigger obj,
+        public static Microsoft.Maui.Controls.EventTrigger Event(this Microsoft.Maui.Controls.EventTrigger self,
             string @event)
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property Event");
-            obj.Event = @event;
-            return obj;
+            self.Event = @event;
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.EventTrigger Event(this Microsoft.Maui.Controls.EventTrigger obj,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buidValue)
+        public static Microsoft.Maui.Controls.EventTrigger Event(this Microsoft.Maui.Controls.EventTrigger self,
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property Event");
-            var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.Event = builder.GetValue();
-            return obj;
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) self.Event = builder.GetValue();
+            return self;
         }
         
     }

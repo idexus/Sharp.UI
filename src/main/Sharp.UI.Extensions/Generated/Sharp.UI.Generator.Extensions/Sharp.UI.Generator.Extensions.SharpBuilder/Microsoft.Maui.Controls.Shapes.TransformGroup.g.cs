@@ -8,33 +8,32 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class TransformGroupExtension
     {
-        public static Microsoft.Maui.Controls.Shapes.TransformGroup Children(this Microsoft.Maui.Controls.Shapes.TransformGroup obj,
+        public static Microsoft.Maui.Controls.Shapes.TransformGroup Children(this Microsoft.Maui.Controls.Shapes.TransformGroup self,
             IList<Microsoft.Maui.Controls.Shapes.Transform> children)
         {
             foreach (var item in children)
-                obj.Children.Add(item);
-            return obj;
+                self.Children.Add(item);
+            return self;
         }
 
-        public static Microsoft.Maui.Controls.Shapes.TransformGroup Children(this Microsoft.Maui.Controls.Shapes.TransformGroup obj,
+        public static Microsoft.Maui.Controls.Shapes.TransformGroup Children(this Microsoft.Maui.Controls.Shapes.TransformGroup self,
             params Microsoft.Maui.Controls.Shapes.Transform[] children)
         {
             foreach (var item in children)
-                obj.Children.Add(item);
-            return obj;
+                self.Children.Add(item);
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.TransformGroup Children(this Microsoft.Maui.Controls.Shapes.TransformGroup obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.Shapes.TransformCollection>, BindingBuilder<Microsoft.Maui.Controls.Shapes.TransformCollection>> buidBinding)
+        public static Microsoft.Maui.Controls.Shapes.TransformGroup Children(this Microsoft.Maui.Controls.Shapes.TransformGroup self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.Shapes.TransformCollection>, BindingBuilder<Microsoft.Maui.Controls.Shapes.TransformCollection>> buildBinding)
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.Shapes.TransformCollection>(obj, Microsoft.Maui.Controls.Shapes.TransformGroup.ChildrenProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Shapes.TransformCollection>(self, Microsoft.Maui.Controls.Shapes.TransformGroup.ChildrenProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
     }

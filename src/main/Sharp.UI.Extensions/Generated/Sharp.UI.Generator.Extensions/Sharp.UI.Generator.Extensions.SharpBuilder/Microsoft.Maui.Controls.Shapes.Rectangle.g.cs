@@ -8,32 +8,31 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class RectangleExtension
     {
-        public static Microsoft.Maui.Controls.Shapes.Rectangle RadiusX(this Microsoft.Maui.Controls.Shapes.Rectangle obj,
+        public static Microsoft.Maui.Controls.Shapes.Rectangle RadiusX(this Microsoft.Maui.Controls.Shapes.Rectangle self,
             double radiusX)
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Rectangle.RadiusXProperty, radiusX);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Rectangle.RadiusXProperty, radiusX);
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.Rectangle RadiusX(this Microsoft.Maui.Controls.Shapes.Rectangle obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static Microsoft.Maui.Controls.Shapes.Rectangle RadiusX(this Microsoft.Maui.Controls.Shapes.Rectangle self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Rectangle.RadiusXProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Rectangle.RadiusXProperty, builder.GetValue());
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.Rectangle RadiusX(this Microsoft.Maui.Controls.Shapes.Rectangle obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static Microsoft.Maui.Controls.Shapes.Rectangle RadiusX(this Microsoft.Maui.Controls.Shapes.Rectangle self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Shapes.Rectangle.RadiusXProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.Rectangle.RadiusXProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
         public static Task<bool> AnimateRadiusXTo(this Microsoft.Maui.Controls.Shapes.Rectangle self, double value, uint length = 250, Easing? easing = null)
@@ -44,27 +43,27 @@ namespace Sharp.UI
             return Transformations.AnimateAsync<double>(self, "AnimateRadiusXTo", transform, callback, length, easing);
         }
         
-        public static Microsoft.Maui.Controls.Shapes.Rectangle RadiusY(this Microsoft.Maui.Controls.Shapes.Rectangle obj,
+        public static Microsoft.Maui.Controls.Shapes.Rectangle RadiusY(this Microsoft.Maui.Controls.Shapes.Rectangle self,
             double radiusY)
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Rectangle.RadiusYProperty, radiusY);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Rectangle.RadiusYProperty, radiusY);
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.Rectangle RadiusY(this Microsoft.Maui.Controls.Shapes.Rectangle obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static Microsoft.Maui.Controls.Shapes.Rectangle RadiusY(this Microsoft.Maui.Controls.Shapes.Rectangle self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Rectangle.RadiusYProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Rectangle.RadiusYProperty, builder.GetValue());
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.Rectangle RadiusY(this Microsoft.Maui.Controls.Shapes.Rectangle obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static Microsoft.Maui.Controls.Shapes.Rectangle RadiusY(this Microsoft.Maui.Controls.Shapes.Rectangle self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Shapes.Rectangle.RadiusYProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.Rectangle.RadiusYProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
         public static Task<bool> AnimateRadiusYTo(this Microsoft.Maui.Controls.Shapes.Rectangle self, double value, uint length = 250, Easing? easing = null)

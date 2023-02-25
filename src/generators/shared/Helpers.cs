@@ -101,6 +101,18 @@ namespace Sharp.UI.Generator
             return isNavigableElement;
         }
 
+        public static bool IsBaseImplementationOfInterface(INamedTypeSymbol symbol, string name)
+        {
+            var count = 0;
+            LoopDownToObject(symbol, type =>
+            {
+                if (type.Interfaces.Any(e => e.Name.Equals(name))) count++;
+                return false;
+            });
+
+            return count == 1;
+        }
+
         public static string GetNormalizedFileName(INamedTypeSymbol type)
         {
             var tail = type.IsGenericType ? $".{type.TypeArguments.FirstOrDefault().Name}" : "";

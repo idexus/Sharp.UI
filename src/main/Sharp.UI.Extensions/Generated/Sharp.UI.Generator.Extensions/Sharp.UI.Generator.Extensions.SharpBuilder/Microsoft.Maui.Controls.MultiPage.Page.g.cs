@@ -8,161 +8,160 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class MultiPageOfPageExtension
     {
-        public static T ItemsSource<T>(this T obj,
+        public static T ItemsSource<T>(this T self,
             System.Collections.IEnumerable itemsSource)
             where T : Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.ItemsSourceProperty, itemsSource);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.ItemsSourceProperty, itemsSource);
+            return self;
         }
         
-        public static T ItemsSource<T>(this T obj,
-            System.Func<ValueBuilder<System.Collections.IEnumerable>, ValueBuilder<System.Collections.IEnumerable>> buidValue)
+        public static T ItemsSource<T>(this T self,
+            System.Func<ValueBuilder<System.Collections.IEnumerable>, ValueBuilder<System.Collections.IEnumerable>> buildValue)
             where T : Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>
         {
-            var builder = buidValue(new ValueBuilder<System.Collections.IEnumerable>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.ItemsSourceProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<System.Collections.IEnumerable>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.ItemsSourceProperty, builder.GetValue());
+            return self;
         }
         
-        public static T ItemsSource<T>(this T obj,
-            System.Func<BindingBuilder<System.Collections.IEnumerable>, BindingBuilder<System.Collections.IEnumerable>> buidBinding)
+        public static T ItemsSource<T>(this T self,
+            System.Func<BindingBuilder<System.Collections.IEnumerable>, BindingBuilder<System.Collections.IEnumerable>> buildBinding)
             where T : Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>
         {
-            var builder = buidBinding(new BindingBuilder<System.Collections.IEnumerable>(obj, Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.ItemsSourceProperty));
+            var builder = buildBinding(new BindingBuilder<System.Collections.IEnumerable>(self, Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.ItemsSourceProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T ItemTemplate<T>(this T obj,
+        public static T ItemTemplate<T>(this T self,
             Microsoft.Maui.Controls.DataTemplate itemTemplate)
             where T : Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.ItemTemplateProperty, itemTemplate);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.ItemTemplateProperty, itemTemplate);
+            return self;
         }
         
-        public static T ItemTemplate<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.DataTemplate>, ValueBuilder<Microsoft.Maui.Controls.DataTemplate>> buidValue)
+        public static T ItemTemplate<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.DataTemplate>, ValueBuilder<Microsoft.Maui.Controls.DataTemplate>> buildValue)
             where T : Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.ItemTemplateProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.ItemTemplateProperty, builder.GetValue());
+            return self;
         }
         
-        public static T ItemTemplate<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buidBinding)
+        public static T ItemTemplate<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buildBinding)
             where T : Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(obj, Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.ItemTemplateProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.ItemTemplateProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T ItemTemplate<T>(this T obj, System.Func<object> loadTemplate)
+        public static T ItemTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>
         {
-            obj.ItemTemplate = new DataTemplate(loadTemplate);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.ItemTemplateProperty, new DataTemplate(loadTemplate));
+            return self;
         }
         
-        public static T SelectedItem<T>(this T obj,
+        public static T SelectedItem<T>(this T self,
             object selectedItem)
             where T : Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.SelectedItemProperty, selectedItem);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.SelectedItemProperty, selectedItem);
+            return self;
         }
         
-        public static T SelectedItem<T>(this T obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+        public static T SelectedItem<T>(this T self,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buildValue)
             where T : Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>
         {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.SelectedItemProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.SelectedItemProperty, builder.GetValue());
+            return self;
         }
         
-        public static T SelectedItem<T>(this T obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+        public static T SelectedItem<T>(this T self,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
             where T : Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>
         {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.SelectedItemProperty));
+            var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.SelectedItemProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T CurrentPage<T>(this T obj,
+        public static T CurrentPage<T>(this T self,
             Microsoft.Maui.Controls.Page currentPage)
             where T : Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property CurrentPage");
-            obj.CurrentPage = currentPage;
-            return obj;
+            self.CurrentPage = currentPage;
+            return self;
         }
         
-        public static T CurrentPage<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.Page>, ValueBuilder<Microsoft.Maui.Controls.Page>> buidValue)
+        public static T CurrentPage<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.Page>, ValueBuilder<Microsoft.Maui.Controls.Page>> buildValue)
             where T : Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property CurrentPage");
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.Page>());
-            if (builder.ValueIsSet()) obj.CurrentPage = builder.GetValue();
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Page>());
+            if (builder.ValueIsSet()) self.CurrentPage = builder.GetValue();
+            return self;
         }
         
-        public static T Children<T>(this T obj,
+        public static T Children<T>(this T self,
             IList<Microsoft.Maui.Controls.Page> children)
             where T : Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>
         {
             foreach (var item in children)
-                obj.Children.Add(item);
-            return obj;
+                self.Children.Add(item);
+            return self;
         }
 
-        public static T Children<T>(this T obj,
+        public static T Children<T>(this T self,
             params Microsoft.Maui.Controls.Page[] children)
             where T : Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>
         {
             foreach (var item in children)
-                obj.Children.Add(item);
-            return obj;
+                self.Children.Add(item);
+            return self;
         }
         
-        public static T OnCurrentPageChanged<T>(this T obj, System.EventHandler handler)
+        public static T OnCurrentPageChanged<T>(this T self, System.EventHandler handler)
             where T : Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>
         {
-            obj.CurrentPageChanged += handler;
-            return obj;
+            self.CurrentPageChanged += handler;
+            return self;
         }
         
-        public static T OnCurrentPageChanged<T>(this T obj, System.Action<T> action)
+        public static T OnCurrentPageChanged<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>
         {
-            obj.CurrentPageChanged += (o, arg) => action(obj);
-            return obj;
+            self.CurrentPageChanged += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnPagesChanged<T>(this T obj, System.Collections.Specialized.NotifyCollectionChangedEventHandler handler)
+        public static T OnPagesChanged<T>(this T self, System.Collections.Specialized.NotifyCollectionChangedEventHandler handler)
             where T : Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>
         {
-            obj.PagesChanged += handler;
-            return obj;
+            self.PagesChanged += handler;
+            return self;
         }
         
-        public static T OnPagesChanged<T>(this T obj, System.Action<T> action)
+        public static T OnPagesChanged<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>
         {
-            obj.PagesChanged += (o, arg) => action(obj);
-            return obj;
+            self.PagesChanged += (o, arg) => action(self);
+            return self;
         }
         
     }

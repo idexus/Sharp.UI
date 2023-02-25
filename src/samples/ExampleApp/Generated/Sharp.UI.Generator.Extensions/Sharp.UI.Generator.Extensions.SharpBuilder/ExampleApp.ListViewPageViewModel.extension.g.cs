@@ -8,35 +8,35 @@
 
 namespace ExampleApp
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    using Sharp.UI;
+    
     public static partial class ListViewPageViewModelExtension
     {
-        public static T SimpleData<T>(this T obj,
+        public static T SimpleData<T>(this T self,
             System.Collections.Generic.List<ExampleApp.DataModel> simpleData)
             where T : ExampleApp.ListViewPageViewModel
         {
-            obj.SetValueOrSetter(ExampleApp.ListViewPageViewModel.SimpleDataProperty, simpleData);
-            return obj;
+            self.SetValueOrAddSetter(ExampleApp.ListViewPageViewModel.SimpleDataProperty, simpleData);
+            return self;
         }
         
-        public static T SimpleData<T>(this T obj,
-            System.Func<ValueBuilder<System.Collections.Generic.List<ExampleApp.DataModel>>, ValueBuilder<System.Collections.Generic.List<ExampleApp.DataModel>>> buidValue)
+        public static T SimpleData<T>(this T self,
+            System.Func<ValueBuilder<System.Collections.Generic.List<ExampleApp.DataModel>>, ValueBuilder<System.Collections.Generic.List<ExampleApp.DataModel>>> buildValue)
             where T : ExampleApp.ListViewPageViewModel
         {
-            var builder = buidValue(new ValueBuilder<System.Collections.Generic.List<ExampleApp.DataModel>>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(ExampleApp.ListViewPageViewModel.SimpleDataProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<System.Collections.Generic.List<ExampleApp.DataModel>>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(ExampleApp.ListViewPageViewModel.SimpleDataProperty, builder.GetValue());
+            return self;
         }
         
-        public static T SimpleData<T>(this T obj,
-            System.Func<BindingBuilder<System.Collections.Generic.List<ExampleApp.DataModel>>, BindingBuilder<System.Collections.Generic.List<ExampleApp.DataModel>>> buidBinding)
+        public static T SimpleData<T>(this T self,
+            System.Func<BindingBuilder<System.Collections.Generic.List<ExampleApp.DataModel>>, BindingBuilder<System.Collections.Generic.List<ExampleApp.DataModel>>> buildBinding)
             where T : ExampleApp.ListViewPageViewModel
         {
-            var builder = buidBinding(new BindingBuilder<System.Collections.Generic.List<ExampleApp.DataModel>>(obj, ExampleApp.ListViewPageViewModel.SimpleDataProperty));
+            var builder = buildBinding(new BindingBuilder<System.Collections.Generic.List<ExampleApp.DataModel>>(self, ExampleApp.ListViewPageViewModel.SimpleDataProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
     }

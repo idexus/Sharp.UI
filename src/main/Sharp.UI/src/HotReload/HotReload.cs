@@ -76,7 +76,7 @@ namespace Sharp.UI
             return stream.WriteAsync(messageBytes, cancellationToken);
         }
 
-        internal static void InitSharpUIHotReload<T>(IPAddress[] IdeIPs)
+        internal static void InitHotReloadKit<T>(IPAddress[] IdeIPs)
         {
             HotReloader.Init<T>(IdeIPs, platformName: SharpPlatform.Name);
             HotReloader.RequestAdditionalTypes = () => registeredActivePages.Select(e => e.GetType().FullName).ToArray();

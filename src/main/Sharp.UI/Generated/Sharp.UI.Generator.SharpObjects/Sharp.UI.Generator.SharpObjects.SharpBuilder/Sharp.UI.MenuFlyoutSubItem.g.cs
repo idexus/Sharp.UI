@@ -12,7 +12,9 @@ using System.Collections.Generic;
 
 namespace Sharp.UI
 {
-	public partial class MenuFlyoutSubItem : IList<Microsoft.Maui.IMenuElement>
+	using Sharp.UI;
+
+    public partial class MenuFlyoutSubItem : IList<Microsoft.Maui.IMenuElement>
 	{
 
         // ----- constructors -----

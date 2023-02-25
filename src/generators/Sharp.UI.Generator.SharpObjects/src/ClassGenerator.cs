@@ -150,13 +150,22 @@ namespace Sharp.UI.Generator.SharpObjects
             context.AddSource($"{mainSymbol.ContainingNamespace.ToDisplayString()}.{Helpers.GetNormalizedFileName(mainSymbol)}.g.cs", builder.ToString());
         }
 
+        public string GetUsingString()
+        {
+            if (mainSymbol.ContainingNamespace.ToDisplayString().Equals("Sharp.UI"))
+                return  $@"using Sharp.UI;
+
+    ";
+            return "";
+        }
+
         void GenerateClassNamespace()
         {
             this.GenerateContainerUsingsIfNeeded();
             builder.AppendLine($@"
 namespace {mainSymbol.ContainingNamespace.ToDisplayString()}
 {{
-	{Shared.GetUsingString(mainSymbol)}public partial class {fullSymbolName}{BaseString()}
+	{GetUsingString()}public partial class {fullSymbolName}{BaseString()}
 	{{");
             GenerateClassBody();
             builder.AppendLine($@"

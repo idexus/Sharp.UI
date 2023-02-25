@@ -12,7 +12,9 @@ using System.Collections.Generic;
 
 namespace Sharp.UI
 {
-	public partial class LinearGradientBrush : IList<Microsoft.Maui.Controls.GradientStop>
+	using Sharp.UI;
+
+    public partial class LinearGradientBrush : IList<Microsoft.Maui.Controls.GradientStop>
 	{
 
         // ----- constructors -----

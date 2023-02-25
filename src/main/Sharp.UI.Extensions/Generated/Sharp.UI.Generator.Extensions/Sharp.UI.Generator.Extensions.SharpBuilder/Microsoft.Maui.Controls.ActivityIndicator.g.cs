@@ -8,35 +8,34 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class ActivityIndicatorExtension
     {
-        public static T Color<T>(this T obj,
+        public static T Color<T>(this T self,
             Microsoft.Maui.Graphics.Color color)
             where T : Microsoft.Maui.Controls.ActivityIndicator
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.ActivityIndicator.ColorProperty, color);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ActivityIndicator.ColorProperty, color);
+            return self;
         }
         
-        public static T Color<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buidValue)
+        public static T Color<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : Microsoft.Maui.Controls.ActivityIndicator
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ActivityIndicator.ColorProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ActivityIndicator.ColorProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Color<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buidBinding)
+        public static T Color<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
             where T : Microsoft.Maui.Controls.ActivityIndicator
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(obj, Microsoft.Maui.Controls.ActivityIndicator.ColorProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.ActivityIndicator.ColorProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
         public static Task<bool> AnimateColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
@@ -48,30 +47,30 @@ namespace Sharp.UI
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateColorTo", transform, callback, length, easing);
         }
         
-        public static T IsRunning<T>(this T obj,
+        public static T IsRunning<T>(this T self,
             bool isRunning)
             where T : Microsoft.Maui.Controls.ActivityIndicator
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.ActivityIndicator.IsRunningProperty, isRunning);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ActivityIndicator.IsRunningProperty, isRunning);
+            return self;
         }
         
-        public static T IsRunning<T>(this T obj,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
+        public static T IsRunning<T>(this T self,
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Microsoft.Maui.Controls.ActivityIndicator
         {
-            var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ActivityIndicator.IsRunningProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ActivityIndicator.IsRunningProperty, builder.GetValue());
+            return self;
         }
         
-        public static T IsRunning<T>(this T obj,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buidBinding)
+        public static T IsRunning<T>(this T self,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Microsoft.Maui.Controls.ActivityIndicator
         {
-            var builder = buidBinding(new BindingBuilder<bool>(obj, Microsoft.Maui.Controls.ActivityIndicator.IsRunningProperty));
+            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.ActivityIndicator.IsRunningProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
     }

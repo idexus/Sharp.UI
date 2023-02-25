@@ -8,32 +8,31 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class FileImageSourceExtension
     {
-        public static Microsoft.Maui.Controls.FileImageSource File(this Microsoft.Maui.Controls.FileImageSource obj,
+        public static Microsoft.Maui.Controls.FileImageSource File(this Microsoft.Maui.Controls.FileImageSource self,
             string file)
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.FileImageSource.FileProperty, file);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.FileImageSource.FileProperty, file);
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.FileImageSource File(this Microsoft.Maui.Controls.FileImageSource obj,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buidValue)
+        public static Microsoft.Maui.Controls.FileImageSource File(this Microsoft.Maui.Controls.FileImageSource self,
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
         {
-            var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.FileImageSource.FileProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.FileImageSource.FileProperty, builder.GetValue());
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.FileImageSource File(this Microsoft.Maui.Controls.FileImageSource obj,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buidBinding)
+        public static Microsoft.Maui.Controls.FileImageSource File(this Microsoft.Maui.Controls.FileImageSource self,
+            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
         {
-            var builder = buidBinding(new BindingBuilder<string>(obj, Microsoft.Maui.Controls.FileImageSource.FileProperty));
+            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.FileImageSource.FileProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
     }

@@ -12,7 +12,9 @@ using System.Collections.Generic;
 
 namespace Sharp.UI
 {
-	public partial class ViewCell : IEnumerable
+	using Sharp.UI;
+
+    public partial class ViewCell : IEnumerable
 	{
 
         // ----- constructors -----

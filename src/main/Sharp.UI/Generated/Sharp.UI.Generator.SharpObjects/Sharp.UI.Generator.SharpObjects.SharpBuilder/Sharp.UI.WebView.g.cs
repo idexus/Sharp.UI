@@ -7,7 +7,9 @@
 
 namespace Sharp.UI
 {
-	public partial class WebView
+	using Sharp.UI;
+
+    public partial class WebView
 	{
 
         // ----- constructors -----

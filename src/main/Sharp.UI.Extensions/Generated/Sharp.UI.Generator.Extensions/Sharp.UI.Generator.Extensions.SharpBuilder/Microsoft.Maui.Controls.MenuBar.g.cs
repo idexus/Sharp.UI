@@ -8,35 +8,34 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class MenuBarExtension
     {
-        public static T IsEnabled<T>(this T obj,
+        public static T IsEnabled<T>(this T self,
             bool isEnabled)
             where T : Microsoft.Maui.Controls.MenuBar
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.MenuBar.IsEnabledProperty, isEnabled);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.MenuBar.IsEnabledProperty, isEnabled);
+            return self;
         }
         
-        public static T IsEnabled<T>(this T obj,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
+        public static T IsEnabled<T>(this T self,
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Microsoft.Maui.Controls.MenuBar
         {
-            var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.MenuBar.IsEnabledProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.MenuBar.IsEnabledProperty, builder.GetValue());
+            return self;
         }
         
-        public static T IsEnabled<T>(this T obj,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buidBinding)
+        public static T IsEnabled<T>(this T self,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Microsoft.Maui.Controls.MenuBar
         {
-            var builder = buidBinding(new BindingBuilder<bool>(obj, Microsoft.Maui.Controls.MenuBar.IsEnabledProperty));
+            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.MenuBar.IsEnabledProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
     }

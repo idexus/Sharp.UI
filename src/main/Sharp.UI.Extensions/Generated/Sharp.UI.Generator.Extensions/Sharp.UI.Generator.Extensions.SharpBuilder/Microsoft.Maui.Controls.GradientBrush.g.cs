@@ -8,50 +8,49 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class GradientBrushExtension
     {
-        public static T GradientStops<T>(this T obj,
+        public static T GradientStops<T>(this T self,
             IList<Microsoft.Maui.Controls.GradientStop> gradientStops)
             where T : Microsoft.Maui.Controls.GradientBrush
         {
             foreach (var item in gradientStops)
-                obj.GradientStops.Add(item);
-            return obj;
+                self.GradientStops.Add(item);
+            return self;
         }
 
-        public static T GradientStops<T>(this T obj,
+        public static T GradientStops<T>(this T self,
             params Microsoft.Maui.Controls.GradientStop[] gradientStops)
             where T : Microsoft.Maui.Controls.GradientBrush
         {
             foreach (var item in gradientStops)
-                obj.GradientStops.Add(item);
-            return obj;
+                self.GradientStops.Add(item);
+            return self;
         }
         
-        public static T GradientStops<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.GradientStopCollection>, BindingBuilder<Microsoft.Maui.Controls.GradientStopCollection>> buidBinding)
+        public static T GradientStops<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.GradientStopCollection>, BindingBuilder<Microsoft.Maui.Controls.GradientStopCollection>> buildBinding)
             where T : Microsoft.Maui.Controls.GradientBrush
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.GradientStopCollection>(obj, Microsoft.Maui.Controls.GradientBrush.GradientStopsProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.GradientStopCollection>(self, Microsoft.Maui.Controls.GradientBrush.GradientStopsProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T OnInvalidateGradientBrushRequested<T>(this T obj, System.EventHandler handler)
+        public static T OnInvalidateGradientBrushRequested<T>(this T self, System.EventHandler handler)
             where T : Microsoft.Maui.Controls.GradientBrush
         {
-            obj.InvalidateGradientBrushRequested += handler;
-            return obj;
+            self.InvalidateGradientBrushRequested += handler;
+            return self;
         }
         
-        public static T OnInvalidateGradientBrushRequested<T>(this T obj, System.Action<T> action)
+        public static T OnInvalidateGradientBrushRequested<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.GradientBrush
         {
-            obj.InvalidateGradientBrushRequested += (o, arg) => action(obj);
-            return obj;
+            self.InvalidateGradientBrushRequested += (o, arg) => action(self);
+            return self;
         }
         
     }

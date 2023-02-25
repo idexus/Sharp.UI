@@ -54,10 +54,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\main\Sharp.UI\Sharp.UI.csproj" />
 		<ProjectReference Include="..\..\..\libs\HotReloadKit\src\HotReloadKit.Generator\HotReloadKit.Generator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
 		<ProjectReference Include="..\..\generators\Sharp.UI.Generator.Extensions\Sharp.UI.Generator.Extensions.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
 		<ProjectReference Include="..\..\generators\Sharp.UI.Generator.SharpObjects\Sharp.UI.Generator.SharpObjects.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+		<ProjectReference Include="..\..\main\Sharp.UI\Sharp.UI.csproj" />
 	</ItemGroup> 
 
 	<PropertyGroup>
@@ -65,6 +65,9 @@
 		<CompilerGeneratedFilesOutputPath>Generated</CompilerGeneratedFilesOutputPath>
     </PropertyGroup>
 
+	<ItemGroup>
+	  <None Remove="Pages\Navigation\" />
+	</ItemGroup>
 	<ItemGroup>
 		<Compile Remove="$(CompilerGeneratedFilesOutputPath)/**/*.cs" />
 	    <None Include="$(CompilerGeneratedFilesOutputPath)/Sharp.UI.Generator.SharpObjects/**/*.cs" />
@@ -90,5 +93,8 @@
 	  <None Update="Platforms\Windows\Package.appxmanifest">
 	    <SubType>Designer</SubType>
 	  </None>
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Pages\Navigation\" />
 	</ItemGroup>
 </Project>

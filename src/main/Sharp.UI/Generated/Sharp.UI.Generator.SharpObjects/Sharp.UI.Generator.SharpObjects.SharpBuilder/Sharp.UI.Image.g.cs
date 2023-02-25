@@ -7,7 +7,9 @@
 
 namespace Sharp.UI
 {
-	public partial class Image
+	using Sharp.UI;
+
+    public partial class Image
 	{
 
         // ----- constructors -----

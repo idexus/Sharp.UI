@@ -8,45 +8,44 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class TriggerBaseExtension
     {
-        public static T EnterActions<T>(this T obj,
+        public static T EnterActions<T>(this T self,
             IList<Microsoft.Maui.Controls.TriggerAction> enterActions)
             where T : Microsoft.Maui.Controls.TriggerBase
         {
             foreach (var item in enterActions)
-                obj.EnterActions.Add(item);
-            return obj;
+                self.EnterActions.Add(item);
+            return self;
         }
 
-        public static T EnterActions<T>(this T obj,
+        public static T EnterActions<T>(this T self,
             params Microsoft.Maui.Controls.TriggerAction[] enterActions)
             where T : Microsoft.Maui.Controls.TriggerBase
         {
             foreach (var item in enterActions)
-                obj.EnterActions.Add(item);
-            return obj;
+                self.EnterActions.Add(item);
+            return self;
         }
         
-        public static T ExitActions<T>(this T obj,
+        public static T ExitActions<T>(this T self,
             IList<Microsoft.Maui.Controls.TriggerAction> exitActions)
             where T : Microsoft.Maui.Controls.TriggerBase
         {
             foreach (var item in exitActions)
-                obj.ExitActions.Add(item);
-            return obj;
+                self.ExitActions.Add(item);
+            return self;
         }
 
-        public static T ExitActions<T>(this T obj,
+        public static T ExitActions<T>(this T self,
             params Microsoft.Maui.Controls.TriggerAction[] exitActions)
             where T : Microsoft.Maui.Controls.TriggerBase
         {
             foreach (var item in exitActions)
-                obj.ExitActions.Add(item);
-            return obj;
+                self.ExitActions.Add(item);
+            return self;
         }
         
     }

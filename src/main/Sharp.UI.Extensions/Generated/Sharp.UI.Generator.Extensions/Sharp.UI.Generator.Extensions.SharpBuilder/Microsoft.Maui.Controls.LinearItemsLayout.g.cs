@@ -8,35 +8,34 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class LinearItemsLayoutExtension
     {
-        public static T ItemSpacing<T>(this T obj,
+        public static T ItemSpacing<T>(this T self,
             double itemSpacing)
             where T : Microsoft.Maui.Controls.LinearItemsLayout
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.LinearItemsLayout.ItemSpacingProperty, itemSpacing);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.LinearItemsLayout.ItemSpacingProperty, itemSpacing);
+            return self;
         }
         
-        public static T ItemSpacing<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T ItemSpacing<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Microsoft.Maui.Controls.LinearItemsLayout
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.LinearItemsLayout.ItemSpacingProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.LinearItemsLayout.ItemSpacingProperty, builder.GetValue());
+            return self;
         }
         
-        public static T ItemSpacing<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T ItemSpacing<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Microsoft.Maui.Controls.LinearItemsLayout
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.LinearItemsLayout.ItemSpacingProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.LinearItemsLayout.ItemSpacingProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
     }

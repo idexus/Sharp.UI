@@ -8,32 +8,31 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class OrientationStateTriggerExtension
     {
-        public static Microsoft.Maui.Controls.OrientationStateTrigger Orientation(this Microsoft.Maui.Controls.OrientationStateTrigger obj,
+        public static Microsoft.Maui.Controls.OrientationStateTrigger Orientation(this Microsoft.Maui.Controls.OrientationStateTrigger self,
             Microsoft.Maui.Devices.DisplayOrientation orientation)
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.OrientationStateTrigger.OrientationProperty, orientation);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.OrientationStateTrigger.OrientationProperty, orientation);
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.OrientationStateTrigger Orientation(this Microsoft.Maui.Controls.OrientationStateTrigger obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Devices.DisplayOrientation>, ValueBuilder<Microsoft.Maui.Devices.DisplayOrientation>> buidValue)
+        public static Microsoft.Maui.Controls.OrientationStateTrigger Orientation(this Microsoft.Maui.Controls.OrientationStateTrigger self,
+            System.Func<ValueBuilder<Microsoft.Maui.Devices.DisplayOrientation>, ValueBuilder<Microsoft.Maui.Devices.DisplayOrientation>> buildValue)
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Devices.DisplayOrientation>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.OrientationStateTrigger.OrientationProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Devices.DisplayOrientation>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.OrientationStateTrigger.OrientationProperty, builder.GetValue());
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.OrientationStateTrigger Orientation(this Microsoft.Maui.Controls.OrientationStateTrigger obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Devices.DisplayOrientation>, BindingBuilder<Microsoft.Maui.Devices.DisplayOrientation>> buidBinding)
+        public static Microsoft.Maui.Controls.OrientationStateTrigger Orientation(this Microsoft.Maui.Controls.OrientationStateTrigger self,
+            System.Func<BindingBuilder<Microsoft.Maui.Devices.DisplayOrientation>, BindingBuilder<Microsoft.Maui.Devices.DisplayOrientation>> buildBinding)
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Devices.DisplayOrientation>(obj, Microsoft.Maui.Controls.OrientationStateTrigger.OrientationProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Devices.DisplayOrientation>(self, Microsoft.Maui.Controls.OrientationStateTrigger.OrientationProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
     }

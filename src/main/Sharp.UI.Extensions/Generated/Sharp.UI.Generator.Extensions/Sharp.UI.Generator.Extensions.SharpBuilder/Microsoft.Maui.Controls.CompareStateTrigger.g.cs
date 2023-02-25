@@ -8,55 +8,54 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class CompareStateTriggerExtension
     {
-        public static Microsoft.Maui.Controls.CompareStateTrigger Property(this Microsoft.Maui.Controls.CompareStateTrigger obj,
+        public static Microsoft.Maui.Controls.CompareStateTrigger Property(this Microsoft.Maui.Controls.CompareStateTrigger self,
             object property)
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.CompareStateTrigger.PropertyProperty, property);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.CompareStateTrigger.PropertyProperty, property);
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.CompareStateTrigger Property(this Microsoft.Maui.Controls.CompareStateTrigger obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+        public static Microsoft.Maui.Controls.CompareStateTrigger Property(this Microsoft.Maui.Controls.CompareStateTrigger self,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buildValue)
         {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.CompareStateTrigger.PropertyProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.CompareStateTrigger.PropertyProperty, builder.GetValue());
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.CompareStateTrigger Property(this Microsoft.Maui.Controls.CompareStateTrigger obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+        public static Microsoft.Maui.Controls.CompareStateTrigger Property(this Microsoft.Maui.Controls.CompareStateTrigger self,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
         {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.CompareStateTrigger.PropertyProperty));
+            var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.CompareStateTrigger.PropertyProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.CompareStateTrigger Value(this Microsoft.Maui.Controls.CompareStateTrigger obj,
+        public static Microsoft.Maui.Controls.CompareStateTrigger Value(this Microsoft.Maui.Controls.CompareStateTrigger self,
             object value)
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.CompareStateTrigger.ValueProperty, value);
-            return obj;
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.CompareStateTrigger.ValueProperty, value);
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.CompareStateTrigger Value(this Microsoft.Maui.Controls.CompareStateTrigger obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+        public static Microsoft.Maui.Controls.CompareStateTrigger Value(this Microsoft.Maui.Controls.CompareStateTrigger self,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buildValue)
         {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.CompareStateTrigger.ValueProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.CompareStateTrigger.ValueProperty, builder.GetValue());
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.CompareStateTrigger Value(this Microsoft.Maui.Controls.CompareStateTrigger obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+        public static Microsoft.Maui.Controls.CompareStateTrigger Value(this Microsoft.Maui.Controls.CompareStateTrigger self,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
         {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.CompareStateTrigger.ValueProperty));
+            var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.CompareStateTrigger.ValueProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
     }
