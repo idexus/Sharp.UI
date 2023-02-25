@@ -74,58 +74,6 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T IsRunning<T>(this T obj,
-            object isRunning)
-            where T : Microsoft.Maui.Controls.ActivityIndicator
-        {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.ActivityIndicator.IsRunningProperty, isRunning);
-            return obj;
-        }
-        
-        public static T IsRunning<T>(this T obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
-            where T : Microsoft.Maui.Controls.ActivityIndicator
-        {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ActivityIndicator.IsRunningProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T IsRunning<T>(this T obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
-            where T : Microsoft.Maui.Controls.ActivityIndicator
-        {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.ActivityIndicator.IsRunningProperty));
-            builder.BindProperty();
-            return obj;
-        }
-        
-        public static T Color<T>(this T obj,
-            object color)
-            where T : Microsoft.Maui.Controls.ActivityIndicator
-        {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.ActivityIndicator.ColorProperty, color);
-            return obj;
-        }
-        
-        public static T Color<T>(this T obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
-            where T : Microsoft.Maui.Controls.ActivityIndicator
-        {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ActivityIndicator.ColorProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T Color<T>(this T obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
-            where T : Microsoft.Maui.Controls.ActivityIndicator
-        {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.ActivityIndicator.ColorProperty));
-            builder.BindProperty();
-            return obj;
-        }
-        
     }
 }
 

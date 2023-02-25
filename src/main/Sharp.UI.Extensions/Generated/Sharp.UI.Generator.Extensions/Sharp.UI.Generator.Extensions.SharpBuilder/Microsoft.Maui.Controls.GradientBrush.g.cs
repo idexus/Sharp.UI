@@ -54,32 +54,6 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T GradientStops<T>(this T obj,
-            object gradientStops)
-            where T : Microsoft.Maui.Controls.GradientBrush
-        {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.GradientBrush.GradientStopsProperty, gradientStops);
-            return obj;
-        }
-        
-        public static T GradientStops<T>(this T obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
-            where T : Microsoft.Maui.Controls.GradientBrush
-        {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.GradientBrush.GradientStopsProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T GradientStops<T>(this T obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
-            where T : Microsoft.Maui.Controls.GradientBrush
-        {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.GradientBrush.GradientStopsProperty));
-            builder.BindProperty();
-            return obj;
-        }
-        
     }
 }
 

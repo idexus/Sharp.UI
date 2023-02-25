@@ -39,32 +39,6 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T Point<T>(this T obj,
-            object point)
-            where T : Microsoft.Maui.Controls.Shapes.LineSegment
-        {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.LineSegment.PointProperty, point);
-            return obj;
-        }
-        
-        public static T Point<T>(this T obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
-            where T : Microsoft.Maui.Controls.Shapes.LineSegment
-        {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.LineSegment.PointProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T Point<T>(this T obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
-            where T : Microsoft.Maui.Controls.Shapes.LineSegment
-        {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Shapes.LineSegment.PointProperty));
-            builder.BindProperty();
-            return obj;
-        }
-        
     }
 }
 

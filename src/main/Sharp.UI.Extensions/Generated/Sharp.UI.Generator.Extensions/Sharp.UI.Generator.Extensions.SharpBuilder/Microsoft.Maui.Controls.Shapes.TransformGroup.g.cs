@@ -37,29 +37,6 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.TransformGroup Children(this Microsoft.Maui.Controls.Shapes.TransformGroup obj,
-            object children)
-        {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.TransformGroup.ChildrenProperty, children);
-            return obj;
-        }
-        
-        public static Microsoft.Maui.Controls.Shapes.TransformGroup Children(this Microsoft.Maui.Controls.Shapes.TransformGroup obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
-        {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.TransformGroup.ChildrenProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static Microsoft.Maui.Controls.Shapes.TransformGroup Children(this Microsoft.Maui.Controls.Shapes.TransformGroup obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
-        {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Shapes.TransformGroup.ChildrenProperty));
-            builder.BindProperty();
-            return obj;
-        }
-        
     }
 }
 

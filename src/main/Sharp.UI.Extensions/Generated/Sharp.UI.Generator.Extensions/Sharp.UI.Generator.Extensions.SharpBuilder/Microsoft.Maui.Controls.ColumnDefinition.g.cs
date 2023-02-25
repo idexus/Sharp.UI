@@ -48,29 +48,6 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static Microsoft.Maui.Controls.ColumnDefinition Width(this Microsoft.Maui.Controls.ColumnDefinition obj,
-            object width)
-        {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.ColumnDefinition.WidthProperty, width);
-            return obj;
-        }
-        
-        public static Microsoft.Maui.Controls.ColumnDefinition Width(this Microsoft.Maui.Controls.ColumnDefinition obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
-        {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ColumnDefinition.WidthProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static Microsoft.Maui.Controls.ColumnDefinition Width(this Microsoft.Maui.Controls.ColumnDefinition obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
-        {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.ColumnDefinition.WidthProperty));
-            builder.BindProperty();
-            return obj;
-        }
-        
     }
 }
 

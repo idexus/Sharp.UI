@@ -137,32 +137,6 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T Drawable<T>(this T obj,
-            object drawable)
-            where T : Microsoft.Maui.Controls.GraphicsView
-        {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.GraphicsView.DrawableProperty, drawable);
-            return obj;
-        }
-        
-        public static T Drawable<T>(this T obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
-            where T : Microsoft.Maui.Controls.GraphicsView
-        {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.GraphicsView.DrawableProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T Drawable<T>(this T obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
-            where T : Microsoft.Maui.Controls.GraphicsView
-        {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.GraphicsView.DrawableProperty));
-            builder.BindProperty();
-            return obj;
-        }
-        
     }
 }
 

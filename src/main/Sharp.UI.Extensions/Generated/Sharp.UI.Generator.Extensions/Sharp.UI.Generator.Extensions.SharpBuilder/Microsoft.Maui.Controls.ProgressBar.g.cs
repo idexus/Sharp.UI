@@ -83,58 +83,6 @@ namespace Sharp.UI
             return Transformations.AnimateAsync<double>(self, "AnimateProgressTo", transform, callback, length, easing);
         }
         
-        public static T ProgressColor<T>(this T obj,
-            object progressColor)
-            where T : Microsoft.Maui.Controls.ProgressBar
-        {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.ProgressBar.ProgressColorProperty, progressColor);
-            return obj;
-        }
-        
-        public static T ProgressColor<T>(this T obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
-            where T : Microsoft.Maui.Controls.ProgressBar
-        {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ProgressBar.ProgressColorProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T ProgressColor<T>(this T obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
-            where T : Microsoft.Maui.Controls.ProgressBar
-        {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.ProgressBar.ProgressColorProperty));
-            builder.BindProperty();
-            return obj;
-        }
-        
-        public static T Progress<T>(this T obj,
-            object progress)
-            where T : Microsoft.Maui.Controls.ProgressBar
-        {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.ProgressBar.ProgressProperty, progress);
-            return obj;
-        }
-        
-        public static T Progress<T>(this T obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
-            where T : Microsoft.Maui.Controls.ProgressBar
-        {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ProgressBar.ProgressProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T Progress<T>(this T obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
-            where T : Microsoft.Maui.Controls.ProgressBar
-        {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.ProgressBar.ProgressProperty));
-            builder.BindProperty();
-            return obj;
-        }
-        
     }
 }
 

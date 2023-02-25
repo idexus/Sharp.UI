@@ -88,58 +88,6 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T IsChecked<T>(this T obj,
-            object isChecked)
-            where T : Microsoft.Maui.Controls.CheckBox
-        {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.CheckBox.IsCheckedProperty, isChecked);
-            return obj;
-        }
-        
-        public static T IsChecked<T>(this T obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
-            where T : Microsoft.Maui.Controls.CheckBox
-        {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.CheckBox.IsCheckedProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T IsChecked<T>(this T obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
-            where T : Microsoft.Maui.Controls.CheckBox
-        {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.CheckBox.IsCheckedProperty));
-            builder.BindProperty();
-            return obj;
-        }
-        
-        public static T Color<T>(this T obj,
-            object color)
-            where T : Microsoft.Maui.Controls.CheckBox
-        {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.CheckBox.ColorProperty, color);
-            return obj;
-        }
-        
-        public static T Color<T>(this T obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
-            where T : Microsoft.Maui.Controls.CheckBox
-        {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.CheckBox.ColorProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T Color<T>(this T obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
-            where T : Microsoft.Maui.Controls.CheckBox
-        {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.CheckBox.ColorProperty));
-            builder.BindProperty();
-            return obj;
-        }
-        
     }
 }
 

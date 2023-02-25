@@ -258,58 +258,6 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T AutomationId<T>(this T obj,
-            object automationId)
-            where T : Microsoft.Maui.Controls.Element
-        {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Element.AutomationIdProperty, automationId);
-            return obj;
-        }
-        
-        public static T AutomationId<T>(this T obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
-            where T : Microsoft.Maui.Controls.Element
-        {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Element.AutomationIdProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T AutomationId<T>(this T obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
-            where T : Microsoft.Maui.Controls.Element
-        {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Element.AutomationIdProperty));
-            builder.BindProperty();
-            return obj;
-        }
-        
-        public static T ClassId<T>(this T obj,
-            object classId)
-            where T : Microsoft.Maui.Controls.Element
-        {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Element.ClassIdProperty, classId);
-            return obj;
-        }
-        
-        public static T ClassId<T>(this T obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
-            where T : Microsoft.Maui.Controls.Element
-        {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Element.ClassIdProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T ClassId<T>(this T obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
-            where T : Microsoft.Maui.Controls.Element
-        {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Element.ClassIdProperty));
-            builder.BindProperty();
-            return obj;
-        }
-        
     }
 }
 

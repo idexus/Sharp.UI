@@ -48,29 +48,6 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static Microsoft.Maui.Controls.RowDefinition Height(this Microsoft.Maui.Controls.RowDefinition obj,
-            object height)
-        {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.RowDefinition.HeightProperty, height);
-            return obj;
-        }
-        
-        public static Microsoft.Maui.Controls.RowDefinition Height(this Microsoft.Maui.Controls.RowDefinition obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
-        {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.RowDefinition.HeightProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static Microsoft.Maui.Controls.RowDefinition Height(this Microsoft.Maui.Controls.RowDefinition obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
-        {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.RowDefinition.HeightProperty));
-            builder.BindProperty();
-            return obj;
-        }
-        
     }
 }
 

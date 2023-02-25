@@ -75,58 +75,6 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T Navigation<T>(this T obj,
-            object navigation)
-            where T : Microsoft.Maui.Controls.NavigableElement
-        {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.NavigableElement.NavigationProperty, navigation);
-            return obj;
-        }
-        
-        public static T Navigation<T>(this T obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
-            where T : Microsoft.Maui.Controls.NavigableElement
-        {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.NavigableElement.NavigationProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T Navigation<T>(this T obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
-            where T : Microsoft.Maui.Controls.NavigableElement
-        {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.NavigableElement.NavigationProperty));
-            builder.BindProperty();
-            return obj;
-        }
-        
-        public static T Style<T>(this T obj,
-            object style)
-            where T : Microsoft.Maui.Controls.NavigableElement
-        {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.NavigableElement.StyleProperty, style);
-            return obj;
-        }
-        
-        public static T Style<T>(this T obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
-            where T : Microsoft.Maui.Controls.NavigableElement
-        {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.NavigableElement.StyleProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T Style<T>(this T obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
-            where T : Microsoft.Maui.Controls.NavigableElement
-        {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.NavigableElement.StyleProperty));
-            builder.BindProperty();
-            return obj;
-        }
-        
     }
 }
 

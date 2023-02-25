@@ -65,58 +65,6 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T SnapPointsAlignment<T>(this T obj,
-            object snapPointsAlignment)
-            where T : Microsoft.Maui.Controls.ItemsLayout
-        {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.ItemsLayout.SnapPointsAlignmentProperty, snapPointsAlignment);
-            return obj;
-        }
-        
-        public static T SnapPointsAlignment<T>(this T obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
-            where T : Microsoft.Maui.Controls.ItemsLayout
-        {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ItemsLayout.SnapPointsAlignmentProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T SnapPointsAlignment<T>(this T obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
-            where T : Microsoft.Maui.Controls.ItemsLayout
-        {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.ItemsLayout.SnapPointsAlignmentProperty));
-            builder.BindProperty();
-            return obj;
-        }
-        
-        public static T SnapPointsType<T>(this T obj,
-            object snapPointsType)
-            where T : Microsoft.Maui.Controls.ItemsLayout
-        {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.ItemsLayout.SnapPointsTypeProperty, snapPointsType);
-            return obj;
-        }
-        
-        public static T SnapPointsType<T>(this T obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
-            where T : Microsoft.Maui.Controls.ItemsLayout
-        {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ItemsLayout.SnapPointsTypeProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T SnapPointsType<T>(this T obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
-            where T : Microsoft.Maui.Controls.ItemsLayout
-        {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.ItemsLayout.SnapPointsTypeProperty));
-            builder.BindProperty();
-            return obj;
-        }
-        
     }
 }
 

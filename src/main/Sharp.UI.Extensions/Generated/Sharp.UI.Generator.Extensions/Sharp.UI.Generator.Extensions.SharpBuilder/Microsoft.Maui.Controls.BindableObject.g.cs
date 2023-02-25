@@ -81,32 +81,6 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T BindingContext<T>(this T obj,
-            object bindingContext)
-            where T : Microsoft.Maui.Controls.BindableObject
-        {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.BindableObject.BindingContextProperty, bindingContext);
-            return obj;
-        }
-        
-        public static T BindingContext<T>(this T obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
-            where T : Microsoft.Maui.Controls.BindableObject
-        {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.BindableObject.BindingContextProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T BindingContext<T>(this T obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
-            where T : Microsoft.Maui.Controls.BindableObject
-        {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.BindableObject.BindingContextProperty));
-            builder.BindProperty();
-            return obj;
-        }
-        
     }
 }
 

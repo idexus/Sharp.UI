@@ -66,58 +66,6 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T CurrentItem<T>(this T obj,
-            object currentItem)
-            where T : Microsoft.Maui.Controls.ShellSection
-        {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.ShellSection.CurrentItemProperty, currentItem);
-            return obj;
-        }
-        
-        public static T CurrentItem<T>(this T obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
-            where T : Microsoft.Maui.Controls.ShellSection
-        {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ShellSection.CurrentItemProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T CurrentItem<T>(this T obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
-            where T : Microsoft.Maui.Controls.ShellSection
-        {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.ShellSection.CurrentItemProperty));
-            builder.BindProperty();
-            return obj;
-        }
-        
-        public static T Items<T>(this T obj,
-            object items)
-            where T : Microsoft.Maui.Controls.ShellSection
-        {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.ShellSection.ItemsProperty, items);
-            return obj;
-        }
-        
-        public static T Items<T>(this T obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
-            where T : Microsoft.Maui.Controls.ShellSection
-        {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ShellSection.ItemsProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T Items<T>(this T obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
-            where T : Microsoft.Maui.Controls.ShellSection
-        {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.ShellSection.ItemsProperty));
-            builder.BindProperty();
-            return obj;
-        }
-        
     }
 }
 

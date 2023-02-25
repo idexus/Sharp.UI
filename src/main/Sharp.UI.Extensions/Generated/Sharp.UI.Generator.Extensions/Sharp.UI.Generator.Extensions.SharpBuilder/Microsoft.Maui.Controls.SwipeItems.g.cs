@@ -79,58 +79,6 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T Mode<T>(this T obj,
-            object mode)
-            where T : Microsoft.Maui.Controls.SwipeItems
-        {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.SwipeItems.ModeProperty, mode);
-            return obj;
-        }
-        
-        public static T Mode<T>(this T obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
-            where T : Microsoft.Maui.Controls.SwipeItems
-        {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SwipeItems.ModeProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T Mode<T>(this T obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
-            where T : Microsoft.Maui.Controls.SwipeItems
-        {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.SwipeItems.ModeProperty));
-            builder.BindProperty();
-            return obj;
-        }
-        
-        public static T SwipeBehaviorOnInvoked<T>(this T obj,
-            object swipeBehaviorOnInvoked)
-            where T : Microsoft.Maui.Controls.SwipeItems
-        {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.SwipeItems.SwipeBehaviorOnInvokedProperty, swipeBehaviorOnInvoked);
-            return obj;
-        }
-        
-        public static T SwipeBehaviorOnInvoked<T>(this T obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
-            where T : Microsoft.Maui.Controls.SwipeItems
-        {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SwipeItems.SwipeBehaviorOnInvokedProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T SwipeBehaviorOnInvoked<T>(this T obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
-            where T : Microsoft.Maui.Controls.SwipeItems
-        {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.SwipeItems.SwipeBehaviorOnInvokedProperty));
-            builder.BindProperty();
-            return obj;
-        }
-        
     }
 }
 

@@ -74,58 +74,6 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T Color<T>(this T obj,
-            object color)
-            where T : Microsoft.Maui.Controls.BoxView
-        {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.BoxView.ColorProperty, color);
-            return obj;
-        }
-        
-        public static T Color<T>(this T obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
-            where T : Microsoft.Maui.Controls.BoxView
-        {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.BoxView.ColorProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T Color<T>(this T obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
-            where T : Microsoft.Maui.Controls.BoxView
-        {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.BoxView.ColorProperty));
-            builder.BindProperty();
-            return obj;
-        }
-        
-        public static T CornerRadius<T>(this T obj,
-            object cornerRadius)
-            where T : Microsoft.Maui.Controls.BoxView
-        {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.BoxView.CornerRadiusProperty, cornerRadius);
-            return obj;
-        }
-        
-        public static T CornerRadius<T>(this T obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
-            where T : Microsoft.Maui.Controls.BoxView
-        {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.BoxView.CornerRadiusProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T CornerRadius<T>(this T obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
-            where T : Microsoft.Maui.Controls.BoxView
-        {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.BoxView.CornerRadiusProperty));
-            builder.BindProperty();
-            return obj;
-        }
-        
     }
 }
 

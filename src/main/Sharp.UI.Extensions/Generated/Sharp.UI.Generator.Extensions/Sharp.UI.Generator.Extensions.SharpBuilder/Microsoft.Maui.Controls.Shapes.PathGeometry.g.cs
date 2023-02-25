@@ -60,52 +60,6 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.PathGeometry Figures(this Microsoft.Maui.Controls.Shapes.PathGeometry obj,
-            object figures)
-        {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.PathGeometry.FiguresProperty, figures);
-            return obj;
-        }
-        
-        public static Microsoft.Maui.Controls.Shapes.PathGeometry Figures(this Microsoft.Maui.Controls.Shapes.PathGeometry obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
-        {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.PathGeometry.FiguresProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static Microsoft.Maui.Controls.Shapes.PathGeometry Figures(this Microsoft.Maui.Controls.Shapes.PathGeometry obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
-        {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Shapes.PathGeometry.FiguresProperty));
-            builder.BindProperty();
-            return obj;
-        }
-        
-        public static Microsoft.Maui.Controls.Shapes.PathGeometry FillRule(this Microsoft.Maui.Controls.Shapes.PathGeometry obj,
-            object fillRule)
-        {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.PathGeometry.FillRuleProperty, fillRule);
-            return obj;
-        }
-        
-        public static Microsoft.Maui.Controls.Shapes.PathGeometry FillRule(this Microsoft.Maui.Controls.Shapes.PathGeometry obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
-        {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.PathGeometry.FillRuleProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static Microsoft.Maui.Controls.Shapes.PathGeometry FillRule(this Microsoft.Maui.Controls.Shapes.PathGeometry obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
-        {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Shapes.PathGeometry.FillRuleProperty));
-            builder.BindProperty();
-            return obj;
-        }
-        
     }
 }
 

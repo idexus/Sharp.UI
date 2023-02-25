@@ -39,32 +39,6 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T Url<T>(this T obj,
-            object url)
-            where T : Microsoft.Maui.Controls.UrlWebViewSource
-        {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.UrlWebViewSource.UrlProperty, url);
-            return obj;
-        }
-        
-        public static T Url<T>(this T obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
-            where T : Microsoft.Maui.Controls.UrlWebViewSource
-        {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.UrlWebViewSource.UrlProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T Url<T>(this T obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
-            where T : Microsoft.Maui.Controls.UrlWebViewSource
-        {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.UrlWebViewSource.UrlProperty));
-            builder.BindProperty();
-            return obj;
-        }
-        
     }
 }
 

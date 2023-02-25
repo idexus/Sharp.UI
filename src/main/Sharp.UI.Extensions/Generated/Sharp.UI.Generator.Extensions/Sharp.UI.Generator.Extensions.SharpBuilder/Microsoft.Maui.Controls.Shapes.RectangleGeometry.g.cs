@@ -39,32 +39,6 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T Rect<T>(this T obj,
-            object rect)
-            where T : Microsoft.Maui.Controls.Shapes.RectangleGeometry
-        {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.RectangleGeometry.RectProperty, rect);
-            return obj;
-        }
-        
-        public static T Rect<T>(this T obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
-            where T : Microsoft.Maui.Controls.Shapes.RectangleGeometry
-        {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.RectangleGeometry.RectProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T Rect<T>(this T obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
-            where T : Microsoft.Maui.Controls.Shapes.RectangleGeometry
-        {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.Shapes.RectangleGeometry.RectProperty));
-            builder.BindProperty();
-            return obj;
-        }
-        
     }
 }
 

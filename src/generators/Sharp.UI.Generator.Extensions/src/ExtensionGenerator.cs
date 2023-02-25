@@ -105,13 +105,6 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
             if (Helpers.IsBaseImplementationOfInterface(mainSymbol, "ITextAlignment"))
                 GenerateExtensionMethods_ITextAlignment(mainSymbol);
 
-            var uknownTypeProperties = bindablePropertyNames.ToList();
-            foreach (var propName in properties.Select(e => e.ToDisplayString()))
-                uknownTypeProperties.Remove(propName);
-
-            //foreach (var name in uknownTypeProperties)
-            //    GenerateExtensionMethodForUknownBindable(name);
-
             GenerateBindablePropertyExtensionsFromInterface();
         }
 
@@ -138,20 +131,13 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
             {
                 symbolTypeName = $"{MainSymbol.ToDisplayString()}";
 
-                if (PropertySymbol == null)
-                {
-                    propertyTypeName = "object";
-                }
-                else
-                {
-                    PropertyName = PropertySymbol.Name.Split(new[] { "." }, StringSplitOptions.None).Last();
-                    PropertyName = PropertyName.Equals("class", StringComparison.Ordinal) ? "@class" : PropertyName;
+                PropertyName = PropertySymbol.Name.Split(new[] { "." }, StringSplitOptions.None).Last();
+                PropertyName = PropertyName.Equals("class", StringComparison.Ordinal) ? "@class" : PropertyName;
 
-                    if (BindableProperties != null) IsBindableProperty = BindableProperties.Contains(PropertyName);
+                if (BindableProperties != null) IsBindableProperty = BindableProperties.Contains(PropertyName);
 
-                    accessedWith = PropertySymbol.IsStatic ? $"{MainSymbol.ToDisplayString()}" : "obj";
-                    propertyTypeName = PropertySymbol.Type.ToDisplayString();
-                }
+                accessedWith = PropertySymbol.IsStatic ? $"{MainSymbol.ToDisplayString()}" : "obj";
+                propertyTypeName = PropertySymbol.Type.ToDisplayString();
 
                 camelCaseName = Helpers.CamelCase(PropertyName);
                 bindablePropertyName = $"{MainSymbol.ToDisplayString()}.{PropertyName}Property";
@@ -235,25 +221,6 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
 
                 if (info.propertyTypeName.Contains("DataTemplate"))
                     GenerateExtensionMethod_DataTemplate(info);
-            }
-        }
-
-        void GenerateExtensionMethodForUknownBindable(string propertyName)
-        {
-            var info = new PropertyInfo
-            {
-                MainSymbol = mainSymbol,
-                PropertyName = propertyName,
-                IsBindableProperty = true,
-                IsBindableObject = true
-            };
-            info.Build();
-
-            if (!Shared.NotGenerateList.Contains(info.PropertyName))
-            {
-                GenerateExtensionMethod_Value(info);
-                GenerateExtensionMethod_ValueBuilder(info);
-                GenerateExtensionMethod_BindingBuilder(info);
             }
         }
 

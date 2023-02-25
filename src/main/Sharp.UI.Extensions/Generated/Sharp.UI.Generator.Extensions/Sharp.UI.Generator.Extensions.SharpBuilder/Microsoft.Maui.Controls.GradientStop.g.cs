@@ -65,58 +65,6 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T Color<T>(this T obj,
-            object color)
-            where T : Microsoft.Maui.Controls.GradientStop
-        {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.GradientStop.ColorProperty, color);
-            return obj;
-        }
-        
-        public static T Color<T>(this T obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
-            where T : Microsoft.Maui.Controls.GradientStop
-        {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.GradientStop.ColorProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T Color<T>(this T obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
-            where T : Microsoft.Maui.Controls.GradientStop
-        {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.GradientStop.ColorProperty));
-            builder.BindProperty();
-            return obj;
-        }
-        
-        public static T Offset<T>(this T obj,
-            object offset)
-            where T : Microsoft.Maui.Controls.GradientStop
-        {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.GradientStop.OffsetProperty, offset);
-            return obj;
-        }
-        
-        public static T Offset<T>(this T obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
-            where T : Microsoft.Maui.Controls.GradientStop
-        {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.GradientStop.OffsetProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T Offset<T>(this T obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
-            where T : Microsoft.Maui.Controls.GradientStop
-        {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.GradientStop.OffsetProperty));
-            builder.BindProperty();
-            return obj;
-        }
-        
     }
 }
 

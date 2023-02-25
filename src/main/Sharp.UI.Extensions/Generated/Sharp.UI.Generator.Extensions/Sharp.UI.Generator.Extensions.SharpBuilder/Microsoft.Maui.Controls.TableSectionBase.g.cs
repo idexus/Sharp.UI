@@ -65,58 +65,6 @@ namespace Sharp.UI
             return obj;
         }
         
-        public static T Title<T>(this T obj,
-            object title)
-            where T : Microsoft.Maui.Controls.TableSectionBase
-        {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.TableSectionBase.TitleProperty, title);
-            return obj;
-        }
-        
-        public static T Title<T>(this T obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
-            where T : Microsoft.Maui.Controls.TableSectionBase
-        {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.TableSectionBase.TitleProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T Title<T>(this T obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
-            where T : Microsoft.Maui.Controls.TableSectionBase
-        {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.TableSectionBase.TitleProperty));
-            builder.BindProperty();
-            return obj;
-        }
-        
-        public static T TextColor<T>(this T obj,
-            object textColor)
-            where T : Microsoft.Maui.Controls.TableSectionBase
-        {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.TableSectionBase.TextColorProperty, textColor);
-            return obj;
-        }
-        
-        public static T TextColor<T>(this T obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
-            where T : Microsoft.Maui.Controls.TableSectionBase
-        {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.TableSectionBase.TextColorProperty, builder.GetValue());
-            return obj;
-        }
-        
-        public static T TextColor<T>(this T obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
-            where T : Microsoft.Maui.Controls.TableSectionBase
-        {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.TableSectionBase.TextColorProperty));
-            builder.BindProperty();
-            return obj;
-        }
-        
     }
 }
 
