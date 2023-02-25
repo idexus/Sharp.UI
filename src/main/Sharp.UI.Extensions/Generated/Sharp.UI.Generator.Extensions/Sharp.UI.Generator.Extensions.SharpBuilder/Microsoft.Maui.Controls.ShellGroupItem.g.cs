@@ -17,7 +17,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.FlyoutDisplayOptions flyoutDisplayOptions)
             where T : Microsoft.Maui.Controls.ShellGroupItem
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.ShellGroupItem.FlyoutDisplayOptionsProperty, flyoutDisplayOptions);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ShellGroupItem.FlyoutDisplayOptionsProperty, flyoutDisplayOptions);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ShellGroupItem
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.FlyoutDisplayOptions>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.ShellGroupItem.FlyoutDisplayOptionsProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ShellGroupItem.FlyoutDisplayOptionsProperty, builder.GetValue());
             return self;
         }
         

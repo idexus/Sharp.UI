@@ -17,7 +17,7 @@ namespace ExampleApp
             System.Collections.Generic.List<ExampleApp.DataModel> simpleData)
             where T : ExampleApp.ListViewPageViewModel
         {
-            self.SetValueOrSetter(ExampleApp.ListViewPageViewModel.SimpleDataProperty, simpleData);
+            self.SetValueOrAddSetter(ExampleApp.ListViewPageViewModel.SimpleDataProperty, simpleData);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace ExampleApp
             where T : ExampleApp.ListViewPageViewModel
         {
             var builder = buildValue(new ValueBuilder<System.Collections.Generic.List<ExampleApp.DataModel>>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(ExampleApp.ListViewPageViewModel.SimpleDataProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(ExampleApp.ListViewPageViewModel.SimpleDataProperty, builder.GetValue());
             return self;
         }
         

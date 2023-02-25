@@ -17,7 +17,7 @@ namespace Sharp.UI
             string format)
             where T : Microsoft.Maui.Controls.TimePicker
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.TimePicker.FormatProperty, format);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.TimePicker.FormatProperty, format);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.TimePicker
         {
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.TimePicker.FormatProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.TimePicker.FormatProperty, builder.GetValue());
             return self;
         }
         
@@ -43,7 +43,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color textColor)
             where T : Microsoft.Maui.Controls.TimePicker
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.TimePicker.TextColorProperty, textColor);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.TimePicker.TextColorProperty, textColor);
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.TimePicker
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.TimePicker.TextColorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.TimePicker.TextColorProperty, builder.GetValue());
             return self;
         }
         
@@ -78,7 +78,7 @@ namespace Sharp.UI
             double characterSpacing)
             where T : Microsoft.Maui.Controls.TimePicker
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.TimePicker.CharacterSpacingProperty, characterSpacing);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.TimePicker.CharacterSpacingProperty, characterSpacing);
             return self;
         }
         
@@ -87,7 +87,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.TimePicker
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.TimePicker.CharacterSpacingProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.TimePicker.CharacterSpacingProperty, builder.GetValue());
             return self;
         }
         
@@ -113,7 +113,7 @@ namespace Sharp.UI
             System.TimeSpan time)
             where T : Microsoft.Maui.Controls.TimePicker
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.TimePicker.TimeProperty, time);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.TimePicker.TimeProperty, time);
             return self;
         }
         
@@ -122,7 +122,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.TimePicker
         {
             var builder = buildValue(new ValueBuilder<System.TimeSpan>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.TimePicker.TimeProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.TimePicker.TimeProperty, builder.GetValue());
             return self;
         }
         
@@ -139,7 +139,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.FontAttributes fontAttributes)
             where T : Microsoft.Maui.Controls.TimePicker
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.TimePicker.FontAttributesProperty, fontAttributes);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.TimePicker.FontAttributesProperty, fontAttributes);
             return self;
         }
         
@@ -148,7 +148,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.TimePicker
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.FontAttributes>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.TimePicker.FontAttributesProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.TimePicker.FontAttributesProperty, builder.GetValue());
             return self;
         }
         
@@ -165,7 +165,7 @@ namespace Sharp.UI
             string fontFamily)
             where T : Microsoft.Maui.Controls.TimePicker
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.TimePicker.FontFamilyProperty, fontFamily);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.TimePicker.FontFamilyProperty, fontFamily);
             return self;
         }
         
@@ -174,7 +174,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.TimePicker
         {
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.TimePicker.FontFamilyProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.TimePicker.FontFamilyProperty, builder.GetValue());
             return self;
         }
         
@@ -191,7 +191,7 @@ namespace Sharp.UI
             double fontSize)
             where T : Microsoft.Maui.Controls.TimePicker
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.TimePicker.FontSizeProperty, fontSize);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.TimePicker.FontSizeProperty, fontSize);
             return self;
         }
         
@@ -200,7 +200,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.TimePicker
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.TimePicker.FontSizeProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.TimePicker.FontSizeProperty, builder.GetValue());
             return self;
         }
         
@@ -226,7 +226,7 @@ namespace Sharp.UI
             bool fontAutoScalingEnabled)
             where T : Microsoft.Maui.Controls.TimePicker
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.TimePicker.FontAutoScalingEnabledProperty, fontAutoScalingEnabled);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.TimePicker.FontAutoScalingEnabledProperty, fontAutoScalingEnabled);
             return self;
         }
         
@@ -235,7 +235,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.TimePicker
         {
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.TimePicker.FontAutoScalingEnabledProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.TimePicker.FontAutoScalingEnabledProperty, builder.GetValue());
             return self;
         }
         

@@ -17,7 +17,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.ScrollMode flyoutVerticalScrollMode)
             where T : Microsoft.Maui.Controls.Shell
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutVerticalScrollModeProperty, flyoutVerticalScrollMode);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutVerticalScrollModeProperty, flyoutVerticalScrollMode);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shell
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ScrollMode>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutVerticalScrollModeProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutVerticalScrollModeProperty, builder.GetValue());
             return self;
         }
         
@@ -43,7 +43,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.ImageSource flyoutIcon)
             where T : Microsoft.Maui.Controls.Shell
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutIconProperty, flyoutIcon);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutIconProperty, flyoutIcon);
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shell
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutIconProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutIconProperty, builder.GetValue());
             return self;
         }
         
@@ -69,7 +69,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.ShellItem currentItem)
             where T : Microsoft.Maui.Controls.Shell
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.CurrentItemProperty, currentItem);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.CurrentItemProperty, currentItem);
             return self;
         }
         
@@ -78,7 +78,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shell
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ShellItem>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.CurrentItemProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.CurrentItemProperty, builder.GetValue());
             return self;
         }
         
@@ -95,7 +95,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.ImageSource flyoutBackgroundImage)
             where T : Microsoft.Maui.Controls.Shell
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutBackgroundImageProperty, flyoutBackgroundImage);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutBackgroundImageProperty, flyoutBackgroundImage);
             return self;
         }
         
@@ -104,7 +104,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shell
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutBackgroundImageProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutBackgroundImageProperty, builder.GetValue());
             return self;
         }
         
@@ -121,7 +121,7 @@ namespace Sharp.UI
             Microsoft.Maui.Aspect flyoutBackgroundImageAspect)
             where T : Microsoft.Maui.Controls.Shell
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutBackgroundImageAspectProperty, flyoutBackgroundImageAspect);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutBackgroundImageAspectProperty, flyoutBackgroundImageAspect);
             return self;
         }
         
@@ -130,7 +130,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shell
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Aspect>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutBackgroundImageAspectProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutBackgroundImageAspectProperty, builder.GetValue());
             return self;
         }
         
@@ -147,7 +147,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color flyoutBackgroundColor)
             where T : Microsoft.Maui.Controls.Shell
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutBackgroundColorProperty, flyoutBackgroundColor);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutBackgroundColorProperty, flyoutBackgroundColor);
             return self;
         }
         
@@ -156,7 +156,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shell
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutBackgroundColorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutBackgroundColorProperty, builder.GetValue());
             return self;
         }
         
@@ -182,7 +182,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.Brush flyoutBackground)
             where T : Microsoft.Maui.Controls.Shell
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutBackgroundProperty, flyoutBackground);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutBackgroundProperty, flyoutBackground);
             return self;
         }
         
@@ -191,7 +191,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shell
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Brush>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutBackgroundProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutBackgroundProperty, builder.GetValue());
             return self;
         }
         
@@ -208,7 +208,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.Brush flyoutBackdrop)
             where T : Microsoft.Maui.Controls.Shell
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutBackdropProperty, flyoutBackdrop);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutBackdropProperty, flyoutBackdrop);
             return self;
         }
         
@@ -217,7 +217,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shell
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Brush>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutBackdropProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutBackdropProperty, builder.GetValue());
             return self;
         }
         
@@ -234,7 +234,7 @@ namespace Sharp.UI
             double flyoutWidth)
             where T : Microsoft.Maui.Controls.Shell
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutWidthProperty, flyoutWidth);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutWidthProperty, flyoutWidth);
             return self;
         }
         
@@ -243,7 +243,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shell
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutWidthProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutWidthProperty, builder.GetValue());
             return self;
         }
         
@@ -269,7 +269,7 @@ namespace Sharp.UI
             double flyoutHeight)
             where T : Microsoft.Maui.Controls.Shell
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutHeightProperty, flyoutHeight);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutHeightProperty, flyoutHeight);
             return self;
         }
         
@@ -278,7 +278,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shell
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutHeightProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutHeightProperty, builder.GetValue());
             return self;
         }
         
@@ -304,7 +304,7 @@ namespace Sharp.UI
             Microsoft.Maui.FlyoutBehavior flyoutBehavior)
             where T : Microsoft.Maui.Controls.Shell
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutBehaviorProperty, flyoutBehavior);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutBehaviorProperty, flyoutBehavior);
             return self;
         }
         
@@ -313,7 +313,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shell
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.FlyoutBehavior>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutBehaviorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutBehaviorProperty, builder.GetValue());
             return self;
         }
         
@@ -330,7 +330,7 @@ namespace Sharp.UI
             object flyoutHeader)
             where T : Microsoft.Maui.Controls.Shell
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutHeaderProperty, flyoutHeader);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutHeaderProperty, flyoutHeader);
             return self;
         }
         
@@ -339,7 +339,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shell
         {
             var builder = buildValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutHeaderProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutHeaderProperty, builder.GetValue());
             return self;
         }
         
@@ -356,7 +356,7 @@ namespace Sharp.UI
             object flyoutFooter)
             where T : Microsoft.Maui.Controls.Shell
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutFooterProperty, flyoutFooter);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutFooterProperty, flyoutFooter);
             return self;
         }
         
@@ -365,7 +365,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shell
         {
             var builder = buildValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutFooterProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutFooterProperty, builder.GetValue());
             return self;
         }
         
@@ -382,7 +382,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.FlyoutHeaderBehavior flyoutHeaderBehavior)
             where T : Microsoft.Maui.Controls.Shell
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutHeaderBehaviorProperty, flyoutHeaderBehavior);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutHeaderBehaviorProperty, flyoutHeaderBehavior);
             return self;
         }
         
@@ -391,7 +391,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shell
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.FlyoutHeaderBehavior>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutHeaderBehaviorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutHeaderBehaviorProperty, builder.GetValue());
             return self;
         }
         
@@ -408,7 +408,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.DataTemplate flyoutHeaderTemplate)
             where T : Microsoft.Maui.Controls.Shell
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutHeaderTemplateProperty, flyoutHeaderTemplate);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutHeaderTemplateProperty, flyoutHeaderTemplate);
             return self;
         }
         
@@ -417,7 +417,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shell
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutHeaderTemplateProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutHeaderTemplateProperty, builder.GetValue());
             return self;
         }
         
@@ -433,7 +433,7 @@ namespace Sharp.UI
         public static T FlyoutHeaderTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.Shell
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutHeaderTemplateProperty, new DataTemplate(loadTemplate));
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutHeaderTemplateProperty, new DataTemplate(loadTemplate));
             return self;
         }
         
@@ -441,7 +441,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.DataTemplate flyoutFooterTemplate)
             where T : Microsoft.Maui.Controls.Shell
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutFooterTemplateProperty, flyoutFooterTemplate);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutFooterTemplateProperty, flyoutFooterTemplate);
             return self;
         }
         
@@ -450,7 +450,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shell
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutFooterTemplateProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutFooterTemplateProperty, builder.GetValue());
             return self;
         }
         
@@ -466,7 +466,7 @@ namespace Sharp.UI
         public static T FlyoutFooterTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.Shell
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutFooterTemplateProperty, new DataTemplate(loadTemplate));
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutFooterTemplateProperty, new DataTemplate(loadTemplate));
             return self;
         }
         
@@ -474,7 +474,7 @@ namespace Sharp.UI
             bool flyoutIsPresented)
             where T : Microsoft.Maui.Controls.Shell
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutIsPresentedProperty, flyoutIsPresented);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutIsPresentedProperty, flyoutIsPresented);
             return self;
         }
         
@@ -483,7 +483,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shell
         {
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutIsPresentedProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutIsPresentedProperty, builder.GetValue());
             return self;
         }
         
@@ -527,7 +527,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.DataTemplate itemTemplate)
             where T : Microsoft.Maui.Controls.Shell
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.ItemTemplateProperty, itemTemplate);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.ItemTemplateProperty, itemTemplate);
             return self;
         }
         
@@ -536,7 +536,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shell
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.ItemTemplateProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.ItemTemplateProperty, builder.GetValue());
             return self;
         }
         
@@ -552,7 +552,7 @@ namespace Sharp.UI
         public static T ItemTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.Shell
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.ItemTemplateProperty, new DataTemplate(loadTemplate));
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.ItemTemplateProperty, new DataTemplate(loadTemplate));
             return self;
         }
         
@@ -560,7 +560,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.DataTemplate menuItemTemplate)
             where T : Microsoft.Maui.Controls.Shell
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.MenuItemTemplateProperty, menuItemTemplate);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.MenuItemTemplateProperty, menuItemTemplate);
             return self;
         }
         
@@ -569,7 +569,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shell
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.MenuItemTemplateProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.MenuItemTemplateProperty, builder.GetValue());
             return self;
         }
         
@@ -585,7 +585,7 @@ namespace Sharp.UI
         public static T MenuItemTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.Shell
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.MenuItemTemplateProperty, new DataTemplate(loadTemplate));
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.MenuItemTemplateProperty, new DataTemplate(loadTemplate));
             return self;
         }
         
@@ -593,7 +593,7 @@ namespace Sharp.UI
             object flyoutContent)
             where T : Microsoft.Maui.Controls.Shell
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutContentProperty, flyoutContent);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutContentProperty, flyoutContent);
             return self;
         }
         
@@ -602,7 +602,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shell
         {
             var builder = buildValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutContentProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutContentProperty, builder.GetValue());
             return self;
         }
         
@@ -619,7 +619,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.DataTemplate flyoutContentTemplate)
             where T : Microsoft.Maui.Controls.Shell
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutContentTemplateProperty, flyoutContentTemplate);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutContentTemplateProperty, flyoutContentTemplate);
             return self;
         }
         
@@ -628,7 +628,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shell
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutContentTemplateProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutContentTemplateProperty, builder.GetValue());
             return self;
         }
         
@@ -644,7 +644,7 @@ namespace Sharp.UI
         public static T FlyoutContentTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.Shell
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.FlyoutContentTemplateProperty, new DataTemplate(loadTemplate));
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.FlyoutContentTemplateProperty, new DataTemplate(loadTemplate));
             return self;
         }
         

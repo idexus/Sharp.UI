@@ -17,7 +17,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color barBackgroundColor)
             where T : Microsoft.Maui.Controls.TabbedPage
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.TabbedPage.BarBackgroundColorProperty, barBackgroundColor);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.TabbedPage.BarBackgroundColorProperty, barBackgroundColor);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.TabbedPage
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.TabbedPage.BarBackgroundColorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.TabbedPage.BarBackgroundColorProperty, builder.GetValue());
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.Brush barBackground)
             where T : Microsoft.Maui.Controls.TabbedPage
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.TabbedPage.BarBackgroundProperty, barBackground);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.TabbedPage.BarBackgroundProperty, barBackground);
             return self;
         }
         
@@ -61,7 +61,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.TabbedPage
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Brush>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.TabbedPage.BarBackgroundProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.TabbedPage.BarBackgroundProperty, builder.GetValue());
             return self;
         }
         
@@ -78,7 +78,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color barTextColor)
             where T : Microsoft.Maui.Controls.TabbedPage
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.TabbedPage.BarTextColorProperty, barTextColor);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.TabbedPage.BarTextColorProperty, barTextColor);
             return self;
         }
         
@@ -87,7 +87,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.TabbedPage
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.TabbedPage.BarTextColorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.TabbedPage.BarTextColorProperty, builder.GetValue());
             return self;
         }
         
@@ -113,7 +113,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color unselectedTabColor)
             where T : Microsoft.Maui.Controls.TabbedPage
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.TabbedPage.UnselectedTabColorProperty, unselectedTabColor);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.TabbedPage.UnselectedTabColorProperty, unselectedTabColor);
             return self;
         }
         
@@ -122,7 +122,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.TabbedPage
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.TabbedPage.UnselectedTabColorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.TabbedPage.UnselectedTabColorProperty, builder.GetValue());
             return self;
         }
         
@@ -148,7 +148,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color selectedTabColor)
             where T : Microsoft.Maui.Controls.TabbedPage
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.TabbedPage.SelectedTabColorProperty, selectedTabColor);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.TabbedPage.SelectedTabColorProperty, selectedTabColor);
             return self;
         }
         
@@ -157,7 +157,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.TabbedPage
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.TabbedPage.SelectedTabColorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.TabbedPage.SelectedTabColorProperty, builder.GetValue());
             return self;
         }
         

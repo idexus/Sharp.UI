@@ -16,7 +16,7 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.SwipeGestureRecognizer Command(this Microsoft.Maui.Controls.SwipeGestureRecognizer self,
             System.Windows.Input.ICommand command)
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SwipeGestureRecognizer.CommandProperty, command);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwipeGestureRecognizer.CommandProperty, command);
             return self;
         }
         
@@ -24,7 +24,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<System.Windows.Input.ICommand>, ValueBuilder<System.Windows.Input.ICommand>> buildValue)
         {
             var builder = buildValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SwipeGestureRecognizer.CommandProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwipeGestureRecognizer.CommandProperty, builder.GetValue());
             return self;
         }
         
@@ -39,7 +39,7 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.SwipeGestureRecognizer CommandParameter(this Microsoft.Maui.Controls.SwipeGestureRecognizer self,
             object commandParameter)
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SwipeGestureRecognizer.CommandParameterProperty, commandParameter);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwipeGestureRecognizer.CommandParameterProperty, commandParameter);
             return self;
         }
         
@@ -47,7 +47,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<object>, ValueBuilder<object>> buildValue)
         {
             var builder = buildValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SwipeGestureRecognizer.CommandParameterProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwipeGestureRecognizer.CommandParameterProperty, builder.GetValue());
             return self;
         }
         
@@ -62,7 +62,7 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.SwipeGestureRecognizer Direction(this Microsoft.Maui.Controls.SwipeGestureRecognizer self,
             Microsoft.Maui.SwipeDirection direction)
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SwipeGestureRecognizer.DirectionProperty, direction);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwipeGestureRecognizer.DirectionProperty, direction);
             return self;
         }
         
@@ -70,7 +70,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<Microsoft.Maui.SwipeDirection>, ValueBuilder<Microsoft.Maui.SwipeDirection>> buildValue)
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.SwipeDirection>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SwipeGestureRecognizer.DirectionProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwipeGestureRecognizer.DirectionProperty, builder.GetValue());
             return self;
         }
         
@@ -85,7 +85,7 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.SwipeGestureRecognizer Threshold(this Microsoft.Maui.Controls.SwipeGestureRecognizer self,
             uint threshold)
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SwipeGestureRecognizer.ThresholdProperty, threshold);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwipeGestureRecognizer.ThresholdProperty, threshold);
             return self;
         }
         
@@ -93,7 +93,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<uint>, ValueBuilder<uint>> buildValue)
         {
             var builder = buildValue(new ValueBuilder<uint>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SwipeGestureRecognizer.ThresholdProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwipeGestureRecognizer.ThresholdProperty, builder.GetValue());
             return self;
         }
         

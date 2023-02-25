@@ -17,7 +17,7 @@ namespace ExampleApp
             int id)
             where T : ExampleApp.DataModel
         {
-            self.SetValueOrSetter(ExampleApp.DataModel.IdProperty, id);
+            self.SetValueOrAddSetter(ExampleApp.DataModel.IdProperty, id);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace ExampleApp
             where T : ExampleApp.DataModel
         {
             var builder = buildValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(ExampleApp.DataModel.IdProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(ExampleApp.DataModel.IdProperty, builder.GetValue());
             return self;
         }
         
@@ -43,7 +43,7 @@ namespace ExampleApp
             string name)
             where T : ExampleApp.DataModel
         {
-            self.SetValueOrSetter(ExampleApp.DataModel.NameProperty, name);
+            self.SetValueOrAddSetter(ExampleApp.DataModel.NameProperty, name);
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace ExampleApp
             where T : ExampleApp.DataModel
         {
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(ExampleApp.DataModel.NameProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(ExampleApp.DataModel.NameProperty, builder.GetValue());
             return self;
         }
         
@@ -69,7 +69,7 @@ namespace ExampleApp
             bool admin)
             where T : ExampleApp.DataModel
         {
-            self.SetValueOrSetter(ExampleApp.DataModel.AdminProperty, admin);
+            self.SetValueOrAddSetter(ExampleApp.DataModel.AdminProperty, admin);
             return self;
         }
         
@@ -78,7 +78,7 @@ namespace ExampleApp
             where T : ExampleApp.DataModel
         {
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(ExampleApp.DataModel.AdminProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(ExampleApp.DataModel.AdminProperty, builder.GetValue());
             return self;
         }
         

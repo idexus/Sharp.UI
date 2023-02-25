@@ -17,7 +17,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.IDrawable drawable)
             where T : Microsoft.Maui.Controls.GraphicsView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.GraphicsView.DrawableProperty, drawable);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.GraphicsView.DrawableProperty, drawable);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.GraphicsView
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.IDrawable>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.GraphicsView.DrawableProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.GraphicsView.DrawableProperty, builder.GetValue());
             return self;
         }
         

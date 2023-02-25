@@ -17,7 +17,7 @@ namespace Sharp.UI
             int touchPoints)
             where T : Microsoft.Maui.Controls.PanGestureRecognizer
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.PanGestureRecognizer.TouchPointsProperty, touchPoints);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.PanGestureRecognizer.TouchPointsProperty, touchPoints);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.PanGestureRecognizer
         {
             var builder = buildValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.PanGestureRecognizer.TouchPointsProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.PanGestureRecognizer.TouchPointsProperty, builder.GetValue());
             return self;
         }
         

@@ -17,7 +17,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color color)
             where T : Microsoft.Maui.Controls.CheckBox
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.CheckBox.ColorProperty, color);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.CheckBox.ColorProperty, color);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.CheckBox
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.CheckBox.ColorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.CheckBox.ColorProperty, builder.GetValue());
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace Sharp.UI
             bool isChecked)
             where T : Microsoft.Maui.Controls.CheckBox
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.CheckBox.IsCheckedProperty, isChecked);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.CheckBox.IsCheckedProperty, isChecked);
             return self;
         }
         
@@ -61,7 +61,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.CheckBox
         {
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.CheckBox.IsCheckedProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.CheckBox.IsCheckedProperty, builder.GetValue());
             return self;
         }
         

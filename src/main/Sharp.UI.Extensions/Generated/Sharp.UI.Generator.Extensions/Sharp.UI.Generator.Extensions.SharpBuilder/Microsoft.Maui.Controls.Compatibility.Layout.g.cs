@@ -17,7 +17,7 @@ namespace Sharp.UI
             bool isClippedToBounds)
             where T : Microsoft.Maui.Controls.Compatibility.Layout
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Compatibility.Layout.IsClippedToBoundsProperty, isClippedToBounds);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Compatibility.Layout.IsClippedToBoundsProperty, isClippedToBounds);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Compatibility.Layout
         {
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Compatibility.Layout.IsClippedToBoundsProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Compatibility.Layout.IsClippedToBoundsProperty, builder.GetValue());
             return self;
         }
         
@@ -43,7 +43,7 @@ namespace Sharp.UI
             Microsoft.Maui.Thickness padding)
             where T : Microsoft.Maui.Controls.Compatibility.Layout
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Compatibility.Layout.PaddingProperty, padding);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Compatibility.Layout.PaddingProperty, padding);
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Compatibility.Layout
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Thickness>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Compatibility.Layout.PaddingProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Compatibility.Layout.PaddingProperty, builder.GetValue());
             return self;
         }
         
@@ -69,7 +69,7 @@ namespace Sharp.UI
             bool cascadeInputTransparent)
             where T : Microsoft.Maui.Controls.Compatibility.Layout
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Compatibility.Layout.CascadeInputTransparentProperty, cascadeInputTransparent);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Compatibility.Layout.CascadeInputTransparentProperty, cascadeInputTransparent);
             return self;
         }
         
@@ -78,7 +78,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Compatibility.Layout
         {
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Compatibility.Layout.CascadeInputTransparentProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Compatibility.Layout.CascadeInputTransparentProperty, builder.GetValue());
             return self;
         }
         

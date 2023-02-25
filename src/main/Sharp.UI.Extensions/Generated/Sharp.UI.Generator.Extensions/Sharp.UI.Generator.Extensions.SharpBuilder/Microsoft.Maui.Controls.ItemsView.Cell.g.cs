@@ -17,7 +17,7 @@ namespace Sharp.UI
             System.Collections.IEnumerable itemsSource)
             where T : Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>.ItemsSourceProperty, itemsSource);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>.ItemsSourceProperty, itemsSource);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>
         {
             var builder = buildValue(new ValueBuilder<System.Collections.IEnumerable>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>.ItemsSourceProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>.ItemsSourceProperty, builder.GetValue());
             return self;
         }
         
@@ -43,7 +43,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.DataTemplate itemTemplate)
             where T : Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>.ItemTemplateProperty, itemTemplate);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>.ItemTemplateProperty, itemTemplate);
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>.ItemTemplateProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>.ItemTemplateProperty, builder.GetValue());
             return self;
         }
         
@@ -68,7 +68,7 @@ namespace Sharp.UI
         public static T ItemTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>.ItemTemplateProperty, new DataTemplate(loadTemplate));
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ItemsView<Microsoft.Maui.Controls.Cell>.ItemTemplateProperty, new DataTemplate(loadTemplate));
             return self;
         }
         

@@ -17,7 +17,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.DataTemplate shellItemTemplate)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.ItemTemplateProperty, shellItemTemplate);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.ItemTemplateProperty, shellItemTemplate);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.ItemTemplateProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.ItemTemplateProperty, builder.GetValue());
             return self;
         }
         
@@ -42,7 +42,7 @@ namespace Sharp.UI
         public static T ShellItemTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.ItemTemplateProperty, new DataTemplate(loadTemplate));
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.ItemTemplateProperty, new DataTemplate(loadTemplate));
             return self;
         }
         

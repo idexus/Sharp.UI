@@ -17,7 +17,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.View content)
             where T : Microsoft.Maui.Controls.ContentView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.ContentView.ContentProperty, content);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ContentView.ContentProperty, content);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ContentView
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.View>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.ContentView.ContentProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ContentView.ContentProperty, builder.GetValue());
             return self;
         }
         

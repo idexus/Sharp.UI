@@ -17,7 +17,7 @@ namespace ExampleApp
             string title)
             where T : ExampleApp.SecondPageViewModel
         {
-            self.SetValueOrSetter(ExampleApp.SecondPageViewModel.TitleProperty, title);
+            self.SetValueOrAddSetter(ExampleApp.SecondPageViewModel.TitleProperty, title);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace ExampleApp
             where T : ExampleApp.SecondPageViewModel
         {
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(ExampleApp.SecondPageViewModel.TitleProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(ExampleApp.SecondPageViewModel.TitleProperty, builder.GetValue());
             return self;
         }
         
@@ -43,7 +43,7 @@ namespace ExampleApp
             string author)
             where T : ExampleApp.SecondPageViewModel
         {
-            self.SetValueOrSetter(ExampleApp.SecondPageViewModel.AuthorProperty, author);
+            self.SetValueOrAddSetter(ExampleApp.SecondPageViewModel.AuthorProperty, author);
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace ExampleApp
             where T : ExampleApp.SecondPageViewModel
         {
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(ExampleApp.SecondPageViewModel.AuthorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(ExampleApp.SecondPageViewModel.AuthorProperty, builder.GetValue());
             return self;
         }
         

@@ -17,7 +17,7 @@ namespace Sharp.UI
             double threshold)
             where T : Microsoft.Maui.Controls.SwipeView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SwipeView.ThresholdProperty, threshold);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwipeView.ThresholdProperty, threshold);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SwipeView
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SwipeView.ThresholdProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwipeView.ThresholdProperty, builder.GetValue());
             return self;
         }
         

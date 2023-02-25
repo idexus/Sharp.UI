@@ -17,7 +17,7 @@ namespace Sharp.UI
             Microsoft.Maui.TextTransform textTransform)
             where T : Microsoft.Maui.Controls.Label
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Label.TextTransformProperty, textTransform);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.TextTransformProperty, textTransform);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Label
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.TextTransform>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Label.TextTransformProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.TextTransformProperty, builder.GetValue());
             return self;
         }
         
@@ -43,7 +43,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.FormattedString formattedText)
             where T : Microsoft.Maui.Controls.Label
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Label.FormattedTextProperty, formattedText);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.FormattedTextProperty, formattedText);
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Label
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.FormattedString>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Label.FormattedTextProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.FormattedTextProperty, builder.GetValue());
             return self;
         }
         
@@ -69,7 +69,7 @@ namespace Sharp.UI
             Microsoft.Maui.TextAlignment horizontalTextAlignment)
             where T : Microsoft.Maui.Controls.Label
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Label.HorizontalTextAlignmentProperty, horizontalTextAlignment);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.HorizontalTextAlignmentProperty, horizontalTextAlignment);
             return self;
         }
         
@@ -78,7 +78,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Label
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.TextAlignment>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Label.HorizontalTextAlignmentProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.HorizontalTextAlignmentProperty, builder.GetValue());
             return self;
         }
         
@@ -95,7 +95,7 @@ namespace Sharp.UI
             Microsoft.Maui.LineBreakMode lineBreakMode)
             where T : Microsoft.Maui.Controls.Label
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Label.LineBreakModeProperty, lineBreakMode);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.LineBreakModeProperty, lineBreakMode);
             return self;
         }
         
@@ -104,7 +104,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Label
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.LineBreakMode>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Label.LineBreakModeProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.LineBreakModeProperty, builder.GetValue());
             return self;
         }
         
@@ -121,7 +121,7 @@ namespace Sharp.UI
             string text)
             where T : Microsoft.Maui.Controls.Label
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Label.TextProperty, text);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.TextProperty, text);
             return self;
         }
         
@@ -130,7 +130,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Label
         {
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Label.TextProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.TextProperty, builder.GetValue());
             return self;
         }
         
@@ -147,7 +147,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color textColor)
             where T : Microsoft.Maui.Controls.Label
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Label.TextColorProperty, textColor);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.TextColorProperty, textColor);
             return self;
         }
         
@@ -156,7 +156,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Label
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Label.TextColorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.TextColorProperty, builder.GetValue());
             return self;
         }
         
@@ -182,7 +182,7 @@ namespace Sharp.UI
             double characterSpacing)
             where T : Microsoft.Maui.Controls.Label
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Label.CharacterSpacingProperty, characterSpacing);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.CharacterSpacingProperty, characterSpacing);
             return self;
         }
         
@@ -191,7 +191,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Label
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Label.CharacterSpacingProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.CharacterSpacingProperty, builder.GetValue());
             return self;
         }
         
@@ -217,7 +217,7 @@ namespace Sharp.UI
             Microsoft.Maui.TextAlignment verticalTextAlignment)
             where T : Microsoft.Maui.Controls.Label
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Label.VerticalTextAlignmentProperty, verticalTextAlignment);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.VerticalTextAlignmentProperty, verticalTextAlignment);
             return self;
         }
         
@@ -226,7 +226,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Label
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.TextAlignment>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Label.VerticalTextAlignmentProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.VerticalTextAlignmentProperty, builder.GetValue());
             return self;
         }
         
@@ -243,7 +243,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.FontAttributes fontAttributes)
             where T : Microsoft.Maui.Controls.Label
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Label.FontAttributesProperty, fontAttributes);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.FontAttributesProperty, fontAttributes);
             return self;
         }
         
@@ -252,7 +252,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Label
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.FontAttributes>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Label.FontAttributesProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.FontAttributesProperty, builder.GetValue());
             return self;
         }
         
@@ -269,7 +269,7 @@ namespace Sharp.UI
             Microsoft.Maui.TextDecorations textDecorations)
             where T : Microsoft.Maui.Controls.Label
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Label.TextDecorationsProperty, textDecorations);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.TextDecorationsProperty, textDecorations);
             return self;
         }
         
@@ -278,7 +278,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Label
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.TextDecorations>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Label.TextDecorationsProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.TextDecorationsProperty, builder.GetValue());
             return self;
         }
         
@@ -295,7 +295,7 @@ namespace Sharp.UI
             string fontFamily)
             where T : Microsoft.Maui.Controls.Label
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Label.FontFamilyProperty, fontFamily);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.FontFamilyProperty, fontFamily);
             return self;
         }
         
@@ -304,7 +304,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Label
         {
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Label.FontFamilyProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.FontFamilyProperty, builder.GetValue());
             return self;
         }
         
@@ -321,7 +321,7 @@ namespace Sharp.UI
             double fontSize)
             where T : Microsoft.Maui.Controls.Label
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Label.FontSizeProperty, fontSize);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.FontSizeProperty, fontSize);
             return self;
         }
         
@@ -330,7 +330,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Label
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Label.FontSizeProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.FontSizeProperty, builder.GetValue());
             return self;
         }
         
@@ -356,7 +356,7 @@ namespace Sharp.UI
             bool fontAutoScalingEnabled)
             where T : Microsoft.Maui.Controls.Label
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Label.FontAutoScalingEnabledProperty, fontAutoScalingEnabled);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.FontAutoScalingEnabledProperty, fontAutoScalingEnabled);
             return self;
         }
         
@@ -365,7 +365,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Label
         {
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Label.FontAutoScalingEnabledProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.FontAutoScalingEnabledProperty, builder.GetValue());
             return self;
         }
         
@@ -382,7 +382,7 @@ namespace Sharp.UI
             double lineHeight)
             where T : Microsoft.Maui.Controls.Label
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Label.LineHeightProperty, lineHeight);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.LineHeightProperty, lineHeight);
             return self;
         }
         
@@ -391,7 +391,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Label
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Label.LineHeightProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.LineHeightProperty, builder.GetValue());
             return self;
         }
         
@@ -417,7 +417,7 @@ namespace Sharp.UI
             int maxLines)
             where T : Microsoft.Maui.Controls.Label
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Label.MaxLinesProperty, maxLines);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.MaxLinesProperty, maxLines);
             return self;
         }
         
@@ -426,7 +426,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Label
         {
             var builder = buildValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Label.MaxLinesProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.MaxLinesProperty, builder.GetValue());
             return self;
         }
         
@@ -443,7 +443,7 @@ namespace Sharp.UI
             Microsoft.Maui.Thickness padding)
             where T : Microsoft.Maui.Controls.Label
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Label.PaddingProperty, padding);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.PaddingProperty, padding);
             return self;
         }
         
@@ -452,7 +452,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Label
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Thickness>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Label.PaddingProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.PaddingProperty, builder.GetValue());
             return self;
         }
         
@@ -469,7 +469,7 @@ namespace Sharp.UI
             Microsoft.Maui.TextType textType)
             where T : Microsoft.Maui.Controls.Label
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Label.TextTypeProperty, textType);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.TextTypeProperty, textType);
             return self;
         }
         
@@ -478,7 +478,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Label
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.TextType>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Label.TextTypeProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.TextTypeProperty, builder.GetValue());
             return self;
         }
         
@@ -495,82 +495,82 @@ namespace Sharp.UI
         public static T TextCenterHorizontal<T>(this T self)
             where T : Microsoft.Maui.Controls.Label
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Label.HorizontalTextAlignmentProperty, TextAlignment.Center);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.HorizontalTextAlignmentProperty, TextAlignment.Center);
             return self;
         }
 
         public static T TextCenterVertical<T>(this T self)
             where T : Microsoft.Maui.Controls.Label
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Label.VerticalTextAlignmentProperty, TextAlignment.Center);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.VerticalTextAlignmentProperty, TextAlignment.Center);
             return self;
         }
 
         public static T TextCenter<T>(this T self)
             where T : Microsoft.Maui.Controls.Label
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Label.HorizontalTextAlignmentProperty, TextAlignment.Center);
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Label.VerticalTextAlignmentProperty, TextAlignment.Center);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.HorizontalTextAlignmentProperty, TextAlignment.Center);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.VerticalTextAlignmentProperty, TextAlignment.Center);
             return self;
         }
 
         public static T TextTop<T>(this T self)
             where T : Microsoft.Maui.Controls.Label
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Label.VerticalTextAlignmentProperty, TextAlignment.Start);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.VerticalTextAlignmentProperty, TextAlignment.Start);
             return self;
         }
 
         public static T TextBottom<T>(this T self)
             where T : Microsoft.Maui.Controls.Label, Microsoft.Maui.ITextAlignment
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Label.VerticalTextAlignmentProperty, TextAlignment.End);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.VerticalTextAlignmentProperty, TextAlignment.End);
             return self;
         }
 
         public static T TextTopStart<T>(this T self)
             where T : Microsoft.Maui.Controls.Label
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Label.VerticalTextAlignmentProperty, TextAlignment.Start);
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Label.HorizontalTextAlignmentProperty, TextAlignment.Start);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.VerticalTextAlignmentProperty, TextAlignment.Start);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.HorizontalTextAlignmentProperty, TextAlignment.Start);
             return self;
         }
 
         public static T TextBottomStart<T>(this T self)
             where T : Microsoft.Maui.Controls.Label
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Label.VerticalTextAlignmentProperty, TextAlignment.End);
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Label.HorizontalTextAlignmentProperty, TextAlignment.Start);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.VerticalTextAlignmentProperty, TextAlignment.End);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.HorizontalTextAlignmentProperty, TextAlignment.Start);
             return self;
         }
 
         public static T TextTopEnd<T>(this T self)
             where T : Microsoft.Maui.Controls.Label
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Label.VerticalTextAlignmentProperty, TextAlignment.Start);
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Label.HorizontalTextAlignmentProperty, TextAlignment.End);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.VerticalTextAlignmentProperty, TextAlignment.Start);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.HorizontalTextAlignmentProperty, TextAlignment.End);
             return self;
         }
 
         public static T TextBottomEnd<T>(this T self)
             where T : Microsoft.Maui.Controls.Label
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Label.VerticalTextAlignmentProperty, TextAlignment.End);
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Label.HorizontalTextAlignmentProperty, TextAlignment.End);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.VerticalTextAlignmentProperty, TextAlignment.End);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.HorizontalTextAlignmentProperty, TextAlignment.End);
             return self;
         }
 
         public static T TextStart<T>(this T self)
             where T : Microsoft.Maui.Controls.Label
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Label.HorizontalTextAlignmentProperty, TextAlignment.Start);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.HorizontalTextAlignmentProperty, TextAlignment.Start);
             return self;
         }
 
         public static T TextEnd<T>(this T self)
             where T : Microsoft.Maui.Controls.Label
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Label.HorizontalTextAlignmentProperty, TextAlignment.End);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.HorizontalTextAlignmentProperty, TextAlignment.End);
             return self;
         }
 

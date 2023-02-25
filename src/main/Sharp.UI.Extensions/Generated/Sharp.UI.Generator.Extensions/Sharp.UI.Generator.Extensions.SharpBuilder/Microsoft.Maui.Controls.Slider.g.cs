@@ -17,7 +17,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color minimumTrackColor)
             where T : Microsoft.Maui.Controls.Slider
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Slider.MinimumTrackColorProperty, minimumTrackColor);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Slider.MinimumTrackColorProperty, minimumTrackColor);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Slider
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Slider.MinimumTrackColorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Slider.MinimumTrackColorProperty, builder.GetValue());
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color maximumTrackColor)
             where T : Microsoft.Maui.Controls.Slider
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Slider.MaximumTrackColorProperty, maximumTrackColor);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Slider.MaximumTrackColorProperty, maximumTrackColor);
             return self;
         }
         
@@ -61,7 +61,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Slider
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Slider.MaximumTrackColorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Slider.MaximumTrackColorProperty, builder.GetValue());
             return self;
         }
         
@@ -87,7 +87,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color thumbColor)
             where T : Microsoft.Maui.Controls.Slider
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Slider.ThumbColorProperty, thumbColor);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Slider.ThumbColorProperty, thumbColor);
             return self;
         }
         
@@ -96,7 +96,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Slider
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Slider.ThumbColorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Slider.ThumbColorProperty, builder.GetValue());
             return self;
         }
         
@@ -122,7 +122,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.ImageSource thumbImageSource)
             where T : Microsoft.Maui.Controls.Slider
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Slider.ThumbImageSourceProperty, thumbImageSource);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Slider.ThumbImageSourceProperty, thumbImageSource);
             return self;
         }
         
@@ -131,7 +131,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Slider
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Slider.ThumbImageSourceProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Slider.ThumbImageSourceProperty, builder.GetValue());
             return self;
         }
         
@@ -148,7 +148,7 @@ namespace Sharp.UI
             System.Windows.Input.ICommand dragStartedCommand)
             where T : Microsoft.Maui.Controls.Slider
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Slider.DragStartedCommandProperty, dragStartedCommand);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Slider.DragStartedCommandProperty, dragStartedCommand);
             return self;
         }
         
@@ -157,7 +157,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Slider
         {
             var builder = buildValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Slider.DragStartedCommandProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Slider.DragStartedCommandProperty, builder.GetValue());
             return self;
         }
         
@@ -174,7 +174,7 @@ namespace Sharp.UI
             System.Windows.Input.ICommand dragCompletedCommand)
             where T : Microsoft.Maui.Controls.Slider
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Slider.DragCompletedCommandProperty, dragCompletedCommand);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Slider.DragCompletedCommandProperty, dragCompletedCommand);
             return self;
         }
         
@@ -183,7 +183,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Slider
         {
             var builder = buildValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Slider.DragCompletedCommandProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Slider.DragCompletedCommandProperty, builder.GetValue());
             return self;
         }
         
@@ -200,7 +200,7 @@ namespace Sharp.UI
             double maximum)
             where T : Microsoft.Maui.Controls.Slider
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Slider.MaximumProperty, maximum);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Slider.MaximumProperty, maximum);
             return self;
         }
         
@@ -209,7 +209,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Slider
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Slider.MaximumProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Slider.MaximumProperty, builder.GetValue());
             return self;
         }
         
@@ -235,7 +235,7 @@ namespace Sharp.UI
             double minimum)
             where T : Microsoft.Maui.Controls.Slider
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Slider.MinimumProperty, minimum);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Slider.MinimumProperty, minimum);
             return self;
         }
         
@@ -244,7 +244,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Slider
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Slider.MinimumProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Slider.MinimumProperty, builder.GetValue());
             return self;
         }
         
@@ -270,7 +270,7 @@ namespace Sharp.UI
             double value)
             where T : Microsoft.Maui.Controls.Slider
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Slider.ValueProperty, value);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Slider.ValueProperty, value);
             return self;
         }
         
@@ -279,7 +279,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Slider
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Slider.ValueProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Slider.ValueProperty, builder.GetValue());
             return self;
         }
         

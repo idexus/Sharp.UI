@@ -17,7 +17,7 @@ namespace Sharp.UI
             object content)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.ContentProperty, content);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.RadioButton.ContentProperty, content);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.RadioButton
         {
             var builder = buildValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.ContentProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.RadioButton.ContentProperty, builder.GetValue());
             return self;
         }
         
@@ -43,7 +43,7 @@ namespace Sharp.UI
             object value)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.ValueProperty, value);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.RadioButton.ValueProperty, value);
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.RadioButton
         {
             var builder = buildValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.ValueProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.RadioButton.ValueProperty, builder.GetValue());
             return self;
         }
         
@@ -69,7 +69,7 @@ namespace Sharp.UI
             bool isChecked)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.IsCheckedProperty, isChecked);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.RadioButton.IsCheckedProperty, isChecked);
             return self;
         }
         
@@ -78,7 +78,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.RadioButton
         {
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.IsCheckedProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.RadioButton.IsCheckedProperty, builder.GetValue());
             return self;
         }
         
@@ -95,7 +95,7 @@ namespace Sharp.UI
             string groupName)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.GroupNameProperty, groupName);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.RadioButton.GroupNameProperty, groupName);
             return self;
         }
         
@@ -104,7 +104,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.RadioButton
         {
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.GroupNameProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.RadioButton.GroupNameProperty, builder.GetValue());
             return self;
         }
         
@@ -121,7 +121,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color textColor)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.TextColorProperty, textColor);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.RadioButton.TextColorProperty, textColor);
             return self;
         }
         
@@ -130,7 +130,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.RadioButton
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.TextColorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.RadioButton.TextColorProperty, builder.GetValue());
             return self;
         }
         
@@ -156,7 +156,7 @@ namespace Sharp.UI
             double characterSpacing)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.CharacterSpacingProperty, characterSpacing);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.RadioButton.CharacterSpacingProperty, characterSpacing);
             return self;
         }
         
@@ -165,7 +165,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.RadioButton
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.CharacterSpacingProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.RadioButton.CharacterSpacingProperty, builder.GetValue());
             return self;
         }
         
@@ -191,7 +191,7 @@ namespace Sharp.UI
             Microsoft.Maui.TextTransform textTransform)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.TextTransformProperty, textTransform);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.RadioButton.TextTransformProperty, textTransform);
             return self;
         }
         
@@ -200,7 +200,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.RadioButton
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.TextTransform>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.TextTransformProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.RadioButton.TextTransformProperty, builder.GetValue());
             return self;
         }
         
@@ -217,7 +217,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.FontAttributes fontAttributes)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.FontAttributesProperty, fontAttributes);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.RadioButton.FontAttributesProperty, fontAttributes);
             return self;
         }
         
@@ -226,7 +226,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.RadioButton
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.FontAttributes>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.FontAttributesProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.RadioButton.FontAttributesProperty, builder.GetValue());
             return self;
         }
         
@@ -243,7 +243,7 @@ namespace Sharp.UI
             string fontFamily)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.FontFamilyProperty, fontFamily);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.RadioButton.FontFamilyProperty, fontFamily);
             return self;
         }
         
@@ -252,7 +252,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.RadioButton
         {
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.FontFamilyProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.RadioButton.FontFamilyProperty, builder.GetValue());
             return self;
         }
         
@@ -269,7 +269,7 @@ namespace Sharp.UI
             double fontSize)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.FontSizeProperty, fontSize);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.RadioButton.FontSizeProperty, fontSize);
             return self;
         }
         
@@ -278,7 +278,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.RadioButton
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.FontSizeProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.RadioButton.FontSizeProperty, builder.GetValue());
             return self;
         }
         
@@ -304,7 +304,7 @@ namespace Sharp.UI
             bool fontAutoScalingEnabled)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.FontAutoScalingEnabledProperty, fontAutoScalingEnabled);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.RadioButton.FontAutoScalingEnabledProperty, fontAutoScalingEnabled);
             return self;
         }
         
@@ -313,7 +313,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.RadioButton
         {
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.FontAutoScalingEnabledProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.RadioButton.FontAutoScalingEnabledProperty, builder.GetValue());
             return self;
         }
         
@@ -330,7 +330,7 @@ namespace Sharp.UI
             double borderWidth)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.BorderWidthProperty, borderWidth);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.RadioButton.BorderWidthProperty, borderWidth);
             return self;
         }
         
@@ -339,7 +339,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.RadioButton
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.BorderWidthProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.RadioButton.BorderWidthProperty, builder.GetValue());
             return self;
         }
         
@@ -365,7 +365,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color borderColor)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.BorderColorProperty, borderColor);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.RadioButton.BorderColorProperty, borderColor);
             return self;
         }
         
@@ -374,7 +374,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.RadioButton
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.BorderColorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.RadioButton.BorderColorProperty, builder.GetValue());
             return self;
         }
         
@@ -400,7 +400,7 @@ namespace Sharp.UI
             int cornerRadius)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.CornerRadiusProperty, cornerRadius);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.RadioButton.CornerRadiusProperty, cornerRadius);
             return self;
         }
         
@@ -409,7 +409,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.RadioButton
         {
             var builder = buildValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.CornerRadiusProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.RadioButton.CornerRadiusProperty, builder.GetValue());
             return self;
         }
         

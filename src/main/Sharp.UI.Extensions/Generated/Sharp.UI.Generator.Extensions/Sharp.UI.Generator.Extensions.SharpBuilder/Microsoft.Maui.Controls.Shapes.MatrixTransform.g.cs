@@ -17,7 +17,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.Shapes.Matrix matrix)
             where T : Microsoft.Maui.Controls.Shapes.MatrixTransform
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.MatrixTransform.MatrixProperty, matrix);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.MatrixTransform.MatrixProperty, matrix);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shapes.MatrixTransform
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Shapes.Matrix>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.MatrixTransform.MatrixProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.MatrixTransform.MatrixProperty, builder.GetValue());
             return self;
         }
         

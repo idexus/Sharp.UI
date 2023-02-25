@@ -17,7 +17,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color onColor)
             where T : Microsoft.Maui.Controls.Switch
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Switch.OnColorProperty, onColor);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Switch.OnColorProperty, onColor);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Switch
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Switch.OnColorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Switch.OnColorProperty, builder.GetValue());
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color thumbColor)
             where T : Microsoft.Maui.Controls.Switch
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Switch.ThumbColorProperty, thumbColor);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Switch.ThumbColorProperty, thumbColor);
             return self;
         }
         
@@ -61,7 +61,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Switch
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Switch.ThumbColorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Switch.ThumbColorProperty, builder.GetValue());
             return self;
         }
         
@@ -87,7 +87,7 @@ namespace Sharp.UI
             bool isToggled)
             where T : Microsoft.Maui.Controls.Switch
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Switch.IsToggledProperty, isToggled);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Switch.IsToggledProperty, isToggled);
             return self;
         }
         
@@ -96,7 +96,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Switch
         {
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Switch.IsToggledProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Switch.IsToggledProperty, builder.GetValue());
             return self;
         }
         

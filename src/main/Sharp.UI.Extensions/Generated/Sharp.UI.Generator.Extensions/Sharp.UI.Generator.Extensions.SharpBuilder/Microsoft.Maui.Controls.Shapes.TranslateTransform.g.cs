@@ -17,7 +17,7 @@ namespace Sharp.UI
             double x)
             where T : Microsoft.Maui.Controls.Shapes.TranslateTransform
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.TranslateTransform.XProperty, x);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.TranslateTransform.XProperty, x);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shapes.TranslateTransform
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.TranslateTransform.XProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.TranslateTransform.XProperty, builder.GetValue());
             return self;
         }
         
@@ -43,7 +43,7 @@ namespace Sharp.UI
             double y)
             where T : Microsoft.Maui.Controls.Shapes.TranslateTransform
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.TranslateTransform.YProperty, y);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.TranslateTransform.YProperty, y);
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shapes.TranslateTransform
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.TranslateTransform.YProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.TranslateTransform.YProperty, builder.GetValue());
             return self;
         }
         

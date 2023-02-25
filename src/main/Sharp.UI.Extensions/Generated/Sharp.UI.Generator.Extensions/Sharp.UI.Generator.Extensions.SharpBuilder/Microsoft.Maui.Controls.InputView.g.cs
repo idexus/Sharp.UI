@@ -17,7 +17,7 @@ namespace Sharp.UI
             int maxLength)
             where T : Microsoft.Maui.Controls.InputView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.InputView.MaxLengthProperty, maxLength);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.InputView.MaxLengthProperty, maxLength);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.InputView
         {
             var builder = buildValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.InputView.MaxLengthProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.InputView.MaxLengthProperty, builder.GetValue());
             return self;
         }
         
@@ -43,7 +43,7 @@ namespace Sharp.UI
             string text)
             where T : Microsoft.Maui.Controls.InputView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.InputView.TextProperty, text);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.InputView.TextProperty, text);
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.InputView
         {
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.InputView.TextProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.InputView.TextProperty, builder.GetValue());
             return self;
         }
         
@@ -69,7 +69,7 @@ namespace Sharp.UI
             Microsoft.Maui.Keyboard keyboard)
             where T : Microsoft.Maui.Controls.InputView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.InputView.KeyboardProperty, keyboard);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.InputView.KeyboardProperty, keyboard);
             return self;
         }
         
@@ -78,7 +78,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.InputView
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Keyboard>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.InputView.KeyboardProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.InputView.KeyboardProperty, builder.GetValue());
             return self;
         }
         
@@ -95,7 +95,7 @@ namespace Sharp.UI
             bool isSpellCheckEnabled)
             where T : Microsoft.Maui.Controls.InputView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.InputView.IsSpellCheckEnabledProperty, isSpellCheckEnabled);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.InputView.IsSpellCheckEnabledProperty, isSpellCheckEnabled);
             return self;
         }
         
@@ -104,7 +104,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.InputView
         {
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.InputView.IsSpellCheckEnabledProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.InputView.IsSpellCheckEnabledProperty, builder.GetValue());
             return self;
         }
         
@@ -121,7 +121,7 @@ namespace Sharp.UI
             bool isReadOnly)
             where T : Microsoft.Maui.Controls.InputView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.InputView.IsReadOnlyProperty, isReadOnly);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.InputView.IsReadOnlyProperty, isReadOnly);
             return self;
         }
         
@@ -130,7 +130,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.InputView
         {
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.InputView.IsReadOnlyProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.InputView.IsReadOnlyProperty, builder.GetValue());
             return self;
         }
         
@@ -147,7 +147,7 @@ namespace Sharp.UI
             string placeholder)
             where T : Microsoft.Maui.Controls.InputView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.InputView.PlaceholderProperty, placeholder);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.InputView.PlaceholderProperty, placeholder);
             return self;
         }
         
@@ -156,7 +156,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.InputView
         {
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.InputView.PlaceholderProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.InputView.PlaceholderProperty, builder.GetValue());
             return self;
         }
         
@@ -173,7 +173,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color placeholderColor)
             where T : Microsoft.Maui.Controls.InputView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.InputView.PlaceholderColorProperty, placeholderColor);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.InputView.PlaceholderColorProperty, placeholderColor);
             return self;
         }
         
@@ -182,7 +182,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.InputView
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.InputView.PlaceholderColorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.InputView.PlaceholderColorProperty, builder.GetValue());
             return self;
         }
         
@@ -208,7 +208,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color textColor)
             where T : Microsoft.Maui.Controls.InputView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.InputView.TextColorProperty, textColor);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.InputView.TextColorProperty, textColor);
             return self;
         }
         
@@ -217,7 +217,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.InputView
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.InputView.TextColorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.InputView.TextColorProperty, builder.GetValue());
             return self;
         }
         
@@ -243,7 +243,7 @@ namespace Sharp.UI
             double characterSpacing)
             where T : Microsoft.Maui.Controls.InputView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.InputView.CharacterSpacingProperty, characterSpacing);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.InputView.CharacterSpacingProperty, characterSpacing);
             return self;
         }
         
@@ -252,7 +252,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.InputView
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.InputView.CharacterSpacingProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.InputView.CharacterSpacingProperty, builder.GetValue());
             return self;
         }
         
@@ -278,7 +278,7 @@ namespace Sharp.UI
             Microsoft.Maui.TextTransform textTransform)
             where T : Microsoft.Maui.Controls.InputView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.InputView.TextTransformProperty, textTransform);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.InputView.TextTransformProperty, textTransform);
             return self;
         }
         
@@ -287,7 +287,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.InputView
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.TextTransform>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.InputView.TextTransformProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.InputView.TextTransformProperty, builder.GetValue());
             return self;
         }
         

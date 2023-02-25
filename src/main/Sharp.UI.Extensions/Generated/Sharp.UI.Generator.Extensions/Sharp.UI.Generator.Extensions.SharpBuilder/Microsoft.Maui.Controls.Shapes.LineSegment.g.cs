@@ -17,7 +17,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Point point)
             where T : Microsoft.Maui.Controls.Shapes.LineSegment
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.LineSegment.PointProperty, point);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.LineSegment.PointProperty, point);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shapes.LineSegment
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Point>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.LineSegment.PointProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.LineSegment.PointProperty, builder.GetValue());
             return self;
         }
         

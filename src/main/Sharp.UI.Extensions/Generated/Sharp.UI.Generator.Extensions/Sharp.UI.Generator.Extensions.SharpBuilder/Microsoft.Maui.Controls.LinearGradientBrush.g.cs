@@ -17,7 +17,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Point startPoint)
             where T : Microsoft.Maui.Controls.LinearGradientBrush
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.LinearGradientBrush.StartPointProperty, startPoint);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.LinearGradientBrush.StartPointProperty, startPoint);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.LinearGradientBrush
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Point>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.LinearGradientBrush.StartPointProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.LinearGradientBrush.StartPointProperty, builder.GetValue());
             return self;
         }
         
@@ -43,7 +43,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Point endPoint)
             where T : Microsoft.Maui.Controls.LinearGradientBrush
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.LinearGradientBrush.EndPointProperty, endPoint);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.LinearGradientBrush.EndPointProperty, endPoint);
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.LinearGradientBrush
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Point>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.LinearGradientBrush.EndPointProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.LinearGradientBrush.EndPointProperty, builder.GetValue());
             return self;
         }
         

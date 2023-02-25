@@ -59,7 +59,7 @@ namespace Sharp.UI
             Microsoft.Maui.ScrollOrientation orientation)
             where T : Microsoft.Maui.Controls.ScrollView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.ScrollView.OrientationProperty, orientation);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ScrollView.OrientationProperty, orientation);
             return self;
         }
         
@@ -68,7 +68,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ScrollView
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.ScrollOrientation>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.ScrollView.OrientationProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ScrollView.OrientationProperty, builder.GetValue());
             return self;
         }
         
@@ -85,7 +85,7 @@ namespace Sharp.UI
             Microsoft.Maui.ScrollBarVisibility horizontalScrollBarVisibility)
             where T : Microsoft.Maui.Controls.ScrollView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.ScrollView.HorizontalScrollBarVisibilityProperty, horizontalScrollBarVisibility);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ScrollView.HorizontalScrollBarVisibilityProperty, horizontalScrollBarVisibility);
             return self;
         }
         
@@ -94,7 +94,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ScrollView
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.ScrollBarVisibility>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.ScrollView.HorizontalScrollBarVisibilityProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ScrollView.HorizontalScrollBarVisibilityProperty, builder.GetValue());
             return self;
         }
         
@@ -111,7 +111,7 @@ namespace Sharp.UI
             Microsoft.Maui.ScrollBarVisibility verticalScrollBarVisibility)
             where T : Microsoft.Maui.Controls.ScrollView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.ScrollView.VerticalScrollBarVisibilityProperty, verticalScrollBarVisibility);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ScrollView.VerticalScrollBarVisibilityProperty, verticalScrollBarVisibility);
             return self;
         }
         
@@ -120,7 +120,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ScrollView
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.ScrollBarVisibility>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.ScrollView.VerticalScrollBarVisibilityProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ScrollView.VerticalScrollBarVisibilityProperty, builder.GetValue());
             return self;
         }
         

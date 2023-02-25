@@ -17,7 +17,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color progressColor)
             where T : Microsoft.Maui.Controls.ProgressBar
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.ProgressBar.ProgressColorProperty, progressColor);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ProgressBar.ProgressColorProperty, progressColor);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ProgressBar
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.ProgressBar.ProgressColorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ProgressBar.ProgressColorProperty, builder.GetValue());
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace Sharp.UI
             double progress)
             where T : Microsoft.Maui.Controls.ProgressBar
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.ProgressBar.ProgressProperty, progress);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ProgressBar.ProgressProperty, progress);
             return self;
         }
         
@@ -61,7 +61,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ProgressBar
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.ProgressBar.ProgressProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ProgressBar.ProgressProperty, builder.GetValue());
             return self;
         }
         

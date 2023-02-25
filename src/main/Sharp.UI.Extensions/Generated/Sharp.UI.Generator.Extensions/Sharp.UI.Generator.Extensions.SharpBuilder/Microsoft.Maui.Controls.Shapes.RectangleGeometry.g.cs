@@ -17,7 +17,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Rect rect)
             where T : Microsoft.Maui.Controls.Shapes.RectangleGeometry
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.RectangleGeometry.RectProperty, rect);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.RectangleGeometry.RectProperty, rect);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shapes.RectangleGeometry
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Rect>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.RectangleGeometry.RectProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.RectangleGeometry.RectProperty, builder.GetValue());
             return self;
         }
         

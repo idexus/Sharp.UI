@@ -17,7 +17,7 @@ namespace Sharp.UI
             object selectedItem)
             where T : Microsoft.Maui.Controls.SelectableItemsView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SelectableItemsView.SelectedItemProperty, selectedItem);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SelectableItemsView.SelectedItemProperty, selectedItem);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SelectableItemsView
         {
             var builder = buildValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SelectableItemsView.SelectedItemProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SelectableItemsView.SelectedItemProperty, builder.GetValue());
             return self;
         }
         
@@ -70,7 +70,7 @@ namespace Sharp.UI
             System.Windows.Input.ICommand selectionChangedCommand)
             where T : Microsoft.Maui.Controls.SelectableItemsView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SelectableItemsView.SelectionChangedCommandProperty, selectionChangedCommand);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SelectableItemsView.SelectionChangedCommandProperty, selectionChangedCommand);
             return self;
         }
         
@@ -79,7 +79,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SelectableItemsView
         {
             var builder = buildValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SelectableItemsView.SelectionChangedCommandProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SelectableItemsView.SelectionChangedCommandProperty, builder.GetValue());
             return self;
         }
         
@@ -96,7 +96,7 @@ namespace Sharp.UI
             object selectionChangedCommandParameter)
             where T : Microsoft.Maui.Controls.SelectableItemsView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SelectableItemsView.SelectionChangedCommandParameterProperty, selectionChangedCommandParameter);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SelectableItemsView.SelectionChangedCommandParameterProperty, selectionChangedCommandParameter);
             return self;
         }
         
@@ -105,7 +105,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SelectableItemsView
         {
             var builder = buildValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SelectableItemsView.SelectionChangedCommandParameterProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SelectableItemsView.SelectionChangedCommandParameterProperty, builder.GetValue());
             return self;
         }
         
@@ -122,7 +122,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.SelectionMode selectionMode)
             where T : Microsoft.Maui.Controls.SelectableItemsView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SelectableItemsView.SelectionModeProperty, selectionMode);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SelectableItemsView.SelectionModeProperty, selectionMode);
             return self;
         }
         
@@ -131,7 +131,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SelectableItemsView
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.SelectionMode>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SelectableItemsView.SelectionModeProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SelectableItemsView.SelectionModeProperty, builder.GetValue());
             return self;
         }
         

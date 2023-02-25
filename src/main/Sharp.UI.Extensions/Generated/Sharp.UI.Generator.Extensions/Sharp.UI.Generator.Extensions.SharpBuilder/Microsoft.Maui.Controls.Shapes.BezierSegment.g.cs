@@ -17,7 +17,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Point point1)
             where T : Microsoft.Maui.Controls.Shapes.BezierSegment
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.BezierSegment.Point1Property, point1);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.BezierSegment.Point1Property, point1);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shapes.BezierSegment
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Point>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.BezierSegment.Point1Property, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.BezierSegment.Point1Property, builder.GetValue());
             return self;
         }
         
@@ -43,7 +43,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Point point2)
             where T : Microsoft.Maui.Controls.Shapes.BezierSegment
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.BezierSegment.Point2Property, point2);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.BezierSegment.Point2Property, point2);
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shapes.BezierSegment
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Point>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.BezierSegment.Point2Property, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.BezierSegment.Point2Property, builder.GetValue());
             return self;
         }
         
@@ -69,7 +69,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Point point3)
             where T : Microsoft.Maui.Controls.Shapes.BezierSegment
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.BezierSegment.Point3Property, point3);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.BezierSegment.Point3Property, point3);
             return self;
         }
         
@@ -78,7 +78,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shapes.BezierSegment
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Point>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.BezierSegment.Point3Property, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.BezierSegment.Point3Property, builder.GetValue());
             return self;
         }
         

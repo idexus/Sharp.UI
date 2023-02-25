@@ -17,7 +17,7 @@ namespace ExampleApp
             double rawAngle)
             where T : ExampleApp.AngleViewModel
         {
-            self.SetValueOrSetter(ExampleApp.AngleViewModel.RawAngleProperty, rawAngle);
+            self.SetValueOrAddSetter(ExampleApp.AngleViewModel.RawAngleProperty, rawAngle);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace ExampleApp
             where T : ExampleApp.AngleViewModel
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(ExampleApp.AngleViewModel.RawAngleProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(ExampleApp.AngleViewModel.RawAngleProperty, builder.GetValue());
             return self;
         }
         
@@ -43,7 +43,7 @@ namespace ExampleApp
             double angle)
             where T : ExampleApp.AngleViewModel
         {
-            self.SetValueOrSetter(ExampleApp.AngleViewModel.AngleProperty, angle);
+            self.SetValueOrAddSetter(ExampleApp.AngleViewModel.AngleProperty, angle);
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace ExampleApp
             where T : ExampleApp.AngleViewModel
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(ExampleApp.AngleViewModel.AngleProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(ExampleApp.AngleViewModel.AngleProperty, builder.GetValue());
             return self;
         }
         
@@ -69,7 +69,7 @@ namespace ExampleApp
             double maximumAngle)
             where T : ExampleApp.AngleViewModel
         {
-            self.SetValueOrSetter(ExampleApp.AngleViewModel.MaximumAngleProperty, maximumAngle);
+            self.SetValueOrAddSetter(ExampleApp.AngleViewModel.MaximumAngleProperty, maximumAngle);
             return self;
         }
         
@@ -78,7 +78,7 @@ namespace ExampleApp
             where T : ExampleApp.AngleViewModel
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(ExampleApp.AngleViewModel.MaximumAngleProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(ExampleApp.AngleViewModel.MaximumAngleProperty, builder.GetValue());
             return self;
         }
         

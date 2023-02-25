@@ -17,7 +17,7 @@ namespace Sharp.UI
             bool loop)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.LoopProperty, loop);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.CarouselView.LoopProperty, loop);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.CarouselView
         {
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.LoopProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.CarouselView.LoopProperty, builder.GetValue());
             return self;
         }
         
@@ -43,7 +43,7 @@ namespace Sharp.UI
             Microsoft.Maui.Thickness peekAreaInsets)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.PeekAreaInsetsProperty, peekAreaInsets);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.CarouselView.PeekAreaInsetsProperty, peekAreaInsets);
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.CarouselView
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Thickness>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.PeekAreaInsetsProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.CarouselView.PeekAreaInsetsProperty, builder.GetValue());
             return self;
         }
         
@@ -96,7 +96,7 @@ namespace Sharp.UI
             bool isBounceEnabled)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.IsBounceEnabledProperty, isBounceEnabled);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.CarouselView.IsBounceEnabledProperty, isBounceEnabled);
             return self;
         }
         
@@ -105,7 +105,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.CarouselView
         {
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.IsBounceEnabledProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.CarouselView.IsBounceEnabledProperty, builder.GetValue());
             return self;
         }
         
@@ -122,7 +122,7 @@ namespace Sharp.UI
             bool isSwipeEnabled)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.IsSwipeEnabledProperty, isSwipeEnabled);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.CarouselView.IsSwipeEnabledProperty, isSwipeEnabled);
             return self;
         }
         
@@ -131,7 +131,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.CarouselView
         {
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.IsSwipeEnabledProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.CarouselView.IsSwipeEnabledProperty, builder.GetValue());
             return self;
         }
         
@@ -148,7 +148,7 @@ namespace Sharp.UI
             bool isScrollAnimated)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.IsScrollAnimatedProperty, isScrollAnimated);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.CarouselView.IsScrollAnimatedProperty, isScrollAnimated);
             return self;
         }
         
@@ -157,7 +157,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.CarouselView
         {
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.IsScrollAnimatedProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.CarouselView.IsScrollAnimatedProperty, builder.GetValue());
             return self;
         }
         
@@ -174,7 +174,7 @@ namespace Sharp.UI
             object currentItem)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.CurrentItemProperty, currentItem);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.CarouselView.CurrentItemProperty, currentItem);
             return self;
         }
         
@@ -183,7 +183,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.CarouselView
         {
             var builder = buildValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.CurrentItemProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.CarouselView.CurrentItemProperty, builder.GetValue());
             return self;
         }
         
@@ -200,7 +200,7 @@ namespace Sharp.UI
             System.Windows.Input.ICommand currentItemChangedCommand)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.CurrentItemChangedCommandProperty, currentItemChangedCommand);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.CarouselView.CurrentItemChangedCommandProperty, currentItemChangedCommand);
             return self;
         }
         
@@ -209,7 +209,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.CarouselView
         {
             var builder = buildValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.CurrentItemChangedCommandProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.CarouselView.CurrentItemChangedCommandProperty, builder.GetValue());
             return self;
         }
         
@@ -226,7 +226,7 @@ namespace Sharp.UI
             object currentItemChangedCommandParameter)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.CurrentItemChangedCommandParameterProperty, currentItemChangedCommandParameter);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.CarouselView.CurrentItemChangedCommandParameterProperty, currentItemChangedCommandParameter);
             return self;
         }
         
@@ -235,7 +235,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.CarouselView
         {
             var builder = buildValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.CurrentItemChangedCommandParameterProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.CarouselView.CurrentItemChangedCommandParameterProperty, builder.GetValue());
             return self;
         }
         
@@ -252,7 +252,7 @@ namespace Sharp.UI
             int position)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.PositionProperty, position);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.CarouselView.PositionProperty, position);
             return self;
         }
         
@@ -261,7 +261,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.CarouselView
         {
             var builder = buildValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.PositionProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.CarouselView.PositionProperty, builder.GetValue());
             return self;
         }
         
@@ -278,7 +278,7 @@ namespace Sharp.UI
             System.Windows.Input.ICommand positionChangedCommand)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.PositionChangedCommandProperty, positionChangedCommand);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.CarouselView.PositionChangedCommandProperty, positionChangedCommand);
             return self;
         }
         
@@ -287,7 +287,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.CarouselView
         {
             var builder = buildValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.PositionChangedCommandProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.CarouselView.PositionChangedCommandProperty, builder.GetValue());
             return self;
         }
         
@@ -304,7 +304,7 @@ namespace Sharp.UI
             object positionChangedCommandParameter)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.PositionChangedCommandParameterProperty, positionChangedCommandParameter);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.CarouselView.PositionChangedCommandParameterProperty, positionChangedCommandParameter);
             return self;
         }
         
@@ -313,7 +313,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.CarouselView
         {
             var builder = buildValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.PositionChangedCommandParameterProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.CarouselView.PositionChangedCommandParameterProperty, builder.GetValue());
             return self;
         }
         
@@ -330,7 +330,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.LinearItemsLayout itemsLayout)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.ItemsLayoutProperty, itemsLayout);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.CarouselView.ItemsLayoutProperty, itemsLayout);
             return self;
         }
         
@@ -339,7 +339,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.CarouselView
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.LinearItemsLayout>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.ItemsLayoutProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.CarouselView.ItemsLayoutProperty, builder.GetValue());
             return self;
         }
         

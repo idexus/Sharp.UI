@@ -17,7 +17,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Rect rect)
             where T : Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry.RectProperty, rect);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry.RectProperty, rect);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Rect>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry.RectProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry.RectProperty, builder.GetValue());
             return self;
         }
         
@@ -43,7 +43,7 @@ namespace Sharp.UI
             Microsoft.Maui.CornerRadius cornerRadius)
             where T : Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry.CornerRadiusProperty, cornerRadius);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry.CornerRadiusProperty, cornerRadius);
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.CornerRadius>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry.CornerRadiusProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry.CornerRadiusProperty, builder.GetValue());
             return self;
         }
         

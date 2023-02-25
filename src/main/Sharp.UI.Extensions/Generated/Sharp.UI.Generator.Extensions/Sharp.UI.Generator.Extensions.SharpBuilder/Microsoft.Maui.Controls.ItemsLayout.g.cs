@@ -17,7 +17,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.SnapPointsAlignment snapPointsAlignment)
             where T : Microsoft.Maui.Controls.ItemsLayout
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.ItemsLayout.SnapPointsAlignmentProperty, snapPointsAlignment);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ItemsLayout.SnapPointsAlignmentProperty, snapPointsAlignment);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ItemsLayout
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.SnapPointsAlignment>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.ItemsLayout.SnapPointsAlignmentProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ItemsLayout.SnapPointsAlignmentProperty, builder.GetValue());
             return self;
         }
         
@@ -43,7 +43,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.SnapPointsType snapPointsType)
             where T : Microsoft.Maui.Controls.ItemsLayout
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.ItemsLayout.SnapPointsTypeProperty, snapPointsType);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ItemsLayout.SnapPointsTypeProperty, snapPointsType);
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ItemsLayout
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.SnapPointsType>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.ItemsLayout.SnapPointsTypeProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ItemsLayout.SnapPointsTypeProperty, builder.GetValue());
             return self;
         }
         

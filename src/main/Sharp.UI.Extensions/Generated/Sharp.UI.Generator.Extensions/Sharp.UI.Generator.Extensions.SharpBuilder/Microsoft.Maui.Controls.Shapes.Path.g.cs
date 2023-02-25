@@ -16,7 +16,7 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.Shapes.Path Data(this Microsoft.Maui.Controls.Shapes.Path self,
             Microsoft.Maui.Controls.Shapes.Geometry data)
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Path.DataProperty, data);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Path.DataProperty, data);
             return self;
         }
         
@@ -24,7 +24,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<Microsoft.Maui.Controls.Shapes.Geometry>, ValueBuilder<Microsoft.Maui.Controls.Shapes.Geometry>> buildValue)
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Shapes.Geometry>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Path.DataProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Path.DataProperty, builder.GetValue());
             return self;
         }
         
@@ -39,7 +39,7 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.Shapes.Path RenderTransform(this Microsoft.Maui.Controls.Shapes.Path self,
             Microsoft.Maui.Controls.Shapes.Transform renderTransform)
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Path.RenderTransformProperty, renderTransform);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Path.RenderTransformProperty, renderTransform);
             return self;
         }
         
@@ -47,7 +47,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<Microsoft.Maui.Controls.Shapes.Transform>, ValueBuilder<Microsoft.Maui.Controls.Shapes.Transform>> buildValue)
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Shapes.Transform>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Path.RenderTransformProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Path.RenderTransformProperty, builder.GetValue());
             return self;
         }
         

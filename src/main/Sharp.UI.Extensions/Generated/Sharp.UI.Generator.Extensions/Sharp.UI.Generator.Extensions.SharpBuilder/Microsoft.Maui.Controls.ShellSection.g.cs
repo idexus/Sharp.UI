@@ -17,7 +17,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.ShellContent currentItem)
             where T : Microsoft.Maui.Controls.ShellSection
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.ShellSection.CurrentItemProperty, currentItem);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ShellSection.CurrentItemProperty, currentItem);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ShellSection
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ShellContent>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.ShellSection.CurrentItemProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ShellSection.CurrentItemProperty, builder.GetValue());
             return self;
         }
         

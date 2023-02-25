@@ -17,7 +17,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Point point)
             where T : Microsoft.Maui.Controls.Shapes.ArcSegment
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.ArcSegment.PointProperty, point);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.ArcSegment.PointProperty, point);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shapes.ArcSegment
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Point>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.ArcSegment.PointProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.ArcSegment.PointProperty, builder.GetValue());
             return self;
         }
         
@@ -43,7 +43,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Size size)
             where T : Microsoft.Maui.Controls.Shapes.ArcSegment
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.ArcSegment.SizeProperty, size);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.ArcSegment.SizeProperty, size);
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shapes.ArcSegment
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Size>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.ArcSegment.SizeProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.ArcSegment.SizeProperty, builder.GetValue());
             return self;
         }
         
@@ -69,7 +69,7 @@ namespace Sharp.UI
             double rotationAngle)
             where T : Microsoft.Maui.Controls.Shapes.ArcSegment
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.ArcSegment.RotationAngleProperty, rotationAngle);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.ArcSegment.RotationAngleProperty, rotationAngle);
             return self;
         }
         
@@ -78,7 +78,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shapes.ArcSegment
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.ArcSegment.RotationAngleProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.ArcSegment.RotationAngleProperty, builder.GetValue());
             return self;
         }
         
@@ -95,7 +95,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.SweepDirection sweepDirection)
             where T : Microsoft.Maui.Controls.Shapes.ArcSegment
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.ArcSegment.SweepDirectionProperty, sweepDirection);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.ArcSegment.SweepDirectionProperty, sweepDirection);
             return self;
         }
         
@@ -104,7 +104,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shapes.ArcSegment
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.SweepDirection>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.ArcSegment.SweepDirectionProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.ArcSegment.SweepDirectionProperty, builder.GetValue());
             return self;
         }
         
@@ -121,7 +121,7 @@ namespace Sharp.UI
             bool isLargeArc)
             where T : Microsoft.Maui.Controls.Shapes.ArcSegment
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.ArcSegment.IsLargeArcProperty, isLargeArc);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.ArcSegment.IsLargeArcProperty, isLargeArc);
             return self;
         }
         
@@ -130,7 +130,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shapes.ArcSegment
         {
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.ArcSegment.IsLargeArcProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.ArcSegment.IsLargeArcProperty, builder.GetValue());
             return self;
         }
         

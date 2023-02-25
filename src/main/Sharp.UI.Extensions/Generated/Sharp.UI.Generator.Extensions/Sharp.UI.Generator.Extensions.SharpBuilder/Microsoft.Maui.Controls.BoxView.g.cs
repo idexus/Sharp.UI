@@ -17,7 +17,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color color)
             where T : Microsoft.Maui.Controls.BoxView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.BoxView.ColorProperty, color);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.BoxView.ColorProperty, color);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.BoxView
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.BoxView.ColorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.BoxView.ColorProperty, builder.GetValue());
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace Sharp.UI
             Microsoft.Maui.CornerRadius cornerRadius)
             where T : Microsoft.Maui.Controls.BoxView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.BoxView.CornerRadiusProperty, cornerRadius);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.BoxView.CornerRadiusProperty, cornerRadius);
             return self;
         }
         
@@ -61,7 +61,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.BoxView
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.CornerRadius>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.BoxView.CornerRadiusProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.BoxView.CornerRadiusProperty, builder.GetValue());
             return self;
         }
         

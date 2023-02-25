@@ -17,7 +17,7 @@ namespace Sharp.UI
             bool isGrouped)
             where T : Microsoft.Maui.Controls.GroupableItemsView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.GroupableItemsView.IsGroupedProperty, isGrouped);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.GroupableItemsView.IsGroupedProperty, isGrouped);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.GroupableItemsView
         {
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.GroupableItemsView.IsGroupedProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.GroupableItemsView.IsGroupedProperty, builder.GetValue());
             return self;
         }
         
@@ -43,7 +43,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.DataTemplate groupHeaderTemplate)
             where T : Microsoft.Maui.Controls.GroupableItemsView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.GroupableItemsView.GroupHeaderTemplateProperty, groupHeaderTemplate);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.GroupableItemsView.GroupHeaderTemplateProperty, groupHeaderTemplate);
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.GroupableItemsView
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.GroupableItemsView.GroupHeaderTemplateProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.GroupableItemsView.GroupHeaderTemplateProperty, builder.GetValue());
             return self;
         }
         
@@ -68,7 +68,7 @@ namespace Sharp.UI
         public static T GroupHeaderTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.GroupableItemsView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.GroupableItemsView.GroupHeaderTemplateProperty, new DataTemplate(loadTemplate));
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.GroupableItemsView.GroupHeaderTemplateProperty, new DataTemplate(loadTemplate));
             return self;
         }
         
@@ -76,7 +76,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.DataTemplate groupFooterTemplate)
             where T : Microsoft.Maui.Controls.GroupableItemsView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.GroupableItemsView.GroupFooterTemplateProperty, groupFooterTemplate);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.GroupableItemsView.GroupFooterTemplateProperty, groupFooterTemplate);
             return self;
         }
         
@@ -85,7 +85,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.GroupableItemsView
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.GroupableItemsView.GroupFooterTemplateProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.GroupableItemsView.GroupFooterTemplateProperty, builder.GetValue());
             return self;
         }
         
@@ -101,7 +101,7 @@ namespace Sharp.UI
         public static T GroupFooterTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.GroupableItemsView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.GroupableItemsView.GroupFooterTemplateProperty, new DataTemplate(loadTemplate));
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.GroupableItemsView.GroupFooterTemplateProperty, new DataTemplate(loadTemplate));
             return self;
         }
         

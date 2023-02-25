@@ -17,7 +17,7 @@ namespace Sharp.UI
             bool allowDrop)
             where T : Microsoft.Maui.Controls.DropGestureRecognizer
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.DropGestureRecognizer.AllowDropProperty, allowDrop);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.DropGestureRecognizer.AllowDropProperty, allowDrop);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.DropGestureRecognizer
         {
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.DropGestureRecognizer.AllowDropProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.DropGestureRecognizer.AllowDropProperty, builder.GetValue());
             return self;
         }
         
@@ -43,7 +43,7 @@ namespace Sharp.UI
             System.Windows.Input.ICommand dragOverCommand)
             where T : Microsoft.Maui.Controls.DropGestureRecognizer
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.DropGestureRecognizer.DragOverCommandProperty, dragOverCommand);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.DropGestureRecognizer.DragOverCommandProperty, dragOverCommand);
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.DropGestureRecognizer
         {
             var builder = buildValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.DropGestureRecognizer.DragOverCommandProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.DropGestureRecognizer.DragOverCommandProperty, builder.GetValue());
             return self;
         }
         
@@ -69,7 +69,7 @@ namespace Sharp.UI
             object dragOverCommandParameter)
             where T : Microsoft.Maui.Controls.DropGestureRecognizer
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.DropGestureRecognizer.DragOverCommandParameterProperty, dragOverCommandParameter);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.DropGestureRecognizer.DragOverCommandParameterProperty, dragOverCommandParameter);
             return self;
         }
         
@@ -78,7 +78,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.DropGestureRecognizer
         {
             var builder = buildValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.DropGestureRecognizer.DragOverCommandParameterProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.DropGestureRecognizer.DragOverCommandParameterProperty, builder.GetValue());
             return self;
         }
         
@@ -95,7 +95,7 @@ namespace Sharp.UI
             System.Windows.Input.ICommand dragLeaveCommand)
             where T : Microsoft.Maui.Controls.DropGestureRecognizer
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.DropGestureRecognizer.DragLeaveCommandProperty, dragLeaveCommand);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.DropGestureRecognizer.DragLeaveCommandProperty, dragLeaveCommand);
             return self;
         }
         
@@ -104,7 +104,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.DropGestureRecognizer
         {
             var builder = buildValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.DropGestureRecognizer.DragLeaveCommandProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.DropGestureRecognizer.DragLeaveCommandProperty, builder.GetValue());
             return self;
         }
         
@@ -121,7 +121,7 @@ namespace Sharp.UI
             object dragLeaveCommandParameter)
             where T : Microsoft.Maui.Controls.DropGestureRecognizer
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.DropGestureRecognizer.DragLeaveCommandParameterProperty, dragLeaveCommandParameter);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.DropGestureRecognizer.DragLeaveCommandParameterProperty, dragLeaveCommandParameter);
             return self;
         }
         
@@ -130,7 +130,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.DropGestureRecognizer
         {
             var builder = buildValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.DropGestureRecognizer.DragLeaveCommandParameterProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.DropGestureRecognizer.DragLeaveCommandParameterProperty, builder.GetValue());
             return self;
         }
         
@@ -147,7 +147,7 @@ namespace Sharp.UI
             System.Windows.Input.ICommand dropCommand)
             where T : Microsoft.Maui.Controls.DropGestureRecognizer
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.DropGestureRecognizer.DropCommandProperty, dropCommand);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.DropGestureRecognizer.DropCommandProperty, dropCommand);
             return self;
         }
         
@@ -156,7 +156,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.DropGestureRecognizer
         {
             var builder = buildValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.DropGestureRecognizer.DropCommandProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.DropGestureRecognizer.DropCommandProperty, builder.GetValue());
             return self;
         }
         
@@ -173,7 +173,7 @@ namespace Sharp.UI
             object dropCommandParameter)
             where T : Microsoft.Maui.Controls.DropGestureRecognizer
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.DropGestureRecognizer.DropCommandParameterProperty, dropCommandParameter);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.DropGestureRecognizer.DropCommandParameterProperty, dropCommandParameter);
             return self;
         }
         
@@ -182,7 +182,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.DropGestureRecognizer
         {
             var builder = buildValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.DropGestureRecognizer.DropCommandParameterProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.DropGestureRecognizer.DropCommandParameterProperty, builder.GetValue());
             return self;
         }
         

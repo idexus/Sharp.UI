@@ -17,7 +17,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color backgroundColor)
             where T : Microsoft.Maui.Controls.SwipeItem
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SwipeItem.BackgroundColorProperty, backgroundColor);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwipeItem.BackgroundColorProperty, backgroundColor);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SwipeItem
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SwipeItem.BackgroundColorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwipeItem.BackgroundColorProperty, builder.GetValue());
             return self;
         }
         
@@ -43,7 +43,7 @@ namespace Sharp.UI
             bool isVisible)
             where T : Microsoft.Maui.Controls.SwipeItem
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SwipeItem.IsVisibleProperty, isVisible);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwipeItem.IsVisibleProperty, isVisible);
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SwipeItem
         {
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SwipeItem.IsVisibleProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwipeItem.IsVisibleProperty, builder.GetValue());
             return self;
         }
         

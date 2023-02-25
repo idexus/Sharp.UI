@@ -17,7 +17,7 @@ namespace Sharp.UI
             bool isEnabled)
             where T : Microsoft.Maui.Controls.MenuBar
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.MenuBar.IsEnabledProperty, isEnabled);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.MenuBar.IsEnabledProperty, isEnabled);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.MenuBar
         {
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.MenuBar.IsEnabledProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.MenuBar.IsEnabledProperty, builder.GetValue());
             return self;
         }
         

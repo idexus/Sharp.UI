@@ -17,7 +17,7 @@ namespace Sharp.UI
             double angle)
             where T : Microsoft.Maui.Controls.Shapes.RotateTransform
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.RotateTransform.AngleProperty, angle);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.RotateTransform.AngleProperty, angle);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shapes.RotateTransform
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.RotateTransform.AngleProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.RotateTransform.AngleProperty, builder.GetValue());
             return self;
         }
         
@@ -43,7 +43,7 @@ namespace Sharp.UI
             double centerX)
             where T : Microsoft.Maui.Controls.Shapes.RotateTransform
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.RotateTransform.CenterXProperty, centerX);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.RotateTransform.CenterXProperty, centerX);
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shapes.RotateTransform
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.RotateTransform.CenterXProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.RotateTransform.CenterXProperty, builder.GetValue());
             return self;
         }
         
@@ -69,7 +69,7 @@ namespace Sharp.UI
             double centerY)
             where T : Microsoft.Maui.Controls.Shapes.RotateTransform
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.RotateTransform.CenterYProperty, centerY);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.RotateTransform.CenterYProperty, centerY);
             return self;
         }
         
@@ -78,7 +78,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shapes.RotateTransform
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.RotateTransform.CenterYProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.RotateTransform.CenterYProperty, builder.GetValue());
             return self;
         }
         

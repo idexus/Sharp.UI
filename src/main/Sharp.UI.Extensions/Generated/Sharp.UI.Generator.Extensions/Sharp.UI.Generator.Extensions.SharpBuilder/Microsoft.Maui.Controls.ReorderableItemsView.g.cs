@@ -17,7 +17,7 @@ namespace Sharp.UI
             bool canMixGroups)
             where T : Microsoft.Maui.Controls.ReorderableItemsView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.ReorderableItemsView.CanMixGroupsProperty, canMixGroups);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ReorderableItemsView.CanMixGroupsProperty, canMixGroups);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ReorderableItemsView
         {
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.ReorderableItemsView.CanMixGroupsProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ReorderableItemsView.CanMixGroupsProperty, builder.GetValue());
             return self;
         }
         
@@ -43,7 +43,7 @@ namespace Sharp.UI
             bool canReorderItems)
             where T : Microsoft.Maui.Controls.ReorderableItemsView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.ReorderableItemsView.CanReorderItemsProperty, canReorderItems);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ReorderableItemsView.CanReorderItemsProperty, canReorderItems);
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ReorderableItemsView
         {
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.ReorderableItemsView.CanReorderItemsProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ReorderableItemsView.CanReorderItemsProperty, builder.GetValue());
             return self;
         }
         

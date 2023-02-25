@@ -17,7 +17,7 @@ namespace Sharp.UI
             string? title)
             where T : Microsoft.Maui.Controls.Window
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Window.TitleProperty, title);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Window.TitleProperty, title);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Window
         {
             var builder = buildValue(new ValueBuilder<string?>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Window.TitleProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Window.TitleProperty, builder.GetValue());
             return self;
         }
         
@@ -43,7 +43,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.Page? page)
             where T : Microsoft.Maui.Controls.Window
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Window.PageProperty, page);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Window.PageProperty, page);
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Window
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Page?>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Window.PageProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Window.PageProperty, builder.GetValue());
             return self;
         }
         
@@ -69,7 +69,7 @@ namespace Sharp.UI
             double x)
             where T : Microsoft.Maui.Controls.Window
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Window.XProperty, x);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Window.XProperty, x);
             return self;
         }
         
@@ -78,7 +78,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Window
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Window.XProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Window.XProperty, builder.GetValue());
             return self;
         }
         
@@ -95,7 +95,7 @@ namespace Sharp.UI
             double y)
             where T : Microsoft.Maui.Controls.Window
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Window.YProperty, y);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Window.YProperty, y);
             return self;
         }
         
@@ -104,7 +104,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Window
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Window.YProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Window.YProperty, builder.GetValue());
             return self;
         }
         
@@ -121,7 +121,7 @@ namespace Sharp.UI
             double width)
             where T : Microsoft.Maui.Controls.Window
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Window.WidthProperty, width);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Window.WidthProperty, width);
             return self;
         }
         
@@ -130,7 +130,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Window
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Window.WidthProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Window.WidthProperty, builder.GetValue());
             return self;
         }
         
@@ -147,7 +147,7 @@ namespace Sharp.UI
             double height)
             where T : Microsoft.Maui.Controls.Window
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Window.HeightProperty, height);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Window.HeightProperty, height);
             return self;
         }
         
@@ -156,7 +156,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Window
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Window.HeightProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Window.HeightProperty, builder.GetValue());
             return self;
         }
         
@@ -173,7 +173,7 @@ namespace Sharp.UI
             double maximumWidth)
             where T : Microsoft.Maui.Controls.Window
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Window.MaximumWidthProperty, maximumWidth);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Window.MaximumWidthProperty, maximumWidth);
             return self;
         }
         
@@ -182,7 +182,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Window
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Window.MaximumWidthProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Window.MaximumWidthProperty, builder.GetValue());
             return self;
         }
         
@@ -199,7 +199,7 @@ namespace Sharp.UI
             double maximumHeight)
             where T : Microsoft.Maui.Controls.Window
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Window.MaximumHeightProperty, maximumHeight);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Window.MaximumHeightProperty, maximumHeight);
             return self;
         }
         
@@ -208,7 +208,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Window
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Window.MaximumHeightProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Window.MaximumHeightProperty, builder.GetValue());
             return self;
         }
         
@@ -225,7 +225,7 @@ namespace Sharp.UI
             double minimumWidth)
             where T : Microsoft.Maui.Controls.Window
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Window.MinimumWidthProperty, minimumWidth);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Window.MinimumWidthProperty, minimumWidth);
             return self;
         }
         
@@ -234,7 +234,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Window
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Window.MinimumWidthProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Window.MinimumWidthProperty, builder.GetValue());
             return self;
         }
         
@@ -251,7 +251,7 @@ namespace Sharp.UI
             double minimumHeight)
             where T : Microsoft.Maui.Controls.Window
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Window.MinimumHeightProperty, minimumHeight);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Window.MinimumHeightProperty, minimumHeight);
             return self;
         }
         
@@ -260,7 +260,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Window
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Window.MinimumHeightProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Window.MinimumHeightProperty, builder.GetValue());
             return self;
         }
         
@@ -277,7 +277,7 @@ namespace Sharp.UI
             Microsoft.Maui.FlowDirection flowDirection)
             where T : Microsoft.Maui.Controls.Window
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Window.FlowDirectionProperty, flowDirection);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Window.FlowDirectionProperty, flowDirection);
             return self;
         }
         
@@ -286,7 +286,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Window
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.FlowDirection>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Window.FlowDirectionProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Window.FlowDirectionProperty, builder.GetValue());
             return self;
         }
         

@@ -17,7 +17,7 @@ namespace Sharp.UI
             object footer)
             where T : Microsoft.Maui.Controls.ListView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.ListView.FooterProperty, footer);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.FooterProperty, footer);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ListView
         {
             var builder = buildValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.ListView.FooterProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.FooterProperty, builder.GetValue());
             return self;
         }
         
@@ -43,7 +43,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.DataTemplate footerTemplate)
             where T : Microsoft.Maui.Controls.ListView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.ListView.FooterTemplateProperty, footerTemplate);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.FooterTemplateProperty, footerTemplate);
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ListView
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.ListView.FooterTemplateProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.FooterTemplateProperty, builder.GetValue());
             return self;
         }
         
@@ -68,7 +68,7 @@ namespace Sharp.UI
         public static T FooterTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.ListView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.ListView.FooterTemplateProperty, new DataTemplate(loadTemplate));
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.FooterTemplateProperty, new DataTemplate(loadTemplate));
             return self;
         }
         
@@ -97,7 +97,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.DataTemplate groupHeaderTemplate)
             where T : Microsoft.Maui.Controls.ListView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.ListView.GroupHeaderTemplateProperty, groupHeaderTemplate);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.GroupHeaderTemplateProperty, groupHeaderTemplate);
             return self;
         }
         
@@ -106,7 +106,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ListView
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.ListView.GroupHeaderTemplateProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.GroupHeaderTemplateProperty, builder.GetValue());
             return self;
         }
         
@@ -122,7 +122,7 @@ namespace Sharp.UI
         public static T GroupHeaderTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.ListView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.ListView.GroupHeaderTemplateProperty, new DataTemplate(loadTemplate));
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.GroupHeaderTemplateProperty, new DataTemplate(loadTemplate));
             return self;
         }
         
@@ -151,7 +151,7 @@ namespace Sharp.UI
             bool hasUnevenRows)
             where T : Microsoft.Maui.Controls.ListView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.ListView.HasUnevenRowsProperty, hasUnevenRows);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.HasUnevenRowsProperty, hasUnevenRows);
             return self;
         }
         
@@ -160,7 +160,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ListView
         {
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.ListView.HasUnevenRowsProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.HasUnevenRowsProperty, builder.GetValue());
             return self;
         }
         
@@ -177,7 +177,7 @@ namespace Sharp.UI
             object header)
             where T : Microsoft.Maui.Controls.ListView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.ListView.HeaderProperty, header);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.HeaderProperty, header);
             return self;
         }
         
@@ -186,7 +186,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ListView
         {
             var builder = buildValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.ListView.HeaderProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.HeaderProperty, builder.GetValue());
             return self;
         }
         
@@ -203,7 +203,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.DataTemplate headerTemplate)
             where T : Microsoft.Maui.Controls.ListView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.ListView.HeaderTemplateProperty, headerTemplate);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.HeaderTemplateProperty, headerTemplate);
             return self;
         }
         
@@ -212,7 +212,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ListView
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.ListView.HeaderTemplateProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.HeaderTemplateProperty, builder.GetValue());
             return self;
         }
         
@@ -228,7 +228,7 @@ namespace Sharp.UI
         public static T HeaderTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.ListView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.ListView.HeaderTemplateProperty, new DataTemplate(loadTemplate));
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.HeaderTemplateProperty, new DataTemplate(loadTemplate));
             return self;
         }
         
@@ -236,7 +236,7 @@ namespace Sharp.UI
             bool isGroupingEnabled)
             where T : Microsoft.Maui.Controls.ListView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.ListView.IsGroupingEnabledProperty, isGroupingEnabled);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.IsGroupingEnabledProperty, isGroupingEnabled);
             return self;
         }
         
@@ -245,7 +245,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ListView
         {
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.ListView.IsGroupingEnabledProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.IsGroupingEnabledProperty, builder.GetValue());
             return self;
         }
         
@@ -262,7 +262,7 @@ namespace Sharp.UI
             bool isPullToRefreshEnabled)
             where T : Microsoft.Maui.Controls.ListView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.ListView.IsPullToRefreshEnabledProperty, isPullToRefreshEnabled);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.IsPullToRefreshEnabledProperty, isPullToRefreshEnabled);
             return self;
         }
         
@@ -271,7 +271,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ListView
         {
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.ListView.IsPullToRefreshEnabledProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.IsPullToRefreshEnabledProperty, builder.GetValue());
             return self;
         }
         
@@ -288,7 +288,7 @@ namespace Sharp.UI
             bool isRefreshing)
             where T : Microsoft.Maui.Controls.ListView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.ListView.IsRefreshingProperty, isRefreshing);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.IsRefreshingProperty, isRefreshing);
             return self;
         }
         
@@ -297,7 +297,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ListView
         {
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.ListView.IsRefreshingProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.IsRefreshingProperty, builder.GetValue());
             return self;
         }
         
@@ -314,7 +314,7 @@ namespace Sharp.UI
             System.Windows.Input.ICommand refreshCommand)
             where T : Microsoft.Maui.Controls.ListView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.ListView.RefreshCommandProperty, refreshCommand);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.RefreshCommandProperty, refreshCommand);
             return self;
         }
         
@@ -323,7 +323,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ListView
         {
             var builder = buildValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.ListView.RefreshCommandProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.RefreshCommandProperty, builder.GetValue());
             return self;
         }
         
@@ -340,7 +340,7 @@ namespace Sharp.UI
             int rowHeight)
             where T : Microsoft.Maui.Controls.ListView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.ListView.RowHeightProperty, rowHeight);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.RowHeightProperty, rowHeight);
             return self;
         }
         
@@ -349,7 +349,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ListView
         {
             var builder = buildValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.ListView.RowHeightProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.RowHeightProperty, builder.GetValue());
             return self;
         }
         
@@ -366,7 +366,7 @@ namespace Sharp.UI
             object selectedItem)
             where T : Microsoft.Maui.Controls.ListView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.ListView.SelectedItemProperty, selectedItem);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.SelectedItemProperty, selectedItem);
             return self;
         }
         
@@ -375,7 +375,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ListView
         {
             var builder = buildValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.ListView.SelectedItemProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.SelectedItemProperty, builder.GetValue());
             return self;
         }
         
@@ -392,7 +392,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.ListViewSelectionMode selectionMode)
             where T : Microsoft.Maui.Controls.ListView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.ListView.SelectionModeProperty, selectionMode);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.SelectionModeProperty, selectionMode);
             return self;
         }
         
@@ -401,7 +401,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ListView
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ListViewSelectionMode>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.ListView.SelectionModeProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.SelectionModeProperty, builder.GetValue());
             return self;
         }
         
@@ -418,7 +418,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color separatorColor)
             where T : Microsoft.Maui.Controls.ListView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.ListView.SeparatorColorProperty, separatorColor);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.SeparatorColorProperty, separatorColor);
             return self;
         }
         
@@ -427,7 +427,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ListView
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.ListView.SeparatorColorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.SeparatorColorProperty, builder.GetValue());
             return self;
         }
         
@@ -453,7 +453,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color refreshControlColor)
             where T : Microsoft.Maui.Controls.ListView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.ListView.RefreshControlColorProperty, refreshControlColor);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.RefreshControlColorProperty, refreshControlColor);
             return self;
         }
         
@@ -462,7 +462,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ListView
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.ListView.RefreshControlColorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.RefreshControlColorProperty, builder.GetValue());
             return self;
         }
         
@@ -488,7 +488,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.SeparatorVisibility separatorVisibility)
             where T : Microsoft.Maui.Controls.ListView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.ListView.SeparatorVisibilityProperty, separatorVisibility);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.SeparatorVisibilityProperty, separatorVisibility);
             return self;
         }
         
@@ -497,7 +497,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ListView
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.SeparatorVisibility>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.ListView.SeparatorVisibilityProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.SeparatorVisibilityProperty, builder.GetValue());
             return self;
         }
         
@@ -514,7 +514,7 @@ namespace Sharp.UI
             Microsoft.Maui.ScrollBarVisibility horizontalScrollBarVisibility)
             where T : Microsoft.Maui.Controls.ListView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.ListView.HorizontalScrollBarVisibilityProperty, horizontalScrollBarVisibility);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.HorizontalScrollBarVisibilityProperty, horizontalScrollBarVisibility);
             return self;
         }
         
@@ -523,7 +523,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ListView
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.ScrollBarVisibility>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.ListView.HorizontalScrollBarVisibilityProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.HorizontalScrollBarVisibilityProperty, builder.GetValue());
             return self;
         }
         
@@ -540,7 +540,7 @@ namespace Sharp.UI
             Microsoft.Maui.ScrollBarVisibility verticalScrollBarVisibility)
             where T : Microsoft.Maui.Controls.ListView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.ListView.VerticalScrollBarVisibilityProperty, verticalScrollBarVisibility);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.VerticalScrollBarVisibilityProperty, verticalScrollBarVisibility);
             return self;
         }
         
@@ -549,7 +549,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ListView
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.ScrollBarVisibility>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.ListView.VerticalScrollBarVisibilityProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.VerticalScrollBarVisibilityProperty, builder.GetValue());
             return self;
         }
         

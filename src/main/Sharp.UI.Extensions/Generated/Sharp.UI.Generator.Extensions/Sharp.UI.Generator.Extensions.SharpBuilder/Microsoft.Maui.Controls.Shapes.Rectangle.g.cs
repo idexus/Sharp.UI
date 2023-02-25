@@ -16,7 +16,7 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.Shapes.Rectangle RadiusX(this Microsoft.Maui.Controls.Shapes.Rectangle self,
             double radiusX)
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Rectangle.RadiusXProperty, radiusX);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Rectangle.RadiusXProperty, radiusX);
             return self;
         }
         
@@ -24,7 +24,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Rectangle.RadiusXProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Rectangle.RadiusXProperty, builder.GetValue());
             return self;
         }
         
@@ -47,7 +47,7 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.Shapes.Rectangle RadiusY(this Microsoft.Maui.Controls.Shapes.Rectangle self,
             double radiusY)
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Rectangle.RadiusYProperty, radiusY);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Rectangle.RadiusYProperty, radiusY);
             return self;
         }
         
@@ -55,7 +55,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Rectangle.RadiusYProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Rectangle.RadiusYProperty, builder.GetValue());
             return self;
         }
         

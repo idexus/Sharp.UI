@@ -16,7 +16,7 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.DeviceStateTrigger Device(this Microsoft.Maui.Controls.DeviceStateTrigger self,
             string device)
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.DeviceStateTrigger.DeviceProperty, device);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.DeviceStateTrigger.DeviceProperty, device);
             return self;
         }
         
@@ -24,7 +24,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
         {
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.DeviceStateTrigger.DeviceProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.DeviceStateTrigger.DeviceProperty, builder.GetValue());
             return self;
         }
         

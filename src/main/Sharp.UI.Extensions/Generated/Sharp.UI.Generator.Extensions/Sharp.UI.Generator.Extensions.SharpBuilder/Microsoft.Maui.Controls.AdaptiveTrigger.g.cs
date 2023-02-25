@@ -16,7 +16,7 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.AdaptiveTrigger MinWindowHeight(this Microsoft.Maui.Controls.AdaptiveTrigger self,
             double minWindowHeight)
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.AdaptiveTrigger.MinWindowHeightProperty, minWindowHeight);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.AdaptiveTrigger.MinWindowHeightProperty, minWindowHeight);
             return self;
         }
         
@@ -24,7 +24,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.AdaptiveTrigger.MinWindowHeightProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.AdaptiveTrigger.MinWindowHeightProperty, builder.GetValue());
             return self;
         }
         
@@ -39,7 +39,7 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.AdaptiveTrigger MinWindowWidth(this Microsoft.Maui.Controls.AdaptiveTrigger self,
             double minWindowWidth)
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.AdaptiveTrigger.MinWindowWidthProperty, minWindowWidth);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.AdaptiveTrigger.MinWindowWidthProperty, minWindowWidth);
             return self;
         }
         
@@ -47,7 +47,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.AdaptiveTrigger.MinWindowWidthProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.AdaptiveTrigger.MinWindowWidthProperty, builder.GetValue());
             return self;
         }
         

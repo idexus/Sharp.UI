@@ -17,7 +17,7 @@ namespace Sharp.UI
             double spacing)
             where T : Microsoft.Maui.Controls.StackBase
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.StackBase.SpacingProperty, spacing);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.StackBase.SpacingProperty, spacing);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.StackBase
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.StackBase.SpacingProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.StackBase.SpacingProperty, builder.GetValue());
             return self;
         }
         

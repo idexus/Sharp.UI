@@ -16,7 +16,7 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.RowDefinition Height(this Microsoft.Maui.Controls.RowDefinition self,
             Microsoft.Maui.GridLength height)
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.RowDefinition.HeightProperty, height);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.RowDefinition.HeightProperty, height);
             return self;
         }
         
@@ -24,7 +24,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<Microsoft.Maui.GridLength>, ValueBuilder<Microsoft.Maui.GridLength>> buildValue)
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.GridLength>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.RowDefinition.HeightProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.RowDefinition.HeightProperty, builder.GetValue());
             return self;
         }
         

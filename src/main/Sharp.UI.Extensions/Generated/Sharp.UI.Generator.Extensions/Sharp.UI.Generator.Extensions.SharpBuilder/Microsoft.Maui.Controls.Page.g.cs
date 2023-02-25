@@ -17,7 +17,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.ImageSource backgroundImageSource)
             where T : Microsoft.Maui.Controls.Page
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Page.BackgroundImageSourceProperty, backgroundImageSource);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Page.BackgroundImageSourceProperty, backgroundImageSource);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Page
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Page.BackgroundImageSourceProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Page.BackgroundImageSourceProperty, builder.GetValue());
             return self;
         }
         
@@ -43,7 +43,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.ImageSource iconImageSource)
             where T : Microsoft.Maui.Controls.Page
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Page.IconImageSourceProperty, iconImageSource);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Page.IconImageSourceProperty, iconImageSource);
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Page
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Page.IconImageSourceProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Page.IconImageSourceProperty, builder.GetValue());
             return self;
         }
         
@@ -69,7 +69,7 @@ namespace Sharp.UI
             bool isBusy)
             where T : Microsoft.Maui.Controls.Page
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Page.IsBusyProperty, isBusy);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Page.IsBusyProperty, isBusy);
             return self;
         }
         
@@ -78,7 +78,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Page
         {
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Page.IsBusyProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Page.IsBusyProperty, builder.GetValue());
             return self;
         }
         
@@ -95,7 +95,7 @@ namespace Sharp.UI
             Microsoft.Maui.Thickness padding)
             where T : Microsoft.Maui.Controls.Page
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Page.PaddingProperty, padding);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Page.PaddingProperty, padding);
             return self;
         }
         
@@ -104,7 +104,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Page
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Thickness>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Page.PaddingProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Page.PaddingProperty, builder.GetValue());
             return self;
         }
         
@@ -121,7 +121,7 @@ namespace Sharp.UI
             string title)
             where T : Microsoft.Maui.Controls.Page
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Page.TitleProperty, title);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Page.TitleProperty, title);
             return self;
         }
         
@@ -130,7 +130,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Page
         {
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Page.TitleProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Page.TitleProperty, builder.GetValue());
             return self;
         }
         

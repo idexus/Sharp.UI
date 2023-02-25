@@ -17,7 +17,7 @@ namespace Sharp.UI
             System.Windows.Input.ICommand command)
             where T : Microsoft.Maui.Controls.MenuItem
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.MenuItem.CommandProperty, command);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.MenuItem.CommandProperty, command);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.MenuItem
         {
             var builder = buildValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.MenuItem.CommandProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.MenuItem.CommandProperty, builder.GetValue());
             return self;
         }
         
@@ -43,7 +43,7 @@ namespace Sharp.UI
             object commandParameter)
             where T : Microsoft.Maui.Controls.MenuItem
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.MenuItem.CommandParameterProperty, commandParameter);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.MenuItem.CommandParameterProperty, commandParameter);
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.MenuItem
         {
             var builder = buildValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.MenuItem.CommandParameterProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.MenuItem.CommandParameterProperty, builder.GetValue());
             return self;
         }
         
@@ -69,7 +69,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.ImageSource iconImageSource)
             where T : Microsoft.Maui.Controls.MenuItem
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.MenuItem.IconImageSourceProperty, iconImageSource);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.MenuItem.IconImageSourceProperty, iconImageSource);
             return self;
         }
         
@@ -78,7 +78,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.MenuItem
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.MenuItem.IconImageSourceProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.MenuItem.IconImageSourceProperty, builder.GetValue());
             return self;
         }
         
@@ -95,7 +95,7 @@ namespace Sharp.UI
             bool isDestructive)
             where T : Microsoft.Maui.Controls.MenuItem
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.MenuItem.IsDestructiveProperty, isDestructive);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.MenuItem.IsDestructiveProperty, isDestructive);
             return self;
         }
         
@@ -104,7 +104,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.MenuItem
         {
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.MenuItem.IsDestructiveProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.MenuItem.IsDestructiveProperty, builder.GetValue());
             return self;
         }
         
@@ -121,7 +121,7 @@ namespace Sharp.UI
             string text)
             where T : Microsoft.Maui.Controls.MenuItem
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.MenuItem.TextProperty, text);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.MenuItem.TextProperty, text);
             return self;
         }
         
@@ -130,7 +130,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.MenuItem
         {
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.MenuItem.TextProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.MenuItem.TextProperty, builder.GetValue());
             return self;
         }
         
@@ -147,7 +147,7 @@ namespace Sharp.UI
             bool isEnabled)
             where T : Microsoft.Maui.Controls.MenuItem
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.MenuItem.IsEnabledProperty, isEnabled);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.MenuItem.IsEnabledProperty, isEnabled);
             return self;
         }
         
@@ -156,7 +156,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.MenuItem
         {
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.MenuItem.IsEnabledProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.MenuItem.IsEnabledProperty, builder.GetValue());
             return self;
         }
         

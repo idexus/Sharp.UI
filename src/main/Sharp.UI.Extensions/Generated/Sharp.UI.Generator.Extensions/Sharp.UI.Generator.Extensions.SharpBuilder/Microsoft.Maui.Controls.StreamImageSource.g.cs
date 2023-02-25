@@ -17,7 +17,7 @@ namespace Sharp.UI
             System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<System.IO.Stream>> stream)
             where T : Microsoft.Maui.Controls.StreamImageSource
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.StreamImageSource.StreamProperty, stream);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.StreamImageSource.StreamProperty, stream);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.StreamImageSource
         {
             var builder = buildValue(new ValueBuilder<System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<System.IO.Stream>>>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.StreamImageSource.StreamProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.StreamImageSource.StreamProperty, builder.GetValue());
             return self;
         }
         

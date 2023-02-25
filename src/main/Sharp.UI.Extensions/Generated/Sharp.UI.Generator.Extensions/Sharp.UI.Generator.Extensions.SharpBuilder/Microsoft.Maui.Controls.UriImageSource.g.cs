@@ -16,7 +16,7 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.UriImageSource CacheValidity(this Microsoft.Maui.Controls.UriImageSource self,
             System.TimeSpan cacheValidity)
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.UriImageSource.CacheValidityProperty, cacheValidity);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.UriImageSource.CacheValidityProperty, cacheValidity);
             return self;
         }
         
@@ -24,7 +24,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<System.TimeSpan>, ValueBuilder<System.TimeSpan>> buildValue)
         {
             var builder = buildValue(new ValueBuilder<System.TimeSpan>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.UriImageSource.CacheValidityProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.UriImageSource.CacheValidityProperty, builder.GetValue());
             return self;
         }
         
@@ -39,7 +39,7 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.UriImageSource CachingEnabled(this Microsoft.Maui.Controls.UriImageSource self,
             bool cachingEnabled)
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.UriImageSource.CachingEnabledProperty, cachingEnabled);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.UriImageSource.CachingEnabledProperty, cachingEnabled);
             return self;
         }
         
@@ -47,7 +47,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
         {
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.UriImageSource.CachingEnabledProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.UriImageSource.CachingEnabledProperty, builder.GetValue());
             return self;
         }
         
@@ -62,7 +62,7 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.UriImageSource Uri(this Microsoft.Maui.Controls.UriImageSource self,
             System.Uri uri)
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.UriImageSource.UriProperty, uri);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.UriImageSource.UriProperty, uri);
             return self;
         }
         
@@ -70,7 +70,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<System.Uri>, ValueBuilder<System.Uri>> buildValue)
         {
             var builder = buildValue(new ValueBuilder<System.Uri>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.UriImageSource.UriProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.UriImageSource.UriProperty, builder.GetValue());
             return self;
         }
         

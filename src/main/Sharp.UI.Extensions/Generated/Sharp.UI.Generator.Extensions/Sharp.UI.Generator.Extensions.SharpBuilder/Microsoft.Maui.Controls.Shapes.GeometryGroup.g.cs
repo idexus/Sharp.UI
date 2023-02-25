@@ -44,7 +44,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.Shapes.FillRule fillRule)
             where T : Microsoft.Maui.Controls.Shapes.GeometryGroup
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.GeometryGroup.FillRuleProperty, fillRule);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.GeometryGroup.FillRuleProperty, fillRule);
             return self;
         }
         
@@ -53,7 +53,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shapes.GeometryGroup
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Shapes.FillRule>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.GeometryGroup.FillRuleProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.GeometryGroup.FillRuleProperty, builder.GetValue());
             return self;
         }
         

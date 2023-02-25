@@ -17,7 +17,7 @@ namespace Sharp.UI
             string automationId)
             where T : Microsoft.Maui.Controls.Element
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Element.AutomationIdProperty, automationId);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Element.AutomationIdProperty, automationId);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Element
         {
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Element.AutomationIdProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Element.AutomationIdProperty, builder.GetValue());
             return self;
         }
         
@@ -43,7 +43,7 @@ namespace Sharp.UI
             string classId)
             where T : Microsoft.Maui.Controls.Element
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Element.ClassIdProperty, classId);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Element.ClassIdProperty, classId);
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Element
         {
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Element.ClassIdProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Element.ClassIdProperty, builder.GetValue());
             return self;
         }
         

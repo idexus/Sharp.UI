@@ -17,7 +17,7 @@ namespace Sharp.UI
             string baseUrl)
             where T : Microsoft.Maui.Controls.HtmlWebViewSource
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.HtmlWebViewSource.BaseUrlProperty, baseUrl);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.HtmlWebViewSource.BaseUrlProperty, baseUrl);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.HtmlWebViewSource
         {
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.HtmlWebViewSource.BaseUrlProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.HtmlWebViewSource.BaseUrlProperty, builder.GetValue());
             return self;
         }
         
@@ -43,7 +43,7 @@ namespace Sharp.UI
             string html)
             where T : Microsoft.Maui.Controls.HtmlWebViewSource
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.HtmlWebViewSource.HtmlProperty, html);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.HtmlWebViewSource.HtmlProperty, html);
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.HtmlWebViewSource
         {
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.HtmlWebViewSource.HtmlProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.HtmlWebViewSource.HtmlProperty, builder.GetValue());
             return self;
         }
         

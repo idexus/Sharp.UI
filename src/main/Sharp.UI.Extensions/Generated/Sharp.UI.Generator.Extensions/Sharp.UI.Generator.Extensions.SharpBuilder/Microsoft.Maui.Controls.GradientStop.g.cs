@@ -17,7 +17,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color color)
             where T : Microsoft.Maui.Controls.GradientStop
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.GradientStop.ColorProperty, color);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.GradientStop.ColorProperty, color);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.GradientStop
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.GradientStop.ColorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.GradientStop.ColorProperty, builder.GetValue());
             return self;
         }
         
@@ -43,7 +43,7 @@ namespace Sharp.UI
             float offset)
             where T : Microsoft.Maui.Controls.GradientStop
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.GradientStop.OffsetProperty, offset);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.GradientStop.OffsetProperty, offset);
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.GradientStop
         {
             var builder = buildValue(new ValueBuilder<float>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.GradientStop.OffsetProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.GradientStop.OffsetProperty, builder.GetValue());
             return self;
         }
         

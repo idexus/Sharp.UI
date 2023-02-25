@@ -17,7 +17,7 @@ namespace Sharp.UI
             int column)
             where T : Microsoft.Maui.Controls.View
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Grid.ColumnProperty, column);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Grid.ColumnProperty, column);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.View
         {
             var builder = buildValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Grid.ColumnProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Grid.ColumnProperty, builder.GetValue());
             return self;
         }
         
@@ -49,7 +49,7 @@ namespace Sharp.UI
             int row)
             where T : Microsoft.Maui.Controls.View
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Grid.RowProperty, row);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Grid.RowProperty, row);
             return self;
         }
         
@@ -58,7 +58,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.View
         {
             var builder = buildValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Grid.RowProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Grid.RowProperty, builder.GetValue());
             return self;
         }
         
@@ -81,7 +81,7 @@ namespace Sharp.UI
             int columnSpan)
             where T : Microsoft.Maui.Controls.View
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Grid.ColumnSpanProperty, columnSpan);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Grid.ColumnSpanProperty, columnSpan);
             return self;
         }
         
@@ -90,7 +90,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.View
         {
             var builder = buildValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Grid.ColumnSpanProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Grid.ColumnSpanProperty, builder.GetValue());
             return self;
         }
         
@@ -113,7 +113,7 @@ namespace Sharp.UI
             int rowSpan)
             where T : Microsoft.Maui.Controls.View
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Grid.RowSpanProperty, rowSpan);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Grid.RowSpanProperty, rowSpan);
             return self;
         }
         
@@ -122,7 +122,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.View
         {
             var builder = buildValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Grid.RowSpanProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Grid.RowSpanProperty, builder.GetValue());
             return self;
         }
         
@@ -145,7 +145,7 @@ namespace Sharp.UI
             Microsoft.Maui.Layouts.AbsoluteLayoutFlags absoluteLayoutFlags)
             where T : Microsoft.Maui.Controls.View
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.AbsoluteLayout.LayoutFlagsProperty, absoluteLayoutFlags);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.AbsoluteLayout.LayoutFlagsProperty, absoluteLayoutFlags);
             return self;
         }
         
@@ -154,7 +154,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.View
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Layouts.AbsoluteLayoutFlags>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.AbsoluteLayout.LayoutFlagsProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.AbsoluteLayout.LayoutFlagsProperty, builder.GetValue());
             return self;
         }
         
@@ -177,7 +177,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Rect absoluteLayoutBounds)
             where T : Microsoft.Maui.Controls.View
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.AbsoluteLayout.LayoutBoundsProperty, absoluteLayoutBounds);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.AbsoluteLayout.LayoutBoundsProperty, absoluteLayoutBounds);
             return self;
         }
         
@@ -186,7 +186,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.View
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Rect>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.AbsoluteLayout.LayoutBoundsProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.AbsoluteLayout.LayoutBoundsProperty, builder.GetValue());
             return self;
         }
         

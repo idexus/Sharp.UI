@@ -17,7 +17,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.ImageSource flyoutIcon)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.BaseShellItem.FlyoutIconProperty, flyoutIcon);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.BaseShellItem.FlyoutIconProperty, flyoutIcon);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.BaseShellItem.FlyoutIconProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.BaseShellItem.FlyoutIconProperty, builder.GetValue());
             return self;
         }
         
@@ -43,7 +43,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.ImageSource icon)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.BaseShellItem.IconProperty, icon);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.BaseShellItem.IconProperty, icon);
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.BaseShellItem.IconProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.BaseShellItem.IconProperty, builder.GetValue());
             return self;
         }
         
@@ -69,7 +69,7 @@ namespace Sharp.UI
             bool isEnabled)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.BaseShellItem.IsEnabledProperty, isEnabled);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.BaseShellItem.IsEnabledProperty, isEnabled);
             return self;
         }
         
@@ -78,7 +78,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.BaseShellItem.IsEnabledProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.BaseShellItem.IsEnabledProperty, builder.GetValue());
             return self;
         }
         
@@ -116,7 +116,7 @@ namespace Sharp.UI
             string title)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.BaseShellItem.TitleProperty, title);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.BaseShellItem.TitleProperty, title);
             return self;
         }
         
@@ -125,7 +125,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.BaseShellItem.TitleProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.BaseShellItem.TitleProperty, builder.GetValue());
             return self;
         }
         
@@ -142,7 +142,7 @@ namespace Sharp.UI
             bool isVisible)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.BaseShellItem.IsVisibleProperty, isVisible);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.BaseShellItem.IsVisibleProperty, isVisible);
             return self;
         }
         
@@ -151,7 +151,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.BaseShellItem.IsVisibleProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.BaseShellItem.IsVisibleProperty, builder.GetValue());
             return self;
         }
         

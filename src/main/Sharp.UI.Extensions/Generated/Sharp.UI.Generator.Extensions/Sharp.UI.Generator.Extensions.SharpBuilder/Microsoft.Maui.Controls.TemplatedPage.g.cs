@@ -17,7 +17,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.ControlTemplate controlTemplate)
             where T : Microsoft.Maui.Controls.TemplatedPage
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.TemplatedPage.ControlTemplateProperty, controlTemplate);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.TemplatedPage.ControlTemplateProperty, controlTemplate);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.TemplatedPage
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ControlTemplate>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.TemplatedPage.ControlTemplateProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.TemplatedPage.ControlTemplateProperty, builder.GetValue());
             return self;
         }
         

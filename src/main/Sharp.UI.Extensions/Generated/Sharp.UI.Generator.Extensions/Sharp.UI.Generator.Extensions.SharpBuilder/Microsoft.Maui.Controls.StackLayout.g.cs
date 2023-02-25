@@ -17,7 +17,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.StackOrientation orientation)
             where T : Microsoft.Maui.Controls.StackLayout
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.StackLayout.OrientationProperty, orientation);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.StackLayout.OrientationProperty, orientation);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.StackLayout
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.StackOrientation>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.StackLayout.OrientationProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.StackLayout.OrientationProperty, builder.GetValue());
             return self;
         }
         

@@ -17,7 +17,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.ImageSource imageSource)
             where T : Microsoft.Maui.Controls.ImageCell
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.ImageCell.ImageSourceProperty, imageSource);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ImageCell.ImageSourceProperty, imageSource);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ImageCell
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.ImageCell.ImageSourceProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ImageCell.ImageSourceProperty, builder.GetValue());
             return self;
         }
         

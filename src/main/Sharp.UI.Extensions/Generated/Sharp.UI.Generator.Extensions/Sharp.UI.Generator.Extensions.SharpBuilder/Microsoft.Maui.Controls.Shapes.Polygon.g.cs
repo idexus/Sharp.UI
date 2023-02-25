@@ -40,7 +40,7 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.Shapes.Polygon FillRule(this Microsoft.Maui.Controls.Shapes.Polygon self,
             Microsoft.Maui.Controls.Shapes.FillRule fillRule)
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Polygon.FillRuleProperty, fillRule);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Polygon.FillRuleProperty, fillRule);
             return self;
         }
         
@@ -48,7 +48,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<Microsoft.Maui.Controls.Shapes.FillRule>, ValueBuilder<Microsoft.Maui.Controls.Shapes.FillRule>> buildValue)
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Shapes.FillRule>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Polygon.FillRuleProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Polygon.FillRuleProperty, builder.GetValue());
             return self;
         }
         

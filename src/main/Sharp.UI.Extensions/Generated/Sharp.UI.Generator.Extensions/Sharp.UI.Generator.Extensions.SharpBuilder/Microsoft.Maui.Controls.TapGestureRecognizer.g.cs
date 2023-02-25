@@ -16,7 +16,7 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.TapGestureRecognizer Command(this Microsoft.Maui.Controls.TapGestureRecognizer self,
             System.Windows.Input.ICommand? command)
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.TapGestureRecognizer.CommandProperty, command);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.TapGestureRecognizer.CommandProperty, command);
             return self;
         }
         
@@ -24,7 +24,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<System.Windows.Input.ICommand?>, ValueBuilder<System.Windows.Input.ICommand?>> buildValue)
         {
             var builder = buildValue(new ValueBuilder<System.Windows.Input.ICommand?>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.TapGestureRecognizer.CommandProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.TapGestureRecognizer.CommandProperty, builder.GetValue());
             return self;
         }
         
@@ -39,7 +39,7 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.TapGestureRecognizer CommandParameter(this Microsoft.Maui.Controls.TapGestureRecognizer self,
             object? commandParameter)
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.TapGestureRecognizer.CommandParameterProperty, commandParameter);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.TapGestureRecognizer.CommandParameterProperty, commandParameter);
             return self;
         }
         
@@ -47,7 +47,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<object?>, ValueBuilder<object?>> buildValue)
         {
             var builder = buildValue(new ValueBuilder<object?>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.TapGestureRecognizer.CommandParameterProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.TapGestureRecognizer.CommandParameterProperty, builder.GetValue());
             return self;
         }
         
@@ -62,7 +62,7 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.TapGestureRecognizer NumberOfTapsRequired(this Microsoft.Maui.Controls.TapGestureRecognizer self,
             int numberOfTapsRequired)
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.TapGestureRecognizer.NumberOfTapsRequiredProperty, numberOfTapsRequired);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.TapGestureRecognizer.NumberOfTapsRequiredProperty, numberOfTapsRequired);
             return self;
         }
         
@@ -70,7 +70,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<int>, ValueBuilder<int>> buildValue)
         {
             var builder = buildValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.TapGestureRecognizer.NumberOfTapsRequiredProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.TapGestureRecognizer.NumberOfTapsRequiredProperty, builder.GetValue());
             return self;
         }
         
@@ -85,7 +85,7 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.TapGestureRecognizer Buttons(this Microsoft.Maui.Controls.TapGestureRecognizer self,
             Microsoft.Maui.Controls.ButtonsMask buttons)
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.TapGestureRecognizer.ButtonsProperty, buttons);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.TapGestureRecognizer.ButtonsProperty, buttons);
             return self;
         }
         
@@ -93,7 +93,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<Microsoft.Maui.Controls.ButtonsMask>, ValueBuilder<Microsoft.Maui.Controls.ButtonsMask>> buildValue)
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ButtonsMask>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.TapGestureRecognizer.ButtonsProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.TapGestureRecognizer.ButtonsProperty, builder.GetValue());
             return self;
         }
         

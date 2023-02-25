@@ -17,7 +17,7 @@ namespace Sharp.UI
             double itemSpacing)
             where T : Microsoft.Maui.Controls.LinearItemsLayout
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.LinearItemsLayout.ItemSpacingProperty, itemSpacing);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.LinearItemsLayout.ItemSpacingProperty, itemSpacing);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.LinearItemsLayout
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.LinearItemsLayout.ItemSpacingProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.LinearItemsLayout.ItemSpacingProperty, builder.GetValue());
             return self;
         }
         

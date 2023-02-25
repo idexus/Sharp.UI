@@ -17,7 +17,7 @@ namespace Sharp.UI
             string url)
             where T : Microsoft.Maui.Controls.UrlWebViewSource
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.UrlWebViewSource.UrlProperty, url);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.UrlWebViewSource.UrlProperty, url);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.UrlWebViewSource
         {
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.UrlWebViewSource.UrlProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.UrlWebViewSource.UrlProperty, builder.GetValue());
             return self;
         }
         

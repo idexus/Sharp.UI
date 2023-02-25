@@ -38,7 +38,7 @@ namespace Sharp.UI
             bool isEnabled)
             where T : Microsoft.Maui.Controls.MenuBarItem
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.MenuBarItem.IsEnabledProperty, isEnabled);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.MenuBarItem.IsEnabledProperty, isEnabled);
             return self;
         }
         
@@ -47,7 +47,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.MenuBarItem
         {
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.MenuBarItem.IsEnabledProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.MenuBarItem.IsEnabledProperty, builder.GetValue());
             return self;
         }
         
@@ -64,7 +64,7 @@ namespace Sharp.UI
             string text)
             where T : Microsoft.Maui.Controls.MenuBarItem
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.MenuBarItem.TextProperty, text);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.MenuBarItem.TextProperty, text);
             return self;
         }
         
@@ -73,7 +73,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.MenuBarItem
         {
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.MenuBarItem.TextProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.MenuBarItem.TextProperty, builder.GetValue());
             return self;
         }
         

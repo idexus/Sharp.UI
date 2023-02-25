@@ -17,7 +17,7 @@ namespace Sharp.UI
             double scaleX)
             where T : Microsoft.Maui.Controls.Shapes.ScaleTransform
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.ScaleTransform.ScaleXProperty, scaleX);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.ScaleTransform.ScaleXProperty, scaleX);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shapes.ScaleTransform
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.ScaleTransform.ScaleXProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.ScaleTransform.ScaleXProperty, builder.GetValue());
             return self;
         }
         
@@ -43,7 +43,7 @@ namespace Sharp.UI
             double scaleY)
             where T : Microsoft.Maui.Controls.Shapes.ScaleTransform
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.ScaleTransform.ScaleYProperty, scaleY);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.ScaleTransform.ScaleYProperty, scaleY);
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shapes.ScaleTransform
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.ScaleTransform.ScaleYProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.ScaleTransform.ScaleYProperty, builder.GetValue());
             return self;
         }
         
@@ -69,7 +69,7 @@ namespace Sharp.UI
             double centerX)
             where T : Microsoft.Maui.Controls.Shapes.ScaleTransform
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.ScaleTransform.CenterXProperty, centerX);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.ScaleTransform.CenterXProperty, centerX);
             return self;
         }
         
@@ -78,7 +78,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shapes.ScaleTransform
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.ScaleTransform.CenterXProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.ScaleTransform.CenterXProperty, builder.GetValue());
             return self;
         }
         
@@ -95,7 +95,7 @@ namespace Sharp.UI
             double centerY)
             where T : Microsoft.Maui.Controls.Shapes.ScaleTransform
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.ScaleTransform.CenterYProperty, centerY);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.ScaleTransform.CenterYProperty, centerY);
             return self;
         }
         
@@ -104,7 +104,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shapes.ScaleTransform
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.ScaleTransform.CenterYProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.ScaleTransform.CenterYProperty, builder.GetValue());
             return self;
         }
         

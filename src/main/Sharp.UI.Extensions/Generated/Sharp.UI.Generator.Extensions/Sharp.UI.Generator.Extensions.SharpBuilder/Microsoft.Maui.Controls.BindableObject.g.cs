@@ -17,7 +17,7 @@ namespace Sharp.UI
             object bindingContext)
             where T : Microsoft.Maui.Controls.BindableObject
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.BindableObject.BindingContextProperty, bindingContext);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.BindableObject.BindingContextProperty, bindingContext);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.BindableObject
         {
             var builder = buildValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.BindableObject.BindingContextProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.BindableObject.BindingContextProperty, builder.GetValue());
             return self;
         }
         

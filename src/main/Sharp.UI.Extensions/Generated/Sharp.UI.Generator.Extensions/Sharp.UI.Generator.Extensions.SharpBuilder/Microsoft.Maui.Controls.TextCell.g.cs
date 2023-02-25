@@ -17,7 +17,7 @@ namespace Sharp.UI
             System.Windows.Input.ICommand command)
             where T : Microsoft.Maui.Controls.TextCell
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.TextCell.CommandProperty, command);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.TextCell.CommandProperty, command);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.TextCell
         {
             var builder = buildValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.TextCell.CommandProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.TextCell.CommandProperty, builder.GetValue());
             return self;
         }
         
@@ -43,7 +43,7 @@ namespace Sharp.UI
             object commandParameter)
             where T : Microsoft.Maui.Controls.TextCell
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.TextCell.CommandParameterProperty, commandParameter);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.TextCell.CommandParameterProperty, commandParameter);
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.TextCell
         {
             var builder = buildValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.TextCell.CommandParameterProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.TextCell.CommandParameterProperty, builder.GetValue());
             return self;
         }
         
@@ -69,7 +69,7 @@ namespace Sharp.UI
             string detail)
             where T : Microsoft.Maui.Controls.TextCell
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.TextCell.DetailProperty, detail);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.TextCell.DetailProperty, detail);
             return self;
         }
         
@@ -78,7 +78,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.TextCell
         {
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.TextCell.DetailProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.TextCell.DetailProperty, builder.GetValue());
             return self;
         }
         
@@ -95,7 +95,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color detailColor)
             where T : Microsoft.Maui.Controls.TextCell
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.TextCell.DetailColorProperty, detailColor);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.TextCell.DetailColorProperty, detailColor);
             return self;
         }
         
@@ -104,7 +104,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.TextCell
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.TextCell.DetailColorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.TextCell.DetailColorProperty, builder.GetValue());
             return self;
         }
         
@@ -121,7 +121,7 @@ namespace Sharp.UI
             string text)
             where T : Microsoft.Maui.Controls.TextCell
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.TextCell.TextProperty, text);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.TextCell.TextProperty, text);
             return self;
         }
         
@@ -130,7 +130,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.TextCell
         {
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.TextCell.TextProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.TextCell.TextProperty, builder.GetValue());
             return self;
         }
         
@@ -147,7 +147,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color textColor)
             where T : Microsoft.Maui.Controls.TextCell
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.TextCell.TextColorProperty, textColor);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.TextCell.TextColorProperty, textColor);
             return self;
         }
         
@@ -156,7 +156,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.TextCell
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.TextCell.TextColorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.TextCell.TextColorProperty, builder.GetValue());
             return self;
         }
         

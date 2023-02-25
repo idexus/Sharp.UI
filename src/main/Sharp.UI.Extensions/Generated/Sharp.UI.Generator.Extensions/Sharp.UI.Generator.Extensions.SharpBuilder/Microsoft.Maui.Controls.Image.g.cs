@@ -17,7 +17,7 @@ namespace Sharp.UI
             Microsoft.Maui.Aspect aspect)
             where T : Microsoft.Maui.Controls.Image
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Image.AspectProperty, aspect);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Image.AspectProperty, aspect);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Image
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Aspect>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Image.AspectProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Image.AspectProperty, builder.GetValue());
             return self;
         }
         
@@ -43,7 +43,7 @@ namespace Sharp.UI
             bool isOpaque)
             where T : Microsoft.Maui.Controls.Image
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Image.IsOpaqueProperty, isOpaque);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Image.IsOpaqueProperty, isOpaque);
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Image
         {
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Image.IsOpaqueProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Image.IsOpaqueProperty, builder.GetValue());
             return self;
         }
         
@@ -69,7 +69,7 @@ namespace Sharp.UI
             bool isAnimationPlaying)
             where T : Microsoft.Maui.Controls.Image
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Image.IsAnimationPlayingProperty, isAnimationPlaying);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Image.IsAnimationPlayingProperty, isAnimationPlaying);
             return self;
         }
         
@@ -78,7 +78,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Image
         {
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Image.IsAnimationPlayingProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Image.IsAnimationPlayingProperty, builder.GetValue());
             return self;
         }
         
@@ -95,7 +95,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.ImageSource source)
             where T : Microsoft.Maui.Controls.Image
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Image.SourceProperty, source);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Image.SourceProperty, source);
             return self;
         }
         
@@ -104,7 +104,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Image
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Image.SourceProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Image.SourceProperty, builder.GetValue());
             return self;
         }
         

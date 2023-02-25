@@ -17,7 +17,7 @@ namespace Sharp.UI
             Microsoft.Maui.SwipeMode mode)
             where T : Microsoft.Maui.Controls.SwipeItems
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SwipeItems.ModeProperty, mode);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwipeItems.ModeProperty, mode);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SwipeItems
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.SwipeMode>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SwipeItems.ModeProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwipeItems.ModeProperty, builder.GetValue());
             return self;
         }
         
@@ -43,7 +43,7 @@ namespace Sharp.UI
             Microsoft.Maui.SwipeBehaviorOnInvoked swipeBehaviorOnInvoked)
             where T : Microsoft.Maui.Controls.SwipeItems
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SwipeItems.SwipeBehaviorOnInvokedProperty, swipeBehaviorOnInvoked);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwipeItems.SwipeBehaviorOnInvokedProperty, swipeBehaviorOnInvoked);
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SwipeItems
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.SwipeBehaviorOnInvoked>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SwipeItems.SwipeBehaviorOnInvokedProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwipeItems.SwipeBehaviorOnInvokedProperty, builder.GetValue());
             return self;
         }
         

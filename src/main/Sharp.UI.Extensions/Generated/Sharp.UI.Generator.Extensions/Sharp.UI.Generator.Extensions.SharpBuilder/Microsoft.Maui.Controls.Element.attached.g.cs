@@ -17,7 +17,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.MenuFlyout contextFlyout)
             where T : Microsoft.Maui.Controls.Element
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.FlyoutBase.ContextFlyoutProperty, contextFlyout);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.FlyoutBase.ContextFlyoutProperty, contextFlyout);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Element
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.MenuFlyout>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.FlyoutBase.ContextFlyoutProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.FlyoutBase.ContextFlyoutProperty, builder.GetValue());
             return self;
         }
         

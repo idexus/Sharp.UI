@@ -38,7 +38,7 @@ namespace Sharp.UI
             bool isGestureEnabled)
             where T : Microsoft.Maui.Controls.FlyoutPage
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.FlyoutPage.IsGestureEnabledProperty, isGestureEnabled);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.FlyoutPage.IsGestureEnabledProperty, isGestureEnabled);
             return self;
         }
         
@@ -47,7 +47,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.FlyoutPage
         {
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.FlyoutPage.IsGestureEnabledProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.FlyoutPage.IsGestureEnabledProperty, builder.GetValue());
             return self;
         }
         
@@ -64,7 +64,7 @@ namespace Sharp.UI
             bool isPresented)
             where T : Microsoft.Maui.Controls.FlyoutPage
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.FlyoutPage.IsPresentedProperty, isPresented);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.FlyoutPage.IsPresentedProperty, isPresented);
             return self;
         }
         
@@ -73,7 +73,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.FlyoutPage
         {
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.FlyoutPage.IsPresentedProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.FlyoutPage.IsPresentedProperty, builder.GetValue());
             return self;
         }
         
@@ -111,7 +111,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.FlyoutLayoutBehavior flyoutLayoutBehavior)
             where T : Microsoft.Maui.Controls.FlyoutPage
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.FlyoutPage.FlyoutLayoutBehaviorProperty, flyoutLayoutBehavior);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.FlyoutPage.FlyoutLayoutBehaviorProperty, flyoutLayoutBehavior);
             return self;
         }
         
@@ -120,7 +120,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.FlyoutPage
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.FlyoutLayoutBehavior>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.FlyoutPage.FlyoutLayoutBehaviorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.FlyoutPage.FlyoutLayoutBehaviorProperty, builder.GetValue());
             return self;
         }
         

@@ -17,7 +17,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color color)
             where T : Microsoft.Maui.Controls.SolidColorBrush
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SolidColorBrush.ColorProperty, color);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SolidColorBrush.ColorProperty, color);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SolidColorBrush
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SolidColorBrush.ColorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SolidColorBrush.ColorProperty, builder.GetValue());
             return self;
         }
         

@@ -17,7 +17,7 @@ namespace Sharp.UI
             System.Net.CookieContainer cookies)
             where T : Microsoft.Maui.Controls.WebView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.WebView.CookiesProperty, cookies);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.WebView.CookiesProperty, cookies);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.WebView
         {
             var builder = buildValue(new ValueBuilder<System.Net.CookieContainer>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.WebView.CookiesProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.WebView.CookiesProperty, builder.GetValue());
             return self;
         }
         
@@ -43,7 +43,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.WebViewSource source)
             where T : Microsoft.Maui.Controls.WebView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.WebView.SourceProperty, source);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.WebView.SourceProperty, source);
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.WebView
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.WebViewSource>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.WebView.SourceProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.WebView.SourceProperty, builder.GetValue());
             return self;
         }
         

@@ -17,7 +17,7 @@ namespace Sharp.UI
             int span)
             where T : Microsoft.Maui.Controls.GridItemsLayout
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.GridItemsLayout.SpanProperty, span);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.GridItemsLayout.SpanProperty, span);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.GridItemsLayout
         {
             var builder = buildValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.GridItemsLayout.SpanProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.GridItemsLayout.SpanProperty, builder.GetValue());
             return self;
         }
         
@@ -43,7 +43,7 @@ namespace Sharp.UI
             double verticalItemSpacing)
             where T : Microsoft.Maui.Controls.GridItemsLayout
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.GridItemsLayout.VerticalItemSpacingProperty, verticalItemSpacing);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.GridItemsLayout.VerticalItemSpacingProperty, verticalItemSpacing);
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.GridItemsLayout
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.GridItemsLayout.VerticalItemSpacingProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.GridItemsLayout.VerticalItemSpacingProperty, builder.GetValue());
             return self;
         }
         
@@ -69,7 +69,7 @@ namespace Sharp.UI
             double horizontalItemSpacing)
             where T : Microsoft.Maui.Controls.GridItemsLayout
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.GridItemsLayout.HorizontalItemSpacingProperty, horizontalItemSpacing);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.GridItemsLayout.HorizontalItemSpacingProperty, horizontalItemSpacing);
             return self;
         }
         
@@ -78,7 +78,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.GridItemsLayout
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.GridItemsLayout.HorizontalItemSpacingProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.GridItemsLayout.HorizontalItemSpacingProperty, builder.GetValue());
             return self;
         }
         

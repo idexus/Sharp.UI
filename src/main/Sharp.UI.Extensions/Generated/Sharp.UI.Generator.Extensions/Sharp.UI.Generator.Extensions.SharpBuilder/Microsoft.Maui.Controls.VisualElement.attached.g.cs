@@ -17,7 +17,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.VisualStateGroupList visualStateGroups)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.VisualStateManager.VisualStateGroupsProperty, visualStateGroups);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.VisualStateManager.VisualStateGroupsProperty, visualStateGroups);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.VisualStateGroupList>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.VisualStateManager.VisualStateGroupsProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.VisualStateManager.VisualStateGroupsProperty, builder.GetValue());
             return self;
         }
         
@@ -49,7 +49,7 @@ namespace Sharp.UI
             bool? automationExcludedWithChildren)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.AutomationProperties.ExcludedWithChildrenProperty, automationExcludedWithChildren);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.AutomationProperties.ExcludedWithChildrenProperty, automationExcludedWithChildren);
             return self;
         }
         
@@ -58,7 +58,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var builder = buildValue(new ValueBuilder<bool?>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.AutomationProperties.ExcludedWithChildrenProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.AutomationProperties.ExcludedWithChildrenProperty, builder.GetValue());
             return self;
         }
         
@@ -81,7 +81,7 @@ namespace Sharp.UI
             bool? automationIsInAccessibleTree)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.AutomationProperties.IsInAccessibleTreeProperty, automationIsInAccessibleTree);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.AutomationProperties.IsInAccessibleTreeProperty, automationIsInAccessibleTree);
             return self;
         }
         
@@ -90,7 +90,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var builder = buildValue(new ValueBuilder<bool?>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.AutomationProperties.IsInAccessibleTreeProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.AutomationProperties.IsInAccessibleTreeProperty, builder.GetValue());
             return self;
         }
         
@@ -113,7 +113,7 @@ namespace Sharp.UI
             string automationName)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.AutomationProperties.NameProperty, automationName);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.AutomationProperties.NameProperty, automationName);
             return self;
         }
         
@@ -122,7 +122,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.AutomationProperties.NameProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.AutomationProperties.NameProperty, builder.GetValue());
             return self;
         }
         
@@ -145,7 +145,7 @@ namespace Sharp.UI
             string automationHelpText)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.AutomationProperties.HelpTextProperty, automationHelpText);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.AutomationProperties.HelpTextProperty, automationHelpText);
             return self;
         }
         
@@ -154,7 +154,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.AutomationProperties.HelpTextProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.AutomationProperties.HelpTextProperty, builder.GetValue());
             return self;
         }
         
@@ -177,7 +177,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.VisualElement automationLabeledBy)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.AutomationProperties.LabeledByProperty, automationLabeledBy);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.AutomationProperties.LabeledByProperty, automationLabeledBy);
             return self;
         }
         
@@ -186,7 +186,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.VisualElement>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.AutomationProperties.LabeledByProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.AutomationProperties.LabeledByProperty, builder.GetValue());
             return self;
         }
         
@@ -209,7 +209,7 @@ namespace Sharp.UI
             string semanticHint)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SemanticProperties.HintProperty, semanticHint);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SemanticProperties.HintProperty, semanticHint);
             return self;
         }
         
@@ -218,7 +218,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SemanticProperties.HintProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SemanticProperties.HintProperty, builder.GetValue());
             return self;
         }
         
@@ -241,7 +241,7 @@ namespace Sharp.UI
             string semanticDescription)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SemanticProperties.DescriptionProperty, semanticDescription);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SemanticProperties.DescriptionProperty, semanticDescription);
             return self;
         }
         
@@ -250,7 +250,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SemanticProperties.DescriptionProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SemanticProperties.DescriptionProperty, builder.GetValue());
             return self;
         }
         
@@ -273,7 +273,7 @@ namespace Sharp.UI
             Microsoft.Maui.SemanticHeadingLevel semanticHeadingLevel)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SemanticProperties.HeadingLevelProperty, semanticHeadingLevel);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SemanticProperties.HeadingLevelProperty, semanticHeadingLevel);
             return self;
         }
         
@@ -282,7 +282,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.SemanticHeadingLevel>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SemanticProperties.HeadingLevelProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SemanticProperties.HeadingLevelProperty, builder.GetValue());
             return self;
         }
         

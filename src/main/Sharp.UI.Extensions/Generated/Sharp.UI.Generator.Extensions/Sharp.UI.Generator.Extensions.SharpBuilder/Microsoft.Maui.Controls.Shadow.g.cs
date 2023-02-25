@@ -17,7 +17,7 @@ namespace Sharp.UI
             float radius)
             where T : Microsoft.Maui.Controls.Shadow
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shadow.RadiusProperty, radius);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shadow.RadiusProperty, radius);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shadow
         {
             var builder = buildValue(new ValueBuilder<float>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shadow.RadiusProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shadow.RadiusProperty, builder.GetValue());
             return self;
         }
         
@@ -43,7 +43,7 @@ namespace Sharp.UI
             float opacity)
             where T : Microsoft.Maui.Controls.Shadow
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shadow.OpacityProperty, opacity);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shadow.OpacityProperty, opacity);
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shadow
         {
             var builder = buildValue(new ValueBuilder<float>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shadow.OpacityProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shadow.OpacityProperty, builder.GetValue());
             return self;
         }
         
@@ -69,7 +69,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.Brush brush)
             where T : Microsoft.Maui.Controls.Shadow
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shadow.BrushProperty, brush);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shadow.BrushProperty, brush);
             return self;
         }
         
@@ -78,7 +78,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shadow
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Brush>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shadow.BrushProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shadow.BrushProperty, builder.GetValue());
             return self;
         }
         
@@ -95,7 +95,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Point offset)
             where T : Microsoft.Maui.Controls.Shadow
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shadow.OffsetProperty, offset);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shadow.OffsetProperty, offset);
             return self;
         }
         
@@ -104,7 +104,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Shadow
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Point>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shadow.OffsetProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shadow.OffsetProperty, builder.GetValue());
             return self;
         }
         

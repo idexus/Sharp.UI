@@ -17,7 +17,7 @@ namespace Sharp.UI
             Microsoft.Maui.Keyboard keyboard)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.KeyboardProperty, keyboard);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.KeyboardProperty, keyboard);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchHandler
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Keyboard>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.KeyboardProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.KeyboardProperty, builder.GetValue());
             return self;
         }
         
@@ -43,7 +43,7 @@ namespace Sharp.UI
             Microsoft.Maui.TextAlignment horizontalTextAlignment)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.HorizontalTextAlignmentProperty, horizontalTextAlignment);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.HorizontalTextAlignmentProperty, horizontalTextAlignment);
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchHandler
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.TextAlignment>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.HorizontalTextAlignmentProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.HorizontalTextAlignmentProperty, builder.GetValue());
             return self;
         }
         
@@ -69,7 +69,7 @@ namespace Sharp.UI
             Microsoft.Maui.TextAlignment verticalTextAlignment)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.VerticalTextAlignmentProperty, verticalTextAlignment);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.VerticalTextAlignmentProperty, verticalTextAlignment);
             return self;
         }
         
@@ -78,7 +78,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchHandler
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.TextAlignment>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.VerticalTextAlignmentProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.VerticalTextAlignmentProperty, builder.GetValue());
             return self;
         }
         
@@ -95,7 +95,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color textColor)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.TextColorProperty, textColor);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.TextColorProperty, textColor);
             return self;
         }
         
@@ -104,7 +104,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchHandler
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.TextColorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.TextColorProperty, builder.GetValue());
             return self;
         }
         
@@ -121,7 +121,7 @@ namespace Sharp.UI
             Microsoft.Maui.TextTransform textTransform)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.TextTransformProperty, textTransform);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.TextTransformProperty, textTransform);
             return self;
         }
         
@@ -130,7 +130,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchHandler
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.TextTransform>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.TextTransformProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.TextTransformProperty, builder.GetValue());
             return self;
         }
         
@@ -147,7 +147,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color cancelButtonColor)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.CancelButtonColorProperty, cancelButtonColor);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.CancelButtonColorProperty, cancelButtonColor);
             return self;
         }
         
@@ -156,7 +156,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchHandler
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.CancelButtonColorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.CancelButtonColorProperty, builder.GetValue());
             return self;
         }
         
@@ -173,7 +173,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.FontAttributes fontAttributes)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.FontAttributesProperty, fontAttributes);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.FontAttributesProperty, fontAttributes);
             return self;
         }
         
@@ -182,7 +182,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchHandler
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.FontAttributes>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.FontAttributesProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.FontAttributesProperty, builder.GetValue());
             return self;
         }
         
@@ -199,7 +199,7 @@ namespace Sharp.UI
             string fontFamily)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.FontFamilyProperty, fontFamily);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.FontFamilyProperty, fontFamily);
             return self;
         }
         
@@ -208,7 +208,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchHandler
         {
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.FontFamilyProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.FontFamilyProperty, builder.GetValue());
             return self;
         }
         
@@ -225,7 +225,7 @@ namespace Sharp.UI
             double characterSpacing)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.CharacterSpacingProperty, characterSpacing);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.CharacterSpacingProperty, characterSpacing);
             return self;
         }
         
@@ -234,7 +234,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchHandler
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.CharacterSpacingProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.CharacterSpacingProperty, builder.GetValue());
             return self;
         }
         
@@ -251,7 +251,7 @@ namespace Sharp.UI
             double fontSize)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.FontSizeProperty, fontSize);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.FontSizeProperty, fontSize);
             return self;
         }
         
@@ -260,7 +260,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchHandler
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.FontSizeProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.FontSizeProperty, builder.GetValue());
             return self;
         }
         
@@ -277,7 +277,7 @@ namespace Sharp.UI
             bool fontAutoScalingEnabled)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.FontAutoScalingEnabledProperty, fontAutoScalingEnabled);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.FontAutoScalingEnabledProperty, fontAutoScalingEnabled);
             return self;
         }
         
@@ -286,7 +286,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchHandler
         {
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.FontAutoScalingEnabledProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.FontAutoScalingEnabledProperty, builder.GetValue());
             return self;
         }
         
@@ -303,7 +303,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color placeholderColor)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.PlaceholderColorProperty, placeholderColor);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.PlaceholderColorProperty, placeholderColor);
             return self;
         }
         
@@ -312,7 +312,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchHandler
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.PlaceholderColorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.PlaceholderColorProperty, builder.GetValue());
             return self;
         }
         
@@ -329,7 +329,7 @@ namespace Sharp.UI
             string placeholder)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.PlaceholderProperty, placeholder);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.PlaceholderProperty, placeholder);
             return self;
         }
         
@@ -338,7 +338,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchHandler
         {
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.PlaceholderProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.PlaceholderProperty, builder.GetValue());
             return self;
         }
         
@@ -355,7 +355,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color backgroundColor)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.BackgroundColorProperty, backgroundColor);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.BackgroundColorProperty, backgroundColor);
             return self;
         }
         
@@ -364,7 +364,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchHandler
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.BackgroundColorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.BackgroundColorProperty, builder.GetValue());
             return self;
         }
         
@@ -381,7 +381,7 @@ namespace Sharp.UI
             string automationId)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.AutomationIdProperty, automationId);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.AutomationIdProperty, automationId);
             return self;
         }
         
@@ -390,7 +390,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchHandler
         {
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.AutomationIdProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.AutomationIdProperty, builder.GetValue());
             return self;
         }
         
@@ -407,7 +407,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.ImageSource clearIcon)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ClearIconProperty, clearIcon);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.ClearIconProperty, clearIcon);
             return self;
         }
         
@@ -416,7 +416,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchHandler
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ClearIconProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.ClearIconProperty, builder.GetValue());
             return self;
         }
         
@@ -433,7 +433,7 @@ namespace Sharp.UI
             string clearIconHelpText)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ClearIconHelpTextProperty, clearIconHelpText);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.ClearIconHelpTextProperty, clearIconHelpText);
             return self;
         }
         
@@ -442,7 +442,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchHandler
         {
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ClearIconHelpTextProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.ClearIconHelpTextProperty, builder.GetValue());
             return self;
         }
         
@@ -459,7 +459,7 @@ namespace Sharp.UI
             string clearIconName)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ClearIconNameProperty, clearIconName);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.ClearIconNameProperty, clearIconName);
             return self;
         }
         
@@ -468,7 +468,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchHandler
         {
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ClearIconNameProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.ClearIconNameProperty, builder.GetValue());
             return self;
         }
         
@@ -485,7 +485,7 @@ namespace Sharp.UI
             System.Windows.Input.ICommand clearPlaceholderCommand)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderCommandProperty, clearPlaceholderCommand);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderCommandProperty, clearPlaceholderCommand);
             return self;
         }
         
@@ -494,7 +494,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchHandler
         {
             var builder = buildValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderCommandProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderCommandProperty, builder.GetValue());
             return self;
         }
         
@@ -511,7 +511,7 @@ namespace Sharp.UI
             object clearPlaceholderCommandParameter)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderCommandParameterProperty, clearPlaceholderCommandParameter);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderCommandParameterProperty, clearPlaceholderCommandParameter);
             return self;
         }
         
@@ -520,7 +520,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchHandler
         {
             var builder = buildValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderCommandParameterProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderCommandParameterProperty, builder.GetValue());
             return self;
         }
         
@@ -537,7 +537,7 @@ namespace Sharp.UI
             bool clearPlaceholderEnabled)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderEnabledProperty, clearPlaceholderEnabled);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderEnabledProperty, clearPlaceholderEnabled);
             return self;
         }
         
@@ -546,7 +546,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchHandler
         {
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderEnabledProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderEnabledProperty, builder.GetValue());
             return self;
         }
         
@@ -563,7 +563,7 @@ namespace Sharp.UI
             string clearPlaceholderHelpText)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderHelpTextProperty, clearPlaceholderHelpText);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderHelpTextProperty, clearPlaceholderHelpText);
             return self;
         }
         
@@ -572,7 +572,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchHandler
         {
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderHelpTextProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderHelpTextProperty, builder.GetValue());
             return self;
         }
         
@@ -589,7 +589,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.ImageSource clearPlaceholderIcon)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderIconProperty, clearPlaceholderIcon);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderIconProperty, clearPlaceholderIcon);
             return self;
         }
         
@@ -598,7 +598,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchHandler
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderIconProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderIconProperty, builder.GetValue());
             return self;
         }
         
@@ -615,7 +615,7 @@ namespace Sharp.UI
             string clearPlaceholderName)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderNameProperty, clearPlaceholderName);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderNameProperty, clearPlaceholderName);
             return self;
         }
         
@@ -624,7 +624,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchHandler
         {
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderNameProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderNameProperty, builder.GetValue());
             return self;
         }
         
@@ -641,7 +641,7 @@ namespace Sharp.UI
             System.Windows.Input.ICommand command)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.CommandProperty, command);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.CommandProperty, command);
             return self;
         }
         
@@ -650,7 +650,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchHandler
         {
             var builder = buildValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.CommandProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.CommandProperty, builder.GetValue());
             return self;
         }
         
@@ -667,7 +667,7 @@ namespace Sharp.UI
             object commandParameter)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.CommandParameterProperty, commandParameter);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.CommandParameterProperty, commandParameter);
             return self;
         }
         
@@ -676,7 +676,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchHandler
         {
             var builder = buildValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.CommandParameterProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.CommandParameterProperty, builder.GetValue());
             return self;
         }
         
@@ -693,7 +693,7 @@ namespace Sharp.UI
             string displayMemberName)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.DisplayMemberNameProperty, displayMemberName);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.DisplayMemberNameProperty, displayMemberName);
             return self;
         }
         
@@ -702,7 +702,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchHandler
         {
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.DisplayMemberNameProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.DisplayMemberNameProperty, builder.GetValue());
             return self;
         }
         
@@ -719,7 +719,7 @@ namespace Sharp.UI
             bool isSearchEnabled)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.IsSearchEnabledProperty, isSearchEnabled);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.IsSearchEnabledProperty, isSearchEnabled);
             return self;
         }
         
@@ -728,7 +728,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchHandler
         {
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.IsSearchEnabledProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.IsSearchEnabledProperty, builder.GetValue());
             return self;
         }
         
@@ -745,7 +745,7 @@ namespace Sharp.UI
             System.Collections.IEnumerable itemsSource)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ItemsSourceProperty, itemsSource);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.ItemsSourceProperty, itemsSource);
             return self;
         }
         
@@ -754,7 +754,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchHandler
         {
             var builder = buildValue(new ValueBuilder<System.Collections.IEnumerable>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ItemsSourceProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.ItemsSourceProperty, builder.GetValue());
             return self;
         }
         
@@ -771,7 +771,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.DataTemplate itemTemplate)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ItemTemplateProperty, itemTemplate);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.ItemTemplateProperty, itemTemplate);
             return self;
         }
         
@@ -780,7 +780,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchHandler
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ItemTemplateProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.ItemTemplateProperty, builder.GetValue());
             return self;
         }
         
@@ -796,7 +796,7 @@ namespace Sharp.UI
         public static T ItemTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ItemTemplateProperty, new DataTemplate(loadTemplate));
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.ItemTemplateProperty, new DataTemplate(loadTemplate));
             return self;
         }
         
@@ -804,7 +804,7 @@ namespace Sharp.UI
             string query)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.QueryProperty, query);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.QueryProperty, query);
             return self;
         }
         
@@ -813,7 +813,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchHandler
         {
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.QueryProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.QueryProperty, builder.GetValue());
             return self;
         }
         
@@ -830,7 +830,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.ImageSource queryIcon)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.QueryIconProperty, queryIcon);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.QueryIconProperty, queryIcon);
             return self;
         }
         
@@ -839,7 +839,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchHandler
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.QueryIconProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.QueryIconProperty, builder.GetValue());
             return self;
         }
         
@@ -856,7 +856,7 @@ namespace Sharp.UI
             string queryIconHelpText)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.QueryIconHelpTextProperty, queryIconHelpText);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.QueryIconHelpTextProperty, queryIconHelpText);
             return self;
         }
         
@@ -865,7 +865,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchHandler
         {
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.QueryIconHelpTextProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.QueryIconHelpTextProperty, builder.GetValue());
             return self;
         }
         
@@ -882,7 +882,7 @@ namespace Sharp.UI
             string queryIconName)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.QueryIconNameProperty, queryIconName);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.QueryIconNameProperty, queryIconName);
             return self;
         }
         
@@ -891,7 +891,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchHandler
         {
             var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.QueryIconNameProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.QueryIconNameProperty, builder.GetValue());
             return self;
         }
         
@@ -908,7 +908,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.SearchBoxVisibility searchBoxVisibility)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.SearchBoxVisibilityProperty, searchBoxVisibility);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.SearchBoxVisibilityProperty, searchBoxVisibility);
             return self;
         }
         
@@ -917,7 +917,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchHandler
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.SearchBoxVisibility>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.SearchBoxVisibilityProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.SearchBoxVisibilityProperty, builder.GetValue());
             return self;
         }
         
@@ -934,7 +934,7 @@ namespace Sharp.UI
             bool showsResults)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ShowsResultsProperty, showsResults);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.ShowsResultsProperty, showsResults);
             return self;
         }
         
@@ -943,7 +943,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SearchHandler
         {
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SearchHandler.ShowsResultsProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.ShowsResultsProperty, builder.GetValue());
             return self;
         }
         

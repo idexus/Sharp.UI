@@ -17,7 +17,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.View? content)
             where T : Microsoft.Maui.Controls.Border
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Border.ContentProperty, content);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Border.ContentProperty, content);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Border
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.View?>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Border.ContentProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Border.ContentProperty, builder.GetValue());
             return self;
         }
         
@@ -43,7 +43,7 @@ namespace Sharp.UI
             Microsoft.Maui.Thickness padding)
             where T : Microsoft.Maui.Controls.Border
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Border.PaddingProperty, padding);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Border.PaddingProperty, padding);
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Border
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Thickness>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Border.PaddingProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Border.PaddingProperty, builder.GetValue());
             return self;
         }
         
@@ -69,7 +69,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.IShape? strokeShape)
             where T : Microsoft.Maui.Controls.Border
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Border.StrokeShapeProperty, strokeShape);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Border.StrokeShapeProperty, strokeShape);
             return self;
         }
         
@@ -78,7 +78,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Border
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.IShape?>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Border.StrokeShapeProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Border.StrokeShapeProperty, builder.GetValue());
             return self;
         }
         
@@ -95,7 +95,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.Brush? stroke)
             where T : Microsoft.Maui.Controls.Border
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Border.StrokeProperty, stroke);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Border.StrokeProperty, stroke);
             return self;
         }
         
@@ -104,7 +104,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Border
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Brush?>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Border.StrokeProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Border.StrokeProperty, builder.GetValue());
             return self;
         }
         
@@ -121,7 +121,7 @@ namespace Sharp.UI
             double strokeThickness)
             where T : Microsoft.Maui.Controls.Border
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Border.StrokeThicknessProperty, strokeThickness);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Border.StrokeThicknessProperty, strokeThickness);
             return self;
         }
         
@@ -130,7 +130,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Border
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Border.StrokeThicknessProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Border.StrokeThicknessProperty, builder.GetValue());
             return self;
         }
         
@@ -183,7 +183,7 @@ namespace Sharp.UI
             double strokeDashOffset)
             where T : Microsoft.Maui.Controls.Border
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Border.StrokeDashOffsetProperty, strokeDashOffset);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Border.StrokeDashOffsetProperty, strokeDashOffset);
             return self;
         }
         
@@ -192,7 +192,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Border
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Border.StrokeDashOffsetProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Border.StrokeDashOffsetProperty, builder.GetValue());
             return self;
         }
         
@@ -218,7 +218,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.Shapes.PenLineCap strokeLineCap)
             where T : Microsoft.Maui.Controls.Border
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Border.StrokeLineCapProperty, strokeLineCap);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Border.StrokeLineCapProperty, strokeLineCap);
             return self;
         }
         
@@ -227,7 +227,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Border
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Shapes.PenLineCap>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Border.StrokeLineCapProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Border.StrokeLineCapProperty, builder.GetValue());
             return self;
         }
         
@@ -244,7 +244,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.Shapes.PenLineJoin strokeLineJoin)
             where T : Microsoft.Maui.Controls.Border
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Border.StrokeLineJoinProperty, strokeLineJoin);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Border.StrokeLineJoinProperty, strokeLineJoin);
             return self;
         }
         
@@ -253,7 +253,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Border
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Shapes.PenLineJoin>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Border.StrokeLineJoinProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Border.StrokeLineJoinProperty, builder.GetValue());
             return self;
         }
         
@@ -270,7 +270,7 @@ namespace Sharp.UI
             double strokeMiterLimit)
             where T : Microsoft.Maui.Controls.Border
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Border.StrokeMiterLimitProperty, strokeMiterLimit);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Border.StrokeMiterLimitProperty, strokeMiterLimit);
             return self;
         }
         
@@ -279,7 +279,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Border
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Border.StrokeMiterLimitProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Border.StrokeMiterLimitProperty, builder.GetValue());
             return self;
         }
         

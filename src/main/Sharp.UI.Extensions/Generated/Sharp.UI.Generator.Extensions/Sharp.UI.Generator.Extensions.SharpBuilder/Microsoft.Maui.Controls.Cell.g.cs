@@ -77,7 +77,7 @@ namespace Sharp.UI
             bool isEnabled)
             where T : Microsoft.Maui.Controls.Cell
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Cell.IsEnabledProperty, isEnabled);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Cell.IsEnabledProperty, isEnabled);
             return self;
         }
         
@@ -86,7 +86,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Cell
         {
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Cell.IsEnabledProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Cell.IsEnabledProperty, builder.GetValue());
             return self;
         }
         

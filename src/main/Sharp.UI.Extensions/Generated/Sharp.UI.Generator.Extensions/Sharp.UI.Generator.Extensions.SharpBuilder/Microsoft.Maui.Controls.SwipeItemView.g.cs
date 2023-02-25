@@ -17,7 +17,7 @@ namespace Sharp.UI
             System.Windows.Input.ICommand command)
             where T : Microsoft.Maui.Controls.SwipeItemView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SwipeItemView.CommandProperty, command);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwipeItemView.CommandProperty, command);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SwipeItemView
         {
             var builder = buildValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SwipeItemView.CommandProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwipeItemView.CommandProperty, builder.GetValue());
             return self;
         }
         
@@ -43,7 +43,7 @@ namespace Sharp.UI
             object commandParameter)
             where T : Microsoft.Maui.Controls.SwipeItemView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.SwipeItemView.CommandParameterProperty, commandParameter);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwipeItemView.CommandParameterProperty, commandParameter);
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.SwipeItemView
         {
             var builder = buildValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SwipeItemView.CommandParameterProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwipeItemView.CommandParameterProperty, builder.GetValue());
             return self;
         }
         

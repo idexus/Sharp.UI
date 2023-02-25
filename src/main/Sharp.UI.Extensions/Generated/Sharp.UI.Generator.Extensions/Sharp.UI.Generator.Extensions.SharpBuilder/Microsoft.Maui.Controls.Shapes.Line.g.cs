@@ -16,7 +16,7 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.Shapes.Line X1(this Microsoft.Maui.Controls.Shapes.Line self,
             double x1)
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Line.X1Property, x1);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Line.X1Property, x1);
             return self;
         }
         
@@ -24,7 +24,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Line.X1Property, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Line.X1Property, builder.GetValue());
             return self;
         }
         
@@ -47,7 +47,7 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.Shapes.Line Y1(this Microsoft.Maui.Controls.Shapes.Line self,
             double y1)
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Line.Y1Property, y1);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Line.Y1Property, y1);
             return self;
         }
         
@@ -55,7 +55,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Line.Y1Property, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Line.Y1Property, builder.GetValue());
             return self;
         }
         
@@ -78,7 +78,7 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.Shapes.Line X2(this Microsoft.Maui.Controls.Shapes.Line self,
             double x2)
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Line.X2Property, x2);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Line.X2Property, x2);
             return self;
         }
         
@@ -86,7 +86,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Line.X2Property, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Line.X2Property, builder.GetValue());
             return self;
         }
         
@@ -109,7 +109,7 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.Shapes.Line Y2(this Microsoft.Maui.Controls.Shapes.Line self,
             double y2)
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Line.Y2Property, y2);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Line.Y2Property, y2);
             return self;
         }
         
@@ -117,7 +117,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Line.Y2Property, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Line.Y2Property, builder.GetValue());
             return self;
         }
         

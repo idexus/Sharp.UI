@@ -16,7 +16,7 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.PointerGestureRecognizer PointerEnteredCommand(this Microsoft.Maui.Controls.PointerGestureRecognizer self,
             System.Windows.Input.ICommand pointerEnteredCommand)
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.PointerGestureRecognizer.PointerEnteredCommandProperty, pointerEnteredCommand);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.PointerGestureRecognizer.PointerEnteredCommandProperty, pointerEnteredCommand);
             return self;
         }
         
@@ -24,7 +24,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<System.Windows.Input.ICommand>, ValueBuilder<System.Windows.Input.ICommand>> buildValue)
         {
             var builder = buildValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.PointerGestureRecognizer.PointerEnteredCommandProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.PointerGestureRecognizer.PointerEnteredCommandProperty, builder.GetValue());
             return self;
         }
         
@@ -39,7 +39,7 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.PointerGestureRecognizer PointerEnteredCommandParameter(this Microsoft.Maui.Controls.PointerGestureRecognizer self,
             System.Windows.Input.ICommand pointerEnteredCommandParameter)
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.PointerGestureRecognizer.PointerEnteredCommandParameterProperty, pointerEnteredCommandParameter);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.PointerGestureRecognizer.PointerEnteredCommandParameterProperty, pointerEnteredCommandParameter);
             return self;
         }
         
@@ -47,7 +47,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<System.Windows.Input.ICommand>, ValueBuilder<System.Windows.Input.ICommand>> buildValue)
         {
             var builder = buildValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.PointerGestureRecognizer.PointerEnteredCommandParameterProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.PointerGestureRecognizer.PointerEnteredCommandParameterProperty, builder.GetValue());
             return self;
         }
         
@@ -62,7 +62,7 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.PointerGestureRecognizer PointerExitedCommand(this Microsoft.Maui.Controls.PointerGestureRecognizer self,
             System.Windows.Input.ICommand pointerExitedCommand)
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.PointerGestureRecognizer.PointerExitedCommandProperty, pointerExitedCommand);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.PointerGestureRecognizer.PointerExitedCommandProperty, pointerExitedCommand);
             return self;
         }
         
@@ -70,7 +70,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<System.Windows.Input.ICommand>, ValueBuilder<System.Windows.Input.ICommand>> buildValue)
         {
             var builder = buildValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.PointerGestureRecognizer.PointerExitedCommandProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.PointerGestureRecognizer.PointerExitedCommandProperty, builder.GetValue());
             return self;
         }
         
@@ -85,7 +85,7 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.PointerGestureRecognizer PointerExitedCommandParameter(this Microsoft.Maui.Controls.PointerGestureRecognizer self,
             System.Windows.Input.ICommand pointerExitedCommandParameter)
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.PointerGestureRecognizer.PointerExitedCommandParameterProperty, pointerExitedCommandParameter);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.PointerGestureRecognizer.PointerExitedCommandParameterProperty, pointerExitedCommandParameter);
             return self;
         }
         
@@ -93,7 +93,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<System.Windows.Input.ICommand>, ValueBuilder<System.Windows.Input.ICommand>> buildValue)
         {
             var builder = buildValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.PointerGestureRecognizer.PointerExitedCommandParameterProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.PointerGestureRecognizer.PointerExitedCommandParameterProperty, builder.GetValue());
             return self;
         }
         
@@ -108,7 +108,7 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.PointerGestureRecognizer PointerMovedCommand(this Microsoft.Maui.Controls.PointerGestureRecognizer self,
             System.Windows.Input.ICommand pointerMovedCommand)
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.PointerGestureRecognizer.PointerMovedCommandProperty, pointerMovedCommand);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.PointerGestureRecognizer.PointerMovedCommandProperty, pointerMovedCommand);
             return self;
         }
         
@@ -116,7 +116,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<System.Windows.Input.ICommand>, ValueBuilder<System.Windows.Input.ICommand>> buildValue)
         {
             var builder = buildValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.PointerGestureRecognizer.PointerMovedCommandProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.PointerGestureRecognizer.PointerMovedCommandProperty, builder.GetValue());
             return self;
         }
         
@@ -131,7 +131,7 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.PointerGestureRecognizer PointerMovedCommandParameter(this Microsoft.Maui.Controls.PointerGestureRecognizer self,
             System.Windows.Input.ICommand pointerMovedCommandParameter)
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.PointerGestureRecognizer.PointerMovedCommandParameterProperty, pointerMovedCommandParameter);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.PointerGestureRecognizer.PointerMovedCommandParameterProperty, pointerMovedCommandParameter);
             return self;
         }
         
@@ -139,7 +139,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<System.Windows.Input.ICommand>, ValueBuilder<System.Windows.Input.ICommand>> buildValue)
         {
             var builder = buildValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.PointerGestureRecognizer.PointerMovedCommandParameterProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.PointerGestureRecognizer.PointerMovedCommandParameterProperty, builder.GetValue());
             return self;
         }
         

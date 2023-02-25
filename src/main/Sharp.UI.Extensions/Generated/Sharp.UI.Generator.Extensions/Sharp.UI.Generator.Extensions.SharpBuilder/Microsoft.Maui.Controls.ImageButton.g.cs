@@ -17,7 +17,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color borderColor)
             where T : Microsoft.Maui.Controls.ImageButton
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.ImageButton.BorderColorProperty, borderColor);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ImageButton.BorderColorProperty, borderColor);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ImageButton
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.ImageButton.BorderColorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ImageButton.BorderColorProperty, builder.GetValue());
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace Sharp.UI
             int cornerRadius)
             where T : Microsoft.Maui.Controls.ImageButton
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.ImageButton.CornerRadiusProperty, cornerRadius);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ImageButton.CornerRadiusProperty, cornerRadius);
             return self;
         }
         
@@ -61,7 +61,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ImageButton
         {
             var builder = buildValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.ImageButton.CornerRadiusProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ImageButton.CornerRadiusProperty, builder.GetValue());
             return self;
         }
         
@@ -78,7 +78,7 @@ namespace Sharp.UI
             double borderWidth)
             where T : Microsoft.Maui.Controls.ImageButton
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.ImageButton.BorderWidthProperty, borderWidth);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ImageButton.BorderWidthProperty, borderWidth);
             return self;
         }
         
@@ -87,7 +87,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ImageButton
         {
             var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.ImageButton.BorderWidthProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ImageButton.BorderWidthProperty, builder.GetValue());
             return self;
         }
         
@@ -113,7 +113,7 @@ namespace Sharp.UI
             Microsoft.Maui.Aspect aspect)
             where T : Microsoft.Maui.Controls.ImageButton
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.ImageButton.AspectProperty, aspect);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ImageButton.AspectProperty, aspect);
             return self;
         }
         
@@ -122,7 +122,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ImageButton
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Aspect>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.ImageButton.AspectProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ImageButton.AspectProperty, builder.GetValue());
             return self;
         }
         
@@ -139,7 +139,7 @@ namespace Sharp.UI
             bool isOpaque)
             where T : Microsoft.Maui.Controls.ImageButton
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.ImageButton.IsOpaqueProperty, isOpaque);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ImageButton.IsOpaqueProperty, isOpaque);
             return self;
         }
         
@@ -148,7 +148,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ImageButton
         {
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.ImageButton.IsOpaqueProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ImageButton.IsOpaqueProperty, builder.GetValue());
             return self;
         }
         
@@ -165,7 +165,7 @@ namespace Sharp.UI
             System.Windows.Input.ICommand command)
             where T : Microsoft.Maui.Controls.ImageButton
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.ImageButton.CommandProperty, command);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ImageButton.CommandProperty, command);
             return self;
         }
         
@@ -174,7 +174,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ImageButton
         {
             var builder = buildValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.ImageButton.CommandProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ImageButton.CommandProperty, builder.GetValue());
             return self;
         }
         
@@ -191,7 +191,7 @@ namespace Sharp.UI
             object commandParameter)
             where T : Microsoft.Maui.Controls.ImageButton
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.ImageButton.CommandParameterProperty, commandParameter);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ImageButton.CommandParameterProperty, commandParameter);
             return self;
         }
         
@@ -200,7 +200,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ImageButton
         {
             var builder = buildValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.ImageButton.CommandParameterProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ImageButton.CommandParameterProperty, builder.GetValue());
             return self;
         }
         
@@ -217,7 +217,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.ImageSource source)
             where T : Microsoft.Maui.Controls.ImageButton
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.ImageButton.SourceProperty, source);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ImageButton.SourceProperty, source);
             return self;
         }
         
@@ -226,7 +226,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ImageButton
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.ImageButton.SourceProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ImageButton.SourceProperty, builder.GetValue());
             return self;
         }
         
@@ -243,7 +243,7 @@ namespace Sharp.UI
             Microsoft.Maui.Thickness padding)
             where T : Microsoft.Maui.Controls.ImageButton
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.ImageButton.PaddingProperty, padding);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ImageButton.PaddingProperty, padding);
             return self;
         }
         
@@ -252,7 +252,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ImageButton
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Thickness>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.ImageButton.PaddingProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ImageButton.PaddingProperty, builder.GetValue());
             return self;
         }
         

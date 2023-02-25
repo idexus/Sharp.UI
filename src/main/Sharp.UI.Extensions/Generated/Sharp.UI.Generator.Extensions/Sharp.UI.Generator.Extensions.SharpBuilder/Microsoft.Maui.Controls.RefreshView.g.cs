@@ -17,7 +17,7 @@ namespace Sharp.UI
             bool isRefreshing)
             where T : Microsoft.Maui.Controls.RefreshView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.RefreshView.IsRefreshingProperty, isRefreshing);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.RefreshView.IsRefreshingProperty, isRefreshing);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.RefreshView
         {
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.RefreshView.IsRefreshingProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.RefreshView.IsRefreshingProperty, builder.GetValue());
             return self;
         }
         
@@ -43,7 +43,7 @@ namespace Sharp.UI
             System.Windows.Input.ICommand command)
             where T : Microsoft.Maui.Controls.RefreshView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.RefreshView.CommandProperty, command);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.RefreshView.CommandProperty, command);
             return self;
         }
         
@@ -52,7 +52,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.RefreshView
         {
             var builder = buildValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.RefreshView.CommandProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.RefreshView.CommandProperty, builder.GetValue());
             return self;
         }
         
@@ -69,7 +69,7 @@ namespace Sharp.UI
             object commandParameter)
             where T : Microsoft.Maui.Controls.RefreshView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.RefreshView.CommandParameterProperty, commandParameter);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.RefreshView.CommandParameterProperty, commandParameter);
             return self;
         }
         
@@ -78,7 +78,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.RefreshView
         {
             var builder = buildValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.RefreshView.CommandParameterProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.RefreshView.CommandParameterProperty, builder.GetValue());
             return self;
         }
         
@@ -95,7 +95,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color refreshColor)
             where T : Microsoft.Maui.Controls.RefreshView
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.RefreshView.RefreshColorProperty, refreshColor);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.RefreshView.RefreshColorProperty, refreshColor);
             return self;
         }
         
@@ -104,7 +104,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.RefreshView
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.RefreshView.RefreshColorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.RefreshView.RefreshColorProperty, builder.GetValue());
             return self;
         }
         

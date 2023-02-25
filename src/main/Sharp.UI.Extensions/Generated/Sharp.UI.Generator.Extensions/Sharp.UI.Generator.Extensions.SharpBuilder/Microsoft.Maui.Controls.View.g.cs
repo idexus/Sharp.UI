@@ -35,7 +35,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.LayoutOptions horizontalOptions)
             where T : Microsoft.Maui.Controls.View
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.View.HorizontalOptionsProperty, horizontalOptions);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.View.HorizontalOptionsProperty, horizontalOptions);
             return self;
         }
         
@@ -44,7 +44,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.View
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.LayoutOptions>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.View.HorizontalOptionsProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.View.HorizontalOptionsProperty, builder.GetValue());
             return self;
         }
         
@@ -61,7 +61,7 @@ namespace Sharp.UI
             Microsoft.Maui.Thickness margin)
             where T : Microsoft.Maui.Controls.View
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.View.MarginProperty, margin);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.View.MarginProperty, margin);
             return self;
         }
         
@@ -70,7 +70,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.View
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Thickness>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.View.MarginProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.View.MarginProperty, builder.GetValue());
             return self;
         }
         
@@ -87,7 +87,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.LayoutOptions verticalOptions)
             where T : Microsoft.Maui.Controls.View
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.View.VerticalOptionsProperty, verticalOptions);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.View.VerticalOptionsProperty, verticalOptions);
             return self;
         }
         
@@ -96,7 +96,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.View
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.LayoutOptions>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.View.VerticalOptionsProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.View.VerticalOptionsProperty, builder.GetValue());
             return self;
         }
         

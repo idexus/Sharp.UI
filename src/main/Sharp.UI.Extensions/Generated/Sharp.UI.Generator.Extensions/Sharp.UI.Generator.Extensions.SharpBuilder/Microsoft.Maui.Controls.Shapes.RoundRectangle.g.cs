@@ -16,7 +16,7 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.Shapes.RoundRectangle CornerRadius(this Microsoft.Maui.Controls.Shapes.RoundRectangle self,
             Microsoft.Maui.CornerRadius cornerRadius)
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.RoundRectangle.CornerRadiusProperty, cornerRadius);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.RoundRectangle.CornerRadiusProperty, cornerRadius);
             return self;
         }
         
@@ -24,7 +24,7 @@ namespace Sharp.UI
             System.Func<ValueBuilder<Microsoft.Maui.CornerRadius>, ValueBuilder<Microsoft.Maui.CornerRadius>> buildValue)
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.CornerRadius>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.RoundRectangle.CornerRadiusProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.RoundRectangle.CornerRadiusProperty, builder.GetValue());
             return self;
         }
         

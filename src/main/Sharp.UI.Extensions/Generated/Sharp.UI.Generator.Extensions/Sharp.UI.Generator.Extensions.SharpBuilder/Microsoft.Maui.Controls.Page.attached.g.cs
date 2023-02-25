@@ -17,7 +17,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.PresentationMode shellPresentationMode)
             where T : Microsoft.Maui.Controls.Page
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.PresentationModeProperty, shellPresentationMode);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.PresentationModeProperty, shellPresentationMode);
             return self;
         }
         
@@ -26,7 +26,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Page
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.PresentationMode>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.PresentationModeProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.PresentationModeProperty, builder.GetValue());
             return self;
         }
         
@@ -49,7 +49,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color shellBackgroundColor)
             where T : Microsoft.Maui.Controls.Page
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.BackgroundColorProperty, shellBackgroundColor);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.BackgroundColorProperty, shellBackgroundColor);
             return self;
         }
         
@@ -58,7 +58,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Page
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.BackgroundColorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.BackgroundColorProperty, builder.GetValue());
             return self;
         }
         
@@ -81,7 +81,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color shellForegroundColor)
             where T : Microsoft.Maui.Controls.Page
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.ForegroundColorProperty, shellForegroundColor);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.ForegroundColorProperty, shellForegroundColor);
             return self;
         }
         
@@ -90,7 +90,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Page
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.ForegroundColorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.ForegroundColorProperty, builder.GetValue());
             return self;
         }
         
@@ -113,7 +113,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color shellTitleColor)
             where T : Microsoft.Maui.Controls.Page
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.TitleColorProperty, shellTitleColor);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.TitleColorProperty, shellTitleColor);
             return self;
         }
         
@@ -122,7 +122,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Page
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.TitleColorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.TitleColorProperty, builder.GetValue());
             return self;
         }
         
@@ -145,7 +145,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color shellDisabledColor)
             where T : Microsoft.Maui.Controls.Page
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.DisabledColorProperty, shellDisabledColor);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.DisabledColorProperty, shellDisabledColor);
             return self;
         }
         
@@ -154,7 +154,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Page
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.DisabledColorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.DisabledColorProperty, builder.GetValue());
             return self;
         }
         
@@ -177,7 +177,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color shellUnselectedColor)
             where T : Microsoft.Maui.Controls.Page
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.UnselectedColorProperty, shellUnselectedColor);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.UnselectedColorProperty, shellUnselectedColor);
             return self;
         }
         
@@ -186,7 +186,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Page
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.UnselectedColorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.UnselectedColorProperty, builder.GetValue());
             return self;
         }
         
@@ -209,7 +209,7 @@ namespace Sharp.UI
             bool shellNavBarHasShadow)
             where T : Microsoft.Maui.Controls.Page
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.NavBarHasShadowProperty, shellNavBarHasShadow);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.NavBarHasShadowProperty, shellNavBarHasShadow);
             return self;
         }
         
@@ -218,7 +218,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Page
         {
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.NavBarHasShadowProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.NavBarHasShadowProperty, builder.GetValue());
             return self;
         }
         
@@ -241,7 +241,7 @@ namespace Sharp.UI
             bool shellNavBarIsVisible)
             where T : Microsoft.Maui.Controls.Page
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.NavBarIsVisibleProperty, shellNavBarIsVisible);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.NavBarIsVisibleProperty, shellNavBarIsVisible);
             return self;
         }
         
@@ -250,7 +250,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Page
         {
             var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.NavBarIsVisibleProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.NavBarIsVisibleProperty, builder.GetValue());
             return self;
         }
         
@@ -273,7 +273,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color shellTabBarBackgroundColor)
             where T : Microsoft.Maui.Controls.Page
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.TabBarBackgroundColorProperty, shellTabBarBackgroundColor);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.TabBarBackgroundColorProperty, shellTabBarBackgroundColor);
             return self;
         }
         
@@ -282,7 +282,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Page
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.TabBarBackgroundColorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.TabBarBackgroundColorProperty, builder.GetValue());
             return self;
         }
         
@@ -305,7 +305,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color shellTabBarForegroundColor)
             where T : Microsoft.Maui.Controls.Page
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.TabBarForegroundColorProperty, shellTabBarForegroundColor);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.TabBarForegroundColorProperty, shellTabBarForegroundColor);
             return self;
         }
         
@@ -314,7 +314,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Page
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.TabBarForegroundColorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.TabBarForegroundColorProperty, builder.GetValue());
             return self;
         }
         
@@ -337,7 +337,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color shellTabBarTitleColor)
             where T : Microsoft.Maui.Controls.Page
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.TabBarTitleColorProperty, shellTabBarTitleColor);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.TabBarTitleColorProperty, shellTabBarTitleColor);
             return self;
         }
         
@@ -346,7 +346,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Page
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.TabBarTitleColorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.TabBarTitleColorProperty, builder.GetValue());
             return self;
         }
         
@@ -369,7 +369,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color shellTabBarDisabledColor)
             where T : Microsoft.Maui.Controls.Page
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.TabBarDisabledColorProperty, shellTabBarDisabledColor);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.TabBarDisabledColorProperty, shellTabBarDisabledColor);
             return self;
         }
         
@@ -378,7 +378,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Page
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.TabBarDisabledColorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.TabBarDisabledColorProperty, builder.GetValue());
             return self;
         }
         
@@ -401,7 +401,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Color shellTabBarUnselectedColor)
             where T : Microsoft.Maui.Controls.Page
         {
-            self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.TabBarUnselectedColorProperty, shellTabBarUnselectedColor);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.TabBarUnselectedColorProperty, shellTabBarUnselectedColor);
             return self;
         }
         
@@ -410,7 +410,7 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Page
         {
             var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shell.TabBarUnselectedColorProperty, builder.GetValue());
+            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.TabBarUnselectedColorProperty, builder.GetValue());
             return self;
         }
         
