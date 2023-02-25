@@ -71,13 +71,13 @@ git submodule update --recursive
 To add __Sharp.UI__ to your project, along with all its functionality, you can use the following command:
 
 ```
-dotnet add package Sharp.UI --version 0.4.4-alpha
+dotnet add package Sharp.UI --version 0.4.3-alpha
 ```
 
 __Sharp.UI__ replaces some standard MAUI classes by subclassing them and adding new constructors, which e.g. enables hot reload functionality. However, if you prefer not to use subclassed controls, it's possible to add the core generated fluent methods for the .Net MAUI framework to your project instead.
 
 ```
-dotnet add package Sharp.UI.Extensions --version 0.4.4-alpha
+dotnet add package Sharp.UI.Extensions --version 0.4.3-alpha
 ```
 ## Project Reference
 
