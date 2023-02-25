@@ -8,11 +8,11 @@ namespace Sharp.UI
     public static partial class SharpUIAppExtension
 	{
         public static MauiAppBuilder SharpUIApplication<T>(this MauiAppBuilder builder, 
-            HotReloadType HotReloadType = HotReloadType.None,
+            //HotReloadType HotReloadType = HotReloadType.None,
             IPAddress[] IdeIPs = null)
             where T : Application
         {
-            builder.Services.TryAddEnumerable(ServiceDescriptor.Singleton<IMauiInitializeService, SharpUIApplicationBuilder<T>>(_ => new SharpUIApplicationBuilder<T> { HotReloadType = HotReloadType, IdeIPs = IdeIPs }));
+            builder.Services.TryAddEnumerable(ServiceDescriptor.Singleton<IMauiInitializeService, SharpUIApplicationBuilder<T>>(_ => new SharpUIApplicationBuilder<T> { HotReloadType = HotReloadType.HotReloadKit, IdeIPs = IdeIPs }));
             return builder;
         }
 
