@@ -13,214 +13,214 @@ namespace Sharp.UI
 
     public static partial class IndicatorViewExtension
     {
-        public static T IndicatorsShape<T>(this T obj,
+        public static T IndicatorsShape<T>(this T self,
             Microsoft.Maui.Controls.IndicatorShape indicatorsShape)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.IndicatorsShapeProperty, indicatorsShape);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.IndicatorsShapeProperty, indicatorsShape);
+            return self;
         }
         
-        public static T IndicatorsShape<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.IndicatorShape>, ValueBuilder<Microsoft.Maui.Controls.IndicatorShape>> buidValue)
+        public static T IndicatorsShape<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.IndicatorShape>, ValueBuilder<Microsoft.Maui.Controls.IndicatorShape>> buildValue)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.IndicatorShape>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.IndicatorsShapeProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.IndicatorShape>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.IndicatorsShapeProperty, builder.GetValue());
+            return self;
         }
         
-        public static T IndicatorsShape<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.IndicatorShape>, BindingBuilder<Microsoft.Maui.Controls.IndicatorShape>> buidBinding)
+        public static T IndicatorsShape<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.IndicatorShape>, BindingBuilder<Microsoft.Maui.Controls.IndicatorShape>> buildBinding)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.IndicatorShape>(obj, Microsoft.Maui.Controls.IndicatorView.IndicatorsShapeProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.IndicatorShape>(self, Microsoft.Maui.Controls.IndicatorView.IndicatorsShapeProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T IndicatorLayout<T>(this T obj,
+        public static T IndicatorLayout<T>(this T self,
             Microsoft.Maui.Controls.IBindableLayout indicatorLayout)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property IndicatorLayout");
-            obj.IndicatorLayout = indicatorLayout;
-            return obj;
+            self.IndicatorLayout = indicatorLayout;
+            return self;
         }
         
-        public static T IndicatorLayout<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.IBindableLayout>, ValueBuilder<Microsoft.Maui.Controls.IBindableLayout>> buidValue)
+        public static T IndicatorLayout<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.IBindableLayout>, ValueBuilder<Microsoft.Maui.Controls.IBindableLayout>> buildValue)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property IndicatorLayout");
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.IBindableLayout>());
-            if (builder.ValueIsSet()) obj.IndicatorLayout = builder.GetValue();
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.IBindableLayout>());
+            if (builder.ValueIsSet()) self.IndicatorLayout = builder.GetValue();
+            return self;
         }
         
-        public static T Position<T>(this T obj,
+        public static T Position<T>(this T self,
             int position)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.PositionProperty, position);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.PositionProperty, position);
+            return self;
         }
         
-        public static T Position<T>(this T obj,
-            System.Func<ValueBuilder<int>, ValueBuilder<int>> buidValue)
+        public static T Position<T>(this T self,
+            System.Func<ValueBuilder<int>, ValueBuilder<int>> buildValue)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            var builder = buidValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.PositionProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<int>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.PositionProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Position<T>(this T obj,
-            System.Func<BindingBuilder<int>, BindingBuilder<int>> buidBinding)
+        public static T Position<T>(this T self,
+            System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            var builder = buidBinding(new BindingBuilder<int>(obj, Microsoft.Maui.Controls.IndicatorView.PositionProperty));
+            var builder = buildBinding(new BindingBuilder<int>(self, Microsoft.Maui.Controls.IndicatorView.PositionProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T Count<T>(this T obj,
+        public static T Count<T>(this T self,
             int count)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.CountProperty, count);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.CountProperty, count);
+            return self;
         }
         
-        public static T Count<T>(this T obj,
-            System.Func<ValueBuilder<int>, ValueBuilder<int>> buidValue)
+        public static T Count<T>(this T self,
+            System.Func<ValueBuilder<int>, ValueBuilder<int>> buildValue)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            var builder = buidValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.CountProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<int>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.CountProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Count<T>(this T obj,
-            System.Func<BindingBuilder<int>, BindingBuilder<int>> buidBinding)
+        public static T Count<T>(this T self,
+            System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            var builder = buidBinding(new BindingBuilder<int>(obj, Microsoft.Maui.Controls.IndicatorView.CountProperty));
+            var builder = buildBinding(new BindingBuilder<int>(self, Microsoft.Maui.Controls.IndicatorView.CountProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T MaximumVisible<T>(this T obj,
+        public static T MaximumVisible<T>(this T self,
             int maximumVisible)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.MaximumVisibleProperty, maximumVisible);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.MaximumVisibleProperty, maximumVisible);
+            return self;
         }
         
-        public static T MaximumVisible<T>(this T obj,
-            System.Func<ValueBuilder<int>, ValueBuilder<int>> buidValue)
+        public static T MaximumVisible<T>(this T self,
+            System.Func<ValueBuilder<int>, ValueBuilder<int>> buildValue)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            var builder = buidValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.MaximumVisibleProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<int>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.MaximumVisibleProperty, builder.GetValue());
+            return self;
         }
         
-        public static T MaximumVisible<T>(this T obj,
-            System.Func<BindingBuilder<int>, BindingBuilder<int>> buidBinding)
+        public static T MaximumVisible<T>(this T self,
+            System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            var builder = buidBinding(new BindingBuilder<int>(obj, Microsoft.Maui.Controls.IndicatorView.MaximumVisibleProperty));
+            var builder = buildBinding(new BindingBuilder<int>(self, Microsoft.Maui.Controls.IndicatorView.MaximumVisibleProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T IndicatorTemplate<T>(this T obj,
+        public static T IndicatorTemplate<T>(this T self,
             Microsoft.Maui.Controls.DataTemplate indicatorTemplate)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.IndicatorTemplateProperty, indicatorTemplate);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.IndicatorTemplateProperty, indicatorTemplate);
+            return self;
         }
         
-        public static T IndicatorTemplate<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.DataTemplate>, ValueBuilder<Microsoft.Maui.Controls.DataTemplate>> buidValue)
+        public static T IndicatorTemplate<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.DataTemplate>, ValueBuilder<Microsoft.Maui.Controls.DataTemplate>> buildValue)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.IndicatorTemplateProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.IndicatorTemplateProperty, builder.GetValue());
+            return self;
         }
         
-        public static T IndicatorTemplate<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buidBinding)
+        public static T IndicatorTemplate<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buildBinding)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(obj, Microsoft.Maui.Controls.IndicatorView.IndicatorTemplateProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.IndicatorView.IndicatorTemplateProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T IndicatorTemplate<T>(this T obj, System.Func<object> loadTemplate)
+        public static T IndicatorTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            obj.IndicatorTemplate = new DataTemplate(loadTemplate);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.IndicatorTemplateProperty, new DataTemplate(loadTemplate));
+            return self;
         }
         
-        public static T HideSingle<T>(this T obj,
+        public static T HideSingle<T>(this T self,
             bool hideSingle)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.HideSingleProperty, hideSingle);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.HideSingleProperty, hideSingle);
+            return self;
         }
         
-        public static T HideSingle<T>(this T obj,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
+        public static T HideSingle<T>(this T self,
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.HideSingleProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.HideSingleProperty, builder.GetValue());
+            return self;
         }
         
-        public static T HideSingle<T>(this T obj,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buidBinding)
+        public static T HideSingle<T>(this T self,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            var builder = buidBinding(new BindingBuilder<bool>(obj, Microsoft.Maui.Controls.IndicatorView.HideSingleProperty));
+            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.IndicatorView.HideSingleProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T IndicatorColor<T>(this T obj,
+        public static T IndicatorColor<T>(this T self,
             Microsoft.Maui.Graphics.Color indicatorColor)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.IndicatorColorProperty, indicatorColor);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.IndicatorColorProperty, indicatorColor);
+            return self;
         }
         
-        public static T IndicatorColor<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buidValue)
+        public static T IndicatorColor<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.IndicatorColorProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.IndicatorColorProperty, builder.GetValue());
+            return self;
         }
         
-        public static T IndicatorColor<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buidBinding)
+        public static T IndicatorColor<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(obj, Microsoft.Maui.Controls.IndicatorView.IndicatorColorProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.IndicatorView.IndicatorColorProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
         public static Task<bool> AnimateIndicatorColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
@@ -232,30 +232,30 @@ namespace Sharp.UI
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateIndicatorColorTo", transform, callback, length, easing);
         }
         
-        public static T SelectedIndicatorColor<T>(this T obj,
+        public static T SelectedIndicatorColor<T>(this T self,
             Microsoft.Maui.Graphics.Color selectedIndicatorColor)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.SelectedIndicatorColorProperty, selectedIndicatorColor);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.SelectedIndicatorColorProperty, selectedIndicatorColor);
+            return self;
         }
         
-        public static T SelectedIndicatorColor<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buidValue)
+        public static T SelectedIndicatorColor<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.SelectedIndicatorColorProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.SelectedIndicatorColorProperty, builder.GetValue());
+            return self;
         }
         
-        public static T SelectedIndicatorColor<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buidBinding)
+        public static T SelectedIndicatorColor<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(obj, Microsoft.Maui.Controls.IndicatorView.SelectedIndicatorColorProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.IndicatorView.SelectedIndicatorColorProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
         public static Task<bool> AnimateSelectedIndicatorColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
@@ -267,30 +267,30 @@ namespace Sharp.UI
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateSelectedIndicatorColorTo", transform, callback, length, easing);
         }
         
-        public static T IndicatorSize<T>(this T obj,
+        public static T IndicatorSize<T>(this T self,
             double indicatorSize)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.IndicatorSizeProperty, indicatorSize);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.IndicatorSizeProperty, indicatorSize);
+            return self;
         }
         
-        public static T IndicatorSize<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T IndicatorSize<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.IndicatorSizeProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.IndicatorSizeProperty, builder.GetValue());
+            return self;
         }
         
-        public static T IndicatorSize<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T IndicatorSize<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.IndicatorView.IndicatorSizeProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.IndicatorView.IndicatorSizeProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
         public static Task<bool> AnimateIndicatorSizeTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
@@ -302,30 +302,30 @@ namespace Sharp.UI
             return Transformations.AnimateAsync<double>(self, "AnimateIndicatorSizeTo", transform, callback, length, easing);
         }
         
-        public static T ItemsSource<T>(this T obj,
+        public static T ItemsSource<T>(this T self,
             System.Collections.IEnumerable itemsSource)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.ItemsSourceProperty, itemsSource);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.ItemsSourceProperty, itemsSource);
+            return self;
         }
         
-        public static T ItemsSource<T>(this T obj,
-            System.Func<ValueBuilder<System.Collections.IEnumerable>, ValueBuilder<System.Collections.IEnumerable>> buidValue)
+        public static T ItemsSource<T>(this T self,
+            System.Func<ValueBuilder<System.Collections.IEnumerable>, ValueBuilder<System.Collections.IEnumerable>> buildValue)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            var builder = buidValue(new ValueBuilder<System.Collections.IEnumerable>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.ItemsSourceProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<System.Collections.IEnumerable>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.IndicatorView.ItemsSourceProperty, builder.GetValue());
+            return self;
         }
         
-        public static T ItemsSource<T>(this T obj,
-            System.Func<BindingBuilder<System.Collections.IEnumerable>, BindingBuilder<System.Collections.IEnumerable>> buidBinding)
+        public static T ItemsSource<T>(this T self,
+            System.Func<BindingBuilder<System.Collections.IEnumerable>, BindingBuilder<System.Collections.IEnumerable>> buildBinding)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            var builder = buidBinding(new BindingBuilder<System.Collections.IEnumerable>(obj, Microsoft.Maui.Controls.IndicatorView.ItemsSourceProperty));
+            var builder = buildBinding(new BindingBuilder<System.Collections.IEnumerable>(self, Microsoft.Maui.Controls.IndicatorView.ItemsSourceProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
     }

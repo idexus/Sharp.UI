@@ -13,108 +13,108 @@ namespace Sharp.UI
 
     public static partial class ScaleTransformExtension
     {
-        public static T ScaleX<T>(this T obj,
+        public static T ScaleX<T>(this T self,
             double scaleX)
             where T : Microsoft.Maui.Controls.Shapes.ScaleTransform
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.ScaleTransform.ScaleXProperty, scaleX);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.ScaleTransform.ScaleXProperty, scaleX);
+            return self;
         }
         
-        public static T ScaleX<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T ScaleX<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Microsoft.Maui.Controls.Shapes.ScaleTransform
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.ScaleTransform.ScaleXProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.ScaleTransform.ScaleXProperty, builder.GetValue());
+            return self;
         }
         
-        public static T ScaleX<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T ScaleX<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Microsoft.Maui.Controls.Shapes.ScaleTransform
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Shapes.ScaleTransform.ScaleXProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.ScaleTransform.ScaleXProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T ScaleY<T>(this T obj,
+        public static T ScaleY<T>(this T self,
             double scaleY)
             where T : Microsoft.Maui.Controls.Shapes.ScaleTransform
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.ScaleTransform.ScaleYProperty, scaleY);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.ScaleTransform.ScaleYProperty, scaleY);
+            return self;
         }
         
-        public static T ScaleY<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T ScaleY<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Microsoft.Maui.Controls.Shapes.ScaleTransform
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.ScaleTransform.ScaleYProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.ScaleTransform.ScaleYProperty, builder.GetValue());
+            return self;
         }
         
-        public static T ScaleY<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T ScaleY<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Microsoft.Maui.Controls.Shapes.ScaleTransform
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Shapes.ScaleTransform.ScaleYProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.ScaleTransform.ScaleYProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T CenterX<T>(this T obj,
+        public static T CenterX<T>(this T self,
             double centerX)
             where T : Microsoft.Maui.Controls.Shapes.ScaleTransform
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.ScaleTransform.CenterXProperty, centerX);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.ScaleTransform.CenterXProperty, centerX);
+            return self;
         }
         
-        public static T CenterX<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T CenterX<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Microsoft.Maui.Controls.Shapes.ScaleTransform
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.ScaleTransform.CenterXProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.ScaleTransform.CenterXProperty, builder.GetValue());
+            return self;
         }
         
-        public static T CenterX<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T CenterX<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Microsoft.Maui.Controls.Shapes.ScaleTransform
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Shapes.ScaleTransform.CenterXProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.ScaleTransform.CenterXProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T CenterY<T>(this T obj,
+        public static T CenterY<T>(this T self,
             double centerY)
             where T : Microsoft.Maui.Controls.Shapes.ScaleTransform
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.ScaleTransform.CenterYProperty, centerY);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.ScaleTransform.CenterYProperty, centerY);
+            return self;
         }
         
-        public static T CenterY<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T CenterY<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Microsoft.Maui.Controls.Shapes.ScaleTransform
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.ScaleTransform.CenterYProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.ScaleTransform.CenterYProperty, builder.GetValue());
+            return self;
         }
         
-        public static T CenterY<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T CenterY<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Microsoft.Maui.Controls.Shapes.ScaleTransform
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Shapes.ScaleTransform.CenterYProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.ScaleTransform.CenterYProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
     }

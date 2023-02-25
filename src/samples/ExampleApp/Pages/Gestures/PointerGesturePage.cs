@@ -28,7 +28,7 @@ public class PointerGesturePage : ContentPage
                             label.Text = $"point: {pos.X}, {pos.Y}";
                         }))
         }
-        .CenterHorizontally()
-        .CenterVertically();
+        .AlignCenterHorizontal()
+        .AlignCenterVertical();
     }
 }

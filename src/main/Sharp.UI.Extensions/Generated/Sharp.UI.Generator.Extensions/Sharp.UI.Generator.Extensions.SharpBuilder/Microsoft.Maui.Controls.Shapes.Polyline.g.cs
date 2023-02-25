@@ -13,51 +13,51 @@ namespace Sharp.UI
 
     public static partial class PolylineExtension
     {
-        public static Microsoft.Maui.Controls.Shapes.Polyline Points(this Microsoft.Maui.Controls.Shapes.Polyline obj,
+        public static Microsoft.Maui.Controls.Shapes.Polyline Points(this Microsoft.Maui.Controls.Shapes.Polyline self,
             IList<Microsoft.Maui.Graphics.Point> points)
         {
             foreach (var item in points)
-                obj.Points.Add(item);
-            return obj;
+                self.Points.Add(item);
+            return self;
         }
 
-        public static Microsoft.Maui.Controls.Shapes.Polyline Points(this Microsoft.Maui.Controls.Shapes.Polyline obj,
+        public static Microsoft.Maui.Controls.Shapes.Polyline Points(this Microsoft.Maui.Controls.Shapes.Polyline self,
             params Microsoft.Maui.Graphics.Point[] points)
         {
             foreach (var item in points)
-                obj.Points.Add(item);
-            return obj;
+                self.Points.Add(item);
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.Polyline Points(this Microsoft.Maui.Controls.Shapes.Polyline obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.PointCollection>, BindingBuilder<Microsoft.Maui.Controls.PointCollection>> buidBinding)
+        public static Microsoft.Maui.Controls.Shapes.Polyline Points(this Microsoft.Maui.Controls.Shapes.Polyline self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.PointCollection>, BindingBuilder<Microsoft.Maui.Controls.PointCollection>> buildBinding)
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.PointCollection>(obj, Microsoft.Maui.Controls.Shapes.Polyline.PointsProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.PointCollection>(self, Microsoft.Maui.Controls.Shapes.Polyline.PointsProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.Polyline FillRule(this Microsoft.Maui.Controls.Shapes.Polyline obj,
+        public static Microsoft.Maui.Controls.Shapes.Polyline FillRule(this Microsoft.Maui.Controls.Shapes.Polyline self,
             Microsoft.Maui.Controls.Shapes.FillRule fillRule)
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Polyline.FillRuleProperty, fillRule);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Polyline.FillRuleProperty, fillRule);
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.Polyline FillRule(this Microsoft.Maui.Controls.Shapes.Polyline obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.Shapes.FillRule>, ValueBuilder<Microsoft.Maui.Controls.Shapes.FillRule>> buidValue)
+        public static Microsoft.Maui.Controls.Shapes.Polyline FillRule(this Microsoft.Maui.Controls.Shapes.Polyline self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.Shapes.FillRule>, ValueBuilder<Microsoft.Maui.Controls.Shapes.FillRule>> buildValue)
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.Shapes.FillRule>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Polyline.FillRuleProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Shapes.FillRule>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Polyline.FillRuleProperty, builder.GetValue());
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.Polyline FillRule(this Microsoft.Maui.Controls.Shapes.Polyline obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.Shapes.FillRule>, BindingBuilder<Microsoft.Maui.Controls.Shapes.FillRule>> buidBinding)
+        public static Microsoft.Maui.Controls.Shapes.Polyline FillRule(this Microsoft.Maui.Controls.Shapes.Polyline self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.Shapes.FillRule>, BindingBuilder<Microsoft.Maui.Controls.Shapes.FillRule>> buildBinding)
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.Shapes.FillRule>(obj, Microsoft.Maui.Controls.Shapes.Polyline.FillRuleProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Shapes.FillRule>(self, Microsoft.Maui.Controls.Shapes.Polyline.FillRuleProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
     }

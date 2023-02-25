@@ -13,21 +13,21 @@ namespace Sharp.UI
 
     public static partial class ElementTemplateExtension
     {
-        public static T LoadTemplate<T>(this T obj,
+        public static T LoadTemplate<T>(this T self,
             System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.ElementTemplate
         {
-            obj.LoadTemplate = loadTemplate;
-            return obj;
+            self.LoadTemplate = loadTemplate;
+            return self;
         }
         
-        public static T LoadTemplate<T>(this T obj,
-            System.Func<ValueBuilder<System.Func<object>>, ValueBuilder<System.Func<object>>> buidValue)
+        public static T LoadTemplate<T>(this T self,
+            System.Func<ValueBuilder<System.Func<object>>, ValueBuilder<System.Func<object>>> buildValue)
             where T : Microsoft.Maui.Controls.ElementTemplate
         {
-            var builder = buidValue(new ValueBuilder<System.Func<object>>());
-            if (builder.ValueIsSet()) obj.LoadTemplate = builder.GetValue();
-            return obj;
+            var builder = buildValue(new ValueBuilder<System.Func<object>>());
+            if (builder.ValueIsSet()) self.LoadTemplate = builder.GetValue();
+            return self;
         }
         
     }

@@ -13,34 +13,34 @@ namespace Sharp.UI
 
     public static partial class PropertyConditionExtension
     {
-        public static Microsoft.Maui.Controls.PropertyCondition Property(this Microsoft.Maui.Controls.PropertyCondition obj,
+        public static Microsoft.Maui.Controls.PropertyCondition Property(this Microsoft.Maui.Controls.PropertyCondition self,
             Microsoft.Maui.Controls.BindableProperty property)
         {
-            obj.Property = property;
-            return obj;
+            self.Property = property;
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.PropertyCondition Property(this Microsoft.Maui.Controls.PropertyCondition obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.BindableProperty>, ValueBuilder<Microsoft.Maui.Controls.BindableProperty>> buidValue)
+        public static Microsoft.Maui.Controls.PropertyCondition Property(this Microsoft.Maui.Controls.PropertyCondition self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.BindableProperty>, ValueBuilder<Microsoft.Maui.Controls.BindableProperty>> buildValue)
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.BindableProperty>());
-            if (builder.ValueIsSet()) obj.Property = builder.GetValue();
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.BindableProperty>());
+            if (builder.ValueIsSet()) self.Property = builder.GetValue();
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.PropertyCondition Value(this Microsoft.Maui.Controls.PropertyCondition obj,
+        public static Microsoft.Maui.Controls.PropertyCondition Value(this Microsoft.Maui.Controls.PropertyCondition self,
             object value)
         {
-            obj.Value = value;
-            return obj;
+            self.Value = value;
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.PropertyCondition Value(this Microsoft.Maui.Controls.PropertyCondition obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+        public static Microsoft.Maui.Controls.PropertyCondition Value(this Microsoft.Maui.Controls.PropertyCondition self,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buildValue)
         {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.Value = builder.GetValue();
-            return obj;
+            var builder = buildValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) self.Value = builder.GetValue();
+            return self;
         }
         
     }

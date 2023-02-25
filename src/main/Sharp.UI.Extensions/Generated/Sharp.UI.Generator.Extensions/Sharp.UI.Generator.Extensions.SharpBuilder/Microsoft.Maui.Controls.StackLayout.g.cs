@@ -13,30 +13,30 @@ namespace Sharp.UI
 
     public static partial class StackLayoutExtension
     {
-        public static T Orientation<T>(this T obj,
+        public static T Orientation<T>(this T self,
             Microsoft.Maui.Controls.StackOrientation orientation)
             where T : Microsoft.Maui.Controls.StackLayout
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.StackLayout.OrientationProperty, orientation);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.StackLayout.OrientationProperty, orientation);
+            return self;
         }
         
-        public static T Orientation<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.StackOrientation>, ValueBuilder<Microsoft.Maui.Controls.StackOrientation>> buidValue)
+        public static T Orientation<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.StackOrientation>, ValueBuilder<Microsoft.Maui.Controls.StackOrientation>> buildValue)
             where T : Microsoft.Maui.Controls.StackLayout
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.StackOrientation>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.StackLayout.OrientationProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.StackOrientation>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.StackLayout.OrientationProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Orientation<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.StackOrientation>, BindingBuilder<Microsoft.Maui.Controls.StackOrientation>> buidBinding)
+        public static T Orientation<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.StackOrientation>, BindingBuilder<Microsoft.Maui.Controls.StackOrientation>> buildBinding)
             where T : Microsoft.Maui.Controls.StackLayout
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.StackOrientation>(obj, Microsoft.Maui.Controls.StackLayout.OrientationProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.StackOrientation>(self, Microsoft.Maui.Controls.StackLayout.OrientationProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
     }

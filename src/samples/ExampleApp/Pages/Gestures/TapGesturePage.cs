@@ -19,7 +19,7 @@ public class TapGesturePage : ContentPage
                     })
                 })
         }
-        .CenterHorizontally()
-        .CenterVertically();
+        .AlignCenterHorizontal()
+        .AlignCenterVertical();
     }
 }

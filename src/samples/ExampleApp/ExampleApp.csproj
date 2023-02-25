@@ -54,10 +54,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\main\Sharp.UI\Sharp.UI.csproj" />
 		<ProjectReference Include="..\..\..\libs\HotReloadKit\src\HotReloadKit.Generator\HotReloadKit.Generator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
 		<ProjectReference Include="..\..\generators\Sharp.UI.Generator.Extensions\Sharp.UI.Generator.Extensions.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
 		<ProjectReference Include="..\..\generators\Sharp.UI.Generator.SharpObjects\Sharp.UI.Generator.SharpObjects.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+		<ProjectReference Include="..\..\main\Sharp.UI\Sharp.UI.csproj" />
 	</ItemGroup> 
 
 	<PropertyGroup>

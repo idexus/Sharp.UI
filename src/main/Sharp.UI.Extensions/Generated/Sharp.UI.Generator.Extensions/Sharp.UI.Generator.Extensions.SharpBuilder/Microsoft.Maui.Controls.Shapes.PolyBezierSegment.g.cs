@@ -13,28 +13,28 @@ namespace Sharp.UI
 
     public static partial class PolyBezierSegmentExtension
     {
-        public static Microsoft.Maui.Controls.Shapes.PolyBezierSegment Points(this Microsoft.Maui.Controls.Shapes.PolyBezierSegment obj,
+        public static Microsoft.Maui.Controls.Shapes.PolyBezierSegment Points(this Microsoft.Maui.Controls.Shapes.PolyBezierSegment self,
             IList<Microsoft.Maui.Graphics.Point> points)
         {
             foreach (var item in points)
-                obj.Points.Add(item);
-            return obj;
+                self.Points.Add(item);
+            return self;
         }
 
-        public static Microsoft.Maui.Controls.Shapes.PolyBezierSegment Points(this Microsoft.Maui.Controls.Shapes.PolyBezierSegment obj,
+        public static Microsoft.Maui.Controls.Shapes.PolyBezierSegment Points(this Microsoft.Maui.Controls.Shapes.PolyBezierSegment self,
             params Microsoft.Maui.Graphics.Point[] points)
         {
             foreach (var item in points)
-                obj.Points.Add(item);
-            return obj;
+                self.Points.Add(item);
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.PolyBezierSegment Points(this Microsoft.Maui.Controls.Shapes.PolyBezierSegment obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.PointCollection>, BindingBuilder<Microsoft.Maui.Controls.PointCollection>> buidBinding)
+        public static Microsoft.Maui.Controls.Shapes.PolyBezierSegment Points(this Microsoft.Maui.Controls.Shapes.PolyBezierSegment self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.PointCollection>, BindingBuilder<Microsoft.Maui.Controls.PointCollection>> buildBinding)
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.PointCollection>(obj, Microsoft.Maui.Controls.Shapes.PolyBezierSegment.PointsProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.PointCollection>(self, Microsoft.Maui.Controls.Shapes.PolyBezierSegment.PointsProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
     }

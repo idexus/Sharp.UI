@@ -2,11 +2,11 @@
 {
     public static partial class LayoutExtension
 	{
-        public static void Add<T>(this T layout, IEnumerable<View> items)
+        public static void Add<T>(this T self, IEnumerable<View> items)
             where T : Layout
         {
             foreach (var item in items)
-                layout.Children.Add(item);
+                self.Children.Add(item);
         }
     }
 }

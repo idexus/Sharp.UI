@@ -13,50 +13,50 @@ namespace Sharp.UI
 
     public static partial class PathExtension
     {
-        public static Microsoft.Maui.Controls.Shapes.Path Data(this Microsoft.Maui.Controls.Shapes.Path obj,
+        public static Microsoft.Maui.Controls.Shapes.Path Data(this Microsoft.Maui.Controls.Shapes.Path self,
             Microsoft.Maui.Controls.Shapes.Geometry data)
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Path.DataProperty, data);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Path.DataProperty, data);
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.Path Data(this Microsoft.Maui.Controls.Shapes.Path obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.Shapes.Geometry>, ValueBuilder<Microsoft.Maui.Controls.Shapes.Geometry>> buidValue)
+        public static Microsoft.Maui.Controls.Shapes.Path Data(this Microsoft.Maui.Controls.Shapes.Path self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.Shapes.Geometry>, ValueBuilder<Microsoft.Maui.Controls.Shapes.Geometry>> buildValue)
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.Shapes.Geometry>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Path.DataProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Shapes.Geometry>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Path.DataProperty, builder.GetValue());
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.Path Data(this Microsoft.Maui.Controls.Shapes.Path obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.Shapes.Geometry>, BindingBuilder<Microsoft.Maui.Controls.Shapes.Geometry>> buidBinding)
+        public static Microsoft.Maui.Controls.Shapes.Path Data(this Microsoft.Maui.Controls.Shapes.Path self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.Shapes.Geometry>, BindingBuilder<Microsoft.Maui.Controls.Shapes.Geometry>> buildBinding)
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.Shapes.Geometry>(obj, Microsoft.Maui.Controls.Shapes.Path.DataProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Shapes.Geometry>(self, Microsoft.Maui.Controls.Shapes.Path.DataProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.Path RenderTransform(this Microsoft.Maui.Controls.Shapes.Path obj,
+        public static Microsoft.Maui.Controls.Shapes.Path RenderTransform(this Microsoft.Maui.Controls.Shapes.Path self,
             Microsoft.Maui.Controls.Shapes.Transform renderTransform)
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Path.RenderTransformProperty, renderTransform);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Path.RenderTransformProperty, renderTransform);
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.Path RenderTransform(this Microsoft.Maui.Controls.Shapes.Path obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.Shapes.Transform>, ValueBuilder<Microsoft.Maui.Controls.Shapes.Transform>> buidValue)
+        public static Microsoft.Maui.Controls.Shapes.Path RenderTransform(this Microsoft.Maui.Controls.Shapes.Path self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.Shapes.Transform>, ValueBuilder<Microsoft.Maui.Controls.Shapes.Transform>> buildValue)
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.Shapes.Transform>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Path.RenderTransformProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Shapes.Transform>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.Path.RenderTransformProperty, builder.GetValue());
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.Path RenderTransform(this Microsoft.Maui.Controls.Shapes.Path obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.Shapes.Transform>, BindingBuilder<Microsoft.Maui.Controls.Shapes.Transform>> buidBinding)
+        public static Microsoft.Maui.Controls.Shapes.Path RenderTransform(this Microsoft.Maui.Controls.Shapes.Path self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.Shapes.Transform>, BindingBuilder<Microsoft.Maui.Controls.Shapes.Transform>> buildBinding)
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.Shapes.Transform>(obj, Microsoft.Maui.Controls.Shapes.Path.RenderTransformProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Shapes.Transform>(self, Microsoft.Maui.Controls.Shapes.Path.RenderTransformProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
     }

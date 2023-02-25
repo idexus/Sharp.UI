@@ -13,56 +13,56 @@ namespace Sharp.UI
 
     public static partial class TranslateTransformExtension
     {
-        public static T X<T>(this T obj,
+        public static T X<T>(this T self,
             double x)
             where T : Microsoft.Maui.Controls.Shapes.TranslateTransform
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.TranslateTransform.XProperty, x);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.TranslateTransform.XProperty, x);
+            return self;
         }
         
-        public static T X<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T X<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Microsoft.Maui.Controls.Shapes.TranslateTransform
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.TranslateTransform.XProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.TranslateTransform.XProperty, builder.GetValue());
+            return self;
         }
         
-        public static T X<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T X<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Microsoft.Maui.Controls.Shapes.TranslateTransform
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Shapes.TranslateTransform.XProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.TranslateTransform.XProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T Y<T>(this T obj,
+        public static T Y<T>(this T self,
             double y)
             where T : Microsoft.Maui.Controls.Shapes.TranslateTransform
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.TranslateTransform.YProperty, y);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.TranslateTransform.YProperty, y);
+            return self;
         }
         
-        public static T Y<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T Y<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Microsoft.Maui.Controls.Shapes.TranslateTransform
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.TranslateTransform.YProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.TranslateTransform.YProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Y<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T Y<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Microsoft.Maui.Controls.Shapes.TranslateTransform
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Shapes.TranslateTransform.YProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.TranslateTransform.YProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
     }

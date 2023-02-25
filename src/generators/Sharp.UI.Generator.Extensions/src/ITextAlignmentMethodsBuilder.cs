@@ -10,93 +10,86 @@ namespace Sharp.UI.Generator.Extensions
             isExtensionMethodsGenerated = true;
             builder.Append($@"
 
-        public static T CenterTextHorizontally<T>(this T obj)
+        public static T TextCenterHorizontal<T>(this T self)
             where T : {symbol.ToDisplayString()}
         {{
-            obj.SetValueOrSetter({symbol.ToDisplayString()}.HorizontalTextAlignmentProperty, HorizontalAlignment.Center);
-            return obj;
+            self.SetValueOrAddSetter({symbol.ToDisplayString()}.HorizontalTextAlignmentProperty, TextAlignment.Center);
+            return self;
         }}
 
-        public static T CenterTextVertically<T>(this T obj)
+        public static T TextCenterVertical<T>(this T self)
             where T : {symbol.ToDisplayString()}
         {{
-            obj.SetValueOrSetter({symbol.ToDisplayString()}.VerticalTextAlignmentProperty, VerticalAlignment.Center);
-            return obj;
+            self.SetValueOrAddSetter({symbol.ToDisplayString()}.VerticalTextAlignmentProperty, TextAlignment.Center);
+            return self;
         }}
 
-        public static T CenterText<T>(this T obj)
+        public static T TextCenter<T>(this T self)
             where T : {symbol.ToDisplayString()}
         {{
-            obj.SetValueOrSetter({symbol.ToDisplayString()}.HorizontalTextAlignmentProperty, HorizontalAlignment.Center);
-            obj.SetValueOrSetter({symbol.ToDisplayString()}.VerticalTextAlignmentProperty, VerticalAlignment.Center);
-            return obj;
+            self.SetValueOrAddSetter({symbol.ToDisplayString()}.HorizontalTextAlignmentProperty, TextAlignment.Center);
+            self.SetValueOrAddSetter({symbol.ToDisplayString()}.VerticalTextAlignmentProperty, TextAlignment.Center);
+            return self;
         }}
 
-        public static T AlignTextTop<T>(this T obj)
+        public static T TextTop<T>(this T self)
             where T : {symbol.ToDisplayString()}
         {{
-            obj.SetValueOrSetter({symbol.ToDisplayString()}.VerticalTextAlignmentProperty, VerticalAlignment.Top);
-            return obj;
+            self.SetValueOrAddSetter({symbol.ToDisplayString()}.VerticalTextAlignmentProperty, TextAlignment.Start);
+            return self;
         }}
 
-        public static T AlignTextBottom<T>(this T obj)
+        public static T TextBottom<T>(this T self)
             where T : {symbol.ToDisplayString()}, Microsoft.Maui.ITextAlignment
         {{
-            obj.SetValueOrSetter({symbol.ToDisplayString()}.VerticalTextAlignmentProperty, VerticalAlignment.Bottom);
-            return obj;
+            self.SetValueOrAddSetter({symbol.ToDisplayString()}.VerticalTextAlignmentProperty, TextAlignment.End);
+            return self;
         }}
 
-        public static T AlignTextTopLeft<T>(this T obj)
+        public static T TextTopStart<T>(this T self)
             where T : {symbol.ToDisplayString()}
         {{
-            obj.SetValueOrSetter({symbol.ToDisplayString()}.VerticalTextAlignmentProperty, VerticalAlignment.Top);
-            obj.SetValueOrSetter({symbol.ToDisplayString()}.HorizontalTextAlignmentProperty, HorizontalAlignment.Left);
-            return obj;
+            self.SetValueOrAddSetter({symbol.ToDisplayString()}.VerticalTextAlignmentProperty, TextAlignment.Start);
+            self.SetValueOrAddSetter({symbol.ToDisplayString()}.HorizontalTextAlignmentProperty, TextAlignment.Start);
+            return self;
         }}
 
-        public static T AlignTextBottomLeft<T>(this T obj)
+        public static T TextBottomStart<T>(this T self)
             where T : {symbol.ToDisplayString()}
         {{
-            obj.SetValueOrSetter({symbol.ToDisplayString()}.VerticalTextAlignmentProperty, VerticalAlignment.Bottom);
-            obj.SetValueOrSetter({symbol.ToDisplayString()}.HorizontalTextAlignmentProperty, HorizontalAlignment.Left);
-            return obj;
+            self.SetValueOrAddSetter({symbol.ToDisplayString()}.VerticalTextAlignmentProperty, TextAlignment.End);
+            self.SetValueOrAddSetter({symbol.ToDisplayString()}.HorizontalTextAlignmentProperty, TextAlignment.Start);
+            return self;
         }}
 
-        public static T AlignTextTopRight<T>(this T obj)
+        public static T TextTopEnd<T>(this T self)
             where T : {symbol.ToDisplayString()}
         {{
-            obj.SetValueOrSetter({symbol.ToDisplayString()}.VerticalTextAlignmentProperty, VerticalAlignment.Top);
-            obj.SetValueOrSetter({symbol.ToDisplayString()}.HorizontalTextAlignmentProperty, HorizontalAlignment.Right);
-            return obj;
+            self.SetValueOrAddSetter({symbol.ToDisplayString()}.VerticalTextAlignmentProperty, TextAlignment.Start);
+            self.SetValueOrAddSetter({symbol.ToDisplayString()}.HorizontalTextAlignmentProperty, TextAlignment.End);
+            return self;
         }}
 
-        public static T AlignTextBottomRight<T>(this T obj)
+        public static T TextBottomEnd<T>(this T self)
             where T : {symbol.ToDisplayString()}
         {{
-            obj.SetValueOrSetter({symbol.ToDisplayString()}.VerticalTextAlignmentProperty, VerticalAlignment.Bottom);
-            obj.SetValueOrSetter({symbol.ToDisplayString()}.HorizontalTextAlignmentProperty, HorizontalAlignment.Right);
-            return obj;
+            self.SetValueOrAddSetter({symbol.ToDisplayString()}.VerticalTextAlignmentProperty, TextAlignment.End);
+            self.SetValueOrAddSetter({symbol.ToDisplayString()}.HorizontalTextAlignmentProperty, TextAlignment.End);
+            return self;
         }}
 
-        public static T AlignTextLeft<T>(this T obj)
+        public static T TextStart<T>(this T self)
             where T : {symbol.ToDisplayString()}
         {{
-            obj.SetValueOrSetter({symbol.ToDisplayString()}.HorizontalTextAlignmentProperty, HorizontalAlignment.Left);
-            return obj;
+            self.SetValueOrAddSetter({symbol.ToDisplayString()}.HorizontalTextAlignmentProperty, TextAlignment.Start);
+            return self;
         }}
 
-        public static T AlignTextRight<T>(this T obj)
+        public static T TextEnd<T>(this T self)
             where T : {symbol.ToDisplayString()}
         {{
-            obj.SetValueOrSetter({symbol.ToDisplayString()}.HorizontalTextAlignmentProperty, HorizontalAlignment.Right);
-            return obj;
-        }}
-
-        public static T AlignTextJustified<T>(this T obj)
-            where T : {symbol.ToDisplayString()}
-        {{
-            obj.SetValueOrSetter({symbol.ToDisplayString()}.HorizontalTextAlignmentProperty, HorizontalAlignment.Justified);
-            return obj;
+            self.SetValueOrAddSetter({symbol.ToDisplayString()}.HorizontalTextAlignmentProperty, TextAlignment.End);
+            return self;
         }}
 
         ");

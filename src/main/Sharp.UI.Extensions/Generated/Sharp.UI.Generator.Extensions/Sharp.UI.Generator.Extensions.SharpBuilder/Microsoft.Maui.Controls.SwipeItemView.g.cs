@@ -13,70 +13,70 @@ namespace Sharp.UI
 
     public static partial class SwipeItemViewExtension
     {
-        public static T Command<T>(this T obj,
+        public static T Command<T>(this T self,
             System.Windows.Input.ICommand command)
             where T : Microsoft.Maui.Controls.SwipeItemView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.SwipeItemView.CommandProperty, command);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.SwipeItemView.CommandProperty, command);
+            return self;
         }
         
-        public static T Command<T>(this T obj,
-            System.Func<ValueBuilder<System.Windows.Input.ICommand>, ValueBuilder<System.Windows.Input.ICommand>> buidValue)
+        public static T Command<T>(this T self,
+            System.Func<ValueBuilder<System.Windows.Input.ICommand>, ValueBuilder<System.Windows.Input.ICommand>> buildValue)
             where T : Microsoft.Maui.Controls.SwipeItemView
         {
-            var builder = buidValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SwipeItemView.CommandProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<System.Windows.Input.ICommand>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SwipeItemView.CommandProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Command<T>(this T obj,
-            System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buidBinding)
+        public static T Command<T>(this T self,
+            System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buildBinding)
             where T : Microsoft.Maui.Controls.SwipeItemView
         {
-            var builder = buidBinding(new BindingBuilder<System.Windows.Input.ICommand>(obj, Microsoft.Maui.Controls.SwipeItemView.CommandProperty));
+            var builder = buildBinding(new BindingBuilder<System.Windows.Input.ICommand>(self, Microsoft.Maui.Controls.SwipeItemView.CommandProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T CommandParameter<T>(this T obj,
+        public static T CommandParameter<T>(this T self,
             object commandParameter)
             where T : Microsoft.Maui.Controls.SwipeItemView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.SwipeItemView.CommandParameterProperty, commandParameter);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.SwipeItemView.CommandParameterProperty, commandParameter);
+            return self;
         }
         
-        public static T CommandParameter<T>(this T obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+        public static T CommandParameter<T>(this T self,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buildValue)
             where T : Microsoft.Maui.Controls.SwipeItemView
         {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SwipeItemView.CommandParameterProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SwipeItemView.CommandParameterProperty, builder.GetValue());
+            return self;
         }
         
-        public static T CommandParameter<T>(this T obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+        public static T CommandParameter<T>(this T self,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
             where T : Microsoft.Maui.Controls.SwipeItemView
         {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.SwipeItemView.CommandParameterProperty));
+            var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.SwipeItemView.CommandParameterProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T OnInvoked<T>(this T obj, System.EventHandler<System.EventArgs> handler)
+        public static T OnInvoked<T>(this T self, System.EventHandler<System.EventArgs> handler)
             where T : Microsoft.Maui.Controls.SwipeItemView
         {
-            obj.Invoked += handler;
-            return obj;
+            self.Invoked += handler;
+            return self;
         }
         
-        public static T OnInvoked<T>(this T obj, System.Action<T> action)
+        public static T OnInvoked<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.SwipeItemView
         {
-            obj.Invoked += (o, arg) => action(obj);
-            return obj;
+            self.Invoked += (o, arg) => action(self);
+            return self;
         }
         
     }

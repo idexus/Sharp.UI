@@ -28,7 +28,7 @@ namespace ExampleApp
                         new Path()
                             .Stroke(Colors.White)
                             .StrokeThickness(5)
-                            .CenterHorizontally()
+                            .AlignCenterHorizontal()
                             .Data(new RectangleGeometry(0,0,200,100)),
 
                         new Image("dotnet_bot.png")
@@ -39,7 +39,7 @@ namespace ExampleApp
                         new Path()
                             .Stroke(Colors.Yellow)
                             .Fill(Colors.Red)
-                            .CenterHorizontally()
+                            .AlignCenterHorizontal()
                             .Data(new GeometryGroup
                             {
                                 new PathGeometry()

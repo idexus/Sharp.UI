@@ -11,8 +11,8 @@ namespace ExampleApp
             new Style<Label>(e => e
                 .TextColor(AppColors.Gray400)
                 .FontSize(40.0)
-                .CenterHorizontally()
-                .CenterVertically()
+                .AlignCenterHorizontal()
+                .AlignCenterVertical()
                 .Margin(new Thickness(10,0))),
 
             new Style<Button>(e => e
@@ -22,12 +22,12 @@ namespace ExampleApp
                 .FontSize(40)),
 
             new Style<VStack>(e => e
-                .CenterHorizontally()
-                .CenterVertically()),
+                .AlignCenterHorizontal()
+                .AlignCenterVertical()),
 
             new Style<HStack>(e => e
-                .CenterHorizontally()
-                .CenterVertically())            
+                .AlignCenterHorizontal()
+                .AlignCenterVertical())            
         };
     }
 }

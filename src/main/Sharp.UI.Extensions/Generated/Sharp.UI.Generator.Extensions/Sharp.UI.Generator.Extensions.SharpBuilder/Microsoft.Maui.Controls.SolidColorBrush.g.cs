@@ -13,30 +13,30 @@ namespace Sharp.UI
 
     public static partial class SolidColorBrushExtension
     {
-        public static T Color<T>(this T obj,
+        public static T Color<T>(this T self,
             Microsoft.Maui.Graphics.Color color)
             where T : Microsoft.Maui.Controls.SolidColorBrush
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.SolidColorBrush.ColorProperty, color);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.SolidColorBrush.ColorProperty, color);
+            return self;
         }
         
-        public static T Color<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buidValue)
+        public static T Color<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : Microsoft.Maui.Controls.SolidColorBrush
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SolidColorBrush.ColorProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SolidColorBrush.ColorProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Color<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buidBinding)
+        public static T Color<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
             where T : Microsoft.Maui.Controls.SolidColorBrush
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(obj, Microsoft.Maui.Controls.SolidColorBrush.ColorProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.SolidColorBrush.ColorProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
     }

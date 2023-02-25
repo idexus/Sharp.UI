@@ -13,39 +13,39 @@ namespace Sharp.UI
 
     public static partial class ColumnDefinitionExtension
     {
-        public static Microsoft.Maui.Controls.ColumnDefinition Width(this Microsoft.Maui.Controls.ColumnDefinition obj,
+        public static Microsoft.Maui.Controls.ColumnDefinition Width(this Microsoft.Maui.Controls.ColumnDefinition self,
             Microsoft.Maui.GridLength width)
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.ColumnDefinition.WidthProperty, width);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.ColumnDefinition.WidthProperty, width);
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.ColumnDefinition Width(this Microsoft.Maui.Controls.ColumnDefinition obj,
-            System.Func<ValueBuilder<Microsoft.Maui.GridLength>, ValueBuilder<Microsoft.Maui.GridLength>> buidValue)
+        public static Microsoft.Maui.Controls.ColumnDefinition Width(this Microsoft.Maui.Controls.ColumnDefinition self,
+            System.Func<ValueBuilder<Microsoft.Maui.GridLength>, ValueBuilder<Microsoft.Maui.GridLength>> buildValue)
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.GridLength>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ColumnDefinition.WidthProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.GridLength>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.ColumnDefinition.WidthProperty, builder.GetValue());
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.ColumnDefinition Width(this Microsoft.Maui.Controls.ColumnDefinition obj,
-            System.Func<BindingBuilder<Microsoft.Maui.GridLength>, BindingBuilder<Microsoft.Maui.GridLength>> buidBinding)
+        public static Microsoft.Maui.Controls.ColumnDefinition Width(this Microsoft.Maui.Controls.ColumnDefinition self,
+            System.Func<BindingBuilder<Microsoft.Maui.GridLength>, BindingBuilder<Microsoft.Maui.GridLength>> buildBinding)
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.GridLength>(obj, Microsoft.Maui.Controls.ColumnDefinition.WidthProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.GridLength>(self, Microsoft.Maui.Controls.ColumnDefinition.WidthProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.ColumnDefinition OnSizeChanged(this Microsoft.Maui.Controls.ColumnDefinition obj, System.EventHandler handler)
+        public static Microsoft.Maui.Controls.ColumnDefinition OnSizeChanged(this Microsoft.Maui.Controls.ColumnDefinition self, System.EventHandler handler)
         {
-            obj.SizeChanged += handler;
-            return obj;
+            self.SizeChanged += handler;
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.ColumnDefinition OnSizeChanged(this Microsoft.Maui.Controls.ColumnDefinition obj, System.Action<Microsoft.Maui.Controls.ColumnDefinition> action)
+        public static Microsoft.Maui.Controls.ColumnDefinition OnSizeChanged(this Microsoft.Maui.Controls.ColumnDefinition self, System.Action<Microsoft.Maui.Controls.ColumnDefinition> action)
         {
-            obj.SizeChanged += (o, arg) => action(obj);
-            return obj;
+            self.SizeChanged += (o, arg) => action(self);
+            return self;
         }
         
     }

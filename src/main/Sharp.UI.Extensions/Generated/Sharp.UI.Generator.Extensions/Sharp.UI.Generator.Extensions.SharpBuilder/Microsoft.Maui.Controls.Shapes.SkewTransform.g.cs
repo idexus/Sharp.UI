@@ -13,108 +13,108 @@ namespace Sharp.UI
 
     public static partial class SkewTransformExtension
     {
-        public static T AngleX<T>(this T obj,
+        public static T AngleX<T>(this T self,
             double angleX)
             where T : Microsoft.Maui.Controls.Shapes.SkewTransform
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.SkewTransform.AngleXProperty, angleX);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.SkewTransform.AngleXProperty, angleX);
+            return self;
         }
         
-        public static T AngleX<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T AngleX<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Microsoft.Maui.Controls.Shapes.SkewTransform
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.SkewTransform.AngleXProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.SkewTransform.AngleXProperty, builder.GetValue());
+            return self;
         }
         
-        public static T AngleX<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T AngleX<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Microsoft.Maui.Controls.Shapes.SkewTransform
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Shapes.SkewTransform.AngleXProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.SkewTransform.AngleXProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T AngleY<T>(this T obj,
+        public static T AngleY<T>(this T self,
             double angleY)
             where T : Microsoft.Maui.Controls.Shapes.SkewTransform
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.SkewTransform.AngleYProperty, angleY);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.SkewTransform.AngleYProperty, angleY);
+            return self;
         }
         
-        public static T AngleY<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T AngleY<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Microsoft.Maui.Controls.Shapes.SkewTransform
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.SkewTransform.AngleYProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.SkewTransform.AngleYProperty, builder.GetValue());
+            return self;
         }
         
-        public static T AngleY<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T AngleY<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Microsoft.Maui.Controls.Shapes.SkewTransform
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Shapes.SkewTransform.AngleYProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.SkewTransform.AngleYProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T CenterX<T>(this T obj,
+        public static T CenterX<T>(this T self,
             double centerX)
             where T : Microsoft.Maui.Controls.Shapes.SkewTransform
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.SkewTransform.CenterXProperty, centerX);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.SkewTransform.CenterXProperty, centerX);
+            return self;
         }
         
-        public static T CenterX<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T CenterX<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Microsoft.Maui.Controls.Shapes.SkewTransform
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.SkewTransform.CenterXProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.SkewTransform.CenterXProperty, builder.GetValue());
+            return self;
         }
         
-        public static T CenterX<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T CenterX<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Microsoft.Maui.Controls.Shapes.SkewTransform
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Shapes.SkewTransform.CenterXProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.SkewTransform.CenterXProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T CenterY<T>(this T obj,
+        public static T CenterY<T>(this T self,
             double centerY)
             where T : Microsoft.Maui.Controls.Shapes.SkewTransform
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.SkewTransform.CenterYProperty, centerY);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.SkewTransform.CenterYProperty, centerY);
+            return self;
         }
         
-        public static T CenterY<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T CenterY<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Microsoft.Maui.Controls.Shapes.SkewTransform
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.SkewTransform.CenterYProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.SkewTransform.CenterYProperty, builder.GetValue());
+            return self;
         }
         
-        public static T CenterY<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T CenterY<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Microsoft.Maui.Controls.Shapes.SkewTransform
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Shapes.SkewTransform.CenterYProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.SkewTransform.CenterYProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
     }

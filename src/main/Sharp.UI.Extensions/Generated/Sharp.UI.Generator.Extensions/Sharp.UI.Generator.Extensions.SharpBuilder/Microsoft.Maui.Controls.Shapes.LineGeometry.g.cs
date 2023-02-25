@@ -13,56 +13,56 @@ namespace Sharp.UI
 
     public static partial class LineGeometryExtension
     {
-        public static T StartPoint<T>(this T obj,
+        public static T StartPoint<T>(this T self,
             Microsoft.Maui.Graphics.Point startPoint)
             where T : Microsoft.Maui.Controls.Shapes.LineGeometry
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.LineGeometry.StartPointProperty, startPoint);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.LineGeometry.StartPointProperty, startPoint);
+            return self;
         }
         
-        public static T StartPoint<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Point>, ValueBuilder<Microsoft.Maui.Graphics.Point>> buidValue)
+        public static T StartPoint<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Point>, ValueBuilder<Microsoft.Maui.Graphics.Point>> buildValue)
             where T : Microsoft.Maui.Controls.Shapes.LineGeometry
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Point>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.LineGeometry.StartPointProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Point>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.LineGeometry.StartPointProperty, builder.GetValue());
+            return self;
         }
         
-        public static T StartPoint<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Point>, BindingBuilder<Microsoft.Maui.Graphics.Point>> buidBinding)
+        public static T StartPoint<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Point>, BindingBuilder<Microsoft.Maui.Graphics.Point>> buildBinding)
             where T : Microsoft.Maui.Controls.Shapes.LineGeometry
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Graphics.Point>(obj, Microsoft.Maui.Controls.Shapes.LineGeometry.StartPointProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Point>(self, Microsoft.Maui.Controls.Shapes.LineGeometry.StartPointProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T EndPoint<T>(this T obj,
+        public static T EndPoint<T>(this T self,
             Microsoft.Maui.Graphics.Point endPoint)
             where T : Microsoft.Maui.Controls.Shapes.LineGeometry
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.LineGeometry.EndPointProperty, endPoint);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.LineGeometry.EndPointProperty, endPoint);
+            return self;
         }
         
-        public static T EndPoint<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Point>, ValueBuilder<Microsoft.Maui.Graphics.Point>> buidValue)
+        public static T EndPoint<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Point>, ValueBuilder<Microsoft.Maui.Graphics.Point>> buildValue)
             where T : Microsoft.Maui.Controls.Shapes.LineGeometry
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Point>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.LineGeometry.EndPointProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Point>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.LineGeometry.EndPointProperty, builder.GetValue());
+            return self;
         }
         
-        public static T EndPoint<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Point>, BindingBuilder<Microsoft.Maui.Graphics.Point>> buidBinding)
+        public static T EndPoint<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Point>, BindingBuilder<Microsoft.Maui.Graphics.Point>> buildBinding)
             where T : Microsoft.Maui.Controls.Shapes.LineGeometry
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Graphics.Point>(obj, Microsoft.Maui.Controls.Shapes.LineGeometry.EndPointProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Point>(self, Microsoft.Maui.Controls.Shapes.LineGeometry.EndPointProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
     }

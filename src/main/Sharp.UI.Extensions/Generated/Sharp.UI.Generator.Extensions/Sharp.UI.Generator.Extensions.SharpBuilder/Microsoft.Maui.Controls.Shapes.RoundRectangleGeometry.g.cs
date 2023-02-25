@@ -13,56 +13,56 @@ namespace Sharp.UI
 
     public static partial class RoundRectangleGeometryExtension
     {
-        public static T Rect<T>(this T obj,
+        public static T Rect<T>(this T self,
             Microsoft.Maui.Graphics.Rect rect)
             where T : Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry.RectProperty, rect);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry.RectProperty, rect);
+            return self;
         }
         
-        public static T Rect<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Rect>, ValueBuilder<Microsoft.Maui.Graphics.Rect>> buidValue)
+        public static T Rect<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Rect>, ValueBuilder<Microsoft.Maui.Graphics.Rect>> buildValue)
             where T : Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Rect>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry.RectProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Rect>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry.RectProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Rect<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Rect>, BindingBuilder<Microsoft.Maui.Graphics.Rect>> buidBinding)
+        public static T Rect<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Rect>, BindingBuilder<Microsoft.Maui.Graphics.Rect>> buildBinding)
             where T : Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Graphics.Rect>(obj, Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry.RectProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Rect>(self, Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry.RectProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T CornerRadius<T>(this T obj,
+        public static T CornerRadius<T>(this T self,
             Microsoft.Maui.CornerRadius cornerRadius)
             where T : Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry.CornerRadiusProperty, cornerRadius);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry.CornerRadiusProperty, cornerRadius);
+            return self;
         }
         
-        public static T CornerRadius<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.CornerRadius>, ValueBuilder<Microsoft.Maui.CornerRadius>> buidValue)
+        public static T CornerRadius<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.CornerRadius>, ValueBuilder<Microsoft.Maui.CornerRadius>> buildValue)
             where T : Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.CornerRadius>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry.CornerRadiusProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.CornerRadius>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry.CornerRadiusProperty, builder.GetValue());
+            return self;
         }
         
-        public static T CornerRadius<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.CornerRadius>, BindingBuilder<Microsoft.Maui.CornerRadius>> buidBinding)
+        public static T CornerRadius<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.CornerRadius>, BindingBuilder<Microsoft.Maui.CornerRadius>> buildBinding)
             where T : Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.CornerRadius>(obj, Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry.CornerRadiusProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.CornerRadius>(self, Microsoft.Maui.Controls.Shapes.RoundRectangleGeometry.CornerRadiusProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
     }

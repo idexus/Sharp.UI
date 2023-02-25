@@ -13,56 +13,56 @@ namespace Sharp.UI
 
     public static partial class HtmlWebViewSourceExtension
     {
-        public static T BaseUrl<T>(this T obj,
+        public static T BaseUrl<T>(this T self,
             string baseUrl)
             where T : Microsoft.Maui.Controls.HtmlWebViewSource
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.HtmlWebViewSource.BaseUrlProperty, baseUrl);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.HtmlWebViewSource.BaseUrlProperty, baseUrl);
+            return self;
         }
         
-        public static T BaseUrl<T>(this T obj,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buidValue)
+        public static T BaseUrl<T>(this T self,
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
             where T : Microsoft.Maui.Controls.HtmlWebViewSource
         {
-            var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.HtmlWebViewSource.BaseUrlProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.HtmlWebViewSource.BaseUrlProperty, builder.GetValue());
+            return self;
         }
         
-        public static T BaseUrl<T>(this T obj,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buidBinding)
+        public static T BaseUrl<T>(this T self,
+            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
             where T : Microsoft.Maui.Controls.HtmlWebViewSource
         {
-            var builder = buidBinding(new BindingBuilder<string>(obj, Microsoft.Maui.Controls.HtmlWebViewSource.BaseUrlProperty));
+            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.HtmlWebViewSource.BaseUrlProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T Html<T>(this T obj,
+        public static T Html<T>(this T self,
             string html)
             where T : Microsoft.Maui.Controls.HtmlWebViewSource
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.HtmlWebViewSource.HtmlProperty, html);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.HtmlWebViewSource.HtmlProperty, html);
+            return self;
         }
         
-        public static T Html<T>(this T obj,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buidValue)
+        public static T Html<T>(this T self,
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
             where T : Microsoft.Maui.Controls.HtmlWebViewSource
         {
-            var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.HtmlWebViewSource.HtmlProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.HtmlWebViewSource.HtmlProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Html<T>(this T obj,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buidBinding)
+        public static T Html<T>(this T self,
+            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
             where T : Microsoft.Maui.Controls.HtmlWebViewSource
         {
-            var builder = buidBinding(new BindingBuilder<string>(obj, Microsoft.Maui.Controls.HtmlWebViewSource.HtmlProperty));
+            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.HtmlWebViewSource.HtmlProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
     }

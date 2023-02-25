@@ -13,27 +13,27 @@ namespace Sharp.UI
 
     public static partial class DeviceStateTriggerExtension
     {
-        public static Microsoft.Maui.Controls.DeviceStateTrigger Device(this Microsoft.Maui.Controls.DeviceStateTrigger obj,
+        public static Microsoft.Maui.Controls.DeviceStateTrigger Device(this Microsoft.Maui.Controls.DeviceStateTrigger self,
             string device)
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.DeviceStateTrigger.DeviceProperty, device);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.DeviceStateTrigger.DeviceProperty, device);
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.DeviceStateTrigger Device(this Microsoft.Maui.Controls.DeviceStateTrigger obj,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buidValue)
+        public static Microsoft.Maui.Controls.DeviceStateTrigger Device(this Microsoft.Maui.Controls.DeviceStateTrigger self,
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
         {
-            var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.DeviceStateTrigger.DeviceProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.DeviceStateTrigger.DeviceProperty, builder.GetValue());
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.DeviceStateTrigger Device(this Microsoft.Maui.Controls.DeviceStateTrigger obj,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buidBinding)
+        public static Microsoft.Maui.Controls.DeviceStateTrigger Device(this Microsoft.Maui.Controls.DeviceStateTrigger self,
+            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
         {
-            var builder = buidBinding(new BindingBuilder<string>(obj, Microsoft.Maui.Controls.DeviceStateTrigger.DeviceProperty));
+            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.DeviceStateTrigger.DeviceProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
     }

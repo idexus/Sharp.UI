@@ -36,7 +36,7 @@ public class AttachedBehaviorPage : ContentPage
             }
         };
 
-		Content = new VStack(e => e.CenterVertically())
+		Content = new VStack(e => e.AlignCenterVertical())
 		{
             new Entry("Enter text...", out var entry).Text("")
 		};

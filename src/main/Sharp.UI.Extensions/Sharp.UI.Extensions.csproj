@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFrameworks>net7.0;net7.0-android;net7.0-ios;net7.0-maccatalyst</TargetFrameworks>
@@ -17,7 +17,7 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 
 		<PackageId>Sharp.UI.Extensions</PackageId>
-		<Version>0.4.3-alpha</Version>
+		<Version>0.4.4-alpha</Version>
 		<Authors>Pawel Krzywdzinski</Authors>
 		<Copyright>Pawel Krzywdzinski</Copyright>
 		<PackageDescription>Library for .NET MAUI: Fluent Extension Methods</PackageDescription>
@@ -53,16 +53,8 @@
 	    <None Include="$(CompilerGeneratedFilesOutputPath)/Sharp.UI.Generator.Extensions/**/*.cs" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <None Remove="src\Extensions\Builders\" />
-	  <None Remove="src\Animation\" />
-	</ItemGroup>
-	<ItemGroup>
-	  <None Include="README.md" Pack="true" PackagePath="\" />
-	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="src\Extensions\Builders\" />
-	  <Folder Include="src\Animation\" />
+	  <None Include="README.md" Pack="true" PackagePath="\" />
 	</ItemGroup>
 </Project>

@@ -1,92 +1,65 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
+
 namespace Sharp.UI
 {
+    [AttachedProperties(typeof(Microsoft.Maui.Controls.SemanticProperties))]
+    public interface IVisualElementSemanticProperties
+    {
+        [AttachedName("HintProperty")]
+        string SemanticHint { get; set; }
+
+        [AttachedName("DescriptionProperty")]
+        string SemanticDescription { get; set; }
+
+        [AttachedName("HeadingLevelProperty")]
+        SemanticHeadingLevel SemanticHeadingLevel { get; set; }
+    }
+
+    [AttachedProperties(typeof(Microsoft.Maui.Controls.AutomationProperties))]
+    public interface IVisualElementAutomationProperties
+    {
+        [AttachedName("ExcludedWithChildrenProperty")]
+        bool? AutomationExcludedWithChildren { get; set; }
+
+        [AttachedName("IsInAccessibleTreeProperty")]
+        bool? AutomationIsInAccessibleTree { get; set; }
+
+        [AttachedName("NameProperty")]
+        string AutomationName { get; set; }
+
+        [AttachedName("HelpTextProperty")]
+        string AutomationHelpText { get; set; }
+
+        [AttachedName("LabeledByProperty")]
+        Microsoft.Maui.Controls.VisualElement AutomationLabeledBy { get; set; }
+    }
+
+    [AttachedProperties(typeof(Microsoft.Maui.Controls.VisualStateManager))]
+    public interface IVisualElementVisualStateGroupsAttachedProperties
+    {
+        Microsoft.Maui.Controls.VisualStateGroupList VisualStateGroups { get; set; }
+    }
+
+    [SharpObject()]
+    [AttachedInterfaces(typeof(Microsoft.Maui.Controls.VisualElement),
+        new[] 
+        { 
+            typeof(IVisualElementVisualStateGroupsAttachedProperties), 
+            typeof(IVisualElementAutomationProperties), 
+            typeof(IVisualElementSemanticProperties) 
+        })]
     public static partial class VisualElementExtension
     {
-        // Microsoft.Maui.Controls.AbsoluteLayout
-
-        public static T AbsoluteLayoutFlags<T>(this T obj, Microsoft.Maui.Layouts.AbsoluteLayoutFlags flags) where T : VisualElement
-        {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.AbsoluteLayout.LayoutFlagsProperty, flags);
-            return obj;
-        }
-
-        public static T AbsoluteLayoutBounds<T>(this T obj, Rect bounds) where T : VisualElement
-        {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.AbsoluteLayout.LayoutBoundsProperty, bounds);
-            return obj;
-        }
-
-        // Microsoft.Maui.Controls.SemanticProperties - attached properties
-
-        public static T SemanticHint<T>(this T obj, string hintProperty) where T : VisualElement
-        {
-            obj.SetValueOrSetter(SemanticProperties.HintProperty, hintProperty);
-            return obj;
-        }
-
-        public static T SemanticDescription<T>(this T obj, string description) where T : VisualElement
-        {
-            obj.SetValueOrSetter(SemanticProperties.DescriptionProperty, description);
-            return obj;
-        }
-
-        public static T SemanticHeadingLevel<T>(this T obj, SemanticHeadingLevel headingLevel) where T : VisualElement
-        {
-            obj.SetValueOrSetter(SemanticProperties.HeadingLevelProperty, headingLevel);
-            return obj;
-        }
-
-        // Microsoft.Maui.Controls.AutomationProperties - attached properties
-
-        public static T AutomationExcludedWithChildren<T>(this T obj, bool? excludedWithChildren) where T : VisualElement
-        {
-            obj.SetValueOrSetter(AutomationProperties.ExcludedWithChildrenProperty, excludedWithChildren);
-            return obj;
-        }
-
-        public static T AutomationIsInAccessibleTree<T>(this T obj, bool? isInAccessibleTree) where T : VisualElement
-        {
-            obj.SetValueOrSetter(AutomationProperties.IsInAccessibleTreeProperty, isInAccessibleTree);
-            return obj;
-        }
-
-        public static T AutomationName<T>(this T obj, string name) where T : VisualElement
-        {
-            obj.SetValueOrSetter(AutomationProperties.NameProperty, name);
-            return obj;
-        }
-
-        public static T AutomationHelpText<T>(this T obj, string helpText) where T : VisualElement
-        {
-            obj.SetValueOrSetter(AutomationProperties.HelpTextProperty, helpText);
-            return obj;
-        }
-
-        public static T AutomationLabeledBy<T>(this T obj, VisualElement labeledBy) where T : VisualElement
-        {
-            obj.SetValueOrSetter(AutomationProperties.LabeledByProperty, labeledBy);
-            return obj;
-        }
-
-        // Microsoft.Maui.Controls.VisualStateManager - attached properties
-
-        public static T VisualStateGroups<T>(this T obj, VisualStateGroupList groups) where T : VisualElement
-        {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.VisualStateManager.VisualStateGroupsProperty, groups);
-            return obj;
-        }
-
         // ------------
 
-        public static T SizeRequest<T>(this T obj, double widthRequest, double heightRequest)
+        public static T SizeRequest<T>(this T self, double widthRequest, double heightRequest)
             where T : VisualElement
         {
-            obj.SetValueOrSetter(VisualElement.WidthRequestProperty, widthRequest);
-            obj.SetValueOrSetter(VisualElement.HeightRequestProperty, heightRequest);
-            return obj;
+            self.SetValueOrAddSetter(VisualElement.WidthRequestProperty, widthRequest);
+            self.SetValueOrAddSetter(VisualElement.HeightRequestProperty, heightRequest);
+            return self;
         }
 
         public static Task<bool> AnimateSizeRequestTo<T>(this T self, double width, double height, uint length = 250, Easing easing = null)

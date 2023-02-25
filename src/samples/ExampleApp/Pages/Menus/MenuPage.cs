@@ -35,7 +35,7 @@ public class MenuPage : ContentPage
         {
             new Label("Menubar test").FontSize(50)
         }
-        .CenterVertically()
-        .CenterHorizontally();
+        .AlignCenterVertical()
+        .AlignCenterHorizontal();
     }
 }

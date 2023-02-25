@@ -18,8 +18,8 @@ public class KeypadPage : ContentPage
             e => e 
                 .RowDefinitions(e => e.Absolute(80, count: 5))
 				.ColumnDefinitions(e => e.Absolute(100, count: 3))
-				.CenterHorizontally()
-				.CenterVertically()
+				.AlignCenterHorizontal()
+				.AlignCenterVertical()
 				.ColumnSpacing(10)
 				.RowSpacing(10),
 

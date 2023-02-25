@@ -13,134 +13,134 @@ namespace Sharp.UI
 
     public static partial class RadioButtonExtension
     {
-        public static T Content<T>(this T obj,
+        public static T Content<T>(this T self,
             object content)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.ContentProperty, content);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.ContentProperty, content);
+            return self;
         }
         
-        public static T Content<T>(this T obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+        public static T Content<T>(this T self,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buildValue)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.ContentProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.ContentProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Content<T>(this T obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+        public static T Content<T>(this T self,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.RadioButton.ContentProperty));
+            var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.RadioButton.ContentProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T Value<T>(this T obj,
+        public static T Value<T>(this T self,
             object value)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.ValueProperty, value);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.ValueProperty, value);
+            return self;
         }
         
-        public static T Value<T>(this T obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+        public static T Value<T>(this T self,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buildValue)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.ValueProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.ValueProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Value<T>(this T obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+        public static T Value<T>(this T self,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.RadioButton.ValueProperty));
+            var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.RadioButton.ValueProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T IsChecked<T>(this T obj,
+        public static T IsChecked<T>(this T self,
             bool isChecked)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.IsCheckedProperty, isChecked);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.IsCheckedProperty, isChecked);
+            return self;
         }
         
-        public static T IsChecked<T>(this T obj,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
+        public static T IsChecked<T>(this T self,
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.IsCheckedProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.IsCheckedProperty, builder.GetValue());
+            return self;
         }
         
-        public static T IsChecked<T>(this T obj,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buidBinding)
+        public static T IsChecked<T>(this T self,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            var builder = buidBinding(new BindingBuilder<bool>(obj, Microsoft.Maui.Controls.RadioButton.IsCheckedProperty));
+            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.RadioButton.IsCheckedProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T GroupName<T>(this T obj,
+        public static T GroupName<T>(this T self,
             string groupName)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.GroupNameProperty, groupName);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.GroupNameProperty, groupName);
+            return self;
         }
         
-        public static T GroupName<T>(this T obj,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buidValue)
+        public static T GroupName<T>(this T self,
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.GroupNameProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.GroupNameProperty, builder.GetValue());
+            return self;
         }
         
-        public static T GroupName<T>(this T obj,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buidBinding)
+        public static T GroupName<T>(this T self,
+            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            var builder = buidBinding(new BindingBuilder<string>(obj, Microsoft.Maui.Controls.RadioButton.GroupNameProperty));
+            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.RadioButton.GroupNameProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T TextColor<T>(this T obj,
+        public static T TextColor<T>(this T self,
             Microsoft.Maui.Graphics.Color textColor)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.TextColorProperty, textColor);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.TextColorProperty, textColor);
+            return self;
         }
         
-        public static T TextColor<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buidValue)
+        public static T TextColor<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.TextColorProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.TextColorProperty, builder.GetValue());
+            return self;
         }
         
-        public static T TextColor<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buidBinding)
+        public static T TextColor<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(obj, Microsoft.Maui.Controls.RadioButton.TextColorProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.RadioButton.TextColorProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
         public static Task<bool> AnimateTextColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
@@ -152,30 +152,30 @@ namespace Sharp.UI
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateTextColorTo", transform, callback, length, easing);
         }
         
-        public static T CharacterSpacing<T>(this T obj,
+        public static T CharacterSpacing<T>(this T self,
             double characterSpacing)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.CharacterSpacingProperty, characterSpacing);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.CharacterSpacingProperty, characterSpacing);
+            return self;
         }
         
-        public static T CharacterSpacing<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T CharacterSpacing<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.CharacterSpacingProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.CharacterSpacingProperty, builder.GetValue());
+            return self;
         }
         
-        public static T CharacterSpacing<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T CharacterSpacing<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.RadioButton.CharacterSpacingProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.RadioButton.CharacterSpacingProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
         public static Task<bool> AnimateCharacterSpacingTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
@@ -187,108 +187,108 @@ namespace Sharp.UI
             return Transformations.AnimateAsync<double>(self, "AnimateCharacterSpacingTo", transform, callback, length, easing);
         }
         
-        public static T TextTransform<T>(this T obj,
+        public static T TextTransform<T>(this T self,
             Microsoft.Maui.TextTransform textTransform)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.TextTransformProperty, textTransform);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.TextTransformProperty, textTransform);
+            return self;
         }
         
-        public static T TextTransform<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.TextTransform>, ValueBuilder<Microsoft.Maui.TextTransform>> buidValue)
+        public static T TextTransform<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.TextTransform>, ValueBuilder<Microsoft.Maui.TextTransform>> buildValue)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.TextTransform>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.TextTransformProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.TextTransform>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.TextTransformProperty, builder.GetValue());
+            return self;
         }
         
-        public static T TextTransform<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.TextTransform>, BindingBuilder<Microsoft.Maui.TextTransform>> buidBinding)
+        public static T TextTransform<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.TextTransform>, BindingBuilder<Microsoft.Maui.TextTransform>> buildBinding)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.TextTransform>(obj, Microsoft.Maui.Controls.RadioButton.TextTransformProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.TextTransform>(self, Microsoft.Maui.Controls.RadioButton.TextTransformProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T FontAttributes<T>(this T obj,
+        public static T FontAttributes<T>(this T self,
             Microsoft.Maui.Controls.FontAttributes fontAttributes)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.FontAttributesProperty, fontAttributes);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.FontAttributesProperty, fontAttributes);
+            return self;
         }
         
-        public static T FontAttributes<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.FontAttributes>, ValueBuilder<Microsoft.Maui.Controls.FontAttributes>> buidValue)
+        public static T FontAttributes<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.FontAttributes>, ValueBuilder<Microsoft.Maui.Controls.FontAttributes>> buildValue)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.FontAttributes>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.FontAttributesProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.FontAttributes>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.FontAttributesProperty, builder.GetValue());
+            return self;
         }
         
-        public static T FontAttributes<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.FontAttributes>, BindingBuilder<Microsoft.Maui.Controls.FontAttributes>> buidBinding)
+        public static T FontAttributes<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.FontAttributes>, BindingBuilder<Microsoft.Maui.Controls.FontAttributes>> buildBinding)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.FontAttributes>(obj, Microsoft.Maui.Controls.RadioButton.FontAttributesProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.FontAttributes>(self, Microsoft.Maui.Controls.RadioButton.FontAttributesProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T FontFamily<T>(this T obj,
+        public static T FontFamily<T>(this T self,
             string fontFamily)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.FontFamilyProperty, fontFamily);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.FontFamilyProperty, fontFamily);
+            return self;
         }
         
-        public static T FontFamily<T>(this T obj,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buidValue)
+        public static T FontFamily<T>(this T self,
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.FontFamilyProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.FontFamilyProperty, builder.GetValue());
+            return self;
         }
         
-        public static T FontFamily<T>(this T obj,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buidBinding)
+        public static T FontFamily<T>(this T self,
+            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            var builder = buidBinding(new BindingBuilder<string>(obj, Microsoft.Maui.Controls.RadioButton.FontFamilyProperty));
+            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.RadioButton.FontFamilyProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T FontSize<T>(this T obj,
+        public static T FontSize<T>(this T self,
             double fontSize)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.FontSizeProperty, fontSize);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.FontSizeProperty, fontSize);
+            return self;
         }
         
-        public static T FontSize<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T FontSize<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.FontSizeProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.FontSizeProperty, builder.GetValue());
+            return self;
         }
         
-        public static T FontSize<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T FontSize<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.RadioButton.FontSizeProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.RadioButton.FontSizeProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
         public static Task<bool> AnimateFontSizeTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
@@ -300,56 +300,56 @@ namespace Sharp.UI
             return Transformations.AnimateAsync<double>(self, "AnimateFontSizeTo", transform, callback, length, easing);
         }
         
-        public static T FontAutoScalingEnabled<T>(this T obj,
+        public static T FontAutoScalingEnabled<T>(this T self,
             bool fontAutoScalingEnabled)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.FontAutoScalingEnabledProperty, fontAutoScalingEnabled);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.FontAutoScalingEnabledProperty, fontAutoScalingEnabled);
+            return self;
         }
         
-        public static T FontAutoScalingEnabled<T>(this T obj,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
+        public static T FontAutoScalingEnabled<T>(this T self,
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.FontAutoScalingEnabledProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.FontAutoScalingEnabledProperty, builder.GetValue());
+            return self;
         }
         
-        public static T FontAutoScalingEnabled<T>(this T obj,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buidBinding)
+        public static T FontAutoScalingEnabled<T>(this T self,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            var builder = buidBinding(new BindingBuilder<bool>(obj, Microsoft.Maui.Controls.RadioButton.FontAutoScalingEnabledProperty));
+            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.RadioButton.FontAutoScalingEnabledProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T BorderWidth<T>(this T obj,
+        public static T BorderWidth<T>(this T self,
             double borderWidth)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.BorderWidthProperty, borderWidth);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.BorderWidthProperty, borderWidth);
+            return self;
         }
         
-        public static T BorderWidth<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T BorderWidth<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.BorderWidthProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.BorderWidthProperty, builder.GetValue());
+            return self;
         }
         
-        public static T BorderWidth<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T BorderWidth<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.RadioButton.BorderWidthProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.RadioButton.BorderWidthProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
         public static Task<bool> AnimateBorderWidthTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
@@ -361,30 +361,30 @@ namespace Sharp.UI
             return Transformations.AnimateAsync<double>(self, "AnimateBorderWidthTo", transform, callback, length, easing);
         }
         
-        public static T BorderColor<T>(this T obj,
+        public static T BorderColor<T>(this T self,
             Microsoft.Maui.Graphics.Color borderColor)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.BorderColorProperty, borderColor);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.BorderColorProperty, borderColor);
+            return self;
         }
         
-        public static T BorderColor<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buidValue)
+        public static T BorderColor<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.BorderColorProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.BorderColorProperty, builder.GetValue());
+            return self;
         }
         
-        public static T BorderColor<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buidBinding)
+        public static T BorderColor<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(obj, Microsoft.Maui.Controls.RadioButton.BorderColorProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.RadioButton.BorderColorProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
         public static Task<bool> AnimateBorderColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
@@ -396,44 +396,44 @@ namespace Sharp.UI
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateBorderColorTo", transform, callback, length, easing);
         }
         
-        public static T CornerRadius<T>(this T obj,
+        public static T CornerRadius<T>(this T self,
             int cornerRadius)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.CornerRadiusProperty, cornerRadius);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.CornerRadiusProperty, cornerRadius);
+            return self;
         }
         
-        public static T CornerRadius<T>(this T obj,
-            System.Func<ValueBuilder<int>, ValueBuilder<int>> buidValue)
+        public static T CornerRadius<T>(this T self,
+            System.Func<ValueBuilder<int>, ValueBuilder<int>> buildValue)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            var builder = buidValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.CornerRadiusProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<int>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.RadioButton.CornerRadiusProperty, builder.GetValue());
+            return self;
         }
         
-        public static T CornerRadius<T>(this T obj,
-            System.Func<BindingBuilder<int>, BindingBuilder<int>> buidBinding)
+        public static T CornerRadius<T>(this T self,
+            System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            var builder = buidBinding(new BindingBuilder<int>(obj, Microsoft.Maui.Controls.RadioButton.CornerRadiusProperty));
+            var builder = buildBinding(new BindingBuilder<int>(self, Microsoft.Maui.Controls.RadioButton.CornerRadiusProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T OnCheckedChanged<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.CheckedChangedEventArgs> handler)
+        public static T OnCheckedChanged<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.CheckedChangedEventArgs> handler)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            obj.CheckedChanged += handler;
-            return obj;
+            self.CheckedChanged += handler;
+            return self;
         }
         
-        public static T OnCheckedChanged<T>(this T obj, System.Action<T> action)
+        public static T OnCheckedChanged<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            obj.CheckedChanged += (o, arg) => action(obj);
-            return obj;
+            self.CheckedChanged += (o, arg) => action(self);
+            return self;
         }
         
     }

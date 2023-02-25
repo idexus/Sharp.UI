@@ -13,19 +13,19 @@ public partial class HelloWorldPage : ContentPage
         new VStack(e => e
             .Spacing(25)
             .Padding(new Thickness(30, 0))
-            .CenterVertically())
+            .AlignCenterVertical())
 	    {
             new Image("dotnet_bot.png", out var image)        
 			    .HeightRequest(280) 
-			    .CenterHorizontally(),
+			    .AlignCenterHorizontal(),
 
 		    new Label("Welcome to .NET Multi-platform App UI")
                 .FontSize(e => e.Default(30).OnPhone(16))
-                .CenterHorizontally(),
+                .AlignCenterHorizontal(),
 
             new Button("Click me")
 			    .FontSize(20)
-                .CenterHorizontally()
+                .AlignCenterHorizontal()
                 .OnClicked(button =>
 			    {
                     count++;

@@ -13,22 +13,22 @@ namespace Sharp.UI
 
     public static partial class GestureElementExtension
     {
-        public static T GestureRecognizers<T>(this T obj,
+        public static T GestureRecognizers<T>(this T self,
             IList<Microsoft.Maui.Controls.IGestureRecognizer> gestureRecognizers)
             where T : Microsoft.Maui.Controls.GestureElement
         {
             foreach (var item in gestureRecognizers)
-                obj.GestureRecognizers.Add(item);
-            return obj;
+                self.GestureRecognizers.Add(item);
+            return self;
         }
 
-        public static T GestureRecognizers<T>(this T obj,
+        public static T GestureRecognizers<T>(this T self,
             params Microsoft.Maui.Controls.IGestureRecognizer[] gestureRecognizers)
             where T : Microsoft.Maui.Controls.GestureElement
         {
             foreach (var item in gestureRecognizers)
-                obj.GestureRecognizers.Add(item);
-            return obj;
+                self.GestureRecognizers.Add(item);
+            return self;
         }
         
     }

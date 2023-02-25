@@ -13,18 +13,18 @@ namespace Sharp.UI
 
     public static partial class StateTriggerBaseExtension
     {
-        public static T OnIsActiveChanged<T>(this T obj, System.EventHandler handler)
+        public static T OnIsActiveChanged<T>(this T self, System.EventHandler handler)
             where T : Microsoft.Maui.Controls.StateTriggerBase
         {
-            obj.IsActiveChanged += handler;
-            return obj;
+            self.IsActiveChanged += handler;
+            return self;
         }
         
-        public static T OnIsActiveChanged<T>(this T obj, System.Action<T> action)
+        public static T OnIsActiveChanged<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.StateTriggerBase
         {
-            obj.IsActiveChanged += (o, arg) => action(obj);
-            return obj;
+            self.IsActiveChanged += (o, arg) => action(self);
+            return self;
         }
         
     }

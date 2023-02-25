@@ -13,30 +13,30 @@ namespace Sharp.UI
 
     public static partial class BoxViewExtension
     {
-        public static T Color<T>(this T obj,
+        public static T Color<T>(this T self,
             Microsoft.Maui.Graphics.Color color)
             where T : Microsoft.Maui.Controls.BoxView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.BoxView.ColorProperty, color);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.BoxView.ColorProperty, color);
+            return self;
         }
         
-        public static T Color<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buidValue)
+        public static T Color<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : Microsoft.Maui.Controls.BoxView
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.BoxView.ColorProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.BoxView.ColorProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Color<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buidBinding)
+        public static T Color<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
             where T : Microsoft.Maui.Controls.BoxView
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(obj, Microsoft.Maui.Controls.BoxView.ColorProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.BoxView.ColorProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
         public static Task<bool> AnimateColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
@@ -48,30 +48,30 @@ namespace Sharp.UI
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateColorTo", transform, callback, length, easing);
         }
         
-        public static T CornerRadius<T>(this T obj,
+        public static T CornerRadius<T>(this T self,
             Microsoft.Maui.CornerRadius cornerRadius)
             where T : Microsoft.Maui.Controls.BoxView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.BoxView.CornerRadiusProperty, cornerRadius);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.BoxView.CornerRadiusProperty, cornerRadius);
+            return self;
         }
         
-        public static T CornerRadius<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.CornerRadius>, ValueBuilder<Microsoft.Maui.CornerRadius>> buidValue)
+        public static T CornerRadius<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.CornerRadius>, ValueBuilder<Microsoft.Maui.CornerRadius>> buildValue)
             where T : Microsoft.Maui.Controls.BoxView
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.CornerRadius>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.BoxView.CornerRadiusProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.CornerRadius>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.BoxView.CornerRadiusProperty, builder.GetValue());
+            return self;
         }
         
-        public static T CornerRadius<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.CornerRadius>, BindingBuilder<Microsoft.Maui.CornerRadius>> buidBinding)
+        public static T CornerRadius<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.CornerRadius>, BindingBuilder<Microsoft.Maui.CornerRadius>> buildBinding)
             where T : Microsoft.Maui.Controls.BoxView
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.CornerRadius>(obj, Microsoft.Maui.Controls.BoxView.CornerRadiusProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.CornerRadius>(self, Microsoft.Maui.Controls.BoxView.CornerRadiusProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
     }

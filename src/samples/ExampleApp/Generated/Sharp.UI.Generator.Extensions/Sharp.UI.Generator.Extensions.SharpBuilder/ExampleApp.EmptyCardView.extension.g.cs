@@ -13,108 +13,108 @@ namespace ExampleApp
 
     public static partial class EmptyCardViewExtension
     {
-        public static T CardTitle<T>(this T obj,
+        public static T CardTitle<T>(this T self,
             string cardTitle)
             where T : ExampleApp.EmptyCardView
         {
-            obj.SetValueOrSetter(ExampleApp.EmptyCardView.CardTitleProperty, cardTitle);
-            return obj;
+            self.SetValueOrSetter(ExampleApp.EmptyCardView.CardTitleProperty, cardTitle);
+            return self;
         }
         
-        public static T CardTitle<T>(this T obj,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buidValue)
+        public static T CardTitle<T>(this T self,
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
             where T : ExampleApp.EmptyCardView
         {
-            var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(ExampleApp.EmptyCardView.CardTitleProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(ExampleApp.EmptyCardView.CardTitleProperty, builder.GetValue());
+            return self;
         }
         
-        public static T CardTitle<T>(this T obj,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buidBinding)
+        public static T CardTitle<T>(this T self,
+            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
             where T : ExampleApp.EmptyCardView
         {
-            var builder = buidBinding(new BindingBuilder<string>(obj, ExampleApp.EmptyCardView.CardTitleProperty));
+            var builder = buildBinding(new BindingBuilder<string>(self, ExampleApp.EmptyCardView.CardTitleProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T CardDescription<T>(this T obj,
+        public static T CardDescription<T>(this T self,
             string cardDescription)
             where T : ExampleApp.EmptyCardView
         {
-            obj.SetValueOrSetter(ExampleApp.EmptyCardView.CardDescriptionProperty, cardDescription);
-            return obj;
+            self.SetValueOrSetter(ExampleApp.EmptyCardView.CardDescriptionProperty, cardDescription);
+            return self;
         }
         
-        public static T CardDescription<T>(this T obj,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buidValue)
+        public static T CardDescription<T>(this T self,
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
             where T : ExampleApp.EmptyCardView
         {
-            var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(ExampleApp.EmptyCardView.CardDescriptionProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(ExampleApp.EmptyCardView.CardDescriptionProperty, builder.GetValue());
+            return self;
         }
         
-        public static T CardDescription<T>(this T obj,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buidBinding)
+        public static T CardDescription<T>(this T self,
+            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
             where T : ExampleApp.EmptyCardView
         {
-            var builder = buidBinding(new BindingBuilder<string>(obj, ExampleApp.EmptyCardView.CardDescriptionProperty));
+            var builder = buildBinding(new BindingBuilder<string>(self, ExampleApp.EmptyCardView.CardDescriptionProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T CardColor<T>(this T obj,
+        public static T CardColor<T>(this T self,
             Microsoft.Maui.Graphics.Color cardColor)
             where T : ExampleApp.EmptyCardView
         {
-            obj.SetValueOrSetter(ExampleApp.EmptyCardView.CardColorProperty, cardColor);
-            return obj;
+            self.SetValueOrSetter(ExampleApp.EmptyCardView.CardColorProperty, cardColor);
+            return self;
         }
         
-        public static T CardColor<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buidValue)
+        public static T CardColor<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : ExampleApp.EmptyCardView
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(ExampleApp.EmptyCardView.CardColorProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(ExampleApp.EmptyCardView.CardColorProperty, builder.GetValue());
+            return self;
         }
         
-        public static T CardColor<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buidBinding)
+        public static T CardColor<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
             where T : ExampleApp.EmptyCardView
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(obj, ExampleApp.EmptyCardView.CardColorProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, ExampleApp.EmptyCardView.CardColorProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T BorderColor<T>(this T obj,
+        public static T BorderColor<T>(this T self,
             Microsoft.Maui.Graphics.Color borderColor)
             where T : ExampleApp.EmptyCardView
         {
-            obj.SetValueOrSetter(ExampleApp.EmptyCardView.BorderColorProperty, borderColor);
-            return obj;
+            self.SetValueOrSetter(ExampleApp.EmptyCardView.BorderColorProperty, borderColor);
+            return self;
         }
         
-        public static T BorderColor<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buidValue)
+        public static T BorderColor<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : ExampleApp.EmptyCardView
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(ExampleApp.EmptyCardView.BorderColorProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(ExampleApp.EmptyCardView.BorderColorProperty, builder.GetValue());
+            return self;
         }
         
-        public static T BorderColor<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buidBinding)
+        public static T BorderColor<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
             where T : ExampleApp.EmptyCardView
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(obj, ExampleApp.EmptyCardView.BorderColorProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, ExampleApp.EmptyCardView.BorderColorProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
     }

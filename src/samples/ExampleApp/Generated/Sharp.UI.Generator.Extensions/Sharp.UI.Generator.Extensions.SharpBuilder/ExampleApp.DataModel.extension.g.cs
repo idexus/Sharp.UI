@@ -13,82 +13,82 @@ namespace ExampleApp
 
     public static partial class DataModelExtension
     {
-        public static T Id<T>(this T obj,
+        public static T Id<T>(this T self,
             int id)
             where T : ExampleApp.DataModel
         {
-            obj.SetValueOrSetter(ExampleApp.DataModel.IdProperty, id);
-            return obj;
+            self.SetValueOrSetter(ExampleApp.DataModel.IdProperty, id);
+            return self;
         }
         
-        public static T Id<T>(this T obj,
-            System.Func<ValueBuilder<int>, ValueBuilder<int>> buidValue)
+        public static T Id<T>(this T self,
+            System.Func<ValueBuilder<int>, ValueBuilder<int>> buildValue)
             where T : ExampleApp.DataModel
         {
-            var builder = buidValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(ExampleApp.DataModel.IdProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<int>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(ExampleApp.DataModel.IdProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Id<T>(this T obj,
-            System.Func<BindingBuilder<int>, BindingBuilder<int>> buidBinding)
+        public static T Id<T>(this T self,
+            System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
             where T : ExampleApp.DataModel
         {
-            var builder = buidBinding(new BindingBuilder<int>(obj, ExampleApp.DataModel.IdProperty));
+            var builder = buildBinding(new BindingBuilder<int>(self, ExampleApp.DataModel.IdProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T Name<T>(this T obj,
+        public static T Name<T>(this T self,
             string name)
             where T : ExampleApp.DataModel
         {
-            obj.SetValueOrSetter(ExampleApp.DataModel.NameProperty, name);
-            return obj;
+            self.SetValueOrSetter(ExampleApp.DataModel.NameProperty, name);
+            return self;
         }
         
-        public static T Name<T>(this T obj,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buidValue)
+        public static T Name<T>(this T self,
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
             where T : ExampleApp.DataModel
         {
-            var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(ExampleApp.DataModel.NameProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(ExampleApp.DataModel.NameProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Name<T>(this T obj,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buidBinding)
+        public static T Name<T>(this T self,
+            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
             where T : ExampleApp.DataModel
         {
-            var builder = buidBinding(new BindingBuilder<string>(obj, ExampleApp.DataModel.NameProperty));
+            var builder = buildBinding(new BindingBuilder<string>(self, ExampleApp.DataModel.NameProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T Admin<T>(this T obj,
+        public static T Admin<T>(this T self,
             bool admin)
             where T : ExampleApp.DataModel
         {
-            obj.SetValueOrSetter(ExampleApp.DataModel.AdminProperty, admin);
-            return obj;
+            self.SetValueOrSetter(ExampleApp.DataModel.AdminProperty, admin);
+            return self;
         }
         
-        public static T Admin<T>(this T obj,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
+        public static T Admin<T>(this T self,
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : ExampleApp.DataModel
         {
-            var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(ExampleApp.DataModel.AdminProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(ExampleApp.DataModel.AdminProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Admin<T>(this T obj,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buidBinding)
+        public static T Admin<T>(this T self,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : ExampleApp.DataModel
         {
-            var builder = buidBinding(new BindingBuilder<bool>(obj, ExampleApp.DataModel.AdminProperty));
+            var builder = buildBinding(new BindingBuilder<bool>(self, ExampleApp.DataModel.AdminProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
     }

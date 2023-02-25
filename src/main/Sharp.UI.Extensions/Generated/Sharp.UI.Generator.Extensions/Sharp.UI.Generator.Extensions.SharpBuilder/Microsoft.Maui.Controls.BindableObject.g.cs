@@ -13,72 +13,72 @@ namespace Sharp.UI
 
     public static partial class BindableObjectExtension
     {
-        public static T BindingContext<T>(this T obj,
+        public static T BindingContext<T>(this T self,
             object bindingContext)
             where T : Microsoft.Maui.Controls.BindableObject
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.BindableObject.BindingContextProperty, bindingContext);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.BindableObject.BindingContextProperty, bindingContext);
+            return self;
         }
         
-        public static T BindingContext<T>(this T obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+        public static T BindingContext<T>(this T self,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buildValue)
             where T : Microsoft.Maui.Controls.BindableObject
         {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.BindableObject.BindingContextProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.BindableObject.BindingContextProperty, builder.GetValue());
+            return self;
         }
         
-        public static T BindingContext<T>(this T obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+        public static T BindingContext<T>(this T self,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
             where T : Microsoft.Maui.Controls.BindableObject
         {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.BindableObject.BindingContextProperty));
+            var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.BindableObject.BindingContextProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T OnPropertyChanged<T>(this T obj, System.ComponentModel.PropertyChangedEventHandler handler)
+        public static T OnPropertyChanged<T>(this T self, System.ComponentModel.PropertyChangedEventHandler handler)
             where T : Microsoft.Maui.Controls.BindableObject
         {
-            obj.PropertyChanged += handler;
-            return obj;
+            self.PropertyChanged += handler;
+            return self;
         }
         
-        public static T OnPropertyChanged<T>(this T obj, System.Action<T> action)
+        public static T OnPropertyChanged<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.BindableObject
         {
-            obj.PropertyChanged += (o, arg) => action(obj);
-            return obj;
+            self.PropertyChanged += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnPropertyChanging<T>(this T obj, Microsoft.Maui.Controls.PropertyChangingEventHandler handler)
+        public static T OnPropertyChanging<T>(this T self, Microsoft.Maui.Controls.PropertyChangingEventHandler handler)
             where T : Microsoft.Maui.Controls.BindableObject
         {
-            obj.PropertyChanging += handler;
-            return obj;
+            self.PropertyChanging += handler;
+            return self;
         }
         
-        public static T OnPropertyChanging<T>(this T obj, System.Action<T> action)
+        public static T OnPropertyChanging<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.BindableObject
         {
-            obj.PropertyChanging += (o, arg) => action(obj);
-            return obj;
+            self.PropertyChanging += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnBindingContextChanged<T>(this T obj, System.EventHandler handler)
+        public static T OnBindingContextChanged<T>(this T self, System.EventHandler handler)
             where T : Microsoft.Maui.Controls.BindableObject
         {
-            obj.BindingContextChanged += handler;
-            return obj;
+            self.BindingContextChanged += handler;
+            return self;
         }
         
-        public static T OnBindingContextChanged<T>(this T obj, System.Action<T> action)
+        public static T OnBindingContextChanged<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.BindableObject
         {
-            obj.BindingContextChanged += (o, arg) => action(obj);
-            return obj;
+            self.BindingContextChanged += (o, arg) => action(self);
+            return self;
         }
         
     }

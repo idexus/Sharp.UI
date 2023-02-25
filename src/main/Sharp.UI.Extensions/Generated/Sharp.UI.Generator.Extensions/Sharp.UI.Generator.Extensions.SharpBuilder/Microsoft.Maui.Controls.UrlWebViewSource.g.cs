@@ -13,30 +13,30 @@ namespace Sharp.UI
 
     public static partial class UrlWebViewSourceExtension
     {
-        public static T Url<T>(this T obj,
+        public static T Url<T>(this T self,
             string url)
             where T : Microsoft.Maui.Controls.UrlWebViewSource
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.UrlWebViewSource.UrlProperty, url);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.UrlWebViewSource.UrlProperty, url);
+            return self;
         }
         
-        public static T Url<T>(this T obj,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buidValue)
+        public static T Url<T>(this T self,
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
             where T : Microsoft.Maui.Controls.UrlWebViewSource
         {
-            var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.UrlWebViewSource.UrlProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.UrlWebViewSource.UrlProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Url<T>(this T obj,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buidBinding)
+        public static T Url<T>(this T self,
+            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
             where T : Microsoft.Maui.Controls.UrlWebViewSource
         {
-            var builder = buidBinding(new BindingBuilder<string>(obj, Microsoft.Maui.Controls.UrlWebViewSource.UrlProperty));
+            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.UrlWebViewSource.UrlProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
     }

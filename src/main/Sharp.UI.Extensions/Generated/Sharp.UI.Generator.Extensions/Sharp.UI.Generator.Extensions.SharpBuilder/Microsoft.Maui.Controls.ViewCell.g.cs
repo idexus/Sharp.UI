@@ -13,25 +13,25 @@ namespace Sharp.UI
 
     public static partial class ViewCellExtension
     {
-        public static T View<T>(this T obj,
+        public static T View<T>(this T self,
             Microsoft.Maui.Controls.View view)
             where T : Microsoft.Maui.Controls.ViewCell
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property View");
-            obj.View = view;
-            return obj;
+            self.View = view;
+            return self;
         }
         
-        public static T View<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.View>, ValueBuilder<Microsoft.Maui.Controls.View>> buidValue)
+        public static T View<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.View>, ValueBuilder<Microsoft.Maui.Controls.View>> buildValue)
             where T : Microsoft.Maui.Controls.ViewCell
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property View");
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.View>());
-            if (builder.ValueIsSet()) obj.View = builder.GetValue();
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.View>());
+            if (builder.ValueIsSet()) self.View = builder.GetValue();
+            return self;
         }
         
     }

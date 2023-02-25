@@ -15,7 +15,7 @@ public class ExamplePage : ContentPage
             new Style<Label>(e => e
                 .TextColor(e => e.OnDark(Colors.LightCyan))
                 .FontSize(20)
-                .CenterHorizontally()
+                .AlignCenterHorizontal()
                 .Padding(e => e.OniOS(20)))            
         };
 
@@ -28,7 +28,7 @@ public class ExamplePage : ContentPage
                         .FontSize(28),                    
 
                     new Button("Count")
-                        .CenterHorizontally()
+                        .AlignCenterHorizontal()
                         .SizeRequest(100,50)
                         .OnClicked(o =>
                         {

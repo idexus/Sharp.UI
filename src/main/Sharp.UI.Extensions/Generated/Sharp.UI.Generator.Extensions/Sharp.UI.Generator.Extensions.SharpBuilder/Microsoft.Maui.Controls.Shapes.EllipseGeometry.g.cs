@@ -13,82 +13,82 @@ namespace Sharp.UI
 
     public static partial class EllipseGeometryExtension
     {
-        public static T Center<T>(this T obj,
+        public static T Center<T>(this T self,
             Microsoft.Maui.Graphics.Point center)
             where T : Microsoft.Maui.Controls.Shapes.EllipseGeometry
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.EllipseGeometry.CenterProperty, center);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.EllipseGeometry.CenterProperty, center);
+            return self;
         }
         
-        public static T Center<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Point>, ValueBuilder<Microsoft.Maui.Graphics.Point>> buidValue)
+        public static T Center<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Point>, ValueBuilder<Microsoft.Maui.Graphics.Point>> buildValue)
             where T : Microsoft.Maui.Controls.Shapes.EllipseGeometry
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Point>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.EllipseGeometry.CenterProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Point>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.EllipseGeometry.CenterProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Center<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Point>, BindingBuilder<Microsoft.Maui.Graphics.Point>> buidBinding)
+        public static T Center<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Point>, BindingBuilder<Microsoft.Maui.Graphics.Point>> buildBinding)
             where T : Microsoft.Maui.Controls.Shapes.EllipseGeometry
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Graphics.Point>(obj, Microsoft.Maui.Controls.Shapes.EllipseGeometry.CenterProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Point>(self, Microsoft.Maui.Controls.Shapes.EllipseGeometry.CenterProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T RadiusX<T>(this T obj,
+        public static T RadiusX<T>(this T self,
             double radiusX)
             where T : Microsoft.Maui.Controls.Shapes.EllipseGeometry
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.EllipseGeometry.RadiusXProperty, radiusX);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.EllipseGeometry.RadiusXProperty, radiusX);
+            return self;
         }
         
-        public static T RadiusX<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T RadiusX<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Microsoft.Maui.Controls.Shapes.EllipseGeometry
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.EllipseGeometry.RadiusXProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.EllipseGeometry.RadiusXProperty, builder.GetValue());
+            return self;
         }
         
-        public static T RadiusX<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T RadiusX<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Microsoft.Maui.Controls.Shapes.EllipseGeometry
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Shapes.EllipseGeometry.RadiusXProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.EllipseGeometry.RadiusXProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T RadiusY<T>(this T obj,
+        public static T RadiusY<T>(this T self,
             double radiusY)
             where T : Microsoft.Maui.Controls.Shapes.EllipseGeometry
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.EllipseGeometry.RadiusYProperty, radiusY);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.EllipseGeometry.RadiusYProperty, radiusY);
+            return self;
         }
         
-        public static T RadiusY<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T RadiusY<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Microsoft.Maui.Controls.Shapes.EllipseGeometry
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.EllipseGeometry.RadiusYProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.EllipseGeometry.RadiusYProperty, builder.GetValue());
+            return self;
         }
         
-        public static T RadiusY<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T RadiusY<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Microsoft.Maui.Controls.Shapes.EllipseGeometry
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Shapes.EllipseGeometry.RadiusYProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.EllipseGeometry.RadiusYProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
     }

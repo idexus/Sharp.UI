@@ -17,7 +17,7 @@ public partial class TestPage : ContentPage
         {
             new Style<Label>(e => e
                 .TextColor(AppColors.Gray200)
-                .CenterInParent()),
+                .AlignCenter()),
 
             new Style<Button>(e => e
                 .BackgroundColor(AppColors.Gray950)
@@ -45,8 +45,9 @@ public partial class TestPage : ContentPage
             }
         };
 
+
         Content = new Grid(e => e.BackgroundColor(Colors.Black))
-        {
+        {            
             new VerticalStackLayout(out var vStack, e => e.VerticalOptions(LayoutOptions.Center))
             {
                 new Label(out var label)
@@ -77,7 +78,7 @@ public partial class TestPage : ContentPage
                             .TextColor(Colors.DarkGray),
 
                         new Switch(out testSwitch).Row(3)
-                            .CenterInParent()
+                            .AlignCenter()
                     },
 
                     e => e

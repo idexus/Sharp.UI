@@ -46,8 +46,8 @@ namespace ExampleApp
                         new Label("This is a test", out var label)
                             .Padding(20)
                             .FontSize(30)
-                            .CenterHorizontally()
-                            .CenterVertically()
+                            .AlignCenterHorizontal()
+                            .AlignCenterVertical()
                     }
                     .Background(new LinearGradientBrush(new Point(0,0), new Point(1,1))
                     {
@@ -64,7 +64,7 @@ namespace ExampleApp
                     new CheckBox(out var checkBox),
 
                     new DatePicker()
-                        .CenterHorizontally(),
+                        .AlignCenterHorizontal(),
 
                     new ScrollView
                     {
@@ -110,7 +110,7 @@ namespace ExampleApp
                     {
                         new Label("TEST")
                             .FontSize(50)
-                            .CenterHorizontally()
+                            .AlignCenterHorizontal()
                     }
                     .BorderColor(Colors.Blue)
                     .CornerRadius(20)
@@ -143,7 +143,7 @@ namespace ExampleApp
                                     .FontSize(30)
 
                             }
-                            .CenterHorizontally();
+                            .AlignCenterHorizontal();
 
                             checkBox.IsChecked = true;
                             label.TextColor = Colors.Blue;
@@ -154,26 +154,26 @@ namespace ExampleApp
                         .SelectedIndicatorColor(Colors.Blue)
                         .Margin(20)
                         .Count(10)
-                        .CenterHorizontally(),
+                        .AlignCenterHorizontal(),
 
                     new IndicatorView()
                         .Margin(20)
                         .IndicatorColor(Colors.Red)
                         .SelectedIndicatorColor(Colors.Blue)
                         .Count(10)
-                        .CenterHorizontally()
+                        .AlignCenterHorizontal()
                         .IndicatorTemplate(new DataTemplate(() => new Label("X").FontSize(20))),
 
                     new Label("This is a test", out label2)
                         .FontSize(30)
-                        .CenterHorizontally(),
+                        .AlignCenterHorizontal(),
 
                     new Line(40, 0, 0, 120)
                         .StrokeThickness(4)
                         .Stroke(Colors.Blue)
                         .StrokeDashArray(new DoubleCollection {2,3})
                         .StrokeDashOffset(4)
-                        .CenterHorizontally(),
+                        .AlignCenterHorizontal(),
 
                     new Picker("Select person")
                         .ItemsSource(data)
@@ -224,7 +224,7 @@ namespace ExampleApp
                                     .SizeRequest(50,50),
                                         
                                 new Label("Robot animal")
-                                    .CenterVertically()
+                                    .AlignCenterVertical()
                                     .TextColor(Colors.Yellow)
                                     .FontSize(18)
                             }

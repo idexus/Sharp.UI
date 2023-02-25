@@ -13,66 +13,66 @@ namespace Sharp.UI
 
     public static partial class VisualStateExtension
     {
-        public static Microsoft.Maui.Controls.VisualState Name(this Microsoft.Maui.Controls.VisualState obj,
+        public static Microsoft.Maui.Controls.VisualState Name(this Microsoft.Maui.Controls.VisualState self,
             string name)
         {
-            obj.Name = name;
-            return obj;
+            self.Name = name;
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.VisualState Name(this Microsoft.Maui.Controls.VisualState obj,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buidValue)
+        public static Microsoft.Maui.Controls.VisualState Name(this Microsoft.Maui.Controls.VisualState self,
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
         {
-            var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.Name = builder.GetValue();
-            return obj;
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) self.Name = builder.GetValue();
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.VisualState Setters(this Microsoft.Maui.Controls.VisualState obj,
+        public static Microsoft.Maui.Controls.VisualState Setters(this Microsoft.Maui.Controls.VisualState self,
             IList<Microsoft.Maui.Controls.Setter> setters)
         {
             foreach (var item in setters)
-                obj.Setters.Add(item);
-            return obj;
+                self.Setters.Add(item);
+            return self;
         }
 
-        public static Microsoft.Maui.Controls.VisualState Setters(this Microsoft.Maui.Controls.VisualState obj,
+        public static Microsoft.Maui.Controls.VisualState Setters(this Microsoft.Maui.Controls.VisualState self,
             params Microsoft.Maui.Controls.Setter[] setters)
         {
             foreach (var item in setters)
-                obj.Setters.Add(item);
-            return obj;
+                self.Setters.Add(item);
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.VisualState StateTriggers(this Microsoft.Maui.Controls.VisualState obj,
+        public static Microsoft.Maui.Controls.VisualState StateTriggers(this Microsoft.Maui.Controls.VisualState self,
             IList<Microsoft.Maui.Controls.StateTriggerBase> stateTriggers)
         {
             foreach (var item in stateTriggers)
-                obj.StateTriggers.Add(item);
-            return obj;
+                self.StateTriggers.Add(item);
+            return self;
         }
 
-        public static Microsoft.Maui.Controls.VisualState StateTriggers(this Microsoft.Maui.Controls.VisualState obj,
+        public static Microsoft.Maui.Controls.VisualState StateTriggers(this Microsoft.Maui.Controls.VisualState self,
             params Microsoft.Maui.Controls.StateTriggerBase[] stateTriggers)
         {
             foreach (var item in stateTriggers)
-                obj.StateTriggers.Add(item);
-            return obj;
+                self.StateTriggers.Add(item);
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.VisualState TargetType(this Microsoft.Maui.Controls.VisualState obj,
+        public static Microsoft.Maui.Controls.VisualState TargetType(this Microsoft.Maui.Controls.VisualState self,
             System.Type targetType)
         {
-            obj.TargetType = targetType;
-            return obj;
+            self.TargetType = targetType;
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.VisualState TargetType(this Microsoft.Maui.Controls.VisualState obj,
-            System.Func<ValueBuilder<System.Type>, ValueBuilder<System.Type>> buidValue)
+        public static Microsoft.Maui.Controls.VisualState TargetType(this Microsoft.Maui.Controls.VisualState self,
+            System.Func<ValueBuilder<System.Type>, ValueBuilder<System.Type>> buildValue)
         {
-            var builder = buidValue(new ValueBuilder<System.Type>());
-            if (builder.ValueIsSet()) obj.TargetType = builder.GetValue();
-            return obj;
+            var builder = buildValue(new ValueBuilder<System.Type>());
+            if (builder.ValueIsSet()) self.TargetType = builder.GetValue();
+            return self;
         }
         
     }

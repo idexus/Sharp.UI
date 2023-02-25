@@ -17,15 +17,15 @@ namespace ExampleApp
                             .Stroke(Colors.Blue)
                             .Fill(Colors.Wheat)
                             .SizeRequest(16,16)
-                            .CenterHorizontally()
-                            .CenterVertically(),
+                            .AlignCenterHorizontal()
+                            .AlignCenterVertical(),
 
                         new Ellipse()
                             .RegisterName("Check", scopedElement: this)
                             .Fill(Colors.Yellow)
                             .SizeRequest(12,12)
-                            .CenterHorizontally()
-                            .CenterVertically()
+                            .AlignCenterHorizontal()
+                            .AlignCenterVertical()
                     }
                     .WidthRequest(18)
                     .HeightRequest(10)
@@ -52,15 +52,15 @@ namespace ExampleApp
                 new VisualState()
                     .Name(VisualStates.RadioButton.Checked)
                     .Setters(
-                        new Setter<VisualElement>(e => e.BackgroundColor(Colors.Red)),
-                        new Setter<Ellipse>(e => e.Fill(Colors.Red)).TargetName("Check")
+                        new Setters<VisualElement>(e => e.BackgroundColor(Colors.Red)),
+                        new Setters<Ellipse>(e => e.Fill(Colors.Red)).TargetName("Check")
                     ),
 
                 new VisualState()
                     .Name(VisualStates.RadioButton.Unchecked)
                     .Setters(
-                        new Setter<VisualElement>(e => e.BackgroundColor(Colors.Blue)),
-                        new Setter<Ellipse>(e => e.Fill(Colors.Yellow)).TargetName("Check")
+                        new Setters<VisualElement>(e => e.BackgroundColor(Colors.Blue)),
+                        new Setters<Ellipse>(e => e.Fill(Colors.Yellow)).TargetName("Check")
                     )
             });
         }

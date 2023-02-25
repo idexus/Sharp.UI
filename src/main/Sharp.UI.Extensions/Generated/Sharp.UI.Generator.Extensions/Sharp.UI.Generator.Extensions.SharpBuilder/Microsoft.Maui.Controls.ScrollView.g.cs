@@ -13,152 +13,152 @@ namespace Sharp.UI
 
     public static partial class ScrollViewExtension
     {
-        public static T LayoutAreaOverride<T>(this T obj,
+        public static T LayoutAreaOverride<T>(this T self,
             Microsoft.Maui.Graphics.Rect layoutAreaOverride)
             where T : Microsoft.Maui.Controls.ScrollView
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property LayoutAreaOverride");
-            obj.LayoutAreaOverride = layoutAreaOverride;
-            return obj;
+            self.LayoutAreaOverride = layoutAreaOverride;
+            return self;
         }
         
-        public static T LayoutAreaOverride<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Rect>, ValueBuilder<Microsoft.Maui.Graphics.Rect>> buidValue)
+        public static T LayoutAreaOverride<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Rect>, ValueBuilder<Microsoft.Maui.Graphics.Rect>> buildValue)
             where T : Microsoft.Maui.Controls.ScrollView
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property LayoutAreaOverride");
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Rect>());
-            if (builder.ValueIsSet()) obj.LayoutAreaOverride = builder.GetValue();
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Rect>());
+            if (builder.ValueIsSet()) self.LayoutAreaOverride = builder.GetValue();
+            return self;
         }
         
-        public static T Content<T>(this T obj,
+        public static T Content<T>(this T self,
             Microsoft.Maui.Controls.View content)
             where T : Microsoft.Maui.Controls.ScrollView
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property Content");
-            obj.Content = content;
-            return obj;
+            self.Content = content;
+            return self;
         }
         
-        public static T Content<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.View>, ValueBuilder<Microsoft.Maui.Controls.View>> buidValue)
+        public static T Content<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.View>, ValueBuilder<Microsoft.Maui.Controls.View>> buildValue)
             where T : Microsoft.Maui.Controls.ScrollView
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property Content");
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.View>());
-            if (builder.ValueIsSet()) obj.Content = builder.GetValue();
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.View>());
+            if (builder.ValueIsSet()) self.Content = builder.GetValue();
+            return self;
         }
         
-        public static T Orientation<T>(this T obj,
+        public static T Orientation<T>(this T self,
             Microsoft.Maui.ScrollOrientation orientation)
             where T : Microsoft.Maui.Controls.ScrollView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.ScrollView.OrientationProperty, orientation);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.ScrollView.OrientationProperty, orientation);
+            return self;
         }
         
-        public static T Orientation<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.ScrollOrientation>, ValueBuilder<Microsoft.Maui.ScrollOrientation>> buidValue)
+        public static T Orientation<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.ScrollOrientation>, ValueBuilder<Microsoft.Maui.ScrollOrientation>> buildValue)
             where T : Microsoft.Maui.Controls.ScrollView
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.ScrollOrientation>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ScrollView.OrientationProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.ScrollOrientation>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.ScrollView.OrientationProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Orientation<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.ScrollOrientation>, BindingBuilder<Microsoft.Maui.ScrollOrientation>> buidBinding)
+        public static T Orientation<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.ScrollOrientation>, BindingBuilder<Microsoft.Maui.ScrollOrientation>> buildBinding)
             where T : Microsoft.Maui.Controls.ScrollView
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.ScrollOrientation>(obj, Microsoft.Maui.Controls.ScrollView.OrientationProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.ScrollOrientation>(self, Microsoft.Maui.Controls.ScrollView.OrientationProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T HorizontalScrollBarVisibility<T>(this T obj,
+        public static T HorizontalScrollBarVisibility<T>(this T self,
             Microsoft.Maui.ScrollBarVisibility horizontalScrollBarVisibility)
             where T : Microsoft.Maui.Controls.ScrollView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.ScrollView.HorizontalScrollBarVisibilityProperty, horizontalScrollBarVisibility);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.ScrollView.HorizontalScrollBarVisibilityProperty, horizontalScrollBarVisibility);
+            return self;
         }
         
-        public static T HorizontalScrollBarVisibility<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.ScrollBarVisibility>, ValueBuilder<Microsoft.Maui.ScrollBarVisibility>> buidValue)
+        public static T HorizontalScrollBarVisibility<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.ScrollBarVisibility>, ValueBuilder<Microsoft.Maui.ScrollBarVisibility>> buildValue)
             where T : Microsoft.Maui.Controls.ScrollView
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.ScrollBarVisibility>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ScrollView.HorizontalScrollBarVisibilityProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.ScrollBarVisibility>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.ScrollView.HorizontalScrollBarVisibilityProperty, builder.GetValue());
+            return self;
         }
         
-        public static T HorizontalScrollBarVisibility<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.ScrollBarVisibility>, BindingBuilder<Microsoft.Maui.ScrollBarVisibility>> buidBinding)
+        public static T HorizontalScrollBarVisibility<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.ScrollBarVisibility>, BindingBuilder<Microsoft.Maui.ScrollBarVisibility>> buildBinding)
             where T : Microsoft.Maui.Controls.ScrollView
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.ScrollBarVisibility>(obj, Microsoft.Maui.Controls.ScrollView.HorizontalScrollBarVisibilityProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.ScrollBarVisibility>(self, Microsoft.Maui.Controls.ScrollView.HorizontalScrollBarVisibilityProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T VerticalScrollBarVisibility<T>(this T obj,
+        public static T VerticalScrollBarVisibility<T>(this T self,
             Microsoft.Maui.ScrollBarVisibility verticalScrollBarVisibility)
             where T : Microsoft.Maui.Controls.ScrollView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.ScrollView.VerticalScrollBarVisibilityProperty, verticalScrollBarVisibility);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.ScrollView.VerticalScrollBarVisibilityProperty, verticalScrollBarVisibility);
+            return self;
         }
         
-        public static T VerticalScrollBarVisibility<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.ScrollBarVisibility>, ValueBuilder<Microsoft.Maui.ScrollBarVisibility>> buidValue)
+        public static T VerticalScrollBarVisibility<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.ScrollBarVisibility>, ValueBuilder<Microsoft.Maui.ScrollBarVisibility>> buildValue)
             where T : Microsoft.Maui.Controls.ScrollView
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.ScrollBarVisibility>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ScrollView.VerticalScrollBarVisibilityProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.ScrollBarVisibility>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.ScrollView.VerticalScrollBarVisibilityProperty, builder.GetValue());
+            return self;
         }
         
-        public static T VerticalScrollBarVisibility<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.ScrollBarVisibility>, BindingBuilder<Microsoft.Maui.ScrollBarVisibility>> buidBinding)
+        public static T VerticalScrollBarVisibility<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.ScrollBarVisibility>, BindingBuilder<Microsoft.Maui.ScrollBarVisibility>> buildBinding)
             where T : Microsoft.Maui.Controls.ScrollView
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.ScrollBarVisibility>(obj, Microsoft.Maui.Controls.ScrollView.VerticalScrollBarVisibilityProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.ScrollBarVisibility>(self, Microsoft.Maui.Controls.ScrollView.VerticalScrollBarVisibilityProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T OnScrollToRequested<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.ScrollToRequestedEventArgs> handler)
+        public static T OnScrollToRequested<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.ScrollToRequestedEventArgs> handler)
             where T : Microsoft.Maui.Controls.ScrollView
         {
-            obj.ScrollToRequested += handler;
-            return obj;
+            self.ScrollToRequested += handler;
+            return self;
         }
         
-        public static T OnScrollToRequested<T>(this T obj, System.Action<T> action)
+        public static T OnScrollToRequested<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.ScrollView
         {
-            obj.ScrollToRequested += (o, arg) => action(obj);
-            return obj;
+            self.ScrollToRequested += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnScrolled<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.ScrolledEventArgs> handler)
+        public static T OnScrolled<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.ScrolledEventArgs> handler)
             where T : Microsoft.Maui.Controls.ScrollView
         {
-            obj.Scrolled += handler;
-            return obj;
+            self.Scrolled += handler;
+            return self;
         }
         
-        public static T OnScrolled<T>(this T obj, System.Action<T> action)
+        public static T OnScrolled<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.ScrollView
         {
-            obj.Scrolled += (o, arg) => action(obj);
-            return obj;
+            self.Scrolled += (o, arg) => action(self);
+            return self;
         }
         
     }

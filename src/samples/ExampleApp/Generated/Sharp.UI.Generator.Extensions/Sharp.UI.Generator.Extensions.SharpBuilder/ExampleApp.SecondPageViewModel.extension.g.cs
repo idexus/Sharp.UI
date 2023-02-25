@@ -13,56 +13,56 @@ namespace ExampleApp
 
     public static partial class SecondPageViewModelExtension
     {
-        public static T Title<T>(this T obj,
+        public static T Title<T>(this T self,
             string title)
             where T : ExampleApp.SecondPageViewModel
         {
-            obj.SetValueOrSetter(ExampleApp.SecondPageViewModel.TitleProperty, title);
-            return obj;
+            self.SetValueOrSetter(ExampleApp.SecondPageViewModel.TitleProperty, title);
+            return self;
         }
         
-        public static T Title<T>(this T obj,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buidValue)
+        public static T Title<T>(this T self,
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
             where T : ExampleApp.SecondPageViewModel
         {
-            var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(ExampleApp.SecondPageViewModel.TitleProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(ExampleApp.SecondPageViewModel.TitleProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Title<T>(this T obj,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buidBinding)
+        public static T Title<T>(this T self,
+            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
             where T : ExampleApp.SecondPageViewModel
         {
-            var builder = buidBinding(new BindingBuilder<string>(obj, ExampleApp.SecondPageViewModel.TitleProperty));
+            var builder = buildBinding(new BindingBuilder<string>(self, ExampleApp.SecondPageViewModel.TitleProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T Author<T>(this T obj,
+        public static T Author<T>(this T self,
             string author)
             where T : ExampleApp.SecondPageViewModel
         {
-            obj.SetValueOrSetter(ExampleApp.SecondPageViewModel.AuthorProperty, author);
-            return obj;
+            self.SetValueOrSetter(ExampleApp.SecondPageViewModel.AuthorProperty, author);
+            return self;
         }
         
-        public static T Author<T>(this T obj,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buidValue)
+        public static T Author<T>(this T self,
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
             where T : ExampleApp.SecondPageViewModel
         {
-            var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(ExampleApp.SecondPageViewModel.AuthorProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(ExampleApp.SecondPageViewModel.AuthorProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Author<T>(this T obj,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buidBinding)
+        public static T Author<T>(this T self,
+            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
             where T : ExampleApp.SecondPageViewModel
         {
-            var builder = buidBinding(new BindingBuilder<string>(obj, ExampleApp.SecondPageViewModel.AuthorProperty));
+            var builder = buildBinding(new BindingBuilder<string>(self, ExampleApp.SecondPageViewModel.AuthorProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
     }

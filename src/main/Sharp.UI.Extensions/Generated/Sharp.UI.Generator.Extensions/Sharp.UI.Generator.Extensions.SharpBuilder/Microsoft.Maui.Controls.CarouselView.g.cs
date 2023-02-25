@@ -13,413 +13,413 @@ namespace Sharp.UI
 
     public static partial class CarouselViewExtension
     {
-        public static T Loop<T>(this T obj,
+        public static T Loop<T>(this T self,
             bool loop)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.LoopProperty, loop);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.LoopProperty, loop);
+            return self;
         }
         
-        public static T Loop<T>(this T obj,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
+        public static T Loop<T>(this T self,
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.LoopProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.LoopProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Loop<T>(this T obj,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buidBinding)
+        public static T Loop<T>(this T self,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            var builder = buidBinding(new BindingBuilder<bool>(obj, Microsoft.Maui.Controls.CarouselView.LoopProperty));
+            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.CarouselView.LoopProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T PeekAreaInsets<T>(this T obj,
+        public static T PeekAreaInsets<T>(this T self,
             Microsoft.Maui.Thickness peekAreaInsets)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.PeekAreaInsetsProperty, peekAreaInsets);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.PeekAreaInsetsProperty, peekAreaInsets);
+            return self;
         }
         
-        public static T PeekAreaInsets<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Thickness>, ValueBuilder<Microsoft.Maui.Thickness>> buidValue)
+        public static T PeekAreaInsets<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Thickness>, ValueBuilder<Microsoft.Maui.Thickness>> buildValue)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Thickness>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.PeekAreaInsetsProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Thickness>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.PeekAreaInsetsProperty, builder.GetValue());
+            return self;
         }
         
-        public static T PeekAreaInsets<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Thickness>, BindingBuilder<Microsoft.Maui.Thickness>> buidBinding)
+        public static T PeekAreaInsets<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Thickness>, BindingBuilder<Microsoft.Maui.Thickness>> buildBinding)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Thickness>(obj, Microsoft.Maui.Controls.CarouselView.PeekAreaInsetsProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Thickness>(self, Microsoft.Maui.Controls.CarouselView.PeekAreaInsetsProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T VisibleViews<T>(this T obj,
+        public static T VisibleViews<T>(this T self,
             IList<Microsoft.Maui.Controls.View> visibleViews)
             where T : Microsoft.Maui.Controls.CarouselView
         {
             foreach (var item in visibleViews)
-                obj.VisibleViews.Add(item);
-            return obj;
+                self.VisibleViews.Add(item);
+            return self;
         }
 
-        public static T VisibleViews<T>(this T obj,
+        public static T VisibleViews<T>(this T self,
             params Microsoft.Maui.Controls.View[] visibleViews)
             where T : Microsoft.Maui.Controls.CarouselView
         {
             foreach (var item in visibleViews)
-                obj.VisibleViews.Add(item);
-            return obj;
+                self.VisibleViews.Add(item);
+            return self;
         }
         
-        public static T VisibleViews<T>(this T obj,
-            System.Func<BindingBuilder<System.Collections.ObjectModel.ObservableCollection<Microsoft.Maui.Controls.View>>, BindingBuilder<System.Collections.ObjectModel.ObservableCollection<Microsoft.Maui.Controls.View>>> buidBinding)
+        public static T VisibleViews<T>(this T self,
+            System.Func<BindingBuilder<System.Collections.ObjectModel.ObservableCollection<Microsoft.Maui.Controls.View>>, BindingBuilder<System.Collections.ObjectModel.ObservableCollection<Microsoft.Maui.Controls.View>>> buildBinding)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            var builder = buidBinding(new BindingBuilder<System.Collections.ObjectModel.ObservableCollection<Microsoft.Maui.Controls.View>>(obj, Microsoft.Maui.Controls.CarouselView.VisibleViewsProperty));
+            var builder = buildBinding(new BindingBuilder<System.Collections.ObjectModel.ObservableCollection<Microsoft.Maui.Controls.View>>(self, Microsoft.Maui.Controls.CarouselView.VisibleViewsProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T IsBounceEnabled<T>(this T obj,
+        public static T IsBounceEnabled<T>(this T self,
             bool isBounceEnabled)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.IsBounceEnabledProperty, isBounceEnabled);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.IsBounceEnabledProperty, isBounceEnabled);
+            return self;
         }
         
-        public static T IsBounceEnabled<T>(this T obj,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
+        public static T IsBounceEnabled<T>(this T self,
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.IsBounceEnabledProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.IsBounceEnabledProperty, builder.GetValue());
+            return self;
         }
         
-        public static T IsBounceEnabled<T>(this T obj,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buidBinding)
+        public static T IsBounceEnabled<T>(this T self,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            var builder = buidBinding(new BindingBuilder<bool>(obj, Microsoft.Maui.Controls.CarouselView.IsBounceEnabledProperty));
+            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.CarouselView.IsBounceEnabledProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T IsSwipeEnabled<T>(this T obj,
+        public static T IsSwipeEnabled<T>(this T self,
             bool isSwipeEnabled)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.IsSwipeEnabledProperty, isSwipeEnabled);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.IsSwipeEnabledProperty, isSwipeEnabled);
+            return self;
         }
         
-        public static T IsSwipeEnabled<T>(this T obj,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
+        public static T IsSwipeEnabled<T>(this T self,
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.IsSwipeEnabledProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.IsSwipeEnabledProperty, builder.GetValue());
+            return self;
         }
         
-        public static T IsSwipeEnabled<T>(this T obj,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buidBinding)
+        public static T IsSwipeEnabled<T>(this T self,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            var builder = buidBinding(new BindingBuilder<bool>(obj, Microsoft.Maui.Controls.CarouselView.IsSwipeEnabledProperty));
+            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.CarouselView.IsSwipeEnabledProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T IsScrollAnimated<T>(this T obj,
+        public static T IsScrollAnimated<T>(this T self,
             bool isScrollAnimated)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.IsScrollAnimatedProperty, isScrollAnimated);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.IsScrollAnimatedProperty, isScrollAnimated);
+            return self;
         }
         
-        public static T IsScrollAnimated<T>(this T obj,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
+        public static T IsScrollAnimated<T>(this T self,
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.IsScrollAnimatedProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.IsScrollAnimatedProperty, builder.GetValue());
+            return self;
         }
         
-        public static T IsScrollAnimated<T>(this T obj,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buidBinding)
+        public static T IsScrollAnimated<T>(this T self,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            var builder = buidBinding(new BindingBuilder<bool>(obj, Microsoft.Maui.Controls.CarouselView.IsScrollAnimatedProperty));
+            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.CarouselView.IsScrollAnimatedProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T CurrentItem<T>(this T obj,
+        public static T CurrentItem<T>(this T self,
             object currentItem)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.CurrentItemProperty, currentItem);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.CurrentItemProperty, currentItem);
+            return self;
         }
         
-        public static T CurrentItem<T>(this T obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+        public static T CurrentItem<T>(this T self,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buildValue)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.CurrentItemProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.CurrentItemProperty, builder.GetValue());
+            return self;
         }
         
-        public static T CurrentItem<T>(this T obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+        public static T CurrentItem<T>(this T self,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.CarouselView.CurrentItemProperty));
+            var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.CarouselView.CurrentItemProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T CurrentItemChangedCommand<T>(this T obj,
+        public static T CurrentItemChangedCommand<T>(this T self,
             System.Windows.Input.ICommand currentItemChangedCommand)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.CurrentItemChangedCommandProperty, currentItemChangedCommand);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.CurrentItemChangedCommandProperty, currentItemChangedCommand);
+            return self;
         }
         
-        public static T CurrentItemChangedCommand<T>(this T obj,
-            System.Func<ValueBuilder<System.Windows.Input.ICommand>, ValueBuilder<System.Windows.Input.ICommand>> buidValue)
+        public static T CurrentItemChangedCommand<T>(this T self,
+            System.Func<ValueBuilder<System.Windows.Input.ICommand>, ValueBuilder<System.Windows.Input.ICommand>> buildValue)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            var builder = buidValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.CurrentItemChangedCommandProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<System.Windows.Input.ICommand>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.CurrentItemChangedCommandProperty, builder.GetValue());
+            return self;
         }
         
-        public static T CurrentItemChangedCommand<T>(this T obj,
-            System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buidBinding)
+        public static T CurrentItemChangedCommand<T>(this T self,
+            System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buildBinding)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            var builder = buidBinding(new BindingBuilder<System.Windows.Input.ICommand>(obj, Microsoft.Maui.Controls.CarouselView.CurrentItemChangedCommandProperty));
+            var builder = buildBinding(new BindingBuilder<System.Windows.Input.ICommand>(self, Microsoft.Maui.Controls.CarouselView.CurrentItemChangedCommandProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T CurrentItemChangedCommandParameter<T>(this T obj,
+        public static T CurrentItemChangedCommandParameter<T>(this T self,
             object currentItemChangedCommandParameter)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.CurrentItemChangedCommandParameterProperty, currentItemChangedCommandParameter);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.CurrentItemChangedCommandParameterProperty, currentItemChangedCommandParameter);
+            return self;
         }
         
-        public static T CurrentItemChangedCommandParameter<T>(this T obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+        public static T CurrentItemChangedCommandParameter<T>(this T self,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buildValue)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.CurrentItemChangedCommandParameterProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.CurrentItemChangedCommandParameterProperty, builder.GetValue());
+            return self;
         }
         
-        public static T CurrentItemChangedCommandParameter<T>(this T obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+        public static T CurrentItemChangedCommandParameter<T>(this T self,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.CarouselView.CurrentItemChangedCommandParameterProperty));
+            var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.CarouselView.CurrentItemChangedCommandParameterProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T Position<T>(this T obj,
+        public static T Position<T>(this T self,
             int position)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.PositionProperty, position);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.PositionProperty, position);
+            return self;
         }
         
-        public static T Position<T>(this T obj,
-            System.Func<ValueBuilder<int>, ValueBuilder<int>> buidValue)
+        public static T Position<T>(this T self,
+            System.Func<ValueBuilder<int>, ValueBuilder<int>> buildValue)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            var builder = buidValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.PositionProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<int>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.PositionProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Position<T>(this T obj,
-            System.Func<BindingBuilder<int>, BindingBuilder<int>> buidBinding)
+        public static T Position<T>(this T self,
+            System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            var builder = buidBinding(new BindingBuilder<int>(obj, Microsoft.Maui.Controls.CarouselView.PositionProperty));
+            var builder = buildBinding(new BindingBuilder<int>(self, Microsoft.Maui.Controls.CarouselView.PositionProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T PositionChangedCommand<T>(this T obj,
+        public static T PositionChangedCommand<T>(this T self,
             System.Windows.Input.ICommand positionChangedCommand)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.PositionChangedCommandProperty, positionChangedCommand);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.PositionChangedCommandProperty, positionChangedCommand);
+            return self;
         }
         
-        public static T PositionChangedCommand<T>(this T obj,
-            System.Func<ValueBuilder<System.Windows.Input.ICommand>, ValueBuilder<System.Windows.Input.ICommand>> buidValue)
+        public static T PositionChangedCommand<T>(this T self,
+            System.Func<ValueBuilder<System.Windows.Input.ICommand>, ValueBuilder<System.Windows.Input.ICommand>> buildValue)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            var builder = buidValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.PositionChangedCommandProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<System.Windows.Input.ICommand>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.PositionChangedCommandProperty, builder.GetValue());
+            return self;
         }
         
-        public static T PositionChangedCommand<T>(this T obj,
-            System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buidBinding)
+        public static T PositionChangedCommand<T>(this T self,
+            System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buildBinding)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            var builder = buidBinding(new BindingBuilder<System.Windows.Input.ICommand>(obj, Microsoft.Maui.Controls.CarouselView.PositionChangedCommandProperty));
+            var builder = buildBinding(new BindingBuilder<System.Windows.Input.ICommand>(self, Microsoft.Maui.Controls.CarouselView.PositionChangedCommandProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T PositionChangedCommandParameter<T>(this T obj,
+        public static T PositionChangedCommandParameter<T>(this T self,
             object positionChangedCommandParameter)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.PositionChangedCommandParameterProperty, positionChangedCommandParameter);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.PositionChangedCommandParameterProperty, positionChangedCommandParameter);
+            return self;
         }
         
-        public static T PositionChangedCommandParameter<T>(this T obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+        public static T PositionChangedCommandParameter<T>(this T self,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buildValue)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.PositionChangedCommandParameterProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.PositionChangedCommandParameterProperty, builder.GetValue());
+            return self;
         }
         
-        public static T PositionChangedCommandParameter<T>(this T obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+        public static T PositionChangedCommandParameter<T>(this T self,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.CarouselView.PositionChangedCommandParameterProperty));
+            var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.CarouselView.PositionChangedCommandParameterProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T ItemsLayout<T>(this T obj,
+        public static T ItemsLayout<T>(this T self,
             Microsoft.Maui.Controls.LinearItemsLayout itemsLayout)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.ItemsLayoutProperty, itemsLayout);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.ItemsLayoutProperty, itemsLayout);
+            return self;
         }
         
-        public static T ItemsLayout<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.LinearItemsLayout>, ValueBuilder<Microsoft.Maui.Controls.LinearItemsLayout>> buidValue)
+        public static T ItemsLayout<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.LinearItemsLayout>, ValueBuilder<Microsoft.Maui.Controls.LinearItemsLayout>> buildValue)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.LinearItemsLayout>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.ItemsLayoutProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.LinearItemsLayout>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.CarouselView.ItemsLayoutProperty, builder.GetValue());
+            return self;
         }
         
-        public static T ItemsLayout<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.LinearItemsLayout>, BindingBuilder<Microsoft.Maui.Controls.LinearItemsLayout>> buidBinding)
+        public static T ItemsLayout<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.LinearItemsLayout>, BindingBuilder<Microsoft.Maui.Controls.LinearItemsLayout>> buildBinding)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.LinearItemsLayout>(obj, Microsoft.Maui.Controls.CarouselView.ItemsLayoutProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.LinearItemsLayout>(self, Microsoft.Maui.Controls.CarouselView.ItemsLayoutProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T IndicatorView<T>(this T obj,
+        public static T IndicatorView<T>(this T self,
             Microsoft.Maui.Controls.IndicatorView indicatorView)
             where T : Microsoft.Maui.Controls.CarouselView
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property IndicatorView");
-            obj.IndicatorView = indicatorView;
-            return obj;
+            self.IndicatorView = indicatorView;
+            return self;
         }
         
-        public static T IndicatorView<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.IndicatorView>, ValueBuilder<Microsoft.Maui.Controls.IndicatorView>> buidValue)
+        public static T IndicatorView<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.IndicatorView>, ValueBuilder<Microsoft.Maui.Controls.IndicatorView>> buildValue)
             where T : Microsoft.Maui.Controls.CarouselView
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property IndicatorView");
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.IndicatorView>());
-            if (builder.ValueIsSet()) obj.IndicatorView = builder.GetValue();
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.IndicatorView>());
+            if (builder.ValueIsSet()) self.IndicatorView = builder.GetValue();
+            return self;
         }
         
-        public static T IsScrolling<T>(this T obj,
+        public static T IsScrolling<T>(this T self,
             bool isScrolling)
             where T : Microsoft.Maui.Controls.CarouselView
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property IsScrolling");
-            obj.IsScrolling = isScrolling;
-            return obj;
+            self.IsScrolling = isScrolling;
+            return self;
         }
         
-        public static T IsScrolling<T>(this T obj,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
+        public static T IsScrolling<T>(this T self,
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Microsoft.Maui.Controls.CarouselView
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property IsScrolling");
-            var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.IsScrolling = builder.GetValue();
-            return obj;
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) self.IsScrolling = builder.GetValue();
+            return self;
         }
         
-        public static T OnCurrentItemChanged<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.CurrentItemChangedEventArgs> handler)
+        public static T OnCurrentItemChanged<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.CurrentItemChangedEventArgs> handler)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            obj.CurrentItemChanged += handler;
-            return obj;
+            self.CurrentItemChanged += handler;
+            return self;
         }
         
-        public static T OnCurrentItemChanged<T>(this T obj, System.Action<T> action)
+        public static T OnCurrentItemChanged<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            obj.CurrentItemChanged += (o, arg) => action(obj);
-            return obj;
+            self.CurrentItemChanged += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnPositionChanged<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.PositionChangedEventArgs> handler)
+        public static T OnPositionChanged<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.PositionChangedEventArgs> handler)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            obj.PositionChanged += handler;
-            return obj;
+            self.PositionChanged += handler;
+            return self;
         }
         
-        public static T OnPositionChanged<T>(this T obj, System.Action<T> action)
+        public static T OnPositionChanged<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            obj.PositionChanged += (o, arg) => action(obj);
-            return obj;
+            self.PositionChanged += (o, arg) => action(self);
+            return self;
         }
         
     }

@@ -13,82 +13,82 @@ namespace ExampleApp
 
     public static partial class AngleViewModelExtension
     {
-        public static T RawAngle<T>(this T obj,
+        public static T RawAngle<T>(this T self,
             double rawAngle)
             where T : ExampleApp.AngleViewModel
         {
-            obj.SetValueOrSetter(ExampleApp.AngleViewModel.RawAngleProperty, rawAngle);
-            return obj;
+            self.SetValueOrSetter(ExampleApp.AngleViewModel.RawAngleProperty, rawAngle);
+            return self;
         }
         
-        public static T RawAngle<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T RawAngle<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : ExampleApp.AngleViewModel
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(ExampleApp.AngleViewModel.RawAngleProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(ExampleApp.AngleViewModel.RawAngleProperty, builder.GetValue());
+            return self;
         }
         
-        public static T RawAngle<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T RawAngle<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : ExampleApp.AngleViewModel
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, ExampleApp.AngleViewModel.RawAngleProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, ExampleApp.AngleViewModel.RawAngleProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T Angle<T>(this T obj,
+        public static T Angle<T>(this T self,
             double angle)
             where T : ExampleApp.AngleViewModel
         {
-            obj.SetValueOrSetter(ExampleApp.AngleViewModel.AngleProperty, angle);
-            return obj;
+            self.SetValueOrSetter(ExampleApp.AngleViewModel.AngleProperty, angle);
+            return self;
         }
         
-        public static T Angle<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T Angle<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : ExampleApp.AngleViewModel
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(ExampleApp.AngleViewModel.AngleProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(ExampleApp.AngleViewModel.AngleProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Angle<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T Angle<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : ExampleApp.AngleViewModel
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, ExampleApp.AngleViewModel.AngleProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, ExampleApp.AngleViewModel.AngleProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T MaximumAngle<T>(this T obj,
+        public static T MaximumAngle<T>(this T self,
             double maximumAngle)
             where T : ExampleApp.AngleViewModel
         {
-            obj.SetValueOrSetter(ExampleApp.AngleViewModel.MaximumAngleProperty, maximumAngle);
-            return obj;
+            self.SetValueOrSetter(ExampleApp.AngleViewModel.MaximumAngleProperty, maximumAngle);
+            return self;
         }
         
-        public static T MaximumAngle<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T MaximumAngle<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : ExampleApp.AngleViewModel
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(ExampleApp.AngleViewModel.MaximumAngleProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(ExampleApp.AngleViewModel.MaximumAngleProperty, builder.GetValue());
+            return self;
         }
         
-        public static T MaximumAngle<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T MaximumAngle<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : ExampleApp.AngleViewModel
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, ExampleApp.AngleViewModel.MaximumAngleProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, ExampleApp.AngleViewModel.MaximumAngleProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
     }

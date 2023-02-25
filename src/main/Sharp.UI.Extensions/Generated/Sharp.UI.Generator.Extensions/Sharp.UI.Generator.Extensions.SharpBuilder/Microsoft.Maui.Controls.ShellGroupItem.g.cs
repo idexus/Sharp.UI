@@ -13,30 +13,30 @@ namespace Sharp.UI
 
     public static partial class ShellGroupItemExtension
     {
-        public static T FlyoutDisplayOptions<T>(this T obj,
+        public static T FlyoutDisplayOptions<T>(this T self,
             Microsoft.Maui.Controls.FlyoutDisplayOptions flyoutDisplayOptions)
             where T : Microsoft.Maui.Controls.ShellGroupItem
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.ShellGroupItem.FlyoutDisplayOptionsProperty, flyoutDisplayOptions);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.ShellGroupItem.FlyoutDisplayOptionsProperty, flyoutDisplayOptions);
+            return self;
         }
         
-        public static T FlyoutDisplayOptions<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.FlyoutDisplayOptions>, ValueBuilder<Microsoft.Maui.Controls.FlyoutDisplayOptions>> buidValue)
+        public static T FlyoutDisplayOptions<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.FlyoutDisplayOptions>, ValueBuilder<Microsoft.Maui.Controls.FlyoutDisplayOptions>> buildValue)
             where T : Microsoft.Maui.Controls.ShellGroupItem
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.FlyoutDisplayOptions>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.ShellGroupItem.FlyoutDisplayOptionsProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.FlyoutDisplayOptions>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.ShellGroupItem.FlyoutDisplayOptionsProperty, builder.GetValue());
+            return self;
         }
         
-        public static T FlyoutDisplayOptions<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.FlyoutDisplayOptions>, BindingBuilder<Microsoft.Maui.Controls.FlyoutDisplayOptions>> buidBinding)
+        public static T FlyoutDisplayOptions<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.FlyoutDisplayOptions>, BindingBuilder<Microsoft.Maui.Controls.FlyoutDisplayOptions>> buildBinding)
             where T : Microsoft.Maui.Controls.ShellGroupItem
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.FlyoutDisplayOptions>(obj, Microsoft.Maui.Controls.ShellGroupItem.FlyoutDisplayOptionsProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.FlyoutDisplayOptions>(self, Microsoft.Maui.Controls.ShellGroupItem.FlyoutDisplayOptionsProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
     }

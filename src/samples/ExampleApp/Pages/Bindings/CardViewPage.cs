@@ -16,10 +16,10 @@ public partial class CardViewPage : ContentPage
 
             new VStack
             {
-                e => e.CenterHorizontally(),
+                e => e.AlignCenterHorizontal(),
 
                 new Label(out var label)
-                    .CenterHorizontally()
+                    .AlignCenterHorizontal()
                     .Text($"Counter {counter}")
                     .FontSize(30)
                     .Margin(40),
@@ -31,7 +31,7 @@ public partial class CardViewPage : ContentPage
                 {
                     e => e                        
                         .Orientation(e => e.OnPhone(StackOrientation.Vertical).Default(StackOrientation.Horizontal))
-                        .CenterHorizontally(),
+                        .AlignCenterHorizontal(),
 
                     new CardView(out var cardNo1, e => e
                         .CardTitle(e => e.Path("Value").Source(slider).StringFormat("Value {0:F1}"))

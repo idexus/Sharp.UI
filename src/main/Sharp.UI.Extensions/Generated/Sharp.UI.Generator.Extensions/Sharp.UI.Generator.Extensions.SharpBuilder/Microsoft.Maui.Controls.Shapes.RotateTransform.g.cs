@@ -13,82 +13,82 @@ namespace Sharp.UI
 
     public static partial class RotateTransformExtension
     {
-        public static T Angle<T>(this T obj,
+        public static T Angle<T>(this T self,
             double angle)
             where T : Microsoft.Maui.Controls.Shapes.RotateTransform
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.RotateTransform.AngleProperty, angle);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.RotateTransform.AngleProperty, angle);
+            return self;
         }
         
-        public static T Angle<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T Angle<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Microsoft.Maui.Controls.Shapes.RotateTransform
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.RotateTransform.AngleProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.RotateTransform.AngleProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Angle<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T Angle<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Microsoft.Maui.Controls.Shapes.RotateTransform
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Shapes.RotateTransform.AngleProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.RotateTransform.AngleProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T CenterX<T>(this T obj,
+        public static T CenterX<T>(this T self,
             double centerX)
             where T : Microsoft.Maui.Controls.Shapes.RotateTransform
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.RotateTransform.CenterXProperty, centerX);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.RotateTransform.CenterXProperty, centerX);
+            return self;
         }
         
-        public static T CenterX<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T CenterX<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Microsoft.Maui.Controls.Shapes.RotateTransform
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.RotateTransform.CenterXProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.RotateTransform.CenterXProperty, builder.GetValue());
+            return self;
         }
         
-        public static T CenterX<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T CenterX<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Microsoft.Maui.Controls.Shapes.RotateTransform
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Shapes.RotateTransform.CenterXProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.RotateTransform.CenterXProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T CenterY<T>(this T obj,
+        public static T CenterY<T>(this T self,
             double centerY)
             where T : Microsoft.Maui.Controls.Shapes.RotateTransform
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.RotateTransform.CenterYProperty, centerY);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.RotateTransform.CenterYProperty, centerY);
+            return self;
         }
         
-        public static T CenterY<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T CenterY<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Microsoft.Maui.Controls.Shapes.RotateTransform
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.RotateTransform.CenterYProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Shapes.RotateTransform.CenterYProperty, builder.GetValue());
+            return self;
         }
         
-        public static T CenterY<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T CenterY<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Microsoft.Maui.Controls.Shapes.RotateTransform
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Shapes.RotateTransform.CenterYProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.RotateTransform.CenterYProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
     }

@@ -13,30 +13,30 @@ namespace Sharp.UI
 
     public static partial class StreamImageSourceExtension
     {
-        public static T Stream<T>(this T obj,
+        public static T Stream<T>(this T self,
             System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<System.IO.Stream>> stream)
             where T : Microsoft.Maui.Controls.StreamImageSource
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.StreamImageSource.StreamProperty, stream);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.StreamImageSource.StreamProperty, stream);
+            return self;
         }
         
-        public static T Stream<T>(this T obj,
-            System.Func<ValueBuilder<System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<System.IO.Stream>>>, ValueBuilder<System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<System.IO.Stream>>>> buidValue)
+        public static T Stream<T>(this T self,
+            System.Func<ValueBuilder<System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<System.IO.Stream>>>, ValueBuilder<System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<System.IO.Stream>>>> buildValue)
             where T : Microsoft.Maui.Controls.StreamImageSource
         {
-            var builder = buidValue(new ValueBuilder<System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<System.IO.Stream>>>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.StreamImageSource.StreamProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<System.IO.Stream>>>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.StreamImageSource.StreamProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Stream<T>(this T obj,
-            System.Func<BindingBuilder<System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<System.IO.Stream>>>, BindingBuilder<System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<System.IO.Stream>>>> buidBinding)
+        public static T Stream<T>(this T self,
+            System.Func<BindingBuilder<System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<System.IO.Stream>>>, BindingBuilder<System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<System.IO.Stream>>>> buildBinding)
             where T : Microsoft.Maui.Controls.StreamImageSource
         {
-            var builder = buidBinding(new BindingBuilder<System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<System.IO.Stream>>>(obj, Microsoft.Maui.Controls.StreamImageSource.StreamProperty));
+            var builder = buildBinding(new BindingBuilder<System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<System.IO.Stream>>>(self, Microsoft.Maui.Controls.StreamImageSource.StreamProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
     }

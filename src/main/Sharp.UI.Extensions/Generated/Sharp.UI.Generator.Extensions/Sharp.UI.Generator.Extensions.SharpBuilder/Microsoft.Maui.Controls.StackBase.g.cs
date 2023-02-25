@@ -13,30 +13,30 @@ namespace Sharp.UI
 
     public static partial class StackBaseExtension
     {
-        public static T Spacing<T>(this T obj,
+        public static T Spacing<T>(this T self,
             double spacing)
             where T : Microsoft.Maui.Controls.StackBase
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.StackBase.SpacingProperty, spacing);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.StackBase.SpacingProperty, spacing);
+            return self;
         }
         
-        public static T Spacing<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T Spacing<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Microsoft.Maui.Controls.StackBase
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.StackBase.SpacingProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.StackBase.SpacingProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Spacing<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T Spacing<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Microsoft.Maui.Controls.StackBase
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.StackBase.SpacingProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.StackBase.SpacingProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
         public static Task<bool> AnimateSpacingTo<T>(this T self, double value, uint length = 250, Easing? easing = null)

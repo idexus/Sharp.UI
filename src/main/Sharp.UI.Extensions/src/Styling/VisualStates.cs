@@ -2,7 +2,7 @@
 {
     public class VisualStates
     {
-        //------ consts -------
+        //------ const -------
 
         public class VisualElement
         {

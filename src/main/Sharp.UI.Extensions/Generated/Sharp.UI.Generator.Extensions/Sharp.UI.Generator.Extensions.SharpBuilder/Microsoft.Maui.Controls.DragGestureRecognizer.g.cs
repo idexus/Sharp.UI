@@ -13,162 +13,162 @@ namespace Sharp.UI
 
     public static partial class DragGestureRecognizerExtension
     {
-        public static T CanDrag<T>(this T obj,
+        public static T CanDrag<T>(this T self,
             bool canDrag)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.DragGestureRecognizer.CanDragProperty, canDrag);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.DragGestureRecognizer.CanDragProperty, canDrag);
+            return self;
         }
         
-        public static T CanDrag<T>(this T obj,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
+        public static T CanDrag<T>(this T self,
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
         {
-            var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.DragGestureRecognizer.CanDragProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.DragGestureRecognizer.CanDragProperty, builder.GetValue());
+            return self;
         }
         
-        public static T CanDrag<T>(this T obj,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buidBinding)
+        public static T CanDrag<T>(this T self,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
         {
-            var builder = buidBinding(new BindingBuilder<bool>(obj, Microsoft.Maui.Controls.DragGestureRecognizer.CanDragProperty));
+            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.DragGestureRecognizer.CanDragProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T DropCompletedCommand<T>(this T obj,
+        public static T DropCompletedCommand<T>(this T self,
             System.Windows.Input.ICommand dropCompletedCommand)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.DragGestureRecognizer.DropCompletedCommandProperty, dropCompletedCommand);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.DragGestureRecognizer.DropCompletedCommandProperty, dropCompletedCommand);
+            return self;
         }
         
-        public static T DropCompletedCommand<T>(this T obj,
-            System.Func<ValueBuilder<System.Windows.Input.ICommand>, ValueBuilder<System.Windows.Input.ICommand>> buidValue)
+        public static T DropCompletedCommand<T>(this T self,
+            System.Func<ValueBuilder<System.Windows.Input.ICommand>, ValueBuilder<System.Windows.Input.ICommand>> buildValue)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
         {
-            var builder = buidValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.DragGestureRecognizer.DropCompletedCommandProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<System.Windows.Input.ICommand>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.DragGestureRecognizer.DropCompletedCommandProperty, builder.GetValue());
+            return self;
         }
         
-        public static T DropCompletedCommand<T>(this T obj,
-            System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buidBinding)
+        public static T DropCompletedCommand<T>(this T self,
+            System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buildBinding)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
         {
-            var builder = buidBinding(new BindingBuilder<System.Windows.Input.ICommand>(obj, Microsoft.Maui.Controls.DragGestureRecognizer.DropCompletedCommandProperty));
+            var builder = buildBinding(new BindingBuilder<System.Windows.Input.ICommand>(self, Microsoft.Maui.Controls.DragGestureRecognizer.DropCompletedCommandProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T DropCompletedCommandParameter<T>(this T obj,
+        public static T DropCompletedCommandParameter<T>(this T self,
             object dropCompletedCommandParameter)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.DragGestureRecognizer.DropCompletedCommandParameterProperty, dropCompletedCommandParameter);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.DragGestureRecognizer.DropCompletedCommandParameterProperty, dropCompletedCommandParameter);
+            return self;
         }
         
-        public static T DropCompletedCommandParameter<T>(this T obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+        public static T DropCompletedCommandParameter<T>(this T self,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buildValue)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
         {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.DragGestureRecognizer.DropCompletedCommandParameterProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.DragGestureRecognizer.DropCompletedCommandParameterProperty, builder.GetValue());
+            return self;
         }
         
-        public static T DropCompletedCommandParameter<T>(this T obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+        public static T DropCompletedCommandParameter<T>(this T self,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
         {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.DragGestureRecognizer.DropCompletedCommandParameterProperty));
+            var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.DragGestureRecognizer.DropCompletedCommandParameterProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T DragStartingCommand<T>(this T obj,
+        public static T DragStartingCommand<T>(this T self,
             System.Windows.Input.ICommand dragStartingCommand)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.DragGestureRecognizer.DragStartingCommandProperty, dragStartingCommand);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.DragGestureRecognizer.DragStartingCommandProperty, dragStartingCommand);
+            return self;
         }
         
-        public static T DragStartingCommand<T>(this T obj,
-            System.Func<ValueBuilder<System.Windows.Input.ICommand>, ValueBuilder<System.Windows.Input.ICommand>> buidValue)
+        public static T DragStartingCommand<T>(this T self,
+            System.Func<ValueBuilder<System.Windows.Input.ICommand>, ValueBuilder<System.Windows.Input.ICommand>> buildValue)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
         {
-            var builder = buidValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.DragGestureRecognizer.DragStartingCommandProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<System.Windows.Input.ICommand>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.DragGestureRecognizer.DragStartingCommandProperty, builder.GetValue());
+            return self;
         }
         
-        public static T DragStartingCommand<T>(this T obj,
-            System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buidBinding)
+        public static T DragStartingCommand<T>(this T self,
+            System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buildBinding)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
         {
-            var builder = buidBinding(new BindingBuilder<System.Windows.Input.ICommand>(obj, Microsoft.Maui.Controls.DragGestureRecognizer.DragStartingCommandProperty));
+            var builder = buildBinding(new BindingBuilder<System.Windows.Input.ICommand>(self, Microsoft.Maui.Controls.DragGestureRecognizer.DragStartingCommandProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T DragStartingCommandParameter<T>(this T obj,
+        public static T DragStartingCommandParameter<T>(this T self,
             object dragStartingCommandParameter)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.DragGestureRecognizer.DragStartingCommandParameterProperty, dragStartingCommandParameter);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.DragGestureRecognizer.DragStartingCommandParameterProperty, dragStartingCommandParameter);
+            return self;
         }
         
-        public static T DragStartingCommandParameter<T>(this T obj,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buidValue)
+        public static T DragStartingCommandParameter<T>(this T self,
+            System.Func<ValueBuilder<object>, ValueBuilder<object>> buildValue)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
         {
-            var builder = buidValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.DragGestureRecognizer.DragStartingCommandParameterProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<object>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.DragGestureRecognizer.DragStartingCommandParameterProperty, builder.GetValue());
+            return self;
         }
         
-        public static T DragStartingCommandParameter<T>(this T obj,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buidBinding)
+        public static T DragStartingCommandParameter<T>(this T self,
+            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
         {
-            var builder = buidBinding(new BindingBuilder<object>(obj, Microsoft.Maui.Controls.DragGestureRecognizer.DragStartingCommandParameterProperty));
+            var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.DragGestureRecognizer.DragStartingCommandParameterProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T OnDropCompleted<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.DropCompletedEventArgs> handler)
+        public static T OnDropCompleted<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.DropCompletedEventArgs> handler)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
         {
-            obj.DropCompleted += handler;
-            return obj;
+            self.DropCompleted += handler;
+            return self;
         }
         
-        public static T OnDropCompleted<T>(this T obj, System.Action<T> action)
+        public static T OnDropCompleted<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
         {
-            obj.DropCompleted += (o, arg) => action(obj);
-            return obj;
+            self.DropCompleted += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnDragStarting<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.DragStartingEventArgs> handler)
+        public static T OnDragStarting<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.DragStartingEventArgs> handler)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
         {
-            obj.DragStarting += handler;
-            return obj;
+            self.DragStarting += handler;
+            return self;
         }
         
-        public static T OnDragStarting<T>(this T obj, System.Action<T> action)
+        public static T OnDragStarting<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
         {
-            obj.DragStarting += (o, arg) => action(obj);
-            return obj;
+            self.DragStarting += (o, arg) => action(self);
+            return self;
         }
         
     }

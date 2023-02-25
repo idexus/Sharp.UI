@@ -13,486 +13,486 @@ namespace Sharp.UI
 
     public static partial class WindowExtension
     {
-        public static T Title<T>(this T obj,
+        public static T Title<T>(this T self,
             string? title)
             where T : Microsoft.Maui.Controls.Window
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Window.TitleProperty, title);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.Window.TitleProperty, title);
+            return self;
         }
         
-        public static T Title<T>(this T obj,
-            System.Func<ValueBuilder<string?>, ValueBuilder<string?>> buidValue)
+        public static T Title<T>(this T self,
+            System.Func<ValueBuilder<string?>, ValueBuilder<string?>> buildValue)
             where T : Microsoft.Maui.Controls.Window
         {
-            var builder = buidValue(new ValueBuilder<string?>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Window.TitleProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<string?>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Window.TitleProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Title<T>(this T obj,
-            System.Func<BindingBuilder<string?>, BindingBuilder<string?>> buidBinding)
+        public static T Title<T>(this T self,
+            System.Func<BindingBuilder<string?>, BindingBuilder<string?>> buildBinding)
             where T : Microsoft.Maui.Controls.Window
         {
-            var builder = buidBinding(new BindingBuilder<string?>(obj, Microsoft.Maui.Controls.Window.TitleProperty));
+            var builder = buildBinding(new BindingBuilder<string?>(self, Microsoft.Maui.Controls.Window.TitleProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T Page<T>(this T obj,
+        public static T Page<T>(this T self,
             Microsoft.Maui.Controls.Page? page)
             where T : Microsoft.Maui.Controls.Window
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Window.PageProperty, page);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.Window.PageProperty, page);
+            return self;
         }
         
-        public static T Page<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.Page?>, ValueBuilder<Microsoft.Maui.Controls.Page?>> buidValue)
+        public static T Page<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.Page?>, ValueBuilder<Microsoft.Maui.Controls.Page?>> buildValue)
             where T : Microsoft.Maui.Controls.Window
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.Page?>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Window.PageProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Page?>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Window.PageProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Page<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.Page?>, BindingBuilder<Microsoft.Maui.Controls.Page?>> buidBinding)
+        public static T Page<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.Page?>, BindingBuilder<Microsoft.Maui.Controls.Page?>> buildBinding)
             where T : Microsoft.Maui.Controls.Window
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.Page?>(obj, Microsoft.Maui.Controls.Window.PageProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Page?>(self, Microsoft.Maui.Controls.Window.PageProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T X<T>(this T obj,
+        public static T X<T>(this T self,
             double x)
             where T : Microsoft.Maui.Controls.Window
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Window.XProperty, x);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.Window.XProperty, x);
+            return self;
         }
         
-        public static T X<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T X<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Microsoft.Maui.Controls.Window
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Window.XProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Window.XProperty, builder.GetValue());
+            return self;
         }
         
-        public static T X<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T X<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Microsoft.Maui.Controls.Window
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Window.XProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Window.XProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T Y<T>(this T obj,
+        public static T Y<T>(this T self,
             double y)
             where T : Microsoft.Maui.Controls.Window
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Window.YProperty, y);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.Window.YProperty, y);
+            return self;
         }
         
-        public static T Y<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T Y<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Microsoft.Maui.Controls.Window
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Window.YProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Window.YProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Y<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T Y<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Microsoft.Maui.Controls.Window
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Window.YProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Window.YProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T Width<T>(this T obj,
+        public static T Width<T>(this T self,
             double width)
             where T : Microsoft.Maui.Controls.Window
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Window.WidthProperty, width);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.Window.WidthProperty, width);
+            return self;
         }
         
-        public static T Width<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T Width<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Microsoft.Maui.Controls.Window
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Window.WidthProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Window.WidthProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Width<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T Width<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Microsoft.Maui.Controls.Window
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Window.WidthProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Window.WidthProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T Height<T>(this T obj,
+        public static T Height<T>(this T self,
             double height)
             where T : Microsoft.Maui.Controls.Window
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Window.HeightProperty, height);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.Window.HeightProperty, height);
+            return self;
         }
         
-        public static T Height<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T Height<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Microsoft.Maui.Controls.Window
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Window.HeightProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Window.HeightProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Height<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T Height<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Microsoft.Maui.Controls.Window
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Window.HeightProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Window.HeightProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T MaximumWidth<T>(this T obj,
+        public static T MaximumWidth<T>(this T self,
             double maximumWidth)
             where T : Microsoft.Maui.Controls.Window
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Window.MaximumWidthProperty, maximumWidth);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.Window.MaximumWidthProperty, maximumWidth);
+            return self;
         }
         
-        public static T MaximumWidth<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T MaximumWidth<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Microsoft.Maui.Controls.Window
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Window.MaximumWidthProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Window.MaximumWidthProperty, builder.GetValue());
+            return self;
         }
         
-        public static T MaximumWidth<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T MaximumWidth<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Microsoft.Maui.Controls.Window
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Window.MaximumWidthProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Window.MaximumWidthProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T MaximumHeight<T>(this T obj,
+        public static T MaximumHeight<T>(this T self,
             double maximumHeight)
             where T : Microsoft.Maui.Controls.Window
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Window.MaximumHeightProperty, maximumHeight);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.Window.MaximumHeightProperty, maximumHeight);
+            return self;
         }
         
-        public static T MaximumHeight<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T MaximumHeight<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Microsoft.Maui.Controls.Window
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Window.MaximumHeightProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Window.MaximumHeightProperty, builder.GetValue());
+            return self;
         }
         
-        public static T MaximumHeight<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T MaximumHeight<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Microsoft.Maui.Controls.Window
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Window.MaximumHeightProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Window.MaximumHeightProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T MinimumWidth<T>(this T obj,
+        public static T MinimumWidth<T>(this T self,
             double minimumWidth)
             where T : Microsoft.Maui.Controls.Window
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Window.MinimumWidthProperty, minimumWidth);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.Window.MinimumWidthProperty, minimumWidth);
+            return self;
         }
         
-        public static T MinimumWidth<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T MinimumWidth<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Microsoft.Maui.Controls.Window
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Window.MinimumWidthProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Window.MinimumWidthProperty, builder.GetValue());
+            return self;
         }
         
-        public static T MinimumWidth<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T MinimumWidth<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Microsoft.Maui.Controls.Window
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Window.MinimumWidthProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Window.MinimumWidthProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T MinimumHeight<T>(this T obj,
+        public static T MinimumHeight<T>(this T self,
             double minimumHeight)
             where T : Microsoft.Maui.Controls.Window
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Window.MinimumHeightProperty, minimumHeight);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.Window.MinimumHeightProperty, minimumHeight);
+            return self;
         }
         
-        public static T MinimumHeight<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T MinimumHeight<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Microsoft.Maui.Controls.Window
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Window.MinimumHeightProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Window.MinimumHeightProperty, builder.GetValue());
+            return self;
         }
         
-        public static T MinimumHeight<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T MinimumHeight<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Microsoft.Maui.Controls.Window
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Window.MinimumHeightProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Window.MinimumHeightProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T FlowDirection<T>(this T obj,
+        public static T FlowDirection<T>(this T self,
             Microsoft.Maui.FlowDirection flowDirection)
             where T : Microsoft.Maui.Controls.Window
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Window.FlowDirectionProperty, flowDirection);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.Window.FlowDirectionProperty, flowDirection);
+            return self;
         }
         
-        public static T FlowDirection<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.FlowDirection>, ValueBuilder<Microsoft.Maui.FlowDirection>> buidValue)
+        public static T FlowDirection<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.FlowDirection>, ValueBuilder<Microsoft.Maui.FlowDirection>> buildValue)
             where T : Microsoft.Maui.Controls.Window
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.FlowDirection>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Window.FlowDirectionProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.FlowDirection>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Window.FlowDirectionProperty, builder.GetValue());
+            return self;
         }
         
-        public static T FlowDirection<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.FlowDirection>, BindingBuilder<Microsoft.Maui.FlowDirection>> buidBinding)
+        public static T FlowDirection<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.FlowDirection>, BindingBuilder<Microsoft.Maui.FlowDirection>> buildBinding)
             where T : Microsoft.Maui.Controls.Window
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.FlowDirection>(obj, Microsoft.Maui.Controls.Window.FlowDirectionProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.FlowDirection>(self, Microsoft.Maui.Controls.Window.FlowDirectionProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T OnSizeChanged<T>(this T obj, System.EventHandler? handler)
+        public static T OnSizeChanged<T>(this T self, System.EventHandler? handler)
             where T : Microsoft.Maui.Controls.Window
         {
-            obj.SizeChanged += handler;
-            return obj;
+            self.SizeChanged += handler;
+            return self;
         }
         
-        public static T OnSizeChanged<T>(this T obj, System.Action<T> action)
+        public static T OnSizeChanged<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Window
         {
-            obj.SizeChanged += (o, arg) => action(obj);
-            return obj;
+            self.SizeChanged += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnModalPopped<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.ModalPoppedEventArgs>? handler)
+        public static T OnModalPopped<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.ModalPoppedEventArgs>? handler)
             where T : Microsoft.Maui.Controls.Window
         {
-            obj.ModalPopped += handler;
-            return obj;
+            self.ModalPopped += handler;
+            return self;
         }
         
-        public static T OnModalPopped<T>(this T obj, System.Action<T> action)
+        public static T OnModalPopped<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Window
         {
-            obj.ModalPopped += (o, arg) => action(obj);
-            return obj;
+            self.ModalPopped += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnModalPopping<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.ModalPoppingEventArgs>? handler)
+        public static T OnModalPopping<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.ModalPoppingEventArgs>? handler)
             where T : Microsoft.Maui.Controls.Window
         {
-            obj.ModalPopping += handler;
-            return obj;
+            self.ModalPopping += handler;
+            return self;
         }
         
-        public static T OnModalPopping<T>(this T obj, System.Action<T> action)
+        public static T OnModalPopping<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Window
         {
-            obj.ModalPopping += (o, arg) => action(obj);
-            return obj;
+            self.ModalPopping += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnModalPushed<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.ModalPushedEventArgs>? handler)
+        public static T OnModalPushed<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.ModalPushedEventArgs>? handler)
             where T : Microsoft.Maui.Controls.Window
         {
-            obj.ModalPushed += handler;
-            return obj;
+            self.ModalPushed += handler;
+            return self;
         }
         
-        public static T OnModalPushed<T>(this T obj, System.Action<T> action)
+        public static T OnModalPushed<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Window
         {
-            obj.ModalPushed += (o, arg) => action(obj);
-            return obj;
+            self.ModalPushed += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnModalPushing<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.ModalPushingEventArgs>? handler)
+        public static T OnModalPushing<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.ModalPushingEventArgs>? handler)
             where T : Microsoft.Maui.Controls.Window
         {
-            obj.ModalPushing += handler;
-            return obj;
+            self.ModalPushing += handler;
+            return self;
         }
         
-        public static T OnModalPushing<T>(this T obj, System.Action<T> action)
+        public static T OnModalPushing<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Window
         {
-            obj.ModalPushing += (o, arg) => action(obj);
-            return obj;
+            self.ModalPushing += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnPopCanceled<T>(this T obj, System.EventHandler? handler)
+        public static T OnPopCanceled<T>(this T self, System.EventHandler? handler)
             where T : Microsoft.Maui.Controls.Window
         {
-            obj.PopCanceled += handler;
-            return obj;
+            self.PopCanceled += handler;
+            return self;
         }
         
-        public static T OnPopCanceled<T>(this T obj, System.Action<T> action)
+        public static T OnPopCanceled<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Window
         {
-            obj.PopCanceled += (o, arg) => action(obj);
-            return obj;
+            self.PopCanceled += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnCreated<T>(this T obj, System.EventHandler? handler)
+        public static T OnCreated<T>(this T self, System.EventHandler? handler)
             where T : Microsoft.Maui.Controls.Window
         {
-            obj.Created += handler;
-            return obj;
+            self.Created += handler;
+            return self;
         }
         
-        public static T OnCreated<T>(this T obj, System.Action<T> action)
+        public static T OnCreated<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Window
         {
-            obj.Created += (o, arg) => action(obj);
-            return obj;
+            self.Created += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnResumed<T>(this T obj, System.EventHandler? handler)
+        public static T OnResumed<T>(this T self, System.EventHandler? handler)
             where T : Microsoft.Maui.Controls.Window
         {
-            obj.Resumed += handler;
-            return obj;
+            self.Resumed += handler;
+            return self;
         }
         
-        public static T OnResumed<T>(this T obj, System.Action<T> action)
+        public static T OnResumed<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Window
         {
-            obj.Resumed += (o, arg) => action(obj);
-            return obj;
+            self.Resumed += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnActivated<T>(this T obj, System.EventHandler? handler)
+        public static T OnActivated<T>(this T self, System.EventHandler? handler)
             where T : Microsoft.Maui.Controls.Window
         {
-            obj.Activated += handler;
-            return obj;
+            self.Activated += handler;
+            return self;
         }
         
-        public static T OnActivated<T>(this T obj, System.Action<T> action)
+        public static T OnActivated<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Window
         {
-            obj.Activated += (o, arg) => action(obj);
-            return obj;
+            self.Activated += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnDeactivated<T>(this T obj, System.EventHandler? handler)
+        public static T OnDeactivated<T>(this T self, System.EventHandler? handler)
             where T : Microsoft.Maui.Controls.Window
         {
-            obj.Deactivated += handler;
-            return obj;
+            self.Deactivated += handler;
+            return self;
         }
         
-        public static T OnDeactivated<T>(this T obj, System.Action<T> action)
+        public static T OnDeactivated<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Window
         {
-            obj.Deactivated += (o, arg) => action(obj);
-            return obj;
+            self.Deactivated += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnStopped<T>(this T obj, System.EventHandler? handler)
+        public static T OnStopped<T>(this T self, System.EventHandler? handler)
             where T : Microsoft.Maui.Controls.Window
         {
-            obj.Stopped += handler;
-            return obj;
+            self.Stopped += handler;
+            return self;
         }
         
-        public static T OnStopped<T>(this T obj, System.Action<T> action)
+        public static T OnStopped<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Window
         {
-            obj.Stopped += (o, arg) => action(obj);
-            return obj;
+            self.Stopped += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnDestroying<T>(this T obj, System.EventHandler? handler)
+        public static T OnDestroying<T>(this T self, System.EventHandler? handler)
             where T : Microsoft.Maui.Controls.Window
         {
-            obj.Destroying += handler;
-            return obj;
+            self.Destroying += handler;
+            return self;
         }
         
-        public static T OnDestroying<T>(this T obj, System.Action<T> action)
+        public static T OnDestroying<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Window
         {
-            obj.Destroying += (o, arg) => action(obj);
-            return obj;
+            self.Destroying += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnBackgrounding<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.BackgroundingEventArgs>? handler)
+        public static T OnBackgrounding<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.BackgroundingEventArgs>? handler)
             where T : Microsoft.Maui.Controls.Window
         {
-            obj.Backgrounding += handler;
-            return obj;
+            self.Backgrounding += handler;
+            return self;
         }
         
-        public static T OnBackgrounding<T>(this T obj, System.Action<T> action)
+        public static T OnBackgrounding<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Window
         {
-            obj.Backgrounding += (o, arg) => action(obj);
-            return obj;
+            self.Backgrounding += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnDisplayDensityChanged<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.DisplayDensityChangedEventArgs>? handler)
+        public static T OnDisplayDensityChanged<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.DisplayDensityChangedEventArgs>? handler)
             where T : Microsoft.Maui.Controls.Window
         {
-            obj.DisplayDensityChanged += handler;
-            return obj;
+            self.DisplayDensityChanged += handler;
+            return self;
         }
         
-        public static T OnDisplayDensityChanged<T>(this T obj, System.Action<T> action)
+        public static T OnDisplayDensityChanged<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Window
         {
-            obj.DisplayDensityChanged += (o, arg) => action(obj);
-            return obj;
+            self.DisplayDensityChanged += (o, arg) => action(self);
+            return self;
         }
         
     }

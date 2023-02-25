@@ -71,7 +71,7 @@ git submodule update --recursive
 To add __Sharp.UI__ to your project, along with all its functionality, you can use the following command:
 
 ```
-dotnet add package Sharp.UI --version 0.4.3-alpha
+dotnet add package Sharp.UI --version 0.4.4-alpha
 ```
 
 __Sharp.UI__ replaces some standard MAUI classes by subclassing them and adding new constructors, which e.g. enables hot reload functionality. However, if you prefer not to use subclassed controls, it's possible to add the core generated fluent methods for the .Net MAUI framework to your project instead.
@@ -194,7 +194,7 @@ Resources = new ResourceDictionary
     new Style<Label>(e => e
         .FontSize(35)
         .TextColor(AppColors.Gray200)
-        .CenterInParent()),                
+        .CenterInContainer()),                
 
     new Style<Button>
     {
@@ -325,12 +325,12 @@ Here's an example of an extension method that centers a view vertically:
 public static T CenterVertically<T>(this T obj)
     where T : Microsoft.Maui.Controls.View
 {
-    obj.SetValueOrSetter(Microsoft.Maui.Controls.View.VerticalOptionsProperty, LayoutOptions.Center);
+    obj.SetValueOrAddSetter(Microsoft.Maui.Controls.View.VerticalOptionsProperty, LayoutOptions.Center);
     return obj;
 }
 ```
 
-In the extension methods, it's important to use the `SetValueOrSetter` method instead of setting the properties directly. `SetValueOrSetter` sets the value of the property if the property is used in a standard context, such as in object creation, or creates a new `Setter` when you use the method to create a setter for a style definition.
+In the extension methods, it's important to use the `SetValueOrAddSetter` method instead of setting the properties directly. `SetValueOrAddSetter` sets the value of the property if the property is used in a standard context, such as in object creation, or add a new `Setter` when you use the method to create a setter for a style definition.
 
 # Disclaimer
 

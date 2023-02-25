@@ -23,10 +23,10 @@ public class MultiTriggerPage : ContentPage
                                 .Binding(e => e.Path("Text.Length").Source(phone))
                                 .Value(0)
                         })
-                        .Setters(new Setter<Entry>(e => e.IsEnabled(false)))                   
+                        .Setters(new Setters<Entry>(e => e.IsEnabled(false)))                   
                 )
         }
         .WidthRequest(400)
-        .CenterVertically();
+        .AlignCenterVertical();
     }
 }

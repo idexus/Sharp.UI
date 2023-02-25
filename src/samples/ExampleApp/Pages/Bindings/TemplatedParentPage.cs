@@ -77,7 +77,7 @@ public class TemplatedParentPage : ContentPage
                     .ControlTemplate(controlTemplate),
 
             }
-            .CenterVertically()
+            .AlignCenterVertical()
         };
     }
 }

@@ -13,186 +13,186 @@ namespace Sharp.UI
 
     public static partial class InputViewExtension
     {
-        public static T MaxLength<T>(this T obj,
+        public static T MaxLength<T>(this T self,
             int maxLength)
             where T : Microsoft.Maui.Controls.InputView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.InputView.MaxLengthProperty, maxLength);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.InputView.MaxLengthProperty, maxLength);
+            return self;
         }
         
-        public static T MaxLength<T>(this T obj,
-            System.Func<ValueBuilder<int>, ValueBuilder<int>> buidValue)
+        public static T MaxLength<T>(this T self,
+            System.Func<ValueBuilder<int>, ValueBuilder<int>> buildValue)
             where T : Microsoft.Maui.Controls.InputView
         {
-            var builder = buidValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.InputView.MaxLengthProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<int>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.InputView.MaxLengthProperty, builder.GetValue());
+            return self;
         }
         
-        public static T MaxLength<T>(this T obj,
-            System.Func<BindingBuilder<int>, BindingBuilder<int>> buidBinding)
+        public static T MaxLength<T>(this T self,
+            System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
             where T : Microsoft.Maui.Controls.InputView
         {
-            var builder = buidBinding(new BindingBuilder<int>(obj, Microsoft.Maui.Controls.InputView.MaxLengthProperty));
+            var builder = buildBinding(new BindingBuilder<int>(self, Microsoft.Maui.Controls.InputView.MaxLengthProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T Text<T>(this T obj,
+        public static T Text<T>(this T self,
             string text)
             where T : Microsoft.Maui.Controls.InputView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.InputView.TextProperty, text);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.InputView.TextProperty, text);
+            return self;
         }
         
-        public static T Text<T>(this T obj,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buidValue)
+        public static T Text<T>(this T self,
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
             where T : Microsoft.Maui.Controls.InputView
         {
-            var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.InputView.TextProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.InputView.TextProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Text<T>(this T obj,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buidBinding)
+        public static T Text<T>(this T self,
+            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
             where T : Microsoft.Maui.Controls.InputView
         {
-            var builder = buidBinding(new BindingBuilder<string>(obj, Microsoft.Maui.Controls.InputView.TextProperty));
+            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.InputView.TextProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T Keyboard<T>(this T obj,
+        public static T Keyboard<T>(this T self,
             Microsoft.Maui.Keyboard keyboard)
             where T : Microsoft.Maui.Controls.InputView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.InputView.KeyboardProperty, keyboard);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.InputView.KeyboardProperty, keyboard);
+            return self;
         }
         
-        public static T Keyboard<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Keyboard>, ValueBuilder<Microsoft.Maui.Keyboard>> buidValue)
+        public static T Keyboard<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Keyboard>, ValueBuilder<Microsoft.Maui.Keyboard>> buildValue)
             where T : Microsoft.Maui.Controls.InputView
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Keyboard>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.InputView.KeyboardProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Keyboard>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.InputView.KeyboardProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Keyboard<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Keyboard>, BindingBuilder<Microsoft.Maui.Keyboard>> buidBinding)
+        public static T Keyboard<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Keyboard>, BindingBuilder<Microsoft.Maui.Keyboard>> buildBinding)
             where T : Microsoft.Maui.Controls.InputView
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Keyboard>(obj, Microsoft.Maui.Controls.InputView.KeyboardProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Keyboard>(self, Microsoft.Maui.Controls.InputView.KeyboardProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T IsSpellCheckEnabled<T>(this T obj,
+        public static T IsSpellCheckEnabled<T>(this T self,
             bool isSpellCheckEnabled)
             where T : Microsoft.Maui.Controls.InputView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.InputView.IsSpellCheckEnabledProperty, isSpellCheckEnabled);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.InputView.IsSpellCheckEnabledProperty, isSpellCheckEnabled);
+            return self;
         }
         
-        public static T IsSpellCheckEnabled<T>(this T obj,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
+        public static T IsSpellCheckEnabled<T>(this T self,
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Microsoft.Maui.Controls.InputView
         {
-            var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.InputView.IsSpellCheckEnabledProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.InputView.IsSpellCheckEnabledProperty, builder.GetValue());
+            return self;
         }
         
-        public static T IsSpellCheckEnabled<T>(this T obj,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buidBinding)
+        public static T IsSpellCheckEnabled<T>(this T self,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Microsoft.Maui.Controls.InputView
         {
-            var builder = buidBinding(new BindingBuilder<bool>(obj, Microsoft.Maui.Controls.InputView.IsSpellCheckEnabledProperty));
+            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.InputView.IsSpellCheckEnabledProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T IsReadOnly<T>(this T obj,
+        public static T IsReadOnly<T>(this T self,
             bool isReadOnly)
             where T : Microsoft.Maui.Controls.InputView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.InputView.IsReadOnlyProperty, isReadOnly);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.InputView.IsReadOnlyProperty, isReadOnly);
+            return self;
         }
         
-        public static T IsReadOnly<T>(this T obj,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
+        public static T IsReadOnly<T>(this T self,
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Microsoft.Maui.Controls.InputView
         {
-            var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.InputView.IsReadOnlyProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.InputView.IsReadOnlyProperty, builder.GetValue());
+            return self;
         }
         
-        public static T IsReadOnly<T>(this T obj,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buidBinding)
+        public static T IsReadOnly<T>(this T self,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Microsoft.Maui.Controls.InputView
         {
-            var builder = buidBinding(new BindingBuilder<bool>(obj, Microsoft.Maui.Controls.InputView.IsReadOnlyProperty));
+            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.InputView.IsReadOnlyProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T Placeholder<T>(this T obj,
+        public static T Placeholder<T>(this T self,
             string placeholder)
             where T : Microsoft.Maui.Controls.InputView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.InputView.PlaceholderProperty, placeholder);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.InputView.PlaceholderProperty, placeholder);
+            return self;
         }
         
-        public static T Placeholder<T>(this T obj,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buidValue)
+        public static T Placeholder<T>(this T self,
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
             where T : Microsoft.Maui.Controls.InputView
         {
-            var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.InputView.PlaceholderProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.InputView.PlaceholderProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Placeholder<T>(this T obj,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buidBinding)
+        public static T Placeholder<T>(this T self,
+            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
             where T : Microsoft.Maui.Controls.InputView
         {
-            var builder = buidBinding(new BindingBuilder<string>(obj, Microsoft.Maui.Controls.InputView.PlaceholderProperty));
+            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.InputView.PlaceholderProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T PlaceholderColor<T>(this T obj,
+        public static T PlaceholderColor<T>(this T self,
             Microsoft.Maui.Graphics.Color placeholderColor)
             where T : Microsoft.Maui.Controls.InputView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.InputView.PlaceholderColorProperty, placeholderColor);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.InputView.PlaceholderColorProperty, placeholderColor);
+            return self;
         }
         
-        public static T PlaceholderColor<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buidValue)
+        public static T PlaceholderColor<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : Microsoft.Maui.Controls.InputView
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.InputView.PlaceholderColorProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.InputView.PlaceholderColorProperty, builder.GetValue());
+            return self;
         }
         
-        public static T PlaceholderColor<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buidBinding)
+        public static T PlaceholderColor<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
             where T : Microsoft.Maui.Controls.InputView
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(obj, Microsoft.Maui.Controls.InputView.PlaceholderColorProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.InputView.PlaceholderColorProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
         public static Task<bool> AnimatePlaceholderColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
@@ -204,30 +204,30 @@ namespace Sharp.UI
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimatePlaceholderColorTo", transform, callback, length, easing);
         }
         
-        public static T TextColor<T>(this T obj,
+        public static T TextColor<T>(this T self,
             Microsoft.Maui.Graphics.Color textColor)
             where T : Microsoft.Maui.Controls.InputView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.InputView.TextColorProperty, textColor);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.InputView.TextColorProperty, textColor);
+            return self;
         }
         
-        public static T TextColor<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buidValue)
+        public static T TextColor<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
             where T : Microsoft.Maui.Controls.InputView
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.InputView.TextColorProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.InputView.TextColorProperty, builder.GetValue());
+            return self;
         }
         
-        public static T TextColor<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buidBinding)
+        public static T TextColor<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
             where T : Microsoft.Maui.Controls.InputView
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(obj, Microsoft.Maui.Controls.InputView.TextColorProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.InputView.TextColorProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
         public static Task<bool> AnimateTextColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
@@ -239,30 +239,30 @@ namespace Sharp.UI
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateTextColorTo", transform, callback, length, easing);
         }
         
-        public static T CharacterSpacing<T>(this T obj,
+        public static T CharacterSpacing<T>(this T self,
             double characterSpacing)
             where T : Microsoft.Maui.Controls.InputView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.InputView.CharacterSpacingProperty, characterSpacing);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.InputView.CharacterSpacingProperty, characterSpacing);
+            return self;
         }
         
-        public static T CharacterSpacing<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T CharacterSpacing<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Microsoft.Maui.Controls.InputView
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.InputView.CharacterSpacingProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.InputView.CharacterSpacingProperty, builder.GetValue());
+            return self;
         }
         
-        public static T CharacterSpacing<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T CharacterSpacing<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Microsoft.Maui.Controls.InputView
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.InputView.CharacterSpacingProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.InputView.CharacterSpacingProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
         public static Task<bool> AnimateCharacterSpacingTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
@@ -274,44 +274,44 @@ namespace Sharp.UI
             return Transformations.AnimateAsync<double>(self, "AnimateCharacterSpacingTo", transform, callback, length, easing);
         }
         
-        public static T TextTransform<T>(this T obj,
+        public static T TextTransform<T>(this T self,
             Microsoft.Maui.TextTransform textTransform)
             where T : Microsoft.Maui.Controls.InputView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.InputView.TextTransformProperty, textTransform);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.InputView.TextTransformProperty, textTransform);
+            return self;
         }
         
-        public static T TextTransform<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.TextTransform>, ValueBuilder<Microsoft.Maui.TextTransform>> buidValue)
+        public static T TextTransform<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.TextTransform>, ValueBuilder<Microsoft.Maui.TextTransform>> buildValue)
             where T : Microsoft.Maui.Controls.InputView
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.TextTransform>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.InputView.TextTransformProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.TextTransform>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.InputView.TextTransformProperty, builder.GetValue());
+            return self;
         }
         
-        public static T TextTransform<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.TextTransform>, BindingBuilder<Microsoft.Maui.TextTransform>> buidBinding)
+        public static T TextTransform<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.TextTransform>, BindingBuilder<Microsoft.Maui.TextTransform>> buildBinding)
             where T : Microsoft.Maui.Controls.InputView
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.TextTransform>(obj, Microsoft.Maui.Controls.InputView.TextTransformProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.TextTransform>(self, Microsoft.Maui.Controls.InputView.TextTransformProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T OnTextChanged<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.TextChangedEventArgs> handler)
+        public static T OnTextChanged<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.TextChangedEventArgs> handler)
             where T : Microsoft.Maui.Controls.InputView
         {
-            obj.TextChanged += handler;
-            return obj;
+            self.TextChanged += handler;
+            return self;
         }
         
-        public static T OnTextChanged<T>(this T obj, System.Action<T> action)
+        public static T OnTextChanged<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.InputView
         {
-            obj.TextChanged += (o, arg) => action(obj);
-            return obj;
+            self.TextChanged += (o, arg) => action(self);
+            return self;
         }
         
     }

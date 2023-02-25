@@ -13,30 +13,30 @@ namespace Sharp.UI
 
     public static partial class SwipeViewExtension
     {
-        public static T Threshold<T>(this T obj,
+        public static T Threshold<T>(this T self,
             double threshold)
             where T : Microsoft.Maui.Controls.SwipeView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.SwipeView.ThresholdProperty, threshold);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.SwipeView.ThresholdProperty, threshold);
+            return self;
         }
         
-        public static T Threshold<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T Threshold<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Microsoft.Maui.Controls.SwipeView
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.SwipeView.ThresholdProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.SwipeView.ThresholdProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Threshold<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T Threshold<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Microsoft.Maui.Controls.SwipeView
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.SwipeView.ThresholdProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.SwipeView.ThresholdProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
         public static Task<bool> AnimateThresholdTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
@@ -48,182 +48,182 @@ namespace Sharp.UI
             return Transformations.AnimateAsync<double>(self, "AnimateThresholdTo", transform, callback, length, easing);
         }
         
-        public static T LeftItems<T>(this T obj,
+        public static T LeftItems<T>(this T self,
             IList<Microsoft.Maui.Controls.ISwipeItem> leftItems)
             where T : Microsoft.Maui.Controls.SwipeView
         {
             foreach (var item in leftItems)
-                obj.LeftItems.Add(item);
-            return obj;
+                self.LeftItems.Add(item);
+            return self;
         }
 
-        public static T LeftItems<T>(this T obj,
+        public static T LeftItems<T>(this T self,
             params Microsoft.Maui.Controls.ISwipeItem[] leftItems)
             where T : Microsoft.Maui.Controls.SwipeView
         {
             foreach (var item in leftItems)
-                obj.LeftItems.Add(item);
-            return obj;
+                self.LeftItems.Add(item);
+            return self;
         }
         
-        public static T LeftItems<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.SwipeItems>, BindingBuilder<Microsoft.Maui.Controls.SwipeItems>> buidBinding)
+        public static T LeftItems<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.SwipeItems>, BindingBuilder<Microsoft.Maui.Controls.SwipeItems>> buildBinding)
             where T : Microsoft.Maui.Controls.SwipeView
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.SwipeItems>(obj, Microsoft.Maui.Controls.SwipeView.LeftItemsProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.SwipeItems>(self, Microsoft.Maui.Controls.SwipeView.LeftItemsProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T RightItems<T>(this T obj,
+        public static T RightItems<T>(this T self,
             IList<Microsoft.Maui.Controls.ISwipeItem> rightItems)
             where T : Microsoft.Maui.Controls.SwipeView
         {
             foreach (var item in rightItems)
-                obj.RightItems.Add(item);
-            return obj;
+                self.RightItems.Add(item);
+            return self;
         }
 
-        public static T RightItems<T>(this T obj,
+        public static T RightItems<T>(this T self,
             params Microsoft.Maui.Controls.ISwipeItem[] rightItems)
             where T : Microsoft.Maui.Controls.SwipeView
         {
             foreach (var item in rightItems)
-                obj.RightItems.Add(item);
-            return obj;
+                self.RightItems.Add(item);
+            return self;
         }
         
-        public static T RightItems<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.SwipeItems>, BindingBuilder<Microsoft.Maui.Controls.SwipeItems>> buidBinding)
+        public static T RightItems<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.SwipeItems>, BindingBuilder<Microsoft.Maui.Controls.SwipeItems>> buildBinding)
             where T : Microsoft.Maui.Controls.SwipeView
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.SwipeItems>(obj, Microsoft.Maui.Controls.SwipeView.RightItemsProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.SwipeItems>(self, Microsoft.Maui.Controls.SwipeView.RightItemsProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T TopItems<T>(this T obj,
+        public static T TopItems<T>(this T self,
             IList<Microsoft.Maui.Controls.ISwipeItem> topItems)
             where T : Microsoft.Maui.Controls.SwipeView
         {
             foreach (var item in topItems)
-                obj.TopItems.Add(item);
-            return obj;
+                self.TopItems.Add(item);
+            return self;
         }
 
-        public static T TopItems<T>(this T obj,
+        public static T TopItems<T>(this T self,
             params Microsoft.Maui.Controls.ISwipeItem[] topItems)
             where T : Microsoft.Maui.Controls.SwipeView
         {
             foreach (var item in topItems)
-                obj.TopItems.Add(item);
-            return obj;
+                self.TopItems.Add(item);
+            return self;
         }
         
-        public static T TopItems<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.SwipeItems>, BindingBuilder<Microsoft.Maui.Controls.SwipeItems>> buidBinding)
+        public static T TopItems<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.SwipeItems>, BindingBuilder<Microsoft.Maui.Controls.SwipeItems>> buildBinding)
             where T : Microsoft.Maui.Controls.SwipeView
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.SwipeItems>(obj, Microsoft.Maui.Controls.SwipeView.TopItemsProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.SwipeItems>(self, Microsoft.Maui.Controls.SwipeView.TopItemsProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T BottomItems<T>(this T obj,
+        public static T BottomItems<T>(this T self,
             IList<Microsoft.Maui.Controls.ISwipeItem> bottomItems)
             where T : Microsoft.Maui.Controls.SwipeView
         {
             foreach (var item in bottomItems)
-                obj.BottomItems.Add(item);
-            return obj;
+                self.BottomItems.Add(item);
+            return self;
         }
 
-        public static T BottomItems<T>(this T obj,
+        public static T BottomItems<T>(this T self,
             params Microsoft.Maui.Controls.ISwipeItem[] bottomItems)
             where T : Microsoft.Maui.Controls.SwipeView
         {
             foreach (var item in bottomItems)
-                obj.BottomItems.Add(item);
-            return obj;
+                self.BottomItems.Add(item);
+            return self;
         }
         
-        public static T BottomItems<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.SwipeItems>, BindingBuilder<Microsoft.Maui.Controls.SwipeItems>> buidBinding)
+        public static T BottomItems<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.SwipeItems>, BindingBuilder<Microsoft.Maui.Controls.SwipeItems>> buildBinding)
             where T : Microsoft.Maui.Controls.SwipeView
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.SwipeItems>(obj, Microsoft.Maui.Controls.SwipeView.BottomItemsProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.SwipeItems>(self, Microsoft.Maui.Controls.SwipeView.BottomItemsProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T OnSwipeStarted<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.SwipeStartedEventArgs> handler)
+        public static T OnSwipeStarted<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.SwipeStartedEventArgs> handler)
             where T : Microsoft.Maui.Controls.SwipeView
         {
-            obj.SwipeStarted += handler;
-            return obj;
+            self.SwipeStarted += handler;
+            return self;
         }
         
-        public static T OnSwipeStarted<T>(this T obj, System.Action<T> action)
+        public static T OnSwipeStarted<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.SwipeView
         {
-            obj.SwipeStarted += (o, arg) => action(obj);
-            return obj;
+            self.SwipeStarted += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnSwipeChanging<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.SwipeChangingEventArgs> handler)
+        public static T OnSwipeChanging<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.SwipeChangingEventArgs> handler)
             where T : Microsoft.Maui.Controls.SwipeView
         {
-            obj.SwipeChanging += handler;
-            return obj;
+            self.SwipeChanging += handler;
+            return self;
         }
         
-        public static T OnSwipeChanging<T>(this T obj, System.Action<T> action)
+        public static T OnSwipeChanging<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.SwipeView
         {
-            obj.SwipeChanging += (o, arg) => action(obj);
-            return obj;
+            self.SwipeChanging += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnSwipeEnded<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.SwipeEndedEventArgs> handler)
+        public static T OnSwipeEnded<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.SwipeEndedEventArgs> handler)
             where T : Microsoft.Maui.Controls.SwipeView
         {
-            obj.SwipeEnded += handler;
-            return obj;
+            self.SwipeEnded += handler;
+            return self;
         }
         
-        public static T OnSwipeEnded<T>(this T obj, System.Action<T> action)
+        public static T OnSwipeEnded<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.SwipeView
         {
-            obj.SwipeEnded += (o, arg) => action(obj);
-            return obj;
+            self.SwipeEnded += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnOpenRequested<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.OpenRequestedEventArgs> handler)
+        public static T OnOpenRequested<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.OpenRequestedEventArgs> handler)
             where T : Microsoft.Maui.Controls.SwipeView
         {
-            obj.OpenRequested += handler;
-            return obj;
+            self.OpenRequested += handler;
+            return self;
         }
         
-        public static T OnOpenRequested<T>(this T obj, System.Action<T> action)
+        public static T OnOpenRequested<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.SwipeView
         {
-            obj.OpenRequested += (o, arg) => action(obj);
-            return obj;
+            self.OpenRequested += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnCloseRequested<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.CloseRequestedEventArgs> handler)
+        public static T OnCloseRequested<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.CloseRequestedEventArgs> handler)
             where T : Microsoft.Maui.Controls.SwipeView
         {
-            obj.CloseRequested += handler;
-            return obj;
+            self.CloseRequested += handler;
+            return self;
         }
         
-        public static T OnCloseRequested<T>(this T obj, System.Action<T> action)
+        public static T OnCloseRequested<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.SwipeView
         {
-            obj.CloseRequested += (o, arg) => action(obj);
-            return obj;
+            self.CloseRequested += (o, arg) => action(self);
+            return self;
         }
         
     }

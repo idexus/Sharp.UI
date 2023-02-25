@@ -13,22 +13,22 @@ namespace Sharp.UI
 
     public static partial class FormattedStringExtension
     {
-        public static T Spans<T>(this T obj,
+        public static T Spans<T>(this T self,
             IList<Microsoft.Maui.Controls.Span> spans)
             where T : Microsoft.Maui.Controls.FormattedString
         {
             foreach (var item in spans)
-                obj.Spans.Add(item);
-            return obj;
+                self.Spans.Add(item);
+            return self;
         }
 
-        public static T Spans<T>(this T obj,
+        public static T Spans<T>(this T self,
             params Microsoft.Maui.Controls.Span[] spans)
             where T : Microsoft.Maui.Controls.FormattedString
         {
             foreach (var item in spans)
-                obj.Spans.Add(item);
-            return obj;
+                self.Spans.Add(item);
+            return self;
         }
         
     }

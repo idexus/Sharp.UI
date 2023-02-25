@@ -13,66 +13,66 @@ namespace Sharp.UI
 
     public static partial class NavigableElementExtension
     {
-        public static T Style<T>(this T obj,
+        public static T Style<T>(this T self,
             Microsoft.Maui.Controls.Style style)
             where T : Microsoft.Maui.Controls.NavigableElement
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.NavigableElement.StyleProperty, style);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.NavigableElement.StyleProperty, style);
+            return self;
         }
         
-        public static T Style<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.Style>, ValueBuilder<Microsoft.Maui.Controls.Style>> buidValue)
+        public static T Style<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.Style>, ValueBuilder<Microsoft.Maui.Controls.Style>> buildValue)
             where T : Microsoft.Maui.Controls.NavigableElement
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.Style>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.NavigableElement.StyleProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Style>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.NavigableElement.StyleProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Style<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.Style>, BindingBuilder<Microsoft.Maui.Controls.Style>> buidBinding)
+        public static T Style<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.Style>, BindingBuilder<Microsoft.Maui.Controls.Style>> buildBinding)
             where T : Microsoft.Maui.Controls.NavigableElement
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.Style>(obj, Microsoft.Maui.Controls.NavigableElement.StyleProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Style>(self, Microsoft.Maui.Controls.NavigableElement.StyleProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T StyleClass<T>(this T obj,
+        public static T StyleClass<T>(this T self,
             IList<string> styleClass)
             where T : Microsoft.Maui.Controls.NavigableElement
         {
             foreach (var item in styleClass)
-                obj.StyleClass.Add(item);
-            return obj;
+                self.StyleClass.Add(item);
+            return self;
         }
 
-        public static T StyleClass<T>(this T obj,
+        public static T StyleClass<T>(this T self,
             params string[] styleClass)
             where T : Microsoft.Maui.Controls.NavigableElement
         {
             foreach (var item in styleClass)
-                obj.StyleClass.Add(item);
-            return obj;
+                self.StyleClass.Add(item);
+            return self;
         }
         
-        public static T @class<T>(this T obj,
+        public static T @class<T>(this T self,
             IList<string> @class)
             where T : Microsoft.Maui.Controls.NavigableElement
         {
             foreach (var item in @class)
-                obj.@class.Add(item);
-            return obj;
+                self.@class.Add(item);
+            return self;
         }
 
-        public static T @class<T>(this T obj,
+        public static T @class<T>(this T self,
             params string[] @class)
             where T : Microsoft.Maui.Controls.NavigableElement
         {
             foreach (var item in @class)
-                obj.@class.Add(item);
-            return obj;
+                self.@class.Add(item);
+            return self;
         }
         
     }

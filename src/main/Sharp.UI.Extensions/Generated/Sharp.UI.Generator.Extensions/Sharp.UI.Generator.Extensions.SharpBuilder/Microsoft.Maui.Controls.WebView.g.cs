@@ -13,84 +13,84 @@ namespace Sharp.UI
 
     public static partial class WebViewExtension
     {
-        public static T Cookies<T>(this T obj,
+        public static T Cookies<T>(this T self,
             System.Net.CookieContainer cookies)
             where T : Microsoft.Maui.Controls.WebView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.WebView.CookiesProperty, cookies);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.WebView.CookiesProperty, cookies);
+            return self;
         }
         
-        public static T Cookies<T>(this T obj,
-            System.Func<ValueBuilder<System.Net.CookieContainer>, ValueBuilder<System.Net.CookieContainer>> buidValue)
+        public static T Cookies<T>(this T self,
+            System.Func<ValueBuilder<System.Net.CookieContainer>, ValueBuilder<System.Net.CookieContainer>> buildValue)
             where T : Microsoft.Maui.Controls.WebView
         {
-            var builder = buidValue(new ValueBuilder<System.Net.CookieContainer>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.WebView.CookiesProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<System.Net.CookieContainer>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.WebView.CookiesProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Cookies<T>(this T obj,
-            System.Func<BindingBuilder<System.Net.CookieContainer>, BindingBuilder<System.Net.CookieContainer>> buidBinding)
+        public static T Cookies<T>(this T self,
+            System.Func<BindingBuilder<System.Net.CookieContainer>, BindingBuilder<System.Net.CookieContainer>> buildBinding)
             where T : Microsoft.Maui.Controls.WebView
         {
-            var builder = buidBinding(new BindingBuilder<System.Net.CookieContainer>(obj, Microsoft.Maui.Controls.WebView.CookiesProperty));
+            var builder = buildBinding(new BindingBuilder<System.Net.CookieContainer>(self, Microsoft.Maui.Controls.WebView.CookiesProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T Source<T>(this T obj,
+        public static T Source<T>(this T self,
             Microsoft.Maui.Controls.WebViewSource source)
             where T : Microsoft.Maui.Controls.WebView
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.WebView.SourceProperty, source);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.WebView.SourceProperty, source);
+            return self;
         }
         
-        public static T Source<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.WebViewSource>, ValueBuilder<Microsoft.Maui.Controls.WebViewSource>> buidValue)
+        public static T Source<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.WebViewSource>, ValueBuilder<Microsoft.Maui.Controls.WebViewSource>> buildValue)
             where T : Microsoft.Maui.Controls.WebView
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.WebViewSource>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.WebView.SourceProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.WebViewSource>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.WebView.SourceProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Source<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.WebViewSource>, BindingBuilder<Microsoft.Maui.Controls.WebViewSource>> buidBinding)
+        public static T Source<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.WebViewSource>, BindingBuilder<Microsoft.Maui.Controls.WebViewSource>> buildBinding)
             where T : Microsoft.Maui.Controls.WebView
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.WebViewSource>(obj, Microsoft.Maui.Controls.WebView.SourceProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.WebViewSource>(self, Microsoft.Maui.Controls.WebView.SourceProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T OnNavigated<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.WebNavigatedEventArgs> handler)
+        public static T OnNavigated<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.WebNavigatedEventArgs> handler)
             where T : Microsoft.Maui.Controls.WebView
         {
-            obj.Navigated += handler;
-            return obj;
+            self.Navigated += handler;
+            return self;
         }
         
-        public static T OnNavigated<T>(this T obj, System.Action<T> action)
+        public static T OnNavigated<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.WebView
         {
-            obj.Navigated += (o, arg) => action(obj);
-            return obj;
+            self.Navigated += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnNavigating<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.WebNavigatingEventArgs> handler)
+        public static T OnNavigating<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.WebNavigatingEventArgs> handler)
             where T : Microsoft.Maui.Controls.WebView
         {
-            obj.Navigating += handler;
-            return obj;
+            self.Navigating += handler;
+            return self;
         }
         
-        public static T OnNavigating<T>(this T obj, System.Action<T> action)
+        public static T OnNavigating<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.WebView
         {
-            obj.Navigating += (o, arg) => action(obj);
-            return obj;
+            self.Navigating += (o, arg) => action(self);
+            return self;
         }
         
     }

@@ -13,39 +13,39 @@ namespace Sharp.UI
 
     public static partial class RowDefinitionExtension
     {
-        public static Microsoft.Maui.Controls.RowDefinition Height(this Microsoft.Maui.Controls.RowDefinition obj,
+        public static Microsoft.Maui.Controls.RowDefinition Height(this Microsoft.Maui.Controls.RowDefinition self,
             Microsoft.Maui.GridLength height)
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.RowDefinition.HeightProperty, height);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.RowDefinition.HeightProperty, height);
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.RowDefinition Height(this Microsoft.Maui.Controls.RowDefinition obj,
-            System.Func<ValueBuilder<Microsoft.Maui.GridLength>, ValueBuilder<Microsoft.Maui.GridLength>> buidValue)
+        public static Microsoft.Maui.Controls.RowDefinition Height(this Microsoft.Maui.Controls.RowDefinition self,
+            System.Func<ValueBuilder<Microsoft.Maui.GridLength>, ValueBuilder<Microsoft.Maui.GridLength>> buildValue)
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.GridLength>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.RowDefinition.HeightProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.GridLength>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.RowDefinition.HeightProperty, builder.GetValue());
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.RowDefinition Height(this Microsoft.Maui.Controls.RowDefinition obj,
-            System.Func<BindingBuilder<Microsoft.Maui.GridLength>, BindingBuilder<Microsoft.Maui.GridLength>> buidBinding)
+        public static Microsoft.Maui.Controls.RowDefinition Height(this Microsoft.Maui.Controls.RowDefinition self,
+            System.Func<BindingBuilder<Microsoft.Maui.GridLength>, BindingBuilder<Microsoft.Maui.GridLength>> buildBinding)
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.GridLength>(obj, Microsoft.Maui.Controls.RowDefinition.HeightProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.GridLength>(self, Microsoft.Maui.Controls.RowDefinition.HeightProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.RowDefinition OnSizeChanged(this Microsoft.Maui.Controls.RowDefinition obj, System.EventHandler handler)
+        public static Microsoft.Maui.Controls.RowDefinition OnSizeChanged(this Microsoft.Maui.Controls.RowDefinition self, System.EventHandler handler)
         {
-            obj.SizeChanged += handler;
-            return obj;
+            self.SizeChanged += handler;
+            return self;
         }
         
-        public static Microsoft.Maui.Controls.RowDefinition OnSizeChanged(this Microsoft.Maui.Controls.RowDefinition obj, System.Action<Microsoft.Maui.Controls.RowDefinition> action)
+        public static Microsoft.Maui.Controls.RowDefinition OnSizeChanged(this Microsoft.Maui.Controls.RowDefinition self, System.Action<Microsoft.Maui.Controls.RowDefinition> action)
         {
-            obj.SizeChanged += (o, arg) => action(obj);
-            return obj;
+            self.SizeChanged += (o, arg) => action(self);
+            return self;
         }
         
     }

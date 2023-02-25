@@ -13,204 +13,204 @@ namespace Sharp.UI
 
     public static partial class BaseShellItemExtension
     {
-        public static T FlyoutIcon<T>(this T obj,
+        public static T FlyoutIcon<T>(this T self,
             Microsoft.Maui.Controls.ImageSource flyoutIcon)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.BaseShellItem.FlyoutIconProperty, flyoutIcon);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.BaseShellItem.FlyoutIconProperty, flyoutIcon);
+            return self;
         }
         
-        public static T FlyoutIcon<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.ImageSource>, ValueBuilder<Microsoft.Maui.Controls.ImageSource>> buidValue)
+        public static T FlyoutIcon<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.ImageSource>, ValueBuilder<Microsoft.Maui.Controls.ImageSource>> buildValue)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.BaseShellItem.FlyoutIconProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.BaseShellItem.FlyoutIconProperty, builder.GetValue());
+            return self;
         }
         
-        public static T FlyoutIcon<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.ImageSource>, BindingBuilder<Microsoft.Maui.Controls.ImageSource>> buidBinding)
+        public static T FlyoutIcon<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.ImageSource>, BindingBuilder<Microsoft.Maui.Controls.ImageSource>> buildBinding)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.ImageSource>(obj, Microsoft.Maui.Controls.BaseShellItem.FlyoutIconProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ImageSource>(self, Microsoft.Maui.Controls.BaseShellItem.FlyoutIconProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T Icon<T>(this T obj,
+        public static T Icon<T>(this T self,
             Microsoft.Maui.Controls.ImageSource icon)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.BaseShellItem.IconProperty, icon);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.BaseShellItem.IconProperty, icon);
+            return self;
         }
         
-        public static T Icon<T>(this T obj,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.ImageSource>, ValueBuilder<Microsoft.Maui.Controls.ImageSource>> buidValue)
+        public static T Icon<T>(this T self,
+            System.Func<ValueBuilder<Microsoft.Maui.Controls.ImageSource>, ValueBuilder<Microsoft.Maui.Controls.ImageSource>> buildValue)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
-            var builder = buidValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.BaseShellItem.IconProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.BaseShellItem.IconProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Icon<T>(this T obj,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.ImageSource>, BindingBuilder<Microsoft.Maui.Controls.ImageSource>> buidBinding)
+        public static T Icon<T>(this T self,
+            System.Func<BindingBuilder<Microsoft.Maui.Controls.ImageSource>, BindingBuilder<Microsoft.Maui.Controls.ImageSource>> buildBinding)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
-            var builder = buidBinding(new BindingBuilder<Microsoft.Maui.Controls.ImageSource>(obj, Microsoft.Maui.Controls.BaseShellItem.IconProperty));
+            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ImageSource>(self, Microsoft.Maui.Controls.BaseShellItem.IconProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T IsEnabled<T>(this T obj,
+        public static T IsEnabled<T>(this T self,
             bool isEnabled)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.BaseShellItem.IsEnabledProperty, isEnabled);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.BaseShellItem.IsEnabledProperty, isEnabled);
+            return self;
         }
         
-        public static T IsEnabled<T>(this T obj,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
+        public static T IsEnabled<T>(this T self,
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
-            var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.BaseShellItem.IsEnabledProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.BaseShellItem.IsEnabledProperty, builder.GetValue());
+            return self;
         }
         
-        public static T IsEnabled<T>(this T obj,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buidBinding)
+        public static T IsEnabled<T>(this T self,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
-            var builder = buidBinding(new BindingBuilder<bool>(obj, Microsoft.Maui.Controls.BaseShellItem.IsEnabledProperty));
+            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.BaseShellItem.IsEnabledProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T Route<T>(this T obj,
+        public static T Route<T>(this T self,
             string route)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property Route");
-            obj.Route = route;
-            return obj;
+            self.Route = route;
+            return self;
         }
         
-        public static T Route<T>(this T obj,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buidValue)
+        public static T Route<T>(this T self,
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property Route");
-            var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.Route = builder.GetValue();
-            return obj;
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) self.Route = builder.GetValue();
+            return self;
         }
         
-        public static T Title<T>(this T obj,
+        public static T Title<T>(this T self,
             string title)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.BaseShellItem.TitleProperty, title);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.BaseShellItem.TitleProperty, title);
+            return self;
         }
         
-        public static T Title<T>(this T obj,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buidValue)
+        public static T Title<T>(this T self,
+            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
-            var builder = buidValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.BaseShellItem.TitleProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<string>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.BaseShellItem.TitleProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Title<T>(this T obj,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buidBinding)
+        public static T Title<T>(this T self,
+            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
-            var builder = buidBinding(new BindingBuilder<string>(obj, Microsoft.Maui.Controls.BaseShellItem.TitleProperty));
+            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.BaseShellItem.TitleProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T IsVisible<T>(this T obj,
+        public static T IsVisible<T>(this T self,
             bool isVisible)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.BaseShellItem.IsVisibleProperty, isVisible);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.BaseShellItem.IsVisibleProperty, isVisible);
+            return self;
         }
         
-        public static T IsVisible<T>(this T obj,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
+        public static T IsVisible<T>(this T self,
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
-            var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.BaseShellItem.IsVisibleProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.BaseShellItem.IsVisibleProperty, builder.GetValue());
+            return self;
         }
         
-        public static T IsVisible<T>(this T obj,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buidBinding)
+        public static T IsVisible<T>(this T self,
+            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
-            var builder = buidBinding(new BindingBuilder<bool>(obj, Microsoft.Maui.Controls.BaseShellItem.IsVisibleProperty));
+            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.BaseShellItem.IsVisibleProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
-        public static T FlyoutItemIsVisible<T>(this T obj,
+        public static T FlyoutItemIsVisible<T>(this T self,
             bool flyoutItemIsVisible)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property FlyoutItemIsVisible");
-            obj.FlyoutItemIsVisible = flyoutItemIsVisible;
-            return obj;
+            self.FlyoutItemIsVisible = flyoutItemIsVisible;
+            return self;
         }
         
-        public static T FlyoutItemIsVisible<T>(this T obj,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buidValue)
+        public static T FlyoutItemIsVisible<T>(this T self,
+            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property FlyoutItemIsVisible");
-            var builder = buidValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) obj.FlyoutItemIsVisible = builder.GetValue();
-            return obj;
+            var builder = buildValue(new ValueBuilder<bool>());
+            if (builder.ValueIsSet()) self.FlyoutItemIsVisible = builder.GetValue();
+            return self;
         }
         
-        public static T OnAppearing<T>(this T obj, System.EventHandler handler)
+        public static T OnAppearing<T>(this T self, System.EventHandler handler)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
-            obj.Appearing += handler;
-            return obj;
+            self.Appearing += handler;
+            return self;
         }
         
-        public static T OnAppearing<T>(this T obj, System.Action<T> action)
+        public static T OnAppearing<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
-            obj.Appearing += (o, arg) => action(obj);
-            return obj;
+            self.Appearing += (o, arg) => action(self);
+            return self;
         }
         
-        public static T OnDisappearing<T>(this T obj, System.EventHandler handler)
+        public static T OnDisappearing<T>(this T self, System.EventHandler handler)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
-            obj.Disappearing += handler;
-            return obj;
+            self.Disappearing += handler;
+            return self;
         }
         
-        public static T OnDisappearing<T>(this T obj, System.Action<T> action)
+        public static T OnDisappearing<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
-            obj.Disappearing += (o, arg) => action(obj);
-            return obj;
+            self.Disappearing += (o, arg) => action(self);
+            return self;
         }
         
     }

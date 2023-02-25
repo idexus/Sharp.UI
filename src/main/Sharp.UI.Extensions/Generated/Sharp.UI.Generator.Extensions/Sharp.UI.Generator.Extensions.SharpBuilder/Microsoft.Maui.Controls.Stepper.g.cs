@@ -13,30 +13,30 @@ namespace Sharp.UI
 
     public static partial class StepperExtension
     {
-        public static T Increment<T>(this T obj,
+        public static T Increment<T>(this T self,
             double increment)
             where T : Microsoft.Maui.Controls.Stepper
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Stepper.IncrementProperty, increment);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.Stepper.IncrementProperty, increment);
+            return self;
         }
         
-        public static T Increment<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T Increment<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Microsoft.Maui.Controls.Stepper
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Stepper.IncrementProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Stepper.IncrementProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Increment<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T Increment<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Microsoft.Maui.Controls.Stepper
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Stepper.IncrementProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Stepper.IncrementProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
         public static Task<bool> AnimateIncrementTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
@@ -48,30 +48,30 @@ namespace Sharp.UI
             return Transformations.AnimateAsync<double>(self, "AnimateIncrementTo", transform, callback, length, easing);
         }
         
-        public static T Maximum<T>(this T obj,
+        public static T Maximum<T>(this T self,
             double maximum)
             where T : Microsoft.Maui.Controls.Stepper
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Stepper.MaximumProperty, maximum);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.Stepper.MaximumProperty, maximum);
+            return self;
         }
         
-        public static T Maximum<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T Maximum<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Microsoft.Maui.Controls.Stepper
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Stepper.MaximumProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Stepper.MaximumProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Maximum<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T Maximum<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Microsoft.Maui.Controls.Stepper
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Stepper.MaximumProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Stepper.MaximumProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
         public static Task<bool> AnimateMaximumTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
@@ -83,30 +83,30 @@ namespace Sharp.UI
             return Transformations.AnimateAsync<double>(self, "AnimateMaximumTo", transform, callback, length, easing);
         }
         
-        public static T Minimum<T>(this T obj,
+        public static T Minimum<T>(this T self,
             double minimum)
             where T : Microsoft.Maui.Controls.Stepper
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Stepper.MinimumProperty, minimum);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.Stepper.MinimumProperty, minimum);
+            return self;
         }
         
-        public static T Minimum<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T Minimum<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Microsoft.Maui.Controls.Stepper
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Stepper.MinimumProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Stepper.MinimumProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Minimum<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T Minimum<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Microsoft.Maui.Controls.Stepper
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Stepper.MinimumProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Stepper.MinimumProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
         public static Task<bool> AnimateMinimumTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
@@ -118,30 +118,30 @@ namespace Sharp.UI
             return Transformations.AnimateAsync<double>(self, "AnimateMinimumTo", transform, callback, length, easing);
         }
         
-        public static T Value<T>(this T obj,
+        public static T Value<T>(this T self,
             double value)
             where T : Microsoft.Maui.Controls.Stepper
         {
-            obj.SetValueOrSetter(Microsoft.Maui.Controls.Stepper.ValueProperty, value);
-            return obj;
+            self.SetValueOrSetter(Microsoft.Maui.Controls.Stepper.ValueProperty, value);
+            return self;
         }
         
-        public static T Value<T>(this T obj,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buidValue)
+        public static T Value<T>(this T self,
+            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
             where T : Microsoft.Maui.Controls.Stepper
         {
-            var builder = buidValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) obj.SetValueOrSetter(Microsoft.Maui.Controls.Stepper.ValueProperty, builder.GetValue());
-            return obj;
+            var builder = buildValue(new ValueBuilder<double>());
+            if (builder.ValueIsSet()) self.SetValueOrSetter(Microsoft.Maui.Controls.Stepper.ValueProperty, builder.GetValue());
+            return self;
         }
         
-        public static T Value<T>(this T obj,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buidBinding)
+        public static T Value<T>(this T self,
+            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
             where T : Microsoft.Maui.Controls.Stepper
         {
-            var builder = buidBinding(new BindingBuilder<double>(obj, Microsoft.Maui.Controls.Stepper.ValueProperty));
+            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Stepper.ValueProperty));
             builder.BindProperty();
-            return obj;
+            return self;
         }
         
         public static Task<bool> AnimateValueTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
@@ -153,18 +153,18 @@ namespace Sharp.UI
             return Transformations.AnimateAsync<double>(self, "AnimateValueTo", transform, callback, length, easing);
         }
         
-        public static T OnValueChanged<T>(this T obj, System.EventHandler<Microsoft.Maui.Controls.ValueChangedEventArgs> handler)
+        public static T OnValueChanged<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.ValueChangedEventArgs> handler)
             where T : Microsoft.Maui.Controls.Stepper
         {
-            obj.ValueChanged += handler;
-            return obj;
+            self.ValueChanged += handler;
+            return self;
         }
         
-        public static T OnValueChanged<T>(this T obj, System.Action<T> action)
+        public static T OnValueChanged<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Stepper
         {
-            obj.ValueChanged += (o, arg) => action(obj);
-            return obj;
+            self.ValueChanged += (o, arg) => action(self);
+            return self;
         }
         
     }
