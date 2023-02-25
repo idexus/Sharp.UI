@@ -8,9 +8,8 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class FlyoutPageExtension
     {
         public static T Detail<T>(this T self,

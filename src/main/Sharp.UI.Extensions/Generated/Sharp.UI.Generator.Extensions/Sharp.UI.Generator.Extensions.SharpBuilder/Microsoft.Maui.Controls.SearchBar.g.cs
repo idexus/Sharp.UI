@@ -8,9 +8,8 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class SearchBarExtension
     {
         public static T CancelButtonColor<T>(this T self,

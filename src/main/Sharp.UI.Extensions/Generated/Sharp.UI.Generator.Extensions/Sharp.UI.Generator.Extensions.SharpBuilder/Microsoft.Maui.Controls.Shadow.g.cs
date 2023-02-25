@@ -8,9 +8,8 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class ShadowExtension
     {
         public static T Radius<T>(this T self,

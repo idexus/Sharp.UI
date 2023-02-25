@@ -7,8 +7,7 @@
 
 namespace ExampleApp
 {
-	using Sharp.UI;
-    public partial class SecondPageViewModel
+	public partial class SecondPageViewModel
 	{
 
         // ----- constructors -----

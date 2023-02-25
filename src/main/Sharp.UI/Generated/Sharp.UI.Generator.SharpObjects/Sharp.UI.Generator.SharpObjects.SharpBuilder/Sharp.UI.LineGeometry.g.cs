@@ -7,7 +7,9 @@
 
 namespace Sharp.UI
 {
-	public partial class LineGeometry
+	using Sharp.UI;
+
+    public partial class LineGeometry
 	{
 
         // ----- constructors -----

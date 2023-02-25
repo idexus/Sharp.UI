@@ -7,7 +7,9 @@
 
 namespace Sharp.UI
 {
-	public partial class ContentPresenter
+	using Sharp.UI;
+
+    public partial class ContentPresenter
 	{
 
         // ----- constructors -----

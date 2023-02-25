@@ -8,9 +8,8 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class PolyQuadraticBezierSegmentExtension
     {
         public static T Points<T>(this T self,

@@ -32,7 +32,39 @@ namespace Sharp.UI
             return self;
         }
 
-        // ---
+        // --- Padding
+
+        public static T Padding<T>(this T self, double horizontalSize, double verticalSize)
+            where T : Microsoft.Maui.Controls.Border
+        {
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Border.PaddingProperty, new Thickness(horizontalSize, verticalSize));
+            return self;
+        }
+
+        public static T Padding<T>(this T self, double left, double top, double right, double bottom)
+            where T : Microsoft.Maui.Controls.Border
+        {
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Border.PaddingProperty, new Thickness(left, top, right, bottom));
+            return self;
+        }
+
+        // --- Margin
+
+        public static T Margin<T>(this T self, double horizontalSize, double verticalSize)
+            where T : Microsoft.Maui.Controls.View
+        {
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.View.MarginProperty, new Thickness(horizontalSize, verticalSize));
+            return self;
+        }
+
+        public static T Margin<T>(this T self, double left, double top, double right, double bottom)
+            where T : Microsoft.Maui.Controls.View
+        {
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.View.MarginProperty, new Thickness(left, top, right, bottom));
+            return self;
+        }
+
+        // --- AbsoluteLayout
 
         public static T AbsoluteLayoutBounds<T>(this T self, double x, double y, double width, double height)
             where T : Microsoft.Maui.Controls.View
@@ -41,7 +73,7 @@ namespace Sharp.UI
             return self;
         }
 
-        // Layout
+        // --- Layout
 
         public static T CenterHorizontally<T>(this T self)
             where T : Microsoft.Maui.Controls.View

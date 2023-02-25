@@ -8,9 +8,8 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class MultiPageOfPageExtension
     {
         public static T ItemsSource<T>(this T self,

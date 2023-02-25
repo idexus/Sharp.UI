@@ -8,9 +8,9 @@
 
 namespace ExampleApp
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    using Sharp.UI;
+    
     public static partial class CardViewExtension
     {
         public static T OnClicked<T>(this T self, System.EventHandler handler)

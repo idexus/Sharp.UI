@@ -8,9 +8,8 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class RefreshViewExtension
     {
         public static T IsRefreshing<T>(this T self,

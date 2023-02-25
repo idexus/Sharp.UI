@@ -8,9 +8,9 @@
 
 namespace ExampleApp
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    using Sharp.UI;
+    
     public static partial class DataModelExtension
     {
         public static T Id<T>(this T self,

@@ -7,7 +7,9 @@
 
 namespace Sharp.UI
 {
-	public partial class BoxView
+	using Sharp.UI;
+
+    public partial class BoxView
 	{
 
         // ----- constructors -----

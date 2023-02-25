@@ -8,9 +8,8 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class ReorderableItemsViewExtension
     {
         public static T CanMixGroups<T>(this T self,

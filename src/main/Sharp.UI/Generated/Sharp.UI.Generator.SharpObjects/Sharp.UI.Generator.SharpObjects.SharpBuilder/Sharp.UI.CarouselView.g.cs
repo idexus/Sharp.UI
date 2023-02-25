@@ -7,7 +7,9 @@
 
 namespace Sharp.UI
 {
-	public partial class CarouselView
+	using Sharp.UI;
+
+    public partial class CarouselView
 	{
 
         // ----- constructors -----

@@ -8,9 +8,9 @@
 
 namespace ExampleApp
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    using Sharp.UI;
+    
     public static partial class EmptyCardViewExtension
     {
         public static T CardTitle<T>(this T self,

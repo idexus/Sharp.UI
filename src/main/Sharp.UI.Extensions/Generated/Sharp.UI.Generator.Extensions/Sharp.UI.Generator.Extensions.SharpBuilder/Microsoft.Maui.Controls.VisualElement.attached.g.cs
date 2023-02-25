@@ -8,9 +8,8 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class VisualElementExtension
     {
         public static T VisualStateGroups<T>(this T self,

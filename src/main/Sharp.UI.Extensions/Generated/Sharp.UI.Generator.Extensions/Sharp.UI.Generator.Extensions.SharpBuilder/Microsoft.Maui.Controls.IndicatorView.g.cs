@@ -8,9 +8,8 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class IndicatorViewExtension
     {
         public static T IndicatorsShape<T>(this T self,

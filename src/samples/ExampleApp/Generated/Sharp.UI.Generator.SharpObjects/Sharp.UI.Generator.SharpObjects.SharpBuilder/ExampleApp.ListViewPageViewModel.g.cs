@@ -7,8 +7,7 @@
 
 namespace ExampleApp
 {
-	using Sharp.UI;
-    public partial class ListViewPageViewModel
+	public partial class ListViewPageViewModel
 	{
 
         // ----- constructors -----

@@ -7,7 +7,9 @@
 
 namespace Sharp.UI
 {
-	public partial class Editor
+	using Sharp.UI;
+
+    public partial class Editor
 	{
 
         // ----- constructors -----

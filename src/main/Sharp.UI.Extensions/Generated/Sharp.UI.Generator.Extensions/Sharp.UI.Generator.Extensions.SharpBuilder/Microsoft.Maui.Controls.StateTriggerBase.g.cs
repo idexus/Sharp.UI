@@ -8,9 +8,8 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class StateTriggerBaseExtension
     {
         public static T OnIsActiveChanged<T>(this T self, System.EventHandler handler)

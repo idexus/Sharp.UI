@@ -7,7 +7,9 @@
 
 namespace Sharp.UI
 {
-	public partial class CheckBox
+	using Sharp.UI;
+
+    public partial class CheckBox
 	{
 
         // ----- constructors -----

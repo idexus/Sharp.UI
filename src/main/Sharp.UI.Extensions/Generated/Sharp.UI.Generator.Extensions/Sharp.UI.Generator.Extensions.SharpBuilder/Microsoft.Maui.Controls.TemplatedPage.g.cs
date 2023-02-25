@@ -8,9 +8,8 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class TemplatedPageExtension
     {
         public static T ControlTemplate<T>(this T self,

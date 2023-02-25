@@ -8,9 +8,8 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class ItemsLayoutExtension
     {
         public static T SnapPointsAlignment<T>(this T self,

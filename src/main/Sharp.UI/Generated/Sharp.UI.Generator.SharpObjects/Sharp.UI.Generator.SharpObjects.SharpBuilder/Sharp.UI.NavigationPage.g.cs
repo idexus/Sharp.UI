@@ -7,7 +7,9 @@
 
 namespace Sharp.UI
 {
-	public partial class NavigationPage
+	using Sharp.UI;
+
+    public partial class NavigationPage
 	{
 
         // ----- constructors -----

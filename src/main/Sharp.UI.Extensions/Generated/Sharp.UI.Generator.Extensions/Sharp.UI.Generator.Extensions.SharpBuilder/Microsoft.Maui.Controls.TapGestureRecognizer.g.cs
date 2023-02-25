@@ -8,9 +8,8 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class TapGestureRecognizerExtension
     {
         public static Microsoft.Maui.Controls.TapGestureRecognizer Command(this Microsoft.Maui.Controls.TapGestureRecognizer self,

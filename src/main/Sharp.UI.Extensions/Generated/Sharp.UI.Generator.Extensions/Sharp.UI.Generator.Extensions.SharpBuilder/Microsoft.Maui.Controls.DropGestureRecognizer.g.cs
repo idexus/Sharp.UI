@@ -8,9 +8,8 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class DropGestureRecognizerExtension
     {
         public static T AllowDrop<T>(this T self,

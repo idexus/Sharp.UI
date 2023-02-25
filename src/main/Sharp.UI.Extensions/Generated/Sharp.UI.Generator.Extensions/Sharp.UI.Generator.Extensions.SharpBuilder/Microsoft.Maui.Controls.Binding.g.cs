@@ -8,9 +8,8 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class BindingExtension
     {
         public static Microsoft.Maui.Controls.Binding Converter(this Microsoft.Maui.Controls.Binding self,

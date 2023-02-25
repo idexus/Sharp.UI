@@ -7,7 +7,9 @@
 
 namespace Sharp.UI
 {
-	public partial class ImageCell
+	using Sharp.UI;
+
+    public partial class ImageCell
 	{
 
         // ----- constructors -----

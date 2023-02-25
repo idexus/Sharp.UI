@@ -62,6 +62,14 @@ namespace Sharp.UI.Generator.Extensions
             }
         }
 
+        public  string GetUsingString()
+        {
+            if (!mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microsoft.Maui"))
+                return $@"using Sharp.UI;
+    ";
+            return "";
+        }
+
         void GenerateExtensionNameSpace()
         {
             var className = $"{Helpers.GetNormalizedClassName(mainSymbol)}Extension";
@@ -69,8 +77,8 @@ namespace Sharp.UI.Generator.Extensions
             builder.Append($@"
 namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microsoft.Maui") ? "Sharp.UI" : mainSymbol.ContainingNamespace.ToDisplayString())}
 {{
-    {Shared.GetUsingString(mainSymbol)}using Sharp.UI.Internal;
-
+    using Sharp.UI.Internal;
+    {GetUsingString()}
     public static partial class {className}
     {{");
             

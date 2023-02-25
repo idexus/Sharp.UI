@@ -8,9 +8,8 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class UrlWebViewSourceExtension
     {
         public static T Url<T>(this T self,

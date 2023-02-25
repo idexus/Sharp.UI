@@ -8,9 +8,9 @@
 
 namespace ExampleApp
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    using Sharp.UI;
+    
     public static partial class ListViewPageViewModelExtension
     {
         public static T SimpleData<T>(this T self,

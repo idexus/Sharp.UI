@@ -7,7 +7,9 @@
 
 namespace Sharp.UI
 {
-	public partial class LineSegment
+	using Sharp.UI;
+
+    public partial class LineSegment
 	{
 
         // ----- constructors -----

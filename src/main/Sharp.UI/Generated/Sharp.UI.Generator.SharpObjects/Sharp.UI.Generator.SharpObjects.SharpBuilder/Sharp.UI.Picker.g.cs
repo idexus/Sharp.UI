@@ -7,7 +7,9 @@
 
 namespace Sharp.UI
 {
-	public partial class Picker
+	using Sharp.UI;
+
+    public partial class Picker
 	{
 
         // ----- constructors -----

@@ -8,9 +8,8 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class GestureElementExtension
     {
         public static T GestureRecognizers<T>(this T self,

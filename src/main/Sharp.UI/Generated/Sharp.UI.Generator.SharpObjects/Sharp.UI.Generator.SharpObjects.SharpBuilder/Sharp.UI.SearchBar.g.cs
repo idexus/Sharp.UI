@@ -7,7 +7,9 @@
 
 namespace Sharp.UI
 {
-	public partial class SearchBar
+	using Sharp.UI;
+
+    public partial class SearchBar
 	{
 
         // ----- constructors -----

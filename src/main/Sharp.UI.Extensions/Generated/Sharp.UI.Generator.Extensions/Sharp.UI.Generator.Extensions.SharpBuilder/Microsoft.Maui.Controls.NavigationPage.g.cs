@@ -8,9 +8,8 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class NavigationPageExtension
     {
         public static T BarBackgroundColor<T>(this T self,

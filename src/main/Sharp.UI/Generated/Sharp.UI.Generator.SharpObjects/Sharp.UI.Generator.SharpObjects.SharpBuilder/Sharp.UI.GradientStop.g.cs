@@ -7,7 +7,9 @@
 
 namespace Sharp.UI
 {
-	public partial class GradientStop
+	using Sharp.UI;
+
+    public partial class GradientStop
 	{
 
         // ----- constructors -----

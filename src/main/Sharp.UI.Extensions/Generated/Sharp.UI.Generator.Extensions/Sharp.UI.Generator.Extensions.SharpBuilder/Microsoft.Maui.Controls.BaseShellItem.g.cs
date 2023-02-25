@@ -8,9 +8,8 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class BaseShellItemExtension
     {
         public static T FlyoutIcon<T>(this T self,

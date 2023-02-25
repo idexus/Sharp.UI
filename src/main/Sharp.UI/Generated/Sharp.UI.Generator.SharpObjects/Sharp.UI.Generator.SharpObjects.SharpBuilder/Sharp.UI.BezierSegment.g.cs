@@ -7,7 +7,9 @@
 
 namespace Sharp.UI
 {
-	public partial class BezierSegment
+	using Sharp.UI;
+
+    public partial class BezierSegment
 	{
 
         // ----- constructors -----

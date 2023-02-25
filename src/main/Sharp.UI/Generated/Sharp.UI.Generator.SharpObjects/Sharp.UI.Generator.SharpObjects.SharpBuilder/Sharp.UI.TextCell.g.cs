@@ -7,7 +7,9 @@
 
 namespace Sharp.UI
 {
-	public partial class TextCell
+	using Sharp.UI;
+
+    public partial class TextCell
 	{
 
         // ----- constructors -----

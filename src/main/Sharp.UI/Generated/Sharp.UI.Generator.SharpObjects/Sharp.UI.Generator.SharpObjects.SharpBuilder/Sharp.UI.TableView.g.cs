@@ -12,7 +12,9 @@ using System.Collections.Generic;
 
 namespace Sharp.UI
 {
-	public partial class TableView : IList<Microsoft.Maui.Controls.TableSection>
+	using Sharp.UI;
+
+    public partial class TableView : IList<Microsoft.Maui.Controls.TableSection>
 	{
 
         // ----- constructors -----

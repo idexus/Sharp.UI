@@ -8,9 +8,8 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class EntryExtension
     {
         public static T HorizontalTextAlignment<T>(this T self,

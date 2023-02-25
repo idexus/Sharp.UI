@@ -8,9 +8,8 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class PinchGestureRecognizerExtension
     {
         public static Microsoft.Maui.Controls.PinchGestureRecognizer OnPinchUpdated(this Microsoft.Maui.Controls.PinchGestureRecognizer self, System.EventHandler<Microsoft.Maui.Controls.PinchGestureUpdatedEventArgs> handler)

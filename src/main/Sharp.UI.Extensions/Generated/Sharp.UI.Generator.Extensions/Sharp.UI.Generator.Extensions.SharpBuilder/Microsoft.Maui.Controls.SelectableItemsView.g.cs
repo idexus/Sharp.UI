@@ -8,9 +8,8 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class SelectableItemsViewExtension
     {
         public static T SelectedItem<T>(this T self,

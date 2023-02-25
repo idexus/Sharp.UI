@@ -28,14 +28,6 @@ namespace Sharp.UI.Generator
             if (attributeData != null) return (string)attributeData.ConstructorArguments[0].Value;
             return $"{symbol.Name}Property";
         }
-
-        public static string GetUsingString(ISymbol symbol)
-        {
-            if (!symbol.ContainingNamespace.ToDisplayString().Equals("Sharp.UI"))
-                return $@"using Sharp.UI;
-    ";
-            return "";
-        }
     }
 }
 

@@ -8,9 +8,8 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class VisualStateExtension
     {
         public static Microsoft.Maui.Controls.VisualState Name(this Microsoft.Maui.Controls.VisualState self,

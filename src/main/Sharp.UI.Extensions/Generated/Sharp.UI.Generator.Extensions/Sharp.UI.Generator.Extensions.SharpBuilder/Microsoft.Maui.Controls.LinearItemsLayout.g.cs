@@ -8,9 +8,8 @@
 
 namespace Sharp.UI
 {
-    using Sharp.UI;
     using Sharp.UI.Internal;
-
+    
     public static partial class LinearItemsLayoutExtension
     {
         public static T ItemSpacing<T>(this T self,

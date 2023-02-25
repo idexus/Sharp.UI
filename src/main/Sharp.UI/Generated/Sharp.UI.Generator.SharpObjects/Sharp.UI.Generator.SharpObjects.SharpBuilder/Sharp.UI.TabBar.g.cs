@@ -12,7 +12,9 @@ using System.Collections.Generic;
 
 namespace Sharp.UI
 {
-	public partial class TabBar : IList<Microsoft.Maui.Controls.ShellSection>
+	using Sharp.UI;
+
+    public partial class TabBar : IList<Microsoft.Maui.Controls.ShellSection>
 	{
 
         // ----- constructors -----

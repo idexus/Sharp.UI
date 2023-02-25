@@ -7,7 +7,9 @@
 
 namespace Sharp.UI
 {
-	public partial class Slider
+	using Sharp.UI;
+
+    public partial class Slider
 	{
 
         // ----- constructors -----
