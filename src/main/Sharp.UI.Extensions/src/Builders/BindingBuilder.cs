@@ -2,9 +2,21 @@
 
 namespace Sharp.UI
 {
+    public class PropertyBuilder<T>
+    {
+        protected BindableObject obj;
+        protected BindableProperty property;
 
+        public PropertyBuilder(BindableObject obj, BindableProperty property)
+        {
+            this.obj = obj;
+            this.property = property;
+        }
 
-    public class BindingBuilder<T>
+        public virtual void Build() { }
+    }
+
+    public class BindingBuilder<T> : PropertyBuilder<T>
     {
         public class ValueConverter : IValueConverter
         {
@@ -57,16 +69,10 @@ namespace Sharp.UI
         string stringFormat = null;
         object source = null;
 
-        private BindableObject obj;
-        private BindableProperty property;
 
-        public BindingBuilder(BindableObject obj, BindableProperty property)
-        {
-            this.obj = obj;
-            this.property = property;
-        }
+        public BindingBuilder(BindableObject obj, BindableProperty property) : base(obj, property) { }
 
-        public void BindProperty()
+        public override void Build()
         {
             if (path != null)
             {

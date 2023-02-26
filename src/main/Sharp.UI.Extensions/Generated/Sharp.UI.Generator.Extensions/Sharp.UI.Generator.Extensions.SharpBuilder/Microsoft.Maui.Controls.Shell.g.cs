@@ -29,14 +29,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FlyoutVerticalScrollMode<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.ScrollMode>, BindingBuilder<Microsoft.Maui.Controls.ScrollMode>> buildBinding)
+        public static T FlyoutVerticalScrollMode<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Shell
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.ScrollMode>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ScrollMode>(self, Microsoft.Maui.Controls.Shell.FlyoutVerticalScrollModeProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shell.FlyoutVerticalScrollModeProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T FlyoutVerticalScrollMode<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.ScrollMode>, BindingBuilder<Microsoft.Maui.Controls.ScrollMode>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Shell
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ScrollMode>(self, Microsoft.Maui.Controls.Shell.FlyoutVerticalScrollModeProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T FlyoutIcon<T>(this T self,
             Microsoft.Maui.Controls.ImageSource flyoutIcon)
@@ -55,14 +66,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FlyoutIcon<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.ImageSource>, BindingBuilder<Microsoft.Maui.Controls.ImageSource>> buildBinding)
+        public static T FlyoutIcon<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Shell
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.ImageSource>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ImageSource>(self, Microsoft.Maui.Controls.Shell.FlyoutIconProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shell.FlyoutIconProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T FlyoutIcon<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.ImageSource>, BindingBuilder<Microsoft.Maui.Controls.ImageSource>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Shell
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ImageSource>(self, Microsoft.Maui.Controls.Shell.FlyoutIconProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T CurrentItem<T>(this T self,
             Microsoft.Maui.Controls.ShellItem currentItem)
@@ -81,14 +103,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T CurrentItem<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.ShellItem>, BindingBuilder<Microsoft.Maui.Controls.ShellItem>> buildBinding)
+        public static T CurrentItem<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Shell
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.ShellItem>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ShellItem>(self, Microsoft.Maui.Controls.Shell.CurrentItemProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shell.CurrentItemProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T CurrentItem<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.ShellItem>, BindingBuilder<Microsoft.Maui.Controls.ShellItem>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Shell
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ShellItem>(self, Microsoft.Maui.Controls.Shell.CurrentItemProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T FlyoutBackgroundImage<T>(this T self,
             Microsoft.Maui.Controls.ImageSource flyoutBackgroundImage)
@@ -107,14 +140,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FlyoutBackgroundImage<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.ImageSource>, BindingBuilder<Microsoft.Maui.Controls.ImageSource>> buildBinding)
+        public static T FlyoutBackgroundImage<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Shell
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.ImageSource>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ImageSource>(self, Microsoft.Maui.Controls.Shell.FlyoutBackgroundImageProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shell.FlyoutBackgroundImageProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T FlyoutBackgroundImage<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.ImageSource>, BindingBuilder<Microsoft.Maui.Controls.ImageSource>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Shell
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ImageSource>(self, Microsoft.Maui.Controls.Shell.FlyoutBackgroundImageProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T FlyoutBackgroundImageAspect<T>(this T self,
             Microsoft.Maui.Aspect flyoutBackgroundImageAspect)
@@ -133,14 +177,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FlyoutBackgroundImageAspect<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Aspect>, BindingBuilder<Microsoft.Maui.Aspect>> buildBinding)
+        public static T FlyoutBackgroundImageAspect<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Shell
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Aspect>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Aspect>(self, Microsoft.Maui.Controls.Shell.FlyoutBackgroundImageAspectProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shell.FlyoutBackgroundImageAspectProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T FlyoutBackgroundImageAspect<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Aspect>, BindingBuilder<Microsoft.Maui.Aspect>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Shell
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Aspect>(self, Microsoft.Maui.Controls.Shell.FlyoutBackgroundImageAspectProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T FlyoutBackgroundColor<T>(this T self,
             Microsoft.Maui.Graphics.Color flyoutBackgroundColor)
@@ -159,14 +214,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FlyoutBackgroundColor<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        public static T FlyoutBackgroundColor<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Shell
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Graphics.Color>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.Shell.FlyoutBackgroundColorProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shell.FlyoutBackgroundColorProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T FlyoutBackgroundColor<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Shell
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.Shell.FlyoutBackgroundColorProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Task<bool> AnimateFlyoutBackgroundColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.Shell
@@ -194,14 +260,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FlyoutBackground<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.Brush>, BindingBuilder<Microsoft.Maui.Controls.Brush>> buildBinding)
+        public static T FlyoutBackground<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Shell
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.Brush>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Brush>(self, Microsoft.Maui.Controls.Shell.FlyoutBackgroundProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shell.FlyoutBackgroundProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T FlyoutBackground<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.Brush>, BindingBuilder<Microsoft.Maui.Controls.Brush>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Shell
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Brush>(self, Microsoft.Maui.Controls.Shell.FlyoutBackgroundProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T FlyoutBackdrop<T>(this T self,
             Microsoft.Maui.Controls.Brush flyoutBackdrop)
@@ -220,14 +297,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FlyoutBackdrop<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.Brush>, BindingBuilder<Microsoft.Maui.Controls.Brush>> buildBinding)
+        public static T FlyoutBackdrop<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Shell
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.Brush>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Brush>(self, Microsoft.Maui.Controls.Shell.FlyoutBackdropProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shell.FlyoutBackdropProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T FlyoutBackdrop<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.Brush>, BindingBuilder<Microsoft.Maui.Controls.Brush>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Shell
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Brush>(self, Microsoft.Maui.Controls.Shell.FlyoutBackdropProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T FlyoutWidth<T>(this T self,
             double flyoutWidth)
@@ -246,14 +334,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FlyoutWidth<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        public static T FlyoutWidth<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Shell
+            where TBuilder : PropertyBuilder<double>
         {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shell.FlyoutWidthProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shell.FlyoutWidthProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T FlyoutWidth<T>(this T self,
+        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Shell
+        //{
+        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shell.FlyoutWidthProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Task<bool> AnimateFlyoutWidthTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.Shell
@@ -281,14 +380,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FlyoutHeight<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        public static T FlyoutHeight<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Shell
+            where TBuilder : PropertyBuilder<double>
         {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shell.FlyoutHeightProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shell.FlyoutHeightProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T FlyoutHeight<T>(this T self,
+        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Shell
+        //{
+        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shell.FlyoutHeightProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Task<bool> AnimateFlyoutHeightTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.Shell
@@ -316,14 +426,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FlyoutBehavior<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.FlyoutBehavior>, BindingBuilder<Microsoft.Maui.FlyoutBehavior>> buildBinding)
+        public static T FlyoutBehavior<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Shell
+            where TBuilder : PropertyBuilder<Microsoft.Maui.FlyoutBehavior>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.FlyoutBehavior>(self, Microsoft.Maui.Controls.Shell.FlyoutBehaviorProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shell.FlyoutBehaviorProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T FlyoutBehavior<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.FlyoutBehavior>, BindingBuilder<Microsoft.Maui.FlyoutBehavior>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Shell
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.FlyoutBehavior>(self, Microsoft.Maui.Controls.Shell.FlyoutBehaviorProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T FlyoutHeader<T>(this T self,
             object flyoutHeader)
@@ -342,14 +463,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FlyoutHeader<T>(this T self,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
+        public static T FlyoutHeader<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Shell
+            where TBuilder : PropertyBuilder<object>
         {
-            var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.Shell.FlyoutHeaderProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shell.FlyoutHeaderProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T FlyoutHeader<T>(this T self,
+        //    System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Shell
+        //{
+        //    var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.Shell.FlyoutHeaderProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T FlyoutFooter<T>(this T self,
             object flyoutFooter)
@@ -368,14 +500,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FlyoutFooter<T>(this T self,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
+        public static T FlyoutFooter<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Shell
+            where TBuilder : PropertyBuilder<object>
         {
-            var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.Shell.FlyoutFooterProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shell.FlyoutFooterProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T FlyoutFooter<T>(this T self,
+        //    System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Shell
+        //{
+        //    var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.Shell.FlyoutFooterProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T FlyoutHeaderBehavior<T>(this T self,
             Microsoft.Maui.Controls.FlyoutHeaderBehavior flyoutHeaderBehavior)
@@ -394,14 +537,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FlyoutHeaderBehavior<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.FlyoutHeaderBehavior>, BindingBuilder<Microsoft.Maui.Controls.FlyoutHeaderBehavior>> buildBinding)
+        public static T FlyoutHeaderBehavior<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Shell
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.FlyoutHeaderBehavior>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.FlyoutHeaderBehavior>(self, Microsoft.Maui.Controls.Shell.FlyoutHeaderBehaviorProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shell.FlyoutHeaderBehaviorProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T FlyoutHeaderBehavior<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.FlyoutHeaderBehavior>, BindingBuilder<Microsoft.Maui.Controls.FlyoutHeaderBehavior>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Shell
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.FlyoutHeaderBehavior>(self, Microsoft.Maui.Controls.Shell.FlyoutHeaderBehaviorProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T FlyoutHeaderTemplate<T>(this T self,
             Microsoft.Maui.Controls.DataTemplate flyoutHeaderTemplate)
@@ -420,14 +574,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FlyoutHeaderTemplate<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buildBinding)
+        public static T FlyoutHeaderTemplate<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Shell
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.DataTemplate>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.Shell.FlyoutHeaderTemplateProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shell.FlyoutHeaderTemplateProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T FlyoutHeaderTemplate<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Shell
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.Shell.FlyoutHeaderTemplateProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T FlyoutHeaderTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.Shell
@@ -453,14 +618,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FlyoutFooterTemplate<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buildBinding)
+        public static T FlyoutFooterTemplate<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Shell
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.DataTemplate>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.Shell.FlyoutFooterTemplateProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shell.FlyoutFooterTemplateProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T FlyoutFooterTemplate<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Shell
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.Shell.FlyoutFooterTemplateProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T FlyoutFooterTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.Shell
@@ -486,14 +662,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FlyoutIsPresented<T>(this T self,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        public static T FlyoutIsPresented<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Shell
+            where TBuilder : PropertyBuilder<bool>
         {
-            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.Shell.FlyoutIsPresentedProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shell.FlyoutIsPresentedProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T FlyoutIsPresented<T>(this T self,
+        //    System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Shell
+        //{
+        //    var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.Shell.FlyoutIsPresentedProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T Items<T>(this T self,
             IList<Microsoft.Maui.Controls.ShellItem> items)
@@ -513,14 +700,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Items<T>(this T self,
-            System.Func<BindingBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellItem>>, BindingBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellItem>>> buildBinding)
+        public static T Items<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Shell
+            where TBuilder : PropertyBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellItem>>
         {
-            var builder = buildBinding(new BindingBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellItem>>(self, Microsoft.Maui.Controls.Shell.ItemsProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shell.ItemsProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T Items<T>(this T self,
+        //    System.Func<BindingBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellItem>>, BindingBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellItem>>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Shell
+        //{
+        //    var builder = buildBinding(new BindingBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellItem>>(self, Microsoft.Maui.Controls.Shell.ItemsProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T ItemTemplate<T>(this T self,
             Microsoft.Maui.Controls.DataTemplate itemTemplate)
@@ -539,14 +737,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ItemTemplate<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buildBinding)
+        public static T ItemTemplate<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Shell
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.DataTemplate>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.Shell.ItemTemplateProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shell.ItemTemplateProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T ItemTemplate<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Shell
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.Shell.ItemTemplateProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T ItemTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.Shell
@@ -572,14 +781,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T MenuItemTemplate<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buildBinding)
+        public static T MenuItemTemplate<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Shell
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.DataTemplate>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.Shell.MenuItemTemplateProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shell.MenuItemTemplateProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T MenuItemTemplate<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Shell
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.Shell.MenuItemTemplateProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T MenuItemTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.Shell
@@ -605,14 +825,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FlyoutContent<T>(this T self,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
+        public static T FlyoutContent<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Shell
+            where TBuilder : PropertyBuilder<object>
         {
-            var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.Shell.FlyoutContentProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shell.FlyoutContentProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T FlyoutContent<T>(this T self,
+        //    System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Shell
+        //{
+        //    var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.Shell.FlyoutContentProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T FlyoutContentTemplate<T>(this T self,
             Microsoft.Maui.Controls.DataTemplate flyoutContentTemplate)
@@ -631,14 +862,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FlyoutContentTemplate<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buildBinding)
+        public static T FlyoutContentTemplate<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Shell
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.DataTemplate>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.Shell.FlyoutContentTemplateProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shell.FlyoutContentTemplateProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T FlyoutContentTemplate<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Shell
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.Shell.FlyoutContentTemplateProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T FlyoutContentTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.Shell

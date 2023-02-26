@@ -28,13 +28,22 @@ namespace Sharp.UI
             return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.Polyline Points(this Microsoft.Maui.Controls.Shapes.Polyline self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.PointCollection>, BindingBuilder<Microsoft.Maui.Controls.PointCollection>> buildBinding)
+        public static Microsoft.Maui.Controls.Shapes.Polyline Points<TBuilder>(this Microsoft.Maui.Controls.Shapes.Polyline self, System.Action<TBuilder> configure)
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.PointCollection>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.PointCollection>(self, Microsoft.Maui.Controls.Shapes.Polyline.PointsProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.Polyline.PointsProperty);
+            configure(builder);
+            builder.Build();
             return self;
         }
+
+        //public static Microsoft.Maui.Controls.Shapes.Polyline Points(this Microsoft.Maui.Controls.Shapes.Polyline self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.PointCollection>, BindingBuilder<Microsoft.Maui.Controls.PointCollection>> buildBinding)
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.PointCollection>(self, Microsoft.Maui.Controls.Shapes.Polyline.PointsProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Microsoft.Maui.Controls.Shapes.Polyline FillRule(this Microsoft.Maui.Controls.Shapes.Polyline self,
             Microsoft.Maui.Controls.Shapes.FillRule fillRule)
@@ -51,13 +60,22 @@ namespace Sharp.UI
             return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.Polyline FillRule(this Microsoft.Maui.Controls.Shapes.Polyline self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.Shapes.FillRule>, BindingBuilder<Microsoft.Maui.Controls.Shapes.FillRule>> buildBinding)
+        public static Microsoft.Maui.Controls.Shapes.Polyline FillRule<TBuilder>(this Microsoft.Maui.Controls.Shapes.Polyline self, System.Action<TBuilder> configure)
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.Shapes.FillRule>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Shapes.FillRule>(self, Microsoft.Maui.Controls.Shapes.Polyline.FillRuleProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.Polyline.FillRuleProperty);
+            configure(builder);
+            builder.Build();
             return self;
         }
+
+        //public static Microsoft.Maui.Controls.Shapes.Polyline FillRule(this Microsoft.Maui.Controls.Shapes.Polyline self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.Shapes.FillRule>, BindingBuilder<Microsoft.Maui.Controls.Shapes.FillRule>> buildBinding)
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Shapes.FillRule>(self, Microsoft.Maui.Controls.Shapes.Polyline.FillRuleProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
     }
 }

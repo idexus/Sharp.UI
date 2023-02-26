@@ -27,13 +27,22 @@ namespace Sharp.UI
             return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.Line X1(this Microsoft.Maui.Controls.Shapes.Line self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        public static Microsoft.Maui.Controls.Shapes.Line X1<TBuilder>(this Microsoft.Maui.Controls.Shapes.Line self, System.Action<TBuilder> configure)
+            where TBuilder : PropertyBuilder<double>
         {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.Line.X1Property));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.Line.X1Property);
+            configure(builder);
+            builder.Build();
             return self;
         }
+
+        //public static Microsoft.Maui.Controls.Shapes.Line X1(this Microsoft.Maui.Controls.Shapes.Line self,
+        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        //{
+        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.Line.X1Property));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Task<bool> AnimateX1To(this Microsoft.Maui.Controls.Shapes.Line self, double value, uint length = 250, Easing? easing = null)
         {
@@ -58,13 +67,22 @@ namespace Sharp.UI
             return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.Line Y1(this Microsoft.Maui.Controls.Shapes.Line self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        public static Microsoft.Maui.Controls.Shapes.Line Y1<TBuilder>(this Microsoft.Maui.Controls.Shapes.Line self, System.Action<TBuilder> configure)
+            where TBuilder : PropertyBuilder<double>
         {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.Line.Y1Property));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.Line.Y1Property);
+            configure(builder);
+            builder.Build();
             return self;
         }
+
+        //public static Microsoft.Maui.Controls.Shapes.Line Y1(this Microsoft.Maui.Controls.Shapes.Line self,
+        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        //{
+        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.Line.Y1Property));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Task<bool> AnimateY1To(this Microsoft.Maui.Controls.Shapes.Line self, double value, uint length = 250, Easing? easing = null)
         {
@@ -89,13 +107,22 @@ namespace Sharp.UI
             return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.Line X2(this Microsoft.Maui.Controls.Shapes.Line self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        public static Microsoft.Maui.Controls.Shapes.Line X2<TBuilder>(this Microsoft.Maui.Controls.Shapes.Line self, System.Action<TBuilder> configure)
+            where TBuilder : PropertyBuilder<double>
         {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.Line.X2Property));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.Line.X2Property);
+            configure(builder);
+            builder.Build();
             return self;
         }
+
+        //public static Microsoft.Maui.Controls.Shapes.Line X2(this Microsoft.Maui.Controls.Shapes.Line self,
+        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        //{
+        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.Line.X2Property));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Task<bool> AnimateX2To(this Microsoft.Maui.Controls.Shapes.Line self, double value, uint length = 250, Easing? easing = null)
         {
@@ -120,13 +147,22 @@ namespace Sharp.UI
             return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.Line Y2(this Microsoft.Maui.Controls.Shapes.Line self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        public static Microsoft.Maui.Controls.Shapes.Line Y2<TBuilder>(this Microsoft.Maui.Controls.Shapes.Line self, System.Action<TBuilder> configure)
+            where TBuilder : PropertyBuilder<double>
         {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.Line.Y2Property));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.Line.Y2Property);
+            configure(builder);
+            builder.Build();
             return self;
         }
+
+        //public static Microsoft.Maui.Controls.Shapes.Line Y2(this Microsoft.Maui.Controls.Shapes.Line self,
+        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        //{
+        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.Line.Y2Property));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Task<bool> AnimateY2To(this Microsoft.Maui.Controls.Shapes.Line self, double value, uint length = 250, Easing? easing = null)
         {

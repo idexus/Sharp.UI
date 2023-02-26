@@ -50,14 +50,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Shadow<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.Shadow>, BindingBuilder<Microsoft.Maui.Controls.Shadow>> buildBinding)
+        public static T Shadow<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.VisualElement
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.Shadow>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Shadow>(self, Microsoft.Maui.Controls.VisualElement.ShadowProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.VisualElement.ShadowProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T Shadow<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.Shadow>, BindingBuilder<Microsoft.Maui.Controls.Shadow>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.VisualElement
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Shadow>(self, Microsoft.Maui.Controls.VisualElement.ShadowProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T ZIndex<T>(this T self,
             int zIndex)
@@ -76,14 +87,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ZIndex<T>(this T self,
-            System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
+        public static T ZIndex<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.VisualElement
+            where TBuilder : PropertyBuilder<int>
         {
-            var builder = buildBinding(new BindingBuilder<int>(self, Microsoft.Maui.Controls.VisualElement.ZIndexProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.VisualElement.ZIndexProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T ZIndex<T>(this T self,
+        //    System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.VisualElement
+        //{
+        //    var builder = buildBinding(new BindingBuilder<int>(self, Microsoft.Maui.Controls.VisualElement.ZIndexProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T Visual<T>(this T self,
             Microsoft.Maui.Controls.IVisual visual)
@@ -102,14 +124,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Visual<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.IVisual>, BindingBuilder<Microsoft.Maui.Controls.IVisual>> buildBinding)
+        public static T Visual<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.VisualElement
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.IVisual>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.IVisual>(self, Microsoft.Maui.Controls.VisualElement.VisualProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.VisualElement.VisualProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T Visual<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.IVisual>, BindingBuilder<Microsoft.Maui.Controls.IVisual>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.VisualElement
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.IVisual>(self, Microsoft.Maui.Controls.VisualElement.VisualProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T FlowDirection<T>(this T self,
             Microsoft.Maui.FlowDirection flowDirection)
@@ -128,14 +161,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FlowDirection<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.FlowDirection>, BindingBuilder<Microsoft.Maui.FlowDirection>> buildBinding)
+        public static T FlowDirection<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.VisualElement
+            where TBuilder : PropertyBuilder<Microsoft.Maui.FlowDirection>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.FlowDirection>(self, Microsoft.Maui.Controls.VisualElement.FlowDirectionProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.VisualElement.FlowDirectionProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T FlowDirection<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.FlowDirection>, BindingBuilder<Microsoft.Maui.FlowDirection>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.VisualElement
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.FlowDirection>(self, Microsoft.Maui.Controls.VisualElement.FlowDirectionProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T AnchorX<T>(this T self,
             double anchorX)
@@ -154,14 +198,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T AnchorX<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        public static T AnchorX<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.VisualElement
+            where TBuilder : PropertyBuilder<double>
         {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.VisualElement.AnchorXProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.VisualElement.AnchorXProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T AnchorX<T>(this T self,
+        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.VisualElement
+        //{
+        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.VisualElement.AnchorXProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Task<bool> AnimateAnchorXTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -189,14 +244,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T AnchorY<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        public static T AnchorY<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.VisualElement
+            where TBuilder : PropertyBuilder<double>
         {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.VisualElement.AnchorYProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.VisualElement.AnchorYProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T AnchorY<T>(this T self,
+        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.VisualElement
+        //{
+        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.VisualElement.AnchorYProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Task<bool> AnimateAnchorYTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -224,14 +290,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T BackgroundColor<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        public static T BackgroundColor<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.VisualElement
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Graphics.Color>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.VisualElement.BackgroundColorProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.VisualElement.BackgroundColorProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T BackgroundColor<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.VisualElement
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.VisualElement.BackgroundColorProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Task<bool> AnimateBackgroundColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -259,14 +336,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Background<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.Brush>, BindingBuilder<Microsoft.Maui.Controls.Brush>> buildBinding)
+        public static T Background<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.VisualElement
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.Brush>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Brush>(self, Microsoft.Maui.Controls.VisualElement.BackgroundProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.VisualElement.BackgroundProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T Background<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.Brush>, BindingBuilder<Microsoft.Maui.Controls.Brush>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.VisualElement
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Brush>(self, Microsoft.Maui.Controls.VisualElement.BackgroundProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T Behaviors<T>(this T self,
             IList<Microsoft.Maui.Controls.Behavior> behaviors)
@@ -286,14 +374,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Behaviors<T>(this T self,
-            System.Func<BindingBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.Behavior>>, BindingBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.Behavior>>> buildBinding)
+        public static T Behaviors<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.VisualElement
+            where TBuilder : PropertyBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.Behavior>>
         {
-            var builder = buildBinding(new BindingBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.Behavior>>(self, Microsoft.Maui.Controls.VisualElement.BehaviorsProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.VisualElement.BehaviorsProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T Behaviors<T>(this T self,
+        //    System.Func<BindingBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.Behavior>>, BindingBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.Behavior>>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.VisualElement
+        //{
+        //    var builder = buildBinding(new BindingBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.Behavior>>(self, Microsoft.Maui.Controls.VisualElement.BehaviorsProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T HeightRequest<T>(this T self,
             double heightRequest)
@@ -312,14 +411,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T HeightRequest<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        public static T HeightRequest<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.VisualElement
+            where TBuilder : PropertyBuilder<double>
         {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.VisualElement.HeightRequestProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.VisualElement.HeightRequestProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T HeightRequest<T>(this T self,
+        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.VisualElement
+        //{
+        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.VisualElement.HeightRequestProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Task<bool> AnimateHeightRequestTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -347,14 +457,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T InputTransparent<T>(this T self,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        public static T InputTransparent<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.VisualElement
+            where TBuilder : PropertyBuilder<bool>
         {
-            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.VisualElement.InputTransparentProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.VisualElement.InputTransparentProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T InputTransparent<T>(this T self,
+        //    System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.VisualElement
+        //{
+        //    var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.VisualElement.InputTransparentProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T IsEnabled<T>(this T self,
             bool isEnabled)
@@ -373,14 +494,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T IsEnabled<T>(this T self,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        public static T IsEnabled<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.VisualElement
+            where TBuilder : PropertyBuilder<bool>
         {
-            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.VisualElement.IsEnabledProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.VisualElement.IsEnabledProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T IsEnabled<T>(this T self,
+        //    System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.VisualElement
+        //{
+        //    var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.VisualElement.IsEnabledProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T IsVisible<T>(this T self,
             bool isVisible)
@@ -399,14 +531,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T IsVisible<T>(this T self,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        public static T IsVisible<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.VisualElement
+            where TBuilder : PropertyBuilder<bool>
         {
-            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.VisualElement.IsVisibleProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.VisualElement.IsVisibleProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T IsVisible<T>(this T self,
+        //    System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.VisualElement
+        //{
+        //    var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.VisualElement.IsVisibleProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T MinimumHeightRequest<T>(this T self,
             double minimumHeightRequest)
@@ -425,14 +568,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T MinimumHeightRequest<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        public static T MinimumHeightRequest<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.VisualElement
+            where TBuilder : PropertyBuilder<double>
         {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.VisualElement.MinimumHeightRequestProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.VisualElement.MinimumHeightRequestProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T MinimumHeightRequest<T>(this T self,
+        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.VisualElement
+        //{
+        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.VisualElement.MinimumHeightRequestProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Task<bool> AnimateMinimumHeightRequestTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -460,14 +614,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T MinimumWidthRequest<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        public static T MinimumWidthRequest<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.VisualElement
+            where TBuilder : PropertyBuilder<double>
         {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.VisualElement.MinimumWidthRequestProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.VisualElement.MinimumWidthRequestProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T MinimumWidthRequest<T>(this T self,
+        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.VisualElement
+        //{
+        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.VisualElement.MinimumWidthRequestProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Task<bool> AnimateMinimumWidthRequestTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -495,14 +660,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T MaximumHeightRequest<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        public static T MaximumHeightRequest<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.VisualElement
+            where TBuilder : PropertyBuilder<double>
         {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.VisualElement.MaximumHeightRequestProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.VisualElement.MaximumHeightRequestProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T MaximumHeightRequest<T>(this T self,
+        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.VisualElement
+        //{
+        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.VisualElement.MaximumHeightRequestProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Task<bool> AnimateMaximumHeightRequestTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -530,14 +706,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T MaximumWidthRequest<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        public static T MaximumWidthRequest<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.VisualElement
+            where TBuilder : PropertyBuilder<double>
         {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.VisualElement.MaximumWidthRequestProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.VisualElement.MaximumWidthRequestProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T MaximumWidthRequest<T>(this T self,
+        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.VisualElement
+        //{
+        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.VisualElement.MaximumWidthRequestProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Task<bool> AnimateMaximumWidthRequestTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -565,14 +752,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Opacity<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        public static T Opacity<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.VisualElement
+            where TBuilder : PropertyBuilder<double>
         {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.VisualElement.OpacityProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.VisualElement.OpacityProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T Opacity<T>(this T self,
+        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.VisualElement
+        //{
+        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.VisualElement.OpacityProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Task<bool> AnimateOpacityTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -600,14 +798,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Rotation<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        public static T Rotation<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.VisualElement
+            where TBuilder : PropertyBuilder<double>
         {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.VisualElement.RotationProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.VisualElement.RotationProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T Rotation<T>(this T self,
+        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.VisualElement
+        //{
+        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.VisualElement.RotationProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Task<bool> AnimateRotationTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -635,14 +844,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T RotationX<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        public static T RotationX<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.VisualElement
+            where TBuilder : PropertyBuilder<double>
         {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.VisualElement.RotationXProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.VisualElement.RotationXProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T RotationX<T>(this T self,
+        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.VisualElement
+        //{
+        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.VisualElement.RotationXProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Task<bool> AnimateRotationXTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -670,14 +890,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T RotationY<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        public static T RotationY<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.VisualElement
+            where TBuilder : PropertyBuilder<double>
         {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.VisualElement.RotationYProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.VisualElement.RotationYProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T RotationY<T>(this T self,
+        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.VisualElement
+        //{
+        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.VisualElement.RotationYProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Task<bool> AnimateRotationYTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -705,14 +936,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Scale<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        public static T Scale<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.VisualElement
+            where TBuilder : PropertyBuilder<double>
         {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.VisualElement.ScaleProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.VisualElement.ScaleProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T Scale<T>(this T self,
+        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.VisualElement
+        //{
+        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.VisualElement.ScaleProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Task<bool> AnimateScaleTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -740,14 +982,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ScaleX<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        public static T ScaleX<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.VisualElement
+            where TBuilder : PropertyBuilder<double>
         {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.VisualElement.ScaleXProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.VisualElement.ScaleXProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T ScaleX<T>(this T self,
+        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.VisualElement
+        //{
+        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.VisualElement.ScaleXProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Task<bool> AnimateScaleXTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -775,14 +1028,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ScaleY<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        public static T ScaleY<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.VisualElement
+            where TBuilder : PropertyBuilder<double>
         {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.VisualElement.ScaleYProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.VisualElement.ScaleYProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T ScaleY<T>(this T self,
+        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.VisualElement
+        //{
+        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.VisualElement.ScaleYProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Task<bool> AnimateScaleYTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -810,14 +1074,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T TranslationX<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        public static T TranslationX<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.VisualElement
+            where TBuilder : PropertyBuilder<double>
         {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.VisualElement.TranslationXProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.VisualElement.TranslationXProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T TranslationX<T>(this T self,
+        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.VisualElement
+        //{
+        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.VisualElement.TranslationXProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Task<bool> AnimateTranslationXTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -845,14 +1120,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T TranslationY<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        public static T TranslationY<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.VisualElement
+            where TBuilder : PropertyBuilder<double>
         {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.VisualElement.TranslationYProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.VisualElement.TranslationYProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T TranslationY<T>(this T self,
+        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.VisualElement
+        //{
+        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.VisualElement.TranslationYProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Task<bool> AnimateTranslationYTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -881,14 +1167,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Triggers<T>(this T self,
-            System.Func<BindingBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerBase>>, BindingBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerBase>>> buildBinding)
+        public static T Triggers<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.VisualElement
+            where TBuilder : PropertyBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerBase>>
         {
-            var builder = buildBinding(new BindingBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerBase>>(self, Microsoft.Maui.Controls.VisualElement.TriggersProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.VisualElement.TriggersProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T Triggers<T>(this T self,
+        //    System.Func<BindingBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerBase>>, BindingBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerBase>>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.VisualElement
+        //{
+        //    var builder = buildBinding(new BindingBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerBase>>(self, Microsoft.Maui.Controls.VisualElement.TriggersProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T WidthRequest<T>(this T self,
             double widthRequest)
@@ -907,14 +1204,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T WidthRequest<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        public static T WidthRequest<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.VisualElement
+            where TBuilder : PropertyBuilder<double>
         {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.VisualElement.WidthRequestProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.VisualElement.WidthRequestProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T WidthRequest<T>(this T self,
+        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.VisualElement
+        //{
+        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.VisualElement.WidthRequestProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Task<bool> AnimateWidthRequestTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -942,14 +1250,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Clip<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.Shapes.Geometry>, BindingBuilder<Microsoft.Maui.Controls.Shapes.Geometry>> buildBinding)
+        public static T Clip<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.VisualElement
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.Shapes.Geometry>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Shapes.Geometry>(self, Microsoft.Maui.Controls.VisualElement.ClipProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.VisualElement.ClipProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T Clip<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.Shapes.Geometry>, BindingBuilder<Microsoft.Maui.Controls.Shapes.Geometry>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.VisualElement
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Shapes.Geometry>(self, Microsoft.Maui.Controls.VisualElement.ClipProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T DisableLayout<T>(this T self,
             bool disableLayout)

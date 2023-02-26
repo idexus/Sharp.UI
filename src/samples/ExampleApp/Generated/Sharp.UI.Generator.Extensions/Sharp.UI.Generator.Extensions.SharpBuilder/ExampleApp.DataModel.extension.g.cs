@@ -35,7 +35,7 @@ namespace ExampleApp
             where T : ExampleApp.DataModel
         {
             var builder = buildBinding(new BindingBuilder<int>(self, ExampleApp.DataModel.IdProperty));
-            builder.BindProperty();
+            builder.Build();
             return self;
         }
         
@@ -61,7 +61,7 @@ namespace ExampleApp
             where T : ExampleApp.DataModel
         {
             var builder = buildBinding(new BindingBuilder<string>(self, ExampleApp.DataModel.NameProperty));
-            builder.BindProperty();
+            builder.Build();
             return self;
         }
         
@@ -87,7 +87,7 @@ namespace ExampleApp
             where T : ExampleApp.DataModel
         {
             var builder = buildBinding(new BindingBuilder<bool>(self, ExampleApp.DataModel.AdminProperty));
-            builder.BindProperty();
+            builder.Build();
             return self;
         }
         

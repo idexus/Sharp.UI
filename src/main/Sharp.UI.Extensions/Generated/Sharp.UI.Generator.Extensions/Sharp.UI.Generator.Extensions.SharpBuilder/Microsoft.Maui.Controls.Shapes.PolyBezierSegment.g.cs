@@ -28,13 +28,22 @@ namespace Sharp.UI
             return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.PolyBezierSegment Points(this Microsoft.Maui.Controls.Shapes.PolyBezierSegment self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.PointCollection>, BindingBuilder<Microsoft.Maui.Controls.PointCollection>> buildBinding)
+        public static Microsoft.Maui.Controls.Shapes.PolyBezierSegment Points<TBuilder>(this Microsoft.Maui.Controls.Shapes.PolyBezierSegment self, System.Action<TBuilder> configure)
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.PointCollection>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.PointCollection>(self, Microsoft.Maui.Controls.Shapes.PolyBezierSegment.PointsProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.PolyBezierSegment.PointsProperty);
+            configure(builder);
+            builder.Build();
             return self;
         }
+
+        //public static Microsoft.Maui.Controls.Shapes.PolyBezierSegment Points(this Microsoft.Maui.Controls.Shapes.PolyBezierSegment self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.PointCollection>, BindingBuilder<Microsoft.Maui.Controls.PointCollection>> buildBinding)
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.PointCollection>(self, Microsoft.Maui.Controls.Shapes.PolyBezierSegment.PointsProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
     }
 }

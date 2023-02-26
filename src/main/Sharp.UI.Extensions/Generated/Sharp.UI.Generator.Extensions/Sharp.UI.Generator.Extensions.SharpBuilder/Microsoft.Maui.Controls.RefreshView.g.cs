@@ -29,14 +29,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T IsRefreshing<T>(this T self,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        public static T IsRefreshing<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.RefreshView
+            where TBuilder : PropertyBuilder<bool>
         {
-            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.RefreshView.IsRefreshingProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.RefreshView.IsRefreshingProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T IsRefreshing<T>(this T self,
+        //    System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.RefreshView
+        //{
+        //    var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.RefreshView.IsRefreshingProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T Command<T>(this T self,
             System.Windows.Input.ICommand command)
@@ -55,14 +66,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Command<T>(this T self,
-            System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buildBinding)
+        public static T Command<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.RefreshView
+            where TBuilder : PropertyBuilder<System.Windows.Input.ICommand>
         {
-            var builder = buildBinding(new BindingBuilder<System.Windows.Input.ICommand>(self, Microsoft.Maui.Controls.RefreshView.CommandProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.RefreshView.CommandProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T Command<T>(this T self,
+        //    System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.RefreshView
+        //{
+        //    var builder = buildBinding(new BindingBuilder<System.Windows.Input.ICommand>(self, Microsoft.Maui.Controls.RefreshView.CommandProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T CommandParameter<T>(this T self,
             object commandParameter)
@@ -81,14 +103,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T CommandParameter<T>(this T self,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
+        public static T CommandParameter<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.RefreshView
+            where TBuilder : PropertyBuilder<object>
         {
-            var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.RefreshView.CommandParameterProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.RefreshView.CommandParameterProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T CommandParameter<T>(this T self,
+        //    System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.RefreshView
+        //{
+        //    var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.RefreshView.CommandParameterProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T RefreshColor<T>(this T self,
             Microsoft.Maui.Graphics.Color refreshColor)
@@ -107,14 +140,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T RefreshColor<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        public static T RefreshColor<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.RefreshView
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Graphics.Color>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.RefreshView.RefreshColorProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.RefreshView.RefreshColorProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T RefreshColor<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.RefreshView
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.RefreshView.RefreshColorProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Task<bool> AnimateRefreshColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.RefreshView

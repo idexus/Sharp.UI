@@ -29,14 +29,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Command<T>(this T self,
-            System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buildBinding)
+        public static T Command<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.MenuItem
+            where TBuilder : PropertyBuilder<System.Windows.Input.ICommand>
         {
-            var builder = buildBinding(new BindingBuilder<System.Windows.Input.ICommand>(self, Microsoft.Maui.Controls.MenuItem.CommandProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.MenuItem.CommandProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T Command<T>(this T self,
+        //    System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.MenuItem
+        //{
+        //    var builder = buildBinding(new BindingBuilder<System.Windows.Input.ICommand>(self, Microsoft.Maui.Controls.MenuItem.CommandProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T CommandParameter<T>(this T self,
             object commandParameter)
@@ -55,14 +66,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T CommandParameter<T>(this T self,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
+        public static T CommandParameter<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.MenuItem
+            where TBuilder : PropertyBuilder<object>
         {
-            var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.MenuItem.CommandParameterProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.MenuItem.CommandParameterProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T CommandParameter<T>(this T self,
+        //    System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.MenuItem
+        //{
+        //    var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.MenuItem.CommandParameterProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T IconImageSource<T>(this T self,
             Microsoft.Maui.Controls.ImageSource iconImageSource)
@@ -81,14 +103,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T IconImageSource<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.ImageSource>, BindingBuilder<Microsoft.Maui.Controls.ImageSource>> buildBinding)
+        public static T IconImageSource<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.MenuItem
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.ImageSource>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ImageSource>(self, Microsoft.Maui.Controls.MenuItem.IconImageSourceProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.MenuItem.IconImageSourceProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T IconImageSource<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.ImageSource>, BindingBuilder<Microsoft.Maui.Controls.ImageSource>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.MenuItem
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ImageSource>(self, Microsoft.Maui.Controls.MenuItem.IconImageSourceProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T IsDestructive<T>(this T self,
             bool isDestructive)
@@ -107,14 +140,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T IsDestructive<T>(this T self,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        public static T IsDestructive<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.MenuItem
+            where TBuilder : PropertyBuilder<bool>
         {
-            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.MenuItem.IsDestructiveProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.MenuItem.IsDestructiveProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T IsDestructive<T>(this T self,
+        //    System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.MenuItem
+        //{
+        //    var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.MenuItem.IsDestructiveProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T Text<T>(this T self,
             string text)
@@ -133,14 +177,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Text<T>(this T self,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        public static T Text<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.MenuItem
+            where TBuilder : PropertyBuilder<string>
         {
-            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.MenuItem.TextProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.MenuItem.TextProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T Text<T>(this T self,
+        //    System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.MenuItem
+        //{
+        //    var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.MenuItem.TextProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T IsEnabled<T>(this T self,
             bool isEnabled)
@@ -159,14 +214,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T IsEnabled<T>(this T self,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        public static T IsEnabled<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.MenuItem
+            where TBuilder : PropertyBuilder<bool>
         {
-            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.MenuItem.IsEnabledProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.MenuItem.IsEnabledProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T IsEnabled<T>(this T self,
+        //    System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.MenuItem
+        //{
+        //    var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.MenuItem.IsEnabledProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T StyleClass<T>(this T self,
             IList<string> styleClass)

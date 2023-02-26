@@ -29,14 +29,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Footer<T>(this T self,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
+        public static T Footer<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.ListView
+            where TBuilder : PropertyBuilder<object>
         {
-            var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.ListView.FooterProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.ListView.FooterProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T Footer<T>(this T self,
+        //    System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.ListView
+        //{
+        //    var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.ListView.FooterProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T FooterTemplate<T>(this T self,
             Microsoft.Maui.Controls.DataTemplate footerTemplate)
@@ -55,14 +66,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FooterTemplate<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buildBinding)
+        public static T FooterTemplate<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.ListView
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.DataTemplate>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.ListView.FooterTemplateProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.ListView.FooterTemplateProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T FooterTemplate<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.ListView
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.ListView.FooterTemplateProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T FooterTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.ListView
@@ -109,14 +131,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T GroupHeaderTemplate<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buildBinding)
+        public static T GroupHeaderTemplate<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.ListView
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.DataTemplate>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.ListView.GroupHeaderTemplateProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.ListView.GroupHeaderTemplateProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T GroupHeaderTemplate<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.ListView
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.ListView.GroupHeaderTemplateProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T GroupHeaderTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.ListView
@@ -163,14 +196,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T HasUnevenRows<T>(this T self,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        public static T HasUnevenRows<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.ListView
+            where TBuilder : PropertyBuilder<bool>
         {
-            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.ListView.HasUnevenRowsProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.ListView.HasUnevenRowsProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T HasUnevenRows<T>(this T self,
+        //    System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.ListView
+        //{
+        //    var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.ListView.HasUnevenRowsProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T Header<T>(this T self,
             object header)
@@ -189,14 +233,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Header<T>(this T self,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
+        public static T Header<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.ListView
+            where TBuilder : PropertyBuilder<object>
         {
-            var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.ListView.HeaderProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.ListView.HeaderProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T Header<T>(this T self,
+        //    System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.ListView
+        //{
+        //    var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.ListView.HeaderProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T HeaderTemplate<T>(this T self,
             Microsoft.Maui.Controls.DataTemplate headerTemplate)
@@ -215,14 +270,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T HeaderTemplate<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buildBinding)
+        public static T HeaderTemplate<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.ListView
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.DataTemplate>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.ListView.HeaderTemplateProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.ListView.HeaderTemplateProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T HeaderTemplate<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.ListView
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.ListView.HeaderTemplateProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T HeaderTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.ListView
@@ -248,14 +314,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T IsGroupingEnabled<T>(this T self,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        public static T IsGroupingEnabled<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.ListView
+            where TBuilder : PropertyBuilder<bool>
         {
-            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.ListView.IsGroupingEnabledProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.ListView.IsGroupingEnabledProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T IsGroupingEnabled<T>(this T self,
+        //    System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.ListView
+        //{
+        //    var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.ListView.IsGroupingEnabledProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T IsPullToRefreshEnabled<T>(this T self,
             bool isPullToRefreshEnabled)
@@ -274,14 +351,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T IsPullToRefreshEnabled<T>(this T self,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        public static T IsPullToRefreshEnabled<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.ListView
+            where TBuilder : PropertyBuilder<bool>
         {
-            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.ListView.IsPullToRefreshEnabledProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.ListView.IsPullToRefreshEnabledProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T IsPullToRefreshEnabled<T>(this T self,
+        //    System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.ListView
+        //{
+        //    var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.ListView.IsPullToRefreshEnabledProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T IsRefreshing<T>(this T self,
             bool isRefreshing)
@@ -300,14 +388,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T IsRefreshing<T>(this T self,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        public static T IsRefreshing<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.ListView
+            where TBuilder : PropertyBuilder<bool>
         {
-            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.ListView.IsRefreshingProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.ListView.IsRefreshingProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T IsRefreshing<T>(this T self,
+        //    System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.ListView
+        //{
+        //    var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.ListView.IsRefreshingProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T RefreshCommand<T>(this T self,
             System.Windows.Input.ICommand refreshCommand)
@@ -326,14 +425,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T RefreshCommand<T>(this T self,
-            System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buildBinding)
+        public static T RefreshCommand<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.ListView
+            where TBuilder : PropertyBuilder<System.Windows.Input.ICommand>
         {
-            var builder = buildBinding(new BindingBuilder<System.Windows.Input.ICommand>(self, Microsoft.Maui.Controls.ListView.RefreshCommandProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.ListView.RefreshCommandProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T RefreshCommand<T>(this T self,
+        //    System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.ListView
+        //{
+        //    var builder = buildBinding(new BindingBuilder<System.Windows.Input.ICommand>(self, Microsoft.Maui.Controls.ListView.RefreshCommandProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T RowHeight<T>(this T self,
             int rowHeight)
@@ -352,14 +462,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T RowHeight<T>(this T self,
-            System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
+        public static T RowHeight<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.ListView
+            where TBuilder : PropertyBuilder<int>
         {
-            var builder = buildBinding(new BindingBuilder<int>(self, Microsoft.Maui.Controls.ListView.RowHeightProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.ListView.RowHeightProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T RowHeight<T>(this T self,
+        //    System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.ListView
+        //{
+        //    var builder = buildBinding(new BindingBuilder<int>(self, Microsoft.Maui.Controls.ListView.RowHeightProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T SelectedItem<T>(this T self,
             object selectedItem)
@@ -378,14 +499,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T SelectedItem<T>(this T self,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
+        public static T SelectedItem<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.ListView
+            where TBuilder : PropertyBuilder<object>
         {
-            var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.ListView.SelectedItemProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.ListView.SelectedItemProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T SelectedItem<T>(this T self,
+        //    System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.ListView
+        //{
+        //    var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.ListView.SelectedItemProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T SelectionMode<T>(this T self,
             Microsoft.Maui.Controls.ListViewSelectionMode selectionMode)
@@ -404,14 +536,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T SelectionMode<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.ListViewSelectionMode>, BindingBuilder<Microsoft.Maui.Controls.ListViewSelectionMode>> buildBinding)
+        public static T SelectionMode<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.ListView
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.ListViewSelectionMode>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ListViewSelectionMode>(self, Microsoft.Maui.Controls.ListView.SelectionModeProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.ListView.SelectionModeProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T SelectionMode<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.ListViewSelectionMode>, BindingBuilder<Microsoft.Maui.Controls.ListViewSelectionMode>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.ListView
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ListViewSelectionMode>(self, Microsoft.Maui.Controls.ListView.SelectionModeProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T SeparatorColor<T>(this T self,
             Microsoft.Maui.Graphics.Color separatorColor)
@@ -430,14 +573,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T SeparatorColor<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        public static T SeparatorColor<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.ListView
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Graphics.Color>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.ListView.SeparatorColorProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.ListView.SeparatorColorProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T SeparatorColor<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.ListView
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.ListView.SeparatorColorProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Task<bool> AnimateSeparatorColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.ListView
@@ -465,14 +619,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T RefreshControlColor<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        public static T RefreshControlColor<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.ListView
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Graphics.Color>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.ListView.RefreshControlColorProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.ListView.RefreshControlColorProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T RefreshControlColor<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.ListView
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.ListView.RefreshControlColorProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Task<bool> AnimateRefreshControlColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.ListView
@@ -500,14 +665,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T SeparatorVisibility<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.SeparatorVisibility>, BindingBuilder<Microsoft.Maui.Controls.SeparatorVisibility>> buildBinding)
+        public static T SeparatorVisibility<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.ListView
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.SeparatorVisibility>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.SeparatorVisibility>(self, Microsoft.Maui.Controls.ListView.SeparatorVisibilityProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.ListView.SeparatorVisibilityProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T SeparatorVisibility<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.SeparatorVisibility>, BindingBuilder<Microsoft.Maui.Controls.SeparatorVisibility>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.ListView
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.SeparatorVisibility>(self, Microsoft.Maui.Controls.ListView.SeparatorVisibilityProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T HorizontalScrollBarVisibility<T>(this T self,
             Microsoft.Maui.ScrollBarVisibility horizontalScrollBarVisibility)
@@ -526,14 +702,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T HorizontalScrollBarVisibility<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.ScrollBarVisibility>, BindingBuilder<Microsoft.Maui.ScrollBarVisibility>> buildBinding)
+        public static T HorizontalScrollBarVisibility<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.ListView
+            where TBuilder : PropertyBuilder<Microsoft.Maui.ScrollBarVisibility>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.ScrollBarVisibility>(self, Microsoft.Maui.Controls.ListView.HorizontalScrollBarVisibilityProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.ListView.HorizontalScrollBarVisibilityProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T HorizontalScrollBarVisibility<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.ScrollBarVisibility>, BindingBuilder<Microsoft.Maui.ScrollBarVisibility>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.ListView
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.ScrollBarVisibility>(self, Microsoft.Maui.Controls.ListView.HorizontalScrollBarVisibilityProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T VerticalScrollBarVisibility<T>(this T self,
             Microsoft.Maui.ScrollBarVisibility verticalScrollBarVisibility)
@@ -552,14 +739,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T VerticalScrollBarVisibility<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.ScrollBarVisibility>, BindingBuilder<Microsoft.Maui.ScrollBarVisibility>> buildBinding)
+        public static T VerticalScrollBarVisibility<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.ListView
+            where TBuilder : PropertyBuilder<Microsoft.Maui.ScrollBarVisibility>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.ScrollBarVisibility>(self, Microsoft.Maui.Controls.ListView.VerticalScrollBarVisibilityProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.ListView.VerticalScrollBarVisibilityProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T VerticalScrollBarVisibility<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.ScrollBarVisibility>, BindingBuilder<Microsoft.Maui.ScrollBarVisibility>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.ListView
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.ScrollBarVisibility>(self, Microsoft.Maui.Controls.ListView.VerticalScrollBarVisibilityProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T RefreshAllowed<T>(this T self,
             bool refreshAllowed)

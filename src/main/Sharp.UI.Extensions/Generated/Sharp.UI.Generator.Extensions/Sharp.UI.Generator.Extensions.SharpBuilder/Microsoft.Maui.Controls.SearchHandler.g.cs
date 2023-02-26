@@ -29,14 +29,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Keyboard<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Keyboard>, BindingBuilder<Microsoft.Maui.Keyboard>> buildBinding)
+        public static T Keyboard<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Keyboard>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Keyboard>(self, Microsoft.Maui.Controls.SearchHandler.KeyboardProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SearchHandler.KeyboardProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T Keyboard<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Keyboard>, BindingBuilder<Microsoft.Maui.Keyboard>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.SearchHandler
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Keyboard>(self, Microsoft.Maui.Controls.SearchHandler.KeyboardProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T HorizontalTextAlignment<T>(this T self,
             Microsoft.Maui.TextAlignment horizontalTextAlignment)
@@ -55,14 +66,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T HorizontalTextAlignment<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.TextAlignment>, BindingBuilder<Microsoft.Maui.TextAlignment>> buildBinding)
+        public static T HorizontalTextAlignment<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
+            where TBuilder : PropertyBuilder<Microsoft.Maui.TextAlignment>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.TextAlignment>(self, Microsoft.Maui.Controls.SearchHandler.HorizontalTextAlignmentProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SearchHandler.HorizontalTextAlignmentProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T HorizontalTextAlignment<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.TextAlignment>, BindingBuilder<Microsoft.Maui.TextAlignment>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.SearchHandler
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.TextAlignment>(self, Microsoft.Maui.Controls.SearchHandler.HorizontalTextAlignmentProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T VerticalTextAlignment<T>(this T self,
             Microsoft.Maui.TextAlignment verticalTextAlignment)
@@ -81,14 +103,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T VerticalTextAlignment<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.TextAlignment>, BindingBuilder<Microsoft.Maui.TextAlignment>> buildBinding)
+        public static T VerticalTextAlignment<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
+            where TBuilder : PropertyBuilder<Microsoft.Maui.TextAlignment>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.TextAlignment>(self, Microsoft.Maui.Controls.SearchHandler.VerticalTextAlignmentProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SearchHandler.VerticalTextAlignmentProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T VerticalTextAlignment<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.TextAlignment>, BindingBuilder<Microsoft.Maui.TextAlignment>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.SearchHandler
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.TextAlignment>(self, Microsoft.Maui.Controls.SearchHandler.VerticalTextAlignmentProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T TextColor<T>(this T self,
             Microsoft.Maui.Graphics.Color textColor)
@@ -107,14 +140,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T TextColor<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        public static T TextColor<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Graphics.Color>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.SearchHandler.TextColorProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SearchHandler.TextColorProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T TextColor<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.SearchHandler
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.SearchHandler.TextColorProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T TextTransform<T>(this T self,
             Microsoft.Maui.TextTransform textTransform)
@@ -133,14 +177,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T TextTransform<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.TextTransform>, BindingBuilder<Microsoft.Maui.TextTransform>> buildBinding)
+        public static T TextTransform<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
+            where TBuilder : PropertyBuilder<Microsoft.Maui.TextTransform>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.TextTransform>(self, Microsoft.Maui.Controls.SearchHandler.TextTransformProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SearchHandler.TextTransformProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T TextTransform<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.TextTransform>, BindingBuilder<Microsoft.Maui.TextTransform>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.SearchHandler
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.TextTransform>(self, Microsoft.Maui.Controls.SearchHandler.TextTransformProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T CancelButtonColor<T>(this T self,
             Microsoft.Maui.Graphics.Color cancelButtonColor)
@@ -159,14 +214,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T CancelButtonColor<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        public static T CancelButtonColor<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Graphics.Color>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.SearchHandler.CancelButtonColorProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SearchHandler.CancelButtonColorProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T CancelButtonColor<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.SearchHandler
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.SearchHandler.CancelButtonColorProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T FontAttributes<T>(this T self,
             Microsoft.Maui.Controls.FontAttributes fontAttributes)
@@ -185,14 +251,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FontAttributes<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.FontAttributes>, BindingBuilder<Microsoft.Maui.Controls.FontAttributes>> buildBinding)
+        public static T FontAttributes<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.FontAttributes>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.FontAttributes>(self, Microsoft.Maui.Controls.SearchHandler.FontAttributesProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SearchHandler.FontAttributesProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T FontAttributes<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.FontAttributes>, BindingBuilder<Microsoft.Maui.Controls.FontAttributes>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.SearchHandler
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.FontAttributes>(self, Microsoft.Maui.Controls.SearchHandler.FontAttributesProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T FontFamily<T>(this T self,
             string fontFamily)
@@ -211,14 +288,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FontFamily<T>(this T self,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        public static T FontFamily<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
+            where TBuilder : PropertyBuilder<string>
         {
-            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.SearchHandler.FontFamilyProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SearchHandler.FontFamilyProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T FontFamily<T>(this T self,
+        //    System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.SearchHandler
+        //{
+        //    var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.SearchHandler.FontFamilyProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T CharacterSpacing<T>(this T self,
             double characterSpacing)
@@ -237,14 +325,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T CharacterSpacing<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        public static T CharacterSpacing<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
+            where TBuilder : PropertyBuilder<double>
         {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.SearchHandler.CharacterSpacingProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SearchHandler.CharacterSpacingProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T CharacterSpacing<T>(this T self,
+        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.SearchHandler
+        //{
+        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.SearchHandler.CharacterSpacingProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T FontSize<T>(this T self,
             double fontSize)
@@ -263,14 +362,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FontSize<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        public static T FontSize<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
+            where TBuilder : PropertyBuilder<double>
         {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.SearchHandler.FontSizeProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SearchHandler.FontSizeProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T FontSize<T>(this T self,
+        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.SearchHandler
+        //{
+        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.SearchHandler.FontSizeProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T FontAutoScalingEnabled<T>(this T self,
             bool fontAutoScalingEnabled)
@@ -289,14 +399,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FontAutoScalingEnabled<T>(this T self,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        public static T FontAutoScalingEnabled<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
+            where TBuilder : PropertyBuilder<bool>
         {
-            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.SearchHandler.FontAutoScalingEnabledProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SearchHandler.FontAutoScalingEnabledProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T FontAutoScalingEnabled<T>(this T self,
+        //    System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.SearchHandler
+        //{
+        //    var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.SearchHandler.FontAutoScalingEnabledProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T PlaceholderColor<T>(this T self,
             Microsoft.Maui.Graphics.Color placeholderColor)
@@ -315,14 +436,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T PlaceholderColor<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        public static T PlaceholderColor<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Graphics.Color>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.SearchHandler.PlaceholderColorProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SearchHandler.PlaceholderColorProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T PlaceholderColor<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.SearchHandler
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.SearchHandler.PlaceholderColorProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T Placeholder<T>(this T self,
             string placeholder)
@@ -341,14 +473,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Placeholder<T>(this T self,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        public static T Placeholder<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
+            where TBuilder : PropertyBuilder<string>
         {
-            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.SearchHandler.PlaceholderProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SearchHandler.PlaceholderProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T Placeholder<T>(this T self,
+        //    System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.SearchHandler
+        //{
+        //    var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.SearchHandler.PlaceholderProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T BackgroundColor<T>(this T self,
             Microsoft.Maui.Graphics.Color backgroundColor)
@@ -367,14 +510,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T BackgroundColor<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        public static T BackgroundColor<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Graphics.Color>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.SearchHandler.BackgroundColorProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SearchHandler.BackgroundColorProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T BackgroundColor<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.SearchHandler
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.SearchHandler.BackgroundColorProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T AutomationId<T>(this T self,
             string automationId)
@@ -393,14 +547,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T AutomationId<T>(this T self,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        public static T AutomationId<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
+            where TBuilder : PropertyBuilder<string>
         {
-            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.SearchHandler.AutomationIdProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SearchHandler.AutomationIdProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T AutomationId<T>(this T self,
+        //    System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.SearchHandler
+        //{
+        //    var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.SearchHandler.AutomationIdProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T ClearIcon<T>(this T self,
             Microsoft.Maui.Controls.ImageSource clearIcon)
@@ -419,14 +584,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ClearIcon<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.ImageSource>, BindingBuilder<Microsoft.Maui.Controls.ImageSource>> buildBinding)
+        public static T ClearIcon<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.ImageSource>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ImageSource>(self, Microsoft.Maui.Controls.SearchHandler.ClearIconProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SearchHandler.ClearIconProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T ClearIcon<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.ImageSource>, BindingBuilder<Microsoft.Maui.Controls.ImageSource>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.SearchHandler
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ImageSource>(self, Microsoft.Maui.Controls.SearchHandler.ClearIconProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T ClearIconHelpText<T>(this T self,
             string clearIconHelpText)
@@ -445,14 +621,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ClearIconHelpText<T>(this T self,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        public static T ClearIconHelpText<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
+            where TBuilder : PropertyBuilder<string>
         {
-            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.SearchHandler.ClearIconHelpTextProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SearchHandler.ClearIconHelpTextProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T ClearIconHelpText<T>(this T self,
+        //    System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.SearchHandler
+        //{
+        //    var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.SearchHandler.ClearIconHelpTextProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T ClearIconName<T>(this T self,
             string clearIconName)
@@ -471,14 +658,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ClearIconName<T>(this T self,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        public static T ClearIconName<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
+            where TBuilder : PropertyBuilder<string>
         {
-            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.SearchHandler.ClearIconNameProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SearchHandler.ClearIconNameProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T ClearIconName<T>(this T self,
+        //    System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.SearchHandler
+        //{
+        //    var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.SearchHandler.ClearIconNameProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T ClearPlaceholderCommand<T>(this T self,
             System.Windows.Input.ICommand clearPlaceholderCommand)
@@ -497,14 +695,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ClearPlaceholderCommand<T>(this T self,
-            System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buildBinding)
+        public static T ClearPlaceholderCommand<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
+            where TBuilder : PropertyBuilder<System.Windows.Input.ICommand>
         {
-            var builder = buildBinding(new BindingBuilder<System.Windows.Input.ICommand>(self, Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderCommandProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderCommandProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T ClearPlaceholderCommand<T>(this T self,
+        //    System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.SearchHandler
+        //{
+        //    var builder = buildBinding(new BindingBuilder<System.Windows.Input.ICommand>(self, Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderCommandProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T ClearPlaceholderCommandParameter<T>(this T self,
             object clearPlaceholderCommandParameter)
@@ -523,14 +732,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ClearPlaceholderCommandParameter<T>(this T self,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
+        public static T ClearPlaceholderCommandParameter<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
+            where TBuilder : PropertyBuilder<object>
         {
-            var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderCommandParameterProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderCommandParameterProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T ClearPlaceholderCommandParameter<T>(this T self,
+        //    System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.SearchHandler
+        //{
+        //    var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderCommandParameterProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T ClearPlaceholderEnabled<T>(this T self,
             bool clearPlaceholderEnabled)
@@ -549,14 +769,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ClearPlaceholderEnabled<T>(this T self,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        public static T ClearPlaceholderEnabled<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
+            where TBuilder : PropertyBuilder<bool>
         {
-            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderEnabledProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderEnabledProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T ClearPlaceholderEnabled<T>(this T self,
+        //    System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.SearchHandler
+        //{
+        //    var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderEnabledProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T ClearPlaceholderHelpText<T>(this T self,
             string clearPlaceholderHelpText)
@@ -575,14 +806,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ClearPlaceholderHelpText<T>(this T self,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        public static T ClearPlaceholderHelpText<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
+            where TBuilder : PropertyBuilder<string>
         {
-            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderHelpTextProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderHelpTextProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T ClearPlaceholderHelpText<T>(this T self,
+        //    System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.SearchHandler
+        //{
+        //    var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderHelpTextProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T ClearPlaceholderIcon<T>(this T self,
             Microsoft.Maui.Controls.ImageSource clearPlaceholderIcon)
@@ -601,14 +843,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ClearPlaceholderIcon<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.ImageSource>, BindingBuilder<Microsoft.Maui.Controls.ImageSource>> buildBinding)
+        public static T ClearPlaceholderIcon<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.ImageSource>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ImageSource>(self, Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderIconProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderIconProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T ClearPlaceholderIcon<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.ImageSource>, BindingBuilder<Microsoft.Maui.Controls.ImageSource>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.SearchHandler
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ImageSource>(self, Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderIconProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T ClearPlaceholderName<T>(this T self,
             string clearPlaceholderName)
@@ -627,14 +880,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ClearPlaceholderName<T>(this T self,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        public static T ClearPlaceholderName<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
+            where TBuilder : PropertyBuilder<string>
         {
-            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderNameProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderNameProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T ClearPlaceholderName<T>(this T self,
+        //    System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.SearchHandler
+        //{
+        //    var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderNameProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T Command<T>(this T self,
             System.Windows.Input.ICommand command)
@@ -653,14 +917,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Command<T>(this T self,
-            System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buildBinding)
+        public static T Command<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
+            where TBuilder : PropertyBuilder<System.Windows.Input.ICommand>
         {
-            var builder = buildBinding(new BindingBuilder<System.Windows.Input.ICommand>(self, Microsoft.Maui.Controls.SearchHandler.CommandProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SearchHandler.CommandProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T Command<T>(this T self,
+        //    System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.SearchHandler
+        //{
+        //    var builder = buildBinding(new BindingBuilder<System.Windows.Input.ICommand>(self, Microsoft.Maui.Controls.SearchHandler.CommandProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T CommandParameter<T>(this T self,
             object commandParameter)
@@ -679,14 +954,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T CommandParameter<T>(this T self,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
+        public static T CommandParameter<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
+            where TBuilder : PropertyBuilder<object>
         {
-            var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.SearchHandler.CommandParameterProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SearchHandler.CommandParameterProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T CommandParameter<T>(this T self,
+        //    System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.SearchHandler
+        //{
+        //    var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.SearchHandler.CommandParameterProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T DisplayMemberName<T>(this T self,
             string displayMemberName)
@@ -705,14 +991,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T DisplayMemberName<T>(this T self,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        public static T DisplayMemberName<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
+            where TBuilder : PropertyBuilder<string>
         {
-            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.SearchHandler.DisplayMemberNameProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SearchHandler.DisplayMemberNameProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T DisplayMemberName<T>(this T self,
+        //    System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.SearchHandler
+        //{
+        //    var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.SearchHandler.DisplayMemberNameProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T IsSearchEnabled<T>(this T self,
             bool isSearchEnabled)
@@ -731,14 +1028,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T IsSearchEnabled<T>(this T self,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        public static T IsSearchEnabled<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
+            where TBuilder : PropertyBuilder<bool>
         {
-            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.SearchHandler.IsSearchEnabledProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SearchHandler.IsSearchEnabledProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T IsSearchEnabled<T>(this T self,
+        //    System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.SearchHandler
+        //{
+        //    var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.SearchHandler.IsSearchEnabledProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T ItemsSource<T>(this T self,
             System.Collections.IEnumerable itemsSource)
@@ -757,14 +1065,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ItemsSource<T>(this T self,
-            System.Func<BindingBuilder<System.Collections.IEnumerable>, BindingBuilder<System.Collections.IEnumerable>> buildBinding)
+        public static T ItemsSource<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
+            where TBuilder : PropertyBuilder<System.Collections.IEnumerable>
         {
-            var builder = buildBinding(new BindingBuilder<System.Collections.IEnumerable>(self, Microsoft.Maui.Controls.SearchHandler.ItemsSourceProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SearchHandler.ItemsSourceProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T ItemsSource<T>(this T self,
+        //    System.Func<BindingBuilder<System.Collections.IEnumerable>, BindingBuilder<System.Collections.IEnumerable>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.SearchHandler
+        //{
+        //    var builder = buildBinding(new BindingBuilder<System.Collections.IEnumerable>(self, Microsoft.Maui.Controls.SearchHandler.ItemsSourceProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T ItemTemplate<T>(this T self,
             Microsoft.Maui.Controls.DataTemplate itemTemplate)
@@ -783,14 +1102,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ItemTemplate<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buildBinding)
+        public static T ItemTemplate<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.DataTemplate>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.SearchHandler.ItemTemplateProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SearchHandler.ItemTemplateProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T ItemTemplate<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.SearchHandler
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.SearchHandler.ItemTemplateProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T ItemTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -816,14 +1146,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Query<T>(this T self,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        public static T Query<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
+            where TBuilder : PropertyBuilder<string>
         {
-            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.SearchHandler.QueryProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SearchHandler.QueryProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T Query<T>(this T self,
+        //    System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.SearchHandler
+        //{
+        //    var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.SearchHandler.QueryProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T QueryIcon<T>(this T self,
             Microsoft.Maui.Controls.ImageSource queryIcon)
@@ -842,14 +1183,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T QueryIcon<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.ImageSource>, BindingBuilder<Microsoft.Maui.Controls.ImageSource>> buildBinding)
+        public static T QueryIcon<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.ImageSource>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ImageSource>(self, Microsoft.Maui.Controls.SearchHandler.QueryIconProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SearchHandler.QueryIconProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T QueryIcon<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.ImageSource>, BindingBuilder<Microsoft.Maui.Controls.ImageSource>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.SearchHandler
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ImageSource>(self, Microsoft.Maui.Controls.SearchHandler.QueryIconProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T QueryIconHelpText<T>(this T self,
             string queryIconHelpText)
@@ -868,14 +1220,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T QueryIconHelpText<T>(this T self,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        public static T QueryIconHelpText<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
+            where TBuilder : PropertyBuilder<string>
         {
-            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.SearchHandler.QueryIconHelpTextProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SearchHandler.QueryIconHelpTextProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T QueryIconHelpText<T>(this T self,
+        //    System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.SearchHandler
+        //{
+        //    var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.SearchHandler.QueryIconHelpTextProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T QueryIconName<T>(this T self,
             string queryIconName)
@@ -894,14 +1257,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T QueryIconName<T>(this T self,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        public static T QueryIconName<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
+            where TBuilder : PropertyBuilder<string>
         {
-            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.SearchHandler.QueryIconNameProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SearchHandler.QueryIconNameProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T QueryIconName<T>(this T self,
+        //    System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.SearchHandler
+        //{
+        //    var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.SearchHandler.QueryIconNameProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T SearchBoxVisibility<T>(this T self,
             Microsoft.Maui.Controls.SearchBoxVisibility searchBoxVisibility)
@@ -920,14 +1294,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T SearchBoxVisibility<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.SearchBoxVisibility>, BindingBuilder<Microsoft.Maui.Controls.SearchBoxVisibility>> buildBinding)
+        public static T SearchBoxVisibility<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.SearchBoxVisibility>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.SearchBoxVisibility>(self, Microsoft.Maui.Controls.SearchHandler.SearchBoxVisibilityProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SearchHandler.SearchBoxVisibilityProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T SearchBoxVisibility<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.SearchBoxVisibility>, BindingBuilder<Microsoft.Maui.Controls.SearchBoxVisibility>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.SearchHandler
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.SearchBoxVisibility>(self, Microsoft.Maui.Controls.SearchHandler.SearchBoxVisibilityProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T ShowsResults<T>(this T self,
             bool showsResults)
@@ -946,14 +1331,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ShowsResults<T>(this T self,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        public static T ShowsResults<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
+            where TBuilder : PropertyBuilder<bool>
         {
-            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.SearchHandler.ShowsResultsProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SearchHandler.ShowsResultsProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T ShowsResults<T>(this T self,
+        //    System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.SearchHandler
+        //{
+        //    var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.SearchHandler.ShowsResultsProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T OnFocused<T>(this T self, System.EventHandler<System.EventArgs> handler)
             where T : Microsoft.Maui.Controls.SearchHandler

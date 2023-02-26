@@ -29,14 +29,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Center<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Point>, BindingBuilder<Microsoft.Maui.Graphics.Point>> buildBinding)
+        public static T Center<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.RadialGradientBrush
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Graphics.Point>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Point>(self, Microsoft.Maui.Controls.RadialGradientBrush.CenterProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.RadialGradientBrush.CenterProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T Center<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Graphics.Point>, BindingBuilder<Microsoft.Maui.Graphics.Point>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.RadialGradientBrush
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Point>(self, Microsoft.Maui.Controls.RadialGradientBrush.CenterProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T Radius<T>(this T self,
             double radius)
@@ -55,14 +66,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Radius<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        public static T Radius<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.RadialGradientBrush
+            where TBuilder : PropertyBuilder<double>
         {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.RadialGradientBrush.RadiusProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.RadialGradientBrush.RadiusProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T Radius<T>(this T self,
+        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.RadialGradientBrush
+        //{
+        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.RadialGradientBrush.RadiusProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
     }
 }

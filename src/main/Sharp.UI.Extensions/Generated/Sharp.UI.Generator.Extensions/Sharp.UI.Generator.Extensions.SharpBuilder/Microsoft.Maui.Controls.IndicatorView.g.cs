@@ -29,14 +29,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T IndicatorsShape<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.IndicatorShape>, BindingBuilder<Microsoft.Maui.Controls.IndicatorShape>> buildBinding)
+        public static T IndicatorsShape<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.IndicatorView
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.IndicatorShape>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.IndicatorShape>(self, Microsoft.Maui.Controls.IndicatorView.IndicatorsShapeProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.IndicatorView.IndicatorsShapeProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T IndicatorsShape<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.IndicatorShape>, BindingBuilder<Microsoft.Maui.Controls.IndicatorShape>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.IndicatorView
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.IndicatorShape>(self, Microsoft.Maui.Controls.IndicatorView.IndicatorsShapeProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T IndicatorLayout<T>(this T self,
             Microsoft.Maui.Controls.IBindableLayout indicatorLayout)
@@ -76,14 +87,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Position<T>(this T self,
-            System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
+        public static T Position<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.IndicatorView
+            where TBuilder : PropertyBuilder<int>
         {
-            var builder = buildBinding(new BindingBuilder<int>(self, Microsoft.Maui.Controls.IndicatorView.PositionProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.IndicatorView.PositionProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T Position<T>(this T self,
+        //    System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.IndicatorView
+        //{
+        //    var builder = buildBinding(new BindingBuilder<int>(self, Microsoft.Maui.Controls.IndicatorView.PositionProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T Count<T>(this T self,
             int count)
@@ -102,14 +124,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Count<T>(this T self,
-            System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
+        public static T Count<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.IndicatorView
+            where TBuilder : PropertyBuilder<int>
         {
-            var builder = buildBinding(new BindingBuilder<int>(self, Microsoft.Maui.Controls.IndicatorView.CountProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.IndicatorView.CountProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T Count<T>(this T self,
+        //    System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.IndicatorView
+        //{
+        //    var builder = buildBinding(new BindingBuilder<int>(self, Microsoft.Maui.Controls.IndicatorView.CountProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T MaximumVisible<T>(this T self,
             int maximumVisible)
@@ -128,14 +161,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T MaximumVisible<T>(this T self,
-            System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
+        public static T MaximumVisible<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.IndicatorView
+            where TBuilder : PropertyBuilder<int>
         {
-            var builder = buildBinding(new BindingBuilder<int>(self, Microsoft.Maui.Controls.IndicatorView.MaximumVisibleProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.IndicatorView.MaximumVisibleProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T MaximumVisible<T>(this T self,
+        //    System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.IndicatorView
+        //{
+        //    var builder = buildBinding(new BindingBuilder<int>(self, Microsoft.Maui.Controls.IndicatorView.MaximumVisibleProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T IndicatorTemplate<T>(this T self,
             Microsoft.Maui.Controls.DataTemplate indicatorTemplate)
@@ -154,14 +198,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T IndicatorTemplate<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buildBinding)
+        public static T IndicatorTemplate<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.IndicatorView
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.DataTemplate>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.IndicatorView.IndicatorTemplateProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.IndicatorView.IndicatorTemplateProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T IndicatorTemplate<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.IndicatorView
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.IndicatorView.IndicatorTemplateProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T IndicatorTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.IndicatorView
@@ -187,14 +242,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T HideSingle<T>(this T self,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        public static T HideSingle<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.IndicatorView
+            where TBuilder : PropertyBuilder<bool>
         {
-            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.IndicatorView.HideSingleProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.IndicatorView.HideSingleProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T HideSingle<T>(this T self,
+        //    System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.IndicatorView
+        //{
+        //    var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.IndicatorView.HideSingleProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T IndicatorColor<T>(this T self,
             Microsoft.Maui.Graphics.Color indicatorColor)
@@ -213,14 +279,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T IndicatorColor<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        public static T IndicatorColor<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.IndicatorView
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Graphics.Color>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.IndicatorView.IndicatorColorProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.IndicatorView.IndicatorColorProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T IndicatorColor<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.IndicatorView
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.IndicatorView.IndicatorColorProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Task<bool> AnimateIndicatorColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.IndicatorView
@@ -248,14 +325,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T SelectedIndicatorColor<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        public static T SelectedIndicatorColor<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.IndicatorView
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Graphics.Color>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.IndicatorView.SelectedIndicatorColorProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.IndicatorView.SelectedIndicatorColorProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T SelectedIndicatorColor<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.IndicatorView
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.IndicatorView.SelectedIndicatorColorProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Task<bool> AnimateSelectedIndicatorColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.IndicatorView
@@ -283,14 +371,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T IndicatorSize<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        public static T IndicatorSize<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.IndicatorView
+            where TBuilder : PropertyBuilder<double>
         {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.IndicatorView.IndicatorSizeProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.IndicatorView.IndicatorSizeProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T IndicatorSize<T>(this T self,
+        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.IndicatorView
+        //{
+        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.IndicatorView.IndicatorSizeProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Task<bool> AnimateIndicatorSizeTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.IndicatorView
@@ -318,14 +417,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ItemsSource<T>(this T self,
-            System.Func<BindingBuilder<System.Collections.IEnumerable>, BindingBuilder<System.Collections.IEnumerable>> buildBinding)
+        public static T ItemsSource<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.IndicatorView
+            where TBuilder : PropertyBuilder<System.Collections.IEnumerable>
         {
-            var builder = buildBinding(new BindingBuilder<System.Collections.IEnumerable>(self, Microsoft.Maui.Controls.IndicatorView.ItemsSourceProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.IndicatorView.ItemsSourceProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T ItemsSource<T>(this T self,
+        //    System.Func<BindingBuilder<System.Collections.IEnumerable>, BindingBuilder<System.Collections.IEnumerable>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.IndicatorView
+        //{
+        //    var builder = buildBinding(new BindingBuilder<System.Collections.IEnumerable>(self, Microsoft.Maui.Controls.IndicatorView.ItemsSourceProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
     }
 }

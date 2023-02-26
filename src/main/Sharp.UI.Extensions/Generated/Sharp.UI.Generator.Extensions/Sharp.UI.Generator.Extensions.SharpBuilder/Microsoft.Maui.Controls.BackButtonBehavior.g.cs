@@ -29,14 +29,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Command<T>(this T self,
-            System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buildBinding)
+        public static T Command<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.BackButtonBehavior
+            where TBuilder : PropertyBuilder<System.Windows.Input.ICommand>
         {
-            var builder = buildBinding(new BindingBuilder<System.Windows.Input.ICommand>(self, Microsoft.Maui.Controls.BackButtonBehavior.CommandProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.BackButtonBehavior.CommandProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T Command<T>(this T self,
+        //    System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.BackButtonBehavior
+        //{
+        //    var builder = buildBinding(new BindingBuilder<System.Windows.Input.ICommand>(self, Microsoft.Maui.Controls.BackButtonBehavior.CommandProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T CommandParameter<T>(this T self,
             object commandParameter)
@@ -55,14 +66,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T CommandParameter<T>(this T self,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
+        public static T CommandParameter<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.BackButtonBehavior
+            where TBuilder : PropertyBuilder<object>
         {
-            var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.BackButtonBehavior.CommandParameterProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.BackButtonBehavior.CommandParameterProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T CommandParameter<T>(this T self,
+        //    System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.BackButtonBehavior
+        //{
+        //    var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.BackButtonBehavior.CommandParameterProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T IconOverride<T>(this T self,
             Microsoft.Maui.Controls.ImageSource iconOverride)
@@ -81,14 +103,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T IconOverride<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.ImageSource>, BindingBuilder<Microsoft.Maui.Controls.ImageSource>> buildBinding)
+        public static T IconOverride<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.BackButtonBehavior
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.ImageSource>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ImageSource>(self, Microsoft.Maui.Controls.BackButtonBehavior.IconOverrideProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.BackButtonBehavior.IconOverrideProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T IconOverride<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.ImageSource>, BindingBuilder<Microsoft.Maui.Controls.ImageSource>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.BackButtonBehavior
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ImageSource>(self, Microsoft.Maui.Controls.BackButtonBehavior.IconOverrideProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T IsEnabled<T>(this T self,
             bool isEnabled)
@@ -107,14 +140,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T IsEnabled<T>(this T self,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        public static T IsEnabled<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.BackButtonBehavior
+            where TBuilder : PropertyBuilder<bool>
         {
-            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.BackButtonBehavior.IsEnabledProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.BackButtonBehavior.IsEnabledProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T IsEnabled<T>(this T self,
+        //    System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.BackButtonBehavior
+        //{
+        //    var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.BackButtonBehavior.IsEnabledProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T IsVisible<T>(this T self,
             bool isVisible)
@@ -133,14 +177,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T IsVisible<T>(this T self,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        public static T IsVisible<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.BackButtonBehavior
+            where TBuilder : PropertyBuilder<bool>
         {
-            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.BackButtonBehavior.IsVisibleProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.BackButtonBehavior.IsVisibleProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T IsVisible<T>(this T self,
+        //    System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.BackButtonBehavior
+        //{
+        //    var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.BackButtonBehavior.IsVisibleProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T TextOverride<T>(this T self,
             string textOverride)
@@ -159,14 +214,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T TextOverride<T>(this T self,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        public static T TextOverride<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.BackButtonBehavior
+            where TBuilder : PropertyBuilder<string>
         {
-            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.BackButtonBehavior.TextOverrideProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.BackButtonBehavior.TextOverrideProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T TextOverride<T>(this T self,
+        //    System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.BackButtonBehavior
+        //{
+        //    var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.BackButtonBehavior.TextOverrideProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
     }
 }

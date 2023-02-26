@@ -29,14 +29,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T VisualStateGroups<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.VisualStateGroupList>, BindingBuilder<Microsoft.Maui.Controls.VisualStateGroupList>> buildBinding)
+        public static T VisualStateGroups<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.VisualElement
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.VisualStateGroupList>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.VisualStateGroupList>(self, Microsoft.Maui.Controls.VisualStateManager.VisualStateGroupsProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.VisualStateManager.VisualStateGroupsProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T VisualStateGroups<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.VisualStateGroupList>, BindingBuilder<Microsoft.Maui.Controls.VisualStateGroupList>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.VisualElement
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.VisualStateGroupList>(self, Microsoft.Maui.Controls.VisualStateManager.VisualStateGroupsProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Microsoft.Maui.Controls.VisualStateGroupList GetVisualStateGroupsValue<T>(this T self)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -61,14 +72,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T AutomationExcludedWithChildren<T>(this T self,
-            System.Func<BindingBuilder<bool?>, BindingBuilder<bool?>> buildBinding)
+        public static T AutomationExcludedWithChildren<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.VisualElement
+            where TBuilder : PropertyBuilder<bool?>
         {
-            var builder = buildBinding(new BindingBuilder<bool?>(self, Microsoft.Maui.Controls.AutomationProperties.ExcludedWithChildrenProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.AutomationProperties.ExcludedWithChildrenProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T AutomationExcludedWithChildren<T>(this T self,
+        //    System.Func<BindingBuilder<bool?>, BindingBuilder<bool?>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.VisualElement
+        //{
+        //    var builder = buildBinding(new BindingBuilder<bool?>(self, Microsoft.Maui.Controls.AutomationProperties.ExcludedWithChildrenProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static bool? GetAutomationExcludedWithChildrenValue<T>(this T self)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -93,14 +115,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T AutomationIsInAccessibleTree<T>(this T self,
-            System.Func<BindingBuilder<bool?>, BindingBuilder<bool?>> buildBinding)
+        public static T AutomationIsInAccessibleTree<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.VisualElement
+            where TBuilder : PropertyBuilder<bool?>
         {
-            var builder = buildBinding(new BindingBuilder<bool?>(self, Microsoft.Maui.Controls.AutomationProperties.IsInAccessibleTreeProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.AutomationProperties.IsInAccessibleTreeProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T AutomationIsInAccessibleTree<T>(this T self,
+        //    System.Func<BindingBuilder<bool?>, BindingBuilder<bool?>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.VisualElement
+        //{
+        //    var builder = buildBinding(new BindingBuilder<bool?>(self, Microsoft.Maui.Controls.AutomationProperties.IsInAccessibleTreeProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static bool? GetAutomationIsInAccessibleTreeValue<T>(this T self)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -125,14 +158,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T AutomationName<T>(this T self,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        public static T AutomationName<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.VisualElement
+            where TBuilder : PropertyBuilder<string>
         {
-            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.AutomationProperties.NameProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.AutomationProperties.NameProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T AutomationName<T>(this T self,
+        //    System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.VisualElement
+        //{
+        //    var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.AutomationProperties.NameProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static string GetAutomationNameValue<T>(this T self)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -157,14 +201,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T AutomationHelpText<T>(this T self,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        public static T AutomationHelpText<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.VisualElement
+            where TBuilder : PropertyBuilder<string>
         {
-            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.AutomationProperties.HelpTextProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.AutomationProperties.HelpTextProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T AutomationHelpText<T>(this T self,
+        //    System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.VisualElement
+        //{
+        //    var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.AutomationProperties.HelpTextProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static string GetAutomationHelpTextValue<T>(this T self)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -189,14 +244,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T AutomationLabeledBy<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.VisualElement>, BindingBuilder<Microsoft.Maui.Controls.VisualElement>> buildBinding)
+        public static T AutomationLabeledBy<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.VisualElement
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.VisualElement>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.VisualElement>(self, Microsoft.Maui.Controls.AutomationProperties.LabeledByProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.AutomationProperties.LabeledByProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T AutomationLabeledBy<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.VisualElement>, BindingBuilder<Microsoft.Maui.Controls.VisualElement>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.VisualElement
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.VisualElement>(self, Microsoft.Maui.Controls.AutomationProperties.LabeledByProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Microsoft.Maui.Controls.VisualElement GetAutomationLabeledByValue<T>(this T self)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -221,14 +287,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T SemanticHint<T>(this T self,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        public static T SemanticHint<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.VisualElement
+            where TBuilder : PropertyBuilder<string>
         {
-            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.SemanticProperties.HintProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SemanticProperties.HintProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T SemanticHint<T>(this T self,
+        //    System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.VisualElement
+        //{
+        //    var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.SemanticProperties.HintProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static string GetSemanticHintValue<T>(this T self)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -253,14 +330,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T SemanticDescription<T>(this T self,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        public static T SemanticDescription<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.VisualElement
+            where TBuilder : PropertyBuilder<string>
         {
-            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.SemanticProperties.DescriptionProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SemanticProperties.DescriptionProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T SemanticDescription<T>(this T self,
+        //    System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.VisualElement
+        //{
+        //    var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.SemanticProperties.DescriptionProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static string GetSemanticDescriptionValue<T>(this T self)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -285,14 +373,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T SemanticHeadingLevel<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.SemanticHeadingLevel>, BindingBuilder<Microsoft.Maui.SemanticHeadingLevel>> buildBinding)
+        public static T SemanticHeadingLevel<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.VisualElement
+            where TBuilder : PropertyBuilder<Microsoft.Maui.SemanticHeadingLevel>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.SemanticHeadingLevel>(self, Microsoft.Maui.Controls.SemanticProperties.HeadingLevelProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SemanticProperties.HeadingLevelProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T SemanticHeadingLevel<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.SemanticHeadingLevel>, BindingBuilder<Microsoft.Maui.SemanticHeadingLevel>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.VisualElement
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.SemanticHeadingLevel>(self, Microsoft.Maui.Controls.SemanticProperties.HeadingLevelProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Microsoft.Maui.SemanticHeadingLevel GetSemanticHeadingLevelValue<T>(this T self)
             where T : Microsoft.Maui.Controls.VisualElement

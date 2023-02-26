@@ -35,7 +35,7 @@ namespace ExampleApp
             where T : ExampleApp.SecondPageViewModel
         {
             var builder = buildBinding(new BindingBuilder<string>(self, ExampleApp.SecondPageViewModel.TitleProperty));
-            builder.BindProperty();
+            builder.Build();
             return self;
         }
         
@@ -61,7 +61,7 @@ namespace ExampleApp
             where T : ExampleApp.SecondPageViewModel
         {
             var builder = buildBinding(new BindingBuilder<string>(self, ExampleApp.SecondPageViewModel.AuthorProperty));
-            builder.BindProperty();
+            builder.Build();
             return self;
         }
         

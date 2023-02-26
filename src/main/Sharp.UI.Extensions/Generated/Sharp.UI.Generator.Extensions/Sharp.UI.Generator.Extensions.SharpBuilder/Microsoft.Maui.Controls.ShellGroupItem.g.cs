@@ -29,14 +29,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FlyoutDisplayOptions<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.FlyoutDisplayOptions>, BindingBuilder<Microsoft.Maui.Controls.FlyoutDisplayOptions>> buildBinding)
+        public static T FlyoutDisplayOptions<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.ShellGroupItem
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.FlyoutDisplayOptions>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.FlyoutDisplayOptions>(self, Microsoft.Maui.Controls.ShellGroupItem.FlyoutDisplayOptionsProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.ShellGroupItem.FlyoutDisplayOptionsProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T FlyoutDisplayOptions<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.FlyoutDisplayOptions>, BindingBuilder<Microsoft.Maui.Controls.FlyoutDisplayOptions>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.ShellGroupItem
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.FlyoutDisplayOptions>(self, Microsoft.Maui.Controls.ShellGroupItem.FlyoutDisplayOptionsProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
     }
 }

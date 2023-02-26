@@ -29,14 +29,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T HasShadow<T>(this T self,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        public static T HasShadow<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Frame
+            where TBuilder : PropertyBuilder<bool>
         {
-            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.Frame.HasShadowProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Frame.HasShadowProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T HasShadow<T>(this T self,
+        //    System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Frame
+        //{
+        //    var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.Frame.HasShadowProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T BorderColor<T>(this T self,
             Microsoft.Maui.Graphics.Color borderColor)
@@ -55,14 +66,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T BorderColor<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        public static T BorderColor<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Frame
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Graphics.Color>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.Frame.BorderColorProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Frame.BorderColorProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T BorderColor<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Frame
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.Frame.BorderColorProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Task<bool> AnimateBorderColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.Frame
@@ -90,14 +112,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T CornerRadius<T>(this T self,
-            System.Func<BindingBuilder<float>, BindingBuilder<float>> buildBinding)
+        public static T CornerRadius<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Frame
+            where TBuilder : PropertyBuilder<float>
         {
-            var builder = buildBinding(new BindingBuilder<float>(self, Microsoft.Maui.Controls.Frame.CornerRadiusProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Frame.CornerRadiusProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T CornerRadius<T>(this T self,
+        //    System.Func<BindingBuilder<float>, BindingBuilder<float>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Frame
+        //{
+        //    var builder = buildBinding(new BindingBuilder<float>(self, Microsoft.Maui.Controls.Frame.CornerRadiusProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
     }
 }

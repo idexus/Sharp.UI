@@ -27,13 +27,22 @@ namespace Sharp.UI
             return self;
         }
         
-        public static Microsoft.Maui.Controls.SwipeGestureRecognizer Command(this Microsoft.Maui.Controls.SwipeGestureRecognizer self,
-            System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buildBinding)
+        public static Microsoft.Maui.Controls.SwipeGestureRecognizer Command<TBuilder>(this Microsoft.Maui.Controls.SwipeGestureRecognizer self, System.Action<TBuilder> configure)
+            where TBuilder : PropertyBuilder<System.Windows.Input.ICommand>
         {
-            var builder = buildBinding(new BindingBuilder<System.Windows.Input.ICommand>(self, Microsoft.Maui.Controls.SwipeGestureRecognizer.CommandProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SwipeGestureRecognizer.CommandProperty);
+            configure(builder);
+            builder.Build();
             return self;
         }
+
+        //public static Microsoft.Maui.Controls.SwipeGestureRecognizer Command(this Microsoft.Maui.Controls.SwipeGestureRecognizer self,
+        //    System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buildBinding)
+        //{
+        //    var builder = buildBinding(new BindingBuilder<System.Windows.Input.ICommand>(self, Microsoft.Maui.Controls.SwipeGestureRecognizer.CommandProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Microsoft.Maui.Controls.SwipeGestureRecognizer CommandParameter(this Microsoft.Maui.Controls.SwipeGestureRecognizer self,
             object commandParameter)
@@ -50,13 +59,22 @@ namespace Sharp.UI
             return self;
         }
         
-        public static Microsoft.Maui.Controls.SwipeGestureRecognizer CommandParameter(this Microsoft.Maui.Controls.SwipeGestureRecognizer self,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
+        public static Microsoft.Maui.Controls.SwipeGestureRecognizer CommandParameter<TBuilder>(this Microsoft.Maui.Controls.SwipeGestureRecognizer self, System.Action<TBuilder> configure)
+            where TBuilder : PropertyBuilder<object>
         {
-            var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.SwipeGestureRecognizer.CommandParameterProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SwipeGestureRecognizer.CommandParameterProperty);
+            configure(builder);
+            builder.Build();
             return self;
         }
+
+        //public static Microsoft.Maui.Controls.SwipeGestureRecognizer CommandParameter(this Microsoft.Maui.Controls.SwipeGestureRecognizer self,
+        //    System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
+        //{
+        //    var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.SwipeGestureRecognizer.CommandParameterProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Microsoft.Maui.Controls.SwipeGestureRecognizer Direction(this Microsoft.Maui.Controls.SwipeGestureRecognizer self,
             Microsoft.Maui.SwipeDirection direction)
@@ -73,13 +91,22 @@ namespace Sharp.UI
             return self;
         }
         
-        public static Microsoft.Maui.Controls.SwipeGestureRecognizer Direction(this Microsoft.Maui.Controls.SwipeGestureRecognizer self,
-            System.Func<BindingBuilder<Microsoft.Maui.SwipeDirection>, BindingBuilder<Microsoft.Maui.SwipeDirection>> buildBinding)
+        public static Microsoft.Maui.Controls.SwipeGestureRecognizer Direction<TBuilder>(this Microsoft.Maui.Controls.SwipeGestureRecognizer self, System.Action<TBuilder> configure)
+            where TBuilder : PropertyBuilder<Microsoft.Maui.SwipeDirection>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.SwipeDirection>(self, Microsoft.Maui.Controls.SwipeGestureRecognizer.DirectionProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SwipeGestureRecognizer.DirectionProperty);
+            configure(builder);
+            builder.Build();
             return self;
         }
+
+        //public static Microsoft.Maui.Controls.SwipeGestureRecognizer Direction(this Microsoft.Maui.Controls.SwipeGestureRecognizer self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.SwipeDirection>, BindingBuilder<Microsoft.Maui.SwipeDirection>> buildBinding)
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.SwipeDirection>(self, Microsoft.Maui.Controls.SwipeGestureRecognizer.DirectionProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Microsoft.Maui.Controls.SwipeGestureRecognizer Threshold(this Microsoft.Maui.Controls.SwipeGestureRecognizer self,
             uint threshold)
@@ -96,13 +123,22 @@ namespace Sharp.UI
             return self;
         }
         
-        public static Microsoft.Maui.Controls.SwipeGestureRecognizer Threshold(this Microsoft.Maui.Controls.SwipeGestureRecognizer self,
-            System.Func<BindingBuilder<uint>, BindingBuilder<uint>> buildBinding)
+        public static Microsoft.Maui.Controls.SwipeGestureRecognizer Threshold<TBuilder>(this Microsoft.Maui.Controls.SwipeGestureRecognizer self, System.Action<TBuilder> configure)
+            where TBuilder : PropertyBuilder<uint>
         {
-            var builder = buildBinding(new BindingBuilder<uint>(self, Microsoft.Maui.Controls.SwipeGestureRecognizer.ThresholdProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SwipeGestureRecognizer.ThresholdProperty);
+            configure(builder);
+            builder.Build();
             return self;
         }
+
+        //public static Microsoft.Maui.Controls.SwipeGestureRecognizer Threshold(this Microsoft.Maui.Controls.SwipeGestureRecognizer self,
+        //    System.Func<BindingBuilder<uint>, BindingBuilder<uint>> buildBinding)
+        //{
+        //    var builder = buildBinding(new BindingBuilder<uint>(self, Microsoft.Maui.Controls.SwipeGestureRecognizer.ThresholdProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Microsoft.Maui.Controls.SwipeGestureRecognizer OnSwiped(this Microsoft.Maui.Controls.SwipeGestureRecognizer self, System.EventHandler<Microsoft.Maui.Controls.SwipedEventArgs> handler)
         {

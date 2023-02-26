@@ -29,14 +29,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ShellPresentationMode<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.PresentationMode>, BindingBuilder<Microsoft.Maui.Controls.PresentationMode>> buildBinding)
+        public static T ShellPresentationMode<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Page
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.PresentationMode>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.PresentationMode>(self, Microsoft.Maui.Controls.Shell.PresentationModeProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shell.PresentationModeProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T ShellPresentationMode<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.PresentationMode>, BindingBuilder<Microsoft.Maui.Controls.PresentationMode>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Page
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.PresentationMode>(self, Microsoft.Maui.Controls.Shell.PresentationModeProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Microsoft.Maui.Controls.PresentationMode GetShellPresentationModeValue<T>(this T self)
             where T : Microsoft.Maui.Controls.Page
@@ -61,14 +72,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ShellBackgroundColor<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        public static T ShellBackgroundColor<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Page
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Graphics.Color>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.Shell.BackgroundColorProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shell.BackgroundColorProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T ShellBackgroundColor<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Page
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.Shell.BackgroundColorProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Microsoft.Maui.Graphics.Color GetShellBackgroundColorValue<T>(this T self)
             where T : Microsoft.Maui.Controls.Page
@@ -93,14 +115,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ShellForegroundColor<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        public static T ShellForegroundColor<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Page
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Graphics.Color>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.Shell.ForegroundColorProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shell.ForegroundColorProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T ShellForegroundColor<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Page
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.Shell.ForegroundColorProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Microsoft.Maui.Graphics.Color GetShellForegroundColorValue<T>(this T self)
             where T : Microsoft.Maui.Controls.Page
@@ -125,14 +158,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ShellTitleColor<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        public static T ShellTitleColor<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Page
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Graphics.Color>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.Shell.TitleColorProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shell.TitleColorProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T ShellTitleColor<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Page
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.Shell.TitleColorProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Microsoft.Maui.Graphics.Color GetShellTitleColorValue<T>(this T self)
             where T : Microsoft.Maui.Controls.Page
@@ -157,14 +201,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ShellDisabledColor<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        public static T ShellDisabledColor<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Page
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Graphics.Color>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.Shell.DisabledColorProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shell.DisabledColorProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T ShellDisabledColor<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Page
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.Shell.DisabledColorProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Microsoft.Maui.Graphics.Color GetShellDisabledColorValue<T>(this T self)
             where T : Microsoft.Maui.Controls.Page
@@ -189,14 +244,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ShellUnselectedColor<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        public static T ShellUnselectedColor<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Page
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Graphics.Color>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.Shell.UnselectedColorProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shell.UnselectedColorProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T ShellUnselectedColor<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Page
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.Shell.UnselectedColorProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Microsoft.Maui.Graphics.Color GetShellUnselectedColorValue<T>(this T self)
             where T : Microsoft.Maui.Controls.Page
@@ -221,14 +287,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ShellNavBarHasShadow<T>(this T self,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        public static T ShellNavBarHasShadow<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Page
+            where TBuilder : PropertyBuilder<bool>
         {
-            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.Shell.NavBarHasShadowProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shell.NavBarHasShadowProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T ShellNavBarHasShadow<T>(this T self,
+        //    System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Page
+        //{
+        //    var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.Shell.NavBarHasShadowProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static bool GetShellNavBarHasShadowValue<T>(this T self)
             where T : Microsoft.Maui.Controls.Page
@@ -253,14 +330,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ShellNavBarIsVisible<T>(this T self,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        public static T ShellNavBarIsVisible<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Page
+            where TBuilder : PropertyBuilder<bool>
         {
-            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.Shell.NavBarIsVisibleProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shell.NavBarIsVisibleProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T ShellNavBarIsVisible<T>(this T self,
+        //    System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Page
+        //{
+        //    var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.Shell.NavBarIsVisibleProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static bool GetShellNavBarIsVisibleValue<T>(this T self)
             where T : Microsoft.Maui.Controls.Page
@@ -285,14 +373,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ShellTabBarBackgroundColor<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        public static T ShellTabBarBackgroundColor<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Page
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Graphics.Color>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.Shell.TabBarBackgroundColorProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shell.TabBarBackgroundColorProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T ShellTabBarBackgroundColor<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Page
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.Shell.TabBarBackgroundColorProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Microsoft.Maui.Graphics.Color GetShellTabBarBackgroundColorValue<T>(this T self)
             where T : Microsoft.Maui.Controls.Page
@@ -317,14 +416,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ShellTabBarForegroundColor<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        public static T ShellTabBarForegroundColor<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Page
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Graphics.Color>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.Shell.TabBarForegroundColorProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shell.TabBarForegroundColorProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T ShellTabBarForegroundColor<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Page
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.Shell.TabBarForegroundColorProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Microsoft.Maui.Graphics.Color GetShellTabBarForegroundColorValue<T>(this T self)
             where T : Microsoft.Maui.Controls.Page
@@ -349,14 +459,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ShellTabBarTitleColor<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        public static T ShellTabBarTitleColor<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Page
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Graphics.Color>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.Shell.TabBarTitleColorProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shell.TabBarTitleColorProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T ShellTabBarTitleColor<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Page
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.Shell.TabBarTitleColorProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Microsoft.Maui.Graphics.Color GetShellTabBarTitleColorValue<T>(this T self)
             where T : Microsoft.Maui.Controls.Page
@@ -381,14 +502,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ShellTabBarDisabledColor<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        public static T ShellTabBarDisabledColor<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Page
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Graphics.Color>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.Shell.TabBarDisabledColorProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shell.TabBarDisabledColorProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T ShellTabBarDisabledColor<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Page
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.Shell.TabBarDisabledColorProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Microsoft.Maui.Graphics.Color GetShellTabBarDisabledColorValue<T>(this T self)
             where T : Microsoft.Maui.Controls.Page
@@ -413,14 +545,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ShellTabBarUnselectedColor<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        public static T ShellTabBarUnselectedColor<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Page
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Graphics.Color>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.Shell.TabBarUnselectedColorProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shell.TabBarUnselectedColorProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T ShellTabBarUnselectedColor<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Page
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.Shell.TabBarUnselectedColorProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Microsoft.Maui.Graphics.Color GetShellTabBarUnselectedColorValue<T>(this T self)
             where T : Microsoft.Maui.Controls.Page

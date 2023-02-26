@@ -29,14 +29,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Content<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.View>, BindingBuilder<Microsoft.Maui.Controls.View>> buildBinding)
+        public static T Content<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.ContentPresenter
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.View>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.View>(self, Microsoft.Maui.Controls.ContentPresenter.ContentProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.ContentPresenter.ContentProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T Content<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.View>, BindingBuilder<Microsoft.Maui.Controls.View>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.ContentPresenter
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.View>(self, Microsoft.Maui.Controls.ContentPresenter.ContentProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
     }
 }

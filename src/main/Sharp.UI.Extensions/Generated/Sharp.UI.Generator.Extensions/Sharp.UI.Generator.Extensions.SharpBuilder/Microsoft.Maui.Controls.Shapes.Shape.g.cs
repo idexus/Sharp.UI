@@ -29,14 +29,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Fill<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.Brush>, BindingBuilder<Microsoft.Maui.Controls.Brush>> buildBinding)
+        public static T Fill<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Shapes.Shape
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.Brush>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Brush>(self, Microsoft.Maui.Controls.Shapes.Shape.FillProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.Shape.FillProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T Fill<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.Brush>, BindingBuilder<Microsoft.Maui.Controls.Brush>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Shapes.Shape
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Brush>(self, Microsoft.Maui.Controls.Shapes.Shape.FillProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T Stroke<T>(this T self,
             Microsoft.Maui.Controls.Brush stroke)
@@ -55,14 +66,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Stroke<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.Brush>, BindingBuilder<Microsoft.Maui.Controls.Brush>> buildBinding)
+        public static T Stroke<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Shapes.Shape
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.Brush>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Brush>(self, Microsoft.Maui.Controls.Shapes.Shape.StrokeProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.Shape.StrokeProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T Stroke<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.Brush>, BindingBuilder<Microsoft.Maui.Controls.Brush>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Shapes.Shape
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Brush>(self, Microsoft.Maui.Controls.Shapes.Shape.StrokeProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T StrokeThickness<T>(this T self,
             double strokeThickness)
@@ -81,14 +103,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T StrokeThickness<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        public static T StrokeThickness<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Shapes.Shape
+            where TBuilder : PropertyBuilder<double>
         {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.Shape.StrokeThicknessProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.Shape.StrokeThicknessProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T StrokeThickness<T>(this T self,
+        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Shapes.Shape
+        //{
+        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.Shape.StrokeThicknessProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Task<bool> AnimateStrokeThicknessTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.Shapes.Shape
@@ -117,14 +150,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T StrokeDashArray<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.DoubleCollection>, BindingBuilder<Microsoft.Maui.Controls.DoubleCollection>> buildBinding)
+        public static T StrokeDashArray<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Shapes.Shape
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.DoubleCollection>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.DoubleCollection>(self, Microsoft.Maui.Controls.Shapes.Shape.StrokeDashArrayProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.Shape.StrokeDashArrayProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T StrokeDashArray<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.DoubleCollection>, BindingBuilder<Microsoft.Maui.Controls.DoubleCollection>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Shapes.Shape
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.DoubleCollection>(self, Microsoft.Maui.Controls.Shapes.Shape.StrokeDashArrayProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T StrokeDashOffset<T>(this T self,
             double strokeDashOffset)
@@ -143,14 +187,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T StrokeDashOffset<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        public static T StrokeDashOffset<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Shapes.Shape
+            where TBuilder : PropertyBuilder<double>
         {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.Shape.StrokeDashOffsetProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.Shape.StrokeDashOffsetProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T StrokeDashOffset<T>(this T self,
+        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Shapes.Shape
+        //{
+        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.Shape.StrokeDashOffsetProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Task<bool> AnimateStrokeDashOffsetTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.Shapes.Shape
@@ -178,14 +233,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T StrokeLineCap<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.Shapes.PenLineCap>, BindingBuilder<Microsoft.Maui.Controls.Shapes.PenLineCap>> buildBinding)
+        public static T StrokeLineCap<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Shapes.Shape
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.Shapes.PenLineCap>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Shapes.PenLineCap>(self, Microsoft.Maui.Controls.Shapes.Shape.StrokeLineCapProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.Shape.StrokeLineCapProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T StrokeLineCap<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.Shapes.PenLineCap>, BindingBuilder<Microsoft.Maui.Controls.Shapes.PenLineCap>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Shapes.Shape
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Shapes.PenLineCap>(self, Microsoft.Maui.Controls.Shapes.Shape.StrokeLineCapProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T StrokeLineJoin<T>(this T self,
             Microsoft.Maui.Controls.Shapes.PenLineJoin strokeLineJoin)
@@ -204,14 +270,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T StrokeLineJoin<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.Shapes.PenLineJoin>, BindingBuilder<Microsoft.Maui.Controls.Shapes.PenLineJoin>> buildBinding)
+        public static T StrokeLineJoin<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Shapes.Shape
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.Shapes.PenLineJoin>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Shapes.PenLineJoin>(self, Microsoft.Maui.Controls.Shapes.Shape.StrokeLineJoinProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.Shape.StrokeLineJoinProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T StrokeLineJoin<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.Shapes.PenLineJoin>, BindingBuilder<Microsoft.Maui.Controls.Shapes.PenLineJoin>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Shapes.Shape
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Shapes.PenLineJoin>(self, Microsoft.Maui.Controls.Shapes.Shape.StrokeLineJoinProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T StrokeMiterLimit<T>(this T self,
             double strokeMiterLimit)
@@ -230,14 +307,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T StrokeMiterLimit<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        public static T StrokeMiterLimit<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Shapes.Shape
+            where TBuilder : PropertyBuilder<double>
         {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.Shape.StrokeMiterLimitProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.Shape.StrokeMiterLimitProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T StrokeMiterLimit<T>(this T self,
+        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Shapes.Shape
+        //{
+        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.Shape.StrokeMiterLimitProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Task<bool> AnimateStrokeMiterLimitTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.Shapes.Shape
@@ -265,14 +353,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Aspect<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.Stretch>, BindingBuilder<Microsoft.Maui.Controls.Stretch>> buildBinding)
+        public static T Aspect<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Shapes.Shape
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.Stretch>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Stretch>(self, Microsoft.Maui.Controls.Shapes.Shape.AspectProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.Shape.AspectProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T Aspect<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.Stretch>, BindingBuilder<Microsoft.Maui.Controls.Stretch>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Shapes.Shape
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Stretch>(self, Microsoft.Maui.Controls.Shapes.Shape.AspectProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
     }
 }

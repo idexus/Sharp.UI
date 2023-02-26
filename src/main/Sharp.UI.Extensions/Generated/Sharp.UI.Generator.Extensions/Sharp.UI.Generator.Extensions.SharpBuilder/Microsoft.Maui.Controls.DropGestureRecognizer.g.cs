@@ -29,14 +29,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T AllowDrop<T>(this T self,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        public static T AllowDrop<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.DropGestureRecognizer
+            where TBuilder : PropertyBuilder<bool>
         {
-            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.DropGestureRecognizer.AllowDropProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.DropGestureRecognizer.AllowDropProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T AllowDrop<T>(this T self,
+        //    System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.DropGestureRecognizer
+        //{
+        //    var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.DropGestureRecognizer.AllowDropProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T DragOverCommand<T>(this T self,
             System.Windows.Input.ICommand dragOverCommand)
@@ -55,14 +66,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T DragOverCommand<T>(this T self,
-            System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buildBinding)
+        public static T DragOverCommand<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.DropGestureRecognizer
+            where TBuilder : PropertyBuilder<System.Windows.Input.ICommand>
         {
-            var builder = buildBinding(new BindingBuilder<System.Windows.Input.ICommand>(self, Microsoft.Maui.Controls.DropGestureRecognizer.DragOverCommandProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.DropGestureRecognizer.DragOverCommandProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T DragOverCommand<T>(this T self,
+        //    System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.DropGestureRecognizer
+        //{
+        //    var builder = buildBinding(new BindingBuilder<System.Windows.Input.ICommand>(self, Microsoft.Maui.Controls.DropGestureRecognizer.DragOverCommandProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T DragOverCommandParameter<T>(this T self,
             object dragOverCommandParameter)
@@ -81,14 +103,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T DragOverCommandParameter<T>(this T self,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
+        public static T DragOverCommandParameter<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.DropGestureRecognizer
+            where TBuilder : PropertyBuilder<object>
         {
-            var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.DropGestureRecognizer.DragOverCommandParameterProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.DropGestureRecognizer.DragOverCommandParameterProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T DragOverCommandParameter<T>(this T self,
+        //    System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.DropGestureRecognizer
+        //{
+        //    var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.DropGestureRecognizer.DragOverCommandParameterProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T DragLeaveCommand<T>(this T self,
             System.Windows.Input.ICommand dragLeaveCommand)
@@ -107,14 +140,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T DragLeaveCommand<T>(this T self,
-            System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buildBinding)
+        public static T DragLeaveCommand<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.DropGestureRecognizer
+            where TBuilder : PropertyBuilder<System.Windows.Input.ICommand>
         {
-            var builder = buildBinding(new BindingBuilder<System.Windows.Input.ICommand>(self, Microsoft.Maui.Controls.DropGestureRecognizer.DragLeaveCommandProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.DropGestureRecognizer.DragLeaveCommandProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T DragLeaveCommand<T>(this T self,
+        //    System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.DropGestureRecognizer
+        //{
+        //    var builder = buildBinding(new BindingBuilder<System.Windows.Input.ICommand>(self, Microsoft.Maui.Controls.DropGestureRecognizer.DragLeaveCommandProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T DragLeaveCommandParameter<T>(this T self,
             object dragLeaveCommandParameter)
@@ -133,14 +177,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T DragLeaveCommandParameter<T>(this T self,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
+        public static T DragLeaveCommandParameter<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.DropGestureRecognizer
+            where TBuilder : PropertyBuilder<object>
         {
-            var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.DropGestureRecognizer.DragLeaveCommandParameterProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.DropGestureRecognizer.DragLeaveCommandParameterProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T DragLeaveCommandParameter<T>(this T self,
+        //    System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.DropGestureRecognizer
+        //{
+        //    var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.DropGestureRecognizer.DragLeaveCommandParameterProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T DropCommand<T>(this T self,
             System.Windows.Input.ICommand dropCommand)
@@ -159,14 +214,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T DropCommand<T>(this T self,
-            System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buildBinding)
+        public static T DropCommand<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.DropGestureRecognizer
+            where TBuilder : PropertyBuilder<System.Windows.Input.ICommand>
         {
-            var builder = buildBinding(new BindingBuilder<System.Windows.Input.ICommand>(self, Microsoft.Maui.Controls.DropGestureRecognizer.DropCommandProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.DropGestureRecognizer.DropCommandProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T DropCommand<T>(this T self,
+        //    System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.DropGestureRecognizer
+        //{
+        //    var builder = buildBinding(new BindingBuilder<System.Windows.Input.ICommand>(self, Microsoft.Maui.Controls.DropGestureRecognizer.DropCommandProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T DropCommandParameter<T>(this T self,
             object dropCommandParameter)
@@ -185,14 +251,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T DropCommandParameter<T>(this T self,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
+        public static T DropCommandParameter<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.DropGestureRecognizer
+            where TBuilder : PropertyBuilder<object>
         {
-            var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.DropGestureRecognizer.DropCommandParameterProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.DropGestureRecognizer.DropCommandParameterProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T DropCommandParameter<T>(this T self,
+        //    System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.DropGestureRecognizer
+        //{
+        //    var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.DropGestureRecognizer.DropCommandParameterProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T OnDragLeave<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.DragEventArgs> handler)
             where T : Microsoft.Maui.Controls.DropGestureRecognizer

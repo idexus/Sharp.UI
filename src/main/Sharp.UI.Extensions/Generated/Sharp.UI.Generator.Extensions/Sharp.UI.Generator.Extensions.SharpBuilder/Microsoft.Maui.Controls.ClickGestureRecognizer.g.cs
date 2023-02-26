@@ -27,13 +27,22 @@ namespace Sharp.UI
             return self;
         }
         
-        public static Microsoft.Maui.Controls.ClickGestureRecognizer Command(this Microsoft.Maui.Controls.ClickGestureRecognizer self,
-            System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buildBinding)
+        public static Microsoft.Maui.Controls.ClickGestureRecognizer Command<TBuilder>(this Microsoft.Maui.Controls.ClickGestureRecognizer self, System.Action<TBuilder> configure)
+            where TBuilder : PropertyBuilder<System.Windows.Input.ICommand>
         {
-            var builder = buildBinding(new BindingBuilder<System.Windows.Input.ICommand>(self, Microsoft.Maui.Controls.ClickGestureRecognizer.CommandProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.ClickGestureRecognizer.CommandProperty);
+            configure(builder);
+            builder.Build();
             return self;
         }
+
+        //public static Microsoft.Maui.Controls.ClickGestureRecognizer Command(this Microsoft.Maui.Controls.ClickGestureRecognizer self,
+        //    System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buildBinding)
+        //{
+        //    var builder = buildBinding(new BindingBuilder<System.Windows.Input.ICommand>(self, Microsoft.Maui.Controls.ClickGestureRecognizer.CommandProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Microsoft.Maui.Controls.ClickGestureRecognizer CommandParameter(this Microsoft.Maui.Controls.ClickGestureRecognizer self,
             object commandParameter)
@@ -50,13 +59,22 @@ namespace Sharp.UI
             return self;
         }
         
-        public static Microsoft.Maui.Controls.ClickGestureRecognizer CommandParameter(this Microsoft.Maui.Controls.ClickGestureRecognizer self,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
+        public static Microsoft.Maui.Controls.ClickGestureRecognizer CommandParameter<TBuilder>(this Microsoft.Maui.Controls.ClickGestureRecognizer self, System.Action<TBuilder> configure)
+            where TBuilder : PropertyBuilder<object>
         {
-            var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.ClickGestureRecognizer.CommandParameterProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.ClickGestureRecognizer.CommandParameterProperty);
+            configure(builder);
+            builder.Build();
             return self;
         }
+
+        //public static Microsoft.Maui.Controls.ClickGestureRecognizer CommandParameter(this Microsoft.Maui.Controls.ClickGestureRecognizer self,
+        //    System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
+        //{
+        //    var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.ClickGestureRecognizer.CommandParameterProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Microsoft.Maui.Controls.ClickGestureRecognizer NumberOfClicksRequired(this Microsoft.Maui.Controls.ClickGestureRecognizer self,
             int numberOfClicksRequired)
@@ -73,13 +91,22 @@ namespace Sharp.UI
             return self;
         }
         
-        public static Microsoft.Maui.Controls.ClickGestureRecognizer NumberOfClicksRequired(this Microsoft.Maui.Controls.ClickGestureRecognizer self,
-            System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
+        public static Microsoft.Maui.Controls.ClickGestureRecognizer NumberOfClicksRequired<TBuilder>(this Microsoft.Maui.Controls.ClickGestureRecognizer self, System.Action<TBuilder> configure)
+            where TBuilder : PropertyBuilder<int>
         {
-            var builder = buildBinding(new BindingBuilder<int>(self, Microsoft.Maui.Controls.ClickGestureRecognizer.NumberOfClicksRequiredProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.ClickGestureRecognizer.NumberOfClicksRequiredProperty);
+            configure(builder);
+            builder.Build();
             return self;
         }
+
+        //public static Microsoft.Maui.Controls.ClickGestureRecognizer NumberOfClicksRequired(this Microsoft.Maui.Controls.ClickGestureRecognizer self,
+        //    System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
+        //{
+        //    var builder = buildBinding(new BindingBuilder<int>(self, Microsoft.Maui.Controls.ClickGestureRecognizer.NumberOfClicksRequiredProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Microsoft.Maui.Controls.ClickGestureRecognizer Buttons(this Microsoft.Maui.Controls.ClickGestureRecognizer self,
             Microsoft.Maui.Controls.ButtonsMask buttons)
@@ -96,13 +123,22 @@ namespace Sharp.UI
             return self;
         }
         
-        public static Microsoft.Maui.Controls.ClickGestureRecognizer Buttons(this Microsoft.Maui.Controls.ClickGestureRecognizer self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.ButtonsMask>, BindingBuilder<Microsoft.Maui.Controls.ButtonsMask>> buildBinding)
+        public static Microsoft.Maui.Controls.ClickGestureRecognizer Buttons<TBuilder>(this Microsoft.Maui.Controls.ClickGestureRecognizer self, System.Action<TBuilder> configure)
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.ButtonsMask>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ButtonsMask>(self, Microsoft.Maui.Controls.ClickGestureRecognizer.ButtonsProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.ClickGestureRecognizer.ButtonsProperty);
+            configure(builder);
+            builder.Build();
             return self;
         }
+
+        //public static Microsoft.Maui.Controls.ClickGestureRecognizer Buttons(this Microsoft.Maui.Controls.ClickGestureRecognizer self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.ButtonsMask>, BindingBuilder<Microsoft.Maui.Controls.ButtonsMask>> buildBinding)
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ButtonsMask>(self, Microsoft.Maui.Controls.ClickGestureRecognizer.ButtonsProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Microsoft.Maui.Controls.ClickGestureRecognizer OnClicked(this Microsoft.Maui.Controls.ClickGestureRecognizer self, System.EventHandler handler)
         {

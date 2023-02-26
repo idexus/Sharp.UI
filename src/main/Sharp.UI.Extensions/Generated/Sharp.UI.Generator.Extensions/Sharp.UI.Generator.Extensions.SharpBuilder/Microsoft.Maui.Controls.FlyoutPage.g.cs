@@ -50,14 +50,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T IsGestureEnabled<T>(this T self,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        public static T IsGestureEnabled<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.FlyoutPage
+            where TBuilder : PropertyBuilder<bool>
         {
-            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.FlyoutPage.IsGestureEnabledProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.FlyoutPage.IsGestureEnabledProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T IsGestureEnabled<T>(this T self,
+        //    System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.FlyoutPage
+        //{
+        //    var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.FlyoutPage.IsGestureEnabledProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T IsPresented<T>(this T self,
             bool isPresented)
@@ -76,14 +87,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T IsPresented<T>(this T self,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        public static T IsPresented<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.FlyoutPage
+            where TBuilder : PropertyBuilder<bool>
         {
-            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.FlyoutPage.IsPresentedProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.FlyoutPage.IsPresentedProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T IsPresented<T>(this T self,
+        //    System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.FlyoutPage
+        //{
+        //    var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.FlyoutPage.IsPresentedProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T Flyout<T>(this T self,
             Microsoft.Maui.Controls.Page flyout)
@@ -123,14 +145,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FlyoutLayoutBehavior<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.FlyoutLayoutBehavior>, BindingBuilder<Microsoft.Maui.Controls.FlyoutLayoutBehavior>> buildBinding)
+        public static T FlyoutLayoutBehavior<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.FlyoutPage
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.FlyoutLayoutBehavior>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.FlyoutLayoutBehavior>(self, Microsoft.Maui.Controls.FlyoutPage.FlyoutLayoutBehaviorProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.FlyoutPage.FlyoutLayoutBehaviorProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T FlyoutLayoutBehavior<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.FlyoutLayoutBehavior>, BindingBuilder<Microsoft.Maui.Controls.FlyoutLayoutBehavior>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.FlyoutPage
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.FlyoutLayoutBehavior>(self, Microsoft.Maui.Controls.FlyoutPage.FlyoutLayoutBehaviorProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T OnIsPresentedChanged<T>(this T self, System.EventHandler handler)
             where T : Microsoft.Maui.Controls.FlyoutPage

@@ -29,14 +29,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T AutomationId<T>(this T self,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        public static T AutomationId<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Element
+            where TBuilder : PropertyBuilder<string>
         {
-            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.Element.AutomationIdProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Element.AutomationIdProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T AutomationId<T>(this T self,
+        //    System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Element
+        //{
+        //    var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.Element.AutomationIdProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T ClassId<T>(this T self,
             string classId)
@@ -55,14 +66,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ClassId<T>(this T self,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        public static T ClassId<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Element
+            where TBuilder : PropertyBuilder<string>
         {
-            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.Element.ClassIdProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Element.ClassIdProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T ClassId<T>(this T self,
+        //    System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Element
+        //{
+        //    var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.Element.ClassIdProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T Effects<T>(this T self,
             IList<Microsoft.Maui.Controls.Effect> effects)

@@ -29,14 +29,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Style<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.Style>, BindingBuilder<Microsoft.Maui.Controls.Style>> buildBinding)
+        public static T Style<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.NavigableElement
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.Style>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Style>(self, Microsoft.Maui.Controls.NavigableElement.StyleProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.NavigableElement.StyleProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T Style<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.Style>, BindingBuilder<Microsoft.Maui.Controls.Style>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.NavigableElement
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Style>(self, Microsoft.Maui.Controls.NavigableElement.StyleProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T StyleClass<T>(this T self,
             IList<string> styleClass)

@@ -35,7 +35,7 @@ namespace ExampleApp
             where T : ExampleApp.AngleViewModel
         {
             var builder = buildBinding(new BindingBuilder<double>(self, ExampleApp.AngleViewModel.RawAngleProperty));
-            builder.BindProperty();
+            builder.Build();
             return self;
         }
         
@@ -61,7 +61,7 @@ namespace ExampleApp
             where T : ExampleApp.AngleViewModel
         {
             var builder = buildBinding(new BindingBuilder<double>(self, ExampleApp.AngleViewModel.AngleProperty));
-            builder.BindProperty();
+            builder.Build();
             return self;
         }
         
@@ -87,7 +87,7 @@ namespace ExampleApp
             where T : ExampleApp.AngleViewModel
         {
             var builder = buildBinding(new BindingBuilder<double>(self, ExampleApp.AngleViewModel.MaximumAngleProperty));
-            builder.BindProperty();
+            builder.Build();
             return self;
         }
         

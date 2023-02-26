@@ -29,14 +29,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T OnColor<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        public static T OnColor<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.SwitchCell
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Graphics.Color>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.SwitchCell.OnColorProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SwitchCell.OnColorProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T OnColor<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.SwitchCell
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.SwitchCell.OnColorProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T On<T>(this T self,
             bool on)
@@ -55,14 +66,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T On<T>(this T self,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        public static T On<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.SwitchCell
+            where TBuilder : PropertyBuilder<bool>
         {
-            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.SwitchCell.OnProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SwitchCell.OnProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T On<T>(this T self,
+        //    System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.SwitchCell
+        //{
+        //    var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.SwitchCell.OnProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T Text<T>(this T self,
             string text)
@@ -81,14 +103,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Text<T>(this T self,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        public static T Text<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.SwitchCell
+            where TBuilder : PropertyBuilder<string>
         {
-            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.SwitchCell.TextProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SwitchCell.TextProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T Text<T>(this T self,
+        //    System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.SwitchCell
+        //{
+        //    var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.SwitchCell.TextProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T OnOnChanged<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.ToggledEventArgs> handler)
             where T : Microsoft.Maui.Controls.SwitchCell

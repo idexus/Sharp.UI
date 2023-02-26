@@ -29,14 +29,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Mode<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.SwipeMode>, BindingBuilder<Microsoft.Maui.SwipeMode>> buildBinding)
+        public static T Mode<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.SwipeItems
+            where TBuilder : PropertyBuilder<Microsoft.Maui.SwipeMode>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.SwipeMode>(self, Microsoft.Maui.Controls.SwipeItems.ModeProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SwipeItems.ModeProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T Mode<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.SwipeMode>, BindingBuilder<Microsoft.Maui.SwipeMode>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.SwipeItems
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.SwipeMode>(self, Microsoft.Maui.Controls.SwipeItems.ModeProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T SwipeBehaviorOnInvoked<T>(this T self,
             Microsoft.Maui.SwipeBehaviorOnInvoked swipeBehaviorOnInvoked)
@@ -55,14 +66,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T SwipeBehaviorOnInvoked<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.SwipeBehaviorOnInvoked>, BindingBuilder<Microsoft.Maui.SwipeBehaviorOnInvoked>> buildBinding)
+        public static T SwipeBehaviorOnInvoked<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.SwipeItems
+            where TBuilder : PropertyBuilder<Microsoft.Maui.SwipeBehaviorOnInvoked>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.SwipeBehaviorOnInvoked>(self, Microsoft.Maui.Controls.SwipeItems.SwipeBehaviorOnInvokedProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.SwipeItems.SwipeBehaviorOnInvokedProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T SwipeBehaviorOnInvoked<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.SwipeBehaviorOnInvoked>, BindingBuilder<Microsoft.Maui.SwipeBehaviorOnInvoked>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.SwipeItems
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.SwipeBehaviorOnInvoked>(self, Microsoft.Maui.Controls.SwipeItems.SwipeBehaviorOnInvokedProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T OnCollectionChanged<T>(this T self, System.Collections.Specialized.NotifyCollectionChangedEventHandler handler)
             where T : Microsoft.Maui.Controls.SwipeItems

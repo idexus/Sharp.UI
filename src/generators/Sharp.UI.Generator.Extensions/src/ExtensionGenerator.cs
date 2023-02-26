@@ -469,13 +469,22 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
         {
             isExtensionMethodsGenerated = true;
             builder.Append($@"
-        public static {info.symbolTypeName} {info.propertyName}(this {info.symbolTypeName} self,
-            System.Func<BindingBuilder<{info.propertyTypeName}>, BindingBuilder<{info.propertyTypeName}>> buildBinding)
+        public static {info.symbolTypeName} {info.propertyName}<TBuilder>(this {info.symbolTypeName} self, System.Action<TBuilder> configure)
+            where TBuilder : PropertyBuilder<{info.propertyTypeName}>
         {{
-            var builder = buildBinding(new BindingBuilder<{info.propertyTypeName}>(self, {info.BindablePropertyName}));
-            builder.BindProperty();
+            var builder = new TBuilder(self, {info.BindablePropertyName});
+            configure(builder);
+            builder.Build();
             return self;
         }}
+
+        //public static {info.symbolTypeName} {info.propertyName}(this {info.symbolTypeName} self,
+        //    System.Func<BindingBuilder<{info.propertyTypeName}>, BindingBuilder<{info.propertyTypeName}>> buildBinding)
+        //{{
+        //    var builder = buildBinding(new BindingBuilder<{info.propertyTypeName}>(self, {info.BindablePropertyName}));
+        //    builder.Build();
+        //    return self;
+        //}}
         ");
         }
 
@@ -483,14 +492,25 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
         {
             isExtensionMethodsGenerated = true;
             builder.Append($@"
-        public static T {info.propertyName}<T>(this T self,
-            System.Func<BindingBuilder<{info.propertyTypeName}>, BindingBuilder<{info.propertyTypeName}>> buildBinding)
+        public static T {info.propertyName}<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : {info.symbolTypeName}
+            where TBuilder : PropertyBuilder<{info.propertyTypeName}>
         {{
-            var builder = buildBinding(new BindingBuilder<{info.propertyTypeName}>(self, {info.BindablePropertyName}));
-            builder.BindProperty();
+            var builder = new TBuilder(self, {info.BindablePropertyName});
+            configure(builder);
+            builder.Build();
             return self;
+
         }}
+
+        //public static T {info.propertyName}<T>(this T self,
+        //    System.Func<BindingBuilder<{info.propertyTypeName}>, BindingBuilder<{info.propertyTypeName}>> buildBinding)
+        //    where T : {info.symbolTypeName}
+        //{{
+        //    var builder = buildBinding(new BindingBuilder<{info.propertyTypeName}>(self, {info.BindablePropertyName}));
+        //    builder.Build();
+        //    return self;
+        //}}
         ");
         }
 

@@ -29,14 +29,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T BaseUrl<T>(this T self,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        public static T BaseUrl<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.HtmlWebViewSource
+            where TBuilder : PropertyBuilder<string>
         {
-            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.HtmlWebViewSource.BaseUrlProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.HtmlWebViewSource.BaseUrlProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T BaseUrl<T>(this T self,
+        //    System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.HtmlWebViewSource
+        //{
+        //    var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.HtmlWebViewSource.BaseUrlProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T Html<T>(this T self,
             string html)
@@ -55,14 +66,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Html<T>(this T self,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        public static T Html<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.HtmlWebViewSource
+            where TBuilder : PropertyBuilder<string>
         {
-            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.HtmlWebViewSource.HtmlProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.HtmlWebViewSource.HtmlProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T Html<T>(this T self,
+        //    System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.HtmlWebViewSource
+        //{
+        //    var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.HtmlWebViewSource.HtmlProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
     }
 }

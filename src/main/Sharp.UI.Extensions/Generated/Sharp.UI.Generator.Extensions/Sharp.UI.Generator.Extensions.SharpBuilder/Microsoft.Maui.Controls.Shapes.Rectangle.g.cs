@@ -27,13 +27,22 @@ namespace Sharp.UI
             return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.Rectangle RadiusX(this Microsoft.Maui.Controls.Shapes.Rectangle self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        public static Microsoft.Maui.Controls.Shapes.Rectangle RadiusX<TBuilder>(this Microsoft.Maui.Controls.Shapes.Rectangle self, System.Action<TBuilder> configure)
+            where TBuilder : PropertyBuilder<double>
         {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.Rectangle.RadiusXProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.Rectangle.RadiusXProperty);
+            configure(builder);
+            builder.Build();
             return self;
         }
+
+        //public static Microsoft.Maui.Controls.Shapes.Rectangle RadiusX(this Microsoft.Maui.Controls.Shapes.Rectangle self,
+        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        //{
+        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.Rectangle.RadiusXProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Task<bool> AnimateRadiusXTo(this Microsoft.Maui.Controls.Shapes.Rectangle self, double value, uint length = 250, Easing? easing = null)
         {
@@ -58,13 +67,22 @@ namespace Sharp.UI
             return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.Rectangle RadiusY(this Microsoft.Maui.Controls.Shapes.Rectangle self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        public static Microsoft.Maui.Controls.Shapes.Rectangle RadiusY<TBuilder>(this Microsoft.Maui.Controls.Shapes.Rectangle self, System.Action<TBuilder> configure)
+            where TBuilder : PropertyBuilder<double>
         {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.Rectangle.RadiusYProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.Rectangle.RadiusYProperty);
+            configure(builder);
+            builder.Build();
             return self;
         }
+
+        //public static Microsoft.Maui.Controls.Shapes.Rectangle RadiusY(this Microsoft.Maui.Controls.Shapes.Rectangle self,
+        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        //{
+        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.Rectangle.RadiusYProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Task<bool> AnimateRadiusYTo(this Microsoft.Maui.Controls.Shapes.Rectangle self, double value, uint length = 250, Easing? easing = null)
         {

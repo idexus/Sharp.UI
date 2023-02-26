@@ -47,14 +47,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T IsClippedToBounds<T>(this T self,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        public static T IsClippedToBounds<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Layout
+            where TBuilder : PropertyBuilder<bool>
         {
-            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.Layout.IsClippedToBoundsProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Layout.IsClippedToBoundsProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T IsClippedToBounds<T>(this T self,
+        //    System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Layout
+        //{
+        //    var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.Layout.IsClippedToBoundsProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T Padding<T>(this T self,
             Microsoft.Maui.Thickness padding)
@@ -73,14 +84,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Padding<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Thickness>, BindingBuilder<Microsoft.Maui.Thickness>> buildBinding)
+        public static T Padding<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Layout
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Thickness>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Thickness>(self, Microsoft.Maui.Controls.Layout.PaddingProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Layout.PaddingProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T Padding<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Thickness>, BindingBuilder<Microsoft.Maui.Thickness>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Layout
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Thickness>(self, Microsoft.Maui.Controls.Layout.PaddingProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T IgnoreSafeArea<T>(this T self,
             bool ignoreSafeArea)
@@ -120,14 +142,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T CascadeInputTransparent<T>(this T self,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        public static T CascadeInputTransparent<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Layout
+            where TBuilder : PropertyBuilder<bool>
         {
-            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.Layout.CascadeInputTransparentProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Layout.CascadeInputTransparentProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T CascadeInputTransparent<T>(this T self,
+        //    System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Layout
+        //{
+        //    var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.Layout.CascadeInputTransparentProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
     }
 }

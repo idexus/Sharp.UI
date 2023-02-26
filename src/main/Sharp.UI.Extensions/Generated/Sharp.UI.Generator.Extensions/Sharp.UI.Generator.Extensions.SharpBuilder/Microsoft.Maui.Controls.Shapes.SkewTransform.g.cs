@@ -29,14 +29,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T AngleX<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        public static T AngleX<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Shapes.SkewTransform
+            where TBuilder : PropertyBuilder<double>
         {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.SkewTransform.AngleXProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.SkewTransform.AngleXProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T AngleX<T>(this T self,
+        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Shapes.SkewTransform
+        //{
+        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.SkewTransform.AngleXProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T AngleY<T>(this T self,
             double angleY)
@@ -55,14 +66,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T AngleY<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        public static T AngleY<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Shapes.SkewTransform
+            where TBuilder : PropertyBuilder<double>
         {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.SkewTransform.AngleYProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.SkewTransform.AngleYProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T AngleY<T>(this T self,
+        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Shapes.SkewTransform
+        //{
+        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.SkewTransform.AngleYProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T CenterX<T>(this T self,
             double centerX)
@@ -81,14 +103,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T CenterX<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        public static T CenterX<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Shapes.SkewTransform
+            where TBuilder : PropertyBuilder<double>
         {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.SkewTransform.CenterXProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.SkewTransform.CenterXProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T CenterX<T>(this T self,
+        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Shapes.SkewTransform
+        //{
+        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.SkewTransform.CenterXProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T CenterY<T>(this T self,
             double centerY)
@@ -107,14 +140,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T CenterY<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        public static T CenterY<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Shapes.SkewTransform
+            where TBuilder : PropertyBuilder<double>
         {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.SkewTransform.CenterYProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.SkewTransform.CenterYProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T CenterY<T>(this T self,
+        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Shapes.SkewTransform
+        //{
+        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.SkewTransform.CenterYProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
     }
 }

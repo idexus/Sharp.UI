@@ -29,14 +29,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ItemSpacing<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        public static T ItemSpacing<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.LinearItemsLayout
+            where TBuilder : PropertyBuilder<double>
         {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.LinearItemsLayout.ItemSpacingProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.LinearItemsLayout.ItemSpacingProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T ItemSpacing<T>(this T self,
+        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.LinearItemsLayout
+        //{
+        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.LinearItemsLayout.ItemSpacingProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
     }
 }

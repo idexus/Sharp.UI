@@ -29,14 +29,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Center<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Point>, BindingBuilder<Microsoft.Maui.Graphics.Point>> buildBinding)
+        public static T Center<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Shapes.EllipseGeometry
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Graphics.Point>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Point>(self, Microsoft.Maui.Controls.Shapes.EllipseGeometry.CenterProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.EllipseGeometry.CenterProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T Center<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Graphics.Point>, BindingBuilder<Microsoft.Maui.Graphics.Point>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Shapes.EllipseGeometry
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Point>(self, Microsoft.Maui.Controls.Shapes.EllipseGeometry.CenterProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T RadiusX<T>(this T self,
             double radiusX)
@@ -55,14 +66,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T RadiusX<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        public static T RadiusX<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Shapes.EllipseGeometry
+            where TBuilder : PropertyBuilder<double>
         {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.EllipseGeometry.RadiusXProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.EllipseGeometry.RadiusXProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T RadiusX<T>(this T self,
+        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Shapes.EllipseGeometry
+        //{
+        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.EllipseGeometry.RadiusXProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T RadiusY<T>(this T self,
             double radiusY)
@@ -81,14 +103,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T RadiusY<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        public static T RadiusY<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Shapes.EllipseGeometry
+            where TBuilder : PropertyBuilder<double>
         {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.EllipseGeometry.RadiusYProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.EllipseGeometry.RadiusYProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T RadiusY<T>(this T self,
+        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Shapes.EllipseGeometry
+        //{
+        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.EllipseGeometry.RadiusYProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
     }
 }

@@ -29,14 +29,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T CurrentItem<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.ShellSection>, BindingBuilder<Microsoft.Maui.Controls.ShellSection>> buildBinding)
+        public static T CurrentItem<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.ShellItem
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.ShellSection>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ShellSection>(self, Microsoft.Maui.Controls.ShellItem.CurrentItemProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.ShellItem.CurrentItemProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T CurrentItem<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.ShellSection>, BindingBuilder<Microsoft.Maui.Controls.ShellSection>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.ShellItem
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ShellSection>(self, Microsoft.Maui.Controls.ShellItem.CurrentItemProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T Items<T>(this T self,
             IList<Microsoft.Maui.Controls.ShellSection> items)
@@ -56,14 +67,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Items<T>(this T self,
-            System.Func<BindingBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellSection>>, BindingBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellSection>>> buildBinding)
+        public static T Items<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.ShellItem
+            where TBuilder : PropertyBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellSection>>
         {
-            var builder = buildBinding(new BindingBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellSection>>(self, Microsoft.Maui.Controls.ShellItem.ItemsProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.ShellItem.ItemsProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T Items<T>(this T self,
+        //    System.Func<BindingBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellSection>>, BindingBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellSection>>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.ShellItem
+        //{
+        //    var builder = buildBinding(new BindingBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellSection>>(self, Microsoft.Maui.Controls.ShellItem.ItemsProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
     }
 }

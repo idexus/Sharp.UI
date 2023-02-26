@@ -29,14 +29,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T TextTransform<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.TextTransform>, BindingBuilder<Microsoft.Maui.TextTransform>> buildBinding)
+        public static T TextTransform<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Label
+            where TBuilder : PropertyBuilder<Microsoft.Maui.TextTransform>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.TextTransform>(self, Microsoft.Maui.Controls.Label.TextTransformProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Label.TextTransformProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T TextTransform<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.TextTransform>, BindingBuilder<Microsoft.Maui.TextTransform>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Label
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.TextTransform>(self, Microsoft.Maui.Controls.Label.TextTransformProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T FormattedText<T>(this T self,
             Microsoft.Maui.Controls.FormattedString formattedText)
@@ -55,14 +66,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FormattedText<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.FormattedString>, BindingBuilder<Microsoft.Maui.Controls.FormattedString>> buildBinding)
+        public static T FormattedText<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Label
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.FormattedString>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.FormattedString>(self, Microsoft.Maui.Controls.Label.FormattedTextProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Label.FormattedTextProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T FormattedText<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.FormattedString>, BindingBuilder<Microsoft.Maui.Controls.FormattedString>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Label
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.FormattedString>(self, Microsoft.Maui.Controls.Label.FormattedTextProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T HorizontalTextAlignment<T>(this T self,
             Microsoft.Maui.TextAlignment horizontalTextAlignment)
@@ -81,14 +103,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T HorizontalTextAlignment<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.TextAlignment>, BindingBuilder<Microsoft.Maui.TextAlignment>> buildBinding)
+        public static T HorizontalTextAlignment<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Label
+            where TBuilder : PropertyBuilder<Microsoft.Maui.TextAlignment>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.TextAlignment>(self, Microsoft.Maui.Controls.Label.HorizontalTextAlignmentProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Label.HorizontalTextAlignmentProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T HorizontalTextAlignment<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.TextAlignment>, BindingBuilder<Microsoft.Maui.TextAlignment>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Label
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.TextAlignment>(self, Microsoft.Maui.Controls.Label.HorizontalTextAlignmentProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T LineBreakMode<T>(this T self,
             Microsoft.Maui.LineBreakMode lineBreakMode)
@@ -107,14 +140,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T LineBreakMode<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.LineBreakMode>, BindingBuilder<Microsoft.Maui.LineBreakMode>> buildBinding)
+        public static T LineBreakMode<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Label
+            where TBuilder : PropertyBuilder<Microsoft.Maui.LineBreakMode>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.LineBreakMode>(self, Microsoft.Maui.Controls.Label.LineBreakModeProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Label.LineBreakModeProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T LineBreakMode<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.LineBreakMode>, BindingBuilder<Microsoft.Maui.LineBreakMode>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Label
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.LineBreakMode>(self, Microsoft.Maui.Controls.Label.LineBreakModeProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T Text<T>(this T self,
             string text)
@@ -133,14 +177,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Text<T>(this T self,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        public static T Text<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Label
+            where TBuilder : PropertyBuilder<string>
         {
-            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.Label.TextProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Label.TextProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T Text<T>(this T self,
+        //    System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Label
+        //{
+        //    var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.Label.TextProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T TextColor<T>(this T self,
             Microsoft.Maui.Graphics.Color textColor)
@@ -159,14 +214,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T TextColor<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        public static T TextColor<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Label
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Graphics.Color>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.Label.TextColorProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Label.TextColorProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T TextColor<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Label
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.Label.TextColorProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Task<bool> AnimateTextColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.Label
@@ -194,14 +260,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T CharacterSpacing<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        public static T CharacterSpacing<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Label
+            where TBuilder : PropertyBuilder<double>
         {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Label.CharacterSpacingProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Label.CharacterSpacingProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T CharacterSpacing<T>(this T self,
+        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Label
+        //{
+        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Label.CharacterSpacingProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Task<bool> AnimateCharacterSpacingTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.Label
@@ -229,14 +306,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T VerticalTextAlignment<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.TextAlignment>, BindingBuilder<Microsoft.Maui.TextAlignment>> buildBinding)
+        public static T VerticalTextAlignment<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Label
+            where TBuilder : PropertyBuilder<Microsoft.Maui.TextAlignment>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.TextAlignment>(self, Microsoft.Maui.Controls.Label.VerticalTextAlignmentProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Label.VerticalTextAlignmentProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T VerticalTextAlignment<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.TextAlignment>, BindingBuilder<Microsoft.Maui.TextAlignment>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Label
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.TextAlignment>(self, Microsoft.Maui.Controls.Label.VerticalTextAlignmentProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T FontAttributes<T>(this T self,
             Microsoft.Maui.Controls.FontAttributes fontAttributes)
@@ -255,14 +343,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FontAttributes<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.FontAttributes>, BindingBuilder<Microsoft.Maui.Controls.FontAttributes>> buildBinding)
+        public static T FontAttributes<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Label
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.FontAttributes>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.FontAttributes>(self, Microsoft.Maui.Controls.Label.FontAttributesProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Label.FontAttributesProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T FontAttributes<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.FontAttributes>, BindingBuilder<Microsoft.Maui.Controls.FontAttributes>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Label
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.FontAttributes>(self, Microsoft.Maui.Controls.Label.FontAttributesProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T TextDecorations<T>(this T self,
             Microsoft.Maui.TextDecorations textDecorations)
@@ -281,14 +380,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T TextDecorations<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.TextDecorations>, BindingBuilder<Microsoft.Maui.TextDecorations>> buildBinding)
+        public static T TextDecorations<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Label
+            where TBuilder : PropertyBuilder<Microsoft.Maui.TextDecorations>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.TextDecorations>(self, Microsoft.Maui.Controls.Label.TextDecorationsProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Label.TextDecorationsProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T TextDecorations<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.TextDecorations>, BindingBuilder<Microsoft.Maui.TextDecorations>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Label
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.TextDecorations>(self, Microsoft.Maui.Controls.Label.TextDecorationsProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T FontFamily<T>(this T self,
             string fontFamily)
@@ -307,14 +417,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FontFamily<T>(this T self,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        public static T FontFamily<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Label
+            where TBuilder : PropertyBuilder<string>
         {
-            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.Label.FontFamilyProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Label.FontFamilyProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T FontFamily<T>(this T self,
+        //    System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Label
+        //{
+        //    var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.Label.FontFamilyProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T FontSize<T>(this T self,
             double fontSize)
@@ -333,14 +454,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FontSize<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        public static T FontSize<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Label
+            where TBuilder : PropertyBuilder<double>
         {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Label.FontSizeProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Label.FontSizeProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T FontSize<T>(this T self,
+        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Label
+        //{
+        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Label.FontSizeProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Task<bool> AnimateFontSizeTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.Label
@@ -368,14 +500,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FontAutoScalingEnabled<T>(this T self,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        public static T FontAutoScalingEnabled<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Label
+            where TBuilder : PropertyBuilder<bool>
         {
-            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.Label.FontAutoScalingEnabledProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Label.FontAutoScalingEnabledProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T FontAutoScalingEnabled<T>(this T self,
+        //    System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Label
+        //{
+        //    var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.Label.FontAutoScalingEnabledProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T LineHeight<T>(this T self,
             double lineHeight)
@@ -394,14 +537,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T LineHeight<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        public static T LineHeight<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Label
+            where TBuilder : PropertyBuilder<double>
         {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Label.LineHeightProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Label.LineHeightProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T LineHeight<T>(this T self,
+        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Label
+        //{
+        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Label.LineHeightProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Task<bool> AnimateLineHeightTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.Label
@@ -429,14 +583,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T MaxLines<T>(this T self,
-            System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
+        public static T MaxLines<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Label
+            where TBuilder : PropertyBuilder<int>
         {
-            var builder = buildBinding(new BindingBuilder<int>(self, Microsoft.Maui.Controls.Label.MaxLinesProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Label.MaxLinesProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T MaxLines<T>(this T self,
+        //    System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Label
+        //{
+        //    var builder = buildBinding(new BindingBuilder<int>(self, Microsoft.Maui.Controls.Label.MaxLinesProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T Padding<T>(this T self,
             Microsoft.Maui.Thickness padding)
@@ -455,14 +620,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Padding<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Thickness>, BindingBuilder<Microsoft.Maui.Thickness>> buildBinding)
+        public static T Padding<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Label
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Thickness>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Thickness>(self, Microsoft.Maui.Controls.Label.PaddingProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Label.PaddingProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T Padding<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Thickness>, BindingBuilder<Microsoft.Maui.Thickness>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Label
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Thickness>(self, Microsoft.Maui.Controls.Label.PaddingProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T TextType<T>(this T self,
             Microsoft.Maui.TextType textType)
@@ -481,14 +657,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T TextType<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.TextType>, BindingBuilder<Microsoft.Maui.TextType>> buildBinding)
+        public static T TextType<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Label
+            where TBuilder : PropertyBuilder<Microsoft.Maui.TextType>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.TextType>(self, Microsoft.Maui.Controls.Label.TextTypeProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Label.TextTypeProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T TextType<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.TextType>, BindingBuilder<Microsoft.Maui.TextType>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Label
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.TextType>(self, Microsoft.Maui.Controls.Label.TextTypeProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
 
         public static T TextCenterHorizontal<T>(this T self)

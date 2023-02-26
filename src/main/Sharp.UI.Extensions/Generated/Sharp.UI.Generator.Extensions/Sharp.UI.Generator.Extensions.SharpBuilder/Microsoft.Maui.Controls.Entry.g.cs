@@ -29,14 +29,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T HorizontalTextAlignment<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.TextAlignment>, BindingBuilder<Microsoft.Maui.TextAlignment>> buildBinding)
+        public static T HorizontalTextAlignment<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Entry
+            where TBuilder : PropertyBuilder<Microsoft.Maui.TextAlignment>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.TextAlignment>(self, Microsoft.Maui.Controls.Entry.HorizontalTextAlignmentProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Entry.HorizontalTextAlignmentProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T HorizontalTextAlignment<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.TextAlignment>, BindingBuilder<Microsoft.Maui.TextAlignment>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Entry
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.TextAlignment>(self, Microsoft.Maui.Controls.Entry.HorizontalTextAlignmentProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T VerticalTextAlignment<T>(this T self,
             Microsoft.Maui.TextAlignment verticalTextAlignment)
@@ -55,14 +66,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T VerticalTextAlignment<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.TextAlignment>, BindingBuilder<Microsoft.Maui.TextAlignment>> buildBinding)
+        public static T VerticalTextAlignment<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Entry
+            where TBuilder : PropertyBuilder<Microsoft.Maui.TextAlignment>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.TextAlignment>(self, Microsoft.Maui.Controls.Entry.VerticalTextAlignmentProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Entry.VerticalTextAlignmentProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T VerticalTextAlignment<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.TextAlignment>, BindingBuilder<Microsoft.Maui.TextAlignment>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Entry
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.TextAlignment>(self, Microsoft.Maui.Controls.Entry.VerticalTextAlignmentProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T IsPassword<T>(this T self,
             bool isPassword)
@@ -81,14 +103,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T IsPassword<T>(this T self,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        public static T IsPassword<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Entry
+            where TBuilder : PropertyBuilder<bool>
         {
-            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.Entry.IsPasswordProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Entry.IsPasswordProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T IsPassword<T>(this T self,
+        //    System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Entry
+        //{
+        //    var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.Entry.IsPasswordProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T FontAttributes<T>(this T self,
             Microsoft.Maui.Controls.FontAttributes fontAttributes)
@@ -107,14 +140,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FontAttributes<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.FontAttributes>, BindingBuilder<Microsoft.Maui.Controls.FontAttributes>> buildBinding)
+        public static T FontAttributes<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Entry
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.FontAttributes>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.FontAttributes>(self, Microsoft.Maui.Controls.Entry.FontAttributesProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Entry.FontAttributesProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T FontAttributes<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.FontAttributes>, BindingBuilder<Microsoft.Maui.Controls.FontAttributes>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Entry
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.FontAttributes>(self, Microsoft.Maui.Controls.Entry.FontAttributesProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T FontFamily<T>(this T self,
             string fontFamily)
@@ -133,14 +177,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FontFamily<T>(this T self,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        public static T FontFamily<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Entry
+            where TBuilder : PropertyBuilder<string>
         {
-            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.Entry.FontFamilyProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Entry.FontFamilyProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T FontFamily<T>(this T self,
+        //    System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Entry
+        //{
+        //    var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.Entry.FontFamilyProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T FontSize<T>(this T self,
             double fontSize)
@@ -159,14 +214,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FontSize<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        public static T FontSize<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Entry
+            where TBuilder : PropertyBuilder<double>
         {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Entry.FontSizeProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Entry.FontSizeProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T FontSize<T>(this T self,
+        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Entry
+        //{
+        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Entry.FontSizeProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static Task<bool> AnimateFontSizeTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.Entry
@@ -194,14 +260,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FontAutoScalingEnabled<T>(this T self,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        public static T FontAutoScalingEnabled<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Entry
+            where TBuilder : PropertyBuilder<bool>
         {
-            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.Entry.FontAutoScalingEnabledProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Entry.FontAutoScalingEnabledProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T FontAutoScalingEnabled<T>(this T self,
+        //    System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Entry
+        //{
+        //    var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.Entry.FontAutoScalingEnabledProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T IsTextPredictionEnabled<T>(this T self,
             bool isTextPredictionEnabled)
@@ -220,14 +297,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T IsTextPredictionEnabled<T>(this T self,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        public static T IsTextPredictionEnabled<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Entry
+            where TBuilder : PropertyBuilder<bool>
         {
-            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.Entry.IsTextPredictionEnabledProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Entry.IsTextPredictionEnabledProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T IsTextPredictionEnabled<T>(this T self,
+        //    System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Entry
+        //{
+        //    var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.Entry.IsTextPredictionEnabledProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T ReturnType<T>(this T self,
             Microsoft.Maui.ReturnType returnType)
@@ -246,14 +334,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ReturnType<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.ReturnType>, BindingBuilder<Microsoft.Maui.ReturnType>> buildBinding)
+        public static T ReturnType<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Entry
+            where TBuilder : PropertyBuilder<Microsoft.Maui.ReturnType>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.ReturnType>(self, Microsoft.Maui.Controls.Entry.ReturnTypeProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Entry.ReturnTypeProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T ReturnType<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.ReturnType>, BindingBuilder<Microsoft.Maui.ReturnType>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Entry
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.ReturnType>(self, Microsoft.Maui.Controls.Entry.ReturnTypeProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T CursorPosition<T>(this T self,
             int cursorPosition)
@@ -272,14 +371,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T CursorPosition<T>(this T self,
-            System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
+        public static T CursorPosition<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Entry
+            where TBuilder : PropertyBuilder<int>
         {
-            var builder = buildBinding(new BindingBuilder<int>(self, Microsoft.Maui.Controls.Entry.CursorPositionProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Entry.CursorPositionProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T CursorPosition<T>(this T self,
+        //    System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Entry
+        //{
+        //    var builder = buildBinding(new BindingBuilder<int>(self, Microsoft.Maui.Controls.Entry.CursorPositionProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T SelectionLength<T>(this T self,
             int selectionLength)
@@ -298,14 +408,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T SelectionLength<T>(this T self,
-            System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
+        public static T SelectionLength<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Entry
+            where TBuilder : PropertyBuilder<int>
         {
-            var builder = buildBinding(new BindingBuilder<int>(self, Microsoft.Maui.Controls.Entry.SelectionLengthProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Entry.SelectionLengthProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T SelectionLength<T>(this T self,
+        //    System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Entry
+        //{
+        //    var builder = buildBinding(new BindingBuilder<int>(self, Microsoft.Maui.Controls.Entry.SelectionLengthProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T ReturnCommand<T>(this T self,
             System.Windows.Input.ICommand returnCommand)
@@ -324,14 +445,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ReturnCommand<T>(this T self,
-            System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buildBinding)
+        public static T ReturnCommand<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Entry
+            where TBuilder : PropertyBuilder<System.Windows.Input.ICommand>
         {
-            var builder = buildBinding(new BindingBuilder<System.Windows.Input.ICommand>(self, Microsoft.Maui.Controls.Entry.ReturnCommandProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Entry.ReturnCommandProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T ReturnCommand<T>(this T self,
+        //    System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Entry
+        //{
+        //    var builder = buildBinding(new BindingBuilder<System.Windows.Input.ICommand>(self, Microsoft.Maui.Controls.Entry.ReturnCommandProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T ReturnCommandParameter<T>(this T self,
             object returnCommandParameter)
@@ -350,14 +482,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ReturnCommandParameter<T>(this T self,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
+        public static T ReturnCommandParameter<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Entry
+            where TBuilder : PropertyBuilder<object>
         {
-            var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.Entry.ReturnCommandParameterProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Entry.ReturnCommandParameterProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T ReturnCommandParameter<T>(this T self,
+        //    System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Entry
+        //{
+        //    var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.Entry.ReturnCommandParameterProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T ClearButtonVisibility<T>(this T self,
             Microsoft.Maui.ClearButtonVisibility clearButtonVisibility)
@@ -376,14 +519,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ClearButtonVisibility<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.ClearButtonVisibility>, BindingBuilder<Microsoft.Maui.ClearButtonVisibility>> buildBinding)
+        public static T ClearButtonVisibility<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.Entry
+            where TBuilder : PropertyBuilder<Microsoft.Maui.ClearButtonVisibility>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.ClearButtonVisibility>(self, Microsoft.Maui.Controls.Entry.ClearButtonVisibilityProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.Entry.ClearButtonVisibilityProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T ClearButtonVisibility<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.ClearButtonVisibility>, BindingBuilder<Microsoft.Maui.ClearButtonVisibility>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.Entry
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.ClearButtonVisibility>(self, Microsoft.Maui.Controls.Entry.ClearButtonVisibilityProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T OnCompleted<T>(this T self, System.EventHandler handler)
             where T : Microsoft.Maui.Controls.Entry

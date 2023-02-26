@@ -49,7 +49,7 @@ namespace ExampleApp
             where T : ExampleApp.CardView
         {
             var builder = buildBinding(new BindingBuilder<string>(self, ExampleApp.CardView.CardTitleProperty));
-            builder.BindProperty();
+            builder.Build();
             return self;
         }
         
@@ -75,7 +75,7 @@ namespace ExampleApp
             where T : ExampleApp.CardView
         {
             var builder = buildBinding(new BindingBuilder<string>(self, ExampleApp.CardView.CardDescriptionProperty));
-            builder.BindProperty();
+            builder.Build();
             return self;
         }
         
@@ -101,7 +101,7 @@ namespace ExampleApp
             where T : ExampleApp.CardView
         {
             var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, ExampleApp.CardView.CardColorProperty));
-            builder.BindProperty();
+            builder.Build();
             return self;
         }
         
@@ -127,7 +127,7 @@ namespace ExampleApp
             where T : ExampleApp.CardView
         {
             var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, ExampleApp.CardView.BorderColorProperty));
-            builder.BindProperty();
+            builder.Build();
             return self;
         }
         
@@ -153,7 +153,7 @@ namespace ExampleApp
             where T : ExampleApp.CardView
         {
             var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Style>(self, ExampleApp.CardView.DescriptionStyleProperty));
-            builder.BindProperty();
+            builder.Build();
             return self;
         }
         
@@ -179,7 +179,7 @@ namespace ExampleApp
             where T : ExampleApp.CardView
         {
             var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.View>(self, ExampleApp.CardView.ContentViewProperty));
-            builder.BindProperty();
+            builder.Build();
             return self;
         }
         
@@ -205,7 +205,7 @@ namespace ExampleApp
             where T : ExampleApp.CardView
         {
             var builder = buildBinding(new BindingBuilder<string>(self, ExampleApp.CardView.ButtonTitleProperty));
-            builder.BindProperty();
+            builder.Build();
             return self;
         }
         

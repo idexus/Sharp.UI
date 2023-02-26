@@ -29,14 +29,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Cookies<T>(this T self,
-            System.Func<BindingBuilder<System.Net.CookieContainer>, BindingBuilder<System.Net.CookieContainer>> buildBinding)
+        public static T Cookies<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.WebView
+            where TBuilder : PropertyBuilder<System.Net.CookieContainer>
         {
-            var builder = buildBinding(new BindingBuilder<System.Net.CookieContainer>(self, Microsoft.Maui.Controls.WebView.CookiesProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.WebView.CookiesProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T Cookies<T>(this T self,
+        //    System.Func<BindingBuilder<System.Net.CookieContainer>, BindingBuilder<System.Net.CookieContainer>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.WebView
+        //{
+        //    var builder = buildBinding(new BindingBuilder<System.Net.CookieContainer>(self, Microsoft.Maui.Controls.WebView.CookiesProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T Source<T>(this T self,
             Microsoft.Maui.Controls.WebViewSource source)
@@ -55,14 +66,25 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Source<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.WebViewSource>, BindingBuilder<Microsoft.Maui.Controls.WebViewSource>> buildBinding)
+        public static T Source<T, TBuilder>(this T self,System.Action<TBuilder> configure)
             where T : Microsoft.Maui.Controls.WebView
+            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.WebViewSource>
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.WebViewSource>(self, Microsoft.Maui.Controls.WebView.SourceProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.WebView.SourceProperty);
+            configure(builder);
+            builder.Build();
             return self;
+
         }
+
+        //public static T Source<T>(this T self,
+        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.WebViewSource>, BindingBuilder<Microsoft.Maui.Controls.WebViewSource>> buildBinding)
+        //    where T : Microsoft.Maui.Controls.WebView
+        //{
+        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.WebViewSource>(self, Microsoft.Maui.Controls.WebView.SourceProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
         public static T OnNavigated<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.WebNavigatedEventArgs> handler)
             where T : Microsoft.Maui.Controls.WebView

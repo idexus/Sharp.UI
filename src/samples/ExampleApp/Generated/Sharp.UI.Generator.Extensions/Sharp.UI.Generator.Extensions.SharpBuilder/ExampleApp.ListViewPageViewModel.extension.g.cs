@@ -35,7 +35,7 @@ namespace ExampleApp
             where T : ExampleApp.ListViewPageViewModel
         {
             var builder = buildBinding(new BindingBuilder<System.Collections.Generic.List<ExampleApp.DataModel>>(self, ExampleApp.ListViewPageViewModel.SimpleDataProperty));
-            builder.BindProperty();
+            builder.Build();
             return self;
         }
         

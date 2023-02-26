@@ -35,7 +35,7 @@ namespace ExampleApp
             where T : ExampleApp.EmptyCardView
         {
             var builder = buildBinding(new BindingBuilder<string>(self, ExampleApp.EmptyCardView.CardTitleProperty));
-            builder.BindProperty();
+            builder.Build();
             return self;
         }
         
@@ -61,7 +61,7 @@ namespace ExampleApp
             where T : ExampleApp.EmptyCardView
         {
             var builder = buildBinding(new BindingBuilder<string>(self, ExampleApp.EmptyCardView.CardDescriptionProperty));
-            builder.BindProperty();
+            builder.Build();
             return self;
         }
         
@@ -87,7 +87,7 @@ namespace ExampleApp
             where T : ExampleApp.EmptyCardView
         {
             var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, ExampleApp.EmptyCardView.CardColorProperty));
-            builder.BindProperty();
+            builder.Build();
             return self;
         }
         
@@ -113,7 +113,7 @@ namespace ExampleApp
             where T : ExampleApp.EmptyCardView
         {
             var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, ExampleApp.EmptyCardView.BorderColorProperty));
-            builder.BindProperty();
+            builder.Build();
             return self;
         }
         

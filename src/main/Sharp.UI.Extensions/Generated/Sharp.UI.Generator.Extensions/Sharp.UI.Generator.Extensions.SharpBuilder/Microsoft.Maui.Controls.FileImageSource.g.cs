@@ -27,13 +27,22 @@ namespace Sharp.UI
             return self;
         }
         
-        public static Microsoft.Maui.Controls.FileImageSource File(this Microsoft.Maui.Controls.FileImageSource self,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        public static Microsoft.Maui.Controls.FileImageSource File<TBuilder>(this Microsoft.Maui.Controls.FileImageSource self, System.Action<TBuilder> configure)
+            where TBuilder : PropertyBuilder<string>
         {
-            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.FileImageSource.FileProperty));
-            builder.BindProperty();
+            var builder = TBuilder(self, Microsoft.Maui.Controls.FileImageSource.FileProperty);
+            configure(builder);
+            builder.Build();
             return self;
         }
+
+        //public static Microsoft.Maui.Controls.FileImageSource File(this Microsoft.Maui.Controls.FileImageSource self,
+        //    System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
+        //{
+        //    var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.FileImageSource.FileProperty));
+        //    builder.Build();
+        //    return self;
+        //}
         
     }
 }
