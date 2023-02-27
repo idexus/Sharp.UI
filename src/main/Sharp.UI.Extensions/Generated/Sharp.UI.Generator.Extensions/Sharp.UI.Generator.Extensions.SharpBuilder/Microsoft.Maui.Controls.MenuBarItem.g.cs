@@ -22,17 +22,6 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Priority<T>(this T self,
-            System.Func<ValueBuilder<int>, ValueBuilder<int>> buildValue)
-            where T : Microsoft.Maui.Controls.MenuBarItem
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property Priority");
-            var builder = buildValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) self.Priority = builder.GetValue();
-            return self;
-        }
-        
         public static T IsEnabled<T>(this T self,
             bool isEnabled)
             where T : Microsoft.Maui.Controls.MenuBarItem

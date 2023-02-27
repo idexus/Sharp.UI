@@ -240,17 +240,6 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T IndicatorView<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.IndicatorView>, ValueBuilder<Microsoft.Maui.Controls.IndicatorView>> buildValue)
-            where T : Microsoft.Maui.Controls.CarouselView
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property IndicatorView");
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.IndicatorView>());
-            if (builder.ValueIsSet()) self.IndicatorView = builder.GetValue();
-            return self;
-        }
-        
         public static T IsScrolling<T>(this T self,
             bool isScrolling)
             where T : Microsoft.Maui.Controls.CarouselView
@@ -258,17 +247,6 @@ namespace Sharp.UI
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property IsScrolling");
             self.IsScrolling = isScrolling;
-            return self;
-        }
-        
-        public static T IsScrolling<T>(this T self,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
-            where T : Microsoft.Maui.Controls.CarouselView
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property IsScrolling");
-            var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.IsScrolling = builder.GetValue();
             return self;
         }
         

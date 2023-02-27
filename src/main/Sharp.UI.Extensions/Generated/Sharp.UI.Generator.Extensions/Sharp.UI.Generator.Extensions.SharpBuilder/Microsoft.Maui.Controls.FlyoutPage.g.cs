@@ -22,17 +22,6 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Detail<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.Page>, ValueBuilder<Microsoft.Maui.Controls.Page>> buildValue)
-            where T : Microsoft.Maui.Controls.FlyoutPage
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property Detail");
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Page>());
-            if (builder.ValueIsSet()) self.Detail = builder.GetValue();
-            return self;
-        }
-        
         public static T IsGestureEnabled<T>(this T self,
             bool isGestureEnabled)
             where T : Microsoft.Maui.Controls.FlyoutPage
@@ -72,17 +61,6 @@ namespace Sharp.UI
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property Flyout");
             self.Flyout = flyout;
-            return self;
-        }
-        
-        public static T Flyout<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.Page>, ValueBuilder<Microsoft.Maui.Controls.Page>> buildValue)
-            where T : Microsoft.Maui.Controls.FlyoutPage
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property Flyout");
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Page>());
-            if (builder.ValueIsSet()) self.Flyout = builder.GetValue();
             return self;
         }
         

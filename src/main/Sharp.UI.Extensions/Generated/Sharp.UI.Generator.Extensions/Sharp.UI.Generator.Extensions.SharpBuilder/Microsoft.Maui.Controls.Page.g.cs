@@ -138,17 +138,6 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ContainerArea<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Rect>, ValueBuilder<Microsoft.Maui.Graphics.Rect>> buildValue)
-            where T : Microsoft.Maui.Controls.Page
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property ContainerArea");
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Rect>());
-            if (builder.ValueIsSet()) self.ContainerArea = builder.GetValue();
-            return self;
-        }
-        
         public static T IgnoresContainerArea<T>(this T self,
             bool ignoresContainerArea)
             where T : Microsoft.Maui.Controls.Page
@@ -156,17 +145,6 @@ namespace Sharp.UI
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property IgnoresContainerArea");
             self.IgnoresContainerArea = ignoresContainerArea;
-            return self;
-        }
-        
-        public static T IgnoresContainerArea<T>(this T self,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
-            where T : Microsoft.Maui.Controls.Page
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property IgnoresContainerArea");
-            var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.IgnoresContainerArea = builder.GetValue();
             return self;
         }
         

@@ -38,17 +38,6 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T IndicatorLayout<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.IBindableLayout>, ValueBuilder<Microsoft.Maui.Controls.IBindableLayout>> buildValue)
-            where T : Microsoft.Maui.Controls.IndicatorView
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property IndicatorLayout");
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.IBindableLayout>());
-            if (builder.ValueIsSet()) self.IndicatorLayout = builder.GetValue();
-            return self;
-        }
-        
         public static T Position<T>(this T self,
             int position)
             where T : Microsoft.Maui.Controls.IndicatorView

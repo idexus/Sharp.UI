@@ -72,17 +72,6 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T IgnoreSafeArea<T>(this T self,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
-            where T : Microsoft.Maui.Controls.Layout
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property IgnoreSafeArea");
-            var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.IgnoreSafeArea = builder.GetValue();
-            return self;
-        }
-        
         public static T CascadeInputTransparent<T>(this T self,
             bool cascadeInputTransparent)
             where T : Microsoft.Maui.Controls.Layout

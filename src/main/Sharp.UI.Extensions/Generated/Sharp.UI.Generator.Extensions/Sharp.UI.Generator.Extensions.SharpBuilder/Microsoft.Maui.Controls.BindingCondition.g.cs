@@ -19,26 +19,10 @@ namespace Sharp.UI
             return self;
         }
         
-        public static Microsoft.Maui.Controls.BindingCondition Binding(this Microsoft.Maui.Controls.BindingCondition self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.BindingBase>, ValueBuilder<Microsoft.Maui.Controls.BindingBase>> buildValue)
-        {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.BindingBase>());
-            if (builder.ValueIsSet()) self.Binding = builder.GetValue();
-            return self;
-        }
-        
         public static Microsoft.Maui.Controls.BindingCondition Value(this Microsoft.Maui.Controls.BindingCondition self,
             object value)
         {
             self.Value = value;
-            return self;
-        }
-        
-        public static Microsoft.Maui.Controls.BindingCondition Value(this Microsoft.Maui.Controls.BindingCondition self,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buildValue)
-        {
-            var builder = buildValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) self.Value = builder.GetValue();
             return self;
         }
         

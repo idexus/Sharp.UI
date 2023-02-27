@@ -40,17 +40,6 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T IsContextActionsLegacyModeEnabled<T>(this T self,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
-            where T : Microsoft.Maui.Controls.Cell
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property IsContextActionsLegacyModeEnabled");
-            var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.IsContextActionsLegacyModeEnabled = builder.GetValue();
-            return self;
-        }
-        
         public static T Height<T>(this T self,
             double height)
             where T : Microsoft.Maui.Controls.Cell
@@ -58,17 +47,6 @@ namespace Sharp.UI
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property Height");
             self.Height = height;
-            return self;
-        }
-        
-        public static T Height<T>(this T self,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
-            where T : Microsoft.Maui.Controls.Cell
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property Height");
-            var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.Height = builder.GetValue();
             return self;
         }
         

@@ -72,17 +72,6 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T StyleId<T>(this T self,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
-            where T : Microsoft.Maui.Controls.Element
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property StyleId");
-            var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.StyleId = builder.GetValue();
-            return self;
-        }
-        
         public static T Parent<T>(this T self,
             Microsoft.Maui.Controls.Element parent)
             where T : Microsoft.Maui.Controls.Element
@@ -93,17 +82,6 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Parent<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.Element>, ValueBuilder<Microsoft.Maui.Controls.Element>> buildValue)
-            where T : Microsoft.Maui.Controls.Element
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property Parent");
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Element>());
-            if (builder.ValueIsSet()) self.Parent = builder.GetValue();
-            return self;
-        }
-        
         public static T EffectControlProvider<T>(this T self,
             Microsoft.Maui.Controls.IEffectControlProvider effectControlProvider)
             where T : Microsoft.Maui.Controls.Element
@@ -111,17 +89,6 @@ namespace Sharp.UI
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property EffectControlProvider");
             self.EffectControlProvider = effectControlProvider;
-            return self;
-        }
-        
-        public static T EffectControlProvider<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.IEffectControlProvider>, ValueBuilder<Microsoft.Maui.Controls.IEffectControlProvider>> buildValue)
-            where T : Microsoft.Maui.Controls.Element
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property EffectControlProvider");
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.IEffectControlProvider>());
-            if (builder.ValueIsSet()) self.EffectControlProvider = builder.GetValue();
             return self;
         }
         

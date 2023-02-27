@@ -19,14 +19,6 @@ namespace Sharp.UI
             return self;
         }
         
-        public static Microsoft.Maui.Controls.VisualState Name(this Microsoft.Maui.Controls.VisualState self,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
-        {
-            var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.Name = builder.GetValue();
-            return self;
-        }
-        
         public static Microsoft.Maui.Controls.VisualState Setters(this Microsoft.Maui.Controls.VisualState self,
             IList<Microsoft.Maui.Controls.Setter> setters)
         {
@@ -63,14 +55,6 @@ namespace Sharp.UI
             System.Type targetType)
         {
             self.TargetType = targetType;
-            return self;
-        }
-        
-        public static Microsoft.Maui.Controls.VisualState TargetType(this Microsoft.Maui.Controls.VisualState self,
-            System.Func<ValueBuilder<System.Type>, ValueBuilder<System.Type>> buildValue)
-        {
-            var builder = buildValue(new ValueBuilder<System.Type>());
-            if (builder.ValueIsSet()) self.TargetType = builder.GetValue();
             return self;
         }
         

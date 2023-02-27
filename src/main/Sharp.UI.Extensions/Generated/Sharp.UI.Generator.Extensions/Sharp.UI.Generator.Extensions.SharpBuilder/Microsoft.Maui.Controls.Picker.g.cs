@@ -284,17 +284,6 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ItemDisplayBinding<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.BindingBase>, ValueBuilder<Microsoft.Maui.Controls.BindingBase>> buildValue)
-            where T : Microsoft.Maui.Controls.Picker
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property ItemDisplayBinding");
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.BindingBase>());
-            if (builder.ValueIsSet()) self.ItemDisplayBinding = builder.GetValue();
-            return self;
-        }
-        
         public static T OnSelectedIndexChanged<T>(this T self, System.EventHandler handler)
             where T : Microsoft.Maui.Controls.Picker
         {

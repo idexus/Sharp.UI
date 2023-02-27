@@ -20,29 +20,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Mode<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.BindingMode>, ValueBuilder<Microsoft.Maui.Controls.BindingMode>> buildValue)
-            where T : Microsoft.Maui.Controls.BindingBase
-        {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.BindingMode>());
-            if (builder.ValueIsSet()) self.Mode = builder.GetValue();
-            return self;
-        }
-        
         public static T StringFormat<T>(this T self,
             string stringFormat)
             where T : Microsoft.Maui.Controls.BindingBase
         {
             self.StringFormat = stringFormat;
-            return self;
-        }
-        
-        public static T StringFormat<T>(this T self,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
-            where T : Microsoft.Maui.Controls.BindingBase
-        {
-            var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.StringFormat = builder.GetValue();
             return self;
         }
         
@@ -54,29 +36,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T TargetNullValue<T>(this T self,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buildValue)
-            where T : Microsoft.Maui.Controls.BindingBase
-        {
-            var builder = buildValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) self.TargetNullValue = builder.GetValue();
-            return self;
-        }
-        
         public static T FallbackValue<T>(this T self,
             object fallbackValue)
             where T : Microsoft.Maui.Controls.BindingBase
         {
             self.FallbackValue = fallbackValue;
-            return self;
-        }
-        
-        public static T FallbackValue<T>(this T self,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buildValue)
-            where T : Microsoft.Maui.Controls.BindingBase
-        {
-            var builder = buildValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) self.FallbackValue = builder.GetValue();
             return self;
         }
         

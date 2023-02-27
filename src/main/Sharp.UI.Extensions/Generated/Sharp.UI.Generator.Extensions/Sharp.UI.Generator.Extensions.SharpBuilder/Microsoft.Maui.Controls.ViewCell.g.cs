@@ -22,17 +22,6 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T View<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.View>, ValueBuilder<Microsoft.Maui.Controls.View>> buildValue)
-            where T : Microsoft.Maui.Controls.ViewCell
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property View");
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.View>());
-            if (builder.ValueIsSet()) self.View = builder.GetValue();
-            return self;
-        }
-        
     }
 }
 

@@ -21,16 +21,6 @@ namespace Sharp.UI
             return self;
         }
         
-        public static Microsoft.Maui.Controls.Trigger Property(this Microsoft.Maui.Controls.Trigger self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.BindableProperty>, ValueBuilder<Microsoft.Maui.Controls.BindableProperty>> buildValue)
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property Property");
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.BindableProperty>());
-            if (builder.ValueIsSet()) self.Property = builder.GetValue();
-            return self;
-        }
-        
         public static Microsoft.Maui.Controls.Trigger Setters(this Microsoft.Maui.Controls.Trigger self,
             IList<Microsoft.Maui.Controls.Setter> setters)
         {
@@ -53,16 +43,6 @@ namespace Sharp.UI
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property Value");
             self.Value = value;
-            return self;
-        }
-        
-        public static Microsoft.Maui.Controls.Trigger Value(this Microsoft.Maui.Controls.Trigger self,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buildValue)
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property Value");
-            var builder = buildValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) self.Value = builder.GetValue();
             return self;
         }
         

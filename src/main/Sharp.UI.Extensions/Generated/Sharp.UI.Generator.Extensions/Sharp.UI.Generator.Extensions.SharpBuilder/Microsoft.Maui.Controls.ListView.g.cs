@@ -61,17 +61,6 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T GroupDisplayBinding<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.BindingBase>, ValueBuilder<Microsoft.Maui.Controls.BindingBase>> buildValue)
-            where T : Microsoft.Maui.Controls.ListView
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property GroupDisplayBinding");
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.BindingBase>());
-            if (builder.ValueIsSet()) self.GroupDisplayBinding = builder.GetValue();
-            return self;
-        }
-        
         public static T GroupHeaderTemplate<T>(this T self,
             Microsoft.Maui.Controls.DataTemplate groupHeaderTemplate)
             where T : Microsoft.Maui.Controls.ListView
@@ -102,17 +91,6 @@ namespace Sharp.UI
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property GroupShortNameBinding");
             self.GroupShortNameBinding = groupShortNameBinding;
-            return self;
-        }
-        
-        public static T GroupShortNameBinding<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.BindingBase>, ValueBuilder<Microsoft.Maui.Controls.BindingBase>> buildValue)
-            where T : Microsoft.Maui.Controls.ListView
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property GroupShortNameBinding");
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.BindingBase>());
-            if (builder.ValueIsSet()) self.GroupShortNameBinding = builder.GetValue();
             return self;
         }
         
@@ -388,17 +366,6 @@ namespace Sharp.UI
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property RefreshAllowed");
             self.RefreshAllowed = refreshAllowed;
-            return self;
-        }
-        
-        public static T RefreshAllowed<T>(this T self,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
-            where T : Microsoft.Maui.Controls.ListView
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property RefreshAllowed");
-            var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.RefreshAllowed = builder.GetValue();
             return self;
         }
         

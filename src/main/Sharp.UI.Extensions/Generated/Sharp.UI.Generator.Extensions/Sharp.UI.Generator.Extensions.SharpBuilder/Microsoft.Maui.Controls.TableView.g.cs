@@ -38,17 +38,6 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Intent<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.TableIntent>, ValueBuilder<Microsoft.Maui.Controls.TableIntent>> buildValue)
-            where T : Microsoft.Maui.Controls.TableView
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property Intent");
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.TableIntent>());
-            if (builder.ValueIsSet()) self.Intent = builder.GetValue();
-            return self;
-        }
-        
         public static T Root<T>(this T self,
             IList<Microsoft.Maui.Controls.TableSection> root)
             where T : Microsoft.Maui.Controls.TableView
@@ -90,17 +79,6 @@ namespace Sharp.UI
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property Model");
             self.Model = model;
-            return self;
-        }
-        
-        public static T Model<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.Internals.TableModel>, ValueBuilder<Microsoft.Maui.Controls.Internals.TableModel>> buildValue)
-            where T : Microsoft.Maui.Controls.TableView
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property Model");
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Internals.TableModel>());
-            if (builder.ValueIsSet()) self.Model = builder.GetValue();
             return self;
         }
         

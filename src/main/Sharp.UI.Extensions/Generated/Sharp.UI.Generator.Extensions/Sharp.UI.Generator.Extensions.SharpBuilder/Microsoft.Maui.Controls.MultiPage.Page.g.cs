@@ -77,17 +77,6 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T CurrentPage<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.Page>, ValueBuilder<Microsoft.Maui.Controls.Page>> buildValue)
-            where T : Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property CurrentPage");
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Page>());
-            if (builder.ValueIsSet()) self.CurrentPage = builder.GetValue();
-            return self;
-        }
-        
         public static T Children<T>(this T self,
             IList<Microsoft.Maui.Controls.Page> children)
             where T : Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>

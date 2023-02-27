@@ -20,15 +20,6 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T LoadTemplate<T>(this T self,
-            System.Func<ValueBuilder<System.Func<object>>, ValueBuilder<System.Func<object>>> buildValue)
-            where T : Microsoft.Maui.Controls.ElementTemplate
-        {
-            var builder = buildValue(new ValueBuilder<System.Func<object>>());
-            if (builder.ValueIsSet()) self.LoadTemplate = builder.GetValue();
-            return self;
-        }
-        
     }
 }
 

@@ -22,17 +22,6 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Frame<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Rect>, ValueBuilder<Microsoft.Maui.Graphics.Rect>> buildValue)
-            where T : Microsoft.Maui.Controls.VisualElement
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property Frame");
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Rect>());
-            if (builder.ValueIsSet()) self.Frame = builder.GetValue();
-            return self;
-        }
-        
         public static T Shadow<T>(this T self,
             Microsoft.Maui.Controls.Shadow shadow)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -689,17 +678,6 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T DisableLayout<T>(this T self,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
-            where T : Microsoft.Maui.Controls.VisualElement
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property DisableLayout");
-            var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.DisableLayout = builder.GetValue();
-            return self;
-        }
-        
         public static T IsInPlatformLayout<T>(this T self,
             bool isInPlatformLayout)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -707,17 +685,6 @@ namespace Sharp.UI
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property IsInPlatformLayout");
             self.IsInPlatformLayout = isInPlatformLayout;
-            return self;
-        }
-        
-        public static T IsInPlatformLayout<T>(this T self,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
-            where T : Microsoft.Maui.Controls.VisualElement
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property IsInPlatformLayout");
-            var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.IsInPlatformLayout = builder.GetValue();
             return self;
         }
         
@@ -731,17 +698,6 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T IsPlatformStateConsistent<T>(this T self,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
-            where T : Microsoft.Maui.Controls.VisualElement
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property IsPlatformStateConsistent");
-            var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.IsPlatformStateConsistent = builder.GetValue();
-            return self;
-        }
-        
         public static T IsPlatformEnabled<T>(this T self,
             bool isPlatformEnabled)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -752,17 +708,6 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T IsPlatformEnabled<T>(this T self,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
-            where T : Microsoft.Maui.Controls.VisualElement
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property IsPlatformEnabled");
-            var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.IsPlatformEnabled = builder.GetValue();
-            return self;
-        }
-        
         public static T Resources<T>(this T self,
             Microsoft.Maui.Controls.ResourceDictionary resources)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -770,17 +715,6 @@ namespace Sharp.UI
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property Resources");
             self.Resources = resources;
-            return self;
-        }
-        
-        public static T Resources<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.ResourceDictionary>, ValueBuilder<Microsoft.Maui.Controls.ResourceDictionary>> buildValue)
-            where T : Microsoft.Maui.Controls.VisualElement
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property Resources");
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ResourceDictionary>());
-            if (builder.ValueIsSet()) self.Resources = builder.GetValue();
             return self;
         }
         

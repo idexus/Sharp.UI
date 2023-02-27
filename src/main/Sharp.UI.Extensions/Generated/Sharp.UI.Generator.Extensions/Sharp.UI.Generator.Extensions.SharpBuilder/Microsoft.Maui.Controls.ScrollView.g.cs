@@ -22,17 +22,6 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T LayoutAreaOverride<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Rect>, ValueBuilder<Microsoft.Maui.Graphics.Rect>> buildValue)
-            where T : Microsoft.Maui.Controls.ScrollView
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property LayoutAreaOverride");
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Rect>());
-            if (builder.ValueIsSet()) self.LayoutAreaOverride = builder.GetValue();
-            return self;
-        }
-        
         public static T Content<T>(this T self,
             Microsoft.Maui.Controls.View content)
             where T : Microsoft.Maui.Controls.ScrollView
@@ -40,17 +29,6 @@ namespace Sharp.UI
             var setters = FluentStyling.Setters as IList<Setter>;
             if (setters != null) throw new ArgumentException("Fluent styling not available for property Content");
             self.Content = content;
-            return self;
-        }
-        
-        public static T Content<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.View>, ValueBuilder<Microsoft.Maui.Controls.View>> buildValue)
-            where T : Microsoft.Maui.Controls.ScrollView
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property Content");
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.View>());
-            if (builder.ValueIsSet()) self.Content = builder.GetValue();
             return self;
         }
         

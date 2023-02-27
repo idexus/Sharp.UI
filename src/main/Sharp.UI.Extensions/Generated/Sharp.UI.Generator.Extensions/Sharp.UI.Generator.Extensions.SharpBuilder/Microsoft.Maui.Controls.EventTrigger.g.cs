@@ -37,16 +37,6 @@ namespace Sharp.UI
             return self;
         }
         
-        public static Microsoft.Maui.Controls.EventTrigger Event(this Microsoft.Maui.Controls.EventTrigger self,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property Event");
-            var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.Event = builder.GetValue();
-            return self;
-        }
-        
     }
 }
 
