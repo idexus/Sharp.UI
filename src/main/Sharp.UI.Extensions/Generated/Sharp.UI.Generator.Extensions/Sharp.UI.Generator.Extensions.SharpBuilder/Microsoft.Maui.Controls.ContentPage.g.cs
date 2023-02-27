@@ -20,34 +20,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Content<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.View>, ValueBuilder<Microsoft.Maui.Controls.View>> buildValue)
+        public static T Content<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.View>, IPropertyBuilder<Microsoft.Maui.Controls.View>> configure)
             where T : Microsoft.Maui.Controls.ContentPage
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.View>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ContentPage.ContentProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.Controls.View>(self, Microsoft.Maui.Controls.ContentPage.ContentProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T Content<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.ContentPage
-            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.View>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.ContentPage.ContentProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T Content<T>(this T self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.View>, BindingBuilder<Microsoft.Maui.Controls.View>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.ContentPage
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.View>(self, Microsoft.Maui.Controls.ContentPage.ContentProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
     }
 }

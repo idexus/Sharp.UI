@@ -20,34 +20,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Spacing<T>(this T self,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
+        public static T Spacing<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.StackBase
         {
-            var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.StackBase.SpacingProperty, builder.GetValue());
+            var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.StackBase.SpacingProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T Spacing<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.StackBase
-            where TBuilder : PropertyBuilder<double>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.StackBase.SpacingProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T Spacing<T>(this T self,
-        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.StackBase
-        //{
-        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.StackBase.SpacingProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static Task<bool> AnimateSpacingTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.StackBase

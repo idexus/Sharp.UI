@@ -20,34 +20,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FontAttributes<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.FontAttributes>, ValueBuilder<Microsoft.Maui.Controls.FontAttributes>> buildValue)
+        public static T FontAttributes<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.FontAttributes>, IPropertyBuilder<Microsoft.Maui.Controls.FontAttributes>> configure)
             where T : Microsoft.Maui.Controls.Picker
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.FontAttributes>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Picker.FontAttributesProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.Controls.FontAttributes>(self, Microsoft.Maui.Controls.Picker.FontAttributesProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T FontAttributes<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.Picker
-            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.FontAttributes>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Picker.FontAttributesProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T FontAttributes<T>(this T self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.FontAttributes>, BindingBuilder<Microsoft.Maui.Controls.FontAttributes>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.Picker
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.FontAttributes>(self, Microsoft.Maui.Controls.Picker.FontAttributesProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T FontFamily<T>(this T self,
             string fontFamily)
@@ -57,34 +36,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FontFamily<T>(this T self,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
+        public static T FontFamily<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.Picker
         {
-            var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Picker.FontFamilyProperty, builder.GetValue());
+            var context = new PropertyContext<string>(self, Microsoft.Maui.Controls.Picker.FontFamilyProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T FontFamily<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.Picker
-            where TBuilder : PropertyBuilder<string>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Picker.FontFamilyProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T FontFamily<T>(this T self,
-        //    System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.Picker
-        //{
-        //    var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.Picker.FontFamilyProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T FontSize<T>(this T self,
             double fontSize)
@@ -94,34 +52,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FontSize<T>(this T self,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
+        public static T FontSize<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Picker
         {
-            var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Picker.FontSizeProperty, builder.GetValue());
+            var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Picker.FontSizeProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T FontSize<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.Picker
-            where TBuilder : PropertyBuilder<double>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Picker.FontSizeProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T FontSize<T>(this T self,
-        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.Picker
-        //{
-        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Picker.FontSizeProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static Task<bool> AnimateFontSizeTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.Picker
@@ -140,34 +77,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FontAutoScalingEnabled<T>(this T self,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
+        public static T FontAutoScalingEnabled<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.Picker
         {
-            var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Picker.FontAutoScalingEnabledProperty, builder.GetValue());
+            var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.Picker.FontAutoScalingEnabledProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T FontAutoScalingEnabled<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.Picker
-            where TBuilder : PropertyBuilder<bool>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Picker.FontAutoScalingEnabledProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T FontAutoScalingEnabled<T>(this T self,
-        //    System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.Picker
-        //{
-        //    var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.Picker.FontAutoScalingEnabledProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T Items<T>(this T self,
             IList<string> items)
@@ -195,34 +111,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ItemsSource<T>(this T self,
-            System.Func<ValueBuilder<System.Collections.IList>, ValueBuilder<System.Collections.IList>> buildValue)
+        public static T ItemsSource<T>(this T self, Func<PropertyContext<System.Collections.IList>, IPropertyBuilder<System.Collections.IList>> configure)
             where T : Microsoft.Maui.Controls.Picker
         {
-            var builder = buildValue(new ValueBuilder<System.Collections.IList>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Picker.ItemsSourceProperty, builder.GetValue());
+            var context = new PropertyContext<System.Collections.IList>(self, Microsoft.Maui.Controls.Picker.ItemsSourceProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T ItemsSource<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.Picker
-            where TBuilder : PropertyBuilder<System.Collections.IList>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Picker.ItemsSourceProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T ItemsSource<T>(this T self,
-        //    System.Func<BindingBuilder<System.Collections.IList>, BindingBuilder<System.Collections.IList>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.Picker
-        //{
-        //    var builder = buildBinding(new BindingBuilder<System.Collections.IList>(self, Microsoft.Maui.Controls.Picker.ItemsSourceProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T SelectedIndex<T>(this T self,
             int selectedIndex)
@@ -232,34 +127,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T SelectedIndex<T>(this T self,
-            System.Func<ValueBuilder<int>, ValueBuilder<int>> buildValue)
+        public static T SelectedIndex<T>(this T self, Func<PropertyContext<int>, IPropertyBuilder<int>> configure)
             where T : Microsoft.Maui.Controls.Picker
         {
-            var builder = buildValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Picker.SelectedIndexProperty, builder.GetValue());
+            var context = new PropertyContext<int>(self, Microsoft.Maui.Controls.Picker.SelectedIndexProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T SelectedIndex<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.Picker
-            where TBuilder : PropertyBuilder<int>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Picker.SelectedIndexProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T SelectedIndex<T>(this T self,
-        //    System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.Picker
-        //{
-        //    var builder = buildBinding(new BindingBuilder<int>(self, Microsoft.Maui.Controls.Picker.SelectedIndexProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T SelectedItem<T>(this T self,
             object selectedItem)
@@ -269,34 +143,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T SelectedItem<T>(this T self,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buildValue)
+        public static T SelectedItem<T>(this T self, Func<PropertyContext<object>, IPropertyBuilder<object>> configure)
             where T : Microsoft.Maui.Controls.Picker
         {
-            var builder = buildValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Picker.SelectedItemProperty, builder.GetValue());
+            var context = new PropertyContext<object>(self, Microsoft.Maui.Controls.Picker.SelectedItemProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T SelectedItem<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.Picker
-            where TBuilder : PropertyBuilder<object>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Picker.SelectedItemProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T SelectedItem<T>(this T self,
-        //    System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.Picker
-        //{
-        //    var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.Picker.SelectedItemProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T TextColor<T>(this T self,
             Microsoft.Maui.Graphics.Color textColor)
@@ -306,34 +159,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T TextColor<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
+        public static T TextColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.Picker
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Picker.TextColorProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.Picker.TextColorProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T TextColor<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.Picker
-            where TBuilder : PropertyBuilder<Microsoft.Maui.Graphics.Color>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Picker.TextColorProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T TextColor<T>(this T self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.Picker
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.Picker.TextColorProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static Task<bool> AnimateTextColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.Picker
@@ -352,34 +184,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T CharacterSpacing<T>(this T self,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
+        public static T CharacterSpacing<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Picker
         {
-            var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Picker.CharacterSpacingProperty, builder.GetValue());
+            var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Picker.CharacterSpacingProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T CharacterSpacing<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.Picker
-            where TBuilder : PropertyBuilder<double>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Picker.CharacterSpacingProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T CharacterSpacing<T>(this T self,
-        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.Picker
-        //{
-        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Picker.CharacterSpacingProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static Task<bool> AnimateCharacterSpacingTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.Picker
@@ -398,34 +209,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Title<T>(this T self,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
+        public static T Title<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.Picker
         {
-            var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Picker.TitleProperty, builder.GetValue());
+            var context = new PropertyContext<string>(self, Microsoft.Maui.Controls.Picker.TitleProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T Title<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.Picker
-            where TBuilder : PropertyBuilder<string>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Picker.TitleProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T Title<T>(this T self,
-        //    System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.Picker
-        //{
-        //    var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.Picker.TitleProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T TitleColor<T>(this T self,
             Microsoft.Maui.Graphics.Color titleColor)
@@ -435,34 +225,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T TitleColor<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
+        public static T TitleColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.Picker
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Picker.TitleColorProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.Picker.TitleColorProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T TitleColor<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.Picker
-            where TBuilder : PropertyBuilder<Microsoft.Maui.Graphics.Color>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Picker.TitleColorProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T TitleColor<T>(this T self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.Picker
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.Picker.TitleColorProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static Task<bool> AnimateTitleColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.Picker
@@ -481,34 +250,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T HorizontalTextAlignment<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.TextAlignment>, ValueBuilder<Microsoft.Maui.TextAlignment>> buildValue)
+        public static T HorizontalTextAlignment<T>(this T self, Func<PropertyContext<Microsoft.Maui.TextAlignment>, IPropertyBuilder<Microsoft.Maui.TextAlignment>> configure)
             where T : Microsoft.Maui.Controls.Picker
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.TextAlignment>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Picker.HorizontalTextAlignmentProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.TextAlignment>(self, Microsoft.Maui.Controls.Picker.HorizontalTextAlignmentProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T HorizontalTextAlignment<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.Picker
-            where TBuilder : PropertyBuilder<Microsoft.Maui.TextAlignment>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Picker.HorizontalTextAlignmentProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T HorizontalTextAlignment<T>(this T self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.TextAlignment>, BindingBuilder<Microsoft.Maui.TextAlignment>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.Picker
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.TextAlignment>(self, Microsoft.Maui.Controls.Picker.HorizontalTextAlignmentProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T VerticalTextAlignment<T>(this T self,
             Microsoft.Maui.TextAlignment verticalTextAlignment)
@@ -518,34 +266,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T VerticalTextAlignment<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.TextAlignment>, ValueBuilder<Microsoft.Maui.TextAlignment>> buildValue)
+        public static T VerticalTextAlignment<T>(this T self, Func<PropertyContext<Microsoft.Maui.TextAlignment>, IPropertyBuilder<Microsoft.Maui.TextAlignment>> configure)
             where T : Microsoft.Maui.Controls.Picker
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.TextAlignment>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Picker.VerticalTextAlignmentProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.TextAlignment>(self, Microsoft.Maui.Controls.Picker.VerticalTextAlignmentProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T VerticalTextAlignment<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.Picker
-            where TBuilder : PropertyBuilder<Microsoft.Maui.TextAlignment>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Picker.VerticalTextAlignmentProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T VerticalTextAlignment<T>(this T self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.TextAlignment>, BindingBuilder<Microsoft.Maui.TextAlignment>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.Picker
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.TextAlignment>(self, Microsoft.Maui.Controls.Picker.VerticalTextAlignmentProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T ItemDisplayBinding<T>(this T self,
             Microsoft.Maui.Controls.BindingBase itemDisplayBinding)

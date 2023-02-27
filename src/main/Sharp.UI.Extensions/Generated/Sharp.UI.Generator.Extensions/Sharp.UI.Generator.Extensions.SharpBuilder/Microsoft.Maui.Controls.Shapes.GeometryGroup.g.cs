@@ -30,25 +30,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Children<T, TBuilder>(this T self,System.Action<TBuilder> configure)
+        public static T Children<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.Shapes.GeometryCollection>, IPropertyBuilder<Microsoft.Maui.Controls.Shapes.GeometryCollection>> configure)
             where T : Microsoft.Maui.Controls.Shapes.GeometryGroup
-            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.Shapes.GeometryCollection>
         {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.GeometryGroup.ChildrenProperty);
-            configure(builder);
-            builder.Build();
+            var context = new PropertyContext<Microsoft.Maui.Controls.Shapes.GeometryCollection>(self, Microsoft.Maui.Controls.Shapes.GeometryGroup.ChildrenProperty);
+            configure(context).Build();
             return self;
-
         }
-
-        //public static T Children<T>(this T self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.Shapes.GeometryCollection>, BindingBuilder<Microsoft.Maui.Controls.Shapes.GeometryCollection>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.Shapes.GeometryGroup
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Shapes.GeometryCollection>(self, Microsoft.Maui.Controls.Shapes.GeometryGroup.ChildrenProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T FillRule<T>(this T self,
             Microsoft.Maui.Controls.Shapes.FillRule fillRule)
@@ -58,34 +46,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FillRule<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.Shapes.FillRule>, ValueBuilder<Microsoft.Maui.Controls.Shapes.FillRule>> buildValue)
+        public static T FillRule<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.Shapes.FillRule>, IPropertyBuilder<Microsoft.Maui.Controls.Shapes.FillRule>> configure)
             where T : Microsoft.Maui.Controls.Shapes.GeometryGroup
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Shapes.FillRule>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.GeometryGroup.FillRuleProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.Controls.Shapes.FillRule>(self, Microsoft.Maui.Controls.Shapes.GeometryGroup.FillRuleProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T FillRule<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.Shapes.GeometryGroup
-            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.Shapes.FillRule>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.GeometryGroup.FillRuleProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T FillRule<T>(this T self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.Shapes.FillRule>, BindingBuilder<Microsoft.Maui.Controls.Shapes.FillRule>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.Shapes.GeometryGroup
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Shapes.FillRule>(self, Microsoft.Maui.Controls.Shapes.GeometryGroup.FillRuleProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T OnInvalidateGeometryRequested<T>(this T self, System.EventHandler handler)
             where T : Microsoft.Maui.Controls.Shapes.GeometryGroup

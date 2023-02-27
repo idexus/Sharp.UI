@@ -20,34 +20,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T AutoSize<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.EditorAutoSizeOption>, ValueBuilder<Microsoft.Maui.Controls.EditorAutoSizeOption>> buildValue)
+        public static T AutoSize<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.EditorAutoSizeOption>, IPropertyBuilder<Microsoft.Maui.Controls.EditorAutoSizeOption>> configure)
             where T : Microsoft.Maui.Controls.Editor
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.EditorAutoSizeOption>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Editor.AutoSizeProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.Controls.EditorAutoSizeOption>(self, Microsoft.Maui.Controls.Editor.AutoSizeProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T AutoSize<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.Editor
-            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.EditorAutoSizeOption>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Editor.AutoSizeProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T AutoSize<T>(this T self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.EditorAutoSizeOption>, BindingBuilder<Microsoft.Maui.Controls.EditorAutoSizeOption>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.Editor
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.EditorAutoSizeOption>(self, Microsoft.Maui.Controls.Editor.AutoSizeProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T FontAttributes<T>(this T self,
             Microsoft.Maui.Controls.FontAttributes fontAttributes)
@@ -57,34 +36,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FontAttributes<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.FontAttributes>, ValueBuilder<Microsoft.Maui.Controls.FontAttributes>> buildValue)
+        public static T FontAttributes<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.FontAttributes>, IPropertyBuilder<Microsoft.Maui.Controls.FontAttributes>> configure)
             where T : Microsoft.Maui.Controls.Editor
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.FontAttributes>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Editor.FontAttributesProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.Controls.FontAttributes>(self, Microsoft.Maui.Controls.Editor.FontAttributesProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T FontAttributes<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.Editor
-            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.FontAttributes>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Editor.FontAttributesProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T FontAttributes<T>(this T self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.FontAttributes>, BindingBuilder<Microsoft.Maui.Controls.FontAttributes>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.Editor
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.FontAttributes>(self, Microsoft.Maui.Controls.Editor.FontAttributesProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T IsTextPredictionEnabled<T>(this T self,
             bool isTextPredictionEnabled)
@@ -94,34 +52,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T IsTextPredictionEnabled<T>(this T self,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
+        public static T IsTextPredictionEnabled<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.Editor
         {
-            var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Editor.IsTextPredictionEnabledProperty, builder.GetValue());
+            var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.Editor.IsTextPredictionEnabledProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T IsTextPredictionEnabled<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.Editor
-            where TBuilder : PropertyBuilder<bool>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Editor.IsTextPredictionEnabledProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T IsTextPredictionEnabled<T>(this T self,
-        //    System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.Editor
-        //{
-        //    var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.Editor.IsTextPredictionEnabledProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T CursorPosition<T>(this T self,
             int cursorPosition)
@@ -131,34 +68,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T CursorPosition<T>(this T self,
-            System.Func<ValueBuilder<int>, ValueBuilder<int>> buildValue)
+        public static T CursorPosition<T>(this T self, Func<PropertyContext<int>, IPropertyBuilder<int>> configure)
             where T : Microsoft.Maui.Controls.Editor
         {
-            var builder = buildValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Editor.CursorPositionProperty, builder.GetValue());
+            var context = new PropertyContext<int>(self, Microsoft.Maui.Controls.Editor.CursorPositionProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T CursorPosition<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.Editor
-            where TBuilder : PropertyBuilder<int>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Editor.CursorPositionProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T CursorPosition<T>(this T self,
-        //    System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.Editor
-        //{
-        //    var builder = buildBinding(new BindingBuilder<int>(self, Microsoft.Maui.Controls.Editor.CursorPositionProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T SelectionLength<T>(this T self,
             int selectionLength)
@@ -168,34 +84,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T SelectionLength<T>(this T self,
-            System.Func<ValueBuilder<int>, ValueBuilder<int>> buildValue)
+        public static T SelectionLength<T>(this T self, Func<PropertyContext<int>, IPropertyBuilder<int>> configure)
             where T : Microsoft.Maui.Controls.Editor
         {
-            var builder = buildValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Editor.SelectionLengthProperty, builder.GetValue());
+            var context = new PropertyContext<int>(self, Microsoft.Maui.Controls.Editor.SelectionLengthProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T SelectionLength<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.Editor
-            where TBuilder : PropertyBuilder<int>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Editor.SelectionLengthProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T SelectionLength<T>(this T self,
-        //    System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.Editor
-        //{
-        //    var builder = buildBinding(new BindingBuilder<int>(self, Microsoft.Maui.Controls.Editor.SelectionLengthProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T FontFamily<T>(this T self,
             string fontFamily)
@@ -205,34 +100,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FontFamily<T>(this T self,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
+        public static T FontFamily<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.Editor
         {
-            var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Editor.FontFamilyProperty, builder.GetValue());
+            var context = new PropertyContext<string>(self, Microsoft.Maui.Controls.Editor.FontFamilyProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T FontFamily<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.Editor
-            where TBuilder : PropertyBuilder<string>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Editor.FontFamilyProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T FontFamily<T>(this T self,
-        //    System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.Editor
-        //{
-        //    var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.Editor.FontFamilyProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T FontSize<T>(this T self,
             double fontSize)
@@ -242,34 +116,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FontSize<T>(this T self,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
+        public static T FontSize<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Editor
         {
-            var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Editor.FontSizeProperty, builder.GetValue());
+            var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Editor.FontSizeProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T FontSize<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.Editor
-            where TBuilder : PropertyBuilder<double>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Editor.FontSizeProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T FontSize<T>(this T self,
-        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.Editor
-        //{
-        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Editor.FontSizeProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static Task<bool> AnimateFontSizeTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.Editor
@@ -288,34 +141,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T HorizontalTextAlignment<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.TextAlignment>, ValueBuilder<Microsoft.Maui.TextAlignment>> buildValue)
+        public static T HorizontalTextAlignment<T>(this T self, Func<PropertyContext<Microsoft.Maui.TextAlignment>, IPropertyBuilder<Microsoft.Maui.TextAlignment>> configure)
             where T : Microsoft.Maui.Controls.Editor
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.TextAlignment>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Editor.HorizontalTextAlignmentProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.TextAlignment>(self, Microsoft.Maui.Controls.Editor.HorizontalTextAlignmentProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T HorizontalTextAlignment<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.Editor
-            where TBuilder : PropertyBuilder<Microsoft.Maui.TextAlignment>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Editor.HorizontalTextAlignmentProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T HorizontalTextAlignment<T>(this T self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.TextAlignment>, BindingBuilder<Microsoft.Maui.TextAlignment>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.Editor
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.TextAlignment>(self, Microsoft.Maui.Controls.Editor.HorizontalTextAlignmentProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T VerticalTextAlignment<T>(this T self,
             Microsoft.Maui.TextAlignment verticalTextAlignment)
@@ -325,34 +157,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T VerticalTextAlignment<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.TextAlignment>, ValueBuilder<Microsoft.Maui.TextAlignment>> buildValue)
+        public static T VerticalTextAlignment<T>(this T self, Func<PropertyContext<Microsoft.Maui.TextAlignment>, IPropertyBuilder<Microsoft.Maui.TextAlignment>> configure)
             where T : Microsoft.Maui.Controls.Editor
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.TextAlignment>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Editor.VerticalTextAlignmentProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.TextAlignment>(self, Microsoft.Maui.Controls.Editor.VerticalTextAlignmentProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T VerticalTextAlignment<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.Editor
-            where TBuilder : PropertyBuilder<Microsoft.Maui.TextAlignment>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Editor.VerticalTextAlignmentProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T VerticalTextAlignment<T>(this T self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.TextAlignment>, BindingBuilder<Microsoft.Maui.TextAlignment>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.Editor
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.TextAlignment>(self, Microsoft.Maui.Controls.Editor.VerticalTextAlignmentProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T FontAutoScalingEnabled<T>(this T self,
             bool fontAutoScalingEnabled)
@@ -362,34 +173,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FontAutoScalingEnabled<T>(this T self,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
+        public static T FontAutoScalingEnabled<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.Editor
         {
-            var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Editor.FontAutoScalingEnabledProperty, builder.GetValue());
+            var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.Editor.FontAutoScalingEnabledProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T FontAutoScalingEnabled<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.Editor
-            where TBuilder : PropertyBuilder<bool>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Editor.FontAutoScalingEnabledProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T FontAutoScalingEnabled<T>(this T self,
-        //    System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.Editor
-        //{
-        //    var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.Editor.FontAutoScalingEnabledProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T OnCompleted<T>(this T self, System.EventHandler handler)
             where T : Microsoft.Maui.Controls.Editor

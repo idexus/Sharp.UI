@@ -19,30 +19,12 @@ namespace Sharp.UI
             return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.CompositeTransform CenterX(this Microsoft.Maui.Controls.Shapes.CompositeTransform self,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
+        public static Microsoft.Maui.Controls.Shapes.CompositeTransform CenterX(this Microsoft.Maui.Controls.Shapes.CompositeTransform self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
         {
-            var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.CompositeTransform.CenterXProperty, builder.GetValue());
+            var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Shapes.CompositeTransform.CenterXProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static Microsoft.Maui.Controls.Shapes.CompositeTransform CenterX<TBuilder>(this Microsoft.Maui.Controls.Shapes.CompositeTransform self, System.Action<TBuilder> configure)
-            where TBuilder : PropertyBuilder<double>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.CompositeTransform.CenterXProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-        }
-
-        //public static Microsoft.Maui.Controls.Shapes.CompositeTransform CenterX(this Microsoft.Maui.Controls.Shapes.CompositeTransform self,
-        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
-        //{
-        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.CompositeTransform.CenterXProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static Microsoft.Maui.Controls.Shapes.CompositeTransform CenterY(this Microsoft.Maui.Controls.Shapes.CompositeTransform self,
             double centerY)
@@ -51,30 +33,12 @@ namespace Sharp.UI
             return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.CompositeTransform CenterY(this Microsoft.Maui.Controls.Shapes.CompositeTransform self,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
+        public static Microsoft.Maui.Controls.Shapes.CompositeTransform CenterY(this Microsoft.Maui.Controls.Shapes.CompositeTransform self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
         {
-            var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.CompositeTransform.CenterYProperty, builder.GetValue());
+            var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Shapes.CompositeTransform.CenterYProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static Microsoft.Maui.Controls.Shapes.CompositeTransform CenterY<TBuilder>(this Microsoft.Maui.Controls.Shapes.CompositeTransform self, System.Action<TBuilder> configure)
-            where TBuilder : PropertyBuilder<double>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.CompositeTransform.CenterYProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-        }
-
-        //public static Microsoft.Maui.Controls.Shapes.CompositeTransform CenterY(this Microsoft.Maui.Controls.Shapes.CompositeTransform self,
-        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
-        //{
-        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.CompositeTransform.CenterYProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static Microsoft.Maui.Controls.Shapes.CompositeTransform ScaleX(this Microsoft.Maui.Controls.Shapes.CompositeTransform self,
             double scaleX)
@@ -83,30 +47,12 @@ namespace Sharp.UI
             return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.CompositeTransform ScaleX(this Microsoft.Maui.Controls.Shapes.CompositeTransform self,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
+        public static Microsoft.Maui.Controls.Shapes.CompositeTransform ScaleX(this Microsoft.Maui.Controls.Shapes.CompositeTransform self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
         {
-            var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.CompositeTransform.ScaleXProperty, builder.GetValue());
+            var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Shapes.CompositeTransform.ScaleXProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static Microsoft.Maui.Controls.Shapes.CompositeTransform ScaleX<TBuilder>(this Microsoft.Maui.Controls.Shapes.CompositeTransform self, System.Action<TBuilder> configure)
-            where TBuilder : PropertyBuilder<double>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.CompositeTransform.ScaleXProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-        }
-
-        //public static Microsoft.Maui.Controls.Shapes.CompositeTransform ScaleX(this Microsoft.Maui.Controls.Shapes.CompositeTransform self,
-        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
-        //{
-        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.CompositeTransform.ScaleXProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static Microsoft.Maui.Controls.Shapes.CompositeTransform ScaleY(this Microsoft.Maui.Controls.Shapes.CompositeTransform self,
             double scaleY)
@@ -115,30 +61,12 @@ namespace Sharp.UI
             return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.CompositeTransform ScaleY(this Microsoft.Maui.Controls.Shapes.CompositeTransform self,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
+        public static Microsoft.Maui.Controls.Shapes.CompositeTransform ScaleY(this Microsoft.Maui.Controls.Shapes.CompositeTransform self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
         {
-            var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.CompositeTransform.ScaleYProperty, builder.GetValue());
+            var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Shapes.CompositeTransform.ScaleYProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static Microsoft.Maui.Controls.Shapes.CompositeTransform ScaleY<TBuilder>(this Microsoft.Maui.Controls.Shapes.CompositeTransform self, System.Action<TBuilder> configure)
-            where TBuilder : PropertyBuilder<double>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.CompositeTransform.ScaleYProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-        }
-
-        //public static Microsoft.Maui.Controls.Shapes.CompositeTransform ScaleY(this Microsoft.Maui.Controls.Shapes.CompositeTransform self,
-        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
-        //{
-        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.CompositeTransform.ScaleYProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static Microsoft.Maui.Controls.Shapes.CompositeTransform SkewX(this Microsoft.Maui.Controls.Shapes.CompositeTransform self,
             double skewX)
@@ -147,30 +75,12 @@ namespace Sharp.UI
             return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.CompositeTransform SkewX(this Microsoft.Maui.Controls.Shapes.CompositeTransform self,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
+        public static Microsoft.Maui.Controls.Shapes.CompositeTransform SkewX(this Microsoft.Maui.Controls.Shapes.CompositeTransform self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
         {
-            var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.CompositeTransform.SkewXProperty, builder.GetValue());
+            var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Shapes.CompositeTransform.SkewXProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static Microsoft.Maui.Controls.Shapes.CompositeTransform SkewX<TBuilder>(this Microsoft.Maui.Controls.Shapes.CompositeTransform self, System.Action<TBuilder> configure)
-            where TBuilder : PropertyBuilder<double>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.CompositeTransform.SkewXProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-        }
-
-        //public static Microsoft.Maui.Controls.Shapes.CompositeTransform SkewX(this Microsoft.Maui.Controls.Shapes.CompositeTransform self,
-        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
-        //{
-        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.CompositeTransform.SkewXProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static Microsoft.Maui.Controls.Shapes.CompositeTransform SkewY(this Microsoft.Maui.Controls.Shapes.CompositeTransform self,
             double skewY)
@@ -179,30 +89,12 @@ namespace Sharp.UI
             return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.CompositeTransform SkewY(this Microsoft.Maui.Controls.Shapes.CompositeTransform self,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
+        public static Microsoft.Maui.Controls.Shapes.CompositeTransform SkewY(this Microsoft.Maui.Controls.Shapes.CompositeTransform self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
         {
-            var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.CompositeTransform.SkewYProperty, builder.GetValue());
+            var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Shapes.CompositeTransform.SkewYProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static Microsoft.Maui.Controls.Shapes.CompositeTransform SkewY<TBuilder>(this Microsoft.Maui.Controls.Shapes.CompositeTransform self, System.Action<TBuilder> configure)
-            where TBuilder : PropertyBuilder<double>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.CompositeTransform.SkewYProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-        }
-
-        //public static Microsoft.Maui.Controls.Shapes.CompositeTransform SkewY(this Microsoft.Maui.Controls.Shapes.CompositeTransform self,
-        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
-        //{
-        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.CompositeTransform.SkewYProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static Microsoft.Maui.Controls.Shapes.CompositeTransform Rotation(this Microsoft.Maui.Controls.Shapes.CompositeTransform self,
             double rotation)
@@ -211,30 +103,12 @@ namespace Sharp.UI
             return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.CompositeTransform Rotation(this Microsoft.Maui.Controls.Shapes.CompositeTransform self,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
+        public static Microsoft.Maui.Controls.Shapes.CompositeTransform Rotation(this Microsoft.Maui.Controls.Shapes.CompositeTransform self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
         {
-            var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.CompositeTransform.RotationProperty, builder.GetValue());
+            var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Shapes.CompositeTransform.RotationProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static Microsoft.Maui.Controls.Shapes.CompositeTransform Rotation<TBuilder>(this Microsoft.Maui.Controls.Shapes.CompositeTransform self, System.Action<TBuilder> configure)
-            where TBuilder : PropertyBuilder<double>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.CompositeTransform.RotationProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-        }
-
-        //public static Microsoft.Maui.Controls.Shapes.CompositeTransform Rotation(this Microsoft.Maui.Controls.Shapes.CompositeTransform self,
-        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
-        //{
-        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.CompositeTransform.RotationProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static Microsoft.Maui.Controls.Shapes.CompositeTransform TranslateX(this Microsoft.Maui.Controls.Shapes.CompositeTransform self,
             double translateX)
@@ -243,30 +117,12 @@ namespace Sharp.UI
             return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.CompositeTransform TranslateX(this Microsoft.Maui.Controls.Shapes.CompositeTransform self,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
+        public static Microsoft.Maui.Controls.Shapes.CompositeTransform TranslateX(this Microsoft.Maui.Controls.Shapes.CompositeTransform self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
         {
-            var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.CompositeTransform.TranslateXProperty, builder.GetValue());
+            var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Shapes.CompositeTransform.TranslateXProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static Microsoft.Maui.Controls.Shapes.CompositeTransform TranslateX<TBuilder>(this Microsoft.Maui.Controls.Shapes.CompositeTransform self, System.Action<TBuilder> configure)
-            where TBuilder : PropertyBuilder<double>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.CompositeTransform.TranslateXProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-        }
-
-        //public static Microsoft.Maui.Controls.Shapes.CompositeTransform TranslateX(this Microsoft.Maui.Controls.Shapes.CompositeTransform self,
-        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
-        //{
-        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.CompositeTransform.TranslateXProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static Microsoft.Maui.Controls.Shapes.CompositeTransform TranslateY(this Microsoft.Maui.Controls.Shapes.CompositeTransform self,
             double translateY)
@@ -275,30 +131,12 @@ namespace Sharp.UI
             return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.CompositeTransform TranslateY(this Microsoft.Maui.Controls.Shapes.CompositeTransform self,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
+        public static Microsoft.Maui.Controls.Shapes.CompositeTransform TranslateY(this Microsoft.Maui.Controls.Shapes.CompositeTransform self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
         {
-            var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.CompositeTransform.TranslateYProperty, builder.GetValue());
+            var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Shapes.CompositeTransform.TranslateYProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static Microsoft.Maui.Controls.Shapes.CompositeTransform TranslateY<TBuilder>(this Microsoft.Maui.Controls.Shapes.CompositeTransform self, System.Action<TBuilder> configure)
-            where TBuilder : PropertyBuilder<double>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.CompositeTransform.TranslateYProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-        }
-
-        //public static Microsoft.Maui.Controls.Shapes.CompositeTransform TranslateY(this Microsoft.Maui.Controls.Shapes.CompositeTransform self,
-        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
-        //{
-        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.CompositeTransform.TranslateYProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
     }
 }

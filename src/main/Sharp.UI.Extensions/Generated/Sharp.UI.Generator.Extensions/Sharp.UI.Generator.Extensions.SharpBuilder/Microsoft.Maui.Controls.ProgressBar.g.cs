@@ -20,34 +20,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ProgressColor<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
+        public static T ProgressColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.ProgressBar
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ProgressBar.ProgressColorProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.ProgressBar.ProgressColorProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T ProgressColor<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.ProgressBar
-            where TBuilder : PropertyBuilder<Microsoft.Maui.Graphics.Color>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.ProgressBar.ProgressColorProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T ProgressColor<T>(this T self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.ProgressBar
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.ProgressBar.ProgressColorProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static Task<bool> AnimateProgressColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.ProgressBar
@@ -66,34 +45,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Progress<T>(this T self,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
+        public static T Progress<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.ProgressBar
         {
-            var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ProgressBar.ProgressProperty, builder.GetValue());
+            var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.ProgressBar.ProgressProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T Progress<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.ProgressBar
-            where TBuilder : PropertyBuilder<double>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.ProgressBar.ProgressProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T Progress<T>(this T self,
-        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.ProgressBar
-        //{
-        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.ProgressBar.ProgressProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static Task<bool> AnimateProgressTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.ProgressBar

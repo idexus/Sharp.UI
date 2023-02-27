@@ -20,34 +20,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Style<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.Style>, ValueBuilder<Microsoft.Maui.Controls.Style>> buildValue)
+        public static T Style<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.Style>, IPropertyBuilder<Microsoft.Maui.Controls.Style>> configure)
             where T : Microsoft.Maui.Controls.NavigableElement
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Style>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.NavigableElement.StyleProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.Controls.Style>(self, Microsoft.Maui.Controls.NavigableElement.StyleProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T Style<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.NavigableElement
-            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.Style>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.NavigableElement.StyleProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T Style<T>(this T self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.Style>, BindingBuilder<Microsoft.Maui.Controls.Style>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.NavigableElement
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Style>(self, Microsoft.Maui.Controls.NavigableElement.StyleProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T StyleClass<T>(this T self,
             IList<string> styleClass)

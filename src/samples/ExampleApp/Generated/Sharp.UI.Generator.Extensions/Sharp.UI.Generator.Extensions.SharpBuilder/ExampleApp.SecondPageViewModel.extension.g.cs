@@ -21,21 +21,11 @@ namespace ExampleApp
             return self;
         }
         
-        public static T Title<T>(this T self,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
+        public static T Title<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : ExampleApp.SecondPageViewModel
         {
-            var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(ExampleApp.SecondPageViewModel.TitleProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T Title<T>(this T self,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
-            where T : ExampleApp.SecondPageViewModel
-        {
-            var builder = buildBinding(new BindingBuilder<string>(self, ExampleApp.SecondPageViewModel.TitleProperty));
-            builder.Build();
+            var context = new PropertyContext<string>(self, ExampleApp.SecondPageViewModel.TitleProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -47,21 +37,11 @@ namespace ExampleApp
             return self;
         }
         
-        public static T Author<T>(this T self,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
+        public static T Author<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : ExampleApp.SecondPageViewModel
         {
-            var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(ExampleApp.SecondPageViewModel.AuthorProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T Author<T>(this T self,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
-            where T : ExampleApp.SecondPageViewModel
-        {
-            var builder = buildBinding(new BindingBuilder<string>(self, ExampleApp.SecondPageViewModel.AuthorProperty));
-            builder.Build();
+            var context = new PropertyContext<string>(self, ExampleApp.SecondPageViewModel.AuthorProperty);
+            configure(context).Build();
             return self;
         }
         

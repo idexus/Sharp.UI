@@ -20,34 +20,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Aspect<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Aspect>, ValueBuilder<Microsoft.Maui.Aspect>> buildValue)
+        public static T Aspect<T>(this T self, Func<PropertyContext<Microsoft.Maui.Aspect>, IPropertyBuilder<Microsoft.Maui.Aspect>> configure)
             where T : Microsoft.Maui.Controls.Image
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Aspect>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Image.AspectProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.Aspect>(self, Microsoft.Maui.Controls.Image.AspectProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T Aspect<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.Image
-            where TBuilder : PropertyBuilder<Microsoft.Maui.Aspect>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Image.AspectProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T Aspect<T>(this T self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.Aspect>, BindingBuilder<Microsoft.Maui.Aspect>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.Image
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Aspect>(self, Microsoft.Maui.Controls.Image.AspectProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T IsOpaque<T>(this T self,
             bool isOpaque)
@@ -57,34 +36,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T IsOpaque<T>(this T self,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
+        public static T IsOpaque<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.Image
         {
-            var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Image.IsOpaqueProperty, builder.GetValue());
+            var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.Image.IsOpaqueProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T IsOpaque<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.Image
-            where TBuilder : PropertyBuilder<bool>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Image.IsOpaqueProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T IsOpaque<T>(this T self,
-        //    System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.Image
-        //{
-        //    var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.Image.IsOpaqueProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T IsAnimationPlaying<T>(this T self,
             bool isAnimationPlaying)
@@ -94,34 +52,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T IsAnimationPlaying<T>(this T self,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
+        public static T IsAnimationPlaying<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.Image
         {
-            var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Image.IsAnimationPlayingProperty, builder.GetValue());
+            var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.Image.IsAnimationPlayingProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T IsAnimationPlaying<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.Image
-            where TBuilder : PropertyBuilder<bool>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Image.IsAnimationPlayingProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T IsAnimationPlaying<T>(this T self,
-        //    System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.Image
-        //{
-        //    var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.Image.IsAnimationPlayingProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T Source<T>(this T self,
             Microsoft.Maui.Controls.ImageSource source)
@@ -131,34 +68,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Source<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.ImageSource>, ValueBuilder<Microsoft.Maui.Controls.ImageSource>> buildValue)
+        public static T Source<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.ImageSource>, IPropertyBuilder<Microsoft.Maui.Controls.ImageSource>> configure)
             where T : Microsoft.Maui.Controls.Image
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Image.SourceProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.Controls.ImageSource>(self, Microsoft.Maui.Controls.Image.SourceProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T Source<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.Image
-            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.ImageSource>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Image.SourceProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T Source<T>(this T self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.ImageSource>, BindingBuilder<Microsoft.Maui.Controls.ImageSource>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.Image
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ImageSource>(self, Microsoft.Maui.Controls.Image.SourceProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
     }
 }

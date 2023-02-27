@@ -41,34 +41,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T IsEnabled<T>(this T self,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
+        public static T IsEnabled<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.MenuBarItem
         {
-            var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.MenuBarItem.IsEnabledProperty, builder.GetValue());
+            var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.MenuBarItem.IsEnabledProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T IsEnabled<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.MenuBarItem
-            where TBuilder : PropertyBuilder<bool>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.MenuBarItem.IsEnabledProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T IsEnabled<T>(this T self,
-        //    System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.MenuBarItem
-        //{
-        //    var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.MenuBarItem.IsEnabledProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T Text<T>(this T self,
             string text)
@@ -78,34 +57,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Text<T>(this T self,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
+        public static T Text<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.MenuBarItem
         {
-            var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.MenuBarItem.TextProperty, builder.GetValue());
+            var context = new PropertyContext<string>(self, Microsoft.Maui.Controls.MenuBarItem.TextProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T Text<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.MenuBarItem
-            where TBuilder : PropertyBuilder<string>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.MenuBarItem.TextProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T Text<T>(this T self,
-        //    System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.MenuBarItem
-        //{
-        //    var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.MenuBarItem.TextProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
     }
 }

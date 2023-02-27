@@ -20,34 +20,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T BarBackgroundColor<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
+        public static T BarBackgroundColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.TabbedPage
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.TabbedPage.BarBackgroundColorProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.TabbedPage.BarBackgroundColorProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T BarBackgroundColor<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.TabbedPage
-            where TBuilder : PropertyBuilder<Microsoft.Maui.Graphics.Color>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.TabbedPage.BarBackgroundColorProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T BarBackgroundColor<T>(this T self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.TabbedPage
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.TabbedPage.BarBackgroundColorProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static Task<bool> AnimateBarBackgroundColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.TabbedPage
@@ -66,34 +45,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T BarBackground<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.Brush>, ValueBuilder<Microsoft.Maui.Controls.Brush>> buildValue)
+        public static T BarBackground<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.Brush>, IPropertyBuilder<Microsoft.Maui.Controls.Brush>> configure)
             where T : Microsoft.Maui.Controls.TabbedPage
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Brush>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.TabbedPage.BarBackgroundProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.Controls.Brush>(self, Microsoft.Maui.Controls.TabbedPage.BarBackgroundProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T BarBackground<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.TabbedPage
-            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.Brush>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.TabbedPage.BarBackgroundProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T BarBackground<T>(this T self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.Brush>, BindingBuilder<Microsoft.Maui.Controls.Brush>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.TabbedPage
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Brush>(self, Microsoft.Maui.Controls.TabbedPage.BarBackgroundProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T BarTextColor<T>(this T self,
             Microsoft.Maui.Graphics.Color barTextColor)
@@ -103,34 +61,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T BarTextColor<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
+        public static T BarTextColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.TabbedPage
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.TabbedPage.BarTextColorProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.TabbedPage.BarTextColorProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T BarTextColor<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.TabbedPage
-            where TBuilder : PropertyBuilder<Microsoft.Maui.Graphics.Color>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.TabbedPage.BarTextColorProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T BarTextColor<T>(this T self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.TabbedPage
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.TabbedPage.BarTextColorProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static Task<bool> AnimateBarTextColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.TabbedPage
@@ -149,34 +86,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T UnselectedTabColor<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
+        public static T UnselectedTabColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.TabbedPage
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.TabbedPage.UnselectedTabColorProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.TabbedPage.UnselectedTabColorProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T UnselectedTabColor<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.TabbedPage
-            where TBuilder : PropertyBuilder<Microsoft.Maui.Graphics.Color>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.TabbedPage.UnselectedTabColorProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T UnselectedTabColor<T>(this T self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.TabbedPage
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.TabbedPage.UnselectedTabColorProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static Task<bool> AnimateUnselectedTabColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.TabbedPage
@@ -195,34 +111,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T SelectedTabColor<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
+        public static T SelectedTabColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.TabbedPage
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.TabbedPage.SelectedTabColorProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.TabbedPage.SelectedTabColorProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T SelectedTabColor<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.TabbedPage
-            where TBuilder : PropertyBuilder<Microsoft.Maui.Graphics.Color>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.TabbedPage.SelectedTabColorProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T SelectedTabColor<T>(this T self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.TabbedPage
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.TabbedPage.SelectedTabColorProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static Task<bool> AnimateSelectedTabColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.TabbedPage

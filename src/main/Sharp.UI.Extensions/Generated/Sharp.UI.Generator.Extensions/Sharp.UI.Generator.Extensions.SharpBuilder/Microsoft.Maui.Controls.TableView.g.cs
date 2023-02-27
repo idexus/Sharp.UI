@@ -20,34 +20,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T HasUnevenRows<T>(this T self,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
+        public static T HasUnevenRows<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.TableView
         {
-            var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.TableView.HasUnevenRowsProperty, builder.GetValue());
+            var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.TableView.HasUnevenRowsProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T HasUnevenRows<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.TableView
-            where TBuilder : PropertyBuilder<bool>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.TableView.HasUnevenRowsProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T HasUnevenRows<T>(this T self,
-        //    System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.TableView
-        //{
-        //    var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.TableView.HasUnevenRowsProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T Intent<T>(this T self,
             Microsoft.Maui.Controls.TableIntent intent)
@@ -96,34 +75,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T RowHeight<T>(this T self,
-            System.Func<ValueBuilder<int>, ValueBuilder<int>> buildValue)
+        public static T RowHeight<T>(this T self, Func<PropertyContext<int>, IPropertyBuilder<int>> configure)
             where T : Microsoft.Maui.Controls.TableView
         {
-            var builder = buildValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.TableView.RowHeightProperty, builder.GetValue());
+            var context = new PropertyContext<int>(self, Microsoft.Maui.Controls.TableView.RowHeightProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T RowHeight<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.TableView
-            where TBuilder : PropertyBuilder<int>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.TableView.RowHeightProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T RowHeight<T>(this T self,
-        //    System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.TableView
-        //{
-        //    var builder = buildBinding(new BindingBuilder<int>(self, Microsoft.Maui.Controls.TableView.RowHeightProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T Model<T>(this T self,
             Microsoft.Maui.Controls.Internals.TableModel model)

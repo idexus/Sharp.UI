@@ -38,34 +38,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T HorizontalOptions<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.LayoutOptions>, ValueBuilder<Microsoft.Maui.Controls.LayoutOptions>> buildValue)
+        public static T HorizontalOptions<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.LayoutOptions>, IPropertyBuilder<Microsoft.Maui.Controls.LayoutOptions>> configure)
             where T : Microsoft.Maui.Controls.View
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.LayoutOptions>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.View.HorizontalOptionsProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.Controls.LayoutOptions>(self, Microsoft.Maui.Controls.View.HorizontalOptionsProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T HorizontalOptions<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.View
-            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.LayoutOptions>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.View.HorizontalOptionsProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T HorizontalOptions<T>(this T self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.LayoutOptions>, BindingBuilder<Microsoft.Maui.Controls.LayoutOptions>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.View
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.LayoutOptions>(self, Microsoft.Maui.Controls.View.HorizontalOptionsProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T Margin<T>(this T self,
             Microsoft.Maui.Thickness margin)
@@ -75,34 +54,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Margin<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Thickness>, ValueBuilder<Microsoft.Maui.Thickness>> buildValue)
+        public static T Margin<T>(this T self, Func<PropertyContext<Microsoft.Maui.Thickness>, IPropertyBuilder<Microsoft.Maui.Thickness>> configure)
             where T : Microsoft.Maui.Controls.View
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Thickness>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.View.MarginProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.Thickness>(self, Microsoft.Maui.Controls.View.MarginProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T Margin<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.View
-            where TBuilder : PropertyBuilder<Microsoft.Maui.Thickness>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.View.MarginProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T Margin<T>(this T self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.Thickness>, BindingBuilder<Microsoft.Maui.Thickness>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.View
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Thickness>(self, Microsoft.Maui.Controls.View.MarginProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T VerticalOptions<T>(this T self,
             Microsoft.Maui.Controls.LayoutOptions verticalOptions)
@@ -112,34 +70,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T VerticalOptions<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.LayoutOptions>, ValueBuilder<Microsoft.Maui.Controls.LayoutOptions>> buildValue)
+        public static T VerticalOptions<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.LayoutOptions>, IPropertyBuilder<Microsoft.Maui.Controls.LayoutOptions>> configure)
             where T : Microsoft.Maui.Controls.View
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.LayoutOptions>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.View.VerticalOptionsProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.Controls.LayoutOptions>(self, Microsoft.Maui.Controls.View.VerticalOptionsProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T VerticalOptions<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.View
-            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.LayoutOptions>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.View.VerticalOptionsProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T VerticalOptions<T>(this T self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.LayoutOptions>, BindingBuilder<Microsoft.Maui.Controls.LayoutOptions>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.View
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.LayoutOptions>(self, Microsoft.Maui.Controls.View.VerticalOptionsProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
     }
 }

@@ -20,34 +20,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Radius<T>(this T self,
-            System.Func<ValueBuilder<float>, ValueBuilder<float>> buildValue)
+        public static T Radius<T>(this T self, Func<PropertyContext<float>, IPropertyBuilder<float>> configure)
             where T : Microsoft.Maui.Controls.Shadow
         {
-            var builder = buildValue(new ValueBuilder<float>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shadow.RadiusProperty, builder.GetValue());
+            var context = new PropertyContext<float>(self, Microsoft.Maui.Controls.Shadow.RadiusProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T Radius<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.Shadow
-            where TBuilder : PropertyBuilder<float>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Shadow.RadiusProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T Radius<T>(this T self,
-        //    System.Func<BindingBuilder<float>, BindingBuilder<float>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.Shadow
-        //{
-        //    var builder = buildBinding(new BindingBuilder<float>(self, Microsoft.Maui.Controls.Shadow.RadiusProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T Opacity<T>(this T self,
             float opacity)
@@ -57,34 +36,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Opacity<T>(this T self,
-            System.Func<ValueBuilder<float>, ValueBuilder<float>> buildValue)
+        public static T Opacity<T>(this T self, Func<PropertyContext<float>, IPropertyBuilder<float>> configure)
             where T : Microsoft.Maui.Controls.Shadow
         {
-            var builder = buildValue(new ValueBuilder<float>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shadow.OpacityProperty, builder.GetValue());
+            var context = new PropertyContext<float>(self, Microsoft.Maui.Controls.Shadow.OpacityProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T Opacity<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.Shadow
-            where TBuilder : PropertyBuilder<float>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Shadow.OpacityProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T Opacity<T>(this T self,
-        //    System.Func<BindingBuilder<float>, BindingBuilder<float>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.Shadow
-        //{
-        //    var builder = buildBinding(new BindingBuilder<float>(self, Microsoft.Maui.Controls.Shadow.OpacityProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T Brush<T>(this T self,
             Microsoft.Maui.Controls.Brush brush)
@@ -94,34 +52,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Brush<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.Brush>, ValueBuilder<Microsoft.Maui.Controls.Brush>> buildValue)
+        public static T Brush<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.Brush>, IPropertyBuilder<Microsoft.Maui.Controls.Brush>> configure)
             where T : Microsoft.Maui.Controls.Shadow
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Brush>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shadow.BrushProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.Controls.Brush>(self, Microsoft.Maui.Controls.Shadow.BrushProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T Brush<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.Shadow
-            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.Brush>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Shadow.BrushProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T Brush<T>(this T self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.Brush>, BindingBuilder<Microsoft.Maui.Controls.Brush>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.Shadow
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Brush>(self, Microsoft.Maui.Controls.Shadow.BrushProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T Offset<T>(this T self,
             Microsoft.Maui.Graphics.Point offset)
@@ -131,34 +68,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Offset<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Point>, ValueBuilder<Microsoft.Maui.Graphics.Point>> buildValue)
+        public static T Offset<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Point>, IPropertyBuilder<Microsoft.Maui.Graphics.Point>> configure)
             where T : Microsoft.Maui.Controls.Shadow
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Point>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shadow.OffsetProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.Graphics.Point>(self, Microsoft.Maui.Controls.Shadow.OffsetProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T Offset<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.Shadow
-            where TBuilder : PropertyBuilder<Microsoft.Maui.Graphics.Point>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Shadow.OffsetProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T Offset<T>(this T self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.Graphics.Point>, BindingBuilder<Microsoft.Maui.Graphics.Point>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.Shadow
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Point>(self, Microsoft.Maui.Controls.Shadow.OffsetProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
     }
 }

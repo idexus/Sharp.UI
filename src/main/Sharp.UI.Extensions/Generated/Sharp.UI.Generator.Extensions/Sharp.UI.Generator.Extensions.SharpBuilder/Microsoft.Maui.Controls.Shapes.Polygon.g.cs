@@ -28,22 +28,12 @@ namespace Sharp.UI
             return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.Polygon Points<TBuilder>(this Microsoft.Maui.Controls.Shapes.Polygon self, System.Action<TBuilder> configure)
-            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.PointCollection>
+        public static Microsoft.Maui.Controls.Shapes.Polygon Points(this Microsoft.Maui.Controls.Shapes.Polygon self, Func<PropertyContext<Microsoft.Maui.Controls.PointCollection>, IPropertyBuilder<Microsoft.Maui.Controls.PointCollection>> configure)
         {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.Polygon.PointsProperty);
-            configure(builder);
-            builder.Build();
+            var context = new PropertyContext<Microsoft.Maui.Controls.PointCollection>(self, Microsoft.Maui.Controls.Shapes.Polygon.PointsProperty);
+            configure(context).Build();
             return self;
         }
-
-        //public static Microsoft.Maui.Controls.Shapes.Polygon Points(this Microsoft.Maui.Controls.Shapes.Polygon self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.PointCollection>, BindingBuilder<Microsoft.Maui.Controls.PointCollection>> buildBinding)
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.PointCollection>(self, Microsoft.Maui.Controls.Shapes.Polygon.PointsProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static Microsoft.Maui.Controls.Shapes.Polygon FillRule(this Microsoft.Maui.Controls.Shapes.Polygon self,
             Microsoft.Maui.Controls.Shapes.FillRule fillRule)
@@ -52,30 +42,12 @@ namespace Sharp.UI
             return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.Polygon FillRule(this Microsoft.Maui.Controls.Shapes.Polygon self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.Shapes.FillRule>, ValueBuilder<Microsoft.Maui.Controls.Shapes.FillRule>> buildValue)
+        public static Microsoft.Maui.Controls.Shapes.Polygon FillRule(this Microsoft.Maui.Controls.Shapes.Polygon self, Func<PropertyContext<Microsoft.Maui.Controls.Shapes.FillRule>, IPropertyBuilder<Microsoft.Maui.Controls.Shapes.FillRule>> configure)
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Shapes.FillRule>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Polygon.FillRuleProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.Controls.Shapes.FillRule>(self, Microsoft.Maui.Controls.Shapes.Polygon.FillRuleProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static Microsoft.Maui.Controls.Shapes.Polygon FillRule<TBuilder>(this Microsoft.Maui.Controls.Shapes.Polygon self, System.Action<TBuilder> configure)
-            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.Shapes.FillRule>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.Polygon.FillRuleProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-        }
-
-        //public static Microsoft.Maui.Controls.Shapes.Polygon FillRule(this Microsoft.Maui.Controls.Shapes.Polygon self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.Shapes.FillRule>, BindingBuilder<Microsoft.Maui.Controls.Shapes.FillRule>> buildBinding)
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Shapes.FillRule>(self, Microsoft.Maui.Controls.Shapes.Polygon.FillRuleProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
     }
 }

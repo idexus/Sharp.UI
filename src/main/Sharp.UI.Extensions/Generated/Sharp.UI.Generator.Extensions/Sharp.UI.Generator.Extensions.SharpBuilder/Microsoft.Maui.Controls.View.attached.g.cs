@@ -20,34 +20,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Column<T>(this T self,
-            System.Func<ValueBuilder<int>, ValueBuilder<int>> buildValue)
+        public static T Column<T>(this T self, Func<PropertyContext<int>, IPropertyBuilder<int>> configure)
             where T : Microsoft.Maui.Controls.View
         {
-            var builder = buildValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Grid.ColumnProperty, builder.GetValue());
+            var context = new PropertyContext<int>(self, Microsoft.Maui.Controls.Grid.ColumnProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T Column<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.View
-            where TBuilder : PropertyBuilder<int>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Grid.ColumnProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T Column<T>(this T self,
-        //    System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.View
-        //{
-        //    var builder = buildBinding(new BindingBuilder<int>(self, Microsoft.Maui.Controls.Grid.ColumnProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static int GetColumnValue<T>(this T self)
             where T : Microsoft.Maui.Controls.View
@@ -63,34 +42,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Row<T>(this T self,
-            System.Func<ValueBuilder<int>, ValueBuilder<int>> buildValue)
+        public static T Row<T>(this T self, Func<PropertyContext<int>, IPropertyBuilder<int>> configure)
             where T : Microsoft.Maui.Controls.View
         {
-            var builder = buildValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Grid.RowProperty, builder.GetValue());
+            var context = new PropertyContext<int>(self, Microsoft.Maui.Controls.Grid.RowProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T Row<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.View
-            where TBuilder : PropertyBuilder<int>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Grid.RowProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T Row<T>(this T self,
-        //    System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.View
-        //{
-        //    var builder = buildBinding(new BindingBuilder<int>(self, Microsoft.Maui.Controls.Grid.RowProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static int GetRowValue<T>(this T self)
             where T : Microsoft.Maui.Controls.View
@@ -106,34 +64,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ColumnSpan<T>(this T self,
-            System.Func<ValueBuilder<int>, ValueBuilder<int>> buildValue)
+        public static T ColumnSpan<T>(this T self, Func<PropertyContext<int>, IPropertyBuilder<int>> configure)
             where T : Microsoft.Maui.Controls.View
         {
-            var builder = buildValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Grid.ColumnSpanProperty, builder.GetValue());
+            var context = new PropertyContext<int>(self, Microsoft.Maui.Controls.Grid.ColumnSpanProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T ColumnSpan<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.View
-            where TBuilder : PropertyBuilder<int>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Grid.ColumnSpanProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T ColumnSpan<T>(this T self,
-        //    System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.View
-        //{
-        //    var builder = buildBinding(new BindingBuilder<int>(self, Microsoft.Maui.Controls.Grid.ColumnSpanProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static int GetColumnSpanValue<T>(this T self)
             where T : Microsoft.Maui.Controls.View
@@ -149,34 +86,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T RowSpan<T>(this T self,
-            System.Func<ValueBuilder<int>, ValueBuilder<int>> buildValue)
+        public static T RowSpan<T>(this T self, Func<PropertyContext<int>, IPropertyBuilder<int>> configure)
             where T : Microsoft.Maui.Controls.View
         {
-            var builder = buildValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Grid.RowSpanProperty, builder.GetValue());
+            var context = new PropertyContext<int>(self, Microsoft.Maui.Controls.Grid.RowSpanProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T RowSpan<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.View
-            where TBuilder : PropertyBuilder<int>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Grid.RowSpanProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T RowSpan<T>(this T self,
-        //    System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.View
-        //{
-        //    var builder = buildBinding(new BindingBuilder<int>(self, Microsoft.Maui.Controls.Grid.RowSpanProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static int GetRowSpanValue<T>(this T self)
             where T : Microsoft.Maui.Controls.View
@@ -192,34 +108,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T AbsoluteLayoutFlags<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Layouts.AbsoluteLayoutFlags>, ValueBuilder<Microsoft.Maui.Layouts.AbsoluteLayoutFlags>> buildValue)
+        public static T AbsoluteLayoutFlags<T>(this T self, Func<PropertyContext<Microsoft.Maui.Layouts.AbsoluteLayoutFlags>, IPropertyBuilder<Microsoft.Maui.Layouts.AbsoluteLayoutFlags>> configure)
             where T : Microsoft.Maui.Controls.View
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Layouts.AbsoluteLayoutFlags>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.AbsoluteLayout.LayoutFlagsProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.Layouts.AbsoluteLayoutFlags>(self, Microsoft.Maui.Controls.AbsoluteLayout.LayoutFlagsProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T AbsoluteLayoutFlags<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.View
-            where TBuilder : PropertyBuilder<Microsoft.Maui.Layouts.AbsoluteLayoutFlags>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.AbsoluteLayout.LayoutFlagsProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T AbsoluteLayoutFlags<T>(this T self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.Layouts.AbsoluteLayoutFlags>, BindingBuilder<Microsoft.Maui.Layouts.AbsoluteLayoutFlags>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.View
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Layouts.AbsoluteLayoutFlags>(self, Microsoft.Maui.Controls.AbsoluteLayout.LayoutFlagsProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static Microsoft.Maui.Layouts.AbsoluteLayoutFlags GetAbsoluteLayoutFlagsValue<T>(this T self)
             where T : Microsoft.Maui.Controls.View
@@ -235,34 +130,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T AbsoluteLayoutBounds<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Rect>, ValueBuilder<Microsoft.Maui.Graphics.Rect>> buildValue)
+        public static T AbsoluteLayoutBounds<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Rect>, IPropertyBuilder<Microsoft.Maui.Graphics.Rect>> configure)
             where T : Microsoft.Maui.Controls.View
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Rect>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.AbsoluteLayout.LayoutBoundsProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.Graphics.Rect>(self, Microsoft.Maui.Controls.AbsoluteLayout.LayoutBoundsProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T AbsoluteLayoutBounds<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.View
-            where TBuilder : PropertyBuilder<Microsoft.Maui.Graphics.Rect>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.AbsoluteLayout.LayoutBoundsProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T AbsoluteLayoutBounds<T>(this T self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.Graphics.Rect>, BindingBuilder<Microsoft.Maui.Graphics.Rect>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.View
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Rect>(self, Microsoft.Maui.Controls.AbsoluteLayout.LayoutBoundsProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static Microsoft.Maui.Graphics.Rect GetAbsoluteLayoutBoundsValue<T>(this T self)
             where T : Microsoft.Maui.Controls.View

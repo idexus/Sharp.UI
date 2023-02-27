@@ -20,34 +20,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T EmptyView<T>(this T self,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buildValue)
+        public static T EmptyView<T>(this T self, Func<PropertyContext<object>, IPropertyBuilder<object>> configure)
             where T : Microsoft.Maui.Controls.ItemsView
         {
-            var builder = buildValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ItemsView.EmptyViewProperty, builder.GetValue());
+            var context = new PropertyContext<object>(self, Microsoft.Maui.Controls.ItemsView.EmptyViewProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T EmptyView<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.ItemsView
-            where TBuilder : PropertyBuilder<object>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.ItemsView.EmptyViewProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T EmptyView<T>(this T self,
-        //    System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.ItemsView
-        //{
-        //    var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.ItemsView.EmptyViewProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T EmptyViewTemplate<T>(this T self,
             Microsoft.Maui.Controls.DataTemplate emptyViewTemplate)
@@ -57,34 +36,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T EmptyViewTemplate<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.DataTemplate>, ValueBuilder<Microsoft.Maui.Controls.DataTemplate>> buildValue)
+        public static T EmptyViewTemplate<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.DataTemplate>, IPropertyBuilder<Microsoft.Maui.Controls.DataTemplate>> configure)
             where T : Microsoft.Maui.Controls.ItemsView
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ItemsView.EmptyViewTemplateProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.ItemsView.EmptyViewTemplateProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T EmptyViewTemplate<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.ItemsView
-            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.DataTemplate>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.ItemsView.EmptyViewTemplateProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T EmptyViewTemplate<T>(this T self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.ItemsView
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.ItemsView.EmptyViewTemplateProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T EmptyViewTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.ItemsView
@@ -101,34 +59,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ItemsSource<T>(this T self,
-            System.Func<ValueBuilder<System.Collections.IEnumerable>, ValueBuilder<System.Collections.IEnumerable>> buildValue)
+        public static T ItemsSource<T>(this T self, Func<PropertyContext<System.Collections.IEnumerable>, IPropertyBuilder<System.Collections.IEnumerable>> configure)
             where T : Microsoft.Maui.Controls.ItemsView
         {
-            var builder = buildValue(new ValueBuilder<System.Collections.IEnumerable>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ItemsView.ItemsSourceProperty, builder.GetValue());
+            var context = new PropertyContext<System.Collections.IEnumerable>(self, Microsoft.Maui.Controls.ItemsView.ItemsSourceProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T ItemsSource<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.ItemsView
-            where TBuilder : PropertyBuilder<System.Collections.IEnumerable>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.ItemsView.ItemsSourceProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T ItemsSource<T>(this T self,
-        //    System.Func<BindingBuilder<System.Collections.IEnumerable>, BindingBuilder<System.Collections.IEnumerable>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.ItemsView
-        //{
-        //    var builder = buildBinding(new BindingBuilder<System.Collections.IEnumerable>(self, Microsoft.Maui.Controls.ItemsView.ItemsSourceProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T RemainingItemsThresholdReachedCommand<T>(this T self,
             System.Windows.Input.ICommand remainingItemsThresholdReachedCommand)
@@ -138,34 +75,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T RemainingItemsThresholdReachedCommand<T>(this T self,
-            System.Func<ValueBuilder<System.Windows.Input.ICommand>, ValueBuilder<System.Windows.Input.ICommand>> buildValue)
+        public static T RemainingItemsThresholdReachedCommand<T>(this T self, Func<PropertyContext<System.Windows.Input.ICommand>, IPropertyBuilder<System.Windows.Input.ICommand>> configure)
             where T : Microsoft.Maui.Controls.ItemsView
         {
-            var builder = buildValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ItemsView.RemainingItemsThresholdReachedCommandProperty, builder.GetValue());
+            var context = new PropertyContext<System.Windows.Input.ICommand>(self, Microsoft.Maui.Controls.ItemsView.RemainingItemsThresholdReachedCommandProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T RemainingItemsThresholdReachedCommand<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.ItemsView
-            where TBuilder : PropertyBuilder<System.Windows.Input.ICommand>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.ItemsView.RemainingItemsThresholdReachedCommandProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T RemainingItemsThresholdReachedCommand<T>(this T self,
-        //    System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.ItemsView
-        //{
-        //    var builder = buildBinding(new BindingBuilder<System.Windows.Input.ICommand>(self, Microsoft.Maui.Controls.ItemsView.RemainingItemsThresholdReachedCommandProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T RemainingItemsThresholdReachedCommandParameter<T>(this T self,
             object remainingItemsThresholdReachedCommandParameter)
@@ -175,34 +91,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T RemainingItemsThresholdReachedCommandParameter<T>(this T self,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buildValue)
+        public static T RemainingItemsThresholdReachedCommandParameter<T>(this T self, Func<PropertyContext<object>, IPropertyBuilder<object>> configure)
             where T : Microsoft.Maui.Controls.ItemsView
         {
-            var builder = buildValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ItemsView.RemainingItemsThresholdReachedCommandParameterProperty, builder.GetValue());
+            var context = new PropertyContext<object>(self, Microsoft.Maui.Controls.ItemsView.RemainingItemsThresholdReachedCommandParameterProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T RemainingItemsThresholdReachedCommandParameter<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.ItemsView
-            where TBuilder : PropertyBuilder<object>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.ItemsView.RemainingItemsThresholdReachedCommandParameterProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T RemainingItemsThresholdReachedCommandParameter<T>(this T self,
-        //    System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.ItemsView
-        //{
-        //    var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.ItemsView.RemainingItemsThresholdReachedCommandParameterProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T HorizontalScrollBarVisibility<T>(this T self,
             Microsoft.Maui.ScrollBarVisibility horizontalScrollBarVisibility)
@@ -212,34 +107,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T HorizontalScrollBarVisibility<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.ScrollBarVisibility>, ValueBuilder<Microsoft.Maui.ScrollBarVisibility>> buildValue)
+        public static T HorizontalScrollBarVisibility<T>(this T self, Func<PropertyContext<Microsoft.Maui.ScrollBarVisibility>, IPropertyBuilder<Microsoft.Maui.ScrollBarVisibility>> configure)
             where T : Microsoft.Maui.Controls.ItemsView
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.ScrollBarVisibility>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ItemsView.HorizontalScrollBarVisibilityProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.ScrollBarVisibility>(self, Microsoft.Maui.Controls.ItemsView.HorizontalScrollBarVisibilityProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T HorizontalScrollBarVisibility<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.ItemsView
-            where TBuilder : PropertyBuilder<Microsoft.Maui.ScrollBarVisibility>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.ItemsView.HorizontalScrollBarVisibilityProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T HorizontalScrollBarVisibility<T>(this T self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.ScrollBarVisibility>, BindingBuilder<Microsoft.Maui.ScrollBarVisibility>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.ItemsView
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.ScrollBarVisibility>(self, Microsoft.Maui.Controls.ItemsView.HorizontalScrollBarVisibilityProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T VerticalScrollBarVisibility<T>(this T self,
             Microsoft.Maui.ScrollBarVisibility verticalScrollBarVisibility)
@@ -249,34 +123,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T VerticalScrollBarVisibility<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.ScrollBarVisibility>, ValueBuilder<Microsoft.Maui.ScrollBarVisibility>> buildValue)
+        public static T VerticalScrollBarVisibility<T>(this T self, Func<PropertyContext<Microsoft.Maui.ScrollBarVisibility>, IPropertyBuilder<Microsoft.Maui.ScrollBarVisibility>> configure)
             where T : Microsoft.Maui.Controls.ItemsView
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.ScrollBarVisibility>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ItemsView.VerticalScrollBarVisibilityProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.ScrollBarVisibility>(self, Microsoft.Maui.Controls.ItemsView.VerticalScrollBarVisibilityProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T VerticalScrollBarVisibility<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.ItemsView
-            where TBuilder : PropertyBuilder<Microsoft.Maui.ScrollBarVisibility>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.ItemsView.VerticalScrollBarVisibilityProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T VerticalScrollBarVisibility<T>(this T self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.ScrollBarVisibility>, BindingBuilder<Microsoft.Maui.ScrollBarVisibility>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.ItemsView
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.ScrollBarVisibility>(self, Microsoft.Maui.Controls.ItemsView.VerticalScrollBarVisibilityProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T RemainingItemsThreshold<T>(this T self,
             int remainingItemsThreshold)
@@ -286,34 +139,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T RemainingItemsThreshold<T>(this T self,
-            System.Func<ValueBuilder<int>, ValueBuilder<int>> buildValue)
+        public static T RemainingItemsThreshold<T>(this T self, Func<PropertyContext<int>, IPropertyBuilder<int>> configure)
             where T : Microsoft.Maui.Controls.ItemsView
         {
-            var builder = buildValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ItemsView.RemainingItemsThresholdProperty, builder.GetValue());
+            var context = new PropertyContext<int>(self, Microsoft.Maui.Controls.ItemsView.RemainingItemsThresholdProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T RemainingItemsThreshold<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.ItemsView
-            where TBuilder : PropertyBuilder<int>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.ItemsView.RemainingItemsThresholdProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T RemainingItemsThreshold<T>(this T self,
-        //    System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.ItemsView
-        //{
-        //    var builder = buildBinding(new BindingBuilder<int>(self, Microsoft.Maui.Controls.ItemsView.RemainingItemsThresholdProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T ItemTemplate<T>(this T self,
             Microsoft.Maui.Controls.DataTemplate itemTemplate)
@@ -323,34 +155,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ItemTemplate<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.DataTemplate>, ValueBuilder<Microsoft.Maui.Controls.DataTemplate>> buildValue)
+        public static T ItemTemplate<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.DataTemplate>, IPropertyBuilder<Microsoft.Maui.Controls.DataTemplate>> configure)
             where T : Microsoft.Maui.Controls.ItemsView
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ItemsView.ItemTemplateProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.ItemsView.ItemTemplateProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T ItemTemplate<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.ItemsView
-            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.DataTemplate>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.ItemsView.ItemTemplateProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T ItemTemplate<T>(this T self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.ItemsView
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.ItemsView.ItemTemplateProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T ItemTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.ItemsView
@@ -367,34 +178,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ItemsUpdatingScrollMode<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.ItemsUpdatingScrollMode>, ValueBuilder<Microsoft.Maui.Controls.ItemsUpdatingScrollMode>> buildValue)
+        public static T ItemsUpdatingScrollMode<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.ItemsUpdatingScrollMode>, IPropertyBuilder<Microsoft.Maui.Controls.ItemsUpdatingScrollMode>> configure)
             where T : Microsoft.Maui.Controls.ItemsView
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ItemsUpdatingScrollMode>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ItemsView.ItemsUpdatingScrollModeProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.Controls.ItemsUpdatingScrollMode>(self, Microsoft.Maui.Controls.ItemsView.ItemsUpdatingScrollModeProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T ItemsUpdatingScrollMode<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.ItemsView
-            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.ItemsUpdatingScrollMode>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.ItemsView.ItemsUpdatingScrollModeProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T ItemsUpdatingScrollMode<T>(this T self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.ItemsUpdatingScrollMode>, BindingBuilder<Microsoft.Maui.Controls.ItemsUpdatingScrollMode>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.ItemsView
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ItemsUpdatingScrollMode>(self, Microsoft.Maui.Controls.ItemsView.ItemsUpdatingScrollModeProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T OnScrollToRequested<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.ScrollToRequestEventArgs> handler)
             where T : Microsoft.Maui.Controls.ItemsView

@@ -20,34 +20,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Date<T>(this T self,
-            System.Func<ValueBuilder<System.DateTime>, ValueBuilder<System.DateTime>> buildValue)
+        public static T Date<T>(this T self, Func<PropertyContext<System.DateTime>, IPropertyBuilder<System.DateTime>> configure)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            var builder = buildValue(new ValueBuilder<System.DateTime>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.DatePicker.DateProperty, builder.GetValue());
+            var context = new PropertyContext<System.DateTime>(self, Microsoft.Maui.Controls.DatePicker.DateProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T Date<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.DatePicker
-            where TBuilder : PropertyBuilder<System.DateTime>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.DatePicker.DateProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T Date<T>(this T self,
-        //    System.Func<BindingBuilder<System.DateTime>, BindingBuilder<System.DateTime>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.DatePicker
-        //{
-        //    var builder = buildBinding(new BindingBuilder<System.DateTime>(self, Microsoft.Maui.Controls.DatePicker.DateProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T Format<T>(this T self,
             string format)
@@ -57,34 +36,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Format<T>(this T self,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
+        public static T Format<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.DatePicker.FormatProperty, builder.GetValue());
+            var context = new PropertyContext<string>(self, Microsoft.Maui.Controls.DatePicker.FormatProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T Format<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.DatePicker
-            where TBuilder : PropertyBuilder<string>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.DatePicker.FormatProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T Format<T>(this T self,
-        //    System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.DatePicker
-        //{
-        //    var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.DatePicker.FormatProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T MaximumDate<T>(this T self,
             System.DateTime maximumDate)
@@ -94,34 +52,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T MaximumDate<T>(this T self,
-            System.Func<ValueBuilder<System.DateTime>, ValueBuilder<System.DateTime>> buildValue)
+        public static T MaximumDate<T>(this T self, Func<PropertyContext<System.DateTime>, IPropertyBuilder<System.DateTime>> configure)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            var builder = buildValue(new ValueBuilder<System.DateTime>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.DatePicker.MaximumDateProperty, builder.GetValue());
+            var context = new PropertyContext<System.DateTime>(self, Microsoft.Maui.Controls.DatePicker.MaximumDateProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T MaximumDate<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.DatePicker
-            where TBuilder : PropertyBuilder<System.DateTime>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.DatePicker.MaximumDateProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T MaximumDate<T>(this T self,
-        //    System.Func<BindingBuilder<System.DateTime>, BindingBuilder<System.DateTime>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.DatePicker
-        //{
-        //    var builder = buildBinding(new BindingBuilder<System.DateTime>(self, Microsoft.Maui.Controls.DatePicker.MaximumDateProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T MinimumDate<T>(this T self,
             System.DateTime minimumDate)
@@ -131,34 +68,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T MinimumDate<T>(this T self,
-            System.Func<ValueBuilder<System.DateTime>, ValueBuilder<System.DateTime>> buildValue)
+        public static T MinimumDate<T>(this T self, Func<PropertyContext<System.DateTime>, IPropertyBuilder<System.DateTime>> configure)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            var builder = buildValue(new ValueBuilder<System.DateTime>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.DatePicker.MinimumDateProperty, builder.GetValue());
+            var context = new PropertyContext<System.DateTime>(self, Microsoft.Maui.Controls.DatePicker.MinimumDateProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T MinimumDate<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.DatePicker
-            where TBuilder : PropertyBuilder<System.DateTime>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.DatePicker.MinimumDateProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T MinimumDate<T>(this T self,
-        //    System.Func<BindingBuilder<System.DateTime>, BindingBuilder<System.DateTime>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.DatePicker
-        //{
-        //    var builder = buildBinding(new BindingBuilder<System.DateTime>(self, Microsoft.Maui.Controls.DatePicker.MinimumDateProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T TextColor<T>(this T self,
             Microsoft.Maui.Graphics.Color textColor)
@@ -168,34 +84,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T TextColor<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
+        public static T TextColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.DatePicker.TextColorProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.DatePicker.TextColorProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T TextColor<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.DatePicker
-            where TBuilder : PropertyBuilder<Microsoft.Maui.Graphics.Color>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.DatePicker.TextColorProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T TextColor<T>(this T self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.DatePicker
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.DatePicker.TextColorProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static Task<bool> AnimateTextColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.DatePicker
@@ -214,34 +109,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T CharacterSpacing<T>(this T self,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
+        public static T CharacterSpacing<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.DatePicker.CharacterSpacingProperty, builder.GetValue());
+            var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.DatePicker.CharacterSpacingProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T CharacterSpacing<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.DatePicker
-            where TBuilder : PropertyBuilder<double>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.DatePicker.CharacterSpacingProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T CharacterSpacing<T>(this T self,
-        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.DatePicker
-        //{
-        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.DatePicker.CharacterSpacingProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static Task<bool> AnimateCharacterSpacingTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.DatePicker
@@ -260,34 +134,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FontAttributes<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.FontAttributes>, ValueBuilder<Microsoft.Maui.Controls.FontAttributes>> buildValue)
+        public static T FontAttributes<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.FontAttributes>, IPropertyBuilder<Microsoft.Maui.Controls.FontAttributes>> configure)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.FontAttributes>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.DatePicker.FontAttributesProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.Controls.FontAttributes>(self, Microsoft.Maui.Controls.DatePicker.FontAttributesProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T FontAttributes<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.DatePicker
-            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.FontAttributes>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.DatePicker.FontAttributesProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T FontAttributes<T>(this T self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.FontAttributes>, BindingBuilder<Microsoft.Maui.Controls.FontAttributes>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.DatePicker
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.FontAttributes>(self, Microsoft.Maui.Controls.DatePicker.FontAttributesProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T FontFamily<T>(this T self,
             string fontFamily)
@@ -297,34 +150,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FontFamily<T>(this T self,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
+        public static T FontFamily<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.DatePicker.FontFamilyProperty, builder.GetValue());
+            var context = new PropertyContext<string>(self, Microsoft.Maui.Controls.DatePicker.FontFamilyProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T FontFamily<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.DatePicker
-            where TBuilder : PropertyBuilder<string>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.DatePicker.FontFamilyProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T FontFamily<T>(this T self,
-        //    System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.DatePicker
-        //{
-        //    var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.DatePicker.FontFamilyProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T FontSize<T>(this T self,
             double fontSize)
@@ -334,34 +166,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FontSize<T>(this T self,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
+        public static T FontSize<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.DatePicker.FontSizeProperty, builder.GetValue());
+            var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.DatePicker.FontSizeProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T FontSize<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.DatePicker
-            where TBuilder : PropertyBuilder<double>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.DatePicker.FontSizeProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T FontSize<T>(this T self,
-        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.DatePicker
-        //{
-        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.DatePicker.FontSizeProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static Task<bool> AnimateFontSizeTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.DatePicker
@@ -380,34 +191,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FontAutoScalingEnabled<T>(this T self,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
+        public static T FontAutoScalingEnabled<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.DatePicker.FontAutoScalingEnabledProperty, builder.GetValue());
+            var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.DatePicker.FontAutoScalingEnabledProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T FontAutoScalingEnabled<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.DatePicker
-            where TBuilder : PropertyBuilder<bool>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.DatePicker.FontAutoScalingEnabledProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T FontAutoScalingEnabled<T>(this T self,
-        //    System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.DatePicker
-        //{
-        //    var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.DatePicker.FontAutoScalingEnabledProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T OnDateSelected<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.DateChangedEventArgs> handler)
             where T : Microsoft.Maui.Controls.DatePicker

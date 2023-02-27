@@ -20,34 +20,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T AutomationId<T>(this T self,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
+        public static T AutomationId<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.Element
         {
-            var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Element.AutomationIdProperty, builder.GetValue());
+            var context = new PropertyContext<string>(self, Microsoft.Maui.Controls.Element.AutomationIdProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T AutomationId<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.Element
-            where TBuilder : PropertyBuilder<string>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Element.AutomationIdProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T AutomationId<T>(this T self,
-        //    System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.Element
-        //{
-        //    var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.Element.AutomationIdProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T ClassId<T>(this T self,
             string classId)
@@ -57,34 +36,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ClassId<T>(this T self,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
+        public static T ClassId<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.Element
         {
-            var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Element.ClassIdProperty, builder.GetValue());
+            var context = new PropertyContext<string>(self, Microsoft.Maui.Controls.Element.ClassIdProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T ClassId<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.Element
-            where TBuilder : PropertyBuilder<string>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Element.ClassIdProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T ClassId<T>(this T self,
-        //    System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.Element
-        //{
-        //    var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.Element.ClassIdProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T Effects<T>(this T self,
             IList<Microsoft.Maui.Controls.Effect> effects)

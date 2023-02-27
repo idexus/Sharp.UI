@@ -20,34 +20,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ShellItemTemplate<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.DataTemplate>, ValueBuilder<Microsoft.Maui.Controls.DataTemplate>> buildValue)
+        public static T ShellItemTemplate<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.DataTemplate>, IPropertyBuilder<Microsoft.Maui.Controls.DataTemplate>> configure)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.ItemTemplateProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.Shell.ItemTemplateProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T ShellItemTemplate<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.BaseShellItem
-            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.DataTemplate>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Shell.ItemTemplateProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T ShellItemTemplate<T>(this T self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.BaseShellItem
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.Shell.ItemTemplateProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T ShellItemTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.BaseShellItem

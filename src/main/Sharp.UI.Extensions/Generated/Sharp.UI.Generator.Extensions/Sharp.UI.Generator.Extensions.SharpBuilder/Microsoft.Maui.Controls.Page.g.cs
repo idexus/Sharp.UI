@@ -20,34 +20,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T BackgroundImageSource<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.ImageSource>, ValueBuilder<Microsoft.Maui.Controls.ImageSource>> buildValue)
+        public static T BackgroundImageSource<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.ImageSource>, IPropertyBuilder<Microsoft.Maui.Controls.ImageSource>> configure)
             where T : Microsoft.Maui.Controls.Page
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Page.BackgroundImageSourceProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.Controls.ImageSource>(self, Microsoft.Maui.Controls.Page.BackgroundImageSourceProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T BackgroundImageSource<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.Page
-            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.ImageSource>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Page.BackgroundImageSourceProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T BackgroundImageSource<T>(this T self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.ImageSource>, BindingBuilder<Microsoft.Maui.Controls.ImageSource>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.Page
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ImageSource>(self, Microsoft.Maui.Controls.Page.BackgroundImageSourceProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T IconImageSource<T>(this T self,
             Microsoft.Maui.Controls.ImageSource iconImageSource)
@@ -57,34 +36,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T IconImageSource<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.ImageSource>, ValueBuilder<Microsoft.Maui.Controls.ImageSource>> buildValue)
+        public static T IconImageSource<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.ImageSource>, IPropertyBuilder<Microsoft.Maui.Controls.ImageSource>> configure)
             where T : Microsoft.Maui.Controls.Page
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Page.IconImageSourceProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.Controls.ImageSource>(self, Microsoft.Maui.Controls.Page.IconImageSourceProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T IconImageSource<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.Page
-            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.ImageSource>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Page.IconImageSourceProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T IconImageSource<T>(this T self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.ImageSource>, BindingBuilder<Microsoft.Maui.Controls.ImageSource>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.Page
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ImageSource>(self, Microsoft.Maui.Controls.Page.IconImageSourceProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T IsBusy<T>(this T self,
             bool isBusy)
@@ -94,34 +52,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T IsBusy<T>(this T self,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
+        public static T IsBusy<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.Page
         {
-            var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Page.IsBusyProperty, builder.GetValue());
+            var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.Page.IsBusyProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T IsBusy<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.Page
-            where TBuilder : PropertyBuilder<bool>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Page.IsBusyProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T IsBusy<T>(this T self,
-        //    System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.Page
-        //{
-        //    var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.Page.IsBusyProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T Padding<T>(this T self,
             Microsoft.Maui.Thickness padding)
@@ -131,34 +68,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Padding<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Thickness>, ValueBuilder<Microsoft.Maui.Thickness>> buildValue)
+        public static T Padding<T>(this T self, Func<PropertyContext<Microsoft.Maui.Thickness>, IPropertyBuilder<Microsoft.Maui.Thickness>> configure)
             where T : Microsoft.Maui.Controls.Page
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Thickness>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Page.PaddingProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.Thickness>(self, Microsoft.Maui.Controls.Page.PaddingProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T Padding<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.Page
-            where TBuilder : PropertyBuilder<Microsoft.Maui.Thickness>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Page.PaddingProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T Padding<T>(this T self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.Thickness>, BindingBuilder<Microsoft.Maui.Thickness>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.Page
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Thickness>(self, Microsoft.Maui.Controls.Page.PaddingProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T Title<T>(this T self,
             string title)
@@ -168,34 +84,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Title<T>(this T self,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
+        public static T Title<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.Page
         {
-            var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Page.TitleProperty, builder.GetValue());
+            var context = new PropertyContext<string>(self, Microsoft.Maui.Controls.Page.TitleProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T Title<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.Page
-            where TBuilder : PropertyBuilder<string>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Page.TitleProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T Title<T>(this T self,
-        //    System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.Page
-        //{
-        //    var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.Page.TitleProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T ToolbarItems<T>(this T self,
             IList<Microsoft.Maui.Controls.ToolbarItem> toolbarItems)

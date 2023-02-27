@@ -20,34 +20,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Point<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Point>, ValueBuilder<Microsoft.Maui.Graphics.Point>> buildValue)
+        public static T Point<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Point>, IPropertyBuilder<Microsoft.Maui.Graphics.Point>> configure)
             where T : Microsoft.Maui.Controls.Shapes.LineSegment
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Point>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.LineSegment.PointProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.Graphics.Point>(self, Microsoft.Maui.Controls.Shapes.LineSegment.PointProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T Point<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.Shapes.LineSegment
-            where TBuilder : PropertyBuilder<Microsoft.Maui.Graphics.Point>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.LineSegment.PointProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T Point<T>(this T self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.Graphics.Point>, BindingBuilder<Microsoft.Maui.Graphics.Point>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.Shapes.LineSegment
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Point>(self, Microsoft.Maui.Controls.Shapes.LineSegment.PointProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
     }
 }

@@ -20,34 +20,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T TouchPoints<T>(this T self,
-            System.Func<ValueBuilder<int>, ValueBuilder<int>> buildValue)
+        public static T TouchPoints<T>(this T self, Func<PropertyContext<int>, IPropertyBuilder<int>> configure)
             where T : Microsoft.Maui.Controls.PanGestureRecognizer
         {
-            var builder = buildValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.PanGestureRecognizer.TouchPointsProperty, builder.GetValue());
+            var context = new PropertyContext<int>(self, Microsoft.Maui.Controls.PanGestureRecognizer.TouchPointsProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T TouchPoints<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.PanGestureRecognizer
-            where TBuilder : PropertyBuilder<int>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.PanGestureRecognizer.TouchPointsProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T TouchPoints<T>(this T self,
-        //    System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.PanGestureRecognizer
-        //{
-        //    var builder = buildBinding(new BindingBuilder<int>(self, Microsoft.Maui.Controls.PanGestureRecognizer.TouchPointsProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T OnPanUpdated<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.PanUpdatedEventArgs> handler)
             where T : Microsoft.Maui.Controls.PanGestureRecognizer

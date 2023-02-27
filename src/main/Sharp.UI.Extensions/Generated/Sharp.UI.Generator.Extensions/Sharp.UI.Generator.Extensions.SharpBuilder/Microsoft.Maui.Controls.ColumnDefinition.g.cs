@@ -19,30 +19,12 @@ namespace Sharp.UI
             return self;
         }
         
-        public static Microsoft.Maui.Controls.ColumnDefinition Width(this Microsoft.Maui.Controls.ColumnDefinition self,
-            System.Func<ValueBuilder<Microsoft.Maui.GridLength>, ValueBuilder<Microsoft.Maui.GridLength>> buildValue)
+        public static Microsoft.Maui.Controls.ColumnDefinition Width(this Microsoft.Maui.Controls.ColumnDefinition self, Func<PropertyContext<Microsoft.Maui.GridLength>, IPropertyBuilder<Microsoft.Maui.GridLength>> configure)
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.GridLength>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ColumnDefinition.WidthProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.GridLength>(self, Microsoft.Maui.Controls.ColumnDefinition.WidthProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static Microsoft.Maui.Controls.ColumnDefinition Width<TBuilder>(this Microsoft.Maui.Controls.ColumnDefinition self, System.Action<TBuilder> configure)
-            where TBuilder : PropertyBuilder<Microsoft.Maui.GridLength>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.ColumnDefinition.WidthProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-        }
-
-        //public static Microsoft.Maui.Controls.ColumnDefinition Width(this Microsoft.Maui.Controls.ColumnDefinition self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.GridLength>, BindingBuilder<Microsoft.Maui.GridLength>> buildBinding)
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.GridLength>(self, Microsoft.Maui.Controls.ColumnDefinition.WidthProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static Microsoft.Maui.Controls.ColumnDefinition OnSizeChanged(this Microsoft.Maui.Controls.ColumnDefinition self, System.EventHandler handler)
         {

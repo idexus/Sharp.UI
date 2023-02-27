@@ -19,30 +19,12 @@ namespace Sharp.UI
             return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.RoundRectangle CornerRadius(this Microsoft.Maui.Controls.Shapes.RoundRectangle self,
-            System.Func<ValueBuilder<Microsoft.Maui.CornerRadius>, ValueBuilder<Microsoft.Maui.CornerRadius>> buildValue)
+        public static Microsoft.Maui.Controls.Shapes.RoundRectangle CornerRadius(this Microsoft.Maui.Controls.Shapes.RoundRectangle self, Func<PropertyContext<Microsoft.Maui.CornerRadius>, IPropertyBuilder<Microsoft.Maui.CornerRadius>> configure)
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.CornerRadius>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.RoundRectangle.CornerRadiusProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.CornerRadius>(self, Microsoft.Maui.Controls.Shapes.RoundRectangle.CornerRadiusProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static Microsoft.Maui.Controls.Shapes.RoundRectangle CornerRadius<TBuilder>(this Microsoft.Maui.Controls.Shapes.RoundRectangle self, System.Action<TBuilder> configure)
-            where TBuilder : PropertyBuilder<Microsoft.Maui.CornerRadius>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.RoundRectangle.CornerRadiusProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-        }
-
-        //public static Microsoft.Maui.Controls.Shapes.RoundRectangle CornerRadius(this Microsoft.Maui.Controls.Shapes.RoundRectangle self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.CornerRadius>, BindingBuilder<Microsoft.Maui.CornerRadius>> buildBinding)
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.CornerRadius>(self, Microsoft.Maui.Controls.Shapes.RoundRectangle.CornerRadiusProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
     }
 }

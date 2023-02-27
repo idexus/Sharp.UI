@@ -20,34 +20,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FlyoutDisplayOptions<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.FlyoutDisplayOptions>, ValueBuilder<Microsoft.Maui.Controls.FlyoutDisplayOptions>> buildValue)
+        public static T FlyoutDisplayOptions<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.FlyoutDisplayOptions>, IPropertyBuilder<Microsoft.Maui.Controls.FlyoutDisplayOptions>> configure)
             where T : Microsoft.Maui.Controls.ShellGroupItem
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.FlyoutDisplayOptions>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ShellGroupItem.FlyoutDisplayOptionsProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.Controls.FlyoutDisplayOptions>(self, Microsoft.Maui.Controls.ShellGroupItem.FlyoutDisplayOptionsProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T FlyoutDisplayOptions<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.ShellGroupItem
-            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.FlyoutDisplayOptions>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.ShellGroupItem.FlyoutDisplayOptionsProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T FlyoutDisplayOptions<T>(this T self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.FlyoutDisplayOptions>, BindingBuilder<Microsoft.Maui.Controls.FlyoutDisplayOptions>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.ShellGroupItem
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.FlyoutDisplayOptions>(self, Microsoft.Maui.Controls.ShellGroupItem.FlyoutDisplayOptionsProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
     }
 }

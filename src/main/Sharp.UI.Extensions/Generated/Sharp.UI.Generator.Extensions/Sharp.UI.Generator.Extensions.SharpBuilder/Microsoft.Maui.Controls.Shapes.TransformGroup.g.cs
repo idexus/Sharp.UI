@@ -28,22 +28,12 @@ namespace Sharp.UI
             return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.TransformGroup Children<TBuilder>(this Microsoft.Maui.Controls.Shapes.TransformGroup self, System.Action<TBuilder> configure)
-            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.Shapes.TransformCollection>
+        public static Microsoft.Maui.Controls.Shapes.TransformGroup Children(this Microsoft.Maui.Controls.Shapes.TransformGroup self, Func<PropertyContext<Microsoft.Maui.Controls.Shapes.TransformCollection>, IPropertyBuilder<Microsoft.Maui.Controls.Shapes.TransformCollection>> configure)
         {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.TransformGroup.ChildrenProperty);
-            configure(builder);
-            builder.Build();
+            var context = new PropertyContext<Microsoft.Maui.Controls.Shapes.TransformCollection>(self, Microsoft.Maui.Controls.Shapes.TransformGroup.ChildrenProperty);
+            configure(context).Build();
             return self;
         }
-
-        //public static Microsoft.Maui.Controls.Shapes.TransformGroup Children(this Microsoft.Maui.Controls.Shapes.TransformGroup self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.Shapes.TransformCollection>, BindingBuilder<Microsoft.Maui.Controls.Shapes.TransformCollection>> buildBinding)
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Shapes.TransformCollection>(self, Microsoft.Maui.Controls.Shapes.TransformGroup.ChildrenProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
     }
 }

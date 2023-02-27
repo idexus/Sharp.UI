@@ -44,7 +44,7 @@ namespace ExampleApp
 							.Fill(Colors.Blue)
 							.Stroke(Colors.Red)
 							.StrokeThickness(3)
-							.Scale(e => e.Default(1).OnPhone(0.5))
+							.Scale(e => e.OnPhone(0.5).Default(1))
 							.Points(
 								new Point(0,48),
 								new Point(0,144),
@@ -111,7 +111,7 @@ namespace ExampleApp
 							.Stroke(Colors.Red)
                             .StrokeThickness(12)
                             .StrokeLineJoin(PenLineJoin.Round)
-                            .Scale(e => e.Default(0.7).OnPhone(0.25))
+                            .Scale(e => e.OnPhone(0.25).Default(0.7))
 							.Data(new PathGeometry()
 								.Figures(
 

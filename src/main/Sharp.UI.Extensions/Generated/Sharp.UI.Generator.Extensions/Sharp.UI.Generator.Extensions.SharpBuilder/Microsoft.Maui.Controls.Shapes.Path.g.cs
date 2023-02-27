@@ -19,30 +19,12 @@ namespace Sharp.UI
             return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.Path Data(this Microsoft.Maui.Controls.Shapes.Path self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.Shapes.Geometry>, ValueBuilder<Microsoft.Maui.Controls.Shapes.Geometry>> buildValue)
+        public static Microsoft.Maui.Controls.Shapes.Path Data(this Microsoft.Maui.Controls.Shapes.Path self, Func<PropertyContext<Microsoft.Maui.Controls.Shapes.Geometry>, IPropertyBuilder<Microsoft.Maui.Controls.Shapes.Geometry>> configure)
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Shapes.Geometry>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Path.DataProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.Controls.Shapes.Geometry>(self, Microsoft.Maui.Controls.Shapes.Path.DataProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static Microsoft.Maui.Controls.Shapes.Path Data<TBuilder>(this Microsoft.Maui.Controls.Shapes.Path self, System.Action<TBuilder> configure)
-            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.Shapes.Geometry>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.Path.DataProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-        }
-
-        //public static Microsoft.Maui.Controls.Shapes.Path Data(this Microsoft.Maui.Controls.Shapes.Path self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.Shapes.Geometry>, BindingBuilder<Microsoft.Maui.Controls.Shapes.Geometry>> buildBinding)
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Shapes.Geometry>(self, Microsoft.Maui.Controls.Shapes.Path.DataProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static Microsoft.Maui.Controls.Shapes.Path RenderTransform(this Microsoft.Maui.Controls.Shapes.Path self,
             Microsoft.Maui.Controls.Shapes.Transform renderTransform)
@@ -51,30 +33,12 @@ namespace Sharp.UI
             return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.Path RenderTransform(this Microsoft.Maui.Controls.Shapes.Path self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.Shapes.Transform>, ValueBuilder<Microsoft.Maui.Controls.Shapes.Transform>> buildValue)
+        public static Microsoft.Maui.Controls.Shapes.Path RenderTransform(this Microsoft.Maui.Controls.Shapes.Path self, Func<PropertyContext<Microsoft.Maui.Controls.Shapes.Transform>, IPropertyBuilder<Microsoft.Maui.Controls.Shapes.Transform>> configure)
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Shapes.Transform>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Path.RenderTransformProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.Controls.Shapes.Transform>(self, Microsoft.Maui.Controls.Shapes.Path.RenderTransformProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static Microsoft.Maui.Controls.Shapes.Path RenderTransform<TBuilder>(this Microsoft.Maui.Controls.Shapes.Path self, System.Action<TBuilder> configure)
-            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.Shapes.Transform>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.Path.RenderTransformProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-        }
-
-        //public static Microsoft.Maui.Controls.Shapes.Path RenderTransform(this Microsoft.Maui.Controls.Shapes.Path self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.Shapes.Transform>, BindingBuilder<Microsoft.Maui.Controls.Shapes.Transform>> buildBinding)
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Shapes.Transform>(self, Microsoft.Maui.Controls.Shapes.Path.RenderTransformProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
     }
 }

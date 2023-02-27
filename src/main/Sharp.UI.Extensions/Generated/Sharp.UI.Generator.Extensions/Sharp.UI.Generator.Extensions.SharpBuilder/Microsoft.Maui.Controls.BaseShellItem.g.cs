@@ -20,34 +20,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FlyoutIcon<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.ImageSource>, ValueBuilder<Microsoft.Maui.Controls.ImageSource>> buildValue)
+        public static T FlyoutIcon<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.ImageSource>, IPropertyBuilder<Microsoft.Maui.Controls.ImageSource>> configure)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.BaseShellItem.FlyoutIconProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.Controls.ImageSource>(self, Microsoft.Maui.Controls.BaseShellItem.FlyoutIconProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T FlyoutIcon<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.BaseShellItem
-            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.ImageSource>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.BaseShellItem.FlyoutIconProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T FlyoutIcon<T>(this T self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.ImageSource>, BindingBuilder<Microsoft.Maui.Controls.ImageSource>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.BaseShellItem
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ImageSource>(self, Microsoft.Maui.Controls.BaseShellItem.FlyoutIconProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T Icon<T>(this T self,
             Microsoft.Maui.Controls.ImageSource icon)
@@ -57,34 +36,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Icon<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.ImageSource>, ValueBuilder<Microsoft.Maui.Controls.ImageSource>> buildValue)
+        public static T Icon<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.ImageSource>, IPropertyBuilder<Microsoft.Maui.Controls.ImageSource>> configure)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.BaseShellItem.IconProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.Controls.ImageSource>(self, Microsoft.Maui.Controls.BaseShellItem.IconProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T Icon<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.BaseShellItem
-            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.ImageSource>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.BaseShellItem.IconProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T Icon<T>(this T self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.ImageSource>, BindingBuilder<Microsoft.Maui.Controls.ImageSource>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.BaseShellItem
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ImageSource>(self, Microsoft.Maui.Controls.BaseShellItem.IconProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T IsEnabled<T>(this T self,
             bool isEnabled)
@@ -94,34 +52,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T IsEnabled<T>(this T self,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
+        public static T IsEnabled<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
-            var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.BaseShellItem.IsEnabledProperty, builder.GetValue());
+            var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.BaseShellItem.IsEnabledProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T IsEnabled<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.BaseShellItem
-            where TBuilder : PropertyBuilder<bool>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.BaseShellItem.IsEnabledProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T IsEnabled<T>(this T self,
-        //    System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.BaseShellItem
-        //{
-        //    var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.BaseShellItem.IsEnabledProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T Route<T>(this T self,
             string route)
@@ -152,34 +89,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Title<T>(this T self,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
+        public static T Title<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
-            var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.BaseShellItem.TitleProperty, builder.GetValue());
+            var context = new PropertyContext<string>(self, Microsoft.Maui.Controls.BaseShellItem.TitleProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T Title<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.BaseShellItem
-            where TBuilder : PropertyBuilder<string>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.BaseShellItem.TitleProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T Title<T>(this T self,
-        //    System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.BaseShellItem
-        //{
-        //    var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.BaseShellItem.TitleProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T IsVisible<T>(this T self,
             bool isVisible)
@@ -189,34 +105,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T IsVisible<T>(this T self,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
+        public static T IsVisible<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
-            var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.BaseShellItem.IsVisibleProperty, builder.GetValue());
+            var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.BaseShellItem.IsVisibleProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T IsVisible<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.BaseShellItem
-            where TBuilder : PropertyBuilder<bool>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.BaseShellItem.IsVisibleProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T IsVisible<T>(this T self,
-        //    System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.BaseShellItem
-        //{
-        //    var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.BaseShellItem.IsVisibleProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T FlyoutItemIsVisible<T>(this T self,
             bool flyoutItemIsVisible)

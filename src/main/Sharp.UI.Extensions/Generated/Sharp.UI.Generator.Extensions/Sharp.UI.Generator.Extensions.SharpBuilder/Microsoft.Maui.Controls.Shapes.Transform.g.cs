@@ -20,34 +20,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Value<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.Shapes.Matrix>, ValueBuilder<Microsoft.Maui.Controls.Shapes.Matrix>> buildValue)
+        public static T Value<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.Shapes.Matrix>, IPropertyBuilder<Microsoft.Maui.Controls.Shapes.Matrix>> configure)
             where T : Microsoft.Maui.Controls.Shapes.Transform
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Shapes.Matrix>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Transform.ValueProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.Controls.Shapes.Matrix>(self, Microsoft.Maui.Controls.Shapes.Transform.ValueProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T Value<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.Shapes.Transform
-            where TBuilder : PropertyBuilder<Microsoft.Maui.Controls.Shapes.Matrix>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.Transform.ValueProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T Value<T>(this T self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.Controls.Shapes.Matrix>, BindingBuilder<Microsoft.Maui.Controls.Shapes.Matrix>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.Shapes.Transform
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Shapes.Matrix>(self, Microsoft.Maui.Controls.Shapes.Transform.ValueProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
     }
 }

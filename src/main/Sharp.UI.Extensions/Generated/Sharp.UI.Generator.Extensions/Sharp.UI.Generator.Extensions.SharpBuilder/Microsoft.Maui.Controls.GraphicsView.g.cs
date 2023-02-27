@@ -20,34 +20,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Drawable<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.IDrawable>, ValueBuilder<Microsoft.Maui.Graphics.IDrawable>> buildValue)
+        public static T Drawable<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.IDrawable>, IPropertyBuilder<Microsoft.Maui.Graphics.IDrawable>> configure)
             where T : Microsoft.Maui.Controls.GraphicsView
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.IDrawable>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.GraphicsView.DrawableProperty, builder.GetValue());
+            var context = new PropertyContext<Microsoft.Maui.Graphics.IDrawable>(self, Microsoft.Maui.Controls.GraphicsView.DrawableProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T Drawable<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.GraphicsView
-            where TBuilder : PropertyBuilder<Microsoft.Maui.Graphics.IDrawable>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.GraphicsView.DrawableProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T Drawable<T>(this T self,
-        //    System.Func<BindingBuilder<Microsoft.Maui.Graphics.IDrawable>, BindingBuilder<Microsoft.Maui.Graphics.IDrawable>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.GraphicsView
-        //{
-        //    var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.IDrawable>(self, Microsoft.Maui.Controls.GraphicsView.DrawableProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T OnStartHoverInteraction<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.TouchEventArgs> handler)
             where T : Microsoft.Maui.Controls.GraphicsView

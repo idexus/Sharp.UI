@@ -20,34 +20,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ScaleX<T>(this T self,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
+        public static T ScaleX<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Shapes.ScaleTransform
         {
-            var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.ScaleTransform.ScaleXProperty, builder.GetValue());
+            var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Shapes.ScaleTransform.ScaleXProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T ScaleX<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.Shapes.ScaleTransform
-            where TBuilder : PropertyBuilder<double>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.ScaleTransform.ScaleXProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T ScaleX<T>(this T self,
-        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.Shapes.ScaleTransform
-        //{
-        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.ScaleTransform.ScaleXProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T ScaleY<T>(this T self,
             double scaleY)
@@ -57,34 +36,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ScaleY<T>(this T self,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
+        public static T ScaleY<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Shapes.ScaleTransform
         {
-            var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.ScaleTransform.ScaleYProperty, builder.GetValue());
+            var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Shapes.ScaleTransform.ScaleYProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T ScaleY<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.Shapes.ScaleTransform
-            where TBuilder : PropertyBuilder<double>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.ScaleTransform.ScaleYProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T ScaleY<T>(this T self,
-        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.Shapes.ScaleTransform
-        //{
-        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.ScaleTransform.ScaleYProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T CenterX<T>(this T self,
             double centerX)
@@ -94,34 +52,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T CenterX<T>(this T self,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
+        public static T CenterX<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Shapes.ScaleTransform
         {
-            var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.ScaleTransform.CenterXProperty, builder.GetValue());
+            var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Shapes.ScaleTransform.CenterXProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T CenterX<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.Shapes.ScaleTransform
-            where TBuilder : PropertyBuilder<double>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.ScaleTransform.CenterXProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T CenterX<T>(this T self,
-        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.Shapes.ScaleTransform
-        //{
-        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.ScaleTransform.CenterXProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
         public static T CenterY<T>(this T self,
             double centerY)
@@ -131,34 +68,13 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T CenterY<T>(this T self,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
+        public static T CenterY<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Shapes.ScaleTransform
         {
-            var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.ScaleTransform.CenterYProperty, builder.GetValue());
+            var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Shapes.ScaleTransform.CenterYProperty);
+            configure(context).Build();
             return self;
         }
-        
-        public static T CenterY<T, TBuilder>(this T self,System.Action<TBuilder> configure)
-            where T : Microsoft.Maui.Controls.Shapes.ScaleTransform
-            where TBuilder : PropertyBuilder<double>
-        {
-            var builder = TBuilder(self, Microsoft.Maui.Controls.Shapes.ScaleTransform.CenterYProperty);
-            configure(builder);
-            builder.Build();
-            return self;
-
-        }
-
-        //public static T CenterY<T>(this T self,
-        //    System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
-        //    where T : Microsoft.Maui.Controls.Shapes.ScaleTransform
-        //{
-        //    var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.ScaleTransform.CenterYProperty));
-        //    builder.Build();
-        //    return self;
-        //}
         
     }
 }
