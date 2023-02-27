@@ -32,8 +32,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.TableIntent intent)
             where T : Microsoft.Maui.Controls.TableView
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property Intent");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property Intent");
             self.Intent = intent;
             return self;
         }
@@ -76,8 +75,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.Internals.TableModel model)
             where T : Microsoft.Maui.Controls.TableView
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property Model");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property Model");
             self.Model = model;
             return self;
         }

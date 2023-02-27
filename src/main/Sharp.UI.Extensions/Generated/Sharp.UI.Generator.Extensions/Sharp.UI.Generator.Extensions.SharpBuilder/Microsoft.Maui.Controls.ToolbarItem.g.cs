@@ -16,8 +16,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.ToolbarItemOrder order)
             where T : Microsoft.Maui.Controls.ToolbarItem
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property Order");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property Order");
             self.Order = order;
             return self;
         }
@@ -26,8 +25,7 @@ namespace Sharp.UI
             int priority)
             where T : Microsoft.Maui.Controls.ToolbarItem
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property Priority");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property Priority");
             self.Priority = priority;
             return self;
         }

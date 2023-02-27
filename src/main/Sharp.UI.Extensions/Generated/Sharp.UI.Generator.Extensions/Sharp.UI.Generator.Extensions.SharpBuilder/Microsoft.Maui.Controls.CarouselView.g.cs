@@ -234,8 +234,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.IndicatorView indicatorView)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property IndicatorView");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property IndicatorView");
             self.IndicatorView = indicatorView;
             return self;
         }
@@ -244,8 +243,7 @@ namespace Sharp.UI
             bool isScrolling)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property IsScrolling");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property IsScrolling");
             self.IsScrolling = isScrolling;
             return self;
         }

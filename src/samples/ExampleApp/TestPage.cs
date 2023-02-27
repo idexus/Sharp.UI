@@ -15,6 +15,8 @@ public partial class TestPage : ContentPage
     {
         Resources = new ResourceDictionary
         {
+            { "myColor", Colors.Yellow },
+
             new Style<Label>(e => e
                 .TextColor(AppColors.Gray200)
                 .CenterInContainer()),
@@ -57,6 +59,7 @@ public partial class TestPage : ContentPage
             new VerticalStackLayout(out var vStack, e => e.VerticalOptions(LayoutOptions.Center))
             {
                 new Label(out var label)
+                    .TextColor(e => e.DynamicResource("myColor"))
                     .Text("Only in Code :)")
                     .FontSize(45),
                     

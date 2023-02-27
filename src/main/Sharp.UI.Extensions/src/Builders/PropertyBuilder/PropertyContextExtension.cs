@@ -90,5 +90,10 @@ namespace Sharp.UI
 
         public static PropertyThemeBuilder<T> OnDark<T>(this PropertyContext<T> self, Func<PropertyContext<T>, IPropertyBuilder<T>> configure)
             => new PropertyThemeBuilder<T>(self).OnDark(configure);
+
+        // -- PropertyDynamicResourcesBuilder --
+
+        public static PropertyDynamicResourcesBuilder<T> DynamicResource<T>(this PropertyContext<T> self, string key)
+            => new PropertyDynamicResourcesBuilder<T>(self).DynamicResource(key);
     }
 }

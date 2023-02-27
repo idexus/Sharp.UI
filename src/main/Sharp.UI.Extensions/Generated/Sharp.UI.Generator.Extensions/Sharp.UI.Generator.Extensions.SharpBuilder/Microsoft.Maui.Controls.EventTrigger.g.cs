@@ -31,8 +31,7 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.EventTrigger Event(this Microsoft.Maui.Controls.EventTrigger self,
             string @event)
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property Event");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property Event");
             self.Event = @event;
             return self;
         }

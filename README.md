@@ -144,6 +144,47 @@ Additionally, some common properties can be set directly as constructor argument
 new Label("This is a test")
 ```
 
+## Inline bindable property configuration
+
+#### Property binding
+
+One way to configure a bindable property inline is to use the `Path` method and additional extension methods to bind the property to a data source. For example:
+
+```cs
+new Label().FontSize(e => e.Path("MyFontSize"))
+new Label().Text(e => e.Path("Value").Source(slider).StringFormat("Value : {0:F1}"))
+```
+
+#### Idiom, Platform, and Theme
+
+Another way to configure bindable properties inline is to set different values for different device idiom (phone or tablet), platform (WinUI or iOS), or theme (light or dark). For example:
+
+```cs
+new Label().FontSize(e => e.OnPhone(30).OnTablet(50).Default(40))
+new Label().FontSize(e => e.OnWinUI(30).OniOS(50).Default(40))
+new Label().TextColor(e => e.OnLight(Colors.Black).OnDark(Colors.White))
+```
+
+#### Dynamic resources
+
+Another way to configure bindable properties inline is to use dynamic resources. Dynamic resources are resources whose values can change at runtime. For example:
+
+```cs
+Label().TextColor(e => e.DynamicResource("myColor"))
+```
+
+#### Mixing
+
+Finally, it's also possible to mix these various configuration options to achieve more complex property configurations. For example:
+
+```
+new Label()
+    .TextColor(e => e
+        .OnLight(e => e.OnWinUI(Colors.Aqua).Default(Colors.LightCoral))
+        .OnDark(Colors.White)
+    )
+```
+
 ## How to assign object references
 
 There are two main ways to assign objects in `Sharp.UI`: 
@@ -319,15 +360,37 @@ public class ViewPage : ContentPage
 
 In __Sharp.UI__, you can create your own extension methods by defining a static method within a static class.
 
-Here's an example of an extension method that centers a view vertically:
+Here's an example of extension methods that set a label font size:
 
 ```cs
-public static T CenterVertically<T>(this T obj)
-    where T : Microsoft.Maui.Controls.View
+public static T FontSize<T>(this T self,
+    double fontSize)
+    where T : Microsoft.Maui.Controls.Label
 {
-    obj.SetValueOrAddSetter(Microsoft.Maui.Controls.View.VerticalOptionsProperty, LayoutOptions.Center);
-    return obj;
+    self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.FontSizeProperty, fontSize);
+    return self;
 }
+        
+public static T FontSize<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
+    where T : Microsoft.Maui.Controls.Label
+{
+    var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Label.FontSizeProperty);
+    configure(context).Build();
+    return self;
+}
+```
+
+the first extension method allows you the following usage:
+
+```cs
+new Label().FontSize(28)
+```
+
+the second:
+
+```cs
+new Label().FontSize(e => e.Path("MyFontSize").Source(myModel))
+new Label().FontSize(e => e.OnPhone(30).OnTablet(50).Default(40))
 ```
 
 In the extension methods, it's important to use the `SetValueOrAddSetter` method instead of setting the properties directly. `SetValueOrAddSetter` sets the value of the property if the property is used in a standard context, such as in object creation, or add a new `Setter` when you use the method to create a setter for a style definition.

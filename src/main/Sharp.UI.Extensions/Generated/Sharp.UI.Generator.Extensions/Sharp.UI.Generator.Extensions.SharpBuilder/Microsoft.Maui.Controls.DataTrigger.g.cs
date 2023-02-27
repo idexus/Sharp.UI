@@ -15,8 +15,7 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.DataTrigger Binding(this Microsoft.Maui.Controls.DataTrigger self,
             Microsoft.Maui.Controls.BindingBase binding)
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property Binding");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property Binding");
             self.Binding = binding;
             return self;
         }
@@ -40,8 +39,7 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.DataTrigger Value(this Microsoft.Maui.Controls.DataTrigger self,
             object value)
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property Value");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property Value");
             self.Value = value;
             return self;
         }

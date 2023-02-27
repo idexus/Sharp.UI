@@ -16,8 +16,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.Page detail)
             where T : Microsoft.Maui.Controls.FlyoutPage
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property Detail");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property Detail");
             self.Detail = detail;
             return self;
         }
@@ -58,8 +57,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.Page flyout)
             where T : Microsoft.Maui.Controls.FlyoutPage
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property Flyout");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property Flyout");
             self.Flyout = flyout;
             return self;
         }

@@ -16,8 +16,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Rect frame)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property Frame");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property Frame");
             self.Frame = frame;
             return self;
         }
@@ -672,8 +671,7 @@ namespace Sharp.UI
             bool disableLayout)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property DisableLayout");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property DisableLayout");
             self.DisableLayout = disableLayout;
             return self;
         }
@@ -682,8 +680,7 @@ namespace Sharp.UI
             bool isInPlatformLayout)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property IsInPlatformLayout");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property IsInPlatformLayout");
             self.IsInPlatformLayout = isInPlatformLayout;
             return self;
         }
@@ -692,8 +689,7 @@ namespace Sharp.UI
             bool isPlatformStateConsistent)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property IsPlatformStateConsistent");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property IsPlatformStateConsistent");
             self.IsPlatformStateConsistent = isPlatformStateConsistent;
             return self;
         }
@@ -702,8 +698,7 @@ namespace Sharp.UI
             bool isPlatformEnabled)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property IsPlatformEnabled");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property IsPlatformEnabled");
             self.IsPlatformEnabled = isPlatformEnabled;
             return self;
         }
@@ -712,8 +707,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.ResourceDictionary resources)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property Resources");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property Resources");
             self.Resources = resources;
             return self;
         }

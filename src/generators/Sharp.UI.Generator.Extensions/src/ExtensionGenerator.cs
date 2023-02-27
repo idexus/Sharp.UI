@@ -175,8 +175,7 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
                     $@"{accessedWith}.{propertyName} = new DataTemplate(loadTemplate);";
 
                 fluentStylingCheckString = IsBindableObject && !IsBindableProperty ?
-            $@"var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException(""Fluent styling not available for property {propertyName}"");
+            $@"if (FluentStyling.Setters != null) throw new ArgumentException(""Fluent styling not available for property {propertyName}"");
             " : "";
 
             }

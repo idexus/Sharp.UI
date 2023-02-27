@@ -66,8 +66,7 @@ namespace Sharp.UI
             bool ignoreSafeArea)
             where T : Microsoft.Maui.Controls.Layout
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property IgnoreSafeArea");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property IgnoreSafeArea");
             self.IgnoreSafeArea = ignoreSafeArea;
             return self;
         }

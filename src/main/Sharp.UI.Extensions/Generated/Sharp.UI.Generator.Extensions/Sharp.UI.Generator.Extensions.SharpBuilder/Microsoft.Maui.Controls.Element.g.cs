@@ -66,8 +66,7 @@ namespace Sharp.UI
             string styleId)
             where T : Microsoft.Maui.Controls.Element
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property StyleId");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property StyleId");
             self.StyleId = styleId;
             return self;
         }
@@ -76,8 +75,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.Element parent)
             where T : Microsoft.Maui.Controls.Element
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property Parent");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property Parent");
             self.Parent = parent;
             return self;
         }
@@ -86,8 +84,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.IEffectControlProvider effectControlProvider)
             where T : Microsoft.Maui.Controls.Element
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property EffectControlProvider");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property EffectControlProvider");
             self.EffectControlProvider = effectControlProvider;
             return self;
         }

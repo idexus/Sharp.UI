@@ -55,8 +55,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.BindingBase groupDisplayBinding)
             where T : Microsoft.Maui.Controls.ListView
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property GroupDisplayBinding");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property GroupDisplayBinding");
             self.GroupDisplayBinding = groupDisplayBinding;
             return self;
         }
@@ -88,8 +87,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.BindingBase groupShortNameBinding)
             where T : Microsoft.Maui.Controls.ListView
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property GroupShortNameBinding");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property GroupShortNameBinding");
             self.GroupShortNameBinding = groupShortNameBinding;
             return self;
         }
@@ -363,8 +361,7 @@ namespace Sharp.UI
             bool refreshAllowed)
             where T : Microsoft.Maui.Controls.ListView
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property RefreshAllowed");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property RefreshAllowed");
             self.RefreshAllowed = refreshAllowed;
             return self;
         }

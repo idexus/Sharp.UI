@@ -16,8 +16,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.Page? mainPage)
             where T : Microsoft.Maui.Controls.Application
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property MainPage");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property MainPage");
             self.MainPage = mainPage;
             return self;
         }
@@ -26,8 +25,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.ResourceDictionary resources)
             where T : Microsoft.Maui.Controls.Application
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property Resources");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property Resources");
             self.Resources = resources;
             return self;
         }
@@ -36,8 +34,7 @@ namespace Sharp.UI
             Microsoft.Maui.ApplicationModel.AppTheme userAppTheme)
             where T : Microsoft.Maui.Controls.Application
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property UserAppTheme");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property UserAppTheme");
             self.UserAppTheme = userAppTheme;
             return self;
         }

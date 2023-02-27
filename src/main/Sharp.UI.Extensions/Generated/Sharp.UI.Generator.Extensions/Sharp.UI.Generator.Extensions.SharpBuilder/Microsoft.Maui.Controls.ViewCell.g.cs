@@ -16,8 +16,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.View view)
             where T : Microsoft.Maui.Controls.ViewCell
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property View");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property View");
             self.View = view;
             return self;
         }

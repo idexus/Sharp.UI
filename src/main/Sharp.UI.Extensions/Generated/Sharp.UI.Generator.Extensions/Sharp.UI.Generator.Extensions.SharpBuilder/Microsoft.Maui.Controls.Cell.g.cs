@@ -34,8 +34,7 @@ namespace Sharp.UI
             bool isContextActionsLegacyModeEnabled)
             where T : Microsoft.Maui.Controls.Cell
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property IsContextActionsLegacyModeEnabled");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property IsContextActionsLegacyModeEnabled");
             self.IsContextActionsLegacyModeEnabled = isContextActionsLegacyModeEnabled;
             return self;
         }
@@ -44,8 +43,7 @@ namespace Sharp.UI
             double height)
             where T : Microsoft.Maui.Controls.Cell
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property Height");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property Height");
             self.Height = height;
             return self;
         }

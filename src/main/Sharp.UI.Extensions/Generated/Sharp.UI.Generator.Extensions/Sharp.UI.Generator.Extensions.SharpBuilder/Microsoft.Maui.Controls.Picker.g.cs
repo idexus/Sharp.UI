@@ -278,8 +278,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.BindingBase itemDisplayBinding)
             where T : Microsoft.Maui.Controls.Picker
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property ItemDisplayBinding");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property ItemDisplayBinding");
             self.ItemDisplayBinding = itemDisplayBinding;
             return self;
         }

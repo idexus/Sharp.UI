@@ -71,8 +71,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.Page currentPage)
             where T : Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property CurrentPage");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property CurrentPage");
             self.CurrentPage = currentPage;
             return self;
         }

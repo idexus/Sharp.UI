@@ -132,8 +132,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Rect containerArea)
             where T : Microsoft.Maui.Controls.Page
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property ContainerArea");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property ContainerArea");
             self.ContainerArea = containerArea;
             return self;
         }
@@ -142,8 +141,7 @@ namespace Sharp.UI
             bool ignoresContainerArea)
             where T : Microsoft.Maui.Controls.Page
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property IgnoresContainerArea");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property IgnoresContainerArea");
             self.IgnoresContainerArea = ignoresContainerArea;
             return self;
         }

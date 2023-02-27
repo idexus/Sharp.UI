@@ -32,8 +32,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.IBindableLayout indicatorLayout)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property IndicatorLayout");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property IndicatorLayout");
             self.IndicatorLayout = indicatorLayout;
             return self;
         }

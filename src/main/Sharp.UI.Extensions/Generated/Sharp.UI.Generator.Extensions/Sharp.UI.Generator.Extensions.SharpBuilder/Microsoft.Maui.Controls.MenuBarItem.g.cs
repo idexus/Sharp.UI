@@ -16,8 +16,7 @@ namespace Sharp.UI
             int priority)
             where T : Microsoft.Maui.Controls.MenuBarItem
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property Priority");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property Priority");
             self.Priority = priority;
             return self;
         }

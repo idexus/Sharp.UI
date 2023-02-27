@@ -16,8 +16,7 @@ namespace Sharp.UI
             Microsoft.Maui.Graphics.Rect layoutAreaOverride)
             where T : Microsoft.Maui.Controls.ScrollView
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property LayoutAreaOverride");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property LayoutAreaOverride");
             self.LayoutAreaOverride = layoutAreaOverride;
             return self;
         }
@@ -26,8 +25,7 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.View content)
             where T : Microsoft.Maui.Controls.ScrollView
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property Content");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property Content");
             self.Content = content;
             return self;
         }

@@ -64,8 +64,7 @@ namespace Sharp.UI
             string route)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property Route");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property Route");
             self.Route = route;
             return self;
         }
@@ -106,8 +105,7 @@ namespace Sharp.UI
             bool flyoutItemIsVisible)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property FlyoutItemIsVisible");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property FlyoutItemIsVisible");
             self.FlyoutItemIsVisible = flyoutItemIsVisible;
             return self;
         }
