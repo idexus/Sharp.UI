@@ -16,20 +16,8 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.Page detail)
             where T : Microsoft.Maui.Controls.FlyoutPage
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property Detail");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property Detail");
             self.Detail = detail;
-            return self;
-        }
-        
-        public static T Detail<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.Page>, ValueBuilder<Microsoft.Maui.Controls.Page>> buildValue)
-            where T : Microsoft.Maui.Controls.FlyoutPage
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property Detail");
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Page>());
-            if (builder.ValueIsSet()) self.Detail = builder.GetValue();
             return self;
         }
         
@@ -41,21 +29,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T IsGestureEnabled<T>(this T self,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
+        public static T IsGestureEnabled<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.FlyoutPage
         {
-            var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.FlyoutPage.IsGestureEnabledProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T IsGestureEnabled<T>(this T self,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
-            where T : Microsoft.Maui.Controls.FlyoutPage
-        {
-            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.FlyoutPage.IsGestureEnabledProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.FlyoutPage.IsGestureEnabledProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -67,21 +45,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T IsPresented<T>(this T self,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
+        public static T IsPresented<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.FlyoutPage
         {
-            var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.FlyoutPage.IsPresentedProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T IsPresented<T>(this T self,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
-            where T : Microsoft.Maui.Controls.FlyoutPage
-        {
-            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.FlyoutPage.IsPresentedProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.FlyoutPage.IsPresentedProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -89,20 +57,8 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.Page flyout)
             where T : Microsoft.Maui.Controls.FlyoutPage
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property Flyout");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property Flyout");
             self.Flyout = flyout;
-            return self;
-        }
-        
-        public static T Flyout<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.Page>, ValueBuilder<Microsoft.Maui.Controls.Page>> buildValue)
-            where T : Microsoft.Maui.Controls.FlyoutPage
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property Flyout");
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Page>());
-            if (builder.ValueIsSet()) self.Flyout = builder.GetValue();
             return self;
         }
         
@@ -114,21 +70,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FlyoutLayoutBehavior<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.FlyoutLayoutBehavior>, ValueBuilder<Microsoft.Maui.Controls.FlyoutLayoutBehavior>> buildValue)
+        public static T FlyoutLayoutBehavior<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.FlyoutLayoutBehavior>, IPropertyBuilder<Microsoft.Maui.Controls.FlyoutLayoutBehavior>> configure)
             where T : Microsoft.Maui.Controls.FlyoutPage
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.FlyoutLayoutBehavior>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.FlyoutPage.FlyoutLayoutBehaviorProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T FlyoutLayoutBehavior<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.FlyoutLayoutBehavior>, BindingBuilder<Microsoft.Maui.Controls.FlyoutLayoutBehavior>> buildBinding)
-            where T : Microsoft.Maui.Controls.FlyoutPage
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.FlyoutLayoutBehavior>(self, Microsoft.Maui.Controls.FlyoutPage.FlyoutLayoutBehaviorProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Controls.FlyoutLayoutBehavior>(self, Microsoft.Maui.Controls.FlyoutPage.FlyoutLayoutBehaviorProperty);
+            configure(context).Build();
             return self;
         }
         

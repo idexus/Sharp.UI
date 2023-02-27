@@ -21,21 +21,11 @@ namespace ExampleApp
             return self;
         }
         
-        public static T SimpleData<T>(this T self,
-            System.Func<ValueBuilder<System.Collections.Generic.List<ExampleApp.DataModel>>, ValueBuilder<System.Collections.Generic.List<ExampleApp.DataModel>>> buildValue)
+        public static T SimpleData<T>(this T self, Func<PropertyContext<System.Collections.Generic.List<ExampleApp.DataModel>>, IPropertyBuilder<System.Collections.Generic.List<ExampleApp.DataModel>>> configure)
             where T : ExampleApp.ListViewPageViewModel
         {
-            var builder = buildValue(new ValueBuilder<System.Collections.Generic.List<ExampleApp.DataModel>>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(ExampleApp.ListViewPageViewModel.SimpleDataProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T SimpleData<T>(this T self,
-            System.Func<BindingBuilder<System.Collections.Generic.List<ExampleApp.DataModel>>, BindingBuilder<System.Collections.Generic.List<ExampleApp.DataModel>>> buildBinding)
-            where T : ExampleApp.ListViewPageViewModel
-        {
-            var builder = buildBinding(new BindingBuilder<System.Collections.Generic.List<ExampleApp.DataModel>>(self, ExampleApp.ListViewPageViewModel.SimpleDataProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<System.Collections.Generic.List<ExampleApp.DataModel>>(self, ExampleApp.ListViewPageViewModel.SimpleDataProperty);
+            configure(context).Build();
             return self;
         }
         

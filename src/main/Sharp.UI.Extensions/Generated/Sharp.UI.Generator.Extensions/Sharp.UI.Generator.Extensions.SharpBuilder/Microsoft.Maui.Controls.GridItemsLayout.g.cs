@@ -20,21 +20,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Span<T>(this T self,
-            System.Func<ValueBuilder<int>, ValueBuilder<int>> buildValue)
+        public static T Span<T>(this T self, Func<PropertyContext<int>, IPropertyBuilder<int>> configure)
             where T : Microsoft.Maui.Controls.GridItemsLayout
         {
-            var builder = buildValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.GridItemsLayout.SpanProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T Span<T>(this T self,
-            System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
-            where T : Microsoft.Maui.Controls.GridItemsLayout
-        {
-            var builder = buildBinding(new BindingBuilder<int>(self, Microsoft.Maui.Controls.GridItemsLayout.SpanProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<int>(self, Microsoft.Maui.Controls.GridItemsLayout.SpanProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -46,21 +36,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T VerticalItemSpacing<T>(this T self,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
+        public static T VerticalItemSpacing<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.GridItemsLayout
         {
-            var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.GridItemsLayout.VerticalItemSpacingProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T VerticalItemSpacing<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
-            where T : Microsoft.Maui.Controls.GridItemsLayout
-        {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.GridItemsLayout.VerticalItemSpacingProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.GridItemsLayout.VerticalItemSpacingProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -72,21 +52,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T HorizontalItemSpacing<T>(this T self,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
+        public static T HorizontalItemSpacing<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.GridItemsLayout
         {
-            var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.GridItemsLayout.HorizontalItemSpacingProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T HorizontalItemSpacing<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
-            where T : Microsoft.Maui.Controls.GridItemsLayout
-        {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.GridItemsLayout.HorizontalItemSpacingProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.GridItemsLayout.HorizontalItemSpacingProperty);
+            configure(context).Build();
             return self;
         }
         

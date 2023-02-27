@@ -20,21 +20,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T HorizontalTextAlignment<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.TextAlignment>, ValueBuilder<Microsoft.Maui.TextAlignment>> buildValue)
+        public static T HorizontalTextAlignment<T>(this T self, Func<PropertyContext<Microsoft.Maui.TextAlignment>, IPropertyBuilder<Microsoft.Maui.TextAlignment>> configure)
             where T : Microsoft.Maui.Controls.EntryCell
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.TextAlignment>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.EntryCell.HorizontalTextAlignmentProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T HorizontalTextAlignment<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.TextAlignment>, BindingBuilder<Microsoft.Maui.TextAlignment>> buildBinding)
-            where T : Microsoft.Maui.Controls.EntryCell
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.TextAlignment>(self, Microsoft.Maui.Controls.EntryCell.HorizontalTextAlignmentProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.TextAlignment>(self, Microsoft.Maui.Controls.EntryCell.HorizontalTextAlignmentProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -46,21 +36,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T VerticalTextAlignment<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.TextAlignment>, ValueBuilder<Microsoft.Maui.TextAlignment>> buildValue)
+        public static T VerticalTextAlignment<T>(this T self, Func<PropertyContext<Microsoft.Maui.TextAlignment>, IPropertyBuilder<Microsoft.Maui.TextAlignment>> configure)
             where T : Microsoft.Maui.Controls.EntryCell
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.TextAlignment>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.EntryCell.VerticalTextAlignmentProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T VerticalTextAlignment<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.TextAlignment>, BindingBuilder<Microsoft.Maui.TextAlignment>> buildBinding)
-            where T : Microsoft.Maui.Controls.EntryCell
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.TextAlignment>(self, Microsoft.Maui.Controls.EntryCell.VerticalTextAlignmentProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.TextAlignment>(self, Microsoft.Maui.Controls.EntryCell.VerticalTextAlignmentProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -72,21 +52,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Keyboard<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Keyboard>, ValueBuilder<Microsoft.Maui.Keyboard>> buildValue)
+        public static T Keyboard<T>(this T self, Func<PropertyContext<Microsoft.Maui.Keyboard>, IPropertyBuilder<Microsoft.Maui.Keyboard>> configure)
             where T : Microsoft.Maui.Controls.EntryCell
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Keyboard>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.EntryCell.KeyboardProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T Keyboard<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Keyboard>, BindingBuilder<Microsoft.Maui.Keyboard>> buildBinding)
-            where T : Microsoft.Maui.Controls.EntryCell
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Keyboard>(self, Microsoft.Maui.Controls.EntryCell.KeyboardProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Keyboard>(self, Microsoft.Maui.Controls.EntryCell.KeyboardProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -98,21 +68,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Label<T>(this T self,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
+        public static T Label<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.EntryCell
         {
-            var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.EntryCell.LabelProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T Label<T>(this T self,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
-            where T : Microsoft.Maui.Controls.EntryCell
-        {
-            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.EntryCell.LabelProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<string>(self, Microsoft.Maui.Controls.EntryCell.LabelProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -124,21 +84,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T LabelColor<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
+        public static T LabelColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.EntryCell
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.EntryCell.LabelColorProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T LabelColor<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
-            where T : Microsoft.Maui.Controls.EntryCell
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.EntryCell.LabelColorProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.EntryCell.LabelColorProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -150,21 +100,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Placeholder<T>(this T self,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
+        public static T Placeholder<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.EntryCell
         {
-            var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.EntryCell.PlaceholderProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T Placeholder<T>(this T self,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
-            where T : Microsoft.Maui.Controls.EntryCell
-        {
-            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.EntryCell.PlaceholderProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<string>(self, Microsoft.Maui.Controls.EntryCell.PlaceholderProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -176,21 +116,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Text<T>(this T self,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
+        public static T Text<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.EntryCell
         {
-            var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.EntryCell.TextProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T Text<T>(this T self,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
-            where T : Microsoft.Maui.Controls.EntryCell
-        {
-            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.EntryCell.TextProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<string>(self, Microsoft.Maui.Controls.EntryCell.TextProperty);
+            configure(context).Build();
             return self;
         }
         

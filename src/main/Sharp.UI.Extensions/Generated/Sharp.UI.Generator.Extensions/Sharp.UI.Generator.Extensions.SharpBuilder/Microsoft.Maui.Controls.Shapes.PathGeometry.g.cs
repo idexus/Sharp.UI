@@ -28,11 +28,10 @@ namespace Sharp.UI
             return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.PathGeometry Figures(this Microsoft.Maui.Controls.Shapes.PathGeometry self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.Shapes.PathFigureCollection>, BindingBuilder<Microsoft.Maui.Controls.Shapes.PathFigureCollection>> buildBinding)
+        public static Microsoft.Maui.Controls.Shapes.PathGeometry Figures(this Microsoft.Maui.Controls.Shapes.PathGeometry self, Func<PropertyContext<Microsoft.Maui.Controls.Shapes.PathFigureCollection>, IPropertyBuilder<Microsoft.Maui.Controls.Shapes.PathFigureCollection>> configure)
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Shapes.PathFigureCollection>(self, Microsoft.Maui.Controls.Shapes.PathGeometry.FiguresProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Controls.Shapes.PathFigureCollection>(self, Microsoft.Maui.Controls.Shapes.PathGeometry.FiguresProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -43,19 +42,10 @@ namespace Sharp.UI
             return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.PathGeometry FillRule(this Microsoft.Maui.Controls.Shapes.PathGeometry self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.Shapes.FillRule>, ValueBuilder<Microsoft.Maui.Controls.Shapes.FillRule>> buildValue)
+        public static Microsoft.Maui.Controls.Shapes.PathGeometry FillRule(this Microsoft.Maui.Controls.Shapes.PathGeometry self, Func<PropertyContext<Microsoft.Maui.Controls.Shapes.FillRule>, IPropertyBuilder<Microsoft.Maui.Controls.Shapes.FillRule>> configure)
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Shapes.FillRule>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.PathGeometry.FillRuleProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static Microsoft.Maui.Controls.Shapes.PathGeometry FillRule(this Microsoft.Maui.Controls.Shapes.PathGeometry self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.Shapes.FillRule>, BindingBuilder<Microsoft.Maui.Controls.Shapes.FillRule>> buildBinding)
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Shapes.FillRule>(self, Microsoft.Maui.Controls.Shapes.PathGeometry.FillRuleProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Controls.Shapes.FillRule>(self, Microsoft.Maui.Controls.Shapes.PathGeometry.FillRuleProperty);
+            configure(context).Build();
             return self;
         }
         

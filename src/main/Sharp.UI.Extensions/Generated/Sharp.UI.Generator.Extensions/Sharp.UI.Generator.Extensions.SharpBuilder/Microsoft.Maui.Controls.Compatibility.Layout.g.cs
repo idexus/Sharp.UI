@@ -20,21 +20,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T IsClippedToBounds<T>(this T self,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
+        public static T IsClippedToBounds<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.Compatibility.Layout
         {
-            var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Compatibility.Layout.IsClippedToBoundsProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T IsClippedToBounds<T>(this T self,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
-            where T : Microsoft.Maui.Controls.Compatibility.Layout
-        {
-            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.Compatibility.Layout.IsClippedToBoundsProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.Compatibility.Layout.IsClippedToBoundsProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -46,21 +36,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Padding<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Thickness>, ValueBuilder<Microsoft.Maui.Thickness>> buildValue)
+        public static T Padding<T>(this T self, Func<PropertyContext<Microsoft.Maui.Thickness>, IPropertyBuilder<Microsoft.Maui.Thickness>> configure)
             where T : Microsoft.Maui.Controls.Compatibility.Layout
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Thickness>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Compatibility.Layout.PaddingProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T Padding<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Thickness>, BindingBuilder<Microsoft.Maui.Thickness>> buildBinding)
-            where T : Microsoft.Maui.Controls.Compatibility.Layout
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Thickness>(self, Microsoft.Maui.Controls.Compatibility.Layout.PaddingProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Thickness>(self, Microsoft.Maui.Controls.Compatibility.Layout.PaddingProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -72,21 +52,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T CascadeInputTransparent<T>(this T self,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
+        public static T CascadeInputTransparent<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.Compatibility.Layout
         {
-            var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Compatibility.Layout.CascadeInputTransparentProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T CascadeInputTransparent<T>(this T self,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
-            where T : Microsoft.Maui.Controls.Compatibility.Layout
-        {
-            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.Compatibility.Layout.CascadeInputTransparentProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.Compatibility.Layout.CascadeInputTransparentProperty);
+            configure(context).Build();
             return self;
         }
         

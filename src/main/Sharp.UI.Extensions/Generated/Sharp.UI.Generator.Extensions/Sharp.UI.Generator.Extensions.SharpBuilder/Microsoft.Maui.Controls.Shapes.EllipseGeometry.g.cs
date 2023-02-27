@@ -20,21 +20,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Center<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Point>, ValueBuilder<Microsoft.Maui.Graphics.Point>> buildValue)
+        public static T Center<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Point>, IPropertyBuilder<Microsoft.Maui.Graphics.Point>> configure)
             where T : Microsoft.Maui.Controls.Shapes.EllipseGeometry
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Point>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.EllipseGeometry.CenterProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T Center<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Point>, BindingBuilder<Microsoft.Maui.Graphics.Point>> buildBinding)
-            where T : Microsoft.Maui.Controls.Shapes.EllipseGeometry
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Point>(self, Microsoft.Maui.Controls.Shapes.EllipseGeometry.CenterProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Graphics.Point>(self, Microsoft.Maui.Controls.Shapes.EllipseGeometry.CenterProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -46,21 +36,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T RadiusX<T>(this T self,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
+        public static T RadiusX<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Shapes.EllipseGeometry
         {
-            var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.EllipseGeometry.RadiusXProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T RadiusX<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
-            where T : Microsoft.Maui.Controls.Shapes.EllipseGeometry
-        {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.EllipseGeometry.RadiusXProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Shapes.EllipseGeometry.RadiusXProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -72,21 +52,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T RadiusY<T>(this T self,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
+        public static T RadiusY<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Shapes.EllipseGeometry
         {
-            var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.EllipseGeometry.RadiusYProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T RadiusY<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
-            where T : Microsoft.Maui.Controls.Shapes.EllipseGeometry
-        {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.EllipseGeometry.RadiusYProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Shapes.EllipseGeometry.RadiusYProperty);
+            configure(context).Build();
             return self;
         }
         

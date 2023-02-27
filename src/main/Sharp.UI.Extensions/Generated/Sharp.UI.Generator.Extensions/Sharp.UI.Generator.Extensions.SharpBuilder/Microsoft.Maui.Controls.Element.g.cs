@@ -20,21 +20,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T AutomationId<T>(this T self,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
+        public static T AutomationId<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.Element
         {
-            var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Element.AutomationIdProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T AutomationId<T>(this T self,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
-            where T : Microsoft.Maui.Controls.Element
-        {
-            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.Element.AutomationIdProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<string>(self, Microsoft.Maui.Controls.Element.AutomationIdProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -46,21 +36,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ClassId<T>(this T self,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
+        public static T ClassId<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.Element
         {
-            var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Element.ClassIdProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T ClassId<T>(this T self,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
-            where T : Microsoft.Maui.Controls.Element
-        {
-            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.Element.ClassIdProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<string>(self, Microsoft.Maui.Controls.Element.ClassIdProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -86,20 +66,8 @@ namespace Sharp.UI
             string styleId)
             where T : Microsoft.Maui.Controls.Element
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property StyleId");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property StyleId");
             self.StyleId = styleId;
-            return self;
-        }
-        
-        public static T StyleId<T>(this T self,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
-            where T : Microsoft.Maui.Controls.Element
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property StyleId");
-            var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.StyleId = builder.GetValue();
             return self;
         }
         
@@ -107,20 +75,8 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.Element parent)
             where T : Microsoft.Maui.Controls.Element
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property Parent");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property Parent");
             self.Parent = parent;
-            return self;
-        }
-        
-        public static T Parent<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.Element>, ValueBuilder<Microsoft.Maui.Controls.Element>> buildValue)
-            where T : Microsoft.Maui.Controls.Element
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property Parent");
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Element>());
-            if (builder.ValueIsSet()) self.Parent = builder.GetValue();
             return self;
         }
         
@@ -128,20 +84,8 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.IEffectControlProvider effectControlProvider)
             where T : Microsoft.Maui.Controls.Element
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property EffectControlProvider");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property EffectControlProvider");
             self.EffectControlProvider = effectControlProvider;
-            return self;
-        }
-        
-        public static T EffectControlProvider<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.IEffectControlProvider>, ValueBuilder<Microsoft.Maui.Controls.IEffectControlProvider>> buildValue)
-            where T : Microsoft.Maui.Controls.Element
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property EffectControlProvider");
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.IEffectControlProvider>());
-            if (builder.ValueIsSet()) self.EffectControlProvider = builder.GetValue();
             return self;
         }
         

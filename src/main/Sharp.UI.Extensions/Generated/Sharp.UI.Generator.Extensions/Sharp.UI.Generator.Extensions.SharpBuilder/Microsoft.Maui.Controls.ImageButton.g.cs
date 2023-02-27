@@ -20,21 +20,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T BorderColor<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
+        public static T BorderColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.ImageButton
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ImageButton.BorderColorProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T BorderColor<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
-            where T : Microsoft.Maui.Controls.ImageButton
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.ImageButton.BorderColorProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.ImageButton.BorderColorProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -55,21 +45,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T CornerRadius<T>(this T self,
-            System.Func<ValueBuilder<int>, ValueBuilder<int>> buildValue)
+        public static T CornerRadius<T>(this T self, Func<PropertyContext<int>, IPropertyBuilder<int>> configure)
             where T : Microsoft.Maui.Controls.ImageButton
         {
-            var builder = buildValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ImageButton.CornerRadiusProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T CornerRadius<T>(this T self,
-            System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
-            where T : Microsoft.Maui.Controls.ImageButton
-        {
-            var builder = buildBinding(new BindingBuilder<int>(self, Microsoft.Maui.Controls.ImageButton.CornerRadiusProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<int>(self, Microsoft.Maui.Controls.ImageButton.CornerRadiusProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -81,21 +61,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T BorderWidth<T>(this T self,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
+        public static T BorderWidth<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.ImageButton
         {
-            var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ImageButton.BorderWidthProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T BorderWidth<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
-            where T : Microsoft.Maui.Controls.ImageButton
-        {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.ImageButton.BorderWidthProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.ImageButton.BorderWidthProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -116,21 +86,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Aspect<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Aspect>, ValueBuilder<Microsoft.Maui.Aspect>> buildValue)
+        public static T Aspect<T>(this T self, Func<PropertyContext<Microsoft.Maui.Aspect>, IPropertyBuilder<Microsoft.Maui.Aspect>> configure)
             where T : Microsoft.Maui.Controls.ImageButton
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Aspect>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ImageButton.AspectProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T Aspect<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Aspect>, BindingBuilder<Microsoft.Maui.Aspect>> buildBinding)
-            where T : Microsoft.Maui.Controls.ImageButton
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Aspect>(self, Microsoft.Maui.Controls.ImageButton.AspectProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Aspect>(self, Microsoft.Maui.Controls.ImageButton.AspectProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -142,21 +102,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T IsOpaque<T>(this T self,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
+        public static T IsOpaque<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.ImageButton
         {
-            var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ImageButton.IsOpaqueProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T IsOpaque<T>(this T self,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
-            where T : Microsoft.Maui.Controls.ImageButton
-        {
-            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.ImageButton.IsOpaqueProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.ImageButton.IsOpaqueProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -168,21 +118,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Command<T>(this T self,
-            System.Func<ValueBuilder<System.Windows.Input.ICommand>, ValueBuilder<System.Windows.Input.ICommand>> buildValue)
+        public static T Command<T>(this T self, Func<PropertyContext<System.Windows.Input.ICommand>, IPropertyBuilder<System.Windows.Input.ICommand>> configure)
             where T : Microsoft.Maui.Controls.ImageButton
         {
-            var builder = buildValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ImageButton.CommandProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T Command<T>(this T self,
-            System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buildBinding)
-            where T : Microsoft.Maui.Controls.ImageButton
-        {
-            var builder = buildBinding(new BindingBuilder<System.Windows.Input.ICommand>(self, Microsoft.Maui.Controls.ImageButton.CommandProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<System.Windows.Input.ICommand>(self, Microsoft.Maui.Controls.ImageButton.CommandProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -194,21 +134,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T CommandParameter<T>(this T self,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buildValue)
+        public static T CommandParameter<T>(this T self, Func<PropertyContext<object>, IPropertyBuilder<object>> configure)
             where T : Microsoft.Maui.Controls.ImageButton
         {
-            var builder = buildValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ImageButton.CommandParameterProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T CommandParameter<T>(this T self,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
-            where T : Microsoft.Maui.Controls.ImageButton
-        {
-            var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.ImageButton.CommandParameterProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<object>(self, Microsoft.Maui.Controls.ImageButton.CommandParameterProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -220,21 +150,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Source<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.ImageSource>, ValueBuilder<Microsoft.Maui.Controls.ImageSource>> buildValue)
+        public static T Source<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.ImageSource>, IPropertyBuilder<Microsoft.Maui.Controls.ImageSource>> configure)
             where T : Microsoft.Maui.Controls.ImageButton
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ImageSource>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ImageButton.SourceProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T Source<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.ImageSource>, BindingBuilder<Microsoft.Maui.Controls.ImageSource>> buildBinding)
-            where T : Microsoft.Maui.Controls.ImageButton
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ImageSource>(self, Microsoft.Maui.Controls.ImageButton.SourceProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Controls.ImageSource>(self, Microsoft.Maui.Controls.ImageButton.SourceProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -246,21 +166,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Padding<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Thickness>, ValueBuilder<Microsoft.Maui.Thickness>> buildValue)
+        public static T Padding<T>(this T self, Func<PropertyContext<Microsoft.Maui.Thickness>, IPropertyBuilder<Microsoft.Maui.Thickness>> configure)
             where T : Microsoft.Maui.Controls.ImageButton
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Thickness>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ImageButton.PaddingProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T Padding<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Thickness>, BindingBuilder<Microsoft.Maui.Thickness>> buildBinding)
-            where T : Microsoft.Maui.Controls.ImageButton
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Thickness>(self, Microsoft.Maui.Controls.ImageButton.PaddingProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Thickness>(self, Microsoft.Maui.Controls.ImageButton.PaddingProperty);
+            configure(context).Build();
             return self;
         }
         

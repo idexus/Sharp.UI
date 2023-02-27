@@ -20,21 +20,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Fill<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.Brush>, ValueBuilder<Microsoft.Maui.Controls.Brush>> buildValue)
+        public static T Fill<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.Brush>, IPropertyBuilder<Microsoft.Maui.Controls.Brush>> configure)
             where T : Microsoft.Maui.Controls.Shapes.Shape
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Brush>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Shape.FillProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T Fill<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.Brush>, BindingBuilder<Microsoft.Maui.Controls.Brush>> buildBinding)
-            where T : Microsoft.Maui.Controls.Shapes.Shape
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Brush>(self, Microsoft.Maui.Controls.Shapes.Shape.FillProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Controls.Brush>(self, Microsoft.Maui.Controls.Shapes.Shape.FillProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -46,21 +36,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Stroke<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.Brush>, ValueBuilder<Microsoft.Maui.Controls.Brush>> buildValue)
+        public static T Stroke<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.Brush>, IPropertyBuilder<Microsoft.Maui.Controls.Brush>> configure)
             where T : Microsoft.Maui.Controls.Shapes.Shape
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Brush>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Shape.StrokeProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T Stroke<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.Brush>, BindingBuilder<Microsoft.Maui.Controls.Brush>> buildBinding)
-            where T : Microsoft.Maui.Controls.Shapes.Shape
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Brush>(self, Microsoft.Maui.Controls.Shapes.Shape.StrokeProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Controls.Brush>(self, Microsoft.Maui.Controls.Shapes.Shape.StrokeProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -72,21 +52,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T StrokeThickness<T>(this T self,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
+        public static T StrokeThickness<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Shapes.Shape
         {
-            var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Shape.StrokeThicknessProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T StrokeThickness<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
-            where T : Microsoft.Maui.Controls.Shapes.Shape
-        {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.Shape.StrokeThicknessProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Shapes.Shape.StrokeThicknessProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -117,12 +87,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T StrokeDashArray<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.DoubleCollection>, BindingBuilder<Microsoft.Maui.Controls.DoubleCollection>> buildBinding)
+        public static T StrokeDashArray<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.DoubleCollection>, IPropertyBuilder<Microsoft.Maui.Controls.DoubleCollection>> configure)
             where T : Microsoft.Maui.Controls.Shapes.Shape
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.DoubleCollection>(self, Microsoft.Maui.Controls.Shapes.Shape.StrokeDashArrayProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Controls.DoubleCollection>(self, Microsoft.Maui.Controls.Shapes.Shape.StrokeDashArrayProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -134,21 +103,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T StrokeDashOffset<T>(this T self,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
+        public static T StrokeDashOffset<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Shapes.Shape
         {
-            var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Shape.StrokeDashOffsetProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T StrokeDashOffset<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
-            where T : Microsoft.Maui.Controls.Shapes.Shape
-        {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.Shape.StrokeDashOffsetProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Shapes.Shape.StrokeDashOffsetProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -169,21 +128,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T StrokeLineCap<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.Shapes.PenLineCap>, ValueBuilder<Microsoft.Maui.Controls.Shapes.PenLineCap>> buildValue)
+        public static T StrokeLineCap<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.Shapes.PenLineCap>, IPropertyBuilder<Microsoft.Maui.Controls.Shapes.PenLineCap>> configure)
             where T : Microsoft.Maui.Controls.Shapes.Shape
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Shapes.PenLineCap>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Shape.StrokeLineCapProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T StrokeLineCap<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.Shapes.PenLineCap>, BindingBuilder<Microsoft.Maui.Controls.Shapes.PenLineCap>> buildBinding)
-            where T : Microsoft.Maui.Controls.Shapes.Shape
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Shapes.PenLineCap>(self, Microsoft.Maui.Controls.Shapes.Shape.StrokeLineCapProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Controls.Shapes.PenLineCap>(self, Microsoft.Maui.Controls.Shapes.Shape.StrokeLineCapProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -195,21 +144,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T StrokeLineJoin<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.Shapes.PenLineJoin>, ValueBuilder<Microsoft.Maui.Controls.Shapes.PenLineJoin>> buildValue)
+        public static T StrokeLineJoin<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.Shapes.PenLineJoin>, IPropertyBuilder<Microsoft.Maui.Controls.Shapes.PenLineJoin>> configure)
             where T : Microsoft.Maui.Controls.Shapes.Shape
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Shapes.PenLineJoin>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Shape.StrokeLineJoinProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T StrokeLineJoin<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.Shapes.PenLineJoin>, BindingBuilder<Microsoft.Maui.Controls.Shapes.PenLineJoin>> buildBinding)
-            where T : Microsoft.Maui.Controls.Shapes.Shape
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Shapes.PenLineJoin>(self, Microsoft.Maui.Controls.Shapes.Shape.StrokeLineJoinProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Controls.Shapes.PenLineJoin>(self, Microsoft.Maui.Controls.Shapes.Shape.StrokeLineJoinProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -221,21 +160,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T StrokeMiterLimit<T>(this T self,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
+        public static T StrokeMiterLimit<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Shapes.Shape
         {
-            var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Shape.StrokeMiterLimitProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T StrokeMiterLimit<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
-            where T : Microsoft.Maui.Controls.Shapes.Shape
-        {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.Shape.StrokeMiterLimitProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Shapes.Shape.StrokeMiterLimitProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -256,21 +185,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Aspect<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.Stretch>, ValueBuilder<Microsoft.Maui.Controls.Stretch>> buildValue)
+        public static T Aspect<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.Stretch>, IPropertyBuilder<Microsoft.Maui.Controls.Stretch>> configure)
             where T : Microsoft.Maui.Controls.Shapes.Shape
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Stretch>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Shape.AspectProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T Aspect<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.Stretch>, BindingBuilder<Microsoft.Maui.Controls.Stretch>> buildBinding)
-            where T : Microsoft.Maui.Controls.Shapes.Shape
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Stretch>(self, Microsoft.Maui.Controls.Shapes.Shape.AspectProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Controls.Stretch>(self, Microsoft.Maui.Controls.Shapes.Shape.AspectProperty);
+            configure(context).Build();
             return self;
         }
         

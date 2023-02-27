@@ -21,21 +21,11 @@ namespace ExampleApp
             return self;
         }
         
-        public static T RawAngle<T>(this T self,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
+        public static T RawAngle<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : ExampleApp.AngleViewModel
         {
-            var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(ExampleApp.AngleViewModel.RawAngleProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T RawAngle<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
-            where T : ExampleApp.AngleViewModel
-        {
-            var builder = buildBinding(new BindingBuilder<double>(self, ExampleApp.AngleViewModel.RawAngleProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<double>(self, ExampleApp.AngleViewModel.RawAngleProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -47,21 +37,11 @@ namespace ExampleApp
             return self;
         }
         
-        public static T Angle<T>(this T self,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
+        public static T Angle<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : ExampleApp.AngleViewModel
         {
-            var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(ExampleApp.AngleViewModel.AngleProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T Angle<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
-            where T : ExampleApp.AngleViewModel
-        {
-            var builder = buildBinding(new BindingBuilder<double>(self, ExampleApp.AngleViewModel.AngleProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<double>(self, ExampleApp.AngleViewModel.AngleProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -73,21 +53,11 @@ namespace ExampleApp
             return self;
         }
         
-        public static T MaximumAngle<T>(this T self,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
+        public static T MaximumAngle<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : ExampleApp.AngleViewModel
         {
-            var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(ExampleApp.AngleViewModel.MaximumAngleProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T MaximumAngle<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
-            where T : ExampleApp.AngleViewModel
-        {
-            var builder = buildBinding(new BindingBuilder<double>(self, ExampleApp.AngleViewModel.MaximumAngleProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<double>(self, ExampleApp.AngleViewModel.MaximumAngleProperty);
+            configure(context).Build();
             return self;
         }
         

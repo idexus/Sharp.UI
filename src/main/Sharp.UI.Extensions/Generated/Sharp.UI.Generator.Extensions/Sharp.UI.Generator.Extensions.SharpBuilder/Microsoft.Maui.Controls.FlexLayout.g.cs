@@ -20,21 +20,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Direction<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Layouts.FlexDirection>, ValueBuilder<Microsoft.Maui.Layouts.FlexDirection>> buildValue)
+        public static T Direction<T>(this T self, Func<PropertyContext<Microsoft.Maui.Layouts.FlexDirection>, IPropertyBuilder<Microsoft.Maui.Layouts.FlexDirection>> configure)
             where T : Microsoft.Maui.Controls.FlexLayout
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Layouts.FlexDirection>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.FlexLayout.DirectionProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T Direction<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Layouts.FlexDirection>, BindingBuilder<Microsoft.Maui.Layouts.FlexDirection>> buildBinding)
-            where T : Microsoft.Maui.Controls.FlexLayout
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Layouts.FlexDirection>(self, Microsoft.Maui.Controls.FlexLayout.DirectionProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Layouts.FlexDirection>(self, Microsoft.Maui.Controls.FlexLayout.DirectionProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -46,21 +36,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T JustifyContent<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Layouts.FlexJustify>, ValueBuilder<Microsoft.Maui.Layouts.FlexJustify>> buildValue)
+        public static T JustifyContent<T>(this T self, Func<PropertyContext<Microsoft.Maui.Layouts.FlexJustify>, IPropertyBuilder<Microsoft.Maui.Layouts.FlexJustify>> configure)
             where T : Microsoft.Maui.Controls.FlexLayout
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Layouts.FlexJustify>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.FlexLayout.JustifyContentProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T JustifyContent<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Layouts.FlexJustify>, BindingBuilder<Microsoft.Maui.Layouts.FlexJustify>> buildBinding)
-            where T : Microsoft.Maui.Controls.FlexLayout
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Layouts.FlexJustify>(self, Microsoft.Maui.Controls.FlexLayout.JustifyContentProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Layouts.FlexJustify>(self, Microsoft.Maui.Controls.FlexLayout.JustifyContentProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -72,21 +52,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T AlignContent<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Layouts.FlexAlignContent>, ValueBuilder<Microsoft.Maui.Layouts.FlexAlignContent>> buildValue)
+        public static T AlignContent<T>(this T self, Func<PropertyContext<Microsoft.Maui.Layouts.FlexAlignContent>, IPropertyBuilder<Microsoft.Maui.Layouts.FlexAlignContent>> configure)
             where T : Microsoft.Maui.Controls.FlexLayout
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Layouts.FlexAlignContent>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.FlexLayout.AlignContentProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T AlignContent<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Layouts.FlexAlignContent>, BindingBuilder<Microsoft.Maui.Layouts.FlexAlignContent>> buildBinding)
-            where T : Microsoft.Maui.Controls.FlexLayout
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Layouts.FlexAlignContent>(self, Microsoft.Maui.Controls.FlexLayout.AlignContentProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Layouts.FlexAlignContent>(self, Microsoft.Maui.Controls.FlexLayout.AlignContentProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -98,21 +68,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T AlignItems<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Layouts.FlexAlignItems>, ValueBuilder<Microsoft.Maui.Layouts.FlexAlignItems>> buildValue)
+        public static T AlignItems<T>(this T self, Func<PropertyContext<Microsoft.Maui.Layouts.FlexAlignItems>, IPropertyBuilder<Microsoft.Maui.Layouts.FlexAlignItems>> configure)
             where T : Microsoft.Maui.Controls.FlexLayout
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Layouts.FlexAlignItems>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.FlexLayout.AlignItemsProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T AlignItems<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Layouts.FlexAlignItems>, BindingBuilder<Microsoft.Maui.Layouts.FlexAlignItems>> buildBinding)
-            where T : Microsoft.Maui.Controls.FlexLayout
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Layouts.FlexAlignItems>(self, Microsoft.Maui.Controls.FlexLayout.AlignItemsProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Layouts.FlexAlignItems>(self, Microsoft.Maui.Controls.FlexLayout.AlignItemsProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -124,21 +84,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Position<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Layouts.FlexPosition>, ValueBuilder<Microsoft.Maui.Layouts.FlexPosition>> buildValue)
+        public static T Position<T>(this T self, Func<PropertyContext<Microsoft.Maui.Layouts.FlexPosition>, IPropertyBuilder<Microsoft.Maui.Layouts.FlexPosition>> configure)
             where T : Microsoft.Maui.Controls.FlexLayout
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Layouts.FlexPosition>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.FlexLayout.PositionProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T Position<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Layouts.FlexPosition>, BindingBuilder<Microsoft.Maui.Layouts.FlexPosition>> buildBinding)
-            where T : Microsoft.Maui.Controls.FlexLayout
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Layouts.FlexPosition>(self, Microsoft.Maui.Controls.FlexLayout.PositionProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Layouts.FlexPosition>(self, Microsoft.Maui.Controls.FlexLayout.PositionProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -150,21 +100,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Wrap<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Layouts.FlexWrap>, ValueBuilder<Microsoft.Maui.Layouts.FlexWrap>> buildValue)
+        public static T Wrap<T>(this T self, Func<PropertyContext<Microsoft.Maui.Layouts.FlexWrap>, IPropertyBuilder<Microsoft.Maui.Layouts.FlexWrap>> configure)
             where T : Microsoft.Maui.Controls.FlexLayout
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Layouts.FlexWrap>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.FlexLayout.WrapProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T Wrap<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Layouts.FlexWrap>, BindingBuilder<Microsoft.Maui.Layouts.FlexWrap>> buildBinding)
-            where T : Microsoft.Maui.Controls.FlexLayout
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Layouts.FlexWrap>(self, Microsoft.Maui.Controls.FlexLayout.WrapProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Layouts.FlexWrap>(self, Microsoft.Maui.Controls.FlexLayout.WrapProperty);
+            configure(context).Build();
             return self;
         }
         

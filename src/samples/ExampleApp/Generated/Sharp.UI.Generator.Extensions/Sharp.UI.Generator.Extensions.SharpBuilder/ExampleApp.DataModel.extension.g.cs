@@ -21,21 +21,11 @@ namespace ExampleApp
             return self;
         }
         
-        public static T Id<T>(this T self,
-            System.Func<ValueBuilder<int>, ValueBuilder<int>> buildValue)
+        public static T Id<T>(this T self, Func<PropertyContext<int>, IPropertyBuilder<int>> configure)
             where T : ExampleApp.DataModel
         {
-            var builder = buildValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(ExampleApp.DataModel.IdProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T Id<T>(this T self,
-            System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
-            where T : ExampleApp.DataModel
-        {
-            var builder = buildBinding(new BindingBuilder<int>(self, ExampleApp.DataModel.IdProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<int>(self, ExampleApp.DataModel.IdProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -47,21 +37,11 @@ namespace ExampleApp
             return self;
         }
         
-        public static T Name<T>(this T self,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
+        public static T Name<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : ExampleApp.DataModel
         {
-            var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(ExampleApp.DataModel.NameProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T Name<T>(this T self,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
-            where T : ExampleApp.DataModel
-        {
-            var builder = buildBinding(new BindingBuilder<string>(self, ExampleApp.DataModel.NameProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<string>(self, ExampleApp.DataModel.NameProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -73,21 +53,11 @@ namespace ExampleApp
             return self;
         }
         
-        public static T Admin<T>(this T self,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
+        public static T Admin<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : ExampleApp.DataModel
         {
-            var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(ExampleApp.DataModel.AdminProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T Admin<T>(this T self,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
-            where T : ExampleApp.DataModel
-        {
-            var builder = buildBinding(new BindingBuilder<bool>(self, ExampleApp.DataModel.AdminProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<bool>(self, ExampleApp.DataModel.AdminProperty);
+            configure(context).Build();
             return self;
         }
         

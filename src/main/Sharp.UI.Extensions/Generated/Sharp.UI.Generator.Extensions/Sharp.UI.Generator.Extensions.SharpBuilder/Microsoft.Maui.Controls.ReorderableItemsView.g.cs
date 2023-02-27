@@ -20,21 +20,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T CanMixGroups<T>(this T self,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
+        public static T CanMixGroups<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.ReorderableItemsView
         {
-            var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ReorderableItemsView.CanMixGroupsProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T CanMixGroups<T>(this T self,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
-            where T : Microsoft.Maui.Controls.ReorderableItemsView
-        {
-            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.ReorderableItemsView.CanMixGroupsProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.ReorderableItemsView.CanMixGroupsProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -46,21 +36,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T CanReorderItems<T>(this T self,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
+        public static T CanReorderItems<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.ReorderableItemsView
         {
-            var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ReorderableItemsView.CanReorderItemsProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T CanReorderItems<T>(this T self,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
-            where T : Microsoft.Maui.Controls.ReorderableItemsView
-        {
-            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.ReorderableItemsView.CanReorderItemsProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.ReorderableItemsView.CanReorderItemsProperty);
+            configure(context).Build();
             return self;
         }
         

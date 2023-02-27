@@ -20,7 +20,7 @@ public partial class HelloWorldPage : ContentPage
 			    .CenterHorizontally(),
 
 		    new Label("Welcome to .NET Multi-platform App UI")
-                .FontSize(e => e.Default(30).OnPhone(16))
+                .FontSize(e => e.OnPhone(16).Default(30))
                 .CenterHorizontally(),
 
             new Button("Click me")

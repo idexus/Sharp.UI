@@ -20,21 +20,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T HasUnevenRows<T>(this T self,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
+        public static T HasUnevenRows<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.TableView
         {
-            var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.TableView.HasUnevenRowsProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T HasUnevenRows<T>(this T self,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
-            where T : Microsoft.Maui.Controls.TableView
-        {
-            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.TableView.HasUnevenRowsProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.TableView.HasUnevenRowsProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -42,20 +32,8 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.TableIntent intent)
             where T : Microsoft.Maui.Controls.TableView
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property Intent");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property Intent");
             self.Intent = intent;
-            return self;
-        }
-        
-        public static T Intent<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.TableIntent>, ValueBuilder<Microsoft.Maui.Controls.TableIntent>> buildValue)
-            where T : Microsoft.Maui.Controls.TableView
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property Intent");
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.TableIntent>());
-            if (builder.ValueIsSet()) self.Intent = builder.GetValue();
             return self;
         }
         
@@ -85,21 +63,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T RowHeight<T>(this T self,
-            System.Func<ValueBuilder<int>, ValueBuilder<int>> buildValue)
+        public static T RowHeight<T>(this T self, Func<PropertyContext<int>, IPropertyBuilder<int>> configure)
             where T : Microsoft.Maui.Controls.TableView
         {
-            var builder = buildValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.TableView.RowHeightProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T RowHeight<T>(this T self,
-            System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
-            where T : Microsoft.Maui.Controls.TableView
-        {
-            var builder = buildBinding(new BindingBuilder<int>(self, Microsoft.Maui.Controls.TableView.RowHeightProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<int>(self, Microsoft.Maui.Controls.TableView.RowHeightProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -107,20 +75,8 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.Internals.TableModel model)
             where T : Microsoft.Maui.Controls.TableView
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property Model");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property Model");
             self.Model = model;
-            return self;
-        }
-        
-        public static T Model<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.Internals.TableModel>, ValueBuilder<Microsoft.Maui.Controls.Internals.TableModel>> buildValue)
-            where T : Microsoft.Maui.Controls.TableView
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property Model");
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Internals.TableModel>());
-            if (builder.ValueIsSet()) self.Model = builder.GetValue();
             return self;
         }
         

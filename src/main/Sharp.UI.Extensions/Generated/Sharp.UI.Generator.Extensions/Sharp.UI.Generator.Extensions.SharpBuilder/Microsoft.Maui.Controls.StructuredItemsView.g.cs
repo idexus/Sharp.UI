@@ -20,21 +20,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Header<T>(this T self,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buildValue)
+        public static T Header<T>(this T self, Func<PropertyContext<object>, IPropertyBuilder<object>> configure)
             where T : Microsoft.Maui.Controls.StructuredItemsView
         {
-            var builder = buildValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.StructuredItemsView.HeaderProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T Header<T>(this T self,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
-            where T : Microsoft.Maui.Controls.StructuredItemsView
-        {
-            var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.StructuredItemsView.HeaderProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<object>(self, Microsoft.Maui.Controls.StructuredItemsView.HeaderProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -46,21 +36,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T HeaderTemplate<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.DataTemplate>, ValueBuilder<Microsoft.Maui.Controls.DataTemplate>> buildValue)
+        public static T HeaderTemplate<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.DataTemplate>, IPropertyBuilder<Microsoft.Maui.Controls.DataTemplate>> configure)
             where T : Microsoft.Maui.Controls.StructuredItemsView
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.StructuredItemsView.HeaderTemplateProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T HeaderTemplate<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buildBinding)
-            where T : Microsoft.Maui.Controls.StructuredItemsView
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.StructuredItemsView.HeaderTemplateProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.StructuredItemsView.HeaderTemplateProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -79,21 +59,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Footer<T>(this T self,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buildValue)
+        public static T Footer<T>(this T self, Func<PropertyContext<object>, IPropertyBuilder<object>> configure)
             where T : Microsoft.Maui.Controls.StructuredItemsView
         {
-            var builder = buildValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.StructuredItemsView.FooterProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T Footer<T>(this T self,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
-            where T : Microsoft.Maui.Controls.StructuredItemsView
-        {
-            var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.StructuredItemsView.FooterProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<object>(self, Microsoft.Maui.Controls.StructuredItemsView.FooterProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -105,21 +75,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FooterTemplate<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.DataTemplate>, ValueBuilder<Microsoft.Maui.Controls.DataTemplate>> buildValue)
+        public static T FooterTemplate<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.DataTemplate>, IPropertyBuilder<Microsoft.Maui.Controls.DataTemplate>> configure)
             where T : Microsoft.Maui.Controls.StructuredItemsView
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.StructuredItemsView.FooterTemplateProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T FooterTemplate<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buildBinding)
-            where T : Microsoft.Maui.Controls.StructuredItemsView
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.StructuredItemsView.FooterTemplateProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.StructuredItemsView.FooterTemplateProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -138,21 +98,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ItemsLayout<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.IItemsLayout>, ValueBuilder<Microsoft.Maui.Controls.IItemsLayout>> buildValue)
+        public static T ItemsLayout<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.IItemsLayout>, IPropertyBuilder<Microsoft.Maui.Controls.IItemsLayout>> configure)
             where T : Microsoft.Maui.Controls.StructuredItemsView
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.IItemsLayout>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.StructuredItemsView.ItemsLayoutProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T ItemsLayout<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.IItemsLayout>, BindingBuilder<Microsoft.Maui.Controls.IItemsLayout>> buildBinding)
-            where T : Microsoft.Maui.Controls.StructuredItemsView
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.IItemsLayout>(self, Microsoft.Maui.Controls.StructuredItemsView.ItemsLayoutProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Controls.IItemsLayout>(self, Microsoft.Maui.Controls.StructuredItemsView.ItemsLayoutProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -164,21 +114,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ItemSizingStrategy<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.ItemSizingStrategy>, ValueBuilder<Microsoft.Maui.Controls.ItemSizingStrategy>> buildValue)
+        public static T ItemSizingStrategy<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.ItemSizingStrategy>, IPropertyBuilder<Microsoft.Maui.Controls.ItemSizingStrategy>> configure)
             where T : Microsoft.Maui.Controls.StructuredItemsView
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ItemSizingStrategy>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.StructuredItemsView.ItemSizingStrategyProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T ItemSizingStrategy<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.ItemSizingStrategy>, BindingBuilder<Microsoft.Maui.Controls.ItemSizingStrategy>> buildBinding)
-            where T : Microsoft.Maui.Controls.StructuredItemsView
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ItemSizingStrategy>(self, Microsoft.Maui.Controls.StructuredItemsView.ItemSizingStrategyProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Controls.ItemSizingStrategy>(self, Microsoft.Maui.Controls.StructuredItemsView.ItemSizingStrategyProperty);
+            configure(context).Build();
             return self;
         }
         

@@ -20,21 +20,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Matrix<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.Shapes.Matrix>, ValueBuilder<Microsoft.Maui.Controls.Shapes.Matrix>> buildValue)
+        public static T Matrix<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.Shapes.Matrix>, IPropertyBuilder<Microsoft.Maui.Controls.Shapes.Matrix>> configure)
             where T : Microsoft.Maui.Controls.Shapes.MatrixTransform
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Shapes.Matrix>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.MatrixTransform.MatrixProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T Matrix<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.Shapes.Matrix>, BindingBuilder<Microsoft.Maui.Controls.Shapes.Matrix>> buildBinding)
-            where T : Microsoft.Maui.Controls.Shapes.MatrixTransform
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Shapes.Matrix>(self, Microsoft.Maui.Controls.Shapes.MatrixTransform.MatrixProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Controls.Shapes.Matrix>(self, Microsoft.Maui.Controls.Shapes.MatrixTransform.MatrixProperty);
+            configure(context).Build();
             return self;
         }
         

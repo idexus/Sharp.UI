@@ -20,21 +20,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T IsGrouped<T>(this T self,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
+        public static T IsGrouped<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.GroupableItemsView
         {
-            var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.GroupableItemsView.IsGroupedProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T IsGrouped<T>(this T self,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
-            where T : Microsoft.Maui.Controls.GroupableItemsView
-        {
-            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.GroupableItemsView.IsGroupedProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.GroupableItemsView.IsGroupedProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -46,21 +36,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T GroupHeaderTemplate<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.DataTemplate>, ValueBuilder<Microsoft.Maui.Controls.DataTemplate>> buildValue)
+        public static T GroupHeaderTemplate<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.DataTemplate>, IPropertyBuilder<Microsoft.Maui.Controls.DataTemplate>> configure)
             where T : Microsoft.Maui.Controls.GroupableItemsView
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.GroupableItemsView.GroupHeaderTemplateProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T GroupHeaderTemplate<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buildBinding)
-            where T : Microsoft.Maui.Controls.GroupableItemsView
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.GroupableItemsView.GroupHeaderTemplateProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.GroupableItemsView.GroupHeaderTemplateProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -79,21 +59,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T GroupFooterTemplate<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.DataTemplate>, ValueBuilder<Microsoft.Maui.Controls.DataTemplate>> buildValue)
+        public static T GroupFooterTemplate<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.DataTemplate>, IPropertyBuilder<Microsoft.Maui.Controls.DataTemplate>> configure)
             where T : Microsoft.Maui.Controls.GroupableItemsView
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.GroupableItemsView.GroupFooterTemplateProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T GroupFooterTemplate<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buildBinding)
-            where T : Microsoft.Maui.Controls.GroupableItemsView
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.GroupableItemsView.GroupFooterTemplateProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.GroupableItemsView.GroupFooterTemplateProperty);
+            configure(context).Build();
             return self;
         }
         

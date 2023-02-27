@@ -20,21 +20,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Orientation<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.StackOrientation>, ValueBuilder<Microsoft.Maui.Controls.StackOrientation>> buildValue)
+        public static T Orientation<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.StackOrientation>, IPropertyBuilder<Microsoft.Maui.Controls.StackOrientation>> configure)
             where T : Microsoft.Maui.Controls.StackLayout
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.StackOrientation>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.StackLayout.OrientationProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T Orientation<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.StackOrientation>, BindingBuilder<Microsoft.Maui.Controls.StackOrientation>> buildBinding)
-            where T : Microsoft.Maui.Controls.StackLayout
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.StackOrientation>(self, Microsoft.Maui.Controls.StackLayout.OrientationProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Controls.StackOrientation>(self, Microsoft.Maui.Controls.StackLayout.OrientationProperty);
+            configure(context).Build();
             return self;
         }
         

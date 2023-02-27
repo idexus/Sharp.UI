@@ -20,21 +20,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Threshold<T>(this T self,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
+        public static T Threshold<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.SwipeView
         {
-            var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwipeView.ThresholdProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T Threshold<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
-            where T : Microsoft.Maui.Controls.SwipeView
-        {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.SwipeView.ThresholdProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.SwipeView.ThresholdProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -65,12 +55,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T LeftItems<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.SwipeItems>, BindingBuilder<Microsoft.Maui.Controls.SwipeItems>> buildBinding)
+        public static T LeftItems<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.SwipeItems>, IPropertyBuilder<Microsoft.Maui.Controls.SwipeItems>> configure)
             where T : Microsoft.Maui.Controls.SwipeView
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.SwipeItems>(self, Microsoft.Maui.Controls.SwipeView.LeftItemsProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Controls.SwipeItems>(self, Microsoft.Maui.Controls.SwipeView.LeftItemsProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -92,12 +81,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T RightItems<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.SwipeItems>, BindingBuilder<Microsoft.Maui.Controls.SwipeItems>> buildBinding)
+        public static T RightItems<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.SwipeItems>, IPropertyBuilder<Microsoft.Maui.Controls.SwipeItems>> configure)
             where T : Microsoft.Maui.Controls.SwipeView
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.SwipeItems>(self, Microsoft.Maui.Controls.SwipeView.RightItemsProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Controls.SwipeItems>(self, Microsoft.Maui.Controls.SwipeView.RightItemsProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -119,12 +107,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T TopItems<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.SwipeItems>, BindingBuilder<Microsoft.Maui.Controls.SwipeItems>> buildBinding)
+        public static T TopItems<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.SwipeItems>, IPropertyBuilder<Microsoft.Maui.Controls.SwipeItems>> configure)
             where T : Microsoft.Maui.Controls.SwipeView
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.SwipeItems>(self, Microsoft.Maui.Controls.SwipeView.TopItemsProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Controls.SwipeItems>(self, Microsoft.Maui.Controls.SwipeView.TopItemsProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -146,12 +133,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T BottomItems<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.SwipeItems>, BindingBuilder<Microsoft.Maui.Controls.SwipeItems>> buildBinding)
+        public static T BottomItems<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.SwipeItems>, IPropertyBuilder<Microsoft.Maui.Controls.SwipeItems>> configure)
             where T : Microsoft.Maui.Controls.SwipeView
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.SwipeItems>(self, Microsoft.Maui.Controls.SwipeView.BottomItemsProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Controls.SwipeItems>(self, Microsoft.Maui.Controls.SwipeView.BottomItemsProperty);
+            configure(context).Build();
             return self;
         }
         

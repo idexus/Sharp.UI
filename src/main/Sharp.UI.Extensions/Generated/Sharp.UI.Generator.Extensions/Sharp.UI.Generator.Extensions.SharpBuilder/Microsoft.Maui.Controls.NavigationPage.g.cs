@@ -20,21 +20,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T BarBackgroundColor<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
+        public static T BarBackgroundColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.NavigationPage
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.NavigationPage.BarBackgroundColorProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T BarBackgroundColor<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
-            where T : Microsoft.Maui.Controls.NavigationPage
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.NavigationPage.BarBackgroundColorProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.NavigationPage.BarBackgroundColorProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -55,21 +45,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T BarBackground<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.Brush>, ValueBuilder<Microsoft.Maui.Controls.Brush>> buildValue)
+        public static T BarBackground<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.Brush>, IPropertyBuilder<Microsoft.Maui.Controls.Brush>> configure)
             where T : Microsoft.Maui.Controls.NavigationPage
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Brush>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.NavigationPage.BarBackgroundProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T BarBackground<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.Brush>, BindingBuilder<Microsoft.Maui.Controls.Brush>> buildBinding)
-            where T : Microsoft.Maui.Controls.NavigationPage
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Brush>(self, Microsoft.Maui.Controls.NavigationPage.BarBackgroundProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Controls.Brush>(self, Microsoft.Maui.Controls.NavigationPage.BarBackgroundProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -81,21 +61,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T BarTextColor<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
+        public static T BarTextColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.NavigationPage
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.NavigationPage.BarTextColorProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T BarTextColor<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
-            where T : Microsoft.Maui.Controls.NavigationPage
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.NavigationPage.BarTextColorProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.NavigationPage.BarTextColorProperty);
+            configure(context).Build();
             return self;
         }
         

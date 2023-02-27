@@ -20,21 +20,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Url<T>(this T self,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
+        public static T Url<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.UrlWebViewSource
         {
-            var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.UrlWebViewSource.UrlProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T Url<T>(this T self,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
-            where T : Microsoft.Maui.Controls.UrlWebViewSource
-        {
-            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.UrlWebViewSource.UrlProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<string>(self, Microsoft.Maui.Controls.UrlWebViewSource.UrlProperty);
+            configure(context).Build();
             return self;
         }
         

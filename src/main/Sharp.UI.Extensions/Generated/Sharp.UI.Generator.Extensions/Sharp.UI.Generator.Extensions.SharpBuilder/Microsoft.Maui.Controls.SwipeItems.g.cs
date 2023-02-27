@@ -20,21 +20,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Mode<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.SwipeMode>, ValueBuilder<Microsoft.Maui.SwipeMode>> buildValue)
+        public static T Mode<T>(this T self, Func<PropertyContext<Microsoft.Maui.SwipeMode>, IPropertyBuilder<Microsoft.Maui.SwipeMode>> configure)
             where T : Microsoft.Maui.Controls.SwipeItems
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.SwipeMode>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwipeItems.ModeProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T Mode<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.SwipeMode>, BindingBuilder<Microsoft.Maui.SwipeMode>> buildBinding)
-            where T : Microsoft.Maui.Controls.SwipeItems
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.SwipeMode>(self, Microsoft.Maui.Controls.SwipeItems.ModeProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.SwipeMode>(self, Microsoft.Maui.Controls.SwipeItems.ModeProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -46,21 +36,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T SwipeBehaviorOnInvoked<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.SwipeBehaviorOnInvoked>, ValueBuilder<Microsoft.Maui.SwipeBehaviorOnInvoked>> buildValue)
+        public static T SwipeBehaviorOnInvoked<T>(this T self, Func<PropertyContext<Microsoft.Maui.SwipeBehaviorOnInvoked>, IPropertyBuilder<Microsoft.Maui.SwipeBehaviorOnInvoked>> configure)
             where T : Microsoft.Maui.Controls.SwipeItems
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.SwipeBehaviorOnInvoked>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwipeItems.SwipeBehaviorOnInvokedProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T SwipeBehaviorOnInvoked<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.SwipeBehaviorOnInvoked>, BindingBuilder<Microsoft.Maui.SwipeBehaviorOnInvoked>> buildBinding)
-            where T : Microsoft.Maui.Controls.SwipeItems
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.SwipeBehaviorOnInvoked>(self, Microsoft.Maui.Controls.SwipeItems.SwipeBehaviorOnInvokedProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.SwipeBehaviorOnInvoked>(self, Microsoft.Maui.Controls.SwipeItems.SwipeBehaviorOnInvokedProperty);
+            configure(context).Build();
             return self;
         }
         

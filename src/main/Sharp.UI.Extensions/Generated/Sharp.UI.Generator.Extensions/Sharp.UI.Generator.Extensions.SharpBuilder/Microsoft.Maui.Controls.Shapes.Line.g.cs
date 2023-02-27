@@ -19,19 +19,10 @@ namespace Sharp.UI
             return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.Line X1(this Microsoft.Maui.Controls.Shapes.Line self,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
+        public static Microsoft.Maui.Controls.Shapes.Line X1(this Microsoft.Maui.Controls.Shapes.Line self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
         {
-            var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Line.X1Property, builder.GetValue());
-            return self;
-        }
-        
-        public static Microsoft.Maui.Controls.Shapes.Line X1(this Microsoft.Maui.Controls.Shapes.Line self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
-        {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.Line.X1Property));
-            builder.BindProperty();
+            var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Shapes.Line.X1Property);
+            configure(context).Build();
             return self;
         }
         
@@ -50,19 +41,10 @@ namespace Sharp.UI
             return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.Line Y1(this Microsoft.Maui.Controls.Shapes.Line self,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
+        public static Microsoft.Maui.Controls.Shapes.Line Y1(this Microsoft.Maui.Controls.Shapes.Line self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
         {
-            var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Line.Y1Property, builder.GetValue());
-            return self;
-        }
-        
-        public static Microsoft.Maui.Controls.Shapes.Line Y1(this Microsoft.Maui.Controls.Shapes.Line self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
-        {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.Line.Y1Property));
-            builder.BindProperty();
+            var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Shapes.Line.Y1Property);
+            configure(context).Build();
             return self;
         }
         
@@ -81,19 +63,10 @@ namespace Sharp.UI
             return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.Line X2(this Microsoft.Maui.Controls.Shapes.Line self,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
+        public static Microsoft.Maui.Controls.Shapes.Line X2(this Microsoft.Maui.Controls.Shapes.Line self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
         {
-            var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Line.X2Property, builder.GetValue());
-            return self;
-        }
-        
-        public static Microsoft.Maui.Controls.Shapes.Line X2(this Microsoft.Maui.Controls.Shapes.Line self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
-        {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.Line.X2Property));
-            builder.BindProperty();
+            var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Shapes.Line.X2Property);
+            configure(context).Build();
             return self;
         }
         
@@ -112,19 +85,10 @@ namespace Sharp.UI
             return self;
         }
         
-        public static Microsoft.Maui.Controls.Shapes.Line Y2(this Microsoft.Maui.Controls.Shapes.Line self,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
+        public static Microsoft.Maui.Controls.Shapes.Line Y2(this Microsoft.Maui.Controls.Shapes.Line self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
         {
-            var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Line.Y2Property, builder.GetValue());
-            return self;
-        }
-        
-        public static Microsoft.Maui.Controls.Shapes.Line Y2(this Microsoft.Maui.Controls.Shapes.Line self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
-        {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Shapes.Line.Y2Property));
-            builder.BindProperty();
+            var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Shapes.Line.Y2Property);
+            configure(context).Build();
             return self;
         }
         

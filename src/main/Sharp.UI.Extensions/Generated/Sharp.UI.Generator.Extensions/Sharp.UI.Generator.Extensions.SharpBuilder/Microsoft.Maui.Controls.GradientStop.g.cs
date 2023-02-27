@@ -20,21 +20,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Color<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
+        public static T Color<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.GradientStop
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.GradientStop.ColorProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T Color<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
-            where T : Microsoft.Maui.Controls.GradientStop
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.GradientStop.ColorProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.GradientStop.ColorProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -46,21 +36,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Offset<T>(this T self,
-            System.Func<ValueBuilder<float>, ValueBuilder<float>> buildValue)
+        public static T Offset<T>(this T self, Func<PropertyContext<float>, IPropertyBuilder<float>> configure)
             where T : Microsoft.Maui.Controls.GradientStop
         {
-            var builder = buildValue(new ValueBuilder<float>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.GradientStop.OffsetProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T Offset<T>(this T self,
-            System.Func<BindingBuilder<float>, BindingBuilder<float>> buildBinding)
-            where T : Microsoft.Maui.Controls.GradientStop
-        {
-            var builder = buildBinding(new BindingBuilder<float>(self, Microsoft.Maui.Controls.GradientStop.OffsetProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<float>(self, Microsoft.Maui.Controls.GradientStop.OffsetProperty);
+            configure(context).Build();
             return self;
         }
         

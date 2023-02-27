@@ -144,7 +144,6 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
             public string camelCaseName;
             public string symbolTypeName;
             public string valueAssignmentString;
-            public string valueBuilderAssignmentString;
             public string dataTemplateAssignmentString;
             public string fluentStylingCheckString;
 
@@ -175,13 +174,8 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
                     $@"self.SetValueOrAddSetter({BindablePropertyName}, new DataTemplate(loadTemplate));" :
                     $@"{accessedWith}.{propertyName} = new DataTemplate(loadTemplate);";
 
-                valueBuilderAssignmentString = IsBindableProperty ?
-                    $@"if (builder.ValueIsSet()) self.SetValueOrAddSetter({BindablePropertyName}, builder.GetValue());" :
-                    $@"if (builder.ValueIsSet()) self.{propertyName} = builder.GetValue();";
-
                 fluentStylingCheckString = IsBindableObject && !IsBindableProperty ?
-            $@"var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException(""Fluent styling not available for property {propertyName}"");
+            $@"if (FluentStyling.Setters != null) throw new ArgumentException(""Fluent styling not available for property {propertyName}"");
             " : "";
 
             }
@@ -299,8 +293,7 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
             if (!Shared.NotGenerateList.Contains(info.propertyName))
             {
                 GenerateExtensionMethod_Value(info);
-                GenerateExtensionMethod_ValueBuilder(info);
-                GenerateExtensionMethod_BindingBuilder(info);
+                GenerateExtensionMethod_BindablePropertyBuilder(info);
 
                 if (info.propertyTypeName.Contains("DataTemplate"))
                     GenerateExtensionMethod_DataTemplate(info);
@@ -336,9 +329,9 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
                     !ExistInBaseClasses(info.propertyName, getterAndSetter: true))
                 {
                     GenerateExtensionMethod_Value(info);
-                    GenerateExtensionMethod_ValueBuilder(info);
+
                     if (info.IsBindableProperty)
-                        GenerateExtensionMethod_BindingBuilder(info);
+                        GenerateExtensionMethod_BindablePropertyBuilder(info);
 
                     if (info.propertyTypeName.Equals("Microsoft.Maui.Controls.DataTemplate"))
                         GenerateExtensionMethod_DataTemplate(info);
@@ -359,7 +352,7 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
                 {
                     GenerateExtensionMethod_List(info, elementType.ToDisplayString());
                     if (info.IsBindableProperty)
-                        GenerateExtensionMethod_BindingBuilder(info);
+                        GenerateExtensionMethod_BindablePropertyBuilder(info);
                 }
             }
         }
@@ -457,77 +450,36 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
 
         // binding builder
 
-        void GenerateExtensionMethod_BindingBuilder(PropertyInfo info)
+        void GenerateExtensionMethod_BindablePropertyBuilder(PropertyInfo info)
         {
             if (mainSymbol.IsSealed)
-                GenerateExtensionMethod_BindingBuilder_Sealed(info);
+                GenerateExtensionMethod_BindablePropertyBuilder_Sealed(info);
             else
-                GenerateExtensionMethod_BindingBuilder_Normal(info);
+                GenerateExtensionMethod_BindablePropertyBuilder_Normal(info);
         }
 
-        void GenerateExtensionMethod_BindingBuilder_Sealed(PropertyInfo info)
+        void GenerateExtensionMethod_BindablePropertyBuilder_Sealed(PropertyInfo info)
         {
             isExtensionMethodsGenerated = true;
             builder.Append($@"
-        public static {info.symbolTypeName} {info.propertyName}(this {info.symbolTypeName} self,
-            System.Func<BindingBuilder<{info.propertyTypeName}>, BindingBuilder<{info.propertyTypeName}>> buildBinding)
+        public static {info.symbolTypeName} {info.propertyName}(this {info.symbolTypeName} self, Func<PropertyContext<{info.propertyTypeName}>, IPropertyBuilder<{info.propertyTypeName}>> configure)
         {{
-            var builder = buildBinding(new BindingBuilder<{info.propertyTypeName}>(self, {info.BindablePropertyName}));
-            builder.BindProperty();
+            var context = new PropertyContext<{info.propertyTypeName}>(self, {info.BindablePropertyName});
+            configure(context).Build();
             return self;
         }}
         ");
         }
 
-        void GenerateExtensionMethod_BindingBuilder_Normal(PropertyInfo info)
+        void GenerateExtensionMethod_BindablePropertyBuilder_Normal(PropertyInfo info)
         {
             isExtensionMethodsGenerated = true;
             builder.Append($@"
-        public static T {info.propertyName}<T>(this T self,
-            System.Func<BindingBuilder<{info.propertyTypeName}>, BindingBuilder<{info.propertyTypeName}>> buildBinding)
+        public static T {info.propertyName}<T>(this T self, Func<PropertyContext<{info.propertyTypeName}>, IPropertyBuilder<{info.propertyTypeName}>> configure)
             where T : {info.symbolTypeName}
         {{
-            var builder = buildBinding(new BindingBuilder<{info.propertyTypeName}>(self, {info.BindablePropertyName}));
-            builder.BindProperty();
-            return self;
-        }}
-        ");
-        }
-
-        // value builder
-
-        void GenerateExtensionMethod_ValueBuilder(PropertyInfo info)
-        {
-            if (mainSymbol.IsSealed)
-                GenerateExtensionMethod_ValueBuilder_Sealed(info);
-            else
-                GenerateExtensionMethod_ValueBuilder_Normal(info);
-        }
-
-        void GenerateExtensionMethod_ValueBuilder_Sealed(PropertyInfo info)
-        {
-            isExtensionMethodsGenerated = true;
-            builder.Append($@"
-        public static {info.symbolTypeName} {info.propertyName}(this {info.symbolTypeName} self,
-            System.Func<ValueBuilder<{info.propertyTypeName}>, ValueBuilder<{info.propertyTypeName}>> buildValue)
-        {{
-            {info.fluentStylingCheckString}var builder = buildValue(new ValueBuilder<{info.propertyTypeName}>());
-            {info.valueBuilderAssignmentString}
-            return self;
-        }}
-        ");
-        }
-
-        void GenerateExtensionMethod_ValueBuilder_Normal(PropertyInfo info)
-        {
-            isExtensionMethodsGenerated = true;
-            builder.Append($@"
-        public static T {info.propertyName}<T>(this T self,
-            System.Func<ValueBuilder<{info.propertyTypeName}>, ValueBuilder<{info.propertyTypeName}>> buildValue)
-            where T : {info.symbolTypeName}
-        {{
-            {info.fluentStylingCheckString}var builder = buildValue(new ValueBuilder<{info.propertyTypeName}>());
-            {info.valueBuilderAssignmentString}
+            var context = new PropertyContext<{info.propertyTypeName}>(self, {info.BindablePropertyName});
+            configure(context).Build();
             return self;
         }}
         ");

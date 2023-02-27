@@ -19,19 +19,10 @@ namespace Sharp.UI
             return self;
         }
         
-        public static Microsoft.Maui.Controls.OrientationStateTrigger Orientation(this Microsoft.Maui.Controls.OrientationStateTrigger self,
-            System.Func<ValueBuilder<Microsoft.Maui.Devices.DisplayOrientation>, ValueBuilder<Microsoft.Maui.Devices.DisplayOrientation>> buildValue)
+        public static Microsoft.Maui.Controls.OrientationStateTrigger Orientation(this Microsoft.Maui.Controls.OrientationStateTrigger self, Func<PropertyContext<Microsoft.Maui.Devices.DisplayOrientation>, IPropertyBuilder<Microsoft.Maui.Devices.DisplayOrientation>> configure)
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Devices.DisplayOrientation>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.OrientationStateTrigger.OrientationProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static Microsoft.Maui.Controls.OrientationStateTrigger Orientation(this Microsoft.Maui.Controls.OrientationStateTrigger self,
-            System.Func<BindingBuilder<Microsoft.Maui.Devices.DisplayOrientation>, BindingBuilder<Microsoft.Maui.Devices.DisplayOrientation>> buildBinding)
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Devices.DisplayOrientation>(self, Microsoft.Maui.Controls.OrientationStateTrigger.OrientationProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Devices.DisplayOrientation>(self, Microsoft.Maui.Controls.OrientationStateTrigger.OrientationProperty);
+            configure(context).Build();
             return self;
         }
         

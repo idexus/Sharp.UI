@@ -20,21 +20,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ContextFlyout<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.MenuFlyout>, ValueBuilder<Microsoft.Maui.Controls.MenuFlyout>> buildValue)
+        public static T ContextFlyout<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.MenuFlyout>, IPropertyBuilder<Microsoft.Maui.Controls.MenuFlyout>> configure)
             where T : Microsoft.Maui.Controls.Element
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.MenuFlyout>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.FlyoutBase.ContextFlyoutProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T ContextFlyout<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.MenuFlyout>, BindingBuilder<Microsoft.Maui.Controls.MenuFlyout>> buildBinding)
-            where T : Microsoft.Maui.Controls.Element
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.MenuFlyout>(self, Microsoft.Maui.Controls.FlyoutBase.ContextFlyoutProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Controls.MenuFlyout>(self, Microsoft.Maui.Controls.FlyoutBase.ContextFlyoutProperty);
+            configure(context).Build();
             return self;
         }
         

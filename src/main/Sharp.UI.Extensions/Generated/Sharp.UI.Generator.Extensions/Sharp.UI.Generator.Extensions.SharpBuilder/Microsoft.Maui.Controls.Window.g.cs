@@ -20,21 +20,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Title<T>(this T self,
-            System.Func<ValueBuilder<string?>, ValueBuilder<string?>> buildValue)
+        public static T Title<T>(this T self, Func<PropertyContext<string?>, IPropertyBuilder<string?>> configure)
             where T : Microsoft.Maui.Controls.Window
         {
-            var builder = buildValue(new ValueBuilder<string?>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Window.TitleProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T Title<T>(this T self,
-            System.Func<BindingBuilder<string?>, BindingBuilder<string?>> buildBinding)
-            where T : Microsoft.Maui.Controls.Window
-        {
-            var builder = buildBinding(new BindingBuilder<string?>(self, Microsoft.Maui.Controls.Window.TitleProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<string?>(self, Microsoft.Maui.Controls.Window.TitleProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -46,21 +36,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Page<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.Page?>, ValueBuilder<Microsoft.Maui.Controls.Page?>> buildValue)
+        public static T Page<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.Page?>, IPropertyBuilder<Microsoft.Maui.Controls.Page?>> configure)
             where T : Microsoft.Maui.Controls.Window
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Page?>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Window.PageProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T Page<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.Page?>, BindingBuilder<Microsoft.Maui.Controls.Page?>> buildBinding)
-            where T : Microsoft.Maui.Controls.Window
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.Page?>(self, Microsoft.Maui.Controls.Window.PageProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Controls.Page?>(self, Microsoft.Maui.Controls.Window.PageProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -72,21 +52,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T X<T>(this T self,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
+        public static T X<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Window
         {
-            var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Window.XProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T X<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
-            where T : Microsoft.Maui.Controls.Window
-        {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Window.XProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Window.XProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -98,21 +68,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Y<T>(this T self,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
+        public static T Y<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Window
         {
-            var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Window.YProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T Y<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
-            where T : Microsoft.Maui.Controls.Window
-        {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Window.YProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Window.YProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -124,21 +84,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Width<T>(this T self,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
+        public static T Width<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Window
         {
-            var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Window.WidthProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T Width<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
-            where T : Microsoft.Maui.Controls.Window
-        {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Window.WidthProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Window.WidthProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -150,21 +100,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Height<T>(this T self,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
+        public static T Height<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Window
         {
-            var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Window.HeightProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T Height<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
-            where T : Microsoft.Maui.Controls.Window
-        {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Window.HeightProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Window.HeightProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -176,21 +116,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T MaximumWidth<T>(this T self,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
+        public static T MaximumWidth<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Window
         {
-            var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Window.MaximumWidthProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T MaximumWidth<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
-            where T : Microsoft.Maui.Controls.Window
-        {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Window.MaximumWidthProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Window.MaximumWidthProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -202,21 +132,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T MaximumHeight<T>(this T self,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
+        public static T MaximumHeight<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Window
         {
-            var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Window.MaximumHeightProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T MaximumHeight<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
-            where T : Microsoft.Maui.Controls.Window
-        {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Window.MaximumHeightProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Window.MaximumHeightProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -228,21 +148,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T MinimumWidth<T>(this T self,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
+        public static T MinimumWidth<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Window
         {
-            var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Window.MinimumWidthProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T MinimumWidth<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
-            where T : Microsoft.Maui.Controls.Window
-        {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Window.MinimumWidthProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Window.MinimumWidthProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -254,21 +164,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T MinimumHeight<T>(this T self,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
+        public static T MinimumHeight<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Window
         {
-            var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Window.MinimumHeightProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T MinimumHeight<T>(this T self,
-            System.Func<BindingBuilder<double>, BindingBuilder<double>> buildBinding)
-            where T : Microsoft.Maui.Controls.Window
-        {
-            var builder = buildBinding(new BindingBuilder<double>(self, Microsoft.Maui.Controls.Window.MinimumHeightProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Window.MinimumHeightProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -280,21 +180,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FlowDirection<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.FlowDirection>, ValueBuilder<Microsoft.Maui.FlowDirection>> buildValue)
+        public static T FlowDirection<T>(this T self, Func<PropertyContext<Microsoft.Maui.FlowDirection>, IPropertyBuilder<Microsoft.Maui.FlowDirection>> configure)
             where T : Microsoft.Maui.Controls.Window
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.FlowDirection>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Window.FlowDirectionProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T FlowDirection<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.FlowDirection>, BindingBuilder<Microsoft.Maui.FlowDirection>> buildBinding)
-            where T : Microsoft.Maui.Controls.Window
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.FlowDirection>(self, Microsoft.Maui.Controls.Window.FlowDirectionProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.FlowDirection>(self, Microsoft.Maui.Controls.Window.FlowDirectionProperty);
+            configure(context).Build();
             return self;
         }
         

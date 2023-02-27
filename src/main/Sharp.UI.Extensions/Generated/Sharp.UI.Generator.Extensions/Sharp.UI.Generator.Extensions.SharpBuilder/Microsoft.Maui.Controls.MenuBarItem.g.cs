@@ -16,20 +16,8 @@ namespace Sharp.UI
             int priority)
             where T : Microsoft.Maui.Controls.MenuBarItem
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property Priority");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property Priority");
             self.Priority = priority;
-            return self;
-        }
-        
-        public static T Priority<T>(this T self,
-            System.Func<ValueBuilder<int>, ValueBuilder<int>> buildValue)
-            where T : Microsoft.Maui.Controls.MenuBarItem
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property Priority");
-            var builder = buildValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) self.Priority = builder.GetValue();
             return self;
         }
         
@@ -41,21 +29,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T IsEnabled<T>(this T self,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
+        public static T IsEnabled<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.MenuBarItem
         {
-            var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.MenuBarItem.IsEnabledProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T IsEnabled<T>(this T self,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
-            where T : Microsoft.Maui.Controls.MenuBarItem
-        {
-            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.MenuBarItem.IsEnabledProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.MenuBarItem.IsEnabledProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -67,21 +45,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Text<T>(this T self,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
+        public static T Text<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.MenuBarItem
         {
-            var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.MenuBarItem.TextProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T Text<T>(this T self,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
-            where T : Microsoft.Maui.Controls.MenuBarItem
-        {
-            var builder = buildBinding(new BindingBuilder<string>(self, Microsoft.Maui.Controls.MenuBarItem.TextProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<string>(self, Microsoft.Maui.Controls.MenuBarItem.TextProperty);
+            configure(context).Build();
             return self;
         }
         

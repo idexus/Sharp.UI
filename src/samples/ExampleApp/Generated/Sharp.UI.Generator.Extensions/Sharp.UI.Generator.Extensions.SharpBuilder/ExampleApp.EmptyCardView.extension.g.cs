@@ -21,21 +21,11 @@ namespace ExampleApp
             return self;
         }
         
-        public static T CardTitle<T>(this T self,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
+        public static T CardTitle<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : ExampleApp.EmptyCardView
         {
-            var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(ExampleApp.EmptyCardView.CardTitleProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T CardTitle<T>(this T self,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
-            where T : ExampleApp.EmptyCardView
-        {
-            var builder = buildBinding(new BindingBuilder<string>(self, ExampleApp.EmptyCardView.CardTitleProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<string>(self, ExampleApp.EmptyCardView.CardTitleProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -47,21 +37,11 @@ namespace ExampleApp
             return self;
         }
         
-        public static T CardDescription<T>(this T self,
-            System.Func<ValueBuilder<string>, ValueBuilder<string>> buildValue)
+        public static T CardDescription<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : ExampleApp.EmptyCardView
         {
-            var builder = buildValue(new ValueBuilder<string>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(ExampleApp.EmptyCardView.CardDescriptionProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T CardDescription<T>(this T self,
-            System.Func<BindingBuilder<string>, BindingBuilder<string>> buildBinding)
-            where T : ExampleApp.EmptyCardView
-        {
-            var builder = buildBinding(new BindingBuilder<string>(self, ExampleApp.EmptyCardView.CardDescriptionProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<string>(self, ExampleApp.EmptyCardView.CardDescriptionProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -73,21 +53,11 @@ namespace ExampleApp
             return self;
         }
         
-        public static T CardColor<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
+        public static T CardColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : ExampleApp.EmptyCardView
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(ExampleApp.EmptyCardView.CardColorProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T CardColor<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
-            where T : ExampleApp.EmptyCardView
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, ExampleApp.EmptyCardView.CardColorProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, ExampleApp.EmptyCardView.CardColorProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -99,21 +69,11 @@ namespace ExampleApp
             return self;
         }
         
-        public static T BorderColor<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
+        public static T BorderColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : ExampleApp.EmptyCardView
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(ExampleApp.EmptyCardView.BorderColorProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T BorderColor<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
-            where T : ExampleApp.EmptyCardView
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, ExampleApp.EmptyCardView.BorderColorProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, ExampleApp.EmptyCardView.BorderColorProperty);
+            configure(context).Build();
             return self;
         }
         

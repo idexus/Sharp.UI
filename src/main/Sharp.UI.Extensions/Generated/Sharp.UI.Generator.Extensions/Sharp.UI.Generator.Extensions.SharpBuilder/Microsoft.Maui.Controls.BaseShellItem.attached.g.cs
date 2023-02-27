@@ -20,21 +20,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ShellItemTemplate<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.DataTemplate>, ValueBuilder<Microsoft.Maui.Controls.DataTemplate>> buildValue)
+        public static T ShellItemTemplate<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.DataTemplate>, IPropertyBuilder<Microsoft.Maui.Controls.DataTemplate>> configure)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.ItemTemplateProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T ShellItemTemplate<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buildBinding)
-            where T : Microsoft.Maui.Controls.BaseShellItem
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.Shell.ItemTemplateProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.Shell.ItemTemplateProperty);
+            configure(context).Build();
             return self;
         }
         

@@ -20,21 +20,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Footer<T>(this T self,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buildValue)
+        public static T Footer<T>(this T self, Func<PropertyContext<object>, IPropertyBuilder<object>> configure)
             where T : Microsoft.Maui.Controls.ListView
         {
-            var builder = buildValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.FooterProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T Footer<T>(this T self,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
-            where T : Microsoft.Maui.Controls.ListView
-        {
-            var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.ListView.FooterProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<object>(self, Microsoft.Maui.Controls.ListView.FooterProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -46,21 +36,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T FooterTemplate<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.DataTemplate>, ValueBuilder<Microsoft.Maui.Controls.DataTemplate>> buildValue)
+        public static T FooterTemplate<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.DataTemplate>, IPropertyBuilder<Microsoft.Maui.Controls.DataTemplate>> configure)
             where T : Microsoft.Maui.Controls.ListView
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.FooterTemplateProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T FooterTemplate<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buildBinding)
-            where T : Microsoft.Maui.Controls.ListView
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.ListView.FooterTemplateProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.ListView.FooterTemplateProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -75,20 +55,8 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.BindingBase groupDisplayBinding)
             where T : Microsoft.Maui.Controls.ListView
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property GroupDisplayBinding");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property GroupDisplayBinding");
             self.GroupDisplayBinding = groupDisplayBinding;
-            return self;
-        }
-        
-        public static T GroupDisplayBinding<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.BindingBase>, ValueBuilder<Microsoft.Maui.Controls.BindingBase>> buildValue)
-            where T : Microsoft.Maui.Controls.ListView
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property GroupDisplayBinding");
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.BindingBase>());
-            if (builder.ValueIsSet()) self.GroupDisplayBinding = builder.GetValue();
             return self;
         }
         
@@ -100,21 +68,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T GroupHeaderTemplate<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.DataTemplate>, ValueBuilder<Microsoft.Maui.Controls.DataTemplate>> buildValue)
+        public static T GroupHeaderTemplate<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.DataTemplate>, IPropertyBuilder<Microsoft.Maui.Controls.DataTemplate>> configure)
             where T : Microsoft.Maui.Controls.ListView
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.GroupHeaderTemplateProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T GroupHeaderTemplate<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buildBinding)
-            where T : Microsoft.Maui.Controls.ListView
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.ListView.GroupHeaderTemplateProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.ListView.GroupHeaderTemplateProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -129,20 +87,8 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.BindingBase groupShortNameBinding)
             where T : Microsoft.Maui.Controls.ListView
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property GroupShortNameBinding");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property GroupShortNameBinding");
             self.GroupShortNameBinding = groupShortNameBinding;
-            return self;
-        }
-        
-        public static T GroupShortNameBinding<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.BindingBase>, ValueBuilder<Microsoft.Maui.Controls.BindingBase>> buildValue)
-            where T : Microsoft.Maui.Controls.ListView
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property GroupShortNameBinding");
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.BindingBase>());
-            if (builder.ValueIsSet()) self.GroupShortNameBinding = builder.GetValue();
             return self;
         }
         
@@ -154,21 +100,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T HasUnevenRows<T>(this T self,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
+        public static T HasUnevenRows<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.ListView
         {
-            var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.HasUnevenRowsProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T HasUnevenRows<T>(this T self,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
-            where T : Microsoft.Maui.Controls.ListView
-        {
-            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.ListView.HasUnevenRowsProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.ListView.HasUnevenRowsProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -180,21 +116,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Header<T>(this T self,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buildValue)
+        public static T Header<T>(this T self, Func<PropertyContext<object>, IPropertyBuilder<object>> configure)
             where T : Microsoft.Maui.Controls.ListView
         {
-            var builder = buildValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.HeaderProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T Header<T>(this T self,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
-            where T : Microsoft.Maui.Controls.ListView
-        {
-            var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.ListView.HeaderProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<object>(self, Microsoft.Maui.Controls.ListView.HeaderProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -206,21 +132,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T HeaderTemplate<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.DataTemplate>, ValueBuilder<Microsoft.Maui.Controls.DataTemplate>> buildValue)
+        public static T HeaderTemplate<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.DataTemplate>, IPropertyBuilder<Microsoft.Maui.Controls.DataTemplate>> configure)
             where T : Microsoft.Maui.Controls.ListView
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.HeaderTemplateProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T HeaderTemplate<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buildBinding)
-            where T : Microsoft.Maui.Controls.ListView
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.ListView.HeaderTemplateProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.ListView.HeaderTemplateProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -239,21 +155,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T IsGroupingEnabled<T>(this T self,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
+        public static T IsGroupingEnabled<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.ListView
         {
-            var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.IsGroupingEnabledProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T IsGroupingEnabled<T>(this T self,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
-            where T : Microsoft.Maui.Controls.ListView
-        {
-            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.ListView.IsGroupingEnabledProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.ListView.IsGroupingEnabledProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -265,21 +171,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T IsPullToRefreshEnabled<T>(this T self,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
+        public static T IsPullToRefreshEnabled<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.ListView
         {
-            var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.IsPullToRefreshEnabledProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T IsPullToRefreshEnabled<T>(this T self,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
-            where T : Microsoft.Maui.Controls.ListView
-        {
-            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.ListView.IsPullToRefreshEnabledProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.ListView.IsPullToRefreshEnabledProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -291,21 +187,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T IsRefreshing<T>(this T self,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
+        public static T IsRefreshing<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.ListView
         {
-            var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.IsRefreshingProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T IsRefreshing<T>(this T self,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
-            where T : Microsoft.Maui.Controls.ListView
-        {
-            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.ListView.IsRefreshingProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.ListView.IsRefreshingProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -317,21 +203,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T RefreshCommand<T>(this T self,
-            System.Func<ValueBuilder<System.Windows.Input.ICommand>, ValueBuilder<System.Windows.Input.ICommand>> buildValue)
+        public static T RefreshCommand<T>(this T self, Func<PropertyContext<System.Windows.Input.ICommand>, IPropertyBuilder<System.Windows.Input.ICommand>> configure)
             where T : Microsoft.Maui.Controls.ListView
         {
-            var builder = buildValue(new ValueBuilder<System.Windows.Input.ICommand>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.RefreshCommandProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T RefreshCommand<T>(this T self,
-            System.Func<BindingBuilder<System.Windows.Input.ICommand>, BindingBuilder<System.Windows.Input.ICommand>> buildBinding)
-            where T : Microsoft.Maui.Controls.ListView
-        {
-            var builder = buildBinding(new BindingBuilder<System.Windows.Input.ICommand>(self, Microsoft.Maui.Controls.ListView.RefreshCommandProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<System.Windows.Input.ICommand>(self, Microsoft.Maui.Controls.ListView.RefreshCommandProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -343,21 +219,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T RowHeight<T>(this T self,
-            System.Func<ValueBuilder<int>, ValueBuilder<int>> buildValue)
+        public static T RowHeight<T>(this T self, Func<PropertyContext<int>, IPropertyBuilder<int>> configure)
             where T : Microsoft.Maui.Controls.ListView
         {
-            var builder = buildValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.RowHeightProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T RowHeight<T>(this T self,
-            System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
-            where T : Microsoft.Maui.Controls.ListView
-        {
-            var builder = buildBinding(new BindingBuilder<int>(self, Microsoft.Maui.Controls.ListView.RowHeightProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<int>(self, Microsoft.Maui.Controls.ListView.RowHeightProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -369,21 +235,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T SelectedItem<T>(this T self,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buildValue)
+        public static T SelectedItem<T>(this T self, Func<PropertyContext<object>, IPropertyBuilder<object>> configure)
             where T : Microsoft.Maui.Controls.ListView
         {
-            var builder = buildValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.SelectedItemProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T SelectedItem<T>(this T self,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
-            where T : Microsoft.Maui.Controls.ListView
-        {
-            var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.ListView.SelectedItemProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<object>(self, Microsoft.Maui.Controls.ListView.SelectedItemProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -395,21 +251,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T SelectionMode<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.ListViewSelectionMode>, ValueBuilder<Microsoft.Maui.Controls.ListViewSelectionMode>> buildValue)
+        public static T SelectionMode<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.ListViewSelectionMode>, IPropertyBuilder<Microsoft.Maui.Controls.ListViewSelectionMode>> configure)
             where T : Microsoft.Maui.Controls.ListView
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.ListViewSelectionMode>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.SelectionModeProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T SelectionMode<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.ListViewSelectionMode>, BindingBuilder<Microsoft.Maui.Controls.ListViewSelectionMode>> buildBinding)
-            where T : Microsoft.Maui.Controls.ListView
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.ListViewSelectionMode>(self, Microsoft.Maui.Controls.ListView.SelectionModeProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Controls.ListViewSelectionMode>(self, Microsoft.Maui.Controls.ListView.SelectionModeProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -421,21 +267,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T SeparatorColor<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
+        public static T SeparatorColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.ListView
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.SeparatorColorProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T SeparatorColor<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
-            where T : Microsoft.Maui.Controls.ListView
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.ListView.SeparatorColorProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.ListView.SeparatorColorProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -456,21 +292,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T RefreshControlColor<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Graphics.Color>, ValueBuilder<Microsoft.Maui.Graphics.Color>> buildValue)
+        public static T RefreshControlColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.ListView
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Graphics.Color>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.RefreshControlColorProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T RefreshControlColor<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Graphics.Color>, BindingBuilder<Microsoft.Maui.Graphics.Color>> buildBinding)
-            where T : Microsoft.Maui.Controls.ListView
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.ListView.RefreshControlColorProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.ListView.RefreshControlColorProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -491,21 +317,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T SeparatorVisibility<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.SeparatorVisibility>, ValueBuilder<Microsoft.Maui.Controls.SeparatorVisibility>> buildValue)
+        public static T SeparatorVisibility<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.SeparatorVisibility>, IPropertyBuilder<Microsoft.Maui.Controls.SeparatorVisibility>> configure)
             where T : Microsoft.Maui.Controls.ListView
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.SeparatorVisibility>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.SeparatorVisibilityProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T SeparatorVisibility<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.SeparatorVisibility>, BindingBuilder<Microsoft.Maui.Controls.SeparatorVisibility>> buildBinding)
-            where T : Microsoft.Maui.Controls.ListView
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.SeparatorVisibility>(self, Microsoft.Maui.Controls.ListView.SeparatorVisibilityProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Controls.SeparatorVisibility>(self, Microsoft.Maui.Controls.ListView.SeparatorVisibilityProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -517,21 +333,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T HorizontalScrollBarVisibility<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.ScrollBarVisibility>, ValueBuilder<Microsoft.Maui.ScrollBarVisibility>> buildValue)
+        public static T HorizontalScrollBarVisibility<T>(this T self, Func<PropertyContext<Microsoft.Maui.ScrollBarVisibility>, IPropertyBuilder<Microsoft.Maui.ScrollBarVisibility>> configure)
             where T : Microsoft.Maui.Controls.ListView
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.ScrollBarVisibility>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.HorizontalScrollBarVisibilityProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T HorizontalScrollBarVisibility<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.ScrollBarVisibility>, BindingBuilder<Microsoft.Maui.ScrollBarVisibility>> buildBinding)
-            where T : Microsoft.Maui.Controls.ListView
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.ScrollBarVisibility>(self, Microsoft.Maui.Controls.ListView.HorizontalScrollBarVisibilityProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.ScrollBarVisibility>(self, Microsoft.Maui.Controls.ListView.HorizontalScrollBarVisibilityProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -543,21 +349,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T VerticalScrollBarVisibility<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.ScrollBarVisibility>, ValueBuilder<Microsoft.Maui.ScrollBarVisibility>> buildValue)
+        public static T VerticalScrollBarVisibility<T>(this T self, Func<PropertyContext<Microsoft.Maui.ScrollBarVisibility>, IPropertyBuilder<Microsoft.Maui.ScrollBarVisibility>> configure)
             where T : Microsoft.Maui.Controls.ListView
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.ScrollBarVisibility>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.VerticalScrollBarVisibilityProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T VerticalScrollBarVisibility<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.ScrollBarVisibility>, BindingBuilder<Microsoft.Maui.ScrollBarVisibility>> buildBinding)
-            where T : Microsoft.Maui.Controls.ListView
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.ScrollBarVisibility>(self, Microsoft.Maui.Controls.ListView.VerticalScrollBarVisibilityProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.ScrollBarVisibility>(self, Microsoft.Maui.Controls.ListView.VerticalScrollBarVisibilityProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -565,20 +361,8 @@ namespace Sharp.UI
             bool refreshAllowed)
             where T : Microsoft.Maui.Controls.ListView
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property RefreshAllowed");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property RefreshAllowed");
             self.RefreshAllowed = refreshAllowed;
-            return self;
-        }
-        
-        public static T RefreshAllowed<T>(this T self,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
-            where T : Microsoft.Maui.Controls.ListView
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property RefreshAllowed");
-            var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.RefreshAllowed = builder.GetValue();
             return self;
         }
         

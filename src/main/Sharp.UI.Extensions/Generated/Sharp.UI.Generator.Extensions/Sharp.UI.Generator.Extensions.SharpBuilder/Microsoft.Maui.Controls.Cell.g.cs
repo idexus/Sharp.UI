@@ -34,20 +34,8 @@ namespace Sharp.UI
             bool isContextActionsLegacyModeEnabled)
             where T : Microsoft.Maui.Controls.Cell
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property IsContextActionsLegacyModeEnabled");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property IsContextActionsLegacyModeEnabled");
             self.IsContextActionsLegacyModeEnabled = isContextActionsLegacyModeEnabled;
-            return self;
-        }
-        
-        public static T IsContextActionsLegacyModeEnabled<T>(this T self,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
-            where T : Microsoft.Maui.Controls.Cell
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property IsContextActionsLegacyModeEnabled");
-            var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.IsContextActionsLegacyModeEnabled = builder.GetValue();
             return self;
         }
         
@@ -55,20 +43,8 @@ namespace Sharp.UI
             double height)
             where T : Microsoft.Maui.Controls.Cell
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property Height");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property Height");
             self.Height = height;
-            return self;
-        }
-        
-        public static T Height<T>(this T self,
-            System.Func<ValueBuilder<double>, ValueBuilder<double>> buildValue)
-            where T : Microsoft.Maui.Controls.Cell
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property Height");
-            var builder = buildValue(new ValueBuilder<double>());
-            if (builder.ValueIsSet()) self.Height = builder.GetValue();
             return self;
         }
         
@@ -80,21 +56,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T IsEnabled<T>(this T self,
-            System.Func<ValueBuilder<bool>, ValueBuilder<bool>> buildValue)
+        public static T IsEnabled<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.Cell
         {
-            var builder = buildValue(new ValueBuilder<bool>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.Cell.IsEnabledProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T IsEnabled<T>(this T self,
-            System.Func<BindingBuilder<bool>, BindingBuilder<bool>> buildBinding)
-            where T : Microsoft.Maui.Controls.Cell
-        {
-            var builder = buildBinding(new BindingBuilder<bool>(self, Microsoft.Maui.Controls.Cell.IsEnabledProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.Cell.IsEnabledProperty);
+            configure(context).Build();
             return self;
         }
         

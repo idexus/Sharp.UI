@@ -30,12 +30,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T Points<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.PointCollection>, BindingBuilder<Microsoft.Maui.Controls.PointCollection>> buildBinding)
+        public static T Points<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.PointCollection>, IPropertyBuilder<Microsoft.Maui.Controls.PointCollection>> configure)
             where T : Microsoft.Maui.Controls.Shapes.PolyLineSegment
         {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.PointCollection>(self, Microsoft.Maui.Controls.Shapes.PolyLineSegment.PointsProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Controls.PointCollection>(self, Microsoft.Maui.Controls.Shapes.PolyLineSegment.PointsProperty);
+            configure(context).Build();
             return self;
         }
         

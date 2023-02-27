@@ -71,13 +71,13 @@ git submodule update --recursive
 To add __Sharp.UI__ to your project, along with all its functionality, you can use the following command:
 
 ```
-dotnet add package Sharp.UI --version 0.4.3-alpha
+dotnet add package Sharp.UI --version 0.4.4-alpha
 ```
 
 __Sharp.UI__ replaces some standard MAUI classes by subclassing them and adding new constructors, which e.g. enables hot reload functionality. However, if you prefer not to use subclassed controls, it's possible to add the core generated fluent methods for the .Net MAUI framework to your project instead.
 
 ```
-dotnet add package Sharp.UI.Extensions --version 0.4.3-alpha
+dotnet add package Sharp.UI.Extensions --version 0.4.4-alpha
 ```
 ## Project Reference
 
@@ -144,6 +144,56 @@ Additionally, some common properties can be set directly as constructor argument
 new Label("This is a test")
 ```
 
+## Inline bindable property configuration
+
+In C# user interfaces, it's often useful to configure the properties of UI elements inline, instead of setting them directly in XAML or code-behind.
+
+#### Property binding
+
+One way to configure a bindable property inline is to use the `Path` method and additional extension methods to bind the property to a data source. For example:
+
+```cs
+new Label().FontSize(e => e.Path("MyFontSize"))
+new Label().Text(e => e.Path("Value").Source(slider).StringFormat("Value : {0:F1}"))
+```
+
+#### Idiom, Platform, and Theme
+
+Another way to configure bindable properties inline is to set different values for different device idiom (phone, tablet, etc.), platform (WinUI, iOS, etc.), or theme (light or dark). For example:
+
+```cs
+new Label().FontSize(e => e.OnPhone(30).OnTablet(50).Default(40))
+new Label().FontSize(e => e.OnWinUI(30).OniOS(50).Default(40))
+new Label().TextColor(e => e.OnLight(Colors.Black).OnDark(Colors.White))
+```
+
+#### Dynamic resources
+
+Another way to configure bindable properties inline is to use dynamic resources. Dynamic resources are resources whose values can change at runtime. For example:
+
+```cs
+Resources = new ResourceDictionary
+{
+    { "myColor", Colors.Yellow },
+    ...
+}
+```
+```cs 
+Label().TextColor(e => e.DynamicResource("myColor"))
+```
+
+#### Mixing
+
+Finally, it's also possible to mix these various configuration options to achieve more complex property configurations. For example:
+
+```cs
+new Label()
+    .TextColor(e => e
+        .OnLight(e => e.OnWinUI(Colors.Aqua).Default(Colors.LightCoral))
+        .OnDark(Colors.White)
+    )
+```
+
 ## How to assign object references
 
 There are two main ways to assign objects in `Sharp.UI`: 
@@ -155,34 +205,6 @@ Or:
 ```cs
 new Label().Assign(out label)
 ```
-
-## Property Bindings
-
-__Sharp.UI__ provides a simple way to bind properties of an element to a source, so that when the source changes, the property changes as well. You can bind a property by using the fluent method e.g. `Text()`, `TextColor()` etc. and then using lambda call the method `Path()` to specify the property you want to bind to.
-
-
-```cs
-public class SimpleBindings : ContentPage
-{
-    public SimpleBindings()
-    {
-        this.Content = new VStack
-        {
-            new Slider(out var slider)
-                .Minimum(1)
-                .Maximum(20),
-
-            new Label()
-                .Text(e => e.Path("Value").Source(slider).StringFormat("Slider value: {0}"))
-                .FontSize(28)
-        };
-    }
-}
-``` 
-
-In this example, the text property of the label is bound to the `Value` property of a `Slider` element named `slider`. When the value of the slider changes, the text of the label will automatically update to reflect the new value.
-
-You can also bind a property to an object that is not part of the visual tree. This is useful when you have a separate data source, such as a model or a view model, that you want to bind to a visual element.
 
 ## Using fluent methods for styling
 
@@ -295,6 +317,7 @@ public class ViewPage : ContentPage
 ## Other Examples
 
 - [Properties and fluent methods](./doc/properties.md)
+- [Property Bindings](./doc/propertybindings.md)
 - [Object references assignment](./doc/assign.md)
 - [Object containers](./doc/containers.md)
 - [Layout options extension methods](./doc/layoutoptions.md)
@@ -312,25 +335,12 @@ public class ViewPage : ContentPage
 - [Behaviors](./doc/behaviors.md)
 - [Application shell](./doc/shellapplication.md)
 - [Callbacks and default values](./doc/advbindablepoperties.md)
+
+## Advanced
+
+- [User defined extension methods](./doc/userdefinedmethods.md)
 - [Creating custom controls](./doc/customcontentview.md)
 - [Control template](./doc/autogenbindableproperties.md)
-
-# User defined extension methods
-
-In __Sharp.UI__, you can create your own extension methods by defining a static method within a static class.
-
-Here's an example of an extension method that centers a view vertically:
-
-```cs
-public static T CenterVertically<T>(this T obj)
-    where T : Microsoft.Maui.Controls.View
-{
-    obj.SetValueOrAddSetter(Microsoft.Maui.Controls.View.VerticalOptionsProperty, LayoutOptions.Center);
-    return obj;
-}
-```
-
-In the extension methods, it's important to use the `SetValueOrAddSetter` method instead of setting the properties directly. `SetValueOrAddSetter` sets the value of the property if the property is used in a standard context, such as in object creation, or add a new `Setter` when you use the method to create a setter for a style definition.
 
 # Disclaimer
 

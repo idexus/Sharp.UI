@@ -20,21 +20,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ItemsSource<T>(this T self,
-            System.Func<ValueBuilder<System.Collections.IEnumerable>, ValueBuilder<System.Collections.IEnumerable>> buildValue)
+        public static T ItemsSource<T>(this T self, Func<PropertyContext<System.Collections.IEnumerable>, IPropertyBuilder<System.Collections.IEnumerable>> configure)
             where T : Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>
         {
-            var builder = buildValue(new ValueBuilder<System.Collections.IEnumerable>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.ItemsSourceProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T ItemsSource<T>(this T self,
-            System.Func<BindingBuilder<System.Collections.IEnumerable>, BindingBuilder<System.Collections.IEnumerable>> buildBinding)
-            where T : Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>
-        {
-            var builder = buildBinding(new BindingBuilder<System.Collections.IEnumerable>(self, Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.ItemsSourceProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<System.Collections.IEnumerable>(self, Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.ItemsSourceProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -46,21 +36,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ItemTemplate<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.DataTemplate>, ValueBuilder<Microsoft.Maui.Controls.DataTemplate>> buildValue)
+        public static T ItemTemplate<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.DataTemplate>, IPropertyBuilder<Microsoft.Maui.Controls.DataTemplate>> configure)
             where T : Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>
         {
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.DataTemplate>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.ItemTemplateProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T ItemTemplate<T>(this T self,
-            System.Func<BindingBuilder<Microsoft.Maui.Controls.DataTemplate>, BindingBuilder<Microsoft.Maui.Controls.DataTemplate>> buildBinding)
-            where T : Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>
-        {
-            var builder = buildBinding(new BindingBuilder<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.ItemTemplateProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<Microsoft.Maui.Controls.DataTemplate>(self, Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.ItemTemplateProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -79,21 +59,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T SelectedItem<T>(this T self,
-            System.Func<ValueBuilder<object>, ValueBuilder<object>> buildValue)
+        public static T SelectedItem<T>(this T self, Func<PropertyContext<object>, IPropertyBuilder<object>> configure)
             where T : Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>
         {
-            var builder = buildValue(new ValueBuilder<object>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.SelectedItemProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T SelectedItem<T>(this T self,
-            System.Func<BindingBuilder<object>, BindingBuilder<object>> buildBinding)
-            where T : Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>
-        {
-            var builder = buildBinding(new BindingBuilder<object>(self, Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.SelectedItemProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<object>(self, Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.SelectedItemProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -101,20 +71,8 @@ namespace Sharp.UI
             Microsoft.Maui.Controls.Page currentPage)
             where T : Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>
         {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property CurrentPage");
+            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property CurrentPage");
             self.CurrentPage = currentPage;
-            return self;
-        }
-        
-        public static T CurrentPage<T>(this T self,
-            System.Func<ValueBuilder<Microsoft.Maui.Controls.Page>, ValueBuilder<Microsoft.Maui.Controls.Page>> buildValue)
-            where T : Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null) throw new ArgumentException("Fluent styling not available for property CurrentPage");
-            var builder = buildValue(new ValueBuilder<Microsoft.Maui.Controls.Page>());
-            if (builder.ValueIsSet()) self.CurrentPage = builder.GetValue();
             return self;
         }
         

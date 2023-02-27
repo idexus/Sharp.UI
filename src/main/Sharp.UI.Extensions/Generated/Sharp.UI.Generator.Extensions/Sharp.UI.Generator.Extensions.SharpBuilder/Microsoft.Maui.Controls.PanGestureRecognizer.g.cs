@@ -20,21 +20,11 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T TouchPoints<T>(this T self,
-            System.Func<ValueBuilder<int>, ValueBuilder<int>> buildValue)
+        public static T TouchPoints<T>(this T self, Func<PropertyContext<int>, IPropertyBuilder<int>> configure)
             where T : Microsoft.Maui.Controls.PanGestureRecognizer
         {
-            var builder = buildValue(new ValueBuilder<int>());
-            if (builder.ValueIsSet()) self.SetValueOrAddSetter(Microsoft.Maui.Controls.PanGestureRecognizer.TouchPointsProperty, builder.GetValue());
-            return self;
-        }
-        
-        public static T TouchPoints<T>(this T self,
-            System.Func<BindingBuilder<int>, BindingBuilder<int>> buildBinding)
-            where T : Microsoft.Maui.Controls.PanGestureRecognizer
-        {
-            var builder = buildBinding(new BindingBuilder<int>(self, Microsoft.Maui.Controls.PanGestureRecognizer.TouchPointsProperty));
-            builder.BindProperty();
+            var context = new PropertyContext<int>(self, Microsoft.Maui.Controls.PanGestureRecognizer.TouchPointsProperty);
+            configure(context).Build();
             return self;
         }
         
