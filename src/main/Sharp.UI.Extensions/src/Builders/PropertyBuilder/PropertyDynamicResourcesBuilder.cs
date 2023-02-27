@@ -14,8 +14,6 @@ namespace Sharp.UI
         public PropertyContext<T> Context { get; set; }
 
         string key = null;
-        ResourceDictionary resourceDictionary = null;
-
 
         public PropertyDynamicResourcesBuilder(PropertyContext<T> context)
         {

@@ -15,7 +15,7 @@ public partial class TestPage : ContentPage
     {
         Resources = new ResourceDictionary
         {
-            { "myColor", Colors.Yellow },
+            { "myColor", AppColors.Gray200 },
 
             new Style<Label>(e => e
                 .TextColor(AppColors.Gray200)
