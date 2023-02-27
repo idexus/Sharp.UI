@@ -24,7 +24,7 @@ To use the layout options, create a container view (such as `HStack` or `VStack`
 ```cs
 new VStack
 {
-    Label("Hello, World!").CenterInContainer()
+    new Label("Hello, World!").CenterHorizontally()
 }
 ```
 
