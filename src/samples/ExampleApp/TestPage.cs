@@ -60,7 +60,7 @@ public partial class TestPage : ContentPage
             {
                 new Label(out var label)
                     .TextColor(e => e.DynamicResource("myColor"))
-                    .Text("Only in Code :)")
+                    .Text("Only in Code ::)")
                     .FontSize(45),
                     
                 new Slider(out var slider)

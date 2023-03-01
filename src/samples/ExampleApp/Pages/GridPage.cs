@@ -10,7 +10,7 @@ namespace ExampleApp
             Content =
 
             new Grid(out var grid, e => e
-                .Margin(new Thickness(0, 35, 0, 0))
+                .Margin(top: Shell.Current != null ? 30 : 0)
                 .RowSpacing(15)
                 .ColumnSpacing(15)
                 .Padding(10)

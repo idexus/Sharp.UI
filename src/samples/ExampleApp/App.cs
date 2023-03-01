@@ -2,7 +2,6 @@
 namespace ExampleApp;
 
 using System.Net;
-using ExampleApp.Pages;
 using Microsoft.Maui;
 using Sharp.UI;
 
@@ -10,91 +9,34 @@ public partial class App : Application
 {
     public App()
     {
-        //MainPage = ActivatorUtilities.GetServiceOrCreateInstance<HotReloadTestPage>(Application.Services);
-
-        Routing.RegisterRoute("details", typeof(NavigationDetailPage));
-        Routing.RegisterRoute("seconddetails", typeof(NavigationSecondDetailPage));
-
-        MainPage = new Shell
+        MainPage = new ContentPage(e => e.Resources(AppResources.Default))
         {
-            e => e
-                .ItemTemplate(() => new ShellItemTemplate())
-                .FlyoutHeaderTemplate(() => new FlyoutHeaderTemplate())
-                .Resources(AppResources.Default)
-                .FlyoutBackgroundColor(AppColors.Gray950),
-
-            new FlyoutItem(FlyoutDisplayOptions.AsMultipleItems)
+            new VStack(e => e.CenterVertically())
             {
-                e => e.Route("top"),
+                new Button("Single Page")
+                    .Margin(10)
+                    .WidthRequest(200)
+                    .OnClicked(b =>
+                    {
+                        MainPage = ActivatorUtilities.GetServiceOrCreateInstance<TestPage>(Application.Services);
+                    }),
 
-                new Tab("Main")
-                {
-                    e => e.Route("main"),
+                new Button("Flyout Application")
+                    .Margin(10)
+                    .WidthRequest(200)
+                    .OnClicked(b =>
+                    {
+                        MainPage = ActivatorUtilities.GetServiceOrCreateInstance<FlyoutMainPage>(Application.Services);
+                    }),
 
-                    new ShellContent<TestPage>("TestPage"),
-                    new ShellContent<HelloWorldPage>("Hello Page"),
-                    new ShellContent<GridPage>("Grid").Route("grid"),
-                    new ShellContent<KeypadPage>("Keypad"),
-                    new ShellContent<AbsoluteLayoutPage>("Absolute layout"),
-                    new ShellContent<ShapesPage>("Shapes"),
-                    new ShellContent<NavigationMainPage>("Navigation")
-                },
-
-                new Tab("Table/List")
-                {
-                    new ShellContent<TableViewPage>("TableView"),
-                    new ShellContent<ScrollPage>("ScrollPage"),
-                    new ShellContent<ListViewPage>("ListView"),
-                    new ShellContent<CollectionPage>("Collection"),
-                    new ShellContent<AlternateCollectionPage>("Alternate"),
-                    new ShellContent<AlternativeBackroundPage>("Background"),
-                },
-                new Tab("Triggers")
-                {
-                    new ShellContent<PropertyTriggerPage>("Property trigger"),
-                    new ShellContent<EventTriggerPage>("Event trigger"),
-                    new ShellContent<DataTriggerPage>("Data trigger"),
-                    new ShellContent<MultiTriggerPage>("Multi trigger"),
-                    new ShellContent<EnterExitActionsPage>("Enter/exit"),
-                    new ShellContent<StateTriggerPage>("State trigger"),
-                },
-                new Tab("Menus")
-                {
-                    new ShellContent<MenuPage>("Menubar"),
-                    new ShellContent<ContextMenuPage>("Context menu"),
-                },
-
-                new Tab("Gestures")
-                {
-                    new ShellContent<PanGesturePage>("Pan"),
-                    new ShellContent<TapGesturePage>("Tap"),
-                    new ShellContent<PointerGesturePage>("Pointer"),
-                    new ShellContent<SwipeGesturePage>("Swipe"),
-                },
-
-                new Tab("Bindings")
-                {
-                    new ShellContent<SecondPage>("View Model"),
-                    new ShellContent<AngleViewModelPage>("Angle View"),
-                    new ShellContent<TestBindingsPage>("Bindings"),
-                    new ShellContent<SimpleBindings>("Simple bindings"),
-                    new ShellContent<TemplatedParentPage>("Templated CardView"),
-                    new ShellContent<CardViewPage>("CardView")
-                },
-
-                new Tab("Other")
-                {
-                    new ShellContent<StyleTestPage>("Style"),
-                    new ShellContent<BehaviorTestPage>("Behaviours"),
-                    new ShellContent<AttachedBehaviorPage>("Attached behaviours"),
-                    new ShellContent<CustomPage>("Custom Page"),
-                    new ShellContent<PathPage>("Path"),
-                    new ShellContent<ExamplePage>("Scroll View"),
-                    new ShellContent<SwipeViewPage>("Swipe"),
-                    new ShellContent<DeviceIdiomPage>("Idiom Page")
-                }
+                new Button("Shell Application")
+                    .Margin(10)
+                    .WidthRequest(200)
+                    .OnClicked(b =>
+                    {
+                        MainPage = new AppShell();
+                    }),
             }
         };
-                
     }
 }

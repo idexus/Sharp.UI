@@ -7,6 +7,7 @@ using System.Net.Sockets;
 using System.Text;
 using System;
 using HotReloadKit;
+using System.Diagnostics;
 
 namespace Sharp.UI
 {
@@ -115,31 +116,13 @@ namespace Sharp.UI
                                     {
                                         BindingContext = activePage.BindingContext;
 
+                                        newContentPage.Title = activePage.Title;
+                                        newContentPage.IconImageSource = activePage.IconImageSource;
+                                        newContentPage.BackgroundImageSource = activePage.BackgroundImageSource;
+                                        newContentPage.Padding = activePage.Padding;
+
                                         var parent = activePage.Parent;
-                                        if (parent is Window parentWindow)
-                                        {
-                                            parentWindow.Page = newContentPage;
-                                            replaced = true;
-                                        }
-                                        //else if (parent is Microsoft.Maui.Controls.ShellContent shellContent)
-                                        //{
-                                        //    shellContent.ContentTemplate = null;
-                                        //    shellContent.Content = newContentPage;
-                                        //    if (newContentPage.Handler == null) newContentPage.Handler = activePage.Handler;
-                                        //    if (newContentPage.Parent == null) newContentPage.Parent = parent;
-                                        //    replaced = true;
-                                        //}
-                                        //else if (parent is Microsoft.Maui.Controls.ShellSection shellSection)
-                                        //{
-                                        //    var current = Shell.Current.CurrentItem;
-
-                                        //    if (newContentPage.Handler == null) newContentPage.Handler = activePage.Handler;
-                                        //    if (newContentPage.Parent == null) newContentPage.Parent = parent;
-
-                                        //    replaced = true;
-                                        //}
-
-                                        else if (Shell.Current != null)
+                                        if (Shell.Current != null)
                                         {
                                             if (parent is Microsoft.Maui.Controls.ShellContent shellContent)
                                             {
@@ -151,20 +134,47 @@ namespace Sharp.UI
                                             }
                                             else
                                             {
-                                                MainThread.BeginInvokeOnMainThread(async () =>
-                                                {
-                                                    await Shell.Current.Navigation.PushAsync(newContentPage, false);
-                                                    Shell.Current.Navigation.RemovePage(activePage);
+                                                Shell.Current.Navigation.InsertPageBefore(newContentPage, activePage);
+                                                Shell.Current.Navigation.RemovePage(activePage);
 
-                                                    var route = Routing.GetRoute(activePage);
+                                                var route = Routing.GetRoute(activePage);
 
-                                                    Routing.UnRegisterRoute(route);
-                                                    Routing.SetRoute(newContentPage, route);
-                                                    Routing.RegisterRoute(route, newContentPage.GetType());
-                                                });
+                                                Routing.UnRegisterRoute(route);
+                                                Routing.SetRoute(newContentPage, route);
+                                                Routing.RegisterRoute(route, newContentPage.GetType());
                                             }
 
                                             replaced = true;
+                                        }
+                                        else if (parent is Window parentWindow)
+                                        {
+                                            parentWindow.Page = newContentPage;
+                                            replaced = true;
+                                        }
+                                        else if (parent is TabbedPage tabbedPage)
+                                        {
+                                            int selectedId = tabbedPage.Children.IndexOf(tabbedPage.CurrentPage);
+
+                                            int id = tabbedPage.Children.IndexOf(activePage);
+                                            tabbedPage.Children[id] = newContentPage;
+
+                                            if (newContentPage.Handler == null) newContentPage.Handler = activePage.Handler;
+                                            if (newContentPage.Parent == null) newContentPage.Parent = parent;
+
+                                            tabbedPage.CurrentPage = tabbedPage.Children[selectedId];
+
+                                            replaced = true;
+                                        }
+                                        else if (parent is NavigationPage navigation)
+                                        {
+                                            navigation.Navigation.InsertPageBefore(newContentPage, activePage);
+                                            navigation.Navigation.RemovePage(activePage);
+
+                                            replaced = true;
+                                        }
+                                        else
+                                        {
+                                            Debug.WriteLine($"Can not hot reload page : {activePage?.GetType()}, parent : {parent?.GetType()}");
                                         }
 
                                         if (replaced) 

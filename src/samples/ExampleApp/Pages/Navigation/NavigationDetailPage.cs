@@ -1,4 +1,4 @@
-namespace ExampleApp.Pages;
+namespace ExampleApp;
 
 using Sharp.UI;
 
@@ -13,7 +13,10 @@ public class NavigationDetailPage : ContentPage
             new Button("Go to next page")
                 .OnClicked(async button =>
                 {
-                    await Shell.Current.GoToAsync("seconddetails");
+                    if (Shell.Current != null)
+                        await Shell.Current.GoToAsync("seconddetails");
+                    else
+                        await Navigation.PushAsync(typeof(NavigationSecondDetailPage));
                 })
         };
 	}

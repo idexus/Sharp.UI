@@ -26,6 +26,9 @@ namespace ExampleApp
             builder.Services.AddSingleton<SecondPage>();
             builder.Services.AddSingleton<KeypadPage>();
 
+            Routing.RegisterRoute("details", typeof(NavigationDetailPage));
+            Routing.RegisterRoute("seconddetails", typeof(NavigationSecondDetailPage));
+
             return builder.Build();
         }
     }

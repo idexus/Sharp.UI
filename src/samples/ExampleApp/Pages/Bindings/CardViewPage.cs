@@ -11,7 +11,7 @@ public partial class CardViewPage : ContentPage
         this.Content = new ScrollView
         {
             e => e
-                .Margin(new Thickness(0, 30, 0, 0))
+                .Margin(top: Shell.Current != null ? 30 : 0)
                 .BackgroundColor(Colors.Black),
 
             new VStack

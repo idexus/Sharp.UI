@@ -6,14 +6,8 @@ namespace Sharp.UI
     [SharpObject] 
     public partial class ContentPage : Microsoft.Maui.Controls.ContentPage
     {
-        //static int MainPageId = 0;
-        //readonly int PageId = 0;
-
         public ContentPage()
         {
-            //PageId = ++MainPageId;
-            //Debug.WriteLine($"--- Created --- : {this.GetType()} : {PageId}");
-
             if (Application.HotReloadIsEnabled)
             {
                 if (HotReload.BindingContext != null) BindingContext = HotReload.BindingContext;
@@ -27,9 +21,6 @@ namespace Sharp.UI
 
         protected override void OnAppearing()
         {
-            //Debug.WriteLine($"--- Appearing --- : {this.GetType()} : {PageId}");
-
-
             base.OnAppearing();
             if (Application.HotReloadIsEnabled)
             {
@@ -39,12 +30,10 @@ namespace Sharp.UI
 
         protected override void OnDisappearing()
         {
-            //Debug.WriteLine($"--- Disappearing --- : {this.GetType()} : {PageId}");
-
             base.OnDisappearing();
             if (Application.HotReloadIsEnabled)
             {
-                if (Shell.Current.Navigation.NavigationStack.Count > 1) 
+                if (Navigation.NavigationStack.Count > 1) 
                 {
                     HotReload.UnregisterActive(this);
                 }

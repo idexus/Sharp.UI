@@ -1,4 +1,4 @@
-namespace ExampleApp.Pages;
+namespace ExampleApp;
 
 using Sharp.UI;
 
@@ -8,7 +8,7 @@ public class NavigationSecondDetailPage : ContentPage
 	{
 		Content = new VStack(e => e.Center())
 		{
-			new Label("Last Page").FontSize(90)
+			new Label("Second Page").FontSize(90)
 		};
 	}
 }
