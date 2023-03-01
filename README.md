@@ -138,10 +138,28 @@ new Label()
     .FontSize(30)
 ```
 
-Additionally, some common properties can be set directly as constructor arguments for even faster definition of the interface. Here is an example using a constructor argument to set the text property on a `Label`:
+#### Additionally
+
+- Some common properties can be set directly as constructor arguments for even faster definition of the interface. Here is an example using a constructor argument to set the text property on a `Label`:
 
 ```cs
 new Label("This is a test")
+```
+
+- All classes that implement the `ITextAlignment` interface get [additional methods](./doc/itextalignment.md), so you can write e.g.:
+
+```cs
+new Label().TextCenter()
+new Entry().TextBottomStart()
+```
+
+- You can layout every view in their container using the [helper extension methods](./doc/layoutoptions.md)
+
+```cs
+new VStack
+{
+    new Label("Hello, World!").CenterHorizontally()
+}
 ```
 
 ## Inline bindable property configuration
@@ -190,7 +208,7 @@ Finally, it's also possible to mix these various configuration options to achiev
 new Label()
     .TextColor(e => e
         .OnLight(e => e.OnWinUI(Colors.Aqua).Default(Colors.LightCoral))
-        .OnDark(Colors.White)
+        .OnDark(Colors.Black)
     )
 ```
 
