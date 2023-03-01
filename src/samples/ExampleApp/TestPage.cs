@@ -19,7 +19,7 @@ public partial class TestPage : ContentPage
 
             new Style<Label>(e => e
                 .TextColor(AppColors.Gray200)
-                .CenterInContainer()),
+                .Center()),
 
             new Style<Button>
             {
@@ -87,7 +87,7 @@ public partial class TestPage : ContentPage
                             .TextColor(Colors.DarkGray),
 
                         new Switch(out testSwitch).Row(3)
-                            .CenterInContainer()
+                            .Center()
                     },
 
                     e => e

@@ -65,7 +65,14 @@ namespace Sharp.UI
 
         internal static void RegisterActive(ContentPage page)
         {
+
+            if (registeredActivePages.Contains(page)) return;
             registeredActivePages.Add(page);
+        }
+
+        internal static void UnregisterActive(ContentPage page)
+        {
+            registeredActivePages.Remove(page);
         }
 
         public static ValueTask WriteAsync<T>(this NetworkStream stream, T obj, CancellationToken cancellationToken = default)
@@ -114,19 +121,61 @@ namespace Sharp.UI
                                             parentWindow.Page = newContentPage;
                                             replaced = true;
                                         }
-                                        else if (parent is Microsoft.Maui.Controls.ShellContent shellContent)
+                                        //else if (parent is Microsoft.Maui.Controls.ShellContent shellContent)
+                                        //{
+                                        //    shellContent.ContentTemplate = null;
+                                        //    shellContent.Content = newContentPage;
+                                        //    if (newContentPage.Handler == null) newContentPage.Handler = activePage.Handler;
+                                        //    if (newContentPage.Parent == null) newContentPage.Parent = parent;
+                                        //    replaced = true;
+                                        //}
+                                        //else if (parent is Microsoft.Maui.Controls.ShellSection shellSection)
+                                        //{
+                                        //    var current = Shell.Current.CurrentItem;
+
+                                        //    if (newContentPage.Handler == null) newContentPage.Handler = activePage.Handler;
+                                        //    if (newContentPage.Parent == null) newContentPage.Parent = parent;
+
+                                        //    replaced = true;
+                                        //}
+
+                                        else if (Shell.Current != null)
                                         {
-                                            shellContent.ContentTemplate = null;
-                                            shellContent.Content = newContentPage;
-                                            if (newContentPage.Handler == null) newContentPage.Handler = activePage.Handler;
-                                            if (newContentPage.Parent == null) newContentPage.Parent = parent;
+                                            if (parent is Microsoft.Maui.Controls.ShellContent shellContent)
+                                            {
+                                                shellContent.ContentTemplate = null;
+                                                shellContent.Content = newContentPage;
+
+                                                if (newContentPage.Handler == null) newContentPage.Handler = activePage.Handler;
+                                                if (newContentPage.Parent == null) newContentPage.Parent = parent;
+                                            }
+                                            else
+                                            {
+                                                MainThread.BeginInvokeOnMainThread(async () =>
+                                                {
+                                                    await Shell.Current.Navigation.PushAsync(newContentPage, false);
+                                                    Shell.Current.Navigation.RemovePage(activePage);
+
+                                                    var route = Routing.GetRoute(activePage);
+
+                                                    Routing.UnRegisterRoute(route);
+                                                    Routing.SetRoute(newContentPage, route);
+                                                    Routing.RegisterRoute(route, newContentPage.GetType());
+                                                });
+                                            }
+
                                             replaced = true;
+                                        }
+
+                                        if (replaced) 
+                                        {                                                                                     
+                                            RegisterActive(newContentPage);
+                                            UnregisterActive(activePage);
                                         }
                                     }
                                 }
                                 finally
                                 {
-                                    if (replaced) registeredActivePages.Remove(activePage);
                                     BindingContext = null;
                                 }
                             }

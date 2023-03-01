@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 
 namespace Sharp.UI
 {
@@ -48,6 +49,13 @@ namespace Sharp.UI
             return self;
         }
 
+        public static T Padding<T>(this T self, object _ = null, double left = 0, double top = 0, double right = 0, double bottom = 0)
+        where T : Microsoft.Maui.Controls.Border
+        {
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Border.PaddingProperty, new Thickness(left, top, right, bottom));
+            return self;
+        }
+
         // --- Margin
 
         public static T Margin<T>(this T self, double horizontalSize, double verticalSize)
@@ -58,6 +66,13 @@ namespace Sharp.UI
         }
 
         public static T Margin<T>(this T self, double left, double top, double right, double bottom)
+            where T : Microsoft.Maui.Controls.View
+        {
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.View.MarginProperty, new Thickness(left, top, right, bottom));
+            return self;
+        }
+
+        public static T Margin<T>(this T self, object _ = null, double left = 0, double top = 0, double right = 0, double bottom = 0)
             where T : Microsoft.Maui.Controls.View
         {
             self.SetValueOrAddSetter(Microsoft.Maui.Controls.View.MarginProperty, new Thickness(left, top, right, bottom));
@@ -89,6 +104,15 @@ namespace Sharp.UI
             return self;
         }
 
+        public static T Center<T>(this T self)
+            where T : Microsoft.Maui.Controls.View
+        {
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.View.HorizontalOptionsProperty, LayoutOptions.Center);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.View.VerticalOptionsProperty, LayoutOptions.Center);
+            return self;
+        }
+
+        [Obsolete("Use Center() instead")]
         public static T CenterInContainer<T>(this T self)
             where T : Microsoft.Maui.Controls.View
         {

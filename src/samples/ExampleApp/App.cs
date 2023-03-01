@@ -2,6 +2,7 @@
 namespace ExampleApp;
 
 using System.Net;
+using ExampleApp.Pages;
 using Microsoft.Maui;
 using Sharp.UI;
 
@@ -10,7 +11,9 @@ public partial class App : Application
     public App()
     {
         //MainPage = ActivatorUtilities.GetServiceOrCreateInstance<HotReloadTestPage>(Application.Services);
-                
+        
+        Routing.RegisterRoute("details", typeof(NavigationDetailPage));
+
         MainPage = new Shell
         {
             e => e
@@ -33,6 +36,7 @@ public partial class App : Application
                     new ShellContent<KeypadPage>("Keypad"),
                     new ShellContent<AbsoluteLayoutPage>("Absolute layout"),
                     new ShellContent<ShapesPage>("Shapes"),
+                    new ShellContent<NavigationMainPage>("Navigation")
                 },
 
                 new Tab("Table/List")
