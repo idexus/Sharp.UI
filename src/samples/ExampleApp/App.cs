@@ -11,8 +11,9 @@ public partial class App : Application
     public App()
     {
         //MainPage = ActivatorUtilities.GetServiceOrCreateInstance<HotReloadTestPage>(Application.Services);
-        
+
         Routing.RegisterRoute("details", typeof(NavigationDetailPage));
+        Routing.RegisterRoute("seconddetails", typeof(NavigationSecondDetailPage));
 
         MainPage = new Shell
         {
