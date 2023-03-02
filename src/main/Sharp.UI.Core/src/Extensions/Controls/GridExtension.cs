@@ -23,5 +23,21 @@ namespace Sharp.UI
                 self.ColumnDefinitions.Add(colDef);
             return self;
         }
+
+        public static T Spacing<T>(this T self, double columnSpacing, double rowSpacing)
+            where T : Microsoft.Maui.Controls.Grid
+        {
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Grid.ColumnSpacingProperty, columnSpacing);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Grid.RowSpacingProperty, rowSpacing);
+            return self;
+        }
+
+        public static T Spacing<T>(this T self, double spacing)
+            where T : Microsoft.Maui.Controls.Grid
+        {
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Grid.ColumnSpacingProperty, spacing);
+            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Grid.RowSpacingProperty, spacing);
+            return self;
+        }
     }
 }
