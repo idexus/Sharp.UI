@@ -112,15 +112,6 @@ namespace Sharp.UI
             return self;
         }
 
-        [Obsolete("Use Center() instead")]
-        public static T CenterInContainer<T>(this T self)
-            where T : Microsoft.Maui.Controls.View
-        {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.View.HorizontalOptionsProperty, LayoutOptions.Center);
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.View.VerticalOptionsProperty, LayoutOptions.Center);
-            return self;
-        }
-
         public static T AlignTop<T>(this T self)
             where T : Microsoft.Maui.Controls.View
         {
