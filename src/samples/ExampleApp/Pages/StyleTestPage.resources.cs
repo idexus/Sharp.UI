@@ -5,8 +5,8 @@ namespace ExampleApp
 
     public partial class StyleTestPage
 	{
-        ResourceDictionary localResources => new ResourceDictionary
-        {
+        ResourceDictionary localResources = new() {
+
             new Style<RadioButton>(applyToDerivedTypes: true, e => e
                 .ControlTemplate(new ControlTemplate(typeof(RadioButtonTemplate)))),
                 

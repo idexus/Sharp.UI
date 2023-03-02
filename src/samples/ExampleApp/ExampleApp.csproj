@@ -94,7 +94,4 @@
 	    <SubType>Designer</SubType>
 	  </None>
 	</ItemGroup>
-	<ItemGroup>
-	  <Folder Include="Pages\Navigation\" />
-	</ItemGroup>
 </Project>

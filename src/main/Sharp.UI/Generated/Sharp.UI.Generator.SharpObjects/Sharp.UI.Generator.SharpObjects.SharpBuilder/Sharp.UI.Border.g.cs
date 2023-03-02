@@ -26,12 +26,12 @@ namespace Sharp.UI
             border = this;
         }
 
-        public Border(System.Action<Border> configure) 
+        public Border(System.Func<Border, Border> configure) 
         {
             configure(this);
         }
 
-        public Border(out Border border, System.Action<Border> configure) 
+        public Border(out Border border, System.Func<Border, Border> configure) 
         {
             border = this;
             configure(this);

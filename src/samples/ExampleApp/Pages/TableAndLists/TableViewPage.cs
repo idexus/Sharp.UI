@@ -6,7 +6,7 @@ public class TableViewPage : ContentPage
 {
 	public TableViewPage()
 	{
-		Content = new TableView()
+        Content = new TableView()
 		{
 			new TableSection("Chapter 1")
 			{
@@ -43,7 +43,7 @@ public class TableViewPage : ContentPage
                 new TextCell("5. XAML vs code")
                     .Detail("Learn about .NET MAUI and what it provides."),
 
-            }
+            },
         };
 	}
 }

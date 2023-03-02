@@ -26,12 +26,12 @@ namespace Sharp.UI
             linearGradientBrush = this;
         }
 
-        public LinearGradientBrush(System.Action<LinearGradientBrush> configure) 
+        public LinearGradientBrush(System.Func<LinearGradientBrush, LinearGradientBrush> configure) 
         {
             configure(this);
         }
 
-        public LinearGradientBrush(out LinearGradientBrush linearGradientBrush, System.Action<LinearGradientBrush> configure) 
+        public LinearGradientBrush(out LinearGradientBrush linearGradientBrush, System.Func<LinearGradientBrush, LinearGradientBrush> configure) 
         {
             linearGradientBrush = this;
             configure(this);
@@ -42,12 +42,12 @@ namespace Sharp.UI
             linearGradientBrush = this;
         }
 
-        public LinearGradientBrush(Microsoft.Maui.Graphics.Point startPoint, Microsoft.Maui.Graphics.Point endPoint, System.Action<LinearGradientBrush> configure) : this(startPoint, endPoint)
+        public LinearGradientBrush(Microsoft.Maui.Graphics.Point startPoint, Microsoft.Maui.Graphics.Point endPoint, System.Func<LinearGradientBrush, LinearGradientBrush> configure) : this(startPoint, endPoint)
         {
             configure(this);
         }
 
-        public LinearGradientBrush(Microsoft.Maui.Graphics.Point startPoint, Microsoft.Maui.Graphics.Point endPoint, out LinearGradientBrush linearGradientBrush, System.Action<LinearGradientBrush> configure) : this(startPoint, endPoint)
+        public LinearGradientBrush(Microsoft.Maui.Graphics.Point startPoint, Microsoft.Maui.Graphics.Point endPoint, out LinearGradientBrush linearGradientBrush, System.Func<LinearGradientBrush, LinearGradientBrush> configure) : this(startPoint, endPoint)
         {
             linearGradientBrush = this;
             configure(this);

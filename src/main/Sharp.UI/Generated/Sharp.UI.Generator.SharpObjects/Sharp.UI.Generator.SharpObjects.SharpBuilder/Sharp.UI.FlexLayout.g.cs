@@ -26,12 +26,12 @@ namespace Sharp.UI
             flexLayout = this;
         }
 
-        public FlexLayout(System.Action<FlexLayout> configure) 
+        public FlexLayout(System.Func<FlexLayout, FlexLayout> configure) 
         {
             configure(this);
         }
 
-        public FlexLayout(out FlexLayout flexLayout, System.Action<FlexLayout> configure) 
+        public FlexLayout(out FlexLayout flexLayout, System.Func<FlexLayout, FlexLayout> configure) 
         {
             flexLayout = this;
             configure(this);

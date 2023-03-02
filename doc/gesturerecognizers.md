@@ -82,7 +82,7 @@ public class PointerGesturePage : ContentPage
 {
     public PointerGesturePage()
     {
-        Content = new VStack(e => e.CenterInContainer())
+        Content = new VStack(e => e.Center())
         {
             new Label(out var label).FontSize(20),
             new Label(out var enterExitLabel).FontSize(20).TextColor(Colors.Blue),

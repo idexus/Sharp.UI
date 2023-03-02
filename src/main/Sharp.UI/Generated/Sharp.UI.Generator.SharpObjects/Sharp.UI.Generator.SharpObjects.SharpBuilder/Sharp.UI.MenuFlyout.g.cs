@@ -26,12 +26,12 @@ namespace Sharp.UI
             menuFlyout = this;
         }
 
-        public MenuFlyout(System.Action<MenuFlyout> configure) 
+        public MenuFlyout(System.Func<MenuFlyout, MenuFlyout> configure) 
         {
             configure(this);
         }
 
-        public MenuFlyout(out MenuFlyout menuFlyout, System.Action<MenuFlyout> configure) 
+        public MenuFlyout(out MenuFlyout menuFlyout, System.Func<MenuFlyout, MenuFlyout> configure) 
         {
             menuFlyout = this;
             configure(this);

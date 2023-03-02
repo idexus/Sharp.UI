@@ -12,18 +12,15 @@ namespace ExampleApp
 
         public AlternativeBackroundPage()
         {
-            Content = new CollectionView
-            {
-                e => e
-                    .Margin(new Thickness(0, 30, 0, 0))
-                    .ItemsSource(Numbers),
-
-                () => new Label()
-                    .FontSize(30)
-                    .Text(e => e.Path("."))
-                    .TextColor(e => e.Path(".").Convert((int n) => n%2 == 0 ? AppColors.Gray600 : AppColors.Gray300))
-                    .BackgroundColor(e => e.Path(".").Convert((int n) => n%2 == 0 ? AppColors.Gray200 : AppColors.Gray600))
-            };
+            Content = new CollectionView()
+                .Margin(new Thickness(0, 30, 0, 0))
+                .ItemsSource(Numbers)
+                .ItemTemplate(() =>
+                    new Label()
+                        .FontSize(30)
+                        .Text(e => e.Path("."))
+                        .TextColor(e => e.Path(".").Convert((int n) => n % 2 == 0 ? AppColors.Gray600 : AppColors.Gray300))
+                        .BackgroundColor(e => e.Path(".").Convert((int n) => n % 2 == 0 ? AppColors.Gray200 : AppColors.Gray600)));            
         }
     }
 }

@@ -32,7 +32,7 @@ public partial class CardView : ContentView, ICardViewProperties
                 .Stroke(e => e.Path(nameof(BorderColor)))
                 .BackgroundColor(e => e.Path(nameof(CardColor)))
                 .SizeRequest(250, 350)
-                .Margin(50)
+                .Margin(20)
                 .Padding(25))
             {                
                 new Grid
@@ -58,9 +58,7 @@ public partial class CardView : ContentView, ICardViewProperties
                     new ContentView()
                         .Row(1)
                         .Content(e => e.Path(nameof(ContentView)))
-                        .CenterHorizontally()
-                        .CenterVertically()
-                        .SizeRequest(120,120),
+                        .FillHorizontally(),
 
                     new Button()
                         .Row(2)

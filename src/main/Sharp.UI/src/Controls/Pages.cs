@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Diagnostics;
 
 namespace Sharp.UI
 {
@@ -7,7 +8,7 @@ namespace Sharp.UI
     {
         public ContentPage()
         {
-            if (Application.HotReloadIsEnabled)
+            if (HotReload.IsEnabled)
             {
                 if (HotReload.BindingContext != null) BindingContext = HotReload.BindingContext;
             }
@@ -21,9 +22,21 @@ namespace Sharp.UI
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            if (Application.HotReloadIsEnabled)
+            if (HotReload.IsEnabled)
             {
                 HotReload.RegisterActive(this);
+            }
+        }
+
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            if (HotReload.IsEnabled)
+            {
+                if (Navigation.NavigationStack.Count > 1) 
+                {
+                    HotReload.UnregisterActive(this);
+                }
             }
         }
     }

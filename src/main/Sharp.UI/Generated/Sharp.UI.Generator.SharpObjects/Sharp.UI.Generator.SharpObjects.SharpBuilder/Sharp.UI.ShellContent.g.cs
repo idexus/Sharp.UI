@@ -26,12 +26,12 @@ namespace Sharp.UI
             shellContent = this;
         }
 
-        public ShellContent(System.Action<ShellContent> configure) 
+        public ShellContent(System.Func<ShellContent, ShellContent> configure) 
         {
             configure(this);
         }
 
-        public ShellContent(out ShellContent shellContent, System.Action<ShellContent> configure) 
+        public ShellContent(out ShellContent shellContent, System.Func<ShellContent, ShellContent> configure) 
         {
             shellContent = this;
             configure(this);
@@ -42,12 +42,12 @@ namespace Sharp.UI
             shellContent = this;
         }
 
-        public ShellContent(string title, object content, System.Action<ShellContent> configure) : this(title, content)
+        public ShellContent(string title, object content, System.Func<ShellContent, ShellContent> configure) : this(title, content)
         {
             configure(this);
         }
 
-        public ShellContent(string title, object content, out ShellContent shellContent, System.Action<ShellContent> configure) : this(title, content)
+        public ShellContent(string title, object content, out ShellContent shellContent, System.Func<ShellContent, ShellContent> configure) : this(title, content)
         {
             shellContent = this;
             configure(this);

@@ -26,12 +26,12 @@ namespace Sharp.UI
             viewCell = this;
         }
 
-        public ViewCell(System.Action<ViewCell> configure) 
+        public ViewCell(System.Func<ViewCell, ViewCell> configure) 
         {
             configure(this);
         }
 
-        public ViewCell(out ViewCell viewCell, System.Action<ViewCell> configure) 
+        public ViewCell(out ViewCell viewCell, System.Func<ViewCell, ViewCell> configure) 
         {
             viewCell = this;
             configure(this);

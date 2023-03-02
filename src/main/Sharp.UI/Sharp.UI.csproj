@@ -17,10 +17,10 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 
 		<PackageId>Sharp.UI</PackageId>
-		<Version>0.4.4-alpha</Version>
+		<Version>0.4.5-alpha</Version>
 		<Authors>Pawel Krzywdzinski</Authors>
 		<Copyright>Pawel Krzywdzinski</Copyright>
-		<PackageDescription>Wrapper Library for .NET MAUI: Code-Only UI dev with Fluent Methods, Hot Reload and No XAML</PackageDescription>
+		<PackageDescription>Library for .NET MAUI: Code-Only UI Development with Fluent Methods and Hot Reload</PackageDescription>
 		<Company></Company>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
@@ -40,7 +40,7 @@
 	<ItemGroup>
 		<ProjectReference Include="..\..\..\libs\HotReloadKit\src\HotReloadKit\HotReloadKit.csproj" />
 		<ProjectReference Include="..\..\generators\Sharp.UI.Generator.SharpObjects\Sharp.UI.Generator.SharpObjects.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
-		<ProjectReference Include="..\Sharp.UI.Extensions\Sharp.UI.Extensions.csproj" />
+		<ProjectReference Include="..\Sharp.UI.Core\Sharp.UI.Core.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

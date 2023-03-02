@@ -24,20 +24,20 @@ namespace ExampleApp
             {
                 new VStack
                 {
-                    new CollectionView(e => e.ItemsSource(itemSource))
-                    {
-                        () => new Grid
-                        {
-                            e => e.Style(e => e.Path("GridStyle")),
+                    new CollectionView()
+                        .ItemsSource(itemSource)
+                        .ItemTemplate(() =>
+                            new Grid
+                            {
+                                e => e.Style(e => e.Path("GridStyle")),
 
-                            new Label()
-                                .Text(e => e.Path("DataModel.Name"))
-                                .Style(e => e.Path("LabelStyle"))
-                                .FontSize(28)
-                                .CenterHorizontally()
+                                new Label()
+                                    .Text(e => e.Path("DataModel.Name"))
+                                    .Style(e => e.Path("LabelStyle"))
+                                    .FontSize(28)
+                                    .CenterHorizontally()
 
-                        }                        
-                    }                    
+                            })                                 
                 }                
             };
         }

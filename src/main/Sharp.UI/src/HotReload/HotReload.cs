@@ -7,65 +7,79 @@ using System.Net.Sockets;
 using System.Text;
 using System;
 using HotReloadKit;
+using System.Diagnostics;
+using Microsoft.Maui.Graphics;
 
 namespace Sharp.UI
 {
-    class HotReloadToken
-    {
-        public string Token { get; set; }
-    }
-
-    class HotReloadRequest
-    {
-        public string[] TypeNames { get; set; }
-    }
-
-    class HotReloadData
-    {
-        public string[] TypeNames { get; set; }
-        public byte[] AssemblyData { get; set; }
-        public byte[] PdbData { get; set; }
-    }
-
     public static partial class HotReload
     {
-        static List<ContentPage> registeredActivePages = new List<ContentPage>();
+        class HotReloadToken
+        {
+            public string Token { get; set; }
+        }
 
-        internal static Dictionary<string, Type> ReplacedTypesDict = new Dictionary<string, Type>();
+        class HotReloadRequest
+        {
+            public string[] TypeNames { get; set; }
+        }
+
+        class HotReloadData
+        {
+            public string[] TypeNames { get; set; }
+            public byte[] AssemblyData { get; set; }
+            public byte[] PdbData { get; set; }
+        }
 
         // --------- public -----------
 
+        public static List<IHotReloadHandler> Handlers { get; } = new List<IHotReloadHandler>();
+        public static bool IsEnabled { get; private set; } = false;
+
         public static void UpdateApplication(Type[] types)
         {
-            MainThread.BeginInvokeOnMainThread(() =>
-            {
-                foreach (var type in types)
-                    ReplacedTypesDict[type.FullName] = type;
-                InvokeHotReload();
-            });
+            if (IsEnabled)
+                MainThread.BeginInvokeOnMainThread(() =>
+                {
+                    foreach (var type in types)
+                        ReplacedTypesDict[type.FullName] = type;
+                    InvokeHotReload();
+                });
         }
 
         public static void ReplaceWithType(Type type)
         {
-            MainThread.BeginInvokeOnMainThread(() =>
-            {
-                ReplacedTypesDict[type.FullName] = type;
-            });
+            if (IsEnabled)
+                MainThread.BeginInvokeOnMainThread(() =>
+                {
+                    ReplacedTypesDict[type.FullName] = type;
+                });
         }
 
         public static void TriggerHotReload()
         {
-            MainThread.BeginInvokeOnMainThread(() =>
-            {
-                InvokeHotReload();
-            });
+            if (IsEnabled)
+                MainThread.BeginInvokeOnMainThread(() =>
+                {
+                    InvokeHotReload();
+                });
         }
 
         // ------------ internal/private -----------
 
-        internal static void RegisterActive(ContentPage page)
+        static List<VisualElement> registeredActiveVisualElements = new List<VisualElement>();
+        internal static Dictionary<string, Type> ReplacedTypesDict = new Dictionary<string, Type>();
+
+        internal static void RegisterActive(VisualElement visualElement)
         {
-            registeredActivePages.Add(page);
+
+            if (registeredActiveVisualElements.Contains(visualElement)) return;
+            registeredActiveVisualElements.Add(visualElement);
+        }
+
+        internal static void UnregisterActive(VisualElement visualElement)
+        {
+            registeredActiveVisualElements.Remove(visualElement);
         }
 
         public static ValueTask WriteAsync<T>(this NetworkStream stream, T obj, CancellationToken cancellationToken = default)
@@ -76,65 +90,66 @@ namespace Sharp.UI
             return stream.WriteAsync(messageBytes, cancellationToken);
         }
 
+        internal static void InitHotReload()
+        {
+            IsEnabled = true;
+            Handlers.Add(new ShellHotReloadHandler());
+            Handlers.Add(new NavigationPageHotReloadHandler());
+            Handlers.Add(new TabbedPageHotReloadHandler());
+            Handlers.Add(new SinglePageHotReloadHandler());
+        }
+        
         internal static void InitHotReloadKit<T>(IPAddress[] IdeIPs)
         {
             HotReloader.Init<T>(IdeIPs, platformName: SharpPlatform.Name);
-            HotReloader.RequestAdditionalTypes = () => registeredActivePages.Select(e => e.GetType().FullName).ToArray();
+            HotReloader.RequestAdditionalTypes = () => registeredActiveVisualElements.Select(e => e.GetType().FullName).ToArray();
             HotReloader.UpdateApplication = UpdateApplication;
         }
 
         internal static object BindingContext = null;
         static void InvokeHotReload()
         {
-            if (Application.HotReloadIsEnabled)
+            try
             {
-                try
+                foreach (var toReloadTypeName in ReplacedTypesDict.Keys)
                 {
-                    foreach (var toReloadTypeName in ReplacedTypesDict.Keys)
+                    var activeVisualElementsForRequestedName = registeredActiveVisualElements.Where(e => e.GetType().FullName == toReloadTypeName).ToList();
+                    foreach (var oldVisualElement in activeVisualElementsForRequestedName)
                     {
-                        var activePagesForTypeName = registeredActivePages.Where(e => e.GetType().FullName == toReloadTypeName).ToList();
-
-                        foreach (var activePage in activePagesForTypeName)
+                        // check if visual element type changed
+                        var typeToReload = ReplacedTypesDict[toReloadTypeName];
+                        if (oldVisualElement.GetType() != typeToReload)
                         {
-                            // check if page type changed
-                            var typeToReload = ReplacedTypesDict[toReloadTypeName];
-                            if (activePage.GetType() != typeToReload)
+                            try
                             {
-                                var replaced = false;
-                                try
+                                var newObject = ActivatorUtilities.GetServiceOrCreateInstance(Application.Services, typeToReload);
+                                if (newObject is VisualElement newVisualElement)
                                 {
-                                    var newObject = ActivatorUtilities.GetServiceOrCreateInstance(Application.Services, typeToReload);
-                                    if (newObject is ContentPage newContentPage)
-                                    {
-                                        BindingContext = activePage.BindingContext;
+                                    BindingContext = oldVisualElement.BindingContext;
 
-                                        var parent = activePage.Parent;
-                                        if (parent is Window parentWindow)
-                                        {
-                                            parentWindow.Page = newContentPage;
-                                            replaced = true;
-                                        }
-                                        else if (parent is Microsoft.Maui.Controls.ShellContent shellContent)
-                                        {
-                                            shellContent.ContentTemplate = null;
-                                            shellContent.Content = newContentPage;
-                                            if (newContentPage.Handler == null) newContentPage.Handler = activePage.Handler;
-                                            if (newContentPage.Parent == null) newContentPage.Parent = parent;
-                                            replaced = true;
-                                        }
+                                    bool replaced = false;
+                                    foreach (var handler in Handlers)
+                                    {
+                                        replaced = handler.ReplaceVisualElement(oldVisualElement, newVisualElement);
+                                        if (replaced) break;
+                                    }
+                                    
+                                    if (replaced)
+                                    {
+                                        RegisterActive(newVisualElement);
+                                        UnregisterActive(oldVisualElement);
                                     }
                                 }
-                                finally
-                                {
-                                    if (replaced) registeredActivePages.Remove(activePage);
-                                    BindingContext = null;
-                                }
+                            }
+                            finally
+                            {
+                                BindingContext = null;
                             }
                         }
                     }
                 }
-                catch { }
             }
+            catch { }
         }
     }
 }
