@@ -22,6 +22,6 @@ new Label("This is a test")
 
 ```cs
 new Label("Hello")
-    .FontSize(e => e.Default(50).OnDesktop(80).OnPhone(30))
+    .FontSize(e => e.OnDesktop(80).OnPhone(30).Default(50))
     .TextColor(e => e.OnLight(Colors.Black).OnDark(Colors.Teal))
 ```
