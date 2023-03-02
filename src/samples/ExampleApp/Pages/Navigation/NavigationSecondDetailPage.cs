@@ -8,7 +8,7 @@ public class NavigationSecondDetailPage : ContentPage
 	{
 		Content = new VStack(e => e.Center())
 		{
-			new Label("Second Page").FontSize(90)
+			new Label("Second Page").FontSize(70)
 		};
 	}
 }

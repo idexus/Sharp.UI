@@ -13,54 +13,14 @@ public partial class TestPage : ContentPage
 
     public TestPage()
     {
-        Resources = new ResourceDictionary
-        {
-            { "myColor", AppColors.Gray200 },
-
-            new Style<Label>(e => e
-                .TextColor(AppColors.Gray200)
-                .Center()),
-
-            new Style<Button>
-            {
-                e => e
-                    .BackgroundColor(AppColors.Gray950)
-                    .Padding(20)
-                    .CornerRadius(10)
-                    .WidthRequest(270),
-
-                new VisualState<Button>(VisualStates.Button.Normal)
-                {
-                    e => e
-                        .FontSize(33)
-                        .TextColor(AppColors.Gray200),
-
-                    async button => {
-                        await button.RotateTo(0);   // create animations inside VisualState
-                    }
-                },
-
-                new VisualState<Button>(VisualStates.Button.Disabled)
-                {
-                    e => e
-                        .FontSize(20)
-                        .TextColor(AppColors.Gray600),
-
-                    async button => {
-                        await button.RotateTo(180);
-                    }
-                },
-            }
-        };
-
-
+        Resources = localResources;
         Content = new Grid(e => e.BackgroundColor(Colors.Black))
         {            
             new VerticalStackLayout(out var vStack, e => e.VerticalOptions(LayoutOptions.Center))
             {
                 new Label(out var label)
                     .TextColor(e => e.DynamicResource("myColor"))
-                    .Text("Only in Code ::)")
+                    .Text("Only in Code :)")
                     .FontSize(45),
                     
                 new Slider(out var slider)

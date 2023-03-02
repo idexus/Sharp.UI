@@ -8,7 +8,7 @@ namespace Sharp.UI
     {
         public ContentPage()
         {
-            if (Application.HotReloadIsEnabled)
+            if (HotReload.IsEnabled)
             {
                 if (HotReload.BindingContext != null) BindingContext = HotReload.BindingContext;
             }
@@ -22,7 +22,7 @@ namespace Sharp.UI
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            if (Application.HotReloadIsEnabled)
+            if (HotReload.IsEnabled)
             {
                 HotReload.RegisterActive(this);
             }
@@ -31,7 +31,7 @@ namespace Sharp.UI
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
-            if (Application.HotReloadIsEnabled)
+            if (HotReload.IsEnabled)
             {
                 if (Navigation.NavigationStack.Count > 1) 
                 {

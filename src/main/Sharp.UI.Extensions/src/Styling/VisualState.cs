@@ -24,14 +24,14 @@ namespace Sharp.UI
         public void Add(Setter setter) => this.mauiVisualState.Setters.Add(setter);
         public void Add(Microsoft.Maui.Controls.StateTriggerBase triggerBase) => this.mauiVisualState.StateTriggers.Add(triggerBase);
 
-        public void Add(Action<T> action)
+        public void Add(Action<T> invokeOnElement)
         {
-            mauiVisualState.Setters.Add(new Setter { Property = AttachedVisualStateInvokeProperty, Value = action });
+            mauiVisualState.Setters.Add(new Setter { Property = AttachedVisualStateInvokeProperty, Value = invokeOnElement });
         }
 
-        public void Add(Func<T, T> configure)
+        public void Add(Func<T, T> styleElement)
         {
-            ConfigureSetters(e => configure(e));
+            ConfigureSetters(styleElement);
         }
 
         public VisualState(string name)
@@ -42,22 +42,22 @@ namespace Sharp.UI
 
         public VisualState() : this(Guid.NewGuid().ToString()) { }
 
-        public VisualState(Action<T> configure) : this()
+        public VisualState(Func<T, T> styleElement) : this()
         {
-            ConfigureSetters(configure);
+            ConfigureSetters(styleElement);
         }
 
-        public VisualState(string name, Action<T> configure) : this(name)
+        public VisualState(string name, Func<T, T> styleElement) : this(name)
         {
-            ConfigureSetters(configure);
+            ConfigureSetters(styleElement);
         }
 
-        void ConfigureSetters(Action<T> configure)
+        void ConfigureSetters(Func<T, T> styleElement)
         {
             MainThread.BeginInvokeOnMainThread(() =>
             {
                 FluentStyling.Setters = mauiVisualState.Setters;
-                configure?.Invoke(null);
+                styleElement?.Invoke(null);
                 FluentStyling.Setters = null;
             });
         }

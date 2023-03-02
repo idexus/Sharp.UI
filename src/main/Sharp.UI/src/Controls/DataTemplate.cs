@@ -9,7 +9,7 @@ namespace Sharp.UI
         public static T Activate<T>(Type type) 
         {
             if (!type.IsAssignableTo(typeof(T))) throw new ArgumentException($"Type {type} is not assignable to {typeof(T)}");
-            if (Application.HotReloadIsEnabled)
+            if (HotReload.IsEnabled)
             {
                 var typeName = type.FullName;
                 if (HotReload.ReplacedTypesDict.TryGetValue(typeName, out var replacedType))
@@ -24,7 +24,7 @@ namespace Sharp.UI
         object getValue(System.Func<object> loadValue)
         {
             object value = loadValue();
-            if (Application.HotReloadIsEnabled)
+            if (HotReload.IsEnabled)
             {
                 var typeName = value.GetType().FullName;
                 if (HotReload.ReplacedTypesDict.TryGetValue(typeName, out var replacedType))
@@ -54,14 +54,4 @@ namespace Sharp.UI
         public IEnumerator GetEnumerator() { yield return this.LoadTemplate; }
         public void Add(System.Func<object> loadTemplate) => this.LoadTemplate = loadTemplate;
     }
-
-    //public class DataTemplate<T> : DataTemplate
-    //{
-    //    public DataTemplate(System.Func<T> loadTemplate)
-    //        : base(() => loadTemplate())
-    //    {
-    //    }
-
-    //    public new T CreateContent() => (T)base.CreateContent();
-    //}
 }

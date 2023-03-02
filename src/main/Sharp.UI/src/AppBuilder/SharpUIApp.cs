@@ -28,15 +28,14 @@ namespace Sharp.UI
                 switch (HotReloadType)
                 {
                     case HotReloadType.HotReloadKit:
-                        Application.HotReloadIsEnabled = IdeIPs.Count() > 0;
-                        if (Application.HotReloadIsEnabled)
+                        if (IdeIPs.Count() > 0)
                         {
-
+                            HotReload.InitHotReload();
                             HotReload.InitHotReloadKit<T>(IdeIPs);
                         }
                         break;
                     case HotReloadType.UserDefined:
-                        Application.HotReloadIsEnabled = true;
+                        HotReload.InitHotReload();
                         break;
                 }                
             }

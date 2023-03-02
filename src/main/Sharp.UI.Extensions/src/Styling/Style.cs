@@ -29,35 +29,35 @@ namespace Sharp.UI
             mauiStyle.ApplyToDerivedTypes = applyToDerivedTypes;
         }
 
-        public Style(Action<T> settersBuilder) : this()
+        public Style(Func<T,T> styleElement) : this()
         {
-            BuildSetters(settersBuilder);
+            BuildSetters(styleElement);
         }
 
-        public Style(bool applyToDerivedTypes, Action<T> settersBuilder) : this()
+        public Style(bool applyToDerivedTypes, Func<T, T> styleElement) : this()
         {
             mauiStyle.ApplyToDerivedTypes = applyToDerivedTypes;
-            BuildSetters(settersBuilder);
+            BuildSetters(styleElement);
         }
 
-        void BuildSetters(Action<T> settersBuilder)
+        void BuildSetters(Func<T,T> styleElement)
         {
             MainThread.BeginInvokeOnMainThread(() =>
             {
                 FluentStyling.Setters = mauiStyle.Setters;
-                settersBuilder?.Invoke(null);
+                styleElement?.Invoke(null);
                 FluentStyling.Setters = null;
             });
         }
 
-        public void Add(Action<T> action)
+        public void Add(Action<T> invokeOnElement)
         {
-            mauiStyle.Setters.Add(new Setter { Property = AttachedStyleInvokeProperty, Value = action });
+            mauiStyle.Setters.Add(new Setter { Property = AttachedStyleInvokeProperty, Value = invokeOnElement });
         }
 
-        public void Add(Func<T, T> settersBuilder)
+        public void Add(Func<T, T> styleElement)
         {
-            BuildSetters(e => settersBuilder(e));
+            BuildSetters(styleElement);
         }
 
         public void Add(Setter setter) => this.mauiStyle.Setters.Add(setter);

@@ -8,7 +8,7 @@ public class NavigationDetailPage : ContentPage
 	{
 		Content = new VStack(e => e.Center())
 		{
-			new Label("Detail Page").FontSize(90),
+			new Label("Detail Page").FontSize(70),
 
             new Button("Go to next page")
                 .OnClicked(async button =>

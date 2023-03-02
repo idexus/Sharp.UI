@@ -3,75 +3,76 @@
 using Sharp.UI;
 
 public partial class CardViewPage : ContentPage
-{    
+{
+    private readonly Label label;
+
     public CardViewPage()
     {
-        var labelStyle = new Style<Label>(e => e.TextColor(Colors.Blue).FontSize(21));
+        var labelStyle = new Style<Label>(e => e.TextColor(AppColors.Gray300).FontSize(21));
 
-        this.Content = new ScrollView
-        {
-            e => e
+        this.Content = 
+            new ScrollView(e => e
                 .Margin(top: Shell.Current != null ? 30 : 0)
-                .BackgroundColor(Colors.Black),
+                .BackgroundColor(Colors.Black)) {
 
-            new VStack
-            {
-                e => e.CenterHorizontally(),
-
-                new Label(out var label)
-                    .CenterHorizontally()
-                    .Text($"Counter {counter}")
-                    .FontSize(30)
-                    .Margin(40),
-
-                new Slider(1,100, out var slider)
-                    .Margin(30),
-
-                new StackLayout
+                new VStack(e => e.Center())
                 {
-                    e => e                        
+                    new Label(out label)
+                        .CenterHorizontally()
+                        .Text($"Counter Value : {counter}")
+                        .FontSize(30)
+                        .Margin(top: 20, bottom: 20),
+
+                    new StackLayout(e => e
                         .Orientation(e => e.OnPhone(StackOrientation.Vertical).Default(StackOrientation.Horizontal))
-                        .CenterHorizontally(),
+                        .CenterHorizontally()) {
 
-                    new CardView(out var cardNo1, e => e
-                        .CardTitle(e => e.Path("Value").Source(slider).StringFormat("Value {0:F1}"))
-                        .ButtonTitle("Play")
-                        .CardDescription("Do you like it?")
-                        .CardColor(AppColors.Gray950))
-                    {
-                        new Image("dotnet_bot.png")
-                            .Aspect(Aspect.AspectFit),
-
-                        e => e.OnClicked(e =>
+                        new CardView
                         {
-                            cardNo1.CardDescription = "Let's play :)";
-                        })
-                    },
+                            new Grid(e => e.RowDefinitions(e => e.Star(2).Star()))
+                            {
+                                new Image("dotnet_bot.png")
+                                    .Aspect(Aspect.AspectFit),
+                                
+                                new Slider(1,100, out var slider)
+                                    .Row(1)
+                                    .Margin(20,0),
+                            },
 
-                    new CardView(out var cardView, e => e
-                        .CardTitle("Title")
-                        .CardDescription("Yes I do")
-                        .CardColor(AppColors.Gray950)
-                        .DescriptionStyle(labelStyle)
-                        .ButtonTitle("Count"))
-                    {
-                        new VStack
-                        {
-                            new Label("This is a simple card view example"),
-                            new Label("Second label")
-                                .FontSize(20)
-                                .TextColor(AppColors.Gray200)
+                            e => e
+                                .CardTitle(e => e.Path("Value").Source(slider).StringFormat("Value {0:F1}"))
+                                .ButtonTitle("Play")
+                                .CardDescription("Do you like it?")
+                                .CardColor(AppColors.Gray950)
+                                .OnClicked(e =>
+                                {
+                                    e.CardDescription = "Let's play :)";
+                                })
                         },
 
-                        e => e.OnClicked(button =>
-                        {
-                            counter += 1;
-                            label.Text = $"Counter {counter}";
-                        }),
+                        new CardView(e => e
+                            .CardTitle("Title")
+                            .CardDescription("Subtitle")
+                            .CardColor(AppColors.Gray950)
+                            .DescriptionStyle(labelStyle)
+                            .ButtonTitle("Count")) {
 
-                    }
-                }
-            }            
-        };
+                            new VStack
+                            {
+                                new Label("This is a simple card view example"),
+                                new Label("Second label")
+                                    .FontSize(20)
+                                    .TextColor(AppColors.Gray200)
+                            },
+
+                            e => e.OnClicked(button =>
+                            {
+                                counter += 1;
+                                label.Text = $"Counter {counter}";
+                            }),
+                        }
+                    },
+                }            
+            };
     }
 }
