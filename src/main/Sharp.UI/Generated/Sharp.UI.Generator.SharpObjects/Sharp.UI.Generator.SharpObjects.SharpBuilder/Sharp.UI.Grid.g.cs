@@ -26,12 +26,12 @@ namespace Sharp.UI
             grid = this;
         }
 
-        public Grid(System.Action<Grid> configure) 
+        public Grid(System.Func<Grid, Grid> configure) 
         {
             configure(this);
         }
 
-        public Grid(out Grid grid, System.Action<Grid> configure) 
+        public Grid(out Grid grid, System.Func<Grid, Grid> configure) 
         {
             grid = this;
             configure(this);

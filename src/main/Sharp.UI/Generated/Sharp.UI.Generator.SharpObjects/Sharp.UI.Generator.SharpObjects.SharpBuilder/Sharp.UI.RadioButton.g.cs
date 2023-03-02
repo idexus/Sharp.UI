@@ -26,12 +26,12 @@ namespace Sharp.UI
             radioButton = this;
         }
 
-        public RadioButton(System.Action<RadioButton> configure) 
+        public RadioButton(System.Func<RadioButton, RadioButton> configure) 
         {
             configure(this);
         }
 
-        public RadioButton(out RadioButton radioButton, System.Action<RadioButton> configure) 
+        public RadioButton(out RadioButton radioButton, System.Func<RadioButton, RadioButton> configure) 
         {
             radioButton = this;
             configure(this);

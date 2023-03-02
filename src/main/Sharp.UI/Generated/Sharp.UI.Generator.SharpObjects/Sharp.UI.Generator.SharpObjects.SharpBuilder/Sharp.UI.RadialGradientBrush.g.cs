@@ -26,12 +26,12 @@ namespace Sharp.UI
             radialGradientBrush = this;
         }
 
-        public RadialGradientBrush(System.Action<RadialGradientBrush> configure) 
+        public RadialGradientBrush(System.Func<RadialGradientBrush, RadialGradientBrush> configure) 
         {
             configure(this);
         }
 
-        public RadialGradientBrush(out RadialGradientBrush radialGradientBrush, System.Action<RadialGradientBrush> configure) 
+        public RadialGradientBrush(out RadialGradientBrush radialGradientBrush, System.Func<RadialGradientBrush, RadialGradientBrush> configure) 
         {
             radialGradientBrush = this;
             configure(this);
@@ -42,12 +42,12 @@ namespace Sharp.UI
             radialGradientBrush = this;
         }
 
-        public RadialGradientBrush(Microsoft.Maui.Graphics.Point center, System.Action<RadialGradientBrush> configure) : this(center)
+        public RadialGradientBrush(Microsoft.Maui.Graphics.Point center, System.Func<RadialGradientBrush, RadialGradientBrush> configure) : this(center)
         {
             configure(this);
         }
 
-        public RadialGradientBrush(Microsoft.Maui.Graphics.Point center, out RadialGradientBrush radialGradientBrush, System.Action<RadialGradientBrush> configure) : this(center)
+        public RadialGradientBrush(Microsoft.Maui.Graphics.Point center, out RadialGradientBrush radialGradientBrush, System.Func<RadialGradientBrush, RadialGradientBrush> configure) : this(center)
         {
             radialGradientBrush = this;
             configure(this);

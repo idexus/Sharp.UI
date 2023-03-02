@@ -2,13 +2,18 @@
 
 namespace Sharp.UI
 {
-	public static class IEnumerableExtension
+	public static partial class IEnumerableExtension
 	{
+        public static void Add<T>(this T self, Func<T, T> configure)
+            where T : BindableObject, IEnumerable
+        {
+            configure(self);
+        }
+
         public static void Add<T>(this T self, Action<T> configure)
-            where T : IEnumerable
+            where T : Layout, IEnumerable
         {
             configure(self);
         }
     }
 }
-

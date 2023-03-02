@@ -12,14 +12,10 @@ public class ScrollPage : ContentPage
     public ScrollPage()
     {
         Content =
-            new CollectionView
-            {
-                e => e
-                    .ItemsSource(MyData.Source)
-                    .Margin(new Thickness(0,50,0,0)),
-
-                () => new Grid
-                {
+            new CollectionView()
+                .ItemsSource(MyData.Source)
+                .Margin(new Thickness(0, 50, 0, 0))
+                .ItemTemplate(() =>
                     new Grid
                     {
                         e => e.ColumnDefinitions(e => e.Auto().Star()),
@@ -40,8 +36,6 @@ public class ScrollPage : ContentPage
                             .FontSize(20)
                             .Text(e => e.Path("Text"))
                             .HeightRequest(200),
-                    }
-                }
-            };
+                    });            
     }
 }

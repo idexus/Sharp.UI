@@ -26,12 +26,12 @@ namespace Sharp.UI
             scrollView = this;
         }
 
-        public ScrollView(System.Action<ScrollView> configure) 
+        public ScrollView(System.Func<ScrollView, ScrollView> configure) 
         {
             configure(this);
         }
 
-        public ScrollView(out ScrollView scrollView, System.Action<ScrollView> configure) 
+        public ScrollView(out ScrollView scrollView, System.Func<ScrollView, ScrollView> configure) 
         {
             scrollView = this;
             configure(this);

@@ -26,12 +26,12 @@ namespace Sharp.UI
             vStack = this;
         }
 
-        public VStack(System.Action<VStack> configure) 
+        public VStack(System.Func<VStack, VStack> configure) 
         {
             configure(this);
         }
 
-        public VStack(out VStack vStack, System.Action<VStack> configure) 
+        public VStack(out VStack vStack, System.Func<VStack, VStack> configure) 
         {
             vStack = this;
             configure(this);

@@ -27,7 +27,6 @@ namespace Sharp.UI
     public partial class CheckBox : Microsoft.Maui.Controls.CheckBox { }
 
     [SharpObject]
-    [ContentProperty(nameof(ItemTemplate))]
     public partial class CollectionView : Microsoft.Maui.Controls.CollectionView
     {
         public void Add(System.Func<object> loadTemplate) => this.ItemTemplate = new DataTemplate(loadTemplate);
@@ -100,7 +99,6 @@ namespace Sharp.UI
     }
 
     [SharpObject]
-    [ContentProperty(nameof(ItemTemplate))]
     public partial class ListView : Microsoft.Maui.Controls.ListView
     {
         public void Add(Func<Cell> loadTemplate) => this.ItemTemplate = new DataTemplate(loadTemplate);

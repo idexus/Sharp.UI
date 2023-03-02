@@ -26,12 +26,12 @@ namespace Sharp.UI
             geometryGroup = this;
         }
 
-        public GeometryGroup(System.Action<GeometryGroup> configure) 
+        public GeometryGroup(System.Func<GeometryGroup, GeometryGroup> configure) 
         {
             configure(this);
         }
 
-        public GeometryGroup(out GeometryGroup geometryGroup, System.Action<GeometryGroup> configure) 
+        public GeometryGroup(out GeometryGroup geometryGroup, System.Func<GeometryGroup, GeometryGroup> configure) 
         {
             geometryGroup = this;
             configure(this);

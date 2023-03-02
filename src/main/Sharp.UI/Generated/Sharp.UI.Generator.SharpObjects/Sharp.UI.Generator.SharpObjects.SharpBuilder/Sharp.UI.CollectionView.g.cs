@@ -5,16 +5,11 @@
 #nullable enable
 
 
-using System.Collections;
-using System.Collections.ObjectModel;
-using System.Collections.Generic;
-
-
 namespace Sharp.UI
 {
 	using Sharp.UI;
 
-    public partial class CollectionView : IEnumerable
+    public partial class CollectionView
 	{
 
         // ----- constructors -----
@@ -25,22 +20,6 @@ namespace Sharp.UI
         {
             collectionView = this;
         }
-
-        public CollectionView(System.Action<CollectionView> configure) 
-        {
-            configure(this);
-        }
-
-        public CollectionView(out CollectionView collectionView, System.Action<CollectionView> configure) 
-        {
-            collectionView = this;
-            configure(this);
-        }
-
-        // ----- single item container -----
-
-        IEnumerator IEnumerable.GetEnumerator() { yield return this.ItemTemplate; }
-        public void Add(Microsoft.Maui.Controls.DataTemplate itemtemplate) => this.ItemTemplate = itemtemplate;
 
     }
 }

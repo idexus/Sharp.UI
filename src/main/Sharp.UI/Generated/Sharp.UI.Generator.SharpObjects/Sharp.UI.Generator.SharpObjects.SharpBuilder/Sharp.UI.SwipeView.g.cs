@@ -26,12 +26,12 @@ namespace Sharp.UI
             swipeView = this;
         }
 
-        public SwipeView(System.Action<SwipeView> configure) 
+        public SwipeView(System.Func<SwipeView, SwipeView> configure) 
         {
             configure(this);
         }
 
-        public SwipeView(out SwipeView swipeView, System.Action<SwipeView> configure) 
+        public SwipeView(out SwipeView swipeView, System.Func<SwipeView, SwipeView> configure) 
         {
             swipeView = this;
             configure(this);

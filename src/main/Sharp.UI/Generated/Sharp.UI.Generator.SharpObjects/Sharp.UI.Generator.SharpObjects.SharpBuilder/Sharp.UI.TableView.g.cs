@@ -24,12 +24,12 @@ namespace Sharp.UI
             tableView = this;
         }
 
-        public TableView(System.Action<TableView> configure) : this()
+        public TableView(System.Func<TableView, TableView> configure) : this()
         {
             configure(this);
         }
 
-        public TableView(out TableView tableView, System.Action<TableView> configure) : this()
+        public TableView(out TableView tableView, System.Func<TableView, TableView> configure) : this()
         {
             tableView = this;
             configure(this);

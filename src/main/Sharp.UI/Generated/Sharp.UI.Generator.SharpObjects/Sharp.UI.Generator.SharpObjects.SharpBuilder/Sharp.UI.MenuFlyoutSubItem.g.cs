@@ -26,12 +26,12 @@ namespace Sharp.UI
             menuFlyoutSubItem = this;
         }
 
-        public MenuFlyoutSubItem(System.Action<MenuFlyoutSubItem> configure) 
+        public MenuFlyoutSubItem(System.Func<MenuFlyoutSubItem, MenuFlyoutSubItem> configure) 
         {
             configure(this);
         }
 
-        public MenuFlyoutSubItem(out MenuFlyoutSubItem menuFlyoutSubItem, System.Action<MenuFlyoutSubItem> configure) 
+        public MenuFlyoutSubItem(out MenuFlyoutSubItem menuFlyoutSubItem, System.Func<MenuFlyoutSubItem, MenuFlyoutSubItem> configure) 
         {
             menuFlyoutSubItem = this;
             configure(this);
@@ -42,12 +42,12 @@ namespace Sharp.UI
             menuFlyoutSubItem = this;
         }
 
-        public MenuFlyoutSubItem(string text, System.Action<MenuFlyoutSubItem> configure) : this(text)
+        public MenuFlyoutSubItem(string text, System.Func<MenuFlyoutSubItem, MenuFlyoutSubItem> configure) : this(text)
         {
             configure(this);
         }
 
-        public MenuFlyoutSubItem(string text, out MenuFlyoutSubItem menuFlyoutSubItem, System.Action<MenuFlyoutSubItem> configure) : this(text)
+        public MenuFlyoutSubItem(string text, out MenuFlyoutSubItem menuFlyoutSubItem, System.Func<MenuFlyoutSubItem, MenuFlyoutSubItem> configure) : this(text)
         {
             menuFlyoutSubItem = this;
             configure(this);

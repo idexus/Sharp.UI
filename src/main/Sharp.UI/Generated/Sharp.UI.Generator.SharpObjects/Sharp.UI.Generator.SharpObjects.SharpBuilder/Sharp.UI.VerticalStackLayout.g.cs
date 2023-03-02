@@ -26,12 +26,12 @@ namespace Sharp.UI
             verticalStackLayout = this;
         }
 
-        public VerticalStackLayout(System.Action<VerticalStackLayout> configure) 
+        public VerticalStackLayout(System.Func<VerticalStackLayout, VerticalStackLayout> configure) 
         {
             configure(this);
         }
 
-        public VerticalStackLayout(out VerticalStackLayout verticalStackLayout, System.Action<VerticalStackLayout> configure) 
+        public VerticalStackLayout(out VerticalStackLayout verticalStackLayout, System.Func<VerticalStackLayout, VerticalStackLayout> configure) 
         {
             verticalStackLayout = this;
             configure(this);

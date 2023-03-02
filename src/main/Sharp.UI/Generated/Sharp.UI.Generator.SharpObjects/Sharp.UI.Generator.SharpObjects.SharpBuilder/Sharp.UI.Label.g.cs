@@ -26,12 +26,12 @@ namespace Sharp.UI
             label = this;
         }
 
-        public Label(System.Action<Label> configure) 
+        public Label(System.Func<Label, Label> configure) 
         {
             configure(this);
         }
 
-        public Label(out Label label, System.Action<Label> configure) 
+        public Label(out Label label, System.Func<Label, Label> configure) 
         {
             label = this;
             configure(this);
@@ -42,12 +42,12 @@ namespace Sharp.UI
             label = this;
         }
 
-        public Label(string text, System.Action<Label> configure) : this(text)
+        public Label(string text, System.Func<Label, Label> configure) : this(text)
         {
             configure(this);
         }
 
-        public Label(string text, out Label label, System.Action<Label> configure) : this(text)
+        public Label(string text, out Label label, System.Func<Label, Label> configure) : this(text)
         {
             label = this;
             configure(this);

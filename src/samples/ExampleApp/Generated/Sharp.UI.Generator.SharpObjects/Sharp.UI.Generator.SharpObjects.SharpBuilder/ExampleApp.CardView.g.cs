@@ -22,12 +22,12 @@ namespace ExampleApp
             cardView = this;
         }
 
-        public CardView(System.Action<CardView> configure) : this()
+        public CardView(System.Func<CardView, CardView> configure) : this()
         {
             configure(this);
         }
 
-        public CardView(out CardView cardView, System.Action<CardView> configure) : this()
+        public CardView(out CardView cardView, System.Func<CardView, CardView> configure) : this()
         {
             cardView = this;
             configure(this);

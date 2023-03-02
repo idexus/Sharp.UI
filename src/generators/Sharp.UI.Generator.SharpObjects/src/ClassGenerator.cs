@@ -288,12 +288,12 @@ using System.Collections.Generic;
 
                 if (containerOfTypeName != null || isAlreadyContainerOfThis)
                     builder.AppendLine($@"
-        public {mainSymbol.Name}({argsString}System.Action<{mainSymbol.Name}> configure) {thisTail}
+        public {mainSymbol.Name}({argsString}System.Func<{mainSymbol.Name}, {mainSymbol.Name}> configure) {thisTail}
         {{
             configure(this);
         }}
 
-        public {mainSymbol.Name}({argsString}out {mainSymbol.Name} {camelCaseName}, System.Action<{mainSymbol.Name}> configure) {thisTail}
+        public {mainSymbol.Name}({argsString}out {mainSymbol.Name} {camelCaseName}, System.Func<{mainSymbol.Name}, {mainSymbol.Name}> configure) {thisTail}
         {{
             {Helpers.CamelCase(mainSymbol.Name)} = this;
             configure(this);
