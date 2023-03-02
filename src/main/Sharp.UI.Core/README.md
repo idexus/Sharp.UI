@@ -1,6 +1,6 @@
 # Overview
 
-Library for .NET MAUI: Fluent Extension Methods Package
+Library for .NET MAUI: Core Fluent API
 
 # License 
 

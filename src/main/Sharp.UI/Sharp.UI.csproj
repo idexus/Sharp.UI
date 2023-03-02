@@ -40,7 +40,7 @@
 	<ItemGroup>
 		<ProjectReference Include="..\..\..\libs\HotReloadKit\src\HotReloadKit\HotReloadKit.csproj" />
 		<ProjectReference Include="..\..\generators\Sharp.UI.Generator.SharpObjects\Sharp.UI.Generator.SharpObjects.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
-		<ProjectReference Include="..\Sharp.UI.Extensions\Sharp.UI.Extensions.csproj" />
+		<ProjectReference Include="..\Sharp.UI.Core\Sharp.UI.Core.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
