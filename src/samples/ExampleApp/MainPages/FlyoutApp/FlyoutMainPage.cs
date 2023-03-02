@@ -40,7 +40,5 @@ public class FlyoutMainPage : FlyoutPage
 
         this.FlyoutLayoutBehavior = FlyoutLayoutBehavior.Popover;
         this.IsPresented = false;
-       
-
     }
 }
