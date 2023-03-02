@@ -49,30 +49,28 @@ public partial class TestPage : ContentPage
                         new Switch(out testSwitch).Row(3)
                             .Center()
                     },
+                }
+                .SizeRequest(270, 450)
+                .BackgroundColor(AppColors.Gray950)
+                .StrokeShape(new RoundRectangle().CornerRadius(40))
+                .VisualStateGroups(new VisualStateGroupList
+                {
+                    new VisualState<Border> {
+                        async border => {
+                            await border.AnimateBackgroundColorTo(Colors.Red, 500);
+                            await label.RotateXTo(360, 400);
+                        },
+                        new StateTrigger().IsActive(e => e.Path("IsToggled").Source(testSwitch))
+                    },
 
-                    e => e
-                        .SizeRequest(270, 450)
-                        .BackgroundColor(AppColors.Gray950)
-                        .StrokeShape(new RoundRectangle().CornerRadius(40))
-                        .VisualStateGroups(new VisualStateGroupList
-                        {
-                            new VisualState<Border> {
-                                async border => {
-                                    await border.AnimateBackgroundColorTo(Colors.Red, 500);
-                                    await label.RotateXTo(360, 400);
-                                },
-                                new StateTrigger().IsActive(e => e.Path("IsToggled").Source(testSwitch))
-                            },
-
-                            new VisualState<Border> {
-                                async border => {
-                                    await border.AnimateBackgroundColorTo(AppColors.Gray950, 500);
-                                    await label.RotateXTo(0, 400);
-                                },
-                                new StateTrigger().IsActive(e => e.Path("IsToggled").Source(testSwitch).Negate())
-                            }
-                        }),
-                },
+                    new VisualState<Border> {
+                        async border => {
+                            await border.AnimateBackgroundColorTo(AppColors.Gray950, 500);
+                            await label.RotateXTo(0, 400);
+                        },
+                        new StateTrigger().IsActive(e => e.Path("IsToggled").Source(testSwitch).Negate())
+                    }
+                }),
 
                 new Button(out button)
                     .Text("Click me")
