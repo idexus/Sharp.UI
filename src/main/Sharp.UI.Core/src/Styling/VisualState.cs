@@ -29,11 +29,6 @@ namespace Sharp.UI
             mauiVisualState.Setters.Add(new Setter { Property = AttachedVisualStateInvokeProperty, Value = invokeOnElement });
         }
 
-        public void Add(Func<T, T> styleElement)
-        {
-            ConfigureSetters(styleElement);
-        }
-
         public VisualState(string name)
         {
             this.mauiVisualState = new Microsoft.Maui.Controls.VisualState();
@@ -42,14 +37,14 @@ namespace Sharp.UI
 
         public VisualState() : this(Guid.NewGuid().ToString()) { }
 
-        public VisualState(Func<T, T> styleElement) : this()
+        public VisualState(Func<T, T> buildSetters) : this()
         {
-            ConfigureSetters(styleElement);
+            ConfigureSetters(buildSetters);
         }
 
-        public VisualState(string name, Func<T, T> styleElement) : this(name)
+        public VisualState(string name, Func<T, T> buildSetters) : this(name)
         {
-            ConfigureSetters(styleElement);
+            ConfigureSetters(buildSetters);
         }
 
         void ConfigureSetters(Func<T, T> styleElement)

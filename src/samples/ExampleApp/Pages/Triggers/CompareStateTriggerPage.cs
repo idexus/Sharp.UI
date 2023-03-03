@@ -16,19 +16,15 @@ public class CompareStateTriggerPage : ContentPage
         }
         .Style(new Style<Grid>
         {
-            new VisualState<Grid>
+            new VisualState<Grid>(e => e.BackgroundColor(Colors.Black))
             {
-                e => e.BackgroundColor(Colors.Black),
-
                 new CompareStateTrigger()
                     .Binding(e => e.Path("IsToggled")
                     .Source(testSwitch))
                     .Value(true),
             },
-            new VisualState<Grid>
+            new VisualState<Grid>(e => e.BackgroundColor(Colors.White))
             {
-                e => e.BackgroundColor(Colors.White),
-
                 new CompareStateTrigger()
                     .Binding(e => e.Path("IsToggled")
                     .Source(testSwitch))

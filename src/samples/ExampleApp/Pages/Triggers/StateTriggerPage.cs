@@ -17,10 +17,8 @@ public partial class StateTriggerPage : ContentPage
                 .CenterHorizontally()
         }
         .Style(
-            new Style<Grid>
+            new Style<Grid>(e => e.BackgroundColor(Colors.Red))
             {
-                e => e.BackgroundColor(Colors.Red),
-
                 new VisualState<Grid>
                 {
                     async e => {

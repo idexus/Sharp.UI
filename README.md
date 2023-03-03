@@ -236,13 +236,11 @@ Resources = new ResourceDictionary
         .TextColor(AppColors.Gray200)
         .CenterInContainer()),                
 
-    new Style<Button>
+    new Style<Button>(e => e
+        .BackgroundColor(AppColors.Gray950)
+        .Padding(20)
+        .CornerRadius(10))
     {
-        e => e
-            .BackgroundColor(AppColors.Gray950)
-            .Padding(20)
-            .CornerRadius(10),
-
         new VisualState<Button>(VisualStates.Button.Normal, e => e
             .FontSize(33)
             .TextColor(AppColors.Gray200)

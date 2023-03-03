@@ -5,12 +5,12 @@ namespace Sharp.UI
     public class Setters<T> : List<Setter>
         where T : BindableObject
 	{
-        public Setters(Func<T,T> styleElement)
+        public Setters(Func<T,T> buildSetters)
         {
             MainThread.BeginInvokeOnMainThread(() =>
             {
                 FluentStyling.Setters = this;
-                styleElement?.Invoke(null);
+                buildSetters?.Invoke(null);
                 FluentStyling.Setters = null;
             });
         }
