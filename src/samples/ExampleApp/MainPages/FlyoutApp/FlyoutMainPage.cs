@@ -28,8 +28,7 @@ public class FlyoutMainPage : FlyoutPage
         {
             new Button("Open test page")
                 .FontSize(20)
-                .Margin(20)
-                .AlignTopStart()
+                .Margin(20)                
                 .CenterHorizontally()
                 .OnClicked(async e =>
                 {
