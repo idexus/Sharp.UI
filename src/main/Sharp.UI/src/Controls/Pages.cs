@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Diagnostics;
 
 namespace Sharp.UI
 {
@@ -47,7 +46,7 @@ namespace Sharp.UI
     [SharpObject] 
     public partial class NavigationPage : Microsoft.Maui.Controls.NavigationPage, IEnumerable
     {
-        public IEnumerator GetEnumerator() => throw new NotImplementedException();
+        public IEnumerator GetEnumerator() { yield return this.CurrentPage; }
         public void Add(Microsoft.Maui.Controls.Page page) => this.PushAsync(page);
     }
 

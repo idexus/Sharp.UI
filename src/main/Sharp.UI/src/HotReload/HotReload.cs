@@ -97,6 +97,7 @@ namespace Sharp.UI
             Handlers.Add(new NavigationPageHotReloadHandler());
             Handlers.Add(new TabbedPageHotReloadHandler());
             Handlers.Add(new SinglePageHotReloadHandler());
+            Handlers.Add(new FlyoutPageHotReloadHandler());
         }
         
         internal static void InitHotReloadKit<T>(IPAddress[] IdeIPs)
