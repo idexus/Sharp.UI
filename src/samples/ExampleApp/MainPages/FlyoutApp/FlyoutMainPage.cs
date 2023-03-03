@@ -24,7 +24,7 @@ public class FlyoutMainPage : FlyoutPage
 
         Flyout = new ContentPage("Menu")
         {
-            new Button("Open test page")
+            new Button("Open test page")                
                 .FontSize(20)
                 .Margin(20)                
                 .CenterHorizontally()

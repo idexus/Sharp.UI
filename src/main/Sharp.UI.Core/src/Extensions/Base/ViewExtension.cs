@@ -112,14 +112,14 @@ namespace Sharp.UI
             return self;
         }
 
-        public static T PlaceTop<T>(this T self)
+        public static T AlignTop<T>(this T self)
             where T : Microsoft.Maui.Controls.View
         {
             self.SetValueOrAddSetter(Microsoft.Maui.Controls.View.VerticalOptionsProperty, LayoutOptions.Start);
             return self;
         }
 
-        public static T PlaceTopStart<T>(this T self)
+        public static T AlignTopStart<T>(this T self)
             where T : Microsoft.Maui.Controls.View
         {
             self.SetValueOrAddSetter(Microsoft.Maui.Controls.View.VerticalOptionsProperty, LayoutOptions.Start);
@@ -127,7 +127,7 @@ namespace Sharp.UI
             return self;
         }
 
-        public static T PlaceTopEnd<T>(this T self)
+        public static T AlignTopEnd<T>(this T self)
             where T : Microsoft.Maui.Controls.View
         {
             self.SetValueOrAddSetter(Microsoft.Maui.Controls.View.VerticalOptionsProperty, LayoutOptions.Start);
@@ -135,14 +135,14 @@ namespace Sharp.UI
             return self;
         }
 
-        public static T PlaceBottom<T>(this T self)
+        public static T AlignBottom<T>(this T self)
             where T : Microsoft.Maui.Controls.View
         {
             self.SetValueOrAddSetter(Microsoft.Maui.Controls.View.VerticalOptionsProperty, LayoutOptions.End);
             return self;
         }
 
-        public static T PlaceBottomStart<T>(this T self)
+        public static T AlignBottomStart<T>(this T self)
             where T : Microsoft.Maui.Controls.View
         {
             self.SetValueOrAddSetter(Microsoft.Maui.Controls.View.VerticalOptionsProperty, LayoutOptions.End);
@@ -150,7 +150,7 @@ namespace Sharp.UI
             return self;
         }
 
-        public static T PlaceBottomEnd<T>(this T self)
+        public static T AlignBottomEnd<T>(this T self)
             where T : Microsoft.Maui.Controls.View
         {
             self.SetValueOrAddSetter(Microsoft.Maui.Controls.View.VerticalOptionsProperty, LayoutOptions.End);
@@ -158,14 +158,14 @@ namespace Sharp.UI
             return self;
         }
 
-        public static T PlaceStart<T>(this T self)
+        public static T AlignStart<T>(this T self)
             where T : Microsoft.Maui.Controls.View
         {
             self.SetValueOrAddSetter(Microsoft.Maui.Controls.View.HorizontalOptionsProperty, LayoutOptions.Start);
             return self;
         }
 
-        public static T PlaceEnd<T>(this T self)
+        public static T AlignEnd<T>(this T self)
             where T : Microsoft.Maui.Controls.View
         {
             self.SetValueOrAddSetter(Microsoft.Maui.Controls.View.HorizontalOptionsProperty, LayoutOptions.End);
