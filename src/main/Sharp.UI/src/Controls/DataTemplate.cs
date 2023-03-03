@@ -6,15 +6,20 @@ namespace Sharp.UI
     [SharpObject]
     public partial class DataTemplate : Microsoft.Maui.Controls.DataTemplate, IEnumerable
     {
-        public static T Activate<T>(Type type) 
+        public static T Activate<T>(Type type = null) 
         {
-            if (!type.IsAssignableTo(typeof(T))) throw new ArgumentException($"Type {type} is not assignable to {typeof(T)}");
-            if (HotReload.IsEnabled)
+            if (type == null) 
+                type = typeof(T);
+            else
             {
-                var typeName = type.FullName;
-                if (HotReload.ReplacedTypesDict.TryGetValue(typeName, out var replacedType))
+                if (!type.IsAssignableTo(typeof(T))) throw new ArgumentException($"Type {type} is not assignable to {typeof(T)}");
+                if (HotReload.IsEnabled)
                 {
-                    type = replacedType;
+                    var typeName = type.FullName;
+                    if (HotReload.ReplacedTypesDict.TryGetValue(typeName, out var replacedType))
+                    {
+                        type = replacedType;
+                    }
                 }
             }
 
