@@ -8,8 +8,6 @@ public class FlyoutMainPage : FlyoutPage
 {
     private NavigationPage navigationPage;
 
-    
-
     public FlyoutMainPage()
     {
         Detail = new NavigationPage(out navigationPage)
