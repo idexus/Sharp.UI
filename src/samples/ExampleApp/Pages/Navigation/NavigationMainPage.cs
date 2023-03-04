@@ -19,7 +19,7 @@ public class NavigationMainPage : ContentPage
 					if (Shell.Current != null)
 						await Shell.Current.GoToAsync("details");
 					else
-						await Navigation.PushAsync(typeof(NavigationDetailPage));
+						await Navigation.PushAsync<NavigationDetailPage>();
                 })
 		};
 	}

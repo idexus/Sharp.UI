@@ -30,7 +30,7 @@ public class FlyoutMainPage : FlyoutPage
                 .CenterHorizontally()
                 .OnClicked(async e =>
                 {
-                    await navigationPage.PushAsync(typeof(TestPage));
+                    await navigationPage.PushAsync<TestPage>();
                     this.IsPresented = false;
                 })
         };

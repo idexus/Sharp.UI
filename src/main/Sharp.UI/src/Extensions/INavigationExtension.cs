@@ -9,10 +9,11 @@ namespace Sharp.UI
 {
     public static partial class INavigationExtension
     {
-        public static Task PushAsync<TNavigation>(this TNavigation navigation, Type pageType)
-            where TNavigation : INavigation
+        public static async Task PushAsync<TPage>(this INavigation navigation)
+            where TPage : Page
         {
-            return navigation.PushAsync(DataTemplate.Activate<Page>(pageType));
+            await Task.Delay(1);
+            await navigation.PushAsync(DataTemplate.Activate<TPage>());
         }
     }
 }
