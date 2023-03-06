@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using Microsoft.Maui.Animations;
 using Microsoft.Maui.Controls;
 using Sharp.UI.Internal;
 
@@ -14,7 +15,8 @@ namespace Sharp.UI
         static void OnAttachedInvokeChanged(BindableObject obj, object oldValue, object newValue)
         {
             var action = newValue as Action<T>;
-            action?.Invoke(obj as T);
+            if (obj is VisualElement visualElement && visualElement.Handler != null)
+                action?.Invoke(obj as T);
         }
 
         Microsoft.Maui.Controls.VisualState mauiVisualState;
