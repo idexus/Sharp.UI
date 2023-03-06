@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
+using Microsoft.Maui.Animations;
 using Microsoft.Maui.Controls;
 using Sharp.UI.Internal;
 
@@ -12,8 +14,9 @@ namespace Sharp.UI
 
         static void OnAttachedInvokeChanged(BindableObject obj, object oldValue, object newValue)
         {
-            var action = newValue as Action<T>;            
-            action?.Invoke(obj as T);
+            var action = newValue as Action<T>;
+            if (obj is VisualElement visualElement && visualElement.Handler != null)
+                action?.Invoke(obj as T);
         }
 
         Microsoft.Maui.Controls.Style mauiStyle;
@@ -29,9 +32,9 @@ namespace Sharp.UI
             mauiStyle.ApplyToDerivedTypes = applyToDerivedTypes;
         }
 
-        public Style(Func<T,T> styleElement) : this()
+        public Style(Func<T,T> buildSetters) : this()
         {
-            BuildSetters(styleElement);
+            BuildSetters(buildSetters);
         }
 
         public Style(bool applyToDerivedTypes, Func<T, T> styleElement) : this()
@@ -40,12 +43,12 @@ namespace Sharp.UI
             BuildSetters(styleElement);
         }
 
-        void BuildSetters(Func<T,T> styleElement)
+        void BuildSetters(Func<T,T> buildSetters)
         {
             MainThread.BeginInvokeOnMainThread(() =>
             {
                 FluentStyling.Setters = mauiStyle.Setters;
-                styleElement?.Invoke(null);
+                buildSetters?.Invoke(null);
                 FluentStyling.Setters = null;
             });
         }
@@ -53,11 +56,6 @@ namespace Sharp.UI
         public void Add(Action<T> invokeOnElement)
         {
             mauiStyle.Setters.Add(new Setter { Property = AttachedStyleInvokeProperty, Value = invokeOnElement });
-        }
-
-        public void Add(Func<T, T> styleElement)
-        {
-            BuildSetters(styleElement);
         }
 
         public void Add(Setter setter) => this.mauiStyle.Setters.Add(setter);

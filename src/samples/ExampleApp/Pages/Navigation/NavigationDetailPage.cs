@@ -16,7 +16,7 @@ public class NavigationDetailPage : ContentPage
                     if (Shell.Current != null)
                         await Shell.Current.GoToAsync("seconddetails");
                     else
-                        await Navigation.PushAsync(typeof(NavigationSecondDetailPage));
+                        await Navigation.PushAsync<NavigationSecondDetailPage>();
                 })
         };
 	}

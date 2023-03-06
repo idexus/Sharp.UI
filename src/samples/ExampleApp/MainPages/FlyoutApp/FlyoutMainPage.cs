@@ -8,8 +8,6 @@ public class FlyoutMainPage : FlyoutPage
 {
     private NavigationPage navigationPage;
 
-    
-
     public FlyoutMainPage()
     {
         Detail = new NavigationPage(out navigationPage)
@@ -26,14 +24,13 @@ public class FlyoutMainPage : FlyoutPage
 
         Flyout = new ContentPage("Menu")
         {
-            new Button("Open test page")
+            new Button("Open test page")                
                 .FontSize(20)
-                .Margin(20)
-                .AlignTopStart()
+                .Margin(20)                
                 .CenterHorizontally()
                 .OnClicked(async e =>
                 {
-                    await navigationPage.PushAsync(typeof(TestPage));
+                    await navigationPage.PushAsync<TestPage>();
                     this.IsPresented = false;
                 })
         };

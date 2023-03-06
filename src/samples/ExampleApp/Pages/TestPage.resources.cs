@@ -20,23 +20,19 @@ public partial class TestPage : ContentPage
             .CornerRadius(10)
             .WidthRequest(270)) {
 
-            new VisualState<Button>(VisualStates.Button.Normal)
-            {
-                button => button
-                    .FontSize(33)
-                    .TextColor(AppColors.Gray200),
-
+            new VisualState<Button>(VisualStates.Button.Normal, e => e
+                .FontSize(33)
+                .TextColor(AppColors.Gray200))
+            {            
                 async button => {
                     await button.RotateTo(0);   // create animations inside VisualState
                 }
             },
 
-            new VisualState<Button>(VisualStates.Button.Disabled)
-            {
-                button => button
-                    .FontSize(20)
-                    .TextColor(AppColors.Gray600),
-
+            new VisualState<Button>(VisualStates.Button.Disabled, e => e
+                .FontSize(20)
+                .TextColor(AppColors.Gray600))
+            {            
                 async button => {
                     await button.RotateTo(180);
                 }

@@ -35,23 +35,25 @@ public class KeypadPage : ContentPage
 
 			new Button("\x21E6").Command(vm.DeleteCharCommand).Column(2),
 
+
+
+			//grid =>
+			//{
+			//	for(int i = 0; i < labels.Length; i++)
+			//	{
+			//		var label = labels[i];
+			//		grid.Add(new Button(label)
+			//			.Row(i/3+1).Column(i%3)
+			//			.Command(vm.AddCharCommand).CommandParameter(label));
+			//	}
+			//}
+
 			// using LINQ inside
 
-			grid =>
-			{
-				for(int i = 0; i < labels.Length; i++)
-				{
-					var label = labels[i];
-					grid.Add(new Button(label)
-						.Row(i/3+1).Column(i%3)
-						.Command(vm.AddCharCommand).CommandParameter(label));
-				}
-			}
-
-			//labels.Select((label, i) =>
-			//	new Button(label)
-   //                 .Row(i/3+1).Column(i%3)
-   //                 .Command(vm.AddCharCommand).CommandParameter(label))
+			labels.Select((label, i) =>
+				new Button(label)
+					.Row(i/3+1).Column(i%3)
+					.Command(vm.AddCharCommand).CommandParameter(label))
 		};
 	}
 }

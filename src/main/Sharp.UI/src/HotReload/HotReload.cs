@@ -97,11 +97,21 @@ namespace Sharp.UI
             Handlers.Add(new NavigationPageHotReloadHandler());
             Handlers.Add(new TabbedPageHotReloadHandler());
             Handlers.Add(new SinglePageHotReloadHandler());
+            Handlers.Add(new FlyoutPageHotReloadHandler());
         }
         
         internal static void InitHotReloadKit<T>(IPAddress[] IdeIPs)
         {
-            HotReloader.Init<T>(IdeIPs, platformName: SharpPlatform.Name);
+            var platformName = DeviceInfo.Platform switch
+            {
+                var t when t == Microsoft.Maui.Devices.DevicePlatform.iOS => "ios",
+                var t when t == Microsoft.Maui.Devices.DevicePlatform.MacCatalyst => "maccatalyst",
+                var t when t == Microsoft.Maui.Devices.DevicePlatform.Android => "android",
+                var t when t == Microsoft.Maui.Devices.DevicePlatform.WinUI => "windows",
+                var t when t == Microsoft.Maui.Devices.DevicePlatform.Tizen => "tizen",
+                _ => "",
+            };
+            HotReloader.Init<T>(IdeIPs, platformName: platformName);
             HotReloader.RequestAdditionalTypes = () => registeredActiveVisualElements.Select(e => e.GetType().FullName).ToArray();
             HotReloader.UpdateApplication = UpdateApplication;
         }
