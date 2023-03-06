@@ -24,7 +24,13 @@ namespace Sharp.UI
 
         public Style()
         {
-            mauiStyle = new Microsoft.Maui.Controls.Style(typeof(T));
+            this.mauiStyle = new Microsoft.Maui.Controls.Style(typeof(T));
+        }
+
+        public Style(Style basedOn) : this()
+        {
+            foreach (var setter in basedOn.Setters) this.mauiStyle.Setters.Add(setter);
+            foreach (var trigger in basedOn.Triggers) this.mauiStyle.Triggers.Add(trigger);
         }
 
         public Style(bool applyToDerivedTypes) : this()
@@ -43,14 +49,27 @@ namespace Sharp.UI
             BuildSetters(styleElement);
         }
 
+        public Style(Style<T> basedOn, bool applyToDerivedTypes) : this(basedOn)
+        {
+            mauiStyle.ApplyToDerivedTypes = applyToDerivedTypes;
+        }
+
+        public Style(Style<T> basedOn, Func<T, T> buildSetters) : this(basedOn)
+        {
+            BuildSetters(buildSetters);
+        }
+
+        public Style(Style<T> basedOn, bool applyToDerivedTypes, Func<T, T> styleElement) : this(basedOn)
+        {
+            mauiStyle.ApplyToDerivedTypes = applyToDerivedTypes;
+            BuildSetters(styleElement);
+        }
+
         void BuildSetters(Func<T,T> buildSetters)
         {
-            MainThread.BeginInvokeOnMainThread(() =>
-            {
-                FluentStyling.Setters = mauiStyle.Setters;
-                buildSetters?.Invoke(null);
-                FluentStyling.Setters = null;
-            });
+            FluentStyling.Setters = mauiStyle.Setters;
+            buildSetters?.Invoke(null);
+            FluentStyling.Setters = null;        
         }
 
         public void Add(Action<T> invokeOnElement)

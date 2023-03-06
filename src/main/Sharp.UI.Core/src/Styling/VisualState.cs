@@ -51,12 +51,9 @@ namespace Sharp.UI
 
         void ConfigureSetters(Func<T, T> styleElement)
         {
-            MainThread.BeginInvokeOnMainThread(() =>
-            {
-                FluentStyling.Setters = mauiVisualState.Setters;
-                styleElement?.Invoke(null);
-                FluentStyling.Setters = null;
-            });
+            FluentStyling.Setters = mauiVisualState.Setters;
+            styleElement?.Invoke(null);
+            FluentStyling.Setters = null;
         }
     }
 }
