@@ -436,6 +436,17 @@ using System.Collections.Generic;
             }
         }
 
+        IPropertySymbol FindInBasePropertySymbolWithName(string propertyName)
+        {
+            IPropertySymbol propertySymbol = null;
+            Helpers.LoopDownToObject(mainSymbol.BaseType, type =>
+            {
+                propertySymbol = (IPropertySymbol)(type.GetMembers(propertyName).FirstOrDefault());
+                return propertySymbol != null;
+            });
+            return propertySymbol;
+        }
+
         void GeneratePropertyForField(IPropertySymbol propertySymbol)
         {
             var name = propertySymbol.Name;
@@ -444,6 +455,8 @@ using System.Collections.Generic;
             var defaultValueString = GetDefaultValueString(propertySymbol, typeName);
             var callbacksString = "";
 
+            var newKeyword = FindInBasePropertySymbolWithName(name) != null ? " new" : "" ;
+
             foreach (var callback in callbacks)
             {
                 callbacksString = $@",
@@ -451,14 +464,14 @@ using System.Collections.Generic;
             }
 
             builder.Append($@"
-        public static readonly Microsoft.Maui.Controls.BindableProperty {name}Property =
+        public static{newKeyword} readonly Microsoft.Maui.Controls.BindableProperty {name}Property =
             Microsoft.Maui.Controls.BindableProperty.Create(
                 nameof({name}),
                 typeof({typeName}),
                 typeof({mainSymbol.ToDisplayString()}),
                 {(defaultValueString != null ? $"({typeName}){defaultValueString}" : $"default({typeName})")}{callbacksString});
 
-        public {typeName} {name}
+        public{newKeyword} {typeName} {name}
         {{
             get => ({typeName})GetValue({name}Property);
             set => SetValue({name}Property, value);
