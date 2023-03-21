@@ -1,6 +1,6 @@
 # Overview
 
-__CodeMarkup for Maui__ is a library for the .NET Multi-platform App User Interface (MAUI) framework that enables you to build user interfaces declaratively in C# code using fluent methods. With __CodeMarkup.Maui__, you can create interfaces without needing to use XAML. Additionally, the library includes hot reload support to make the development process faster and more efficient. The hot reload feature is supported in Visual Studio 2022 for both Windows and Mac using the [HotReloadKit library](https://github.com/idexus/HotReloadKit.git).
+__CodeMarkup for Maui__ (previously Sharp.UI) is a library for the .NET Multi-platform App User Interface (MAUI) framework that enables you to build user interfaces declaratively in C# code using fluent methods. With __CodeMarkup.Maui__, you can create interfaces without needing to use XAML. Additionally, the library includes hot reload support to make the development process faster and more efficient. The hot reload feature is supported in Visual Studio 2022 for both Windows and Mac using the [HotReloadKit library](https://github.com/idexus/HotReloadKit.git).
 
 <a href="https://youtu.be/w5863t1E5tg" target="_blank">
  <img src="https://github.com/idexus/CodeMarkup-Maui/raw/main/doc/assets/ytscreen.jpg" alt="Hot Reload Support" width="640" border="0" />
@@ -223,7 +223,7 @@ new Label().Assign(out label)
 
 ## Using fluent methods for styling
 
-__CodeMarkup.Maui__ provides a way to define the styles of elements using the `Style<T>` class and extension methods. Here's an example of how you can define the styles for a `Label` and a `Button`:
+__CodeMarkup for Maui__ provides a way to define the styles of elements using the `Style<T>` class and extension methods. Here's an example of how you can define the styles for a `Label` and a `Button`:
 
 ```cs
 Resources = new ResourceDictionary
@@ -253,7 +253,7 @@ Resources = new ResourceDictionary
 
 ## Animations
 
-In __CodeMarkup.Maui__, you can use async methods with the naming convention `Animate{PropertyName}To` to animate any `double` or `Color` bindable property.
+In __CodeMarkup for Maui__, you can use async methods with the naming convention `Animate{PropertyName}To` to animate any `double` or `Color` bindable property.
 
 For example, to animate the `BackgroundColor` property, you can use the `AnimateBackgroundColorTo` async method.
 
@@ -284,7 +284,7 @@ You can also use visual states inside Style<T> to define animations. See the [do
 
 ## Auto-generated code
 
-__CodeMarkup.Maui__ library has a feature of automatically generating bindable properties and their fluent helper methods. To use this feature, you need to define the __view-model__ as follows:
+__CodeMarkup for Maui__ library has a feature of automatically generating bindable properties and their fluent helper methods. To use this feature, you need to define the __view-model__ as follows:
  
 ```cs
 [BindableProperties]
@@ -357,7 +357,7 @@ public class ViewPage : ContentPage
 
 # Disclaimer
 
-__CodeMarkup.Maui__ is a proof of concept. There is no official support. Use at your own risk.
+__CodeMarkup for Maui__ (previously Sharp.UI) is a proof of concept. There is no official support. Use at your own risk.
 
 # License 
 
