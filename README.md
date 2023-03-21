@@ -1,6 +1,6 @@
 # Overview
 
-__CodeMarkup for Maui__ (previously Sharp.UI) is a library for the .NET Multi-platform App User Interface (MAUI) framework that enables you to build user interfaces declaratively in C# code using fluent methods. With __CodeMarkup.Maui__, you can create interfaces without needing to use XAML. Additionally, the library includes hot reload support to make the development process faster and more efficient. The hot reload feature is supported in Visual Studio 2022 for both Windows and Mac using the [HotReloadKit library](https://github.com/idexus/HotReloadKit.git).
+__CodeMarkup for Maui__ (previously Sharp.UI) is a library for the .NET Multi-platform App User Interface (MAUI) framework that enables you to build user interfaces declaratively in C# code using fluent methods. With __CodeMarkup for Maui__, you can create interfaces without needing to use XAML. Additionally, the library includes hot reload support to make the development process faster and more efficient. The hot reload feature is supported in Visual Studio 2022 for both Windows and Mac using the [HotReloadKit library](https://github.com/idexus/HotReloadKit.git).
 
 <a href="https://youtu.be/w5863t1E5tg" target="_blank">
  <img src="https://github.com/idexus/CodeMarkup-Maui/raw/main/doc/assets/ytscreen.jpg" alt="Hot Reload Support" width="640" border="0" />
@@ -8,7 +8,7 @@ __CodeMarkup for Maui__ (previously Sharp.UI) is a library for the .NET Multi-pl
 
 # Hello, World! Example
 
-Here is an example of how you could create a simple "Hello, World!" page in CodeMarkup.Maui:
+Here is an example of how you could create a simple "Hello, World!" page in __CodeMarkup for Maui__:
 
 ```cs
 namespace ExampleApp;
@@ -48,7 +48,7 @@ public partial class HelloWorldPage : ContentPage
     }
 }
 ```
-# Using CodeMarkup.Maui
+# Using __CodeMarkup for Maui__
 
 ## Repository
 
@@ -72,7 +72,7 @@ To add __CodeMarkup for Maui__ to your project, along with all its functionality
 
 - [https://www.nuget.org/packages/CodeMarkup.Maui](https://www.nuget.org/packages/CodeMarkup.Maui)
 
-__CodeMarkup.Maui__ replaces some standard MAUI classes by subclassing them and adding new constructors, which e.g. enables hot reload functionality. However, if you prefer not to use subclassed controls, it's possible to add the core fluent API methods for the .Net MAUI framework to your project instead.
+__CodeMarkup for Maui__ replaces some standard MAUI classes by subclassing them and adding new constructors, which e.g. enables hot reload functionality. However, if you prefer not to use subclassed controls, it's possible to add the core fluent API methods for the .Net MAUI framework to your project instead.
 
 - [https://www.nuget.org/packages/CodeMarkup.Maui.Core](https://www.nuget.org/packages/CodeMarkup.Maui.Core)
 
@@ -82,7 +82,7 @@ You can also add the library to your project by adding a project reference to th
 
 ## In Your Project
 
-To use CodeMarkup.Maui in your projects, you need to include the `using CodeMarkup.Maui` statement inside your app namespace.
+To use CodeMarkup for Maui in your projects, you need to include the `using CodeMarkup.Maui` statement inside your app namespace.
 
 ```cs
 namespace ExampleApp;
@@ -101,7 +101,7 @@ namespace ExampleApp
 
 # Hot Reload
 
-The hot reload feature allows you to see changes to your UI in real-time without having to rebuild the entire application. To use hot reload in __CodeMarkup.Maui__, you will need to use the [HotReloadKit](https://github.com/idexus/HotReloadKit.git) library and add `SharpUIApplication<App>(HotReloadSupport.IdeIPs)` extension method in your `MauiApp` builder.
+The hot reload feature allows you to see changes to your UI in real-time without having to rebuild the entire application. To use hot reload in __CodeMarkup for Maui__, you will need to use the [HotReloadKit](https://github.com/idexus/HotReloadKit.git) library and add `CodeMarkupApp<App>(HotReloadSupport.IdeIPs)` extension method in your `MauiApp` builder.
 
 ```cs
 public static MauiApp CreateMauiApp()
@@ -124,7 +124,7 @@ Here are some examples showing how to use the __CodeMarkup.Maui__ library
 
 ## Properties and Fluent Methods
 
-`CodeMarkup.Maui` provides a convenient way to set properties for UI elements by matching properties with fluent helper methods. This makes it easier and more readable to define the interface of your application.
+__CodeMarkup for Maui__ provides a convenient way to set properties for UI elements by matching properties with fluent helper methods. This makes it easier and more readable to define the interface of your application.
 
 Here is an example of using fluent methods to set properties on a `Label`:
 
@@ -211,7 +211,7 @@ new Label()
 
 ## How to assign object references
 
-There are two main ways to assign objects in `CodeMarkup.Maui`: 
+There are two main ways to assign objects in __CodeMarkup for Maui__: 
 
 ```cs
 new Label(out label)
