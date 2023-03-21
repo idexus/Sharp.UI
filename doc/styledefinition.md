@@ -1,6 +1,6 @@
 # Application Styling
 
-`Sharp.UI` provides a way to define the styles of elements using the `Style<T>` class. Here's an example of how to define the style of a button:
+`CodeMarkup.Maui` provides a way to define the styles of elements using the `Style<T>` class. Here's an example of how to define the style of a button:
 
 ```cs
 new Style<Button>(e => e

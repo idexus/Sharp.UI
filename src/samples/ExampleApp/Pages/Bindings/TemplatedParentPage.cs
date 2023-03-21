@@ -2,7 +2,7 @@
 
 namespace ExampleApp;
 
-using Sharp.UI;
+using CodeMarkup.Maui;
 
 [BindableProperties]
 public interface IEmptyCardViewProperties
@@ -13,7 +13,7 @@ public interface IEmptyCardViewProperties
     Color BorderColor { get; set; }
 }
 
-[SharpObject]
+[CodeMarkup]
 public partial class EmptyCardView : ContentView, IEmptyCardViewProperties
 {
 }

@@ -1,7 +1,7 @@
 ﻿
 #pragma warning disable CS0169
 
-namespace Sharp.UI.Internal
+namespace CodeMarkup.Maui.Internal
 {
     class MauiSymbols
 	{

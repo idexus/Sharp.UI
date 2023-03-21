@@ -1,4 +1,4 @@
-# Menus in Sharp.UI
+# Menus in CodeMarkup.Maui
 
 ### Context menu
 

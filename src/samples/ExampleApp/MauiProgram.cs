@@ -2,7 +2,7 @@
 
 namespace ExampleApp
 {
-    using Sharp.UI;
+    using CodeMarkup.Maui;
 
     public static class MauiProgram
     {
@@ -10,7 +10,7 @@ namespace ExampleApp
         {
             var builder = MauiApp.CreateBuilder();
             builder
-                .SharpUIApplication<App>(HotReloadSupport.IdeIPs)
+                .CodeMarkupApp<App>(HotReloadSupport.IdeIPs)
                 .UseMauiApp<App>()            
                 .ConfigureFonts(fonts =>
                 {

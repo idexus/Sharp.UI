@@ -3,7 +3,7 @@ namespace ExampleApp;
 
 using System.Net;
 using Microsoft.Maui;
-using Sharp.UI;
+using CodeMarkup.Maui;
 
 public partial class App : Application
 {

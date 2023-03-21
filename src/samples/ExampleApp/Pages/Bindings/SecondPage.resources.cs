@@ -2,7 +2,7 @@
 
 namespace ExampleApp
 {
-    using Sharp.UI;
+    using CodeMarkup.Maui;
 
     public partial class SecondPage
 	{

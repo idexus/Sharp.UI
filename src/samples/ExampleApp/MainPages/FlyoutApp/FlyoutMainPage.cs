@@ -1,7 +1,7 @@
 
 namespace ExampleApp;
 
-using Sharp.UI;
+using CodeMarkup.Maui;
 using System.Runtime.CompilerServices;
 
 public class FlyoutMainPage : FlyoutPage
