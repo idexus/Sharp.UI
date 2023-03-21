@@ -1,6 +1,6 @@
 ﻿namespace ExampleApp;
 
-using Sharp.UI;
+using CodeMarkup.Maui;
 
 public class NumericValidationTriggerAction : TriggerAction<Entry>
 {

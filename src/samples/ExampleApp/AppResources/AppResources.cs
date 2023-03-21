@@ -1,7 +1,7 @@
 ﻿namespace ExampleApp;
 
 using Microsoft.Maui.Controls.Shapes;
-using Sharp.UI;
+using CodeMarkup.Maui;
 
 public class AppResources
 {

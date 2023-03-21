@@ -4,7 +4,7 @@ using Microsoft.Maui.Controls.Shapes;
 
 namespace ExampleApp
 {
-    using Sharp.UI;
+    using CodeMarkup.Maui;
 
     public class CustomPage : ContentPage
     {

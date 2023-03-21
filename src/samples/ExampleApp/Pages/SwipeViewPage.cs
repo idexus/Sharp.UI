@@ -1,6 +1,6 @@
-﻿namespace Sharp.UI;
+﻿namespace CodeMarkup.Maui;
 
-using Sharp.UI;
+using CodeMarkup.Maui;
 
 public class SwipeViewPage : ContentPage
 {

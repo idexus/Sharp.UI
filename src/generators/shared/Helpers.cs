@@ -11,7 +11,7 @@ using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Sharp.UI.Generator
+namespace CodeMarkup.Maui.Generator
 {
     public static class Helpers
     {

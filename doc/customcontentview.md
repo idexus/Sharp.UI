@@ -1,6 +1,6 @@
 # Custom Control Views
 
-In `Sharp.UI`, you can create custom control views, and all interface bindable properties and fluent helper methods for event handlers will be generated automatically.
+In `CodeMarkup.Maui`, you can create custom control views, and all interface bindable properties and fluent helper methods for event handlers will be generated automatically.
 
 ### Interface
 
@@ -25,7 +25,7 @@ public interface ICardViewProperties
 To automatically generate bindable properties and fluent helper methods for event handlers, you need to inherit the interface and use the `[SharpObject]` attribute. In the following example, a CardView class is declared that implements the `ICardViewProperties` interface:
 
 ```cs
-[SharpObject]
+[CodeMarkup]
 [ContentProperty(nameof(ContentView))]
 public partial class CardView : ContentView, ICardViewProperties
 {

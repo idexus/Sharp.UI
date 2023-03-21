@@ -1,6 +1,6 @@
 # User defined extension methods
 
-In __Sharp.UI__, you can create your own extension methods by defining a static method within a static class.
+In __CodeMarkup.Maui__, you can create your own extension methods by defining a static method within a static class.
 
 Here's an example of extension methods that set a label font size:
 

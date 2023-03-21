@@ -1,0 +1,117 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31611.283
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeMarkup.Maui", "main\CodeMarkup.Maui\CodeMarkup.Maui.csproj", "{FB396864-6EFC-4A20-A9A7-30CF1B0245CC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeMarkup.Maui.Generator.Classes", "generators\CodeMarkup.Maui.Generator.Classes\CodeMarkup.Maui.Generator.Classes.csproj", "{DB13FDDD-8B03-44F4-A017-4CEAC318A148}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_libs", "_libs", "{5EAB34D2-9270-4CE3-AE54-DA18E08B6218}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotReloadKit", "..\libs\HotReloadKit\src\HotReloadKit\HotReloadKit.csproj", "{EB58844E-9852-4808-B31C-329F5F4D4CF9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SlimTcpServer", "..\libs\HotReloadKit\libs\SlimTcpServer\src\SlimTcpServer\SlimTcpServer.csproj", "{7D6B154D-94E6-48AB-B892-5AACE948A616}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotReloadKit.Generator", "..\libs\HotReloadKit\src\HotReloadKit.Generator\HotReloadKit.Generator.csproj", "{2A41FCAE-6FEB-4DA9-A551-4AEDE489E568}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "generators", "generators", "{0C615F9A-4826-4C47-A845-5CB52CBA5AD1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "main", "main", "{243EF759-3A44-43B1-B430-15BD51692EC7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{E50BEB58-0BF4-42B4-BAAA-12F956FFB290}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExampleApp", "samples\ExampleApp\ExampleApp.csproj", "{8C961A5F-EFF4-47FC-86E6-3114C5122297}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeMarkup.Maui.Generator.Extensions", "generators\CodeMarkup.Maui.Generator.Extensions\CodeMarkup.Maui.Generator.Extensions.csproj", "{48EB73BD-2AD7-4F51-B44E-C538F1E92849}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_docs", "_docs", "{EBEF87B9-CBCC-47E7-B35D-2786A76CD608}"
+	ProjectSection(SolutionItems) = preProject
+		..\.gitignore = ..\.gitignore
+		..\README.md = ..\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{B7D0A8ED-E017-4BEB-A222-DA59B2040CD7}"
+	ProjectSection(SolutionItems) = preProject
+		..\doc\absolutelayout.md = ..\doc\absolutelayout.md
+		..\doc\advbindablepoperties.md = ..\doc\advbindablepoperties.md
+		..\doc\assign.md = ..\doc\assign.md
+		..\doc\attachedproperties.md = ..\doc\attachedproperties.md
+		..\doc\autogenbindableproperties.md = ..\doc\autogenbindableproperties.md
+		..\doc\behaviors.md = ..\doc\behaviors.md
+		..\doc\bindingconverters.md = ..\doc\bindingconverters.md
+		..\doc\containers.md = ..\doc\containers.md
+		..\doc\customcontentview.md = ..\doc\customcontentview.md
+		..\doc\eventhandlers.md = ..\doc\eventhandlers.md
+		..\doc\gesturerecognizers.md = ..\doc\gesturerecognizers.md
+		..\doc\gradients.md = ..\doc\gradients.md
+		..\doc\griddefinition.md = ..\doc\griddefinition.md
+		..\doc\itextalignment.md = ..\doc\itextalignment.md
+		..\doc\layoutoptions.md = ..\doc\layoutoptions.md
+		..\doc\menudefinition.md = ..\doc\menudefinition.md
+		..\doc\projectref.md = ..\doc\projectref.md
+		..\doc\properties.md = ..\doc\properties.md
+		..\doc\shellapplication.md = ..\doc\shellapplication.md
+		..\doc\styledefinition.md = ..\doc\styledefinition.md
+		..\doc\triggers.md = ..\doc\triggers.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeMarkup.Maui.Core", "main\CodeMarkup.Maui.Core\CodeMarkup.Maui.Core.csproj", "{EA579CDD-7301-4A96-A433-E6829534D72E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FB396864-6EFC-4A20-A9A7-30CF1B0245CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB396864-6EFC-4A20-A9A7-30CF1B0245CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB396864-6EFC-4A20-A9A7-30CF1B0245CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB396864-6EFC-4A20-A9A7-30CF1B0245CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB13FDDD-8B03-44F4-A017-4CEAC318A148}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB13FDDD-8B03-44F4-A017-4CEAC318A148}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB13FDDD-8B03-44F4-A017-4CEAC318A148}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB13FDDD-8B03-44F4-A017-4CEAC318A148}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB58844E-9852-4808-B31C-329F5F4D4CF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB58844E-9852-4808-B31C-329F5F4D4CF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB58844E-9852-4808-B31C-329F5F4D4CF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB58844E-9852-4808-B31C-329F5F4D4CF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D6B154D-94E6-48AB-B892-5AACE948A616}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D6B154D-94E6-48AB-B892-5AACE948A616}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D6B154D-94E6-48AB-B892-5AACE948A616}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D6B154D-94E6-48AB-B892-5AACE948A616}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A41FCAE-6FEB-4DA9-A551-4AEDE489E568}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A41FCAE-6FEB-4DA9-A551-4AEDE489E568}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A41FCAE-6FEB-4DA9-A551-4AEDE489E568}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A41FCAE-6FEB-4DA9-A551-4AEDE489E568}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C961A5F-EFF4-47FC-86E6-3114C5122297}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C961A5F-EFF4-47FC-86E6-3114C5122297}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C961A5F-EFF4-47FC-86E6-3114C5122297}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{8C961A5F-EFF4-47FC-86E6-3114C5122297}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C961A5F-EFF4-47FC-86E6-3114C5122297}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48EB73BD-2AD7-4F51-B44E-C538F1E92849}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48EB73BD-2AD7-4F51-B44E-C538F1E92849}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48EB73BD-2AD7-4F51-B44E-C538F1E92849}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48EB73BD-2AD7-4F51-B44E-C538F1E92849}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA579CDD-7301-4A96-A433-E6829534D72E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA579CDD-7301-4A96-A433-E6829534D72E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA579CDD-7301-4A96-A433-E6829534D72E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA579CDD-7301-4A96-A433-E6829534D72E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FB396864-6EFC-4A20-A9A7-30CF1B0245CC} = {243EF759-3A44-43B1-B430-15BD51692EC7}
+		{DB13FDDD-8B03-44F4-A017-4CEAC318A148} = {0C615F9A-4826-4C47-A845-5CB52CBA5AD1}
+		{EB58844E-9852-4808-B31C-329F5F4D4CF9} = {5EAB34D2-9270-4CE3-AE54-DA18E08B6218}
+		{7D6B154D-94E6-48AB-B892-5AACE948A616} = {5EAB34D2-9270-4CE3-AE54-DA18E08B6218}
+		{2A41FCAE-6FEB-4DA9-A551-4AEDE489E568} = {5EAB34D2-9270-4CE3-AE54-DA18E08B6218}
+		{8C961A5F-EFF4-47FC-86E6-3114C5122297} = {E50BEB58-0BF4-42B4-BAAA-12F956FFB290}
+		{48EB73BD-2AD7-4F51-B44E-C538F1E92849} = {0C615F9A-4826-4C47-A845-5CB52CBA5AD1}
+		{B7D0A8ED-E017-4BEB-A222-DA59B2040CD7} = {EBEF87B9-CBCC-47E7-B35D-2786A76CD608}
+		{EA579CDD-7301-4A96-A433-E6829534D72E} = {243EF759-3A44-43B1-B430-15BD51692EC7}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
+	EndGlobalSection
+EndGlobal

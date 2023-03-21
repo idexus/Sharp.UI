@@ -1,7 +1,7 @@
 ﻿
 namespace ExampleApp;
 
-using Sharp.UI;
+using CodeMarkup.Maui;
 
 public class ListViewPage : ContentPage
 {

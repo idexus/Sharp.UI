@@ -1,18 +1,18 @@
 # Overview
 
-__Sharp.UI__ is a library for the .NET Multi-platform App User Interface (MAUI) framework that enables you to build user interfaces declaratively in C# code using fluent methods. With __Sharp.UI__, you can create interfaces without needing to use XAML. Additionally, the library includes hot reload support to make the development process faster and more efficient. The hot reload feature is supported in Visual Studio 2022 for both Windows and Mac using the [HotReloadKit library](https://github.com/idexus/HotReloadKit.git).
+__CodeMarkup for Maui__ is a library for the .NET Multi-platform App User Interface (MAUI) framework that enables you to build user interfaces declaratively in C# code using fluent methods. With __CodeMarkup.Maui__, you can create interfaces without needing to use XAML. Additionally, the library includes hot reload support to make the development process faster and more efficient. The hot reload feature is supported in Visual Studio 2022 for both Windows and Mac using the [HotReloadKit library](https://github.com/idexus/HotReloadKit.git).
 
 <a href="https://youtu.be/w5863t1E5tg" target="_blank">
- <img src="https://github.com/idexus/Sharp.UI/raw/main/doc/assets/ytscreen.jpg" alt="Hot Reload Support" width="640" border="0" />
+ <img src="https://github.com/idexus/CodeMarkup.Maui/raw/main/doc/assets/ytscreen.jpg" alt="Hot Reload Support" width="640" border="0" />
 </a>
 
 # Hello, World! Example
 
-Here is an example of how you could create a simple "Hello, World!" page in Sharp.UI:
+Here is an example of how you could create a simple "Hello, World!" page in CodeMarkup.Maui:
 
 ```cs
 namespace ExampleApp;
-using Sharp.UI;
+using CodeMarkup.Maui;
 
 public partial class HelloWorldPage : ContentPage 
 {
@@ -48,7 +48,7 @@ public partial class HelloWorldPage : ContentPage
     }
 }
 ```
-# Using Sharp.UI
+# Using CodeMarkup.Maui
 
 ## Repository
 
@@ -68,28 +68,25 @@ git submodule update --recursive
 
 ## Nuget Package
 
-To add __Sharp.UI__ to your project, along with all its functionality, you can use the following command:
+To add __CodeMarkup for Maui__ to your project, along with all its functionality, you can use:
 
-```
-dotnet add package Sharp.UI --version 0.4.6-alpha
-```
+- [https://www.nuget.org/packages/CodeMarkup.Maui](https://www.nuget.org/packages/CodeMarkup.Maui)
 
-__Sharp.UI__ replaces some standard MAUI classes by subclassing them and adding new constructors, which e.g. enables hot reload functionality. However, if you prefer not to use subclassed controls, it's possible to add the core fluent API methods for the .Net MAUI framework to your project instead.
+__CodeMarkup.Maui__ replaces some standard MAUI classes by subclassing them and adding new constructors, which e.g. enables hot reload functionality. However, if you prefer not to use subclassed controls, it's possible to add the core fluent API methods for the .Net MAUI framework to your project instead.
 
-```
-dotnet add package Sharp.UI.Core --version 0.4.6-alpha
-```
+- [https://www.nuget.org/packages/CodeMarkup.Maui.Core](https://www.nuget.org/packages/CodeMarkup.Maui.Core)
+
 ## Project Reference
 
-You can also add the library to your project by adding a project reference to the Sharp.UI library. For more information, see the [Adding the Library by VS Project Reference](./doc/projectref.md) document.
+You can also add the library to your project by adding a project reference to the CodeMarkup.Maui library. For more information, see the [Adding the Library by VS Project Reference](./doc/projectref.md) document.
 
 ## In Your Project
 
-To use Sharp.UI in your projects, you need to include the `using Sharp.UI` statement inside your app namespace.
+To use CodeMarkup.Maui in your projects, you need to include the `using CodeMarkup.Maui` statement inside your app namespace.
 
 ```cs
 namespace ExampleApp;
-using Sharp.UI;
+using CodeMarkup.Maui;
 ```
 
 Or:
@@ -97,21 +94,21 @@ Or:
 ```cs
 namespace ExampleApp
 {
-    using Sharp.UI;
+    using CodeMarkup.Maui;
     ...
 }
 ```
 
 # Hot Reload
 
-The hot reload feature allows you to see changes to your UI in real-time without having to rebuild the entire application. To use hot reload in __Sharp.UI__, you will need to use the [HotReloadKit](https://github.com/idexus/HotReloadKit.git) library and add `SharpUIApplication<App>(HotReloadSupport.IdeIPs)` extension method in your `MauiApp` builder.
+The hot reload feature allows you to see changes to your UI in real-time without having to rebuild the entire application. To use hot reload in __CodeMarkup.Maui__, you will need to use the [HotReloadKit](https://github.com/idexus/HotReloadKit.git) library and add `SharpUIApplication<App>(HotReloadSupport.IdeIPs)` extension method in your `MauiApp` builder.
 
 ```cs
 public static MauiApp CreateMauiApp()
 {
     var builder = MauiApp.CreateBuilder();
     builder
-        .SharpUIApplication<App>(HotReloadSupport.IdeIPs)   // to enable Hot Reload
+        .CodeMarkupApp<App>(HotReloadSupport.IdeIPs)   // to enable Hot Reload
         .UseMauiApp<App>()
         ...
 
@@ -123,11 +120,11 @@ Visual Studio 2022 extensions for both Windows and Mac are available for downloa
 
 # Examples
 
-Here are some examples showing how to use the __Sharp.UI__ library
+Here are some examples showing how to use the __CodeMarkup.Maui__ library
 
 ## Properties and Fluent Methods
 
-`Sharp.UI` provides a convenient way to set properties for UI elements by matching properties with fluent helper methods. This makes it easier and more readable to define the interface of your application.
+`CodeMarkup.Maui` provides a convenient way to set properties for UI elements by matching properties with fluent helper methods. This makes it easier and more readable to define the interface of your application.
 
 Here is an example of using fluent methods to set properties on a `Label`:
 
@@ -214,7 +211,7 @@ new Label()
 
 ## How to assign object references
 
-There are two main ways to assign objects in `Sharp.UI`: 
+There are two main ways to assign objects in `CodeMarkup.Maui`: 
 
 ```cs
 new Label(out label)
@@ -226,7 +223,7 @@ new Label().Assign(out label)
 
 ## Using fluent methods for styling
 
-__Sharp.UI__ provides a way to define the styles of elements using the `Style<T>` class and extension methods. Here's an example of how you can define the styles for a `Label` and a `Button`:
+__CodeMarkup.Maui__ provides a way to define the styles of elements using the `Style<T>` class and extension methods. Here's an example of how you can define the styles for a `Label` and a `Button`:
 
 ```cs
 Resources = new ResourceDictionary
@@ -256,7 +253,7 @@ Resources = new ResourceDictionary
 
 ## Animations
 
-In __Sharp.UI__, you can use async methods with the naming convention `Animate{PropertyName}To` to animate any `double` or `Color` bindable property.
+In __CodeMarkup.Maui__, you can use async methods with the naming convention `Animate{PropertyName}To` to animate any `double` or `Color` bindable property.
 
 For example, to animate the `BackgroundColor` property, you can use the `AnimateBackgroundColorTo` async method.
 
@@ -287,7 +284,7 @@ You can also use visual states inside Style<T> to define animations. See the [do
 
 ## Auto-generated code
 
-__Sharp.UI__ library has a feature of automatically generating bindable properties and their fluent helper methods. To use this feature, you need to define the __view-model__ as follows:
+__CodeMarkup.Maui__ library has a feature of automatically generating bindable properties and their fluent helper methods. To use this feature, you need to define the __view-model__ as follows:
  
 ```cs
 [BindableProperties]
@@ -297,7 +294,7 @@ public interface IViewModelProperties
     string Author { get; set; }
 }
 
-[SharpObject]
+[CodeMarkup]
 public partial class ViewModel : BindableObject, IViewModelProperties
 {
     public void SetAuthor(Button button)
@@ -360,7 +357,7 @@ public class ViewPage : ContentPage
 
 # Disclaimer
 
-__Sharp.UI__ is a proof of concept. There is no official support. Use at your own risk.
+__CodeMarkup.Maui__ is a proof of concept. There is no official support. Use at your own risk.
 
 # License 
 

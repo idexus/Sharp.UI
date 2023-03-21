@@ -1,6 +1,6 @@
 # Layout options
 
-In Sharp.UI, you can layout every view in their container using the following extension methods:
+In CodeMarkup.Maui, you can layout every view in their container using the following extension methods:
 
 - `CenterHorizontally`
 - `CenterVertically`

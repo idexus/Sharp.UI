@@ -1,7 +1,7 @@
 
 # How to assign object references
 
-There are two main ways to assign objects in `Sharp.UI`: 
+There are two main ways to assign objects in `CodeMarkup.Maui`: 
 
 - using the `Assign` method,
 - using a constructor parameter.

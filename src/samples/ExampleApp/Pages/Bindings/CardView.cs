@@ -2,7 +2,7 @@
 
 namespace ExampleApp;
 
-using Sharp.UI;
+using CodeMarkup.Maui;
 
 [BindableProperties]
 public interface ICardViewProperties
@@ -16,7 +16,7 @@ public interface ICardViewProperties
     string ButtonTitle { get; set; }
 }
 
-[SharpObject]
+[CodeMarkup]
 [ContentProperty(nameof(ContentView))]
 public partial class CardView : ContentView, ICardViewProperties
 {
