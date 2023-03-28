@@ -99,6 +99,12 @@ namespace ExampleApp
 }
 ```
 
+# CodeMarkup Tepmlate Project
+
+A vanilla sample project using nuget package
+
+[https://github.com/idexus/CodeMarkup-Maui-Template](https://github.com/idexus/CodeMarkup-Maui-Template)
+
 # Hot Reload
 
 The hot reload feature allows you to see changes to your UI in real-time without having to rebuild the entire application. To use hot reload in __CodeMarkup for Maui__, you will need to use the [HotReloadKit](https://github.com/idexus/HotReloadKit.git) library and add `CodeMarkupApp<App>(HotReloadSupport.IdeIPs)` extension method in your `MauiApp` builder.
