@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Controls.StackOrientation orientation)
             where T : Microsoft.Maui.Controls.StackLayout
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.StackLayout.OrientationProperty, orientation);
+            self.SetValue(Microsoft.Maui.Controls.StackLayout.OrientationProperty, orientation);
             return self;
         }
         
@@ -24,6 +24,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.StackLayout
         {
             var context = new PropertyContext<Microsoft.Maui.Controls.StackOrientation>(self, Microsoft.Maui.Controls.StackLayout.OrientationProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> Orientation<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.StackOrientation orientation)
+            where T : Microsoft.Maui.Controls.StackLayout
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.StackLayout.OrientationProperty, Value = orientation });
+            return self;
+        }
+        
+        public static SettersContext<T> Orientation<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.StackOrientation>, IPropertySettersBuilder<Microsoft.Maui.Controls.StackOrientation>> configure)
+            where T : Microsoft.Maui.Controls.StackLayout
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.StackOrientation>(self.XamlSetters, Microsoft.Maui.Controls.StackLayout.OrientationProperty);
             configure(context).Build();
             return self;
         }

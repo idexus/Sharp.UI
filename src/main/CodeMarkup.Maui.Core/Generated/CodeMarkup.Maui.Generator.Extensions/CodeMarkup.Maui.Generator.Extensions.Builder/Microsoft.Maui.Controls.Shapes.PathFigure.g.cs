@@ -38,7 +38,7 @@ namespace CodeMarkup.Maui
         public static Microsoft.Maui.Controls.Shapes.PathFigure StartPoint(this Microsoft.Maui.Controls.Shapes.PathFigure self,
             Microsoft.Maui.Graphics.Point startPoint)
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.PathFigure.StartPointProperty, startPoint);
+            self.SetValue(Microsoft.Maui.Controls.Shapes.PathFigure.StartPointProperty, startPoint);
             return self;
         }
         
@@ -49,10 +49,24 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<Microsoft.Maui.Controls.Shapes.PathFigure> StartPoint(this SettersContext<Microsoft.Maui.Controls.Shapes.PathFigure> self,
+            Microsoft.Maui.Graphics.Point startPoint)
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shapes.PathFigure.StartPointProperty, Value = startPoint });
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.Shapes.PathFigure> StartPoint(this SettersContext<Microsoft.Maui.Controls.Shapes.PathFigure> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Point>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Point>> configure)
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.Point>(self.XamlSetters, Microsoft.Maui.Controls.Shapes.PathFigure.StartPointProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static Microsoft.Maui.Controls.Shapes.PathFigure IsClosed(this Microsoft.Maui.Controls.Shapes.PathFigure self,
             bool isClosed)
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.PathFigure.IsClosedProperty, isClosed);
+            self.SetValue(Microsoft.Maui.Controls.Shapes.PathFigure.IsClosedProperty, isClosed);
             return self;
         }
         
@@ -63,16 +77,44 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<Microsoft.Maui.Controls.Shapes.PathFigure> IsClosed(this SettersContext<Microsoft.Maui.Controls.Shapes.PathFigure> self,
+            bool isClosed)
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shapes.PathFigure.IsClosedProperty, Value = isClosed });
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.Shapes.PathFigure> IsClosed(this SettersContext<Microsoft.Maui.Controls.Shapes.PathFigure> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.Shapes.PathFigure.IsClosedProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static Microsoft.Maui.Controls.Shapes.PathFigure IsFilled(this Microsoft.Maui.Controls.Shapes.PathFigure self,
             bool isFilled)
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.PathFigure.IsFilledProperty, isFilled);
+            self.SetValue(Microsoft.Maui.Controls.Shapes.PathFigure.IsFilledProperty, isFilled);
             return self;
         }
         
         public static Microsoft.Maui.Controls.Shapes.PathFigure IsFilled(this Microsoft.Maui.Controls.Shapes.PathFigure self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
         {
             var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.Shapes.PathFigure.IsFilledProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.Shapes.PathFigure> IsFilled(this SettersContext<Microsoft.Maui.Controls.Shapes.PathFigure> self,
+            bool isFilled)
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shapes.PathFigure.IsFilledProperty, Value = isFilled });
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.Shapes.PathFigure> IsFilled(this SettersContext<Microsoft.Maui.Controls.Shapes.PathFigure> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.Shapes.PathFigure.IsFilledProperty);
             configure(context).Build();
             return self;
         }

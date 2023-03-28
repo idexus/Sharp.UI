@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace CodeMarkup.Maui
 {
-    public sealed class PropertyThemeBuilder<T> : IPropertyBuilder<T>
+    public sealed class PropertySettersThemeBuilder<T> : IPropertySettersBuilder<T>
     {
-        public PropertyContext<T> Context { get; set; }
+        public PropertySettersContext<T> Context { get; set; }
 
         T newValue;
         T defaultValue;
-        Func<PropertyContext<T>, IPropertyBuilder<T>> defaultConfigure;
+        Func<PropertySettersContext<T>, IPropertySettersBuilder<T>> defaultConfigure;
 
         bool isSet;
         bool defaultIsSet;
         bool buildValue;
 
-        public PropertyThemeBuilder(PropertyContext<T> context)
+        public PropertySettersThemeBuilder(PropertySettersContext<T> context)
         {
             Context = context;
         }
@@ -26,7 +26,7 @@ namespace CodeMarkup.Maui
         public bool Build()
         {
             if (buildValue)
-                Context.BindableObject.SetValueOrAddSetter(Context.Property, newValue);
+                Context.XamlSetters.Add(new Setter { Property = Context.Property, Value = newValue });
             else if (!isSet)
             {
                 if (defaultIsSet)
@@ -34,7 +34,7 @@ namespace CodeMarkup.Maui
                     if (defaultConfigure != null)
                         isSet = defaultConfigure(Context).Build();
                     else
-                        Context.BindableObject.SetValueOrAddSetter(Context.Property, defaultValue);
+                        Context.XamlSetters.Add(new Setter { Property = Context.Property, Value = defaultValue });
                 }
 
             }
@@ -43,7 +43,7 @@ namespace CodeMarkup.Maui
 
         // Default
 
-        public PropertyThemeBuilder<T> Default(T value)
+        public PropertySettersThemeBuilder<T> Default(T value)
         {
             if (!defaultIsSet)
             {
@@ -53,7 +53,7 @@ namespace CodeMarkup.Maui
             return this;
         }
 
-        public PropertyThemeBuilder<T> Default(Func<PropertyContext<T>, IPropertyBuilder<T>> configure)
+        public PropertySettersThemeBuilder<T> Default(Func<PropertySettersContext<T>, IPropertySettersBuilder<T>> configure)
         {
             if (!defaultIsSet)
             {
@@ -65,7 +65,7 @@ namespace CodeMarkup.Maui
 
         // OnLight
 
-        public PropertyThemeBuilder<T> OnLight(T value)
+        public PropertySettersThemeBuilder<T> OnLight(T value)
         {
             if (!isSet && Application.Current?.RequestedTheme == AppTheme.Light)
             {
@@ -76,7 +76,7 @@ namespace CodeMarkup.Maui
             return this;
         }
 
-        public PropertyThemeBuilder<T> OnLight(Func<PropertyContext<T>, IPropertyBuilder<T>> configure)
+        public PropertySettersThemeBuilder<T> OnLight(Func<PropertySettersContext<T>, IPropertySettersBuilder<T>> configure)
         {
             if (!isSet && Application.Current?.RequestedTheme == AppTheme.Light)
                 isSet = configure(Context).Build();
@@ -85,7 +85,7 @@ namespace CodeMarkup.Maui
 
         // OnDark
 
-        public PropertyThemeBuilder<T> OnDark(T value)
+        public PropertySettersThemeBuilder<T> OnDark(T value)
         {
             if (!isSet && Application.Current?.RequestedTheme == AppTheme.Dark)
             {
@@ -96,7 +96,7 @@ namespace CodeMarkup.Maui
             return this;
         }
 
-        public PropertyThemeBuilder<T> OnDark(Func<PropertyContext<T>, IPropertyBuilder<T>> configure)
+        public PropertySettersThemeBuilder<T> OnDark(Func<PropertySettersContext<T>, IPropertySettersBuilder<T>> configure)
         {
             if (!isSet && Application.Current?.RequestedTheme == AppTheme.Dark)
                 isSet = configure(Context).Build();

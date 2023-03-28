@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             string url)
             where T : Microsoft.Maui.Controls.UrlWebViewSource
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.UrlWebViewSource.UrlProperty, url);
+            self.SetValue(Microsoft.Maui.Controls.UrlWebViewSource.UrlProperty, url);
             return self;
         }
         
@@ -24,6 +24,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.UrlWebViewSource
         {
             var context = new PropertyContext<string>(self, Microsoft.Maui.Controls.UrlWebViewSource.UrlProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> Url<T>(this SettersContext<T> self,
+            string url)
+            where T : Microsoft.Maui.Controls.UrlWebViewSource
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.UrlWebViewSource.UrlProperty, Value = url });
+            return self;
+        }
+        
+        public static SettersContext<T> Url<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
+            where T : Microsoft.Maui.Controls.UrlWebViewSource
+        {
+            var context = new PropertySettersContext<string>(self.XamlSetters, Microsoft.Maui.Controls.UrlWebViewSource.UrlProperty);
             configure(context).Build();
             return self;
         }

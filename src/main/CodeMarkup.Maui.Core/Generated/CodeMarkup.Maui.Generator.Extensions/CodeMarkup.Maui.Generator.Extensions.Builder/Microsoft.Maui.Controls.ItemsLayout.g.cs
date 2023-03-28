@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Controls.SnapPointsAlignment snapPointsAlignment)
             where T : Microsoft.Maui.Controls.ItemsLayout
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ItemsLayout.SnapPointsAlignmentProperty, snapPointsAlignment);
+            self.SetValue(Microsoft.Maui.Controls.ItemsLayout.SnapPointsAlignmentProperty, snapPointsAlignment);
             return self;
         }
         
@@ -28,11 +28,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> SnapPointsAlignment<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.SnapPointsAlignment snapPointsAlignment)
+            where T : Microsoft.Maui.Controls.ItemsLayout
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ItemsLayout.SnapPointsAlignmentProperty, Value = snapPointsAlignment });
+            return self;
+        }
+        
+        public static SettersContext<T> SnapPointsAlignment<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.SnapPointsAlignment>, IPropertySettersBuilder<Microsoft.Maui.Controls.SnapPointsAlignment>> configure)
+            where T : Microsoft.Maui.Controls.ItemsLayout
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.SnapPointsAlignment>(self.XamlSetters, Microsoft.Maui.Controls.ItemsLayout.SnapPointsAlignmentProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T SnapPointsType<T>(this T self,
             Microsoft.Maui.Controls.SnapPointsType snapPointsType)
             where T : Microsoft.Maui.Controls.ItemsLayout
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ItemsLayout.SnapPointsTypeProperty, snapPointsType);
+            self.SetValue(Microsoft.Maui.Controls.ItemsLayout.SnapPointsTypeProperty, snapPointsType);
             return self;
         }
         
@@ -40,6 +56,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.ItemsLayout
         {
             var context = new PropertyContext<Microsoft.Maui.Controls.SnapPointsType>(self, Microsoft.Maui.Controls.ItemsLayout.SnapPointsTypeProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> SnapPointsType<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.SnapPointsType snapPointsType)
+            where T : Microsoft.Maui.Controls.ItemsLayout
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ItemsLayout.SnapPointsTypeProperty, Value = snapPointsType });
+            return self;
+        }
+        
+        public static SettersContext<T> SnapPointsType<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.SnapPointsType>, IPropertySettersBuilder<Microsoft.Maui.Controls.SnapPointsType>> configure)
+            where T : Microsoft.Maui.Controls.ItemsLayout
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.SnapPointsType>(self.XamlSetters, Microsoft.Maui.Controls.ItemsLayout.SnapPointsTypeProperty);
             configure(context).Build();
             return self;
         }

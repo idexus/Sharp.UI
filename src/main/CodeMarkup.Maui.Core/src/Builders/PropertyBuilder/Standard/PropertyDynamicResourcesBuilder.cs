@@ -22,7 +22,6 @@ namespace CodeMarkup.Maui
 
         public bool Build()
         {
-            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling is not available for dynamic resources");
             if (key != null)
             {
                 if (Context.BindableObject is IDynamicResourceHandler resourceHandler)

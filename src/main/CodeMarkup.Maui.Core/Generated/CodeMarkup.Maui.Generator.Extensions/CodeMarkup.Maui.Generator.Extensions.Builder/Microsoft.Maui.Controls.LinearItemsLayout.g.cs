@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             double itemSpacing)
             where T : Microsoft.Maui.Controls.LinearItemsLayout
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.LinearItemsLayout.ItemSpacingProperty, itemSpacing);
+            self.SetValue(Microsoft.Maui.Controls.LinearItemsLayout.ItemSpacingProperty, itemSpacing);
             return self;
         }
         
@@ -24,6 +24,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.LinearItemsLayout
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.LinearItemsLayout.ItemSpacingProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> ItemSpacing<T>(this SettersContext<T> self,
+            double itemSpacing)
+            where T : Microsoft.Maui.Controls.LinearItemsLayout
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.LinearItemsLayout.ItemSpacingProperty, Value = itemSpacing });
+            return self;
+        }
+        
+        public static SettersContext<T> ItemSpacing<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.LinearItemsLayout
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.LinearItemsLayout.ItemSpacingProperty);
             configure(context).Build();
             return self;
         }

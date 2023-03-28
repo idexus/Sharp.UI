@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Layouts.FlexDirection direction)
             where T : Microsoft.Maui.Controls.FlexLayout
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.FlexLayout.DirectionProperty, direction);
+            self.SetValue(Microsoft.Maui.Controls.FlexLayout.DirectionProperty, direction);
             return self;
         }
         
@@ -28,11 +28,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> Direction<T>(this SettersContext<T> self,
+            Microsoft.Maui.Layouts.FlexDirection direction)
+            where T : Microsoft.Maui.Controls.FlexLayout
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.FlexLayout.DirectionProperty, Value = direction });
+            return self;
+        }
+        
+        public static SettersContext<T> Direction<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Layouts.FlexDirection>, IPropertySettersBuilder<Microsoft.Maui.Layouts.FlexDirection>> configure)
+            where T : Microsoft.Maui.Controls.FlexLayout
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Layouts.FlexDirection>(self.XamlSetters, Microsoft.Maui.Controls.FlexLayout.DirectionProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T JustifyContent<T>(this T self,
             Microsoft.Maui.Layouts.FlexJustify justifyContent)
             where T : Microsoft.Maui.Controls.FlexLayout
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.FlexLayout.JustifyContentProperty, justifyContent);
+            self.SetValue(Microsoft.Maui.Controls.FlexLayout.JustifyContentProperty, justifyContent);
             return self;
         }
         
@@ -44,11 +60,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> JustifyContent<T>(this SettersContext<T> self,
+            Microsoft.Maui.Layouts.FlexJustify justifyContent)
+            where T : Microsoft.Maui.Controls.FlexLayout
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.FlexLayout.JustifyContentProperty, Value = justifyContent });
+            return self;
+        }
+        
+        public static SettersContext<T> JustifyContent<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Layouts.FlexJustify>, IPropertySettersBuilder<Microsoft.Maui.Layouts.FlexJustify>> configure)
+            where T : Microsoft.Maui.Controls.FlexLayout
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Layouts.FlexJustify>(self.XamlSetters, Microsoft.Maui.Controls.FlexLayout.JustifyContentProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T AlignContent<T>(this T self,
             Microsoft.Maui.Layouts.FlexAlignContent alignContent)
             where T : Microsoft.Maui.Controls.FlexLayout
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.FlexLayout.AlignContentProperty, alignContent);
+            self.SetValue(Microsoft.Maui.Controls.FlexLayout.AlignContentProperty, alignContent);
             return self;
         }
         
@@ -60,11 +92,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> AlignContent<T>(this SettersContext<T> self,
+            Microsoft.Maui.Layouts.FlexAlignContent alignContent)
+            where T : Microsoft.Maui.Controls.FlexLayout
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.FlexLayout.AlignContentProperty, Value = alignContent });
+            return self;
+        }
+        
+        public static SettersContext<T> AlignContent<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Layouts.FlexAlignContent>, IPropertySettersBuilder<Microsoft.Maui.Layouts.FlexAlignContent>> configure)
+            where T : Microsoft.Maui.Controls.FlexLayout
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Layouts.FlexAlignContent>(self.XamlSetters, Microsoft.Maui.Controls.FlexLayout.AlignContentProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T AlignItems<T>(this T self,
             Microsoft.Maui.Layouts.FlexAlignItems alignItems)
             where T : Microsoft.Maui.Controls.FlexLayout
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.FlexLayout.AlignItemsProperty, alignItems);
+            self.SetValue(Microsoft.Maui.Controls.FlexLayout.AlignItemsProperty, alignItems);
             return self;
         }
         
@@ -76,11 +124,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> AlignItems<T>(this SettersContext<T> self,
+            Microsoft.Maui.Layouts.FlexAlignItems alignItems)
+            where T : Microsoft.Maui.Controls.FlexLayout
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.FlexLayout.AlignItemsProperty, Value = alignItems });
+            return self;
+        }
+        
+        public static SettersContext<T> AlignItems<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Layouts.FlexAlignItems>, IPropertySettersBuilder<Microsoft.Maui.Layouts.FlexAlignItems>> configure)
+            where T : Microsoft.Maui.Controls.FlexLayout
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Layouts.FlexAlignItems>(self.XamlSetters, Microsoft.Maui.Controls.FlexLayout.AlignItemsProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T Position<T>(this T self,
             Microsoft.Maui.Layouts.FlexPosition position)
             where T : Microsoft.Maui.Controls.FlexLayout
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.FlexLayout.PositionProperty, position);
+            self.SetValue(Microsoft.Maui.Controls.FlexLayout.PositionProperty, position);
             return self;
         }
         
@@ -92,11 +156,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> Position<T>(this SettersContext<T> self,
+            Microsoft.Maui.Layouts.FlexPosition position)
+            where T : Microsoft.Maui.Controls.FlexLayout
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.FlexLayout.PositionProperty, Value = position });
+            return self;
+        }
+        
+        public static SettersContext<T> Position<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Layouts.FlexPosition>, IPropertySettersBuilder<Microsoft.Maui.Layouts.FlexPosition>> configure)
+            where T : Microsoft.Maui.Controls.FlexLayout
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Layouts.FlexPosition>(self.XamlSetters, Microsoft.Maui.Controls.FlexLayout.PositionProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T Wrap<T>(this T self,
             Microsoft.Maui.Layouts.FlexWrap wrap)
             where T : Microsoft.Maui.Controls.FlexLayout
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.FlexLayout.WrapProperty, wrap);
+            self.SetValue(Microsoft.Maui.Controls.FlexLayout.WrapProperty, wrap);
             return self;
         }
         
@@ -104,6 +184,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.FlexLayout
         {
             var context = new PropertyContext<Microsoft.Maui.Layouts.FlexWrap>(self, Microsoft.Maui.Controls.FlexLayout.WrapProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> Wrap<T>(this SettersContext<T> self,
+            Microsoft.Maui.Layouts.FlexWrap wrap)
+            where T : Microsoft.Maui.Controls.FlexLayout
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.FlexLayout.WrapProperty, Value = wrap });
+            return self;
+        }
+        
+        public static SettersContext<T> Wrap<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Layouts.FlexWrap>, IPropertySettersBuilder<Microsoft.Maui.Layouts.FlexWrap>> configure)
+            where T : Microsoft.Maui.Controls.FlexLayout
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Layouts.FlexWrap>(self.XamlSetters, Microsoft.Maui.Controls.FlexLayout.WrapProperty);
             configure(context).Build();
             return self;
         }

@@ -31,7 +31,6 @@ namespace CodeMarkup.Maui
         public static Microsoft.Maui.Controls.EventTrigger Event(this Microsoft.Maui.Controls.EventTrigger self,
             string @event)
         {
-            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property Event");
             self.Event = @event;
             return self;
         }

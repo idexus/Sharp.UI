@@ -15,13 +15,27 @@ namespace CodeMarkup.Maui
         public static Microsoft.Maui.Controls.RowDefinition Height(this Microsoft.Maui.Controls.RowDefinition self,
             Microsoft.Maui.GridLength height)
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.RowDefinition.HeightProperty, height);
+            self.SetValue(Microsoft.Maui.Controls.RowDefinition.HeightProperty, height);
             return self;
         }
         
         public static Microsoft.Maui.Controls.RowDefinition Height(this Microsoft.Maui.Controls.RowDefinition self, Func<PropertyContext<Microsoft.Maui.GridLength>, IPropertyBuilder<Microsoft.Maui.GridLength>> configure)
         {
             var context = new PropertyContext<Microsoft.Maui.GridLength>(self, Microsoft.Maui.Controls.RowDefinition.HeightProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.RowDefinition> Height(this SettersContext<Microsoft.Maui.Controls.RowDefinition> self,
+            Microsoft.Maui.GridLength height)
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.RowDefinition.HeightProperty, Value = height });
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.RowDefinition> Height(this SettersContext<Microsoft.Maui.Controls.RowDefinition> self, Func<PropertySettersContext<Microsoft.Maui.GridLength>, IPropertySettersBuilder<Microsoft.Maui.GridLength>> configure)
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.GridLength>(self.XamlSetters, Microsoft.Maui.Controls.RowDefinition.HeightProperty);
             configure(context).Build();
             return self;
         }

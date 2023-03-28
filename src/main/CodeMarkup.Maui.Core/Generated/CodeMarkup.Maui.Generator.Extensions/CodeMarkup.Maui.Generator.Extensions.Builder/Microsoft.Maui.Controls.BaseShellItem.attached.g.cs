@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Controls.DataTemplate shellItemTemplate)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.ItemTemplateProperty, shellItemTemplate);
+            self.SetValue(Microsoft.Maui.Controls.Shell.ItemTemplateProperty, shellItemTemplate);
             return self;
         }
         
@@ -28,10 +28,26 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> ShellItemTemplate<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.DataTemplate shellItemTemplate)
+            where T : Microsoft.Maui.Controls.BaseShellItem
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shell.ItemTemplateProperty, Value = shellItemTemplate });
+            return self;
+        }
+        
+        public static SettersContext<T> ShellItemTemplate<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.DataTemplate>, IPropertySettersBuilder<Microsoft.Maui.Controls.DataTemplate>> configure)
+            where T : Microsoft.Maui.Controls.BaseShellItem
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.DataTemplate>(self.XamlSetters, Microsoft.Maui.Controls.Shell.ItemTemplateProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T ShellItemTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shell.ItemTemplateProperty, new DataTemplate(loadTemplate));
+            self.SetValue(Microsoft.Maui.Controls.Shell.ItemTemplateProperty, new DataTemplate(loadTemplate));
             return self;
         }
         

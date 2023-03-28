@@ -38,15 +38,15 @@ namespace CodeMarkup.Maui
             mauiStyle.ApplyToDerivedTypes = applyToDerivedTypes;
         }
 
-        public Style(Func<T,T> buildSetters) : this()
+        public Style(Func<SettersContext<T>, SettersContext<T>> buildSetters) : this()
         {
             BuildSetters(buildSetters);
         }
 
-        public Style(bool applyToDerivedTypes, Func<T, T> styleElement) : this()
+        public Style(bool applyToDerivedTypes, Func<SettersContext<T>, SettersContext<T>> buildSetters) : this()
         {
             mauiStyle.ApplyToDerivedTypes = applyToDerivedTypes;
-            BuildSetters(styleElement);
+            BuildSetters(buildSetters);
         }
 
         public Style(Style<T> basedOn, bool applyToDerivedTypes) : this(basedOn)
@@ -54,22 +54,23 @@ namespace CodeMarkup.Maui
             mauiStyle.ApplyToDerivedTypes = applyToDerivedTypes;
         }
 
-        public Style(Style<T> basedOn, Func<T, T> buildSetters) : this(basedOn)
+        public Style(Style<T> basedOn, Func<SettersContext<T>, SettersContext<T>> buildSetters) : this(basedOn)
         {
             BuildSetters(buildSetters);
         }
 
-        public Style(Style<T> basedOn, bool applyToDerivedTypes, Func<T, T> styleElement) : this(basedOn)
+        public Style(Style<T> basedOn, bool applyToDerivedTypes, Func<SettersContext<T>, SettersContext<T>> buildSetters) : this(basedOn)
         {
             mauiStyle.ApplyToDerivedTypes = applyToDerivedTypes;
-            BuildSetters(styleElement);
+            BuildSetters(buildSetters);
         }
 
-        void BuildSetters(Func<T,T> buildSetters)
+        void BuildSetters(Func<SettersContext<T>, SettersContext<T>> buildSetters)
         {
-            FluentStyling.Setters = mauiStyle.Setters;
-            buildSetters?.Invoke(null);
-            FluentStyling.Setters = null;        
+            var settersContext = new SettersContext<T>();
+            buildSetters(settersContext);
+            foreach (var setter in settersContext.XamlSetters)
+                this.mauiStyle.Setters.Add(setter);            
         }
 
         public void Add(Action<T> invokeOnElement)

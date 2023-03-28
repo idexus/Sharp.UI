@@ -15,7 +15,7 @@ namespace CodeMarkup.Maui
         public static Microsoft.Maui.Controls.Shapes.CompositeTransform CenterX(this Microsoft.Maui.Controls.Shapes.CompositeTransform self,
             double centerX)
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.CompositeTransform.CenterXProperty, centerX);
+            self.SetValue(Microsoft.Maui.Controls.Shapes.CompositeTransform.CenterXProperty, centerX);
             return self;
         }
         
@@ -26,10 +26,24 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<Microsoft.Maui.Controls.Shapes.CompositeTransform> CenterX(this SettersContext<Microsoft.Maui.Controls.Shapes.CompositeTransform> self,
+            double centerX)
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shapes.CompositeTransform.CenterXProperty, Value = centerX });
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.Shapes.CompositeTransform> CenterX(this SettersContext<Microsoft.Maui.Controls.Shapes.CompositeTransform> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.Shapes.CompositeTransform.CenterXProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static Microsoft.Maui.Controls.Shapes.CompositeTransform CenterY(this Microsoft.Maui.Controls.Shapes.CompositeTransform self,
             double centerY)
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.CompositeTransform.CenterYProperty, centerY);
+            self.SetValue(Microsoft.Maui.Controls.Shapes.CompositeTransform.CenterYProperty, centerY);
             return self;
         }
         
@@ -40,10 +54,24 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<Microsoft.Maui.Controls.Shapes.CompositeTransform> CenterY(this SettersContext<Microsoft.Maui.Controls.Shapes.CompositeTransform> self,
+            double centerY)
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shapes.CompositeTransform.CenterYProperty, Value = centerY });
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.Shapes.CompositeTransform> CenterY(this SettersContext<Microsoft.Maui.Controls.Shapes.CompositeTransform> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.Shapes.CompositeTransform.CenterYProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static Microsoft.Maui.Controls.Shapes.CompositeTransform ScaleX(this Microsoft.Maui.Controls.Shapes.CompositeTransform self,
             double scaleX)
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.CompositeTransform.ScaleXProperty, scaleX);
+            self.SetValue(Microsoft.Maui.Controls.Shapes.CompositeTransform.ScaleXProperty, scaleX);
             return self;
         }
         
@@ -54,10 +82,24 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<Microsoft.Maui.Controls.Shapes.CompositeTransform> ScaleX(this SettersContext<Microsoft.Maui.Controls.Shapes.CompositeTransform> self,
+            double scaleX)
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shapes.CompositeTransform.ScaleXProperty, Value = scaleX });
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.Shapes.CompositeTransform> ScaleX(this SettersContext<Microsoft.Maui.Controls.Shapes.CompositeTransform> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.Shapes.CompositeTransform.ScaleXProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static Microsoft.Maui.Controls.Shapes.CompositeTransform ScaleY(this Microsoft.Maui.Controls.Shapes.CompositeTransform self,
             double scaleY)
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.CompositeTransform.ScaleYProperty, scaleY);
+            self.SetValue(Microsoft.Maui.Controls.Shapes.CompositeTransform.ScaleYProperty, scaleY);
             return self;
         }
         
@@ -68,10 +110,24 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<Microsoft.Maui.Controls.Shapes.CompositeTransform> ScaleY(this SettersContext<Microsoft.Maui.Controls.Shapes.CompositeTransform> self,
+            double scaleY)
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shapes.CompositeTransform.ScaleYProperty, Value = scaleY });
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.Shapes.CompositeTransform> ScaleY(this SettersContext<Microsoft.Maui.Controls.Shapes.CompositeTransform> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.Shapes.CompositeTransform.ScaleYProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static Microsoft.Maui.Controls.Shapes.CompositeTransform SkewX(this Microsoft.Maui.Controls.Shapes.CompositeTransform self,
             double skewX)
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.CompositeTransform.SkewXProperty, skewX);
+            self.SetValue(Microsoft.Maui.Controls.Shapes.CompositeTransform.SkewXProperty, skewX);
             return self;
         }
         
@@ -82,10 +138,24 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<Microsoft.Maui.Controls.Shapes.CompositeTransform> SkewX(this SettersContext<Microsoft.Maui.Controls.Shapes.CompositeTransform> self,
+            double skewX)
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shapes.CompositeTransform.SkewXProperty, Value = skewX });
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.Shapes.CompositeTransform> SkewX(this SettersContext<Microsoft.Maui.Controls.Shapes.CompositeTransform> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.Shapes.CompositeTransform.SkewXProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static Microsoft.Maui.Controls.Shapes.CompositeTransform SkewY(this Microsoft.Maui.Controls.Shapes.CompositeTransform self,
             double skewY)
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.CompositeTransform.SkewYProperty, skewY);
+            self.SetValue(Microsoft.Maui.Controls.Shapes.CompositeTransform.SkewYProperty, skewY);
             return self;
         }
         
@@ -96,10 +166,24 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<Microsoft.Maui.Controls.Shapes.CompositeTransform> SkewY(this SettersContext<Microsoft.Maui.Controls.Shapes.CompositeTransform> self,
+            double skewY)
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shapes.CompositeTransform.SkewYProperty, Value = skewY });
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.Shapes.CompositeTransform> SkewY(this SettersContext<Microsoft.Maui.Controls.Shapes.CompositeTransform> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.Shapes.CompositeTransform.SkewYProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static Microsoft.Maui.Controls.Shapes.CompositeTransform Rotation(this Microsoft.Maui.Controls.Shapes.CompositeTransform self,
             double rotation)
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.CompositeTransform.RotationProperty, rotation);
+            self.SetValue(Microsoft.Maui.Controls.Shapes.CompositeTransform.RotationProperty, rotation);
             return self;
         }
         
@@ -110,10 +194,24 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<Microsoft.Maui.Controls.Shapes.CompositeTransform> Rotation(this SettersContext<Microsoft.Maui.Controls.Shapes.CompositeTransform> self,
+            double rotation)
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shapes.CompositeTransform.RotationProperty, Value = rotation });
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.Shapes.CompositeTransform> Rotation(this SettersContext<Microsoft.Maui.Controls.Shapes.CompositeTransform> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.Shapes.CompositeTransform.RotationProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static Microsoft.Maui.Controls.Shapes.CompositeTransform TranslateX(this Microsoft.Maui.Controls.Shapes.CompositeTransform self,
             double translateX)
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.CompositeTransform.TranslateXProperty, translateX);
+            self.SetValue(Microsoft.Maui.Controls.Shapes.CompositeTransform.TranslateXProperty, translateX);
             return self;
         }
         
@@ -124,16 +222,44 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<Microsoft.Maui.Controls.Shapes.CompositeTransform> TranslateX(this SettersContext<Microsoft.Maui.Controls.Shapes.CompositeTransform> self,
+            double translateX)
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shapes.CompositeTransform.TranslateXProperty, Value = translateX });
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.Shapes.CompositeTransform> TranslateX(this SettersContext<Microsoft.Maui.Controls.Shapes.CompositeTransform> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.Shapes.CompositeTransform.TranslateXProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static Microsoft.Maui.Controls.Shapes.CompositeTransform TranslateY(this Microsoft.Maui.Controls.Shapes.CompositeTransform self,
             double translateY)
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.CompositeTransform.TranslateYProperty, translateY);
+            self.SetValue(Microsoft.Maui.Controls.Shapes.CompositeTransform.TranslateYProperty, translateY);
             return self;
         }
         
         public static Microsoft.Maui.Controls.Shapes.CompositeTransform TranslateY(this Microsoft.Maui.Controls.Shapes.CompositeTransform self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Shapes.CompositeTransform.TranslateYProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.Shapes.CompositeTransform> TranslateY(this SettersContext<Microsoft.Maui.Controls.Shapes.CompositeTransform> self,
+            double translateY)
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shapes.CompositeTransform.TranslateYProperty, Value = translateY });
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.Shapes.CompositeTransform> TranslateY(this SettersContext<Microsoft.Maui.Controls.Shapes.CompositeTransform> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.Shapes.CompositeTransform.TranslateYProperty);
             configure(context).Build();
             return self;
         }

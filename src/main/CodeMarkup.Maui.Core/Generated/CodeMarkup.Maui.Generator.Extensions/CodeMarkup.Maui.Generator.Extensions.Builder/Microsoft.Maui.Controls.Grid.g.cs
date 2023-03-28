@@ -68,7 +68,7 @@ namespace CodeMarkup.Maui
             double rowSpacing)
             where T : Microsoft.Maui.Controls.Grid
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Grid.RowSpacingProperty, rowSpacing);
+            self.SetValue(Microsoft.Maui.Controls.Grid.RowSpacingProperty, rowSpacing);
             return self;
         }
         
@@ -76,6 +76,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.Grid
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Grid.RowSpacingProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> RowSpacing<T>(this SettersContext<T> self,
+            double rowSpacing)
+            where T : Microsoft.Maui.Controls.Grid
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Grid.RowSpacingProperty, Value = rowSpacing });
+            return self;
+        }
+        
+        public static SettersContext<T> RowSpacing<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.Grid
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.Grid.RowSpacingProperty);
             configure(context).Build();
             return self;
         }
@@ -93,7 +109,7 @@ namespace CodeMarkup.Maui
             double columnSpacing)
             where T : Microsoft.Maui.Controls.Grid
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Grid.ColumnSpacingProperty, columnSpacing);
+            self.SetValue(Microsoft.Maui.Controls.Grid.ColumnSpacingProperty, columnSpacing);
             return self;
         }
         
@@ -101,6 +117,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.Grid
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Grid.ColumnSpacingProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> ColumnSpacing<T>(this SettersContext<T> self,
+            double columnSpacing)
+            where T : Microsoft.Maui.Controls.Grid
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Grid.ColumnSpacingProperty, Value = columnSpacing });
+            return self;
+        }
+        
+        public static SettersContext<T> ColumnSpacing<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.Grid
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.Grid.ColumnSpacingProperty);
             configure(context).Build();
             return self;
         }

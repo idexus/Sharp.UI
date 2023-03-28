@@ -15,13 +15,27 @@ namespace CodeMarkup.Maui
         public static Microsoft.Maui.Controls.ColumnDefinition Width(this Microsoft.Maui.Controls.ColumnDefinition self,
             Microsoft.Maui.GridLength width)
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ColumnDefinition.WidthProperty, width);
+            self.SetValue(Microsoft.Maui.Controls.ColumnDefinition.WidthProperty, width);
             return self;
         }
         
         public static Microsoft.Maui.Controls.ColumnDefinition Width(this Microsoft.Maui.Controls.ColumnDefinition self, Func<PropertyContext<Microsoft.Maui.GridLength>, IPropertyBuilder<Microsoft.Maui.GridLength>> configure)
         {
             var context = new PropertyContext<Microsoft.Maui.GridLength>(self, Microsoft.Maui.Controls.ColumnDefinition.WidthProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.ColumnDefinition> Width(this SettersContext<Microsoft.Maui.Controls.ColumnDefinition> self,
+            Microsoft.Maui.GridLength width)
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ColumnDefinition.WidthProperty, Value = width });
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.ColumnDefinition> Width(this SettersContext<Microsoft.Maui.Controls.ColumnDefinition> self, Func<PropertySettersContext<Microsoft.Maui.GridLength>, IPropertySettersBuilder<Microsoft.Maui.GridLength>> configure)
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.GridLength>(self.XamlSetters, Microsoft.Maui.Controls.ColumnDefinition.WidthProperty);
             configure(context).Build();
             return self;
         }

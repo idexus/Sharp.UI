@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             bool hasShadow)
             where T : Microsoft.Maui.Controls.Frame
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Frame.HasShadowProperty, hasShadow);
+            self.SetValue(Microsoft.Maui.Controls.Frame.HasShadowProperty, hasShadow);
             return self;
         }
         
@@ -28,11 +28,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> HasShadow<T>(this SettersContext<T> self,
+            bool hasShadow)
+            where T : Microsoft.Maui.Controls.Frame
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Frame.HasShadowProperty, Value = hasShadow });
+            return self;
+        }
+        
+        public static SettersContext<T> HasShadow<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.Frame
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.Frame.HasShadowProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T BorderColor<T>(this T self,
             Microsoft.Maui.Graphics.Color borderColor)
             where T : Microsoft.Maui.Controls.Frame
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Frame.BorderColorProperty, borderColor);
+            self.SetValue(Microsoft.Maui.Controls.Frame.BorderColorProperty, borderColor);
             return self;
         }
         
@@ -40,6 +56,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.Frame
         {
             var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.Frame.BorderColorProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> BorderColor<T>(this SettersContext<T> self,
+            Microsoft.Maui.Graphics.Color borderColor)
+            where T : Microsoft.Maui.Controls.Frame
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Frame.BorderColorProperty, Value = borderColor });
+            return self;
+        }
+        
+        public static SettersContext<T> BorderColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
+            where T : Microsoft.Maui.Controls.Frame
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.Color>(self.XamlSetters, Microsoft.Maui.Controls.Frame.BorderColorProperty);
             configure(context).Build();
             return self;
         }
@@ -57,7 +89,7 @@ namespace CodeMarkup.Maui
             float cornerRadius)
             where T : Microsoft.Maui.Controls.Frame
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Frame.CornerRadiusProperty, cornerRadius);
+            self.SetValue(Microsoft.Maui.Controls.Frame.CornerRadiusProperty, cornerRadius);
             return self;
         }
         
@@ -65,6 +97,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.Frame
         {
             var context = new PropertyContext<float>(self, Microsoft.Maui.Controls.Frame.CornerRadiusProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> CornerRadius<T>(this SettersContext<T> self,
+            float cornerRadius)
+            where T : Microsoft.Maui.Controls.Frame
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Frame.CornerRadiusProperty, Value = cornerRadius });
+            return self;
+        }
+        
+        public static SettersContext<T> CornerRadius<T>(this SettersContext<T> self, Func<PropertySettersContext<float>, IPropertySettersBuilder<float>> configure)
+            where T : Microsoft.Maui.Controls.Frame
+        {
+            var context = new PropertySettersContext<float>(self.XamlSetters, Microsoft.Maui.Controls.Frame.CornerRadiusProperty);
             configure(context).Build();
             return self;
         }

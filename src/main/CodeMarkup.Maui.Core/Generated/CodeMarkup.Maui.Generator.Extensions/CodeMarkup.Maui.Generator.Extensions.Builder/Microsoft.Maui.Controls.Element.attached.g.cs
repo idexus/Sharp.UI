@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Controls.MenuFlyout contextFlyout)
             where T : Microsoft.Maui.Controls.Element
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.FlyoutBase.ContextFlyoutProperty, contextFlyout);
+            self.SetValue(Microsoft.Maui.Controls.FlyoutBase.ContextFlyoutProperty, contextFlyout);
             return self;
         }
         
@@ -24,6 +24,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.Element
         {
             var context = new PropertyContext<Microsoft.Maui.Controls.MenuFlyout>(self, Microsoft.Maui.Controls.FlyoutBase.ContextFlyoutProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> ContextFlyout<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.MenuFlyout contextFlyout)
+            where T : Microsoft.Maui.Controls.Element
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.FlyoutBase.ContextFlyoutProperty, Value = contextFlyout });
+            return self;
+        }
+        
+        public static SettersContext<T> ContextFlyout<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.MenuFlyout>, IPropertySettersBuilder<Microsoft.Maui.Controls.MenuFlyout>> configure)
+            where T : Microsoft.Maui.Controls.Element
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.MenuFlyout>(self.XamlSetters, Microsoft.Maui.Controls.FlyoutBase.ContextFlyoutProperty);
             configure(context).Build();
             return self;
         }

@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Graphics.Color onColor)
             where T : Microsoft.Maui.Controls.SwitchCell
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwitchCell.OnColorProperty, onColor);
+            self.SetValue(Microsoft.Maui.Controls.SwitchCell.OnColorProperty, onColor);
             return self;
         }
         
@@ -28,11 +28,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> OnColor<T>(this SettersContext<T> self,
+            Microsoft.Maui.Graphics.Color onColor)
+            where T : Microsoft.Maui.Controls.SwitchCell
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SwitchCell.OnColorProperty, Value = onColor });
+            return self;
+        }
+        
+        public static SettersContext<T> OnColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
+            where T : Microsoft.Maui.Controls.SwitchCell
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.Color>(self.XamlSetters, Microsoft.Maui.Controls.SwitchCell.OnColorProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T On<T>(this T self,
             bool on)
             where T : Microsoft.Maui.Controls.SwitchCell
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwitchCell.OnProperty, on);
+            self.SetValue(Microsoft.Maui.Controls.SwitchCell.OnProperty, on);
             return self;
         }
         
@@ -44,11 +60,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> On<T>(this SettersContext<T> self,
+            bool on)
+            where T : Microsoft.Maui.Controls.SwitchCell
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SwitchCell.OnProperty, Value = on });
+            return self;
+        }
+        
+        public static SettersContext<T> On<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.SwitchCell
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.SwitchCell.OnProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T Text<T>(this T self,
             string text)
             where T : Microsoft.Maui.Controls.SwitchCell
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwitchCell.TextProperty, text);
+            self.SetValue(Microsoft.Maui.Controls.SwitchCell.TextProperty, text);
             return self;
         }
         
@@ -56,6 +88,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.SwitchCell
         {
             var context = new PropertyContext<string>(self, Microsoft.Maui.Controls.SwitchCell.TextProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> Text<T>(this SettersContext<T> self,
+            string text)
+            where T : Microsoft.Maui.Controls.SwitchCell
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SwitchCell.TextProperty, Value = text });
+            return self;
+        }
+        
+        public static SettersContext<T> Text<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
+            where T : Microsoft.Maui.Controls.SwitchCell
+        {
+            var context = new PropertySettersContext<string>(self.XamlSetters, Microsoft.Maui.Controls.SwitchCell.TextProperty);
             configure(context).Build();
             return self;
         }

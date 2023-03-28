@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             int maxLength)
             where T : Microsoft.Maui.Controls.InputView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.InputView.MaxLengthProperty, maxLength);
+            self.SetValue(Microsoft.Maui.Controls.InputView.MaxLengthProperty, maxLength);
             return self;
         }
         
@@ -28,11 +28,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> MaxLength<T>(this SettersContext<T> self,
+            int maxLength)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.InputView.MaxLengthProperty, Value = maxLength });
+            return self;
+        }
+        
+        public static SettersContext<T> MaxLength<T>(this SettersContext<T> self, Func<PropertySettersContext<int>, IPropertySettersBuilder<int>> configure)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            var context = new PropertySettersContext<int>(self.XamlSetters, Microsoft.Maui.Controls.InputView.MaxLengthProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T Text<T>(this T self,
             string text)
             where T : Microsoft.Maui.Controls.InputView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.InputView.TextProperty, text);
+            self.SetValue(Microsoft.Maui.Controls.InputView.TextProperty, text);
             return self;
         }
         
@@ -44,11 +60,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> Text<T>(this SettersContext<T> self,
+            string text)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.InputView.TextProperty, Value = text });
+            return self;
+        }
+        
+        public static SettersContext<T> Text<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            var context = new PropertySettersContext<string>(self.XamlSetters, Microsoft.Maui.Controls.InputView.TextProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T Keyboard<T>(this T self,
             Microsoft.Maui.Keyboard keyboard)
             where T : Microsoft.Maui.Controls.InputView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.InputView.KeyboardProperty, keyboard);
+            self.SetValue(Microsoft.Maui.Controls.InputView.KeyboardProperty, keyboard);
             return self;
         }
         
@@ -60,11 +92,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> Keyboard<T>(this SettersContext<T> self,
+            Microsoft.Maui.Keyboard keyboard)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.InputView.KeyboardProperty, Value = keyboard });
+            return self;
+        }
+        
+        public static SettersContext<T> Keyboard<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Keyboard>, IPropertySettersBuilder<Microsoft.Maui.Keyboard>> configure)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Keyboard>(self.XamlSetters, Microsoft.Maui.Controls.InputView.KeyboardProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T IsSpellCheckEnabled<T>(this T self,
             bool isSpellCheckEnabled)
             where T : Microsoft.Maui.Controls.InputView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.InputView.IsSpellCheckEnabledProperty, isSpellCheckEnabled);
+            self.SetValue(Microsoft.Maui.Controls.InputView.IsSpellCheckEnabledProperty, isSpellCheckEnabled);
             return self;
         }
         
@@ -76,11 +124,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> IsSpellCheckEnabled<T>(this SettersContext<T> self,
+            bool isSpellCheckEnabled)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.InputView.IsSpellCheckEnabledProperty, Value = isSpellCheckEnabled });
+            return self;
+        }
+        
+        public static SettersContext<T> IsSpellCheckEnabled<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.InputView.IsSpellCheckEnabledProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T IsReadOnly<T>(this T self,
             bool isReadOnly)
             where T : Microsoft.Maui.Controls.InputView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.InputView.IsReadOnlyProperty, isReadOnly);
+            self.SetValue(Microsoft.Maui.Controls.InputView.IsReadOnlyProperty, isReadOnly);
             return self;
         }
         
@@ -92,11 +156,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> IsReadOnly<T>(this SettersContext<T> self,
+            bool isReadOnly)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.InputView.IsReadOnlyProperty, Value = isReadOnly });
+            return self;
+        }
+        
+        public static SettersContext<T> IsReadOnly<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.InputView.IsReadOnlyProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T Placeholder<T>(this T self,
             string placeholder)
             where T : Microsoft.Maui.Controls.InputView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.InputView.PlaceholderProperty, placeholder);
+            self.SetValue(Microsoft.Maui.Controls.InputView.PlaceholderProperty, placeholder);
             return self;
         }
         
@@ -108,11 +188,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> Placeholder<T>(this SettersContext<T> self,
+            string placeholder)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.InputView.PlaceholderProperty, Value = placeholder });
+            return self;
+        }
+        
+        public static SettersContext<T> Placeholder<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            var context = new PropertySettersContext<string>(self.XamlSetters, Microsoft.Maui.Controls.InputView.PlaceholderProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T PlaceholderColor<T>(this T self,
             Microsoft.Maui.Graphics.Color placeholderColor)
             where T : Microsoft.Maui.Controls.InputView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.InputView.PlaceholderColorProperty, placeholderColor);
+            self.SetValue(Microsoft.Maui.Controls.InputView.PlaceholderColorProperty, placeholderColor);
             return self;
         }
         
@@ -120,6 +216,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.InputView
         {
             var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.InputView.PlaceholderColorProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> PlaceholderColor<T>(this SettersContext<T> self,
+            Microsoft.Maui.Graphics.Color placeholderColor)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.InputView.PlaceholderColorProperty, Value = placeholderColor });
+            return self;
+        }
+        
+        public static SettersContext<T> PlaceholderColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.Color>(self.XamlSetters, Microsoft.Maui.Controls.InputView.PlaceholderColorProperty);
             configure(context).Build();
             return self;
         }
@@ -137,7 +249,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Graphics.Color textColor)
             where T : Microsoft.Maui.Controls.InputView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.InputView.TextColorProperty, textColor);
+            self.SetValue(Microsoft.Maui.Controls.InputView.TextColorProperty, textColor);
             return self;
         }
         
@@ -145,6 +257,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.InputView
         {
             var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.InputView.TextColorProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> TextColor<T>(this SettersContext<T> self,
+            Microsoft.Maui.Graphics.Color textColor)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.InputView.TextColorProperty, Value = textColor });
+            return self;
+        }
+        
+        public static SettersContext<T> TextColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.Color>(self.XamlSetters, Microsoft.Maui.Controls.InputView.TextColorProperty);
             configure(context).Build();
             return self;
         }
@@ -162,7 +290,7 @@ namespace CodeMarkup.Maui
             double characterSpacing)
             where T : Microsoft.Maui.Controls.InputView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.InputView.CharacterSpacingProperty, characterSpacing);
+            self.SetValue(Microsoft.Maui.Controls.InputView.CharacterSpacingProperty, characterSpacing);
             return self;
         }
         
@@ -170,6 +298,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.InputView
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.InputView.CharacterSpacingProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> CharacterSpacing<T>(this SettersContext<T> self,
+            double characterSpacing)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.InputView.CharacterSpacingProperty, Value = characterSpacing });
+            return self;
+        }
+        
+        public static SettersContext<T> CharacterSpacing<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.InputView.CharacterSpacingProperty);
             configure(context).Build();
             return self;
         }
@@ -187,7 +331,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.TextTransform textTransform)
             where T : Microsoft.Maui.Controls.InputView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.InputView.TextTransformProperty, textTransform);
+            self.SetValue(Microsoft.Maui.Controls.InputView.TextTransformProperty, textTransform);
             return self;
         }
         
@@ -195,6 +339,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.InputView
         {
             var context = new PropertyContext<Microsoft.Maui.TextTransform>(self, Microsoft.Maui.Controls.InputView.TextTransformProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> TextTransform<T>(this SettersContext<T> self,
+            Microsoft.Maui.TextTransform textTransform)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.InputView.TextTransformProperty, Value = textTransform });
+            return self;
+        }
+        
+        public static SettersContext<T> TextTransform<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.TextTransform>, IPropertySettersBuilder<Microsoft.Maui.TextTransform>> configure)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.TextTransform>(self.XamlSetters, Microsoft.Maui.Controls.InputView.TextTransformProperty);
             configure(context).Build();
             return self;
         }

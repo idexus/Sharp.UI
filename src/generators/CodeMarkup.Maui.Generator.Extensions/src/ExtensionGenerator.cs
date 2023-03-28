@@ -145,7 +145,6 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
             public string symbolTypeName;
             public string valueAssignmentString;
             public string dataTemplateAssignmentString;
-            public string fluentStylingCheckString;
 
             public void Build()
             {
@@ -167,16 +166,12 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
                 camelCaseName = Helpers.CamelCase(propertyName);
 
                 valueAssignmentString = IsBindableProperty  ?
-                    $@"self.SetValueOrAddSetter({BindablePropertyName}, {camelCaseName});" :
+                    $@"self.SetValue({BindablePropertyName}, {camelCaseName});" :
                     $"{accessedWith}.{propertyName} = {camelCaseName};";
 
                 dataTemplateAssignmentString = IsBindableProperty ?
-                    $@"self.SetValueOrAddSetter({BindablePropertyName}, new DataTemplate(loadTemplate));" :
+                    $@"self.SetValue({BindablePropertyName}, new DataTemplate(loadTemplate));" :
                     $@"{accessedWith}.{propertyName} = new DataTemplate(loadTemplate);";
-
-                fluentStylingCheckString = IsBindableObject && !IsBindableProperty ?
-            $@"if (FluentStyling.Setters != null) throw new ArgumentException(""Fluent styling not available for property {propertyName}"");
-            " : "";
 
             }
         }
@@ -294,6 +289,8 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
             {
                 GenerateExtensionMethod_Value(info);
                 GenerateExtensionMethod_BindablePropertyBuilder(info);
+                GenerateExtensionMethod_Setters(info);
+                GenerateExtensionMethod_SettersBuilder(info);
 
                 if (info.propertyTypeName.Contains("DataTemplate"))
                     GenerateExtensionMethod_DataTemplate(info);
@@ -331,7 +328,11 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
                     GenerateExtensionMethod_Value(info);
 
                     if (info.IsBindableProperty)
+                    {
                         GenerateExtensionMethod_BindablePropertyBuilder(info);
+                        GenerateExtensionMethod_Setters(info);
+                        GenerateExtensionMethod_SettersBuilder(info);
+                    }
 
                     if (info.propertyTypeName.Equals("Microsoft.Maui.Controls.DataTemplate"))
                         GenerateExtensionMethod_DataTemplate(info);
@@ -357,6 +358,43 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
             }
         }
 
+        void GenerateExtensionMethod_Setters(PropertyInfo info)
+        {
+            if (mainSymbol.IsSealed)
+                GenerateExtensionMethod_Setters_Sealed(info);
+            else
+                GenerateExtensionMethod_Setters_Normal(info);
+        }
+
+        void GenerateExtensionMethod_Setters_Sealed(PropertyInfo info)
+        {
+            isExtensionMethodsGenerated = true;
+            builder.Append($@"
+        public static SettersContext<{info.symbolTypeName}> {info.propertyName}(this SettersContext<{info.symbolTypeName}> self,
+            {info.propertyTypeName} {info.camelCaseName})
+        {{
+            self.XamlSetters.Add(new Setter {{ Property = {info.BindablePropertyName}, Value = {info.camelCaseName} }});
+            return self;
+        }}
+        ");
+        }
+
+        void GenerateExtensionMethod_Setters_Normal(PropertyInfo info)
+        {
+            isExtensionMethodsGenerated = true;
+            builder.Append($@"
+        public static SettersContext<T> {info.propertyName}<T>(this SettersContext<T> self,
+            {info.propertyTypeName} {info.camelCaseName})
+            where T : {info.symbolTypeName}
+        {{
+            self.XamlSetters.Add(new Setter {{ Property = {info.BindablePropertyName}, Value = {info.camelCaseName} }});
+            return self;
+        }}
+        ");
+        }
+
+        // value
+
         void GenerateExtensionMethod_Value(PropertyInfo info)
         {
             if (mainSymbol.IsSealed)
@@ -372,7 +410,7 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
         public static {info.symbolTypeName} {info.propertyName}(this {info.symbolTypeName} self,
             {info.propertyTypeName} {info.camelCaseName})
         {{
-            {info.fluentStylingCheckString}{info.valueAssignmentString}
+            {info.valueAssignmentString}
             return self;
         }}
         ");
@@ -386,7 +424,7 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
             {info.propertyTypeName} {info.camelCaseName})
             where T : {info.symbolTypeName}
         {{
-            {info.fluentStylingCheckString}{info.valueAssignmentString}
+            {info.valueAssignmentString}
             return self;
         }}
         ");
@@ -484,6 +522,45 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
         }}
         ");
         }
+
+        // binding builder (Setters)
+
+        void GenerateExtensionMethod_SettersBuilder(PropertyInfo info)
+        {
+            if (mainSymbol.IsSealed)
+                GenerateExtensionMethod_SettersBuilder_Sealed(info);
+            else
+                GenerateExtensionMethod_SettersBuilder_Normal(info);
+        }
+
+        void GenerateExtensionMethod_SettersBuilder_Sealed(PropertyInfo info)
+        {
+            isExtensionMethodsGenerated = true;
+            builder.Append($@"
+        public static SettersContext<{info.symbolTypeName}> {info.propertyName}(this SettersContext<{info.symbolTypeName}> self, Func<PropertySettersContext<{info.propertyTypeName}>, IPropertySettersBuilder<{info.propertyTypeName}>> configure)
+        {{
+            var context = new PropertySettersContext<{info.propertyTypeName}>(self.XamlSetters, {info.BindablePropertyName});
+            configure(context).Build();
+            return self;
+        }}
+        ");
+        }
+
+        void GenerateExtensionMethod_SettersBuilder_Normal(PropertyInfo info)
+        {
+            isExtensionMethodsGenerated = true;
+            builder.Append($@"
+        public static SettersContext<T> {info.propertyName}<T>(this SettersContext<T> self, Func<PropertySettersContext<{info.propertyTypeName}>, IPropertySettersBuilder<{info.propertyTypeName}>> configure)
+            where T : {info.symbolTypeName}
+        {{
+            var context = new PropertySettersContext<{info.propertyTypeName}>(self.XamlSetters, {info.BindablePropertyName});
+            configure(context).Build();
+            return self;
+        }}
+        ");
+        }
+
+
 
         void GenerateExtensionMethod_DataTemplate(PropertyInfo info)
         {

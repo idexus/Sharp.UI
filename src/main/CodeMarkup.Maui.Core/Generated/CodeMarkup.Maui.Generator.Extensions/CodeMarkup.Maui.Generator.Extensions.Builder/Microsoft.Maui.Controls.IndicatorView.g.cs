@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Controls.IndicatorShape indicatorsShape)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.IndicatorView.IndicatorsShapeProperty, indicatorsShape);
+            self.SetValue(Microsoft.Maui.Controls.IndicatorView.IndicatorsShapeProperty, indicatorsShape);
             return self;
         }
         
@@ -28,11 +28,26 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> IndicatorsShape<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.IndicatorShape indicatorsShape)
+            where T : Microsoft.Maui.Controls.IndicatorView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.IndicatorView.IndicatorsShapeProperty, Value = indicatorsShape });
+            return self;
+        }
+        
+        public static SettersContext<T> IndicatorsShape<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.IndicatorShape>, IPropertySettersBuilder<Microsoft.Maui.Controls.IndicatorShape>> configure)
+            where T : Microsoft.Maui.Controls.IndicatorView
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.IndicatorShape>(self.XamlSetters, Microsoft.Maui.Controls.IndicatorView.IndicatorsShapeProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T IndicatorLayout<T>(this T self,
             Microsoft.Maui.Controls.IBindableLayout indicatorLayout)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property IndicatorLayout");
             self.IndicatorLayout = indicatorLayout;
             return self;
         }
@@ -41,7 +56,7 @@ namespace CodeMarkup.Maui
             int position)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.IndicatorView.PositionProperty, position);
+            self.SetValue(Microsoft.Maui.Controls.IndicatorView.PositionProperty, position);
             return self;
         }
         
@@ -53,11 +68,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> Position<T>(this SettersContext<T> self,
+            int position)
+            where T : Microsoft.Maui.Controls.IndicatorView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.IndicatorView.PositionProperty, Value = position });
+            return self;
+        }
+        
+        public static SettersContext<T> Position<T>(this SettersContext<T> self, Func<PropertySettersContext<int>, IPropertySettersBuilder<int>> configure)
+            where T : Microsoft.Maui.Controls.IndicatorView
+        {
+            var context = new PropertySettersContext<int>(self.XamlSetters, Microsoft.Maui.Controls.IndicatorView.PositionProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T Count<T>(this T self,
             int count)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.IndicatorView.CountProperty, count);
+            self.SetValue(Microsoft.Maui.Controls.IndicatorView.CountProperty, count);
             return self;
         }
         
@@ -69,11 +100,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> Count<T>(this SettersContext<T> self,
+            int count)
+            where T : Microsoft.Maui.Controls.IndicatorView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.IndicatorView.CountProperty, Value = count });
+            return self;
+        }
+        
+        public static SettersContext<T> Count<T>(this SettersContext<T> self, Func<PropertySettersContext<int>, IPropertySettersBuilder<int>> configure)
+            where T : Microsoft.Maui.Controls.IndicatorView
+        {
+            var context = new PropertySettersContext<int>(self.XamlSetters, Microsoft.Maui.Controls.IndicatorView.CountProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T MaximumVisible<T>(this T self,
             int maximumVisible)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.IndicatorView.MaximumVisibleProperty, maximumVisible);
+            self.SetValue(Microsoft.Maui.Controls.IndicatorView.MaximumVisibleProperty, maximumVisible);
             return self;
         }
         
@@ -85,11 +132,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> MaximumVisible<T>(this SettersContext<T> self,
+            int maximumVisible)
+            where T : Microsoft.Maui.Controls.IndicatorView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.IndicatorView.MaximumVisibleProperty, Value = maximumVisible });
+            return self;
+        }
+        
+        public static SettersContext<T> MaximumVisible<T>(this SettersContext<T> self, Func<PropertySettersContext<int>, IPropertySettersBuilder<int>> configure)
+            where T : Microsoft.Maui.Controls.IndicatorView
+        {
+            var context = new PropertySettersContext<int>(self.XamlSetters, Microsoft.Maui.Controls.IndicatorView.MaximumVisibleProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T IndicatorTemplate<T>(this T self,
             Microsoft.Maui.Controls.DataTemplate indicatorTemplate)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.IndicatorView.IndicatorTemplateProperty, indicatorTemplate);
+            self.SetValue(Microsoft.Maui.Controls.IndicatorView.IndicatorTemplateProperty, indicatorTemplate);
             return self;
         }
         
@@ -101,10 +164,26 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> IndicatorTemplate<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.DataTemplate indicatorTemplate)
+            where T : Microsoft.Maui.Controls.IndicatorView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.IndicatorView.IndicatorTemplateProperty, Value = indicatorTemplate });
+            return self;
+        }
+        
+        public static SettersContext<T> IndicatorTemplate<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.DataTemplate>, IPropertySettersBuilder<Microsoft.Maui.Controls.DataTemplate>> configure)
+            where T : Microsoft.Maui.Controls.IndicatorView
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.DataTemplate>(self.XamlSetters, Microsoft.Maui.Controls.IndicatorView.IndicatorTemplateProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T IndicatorTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.IndicatorView.IndicatorTemplateProperty, new DataTemplate(loadTemplate));
+            self.SetValue(Microsoft.Maui.Controls.IndicatorView.IndicatorTemplateProperty, new DataTemplate(loadTemplate));
             return self;
         }
         
@@ -112,7 +191,7 @@ namespace CodeMarkup.Maui
             bool hideSingle)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.IndicatorView.HideSingleProperty, hideSingle);
+            self.SetValue(Microsoft.Maui.Controls.IndicatorView.HideSingleProperty, hideSingle);
             return self;
         }
         
@@ -124,11 +203,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> HideSingle<T>(this SettersContext<T> self,
+            bool hideSingle)
+            where T : Microsoft.Maui.Controls.IndicatorView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.IndicatorView.HideSingleProperty, Value = hideSingle });
+            return self;
+        }
+        
+        public static SettersContext<T> HideSingle<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.IndicatorView
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.IndicatorView.HideSingleProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T IndicatorColor<T>(this T self,
             Microsoft.Maui.Graphics.Color indicatorColor)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.IndicatorView.IndicatorColorProperty, indicatorColor);
+            self.SetValue(Microsoft.Maui.Controls.IndicatorView.IndicatorColorProperty, indicatorColor);
             return self;
         }
         
@@ -136,6 +231,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.IndicatorView
         {
             var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.IndicatorView.IndicatorColorProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> IndicatorColor<T>(this SettersContext<T> self,
+            Microsoft.Maui.Graphics.Color indicatorColor)
+            where T : Microsoft.Maui.Controls.IndicatorView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.IndicatorView.IndicatorColorProperty, Value = indicatorColor });
+            return self;
+        }
+        
+        public static SettersContext<T> IndicatorColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
+            where T : Microsoft.Maui.Controls.IndicatorView
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.Color>(self.XamlSetters, Microsoft.Maui.Controls.IndicatorView.IndicatorColorProperty);
             configure(context).Build();
             return self;
         }
@@ -153,7 +264,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Graphics.Color selectedIndicatorColor)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.IndicatorView.SelectedIndicatorColorProperty, selectedIndicatorColor);
+            self.SetValue(Microsoft.Maui.Controls.IndicatorView.SelectedIndicatorColorProperty, selectedIndicatorColor);
             return self;
         }
         
@@ -161,6 +272,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.IndicatorView
         {
             var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.IndicatorView.SelectedIndicatorColorProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> SelectedIndicatorColor<T>(this SettersContext<T> self,
+            Microsoft.Maui.Graphics.Color selectedIndicatorColor)
+            where T : Microsoft.Maui.Controls.IndicatorView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.IndicatorView.SelectedIndicatorColorProperty, Value = selectedIndicatorColor });
+            return self;
+        }
+        
+        public static SettersContext<T> SelectedIndicatorColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
+            where T : Microsoft.Maui.Controls.IndicatorView
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.Color>(self.XamlSetters, Microsoft.Maui.Controls.IndicatorView.SelectedIndicatorColorProperty);
             configure(context).Build();
             return self;
         }
@@ -178,7 +305,7 @@ namespace CodeMarkup.Maui
             double indicatorSize)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.IndicatorView.IndicatorSizeProperty, indicatorSize);
+            self.SetValue(Microsoft.Maui.Controls.IndicatorView.IndicatorSizeProperty, indicatorSize);
             return self;
         }
         
@@ -186,6 +313,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.IndicatorView
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.IndicatorView.IndicatorSizeProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> IndicatorSize<T>(this SettersContext<T> self,
+            double indicatorSize)
+            where T : Microsoft.Maui.Controls.IndicatorView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.IndicatorView.IndicatorSizeProperty, Value = indicatorSize });
+            return self;
+        }
+        
+        public static SettersContext<T> IndicatorSize<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.IndicatorView
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.IndicatorView.IndicatorSizeProperty);
             configure(context).Build();
             return self;
         }
@@ -203,7 +346,7 @@ namespace CodeMarkup.Maui
             System.Collections.IEnumerable itemsSource)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.IndicatorView.ItemsSourceProperty, itemsSource);
+            self.SetValue(Microsoft.Maui.Controls.IndicatorView.ItemsSourceProperty, itemsSource);
             return self;
         }
         
@@ -211,6 +354,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.IndicatorView
         {
             var context = new PropertyContext<System.Collections.IEnumerable>(self, Microsoft.Maui.Controls.IndicatorView.ItemsSourceProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> ItemsSource<T>(this SettersContext<T> self,
+            System.Collections.IEnumerable itemsSource)
+            where T : Microsoft.Maui.Controls.IndicatorView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.IndicatorView.ItemsSourceProperty, Value = itemsSource });
+            return self;
+        }
+        
+        public static SettersContext<T> ItemsSource<T>(this SettersContext<T> self, Func<PropertySettersContext<System.Collections.IEnumerable>, IPropertySettersBuilder<System.Collections.IEnumerable>> configure)
+            where T : Microsoft.Maui.Controls.IndicatorView
+        {
+            var context = new PropertySettersContext<System.Collections.IEnumerable>(self.XamlSetters, Microsoft.Maui.Controls.IndicatorView.ItemsSourceProperty);
             configure(context).Build();
             return self;
         }

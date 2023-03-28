@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             bool isGrouped)
             where T : Microsoft.Maui.Controls.GroupableItemsView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.GroupableItemsView.IsGroupedProperty, isGrouped);
+            self.SetValue(Microsoft.Maui.Controls.GroupableItemsView.IsGroupedProperty, isGrouped);
             return self;
         }
         
@@ -28,11 +28,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> IsGrouped<T>(this SettersContext<T> self,
+            bool isGrouped)
+            where T : Microsoft.Maui.Controls.GroupableItemsView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.GroupableItemsView.IsGroupedProperty, Value = isGrouped });
+            return self;
+        }
+        
+        public static SettersContext<T> IsGrouped<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.GroupableItemsView
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.GroupableItemsView.IsGroupedProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T GroupHeaderTemplate<T>(this T self,
             Microsoft.Maui.Controls.DataTemplate groupHeaderTemplate)
             where T : Microsoft.Maui.Controls.GroupableItemsView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.GroupableItemsView.GroupHeaderTemplateProperty, groupHeaderTemplate);
+            self.SetValue(Microsoft.Maui.Controls.GroupableItemsView.GroupHeaderTemplateProperty, groupHeaderTemplate);
             return self;
         }
         
@@ -44,10 +60,26 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> GroupHeaderTemplate<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.DataTemplate groupHeaderTemplate)
+            where T : Microsoft.Maui.Controls.GroupableItemsView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.GroupableItemsView.GroupHeaderTemplateProperty, Value = groupHeaderTemplate });
+            return self;
+        }
+        
+        public static SettersContext<T> GroupHeaderTemplate<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.DataTemplate>, IPropertySettersBuilder<Microsoft.Maui.Controls.DataTemplate>> configure)
+            where T : Microsoft.Maui.Controls.GroupableItemsView
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.DataTemplate>(self.XamlSetters, Microsoft.Maui.Controls.GroupableItemsView.GroupHeaderTemplateProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T GroupHeaderTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.GroupableItemsView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.GroupableItemsView.GroupHeaderTemplateProperty, new DataTemplate(loadTemplate));
+            self.SetValue(Microsoft.Maui.Controls.GroupableItemsView.GroupHeaderTemplateProperty, new DataTemplate(loadTemplate));
             return self;
         }
         
@@ -55,7 +87,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Controls.DataTemplate groupFooterTemplate)
             where T : Microsoft.Maui.Controls.GroupableItemsView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.GroupableItemsView.GroupFooterTemplateProperty, groupFooterTemplate);
+            self.SetValue(Microsoft.Maui.Controls.GroupableItemsView.GroupFooterTemplateProperty, groupFooterTemplate);
             return self;
         }
         
@@ -67,10 +99,26 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> GroupFooterTemplate<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.DataTemplate groupFooterTemplate)
+            where T : Microsoft.Maui.Controls.GroupableItemsView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.GroupableItemsView.GroupFooterTemplateProperty, Value = groupFooterTemplate });
+            return self;
+        }
+        
+        public static SettersContext<T> GroupFooterTemplate<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.DataTemplate>, IPropertySettersBuilder<Microsoft.Maui.Controls.DataTemplate>> configure)
+            where T : Microsoft.Maui.Controls.GroupableItemsView
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.DataTemplate>(self.XamlSetters, Microsoft.Maui.Controls.GroupableItemsView.GroupFooterTemplateProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T GroupFooterTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.GroupableItemsView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.GroupableItemsView.GroupFooterTemplateProperty, new DataTemplate(loadTemplate));
+            self.SetValue(Microsoft.Maui.Controls.GroupableItemsView.GroupFooterTemplateProperty, new DataTemplate(loadTemplate));
             return self;
         }
         

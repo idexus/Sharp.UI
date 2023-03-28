@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Graphics.Color color)
             where T : Microsoft.Maui.Controls.CheckBox
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.CheckBox.ColorProperty, color);
+            self.SetValue(Microsoft.Maui.Controls.CheckBox.ColorProperty, color);
             return self;
         }
         
@@ -24,6 +24,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.CheckBox
         {
             var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.CheckBox.ColorProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> Color<T>(this SettersContext<T> self,
+            Microsoft.Maui.Graphics.Color color)
+            where T : Microsoft.Maui.Controls.CheckBox
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.CheckBox.ColorProperty, Value = color });
+            return self;
+        }
+        
+        public static SettersContext<T> Color<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
+            where T : Microsoft.Maui.Controls.CheckBox
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.Color>(self.XamlSetters, Microsoft.Maui.Controls.CheckBox.ColorProperty);
             configure(context).Build();
             return self;
         }
@@ -41,7 +57,7 @@ namespace CodeMarkup.Maui
             bool isChecked)
             where T : Microsoft.Maui.Controls.CheckBox
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.CheckBox.IsCheckedProperty, isChecked);
+            self.SetValue(Microsoft.Maui.Controls.CheckBox.IsCheckedProperty, isChecked);
             return self;
         }
         
@@ -49,6 +65,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.CheckBox
         {
             var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.CheckBox.IsCheckedProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> IsChecked<T>(this SettersContext<T> self,
+            bool isChecked)
+            where T : Microsoft.Maui.Controls.CheckBox
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.CheckBox.IsCheckedProperty, Value = isChecked });
+            return self;
+        }
+        
+        public static SettersContext<T> IsChecked<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.CheckBox
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.CheckBox.IsCheckedProperty);
             configure(context).Build();
             return self;
         }

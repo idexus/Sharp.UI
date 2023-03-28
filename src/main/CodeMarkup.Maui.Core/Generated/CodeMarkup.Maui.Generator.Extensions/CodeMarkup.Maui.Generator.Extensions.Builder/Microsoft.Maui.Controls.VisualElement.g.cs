@@ -16,7 +16,6 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Graphics.Rect frame)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property Frame");
             self.Frame = frame;
             return self;
         }
@@ -25,7 +24,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Controls.Shadow shadow)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.VisualElement.ShadowProperty, shadow);
+            self.SetValue(Microsoft.Maui.Controls.VisualElement.ShadowProperty, shadow);
             return self;
         }
         
@@ -37,11 +36,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> Shadow<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.Shadow shadow)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.ShadowProperty, Value = shadow });
+            return self;
+        }
+        
+        public static SettersContext<T> Shadow<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.Shadow>, IPropertySettersBuilder<Microsoft.Maui.Controls.Shadow>> configure)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.Shadow>(self.XamlSetters, Microsoft.Maui.Controls.VisualElement.ShadowProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T ZIndex<T>(this T self,
             int zIndex)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.VisualElement.ZIndexProperty, zIndex);
+            self.SetValue(Microsoft.Maui.Controls.VisualElement.ZIndexProperty, zIndex);
             return self;
         }
         
@@ -53,11 +68,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> ZIndex<T>(this SettersContext<T> self,
+            int zIndex)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.ZIndexProperty, Value = zIndex });
+            return self;
+        }
+        
+        public static SettersContext<T> ZIndex<T>(this SettersContext<T> self, Func<PropertySettersContext<int>, IPropertySettersBuilder<int>> configure)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var context = new PropertySettersContext<int>(self.XamlSetters, Microsoft.Maui.Controls.VisualElement.ZIndexProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T Visual<T>(this T self,
             Microsoft.Maui.Controls.IVisual visual)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.VisualElement.VisualProperty, visual);
+            self.SetValue(Microsoft.Maui.Controls.VisualElement.VisualProperty, visual);
             return self;
         }
         
@@ -69,11 +100,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> Visual<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.IVisual visual)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.VisualProperty, Value = visual });
+            return self;
+        }
+        
+        public static SettersContext<T> Visual<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.IVisual>, IPropertySettersBuilder<Microsoft.Maui.Controls.IVisual>> configure)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.IVisual>(self.XamlSetters, Microsoft.Maui.Controls.VisualElement.VisualProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T FlowDirection<T>(this T self,
             Microsoft.Maui.FlowDirection flowDirection)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.VisualElement.FlowDirectionProperty, flowDirection);
+            self.SetValue(Microsoft.Maui.Controls.VisualElement.FlowDirectionProperty, flowDirection);
             return self;
         }
         
@@ -85,11 +132,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> FlowDirection<T>(this SettersContext<T> self,
+            Microsoft.Maui.FlowDirection flowDirection)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.FlowDirectionProperty, Value = flowDirection });
+            return self;
+        }
+        
+        public static SettersContext<T> FlowDirection<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.FlowDirection>, IPropertySettersBuilder<Microsoft.Maui.FlowDirection>> configure)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.FlowDirection>(self.XamlSetters, Microsoft.Maui.Controls.VisualElement.FlowDirectionProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T AnchorX<T>(this T self,
             double anchorX)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.VisualElement.AnchorXProperty, anchorX);
+            self.SetValue(Microsoft.Maui.Controls.VisualElement.AnchorXProperty, anchorX);
             return self;
         }
         
@@ -97,6 +160,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.VisualElement.AnchorXProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> AnchorX<T>(this SettersContext<T> self,
+            double anchorX)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.AnchorXProperty, Value = anchorX });
+            return self;
+        }
+        
+        public static SettersContext<T> AnchorX<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.VisualElement.AnchorXProperty);
             configure(context).Build();
             return self;
         }
@@ -114,7 +193,7 @@ namespace CodeMarkup.Maui
             double anchorY)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.VisualElement.AnchorYProperty, anchorY);
+            self.SetValue(Microsoft.Maui.Controls.VisualElement.AnchorYProperty, anchorY);
             return self;
         }
         
@@ -122,6 +201,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.VisualElement.AnchorYProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> AnchorY<T>(this SettersContext<T> self,
+            double anchorY)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.AnchorYProperty, Value = anchorY });
+            return self;
+        }
+        
+        public static SettersContext<T> AnchorY<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.VisualElement.AnchorYProperty);
             configure(context).Build();
             return self;
         }
@@ -139,7 +234,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Graphics.Color backgroundColor)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.VisualElement.BackgroundColorProperty, backgroundColor);
+            self.SetValue(Microsoft.Maui.Controls.VisualElement.BackgroundColorProperty, backgroundColor);
             return self;
         }
         
@@ -147,6 +242,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.VisualElement.BackgroundColorProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> BackgroundColor<T>(this SettersContext<T> self,
+            Microsoft.Maui.Graphics.Color backgroundColor)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.BackgroundColorProperty, Value = backgroundColor });
+            return self;
+        }
+        
+        public static SettersContext<T> BackgroundColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.Color>(self.XamlSetters, Microsoft.Maui.Controls.VisualElement.BackgroundColorProperty);
             configure(context).Build();
             return self;
         }
@@ -164,7 +275,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Controls.Brush background)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.VisualElement.BackgroundProperty, background);
+            self.SetValue(Microsoft.Maui.Controls.VisualElement.BackgroundProperty, background);
             return self;
         }
         
@@ -172,6 +283,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var context = new PropertyContext<Microsoft.Maui.Controls.Brush>(self, Microsoft.Maui.Controls.VisualElement.BackgroundProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> Background<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.Brush background)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.BackgroundProperty, Value = background });
+            return self;
+        }
+        
+        public static SettersContext<T> Background<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.Brush>, IPropertySettersBuilder<Microsoft.Maui.Controls.Brush>> configure)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.Brush>(self.XamlSetters, Microsoft.Maui.Controls.VisualElement.BackgroundProperty);
             configure(context).Build();
             return self;
         }
@@ -206,7 +333,7 @@ namespace CodeMarkup.Maui
             double heightRequest)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.VisualElement.HeightRequestProperty, heightRequest);
+            self.SetValue(Microsoft.Maui.Controls.VisualElement.HeightRequestProperty, heightRequest);
             return self;
         }
         
@@ -214,6 +341,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.VisualElement.HeightRequestProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> HeightRequest<T>(this SettersContext<T> self,
+            double heightRequest)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.HeightRequestProperty, Value = heightRequest });
+            return self;
+        }
+        
+        public static SettersContext<T> HeightRequest<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.VisualElement.HeightRequestProperty);
             configure(context).Build();
             return self;
         }
@@ -231,7 +374,7 @@ namespace CodeMarkup.Maui
             bool inputTransparent)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.VisualElement.InputTransparentProperty, inputTransparent);
+            self.SetValue(Microsoft.Maui.Controls.VisualElement.InputTransparentProperty, inputTransparent);
             return self;
         }
         
@@ -243,11 +386,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> InputTransparent<T>(this SettersContext<T> self,
+            bool inputTransparent)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.InputTransparentProperty, Value = inputTransparent });
+            return self;
+        }
+        
+        public static SettersContext<T> InputTransparent<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.VisualElement.InputTransparentProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T IsEnabled<T>(this T self,
             bool isEnabled)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.VisualElement.IsEnabledProperty, isEnabled);
+            self.SetValue(Microsoft.Maui.Controls.VisualElement.IsEnabledProperty, isEnabled);
             return self;
         }
         
@@ -259,11 +418,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> IsEnabled<T>(this SettersContext<T> self,
+            bool isEnabled)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.IsEnabledProperty, Value = isEnabled });
+            return self;
+        }
+        
+        public static SettersContext<T> IsEnabled<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.VisualElement.IsEnabledProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T IsVisible<T>(this T self,
             bool isVisible)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.VisualElement.IsVisibleProperty, isVisible);
+            self.SetValue(Microsoft.Maui.Controls.VisualElement.IsVisibleProperty, isVisible);
             return self;
         }
         
@@ -275,11 +450,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> IsVisible<T>(this SettersContext<T> self,
+            bool isVisible)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.IsVisibleProperty, Value = isVisible });
+            return self;
+        }
+        
+        public static SettersContext<T> IsVisible<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.VisualElement.IsVisibleProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T MinimumHeightRequest<T>(this T self,
             double minimumHeightRequest)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.VisualElement.MinimumHeightRequestProperty, minimumHeightRequest);
+            self.SetValue(Microsoft.Maui.Controls.VisualElement.MinimumHeightRequestProperty, minimumHeightRequest);
             return self;
         }
         
@@ -287,6 +478,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.VisualElement.MinimumHeightRequestProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> MinimumHeightRequest<T>(this SettersContext<T> self,
+            double minimumHeightRequest)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.MinimumHeightRequestProperty, Value = minimumHeightRequest });
+            return self;
+        }
+        
+        public static SettersContext<T> MinimumHeightRequest<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.VisualElement.MinimumHeightRequestProperty);
             configure(context).Build();
             return self;
         }
@@ -304,7 +511,7 @@ namespace CodeMarkup.Maui
             double minimumWidthRequest)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.VisualElement.MinimumWidthRequestProperty, minimumWidthRequest);
+            self.SetValue(Microsoft.Maui.Controls.VisualElement.MinimumWidthRequestProperty, minimumWidthRequest);
             return self;
         }
         
@@ -312,6 +519,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.VisualElement.MinimumWidthRequestProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> MinimumWidthRequest<T>(this SettersContext<T> self,
+            double minimumWidthRequest)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.MinimumWidthRequestProperty, Value = minimumWidthRequest });
+            return self;
+        }
+        
+        public static SettersContext<T> MinimumWidthRequest<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.VisualElement.MinimumWidthRequestProperty);
             configure(context).Build();
             return self;
         }
@@ -329,7 +552,7 @@ namespace CodeMarkup.Maui
             double maximumHeightRequest)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.VisualElement.MaximumHeightRequestProperty, maximumHeightRequest);
+            self.SetValue(Microsoft.Maui.Controls.VisualElement.MaximumHeightRequestProperty, maximumHeightRequest);
             return self;
         }
         
@@ -337,6 +560,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.VisualElement.MaximumHeightRequestProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> MaximumHeightRequest<T>(this SettersContext<T> self,
+            double maximumHeightRequest)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.MaximumHeightRequestProperty, Value = maximumHeightRequest });
+            return self;
+        }
+        
+        public static SettersContext<T> MaximumHeightRequest<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.VisualElement.MaximumHeightRequestProperty);
             configure(context).Build();
             return self;
         }
@@ -354,7 +593,7 @@ namespace CodeMarkup.Maui
             double maximumWidthRequest)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.VisualElement.MaximumWidthRequestProperty, maximumWidthRequest);
+            self.SetValue(Microsoft.Maui.Controls.VisualElement.MaximumWidthRequestProperty, maximumWidthRequest);
             return self;
         }
         
@@ -362,6 +601,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.VisualElement.MaximumWidthRequestProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> MaximumWidthRequest<T>(this SettersContext<T> self,
+            double maximumWidthRequest)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.MaximumWidthRequestProperty, Value = maximumWidthRequest });
+            return self;
+        }
+        
+        public static SettersContext<T> MaximumWidthRequest<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.VisualElement.MaximumWidthRequestProperty);
             configure(context).Build();
             return self;
         }
@@ -379,7 +634,7 @@ namespace CodeMarkup.Maui
             double opacity)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.VisualElement.OpacityProperty, opacity);
+            self.SetValue(Microsoft.Maui.Controls.VisualElement.OpacityProperty, opacity);
             return self;
         }
         
@@ -387,6 +642,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.VisualElement.OpacityProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> Opacity<T>(this SettersContext<T> self,
+            double opacity)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.OpacityProperty, Value = opacity });
+            return self;
+        }
+        
+        public static SettersContext<T> Opacity<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.VisualElement.OpacityProperty);
             configure(context).Build();
             return self;
         }
@@ -404,7 +675,7 @@ namespace CodeMarkup.Maui
             double rotation)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.VisualElement.RotationProperty, rotation);
+            self.SetValue(Microsoft.Maui.Controls.VisualElement.RotationProperty, rotation);
             return self;
         }
         
@@ -412,6 +683,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.VisualElement.RotationProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> Rotation<T>(this SettersContext<T> self,
+            double rotation)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.RotationProperty, Value = rotation });
+            return self;
+        }
+        
+        public static SettersContext<T> Rotation<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.VisualElement.RotationProperty);
             configure(context).Build();
             return self;
         }
@@ -429,7 +716,7 @@ namespace CodeMarkup.Maui
             double rotationX)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.VisualElement.RotationXProperty, rotationX);
+            self.SetValue(Microsoft.Maui.Controls.VisualElement.RotationXProperty, rotationX);
             return self;
         }
         
@@ -437,6 +724,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.VisualElement.RotationXProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> RotationX<T>(this SettersContext<T> self,
+            double rotationX)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.RotationXProperty, Value = rotationX });
+            return self;
+        }
+        
+        public static SettersContext<T> RotationX<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.VisualElement.RotationXProperty);
             configure(context).Build();
             return self;
         }
@@ -454,7 +757,7 @@ namespace CodeMarkup.Maui
             double rotationY)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.VisualElement.RotationYProperty, rotationY);
+            self.SetValue(Microsoft.Maui.Controls.VisualElement.RotationYProperty, rotationY);
             return self;
         }
         
@@ -462,6 +765,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.VisualElement.RotationYProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> RotationY<T>(this SettersContext<T> self,
+            double rotationY)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.RotationYProperty, Value = rotationY });
+            return self;
+        }
+        
+        public static SettersContext<T> RotationY<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.VisualElement.RotationYProperty);
             configure(context).Build();
             return self;
         }
@@ -479,7 +798,7 @@ namespace CodeMarkup.Maui
             double scale)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.VisualElement.ScaleProperty, scale);
+            self.SetValue(Microsoft.Maui.Controls.VisualElement.ScaleProperty, scale);
             return self;
         }
         
@@ -487,6 +806,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.VisualElement.ScaleProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> Scale<T>(this SettersContext<T> self,
+            double scale)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.ScaleProperty, Value = scale });
+            return self;
+        }
+        
+        public static SettersContext<T> Scale<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.VisualElement.ScaleProperty);
             configure(context).Build();
             return self;
         }
@@ -504,7 +839,7 @@ namespace CodeMarkup.Maui
             double scaleX)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.VisualElement.ScaleXProperty, scaleX);
+            self.SetValue(Microsoft.Maui.Controls.VisualElement.ScaleXProperty, scaleX);
             return self;
         }
         
@@ -512,6 +847,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.VisualElement.ScaleXProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> ScaleX<T>(this SettersContext<T> self,
+            double scaleX)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.ScaleXProperty, Value = scaleX });
+            return self;
+        }
+        
+        public static SettersContext<T> ScaleX<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.VisualElement.ScaleXProperty);
             configure(context).Build();
             return self;
         }
@@ -529,7 +880,7 @@ namespace CodeMarkup.Maui
             double scaleY)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.VisualElement.ScaleYProperty, scaleY);
+            self.SetValue(Microsoft.Maui.Controls.VisualElement.ScaleYProperty, scaleY);
             return self;
         }
         
@@ -537,6 +888,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.VisualElement.ScaleYProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> ScaleY<T>(this SettersContext<T> self,
+            double scaleY)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.ScaleYProperty, Value = scaleY });
+            return self;
+        }
+        
+        public static SettersContext<T> ScaleY<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.VisualElement.ScaleYProperty);
             configure(context).Build();
             return self;
         }
@@ -554,7 +921,7 @@ namespace CodeMarkup.Maui
             double translationX)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.VisualElement.TranslationXProperty, translationX);
+            self.SetValue(Microsoft.Maui.Controls.VisualElement.TranslationXProperty, translationX);
             return self;
         }
         
@@ -562,6 +929,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.VisualElement.TranslationXProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> TranslationX<T>(this SettersContext<T> self,
+            double translationX)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.TranslationXProperty, Value = translationX });
+            return self;
+        }
+        
+        public static SettersContext<T> TranslationX<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.VisualElement.TranslationXProperty);
             configure(context).Build();
             return self;
         }
@@ -579,7 +962,7 @@ namespace CodeMarkup.Maui
             double translationY)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.VisualElement.TranslationYProperty, translationY);
+            self.SetValue(Microsoft.Maui.Controls.VisualElement.TranslationYProperty, translationY);
             return self;
         }
         
@@ -587,6 +970,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.VisualElement.TranslationYProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> TranslationY<T>(this SettersContext<T> self,
+            double translationY)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.TranslationYProperty, Value = translationY });
+            return self;
+        }
+        
+        public static SettersContext<T> TranslationY<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.VisualElement.TranslationYProperty);
             configure(context).Build();
             return self;
         }
@@ -630,7 +1029,7 @@ namespace CodeMarkup.Maui
             double widthRequest)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.VisualElement.WidthRequestProperty, widthRequest);
+            self.SetValue(Microsoft.Maui.Controls.VisualElement.WidthRequestProperty, widthRequest);
             return self;
         }
         
@@ -638,6 +1037,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.VisualElement.WidthRequestProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> WidthRequest<T>(this SettersContext<T> self,
+            double widthRequest)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.WidthRequestProperty, Value = widthRequest });
+            return self;
+        }
+        
+        public static SettersContext<T> WidthRequest<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.VisualElement.WidthRequestProperty);
             configure(context).Build();
             return self;
         }
@@ -655,7 +1070,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Controls.Shapes.Geometry clip)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.VisualElement.ClipProperty, clip);
+            self.SetValue(Microsoft.Maui.Controls.VisualElement.ClipProperty, clip);
             return self;
         }
         
@@ -667,11 +1082,26 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> Clip<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.Shapes.Geometry clip)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.ClipProperty, Value = clip });
+            return self;
+        }
+        
+        public static SettersContext<T> Clip<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.Shapes.Geometry>, IPropertySettersBuilder<Microsoft.Maui.Controls.Shapes.Geometry>> configure)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.Shapes.Geometry>(self.XamlSetters, Microsoft.Maui.Controls.VisualElement.ClipProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T DisableLayout<T>(this T self,
             bool disableLayout)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property DisableLayout");
             self.DisableLayout = disableLayout;
             return self;
         }
@@ -680,7 +1110,6 @@ namespace CodeMarkup.Maui
             bool isInPlatformLayout)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property IsInPlatformLayout");
             self.IsInPlatformLayout = isInPlatformLayout;
             return self;
         }
@@ -689,7 +1118,6 @@ namespace CodeMarkup.Maui
             bool isPlatformStateConsistent)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property IsPlatformStateConsistent");
             self.IsPlatformStateConsistent = isPlatformStateConsistent;
             return self;
         }
@@ -698,7 +1126,6 @@ namespace CodeMarkup.Maui
             bool isPlatformEnabled)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property IsPlatformEnabled");
             self.IsPlatformEnabled = isPlatformEnabled;
             return self;
         }
@@ -707,7 +1134,6 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Controls.ResourceDictionary resources)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property Resources");
             self.Resources = resources;
             return self;
         }

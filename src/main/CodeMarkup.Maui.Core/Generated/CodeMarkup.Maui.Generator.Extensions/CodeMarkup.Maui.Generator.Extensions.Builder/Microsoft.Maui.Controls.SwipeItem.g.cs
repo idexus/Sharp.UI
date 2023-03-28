@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Graphics.Color backgroundColor)
             where T : Microsoft.Maui.Controls.SwipeItem
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwipeItem.BackgroundColorProperty, backgroundColor);
+            self.SetValue(Microsoft.Maui.Controls.SwipeItem.BackgroundColorProperty, backgroundColor);
             return self;
         }
         
@@ -28,11 +28,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> BackgroundColor<T>(this SettersContext<T> self,
+            Microsoft.Maui.Graphics.Color backgroundColor)
+            where T : Microsoft.Maui.Controls.SwipeItem
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SwipeItem.BackgroundColorProperty, Value = backgroundColor });
+            return self;
+        }
+        
+        public static SettersContext<T> BackgroundColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
+            where T : Microsoft.Maui.Controls.SwipeItem
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.Color>(self.XamlSetters, Microsoft.Maui.Controls.SwipeItem.BackgroundColorProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T IsVisible<T>(this T self,
             bool isVisible)
             where T : Microsoft.Maui.Controls.SwipeItem
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwipeItem.IsVisibleProperty, isVisible);
+            self.SetValue(Microsoft.Maui.Controls.SwipeItem.IsVisibleProperty, isVisible);
             return self;
         }
         
@@ -40,6 +56,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.SwipeItem
         {
             var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.SwipeItem.IsVisibleProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> IsVisible<T>(this SettersContext<T> self,
+            bool isVisible)
+            where T : Microsoft.Maui.Controls.SwipeItem
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SwipeItem.IsVisibleProperty, Value = isVisible });
+            return self;
+        }
+        
+        public static SettersContext<T> IsVisible<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.SwipeItem
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.SwipeItem.IsVisibleProperty);
             configure(context).Build();
             return self;
         }

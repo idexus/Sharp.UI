@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Controls.ShellContent currentItem)
             where T : Microsoft.Maui.Controls.ShellSection
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ShellSection.CurrentItemProperty, currentItem);
+            self.SetValue(Microsoft.Maui.Controls.ShellSection.CurrentItemProperty, currentItem);
             return self;
         }
         
@@ -24,6 +24,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.ShellSection
         {
             var context = new PropertyContext<Microsoft.Maui.Controls.ShellContent>(self, Microsoft.Maui.Controls.ShellSection.CurrentItemProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> CurrentItem<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.ShellContent currentItem)
+            where T : Microsoft.Maui.Controls.ShellSection
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ShellSection.CurrentItemProperty, Value = currentItem });
+            return self;
+        }
+        
+        public static SettersContext<T> CurrentItem<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.ShellContent>, IPropertySettersBuilder<Microsoft.Maui.Controls.ShellContent>> configure)
+            where T : Microsoft.Maui.Controls.ShellSection
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.ShellContent>(self.XamlSetters, Microsoft.Maui.Controls.ShellSection.CurrentItemProperty);
             configure(context).Build();
             return self;
         }

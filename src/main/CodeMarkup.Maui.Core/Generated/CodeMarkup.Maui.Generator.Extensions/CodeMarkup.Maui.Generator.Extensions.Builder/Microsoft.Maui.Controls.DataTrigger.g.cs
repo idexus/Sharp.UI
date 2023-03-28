@@ -15,7 +15,6 @@ namespace CodeMarkup.Maui
         public static Microsoft.Maui.Controls.DataTrigger Binding(this Microsoft.Maui.Controls.DataTrigger self,
             Microsoft.Maui.Controls.BindingBase binding)
         {
-            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property Binding");
             self.Binding = binding;
             return self;
         }
@@ -39,7 +38,6 @@ namespace CodeMarkup.Maui
         public static Microsoft.Maui.Controls.DataTrigger Value(this Microsoft.Maui.Controls.DataTrigger self,
             object value)
         {
-            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property Value");
             self.Value = value;
             return self;
         }

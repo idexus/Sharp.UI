@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Keyboard keyboard)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.KeyboardProperty, keyboard);
+            self.SetValue(Microsoft.Maui.Controls.SearchHandler.KeyboardProperty, keyboard);
             return self;
         }
         
@@ -28,11 +28,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> Keyboard<T>(this SettersContext<T> self,
+            Microsoft.Maui.Keyboard keyboard)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.KeyboardProperty, Value = keyboard });
+            return self;
+        }
+        
+        public static SettersContext<T> Keyboard<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Keyboard>, IPropertySettersBuilder<Microsoft.Maui.Keyboard>> configure)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Keyboard>(self.XamlSetters, Microsoft.Maui.Controls.SearchHandler.KeyboardProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T HorizontalTextAlignment<T>(this T self,
             Microsoft.Maui.TextAlignment horizontalTextAlignment)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.HorizontalTextAlignmentProperty, horizontalTextAlignment);
+            self.SetValue(Microsoft.Maui.Controls.SearchHandler.HorizontalTextAlignmentProperty, horizontalTextAlignment);
             return self;
         }
         
@@ -44,11 +60,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> HorizontalTextAlignment<T>(this SettersContext<T> self,
+            Microsoft.Maui.TextAlignment horizontalTextAlignment)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.HorizontalTextAlignmentProperty, Value = horizontalTextAlignment });
+            return self;
+        }
+        
+        public static SettersContext<T> HorizontalTextAlignment<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.TextAlignment>, IPropertySettersBuilder<Microsoft.Maui.TextAlignment>> configure)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.TextAlignment>(self.XamlSetters, Microsoft.Maui.Controls.SearchHandler.HorizontalTextAlignmentProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T VerticalTextAlignment<T>(this T self,
             Microsoft.Maui.TextAlignment verticalTextAlignment)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.VerticalTextAlignmentProperty, verticalTextAlignment);
+            self.SetValue(Microsoft.Maui.Controls.SearchHandler.VerticalTextAlignmentProperty, verticalTextAlignment);
             return self;
         }
         
@@ -60,11 +92,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> VerticalTextAlignment<T>(this SettersContext<T> self,
+            Microsoft.Maui.TextAlignment verticalTextAlignment)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.VerticalTextAlignmentProperty, Value = verticalTextAlignment });
+            return self;
+        }
+        
+        public static SettersContext<T> VerticalTextAlignment<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.TextAlignment>, IPropertySettersBuilder<Microsoft.Maui.TextAlignment>> configure)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.TextAlignment>(self.XamlSetters, Microsoft.Maui.Controls.SearchHandler.VerticalTextAlignmentProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T TextColor<T>(this T self,
             Microsoft.Maui.Graphics.Color textColor)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.TextColorProperty, textColor);
+            self.SetValue(Microsoft.Maui.Controls.SearchHandler.TextColorProperty, textColor);
             return self;
         }
         
@@ -76,11 +124,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> TextColor<T>(this SettersContext<T> self,
+            Microsoft.Maui.Graphics.Color textColor)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.TextColorProperty, Value = textColor });
+            return self;
+        }
+        
+        public static SettersContext<T> TextColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.Color>(self.XamlSetters, Microsoft.Maui.Controls.SearchHandler.TextColorProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T TextTransform<T>(this T self,
             Microsoft.Maui.TextTransform textTransform)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.TextTransformProperty, textTransform);
+            self.SetValue(Microsoft.Maui.Controls.SearchHandler.TextTransformProperty, textTransform);
             return self;
         }
         
@@ -92,11 +156,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> TextTransform<T>(this SettersContext<T> self,
+            Microsoft.Maui.TextTransform textTransform)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.TextTransformProperty, Value = textTransform });
+            return self;
+        }
+        
+        public static SettersContext<T> TextTransform<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.TextTransform>, IPropertySettersBuilder<Microsoft.Maui.TextTransform>> configure)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.TextTransform>(self.XamlSetters, Microsoft.Maui.Controls.SearchHandler.TextTransformProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T CancelButtonColor<T>(this T self,
             Microsoft.Maui.Graphics.Color cancelButtonColor)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.CancelButtonColorProperty, cancelButtonColor);
+            self.SetValue(Microsoft.Maui.Controls.SearchHandler.CancelButtonColorProperty, cancelButtonColor);
             return self;
         }
         
@@ -108,11 +188,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> CancelButtonColor<T>(this SettersContext<T> self,
+            Microsoft.Maui.Graphics.Color cancelButtonColor)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.CancelButtonColorProperty, Value = cancelButtonColor });
+            return self;
+        }
+        
+        public static SettersContext<T> CancelButtonColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.Color>(self.XamlSetters, Microsoft.Maui.Controls.SearchHandler.CancelButtonColorProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T FontAttributes<T>(this T self,
             Microsoft.Maui.Controls.FontAttributes fontAttributes)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.FontAttributesProperty, fontAttributes);
+            self.SetValue(Microsoft.Maui.Controls.SearchHandler.FontAttributesProperty, fontAttributes);
             return self;
         }
         
@@ -124,11 +220,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> FontAttributes<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.FontAttributes fontAttributes)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.FontAttributesProperty, Value = fontAttributes });
+            return self;
+        }
+        
+        public static SettersContext<T> FontAttributes<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.FontAttributes>, IPropertySettersBuilder<Microsoft.Maui.Controls.FontAttributes>> configure)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.FontAttributes>(self.XamlSetters, Microsoft.Maui.Controls.SearchHandler.FontAttributesProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T FontFamily<T>(this T self,
             string fontFamily)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.FontFamilyProperty, fontFamily);
+            self.SetValue(Microsoft.Maui.Controls.SearchHandler.FontFamilyProperty, fontFamily);
             return self;
         }
         
@@ -140,11 +252,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> FontFamily<T>(this SettersContext<T> self,
+            string fontFamily)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.FontFamilyProperty, Value = fontFamily });
+            return self;
+        }
+        
+        public static SettersContext<T> FontFamily<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var context = new PropertySettersContext<string>(self.XamlSetters, Microsoft.Maui.Controls.SearchHandler.FontFamilyProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T CharacterSpacing<T>(this T self,
             double characterSpacing)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.CharacterSpacingProperty, characterSpacing);
+            self.SetValue(Microsoft.Maui.Controls.SearchHandler.CharacterSpacingProperty, characterSpacing);
             return self;
         }
         
@@ -156,11 +284,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> CharacterSpacing<T>(this SettersContext<T> self,
+            double characterSpacing)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.CharacterSpacingProperty, Value = characterSpacing });
+            return self;
+        }
+        
+        public static SettersContext<T> CharacterSpacing<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.SearchHandler.CharacterSpacingProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T FontSize<T>(this T self,
             double fontSize)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.FontSizeProperty, fontSize);
+            self.SetValue(Microsoft.Maui.Controls.SearchHandler.FontSizeProperty, fontSize);
             return self;
         }
         
@@ -172,11 +316,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> FontSize<T>(this SettersContext<T> self,
+            double fontSize)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.FontSizeProperty, Value = fontSize });
+            return self;
+        }
+        
+        public static SettersContext<T> FontSize<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.SearchHandler.FontSizeProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T FontAutoScalingEnabled<T>(this T self,
             bool fontAutoScalingEnabled)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.FontAutoScalingEnabledProperty, fontAutoScalingEnabled);
+            self.SetValue(Microsoft.Maui.Controls.SearchHandler.FontAutoScalingEnabledProperty, fontAutoScalingEnabled);
             return self;
         }
         
@@ -188,11 +348,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> FontAutoScalingEnabled<T>(this SettersContext<T> self,
+            bool fontAutoScalingEnabled)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.FontAutoScalingEnabledProperty, Value = fontAutoScalingEnabled });
+            return self;
+        }
+        
+        public static SettersContext<T> FontAutoScalingEnabled<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.SearchHandler.FontAutoScalingEnabledProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T PlaceholderColor<T>(this T self,
             Microsoft.Maui.Graphics.Color placeholderColor)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.PlaceholderColorProperty, placeholderColor);
+            self.SetValue(Microsoft.Maui.Controls.SearchHandler.PlaceholderColorProperty, placeholderColor);
             return self;
         }
         
@@ -204,11 +380,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> PlaceholderColor<T>(this SettersContext<T> self,
+            Microsoft.Maui.Graphics.Color placeholderColor)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.PlaceholderColorProperty, Value = placeholderColor });
+            return self;
+        }
+        
+        public static SettersContext<T> PlaceholderColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.Color>(self.XamlSetters, Microsoft.Maui.Controls.SearchHandler.PlaceholderColorProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T Placeholder<T>(this T self,
             string placeholder)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.PlaceholderProperty, placeholder);
+            self.SetValue(Microsoft.Maui.Controls.SearchHandler.PlaceholderProperty, placeholder);
             return self;
         }
         
@@ -220,11 +412,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> Placeholder<T>(this SettersContext<T> self,
+            string placeholder)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.PlaceholderProperty, Value = placeholder });
+            return self;
+        }
+        
+        public static SettersContext<T> Placeholder<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var context = new PropertySettersContext<string>(self.XamlSetters, Microsoft.Maui.Controls.SearchHandler.PlaceholderProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T BackgroundColor<T>(this T self,
             Microsoft.Maui.Graphics.Color backgroundColor)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.BackgroundColorProperty, backgroundColor);
+            self.SetValue(Microsoft.Maui.Controls.SearchHandler.BackgroundColorProperty, backgroundColor);
             return self;
         }
         
@@ -236,11 +444,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> BackgroundColor<T>(this SettersContext<T> self,
+            Microsoft.Maui.Graphics.Color backgroundColor)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.BackgroundColorProperty, Value = backgroundColor });
+            return self;
+        }
+        
+        public static SettersContext<T> BackgroundColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.Color>(self.XamlSetters, Microsoft.Maui.Controls.SearchHandler.BackgroundColorProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T AutomationId<T>(this T self,
             string automationId)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.AutomationIdProperty, automationId);
+            self.SetValue(Microsoft.Maui.Controls.SearchHandler.AutomationIdProperty, automationId);
             return self;
         }
         
@@ -252,11 +476,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> AutomationId<T>(this SettersContext<T> self,
+            string automationId)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.AutomationIdProperty, Value = automationId });
+            return self;
+        }
+        
+        public static SettersContext<T> AutomationId<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var context = new PropertySettersContext<string>(self.XamlSetters, Microsoft.Maui.Controls.SearchHandler.AutomationIdProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T ClearIcon<T>(this T self,
             Microsoft.Maui.Controls.ImageSource clearIcon)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.ClearIconProperty, clearIcon);
+            self.SetValue(Microsoft.Maui.Controls.SearchHandler.ClearIconProperty, clearIcon);
             return self;
         }
         
@@ -268,11 +508,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> ClearIcon<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.ImageSource clearIcon)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.ClearIconProperty, Value = clearIcon });
+            return self;
+        }
+        
+        public static SettersContext<T> ClearIcon<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.ImageSource>, IPropertySettersBuilder<Microsoft.Maui.Controls.ImageSource>> configure)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.ImageSource>(self.XamlSetters, Microsoft.Maui.Controls.SearchHandler.ClearIconProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T ClearIconHelpText<T>(this T self,
             string clearIconHelpText)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.ClearIconHelpTextProperty, clearIconHelpText);
+            self.SetValue(Microsoft.Maui.Controls.SearchHandler.ClearIconHelpTextProperty, clearIconHelpText);
             return self;
         }
         
@@ -284,11 +540,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> ClearIconHelpText<T>(this SettersContext<T> self,
+            string clearIconHelpText)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.ClearIconHelpTextProperty, Value = clearIconHelpText });
+            return self;
+        }
+        
+        public static SettersContext<T> ClearIconHelpText<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var context = new PropertySettersContext<string>(self.XamlSetters, Microsoft.Maui.Controls.SearchHandler.ClearIconHelpTextProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T ClearIconName<T>(this T self,
             string clearIconName)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.ClearIconNameProperty, clearIconName);
+            self.SetValue(Microsoft.Maui.Controls.SearchHandler.ClearIconNameProperty, clearIconName);
             return self;
         }
         
@@ -300,11 +572,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> ClearIconName<T>(this SettersContext<T> self,
+            string clearIconName)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.ClearIconNameProperty, Value = clearIconName });
+            return self;
+        }
+        
+        public static SettersContext<T> ClearIconName<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var context = new PropertySettersContext<string>(self.XamlSetters, Microsoft.Maui.Controls.SearchHandler.ClearIconNameProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T ClearPlaceholderCommand<T>(this T self,
             System.Windows.Input.ICommand clearPlaceholderCommand)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderCommandProperty, clearPlaceholderCommand);
+            self.SetValue(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderCommandProperty, clearPlaceholderCommand);
             return self;
         }
         
@@ -316,11 +604,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> ClearPlaceholderCommand<T>(this SettersContext<T> self,
+            System.Windows.Input.ICommand clearPlaceholderCommand)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderCommandProperty, Value = clearPlaceholderCommand });
+            return self;
+        }
+        
+        public static SettersContext<T> ClearPlaceholderCommand<T>(this SettersContext<T> self, Func<PropertySettersContext<System.Windows.Input.ICommand>, IPropertySettersBuilder<System.Windows.Input.ICommand>> configure)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var context = new PropertySettersContext<System.Windows.Input.ICommand>(self.XamlSetters, Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderCommandProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T ClearPlaceholderCommandParameter<T>(this T self,
             object clearPlaceholderCommandParameter)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderCommandParameterProperty, clearPlaceholderCommandParameter);
+            self.SetValue(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderCommandParameterProperty, clearPlaceholderCommandParameter);
             return self;
         }
         
@@ -332,11 +636,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> ClearPlaceholderCommandParameter<T>(this SettersContext<T> self,
+            object clearPlaceholderCommandParameter)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderCommandParameterProperty, Value = clearPlaceholderCommandParameter });
+            return self;
+        }
+        
+        public static SettersContext<T> ClearPlaceholderCommandParameter<T>(this SettersContext<T> self, Func<PropertySettersContext<object>, IPropertySettersBuilder<object>> configure)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var context = new PropertySettersContext<object>(self.XamlSetters, Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderCommandParameterProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T ClearPlaceholderEnabled<T>(this T self,
             bool clearPlaceholderEnabled)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderEnabledProperty, clearPlaceholderEnabled);
+            self.SetValue(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderEnabledProperty, clearPlaceholderEnabled);
             return self;
         }
         
@@ -348,11 +668,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> ClearPlaceholderEnabled<T>(this SettersContext<T> self,
+            bool clearPlaceholderEnabled)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderEnabledProperty, Value = clearPlaceholderEnabled });
+            return self;
+        }
+        
+        public static SettersContext<T> ClearPlaceholderEnabled<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderEnabledProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T ClearPlaceholderHelpText<T>(this T self,
             string clearPlaceholderHelpText)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderHelpTextProperty, clearPlaceholderHelpText);
+            self.SetValue(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderHelpTextProperty, clearPlaceholderHelpText);
             return self;
         }
         
@@ -364,11 +700,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> ClearPlaceholderHelpText<T>(this SettersContext<T> self,
+            string clearPlaceholderHelpText)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderHelpTextProperty, Value = clearPlaceholderHelpText });
+            return self;
+        }
+        
+        public static SettersContext<T> ClearPlaceholderHelpText<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var context = new PropertySettersContext<string>(self.XamlSetters, Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderHelpTextProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T ClearPlaceholderIcon<T>(this T self,
             Microsoft.Maui.Controls.ImageSource clearPlaceholderIcon)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderIconProperty, clearPlaceholderIcon);
+            self.SetValue(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderIconProperty, clearPlaceholderIcon);
             return self;
         }
         
@@ -380,11 +732,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> ClearPlaceholderIcon<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.ImageSource clearPlaceholderIcon)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderIconProperty, Value = clearPlaceholderIcon });
+            return self;
+        }
+        
+        public static SettersContext<T> ClearPlaceholderIcon<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.ImageSource>, IPropertySettersBuilder<Microsoft.Maui.Controls.ImageSource>> configure)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.ImageSource>(self.XamlSetters, Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderIconProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T ClearPlaceholderName<T>(this T self,
             string clearPlaceholderName)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderNameProperty, clearPlaceholderName);
+            self.SetValue(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderNameProperty, clearPlaceholderName);
             return self;
         }
         
@@ -396,11 +764,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> ClearPlaceholderName<T>(this SettersContext<T> self,
+            string clearPlaceholderName)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderNameProperty, Value = clearPlaceholderName });
+            return self;
+        }
+        
+        public static SettersContext<T> ClearPlaceholderName<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var context = new PropertySettersContext<string>(self.XamlSetters, Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderNameProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T Command<T>(this T self,
             System.Windows.Input.ICommand command)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.CommandProperty, command);
+            self.SetValue(Microsoft.Maui.Controls.SearchHandler.CommandProperty, command);
             return self;
         }
         
@@ -412,11 +796,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> Command<T>(this SettersContext<T> self,
+            System.Windows.Input.ICommand command)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.CommandProperty, Value = command });
+            return self;
+        }
+        
+        public static SettersContext<T> Command<T>(this SettersContext<T> self, Func<PropertySettersContext<System.Windows.Input.ICommand>, IPropertySettersBuilder<System.Windows.Input.ICommand>> configure)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var context = new PropertySettersContext<System.Windows.Input.ICommand>(self.XamlSetters, Microsoft.Maui.Controls.SearchHandler.CommandProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T CommandParameter<T>(this T self,
             object commandParameter)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.CommandParameterProperty, commandParameter);
+            self.SetValue(Microsoft.Maui.Controls.SearchHandler.CommandParameterProperty, commandParameter);
             return self;
         }
         
@@ -428,11 +828,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> CommandParameter<T>(this SettersContext<T> self,
+            object commandParameter)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.CommandParameterProperty, Value = commandParameter });
+            return self;
+        }
+        
+        public static SettersContext<T> CommandParameter<T>(this SettersContext<T> self, Func<PropertySettersContext<object>, IPropertySettersBuilder<object>> configure)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var context = new PropertySettersContext<object>(self.XamlSetters, Microsoft.Maui.Controls.SearchHandler.CommandParameterProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T DisplayMemberName<T>(this T self,
             string displayMemberName)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.DisplayMemberNameProperty, displayMemberName);
+            self.SetValue(Microsoft.Maui.Controls.SearchHandler.DisplayMemberNameProperty, displayMemberName);
             return self;
         }
         
@@ -444,11 +860,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> DisplayMemberName<T>(this SettersContext<T> self,
+            string displayMemberName)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.DisplayMemberNameProperty, Value = displayMemberName });
+            return self;
+        }
+        
+        public static SettersContext<T> DisplayMemberName<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var context = new PropertySettersContext<string>(self.XamlSetters, Microsoft.Maui.Controls.SearchHandler.DisplayMemberNameProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T IsSearchEnabled<T>(this T self,
             bool isSearchEnabled)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.IsSearchEnabledProperty, isSearchEnabled);
+            self.SetValue(Microsoft.Maui.Controls.SearchHandler.IsSearchEnabledProperty, isSearchEnabled);
             return self;
         }
         
@@ -460,11 +892,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> IsSearchEnabled<T>(this SettersContext<T> self,
+            bool isSearchEnabled)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.IsSearchEnabledProperty, Value = isSearchEnabled });
+            return self;
+        }
+        
+        public static SettersContext<T> IsSearchEnabled<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.SearchHandler.IsSearchEnabledProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T ItemsSource<T>(this T self,
             System.Collections.IEnumerable itemsSource)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.ItemsSourceProperty, itemsSource);
+            self.SetValue(Microsoft.Maui.Controls.SearchHandler.ItemsSourceProperty, itemsSource);
             return self;
         }
         
@@ -476,11 +924,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> ItemsSource<T>(this SettersContext<T> self,
+            System.Collections.IEnumerable itemsSource)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.ItemsSourceProperty, Value = itemsSource });
+            return self;
+        }
+        
+        public static SettersContext<T> ItemsSource<T>(this SettersContext<T> self, Func<PropertySettersContext<System.Collections.IEnumerable>, IPropertySettersBuilder<System.Collections.IEnumerable>> configure)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var context = new PropertySettersContext<System.Collections.IEnumerable>(self.XamlSetters, Microsoft.Maui.Controls.SearchHandler.ItemsSourceProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T ItemTemplate<T>(this T self,
             Microsoft.Maui.Controls.DataTemplate itemTemplate)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.ItemTemplateProperty, itemTemplate);
+            self.SetValue(Microsoft.Maui.Controls.SearchHandler.ItemTemplateProperty, itemTemplate);
             return self;
         }
         
@@ -492,10 +956,26 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> ItemTemplate<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.DataTemplate itemTemplate)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.ItemTemplateProperty, Value = itemTemplate });
+            return self;
+        }
+        
+        public static SettersContext<T> ItemTemplate<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.DataTemplate>, IPropertySettersBuilder<Microsoft.Maui.Controls.DataTemplate>> configure)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.DataTemplate>(self.XamlSetters, Microsoft.Maui.Controls.SearchHandler.ItemTemplateProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T ItemTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.ItemTemplateProperty, new DataTemplate(loadTemplate));
+            self.SetValue(Microsoft.Maui.Controls.SearchHandler.ItemTemplateProperty, new DataTemplate(loadTemplate));
             return self;
         }
         
@@ -503,7 +983,7 @@ namespace CodeMarkup.Maui
             string query)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.QueryProperty, query);
+            self.SetValue(Microsoft.Maui.Controls.SearchHandler.QueryProperty, query);
             return self;
         }
         
@@ -515,11 +995,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> Query<T>(this SettersContext<T> self,
+            string query)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.QueryProperty, Value = query });
+            return self;
+        }
+        
+        public static SettersContext<T> Query<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var context = new PropertySettersContext<string>(self.XamlSetters, Microsoft.Maui.Controls.SearchHandler.QueryProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T QueryIcon<T>(this T self,
             Microsoft.Maui.Controls.ImageSource queryIcon)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.QueryIconProperty, queryIcon);
+            self.SetValue(Microsoft.Maui.Controls.SearchHandler.QueryIconProperty, queryIcon);
             return self;
         }
         
@@ -531,11 +1027,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> QueryIcon<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.ImageSource queryIcon)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.QueryIconProperty, Value = queryIcon });
+            return self;
+        }
+        
+        public static SettersContext<T> QueryIcon<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.ImageSource>, IPropertySettersBuilder<Microsoft.Maui.Controls.ImageSource>> configure)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.ImageSource>(self.XamlSetters, Microsoft.Maui.Controls.SearchHandler.QueryIconProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T QueryIconHelpText<T>(this T self,
             string queryIconHelpText)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.QueryIconHelpTextProperty, queryIconHelpText);
+            self.SetValue(Microsoft.Maui.Controls.SearchHandler.QueryIconHelpTextProperty, queryIconHelpText);
             return self;
         }
         
@@ -547,11 +1059,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> QueryIconHelpText<T>(this SettersContext<T> self,
+            string queryIconHelpText)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.QueryIconHelpTextProperty, Value = queryIconHelpText });
+            return self;
+        }
+        
+        public static SettersContext<T> QueryIconHelpText<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var context = new PropertySettersContext<string>(self.XamlSetters, Microsoft.Maui.Controls.SearchHandler.QueryIconHelpTextProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T QueryIconName<T>(this T self,
             string queryIconName)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.QueryIconNameProperty, queryIconName);
+            self.SetValue(Microsoft.Maui.Controls.SearchHandler.QueryIconNameProperty, queryIconName);
             return self;
         }
         
@@ -563,11 +1091,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> QueryIconName<T>(this SettersContext<T> self,
+            string queryIconName)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.QueryIconNameProperty, Value = queryIconName });
+            return self;
+        }
+        
+        public static SettersContext<T> QueryIconName<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var context = new PropertySettersContext<string>(self.XamlSetters, Microsoft.Maui.Controls.SearchHandler.QueryIconNameProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T SearchBoxVisibility<T>(this T self,
             Microsoft.Maui.Controls.SearchBoxVisibility searchBoxVisibility)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.SearchBoxVisibilityProperty, searchBoxVisibility);
+            self.SetValue(Microsoft.Maui.Controls.SearchHandler.SearchBoxVisibilityProperty, searchBoxVisibility);
             return self;
         }
         
@@ -579,11 +1123,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> SearchBoxVisibility<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.SearchBoxVisibility searchBoxVisibility)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.SearchBoxVisibilityProperty, Value = searchBoxVisibility });
+            return self;
+        }
+        
+        public static SettersContext<T> SearchBoxVisibility<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.SearchBoxVisibility>, IPropertySettersBuilder<Microsoft.Maui.Controls.SearchBoxVisibility>> configure)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.SearchBoxVisibility>(self.XamlSetters, Microsoft.Maui.Controls.SearchHandler.SearchBoxVisibilityProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T ShowsResults<T>(this T self,
             bool showsResults)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SearchHandler.ShowsResultsProperty, showsResults);
+            self.SetValue(Microsoft.Maui.Controls.SearchHandler.ShowsResultsProperty, showsResults);
             return self;
         }
         
@@ -591,6 +1151,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.SearchHandler
         {
             var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.SearchHandler.ShowsResultsProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> ShowsResults<T>(this SettersContext<T> self,
+            bool showsResults)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.ShowsResultsProperty, Value = showsResults });
+            return self;
+        }
+        
+        public static SettersContext<T> ShowsResults<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.SearchHandler
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.SearchHandler.ShowsResultsProperty);
             configure(context).Build();
             return self;
         }

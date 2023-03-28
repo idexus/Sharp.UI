@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             int column)
             where T : Microsoft.Maui.Controls.View
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Grid.ColumnProperty, column);
+            self.SetValue(Microsoft.Maui.Controls.Grid.ColumnProperty, column);
             return self;
         }
         
@@ -24,6 +24,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.View
         {
             var context = new PropertyContext<int>(self, Microsoft.Maui.Controls.Grid.ColumnProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> Column<T>(this SettersContext<T> self,
+            int column)
+            where T : Microsoft.Maui.Controls.View
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Grid.ColumnProperty, Value = column });
+            return self;
+        }
+        
+        public static SettersContext<T> Column<T>(this SettersContext<T> self, Func<PropertySettersContext<int>, IPropertySettersBuilder<int>> configure)
+            where T : Microsoft.Maui.Controls.View
+        {
+            var context = new PropertySettersContext<int>(self.XamlSetters, Microsoft.Maui.Controls.Grid.ColumnProperty);
             configure(context).Build();
             return self;
         }
@@ -38,7 +54,7 @@ namespace CodeMarkup.Maui
             int row)
             where T : Microsoft.Maui.Controls.View
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Grid.RowProperty, row);
+            self.SetValue(Microsoft.Maui.Controls.Grid.RowProperty, row);
             return self;
         }
         
@@ -46,6 +62,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.View
         {
             var context = new PropertyContext<int>(self, Microsoft.Maui.Controls.Grid.RowProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> Row<T>(this SettersContext<T> self,
+            int row)
+            where T : Microsoft.Maui.Controls.View
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Grid.RowProperty, Value = row });
+            return self;
+        }
+        
+        public static SettersContext<T> Row<T>(this SettersContext<T> self, Func<PropertySettersContext<int>, IPropertySettersBuilder<int>> configure)
+            where T : Microsoft.Maui.Controls.View
+        {
+            var context = new PropertySettersContext<int>(self.XamlSetters, Microsoft.Maui.Controls.Grid.RowProperty);
             configure(context).Build();
             return self;
         }
@@ -60,7 +92,7 @@ namespace CodeMarkup.Maui
             int columnSpan)
             where T : Microsoft.Maui.Controls.View
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Grid.ColumnSpanProperty, columnSpan);
+            self.SetValue(Microsoft.Maui.Controls.Grid.ColumnSpanProperty, columnSpan);
             return self;
         }
         
@@ -68,6 +100,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.View
         {
             var context = new PropertyContext<int>(self, Microsoft.Maui.Controls.Grid.ColumnSpanProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> ColumnSpan<T>(this SettersContext<T> self,
+            int columnSpan)
+            where T : Microsoft.Maui.Controls.View
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Grid.ColumnSpanProperty, Value = columnSpan });
+            return self;
+        }
+        
+        public static SettersContext<T> ColumnSpan<T>(this SettersContext<T> self, Func<PropertySettersContext<int>, IPropertySettersBuilder<int>> configure)
+            where T : Microsoft.Maui.Controls.View
+        {
+            var context = new PropertySettersContext<int>(self.XamlSetters, Microsoft.Maui.Controls.Grid.ColumnSpanProperty);
             configure(context).Build();
             return self;
         }
@@ -82,7 +130,7 @@ namespace CodeMarkup.Maui
             int rowSpan)
             where T : Microsoft.Maui.Controls.View
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Grid.RowSpanProperty, rowSpan);
+            self.SetValue(Microsoft.Maui.Controls.Grid.RowSpanProperty, rowSpan);
             return self;
         }
         
@@ -90,6 +138,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.View
         {
             var context = new PropertyContext<int>(self, Microsoft.Maui.Controls.Grid.RowSpanProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> RowSpan<T>(this SettersContext<T> self,
+            int rowSpan)
+            where T : Microsoft.Maui.Controls.View
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Grid.RowSpanProperty, Value = rowSpan });
+            return self;
+        }
+        
+        public static SettersContext<T> RowSpan<T>(this SettersContext<T> self, Func<PropertySettersContext<int>, IPropertySettersBuilder<int>> configure)
+            where T : Microsoft.Maui.Controls.View
+        {
+            var context = new PropertySettersContext<int>(self.XamlSetters, Microsoft.Maui.Controls.Grid.RowSpanProperty);
             configure(context).Build();
             return self;
         }
@@ -104,7 +168,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Layouts.AbsoluteLayoutFlags absoluteLayoutFlags)
             where T : Microsoft.Maui.Controls.View
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.AbsoluteLayout.LayoutFlagsProperty, absoluteLayoutFlags);
+            self.SetValue(Microsoft.Maui.Controls.AbsoluteLayout.LayoutFlagsProperty, absoluteLayoutFlags);
             return self;
         }
         
@@ -112,6 +176,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.View
         {
             var context = new PropertyContext<Microsoft.Maui.Layouts.AbsoluteLayoutFlags>(self, Microsoft.Maui.Controls.AbsoluteLayout.LayoutFlagsProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> AbsoluteLayoutFlags<T>(this SettersContext<T> self,
+            Microsoft.Maui.Layouts.AbsoluteLayoutFlags absoluteLayoutFlags)
+            where T : Microsoft.Maui.Controls.View
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.AbsoluteLayout.LayoutFlagsProperty, Value = absoluteLayoutFlags });
+            return self;
+        }
+        
+        public static SettersContext<T> AbsoluteLayoutFlags<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Layouts.AbsoluteLayoutFlags>, IPropertySettersBuilder<Microsoft.Maui.Layouts.AbsoluteLayoutFlags>> configure)
+            where T : Microsoft.Maui.Controls.View
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Layouts.AbsoluteLayoutFlags>(self.XamlSetters, Microsoft.Maui.Controls.AbsoluteLayout.LayoutFlagsProperty);
             configure(context).Build();
             return self;
         }
@@ -126,7 +206,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Graphics.Rect absoluteLayoutBounds)
             where T : Microsoft.Maui.Controls.View
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.AbsoluteLayout.LayoutBoundsProperty, absoluteLayoutBounds);
+            self.SetValue(Microsoft.Maui.Controls.AbsoluteLayout.LayoutBoundsProperty, absoluteLayoutBounds);
             return self;
         }
         
@@ -134,6 +214,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.View
         {
             var context = new PropertyContext<Microsoft.Maui.Graphics.Rect>(self, Microsoft.Maui.Controls.AbsoluteLayout.LayoutBoundsProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> AbsoluteLayoutBounds<T>(this SettersContext<T> self,
+            Microsoft.Maui.Graphics.Rect absoluteLayoutBounds)
+            where T : Microsoft.Maui.Controls.View
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.AbsoluteLayout.LayoutBoundsProperty, Value = absoluteLayoutBounds });
+            return self;
+        }
+        
+        public static SettersContext<T> AbsoluteLayoutBounds<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Rect>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Rect>> configure)
+            where T : Microsoft.Maui.Controls.View
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.Rect>(self.XamlSetters, Microsoft.Maui.Controls.AbsoluteLayout.LayoutBoundsProperty);
             configure(context).Build();
             return self;
         }

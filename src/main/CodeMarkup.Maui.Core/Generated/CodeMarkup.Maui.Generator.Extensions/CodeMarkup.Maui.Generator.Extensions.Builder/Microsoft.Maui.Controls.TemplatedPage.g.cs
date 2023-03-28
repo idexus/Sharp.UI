@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Controls.ControlTemplate controlTemplate)
             where T : Microsoft.Maui.Controls.TemplatedPage
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.TemplatedPage.ControlTemplateProperty, controlTemplate);
+            self.SetValue(Microsoft.Maui.Controls.TemplatedPage.ControlTemplateProperty, controlTemplate);
             return self;
         }
         
@@ -24,6 +24,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.TemplatedPage
         {
             var context = new PropertyContext<Microsoft.Maui.Controls.ControlTemplate>(self, Microsoft.Maui.Controls.TemplatedPage.ControlTemplateProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> ControlTemplate<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.ControlTemplate controlTemplate)
+            where T : Microsoft.Maui.Controls.TemplatedPage
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.TemplatedPage.ControlTemplateProperty, Value = controlTemplate });
+            return self;
+        }
+        
+        public static SettersContext<T> ControlTemplate<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.ControlTemplate>, IPropertySettersBuilder<Microsoft.Maui.Controls.ControlTemplate>> configure)
+            where T : Microsoft.Maui.Controls.TemplatedPage
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.ControlTemplate>(self.XamlSetters, Microsoft.Maui.Controls.TemplatedPage.ControlTemplateProperty);
             configure(context).Build();
             return self;
         }

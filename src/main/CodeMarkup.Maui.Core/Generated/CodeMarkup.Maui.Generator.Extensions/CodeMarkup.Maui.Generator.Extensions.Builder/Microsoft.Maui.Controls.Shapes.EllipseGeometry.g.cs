@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Graphics.Point center)
             where T : Microsoft.Maui.Controls.Shapes.EllipseGeometry
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.EllipseGeometry.CenterProperty, center);
+            self.SetValue(Microsoft.Maui.Controls.Shapes.EllipseGeometry.CenterProperty, center);
             return self;
         }
         
@@ -28,11 +28,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> Center<T>(this SettersContext<T> self,
+            Microsoft.Maui.Graphics.Point center)
+            where T : Microsoft.Maui.Controls.Shapes.EllipseGeometry
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shapes.EllipseGeometry.CenterProperty, Value = center });
+            return self;
+        }
+        
+        public static SettersContext<T> Center<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Point>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Point>> configure)
+            where T : Microsoft.Maui.Controls.Shapes.EllipseGeometry
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.Point>(self.XamlSetters, Microsoft.Maui.Controls.Shapes.EllipseGeometry.CenterProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T RadiusX<T>(this T self,
             double radiusX)
             where T : Microsoft.Maui.Controls.Shapes.EllipseGeometry
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.EllipseGeometry.RadiusXProperty, radiusX);
+            self.SetValue(Microsoft.Maui.Controls.Shapes.EllipseGeometry.RadiusXProperty, radiusX);
             return self;
         }
         
@@ -44,11 +60,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> RadiusX<T>(this SettersContext<T> self,
+            double radiusX)
+            where T : Microsoft.Maui.Controls.Shapes.EllipseGeometry
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shapes.EllipseGeometry.RadiusXProperty, Value = radiusX });
+            return self;
+        }
+        
+        public static SettersContext<T> RadiusX<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.Shapes.EllipseGeometry
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.Shapes.EllipseGeometry.RadiusXProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T RadiusY<T>(this T self,
             double radiusY)
             where T : Microsoft.Maui.Controls.Shapes.EllipseGeometry
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.EllipseGeometry.RadiusYProperty, radiusY);
+            self.SetValue(Microsoft.Maui.Controls.Shapes.EllipseGeometry.RadiusYProperty, radiusY);
             return self;
         }
         
@@ -56,6 +88,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.Shapes.EllipseGeometry
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Shapes.EllipseGeometry.RadiusYProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> RadiusY<T>(this SettersContext<T> self,
+            double radiusY)
+            where T : Microsoft.Maui.Controls.Shapes.EllipseGeometry
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shapes.EllipseGeometry.RadiusYProperty, Value = radiusY });
+            return self;
+        }
+        
+        public static SettersContext<T> RadiusY<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.Shapes.EllipseGeometry
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.Shapes.EllipseGeometry.RadiusYProperty);
             configure(context).Build();
             return self;
         }

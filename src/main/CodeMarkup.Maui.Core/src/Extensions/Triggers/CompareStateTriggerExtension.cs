@@ -8,7 +8,7 @@ namespace CodeMarkup.Maui
         public static Microsoft.Maui.Controls.CompareStateTrigger Binding(this Microsoft.Maui.Controls.CompareStateTrigger self,
             Func<Binding, Binding> bindingBuilder)
         {            
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.CompareStateTrigger.PropertyProperty, bindingBuilder(new Binding()));
+            self.SetValue(Microsoft.Maui.Controls.CompareStateTrigger.PropertyProperty, bindingBuilder(new Binding()));
             return self;
         }
     }

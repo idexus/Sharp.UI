@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             double threshold)
             where T : Microsoft.Maui.Controls.SwipeView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwipeView.ThresholdProperty, threshold);
+            self.SetValue(Microsoft.Maui.Controls.SwipeView.ThresholdProperty, threshold);
             return self;
         }
         
@@ -24,6 +24,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.SwipeView
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.SwipeView.ThresholdProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> Threshold<T>(this SettersContext<T> self,
+            double threshold)
+            where T : Microsoft.Maui.Controls.SwipeView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SwipeView.ThresholdProperty, Value = threshold });
+            return self;
+        }
+        
+        public static SettersContext<T> Threshold<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.SwipeView
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.SwipeView.ThresholdProperty);
             configure(context).Build();
             return self;
         }

@@ -15,13 +15,27 @@ namespace CodeMarkup.Maui
         public static Microsoft.Maui.Controls.StateTrigger IsActive(this Microsoft.Maui.Controls.StateTrigger self,
             bool isActive)
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.StateTrigger.IsActiveProperty, isActive);
+            self.SetValue(Microsoft.Maui.Controls.StateTrigger.IsActiveProperty, isActive);
             return self;
         }
         
         public static Microsoft.Maui.Controls.StateTrigger IsActive(this Microsoft.Maui.Controls.StateTrigger self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
         {
             var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.StateTrigger.IsActiveProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.StateTrigger> IsActive(this SettersContext<Microsoft.Maui.Controls.StateTrigger> self,
+            bool isActive)
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.StateTrigger.IsActiveProperty, Value = isActive });
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.StateTrigger> IsActive(this SettersContext<Microsoft.Maui.Controls.StateTrigger> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.StateTrigger.IsActiveProperty);
             configure(context).Build();
             return self;
         }

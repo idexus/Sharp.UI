@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             bool allowDrop)
             where T : Microsoft.Maui.Controls.DropGestureRecognizer
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.DropGestureRecognizer.AllowDropProperty, allowDrop);
+            self.SetValue(Microsoft.Maui.Controls.DropGestureRecognizer.AllowDropProperty, allowDrop);
             return self;
         }
         
@@ -28,11 +28,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> AllowDrop<T>(this SettersContext<T> self,
+            bool allowDrop)
+            where T : Microsoft.Maui.Controls.DropGestureRecognizer
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.DropGestureRecognizer.AllowDropProperty, Value = allowDrop });
+            return self;
+        }
+        
+        public static SettersContext<T> AllowDrop<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.DropGestureRecognizer
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.DropGestureRecognizer.AllowDropProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T DragOverCommand<T>(this T self,
             System.Windows.Input.ICommand dragOverCommand)
             where T : Microsoft.Maui.Controls.DropGestureRecognizer
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.DropGestureRecognizer.DragOverCommandProperty, dragOverCommand);
+            self.SetValue(Microsoft.Maui.Controls.DropGestureRecognizer.DragOverCommandProperty, dragOverCommand);
             return self;
         }
         
@@ -44,11 +60,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> DragOverCommand<T>(this SettersContext<T> self,
+            System.Windows.Input.ICommand dragOverCommand)
+            where T : Microsoft.Maui.Controls.DropGestureRecognizer
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.DropGestureRecognizer.DragOverCommandProperty, Value = dragOverCommand });
+            return self;
+        }
+        
+        public static SettersContext<T> DragOverCommand<T>(this SettersContext<T> self, Func<PropertySettersContext<System.Windows.Input.ICommand>, IPropertySettersBuilder<System.Windows.Input.ICommand>> configure)
+            where T : Microsoft.Maui.Controls.DropGestureRecognizer
+        {
+            var context = new PropertySettersContext<System.Windows.Input.ICommand>(self.XamlSetters, Microsoft.Maui.Controls.DropGestureRecognizer.DragOverCommandProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T DragOverCommandParameter<T>(this T self,
             object dragOverCommandParameter)
             where T : Microsoft.Maui.Controls.DropGestureRecognizer
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.DropGestureRecognizer.DragOverCommandParameterProperty, dragOverCommandParameter);
+            self.SetValue(Microsoft.Maui.Controls.DropGestureRecognizer.DragOverCommandParameterProperty, dragOverCommandParameter);
             return self;
         }
         
@@ -60,11 +92,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> DragOverCommandParameter<T>(this SettersContext<T> self,
+            object dragOverCommandParameter)
+            where T : Microsoft.Maui.Controls.DropGestureRecognizer
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.DropGestureRecognizer.DragOverCommandParameterProperty, Value = dragOverCommandParameter });
+            return self;
+        }
+        
+        public static SettersContext<T> DragOverCommandParameter<T>(this SettersContext<T> self, Func<PropertySettersContext<object>, IPropertySettersBuilder<object>> configure)
+            where T : Microsoft.Maui.Controls.DropGestureRecognizer
+        {
+            var context = new PropertySettersContext<object>(self.XamlSetters, Microsoft.Maui.Controls.DropGestureRecognizer.DragOverCommandParameterProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T DragLeaveCommand<T>(this T self,
             System.Windows.Input.ICommand dragLeaveCommand)
             where T : Microsoft.Maui.Controls.DropGestureRecognizer
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.DropGestureRecognizer.DragLeaveCommandProperty, dragLeaveCommand);
+            self.SetValue(Microsoft.Maui.Controls.DropGestureRecognizer.DragLeaveCommandProperty, dragLeaveCommand);
             return self;
         }
         
@@ -76,11 +124,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> DragLeaveCommand<T>(this SettersContext<T> self,
+            System.Windows.Input.ICommand dragLeaveCommand)
+            where T : Microsoft.Maui.Controls.DropGestureRecognizer
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.DropGestureRecognizer.DragLeaveCommandProperty, Value = dragLeaveCommand });
+            return self;
+        }
+        
+        public static SettersContext<T> DragLeaveCommand<T>(this SettersContext<T> self, Func<PropertySettersContext<System.Windows.Input.ICommand>, IPropertySettersBuilder<System.Windows.Input.ICommand>> configure)
+            where T : Microsoft.Maui.Controls.DropGestureRecognizer
+        {
+            var context = new PropertySettersContext<System.Windows.Input.ICommand>(self.XamlSetters, Microsoft.Maui.Controls.DropGestureRecognizer.DragLeaveCommandProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T DragLeaveCommandParameter<T>(this T self,
             object dragLeaveCommandParameter)
             where T : Microsoft.Maui.Controls.DropGestureRecognizer
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.DropGestureRecognizer.DragLeaveCommandParameterProperty, dragLeaveCommandParameter);
+            self.SetValue(Microsoft.Maui.Controls.DropGestureRecognizer.DragLeaveCommandParameterProperty, dragLeaveCommandParameter);
             return self;
         }
         
@@ -92,11 +156,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> DragLeaveCommandParameter<T>(this SettersContext<T> self,
+            object dragLeaveCommandParameter)
+            where T : Microsoft.Maui.Controls.DropGestureRecognizer
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.DropGestureRecognizer.DragLeaveCommandParameterProperty, Value = dragLeaveCommandParameter });
+            return self;
+        }
+        
+        public static SettersContext<T> DragLeaveCommandParameter<T>(this SettersContext<T> self, Func<PropertySettersContext<object>, IPropertySettersBuilder<object>> configure)
+            where T : Microsoft.Maui.Controls.DropGestureRecognizer
+        {
+            var context = new PropertySettersContext<object>(self.XamlSetters, Microsoft.Maui.Controls.DropGestureRecognizer.DragLeaveCommandParameterProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T DropCommand<T>(this T self,
             System.Windows.Input.ICommand dropCommand)
             where T : Microsoft.Maui.Controls.DropGestureRecognizer
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.DropGestureRecognizer.DropCommandProperty, dropCommand);
+            self.SetValue(Microsoft.Maui.Controls.DropGestureRecognizer.DropCommandProperty, dropCommand);
             return self;
         }
         
@@ -108,11 +188,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> DropCommand<T>(this SettersContext<T> self,
+            System.Windows.Input.ICommand dropCommand)
+            where T : Microsoft.Maui.Controls.DropGestureRecognizer
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.DropGestureRecognizer.DropCommandProperty, Value = dropCommand });
+            return self;
+        }
+        
+        public static SettersContext<T> DropCommand<T>(this SettersContext<T> self, Func<PropertySettersContext<System.Windows.Input.ICommand>, IPropertySettersBuilder<System.Windows.Input.ICommand>> configure)
+            where T : Microsoft.Maui.Controls.DropGestureRecognizer
+        {
+            var context = new PropertySettersContext<System.Windows.Input.ICommand>(self.XamlSetters, Microsoft.Maui.Controls.DropGestureRecognizer.DropCommandProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T DropCommandParameter<T>(this T self,
             object dropCommandParameter)
             where T : Microsoft.Maui.Controls.DropGestureRecognizer
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.DropGestureRecognizer.DropCommandParameterProperty, dropCommandParameter);
+            self.SetValue(Microsoft.Maui.Controls.DropGestureRecognizer.DropCommandParameterProperty, dropCommandParameter);
             return self;
         }
         
@@ -120,6 +216,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.DropGestureRecognizer
         {
             var context = new PropertyContext<object>(self, Microsoft.Maui.Controls.DropGestureRecognizer.DropCommandParameterProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> DropCommandParameter<T>(this SettersContext<T> self,
+            object dropCommandParameter)
+            where T : Microsoft.Maui.Controls.DropGestureRecognizer
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.DropGestureRecognizer.DropCommandParameterProperty, Value = dropCommandParameter });
+            return self;
+        }
+        
+        public static SettersContext<T> DropCommandParameter<T>(this SettersContext<T> self, Func<PropertySettersContext<object>, IPropertySettersBuilder<object>> configure)
+            where T : Microsoft.Maui.Controls.DropGestureRecognizer
+        {
+            var context = new PropertySettersContext<object>(self.XamlSetters, Microsoft.Maui.Controls.DropGestureRecognizer.DropCommandParameterProperty);
             configure(context).Build();
             return self;
         }

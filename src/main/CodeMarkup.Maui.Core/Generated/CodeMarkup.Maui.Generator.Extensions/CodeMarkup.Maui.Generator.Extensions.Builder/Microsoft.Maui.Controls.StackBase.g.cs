@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             double spacing)
             where T : Microsoft.Maui.Controls.StackBase
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.StackBase.SpacingProperty, spacing);
+            self.SetValue(Microsoft.Maui.Controls.StackBase.SpacingProperty, spacing);
             return self;
         }
         
@@ -24,6 +24,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.StackBase
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.StackBase.SpacingProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> Spacing<T>(this SettersContext<T> self,
+            double spacing)
+            where T : Microsoft.Maui.Controls.StackBase
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.StackBase.SpacingProperty, Value = spacing });
+            return self;
+        }
+        
+        public static SettersContext<T> Spacing<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.StackBase
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.StackBase.SpacingProperty);
             configure(context).Build();
             return self;
         }

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFrameworks>net7.0;net7.0-maccatalyst;net7.0-ios;net7.0-android</TargetFrameworks>
@@ -17,7 +17,7 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 
 		<PackageId>CodeMarkup.Maui</PackageId>
-		<Version>0.5.1-alpha</Version>
+		<Version>0.6.0-alpha</Version>
 		<Authors>Pawel Krzywdzinski</Authors>
 		<Copyright>Pawel Krzywdzinski</Copyright>
 		<PackageDescription>C# Code Markup Library for .NET MAUI: Code-Only UI Development with Fluent Methods and Hot Reload</PackageDescription>

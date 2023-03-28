@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             bool hasUnevenRows)
             where T : Microsoft.Maui.Controls.TableView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.TableView.HasUnevenRowsProperty, hasUnevenRows);
+            self.SetValue(Microsoft.Maui.Controls.TableView.HasUnevenRowsProperty, hasUnevenRows);
             return self;
         }
         
@@ -28,11 +28,26 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> HasUnevenRows<T>(this SettersContext<T> self,
+            bool hasUnevenRows)
+            where T : Microsoft.Maui.Controls.TableView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.TableView.HasUnevenRowsProperty, Value = hasUnevenRows });
+            return self;
+        }
+        
+        public static SettersContext<T> HasUnevenRows<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.TableView
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.TableView.HasUnevenRowsProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T Intent<T>(this T self,
             Microsoft.Maui.Controls.TableIntent intent)
             where T : Microsoft.Maui.Controls.TableView
         {
-            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property Intent");
             self.Intent = intent;
             return self;
         }
@@ -59,7 +74,7 @@ namespace CodeMarkup.Maui
             int rowHeight)
             where T : Microsoft.Maui.Controls.TableView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.TableView.RowHeightProperty, rowHeight);
+            self.SetValue(Microsoft.Maui.Controls.TableView.RowHeightProperty, rowHeight);
             return self;
         }
         
@@ -71,11 +86,26 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> RowHeight<T>(this SettersContext<T> self,
+            int rowHeight)
+            where T : Microsoft.Maui.Controls.TableView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.TableView.RowHeightProperty, Value = rowHeight });
+            return self;
+        }
+        
+        public static SettersContext<T> RowHeight<T>(this SettersContext<T> self, Func<PropertySettersContext<int>, IPropertySettersBuilder<int>> configure)
+            where T : Microsoft.Maui.Controls.TableView
+        {
+            var context = new PropertySettersContext<int>(self.XamlSetters, Microsoft.Maui.Controls.TableView.RowHeightProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T Model<T>(this T self,
             Microsoft.Maui.Controls.Internals.TableModel model)
             where T : Microsoft.Maui.Controls.TableView
         {
-            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property Model");
             self.Model = model;
             return self;
         }

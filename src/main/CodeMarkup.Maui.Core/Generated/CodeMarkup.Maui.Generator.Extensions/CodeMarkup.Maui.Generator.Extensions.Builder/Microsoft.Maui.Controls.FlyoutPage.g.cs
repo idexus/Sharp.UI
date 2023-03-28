@@ -16,7 +16,6 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Controls.Page detail)
             where T : Microsoft.Maui.Controls.FlyoutPage
         {
-            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property Detail");
             self.Detail = detail;
             return self;
         }
@@ -25,7 +24,7 @@ namespace CodeMarkup.Maui
             bool isGestureEnabled)
             where T : Microsoft.Maui.Controls.FlyoutPage
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.FlyoutPage.IsGestureEnabledProperty, isGestureEnabled);
+            self.SetValue(Microsoft.Maui.Controls.FlyoutPage.IsGestureEnabledProperty, isGestureEnabled);
             return self;
         }
         
@@ -37,11 +36,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> IsGestureEnabled<T>(this SettersContext<T> self,
+            bool isGestureEnabled)
+            where T : Microsoft.Maui.Controls.FlyoutPage
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.FlyoutPage.IsGestureEnabledProperty, Value = isGestureEnabled });
+            return self;
+        }
+        
+        public static SettersContext<T> IsGestureEnabled<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.FlyoutPage
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.FlyoutPage.IsGestureEnabledProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T IsPresented<T>(this T self,
             bool isPresented)
             where T : Microsoft.Maui.Controls.FlyoutPage
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.FlyoutPage.IsPresentedProperty, isPresented);
+            self.SetValue(Microsoft.Maui.Controls.FlyoutPage.IsPresentedProperty, isPresented);
             return self;
         }
         
@@ -53,11 +68,26 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> IsPresented<T>(this SettersContext<T> self,
+            bool isPresented)
+            where T : Microsoft.Maui.Controls.FlyoutPage
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.FlyoutPage.IsPresentedProperty, Value = isPresented });
+            return self;
+        }
+        
+        public static SettersContext<T> IsPresented<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.FlyoutPage
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.FlyoutPage.IsPresentedProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T Flyout<T>(this T self,
             Microsoft.Maui.Controls.Page flyout)
             where T : Microsoft.Maui.Controls.FlyoutPage
         {
-            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property Flyout");
             self.Flyout = flyout;
             return self;
         }
@@ -66,7 +96,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Controls.FlyoutLayoutBehavior flyoutLayoutBehavior)
             where T : Microsoft.Maui.Controls.FlyoutPage
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.FlyoutPage.FlyoutLayoutBehaviorProperty, flyoutLayoutBehavior);
+            self.SetValue(Microsoft.Maui.Controls.FlyoutPage.FlyoutLayoutBehaviorProperty, flyoutLayoutBehavior);
             return self;
         }
         
@@ -74,6 +104,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.FlyoutPage
         {
             var context = new PropertyContext<Microsoft.Maui.Controls.FlyoutLayoutBehavior>(self, Microsoft.Maui.Controls.FlyoutPage.FlyoutLayoutBehaviorProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> FlyoutLayoutBehavior<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.FlyoutLayoutBehavior flyoutLayoutBehavior)
+            where T : Microsoft.Maui.Controls.FlyoutPage
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.FlyoutPage.FlyoutLayoutBehaviorProperty, Value = flyoutLayoutBehavior });
+            return self;
+        }
+        
+        public static SettersContext<T> FlyoutLayoutBehavior<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.FlyoutLayoutBehavior>, IPropertySettersBuilder<Microsoft.Maui.Controls.FlyoutLayoutBehavior>> configure)
+            where T : Microsoft.Maui.Controls.FlyoutPage
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.FlyoutLayoutBehavior>(self.XamlSetters, Microsoft.Maui.Controls.FlyoutPage.FlyoutLayoutBehaviorProperty);
             configure(context).Build();
             return self;
         }

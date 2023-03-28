@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             System.Collections.IEnumerable itemsSource)
             where T : Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.ItemsSourceProperty, itemsSource);
+            self.SetValue(Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.ItemsSourceProperty, itemsSource);
             return self;
         }
         
@@ -28,11 +28,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> ItemsSource<T>(this SettersContext<T> self,
+            System.Collections.IEnumerable itemsSource)
+            where T : Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.ItemsSourceProperty, Value = itemsSource });
+            return self;
+        }
+        
+        public static SettersContext<T> ItemsSource<T>(this SettersContext<T> self, Func<PropertySettersContext<System.Collections.IEnumerable>, IPropertySettersBuilder<System.Collections.IEnumerable>> configure)
+            where T : Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>
+        {
+            var context = new PropertySettersContext<System.Collections.IEnumerable>(self.XamlSetters, Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.ItemsSourceProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T ItemTemplate<T>(this T self,
             Microsoft.Maui.Controls.DataTemplate itemTemplate)
             where T : Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.ItemTemplateProperty, itemTemplate);
+            self.SetValue(Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.ItemTemplateProperty, itemTemplate);
             return self;
         }
         
@@ -44,10 +60,26 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> ItemTemplate<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.DataTemplate itemTemplate)
+            where T : Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.ItemTemplateProperty, Value = itemTemplate });
+            return self;
+        }
+        
+        public static SettersContext<T> ItemTemplate<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.DataTemplate>, IPropertySettersBuilder<Microsoft.Maui.Controls.DataTemplate>> configure)
+            where T : Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.DataTemplate>(self.XamlSetters, Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.ItemTemplateProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T ItemTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.ItemTemplateProperty, new DataTemplate(loadTemplate));
+            self.SetValue(Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.ItemTemplateProperty, new DataTemplate(loadTemplate));
             return self;
         }
         
@@ -55,7 +87,7 @@ namespace CodeMarkup.Maui
             object selectedItem)
             where T : Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.SelectedItemProperty, selectedItem);
+            self.SetValue(Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.SelectedItemProperty, selectedItem);
             return self;
         }
         
@@ -67,11 +99,26 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> SelectedItem<T>(this SettersContext<T> self,
+            object selectedItem)
+            where T : Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.SelectedItemProperty, Value = selectedItem });
+            return self;
+        }
+        
+        public static SettersContext<T> SelectedItem<T>(this SettersContext<T> self, Func<PropertySettersContext<object>, IPropertySettersBuilder<object>> configure)
+            where T : Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>
+        {
+            var context = new PropertySettersContext<object>(self.XamlSetters, Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>.SelectedItemProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T CurrentPage<T>(this T self,
             Microsoft.Maui.Controls.Page currentPage)
             where T : Microsoft.Maui.Controls.MultiPage<Microsoft.Maui.Controls.Page>
         {
-            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property CurrentPage");
             self.CurrentPage = currentPage;
             return self;
         }

@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             System.DateTime date)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.DatePicker.DateProperty, date);
+            self.SetValue(Microsoft.Maui.Controls.DatePicker.DateProperty, date);
             return self;
         }
         
@@ -28,11 +28,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> Date<T>(this SettersContext<T> self,
+            System.DateTime date)
+            where T : Microsoft.Maui.Controls.DatePicker
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.DatePicker.DateProperty, Value = date });
+            return self;
+        }
+        
+        public static SettersContext<T> Date<T>(this SettersContext<T> self, Func<PropertySettersContext<System.DateTime>, IPropertySettersBuilder<System.DateTime>> configure)
+            where T : Microsoft.Maui.Controls.DatePicker
+        {
+            var context = new PropertySettersContext<System.DateTime>(self.XamlSetters, Microsoft.Maui.Controls.DatePicker.DateProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T Format<T>(this T self,
             string format)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.DatePicker.FormatProperty, format);
+            self.SetValue(Microsoft.Maui.Controls.DatePicker.FormatProperty, format);
             return self;
         }
         
@@ -44,11 +60,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> Format<T>(this SettersContext<T> self,
+            string format)
+            where T : Microsoft.Maui.Controls.DatePicker
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.DatePicker.FormatProperty, Value = format });
+            return self;
+        }
+        
+        public static SettersContext<T> Format<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
+            where T : Microsoft.Maui.Controls.DatePicker
+        {
+            var context = new PropertySettersContext<string>(self.XamlSetters, Microsoft.Maui.Controls.DatePicker.FormatProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T MaximumDate<T>(this T self,
             System.DateTime maximumDate)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.DatePicker.MaximumDateProperty, maximumDate);
+            self.SetValue(Microsoft.Maui.Controls.DatePicker.MaximumDateProperty, maximumDate);
             return self;
         }
         
@@ -60,11 +92,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> MaximumDate<T>(this SettersContext<T> self,
+            System.DateTime maximumDate)
+            where T : Microsoft.Maui.Controls.DatePicker
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.DatePicker.MaximumDateProperty, Value = maximumDate });
+            return self;
+        }
+        
+        public static SettersContext<T> MaximumDate<T>(this SettersContext<T> self, Func<PropertySettersContext<System.DateTime>, IPropertySettersBuilder<System.DateTime>> configure)
+            where T : Microsoft.Maui.Controls.DatePicker
+        {
+            var context = new PropertySettersContext<System.DateTime>(self.XamlSetters, Microsoft.Maui.Controls.DatePicker.MaximumDateProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T MinimumDate<T>(this T self,
             System.DateTime minimumDate)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.DatePicker.MinimumDateProperty, minimumDate);
+            self.SetValue(Microsoft.Maui.Controls.DatePicker.MinimumDateProperty, minimumDate);
             return self;
         }
         
@@ -76,11 +124,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> MinimumDate<T>(this SettersContext<T> self,
+            System.DateTime minimumDate)
+            where T : Microsoft.Maui.Controls.DatePicker
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.DatePicker.MinimumDateProperty, Value = minimumDate });
+            return self;
+        }
+        
+        public static SettersContext<T> MinimumDate<T>(this SettersContext<T> self, Func<PropertySettersContext<System.DateTime>, IPropertySettersBuilder<System.DateTime>> configure)
+            where T : Microsoft.Maui.Controls.DatePicker
+        {
+            var context = new PropertySettersContext<System.DateTime>(self.XamlSetters, Microsoft.Maui.Controls.DatePicker.MinimumDateProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T TextColor<T>(this T self,
             Microsoft.Maui.Graphics.Color textColor)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.DatePicker.TextColorProperty, textColor);
+            self.SetValue(Microsoft.Maui.Controls.DatePicker.TextColorProperty, textColor);
             return self;
         }
         
@@ -88,6 +152,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.DatePicker
         {
             var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.DatePicker.TextColorProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> TextColor<T>(this SettersContext<T> self,
+            Microsoft.Maui.Graphics.Color textColor)
+            where T : Microsoft.Maui.Controls.DatePicker
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.DatePicker.TextColorProperty, Value = textColor });
+            return self;
+        }
+        
+        public static SettersContext<T> TextColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
+            where T : Microsoft.Maui.Controls.DatePicker
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.Color>(self.XamlSetters, Microsoft.Maui.Controls.DatePicker.TextColorProperty);
             configure(context).Build();
             return self;
         }
@@ -105,7 +185,7 @@ namespace CodeMarkup.Maui
             double characterSpacing)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.DatePicker.CharacterSpacingProperty, characterSpacing);
+            self.SetValue(Microsoft.Maui.Controls.DatePicker.CharacterSpacingProperty, characterSpacing);
             return self;
         }
         
@@ -113,6 +193,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.DatePicker
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.DatePicker.CharacterSpacingProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> CharacterSpacing<T>(this SettersContext<T> self,
+            double characterSpacing)
+            where T : Microsoft.Maui.Controls.DatePicker
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.DatePicker.CharacterSpacingProperty, Value = characterSpacing });
+            return self;
+        }
+        
+        public static SettersContext<T> CharacterSpacing<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.DatePicker
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.DatePicker.CharacterSpacingProperty);
             configure(context).Build();
             return self;
         }
@@ -130,7 +226,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Controls.FontAttributes fontAttributes)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.DatePicker.FontAttributesProperty, fontAttributes);
+            self.SetValue(Microsoft.Maui.Controls.DatePicker.FontAttributesProperty, fontAttributes);
             return self;
         }
         
@@ -142,11 +238,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> FontAttributes<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.FontAttributes fontAttributes)
+            where T : Microsoft.Maui.Controls.DatePicker
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.DatePicker.FontAttributesProperty, Value = fontAttributes });
+            return self;
+        }
+        
+        public static SettersContext<T> FontAttributes<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.FontAttributes>, IPropertySettersBuilder<Microsoft.Maui.Controls.FontAttributes>> configure)
+            where T : Microsoft.Maui.Controls.DatePicker
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.FontAttributes>(self.XamlSetters, Microsoft.Maui.Controls.DatePicker.FontAttributesProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T FontFamily<T>(this T self,
             string fontFamily)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.DatePicker.FontFamilyProperty, fontFamily);
+            self.SetValue(Microsoft.Maui.Controls.DatePicker.FontFamilyProperty, fontFamily);
             return self;
         }
         
@@ -158,11 +270,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> FontFamily<T>(this SettersContext<T> self,
+            string fontFamily)
+            where T : Microsoft.Maui.Controls.DatePicker
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.DatePicker.FontFamilyProperty, Value = fontFamily });
+            return self;
+        }
+        
+        public static SettersContext<T> FontFamily<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
+            where T : Microsoft.Maui.Controls.DatePicker
+        {
+            var context = new PropertySettersContext<string>(self.XamlSetters, Microsoft.Maui.Controls.DatePicker.FontFamilyProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T FontSize<T>(this T self,
             double fontSize)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.DatePicker.FontSizeProperty, fontSize);
+            self.SetValue(Microsoft.Maui.Controls.DatePicker.FontSizeProperty, fontSize);
             return self;
         }
         
@@ -170,6 +298,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.DatePicker
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.DatePicker.FontSizeProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> FontSize<T>(this SettersContext<T> self,
+            double fontSize)
+            where T : Microsoft.Maui.Controls.DatePicker
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.DatePicker.FontSizeProperty, Value = fontSize });
+            return self;
+        }
+        
+        public static SettersContext<T> FontSize<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.DatePicker
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.DatePicker.FontSizeProperty);
             configure(context).Build();
             return self;
         }
@@ -187,7 +331,7 @@ namespace CodeMarkup.Maui
             bool fontAutoScalingEnabled)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.DatePicker.FontAutoScalingEnabledProperty, fontAutoScalingEnabled);
+            self.SetValue(Microsoft.Maui.Controls.DatePicker.FontAutoScalingEnabledProperty, fontAutoScalingEnabled);
             return self;
         }
         
@@ -195,6 +339,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.DatePicker
         {
             var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.DatePicker.FontAutoScalingEnabledProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> FontAutoScalingEnabled<T>(this SettersContext<T> self,
+            bool fontAutoScalingEnabled)
+            where T : Microsoft.Maui.Controls.DatePicker
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.DatePicker.FontAutoScalingEnabledProperty, Value = fontAutoScalingEnabled });
+            return self;
+        }
+        
+        public static SettersContext<T> FontAutoScalingEnabled<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.DatePicker
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.DatePicker.FontAutoScalingEnabledProperty);
             configure(context).Build();
             return self;
         }

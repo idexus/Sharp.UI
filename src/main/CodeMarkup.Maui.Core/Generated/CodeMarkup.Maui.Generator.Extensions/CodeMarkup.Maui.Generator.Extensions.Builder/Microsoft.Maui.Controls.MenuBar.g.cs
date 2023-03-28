@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             bool isEnabled)
             where T : Microsoft.Maui.Controls.MenuBar
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.MenuBar.IsEnabledProperty, isEnabled);
+            self.SetValue(Microsoft.Maui.Controls.MenuBar.IsEnabledProperty, isEnabled);
             return self;
         }
         
@@ -24,6 +24,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.MenuBar
         {
             var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.MenuBar.IsEnabledProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> IsEnabled<T>(this SettersContext<T> self,
+            bool isEnabled)
+            where T : Microsoft.Maui.Controls.MenuBar
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.MenuBar.IsEnabledProperty, Value = isEnabled });
+            return self;
+        }
+        
+        public static SettersContext<T> IsEnabled<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.MenuBar
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.MenuBar.IsEnabledProperty);
             configure(context).Build();
             return self;
         }

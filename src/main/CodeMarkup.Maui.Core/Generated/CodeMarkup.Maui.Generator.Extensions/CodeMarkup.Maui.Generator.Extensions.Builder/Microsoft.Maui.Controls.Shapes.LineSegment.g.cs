@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Graphics.Point point)
             where T : Microsoft.Maui.Controls.Shapes.LineSegment
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.LineSegment.PointProperty, point);
+            self.SetValue(Microsoft.Maui.Controls.Shapes.LineSegment.PointProperty, point);
             return self;
         }
         
@@ -24,6 +24,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.Shapes.LineSegment
         {
             var context = new PropertyContext<Microsoft.Maui.Graphics.Point>(self, Microsoft.Maui.Controls.Shapes.LineSegment.PointProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> Point<T>(this SettersContext<T> self,
+            Microsoft.Maui.Graphics.Point point)
+            where T : Microsoft.Maui.Controls.Shapes.LineSegment
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shapes.LineSegment.PointProperty, Value = point });
+            return self;
+        }
+        
+        public static SettersContext<T> Point<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Point>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Point>> configure)
+            where T : Microsoft.Maui.Controls.Shapes.LineSegment
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.Point>(self.XamlSetters, Microsoft.Maui.Controls.Shapes.LineSegment.PointProperty);
             configure(context).Build();
             return self;
         }

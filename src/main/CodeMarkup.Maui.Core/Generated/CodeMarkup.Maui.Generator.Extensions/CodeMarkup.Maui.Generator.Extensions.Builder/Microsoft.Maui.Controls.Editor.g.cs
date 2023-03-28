@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Controls.EditorAutoSizeOption autoSize)
             where T : Microsoft.Maui.Controls.Editor
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Editor.AutoSizeProperty, autoSize);
+            self.SetValue(Microsoft.Maui.Controls.Editor.AutoSizeProperty, autoSize);
             return self;
         }
         
@@ -28,11 +28,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> AutoSize<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.EditorAutoSizeOption autoSize)
+            where T : Microsoft.Maui.Controls.Editor
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Editor.AutoSizeProperty, Value = autoSize });
+            return self;
+        }
+        
+        public static SettersContext<T> AutoSize<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.EditorAutoSizeOption>, IPropertySettersBuilder<Microsoft.Maui.Controls.EditorAutoSizeOption>> configure)
+            where T : Microsoft.Maui.Controls.Editor
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.EditorAutoSizeOption>(self.XamlSetters, Microsoft.Maui.Controls.Editor.AutoSizeProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T FontAttributes<T>(this T self,
             Microsoft.Maui.Controls.FontAttributes fontAttributes)
             where T : Microsoft.Maui.Controls.Editor
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Editor.FontAttributesProperty, fontAttributes);
+            self.SetValue(Microsoft.Maui.Controls.Editor.FontAttributesProperty, fontAttributes);
             return self;
         }
         
@@ -44,11 +60,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> FontAttributes<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.FontAttributes fontAttributes)
+            where T : Microsoft.Maui.Controls.Editor
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Editor.FontAttributesProperty, Value = fontAttributes });
+            return self;
+        }
+        
+        public static SettersContext<T> FontAttributes<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.FontAttributes>, IPropertySettersBuilder<Microsoft.Maui.Controls.FontAttributes>> configure)
+            where T : Microsoft.Maui.Controls.Editor
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.FontAttributes>(self.XamlSetters, Microsoft.Maui.Controls.Editor.FontAttributesProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T IsTextPredictionEnabled<T>(this T self,
             bool isTextPredictionEnabled)
             where T : Microsoft.Maui.Controls.Editor
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Editor.IsTextPredictionEnabledProperty, isTextPredictionEnabled);
+            self.SetValue(Microsoft.Maui.Controls.Editor.IsTextPredictionEnabledProperty, isTextPredictionEnabled);
             return self;
         }
         
@@ -60,11 +92,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> IsTextPredictionEnabled<T>(this SettersContext<T> self,
+            bool isTextPredictionEnabled)
+            where T : Microsoft.Maui.Controls.Editor
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Editor.IsTextPredictionEnabledProperty, Value = isTextPredictionEnabled });
+            return self;
+        }
+        
+        public static SettersContext<T> IsTextPredictionEnabled<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.Editor
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.Editor.IsTextPredictionEnabledProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T CursorPosition<T>(this T self,
             int cursorPosition)
             where T : Microsoft.Maui.Controls.Editor
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Editor.CursorPositionProperty, cursorPosition);
+            self.SetValue(Microsoft.Maui.Controls.Editor.CursorPositionProperty, cursorPosition);
             return self;
         }
         
@@ -76,11 +124,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> CursorPosition<T>(this SettersContext<T> self,
+            int cursorPosition)
+            where T : Microsoft.Maui.Controls.Editor
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Editor.CursorPositionProperty, Value = cursorPosition });
+            return self;
+        }
+        
+        public static SettersContext<T> CursorPosition<T>(this SettersContext<T> self, Func<PropertySettersContext<int>, IPropertySettersBuilder<int>> configure)
+            where T : Microsoft.Maui.Controls.Editor
+        {
+            var context = new PropertySettersContext<int>(self.XamlSetters, Microsoft.Maui.Controls.Editor.CursorPositionProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T SelectionLength<T>(this T self,
             int selectionLength)
             where T : Microsoft.Maui.Controls.Editor
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Editor.SelectionLengthProperty, selectionLength);
+            self.SetValue(Microsoft.Maui.Controls.Editor.SelectionLengthProperty, selectionLength);
             return self;
         }
         
@@ -92,11 +156,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> SelectionLength<T>(this SettersContext<T> self,
+            int selectionLength)
+            where T : Microsoft.Maui.Controls.Editor
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Editor.SelectionLengthProperty, Value = selectionLength });
+            return self;
+        }
+        
+        public static SettersContext<T> SelectionLength<T>(this SettersContext<T> self, Func<PropertySettersContext<int>, IPropertySettersBuilder<int>> configure)
+            where T : Microsoft.Maui.Controls.Editor
+        {
+            var context = new PropertySettersContext<int>(self.XamlSetters, Microsoft.Maui.Controls.Editor.SelectionLengthProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T FontFamily<T>(this T self,
             string fontFamily)
             where T : Microsoft.Maui.Controls.Editor
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Editor.FontFamilyProperty, fontFamily);
+            self.SetValue(Microsoft.Maui.Controls.Editor.FontFamilyProperty, fontFamily);
             return self;
         }
         
@@ -108,11 +188,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> FontFamily<T>(this SettersContext<T> self,
+            string fontFamily)
+            where T : Microsoft.Maui.Controls.Editor
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Editor.FontFamilyProperty, Value = fontFamily });
+            return self;
+        }
+        
+        public static SettersContext<T> FontFamily<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
+            where T : Microsoft.Maui.Controls.Editor
+        {
+            var context = new PropertySettersContext<string>(self.XamlSetters, Microsoft.Maui.Controls.Editor.FontFamilyProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T FontSize<T>(this T self,
             double fontSize)
             where T : Microsoft.Maui.Controls.Editor
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Editor.FontSizeProperty, fontSize);
+            self.SetValue(Microsoft.Maui.Controls.Editor.FontSizeProperty, fontSize);
             return self;
         }
         
@@ -120,6 +216,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.Editor
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Editor.FontSizeProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> FontSize<T>(this SettersContext<T> self,
+            double fontSize)
+            where T : Microsoft.Maui.Controls.Editor
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Editor.FontSizeProperty, Value = fontSize });
+            return self;
+        }
+        
+        public static SettersContext<T> FontSize<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.Editor
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.Editor.FontSizeProperty);
             configure(context).Build();
             return self;
         }
@@ -137,7 +249,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.TextAlignment horizontalTextAlignment)
             where T : Microsoft.Maui.Controls.Editor
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Editor.HorizontalTextAlignmentProperty, horizontalTextAlignment);
+            self.SetValue(Microsoft.Maui.Controls.Editor.HorizontalTextAlignmentProperty, horizontalTextAlignment);
             return self;
         }
         
@@ -149,11 +261,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> HorizontalTextAlignment<T>(this SettersContext<T> self,
+            Microsoft.Maui.TextAlignment horizontalTextAlignment)
+            where T : Microsoft.Maui.Controls.Editor
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Editor.HorizontalTextAlignmentProperty, Value = horizontalTextAlignment });
+            return self;
+        }
+        
+        public static SettersContext<T> HorizontalTextAlignment<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.TextAlignment>, IPropertySettersBuilder<Microsoft.Maui.TextAlignment>> configure)
+            where T : Microsoft.Maui.Controls.Editor
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.TextAlignment>(self.XamlSetters, Microsoft.Maui.Controls.Editor.HorizontalTextAlignmentProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T VerticalTextAlignment<T>(this T self,
             Microsoft.Maui.TextAlignment verticalTextAlignment)
             where T : Microsoft.Maui.Controls.Editor
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Editor.VerticalTextAlignmentProperty, verticalTextAlignment);
+            self.SetValue(Microsoft.Maui.Controls.Editor.VerticalTextAlignmentProperty, verticalTextAlignment);
             return self;
         }
         
@@ -165,11 +293,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> VerticalTextAlignment<T>(this SettersContext<T> self,
+            Microsoft.Maui.TextAlignment verticalTextAlignment)
+            where T : Microsoft.Maui.Controls.Editor
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Editor.VerticalTextAlignmentProperty, Value = verticalTextAlignment });
+            return self;
+        }
+        
+        public static SettersContext<T> VerticalTextAlignment<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.TextAlignment>, IPropertySettersBuilder<Microsoft.Maui.TextAlignment>> configure)
+            where T : Microsoft.Maui.Controls.Editor
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.TextAlignment>(self.XamlSetters, Microsoft.Maui.Controls.Editor.VerticalTextAlignmentProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T FontAutoScalingEnabled<T>(this T self,
             bool fontAutoScalingEnabled)
             where T : Microsoft.Maui.Controls.Editor
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Editor.FontAutoScalingEnabledProperty, fontAutoScalingEnabled);
+            self.SetValue(Microsoft.Maui.Controls.Editor.FontAutoScalingEnabledProperty, fontAutoScalingEnabled);
             return self;
         }
         
@@ -177,6 +321,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.Editor
         {
             var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.Editor.FontAutoScalingEnabledProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> FontAutoScalingEnabled<T>(this SettersContext<T> self,
+            bool fontAutoScalingEnabled)
+            where T : Microsoft.Maui.Controls.Editor
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Editor.FontAutoScalingEnabledProperty, Value = fontAutoScalingEnabled });
+            return self;
+        }
+        
+        public static SettersContext<T> FontAutoScalingEnabled<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.Editor
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.Editor.FontAutoScalingEnabledProperty);
             configure(context).Build();
             return self;
         }
@@ -199,82 +359,82 @@ namespace CodeMarkup.Maui
         public static T TextCenterHorizontal<T>(this T self)
             where T : Microsoft.Maui.Controls.Editor
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Editor.HorizontalTextAlignmentProperty, TextAlignment.Center);
+            self.SetValue(Microsoft.Maui.Controls.Editor.HorizontalTextAlignmentProperty, TextAlignment.Center);
             return self;
         }
 
         public static T TextCenterVertical<T>(this T self)
             where T : Microsoft.Maui.Controls.Editor
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Editor.VerticalTextAlignmentProperty, TextAlignment.Center);
+            self.SetValue(Microsoft.Maui.Controls.Editor.VerticalTextAlignmentProperty, TextAlignment.Center);
             return self;
         }
 
         public static T TextCenter<T>(this T self)
             where T : Microsoft.Maui.Controls.Editor
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Editor.HorizontalTextAlignmentProperty, TextAlignment.Center);
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Editor.VerticalTextAlignmentProperty, TextAlignment.Center);
+            self.SetValue(Microsoft.Maui.Controls.Editor.HorizontalTextAlignmentProperty, TextAlignment.Center);
+            self.SetValue(Microsoft.Maui.Controls.Editor.VerticalTextAlignmentProperty, TextAlignment.Center);
             return self;
         }
 
         public static T TextTop<T>(this T self)
             where T : Microsoft.Maui.Controls.Editor
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Editor.VerticalTextAlignmentProperty, TextAlignment.Start);
+            self.SetValue(Microsoft.Maui.Controls.Editor.VerticalTextAlignmentProperty, TextAlignment.Start);
             return self;
         }
 
         public static T TextBottom<T>(this T self)
             where T : Microsoft.Maui.Controls.Editor, Microsoft.Maui.ITextAlignment
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Editor.VerticalTextAlignmentProperty, TextAlignment.End);
+            self.SetValue(Microsoft.Maui.Controls.Editor.VerticalTextAlignmentProperty, TextAlignment.End);
             return self;
         }
 
         public static T TextTopStart<T>(this T self)
             where T : Microsoft.Maui.Controls.Editor
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Editor.VerticalTextAlignmentProperty, TextAlignment.Start);
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Editor.HorizontalTextAlignmentProperty, TextAlignment.Start);
+            self.SetValue(Microsoft.Maui.Controls.Editor.VerticalTextAlignmentProperty, TextAlignment.Start);
+            self.SetValue(Microsoft.Maui.Controls.Editor.HorizontalTextAlignmentProperty, TextAlignment.Start);
             return self;
         }
 
         public static T TextBottomStart<T>(this T self)
             where T : Microsoft.Maui.Controls.Editor
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Editor.VerticalTextAlignmentProperty, TextAlignment.End);
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Editor.HorizontalTextAlignmentProperty, TextAlignment.Start);
+            self.SetValue(Microsoft.Maui.Controls.Editor.VerticalTextAlignmentProperty, TextAlignment.End);
+            self.SetValue(Microsoft.Maui.Controls.Editor.HorizontalTextAlignmentProperty, TextAlignment.Start);
             return self;
         }
 
         public static T TextTopEnd<T>(this T self)
             where T : Microsoft.Maui.Controls.Editor
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Editor.VerticalTextAlignmentProperty, TextAlignment.Start);
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Editor.HorizontalTextAlignmentProperty, TextAlignment.End);
+            self.SetValue(Microsoft.Maui.Controls.Editor.VerticalTextAlignmentProperty, TextAlignment.Start);
+            self.SetValue(Microsoft.Maui.Controls.Editor.HorizontalTextAlignmentProperty, TextAlignment.End);
             return self;
         }
 
         public static T TextBottomEnd<T>(this T self)
             where T : Microsoft.Maui.Controls.Editor
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Editor.VerticalTextAlignmentProperty, TextAlignment.End);
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Editor.HorizontalTextAlignmentProperty, TextAlignment.End);
+            self.SetValue(Microsoft.Maui.Controls.Editor.VerticalTextAlignmentProperty, TextAlignment.End);
+            self.SetValue(Microsoft.Maui.Controls.Editor.HorizontalTextAlignmentProperty, TextAlignment.End);
             return self;
         }
 
         public static T TextStart<T>(this T self)
             where T : Microsoft.Maui.Controls.Editor
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Editor.HorizontalTextAlignmentProperty, TextAlignment.Start);
+            self.SetValue(Microsoft.Maui.Controls.Editor.HorizontalTextAlignmentProperty, TextAlignment.Start);
             return self;
         }
 
         public static T TextEnd<T>(this T self)
             where T : Microsoft.Maui.Controls.Editor
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Editor.HorizontalTextAlignmentProperty, TextAlignment.End);
+            self.SetValue(Microsoft.Maui.Controls.Editor.HorizontalTextAlignmentProperty, TextAlignment.End);
             return self;
         }
 

@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             bool isRefreshing)
             where T : Microsoft.Maui.Controls.RefreshView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.RefreshView.IsRefreshingProperty, isRefreshing);
+            self.SetValue(Microsoft.Maui.Controls.RefreshView.IsRefreshingProperty, isRefreshing);
             return self;
         }
         
@@ -28,11 +28,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> IsRefreshing<T>(this SettersContext<T> self,
+            bool isRefreshing)
+            where T : Microsoft.Maui.Controls.RefreshView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.RefreshView.IsRefreshingProperty, Value = isRefreshing });
+            return self;
+        }
+        
+        public static SettersContext<T> IsRefreshing<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.RefreshView
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.RefreshView.IsRefreshingProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T Command<T>(this T self,
             System.Windows.Input.ICommand command)
             where T : Microsoft.Maui.Controls.RefreshView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.RefreshView.CommandProperty, command);
+            self.SetValue(Microsoft.Maui.Controls.RefreshView.CommandProperty, command);
             return self;
         }
         
@@ -44,11 +60,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> Command<T>(this SettersContext<T> self,
+            System.Windows.Input.ICommand command)
+            where T : Microsoft.Maui.Controls.RefreshView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.RefreshView.CommandProperty, Value = command });
+            return self;
+        }
+        
+        public static SettersContext<T> Command<T>(this SettersContext<T> self, Func<PropertySettersContext<System.Windows.Input.ICommand>, IPropertySettersBuilder<System.Windows.Input.ICommand>> configure)
+            where T : Microsoft.Maui.Controls.RefreshView
+        {
+            var context = new PropertySettersContext<System.Windows.Input.ICommand>(self.XamlSetters, Microsoft.Maui.Controls.RefreshView.CommandProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T CommandParameter<T>(this T self,
             object commandParameter)
             where T : Microsoft.Maui.Controls.RefreshView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.RefreshView.CommandParameterProperty, commandParameter);
+            self.SetValue(Microsoft.Maui.Controls.RefreshView.CommandParameterProperty, commandParameter);
             return self;
         }
         
@@ -60,11 +92,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> CommandParameter<T>(this SettersContext<T> self,
+            object commandParameter)
+            where T : Microsoft.Maui.Controls.RefreshView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.RefreshView.CommandParameterProperty, Value = commandParameter });
+            return self;
+        }
+        
+        public static SettersContext<T> CommandParameter<T>(this SettersContext<T> self, Func<PropertySettersContext<object>, IPropertySettersBuilder<object>> configure)
+            where T : Microsoft.Maui.Controls.RefreshView
+        {
+            var context = new PropertySettersContext<object>(self.XamlSetters, Microsoft.Maui.Controls.RefreshView.CommandParameterProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T RefreshColor<T>(this T self,
             Microsoft.Maui.Graphics.Color refreshColor)
             where T : Microsoft.Maui.Controls.RefreshView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.RefreshView.RefreshColorProperty, refreshColor);
+            self.SetValue(Microsoft.Maui.Controls.RefreshView.RefreshColorProperty, refreshColor);
             return self;
         }
         
@@ -72,6 +120,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.RefreshView
         {
             var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.RefreshView.RefreshColorProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> RefreshColor<T>(this SettersContext<T> self,
+            Microsoft.Maui.Graphics.Color refreshColor)
+            where T : Microsoft.Maui.Controls.RefreshView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.RefreshView.RefreshColorProperty, Value = refreshColor });
+            return self;
+        }
+        
+        public static SettersContext<T> RefreshColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
+            where T : Microsoft.Maui.Controls.RefreshView
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.Color>(self.XamlSetters, Microsoft.Maui.Controls.RefreshView.RefreshColorProperty);
             configure(context).Build();
             return self;
         }

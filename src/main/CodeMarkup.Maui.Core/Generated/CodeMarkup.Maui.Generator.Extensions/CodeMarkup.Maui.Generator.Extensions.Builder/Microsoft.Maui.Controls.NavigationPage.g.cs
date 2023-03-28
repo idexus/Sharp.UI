@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Graphics.Color barBackgroundColor)
             where T : Microsoft.Maui.Controls.NavigationPage
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.NavigationPage.BarBackgroundColorProperty, barBackgroundColor);
+            self.SetValue(Microsoft.Maui.Controls.NavigationPage.BarBackgroundColorProperty, barBackgroundColor);
             return self;
         }
         
@@ -24,6 +24,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.NavigationPage
         {
             var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.NavigationPage.BarBackgroundColorProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> BarBackgroundColor<T>(this SettersContext<T> self,
+            Microsoft.Maui.Graphics.Color barBackgroundColor)
+            where T : Microsoft.Maui.Controls.NavigationPage
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.NavigationPage.BarBackgroundColorProperty, Value = barBackgroundColor });
+            return self;
+        }
+        
+        public static SettersContext<T> BarBackgroundColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
+            where T : Microsoft.Maui.Controls.NavigationPage
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.Color>(self.XamlSetters, Microsoft.Maui.Controls.NavigationPage.BarBackgroundColorProperty);
             configure(context).Build();
             return self;
         }
@@ -41,7 +57,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Controls.Brush barBackground)
             where T : Microsoft.Maui.Controls.NavigationPage
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.NavigationPage.BarBackgroundProperty, barBackground);
+            self.SetValue(Microsoft.Maui.Controls.NavigationPage.BarBackgroundProperty, barBackground);
             return self;
         }
         
@@ -53,11 +69,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> BarBackground<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.Brush barBackground)
+            where T : Microsoft.Maui.Controls.NavigationPage
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.NavigationPage.BarBackgroundProperty, Value = barBackground });
+            return self;
+        }
+        
+        public static SettersContext<T> BarBackground<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.Brush>, IPropertySettersBuilder<Microsoft.Maui.Controls.Brush>> configure)
+            where T : Microsoft.Maui.Controls.NavigationPage
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.Brush>(self.XamlSetters, Microsoft.Maui.Controls.NavigationPage.BarBackgroundProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T BarTextColor<T>(this T self,
             Microsoft.Maui.Graphics.Color barTextColor)
             where T : Microsoft.Maui.Controls.NavigationPage
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.NavigationPage.BarTextColorProperty, barTextColor);
+            self.SetValue(Microsoft.Maui.Controls.NavigationPage.BarTextColorProperty, barTextColor);
             return self;
         }
         
@@ -65,6 +97,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.NavigationPage
         {
             var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.NavigationPage.BarTextColorProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> BarTextColor<T>(this SettersContext<T> self,
+            Microsoft.Maui.Graphics.Color barTextColor)
+            where T : Microsoft.Maui.Controls.NavigationPage
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.NavigationPage.BarTextColorProperty, Value = barTextColor });
+            return self;
+        }
+        
+        public static SettersContext<T> BarTextColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
+            where T : Microsoft.Maui.Controls.NavigationPage
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.Color>(self.XamlSetters, Microsoft.Maui.Controls.NavigationPage.BarTextColorProperty);
             configure(context).Build();
             return self;
         }

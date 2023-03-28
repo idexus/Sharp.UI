@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             object bindingContext)
             where T : Microsoft.Maui.Controls.BindableObject
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.BindableObject.BindingContextProperty, bindingContext);
+            self.SetValue(Microsoft.Maui.Controls.BindableObject.BindingContextProperty, bindingContext);
             return self;
         }
         
@@ -24,6 +24,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.BindableObject
         {
             var context = new PropertyContext<object>(self, Microsoft.Maui.Controls.BindableObject.BindingContextProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> BindingContext<T>(this SettersContext<T> self,
+            object bindingContext)
+            where T : Microsoft.Maui.Controls.BindableObject
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.BindableObject.BindingContextProperty, Value = bindingContext });
+            return self;
+        }
+        
+        public static SettersContext<T> BindingContext<T>(this SettersContext<T> self, Func<PropertySettersContext<object>, IPropertySettersBuilder<object>> configure)
+            where T : Microsoft.Maui.Controls.BindableObject
+        {
+            var context = new PropertySettersContext<object>(self.XamlSetters, Microsoft.Maui.Controls.BindableObject.BindingContextProperty);
             configure(context).Build();
             return self;
         }

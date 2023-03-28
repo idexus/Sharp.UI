@@ -15,13 +15,27 @@ namespace CodeMarkup.Maui
         public static Microsoft.Maui.Controls.Shapes.Line X1(this Microsoft.Maui.Controls.Shapes.Line self,
             double x1)
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Line.X1Property, x1);
+            self.SetValue(Microsoft.Maui.Controls.Shapes.Line.X1Property, x1);
             return self;
         }
         
         public static Microsoft.Maui.Controls.Shapes.Line X1(this Microsoft.Maui.Controls.Shapes.Line self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Shapes.Line.X1Property);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.Shapes.Line> X1(this SettersContext<Microsoft.Maui.Controls.Shapes.Line> self,
+            double x1)
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shapes.Line.X1Property, Value = x1 });
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.Shapes.Line> X1(this SettersContext<Microsoft.Maui.Controls.Shapes.Line> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.Shapes.Line.X1Property);
             configure(context).Build();
             return self;
         }
@@ -37,13 +51,27 @@ namespace CodeMarkup.Maui
         public static Microsoft.Maui.Controls.Shapes.Line Y1(this Microsoft.Maui.Controls.Shapes.Line self,
             double y1)
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Line.Y1Property, y1);
+            self.SetValue(Microsoft.Maui.Controls.Shapes.Line.Y1Property, y1);
             return self;
         }
         
         public static Microsoft.Maui.Controls.Shapes.Line Y1(this Microsoft.Maui.Controls.Shapes.Line self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Shapes.Line.Y1Property);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.Shapes.Line> Y1(this SettersContext<Microsoft.Maui.Controls.Shapes.Line> self,
+            double y1)
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shapes.Line.Y1Property, Value = y1 });
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.Shapes.Line> Y1(this SettersContext<Microsoft.Maui.Controls.Shapes.Line> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.Shapes.Line.Y1Property);
             configure(context).Build();
             return self;
         }
@@ -59,13 +87,27 @@ namespace CodeMarkup.Maui
         public static Microsoft.Maui.Controls.Shapes.Line X2(this Microsoft.Maui.Controls.Shapes.Line self,
             double x2)
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Line.X2Property, x2);
+            self.SetValue(Microsoft.Maui.Controls.Shapes.Line.X2Property, x2);
             return self;
         }
         
         public static Microsoft.Maui.Controls.Shapes.Line X2(this Microsoft.Maui.Controls.Shapes.Line self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Shapes.Line.X2Property);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.Shapes.Line> X2(this SettersContext<Microsoft.Maui.Controls.Shapes.Line> self,
+            double x2)
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shapes.Line.X2Property, Value = x2 });
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.Shapes.Line> X2(this SettersContext<Microsoft.Maui.Controls.Shapes.Line> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.Shapes.Line.X2Property);
             configure(context).Build();
             return self;
         }
@@ -81,13 +123,27 @@ namespace CodeMarkup.Maui
         public static Microsoft.Maui.Controls.Shapes.Line Y2(this Microsoft.Maui.Controls.Shapes.Line self,
             double y2)
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Line.Y2Property, y2);
+            self.SetValue(Microsoft.Maui.Controls.Shapes.Line.Y2Property, y2);
             return self;
         }
         
         public static Microsoft.Maui.Controls.Shapes.Line Y2(this Microsoft.Maui.Controls.Shapes.Line self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Shapes.Line.Y2Property);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.Shapes.Line> Y2(this SettersContext<Microsoft.Maui.Controls.Shapes.Line> self,
+            double y2)
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shapes.Line.Y2Property, Value = y2 });
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.Shapes.Line> Y2(this SettersContext<Microsoft.Maui.Controls.Shapes.Line> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.Shapes.Line.Y2Property);
             configure(context).Build();
             return self;
         }

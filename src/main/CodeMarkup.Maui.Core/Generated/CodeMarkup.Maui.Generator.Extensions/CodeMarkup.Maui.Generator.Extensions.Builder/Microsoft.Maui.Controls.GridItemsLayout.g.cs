@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             int span)
             where T : Microsoft.Maui.Controls.GridItemsLayout
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.GridItemsLayout.SpanProperty, span);
+            self.SetValue(Microsoft.Maui.Controls.GridItemsLayout.SpanProperty, span);
             return self;
         }
         
@@ -28,11 +28,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> Span<T>(this SettersContext<T> self,
+            int span)
+            where T : Microsoft.Maui.Controls.GridItemsLayout
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.GridItemsLayout.SpanProperty, Value = span });
+            return self;
+        }
+        
+        public static SettersContext<T> Span<T>(this SettersContext<T> self, Func<PropertySettersContext<int>, IPropertySettersBuilder<int>> configure)
+            where T : Microsoft.Maui.Controls.GridItemsLayout
+        {
+            var context = new PropertySettersContext<int>(self.XamlSetters, Microsoft.Maui.Controls.GridItemsLayout.SpanProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T VerticalItemSpacing<T>(this T self,
             double verticalItemSpacing)
             where T : Microsoft.Maui.Controls.GridItemsLayout
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.GridItemsLayout.VerticalItemSpacingProperty, verticalItemSpacing);
+            self.SetValue(Microsoft.Maui.Controls.GridItemsLayout.VerticalItemSpacingProperty, verticalItemSpacing);
             return self;
         }
         
@@ -44,11 +60,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> VerticalItemSpacing<T>(this SettersContext<T> self,
+            double verticalItemSpacing)
+            where T : Microsoft.Maui.Controls.GridItemsLayout
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.GridItemsLayout.VerticalItemSpacingProperty, Value = verticalItemSpacing });
+            return self;
+        }
+        
+        public static SettersContext<T> VerticalItemSpacing<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.GridItemsLayout
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.GridItemsLayout.VerticalItemSpacingProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T HorizontalItemSpacing<T>(this T self,
             double horizontalItemSpacing)
             where T : Microsoft.Maui.Controls.GridItemsLayout
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.GridItemsLayout.HorizontalItemSpacingProperty, horizontalItemSpacing);
+            self.SetValue(Microsoft.Maui.Controls.GridItemsLayout.HorizontalItemSpacingProperty, horizontalItemSpacing);
             return self;
         }
         
@@ -56,6 +88,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.GridItemsLayout
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.GridItemsLayout.HorizontalItemSpacingProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> HorizontalItemSpacing<T>(this SettersContext<T> self,
+            double horizontalItemSpacing)
+            where T : Microsoft.Maui.Controls.GridItemsLayout
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.GridItemsLayout.HorizontalItemSpacingProperty, Value = horizontalItemSpacing });
+            return self;
+        }
+        
+        public static SettersContext<T> HorizontalItemSpacing<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.GridItemsLayout
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.GridItemsLayout.HorizontalItemSpacingProperty);
             configure(context).Build();
             return self;
         }

@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Controls.Style style)
             where T : Microsoft.Maui.Controls.NavigableElement
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.NavigableElement.StyleProperty, style);
+            self.SetValue(Microsoft.Maui.Controls.NavigableElement.StyleProperty, style);
             return self;
         }
         
@@ -24,6 +24,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.NavigableElement
         {
             var context = new PropertyContext<Microsoft.Maui.Controls.Style>(self, Microsoft.Maui.Controls.NavigableElement.StyleProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> Style<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.Style style)
+            where T : Microsoft.Maui.Controls.NavigableElement
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.NavigableElement.StyleProperty, Value = style });
+            return self;
+        }
+        
+        public static SettersContext<T> Style<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.Style>, IPropertySettersBuilder<Microsoft.Maui.Controls.Style>> configure)
+            where T : Microsoft.Maui.Controls.NavigableElement
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.Style>(self.XamlSetters, Microsoft.Maui.Controls.NavigableElement.StyleProperty);
             configure(context).Build();
             return self;
         }
