@@ -15,13 +15,27 @@ namespace CodeMarkup.Maui
         public static Microsoft.Maui.Controls.FileImageSource File(this Microsoft.Maui.Controls.FileImageSource self,
             string file)
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.FileImageSource.FileProperty, file);
+            self.SetValue(Microsoft.Maui.Controls.FileImageSource.FileProperty, file);
             return self;
         }
         
         public static Microsoft.Maui.Controls.FileImageSource File(this Microsoft.Maui.Controls.FileImageSource self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
         {
             var context = new PropertyContext<string>(self, Microsoft.Maui.Controls.FileImageSource.FileProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.FileImageSource> File(this SettersContext<Microsoft.Maui.Controls.FileImageSource> self,
+            string file)
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.FileImageSource.FileProperty, Value = file });
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.FileImageSource> File(this SettersContext<Microsoft.Maui.Controls.FileImageSource> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
+        {
+            var context = new PropertySettersContext<string>(self.XamlSetters, Microsoft.Maui.Controls.FileImageSource.FileProperty);
             configure(context).Build();
             return self;
         }

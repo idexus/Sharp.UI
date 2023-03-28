@@ -16,7 +16,6 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Controls.View view)
             where T : Microsoft.Maui.Controls.ViewCell
         {
-            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property View");
             self.View = view;
             return self;
         }

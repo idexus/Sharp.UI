@@ -34,7 +34,6 @@ namespace CodeMarkup.Maui
             bool isContextActionsLegacyModeEnabled)
             where T : Microsoft.Maui.Controls.Cell
         {
-            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property IsContextActionsLegacyModeEnabled");
             self.IsContextActionsLegacyModeEnabled = isContextActionsLegacyModeEnabled;
             return self;
         }
@@ -43,7 +42,6 @@ namespace CodeMarkup.Maui
             double height)
             where T : Microsoft.Maui.Controls.Cell
         {
-            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property Height");
             self.Height = height;
             return self;
         }
@@ -52,7 +50,7 @@ namespace CodeMarkup.Maui
             bool isEnabled)
             where T : Microsoft.Maui.Controls.Cell
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Cell.IsEnabledProperty, isEnabled);
+            self.SetValue(Microsoft.Maui.Controls.Cell.IsEnabledProperty, isEnabled);
             return self;
         }
         
@@ -60,6 +58,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.Cell
         {
             var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.Cell.IsEnabledProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> IsEnabled<T>(this SettersContext<T> self,
+            bool isEnabled)
+            where T : Microsoft.Maui.Controls.Cell
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Cell.IsEnabledProperty, Value = isEnabled });
+            return self;
+        }
+        
+        public static SettersContext<T> IsEnabled<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.Cell
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.Cell.IsEnabledProperty);
             configure(context).Build();
             return self;
         }

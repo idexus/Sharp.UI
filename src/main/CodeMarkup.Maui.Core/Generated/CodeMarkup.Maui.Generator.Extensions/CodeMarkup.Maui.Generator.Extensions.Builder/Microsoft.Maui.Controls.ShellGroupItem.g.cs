@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Controls.FlyoutDisplayOptions flyoutDisplayOptions)
             where T : Microsoft.Maui.Controls.ShellGroupItem
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ShellGroupItem.FlyoutDisplayOptionsProperty, flyoutDisplayOptions);
+            self.SetValue(Microsoft.Maui.Controls.ShellGroupItem.FlyoutDisplayOptionsProperty, flyoutDisplayOptions);
             return self;
         }
         
@@ -24,6 +24,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.ShellGroupItem
         {
             var context = new PropertyContext<Microsoft.Maui.Controls.FlyoutDisplayOptions>(self, Microsoft.Maui.Controls.ShellGroupItem.FlyoutDisplayOptionsProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> FlyoutDisplayOptions<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.FlyoutDisplayOptions flyoutDisplayOptions)
+            where T : Microsoft.Maui.Controls.ShellGroupItem
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ShellGroupItem.FlyoutDisplayOptionsProperty, Value = flyoutDisplayOptions });
+            return self;
+        }
+        
+        public static SettersContext<T> FlyoutDisplayOptions<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.FlyoutDisplayOptions>, IPropertySettersBuilder<Microsoft.Maui.Controls.FlyoutDisplayOptions>> configure)
+            where T : Microsoft.Maui.Controls.ShellGroupItem
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.FlyoutDisplayOptions>(self.XamlSetters, Microsoft.Maui.Controls.ShellGroupItem.FlyoutDisplayOptionsProperty);
             configure(context).Build();
             return self;
         }

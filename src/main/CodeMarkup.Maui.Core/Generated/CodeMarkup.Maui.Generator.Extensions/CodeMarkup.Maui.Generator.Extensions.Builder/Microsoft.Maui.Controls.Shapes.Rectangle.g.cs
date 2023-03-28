@@ -15,13 +15,27 @@ namespace CodeMarkup.Maui
         public static Microsoft.Maui.Controls.Shapes.Rectangle RadiusX(this Microsoft.Maui.Controls.Shapes.Rectangle self,
             double radiusX)
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Rectangle.RadiusXProperty, radiusX);
+            self.SetValue(Microsoft.Maui.Controls.Shapes.Rectangle.RadiusXProperty, radiusX);
             return self;
         }
         
         public static Microsoft.Maui.Controls.Shapes.Rectangle RadiusX(this Microsoft.Maui.Controls.Shapes.Rectangle self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Shapes.Rectangle.RadiusXProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.Shapes.Rectangle> RadiusX(this SettersContext<Microsoft.Maui.Controls.Shapes.Rectangle> self,
+            double radiusX)
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shapes.Rectangle.RadiusXProperty, Value = radiusX });
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.Shapes.Rectangle> RadiusX(this SettersContext<Microsoft.Maui.Controls.Shapes.Rectangle> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.Shapes.Rectangle.RadiusXProperty);
             configure(context).Build();
             return self;
         }
@@ -37,13 +51,27 @@ namespace CodeMarkup.Maui
         public static Microsoft.Maui.Controls.Shapes.Rectangle RadiusY(this Microsoft.Maui.Controls.Shapes.Rectangle self,
             double radiusY)
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Rectangle.RadiusYProperty, radiusY);
+            self.SetValue(Microsoft.Maui.Controls.Shapes.Rectangle.RadiusYProperty, radiusY);
             return self;
         }
         
         public static Microsoft.Maui.Controls.Shapes.Rectangle RadiusY(this Microsoft.Maui.Controls.Shapes.Rectangle self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Shapes.Rectangle.RadiusYProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.Shapes.Rectangle> RadiusY(this SettersContext<Microsoft.Maui.Controls.Shapes.Rectangle> self,
+            double radiusY)
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shapes.Rectangle.RadiusYProperty, Value = radiusY });
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.Shapes.Rectangle> RadiusY(this SettersContext<Microsoft.Maui.Controls.Shapes.Rectangle> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.Shapes.Rectangle.RadiusYProperty);
             configure(context).Build();
             return self;
         }

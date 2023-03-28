@@ -5,14 +5,12 @@ namespace CodeMarkup.Maui
     public class Setters<T> : List<Setter>
         where T : BindableObject
 	{
-        public Setters(Func<T,T> buildSetters)
+        public Setters(Func<SettersContext<T>, SettersContext<T>> buildSetters)
         {
-            MainThread.BeginInvokeOnMainThread(() =>
-            {
-                FluentStyling.Setters = this;
-                buildSetters?.Invoke(null);
-                FluentStyling.Setters = null;
-            });
+            var settersContext = new SettersContext<T>();
+            buildSetters(settersContext);
+            foreach (var setter in settersContext.XamlSetters)
+                this.Add(setter);
         }
     }
 }

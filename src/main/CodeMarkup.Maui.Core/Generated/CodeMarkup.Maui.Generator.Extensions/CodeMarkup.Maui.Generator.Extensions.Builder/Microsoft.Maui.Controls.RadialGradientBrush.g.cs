@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Graphics.Point center)
             where T : Microsoft.Maui.Controls.RadialGradientBrush
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.RadialGradientBrush.CenterProperty, center);
+            self.SetValue(Microsoft.Maui.Controls.RadialGradientBrush.CenterProperty, center);
             return self;
         }
         
@@ -28,11 +28,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> Center<T>(this SettersContext<T> self,
+            Microsoft.Maui.Graphics.Point center)
+            where T : Microsoft.Maui.Controls.RadialGradientBrush
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.RadialGradientBrush.CenterProperty, Value = center });
+            return self;
+        }
+        
+        public static SettersContext<T> Center<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Point>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Point>> configure)
+            where T : Microsoft.Maui.Controls.RadialGradientBrush
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.Point>(self.XamlSetters, Microsoft.Maui.Controls.RadialGradientBrush.CenterProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T Radius<T>(this T self,
             double radius)
             where T : Microsoft.Maui.Controls.RadialGradientBrush
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.RadialGradientBrush.RadiusProperty, radius);
+            self.SetValue(Microsoft.Maui.Controls.RadialGradientBrush.RadiusProperty, radius);
             return self;
         }
         
@@ -40,6 +56,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.RadialGradientBrush
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.RadialGradientBrush.RadiusProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> Radius<T>(this SettersContext<T> self,
+            double radius)
+            where T : Microsoft.Maui.Controls.RadialGradientBrush
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.RadialGradientBrush.RadiusProperty, Value = radius });
+            return self;
+        }
+        
+        public static SettersContext<T> Radius<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.RadialGradientBrush
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.RadialGradientBrush.RadiusProperty);
             configure(context).Build();
             return self;
         }

@@ -15,13 +15,27 @@ namespace CodeMarkup.Maui
         public static Microsoft.Maui.Controls.OrientationStateTrigger Orientation(this Microsoft.Maui.Controls.OrientationStateTrigger self,
             Microsoft.Maui.Devices.DisplayOrientation orientation)
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.OrientationStateTrigger.OrientationProperty, orientation);
+            self.SetValue(Microsoft.Maui.Controls.OrientationStateTrigger.OrientationProperty, orientation);
             return self;
         }
         
         public static Microsoft.Maui.Controls.OrientationStateTrigger Orientation(this Microsoft.Maui.Controls.OrientationStateTrigger self, Func<PropertyContext<Microsoft.Maui.Devices.DisplayOrientation>, IPropertyBuilder<Microsoft.Maui.Devices.DisplayOrientation>> configure)
         {
             var context = new PropertyContext<Microsoft.Maui.Devices.DisplayOrientation>(self, Microsoft.Maui.Controls.OrientationStateTrigger.OrientationProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.OrientationStateTrigger> Orientation(this SettersContext<Microsoft.Maui.Controls.OrientationStateTrigger> self,
+            Microsoft.Maui.Devices.DisplayOrientation orientation)
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.OrientationStateTrigger.OrientationProperty, Value = orientation });
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.OrientationStateTrigger> Orientation(this SettersContext<Microsoft.Maui.Controls.OrientationStateTrigger> self, Func<PropertySettersContext<Microsoft.Maui.Devices.DisplayOrientation>, IPropertySettersBuilder<Microsoft.Maui.Devices.DisplayOrientation>> configure)
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Devices.DisplayOrientation>(self.XamlSetters, Microsoft.Maui.Controls.OrientationStateTrigger.OrientationProperty);
             configure(context).Build();
             return self;
         }

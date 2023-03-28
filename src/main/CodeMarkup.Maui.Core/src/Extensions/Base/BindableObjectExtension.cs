@@ -6,16 +6,6 @@ namespace CodeMarkup.Maui
 {    
     public static partial class BindableObjectExtension
     {
-        public static T SetValueOrAddSetter<T>(this T self, BindableProperty property, object value) where T : BindableObject
-        {
-            var setters = FluentStyling.Setters as IList<Setter>;
-            if (setters != null)
-                setters.Add(new Setter { Property = property, Value = value });
-            else
-                self.SetValue(property, value);
-            return self;
-        }
-
         public static T Bind<T>(this T self,
             BindableProperty property,
             string sourcePath,

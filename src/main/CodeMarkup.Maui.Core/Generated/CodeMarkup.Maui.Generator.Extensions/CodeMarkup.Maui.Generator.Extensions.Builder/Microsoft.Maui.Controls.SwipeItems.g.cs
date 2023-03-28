@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.SwipeMode mode)
             where T : Microsoft.Maui.Controls.SwipeItems
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwipeItems.ModeProperty, mode);
+            self.SetValue(Microsoft.Maui.Controls.SwipeItems.ModeProperty, mode);
             return self;
         }
         
@@ -28,11 +28,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> Mode<T>(this SettersContext<T> self,
+            Microsoft.Maui.SwipeMode mode)
+            where T : Microsoft.Maui.Controls.SwipeItems
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SwipeItems.ModeProperty, Value = mode });
+            return self;
+        }
+        
+        public static SettersContext<T> Mode<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.SwipeMode>, IPropertySettersBuilder<Microsoft.Maui.SwipeMode>> configure)
+            where T : Microsoft.Maui.Controls.SwipeItems
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.SwipeMode>(self.XamlSetters, Microsoft.Maui.Controls.SwipeItems.ModeProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T SwipeBehaviorOnInvoked<T>(this T self,
             Microsoft.Maui.SwipeBehaviorOnInvoked swipeBehaviorOnInvoked)
             where T : Microsoft.Maui.Controls.SwipeItems
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwipeItems.SwipeBehaviorOnInvokedProperty, swipeBehaviorOnInvoked);
+            self.SetValue(Microsoft.Maui.Controls.SwipeItems.SwipeBehaviorOnInvokedProperty, swipeBehaviorOnInvoked);
             return self;
         }
         
@@ -40,6 +56,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.SwipeItems
         {
             var context = new PropertyContext<Microsoft.Maui.SwipeBehaviorOnInvoked>(self, Microsoft.Maui.Controls.SwipeItems.SwipeBehaviorOnInvokedProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> SwipeBehaviorOnInvoked<T>(this SettersContext<T> self,
+            Microsoft.Maui.SwipeBehaviorOnInvoked swipeBehaviorOnInvoked)
+            where T : Microsoft.Maui.Controls.SwipeItems
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SwipeItems.SwipeBehaviorOnInvokedProperty, Value = swipeBehaviorOnInvoked });
+            return self;
+        }
+        
+        public static SettersContext<T> SwipeBehaviorOnInvoked<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.SwipeBehaviorOnInvoked>, IPropertySettersBuilder<Microsoft.Maui.SwipeBehaviorOnInvoked>> configure)
+            where T : Microsoft.Maui.Controls.SwipeItems
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.SwipeBehaviorOnInvoked>(self.XamlSetters, Microsoft.Maui.Controls.SwipeItems.SwipeBehaviorOnInvokedProperty);
             configure(context).Build();
             return self;
         }

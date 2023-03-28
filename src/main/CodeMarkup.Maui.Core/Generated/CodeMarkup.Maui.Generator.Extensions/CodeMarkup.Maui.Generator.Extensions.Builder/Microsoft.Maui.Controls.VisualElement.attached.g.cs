@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Controls.VisualStateGroupList visualStateGroups)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.VisualStateManager.VisualStateGroupsProperty, visualStateGroups);
+            self.SetValue(Microsoft.Maui.Controls.VisualStateManager.VisualStateGroupsProperty, visualStateGroups);
             return self;
         }
         
@@ -24,6 +24,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var context = new PropertyContext<Microsoft.Maui.Controls.VisualStateGroupList>(self, Microsoft.Maui.Controls.VisualStateManager.VisualStateGroupsProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> VisualStateGroups<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.VisualStateGroupList visualStateGroups)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualStateManager.VisualStateGroupsProperty, Value = visualStateGroups });
+            return self;
+        }
+        
+        public static SettersContext<T> VisualStateGroups<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.VisualStateGroupList>, IPropertySettersBuilder<Microsoft.Maui.Controls.VisualStateGroupList>> configure)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.VisualStateGroupList>(self.XamlSetters, Microsoft.Maui.Controls.VisualStateManager.VisualStateGroupsProperty);
             configure(context).Build();
             return self;
         }
@@ -38,7 +54,7 @@ namespace CodeMarkup.Maui
             bool? automationExcludedWithChildren)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.AutomationProperties.ExcludedWithChildrenProperty, automationExcludedWithChildren);
+            self.SetValue(Microsoft.Maui.Controls.AutomationProperties.ExcludedWithChildrenProperty, automationExcludedWithChildren);
             return self;
         }
         
@@ -46,6 +62,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var context = new PropertyContext<bool?>(self, Microsoft.Maui.Controls.AutomationProperties.ExcludedWithChildrenProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> AutomationExcludedWithChildren<T>(this SettersContext<T> self,
+            bool? automationExcludedWithChildren)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.AutomationProperties.ExcludedWithChildrenProperty, Value = automationExcludedWithChildren });
+            return self;
+        }
+        
+        public static SettersContext<T> AutomationExcludedWithChildren<T>(this SettersContext<T> self, Func<PropertySettersContext<bool?>, IPropertySettersBuilder<bool?>> configure)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var context = new PropertySettersContext<bool?>(self.XamlSetters, Microsoft.Maui.Controls.AutomationProperties.ExcludedWithChildrenProperty);
             configure(context).Build();
             return self;
         }
@@ -60,7 +92,7 @@ namespace CodeMarkup.Maui
             bool? automationIsInAccessibleTree)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.AutomationProperties.IsInAccessibleTreeProperty, automationIsInAccessibleTree);
+            self.SetValue(Microsoft.Maui.Controls.AutomationProperties.IsInAccessibleTreeProperty, automationIsInAccessibleTree);
             return self;
         }
         
@@ -68,6 +100,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var context = new PropertyContext<bool?>(self, Microsoft.Maui.Controls.AutomationProperties.IsInAccessibleTreeProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> AutomationIsInAccessibleTree<T>(this SettersContext<T> self,
+            bool? automationIsInAccessibleTree)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.AutomationProperties.IsInAccessibleTreeProperty, Value = automationIsInAccessibleTree });
+            return self;
+        }
+        
+        public static SettersContext<T> AutomationIsInAccessibleTree<T>(this SettersContext<T> self, Func<PropertySettersContext<bool?>, IPropertySettersBuilder<bool?>> configure)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var context = new PropertySettersContext<bool?>(self.XamlSetters, Microsoft.Maui.Controls.AutomationProperties.IsInAccessibleTreeProperty);
             configure(context).Build();
             return self;
         }
@@ -82,7 +130,7 @@ namespace CodeMarkup.Maui
             string automationName)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.AutomationProperties.NameProperty, automationName);
+            self.SetValue(Microsoft.Maui.Controls.AutomationProperties.NameProperty, automationName);
             return self;
         }
         
@@ -90,6 +138,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var context = new PropertyContext<string>(self, Microsoft.Maui.Controls.AutomationProperties.NameProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> AutomationName<T>(this SettersContext<T> self,
+            string automationName)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.AutomationProperties.NameProperty, Value = automationName });
+            return self;
+        }
+        
+        public static SettersContext<T> AutomationName<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var context = new PropertySettersContext<string>(self.XamlSetters, Microsoft.Maui.Controls.AutomationProperties.NameProperty);
             configure(context).Build();
             return self;
         }
@@ -104,7 +168,7 @@ namespace CodeMarkup.Maui
             string automationHelpText)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.AutomationProperties.HelpTextProperty, automationHelpText);
+            self.SetValue(Microsoft.Maui.Controls.AutomationProperties.HelpTextProperty, automationHelpText);
             return self;
         }
         
@@ -112,6 +176,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var context = new PropertyContext<string>(self, Microsoft.Maui.Controls.AutomationProperties.HelpTextProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> AutomationHelpText<T>(this SettersContext<T> self,
+            string automationHelpText)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.AutomationProperties.HelpTextProperty, Value = automationHelpText });
+            return self;
+        }
+        
+        public static SettersContext<T> AutomationHelpText<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var context = new PropertySettersContext<string>(self.XamlSetters, Microsoft.Maui.Controls.AutomationProperties.HelpTextProperty);
             configure(context).Build();
             return self;
         }
@@ -126,7 +206,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Controls.VisualElement automationLabeledBy)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.AutomationProperties.LabeledByProperty, automationLabeledBy);
+            self.SetValue(Microsoft.Maui.Controls.AutomationProperties.LabeledByProperty, automationLabeledBy);
             return self;
         }
         
@@ -134,6 +214,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var context = new PropertyContext<Microsoft.Maui.Controls.VisualElement>(self, Microsoft.Maui.Controls.AutomationProperties.LabeledByProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> AutomationLabeledBy<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.VisualElement automationLabeledBy)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.AutomationProperties.LabeledByProperty, Value = automationLabeledBy });
+            return self;
+        }
+        
+        public static SettersContext<T> AutomationLabeledBy<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.VisualElement>, IPropertySettersBuilder<Microsoft.Maui.Controls.VisualElement>> configure)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.VisualElement>(self.XamlSetters, Microsoft.Maui.Controls.AutomationProperties.LabeledByProperty);
             configure(context).Build();
             return self;
         }
@@ -148,7 +244,7 @@ namespace CodeMarkup.Maui
             string semanticHint)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SemanticProperties.HintProperty, semanticHint);
+            self.SetValue(Microsoft.Maui.Controls.SemanticProperties.HintProperty, semanticHint);
             return self;
         }
         
@@ -156,6 +252,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var context = new PropertyContext<string>(self, Microsoft.Maui.Controls.SemanticProperties.HintProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> SemanticHint<T>(this SettersContext<T> self,
+            string semanticHint)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SemanticProperties.HintProperty, Value = semanticHint });
+            return self;
+        }
+        
+        public static SettersContext<T> SemanticHint<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var context = new PropertySettersContext<string>(self.XamlSetters, Microsoft.Maui.Controls.SemanticProperties.HintProperty);
             configure(context).Build();
             return self;
         }
@@ -170,7 +282,7 @@ namespace CodeMarkup.Maui
             string semanticDescription)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SemanticProperties.DescriptionProperty, semanticDescription);
+            self.SetValue(Microsoft.Maui.Controls.SemanticProperties.DescriptionProperty, semanticDescription);
             return self;
         }
         
@@ -178,6 +290,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var context = new PropertyContext<string>(self, Microsoft.Maui.Controls.SemanticProperties.DescriptionProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> SemanticDescription<T>(this SettersContext<T> self,
+            string semanticDescription)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SemanticProperties.DescriptionProperty, Value = semanticDescription });
+            return self;
+        }
+        
+        public static SettersContext<T> SemanticDescription<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var context = new PropertySettersContext<string>(self.XamlSetters, Microsoft.Maui.Controls.SemanticProperties.DescriptionProperty);
             configure(context).Build();
             return self;
         }
@@ -192,7 +320,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.SemanticHeadingLevel semanticHeadingLevel)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SemanticProperties.HeadingLevelProperty, semanticHeadingLevel);
+            self.SetValue(Microsoft.Maui.Controls.SemanticProperties.HeadingLevelProperty, semanticHeadingLevel);
             return self;
         }
         
@@ -200,6 +328,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.VisualElement
         {
             var context = new PropertyContext<Microsoft.Maui.SemanticHeadingLevel>(self, Microsoft.Maui.Controls.SemanticProperties.HeadingLevelProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> SemanticHeadingLevel<T>(this SettersContext<T> self,
+            Microsoft.Maui.SemanticHeadingLevel semanticHeadingLevel)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SemanticProperties.HeadingLevelProperty, Value = semanticHeadingLevel });
+            return self;
+        }
+        
+        public static SettersContext<T> SemanticHeadingLevel<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.SemanticHeadingLevel>, IPropertySettersBuilder<Microsoft.Maui.SemanticHeadingLevel>> configure)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.SemanticHeadingLevel>(self.XamlSetters, Microsoft.Maui.Controls.SemanticProperties.HeadingLevelProperty);
             configure(context).Build();
             return self;
         }

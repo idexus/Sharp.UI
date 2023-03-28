@@ -15,13 +15,27 @@ namespace CodeMarkup.Maui
         public static Microsoft.Maui.Controls.Shapes.RoundRectangle CornerRadius(this Microsoft.Maui.Controls.Shapes.RoundRectangle self,
             Microsoft.Maui.CornerRadius cornerRadius)
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.RoundRectangle.CornerRadiusProperty, cornerRadius);
+            self.SetValue(Microsoft.Maui.Controls.Shapes.RoundRectangle.CornerRadiusProperty, cornerRadius);
             return self;
         }
         
         public static Microsoft.Maui.Controls.Shapes.RoundRectangle CornerRadius(this Microsoft.Maui.Controls.Shapes.RoundRectangle self, Func<PropertyContext<Microsoft.Maui.CornerRadius>, IPropertyBuilder<Microsoft.Maui.CornerRadius>> configure)
         {
             var context = new PropertyContext<Microsoft.Maui.CornerRadius>(self, Microsoft.Maui.Controls.Shapes.RoundRectangle.CornerRadiusProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.Shapes.RoundRectangle> CornerRadius(this SettersContext<Microsoft.Maui.Controls.Shapes.RoundRectangle> self,
+            Microsoft.Maui.CornerRadius cornerRadius)
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shapes.RoundRectangle.CornerRadiusProperty, Value = cornerRadius });
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.Shapes.RoundRectangle> CornerRadius(this SettersContext<Microsoft.Maui.Controls.Shapes.RoundRectangle> self, Func<PropertySettersContext<Microsoft.Maui.CornerRadius>, IPropertySettersBuilder<Microsoft.Maui.CornerRadius>> configure)
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.CornerRadius>(self.XamlSetters, Microsoft.Maui.Controls.Shapes.RoundRectangle.CornerRadiusProperty);
             configure(context).Build();
             return self;
         }

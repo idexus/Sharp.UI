@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             int touchPoints)
             where T : Microsoft.Maui.Controls.PanGestureRecognizer
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.PanGestureRecognizer.TouchPointsProperty, touchPoints);
+            self.SetValue(Microsoft.Maui.Controls.PanGestureRecognizer.TouchPointsProperty, touchPoints);
             return self;
         }
         
@@ -24,6 +24,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.PanGestureRecognizer
         {
             var context = new PropertyContext<int>(self, Microsoft.Maui.Controls.PanGestureRecognizer.TouchPointsProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> TouchPoints<T>(this SettersContext<T> self,
+            int touchPoints)
+            where T : Microsoft.Maui.Controls.PanGestureRecognizer
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.PanGestureRecognizer.TouchPointsProperty, Value = touchPoints });
+            return self;
+        }
+        
+        public static SettersContext<T> TouchPoints<T>(this SettersContext<T> self, Func<PropertySettersContext<int>, IPropertySettersBuilder<int>> configure)
+            where T : Microsoft.Maui.Controls.PanGestureRecognizer
+        {
+            var context = new PropertySettersContext<int>(self.XamlSetters, Microsoft.Maui.Controls.PanGestureRecognizer.TouchPointsProperty);
             configure(context).Build();
             return self;
         }

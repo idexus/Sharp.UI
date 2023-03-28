@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             bool canMixGroups)
             where T : Microsoft.Maui.Controls.ReorderableItemsView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ReorderableItemsView.CanMixGroupsProperty, canMixGroups);
+            self.SetValue(Microsoft.Maui.Controls.ReorderableItemsView.CanMixGroupsProperty, canMixGroups);
             return self;
         }
         
@@ -28,11 +28,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> CanMixGroups<T>(this SettersContext<T> self,
+            bool canMixGroups)
+            where T : Microsoft.Maui.Controls.ReorderableItemsView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ReorderableItemsView.CanMixGroupsProperty, Value = canMixGroups });
+            return self;
+        }
+        
+        public static SettersContext<T> CanMixGroups<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.ReorderableItemsView
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.ReorderableItemsView.CanMixGroupsProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T CanReorderItems<T>(this T self,
             bool canReorderItems)
             where T : Microsoft.Maui.Controls.ReorderableItemsView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ReorderableItemsView.CanReorderItemsProperty, canReorderItems);
+            self.SetValue(Microsoft.Maui.Controls.ReorderableItemsView.CanReorderItemsProperty, canReorderItems);
             return self;
         }
         
@@ -40,6 +56,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.ReorderableItemsView
         {
             var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.ReorderableItemsView.CanReorderItemsProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> CanReorderItems<T>(this SettersContext<T> self,
+            bool canReorderItems)
+            where T : Microsoft.Maui.Controls.ReorderableItemsView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ReorderableItemsView.CanReorderItemsProperty, Value = canReorderItems });
+            return self;
+        }
+        
+        public static SettersContext<T> CanReorderItems<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.ReorderableItemsView
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.ReorderableItemsView.CanReorderItemsProperty);
             configure(context).Build();
             return self;
         }

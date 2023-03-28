@@ -15,7 +15,6 @@ namespace CodeMarkup.Maui
         public static Microsoft.Maui.Controls.Trigger Property(this Microsoft.Maui.Controls.Trigger self,
             Microsoft.Maui.Controls.BindableProperty property)
         {
-            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property Property");
             self.Property = property;
             return self;
         }
@@ -39,7 +38,6 @@ namespace CodeMarkup.Maui
         public static Microsoft.Maui.Controls.Trigger Value(this Microsoft.Maui.Controls.Trigger self,
             object value)
         {
-            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property Value");
             self.Value = value;
             return self;
         }

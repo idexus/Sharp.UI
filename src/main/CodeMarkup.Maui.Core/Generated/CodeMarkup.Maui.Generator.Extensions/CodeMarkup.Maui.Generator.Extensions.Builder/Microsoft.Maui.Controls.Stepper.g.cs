@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             double increment)
             where T : Microsoft.Maui.Controls.Stepper
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Stepper.IncrementProperty, increment);
+            self.SetValue(Microsoft.Maui.Controls.Stepper.IncrementProperty, increment);
             return self;
         }
         
@@ -24,6 +24,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.Stepper
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Stepper.IncrementProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> Increment<T>(this SettersContext<T> self,
+            double increment)
+            where T : Microsoft.Maui.Controls.Stepper
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Stepper.IncrementProperty, Value = increment });
+            return self;
+        }
+        
+        public static SettersContext<T> Increment<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.Stepper
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.Stepper.IncrementProperty);
             configure(context).Build();
             return self;
         }
@@ -41,7 +57,7 @@ namespace CodeMarkup.Maui
             double maximum)
             where T : Microsoft.Maui.Controls.Stepper
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Stepper.MaximumProperty, maximum);
+            self.SetValue(Microsoft.Maui.Controls.Stepper.MaximumProperty, maximum);
             return self;
         }
         
@@ -49,6 +65,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.Stepper
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Stepper.MaximumProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> Maximum<T>(this SettersContext<T> self,
+            double maximum)
+            where T : Microsoft.Maui.Controls.Stepper
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Stepper.MaximumProperty, Value = maximum });
+            return self;
+        }
+        
+        public static SettersContext<T> Maximum<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.Stepper
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.Stepper.MaximumProperty);
             configure(context).Build();
             return self;
         }
@@ -66,7 +98,7 @@ namespace CodeMarkup.Maui
             double minimum)
             where T : Microsoft.Maui.Controls.Stepper
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Stepper.MinimumProperty, minimum);
+            self.SetValue(Microsoft.Maui.Controls.Stepper.MinimumProperty, minimum);
             return self;
         }
         
@@ -74,6 +106,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.Stepper
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Stepper.MinimumProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> Minimum<T>(this SettersContext<T> self,
+            double minimum)
+            where T : Microsoft.Maui.Controls.Stepper
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Stepper.MinimumProperty, Value = minimum });
+            return self;
+        }
+        
+        public static SettersContext<T> Minimum<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.Stepper
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.Stepper.MinimumProperty);
             configure(context).Build();
             return self;
         }
@@ -91,7 +139,7 @@ namespace CodeMarkup.Maui
             double value)
             where T : Microsoft.Maui.Controls.Stepper
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Stepper.ValueProperty, value);
+            self.SetValue(Microsoft.Maui.Controls.Stepper.ValueProperty, value);
             return self;
         }
         
@@ -99,6 +147,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.Stepper
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Stepper.ValueProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> Value<T>(this SettersContext<T> self,
+            double value)
+            where T : Microsoft.Maui.Controls.Stepper
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Stepper.ValueProperty, Value = value });
+            return self;
+        }
+        
+        public static SettersContext<T> Value<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.Stepper
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.Stepper.ValueProperty);
             configure(context).Build();
             return self;
         }

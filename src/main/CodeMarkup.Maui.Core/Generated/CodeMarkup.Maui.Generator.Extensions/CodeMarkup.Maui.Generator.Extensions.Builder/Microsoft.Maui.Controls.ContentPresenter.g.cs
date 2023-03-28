@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Controls.View content)
             where T : Microsoft.Maui.Controls.ContentPresenter
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ContentPresenter.ContentProperty, content);
+            self.SetValue(Microsoft.Maui.Controls.ContentPresenter.ContentProperty, content);
             return self;
         }
         
@@ -24,6 +24,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.ContentPresenter
         {
             var context = new PropertyContext<Microsoft.Maui.Controls.View>(self, Microsoft.Maui.Controls.ContentPresenter.ContentProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> Content<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.View content)
+            where T : Microsoft.Maui.Controls.ContentPresenter
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ContentPresenter.ContentProperty, Value = content });
+            return self;
+        }
+        
+        public static SettersContext<T> Content<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.View>, IPropertySettersBuilder<Microsoft.Maui.Controls.View>> configure)
+            where T : Microsoft.Maui.Controls.ContentPresenter
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.View>(self.XamlSetters, Microsoft.Maui.Controls.ContentPresenter.ContentProperty);
             configure(context).Build();
             return self;
         }

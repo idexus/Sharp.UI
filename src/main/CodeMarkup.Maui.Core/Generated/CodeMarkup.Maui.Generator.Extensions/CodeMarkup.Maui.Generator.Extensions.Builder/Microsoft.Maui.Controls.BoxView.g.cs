@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Graphics.Color color)
             where T : Microsoft.Maui.Controls.BoxView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.BoxView.ColorProperty, color);
+            self.SetValue(Microsoft.Maui.Controls.BoxView.ColorProperty, color);
             return self;
         }
         
@@ -24,6 +24,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.BoxView
         {
             var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.BoxView.ColorProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> Color<T>(this SettersContext<T> self,
+            Microsoft.Maui.Graphics.Color color)
+            where T : Microsoft.Maui.Controls.BoxView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.BoxView.ColorProperty, Value = color });
+            return self;
+        }
+        
+        public static SettersContext<T> Color<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
+            where T : Microsoft.Maui.Controls.BoxView
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.Color>(self.XamlSetters, Microsoft.Maui.Controls.BoxView.ColorProperty);
             configure(context).Build();
             return self;
         }
@@ -41,7 +57,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.CornerRadius cornerRadius)
             where T : Microsoft.Maui.Controls.BoxView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.BoxView.CornerRadiusProperty, cornerRadius);
+            self.SetValue(Microsoft.Maui.Controls.BoxView.CornerRadiusProperty, cornerRadius);
             return self;
         }
         
@@ -49,6 +65,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.BoxView
         {
             var context = new PropertyContext<Microsoft.Maui.CornerRadius>(self, Microsoft.Maui.Controls.BoxView.CornerRadiusProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> CornerRadius<T>(this SettersContext<T> self,
+            Microsoft.Maui.CornerRadius cornerRadius)
+            where T : Microsoft.Maui.Controls.BoxView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.BoxView.CornerRadiusProperty, Value = cornerRadius });
+            return self;
+        }
+        
+        public static SettersContext<T> CornerRadius<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.CornerRadius>, IPropertySettersBuilder<Microsoft.Maui.CornerRadius>> configure)
+            where T : Microsoft.Maui.Controls.BoxView
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.CornerRadius>(self.XamlSetters, Microsoft.Maui.Controls.BoxView.CornerRadiusProperty);
             configure(context).Build();
             return self;
         }

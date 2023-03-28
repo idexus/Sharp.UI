@@ -17,7 +17,7 @@ namespace ExampleApp
             string cardTitle)
             where T : ExampleApp.EmptyCardView
         {
-            self.SetValueOrAddSetter(ExampleApp.EmptyCardView.CardTitleProperty, cardTitle);
+            self.SetValue(ExampleApp.EmptyCardView.CardTitleProperty, cardTitle);
             return self;
         }
         
@@ -29,11 +29,27 @@ namespace ExampleApp
             return self;
         }
         
+        public static SettersContext<T> CardTitle<T>(this SettersContext<T> self,
+            string cardTitle)
+            where T : ExampleApp.EmptyCardView
+        {
+            self.XamlSetters.Add(new Setter { Property = ExampleApp.EmptyCardView.CardTitleProperty, Value = cardTitle });
+            return self;
+        }
+        
+        public static SettersContext<T> CardTitle<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
+            where T : ExampleApp.EmptyCardView
+        {
+            var context = new PropertySettersContext<string>(self.XamlSetters, ExampleApp.EmptyCardView.CardTitleProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T CardDescription<T>(this T self,
             string cardDescription)
             where T : ExampleApp.EmptyCardView
         {
-            self.SetValueOrAddSetter(ExampleApp.EmptyCardView.CardDescriptionProperty, cardDescription);
+            self.SetValue(ExampleApp.EmptyCardView.CardDescriptionProperty, cardDescription);
             return self;
         }
         
@@ -45,11 +61,27 @@ namespace ExampleApp
             return self;
         }
         
+        public static SettersContext<T> CardDescription<T>(this SettersContext<T> self,
+            string cardDescription)
+            where T : ExampleApp.EmptyCardView
+        {
+            self.XamlSetters.Add(new Setter { Property = ExampleApp.EmptyCardView.CardDescriptionProperty, Value = cardDescription });
+            return self;
+        }
+        
+        public static SettersContext<T> CardDescription<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
+            where T : ExampleApp.EmptyCardView
+        {
+            var context = new PropertySettersContext<string>(self.XamlSetters, ExampleApp.EmptyCardView.CardDescriptionProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T CardColor<T>(this T self,
             Microsoft.Maui.Graphics.Color cardColor)
             where T : ExampleApp.EmptyCardView
         {
-            self.SetValueOrAddSetter(ExampleApp.EmptyCardView.CardColorProperty, cardColor);
+            self.SetValue(ExampleApp.EmptyCardView.CardColorProperty, cardColor);
             return self;
         }
         
@@ -61,11 +93,27 @@ namespace ExampleApp
             return self;
         }
         
+        public static SettersContext<T> CardColor<T>(this SettersContext<T> self,
+            Microsoft.Maui.Graphics.Color cardColor)
+            where T : ExampleApp.EmptyCardView
+        {
+            self.XamlSetters.Add(new Setter { Property = ExampleApp.EmptyCardView.CardColorProperty, Value = cardColor });
+            return self;
+        }
+        
+        public static SettersContext<T> CardColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
+            where T : ExampleApp.EmptyCardView
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.Color>(self.XamlSetters, ExampleApp.EmptyCardView.CardColorProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T BorderColor<T>(this T self,
             Microsoft.Maui.Graphics.Color borderColor)
             where T : ExampleApp.EmptyCardView
         {
-            self.SetValueOrAddSetter(ExampleApp.EmptyCardView.BorderColorProperty, borderColor);
+            self.SetValue(ExampleApp.EmptyCardView.BorderColorProperty, borderColor);
             return self;
         }
         
@@ -73,6 +121,22 @@ namespace ExampleApp
             where T : ExampleApp.EmptyCardView
         {
             var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, ExampleApp.EmptyCardView.BorderColorProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> BorderColor<T>(this SettersContext<T> self,
+            Microsoft.Maui.Graphics.Color borderColor)
+            where T : ExampleApp.EmptyCardView
+        {
+            self.XamlSetters.Add(new Setter { Property = ExampleApp.EmptyCardView.BorderColorProperty, Value = borderColor });
+            return self;
+        }
+        
+        public static SettersContext<T> BorderColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
+            where T : ExampleApp.EmptyCardView
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.Color>(self.XamlSetters, ExampleApp.EmptyCardView.BorderColorProperty);
             configure(context).Build();
             return self;
         }

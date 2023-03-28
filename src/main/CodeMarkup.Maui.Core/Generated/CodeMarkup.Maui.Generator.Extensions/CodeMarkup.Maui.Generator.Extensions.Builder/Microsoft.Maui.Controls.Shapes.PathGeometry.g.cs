@@ -38,13 +38,27 @@ namespace CodeMarkup.Maui
         public static Microsoft.Maui.Controls.Shapes.PathGeometry FillRule(this Microsoft.Maui.Controls.Shapes.PathGeometry self,
             Microsoft.Maui.Controls.Shapes.FillRule fillRule)
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.PathGeometry.FillRuleProperty, fillRule);
+            self.SetValue(Microsoft.Maui.Controls.Shapes.PathGeometry.FillRuleProperty, fillRule);
             return self;
         }
         
         public static Microsoft.Maui.Controls.Shapes.PathGeometry FillRule(this Microsoft.Maui.Controls.Shapes.PathGeometry self, Func<PropertyContext<Microsoft.Maui.Controls.Shapes.FillRule>, IPropertyBuilder<Microsoft.Maui.Controls.Shapes.FillRule>> configure)
         {
             var context = new PropertyContext<Microsoft.Maui.Controls.Shapes.FillRule>(self, Microsoft.Maui.Controls.Shapes.PathGeometry.FillRuleProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.Shapes.PathGeometry> FillRule(this SettersContext<Microsoft.Maui.Controls.Shapes.PathGeometry> self,
+            Microsoft.Maui.Controls.Shapes.FillRule fillRule)
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shapes.PathGeometry.FillRuleProperty, Value = fillRule });
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.Shapes.PathGeometry> FillRule(this SettersContext<Microsoft.Maui.Controls.Shapes.PathGeometry> self, Func<PropertySettersContext<Microsoft.Maui.Controls.Shapes.FillRule>, IPropertySettersBuilder<Microsoft.Maui.Controls.Shapes.FillRule>> configure)
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.Shapes.FillRule>(self.XamlSetters, Microsoft.Maui.Controls.Shapes.PathGeometry.FillRuleProperty);
             configure(context).Build();
             return self;
         }

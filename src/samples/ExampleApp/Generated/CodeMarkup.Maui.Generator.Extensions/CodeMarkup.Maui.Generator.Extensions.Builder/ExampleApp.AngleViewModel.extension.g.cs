@@ -17,7 +17,7 @@ namespace ExampleApp
             double rawAngle)
             where T : ExampleApp.AngleViewModel
         {
-            self.SetValueOrAddSetter(ExampleApp.AngleViewModel.RawAngleProperty, rawAngle);
+            self.SetValue(ExampleApp.AngleViewModel.RawAngleProperty, rawAngle);
             return self;
         }
         
@@ -29,11 +29,27 @@ namespace ExampleApp
             return self;
         }
         
+        public static SettersContext<T> RawAngle<T>(this SettersContext<T> self,
+            double rawAngle)
+            where T : ExampleApp.AngleViewModel
+        {
+            self.XamlSetters.Add(new Setter { Property = ExampleApp.AngleViewModel.RawAngleProperty, Value = rawAngle });
+            return self;
+        }
+        
+        public static SettersContext<T> RawAngle<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : ExampleApp.AngleViewModel
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, ExampleApp.AngleViewModel.RawAngleProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T Angle<T>(this T self,
             double angle)
             where T : ExampleApp.AngleViewModel
         {
-            self.SetValueOrAddSetter(ExampleApp.AngleViewModel.AngleProperty, angle);
+            self.SetValue(ExampleApp.AngleViewModel.AngleProperty, angle);
             return self;
         }
         
@@ -45,11 +61,27 @@ namespace ExampleApp
             return self;
         }
         
+        public static SettersContext<T> Angle<T>(this SettersContext<T> self,
+            double angle)
+            where T : ExampleApp.AngleViewModel
+        {
+            self.XamlSetters.Add(new Setter { Property = ExampleApp.AngleViewModel.AngleProperty, Value = angle });
+            return self;
+        }
+        
+        public static SettersContext<T> Angle<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : ExampleApp.AngleViewModel
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, ExampleApp.AngleViewModel.AngleProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T MaximumAngle<T>(this T self,
             double maximumAngle)
             where T : ExampleApp.AngleViewModel
         {
-            self.SetValueOrAddSetter(ExampleApp.AngleViewModel.MaximumAngleProperty, maximumAngle);
+            self.SetValue(ExampleApp.AngleViewModel.MaximumAngleProperty, maximumAngle);
             return self;
         }
         
@@ -57,6 +89,22 @@ namespace ExampleApp
             where T : ExampleApp.AngleViewModel
         {
             var context = new PropertyContext<double>(self, ExampleApp.AngleViewModel.MaximumAngleProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> MaximumAngle<T>(this SettersContext<T> self,
+            double maximumAngle)
+            where T : ExampleApp.AngleViewModel
+        {
+            self.XamlSetters.Add(new Setter { Property = ExampleApp.AngleViewModel.MaximumAngleProperty, Value = maximumAngle });
+            return self;
+        }
+        
+        public static SettersContext<T> MaximumAngle<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : ExampleApp.AngleViewModel
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, ExampleApp.AngleViewModel.MaximumAngleProperty);
             configure(context).Build();
             return self;
         }

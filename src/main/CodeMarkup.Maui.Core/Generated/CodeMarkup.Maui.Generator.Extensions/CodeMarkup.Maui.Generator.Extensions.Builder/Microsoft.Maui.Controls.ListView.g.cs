@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             object footer)
             where T : Microsoft.Maui.Controls.ListView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.FooterProperty, footer);
+            self.SetValue(Microsoft.Maui.Controls.ListView.FooterProperty, footer);
             return self;
         }
         
@@ -28,11 +28,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> Footer<T>(this SettersContext<T> self,
+            object footer)
+            where T : Microsoft.Maui.Controls.ListView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ListView.FooterProperty, Value = footer });
+            return self;
+        }
+        
+        public static SettersContext<T> Footer<T>(this SettersContext<T> self, Func<PropertySettersContext<object>, IPropertySettersBuilder<object>> configure)
+            where T : Microsoft.Maui.Controls.ListView
+        {
+            var context = new PropertySettersContext<object>(self.XamlSetters, Microsoft.Maui.Controls.ListView.FooterProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T FooterTemplate<T>(this T self,
             Microsoft.Maui.Controls.DataTemplate footerTemplate)
             where T : Microsoft.Maui.Controls.ListView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.FooterTemplateProperty, footerTemplate);
+            self.SetValue(Microsoft.Maui.Controls.ListView.FooterTemplateProperty, footerTemplate);
             return self;
         }
         
@@ -44,10 +60,26 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> FooterTemplate<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.DataTemplate footerTemplate)
+            where T : Microsoft.Maui.Controls.ListView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ListView.FooterTemplateProperty, Value = footerTemplate });
+            return self;
+        }
+        
+        public static SettersContext<T> FooterTemplate<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.DataTemplate>, IPropertySettersBuilder<Microsoft.Maui.Controls.DataTemplate>> configure)
+            where T : Microsoft.Maui.Controls.ListView
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.DataTemplate>(self.XamlSetters, Microsoft.Maui.Controls.ListView.FooterTemplateProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T FooterTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.ListView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.FooterTemplateProperty, new DataTemplate(loadTemplate));
+            self.SetValue(Microsoft.Maui.Controls.ListView.FooterTemplateProperty, new DataTemplate(loadTemplate));
             return self;
         }
         
@@ -55,7 +87,6 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Controls.BindingBase groupDisplayBinding)
             where T : Microsoft.Maui.Controls.ListView
         {
-            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property GroupDisplayBinding");
             self.GroupDisplayBinding = groupDisplayBinding;
             return self;
         }
@@ -64,7 +95,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Controls.DataTemplate groupHeaderTemplate)
             where T : Microsoft.Maui.Controls.ListView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.GroupHeaderTemplateProperty, groupHeaderTemplate);
+            self.SetValue(Microsoft.Maui.Controls.ListView.GroupHeaderTemplateProperty, groupHeaderTemplate);
             return self;
         }
         
@@ -76,10 +107,26 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> GroupHeaderTemplate<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.DataTemplate groupHeaderTemplate)
+            where T : Microsoft.Maui.Controls.ListView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ListView.GroupHeaderTemplateProperty, Value = groupHeaderTemplate });
+            return self;
+        }
+        
+        public static SettersContext<T> GroupHeaderTemplate<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.DataTemplate>, IPropertySettersBuilder<Microsoft.Maui.Controls.DataTemplate>> configure)
+            where T : Microsoft.Maui.Controls.ListView
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.DataTemplate>(self.XamlSetters, Microsoft.Maui.Controls.ListView.GroupHeaderTemplateProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T GroupHeaderTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.ListView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.GroupHeaderTemplateProperty, new DataTemplate(loadTemplate));
+            self.SetValue(Microsoft.Maui.Controls.ListView.GroupHeaderTemplateProperty, new DataTemplate(loadTemplate));
             return self;
         }
         
@@ -87,7 +134,6 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Controls.BindingBase groupShortNameBinding)
             where T : Microsoft.Maui.Controls.ListView
         {
-            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property GroupShortNameBinding");
             self.GroupShortNameBinding = groupShortNameBinding;
             return self;
         }
@@ -96,7 +142,7 @@ namespace CodeMarkup.Maui
             bool hasUnevenRows)
             where T : Microsoft.Maui.Controls.ListView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.HasUnevenRowsProperty, hasUnevenRows);
+            self.SetValue(Microsoft.Maui.Controls.ListView.HasUnevenRowsProperty, hasUnevenRows);
             return self;
         }
         
@@ -108,11 +154,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> HasUnevenRows<T>(this SettersContext<T> self,
+            bool hasUnevenRows)
+            where T : Microsoft.Maui.Controls.ListView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ListView.HasUnevenRowsProperty, Value = hasUnevenRows });
+            return self;
+        }
+        
+        public static SettersContext<T> HasUnevenRows<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.ListView
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.ListView.HasUnevenRowsProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T Header<T>(this T self,
             object header)
             where T : Microsoft.Maui.Controls.ListView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.HeaderProperty, header);
+            self.SetValue(Microsoft.Maui.Controls.ListView.HeaderProperty, header);
             return self;
         }
         
@@ -124,11 +186,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> Header<T>(this SettersContext<T> self,
+            object header)
+            where T : Microsoft.Maui.Controls.ListView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ListView.HeaderProperty, Value = header });
+            return self;
+        }
+        
+        public static SettersContext<T> Header<T>(this SettersContext<T> self, Func<PropertySettersContext<object>, IPropertySettersBuilder<object>> configure)
+            where T : Microsoft.Maui.Controls.ListView
+        {
+            var context = new PropertySettersContext<object>(self.XamlSetters, Microsoft.Maui.Controls.ListView.HeaderProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T HeaderTemplate<T>(this T self,
             Microsoft.Maui.Controls.DataTemplate headerTemplate)
             where T : Microsoft.Maui.Controls.ListView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.HeaderTemplateProperty, headerTemplate);
+            self.SetValue(Microsoft.Maui.Controls.ListView.HeaderTemplateProperty, headerTemplate);
             return self;
         }
         
@@ -140,10 +218,26 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> HeaderTemplate<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.DataTemplate headerTemplate)
+            where T : Microsoft.Maui.Controls.ListView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ListView.HeaderTemplateProperty, Value = headerTemplate });
+            return self;
+        }
+        
+        public static SettersContext<T> HeaderTemplate<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.DataTemplate>, IPropertySettersBuilder<Microsoft.Maui.Controls.DataTemplate>> configure)
+            where T : Microsoft.Maui.Controls.ListView
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.DataTemplate>(self.XamlSetters, Microsoft.Maui.Controls.ListView.HeaderTemplateProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T HeaderTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.ListView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.HeaderTemplateProperty, new DataTemplate(loadTemplate));
+            self.SetValue(Microsoft.Maui.Controls.ListView.HeaderTemplateProperty, new DataTemplate(loadTemplate));
             return self;
         }
         
@@ -151,7 +245,7 @@ namespace CodeMarkup.Maui
             bool isGroupingEnabled)
             where T : Microsoft.Maui.Controls.ListView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.IsGroupingEnabledProperty, isGroupingEnabled);
+            self.SetValue(Microsoft.Maui.Controls.ListView.IsGroupingEnabledProperty, isGroupingEnabled);
             return self;
         }
         
@@ -163,11 +257,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> IsGroupingEnabled<T>(this SettersContext<T> self,
+            bool isGroupingEnabled)
+            where T : Microsoft.Maui.Controls.ListView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ListView.IsGroupingEnabledProperty, Value = isGroupingEnabled });
+            return self;
+        }
+        
+        public static SettersContext<T> IsGroupingEnabled<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.ListView
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.ListView.IsGroupingEnabledProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T IsPullToRefreshEnabled<T>(this T self,
             bool isPullToRefreshEnabled)
             where T : Microsoft.Maui.Controls.ListView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.IsPullToRefreshEnabledProperty, isPullToRefreshEnabled);
+            self.SetValue(Microsoft.Maui.Controls.ListView.IsPullToRefreshEnabledProperty, isPullToRefreshEnabled);
             return self;
         }
         
@@ -179,11 +289,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> IsPullToRefreshEnabled<T>(this SettersContext<T> self,
+            bool isPullToRefreshEnabled)
+            where T : Microsoft.Maui.Controls.ListView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ListView.IsPullToRefreshEnabledProperty, Value = isPullToRefreshEnabled });
+            return self;
+        }
+        
+        public static SettersContext<T> IsPullToRefreshEnabled<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.ListView
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.ListView.IsPullToRefreshEnabledProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T IsRefreshing<T>(this T self,
             bool isRefreshing)
             where T : Microsoft.Maui.Controls.ListView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.IsRefreshingProperty, isRefreshing);
+            self.SetValue(Microsoft.Maui.Controls.ListView.IsRefreshingProperty, isRefreshing);
             return self;
         }
         
@@ -195,11 +321,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> IsRefreshing<T>(this SettersContext<T> self,
+            bool isRefreshing)
+            where T : Microsoft.Maui.Controls.ListView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ListView.IsRefreshingProperty, Value = isRefreshing });
+            return self;
+        }
+        
+        public static SettersContext<T> IsRefreshing<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.ListView
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.ListView.IsRefreshingProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T RefreshCommand<T>(this T self,
             System.Windows.Input.ICommand refreshCommand)
             where T : Microsoft.Maui.Controls.ListView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.RefreshCommandProperty, refreshCommand);
+            self.SetValue(Microsoft.Maui.Controls.ListView.RefreshCommandProperty, refreshCommand);
             return self;
         }
         
@@ -211,11 +353,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> RefreshCommand<T>(this SettersContext<T> self,
+            System.Windows.Input.ICommand refreshCommand)
+            where T : Microsoft.Maui.Controls.ListView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ListView.RefreshCommandProperty, Value = refreshCommand });
+            return self;
+        }
+        
+        public static SettersContext<T> RefreshCommand<T>(this SettersContext<T> self, Func<PropertySettersContext<System.Windows.Input.ICommand>, IPropertySettersBuilder<System.Windows.Input.ICommand>> configure)
+            where T : Microsoft.Maui.Controls.ListView
+        {
+            var context = new PropertySettersContext<System.Windows.Input.ICommand>(self.XamlSetters, Microsoft.Maui.Controls.ListView.RefreshCommandProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T RowHeight<T>(this T self,
             int rowHeight)
             where T : Microsoft.Maui.Controls.ListView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.RowHeightProperty, rowHeight);
+            self.SetValue(Microsoft.Maui.Controls.ListView.RowHeightProperty, rowHeight);
             return self;
         }
         
@@ -227,11 +385,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> RowHeight<T>(this SettersContext<T> self,
+            int rowHeight)
+            where T : Microsoft.Maui.Controls.ListView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ListView.RowHeightProperty, Value = rowHeight });
+            return self;
+        }
+        
+        public static SettersContext<T> RowHeight<T>(this SettersContext<T> self, Func<PropertySettersContext<int>, IPropertySettersBuilder<int>> configure)
+            where T : Microsoft.Maui.Controls.ListView
+        {
+            var context = new PropertySettersContext<int>(self.XamlSetters, Microsoft.Maui.Controls.ListView.RowHeightProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T SelectedItem<T>(this T self,
             object selectedItem)
             where T : Microsoft.Maui.Controls.ListView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.SelectedItemProperty, selectedItem);
+            self.SetValue(Microsoft.Maui.Controls.ListView.SelectedItemProperty, selectedItem);
             return self;
         }
         
@@ -243,11 +417,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> SelectedItem<T>(this SettersContext<T> self,
+            object selectedItem)
+            where T : Microsoft.Maui.Controls.ListView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ListView.SelectedItemProperty, Value = selectedItem });
+            return self;
+        }
+        
+        public static SettersContext<T> SelectedItem<T>(this SettersContext<T> self, Func<PropertySettersContext<object>, IPropertySettersBuilder<object>> configure)
+            where T : Microsoft.Maui.Controls.ListView
+        {
+            var context = new PropertySettersContext<object>(self.XamlSetters, Microsoft.Maui.Controls.ListView.SelectedItemProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T SelectionMode<T>(this T self,
             Microsoft.Maui.Controls.ListViewSelectionMode selectionMode)
             where T : Microsoft.Maui.Controls.ListView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.SelectionModeProperty, selectionMode);
+            self.SetValue(Microsoft.Maui.Controls.ListView.SelectionModeProperty, selectionMode);
             return self;
         }
         
@@ -259,11 +449,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> SelectionMode<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.ListViewSelectionMode selectionMode)
+            where T : Microsoft.Maui.Controls.ListView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ListView.SelectionModeProperty, Value = selectionMode });
+            return self;
+        }
+        
+        public static SettersContext<T> SelectionMode<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.ListViewSelectionMode>, IPropertySettersBuilder<Microsoft.Maui.Controls.ListViewSelectionMode>> configure)
+            where T : Microsoft.Maui.Controls.ListView
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.ListViewSelectionMode>(self.XamlSetters, Microsoft.Maui.Controls.ListView.SelectionModeProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T SeparatorColor<T>(this T self,
             Microsoft.Maui.Graphics.Color separatorColor)
             where T : Microsoft.Maui.Controls.ListView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.SeparatorColorProperty, separatorColor);
+            self.SetValue(Microsoft.Maui.Controls.ListView.SeparatorColorProperty, separatorColor);
             return self;
         }
         
@@ -271,6 +477,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.ListView
         {
             var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.ListView.SeparatorColorProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> SeparatorColor<T>(this SettersContext<T> self,
+            Microsoft.Maui.Graphics.Color separatorColor)
+            where T : Microsoft.Maui.Controls.ListView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ListView.SeparatorColorProperty, Value = separatorColor });
+            return self;
+        }
+        
+        public static SettersContext<T> SeparatorColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
+            where T : Microsoft.Maui.Controls.ListView
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.Color>(self.XamlSetters, Microsoft.Maui.Controls.ListView.SeparatorColorProperty);
             configure(context).Build();
             return self;
         }
@@ -288,7 +510,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Graphics.Color refreshControlColor)
             where T : Microsoft.Maui.Controls.ListView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.RefreshControlColorProperty, refreshControlColor);
+            self.SetValue(Microsoft.Maui.Controls.ListView.RefreshControlColorProperty, refreshControlColor);
             return self;
         }
         
@@ -296,6 +518,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.ListView
         {
             var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.ListView.RefreshControlColorProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> RefreshControlColor<T>(this SettersContext<T> self,
+            Microsoft.Maui.Graphics.Color refreshControlColor)
+            where T : Microsoft.Maui.Controls.ListView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ListView.RefreshControlColorProperty, Value = refreshControlColor });
+            return self;
+        }
+        
+        public static SettersContext<T> RefreshControlColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
+            where T : Microsoft.Maui.Controls.ListView
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.Color>(self.XamlSetters, Microsoft.Maui.Controls.ListView.RefreshControlColorProperty);
             configure(context).Build();
             return self;
         }
@@ -313,7 +551,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Controls.SeparatorVisibility separatorVisibility)
             where T : Microsoft.Maui.Controls.ListView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.SeparatorVisibilityProperty, separatorVisibility);
+            self.SetValue(Microsoft.Maui.Controls.ListView.SeparatorVisibilityProperty, separatorVisibility);
             return self;
         }
         
@@ -325,11 +563,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> SeparatorVisibility<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.SeparatorVisibility separatorVisibility)
+            where T : Microsoft.Maui.Controls.ListView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ListView.SeparatorVisibilityProperty, Value = separatorVisibility });
+            return self;
+        }
+        
+        public static SettersContext<T> SeparatorVisibility<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.SeparatorVisibility>, IPropertySettersBuilder<Microsoft.Maui.Controls.SeparatorVisibility>> configure)
+            where T : Microsoft.Maui.Controls.ListView
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.SeparatorVisibility>(self.XamlSetters, Microsoft.Maui.Controls.ListView.SeparatorVisibilityProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T HorizontalScrollBarVisibility<T>(this T self,
             Microsoft.Maui.ScrollBarVisibility horizontalScrollBarVisibility)
             where T : Microsoft.Maui.Controls.ListView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.HorizontalScrollBarVisibilityProperty, horizontalScrollBarVisibility);
+            self.SetValue(Microsoft.Maui.Controls.ListView.HorizontalScrollBarVisibilityProperty, horizontalScrollBarVisibility);
             return self;
         }
         
@@ -341,11 +595,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> HorizontalScrollBarVisibility<T>(this SettersContext<T> self,
+            Microsoft.Maui.ScrollBarVisibility horizontalScrollBarVisibility)
+            where T : Microsoft.Maui.Controls.ListView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ListView.HorizontalScrollBarVisibilityProperty, Value = horizontalScrollBarVisibility });
+            return self;
+        }
+        
+        public static SettersContext<T> HorizontalScrollBarVisibility<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.ScrollBarVisibility>, IPropertySettersBuilder<Microsoft.Maui.ScrollBarVisibility>> configure)
+            where T : Microsoft.Maui.Controls.ListView
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.ScrollBarVisibility>(self.XamlSetters, Microsoft.Maui.Controls.ListView.HorizontalScrollBarVisibilityProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T VerticalScrollBarVisibility<T>(this T self,
             Microsoft.Maui.ScrollBarVisibility verticalScrollBarVisibility)
             where T : Microsoft.Maui.Controls.ListView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ListView.VerticalScrollBarVisibilityProperty, verticalScrollBarVisibility);
+            self.SetValue(Microsoft.Maui.Controls.ListView.VerticalScrollBarVisibilityProperty, verticalScrollBarVisibility);
             return self;
         }
         
@@ -357,11 +627,26 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> VerticalScrollBarVisibility<T>(this SettersContext<T> self,
+            Microsoft.Maui.ScrollBarVisibility verticalScrollBarVisibility)
+            where T : Microsoft.Maui.Controls.ListView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ListView.VerticalScrollBarVisibilityProperty, Value = verticalScrollBarVisibility });
+            return self;
+        }
+        
+        public static SettersContext<T> VerticalScrollBarVisibility<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.ScrollBarVisibility>, IPropertySettersBuilder<Microsoft.Maui.ScrollBarVisibility>> configure)
+            where T : Microsoft.Maui.Controls.ListView
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.ScrollBarVisibility>(self.XamlSetters, Microsoft.Maui.Controls.ListView.VerticalScrollBarVisibilityProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T RefreshAllowed<T>(this T self,
             bool refreshAllowed)
             where T : Microsoft.Maui.Controls.ListView
         {
-            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property RefreshAllowed");
             self.RefreshAllowed = refreshAllowed;
             return self;
         }

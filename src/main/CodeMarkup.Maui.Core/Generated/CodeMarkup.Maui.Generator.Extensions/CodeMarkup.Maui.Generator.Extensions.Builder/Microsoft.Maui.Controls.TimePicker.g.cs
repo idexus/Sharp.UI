@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             string format)
             where T : Microsoft.Maui.Controls.TimePicker
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.TimePicker.FormatProperty, format);
+            self.SetValue(Microsoft.Maui.Controls.TimePicker.FormatProperty, format);
             return self;
         }
         
@@ -28,11 +28,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> Format<T>(this SettersContext<T> self,
+            string format)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.TimePicker.FormatProperty, Value = format });
+            return self;
+        }
+        
+        public static SettersContext<T> Format<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            var context = new PropertySettersContext<string>(self.XamlSetters, Microsoft.Maui.Controls.TimePicker.FormatProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T TextColor<T>(this T self,
             Microsoft.Maui.Graphics.Color textColor)
             where T : Microsoft.Maui.Controls.TimePicker
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.TimePicker.TextColorProperty, textColor);
+            self.SetValue(Microsoft.Maui.Controls.TimePicker.TextColorProperty, textColor);
             return self;
         }
         
@@ -40,6 +56,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.TimePicker
         {
             var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.TimePicker.TextColorProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> TextColor<T>(this SettersContext<T> self,
+            Microsoft.Maui.Graphics.Color textColor)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.TimePicker.TextColorProperty, Value = textColor });
+            return self;
+        }
+        
+        public static SettersContext<T> TextColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.Color>(self.XamlSetters, Microsoft.Maui.Controls.TimePicker.TextColorProperty);
             configure(context).Build();
             return self;
         }
@@ -57,7 +89,7 @@ namespace CodeMarkup.Maui
             double characterSpacing)
             where T : Microsoft.Maui.Controls.TimePicker
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.TimePicker.CharacterSpacingProperty, characterSpacing);
+            self.SetValue(Microsoft.Maui.Controls.TimePicker.CharacterSpacingProperty, characterSpacing);
             return self;
         }
         
@@ -65,6 +97,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.TimePicker
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.TimePicker.CharacterSpacingProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> CharacterSpacing<T>(this SettersContext<T> self,
+            double characterSpacing)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.TimePicker.CharacterSpacingProperty, Value = characterSpacing });
+            return self;
+        }
+        
+        public static SettersContext<T> CharacterSpacing<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.TimePicker.CharacterSpacingProperty);
             configure(context).Build();
             return self;
         }
@@ -82,7 +130,7 @@ namespace CodeMarkup.Maui
             System.TimeSpan time)
             where T : Microsoft.Maui.Controls.TimePicker
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.TimePicker.TimeProperty, time);
+            self.SetValue(Microsoft.Maui.Controls.TimePicker.TimeProperty, time);
             return self;
         }
         
@@ -94,11 +142,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> Time<T>(this SettersContext<T> self,
+            System.TimeSpan time)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.TimePicker.TimeProperty, Value = time });
+            return self;
+        }
+        
+        public static SettersContext<T> Time<T>(this SettersContext<T> self, Func<PropertySettersContext<System.TimeSpan>, IPropertySettersBuilder<System.TimeSpan>> configure)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            var context = new PropertySettersContext<System.TimeSpan>(self.XamlSetters, Microsoft.Maui.Controls.TimePicker.TimeProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T FontAttributes<T>(this T self,
             Microsoft.Maui.Controls.FontAttributes fontAttributes)
             where T : Microsoft.Maui.Controls.TimePicker
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.TimePicker.FontAttributesProperty, fontAttributes);
+            self.SetValue(Microsoft.Maui.Controls.TimePicker.FontAttributesProperty, fontAttributes);
             return self;
         }
         
@@ -110,11 +174,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> FontAttributes<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.FontAttributes fontAttributes)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.TimePicker.FontAttributesProperty, Value = fontAttributes });
+            return self;
+        }
+        
+        public static SettersContext<T> FontAttributes<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.FontAttributes>, IPropertySettersBuilder<Microsoft.Maui.Controls.FontAttributes>> configure)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.FontAttributes>(self.XamlSetters, Microsoft.Maui.Controls.TimePicker.FontAttributesProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T FontFamily<T>(this T self,
             string fontFamily)
             where T : Microsoft.Maui.Controls.TimePicker
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.TimePicker.FontFamilyProperty, fontFamily);
+            self.SetValue(Microsoft.Maui.Controls.TimePicker.FontFamilyProperty, fontFamily);
             return self;
         }
         
@@ -126,11 +206,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> FontFamily<T>(this SettersContext<T> self,
+            string fontFamily)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.TimePicker.FontFamilyProperty, Value = fontFamily });
+            return self;
+        }
+        
+        public static SettersContext<T> FontFamily<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            var context = new PropertySettersContext<string>(self.XamlSetters, Microsoft.Maui.Controls.TimePicker.FontFamilyProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T FontSize<T>(this T self,
             double fontSize)
             where T : Microsoft.Maui.Controls.TimePicker
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.TimePicker.FontSizeProperty, fontSize);
+            self.SetValue(Microsoft.Maui.Controls.TimePicker.FontSizeProperty, fontSize);
             return self;
         }
         
@@ -138,6 +234,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.TimePicker
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.TimePicker.FontSizeProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> FontSize<T>(this SettersContext<T> self,
+            double fontSize)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.TimePicker.FontSizeProperty, Value = fontSize });
+            return self;
+        }
+        
+        public static SettersContext<T> FontSize<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.TimePicker.FontSizeProperty);
             configure(context).Build();
             return self;
         }
@@ -155,7 +267,7 @@ namespace CodeMarkup.Maui
             bool fontAutoScalingEnabled)
             where T : Microsoft.Maui.Controls.TimePicker
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.TimePicker.FontAutoScalingEnabledProperty, fontAutoScalingEnabled);
+            self.SetValue(Microsoft.Maui.Controls.TimePicker.FontAutoScalingEnabledProperty, fontAutoScalingEnabled);
             return self;
         }
         
@@ -163,6 +275,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.TimePicker
         {
             var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.TimePicker.FontAutoScalingEnabledProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> FontAutoScalingEnabled<T>(this SettersContext<T> self,
+            bool fontAutoScalingEnabled)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.TimePicker.FontAutoScalingEnabledProperty, Value = fontAutoScalingEnabled });
+            return self;
+        }
+        
+        public static SettersContext<T> FontAutoScalingEnabled<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.TimePicker.FontAutoScalingEnabledProperty);
             configure(context).Build();
             return self;
         }

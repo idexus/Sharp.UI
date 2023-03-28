@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Aspect aspect)
             where T : Microsoft.Maui.Controls.Image
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Image.AspectProperty, aspect);
+            self.SetValue(Microsoft.Maui.Controls.Image.AspectProperty, aspect);
             return self;
         }
         
@@ -28,11 +28,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> Aspect<T>(this SettersContext<T> self,
+            Microsoft.Maui.Aspect aspect)
+            where T : Microsoft.Maui.Controls.Image
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Image.AspectProperty, Value = aspect });
+            return self;
+        }
+        
+        public static SettersContext<T> Aspect<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Aspect>, IPropertySettersBuilder<Microsoft.Maui.Aspect>> configure)
+            where T : Microsoft.Maui.Controls.Image
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Aspect>(self.XamlSetters, Microsoft.Maui.Controls.Image.AspectProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T IsOpaque<T>(this T self,
             bool isOpaque)
             where T : Microsoft.Maui.Controls.Image
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Image.IsOpaqueProperty, isOpaque);
+            self.SetValue(Microsoft.Maui.Controls.Image.IsOpaqueProperty, isOpaque);
             return self;
         }
         
@@ -44,11 +60,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> IsOpaque<T>(this SettersContext<T> self,
+            bool isOpaque)
+            where T : Microsoft.Maui.Controls.Image
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Image.IsOpaqueProperty, Value = isOpaque });
+            return self;
+        }
+        
+        public static SettersContext<T> IsOpaque<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.Image
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.Image.IsOpaqueProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T IsAnimationPlaying<T>(this T self,
             bool isAnimationPlaying)
             where T : Microsoft.Maui.Controls.Image
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Image.IsAnimationPlayingProperty, isAnimationPlaying);
+            self.SetValue(Microsoft.Maui.Controls.Image.IsAnimationPlayingProperty, isAnimationPlaying);
             return self;
         }
         
@@ -60,11 +92,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> IsAnimationPlaying<T>(this SettersContext<T> self,
+            bool isAnimationPlaying)
+            where T : Microsoft.Maui.Controls.Image
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Image.IsAnimationPlayingProperty, Value = isAnimationPlaying });
+            return self;
+        }
+        
+        public static SettersContext<T> IsAnimationPlaying<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.Image
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.Image.IsAnimationPlayingProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T Source<T>(this T self,
             Microsoft.Maui.Controls.ImageSource source)
             where T : Microsoft.Maui.Controls.Image
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Image.SourceProperty, source);
+            self.SetValue(Microsoft.Maui.Controls.Image.SourceProperty, source);
             return self;
         }
         
@@ -72,6 +120,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.Image
         {
             var context = new PropertyContext<Microsoft.Maui.Controls.ImageSource>(self, Microsoft.Maui.Controls.Image.SourceProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> Source<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.ImageSource source)
+            where T : Microsoft.Maui.Controls.Image
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Image.SourceProperty, Value = source });
+            return self;
+        }
+        
+        public static SettersContext<T> Source<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.ImageSource>, IPropertySettersBuilder<Microsoft.Maui.Controls.ImageSource>> configure)
+            where T : Microsoft.Maui.Controls.Image
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.ImageSource>(self.XamlSetters, Microsoft.Maui.Controls.Image.SourceProperty);
             configure(context).Build();
             return self;
         }

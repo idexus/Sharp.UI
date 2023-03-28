@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Graphics.Color color)
             where T : Microsoft.Maui.Controls.SolidColorBrush
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SolidColorBrush.ColorProperty, color);
+            self.SetValue(Microsoft.Maui.Controls.SolidColorBrush.ColorProperty, color);
             return self;
         }
         
@@ -24,6 +24,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.SolidColorBrush
         {
             var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.SolidColorBrush.ColorProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> Color<T>(this SettersContext<T> self,
+            Microsoft.Maui.Graphics.Color color)
+            where T : Microsoft.Maui.Controls.SolidColorBrush
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SolidColorBrush.ColorProperty, Value = color });
+            return self;
+        }
+        
+        public static SettersContext<T> Color<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
+            where T : Microsoft.Maui.Controls.SolidColorBrush
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.Color>(self.XamlSetters, Microsoft.Maui.Controls.SolidColorBrush.ColorProperty);
             configure(context).Build();
             return self;
         }

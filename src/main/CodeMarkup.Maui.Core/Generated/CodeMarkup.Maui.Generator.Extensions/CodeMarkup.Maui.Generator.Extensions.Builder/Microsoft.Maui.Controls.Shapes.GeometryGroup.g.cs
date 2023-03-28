@@ -42,7 +42,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Controls.Shapes.FillRule fillRule)
             where T : Microsoft.Maui.Controls.Shapes.GeometryGroup
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.GeometryGroup.FillRuleProperty, fillRule);
+            self.SetValue(Microsoft.Maui.Controls.Shapes.GeometryGroup.FillRuleProperty, fillRule);
             return self;
         }
         
@@ -50,6 +50,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.Shapes.GeometryGroup
         {
             var context = new PropertyContext<Microsoft.Maui.Controls.Shapes.FillRule>(self, Microsoft.Maui.Controls.Shapes.GeometryGroup.FillRuleProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> FillRule<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.Shapes.FillRule fillRule)
+            where T : Microsoft.Maui.Controls.Shapes.GeometryGroup
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shapes.GeometryGroup.FillRuleProperty, Value = fillRule });
+            return self;
+        }
+        
+        public static SettersContext<T> FillRule<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.Shapes.FillRule>, IPropertySettersBuilder<Microsoft.Maui.Controls.Shapes.FillRule>> configure)
+            where T : Microsoft.Maui.Controls.Shapes.GeometryGroup
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.Shapes.FillRule>(self.XamlSetters, Microsoft.Maui.Controls.Shapes.GeometryGroup.FillRuleProperty);
             configure(context).Build();
             return self;
         }

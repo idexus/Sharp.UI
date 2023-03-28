@@ -39,21 +39,22 @@ namespace CodeMarkup.Maui
 
         public VisualState() : this(Guid.NewGuid().ToString()) { }
 
-        public VisualState(Func<T, T> buildSetters) : this()
+        public VisualState(Func<SettersContext<T>, SettersContext<T>> buildSetters) : this()
         {
-            ConfigureSetters(buildSetters);
+            BuildSetters(buildSetters);
         }
 
-        public VisualState(string name, Func<T, T> buildSetters) : this(name)
+        public VisualState(string name, Func<SettersContext<T>, SettersContext<T>> buildSetters) : this(name)
         {
-            ConfigureSetters(buildSetters);
+            BuildSetters(buildSetters);
         }
 
-        void ConfigureSetters(Func<T, T> styleElement)
+        void BuildSetters(Func<SettersContext<T>, SettersContext<T>> buildSetters)
         {
-            FluentStyling.Setters = mauiVisualState.Setters;
-            styleElement?.Invoke(null);
-            FluentStyling.Setters = null;
+            var settersContext = new SettersContext<T>();
+            buildSetters(settersContext);
+            foreach (var setter in settersContext.XamlSetters)
+                this.mauiVisualState.Setters.Add(setter);
         }
     }
 }

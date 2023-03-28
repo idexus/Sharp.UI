@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Controls.Brush fill)
             where T : Microsoft.Maui.Controls.Shapes.Shape
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Shape.FillProperty, fill);
+            self.SetValue(Microsoft.Maui.Controls.Shapes.Shape.FillProperty, fill);
             return self;
         }
         
@@ -28,11 +28,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> Fill<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.Brush fill)
+            where T : Microsoft.Maui.Controls.Shapes.Shape
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shapes.Shape.FillProperty, Value = fill });
+            return self;
+        }
+        
+        public static SettersContext<T> Fill<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.Brush>, IPropertySettersBuilder<Microsoft.Maui.Controls.Brush>> configure)
+            where T : Microsoft.Maui.Controls.Shapes.Shape
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.Brush>(self.XamlSetters, Microsoft.Maui.Controls.Shapes.Shape.FillProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T Stroke<T>(this T self,
             Microsoft.Maui.Controls.Brush stroke)
             where T : Microsoft.Maui.Controls.Shapes.Shape
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Shape.StrokeProperty, stroke);
+            self.SetValue(Microsoft.Maui.Controls.Shapes.Shape.StrokeProperty, stroke);
             return self;
         }
         
@@ -44,11 +60,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> Stroke<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.Brush stroke)
+            where T : Microsoft.Maui.Controls.Shapes.Shape
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shapes.Shape.StrokeProperty, Value = stroke });
+            return self;
+        }
+        
+        public static SettersContext<T> Stroke<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.Brush>, IPropertySettersBuilder<Microsoft.Maui.Controls.Brush>> configure)
+            where T : Microsoft.Maui.Controls.Shapes.Shape
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.Brush>(self.XamlSetters, Microsoft.Maui.Controls.Shapes.Shape.StrokeProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T StrokeThickness<T>(this T self,
             double strokeThickness)
             where T : Microsoft.Maui.Controls.Shapes.Shape
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Shape.StrokeThicknessProperty, strokeThickness);
+            self.SetValue(Microsoft.Maui.Controls.Shapes.Shape.StrokeThicknessProperty, strokeThickness);
             return self;
         }
         
@@ -56,6 +88,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.Shapes.Shape
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Shapes.Shape.StrokeThicknessProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> StrokeThickness<T>(this SettersContext<T> self,
+            double strokeThickness)
+            where T : Microsoft.Maui.Controls.Shapes.Shape
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shapes.Shape.StrokeThicknessProperty, Value = strokeThickness });
+            return self;
+        }
+        
+        public static SettersContext<T> StrokeThickness<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.Shapes.Shape
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.Shapes.Shape.StrokeThicknessProperty);
             configure(context).Build();
             return self;
         }
@@ -99,7 +147,7 @@ namespace CodeMarkup.Maui
             double strokeDashOffset)
             where T : Microsoft.Maui.Controls.Shapes.Shape
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Shape.StrokeDashOffsetProperty, strokeDashOffset);
+            self.SetValue(Microsoft.Maui.Controls.Shapes.Shape.StrokeDashOffsetProperty, strokeDashOffset);
             return self;
         }
         
@@ -107,6 +155,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.Shapes.Shape
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Shapes.Shape.StrokeDashOffsetProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> StrokeDashOffset<T>(this SettersContext<T> self,
+            double strokeDashOffset)
+            where T : Microsoft.Maui.Controls.Shapes.Shape
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shapes.Shape.StrokeDashOffsetProperty, Value = strokeDashOffset });
+            return self;
+        }
+        
+        public static SettersContext<T> StrokeDashOffset<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.Shapes.Shape
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.Shapes.Shape.StrokeDashOffsetProperty);
             configure(context).Build();
             return self;
         }
@@ -124,7 +188,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Controls.Shapes.PenLineCap strokeLineCap)
             where T : Microsoft.Maui.Controls.Shapes.Shape
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Shape.StrokeLineCapProperty, strokeLineCap);
+            self.SetValue(Microsoft.Maui.Controls.Shapes.Shape.StrokeLineCapProperty, strokeLineCap);
             return self;
         }
         
@@ -136,11 +200,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> StrokeLineCap<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.Shapes.PenLineCap strokeLineCap)
+            where T : Microsoft.Maui.Controls.Shapes.Shape
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shapes.Shape.StrokeLineCapProperty, Value = strokeLineCap });
+            return self;
+        }
+        
+        public static SettersContext<T> StrokeLineCap<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.Shapes.PenLineCap>, IPropertySettersBuilder<Microsoft.Maui.Controls.Shapes.PenLineCap>> configure)
+            where T : Microsoft.Maui.Controls.Shapes.Shape
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.Shapes.PenLineCap>(self.XamlSetters, Microsoft.Maui.Controls.Shapes.Shape.StrokeLineCapProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T StrokeLineJoin<T>(this T self,
             Microsoft.Maui.Controls.Shapes.PenLineJoin strokeLineJoin)
             where T : Microsoft.Maui.Controls.Shapes.Shape
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Shape.StrokeLineJoinProperty, strokeLineJoin);
+            self.SetValue(Microsoft.Maui.Controls.Shapes.Shape.StrokeLineJoinProperty, strokeLineJoin);
             return self;
         }
         
@@ -152,11 +232,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> StrokeLineJoin<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.Shapes.PenLineJoin strokeLineJoin)
+            where T : Microsoft.Maui.Controls.Shapes.Shape
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shapes.Shape.StrokeLineJoinProperty, Value = strokeLineJoin });
+            return self;
+        }
+        
+        public static SettersContext<T> StrokeLineJoin<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.Shapes.PenLineJoin>, IPropertySettersBuilder<Microsoft.Maui.Controls.Shapes.PenLineJoin>> configure)
+            where T : Microsoft.Maui.Controls.Shapes.Shape
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.Shapes.PenLineJoin>(self.XamlSetters, Microsoft.Maui.Controls.Shapes.Shape.StrokeLineJoinProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T StrokeMiterLimit<T>(this T self,
             double strokeMiterLimit)
             where T : Microsoft.Maui.Controls.Shapes.Shape
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Shape.StrokeMiterLimitProperty, strokeMiterLimit);
+            self.SetValue(Microsoft.Maui.Controls.Shapes.Shape.StrokeMiterLimitProperty, strokeMiterLimit);
             return self;
         }
         
@@ -164,6 +260,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.Shapes.Shape
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Shapes.Shape.StrokeMiterLimitProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> StrokeMiterLimit<T>(this SettersContext<T> self,
+            double strokeMiterLimit)
+            where T : Microsoft.Maui.Controls.Shapes.Shape
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shapes.Shape.StrokeMiterLimitProperty, Value = strokeMiterLimit });
+            return self;
+        }
+        
+        public static SettersContext<T> StrokeMiterLimit<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.Shapes.Shape
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.Shapes.Shape.StrokeMiterLimitProperty);
             configure(context).Build();
             return self;
         }
@@ -181,7 +293,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Controls.Stretch aspect)
             where T : Microsoft.Maui.Controls.Shapes.Shape
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.Shape.AspectProperty, aspect);
+            self.SetValue(Microsoft.Maui.Controls.Shapes.Shape.AspectProperty, aspect);
             return self;
         }
         
@@ -189,6 +301,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.Shapes.Shape
         {
             var context = new PropertyContext<Microsoft.Maui.Controls.Stretch>(self, Microsoft.Maui.Controls.Shapes.Shape.AspectProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> Aspect<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.Stretch aspect)
+            where T : Microsoft.Maui.Controls.Shapes.Shape
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shapes.Shape.AspectProperty, Value = aspect });
+            return self;
+        }
+        
+        public static SettersContext<T> Aspect<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.Stretch>, IPropertySettersBuilder<Microsoft.Maui.Controls.Stretch>> configure)
+            where T : Microsoft.Maui.Controls.Shapes.Shape
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.Stretch>(self.XamlSetters, Microsoft.Maui.Controls.Shapes.Shape.AspectProperty);
             configure(context).Build();
             return self;
         }

@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Graphics.Color barBackgroundColor)
             where T : Microsoft.Maui.Controls.TabbedPage
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.TabbedPage.BarBackgroundColorProperty, barBackgroundColor);
+            self.SetValue(Microsoft.Maui.Controls.TabbedPage.BarBackgroundColorProperty, barBackgroundColor);
             return self;
         }
         
@@ -24,6 +24,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.TabbedPage
         {
             var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.TabbedPage.BarBackgroundColorProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> BarBackgroundColor<T>(this SettersContext<T> self,
+            Microsoft.Maui.Graphics.Color barBackgroundColor)
+            where T : Microsoft.Maui.Controls.TabbedPage
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.TabbedPage.BarBackgroundColorProperty, Value = barBackgroundColor });
+            return self;
+        }
+        
+        public static SettersContext<T> BarBackgroundColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
+            where T : Microsoft.Maui.Controls.TabbedPage
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.Color>(self.XamlSetters, Microsoft.Maui.Controls.TabbedPage.BarBackgroundColorProperty);
             configure(context).Build();
             return self;
         }
@@ -41,7 +57,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Controls.Brush barBackground)
             where T : Microsoft.Maui.Controls.TabbedPage
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.TabbedPage.BarBackgroundProperty, barBackground);
+            self.SetValue(Microsoft.Maui.Controls.TabbedPage.BarBackgroundProperty, barBackground);
             return self;
         }
         
@@ -53,11 +69,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> BarBackground<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.Brush barBackground)
+            where T : Microsoft.Maui.Controls.TabbedPage
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.TabbedPage.BarBackgroundProperty, Value = barBackground });
+            return self;
+        }
+        
+        public static SettersContext<T> BarBackground<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.Brush>, IPropertySettersBuilder<Microsoft.Maui.Controls.Brush>> configure)
+            where T : Microsoft.Maui.Controls.TabbedPage
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.Brush>(self.XamlSetters, Microsoft.Maui.Controls.TabbedPage.BarBackgroundProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T BarTextColor<T>(this T self,
             Microsoft.Maui.Graphics.Color barTextColor)
             where T : Microsoft.Maui.Controls.TabbedPage
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.TabbedPage.BarTextColorProperty, barTextColor);
+            self.SetValue(Microsoft.Maui.Controls.TabbedPage.BarTextColorProperty, barTextColor);
             return self;
         }
         
@@ -65,6 +97,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.TabbedPage
         {
             var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.TabbedPage.BarTextColorProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> BarTextColor<T>(this SettersContext<T> self,
+            Microsoft.Maui.Graphics.Color barTextColor)
+            where T : Microsoft.Maui.Controls.TabbedPage
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.TabbedPage.BarTextColorProperty, Value = barTextColor });
+            return self;
+        }
+        
+        public static SettersContext<T> BarTextColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
+            where T : Microsoft.Maui.Controls.TabbedPage
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.Color>(self.XamlSetters, Microsoft.Maui.Controls.TabbedPage.BarTextColorProperty);
             configure(context).Build();
             return self;
         }
@@ -82,7 +130,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Graphics.Color unselectedTabColor)
             where T : Microsoft.Maui.Controls.TabbedPage
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.TabbedPage.UnselectedTabColorProperty, unselectedTabColor);
+            self.SetValue(Microsoft.Maui.Controls.TabbedPage.UnselectedTabColorProperty, unselectedTabColor);
             return self;
         }
         
@@ -90,6 +138,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.TabbedPage
         {
             var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.TabbedPage.UnselectedTabColorProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> UnselectedTabColor<T>(this SettersContext<T> self,
+            Microsoft.Maui.Graphics.Color unselectedTabColor)
+            where T : Microsoft.Maui.Controls.TabbedPage
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.TabbedPage.UnselectedTabColorProperty, Value = unselectedTabColor });
+            return self;
+        }
+        
+        public static SettersContext<T> UnselectedTabColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
+            where T : Microsoft.Maui.Controls.TabbedPage
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.Color>(self.XamlSetters, Microsoft.Maui.Controls.TabbedPage.UnselectedTabColorProperty);
             configure(context).Build();
             return self;
         }
@@ -107,7 +171,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Graphics.Color selectedTabColor)
             where T : Microsoft.Maui.Controls.TabbedPage
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.TabbedPage.SelectedTabColorProperty, selectedTabColor);
+            self.SetValue(Microsoft.Maui.Controls.TabbedPage.SelectedTabColorProperty, selectedTabColor);
             return self;
         }
         
@@ -115,6 +179,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.TabbedPage
         {
             var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.TabbedPage.SelectedTabColorProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> SelectedTabColor<T>(this SettersContext<T> self,
+            Microsoft.Maui.Graphics.Color selectedTabColor)
+            where T : Microsoft.Maui.Controls.TabbedPage
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.TabbedPage.SelectedTabColorProperty, Value = selectedTabColor });
+            return self;
+        }
+        
+        public static SettersContext<T> SelectedTabColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
+            where T : Microsoft.Maui.Controls.TabbedPage
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.Color>(self.XamlSetters, Microsoft.Maui.Controls.TabbedPage.SelectedTabColorProperty);
             configure(context).Build();
             return self;
         }

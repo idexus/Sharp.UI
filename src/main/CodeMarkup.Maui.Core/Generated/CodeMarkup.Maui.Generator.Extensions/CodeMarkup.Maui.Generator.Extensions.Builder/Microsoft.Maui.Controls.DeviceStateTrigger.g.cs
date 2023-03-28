@@ -15,13 +15,27 @@ namespace CodeMarkup.Maui
         public static Microsoft.Maui.Controls.DeviceStateTrigger Device(this Microsoft.Maui.Controls.DeviceStateTrigger self,
             string device)
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.DeviceStateTrigger.DeviceProperty, device);
+            self.SetValue(Microsoft.Maui.Controls.DeviceStateTrigger.DeviceProperty, device);
             return self;
         }
         
         public static Microsoft.Maui.Controls.DeviceStateTrigger Device(this Microsoft.Maui.Controls.DeviceStateTrigger self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
         {
             var context = new PropertyContext<string>(self, Microsoft.Maui.Controls.DeviceStateTrigger.DeviceProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.DeviceStateTrigger> Device(this SettersContext<Microsoft.Maui.Controls.DeviceStateTrigger> self,
+            string device)
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.DeviceStateTrigger.DeviceProperty, Value = device });
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.DeviceStateTrigger> Device(this SettersContext<Microsoft.Maui.Controls.DeviceStateTrigger> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
+        {
+            var context = new PropertySettersContext<string>(self.XamlSetters, Microsoft.Maui.Controls.DeviceStateTrigger.DeviceProperty);
             configure(context).Build();
             return self;
         }

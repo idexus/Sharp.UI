@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<System.IO.Stream>> stream)
             where T : Microsoft.Maui.Controls.StreamImageSource
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.StreamImageSource.StreamProperty, stream);
+            self.SetValue(Microsoft.Maui.Controls.StreamImageSource.StreamProperty, stream);
             return self;
         }
         
@@ -24,6 +24,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.StreamImageSource
         {
             var context = new PropertyContext<System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<System.IO.Stream>>>(self, Microsoft.Maui.Controls.StreamImageSource.StreamProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> Stream<T>(this SettersContext<T> self,
+            System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<System.IO.Stream>> stream)
+            where T : Microsoft.Maui.Controls.StreamImageSource
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.StreamImageSource.StreamProperty, Value = stream });
+            return self;
+        }
+        
+        public static SettersContext<T> Stream<T>(this SettersContext<T> self, Func<PropertySettersContext<System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<System.IO.Stream>>>, IPropertySettersBuilder<System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<System.IO.Stream>>>> configure)
+            where T : Microsoft.Maui.Controls.StreamImageSource
+        {
+            var context = new PropertySettersContext<System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<System.IO.Stream>>>(self.XamlSetters, Microsoft.Maui.Controls.StreamImageSource.StreamProperty);
             configure(context).Build();
             return self;
         }

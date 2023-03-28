@@ -17,7 +17,7 @@ namespace ExampleApp
             int id)
             where T : ExampleApp.DataModel
         {
-            self.SetValueOrAddSetter(ExampleApp.DataModel.IdProperty, id);
+            self.SetValue(ExampleApp.DataModel.IdProperty, id);
             return self;
         }
         
@@ -29,11 +29,27 @@ namespace ExampleApp
             return self;
         }
         
+        public static SettersContext<T> Id<T>(this SettersContext<T> self,
+            int id)
+            where T : ExampleApp.DataModel
+        {
+            self.XamlSetters.Add(new Setter { Property = ExampleApp.DataModel.IdProperty, Value = id });
+            return self;
+        }
+        
+        public static SettersContext<T> Id<T>(this SettersContext<T> self, Func<PropertySettersContext<int>, IPropertySettersBuilder<int>> configure)
+            where T : ExampleApp.DataModel
+        {
+            var context = new PropertySettersContext<int>(self.XamlSetters, ExampleApp.DataModel.IdProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T Name<T>(this T self,
             string name)
             where T : ExampleApp.DataModel
         {
-            self.SetValueOrAddSetter(ExampleApp.DataModel.NameProperty, name);
+            self.SetValue(ExampleApp.DataModel.NameProperty, name);
             return self;
         }
         
@@ -45,11 +61,27 @@ namespace ExampleApp
             return self;
         }
         
+        public static SettersContext<T> Name<T>(this SettersContext<T> self,
+            string name)
+            where T : ExampleApp.DataModel
+        {
+            self.XamlSetters.Add(new Setter { Property = ExampleApp.DataModel.NameProperty, Value = name });
+            return self;
+        }
+        
+        public static SettersContext<T> Name<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
+            where T : ExampleApp.DataModel
+        {
+            var context = new PropertySettersContext<string>(self.XamlSetters, ExampleApp.DataModel.NameProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T Admin<T>(this T self,
             bool admin)
             where T : ExampleApp.DataModel
         {
-            self.SetValueOrAddSetter(ExampleApp.DataModel.AdminProperty, admin);
+            self.SetValue(ExampleApp.DataModel.AdminProperty, admin);
             return self;
         }
         
@@ -57,6 +89,22 @@ namespace ExampleApp
             where T : ExampleApp.DataModel
         {
             var context = new PropertyContext<bool>(self, ExampleApp.DataModel.AdminProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> Admin<T>(this SettersContext<T> self,
+            bool admin)
+            where T : ExampleApp.DataModel
+        {
+            self.XamlSetters.Add(new Setter { Property = ExampleApp.DataModel.AdminProperty, Value = admin });
+            return self;
+        }
+        
+        public static SettersContext<T> Admin<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : ExampleApp.DataModel
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, ExampleApp.DataModel.AdminProperty);
             configure(context).Build();
             return self;
         }

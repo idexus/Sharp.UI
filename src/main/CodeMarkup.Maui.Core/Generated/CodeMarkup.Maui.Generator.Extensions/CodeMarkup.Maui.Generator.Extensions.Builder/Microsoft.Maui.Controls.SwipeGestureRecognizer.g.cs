@@ -15,7 +15,7 @@ namespace CodeMarkup.Maui
         public static Microsoft.Maui.Controls.SwipeGestureRecognizer Command(this Microsoft.Maui.Controls.SwipeGestureRecognizer self,
             System.Windows.Input.ICommand command)
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwipeGestureRecognizer.CommandProperty, command);
+            self.SetValue(Microsoft.Maui.Controls.SwipeGestureRecognizer.CommandProperty, command);
             return self;
         }
         
@@ -26,10 +26,24 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<Microsoft.Maui.Controls.SwipeGestureRecognizer> Command(this SettersContext<Microsoft.Maui.Controls.SwipeGestureRecognizer> self,
+            System.Windows.Input.ICommand command)
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SwipeGestureRecognizer.CommandProperty, Value = command });
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.SwipeGestureRecognizer> Command(this SettersContext<Microsoft.Maui.Controls.SwipeGestureRecognizer> self, Func<PropertySettersContext<System.Windows.Input.ICommand>, IPropertySettersBuilder<System.Windows.Input.ICommand>> configure)
+        {
+            var context = new PropertySettersContext<System.Windows.Input.ICommand>(self.XamlSetters, Microsoft.Maui.Controls.SwipeGestureRecognizer.CommandProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static Microsoft.Maui.Controls.SwipeGestureRecognizer CommandParameter(this Microsoft.Maui.Controls.SwipeGestureRecognizer self,
             object commandParameter)
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwipeGestureRecognizer.CommandParameterProperty, commandParameter);
+            self.SetValue(Microsoft.Maui.Controls.SwipeGestureRecognizer.CommandParameterProperty, commandParameter);
             return self;
         }
         
@@ -40,10 +54,24 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<Microsoft.Maui.Controls.SwipeGestureRecognizer> CommandParameter(this SettersContext<Microsoft.Maui.Controls.SwipeGestureRecognizer> self,
+            object commandParameter)
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SwipeGestureRecognizer.CommandParameterProperty, Value = commandParameter });
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.SwipeGestureRecognizer> CommandParameter(this SettersContext<Microsoft.Maui.Controls.SwipeGestureRecognizer> self, Func<PropertySettersContext<object>, IPropertySettersBuilder<object>> configure)
+        {
+            var context = new PropertySettersContext<object>(self.XamlSetters, Microsoft.Maui.Controls.SwipeGestureRecognizer.CommandParameterProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static Microsoft.Maui.Controls.SwipeGestureRecognizer Direction(this Microsoft.Maui.Controls.SwipeGestureRecognizer self,
             Microsoft.Maui.SwipeDirection direction)
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwipeGestureRecognizer.DirectionProperty, direction);
+            self.SetValue(Microsoft.Maui.Controls.SwipeGestureRecognizer.DirectionProperty, direction);
             return self;
         }
         
@@ -54,16 +82,44 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<Microsoft.Maui.Controls.SwipeGestureRecognizer> Direction(this SettersContext<Microsoft.Maui.Controls.SwipeGestureRecognizer> self,
+            Microsoft.Maui.SwipeDirection direction)
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SwipeGestureRecognizer.DirectionProperty, Value = direction });
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.SwipeGestureRecognizer> Direction(this SettersContext<Microsoft.Maui.Controls.SwipeGestureRecognizer> self, Func<PropertySettersContext<Microsoft.Maui.SwipeDirection>, IPropertySettersBuilder<Microsoft.Maui.SwipeDirection>> configure)
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.SwipeDirection>(self.XamlSetters, Microsoft.Maui.Controls.SwipeGestureRecognizer.DirectionProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static Microsoft.Maui.Controls.SwipeGestureRecognizer Threshold(this Microsoft.Maui.Controls.SwipeGestureRecognizer self,
             uint threshold)
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwipeGestureRecognizer.ThresholdProperty, threshold);
+            self.SetValue(Microsoft.Maui.Controls.SwipeGestureRecognizer.ThresholdProperty, threshold);
             return self;
         }
         
         public static Microsoft.Maui.Controls.SwipeGestureRecognizer Threshold(this Microsoft.Maui.Controls.SwipeGestureRecognizer self, Func<PropertyContext<uint>, IPropertyBuilder<uint>> configure)
         {
             var context = new PropertyContext<uint>(self, Microsoft.Maui.Controls.SwipeGestureRecognizer.ThresholdProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.SwipeGestureRecognizer> Threshold(this SettersContext<Microsoft.Maui.Controls.SwipeGestureRecognizer> self,
+            uint threshold)
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SwipeGestureRecognizer.ThresholdProperty, Value = threshold });
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.SwipeGestureRecognizer> Threshold(this SettersContext<Microsoft.Maui.Controls.SwipeGestureRecognizer> self, Func<PropertySettersContext<uint>, IPropertySettersBuilder<uint>> configure)
+        {
+            var context = new PropertySettersContext<uint>(self.XamlSetters, Microsoft.Maui.Controls.SwipeGestureRecognizer.ThresholdProperty);
             configure(context).Build();
             return self;
         }

@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Graphics.Color minimumTrackColor)
             where T : Microsoft.Maui.Controls.Slider
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Slider.MinimumTrackColorProperty, minimumTrackColor);
+            self.SetValue(Microsoft.Maui.Controls.Slider.MinimumTrackColorProperty, minimumTrackColor);
             return self;
         }
         
@@ -24,6 +24,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.Slider
         {
             var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.Slider.MinimumTrackColorProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> MinimumTrackColor<T>(this SettersContext<T> self,
+            Microsoft.Maui.Graphics.Color minimumTrackColor)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Slider.MinimumTrackColorProperty, Value = minimumTrackColor });
+            return self;
+        }
+        
+        public static SettersContext<T> MinimumTrackColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.Color>(self.XamlSetters, Microsoft.Maui.Controls.Slider.MinimumTrackColorProperty);
             configure(context).Build();
             return self;
         }
@@ -41,7 +57,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Graphics.Color maximumTrackColor)
             where T : Microsoft.Maui.Controls.Slider
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Slider.MaximumTrackColorProperty, maximumTrackColor);
+            self.SetValue(Microsoft.Maui.Controls.Slider.MaximumTrackColorProperty, maximumTrackColor);
             return self;
         }
         
@@ -49,6 +65,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.Slider
         {
             var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.Slider.MaximumTrackColorProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> MaximumTrackColor<T>(this SettersContext<T> self,
+            Microsoft.Maui.Graphics.Color maximumTrackColor)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Slider.MaximumTrackColorProperty, Value = maximumTrackColor });
+            return self;
+        }
+        
+        public static SettersContext<T> MaximumTrackColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.Color>(self.XamlSetters, Microsoft.Maui.Controls.Slider.MaximumTrackColorProperty);
             configure(context).Build();
             return self;
         }
@@ -66,7 +98,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Graphics.Color thumbColor)
             where T : Microsoft.Maui.Controls.Slider
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Slider.ThumbColorProperty, thumbColor);
+            self.SetValue(Microsoft.Maui.Controls.Slider.ThumbColorProperty, thumbColor);
             return self;
         }
         
@@ -74,6 +106,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.Slider
         {
             var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.Slider.ThumbColorProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> ThumbColor<T>(this SettersContext<T> self,
+            Microsoft.Maui.Graphics.Color thumbColor)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Slider.ThumbColorProperty, Value = thumbColor });
+            return self;
+        }
+        
+        public static SettersContext<T> ThumbColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.Color>(self.XamlSetters, Microsoft.Maui.Controls.Slider.ThumbColorProperty);
             configure(context).Build();
             return self;
         }
@@ -91,7 +139,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Controls.ImageSource thumbImageSource)
             where T : Microsoft.Maui.Controls.Slider
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Slider.ThumbImageSourceProperty, thumbImageSource);
+            self.SetValue(Microsoft.Maui.Controls.Slider.ThumbImageSourceProperty, thumbImageSource);
             return self;
         }
         
@@ -103,11 +151,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> ThumbImageSource<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.ImageSource thumbImageSource)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Slider.ThumbImageSourceProperty, Value = thumbImageSource });
+            return self;
+        }
+        
+        public static SettersContext<T> ThumbImageSource<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.ImageSource>, IPropertySettersBuilder<Microsoft.Maui.Controls.ImageSource>> configure)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.ImageSource>(self.XamlSetters, Microsoft.Maui.Controls.Slider.ThumbImageSourceProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T DragStartedCommand<T>(this T self,
             System.Windows.Input.ICommand dragStartedCommand)
             where T : Microsoft.Maui.Controls.Slider
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Slider.DragStartedCommandProperty, dragStartedCommand);
+            self.SetValue(Microsoft.Maui.Controls.Slider.DragStartedCommandProperty, dragStartedCommand);
             return self;
         }
         
@@ -119,11 +183,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> DragStartedCommand<T>(this SettersContext<T> self,
+            System.Windows.Input.ICommand dragStartedCommand)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Slider.DragStartedCommandProperty, Value = dragStartedCommand });
+            return self;
+        }
+        
+        public static SettersContext<T> DragStartedCommand<T>(this SettersContext<T> self, Func<PropertySettersContext<System.Windows.Input.ICommand>, IPropertySettersBuilder<System.Windows.Input.ICommand>> configure)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            var context = new PropertySettersContext<System.Windows.Input.ICommand>(self.XamlSetters, Microsoft.Maui.Controls.Slider.DragStartedCommandProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T DragCompletedCommand<T>(this T self,
             System.Windows.Input.ICommand dragCompletedCommand)
             where T : Microsoft.Maui.Controls.Slider
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Slider.DragCompletedCommandProperty, dragCompletedCommand);
+            self.SetValue(Microsoft.Maui.Controls.Slider.DragCompletedCommandProperty, dragCompletedCommand);
             return self;
         }
         
@@ -135,11 +215,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> DragCompletedCommand<T>(this SettersContext<T> self,
+            System.Windows.Input.ICommand dragCompletedCommand)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Slider.DragCompletedCommandProperty, Value = dragCompletedCommand });
+            return self;
+        }
+        
+        public static SettersContext<T> DragCompletedCommand<T>(this SettersContext<T> self, Func<PropertySettersContext<System.Windows.Input.ICommand>, IPropertySettersBuilder<System.Windows.Input.ICommand>> configure)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            var context = new PropertySettersContext<System.Windows.Input.ICommand>(self.XamlSetters, Microsoft.Maui.Controls.Slider.DragCompletedCommandProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T Maximum<T>(this T self,
             double maximum)
             where T : Microsoft.Maui.Controls.Slider
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Slider.MaximumProperty, maximum);
+            self.SetValue(Microsoft.Maui.Controls.Slider.MaximumProperty, maximum);
             return self;
         }
         
@@ -147,6 +243,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.Slider
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Slider.MaximumProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> Maximum<T>(this SettersContext<T> self,
+            double maximum)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Slider.MaximumProperty, Value = maximum });
+            return self;
+        }
+        
+        public static SettersContext<T> Maximum<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.Slider.MaximumProperty);
             configure(context).Build();
             return self;
         }
@@ -164,7 +276,7 @@ namespace CodeMarkup.Maui
             double minimum)
             where T : Microsoft.Maui.Controls.Slider
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Slider.MinimumProperty, minimum);
+            self.SetValue(Microsoft.Maui.Controls.Slider.MinimumProperty, minimum);
             return self;
         }
         
@@ -172,6 +284,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.Slider
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Slider.MinimumProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> Minimum<T>(this SettersContext<T> self,
+            double minimum)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Slider.MinimumProperty, Value = minimum });
+            return self;
+        }
+        
+        public static SettersContext<T> Minimum<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.Slider.MinimumProperty);
             configure(context).Build();
             return self;
         }
@@ -189,7 +317,7 @@ namespace CodeMarkup.Maui
             double value)
             where T : Microsoft.Maui.Controls.Slider
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Slider.ValueProperty, value);
+            self.SetValue(Microsoft.Maui.Controls.Slider.ValueProperty, value);
             return self;
         }
         
@@ -197,6 +325,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.Slider
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Slider.ValueProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> Value<T>(this SettersContext<T> self,
+            double value)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Slider.ValueProperty, Value = value });
+            return self;
+        }
+        
+        public static SettersContext<T> Value<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.Slider
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.Slider.ValueProperty);
             configure(context).Build();
             return self;
         }

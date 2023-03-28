@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Graphics.Rect rect)
             where T : Microsoft.Maui.Controls.Shapes.RectangleGeometry
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Shapes.RectangleGeometry.RectProperty, rect);
+            self.SetValue(Microsoft.Maui.Controls.Shapes.RectangleGeometry.RectProperty, rect);
             return self;
         }
         
@@ -24,6 +24,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.Shapes.RectangleGeometry
         {
             var context = new PropertyContext<Microsoft.Maui.Graphics.Rect>(self, Microsoft.Maui.Controls.Shapes.RectangleGeometry.RectProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> Rect<T>(this SettersContext<T> self,
+            Microsoft.Maui.Graphics.Rect rect)
+            where T : Microsoft.Maui.Controls.Shapes.RectangleGeometry
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shapes.RectangleGeometry.RectProperty, Value = rect });
+            return self;
+        }
+        
+        public static SettersContext<T> Rect<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Rect>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Rect>> configure)
+            where T : Microsoft.Maui.Controls.Shapes.RectangleGeometry
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.Rect>(self.XamlSetters, Microsoft.Maui.Controls.Shapes.RectangleGeometry.RectProperty);
             configure(context).Build();
             return self;
         }

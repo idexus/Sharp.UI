@@ -16,7 +16,6 @@ namespace CodeMarkup.Maui
             int priority)
             where T : Microsoft.Maui.Controls.MenuBarItem
         {
-            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property Priority");
             self.Priority = priority;
             return self;
         }
@@ -25,7 +24,7 @@ namespace CodeMarkup.Maui
             bool isEnabled)
             where T : Microsoft.Maui.Controls.MenuBarItem
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.MenuBarItem.IsEnabledProperty, isEnabled);
+            self.SetValue(Microsoft.Maui.Controls.MenuBarItem.IsEnabledProperty, isEnabled);
             return self;
         }
         
@@ -37,11 +36,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> IsEnabled<T>(this SettersContext<T> self,
+            bool isEnabled)
+            where T : Microsoft.Maui.Controls.MenuBarItem
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.MenuBarItem.IsEnabledProperty, Value = isEnabled });
+            return self;
+        }
+        
+        public static SettersContext<T> IsEnabled<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.MenuBarItem
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.MenuBarItem.IsEnabledProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T Text<T>(this T self,
             string text)
             where T : Microsoft.Maui.Controls.MenuBarItem
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.MenuBarItem.TextProperty, text);
+            self.SetValue(Microsoft.Maui.Controls.MenuBarItem.TextProperty, text);
             return self;
         }
         
@@ -49,6 +64,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.MenuBarItem
         {
             var context = new PropertyContext<string>(self, Microsoft.Maui.Controls.MenuBarItem.TextProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> Text<T>(this SettersContext<T> self,
+            string text)
+            where T : Microsoft.Maui.Controls.MenuBarItem
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.MenuBarItem.TextProperty, Value = text });
+            return self;
+        }
+        
+        public static SettersContext<T> Text<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
+            where T : Microsoft.Maui.Controls.MenuBarItem
+        {
+            var context = new PropertySettersContext<string>(self.XamlSetters, Microsoft.Maui.Controls.MenuBarItem.TextProperty);
             configure(context).Build();
             return self;
         }

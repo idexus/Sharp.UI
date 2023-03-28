@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             object content)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.RadioButton.ContentProperty, content);
+            self.SetValue(Microsoft.Maui.Controls.RadioButton.ContentProperty, content);
             return self;
         }
         
@@ -28,11 +28,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> Content<T>(this SettersContext<T> self,
+            object content)
+            where T : Microsoft.Maui.Controls.RadioButton
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.RadioButton.ContentProperty, Value = content });
+            return self;
+        }
+        
+        public static SettersContext<T> Content<T>(this SettersContext<T> self, Func<PropertySettersContext<object>, IPropertySettersBuilder<object>> configure)
+            where T : Microsoft.Maui.Controls.RadioButton
+        {
+            var context = new PropertySettersContext<object>(self.XamlSetters, Microsoft.Maui.Controls.RadioButton.ContentProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T Value<T>(this T self,
             object value)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.RadioButton.ValueProperty, value);
+            self.SetValue(Microsoft.Maui.Controls.RadioButton.ValueProperty, value);
             return self;
         }
         
@@ -44,11 +60,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> Value<T>(this SettersContext<T> self,
+            object value)
+            where T : Microsoft.Maui.Controls.RadioButton
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.RadioButton.ValueProperty, Value = value });
+            return self;
+        }
+        
+        public static SettersContext<T> Value<T>(this SettersContext<T> self, Func<PropertySettersContext<object>, IPropertySettersBuilder<object>> configure)
+            where T : Microsoft.Maui.Controls.RadioButton
+        {
+            var context = new PropertySettersContext<object>(self.XamlSetters, Microsoft.Maui.Controls.RadioButton.ValueProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T IsChecked<T>(this T self,
             bool isChecked)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.RadioButton.IsCheckedProperty, isChecked);
+            self.SetValue(Microsoft.Maui.Controls.RadioButton.IsCheckedProperty, isChecked);
             return self;
         }
         
@@ -60,11 +92,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> IsChecked<T>(this SettersContext<T> self,
+            bool isChecked)
+            where T : Microsoft.Maui.Controls.RadioButton
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.RadioButton.IsCheckedProperty, Value = isChecked });
+            return self;
+        }
+        
+        public static SettersContext<T> IsChecked<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.RadioButton
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.RadioButton.IsCheckedProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T GroupName<T>(this T self,
             string groupName)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.RadioButton.GroupNameProperty, groupName);
+            self.SetValue(Microsoft.Maui.Controls.RadioButton.GroupNameProperty, groupName);
             return self;
         }
         
@@ -76,11 +124,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> GroupName<T>(this SettersContext<T> self,
+            string groupName)
+            where T : Microsoft.Maui.Controls.RadioButton
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.RadioButton.GroupNameProperty, Value = groupName });
+            return self;
+        }
+        
+        public static SettersContext<T> GroupName<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
+            where T : Microsoft.Maui.Controls.RadioButton
+        {
+            var context = new PropertySettersContext<string>(self.XamlSetters, Microsoft.Maui.Controls.RadioButton.GroupNameProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T TextColor<T>(this T self,
             Microsoft.Maui.Graphics.Color textColor)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.RadioButton.TextColorProperty, textColor);
+            self.SetValue(Microsoft.Maui.Controls.RadioButton.TextColorProperty, textColor);
             return self;
         }
         
@@ -88,6 +152,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.RadioButton
         {
             var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.RadioButton.TextColorProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> TextColor<T>(this SettersContext<T> self,
+            Microsoft.Maui.Graphics.Color textColor)
+            where T : Microsoft.Maui.Controls.RadioButton
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.RadioButton.TextColorProperty, Value = textColor });
+            return self;
+        }
+        
+        public static SettersContext<T> TextColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
+            where T : Microsoft.Maui.Controls.RadioButton
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.Color>(self.XamlSetters, Microsoft.Maui.Controls.RadioButton.TextColorProperty);
             configure(context).Build();
             return self;
         }
@@ -105,7 +185,7 @@ namespace CodeMarkup.Maui
             double characterSpacing)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.RadioButton.CharacterSpacingProperty, characterSpacing);
+            self.SetValue(Microsoft.Maui.Controls.RadioButton.CharacterSpacingProperty, characterSpacing);
             return self;
         }
         
@@ -113,6 +193,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.RadioButton
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.RadioButton.CharacterSpacingProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> CharacterSpacing<T>(this SettersContext<T> self,
+            double characterSpacing)
+            where T : Microsoft.Maui.Controls.RadioButton
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.RadioButton.CharacterSpacingProperty, Value = characterSpacing });
+            return self;
+        }
+        
+        public static SettersContext<T> CharacterSpacing<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.RadioButton
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.RadioButton.CharacterSpacingProperty);
             configure(context).Build();
             return self;
         }
@@ -130,7 +226,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.TextTransform textTransform)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.RadioButton.TextTransformProperty, textTransform);
+            self.SetValue(Microsoft.Maui.Controls.RadioButton.TextTransformProperty, textTransform);
             return self;
         }
         
@@ -142,11 +238,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> TextTransform<T>(this SettersContext<T> self,
+            Microsoft.Maui.TextTransform textTransform)
+            where T : Microsoft.Maui.Controls.RadioButton
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.RadioButton.TextTransformProperty, Value = textTransform });
+            return self;
+        }
+        
+        public static SettersContext<T> TextTransform<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.TextTransform>, IPropertySettersBuilder<Microsoft.Maui.TextTransform>> configure)
+            where T : Microsoft.Maui.Controls.RadioButton
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.TextTransform>(self.XamlSetters, Microsoft.Maui.Controls.RadioButton.TextTransformProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T FontAttributes<T>(this T self,
             Microsoft.Maui.Controls.FontAttributes fontAttributes)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.RadioButton.FontAttributesProperty, fontAttributes);
+            self.SetValue(Microsoft.Maui.Controls.RadioButton.FontAttributesProperty, fontAttributes);
             return self;
         }
         
@@ -158,11 +270,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> FontAttributes<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.FontAttributes fontAttributes)
+            where T : Microsoft.Maui.Controls.RadioButton
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.RadioButton.FontAttributesProperty, Value = fontAttributes });
+            return self;
+        }
+        
+        public static SettersContext<T> FontAttributes<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.FontAttributes>, IPropertySettersBuilder<Microsoft.Maui.Controls.FontAttributes>> configure)
+            where T : Microsoft.Maui.Controls.RadioButton
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.FontAttributes>(self.XamlSetters, Microsoft.Maui.Controls.RadioButton.FontAttributesProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T FontFamily<T>(this T self,
             string fontFamily)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.RadioButton.FontFamilyProperty, fontFamily);
+            self.SetValue(Microsoft.Maui.Controls.RadioButton.FontFamilyProperty, fontFamily);
             return self;
         }
         
@@ -174,11 +302,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> FontFamily<T>(this SettersContext<T> self,
+            string fontFamily)
+            where T : Microsoft.Maui.Controls.RadioButton
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.RadioButton.FontFamilyProperty, Value = fontFamily });
+            return self;
+        }
+        
+        public static SettersContext<T> FontFamily<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
+            where T : Microsoft.Maui.Controls.RadioButton
+        {
+            var context = new PropertySettersContext<string>(self.XamlSetters, Microsoft.Maui.Controls.RadioButton.FontFamilyProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T FontSize<T>(this T self,
             double fontSize)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.RadioButton.FontSizeProperty, fontSize);
+            self.SetValue(Microsoft.Maui.Controls.RadioButton.FontSizeProperty, fontSize);
             return self;
         }
         
@@ -186,6 +330,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.RadioButton
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.RadioButton.FontSizeProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> FontSize<T>(this SettersContext<T> self,
+            double fontSize)
+            where T : Microsoft.Maui.Controls.RadioButton
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.RadioButton.FontSizeProperty, Value = fontSize });
+            return self;
+        }
+        
+        public static SettersContext<T> FontSize<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.RadioButton
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.RadioButton.FontSizeProperty);
             configure(context).Build();
             return self;
         }
@@ -203,7 +363,7 @@ namespace CodeMarkup.Maui
             bool fontAutoScalingEnabled)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.RadioButton.FontAutoScalingEnabledProperty, fontAutoScalingEnabled);
+            self.SetValue(Microsoft.Maui.Controls.RadioButton.FontAutoScalingEnabledProperty, fontAutoScalingEnabled);
             return self;
         }
         
@@ -215,11 +375,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> FontAutoScalingEnabled<T>(this SettersContext<T> self,
+            bool fontAutoScalingEnabled)
+            where T : Microsoft.Maui.Controls.RadioButton
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.RadioButton.FontAutoScalingEnabledProperty, Value = fontAutoScalingEnabled });
+            return self;
+        }
+        
+        public static SettersContext<T> FontAutoScalingEnabled<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.RadioButton
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.RadioButton.FontAutoScalingEnabledProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T BorderWidth<T>(this T self,
             double borderWidth)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.RadioButton.BorderWidthProperty, borderWidth);
+            self.SetValue(Microsoft.Maui.Controls.RadioButton.BorderWidthProperty, borderWidth);
             return self;
         }
         
@@ -227,6 +403,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.RadioButton
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.RadioButton.BorderWidthProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> BorderWidth<T>(this SettersContext<T> self,
+            double borderWidth)
+            where T : Microsoft.Maui.Controls.RadioButton
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.RadioButton.BorderWidthProperty, Value = borderWidth });
+            return self;
+        }
+        
+        public static SettersContext<T> BorderWidth<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.RadioButton
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.RadioButton.BorderWidthProperty);
             configure(context).Build();
             return self;
         }
@@ -244,7 +436,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Graphics.Color borderColor)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.RadioButton.BorderColorProperty, borderColor);
+            self.SetValue(Microsoft.Maui.Controls.RadioButton.BorderColorProperty, borderColor);
             return self;
         }
         
@@ -252,6 +444,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.RadioButton
         {
             var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.RadioButton.BorderColorProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> BorderColor<T>(this SettersContext<T> self,
+            Microsoft.Maui.Graphics.Color borderColor)
+            where T : Microsoft.Maui.Controls.RadioButton
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.RadioButton.BorderColorProperty, Value = borderColor });
+            return self;
+        }
+        
+        public static SettersContext<T> BorderColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
+            where T : Microsoft.Maui.Controls.RadioButton
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.Color>(self.XamlSetters, Microsoft.Maui.Controls.RadioButton.BorderColorProperty);
             configure(context).Build();
             return self;
         }
@@ -269,7 +477,7 @@ namespace CodeMarkup.Maui
             int cornerRadius)
             where T : Microsoft.Maui.Controls.RadioButton
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.RadioButton.CornerRadiusProperty, cornerRadius);
+            self.SetValue(Microsoft.Maui.Controls.RadioButton.CornerRadiusProperty, cornerRadius);
             return self;
         }
         
@@ -277,6 +485,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.RadioButton
         {
             var context = new PropertyContext<int>(self, Microsoft.Maui.Controls.RadioButton.CornerRadiusProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> CornerRadius<T>(this SettersContext<T> self,
+            int cornerRadius)
+            where T : Microsoft.Maui.Controls.RadioButton
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.RadioButton.CornerRadiusProperty, Value = cornerRadius });
+            return self;
+        }
+        
+        public static SettersContext<T> CornerRadius<T>(this SettersContext<T> self, Func<PropertySettersContext<int>, IPropertySettersBuilder<int>> configure)
+            where T : Microsoft.Maui.Controls.RadioButton
+        {
+            var context = new PropertySettersContext<int>(self.XamlSetters, Microsoft.Maui.Controls.RadioButton.CornerRadiusProperty);
             configure(context).Build();
             return self;
         }

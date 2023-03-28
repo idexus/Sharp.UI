@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Thickness padding)
             where T : Microsoft.Maui.Controls.Button
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.PaddingProperty, padding);
+            self.SetValue(Microsoft.Maui.Controls.Button.PaddingProperty, padding);
             return self;
         }
         
@@ -28,11 +28,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> Padding<T>(this SettersContext<T> self,
+            Microsoft.Maui.Thickness padding)
+            where T : Microsoft.Maui.Controls.Button
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Button.PaddingProperty, Value = padding });
+            return self;
+        }
+        
+        public static SettersContext<T> Padding<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Thickness>, IPropertySettersBuilder<Microsoft.Maui.Thickness>> configure)
+            where T : Microsoft.Maui.Controls.Button
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Thickness>(self.XamlSetters, Microsoft.Maui.Controls.Button.PaddingProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T LineBreakMode<T>(this T self,
             Microsoft.Maui.LineBreakMode lineBreakMode)
             where T : Microsoft.Maui.Controls.Button
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.LineBreakModeProperty, lineBreakMode);
+            self.SetValue(Microsoft.Maui.Controls.Button.LineBreakModeProperty, lineBreakMode);
             return self;
         }
         
@@ -44,11 +60,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> LineBreakMode<T>(this SettersContext<T> self,
+            Microsoft.Maui.LineBreakMode lineBreakMode)
+            where T : Microsoft.Maui.Controls.Button
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Button.LineBreakModeProperty, Value = lineBreakMode });
+            return self;
+        }
+        
+        public static SettersContext<T> LineBreakMode<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.LineBreakMode>, IPropertySettersBuilder<Microsoft.Maui.LineBreakMode>> configure)
+            where T : Microsoft.Maui.Controls.Button
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.LineBreakMode>(self.XamlSetters, Microsoft.Maui.Controls.Button.LineBreakModeProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T BorderColor<T>(this T self,
             Microsoft.Maui.Graphics.Color borderColor)
             where T : Microsoft.Maui.Controls.Button
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.BorderColorProperty, borderColor);
+            self.SetValue(Microsoft.Maui.Controls.Button.BorderColorProperty, borderColor);
             return self;
         }
         
@@ -56,6 +88,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.Button
         {
             var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.Button.BorderColorProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> BorderColor<T>(this SettersContext<T> self,
+            Microsoft.Maui.Graphics.Color borderColor)
+            where T : Microsoft.Maui.Controls.Button
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Button.BorderColorProperty, Value = borderColor });
+            return self;
+        }
+        
+        public static SettersContext<T> BorderColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
+            where T : Microsoft.Maui.Controls.Button
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.Color>(self.XamlSetters, Microsoft.Maui.Controls.Button.BorderColorProperty);
             configure(context).Build();
             return self;
         }
@@ -73,7 +121,7 @@ namespace CodeMarkup.Maui
             int cornerRadius)
             where T : Microsoft.Maui.Controls.Button
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.CornerRadiusProperty, cornerRadius);
+            self.SetValue(Microsoft.Maui.Controls.Button.CornerRadiusProperty, cornerRadius);
             return self;
         }
         
@@ -85,11 +133,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> CornerRadius<T>(this SettersContext<T> self,
+            int cornerRadius)
+            where T : Microsoft.Maui.Controls.Button
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Button.CornerRadiusProperty, Value = cornerRadius });
+            return self;
+        }
+        
+        public static SettersContext<T> CornerRadius<T>(this SettersContext<T> self, Func<PropertySettersContext<int>, IPropertySettersBuilder<int>> configure)
+            where T : Microsoft.Maui.Controls.Button
+        {
+            var context = new PropertySettersContext<int>(self.XamlSetters, Microsoft.Maui.Controls.Button.CornerRadiusProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T BorderWidth<T>(this T self,
             double borderWidth)
             where T : Microsoft.Maui.Controls.Button
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.BorderWidthProperty, borderWidth);
+            self.SetValue(Microsoft.Maui.Controls.Button.BorderWidthProperty, borderWidth);
             return self;
         }
         
@@ -97,6 +161,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.Button
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Button.BorderWidthProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> BorderWidth<T>(this SettersContext<T> self,
+            double borderWidth)
+            where T : Microsoft.Maui.Controls.Button
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Button.BorderWidthProperty, Value = borderWidth });
+            return self;
+        }
+        
+        public static SettersContext<T> BorderWidth<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.Button
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.Button.BorderWidthProperty);
             configure(context).Build();
             return self;
         }
@@ -114,7 +194,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Controls.Button.ButtonContentLayout contentLayout)
             where T : Microsoft.Maui.Controls.Button
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.ContentLayoutProperty, contentLayout);
+            self.SetValue(Microsoft.Maui.Controls.Button.ContentLayoutProperty, contentLayout);
             return self;
         }
         
@@ -126,11 +206,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> ContentLayout<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.Button.ButtonContentLayout contentLayout)
+            where T : Microsoft.Maui.Controls.Button
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Button.ContentLayoutProperty, Value = contentLayout });
+            return self;
+        }
+        
+        public static SettersContext<T> ContentLayout<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.Button.ButtonContentLayout>, IPropertySettersBuilder<Microsoft.Maui.Controls.Button.ButtonContentLayout>> configure)
+            where T : Microsoft.Maui.Controls.Button
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.Button.ButtonContentLayout>(self.XamlSetters, Microsoft.Maui.Controls.Button.ContentLayoutProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T Command<T>(this T self,
             System.Windows.Input.ICommand command)
             where T : Microsoft.Maui.Controls.Button
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.CommandProperty, command);
+            self.SetValue(Microsoft.Maui.Controls.Button.CommandProperty, command);
             return self;
         }
         
@@ -142,11 +238,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> Command<T>(this SettersContext<T> self,
+            System.Windows.Input.ICommand command)
+            where T : Microsoft.Maui.Controls.Button
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Button.CommandProperty, Value = command });
+            return self;
+        }
+        
+        public static SettersContext<T> Command<T>(this SettersContext<T> self, Func<PropertySettersContext<System.Windows.Input.ICommand>, IPropertySettersBuilder<System.Windows.Input.ICommand>> configure)
+            where T : Microsoft.Maui.Controls.Button
+        {
+            var context = new PropertySettersContext<System.Windows.Input.ICommand>(self.XamlSetters, Microsoft.Maui.Controls.Button.CommandProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T CommandParameter<T>(this T self,
             object commandParameter)
             where T : Microsoft.Maui.Controls.Button
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.CommandParameterProperty, commandParameter);
+            self.SetValue(Microsoft.Maui.Controls.Button.CommandParameterProperty, commandParameter);
             return self;
         }
         
@@ -158,11 +270,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> CommandParameter<T>(this SettersContext<T> self,
+            object commandParameter)
+            where T : Microsoft.Maui.Controls.Button
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Button.CommandParameterProperty, Value = commandParameter });
+            return self;
+        }
+        
+        public static SettersContext<T> CommandParameter<T>(this SettersContext<T> self, Func<PropertySettersContext<object>, IPropertySettersBuilder<object>> configure)
+            where T : Microsoft.Maui.Controls.Button
+        {
+            var context = new PropertySettersContext<object>(self.XamlSetters, Microsoft.Maui.Controls.Button.CommandParameterProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T ImageSource<T>(this T self,
             Microsoft.Maui.Controls.ImageSource imageSource)
             where T : Microsoft.Maui.Controls.Button
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.ImageSourceProperty, imageSource);
+            self.SetValue(Microsoft.Maui.Controls.Button.ImageSourceProperty, imageSource);
             return self;
         }
         
@@ -174,11 +302,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> ImageSource<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.ImageSource imageSource)
+            where T : Microsoft.Maui.Controls.Button
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Button.ImageSourceProperty, Value = imageSource });
+            return self;
+        }
+        
+        public static SettersContext<T> ImageSource<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.ImageSource>, IPropertySettersBuilder<Microsoft.Maui.Controls.ImageSource>> configure)
+            where T : Microsoft.Maui.Controls.Button
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.ImageSource>(self.XamlSetters, Microsoft.Maui.Controls.Button.ImageSourceProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T Text<T>(this T self,
             string text)
             where T : Microsoft.Maui.Controls.Button
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.TextProperty, text);
+            self.SetValue(Microsoft.Maui.Controls.Button.TextProperty, text);
             return self;
         }
         
@@ -190,11 +334,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> Text<T>(this SettersContext<T> self,
+            string text)
+            where T : Microsoft.Maui.Controls.Button
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Button.TextProperty, Value = text });
+            return self;
+        }
+        
+        public static SettersContext<T> Text<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
+            where T : Microsoft.Maui.Controls.Button
+        {
+            var context = new PropertySettersContext<string>(self.XamlSetters, Microsoft.Maui.Controls.Button.TextProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T TextColor<T>(this T self,
             Microsoft.Maui.Graphics.Color textColor)
             where T : Microsoft.Maui.Controls.Button
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.TextColorProperty, textColor);
+            self.SetValue(Microsoft.Maui.Controls.Button.TextColorProperty, textColor);
             return self;
         }
         
@@ -202,6 +362,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.Button
         {
             var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.Button.TextColorProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> TextColor<T>(this SettersContext<T> self,
+            Microsoft.Maui.Graphics.Color textColor)
+            where T : Microsoft.Maui.Controls.Button
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Button.TextColorProperty, Value = textColor });
+            return self;
+        }
+        
+        public static SettersContext<T> TextColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
+            where T : Microsoft.Maui.Controls.Button
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.Color>(self.XamlSetters, Microsoft.Maui.Controls.Button.TextColorProperty);
             configure(context).Build();
             return self;
         }
@@ -219,7 +395,7 @@ namespace CodeMarkup.Maui
             double characterSpacing)
             where T : Microsoft.Maui.Controls.Button
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.CharacterSpacingProperty, characterSpacing);
+            self.SetValue(Microsoft.Maui.Controls.Button.CharacterSpacingProperty, characterSpacing);
             return self;
         }
         
@@ -227,6 +403,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.Button
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Button.CharacterSpacingProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> CharacterSpacing<T>(this SettersContext<T> self,
+            double characterSpacing)
+            where T : Microsoft.Maui.Controls.Button
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Button.CharacterSpacingProperty, Value = characterSpacing });
+            return self;
+        }
+        
+        public static SettersContext<T> CharacterSpacing<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.Button
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.Button.CharacterSpacingProperty);
             configure(context).Build();
             return self;
         }
@@ -244,7 +436,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Controls.FontAttributes fontAttributes)
             where T : Microsoft.Maui.Controls.Button
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.FontAttributesProperty, fontAttributes);
+            self.SetValue(Microsoft.Maui.Controls.Button.FontAttributesProperty, fontAttributes);
             return self;
         }
         
@@ -256,11 +448,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> FontAttributes<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.FontAttributes fontAttributes)
+            where T : Microsoft.Maui.Controls.Button
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Button.FontAttributesProperty, Value = fontAttributes });
+            return self;
+        }
+        
+        public static SettersContext<T> FontAttributes<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.FontAttributes>, IPropertySettersBuilder<Microsoft.Maui.Controls.FontAttributes>> configure)
+            where T : Microsoft.Maui.Controls.Button
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.FontAttributes>(self.XamlSetters, Microsoft.Maui.Controls.Button.FontAttributesProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T FontFamily<T>(this T self,
             string fontFamily)
             where T : Microsoft.Maui.Controls.Button
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.FontFamilyProperty, fontFamily);
+            self.SetValue(Microsoft.Maui.Controls.Button.FontFamilyProperty, fontFamily);
             return self;
         }
         
@@ -272,11 +480,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> FontFamily<T>(this SettersContext<T> self,
+            string fontFamily)
+            where T : Microsoft.Maui.Controls.Button
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Button.FontFamilyProperty, Value = fontFamily });
+            return self;
+        }
+        
+        public static SettersContext<T> FontFamily<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
+            where T : Microsoft.Maui.Controls.Button
+        {
+            var context = new PropertySettersContext<string>(self.XamlSetters, Microsoft.Maui.Controls.Button.FontFamilyProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T FontSize<T>(this T self,
             double fontSize)
             where T : Microsoft.Maui.Controls.Button
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.FontSizeProperty, fontSize);
+            self.SetValue(Microsoft.Maui.Controls.Button.FontSizeProperty, fontSize);
             return self;
         }
         
@@ -284,6 +508,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.Button
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Button.FontSizeProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> FontSize<T>(this SettersContext<T> self,
+            double fontSize)
+            where T : Microsoft.Maui.Controls.Button
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Button.FontSizeProperty, Value = fontSize });
+            return self;
+        }
+        
+        public static SettersContext<T> FontSize<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.Button
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.Button.FontSizeProperty);
             configure(context).Build();
             return self;
         }
@@ -301,7 +541,7 @@ namespace CodeMarkup.Maui
             bool fontAutoScalingEnabled)
             where T : Microsoft.Maui.Controls.Button
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.FontAutoScalingEnabledProperty, fontAutoScalingEnabled);
+            self.SetValue(Microsoft.Maui.Controls.Button.FontAutoScalingEnabledProperty, fontAutoScalingEnabled);
             return self;
         }
         
@@ -313,11 +553,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> FontAutoScalingEnabled<T>(this SettersContext<T> self,
+            bool fontAutoScalingEnabled)
+            where T : Microsoft.Maui.Controls.Button
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Button.FontAutoScalingEnabledProperty, Value = fontAutoScalingEnabled });
+            return self;
+        }
+        
+        public static SettersContext<T> FontAutoScalingEnabled<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.Button
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.Button.FontAutoScalingEnabledProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T TextTransform<T>(this T self,
             Microsoft.Maui.TextTransform textTransform)
             where T : Microsoft.Maui.Controls.Button
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Button.TextTransformProperty, textTransform);
+            self.SetValue(Microsoft.Maui.Controls.Button.TextTransformProperty, textTransform);
             return self;
         }
         
@@ -325,6 +581,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.Button
         {
             var context = new PropertyContext<Microsoft.Maui.TextTransform>(self, Microsoft.Maui.Controls.Button.TextTransformProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> TextTransform<T>(this SettersContext<T> self,
+            Microsoft.Maui.TextTransform textTransform)
+            where T : Microsoft.Maui.Controls.Button
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Button.TextTransformProperty, Value = textTransform });
+            return self;
+        }
+        
+        public static SettersContext<T> TextTransform<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.TextTransform>, IPropertySettersBuilder<Microsoft.Maui.TextTransform>> configure)
+            where T : Microsoft.Maui.Controls.Button
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.TextTransform>(self.XamlSetters, Microsoft.Maui.Controls.Button.TextTransformProperty);
             configure(context).Build();
             return self;
         }

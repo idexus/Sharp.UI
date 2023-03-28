@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             System.Windows.Input.ICommand command)
             where T : Microsoft.Maui.Controls.SwipeItemView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwipeItemView.CommandProperty, command);
+            self.SetValue(Microsoft.Maui.Controls.SwipeItemView.CommandProperty, command);
             return self;
         }
         
@@ -28,11 +28,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> Command<T>(this SettersContext<T> self,
+            System.Windows.Input.ICommand command)
+            where T : Microsoft.Maui.Controls.SwipeItemView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SwipeItemView.CommandProperty, Value = command });
+            return self;
+        }
+        
+        public static SettersContext<T> Command<T>(this SettersContext<T> self, Func<PropertySettersContext<System.Windows.Input.ICommand>, IPropertySettersBuilder<System.Windows.Input.ICommand>> configure)
+            where T : Microsoft.Maui.Controls.SwipeItemView
+        {
+            var context = new PropertySettersContext<System.Windows.Input.ICommand>(self.XamlSetters, Microsoft.Maui.Controls.SwipeItemView.CommandProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T CommandParameter<T>(this T self,
             object commandParameter)
             where T : Microsoft.Maui.Controls.SwipeItemView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.SwipeItemView.CommandParameterProperty, commandParameter);
+            self.SetValue(Microsoft.Maui.Controls.SwipeItemView.CommandParameterProperty, commandParameter);
             return self;
         }
         
@@ -40,6 +56,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.SwipeItemView
         {
             var context = new PropertyContext<object>(self, Microsoft.Maui.Controls.SwipeItemView.CommandParameterProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> CommandParameter<T>(this SettersContext<T> self,
+            object commandParameter)
+            where T : Microsoft.Maui.Controls.SwipeItemView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SwipeItemView.CommandParameterProperty, Value = commandParameter });
+            return self;
+        }
+        
+        public static SettersContext<T> CommandParameter<T>(this SettersContext<T> self, Func<PropertySettersContext<object>, IPropertySettersBuilder<object>> configure)
+            where T : Microsoft.Maui.Controls.SwipeItemView
+        {
+            var context = new PropertySettersContext<object>(self.XamlSetters, Microsoft.Maui.Controls.SwipeItemView.CommandParameterProperty);
             configure(context).Build();
             return self;
         }

@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Graphics.Color onColor)
             where T : Microsoft.Maui.Controls.Switch
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Switch.OnColorProperty, onColor);
+            self.SetValue(Microsoft.Maui.Controls.Switch.OnColorProperty, onColor);
             return self;
         }
         
@@ -24,6 +24,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.Switch
         {
             var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.Switch.OnColorProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> OnColor<T>(this SettersContext<T> self,
+            Microsoft.Maui.Graphics.Color onColor)
+            where T : Microsoft.Maui.Controls.Switch
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Switch.OnColorProperty, Value = onColor });
+            return self;
+        }
+        
+        public static SettersContext<T> OnColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
+            where T : Microsoft.Maui.Controls.Switch
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.Color>(self.XamlSetters, Microsoft.Maui.Controls.Switch.OnColorProperty);
             configure(context).Build();
             return self;
         }
@@ -41,7 +57,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Graphics.Color thumbColor)
             where T : Microsoft.Maui.Controls.Switch
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Switch.ThumbColorProperty, thumbColor);
+            self.SetValue(Microsoft.Maui.Controls.Switch.ThumbColorProperty, thumbColor);
             return self;
         }
         
@@ -49,6 +65,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.Switch
         {
             var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.Switch.ThumbColorProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> ThumbColor<T>(this SettersContext<T> self,
+            Microsoft.Maui.Graphics.Color thumbColor)
+            where T : Microsoft.Maui.Controls.Switch
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Switch.ThumbColorProperty, Value = thumbColor });
+            return self;
+        }
+        
+        public static SettersContext<T> ThumbColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
+            where T : Microsoft.Maui.Controls.Switch
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.Color>(self.XamlSetters, Microsoft.Maui.Controls.Switch.ThumbColorProperty);
             configure(context).Build();
             return self;
         }
@@ -66,7 +98,7 @@ namespace CodeMarkup.Maui
             bool isToggled)
             where T : Microsoft.Maui.Controls.Switch
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Switch.IsToggledProperty, isToggled);
+            self.SetValue(Microsoft.Maui.Controls.Switch.IsToggledProperty, isToggled);
             return self;
         }
         
@@ -74,6 +106,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.Switch
         {
             var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.Switch.IsToggledProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> IsToggled<T>(this SettersContext<T> self,
+            bool isToggled)
+            where T : Microsoft.Maui.Controls.Switch
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Switch.IsToggledProperty, Value = isToggled });
+            return self;
+        }
+        
+        public static SettersContext<T> IsToggled<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.Switch
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.Switch.IsToggledProperty);
             configure(context).Build();
             return self;
         }

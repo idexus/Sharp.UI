@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Graphics.Color borderColor)
             where T : Microsoft.Maui.Controls.ImageButton
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ImageButton.BorderColorProperty, borderColor);
+            self.SetValue(Microsoft.Maui.Controls.ImageButton.BorderColorProperty, borderColor);
             return self;
         }
         
@@ -24,6 +24,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.ImageButton
         {
             var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.ImageButton.BorderColorProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> BorderColor<T>(this SettersContext<T> self,
+            Microsoft.Maui.Graphics.Color borderColor)
+            where T : Microsoft.Maui.Controls.ImageButton
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ImageButton.BorderColorProperty, Value = borderColor });
+            return self;
+        }
+        
+        public static SettersContext<T> BorderColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
+            where T : Microsoft.Maui.Controls.ImageButton
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.Color>(self.XamlSetters, Microsoft.Maui.Controls.ImageButton.BorderColorProperty);
             configure(context).Build();
             return self;
         }
@@ -41,7 +57,7 @@ namespace CodeMarkup.Maui
             int cornerRadius)
             where T : Microsoft.Maui.Controls.ImageButton
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ImageButton.CornerRadiusProperty, cornerRadius);
+            self.SetValue(Microsoft.Maui.Controls.ImageButton.CornerRadiusProperty, cornerRadius);
             return self;
         }
         
@@ -53,11 +69,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> CornerRadius<T>(this SettersContext<T> self,
+            int cornerRadius)
+            where T : Microsoft.Maui.Controls.ImageButton
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ImageButton.CornerRadiusProperty, Value = cornerRadius });
+            return self;
+        }
+        
+        public static SettersContext<T> CornerRadius<T>(this SettersContext<T> self, Func<PropertySettersContext<int>, IPropertySettersBuilder<int>> configure)
+            where T : Microsoft.Maui.Controls.ImageButton
+        {
+            var context = new PropertySettersContext<int>(self.XamlSetters, Microsoft.Maui.Controls.ImageButton.CornerRadiusProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T BorderWidth<T>(this T self,
             double borderWidth)
             where T : Microsoft.Maui.Controls.ImageButton
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ImageButton.BorderWidthProperty, borderWidth);
+            self.SetValue(Microsoft.Maui.Controls.ImageButton.BorderWidthProperty, borderWidth);
             return self;
         }
         
@@ -65,6 +97,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.ImageButton
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.ImageButton.BorderWidthProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> BorderWidth<T>(this SettersContext<T> self,
+            double borderWidth)
+            where T : Microsoft.Maui.Controls.ImageButton
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ImageButton.BorderWidthProperty, Value = borderWidth });
+            return self;
+        }
+        
+        public static SettersContext<T> BorderWidth<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.ImageButton
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.ImageButton.BorderWidthProperty);
             configure(context).Build();
             return self;
         }
@@ -82,7 +130,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Aspect aspect)
             where T : Microsoft.Maui.Controls.ImageButton
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ImageButton.AspectProperty, aspect);
+            self.SetValue(Microsoft.Maui.Controls.ImageButton.AspectProperty, aspect);
             return self;
         }
         
@@ -94,11 +142,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> Aspect<T>(this SettersContext<T> self,
+            Microsoft.Maui.Aspect aspect)
+            where T : Microsoft.Maui.Controls.ImageButton
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ImageButton.AspectProperty, Value = aspect });
+            return self;
+        }
+        
+        public static SettersContext<T> Aspect<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Aspect>, IPropertySettersBuilder<Microsoft.Maui.Aspect>> configure)
+            where T : Microsoft.Maui.Controls.ImageButton
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Aspect>(self.XamlSetters, Microsoft.Maui.Controls.ImageButton.AspectProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T IsOpaque<T>(this T self,
             bool isOpaque)
             where T : Microsoft.Maui.Controls.ImageButton
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ImageButton.IsOpaqueProperty, isOpaque);
+            self.SetValue(Microsoft.Maui.Controls.ImageButton.IsOpaqueProperty, isOpaque);
             return self;
         }
         
@@ -110,11 +174,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> IsOpaque<T>(this SettersContext<T> self,
+            bool isOpaque)
+            where T : Microsoft.Maui.Controls.ImageButton
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ImageButton.IsOpaqueProperty, Value = isOpaque });
+            return self;
+        }
+        
+        public static SettersContext<T> IsOpaque<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.ImageButton
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.ImageButton.IsOpaqueProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T Command<T>(this T self,
             System.Windows.Input.ICommand command)
             where T : Microsoft.Maui.Controls.ImageButton
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ImageButton.CommandProperty, command);
+            self.SetValue(Microsoft.Maui.Controls.ImageButton.CommandProperty, command);
             return self;
         }
         
@@ -126,11 +206,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> Command<T>(this SettersContext<T> self,
+            System.Windows.Input.ICommand command)
+            where T : Microsoft.Maui.Controls.ImageButton
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ImageButton.CommandProperty, Value = command });
+            return self;
+        }
+        
+        public static SettersContext<T> Command<T>(this SettersContext<T> self, Func<PropertySettersContext<System.Windows.Input.ICommand>, IPropertySettersBuilder<System.Windows.Input.ICommand>> configure)
+            where T : Microsoft.Maui.Controls.ImageButton
+        {
+            var context = new PropertySettersContext<System.Windows.Input.ICommand>(self.XamlSetters, Microsoft.Maui.Controls.ImageButton.CommandProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T CommandParameter<T>(this T self,
             object commandParameter)
             where T : Microsoft.Maui.Controls.ImageButton
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ImageButton.CommandParameterProperty, commandParameter);
+            self.SetValue(Microsoft.Maui.Controls.ImageButton.CommandParameterProperty, commandParameter);
             return self;
         }
         
@@ -142,11 +238,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> CommandParameter<T>(this SettersContext<T> self,
+            object commandParameter)
+            where T : Microsoft.Maui.Controls.ImageButton
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ImageButton.CommandParameterProperty, Value = commandParameter });
+            return self;
+        }
+        
+        public static SettersContext<T> CommandParameter<T>(this SettersContext<T> self, Func<PropertySettersContext<object>, IPropertySettersBuilder<object>> configure)
+            where T : Microsoft.Maui.Controls.ImageButton
+        {
+            var context = new PropertySettersContext<object>(self.XamlSetters, Microsoft.Maui.Controls.ImageButton.CommandParameterProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T Source<T>(this T self,
             Microsoft.Maui.Controls.ImageSource source)
             where T : Microsoft.Maui.Controls.ImageButton
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ImageButton.SourceProperty, source);
+            self.SetValue(Microsoft.Maui.Controls.ImageButton.SourceProperty, source);
             return self;
         }
         
@@ -158,11 +270,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> Source<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.ImageSource source)
+            where T : Microsoft.Maui.Controls.ImageButton
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ImageButton.SourceProperty, Value = source });
+            return self;
+        }
+        
+        public static SettersContext<T> Source<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.ImageSource>, IPropertySettersBuilder<Microsoft.Maui.Controls.ImageSource>> configure)
+            where T : Microsoft.Maui.Controls.ImageButton
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.ImageSource>(self.XamlSetters, Microsoft.Maui.Controls.ImageButton.SourceProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T Padding<T>(this T self,
             Microsoft.Maui.Thickness padding)
             where T : Microsoft.Maui.Controls.ImageButton
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ImageButton.PaddingProperty, padding);
+            self.SetValue(Microsoft.Maui.Controls.ImageButton.PaddingProperty, padding);
             return self;
         }
         
@@ -170,6 +298,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.ImageButton
         {
             var context = new PropertyContext<Microsoft.Maui.Thickness>(self, Microsoft.Maui.Controls.ImageButton.PaddingProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> Padding<T>(this SettersContext<T> self,
+            Microsoft.Maui.Thickness padding)
+            where T : Microsoft.Maui.Controls.ImageButton
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ImageButton.PaddingProperty, Value = padding });
+            return self;
+        }
+        
+        public static SettersContext<T> Padding<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Thickness>, IPropertySettersBuilder<Microsoft.Maui.Thickness>> configure)
+            where T : Microsoft.Maui.Controls.ImageButton
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Thickness>(self.XamlSetters, Microsoft.Maui.Controls.ImageButton.PaddingProperty);
             configure(context).Build();
             return self;
         }

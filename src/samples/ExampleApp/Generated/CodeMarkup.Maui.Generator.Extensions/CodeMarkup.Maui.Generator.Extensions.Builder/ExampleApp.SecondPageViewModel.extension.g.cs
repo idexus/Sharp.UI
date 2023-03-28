@@ -17,7 +17,7 @@ namespace ExampleApp
             string title)
             where T : ExampleApp.SecondPageViewModel
         {
-            self.SetValueOrAddSetter(ExampleApp.SecondPageViewModel.TitleProperty, title);
+            self.SetValue(ExampleApp.SecondPageViewModel.TitleProperty, title);
             return self;
         }
         
@@ -29,11 +29,27 @@ namespace ExampleApp
             return self;
         }
         
+        public static SettersContext<T> Title<T>(this SettersContext<T> self,
+            string title)
+            where T : ExampleApp.SecondPageViewModel
+        {
+            self.XamlSetters.Add(new Setter { Property = ExampleApp.SecondPageViewModel.TitleProperty, Value = title });
+            return self;
+        }
+        
+        public static SettersContext<T> Title<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
+            where T : ExampleApp.SecondPageViewModel
+        {
+            var context = new PropertySettersContext<string>(self.XamlSetters, ExampleApp.SecondPageViewModel.TitleProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T Author<T>(this T self,
             string author)
             where T : ExampleApp.SecondPageViewModel
         {
-            self.SetValueOrAddSetter(ExampleApp.SecondPageViewModel.AuthorProperty, author);
+            self.SetValue(ExampleApp.SecondPageViewModel.AuthorProperty, author);
             return self;
         }
         
@@ -41,6 +57,22 @@ namespace ExampleApp
             where T : ExampleApp.SecondPageViewModel
         {
             var context = new PropertyContext<string>(self, ExampleApp.SecondPageViewModel.AuthorProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> Author<T>(this SettersContext<T> self,
+            string author)
+            where T : ExampleApp.SecondPageViewModel
+        {
+            self.XamlSetters.Add(new Setter { Property = ExampleApp.SecondPageViewModel.AuthorProperty, Value = author });
+            return self;
+        }
+        
+        public static SettersContext<T> Author<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
+            where T : ExampleApp.SecondPageViewModel
+        {
+            var context = new PropertySettersContext<string>(self.XamlSetters, ExampleApp.SecondPageViewModel.AuthorProperty);
             configure(context).Build();
             return self;
         }

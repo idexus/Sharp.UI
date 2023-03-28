@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace CodeMarkup.Maui
 {
-    public sealed class PropertyIdiomBuilder<T> : IPropertyBuilder<T>
+    public sealed class PropertySettersIdiomBuilder<T> : IPropertySettersBuilder<T>
     {
-        public PropertyContext<T> Context { get; set; }
+        public PropertySettersContext<T> Context { get; set; }
 
         T newValue;
         T defaultValue;
-        Func<PropertyContext<T>, IPropertyBuilder<T>> defaultConfigure;
+        Func<PropertySettersContext<T>, IPropertySettersBuilder<T>> defaultConfigure;
 
         bool isSet;
         bool defaultIsSet;
         bool buildValue;
 
-        public PropertyIdiomBuilder(PropertyContext<T> context)
+        public PropertySettersIdiomBuilder(PropertySettersContext<T> context)
         {
             Context = context;
         }
@@ -26,7 +26,7 @@ namespace CodeMarkup.Maui
         public bool Build()
         {
             if (buildValue)
-                Context.BindableObject.SetValueOrAddSetter(Context.Property, newValue);
+                Context.XamlSetters.Add(new Setter { Property = Context.Property, Value = newValue });
             else if (!isSet)
             {
                 if (defaultIsSet)
@@ -34,7 +34,7 @@ namespace CodeMarkup.Maui
                     if (defaultConfigure != null)
                         isSet = defaultConfigure(Context).Build();
                     else
-                        Context.BindableObject.SetValueOrAddSetter(Context.Property, defaultValue);
+                        Context.XamlSetters.Add(new Setter { Property = Context.Property, Value = defaultValue });
                 }
 
             }
@@ -43,7 +43,7 @@ namespace CodeMarkup.Maui
 
         // Default
 
-        public PropertyIdiomBuilder<T> Default(T value)
+        public PropertySettersIdiomBuilder<T> Default(T value)
         {
             if (!defaultIsSet)
             {
@@ -53,7 +53,7 @@ namespace CodeMarkup.Maui
             return this;
         }
 
-        public PropertyIdiomBuilder<T> Default(Func<PropertyContext<T>, IPropertyBuilder<T>> configure)
+        public PropertySettersIdiomBuilder<T> Default(Func<PropertySettersContext<T>, IPropertySettersBuilder<T>> configure)
         {
             if (!defaultIsSet)
             {
@@ -65,7 +65,7 @@ namespace CodeMarkup.Maui
 
         // OnPhone
 
-        public PropertyIdiomBuilder<T> OnPhone(T value)
+        public PropertySettersIdiomBuilder<T> OnPhone(T value)
         {
             if (!isSet && DeviceInfo.Idiom == DeviceIdiom.Phone)
             {
@@ -76,7 +76,7 @@ namespace CodeMarkup.Maui
             return this;
         }
 
-        public PropertyIdiomBuilder<T> OnPhone(Func<PropertyContext<T>, IPropertyBuilder<T>> configure)
+        public PropertySettersIdiomBuilder<T> OnPhone(Func<PropertySettersContext<T>, IPropertySettersBuilder<T>> configure)
         {
             if (!isSet && DeviceInfo.Idiom == DeviceIdiom.Phone)
                 isSet = configure(Context).Build();
@@ -85,7 +85,7 @@ namespace CodeMarkup.Maui
 
         // OnTablet
 
-        public PropertyIdiomBuilder<T> OnTablet(T value)
+        public PropertySettersIdiomBuilder<T> OnTablet(T value)
         {
             if (!isSet && DeviceInfo.Idiom == DeviceIdiom.Tablet)
             {
@@ -96,7 +96,7 @@ namespace CodeMarkup.Maui
             return this;
         }
 
-        public PropertyIdiomBuilder<T> OnTablet(Func<PropertyContext<T>, IPropertyBuilder<T>> configure)
+        public PropertySettersIdiomBuilder<T> OnTablet(Func<PropertySettersContext<T>, IPropertySettersBuilder<T>> configure)
         {
             if (!isSet && DeviceInfo.Idiom == DeviceIdiom.Tablet)
                 isSet = configure(Context).Build();
@@ -105,7 +105,7 @@ namespace CodeMarkup.Maui
 
         // OnDesktop
 
-        public PropertyIdiomBuilder<T> OnDesktop(T value)
+        public PropertySettersIdiomBuilder<T> OnDesktop(T value)
         {
             if (!isSet && DeviceInfo.Idiom == DeviceIdiom.Desktop)
             {
@@ -116,7 +116,7 @@ namespace CodeMarkup.Maui
             return this;
         }
 
-        public PropertyIdiomBuilder<T> OnDesktop(Func<PropertyContext<T>, IPropertyBuilder<T>> configure)
+        public PropertySettersIdiomBuilder<T> OnDesktop(Func<PropertySettersContext<T>, IPropertySettersBuilder<T>> configure)
         {
             if (!isSet && DeviceInfo.Idiom == DeviceIdiom.Desktop)
                 isSet = configure(Context).Build();
@@ -125,7 +125,7 @@ namespace CodeMarkup.Maui
 
         // OnTV
 
-        public PropertyIdiomBuilder<T> OnTV(T value)
+        public PropertySettersIdiomBuilder<T> OnTV(T value)
         {
             if (!isSet && DeviceInfo.Idiom == DeviceIdiom.TV)
             {
@@ -136,7 +136,7 @@ namespace CodeMarkup.Maui
             return this;
         }
 
-        public PropertyIdiomBuilder<T> OnTV(Func<PropertyContext<T>, IPropertyBuilder<T>> configure)
+        public PropertySettersIdiomBuilder<T> OnTV(Func<PropertySettersContext<T>, IPropertySettersBuilder<T>> configure)
         {
             if (!isSet && DeviceInfo.Idiom == DeviceIdiom.TV)
                 isSet = configure(Context).Build();
@@ -145,7 +145,7 @@ namespace CodeMarkup.Maui
 
         // OnWatch
 
-        public PropertyIdiomBuilder<T> OnWatch(T value)
+        public PropertySettersIdiomBuilder<T> OnWatch(T value)
         {
             if (!isSet && DeviceInfo.Idiom == DeviceIdiom.Watch)
             {
@@ -156,7 +156,7 @@ namespace CodeMarkup.Maui
             return this;
         }
 
-        public PropertyIdiomBuilder<T> OnWatch(Func<PropertyContext<T>, IPropertyBuilder<T>> configure)
+        public PropertySettersIdiomBuilder<T> OnWatch(Func<PropertySettersContext<T>, IPropertySettersBuilder<T>> configure)
         {
             if (!isSet && DeviceInfo.Idiom == DeviceIdiom.Watch)
                 isSet = configure(Context).Build();

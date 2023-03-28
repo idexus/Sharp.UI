@@ -16,7 +16,6 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Graphics.Rect layoutAreaOverride)
             where T : Microsoft.Maui.Controls.ScrollView
         {
-            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property LayoutAreaOverride");
             self.LayoutAreaOverride = layoutAreaOverride;
             return self;
         }
@@ -25,7 +24,6 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Controls.View content)
             where T : Microsoft.Maui.Controls.ScrollView
         {
-            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property Content");
             self.Content = content;
             return self;
         }
@@ -34,7 +32,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.ScrollOrientation orientation)
             where T : Microsoft.Maui.Controls.ScrollView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ScrollView.OrientationProperty, orientation);
+            self.SetValue(Microsoft.Maui.Controls.ScrollView.OrientationProperty, orientation);
             return self;
         }
         
@@ -46,11 +44,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> Orientation<T>(this SettersContext<T> self,
+            Microsoft.Maui.ScrollOrientation orientation)
+            where T : Microsoft.Maui.Controls.ScrollView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ScrollView.OrientationProperty, Value = orientation });
+            return self;
+        }
+        
+        public static SettersContext<T> Orientation<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.ScrollOrientation>, IPropertySettersBuilder<Microsoft.Maui.ScrollOrientation>> configure)
+            where T : Microsoft.Maui.Controls.ScrollView
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.ScrollOrientation>(self.XamlSetters, Microsoft.Maui.Controls.ScrollView.OrientationProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T HorizontalScrollBarVisibility<T>(this T self,
             Microsoft.Maui.ScrollBarVisibility horizontalScrollBarVisibility)
             where T : Microsoft.Maui.Controls.ScrollView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ScrollView.HorizontalScrollBarVisibilityProperty, horizontalScrollBarVisibility);
+            self.SetValue(Microsoft.Maui.Controls.ScrollView.HorizontalScrollBarVisibilityProperty, horizontalScrollBarVisibility);
             return self;
         }
         
@@ -62,11 +76,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> HorizontalScrollBarVisibility<T>(this SettersContext<T> self,
+            Microsoft.Maui.ScrollBarVisibility horizontalScrollBarVisibility)
+            where T : Microsoft.Maui.Controls.ScrollView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ScrollView.HorizontalScrollBarVisibilityProperty, Value = horizontalScrollBarVisibility });
+            return self;
+        }
+        
+        public static SettersContext<T> HorizontalScrollBarVisibility<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.ScrollBarVisibility>, IPropertySettersBuilder<Microsoft.Maui.ScrollBarVisibility>> configure)
+            where T : Microsoft.Maui.Controls.ScrollView
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.ScrollBarVisibility>(self.XamlSetters, Microsoft.Maui.Controls.ScrollView.HorizontalScrollBarVisibilityProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T VerticalScrollBarVisibility<T>(this T self,
             Microsoft.Maui.ScrollBarVisibility verticalScrollBarVisibility)
             where T : Microsoft.Maui.Controls.ScrollView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ScrollView.VerticalScrollBarVisibilityProperty, verticalScrollBarVisibility);
+            self.SetValue(Microsoft.Maui.Controls.ScrollView.VerticalScrollBarVisibilityProperty, verticalScrollBarVisibility);
             return self;
         }
         
@@ -74,6 +104,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.ScrollView
         {
             var context = new PropertyContext<Microsoft.Maui.ScrollBarVisibility>(self, Microsoft.Maui.Controls.ScrollView.VerticalScrollBarVisibilityProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> VerticalScrollBarVisibility<T>(this SettersContext<T> self,
+            Microsoft.Maui.ScrollBarVisibility verticalScrollBarVisibility)
+            where T : Microsoft.Maui.Controls.ScrollView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ScrollView.VerticalScrollBarVisibilityProperty, Value = verticalScrollBarVisibility });
+            return self;
+        }
+        
+        public static SettersContext<T> VerticalScrollBarVisibility<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.ScrollBarVisibility>, IPropertySettersBuilder<Microsoft.Maui.ScrollBarVisibility>> configure)
+            where T : Microsoft.Maui.Controls.ScrollView
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.ScrollBarVisibility>(self.XamlSetters, Microsoft.Maui.Controls.ScrollView.VerticalScrollBarVisibilityProperty);
             configure(context).Build();
             return self;
         }

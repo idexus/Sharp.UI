@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Graphics.Color progressColor)
             where T : Microsoft.Maui.Controls.ProgressBar
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ProgressBar.ProgressColorProperty, progressColor);
+            self.SetValue(Microsoft.Maui.Controls.ProgressBar.ProgressColorProperty, progressColor);
             return self;
         }
         
@@ -24,6 +24,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.ProgressBar
         {
             var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.ProgressBar.ProgressColorProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> ProgressColor<T>(this SettersContext<T> self,
+            Microsoft.Maui.Graphics.Color progressColor)
+            where T : Microsoft.Maui.Controls.ProgressBar
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ProgressBar.ProgressColorProperty, Value = progressColor });
+            return self;
+        }
+        
+        public static SettersContext<T> ProgressColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
+            where T : Microsoft.Maui.Controls.ProgressBar
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.Color>(self.XamlSetters, Microsoft.Maui.Controls.ProgressBar.ProgressColorProperty);
             configure(context).Build();
             return self;
         }
@@ -41,7 +57,7 @@ namespace CodeMarkup.Maui
             double progress)
             where T : Microsoft.Maui.Controls.ProgressBar
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.ProgressBar.ProgressProperty, progress);
+            self.SetValue(Microsoft.Maui.Controls.ProgressBar.ProgressProperty, progress);
             return self;
         }
         
@@ -49,6 +65,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.ProgressBar
         {
             var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.ProgressBar.ProgressProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> Progress<T>(this SettersContext<T> self,
+            double progress)
+            where T : Microsoft.Maui.Controls.ProgressBar
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ProgressBar.ProgressProperty, Value = progress });
+            return self;
+        }
+        
+        public static SettersContext<T> Progress<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.ProgressBar
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.ProgressBar.ProgressProperty);
             configure(context).Build();
             return self;
         }

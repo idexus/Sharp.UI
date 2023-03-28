@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Controls.ImageSource backgroundImageSource)
             where T : Microsoft.Maui.Controls.Page
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Page.BackgroundImageSourceProperty, backgroundImageSource);
+            self.SetValue(Microsoft.Maui.Controls.Page.BackgroundImageSourceProperty, backgroundImageSource);
             return self;
         }
         
@@ -28,11 +28,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> BackgroundImageSource<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.ImageSource backgroundImageSource)
+            where T : Microsoft.Maui.Controls.Page
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Page.BackgroundImageSourceProperty, Value = backgroundImageSource });
+            return self;
+        }
+        
+        public static SettersContext<T> BackgroundImageSource<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.ImageSource>, IPropertySettersBuilder<Microsoft.Maui.Controls.ImageSource>> configure)
+            where T : Microsoft.Maui.Controls.Page
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.ImageSource>(self.XamlSetters, Microsoft.Maui.Controls.Page.BackgroundImageSourceProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T IconImageSource<T>(this T self,
             Microsoft.Maui.Controls.ImageSource iconImageSource)
             where T : Microsoft.Maui.Controls.Page
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Page.IconImageSourceProperty, iconImageSource);
+            self.SetValue(Microsoft.Maui.Controls.Page.IconImageSourceProperty, iconImageSource);
             return self;
         }
         
@@ -44,11 +60,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> IconImageSource<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.ImageSource iconImageSource)
+            where T : Microsoft.Maui.Controls.Page
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Page.IconImageSourceProperty, Value = iconImageSource });
+            return self;
+        }
+        
+        public static SettersContext<T> IconImageSource<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.ImageSource>, IPropertySettersBuilder<Microsoft.Maui.Controls.ImageSource>> configure)
+            where T : Microsoft.Maui.Controls.Page
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.ImageSource>(self.XamlSetters, Microsoft.Maui.Controls.Page.IconImageSourceProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T IsBusy<T>(this T self,
             bool isBusy)
             where T : Microsoft.Maui.Controls.Page
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Page.IsBusyProperty, isBusy);
+            self.SetValue(Microsoft.Maui.Controls.Page.IsBusyProperty, isBusy);
             return self;
         }
         
@@ -60,11 +92,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> IsBusy<T>(this SettersContext<T> self,
+            bool isBusy)
+            where T : Microsoft.Maui.Controls.Page
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Page.IsBusyProperty, Value = isBusy });
+            return self;
+        }
+        
+        public static SettersContext<T> IsBusy<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.Page
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.Page.IsBusyProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T Padding<T>(this T self,
             Microsoft.Maui.Thickness padding)
             where T : Microsoft.Maui.Controls.Page
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Page.PaddingProperty, padding);
+            self.SetValue(Microsoft.Maui.Controls.Page.PaddingProperty, padding);
             return self;
         }
         
@@ -76,11 +124,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> Padding<T>(this SettersContext<T> self,
+            Microsoft.Maui.Thickness padding)
+            where T : Microsoft.Maui.Controls.Page
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Page.PaddingProperty, Value = padding });
+            return self;
+        }
+        
+        public static SettersContext<T> Padding<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Thickness>, IPropertySettersBuilder<Microsoft.Maui.Thickness>> configure)
+            where T : Microsoft.Maui.Controls.Page
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Thickness>(self.XamlSetters, Microsoft.Maui.Controls.Page.PaddingProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T Title<T>(this T self,
             string title)
             where T : Microsoft.Maui.Controls.Page
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Page.TitleProperty, title);
+            self.SetValue(Microsoft.Maui.Controls.Page.TitleProperty, title);
             return self;
         }
         
@@ -88,6 +152,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.Page
         {
             var context = new PropertyContext<string>(self, Microsoft.Maui.Controls.Page.TitleProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> Title<T>(this SettersContext<T> self,
+            string title)
+            where T : Microsoft.Maui.Controls.Page
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Page.TitleProperty, Value = title });
+            return self;
+        }
+        
+        public static SettersContext<T> Title<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
+            where T : Microsoft.Maui.Controls.Page
+        {
+            var context = new PropertySettersContext<string>(self.XamlSetters, Microsoft.Maui.Controls.Page.TitleProperty);
             configure(context).Build();
             return self;
         }
@@ -132,7 +212,6 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Graphics.Rect containerArea)
             where T : Microsoft.Maui.Controls.Page
         {
-            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property ContainerArea");
             self.ContainerArea = containerArea;
             return self;
         }
@@ -141,7 +220,6 @@ namespace CodeMarkup.Maui
             bool ignoresContainerArea)
             where T : Microsoft.Maui.Controls.Page
         {
-            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property IgnoresContainerArea");
             self.IgnoresContainerArea = ignoresContainerArea;
             return self;
         }

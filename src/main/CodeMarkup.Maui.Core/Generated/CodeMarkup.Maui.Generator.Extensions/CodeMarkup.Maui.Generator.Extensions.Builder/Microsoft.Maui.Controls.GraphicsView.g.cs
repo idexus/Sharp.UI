@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Graphics.IDrawable drawable)
             where T : Microsoft.Maui.Controls.GraphicsView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.GraphicsView.DrawableProperty, drawable);
+            self.SetValue(Microsoft.Maui.Controls.GraphicsView.DrawableProperty, drawable);
             return self;
         }
         
@@ -24,6 +24,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.GraphicsView
         {
             var context = new PropertyContext<Microsoft.Maui.Graphics.IDrawable>(self, Microsoft.Maui.Controls.GraphicsView.DrawableProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> Drawable<T>(this SettersContext<T> self,
+            Microsoft.Maui.Graphics.IDrawable drawable)
+            where T : Microsoft.Maui.Controls.GraphicsView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.GraphicsView.DrawableProperty, Value = drawable });
+            return self;
+        }
+        
+        public static SettersContext<T> Drawable<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.IDrawable>, IPropertySettersBuilder<Microsoft.Maui.Graphics.IDrawable>> configure)
+            where T : Microsoft.Maui.Controls.GraphicsView
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.IDrawable>(self.XamlSetters, Microsoft.Maui.Controls.GraphicsView.DrawableProperty);
             configure(context).Build();
             return self;
         }

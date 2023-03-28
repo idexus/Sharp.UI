@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             System.Windows.Input.ICommand command)
             where T : Microsoft.Maui.Controls.MenuItem
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.MenuItem.CommandProperty, command);
+            self.SetValue(Microsoft.Maui.Controls.MenuItem.CommandProperty, command);
             return self;
         }
         
@@ -28,11 +28,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> Command<T>(this SettersContext<T> self,
+            System.Windows.Input.ICommand command)
+            where T : Microsoft.Maui.Controls.MenuItem
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.MenuItem.CommandProperty, Value = command });
+            return self;
+        }
+        
+        public static SettersContext<T> Command<T>(this SettersContext<T> self, Func<PropertySettersContext<System.Windows.Input.ICommand>, IPropertySettersBuilder<System.Windows.Input.ICommand>> configure)
+            where T : Microsoft.Maui.Controls.MenuItem
+        {
+            var context = new PropertySettersContext<System.Windows.Input.ICommand>(self.XamlSetters, Microsoft.Maui.Controls.MenuItem.CommandProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T CommandParameter<T>(this T self,
             object commandParameter)
             where T : Microsoft.Maui.Controls.MenuItem
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.MenuItem.CommandParameterProperty, commandParameter);
+            self.SetValue(Microsoft.Maui.Controls.MenuItem.CommandParameterProperty, commandParameter);
             return self;
         }
         
@@ -44,11 +60,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> CommandParameter<T>(this SettersContext<T> self,
+            object commandParameter)
+            where T : Microsoft.Maui.Controls.MenuItem
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.MenuItem.CommandParameterProperty, Value = commandParameter });
+            return self;
+        }
+        
+        public static SettersContext<T> CommandParameter<T>(this SettersContext<T> self, Func<PropertySettersContext<object>, IPropertySettersBuilder<object>> configure)
+            where T : Microsoft.Maui.Controls.MenuItem
+        {
+            var context = new PropertySettersContext<object>(self.XamlSetters, Microsoft.Maui.Controls.MenuItem.CommandParameterProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T IconImageSource<T>(this T self,
             Microsoft.Maui.Controls.ImageSource iconImageSource)
             where T : Microsoft.Maui.Controls.MenuItem
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.MenuItem.IconImageSourceProperty, iconImageSource);
+            self.SetValue(Microsoft.Maui.Controls.MenuItem.IconImageSourceProperty, iconImageSource);
             return self;
         }
         
@@ -60,11 +92,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> IconImageSource<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.ImageSource iconImageSource)
+            where T : Microsoft.Maui.Controls.MenuItem
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.MenuItem.IconImageSourceProperty, Value = iconImageSource });
+            return self;
+        }
+        
+        public static SettersContext<T> IconImageSource<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.ImageSource>, IPropertySettersBuilder<Microsoft.Maui.Controls.ImageSource>> configure)
+            where T : Microsoft.Maui.Controls.MenuItem
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.ImageSource>(self.XamlSetters, Microsoft.Maui.Controls.MenuItem.IconImageSourceProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T IsDestructive<T>(this T self,
             bool isDestructive)
             where T : Microsoft.Maui.Controls.MenuItem
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.MenuItem.IsDestructiveProperty, isDestructive);
+            self.SetValue(Microsoft.Maui.Controls.MenuItem.IsDestructiveProperty, isDestructive);
             return self;
         }
         
@@ -76,11 +124,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> IsDestructive<T>(this SettersContext<T> self,
+            bool isDestructive)
+            where T : Microsoft.Maui.Controls.MenuItem
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.MenuItem.IsDestructiveProperty, Value = isDestructive });
+            return self;
+        }
+        
+        public static SettersContext<T> IsDestructive<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.MenuItem
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.MenuItem.IsDestructiveProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T Text<T>(this T self,
             string text)
             where T : Microsoft.Maui.Controls.MenuItem
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.MenuItem.TextProperty, text);
+            self.SetValue(Microsoft.Maui.Controls.MenuItem.TextProperty, text);
             return self;
         }
         
@@ -92,11 +156,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> Text<T>(this SettersContext<T> self,
+            string text)
+            where T : Microsoft.Maui.Controls.MenuItem
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.MenuItem.TextProperty, Value = text });
+            return self;
+        }
+        
+        public static SettersContext<T> Text<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
+            where T : Microsoft.Maui.Controls.MenuItem
+        {
+            var context = new PropertySettersContext<string>(self.XamlSetters, Microsoft.Maui.Controls.MenuItem.TextProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T IsEnabled<T>(this T self,
             bool isEnabled)
             where T : Microsoft.Maui.Controls.MenuItem
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.MenuItem.IsEnabledProperty, isEnabled);
+            self.SetValue(Microsoft.Maui.Controls.MenuItem.IsEnabledProperty, isEnabled);
             return self;
         }
         
@@ -104,6 +184,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.MenuItem
         {
             var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.MenuItem.IsEnabledProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> IsEnabled<T>(this SettersContext<T> self,
+            bool isEnabled)
+            where T : Microsoft.Maui.Controls.MenuItem
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.MenuItem.IsEnabledProperty, Value = isEnabled });
+            return self;
+        }
+        
+        public static SettersContext<T> IsEnabled<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.MenuItem
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.MenuItem.IsEnabledProperty);
             configure(context).Build();
             return self;
         }

@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             bool loop)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.CarouselView.LoopProperty, loop);
+            self.SetValue(Microsoft.Maui.Controls.CarouselView.LoopProperty, loop);
             return self;
         }
         
@@ -28,11 +28,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> Loop<T>(this SettersContext<T> self,
+            bool loop)
+            where T : Microsoft.Maui.Controls.CarouselView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.CarouselView.LoopProperty, Value = loop });
+            return self;
+        }
+        
+        public static SettersContext<T> Loop<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.CarouselView
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.CarouselView.LoopProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T PeekAreaInsets<T>(this T self,
             Microsoft.Maui.Thickness peekAreaInsets)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.CarouselView.PeekAreaInsetsProperty, peekAreaInsets);
+            self.SetValue(Microsoft.Maui.Controls.CarouselView.PeekAreaInsetsProperty, peekAreaInsets);
             return self;
         }
         
@@ -40,6 +56,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.CarouselView
         {
             var context = new PropertyContext<Microsoft.Maui.Thickness>(self, Microsoft.Maui.Controls.CarouselView.PeekAreaInsetsProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> PeekAreaInsets<T>(this SettersContext<T> self,
+            Microsoft.Maui.Thickness peekAreaInsets)
+            where T : Microsoft.Maui.Controls.CarouselView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.CarouselView.PeekAreaInsetsProperty, Value = peekAreaInsets });
+            return self;
+        }
+        
+        public static SettersContext<T> PeekAreaInsets<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Thickness>, IPropertySettersBuilder<Microsoft.Maui.Thickness>> configure)
+            where T : Microsoft.Maui.Controls.CarouselView
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Thickness>(self.XamlSetters, Microsoft.Maui.Controls.CarouselView.PeekAreaInsetsProperty);
             configure(context).Build();
             return self;
         }
@@ -74,7 +106,7 @@ namespace CodeMarkup.Maui
             bool isBounceEnabled)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.CarouselView.IsBounceEnabledProperty, isBounceEnabled);
+            self.SetValue(Microsoft.Maui.Controls.CarouselView.IsBounceEnabledProperty, isBounceEnabled);
             return self;
         }
         
@@ -86,11 +118,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> IsBounceEnabled<T>(this SettersContext<T> self,
+            bool isBounceEnabled)
+            where T : Microsoft.Maui.Controls.CarouselView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.CarouselView.IsBounceEnabledProperty, Value = isBounceEnabled });
+            return self;
+        }
+        
+        public static SettersContext<T> IsBounceEnabled<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.CarouselView
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.CarouselView.IsBounceEnabledProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T IsSwipeEnabled<T>(this T self,
             bool isSwipeEnabled)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.CarouselView.IsSwipeEnabledProperty, isSwipeEnabled);
+            self.SetValue(Microsoft.Maui.Controls.CarouselView.IsSwipeEnabledProperty, isSwipeEnabled);
             return self;
         }
         
@@ -102,11 +150,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> IsSwipeEnabled<T>(this SettersContext<T> self,
+            bool isSwipeEnabled)
+            where T : Microsoft.Maui.Controls.CarouselView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.CarouselView.IsSwipeEnabledProperty, Value = isSwipeEnabled });
+            return self;
+        }
+        
+        public static SettersContext<T> IsSwipeEnabled<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.CarouselView
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.CarouselView.IsSwipeEnabledProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T IsScrollAnimated<T>(this T self,
             bool isScrollAnimated)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.CarouselView.IsScrollAnimatedProperty, isScrollAnimated);
+            self.SetValue(Microsoft.Maui.Controls.CarouselView.IsScrollAnimatedProperty, isScrollAnimated);
             return self;
         }
         
@@ -118,11 +182,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> IsScrollAnimated<T>(this SettersContext<T> self,
+            bool isScrollAnimated)
+            where T : Microsoft.Maui.Controls.CarouselView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.CarouselView.IsScrollAnimatedProperty, Value = isScrollAnimated });
+            return self;
+        }
+        
+        public static SettersContext<T> IsScrollAnimated<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.CarouselView
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.CarouselView.IsScrollAnimatedProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T CurrentItem<T>(this T self,
             object currentItem)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.CarouselView.CurrentItemProperty, currentItem);
+            self.SetValue(Microsoft.Maui.Controls.CarouselView.CurrentItemProperty, currentItem);
             return self;
         }
         
@@ -134,11 +214,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> CurrentItem<T>(this SettersContext<T> self,
+            object currentItem)
+            where T : Microsoft.Maui.Controls.CarouselView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.CarouselView.CurrentItemProperty, Value = currentItem });
+            return self;
+        }
+        
+        public static SettersContext<T> CurrentItem<T>(this SettersContext<T> self, Func<PropertySettersContext<object>, IPropertySettersBuilder<object>> configure)
+            where T : Microsoft.Maui.Controls.CarouselView
+        {
+            var context = new PropertySettersContext<object>(self.XamlSetters, Microsoft.Maui.Controls.CarouselView.CurrentItemProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T CurrentItemChangedCommand<T>(this T self,
             System.Windows.Input.ICommand currentItemChangedCommand)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.CarouselView.CurrentItemChangedCommandProperty, currentItemChangedCommand);
+            self.SetValue(Microsoft.Maui.Controls.CarouselView.CurrentItemChangedCommandProperty, currentItemChangedCommand);
             return self;
         }
         
@@ -150,11 +246,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> CurrentItemChangedCommand<T>(this SettersContext<T> self,
+            System.Windows.Input.ICommand currentItemChangedCommand)
+            where T : Microsoft.Maui.Controls.CarouselView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.CarouselView.CurrentItemChangedCommandProperty, Value = currentItemChangedCommand });
+            return self;
+        }
+        
+        public static SettersContext<T> CurrentItemChangedCommand<T>(this SettersContext<T> self, Func<PropertySettersContext<System.Windows.Input.ICommand>, IPropertySettersBuilder<System.Windows.Input.ICommand>> configure)
+            where T : Microsoft.Maui.Controls.CarouselView
+        {
+            var context = new PropertySettersContext<System.Windows.Input.ICommand>(self.XamlSetters, Microsoft.Maui.Controls.CarouselView.CurrentItemChangedCommandProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T CurrentItemChangedCommandParameter<T>(this T self,
             object currentItemChangedCommandParameter)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.CarouselView.CurrentItemChangedCommandParameterProperty, currentItemChangedCommandParameter);
+            self.SetValue(Microsoft.Maui.Controls.CarouselView.CurrentItemChangedCommandParameterProperty, currentItemChangedCommandParameter);
             return self;
         }
         
@@ -166,11 +278,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> CurrentItemChangedCommandParameter<T>(this SettersContext<T> self,
+            object currentItemChangedCommandParameter)
+            where T : Microsoft.Maui.Controls.CarouselView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.CarouselView.CurrentItemChangedCommandParameterProperty, Value = currentItemChangedCommandParameter });
+            return self;
+        }
+        
+        public static SettersContext<T> CurrentItemChangedCommandParameter<T>(this SettersContext<T> self, Func<PropertySettersContext<object>, IPropertySettersBuilder<object>> configure)
+            where T : Microsoft.Maui.Controls.CarouselView
+        {
+            var context = new PropertySettersContext<object>(self.XamlSetters, Microsoft.Maui.Controls.CarouselView.CurrentItemChangedCommandParameterProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T Position<T>(this T self,
             int position)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.CarouselView.PositionProperty, position);
+            self.SetValue(Microsoft.Maui.Controls.CarouselView.PositionProperty, position);
             return self;
         }
         
@@ -182,11 +310,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> Position<T>(this SettersContext<T> self,
+            int position)
+            where T : Microsoft.Maui.Controls.CarouselView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.CarouselView.PositionProperty, Value = position });
+            return self;
+        }
+        
+        public static SettersContext<T> Position<T>(this SettersContext<T> self, Func<PropertySettersContext<int>, IPropertySettersBuilder<int>> configure)
+            where T : Microsoft.Maui.Controls.CarouselView
+        {
+            var context = new PropertySettersContext<int>(self.XamlSetters, Microsoft.Maui.Controls.CarouselView.PositionProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T PositionChangedCommand<T>(this T self,
             System.Windows.Input.ICommand positionChangedCommand)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.CarouselView.PositionChangedCommandProperty, positionChangedCommand);
+            self.SetValue(Microsoft.Maui.Controls.CarouselView.PositionChangedCommandProperty, positionChangedCommand);
             return self;
         }
         
@@ -198,11 +342,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> PositionChangedCommand<T>(this SettersContext<T> self,
+            System.Windows.Input.ICommand positionChangedCommand)
+            where T : Microsoft.Maui.Controls.CarouselView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.CarouselView.PositionChangedCommandProperty, Value = positionChangedCommand });
+            return self;
+        }
+        
+        public static SettersContext<T> PositionChangedCommand<T>(this SettersContext<T> self, Func<PropertySettersContext<System.Windows.Input.ICommand>, IPropertySettersBuilder<System.Windows.Input.ICommand>> configure)
+            where T : Microsoft.Maui.Controls.CarouselView
+        {
+            var context = new PropertySettersContext<System.Windows.Input.ICommand>(self.XamlSetters, Microsoft.Maui.Controls.CarouselView.PositionChangedCommandProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T PositionChangedCommandParameter<T>(this T self,
             object positionChangedCommandParameter)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.CarouselView.PositionChangedCommandParameterProperty, positionChangedCommandParameter);
+            self.SetValue(Microsoft.Maui.Controls.CarouselView.PositionChangedCommandParameterProperty, positionChangedCommandParameter);
             return self;
         }
         
@@ -214,11 +374,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> PositionChangedCommandParameter<T>(this SettersContext<T> self,
+            object positionChangedCommandParameter)
+            where T : Microsoft.Maui.Controls.CarouselView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.CarouselView.PositionChangedCommandParameterProperty, Value = positionChangedCommandParameter });
+            return self;
+        }
+        
+        public static SettersContext<T> PositionChangedCommandParameter<T>(this SettersContext<T> self, Func<PropertySettersContext<object>, IPropertySettersBuilder<object>> configure)
+            where T : Microsoft.Maui.Controls.CarouselView
+        {
+            var context = new PropertySettersContext<object>(self.XamlSetters, Microsoft.Maui.Controls.CarouselView.PositionChangedCommandParameterProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T ItemsLayout<T>(this T self,
             Microsoft.Maui.Controls.LinearItemsLayout itemsLayout)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.CarouselView.ItemsLayoutProperty, itemsLayout);
+            self.SetValue(Microsoft.Maui.Controls.CarouselView.ItemsLayoutProperty, itemsLayout);
             return self;
         }
         
@@ -230,11 +406,26 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> ItemsLayout<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.LinearItemsLayout itemsLayout)
+            where T : Microsoft.Maui.Controls.CarouselView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.CarouselView.ItemsLayoutProperty, Value = itemsLayout });
+            return self;
+        }
+        
+        public static SettersContext<T> ItemsLayout<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.LinearItemsLayout>, IPropertySettersBuilder<Microsoft.Maui.Controls.LinearItemsLayout>> configure)
+            where T : Microsoft.Maui.Controls.CarouselView
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.LinearItemsLayout>(self.XamlSetters, Microsoft.Maui.Controls.CarouselView.ItemsLayoutProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T IndicatorView<T>(this T self,
             Microsoft.Maui.Controls.IndicatorView indicatorView)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property IndicatorView");
             self.IndicatorView = indicatorView;
             return self;
         }
@@ -243,7 +434,6 @@ namespace CodeMarkup.Maui
             bool isScrolling)
             where T : Microsoft.Maui.Controls.CarouselView
         {
-            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property IsScrolling");
             self.IsScrolling = isScrolling;
             return self;
         }

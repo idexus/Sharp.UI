@@ -26,7 +26,7 @@ namespace CodeMarkup.Maui
         public bool Build()
         {
             if (buildValue)
-                Context.BindableObject.SetValueOrAddSetter(Context.Property, newValue);
+                Context.BindableObject.SetValue(Context.Property, newValue);
             else if (!isSet)
             {
                 if (defaultIsSet)
@@ -34,7 +34,7 @@ namespace CodeMarkup.Maui
                     if (defaultConfigure != null)
                         isSet = defaultConfigure(Context).Build();
                     else
-                        Context.BindableObject.SetValueOrAddSetter(Context.Property, defaultValue);
+                        Context.BindableObject.SetValue(Context.Property, defaultValue);
                 }
 
             }

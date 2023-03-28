@@ -16,7 +16,6 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Controls.ToolbarItemOrder order)
             where T : Microsoft.Maui.Controls.ToolbarItem
         {
-            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property Order");
             self.Order = order;
             return self;
         }
@@ -25,7 +24,6 @@ namespace CodeMarkup.Maui
             int priority)
             where T : Microsoft.Maui.Controls.ToolbarItem
         {
-            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property Priority");
             self.Priority = priority;
             return self;
         }

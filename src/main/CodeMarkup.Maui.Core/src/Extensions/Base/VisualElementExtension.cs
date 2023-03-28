@@ -57,8 +57,16 @@ namespace CodeMarkup.Maui
         public static T SizeRequest<T>(this T self, double widthRequest, double heightRequest)
             where T : VisualElement
         {
-            self.SetValueOrAddSetter(VisualElement.WidthRequestProperty, widthRequest);
-            self.SetValueOrAddSetter(VisualElement.HeightRequestProperty, heightRequest);
+            self.SetValue(VisualElement.WidthRequestProperty, widthRequest);
+            self.SetValue(VisualElement.HeightRequestProperty, heightRequest);
+            return self;
+        }
+
+        public static SettersContext<T> SizeRequest<T>(this SettersContext<T> self, double widthRequest, double heightRequest)
+            where T : VisualElement
+        {
+            self.XamlSetters.Add(new Setter { Property = VisualElement.WidthRequestProperty, Value = widthRequest });
+            self.XamlSetters.Add(new Setter { Property = VisualElement.HeightRequestProperty, Value = heightRequest });
             return self;
         }
 

@@ -34,7 +34,7 @@ namespace CodeMarkup.Maui
             bool isClippedToBounds)
             where T : Microsoft.Maui.Controls.Layout
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Layout.IsClippedToBoundsProperty, isClippedToBounds);
+            self.SetValue(Microsoft.Maui.Controls.Layout.IsClippedToBoundsProperty, isClippedToBounds);
             return self;
         }
         
@@ -46,11 +46,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> IsClippedToBounds<T>(this SettersContext<T> self,
+            bool isClippedToBounds)
+            where T : Microsoft.Maui.Controls.Layout
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Layout.IsClippedToBoundsProperty, Value = isClippedToBounds });
+            return self;
+        }
+        
+        public static SettersContext<T> IsClippedToBounds<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.Layout
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.Layout.IsClippedToBoundsProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T Padding<T>(this T self,
             Microsoft.Maui.Thickness padding)
             where T : Microsoft.Maui.Controls.Layout
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Layout.PaddingProperty, padding);
+            self.SetValue(Microsoft.Maui.Controls.Layout.PaddingProperty, padding);
             return self;
         }
         
@@ -62,11 +78,26 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> Padding<T>(this SettersContext<T> self,
+            Microsoft.Maui.Thickness padding)
+            where T : Microsoft.Maui.Controls.Layout
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Layout.PaddingProperty, Value = padding });
+            return self;
+        }
+        
+        public static SettersContext<T> Padding<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Thickness>, IPropertySettersBuilder<Microsoft.Maui.Thickness>> configure)
+            where T : Microsoft.Maui.Controls.Layout
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Thickness>(self.XamlSetters, Microsoft.Maui.Controls.Layout.PaddingProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T IgnoreSafeArea<T>(this T self,
             bool ignoreSafeArea)
             where T : Microsoft.Maui.Controls.Layout
         {
-            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property IgnoreSafeArea");
             self.IgnoreSafeArea = ignoreSafeArea;
             return self;
         }
@@ -75,7 +106,7 @@ namespace CodeMarkup.Maui
             bool cascadeInputTransparent)
             where T : Microsoft.Maui.Controls.Layout
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Layout.CascadeInputTransparentProperty, cascadeInputTransparent);
+            self.SetValue(Microsoft.Maui.Controls.Layout.CascadeInputTransparentProperty, cascadeInputTransparent);
             return self;
         }
         
@@ -83,6 +114,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.Layout
         {
             var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.Layout.CascadeInputTransparentProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> CascadeInputTransparent<T>(this SettersContext<T> self,
+            bool cascadeInputTransparent)
+            where T : Microsoft.Maui.Controls.Layout
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Layout.CascadeInputTransparentProperty, Value = cascadeInputTransparent });
+            return self;
+        }
+        
+        public static SettersContext<T> CascadeInputTransparent<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.Layout
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.Layout.CascadeInputTransparentProperty);
             configure(context).Build();
             return self;
         }

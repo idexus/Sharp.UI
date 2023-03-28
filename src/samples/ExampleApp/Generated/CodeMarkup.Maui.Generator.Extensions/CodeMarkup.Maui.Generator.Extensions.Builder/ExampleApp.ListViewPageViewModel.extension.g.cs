@@ -17,7 +17,7 @@ namespace ExampleApp
             System.Collections.Generic.List<ExampleApp.DataModel> simpleData)
             where T : ExampleApp.ListViewPageViewModel
         {
-            self.SetValueOrAddSetter(ExampleApp.ListViewPageViewModel.SimpleDataProperty, simpleData);
+            self.SetValue(ExampleApp.ListViewPageViewModel.SimpleDataProperty, simpleData);
             return self;
         }
         
@@ -25,6 +25,22 @@ namespace ExampleApp
             where T : ExampleApp.ListViewPageViewModel
         {
             var context = new PropertyContext<System.Collections.Generic.List<ExampleApp.DataModel>>(self, ExampleApp.ListViewPageViewModel.SimpleDataProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> SimpleData<T>(this SettersContext<T> self,
+            System.Collections.Generic.List<ExampleApp.DataModel> simpleData)
+            where T : ExampleApp.ListViewPageViewModel
+        {
+            self.XamlSetters.Add(new Setter { Property = ExampleApp.ListViewPageViewModel.SimpleDataProperty, Value = simpleData });
+            return self;
+        }
+        
+        public static SettersContext<T> SimpleData<T>(this SettersContext<T> self, Func<PropertySettersContext<System.Collections.Generic.List<ExampleApp.DataModel>>, IPropertySettersBuilder<System.Collections.Generic.List<ExampleApp.DataModel>>> configure)
+            where T : ExampleApp.ListViewPageViewModel
+        {
+            var context = new PropertySettersContext<System.Collections.Generic.List<ExampleApp.DataModel>>(self.XamlSetters, ExampleApp.ListViewPageViewModel.SimpleDataProperty);
             configure(context).Build();
             return self;
         }

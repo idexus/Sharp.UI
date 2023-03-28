@@ -16,7 +16,7 @@ namespace CodeMarkup.Maui
             string automationId)
             where T : Microsoft.Maui.Controls.Element
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Element.AutomationIdProperty, automationId);
+            self.SetValue(Microsoft.Maui.Controls.Element.AutomationIdProperty, automationId);
             return self;
         }
         
@@ -28,11 +28,27 @@ namespace CodeMarkup.Maui
             return self;
         }
         
+        public static SettersContext<T> AutomationId<T>(this SettersContext<T> self,
+            string automationId)
+            where T : Microsoft.Maui.Controls.Element
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Element.AutomationIdProperty, Value = automationId });
+            return self;
+        }
+        
+        public static SettersContext<T> AutomationId<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
+            where T : Microsoft.Maui.Controls.Element
+        {
+            var context = new PropertySettersContext<string>(self.XamlSetters, Microsoft.Maui.Controls.Element.AutomationIdProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T ClassId<T>(this T self,
             string classId)
             where T : Microsoft.Maui.Controls.Element
         {
-            self.SetValueOrAddSetter(Microsoft.Maui.Controls.Element.ClassIdProperty, classId);
+            self.SetValue(Microsoft.Maui.Controls.Element.ClassIdProperty, classId);
             return self;
         }
         
@@ -40,6 +56,22 @@ namespace CodeMarkup.Maui
             where T : Microsoft.Maui.Controls.Element
         {
             var context = new PropertyContext<string>(self, Microsoft.Maui.Controls.Element.ClassIdProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> ClassId<T>(this SettersContext<T> self,
+            string classId)
+            where T : Microsoft.Maui.Controls.Element
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Element.ClassIdProperty, Value = classId });
+            return self;
+        }
+        
+        public static SettersContext<T> ClassId<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
+            where T : Microsoft.Maui.Controls.Element
+        {
+            var context = new PropertySettersContext<string>(self.XamlSetters, Microsoft.Maui.Controls.Element.ClassIdProperty);
             configure(context).Build();
             return self;
         }
@@ -66,7 +98,6 @@ namespace CodeMarkup.Maui
             string styleId)
             where T : Microsoft.Maui.Controls.Element
         {
-            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property StyleId");
             self.StyleId = styleId;
             return self;
         }
@@ -75,7 +106,6 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Controls.Element parent)
             where T : Microsoft.Maui.Controls.Element
         {
-            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property Parent");
             self.Parent = parent;
             return self;
         }
@@ -84,7 +114,6 @@ namespace CodeMarkup.Maui
             Microsoft.Maui.Controls.IEffectControlProvider effectControlProvider)
             where T : Microsoft.Maui.Controls.Element
         {
-            if (FluentStyling.Setters != null) throw new ArgumentException("Fluent styling not available for property EffectControlProvider");
             self.EffectControlProvider = effectControlProvider;
             return self;
         }
