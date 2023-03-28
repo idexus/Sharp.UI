@@ -99,7 +99,7 @@ namespace ExampleApp
 }
 ```
 
-# CodeMarkup Tepmlate Project
+# CodeMarkup Template Project
 
 A vanilla sample project using nuget package
 
