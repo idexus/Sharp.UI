@@ -1,6 +1,6 @@
 ﻿namespace ExampleApp;
 
-using CodeMarkup.Maui;
+using Sharp.UI;
 
 [BindableProperties]
 public interface IAngleViewModelProperties
@@ -16,7 +16,7 @@ public interface IAngleViewModelProperties
 }
 
 
-[CodeMarkup]
+[SharpObject]
 public partial class AngleViewModel : BindableObject, IAngleViewModelProperties
 {
     static void OnAngleChanged(BindableObject bindable, object oldValue, object newValue)

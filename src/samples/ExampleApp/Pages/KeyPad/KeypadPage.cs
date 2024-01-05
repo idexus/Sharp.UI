@@ -1,7 +1,7 @@
 ﻿using System;
 namespace ExampleApp;
 
-using CodeMarkup.Maui;
+using Sharp.UI;
 
 public class KeypadPage : ContentPage
 {

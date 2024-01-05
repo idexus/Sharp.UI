@@ -1,6 +1,6 @@
 # Gradients
 
-`CodeMarkup.Maui` provides a way to create visual effects using gradient brushes in curly braces. There are two defined types of gradient brushes: 
+`Sharp.UI` provides a way to create visual effects using gradient brushes in curly braces. There are two defined types of gradient brushes: 
 
 - LinearGradientBrush 
 - RadialGradientBrush.

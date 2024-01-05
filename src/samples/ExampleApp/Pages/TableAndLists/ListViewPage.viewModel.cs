@@ -1,7 +1,7 @@
 ﻿
 namespace ExampleApp;
 
-using CodeMarkup.Maui;
+using Sharp.UI;
 
 [BindableProperties]
 public interface ListViewPageViewModelProperties
@@ -9,7 +9,7 @@ public interface ListViewPageViewModelProperties
     List<DataModel> SimpleData { get; set; }
 }
 
-[CodeMarkup]
+[SharpObject]
 public partial class ListViewPageViewModel : BindableObject, ListViewPageViewModelProperties
 {
     public ListViewPageViewModel()

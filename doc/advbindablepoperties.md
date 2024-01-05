@@ -1,6 +1,6 @@
 # Advanced scenarios
 
-CodeMarkup.Maui provides two attributes, `PropertyCallbacks` and `DefaultValue`, to allow developers to customize properties and their behavior.
+Sharp.UI provides two attributes, `PropertyCallbacks` and `DefaultValue`, to allow developers to customize properties and their behavior.
 
 ### PropertyCallbacks Attribute
 
@@ -37,7 +37,7 @@ public interface IAngleViewModelProperties
 Class declaration
 
 ```cs
-[CodeMarkup]
+[SharpObject]
 public partial class AngleViewModel : BindableObject, IAngleViewModelProperties
 {
     static void OnAngleChanged(BindableObject bindable, object oldValue, object newValue)

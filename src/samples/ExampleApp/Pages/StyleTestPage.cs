@@ -3,7 +3,7 @@ using System.Collections.ObjectModel;
 
 namespace ExampleApp
 {
-    using CodeMarkup.Maui;
+    using Sharp.UI;
 
     public partial class StyleTestPage : ContentPage
     {

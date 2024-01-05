@@ -2,7 +2,7 @@
 using System.Linq;
 using Microsoft.CodeAnalysis;
 
-namespace CodeMarkup.Maui.Generator
+namespace Sharp.UI.Generator
 {
 	public class Shared
 	{
@@ -10,7 +10,7 @@ namespace CodeMarkup.Maui.Generator
 
         public const string ContentPropertyAttributeString = "ContentPropertyAttribute";
         public const string BindablePropertiesAttributeString = "BindablePropertiesAttribute";
-        public const string CodeMarkupAttributeString = "CodeMarkupAttribute";
+        public const string SharpObjectAttributeString = "SharpObjectAttribute";
         public const string AttachedPropertiesAttributeString = "AttachedPropertiesAttribute";
         public const string AttachedInterfacesAttributeString = "AttachedInterfacesAttribute";
         public const string AttachedNameAttributeString = "AttachedNameAttribute";

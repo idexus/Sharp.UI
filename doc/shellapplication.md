@@ -3,7 +3,7 @@
 Here's an example of a simple shell-based application:
 
 ```cs
-using CodeMarkup.Maui;
+using Sharp.UI;
 
 public partial class App : Application
 {

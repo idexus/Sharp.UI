@@ -2,7 +2,7 @@
 namespace ExampleApp; 
 
 using Microsoft.Maui.Controls.Shapes;
-using CodeMarkup.Maui;
+using Sharp.UI;
 
 public partial class TestPage : ContentPage
 {
@@ -20,7 +20,7 @@ public partial class TestPage : ContentPage
             {
                 new Label(out var label)
                     .TextColor(e => e.DynamicResource("myColor"))
-                    .Text("Code Markup for Maui")
+                    .Text("Sharp.UI for Maui")
                     .FontSize(45),
                     
                 new Slider(out var slider)

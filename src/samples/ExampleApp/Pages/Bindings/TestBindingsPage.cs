@@ -2,7 +2,7 @@
 
 namespace ExampleApp
 {
-	using CodeMarkup.Maui;
+	using Sharp.UI;
 
 	public class TestBindingsPage : ContentPage
 	{

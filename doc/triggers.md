@@ -9,7 +9,7 @@ A property trigger sets a property in response to a change in the value of anoth
 Here is an example of using a property trigger to change the background color and text color of an `Entry` element when it gets focused:
 
 ```cs
-using CodeMarkup.Maui;
+using Sharp.UI;
 
 public class PropertyTriggerPage : ContentPage
 {

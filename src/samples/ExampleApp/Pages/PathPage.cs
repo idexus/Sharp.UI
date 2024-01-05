@@ -3,7 +3,7 @@ using Path = Microsoft.Maui.Controls.Shapes.Path;
 
 namespace ExampleApp
 {
-    using CodeMarkup.Maui;
+    using Sharp.UI;
 
     public class PathPage : ContentPage
     {

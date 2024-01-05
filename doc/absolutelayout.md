@@ -9,7 +9,7 @@ You can use the `AbsoluteLayoutBounds` fluent method to specify the boundaries o
 Here's an example of how you can use the `AbsoluteLayoutBounds` method to define the boundaries of two different views:
 
 ```cs
-using CodeMarkup.Maui;
+using Sharp.UI;
 
 public class AbsoluteLayoutPage : ContentPage
 {
@@ -55,7 +55,7 @@ public class AbsoluteLayoutPage : ContentPage
 
 ### Using attached properties
 
-In addition to the `AbsoluteLayoutBounds` method, CodeMarkup.Maui also provides access to the following attached properties for the `AbsoluteLayout` class:
+In addition to the `AbsoluteLayoutBounds` method, Sharp.UI also provides access to the following attached properties for the `AbsoluteLayout` class:
 
 | Attached property | Fluent method |
 |-|-|

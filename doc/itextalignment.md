@@ -1,6 +1,6 @@
 # ITextAlignment interface extension methods
 
-In CodeMarkup.Maui, all classes that implement the `ITextAlignment` interface get the following extension methods:
+In Sharp.UI, all classes that implement the `ITextAlignment` interface get the following extension methods:
 
 - `TextCenterHorizontal`
 - `TextCenterVertical`
