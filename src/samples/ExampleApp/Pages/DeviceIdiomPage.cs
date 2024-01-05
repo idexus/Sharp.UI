@@ -1,7 +1,7 @@
 ﻿namespace ExampleApp;
 
 using System.Linq.Expressions;
-using CodeMarkup.Maui;
+using Sharp.UI;
 
 public class DeviceIdiomPage : ContentPage
 {

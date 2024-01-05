@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 
 namespace ExampleApp;
 
-using CodeMarkup.Maui;
+using Sharp.UI;
 
 public class ExamplePage : ContentPage
 {

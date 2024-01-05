@@ -3,7 +3,7 @@ using System.Collections.ObjectModel;
 
 namespace ExampleApp
 {
-    using CodeMarkup.Maui;
+    using Sharp.UI;
 
     public class AlternativeBackroundPage : ContentPage
     {

@@ -1,5 +1,5 @@
 # Behaviors
-In `CodeMarkup.Maui`, you can add functionality to user interface controls using behaviors. Behaviors allow you to add functionality to controls without having to subclass them.
+In `Sharp.UI`, you can add functionality to user interface controls using behaviors. Behaviors allow you to add functionality to controls without having to subclass them.
 
 You can add a behavior to a control by using the `Behaviors` method and passing in an instance of the behavior class. For example:
 

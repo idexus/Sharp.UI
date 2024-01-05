@@ -1,7 +1,7 @@
 ﻿
 namespace ExampleApp
 {
-    using CodeMarkup.Maui;
+    using Sharp.UI;
 
     [BindableProperties]
     public interface IDataModelProperties
@@ -11,7 +11,7 @@ namespace ExampleApp
         public bool Admin { get; set; }
     }
 
-    [CodeMarkup]
+    [SharpObject]
     public partial class DataModel : BindableObject, IDataModelProperties
     {
         public DataModel(int id, string name, bool admin)

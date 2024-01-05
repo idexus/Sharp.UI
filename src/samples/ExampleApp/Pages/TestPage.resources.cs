@@ -2,7 +2,7 @@
 namespace ExampleApp;
 
 using Microsoft.Maui.Controls.Shapes;
-using CodeMarkup.Maui;
+using Sharp.UI;
 
 public partial class TestPage : ContentPage
 {

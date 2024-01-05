@@ -1,6 +1,6 @@
 ﻿namespace ExampleApp;
 
-using CodeMarkup.Maui;
+using Sharp.UI;
 
 [BindableProperties]
 public interface ISecondPageViewModelProperties
@@ -10,7 +10,7 @@ public interface ISecondPageViewModelProperties
     public string Author { get; set; }
 }
 
-[CodeMarkup]
+[SharpObject]
 public partial class SecondPageViewModel : BindableObject, ISecondPageViewModelProperties
 {
     public void SetAuthor(Button button)

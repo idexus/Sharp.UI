@@ -1,10 +1,10 @@
 # Control template
 
-In `CodeMarkup.Maui`, custom control views can be easily created by implementing an interface that defines bindable properties. When the interface is implemented, all of the bindable properties defined in the interface are automatically generated in the custom control view class. This makes it simple and straightforward to use and manipulate the properties in code, without having to manually write property implementations for each one.
+In `Sharp.UI`, custom control views can be easily created by implementing an interface that defines bindable properties. When the interface is implemented, all of the bindable properties defined in the interface are automatically generated in the custom control view class. This makes it simple and straightforward to use and manipulate the properties in code, without having to manually write property implementations for each one.
 
 ### Example
 
-This code demonstrates how to create a custom control view using a control template in `CodeMarkup.Maui`.
+This code demonstrates how to create a custom control view using a control template in `Sharp.UI`.
 
 The `ICardViewProperties` interface defines four bindable properties: `CardTitle`, `CardDescription`, `CardColor`, and `BorderColor`. The `CardView` class implements the `ICardViewProperties` interface. These properties are automatically generated in the CardView class.
 
@@ -18,7 +18,7 @@ public interface ICardViewProperties
     Color BorderColor { get; set; }
 }
 
-[CodeMarkup]
+[SharpObject]
 public partial class CardView : ContentView, ICardViewProperties
 {
 }

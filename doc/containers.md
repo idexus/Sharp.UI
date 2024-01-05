@@ -1,6 +1,6 @@
 # Containers
 
-`CodeMarkup.Maui` allows you to create single and multi-element containers using curly braces `{ }`.
+`Sharp.UI` allows you to create single and multi-element containers using curly braces `{ }`.
 
 ### Single item containers
 
@@ -34,7 +34,7 @@ new VStack
 
 ### Setting containers properties
 
-In `CodeMarkup.Maui`, you can set properties for containers using lambda syntax inside the curly braces of the container, or as constructor parameters. The lambda function is a preferred style for setting container properties because it allows you to chain multiple property setters in a single expression, making the code more concise and readable.
+In `Sharp.UI`, you can set properties for containers using lambda syntax inside the curly braces of the container, or as constructor parameters. The lambda function is a preferred style for setting container properties because it allows you to chain multiple property setters in a single expression, making the code more concise and readable.
 
 ```cs
 new Grid
