@@ -72,10 +72,6 @@ To add __Sharp.UI__ to your project, along with all its functionality, you can u
 
 - [https://www.nuget.org/packages/Sharp.UI](https://www.nuget.org/packages/Sharp.UI)
 
-__Sharp.UI__ replaces some standard MAUI classes by subclassing them and adding new constructors, which e.g. enables hot reload functionality. However, if you prefer not to use subclassed controls, it's possible to add the core fluent API methods for the .Net MAUI framework to your project instead.
-
-- [https://www.nuget.org/packages/Sharp.UI](https://www.nuget.org/packages/Sharp.UI)
-
 ## Project Reference
 
 You can also add the library to your project by adding a project reference to the Sharp.UI library. For more information, see the [Adding the Library by VS Project Reference](./doc/projectref.md) document.
@@ -363,7 +359,7 @@ public class ViewPage : ContentPage
 
 # Disclaimer
 
-__Sharp.UI__ (previously Sharp.UI) is a proof of concept. There is no official support. Use at your own risk.
+__Sharp.UI__ is a proof of concept. There is no official support. Use at your own risk.
 
 # License 
 
