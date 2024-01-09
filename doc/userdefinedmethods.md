@@ -2,7 +2,7 @@
 
 In __CodeMarkup.Maui__, you can create your own extension methods by defining a static method within a static class.
 
-Here's an example of extension methods that set a label font size:
+Here's an example of extension methods that set an entry font size:
 
 ```cs
 public static T FontSize<T>(this T self,
