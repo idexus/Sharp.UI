@@ -45,7 +45,7 @@
 
 	<ItemGroup>
     <None Include="..\..\generators\Sharp.UI.Generator.Classes\bin\$(Configuration)\netstandard2.0\Sharp.UI.Generator.Classes.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
-    <None Include="..\..\generators\Sharp.UI.Generator.Classes\bin\$(Configuration)\netstandard2.0\Sharp.UI.Generator.Extensions.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+    <None Include="..\..\generators\Sharp.UI.Generator.Extensions\bin\$(Configuration)\netstandard2.0\Sharp.UI.Generator.Extensions.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
   </ItemGroup>
 
 	<PropertyGroup>
