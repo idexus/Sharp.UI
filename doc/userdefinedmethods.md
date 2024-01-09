@@ -7,32 +7,33 @@ Here's an example of extension methods that set a label font size:
 ```cs
 public static T FontSize<T>(this T self,
     double fontSize)
-    where T : Microsoft.Maui.Controls.Label
+    where T : Microsoft.Maui.Controls.Entry
 {
-    self.SetValueOrAddSetter(Microsoft.Maui.Controls.Label.FontSizeProperty, fontSize);
+    self.SetValue(Microsoft.Maui.Controls.Entry.FontSizeProperty, fontSize);
     return self;
 }
         
 public static T FontSize<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
-    where T : Microsoft.Maui.Controls.Label
+    where T : Microsoft.Maui.Controls.Entry
 {
-    var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Label.FontSizeProperty);
+    var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.Entry.FontSizeProperty);
+    configure(context).Build();
+    return self;
+}
+        
+public static SettersContext<T> FontSize<T>(this SettersContext<T> self,
+    double fontSize)
+    where T : Microsoft.Maui.Controls.Entry
+{
+    self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Entry.FontSizeProperty, Value = fontSize });
+    return self;
+}
+        
+public static SettersContext<T> FontSize<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+    where T : Microsoft.Maui.Controls.Entry
+{
+    var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.Entry.FontSizeProperty);
     configure(context).Build();
     return self;
 }
 ```
-
-the first extension method allows you the following usage:
-
-```cs
-new Label().FontSize(28)
-```
-
-the second:
-
-```cs
-new Label().FontSize(e => e.Path("MyFontSize").Source(myModel))
-new Label().FontSize(e => e.OnPhone(30).OnTablet(50).Default(40))
-```
-
-In the extension methods, it's important to use the `SetValueOrAddSetter` method instead of setting the properties directly. `SetValueOrAddSetter` sets the value of the property if the property is used in a standard context, such as in object creation, or add a new `Setter` when you use the method to create a setter for a style definition.
