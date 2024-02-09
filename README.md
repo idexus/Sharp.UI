@@ -1,6 +1,6 @@
 # Overview
 
-__Sharp.UI__ is a library for the .NET Multi-platform App User Interface (MAUI) framework that enables you to build user interfaces declaratively in C# code using fluent methods. With __Sharp.UI__, you can create interfaces without needing to use XAML. Additionally, the library includes hot reload support to make the development process faster and more efficient. The hot reload feature is supported in VS Code and Visual Studio 2022 using the [HotReloadKit library](https://github.com/idexus/HotReloadKit.git).
+__Sharp.UI__ is a library for the .NET Multi-platform App User Interface (MAUI) framework that enables you to build user interfaces declaratively in C# code using fluent methods. With __Sharp.UI__, you can create interfaces without needing to use XAML. Additionally, the library includes hot reload support to make the development process faster and more efficient. The hot reload feature is supported in Visual Studio Code and Visual Studio 2022 using the [HotReloadKit library](https://github.com/idexus/HotReloadKit.git).
 
 <a href="https://youtu.be/w5863t1E5tg" target="_blank">
  <img src="https://github.com/idexus/Sharp.UI-Maui/raw/main/doc/assets/ytscreen.jpg" alt="Hot Reload Support" width="640" border="0" />
@@ -118,7 +118,7 @@ public static MauiApp CreateMauiApp()
 }
 ```
 
-VS Code and Visual Studio 2022 extensions for both Windows and Mac are available for download from the [HotReloadKit releases page](https://github.com/idexus/HotReloadKit/releases). Please note that this is a proof of concept and there is no official support. Use it at your own risk.
+Visual Studio Code and Visual Studio 2022 extensions for both Windows and Mac are available for download from the [HotReloadKit releases page](https://github.com/idexus/HotReloadKit/releases). Please note that this is a proof of concept and there is no official support. Use it at your own risk.
 
 # Examples
 
