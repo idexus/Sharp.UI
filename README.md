@@ -50,6 +50,12 @@ public partial class HelloWorldPage : ContentPage
 ```
 # Using __Sharp.UI__
 
+## Nuget Package
+
+To add __Sharp.UI__ to your project, along with all its functionality, you can use:
+
+- [https://www.nuget.org/packages/Sharp.UI](https://www.nuget.org/packages/Sharp.UI)
+  
 ## Repository
 
 This project uses submodules, which means that it depends on other external projects to function properly. To ensure that these dependencies are properly included, you'll need to initialize the submodules when you first clone the repository.
@@ -65,12 +71,6 @@ If you ever update your clone of the repository, you may need to update the subm
 ```
 git submodule update --recursive
 ```
-
-## Nuget Package
-
-To add __Sharp.UI__ to your project, along with all its functionality, you can use:
-
-- [https://www.nuget.org/packages/Sharp.UI](https://www.nuget.org/packages/Sharp.UI)
 
 ## Project Reference
 
