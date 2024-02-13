@@ -12,78 +12,6 @@ namespace Sharp.UI
     
     public static partial class VisualElementExtension
     {
-        public static T Frame<T>(this T self,
-            Microsoft.Maui.Graphics.Rect frame)
-            where T : Microsoft.Maui.Controls.VisualElement
-        {
-            self.Frame = frame;
-            return self;
-        }
-        
-        public static T Shadow<T>(this T self,
-            Microsoft.Maui.Controls.Shadow shadow)
-            where T : Microsoft.Maui.Controls.VisualElement
-        {
-            self.SetValue(Microsoft.Maui.Controls.VisualElement.ShadowProperty, shadow);
-            return self;
-        }
-        
-        public static T Shadow<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.Shadow>, IPropertyBuilder<Microsoft.Maui.Controls.Shadow>> configure)
-            where T : Microsoft.Maui.Controls.VisualElement
-        {
-            var context = new PropertyContext<Microsoft.Maui.Controls.Shadow>(self, Microsoft.Maui.Controls.VisualElement.ShadowProperty);
-            configure(context).Build();
-            return self;
-        }
-        
-        public static SettersContext<T> Shadow<T>(this SettersContext<T> self,
-            Microsoft.Maui.Controls.Shadow shadow)
-            where T : Microsoft.Maui.Controls.VisualElement
-        {
-            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.ShadowProperty, Value = shadow });
-            return self;
-        }
-        
-        public static SettersContext<T> Shadow<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.Shadow>, IPropertySettersBuilder<Microsoft.Maui.Controls.Shadow>> configure)
-            where T : Microsoft.Maui.Controls.VisualElement
-        {
-            var context = new PropertySettersContext<Microsoft.Maui.Controls.Shadow>(self.XamlSetters, Microsoft.Maui.Controls.VisualElement.ShadowProperty);
-            configure(context).Build();
-            return self;
-        }
-        
-        public static T ZIndex<T>(this T self,
-            int zIndex)
-            where T : Microsoft.Maui.Controls.VisualElement
-        {
-            self.SetValue(Microsoft.Maui.Controls.VisualElement.ZIndexProperty, zIndex);
-            return self;
-        }
-        
-        public static T ZIndex<T>(this T self, Func<PropertyContext<int>, IPropertyBuilder<int>> configure)
-            where T : Microsoft.Maui.Controls.VisualElement
-        {
-            var context = new PropertyContext<int>(self, Microsoft.Maui.Controls.VisualElement.ZIndexProperty);
-            configure(context).Build();
-            return self;
-        }
-        
-        public static SettersContext<T> ZIndex<T>(this SettersContext<T> self,
-            int zIndex)
-            where T : Microsoft.Maui.Controls.VisualElement
-        {
-            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.ZIndexProperty, Value = zIndex });
-            return self;
-        }
-        
-        public static SettersContext<T> ZIndex<T>(this SettersContext<T> self, Func<PropertySettersContext<int>, IPropertySettersBuilder<int>> configure)
-            where T : Microsoft.Maui.Controls.VisualElement
-        {
-            var context = new PropertySettersContext<int>(self.XamlSetters, Microsoft.Maui.Controls.VisualElement.ZIndexProperty);
-            configure(context).Build();
-            return self;
-        }
-        
         public static T Visual<T>(this T self,
             Microsoft.Maui.Controls.IVisual visual)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -1138,31 +1066,75 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T OnLoaded<T>(this T self, System.EventHandler? handler)
+        public static T Frame<T>(this T self,
+            Microsoft.Maui.Graphics.Rect frame)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.Loaded += handler;
+            self.Frame = frame;
             return self;
         }
         
-        public static T OnLoaded<T>(this T self, System.Action<T> action)
+        public static T Shadow<T>(this T self,
+            Microsoft.Maui.Controls.Shadow shadow)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.Loaded += (o, arg) => action(self);
+            self.SetValue(Microsoft.Maui.Controls.VisualElement.ShadowProperty, shadow);
             return self;
         }
         
-        public static T OnUnloaded<T>(this T self, System.EventHandler? handler)
+        public static T Shadow<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.Shadow>, IPropertyBuilder<Microsoft.Maui.Controls.Shadow>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.Unloaded += handler;
+            var context = new PropertyContext<Microsoft.Maui.Controls.Shadow>(self, Microsoft.Maui.Controls.VisualElement.ShadowProperty);
+            configure(context).Build();
             return self;
         }
         
-        public static T OnUnloaded<T>(this T self, System.Action<T> action)
+        public static SettersContext<T> Shadow<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.Shadow shadow)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.Unloaded += (o, arg) => action(self);
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.ShadowProperty, Value = shadow });
+            return self;
+        }
+        
+        public static SettersContext<T> Shadow<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.Shadow>, IPropertySettersBuilder<Microsoft.Maui.Controls.Shadow>> configure)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.Shadow>(self.XamlSetters, Microsoft.Maui.Controls.VisualElement.ShadowProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static T ZIndex<T>(this T self,
+            int zIndex)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            self.SetValue(Microsoft.Maui.Controls.VisualElement.ZIndexProperty, zIndex);
+            return self;
+        }
+        
+        public static T ZIndex<T>(this T self, Func<PropertyContext<int>, IPropertyBuilder<int>> configure)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var context = new PropertyContext<int>(self, Microsoft.Maui.Controls.VisualElement.ZIndexProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> ZIndex<T>(this SettersContext<T> self,
+            int zIndex)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.ZIndexProperty, Value = zIndex });
+            return self;
+        }
+        
+        public static SettersContext<T> ZIndex<T>(this SettersContext<T> self, Func<PropertySettersContext<int>, IPropertySettersBuilder<int>> configure)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            var context = new PropertySettersContext<int>(self.XamlSetters, Microsoft.Maui.Controls.VisualElement.ZIndexProperty);
+            configure(context).Build();
             return self;
         }
         
@@ -1250,17 +1222,31 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T OnFocusChangeRequested<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.VisualElement.FocusRequestArgs> handler)
+        public static T OnLoaded<T>(this T self, System.EventHandler? handler)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.FocusChangeRequested += handler;
+            self.Loaded += handler;
             return self;
         }
         
-        public static T OnFocusChangeRequested<T>(this T self, System.Action<T> action)
+        public static T OnLoaded<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.VisualElement
         {
-            self.FocusChangeRequested += (o, arg) => action(self);
+            self.Loaded += (o, arg) => action(self);
+            return self;
+        }
+        
+        public static T OnUnloaded<T>(this T self, System.EventHandler? handler)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            self.Unloaded += handler;
+            return self;
+        }
+        
+        public static T OnUnloaded<T>(this T self, System.Action<T> action)
+            where T : Microsoft.Maui.Controls.VisualElement
+        {
+            self.Unloaded += (o, arg) => action(self);
             return self;
         }
         

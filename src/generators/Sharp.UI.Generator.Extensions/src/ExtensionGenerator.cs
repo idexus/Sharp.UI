@@ -110,11 +110,11 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
 
             var properties = mainSymbol
                 .GetMembers()
-                .Where(e => e.Kind == SymbolKind.Property && e.DeclaredAccessibility == Accessibility.Public && !e.IsStatic);
+                .Where(e => e.Kind == SymbolKind.Property && e.DeclaredAccessibility == Accessibility.Public && !e.IsStatic && !Helpers.IsSymbolDeprecated(e));
 
             var events = mainSymbol
                 .GetMembers()
-                .Where(e => e.Kind == SymbolKind.Event && e.DeclaredAccessibility == Accessibility.Public && !e.IsStatic);
+                .Where(e => e.Kind == SymbolKind.Event && e.DeclaredAccessibility == Accessibility.Public && !e.IsStatic && !Helpers.IsSymbolDeprecated(e));
 
             foreach (var prop in properties)
                 GenerateExtensionMethod(prop as IPropertySymbol);
@@ -228,7 +228,7 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
                         {
                             var properties = inter
                                 .GetMembers()
-                                .Where(e => e.Kind == SymbolKind.Property);
+                                .Where(e => e.Kind == SymbolKind.Property && !Helpers.IsSymbolDeprecated(e));
 
                             foreach (var prop in properties)
                             {
@@ -258,7 +258,7 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
             {
                 var properties = inter
                     .GetMembers()
-                    .Where(e => e.Kind == SymbolKind.Property);
+                    .Where(e => e.Kind == SymbolKind.Property && !Helpers.IsSymbolDeprecated(e));
 
                 foreach (var prop in properties)
                 {

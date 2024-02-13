@@ -242,48 +242,6 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T OnNavigatedTo<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.NavigatedToEventArgs> handler)
-            where T : Microsoft.Maui.Controls.Page
-        {
-            self.NavigatedTo += handler;
-            return self;
-        }
-        
-        public static T OnNavigatedTo<T>(this T self, System.Action<T> action)
-            where T : Microsoft.Maui.Controls.Page
-        {
-            self.NavigatedTo += (o, arg) => action(self);
-            return self;
-        }
-        
-        public static T OnNavigatingFrom<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.NavigatingFromEventArgs> handler)
-            where T : Microsoft.Maui.Controls.Page
-        {
-            self.NavigatingFrom += handler;
-            return self;
-        }
-        
-        public static T OnNavigatingFrom<T>(this T self, System.Action<T> action)
-            where T : Microsoft.Maui.Controls.Page
-        {
-            self.NavigatingFrom += (o, arg) => action(self);
-            return self;
-        }
-        
-        public static T OnNavigatedFrom<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.NavigatedFromEventArgs> handler)
-            where T : Microsoft.Maui.Controls.Page
-        {
-            self.NavigatedFrom += handler;
-            return self;
-        }
-        
-        public static T OnNavigatedFrom<T>(this T self, System.Action<T> action)
-            where T : Microsoft.Maui.Controls.Page
-        {
-            self.NavigatedFrom += (o, arg) => action(self);
-            return self;
-        }
-        
         public static T OnLayoutChanged<T>(this T self, System.EventHandler handler)
             where T : Microsoft.Maui.Controls.Page
         {
@@ -323,6 +281,48 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Page
         {
             self.Disappearing += (o, arg) => action(self);
+            return self;
+        }
+        
+        public static T OnNavigatedTo<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.NavigatedToEventArgs> handler)
+            where T : Microsoft.Maui.Controls.Page
+        {
+            self.NavigatedTo += handler;
+            return self;
+        }
+        
+        public static T OnNavigatedTo<T>(this T self, System.Action<T> action)
+            where T : Microsoft.Maui.Controls.Page
+        {
+            self.NavigatedTo += (o, arg) => action(self);
+            return self;
+        }
+        
+        public static T OnNavigatingFrom<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.NavigatingFromEventArgs> handler)
+            where T : Microsoft.Maui.Controls.Page
+        {
+            self.NavigatingFrom += handler;
+            return self;
+        }
+        
+        public static T OnNavigatingFrom<T>(this T self, System.Action<T> action)
+            where T : Microsoft.Maui.Controls.Page
+        {
+            self.NavigatingFrom += (o, arg) => action(self);
+            return self;
+        }
+        
+        public static T OnNavigatedFrom<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.NavigatedFromEventArgs> handler)
+            where T : Microsoft.Maui.Controls.Page
+        {
+            self.NavigatedFrom += handler;
+            return self;
+        }
+        
+        public static T OnNavigatedFrom<T>(this T self, System.Action<T> action)
+            where T : Microsoft.Maui.Controls.Page
+        {
+            self.NavigatedFrom += (o, arg) => action(self);
             return self;
         }
         

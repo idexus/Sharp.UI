@@ -12,6 +12,38 @@ namespace Sharp.UI
     
     public static partial class WebViewExtension
     {
+        public static T UserAgent<T>(this T self,
+            string userAgent)
+            where T : Microsoft.Maui.Controls.WebView
+        {
+            self.SetValue(Microsoft.Maui.Controls.WebView.UserAgentProperty, userAgent);
+            return self;
+        }
+        
+        public static T UserAgent<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
+            where T : Microsoft.Maui.Controls.WebView
+        {
+            var context = new PropertyContext<string>(self, Microsoft.Maui.Controls.WebView.UserAgentProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> UserAgent<T>(this SettersContext<T> self,
+            string userAgent)
+            where T : Microsoft.Maui.Controls.WebView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.WebView.UserAgentProperty, Value = userAgent });
+            return self;
+        }
+        
+        public static SettersContext<T> UserAgent<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
+            where T : Microsoft.Maui.Controls.WebView
+        {
+            var context = new PropertySettersContext<string>(self.XamlSetters, Microsoft.Maui.Controls.WebView.UserAgentProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T Cookies<T>(this T self,
             System.Net.CookieContainer cookies)
             where T : Microsoft.Maui.Controls.WebView
