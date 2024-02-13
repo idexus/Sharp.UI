@@ -5,6 +5,8 @@ namespace Sharp.UI.Internal
 {
     class MauiSymbols
 	{
+        Microsoft.Maui.Controls.VisualElement visualElement;
+        
         Microsoft.Maui.Controls.Binding binding;
         Microsoft.Maui.Controls.ElementTemplate elementTemplate;
         Microsoft.Maui.Controls.PropertyCondition propertyCondition;
@@ -12,7 +14,7 @@ namespace Sharp.UI.Internal
 
         Microsoft.Maui.Controls.VisualState visualState;
 
-        // Count 126
+        // Count 125
 
         Microsoft.Maui.Controls.AbsoluteLayout absoluteLayout;
         Microsoft.Maui.Controls.ActivityIndicator activityIndicator;
@@ -25,7 +27,6 @@ namespace Sharp.UI.Internal
         Microsoft.Maui.Controls.Button button;
         Microsoft.Maui.Controls.CarouselView carouselView;
         Microsoft.Maui.Controls.CheckBox checkBox;
-        Microsoft.Maui.Controls.ClickGestureRecognizer clickGestureRecognizer;
         Microsoft.Maui.Controls.CollectionView collectionView;
         Microsoft.Maui.Controls.ColumnDefinition columnDefinition;
         Microsoft.Maui.Controls.CompareStateTrigger compareStateTrigger;

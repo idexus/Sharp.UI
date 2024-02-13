@@ -44,6 +44,38 @@ namespace Sharp.UI
             return self;
         }
         
+        public static T HideSoftInputOnTapped<T>(this T self,
+            bool hideSoftInputOnTapped)
+            where T : Microsoft.Maui.Controls.ContentPage
+        {
+            self.SetValue(Microsoft.Maui.Controls.ContentPage.HideSoftInputOnTappedProperty, hideSoftInputOnTapped);
+            return self;
+        }
+        
+        public static T HideSoftInputOnTapped<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.ContentPage
+        {
+            var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.ContentPage.HideSoftInputOnTappedProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> HideSoftInputOnTapped<T>(this SettersContext<T> self,
+            bool hideSoftInputOnTapped)
+            where T : Microsoft.Maui.Controls.ContentPage
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ContentPage.HideSoftInputOnTappedProperty, Value = hideSoftInputOnTapped });
+            return self;
+        }
+        
+        public static SettersContext<T> HideSoftInputOnTapped<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.ContentPage
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.ContentPage.HideSoftInputOnTappedProperty);
+            configure(context).Build();
+            return self;
+        }
+        
     }
 }
 

@@ -172,7 +172,7 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T OnDropCompleted<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.DropCompletedEventArgs> handler)
+        public static T OnDropCompleted<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.DropCompletedEventArgs>? handler)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
         {
             self.DropCompleted += handler;
@@ -186,7 +186,7 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T OnDragStarting<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.DragStartingEventArgs> handler)
+        public static T OnDragStarting<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.DragStartingEventArgs>? handler)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
         {
             self.DragStarting += handler;

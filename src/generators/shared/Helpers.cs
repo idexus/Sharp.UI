@@ -10,6 +10,7 @@ using System.Linq;
 using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace Sharp.UI.Generator
 {
@@ -138,6 +139,18 @@ namespace Sharp.UI.Generator
             });
 
             return isBindable;
+        }
+
+        public static bool IsSymbolDeprecated(ISymbol symbol)
+        {
+            foreach (var attribute in symbol.GetAttributes())
+            {
+                if (attribute.AttributeClass.ToDisplayString().Contains("Obsolete"))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

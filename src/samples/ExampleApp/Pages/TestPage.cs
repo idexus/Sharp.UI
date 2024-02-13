@@ -20,12 +20,16 @@ public partial class TestPage : ContentPage
             {
                 new Label(out var label)
                     .TextColor(e => e.DynamicResource("myColor"))
-                    .Text("Sharp.UI for Maui")
-                    .FontSize(45),
+                    .Text("Sharp.UI")
+                    .FontSize(e => e.OnDesktop(100).Default(70)),
+
+                new Label("for .NET Maui")
+                    .FontSize(30)
+                    .TextColor(Colors.Red),
                     
                 new Slider(out var slider)
                     .Minimum(1).Maximum(30)
-                    .WidthRequest(400)
+                    .WidthRequest(300)
                     .Value(e => e.Path("SliderValue"))
                     .Margin(50, 30)
                     .OnValueChanged(slider => button.IsEnabled = slider.Value < 10),
@@ -50,7 +54,7 @@ public partial class TestPage : ContentPage
                             .Center()
                     },
                 }
-                .SizeRequest(270, 450)
+                .SizeRequest(250, 400)
                 .BackgroundColor(AppColors.Gray950)
                 .StrokeShape(new RoundRectangle().CornerRadius(40))
                 .VisualStateGroups(new VisualStateGroupList
@@ -74,6 +78,7 @@ public partial class TestPage : ContentPage
 
                 new Button(out button)
                     .Text("Click me")
+                    .WidthRequest(250)
                     .Margin(30)
                     .OnClicked(async (Button b) =>
                     {

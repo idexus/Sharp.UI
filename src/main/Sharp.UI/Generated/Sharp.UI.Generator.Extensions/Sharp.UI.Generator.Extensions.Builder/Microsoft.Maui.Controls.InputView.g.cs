@@ -140,6 +140,38 @@ namespace Sharp.UI
             return self;
         }
         
+        public static T IsTextPredictionEnabled<T>(this T self,
+            bool isTextPredictionEnabled)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            self.SetValue(Microsoft.Maui.Controls.InputView.IsTextPredictionEnabledProperty, isTextPredictionEnabled);
+            return self;
+        }
+        
+        public static T IsTextPredictionEnabled<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.InputView.IsTextPredictionEnabledProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> IsTextPredictionEnabled<T>(this SettersContext<T> self,
+            bool isTextPredictionEnabled)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.InputView.IsTextPredictionEnabledProperty, Value = isTextPredictionEnabled });
+            return self;
+        }
+        
+        public static SettersContext<T> IsTextPredictionEnabled<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.InputView.IsTextPredictionEnabledProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T IsReadOnly<T>(this T self,
             bool isReadOnly)
             where T : Microsoft.Maui.Controls.InputView
@@ -355,6 +387,207 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.InputView
         {
             var context = new PropertySettersContext<Microsoft.Maui.TextTransform>(self.XamlSetters, Microsoft.Maui.Controls.InputView.TextTransformProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static T CursorPosition<T>(this T self,
+            int cursorPosition)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            self.SetValue(Microsoft.Maui.Controls.InputView.CursorPositionProperty, cursorPosition);
+            return self;
+        }
+        
+        public static T CursorPosition<T>(this T self, Func<PropertyContext<int>, IPropertyBuilder<int>> configure)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            var context = new PropertyContext<int>(self, Microsoft.Maui.Controls.InputView.CursorPositionProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> CursorPosition<T>(this SettersContext<T> self,
+            int cursorPosition)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.InputView.CursorPositionProperty, Value = cursorPosition });
+            return self;
+        }
+        
+        public static SettersContext<T> CursorPosition<T>(this SettersContext<T> self, Func<PropertySettersContext<int>, IPropertySettersBuilder<int>> configure)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            var context = new PropertySettersContext<int>(self.XamlSetters, Microsoft.Maui.Controls.InputView.CursorPositionProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static T SelectionLength<T>(this T self,
+            int selectionLength)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            self.SetValue(Microsoft.Maui.Controls.InputView.SelectionLengthProperty, selectionLength);
+            return self;
+        }
+        
+        public static T SelectionLength<T>(this T self, Func<PropertyContext<int>, IPropertyBuilder<int>> configure)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            var context = new PropertyContext<int>(self, Microsoft.Maui.Controls.InputView.SelectionLengthProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> SelectionLength<T>(this SettersContext<T> self,
+            int selectionLength)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.InputView.SelectionLengthProperty, Value = selectionLength });
+            return self;
+        }
+        
+        public static SettersContext<T> SelectionLength<T>(this SettersContext<T> self, Func<PropertySettersContext<int>, IPropertySettersBuilder<int>> configure)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            var context = new PropertySettersContext<int>(self.XamlSetters, Microsoft.Maui.Controls.InputView.SelectionLengthProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static T FontAttributes<T>(this T self,
+            Microsoft.Maui.Controls.FontAttributes fontAttributes)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            self.SetValue(Microsoft.Maui.Controls.InputView.FontAttributesProperty, fontAttributes);
+            return self;
+        }
+        
+        public static T FontAttributes<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.FontAttributes>, IPropertyBuilder<Microsoft.Maui.Controls.FontAttributes>> configure)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            var context = new PropertyContext<Microsoft.Maui.Controls.FontAttributes>(self, Microsoft.Maui.Controls.InputView.FontAttributesProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> FontAttributes<T>(this SettersContext<T> self,
+            Microsoft.Maui.Controls.FontAttributes fontAttributes)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.InputView.FontAttributesProperty, Value = fontAttributes });
+            return self;
+        }
+        
+        public static SettersContext<T> FontAttributes<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.FontAttributes>, IPropertySettersBuilder<Microsoft.Maui.Controls.FontAttributes>> configure)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.FontAttributes>(self.XamlSetters, Microsoft.Maui.Controls.InputView.FontAttributesProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static T FontFamily<T>(this T self,
+            string fontFamily)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            self.SetValue(Microsoft.Maui.Controls.InputView.FontFamilyProperty, fontFamily);
+            return self;
+        }
+        
+        public static T FontFamily<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            var context = new PropertyContext<string>(self, Microsoft.Maui.Controls.InputView.FontFamilyProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> FontFamily<T>(this SettersContext<T> self,
+            string fontFamily)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.InputView.FontFamilyProperty, Value = fontFamily });
+            return self;
+        }
+        
+        public static SettersContext<T> FontFamily<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            var context = new PropertySettersContext<string>(self.XamlSetters, Microsoft.Maui.Controls.InputView.FontFamilyProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static T FontSize<T>(this T self,
+            double fontSize)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            self.SetValue(Microsoft.Maui.Controls.InputView.FontSizeProperty, fontSize);
+            return self;
+        }
+        
+        public static T FontSize<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            var context = new PropertyContext<double>(self, Microsoft.Maui.Controls.InputView.FontSizeProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> FontSize<T>(this SettersContext<T> self,
+            double fontSize)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.InputView.FontSizeProperty, Value = fontSize });
+            return self;
+        }
+        
+        public static SettersContext<T> FontSize<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            var context = new PropertySettersContext<double>(self.XamlSetters, Microsoft.Maui.Controls.InputView.FontSizeProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static Task<bool> AnimateFontSizeTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            double fromValue = self.FontSize;
+            var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
+            var callback = (double actValue) => { self.FontSize = actValue; };
+            return Transformations.AnimateAsync<double>(self, "AnimateFontSizeTo", transform, callback, length, easing);
+        }
+        
+        public static T FontAutoScalingEnabled<T>(this T self,
+            bool fontAutoScalingEnabled)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            self.SetValue(Microsoft.Maui.Controls.InputView.FontAutoScalingEnabledProperty, fontAutoScalingEnabled);
+            return self;
+        }
+        
+        public static T FontAutoScalingEnabled<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.InputView.FontAutoScalingEnabledProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> FontAutoScalingEnabled<T>(this SettersContext<T> self,
+            bool fontAutoScalingEnabled)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.InputView.FontAutoScalingEnabledProperty, Value = fontAutoScalingEnabled });
+            return self;
+        }
+        
+        public static SettersContext<T> FontAutoScalingEnabled<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.InputView
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.InputView.FontAutoScalingEnabledProperty);
             configure(context).Build();
             return self;
         }

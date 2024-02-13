@@ -25,15 +25,6 @@ namespace Sharp.UI
 
         [AttachedName("IsInAccessibleTreeProperty")]
         bool? AutomationIsInAccessibleTree { get; set; }
-
-        [AttachedName("NameProperty")]
-        string AutomationName { get; set; }
-
-        [AttachedName("HelpTextProperty")]
-        string AutomationHelpText { get; set; }
-
-        [AttachedName("LabeledByProperty")]
-        Microsoft.Maui.Controls.VisualElement AutomationLabeledBy { get; set; }
     }
 
     [AttachedProperties(typeof(Microsoft.Maui.Controls.VisualStateManager))]

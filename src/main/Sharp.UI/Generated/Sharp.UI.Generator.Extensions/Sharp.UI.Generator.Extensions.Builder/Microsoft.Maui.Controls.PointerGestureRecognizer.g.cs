@@ -41,29 +41,29 @@ namespace Sharp.UI
         }
         
         public static Microsoft.Maui.Controls.PointerGestureRecognizer PointerEnteredCommandParameter(this Microsoft.Maui.Controls.PointerGestureRecognizer self,
-            System.Windows.Input.ICommand pointerEnteredCommandParameter)
+            object pointerEnteredCommandParameter)
         {
             self.SetValue(Microsoft.Maui.Controls.PointerGestureRecognizer.PointerEnteredCommandParameterProperty, pointerEnteredCommandParameter);
             return self;
         }
         
-        public static Microsoft.Maui.Controls.PointerGestureRecognizer PointerEnteredCommandParameter(this Microsoft.Maui.Controls.PointerGestureRecognizer self, Func<PropertyContext<System.Windows.Input.ICommand>, IPropertyBuilder<System.Windows.Input.ICommand>> configure)
+        public static Microsoft.Maui.Controls.PointerGestureRecognizer PointerEnteredCommandParameter(this Microsoft.Maui.Controls.PointerGestureRecognizer self, Func<PropertyContext<object>, IPropertyBuilder<object>> configure)
         {
-            var context = new PropertyContext<System.Windows.Input.ICommand>(self, Microsoft.Maui.Controls.PointerGestureRecognizer.PointerEnteredCommandParameterProperty);
+            var context = new PropertyContext<object>(self, Microsoft.Maui.Controls.PointerGestureRecognizer.PointerEnteredCommandParameterProperty);
             configure(context).Build();
             return self;
         }
         
         public static SettersContext<Microsoft.Maui.Controls.PointerGestureRecognizer> PointerEnteredCommandParameter(this SettersContext<Microsoft.Maui.Controls.PointerGestureRecognizer> self,
-            System.Windows.Input.ICommand pointerEnteredCommandParameter)
+            object pointerEnteredCommandParameter)
         {
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.PointerGestureRecognizer.PointerEnteredCommandParameterProperty, Value = pointerEnteredCommandParameter });
             return self;
         }
         
-        public static SettersContext<Microsoft.Maui.Controls.PointerGestureRecognizer> PointerEnteredCommandParameter(this SettersContext<Microsoft.Maui.Controls.PointerGestureRecognizer> self, Func<PropertySettersContext<System.Windows.Input.ICommand>, IPropertySettersBuilder<System.Windows.Input.ICommand>> configure)
+        public static SettersContext<Microsoft.Maui.Controls.PointerGestureRecognizer> PointerEnteredCommandParameter(this SettersContext<Microsoft.Maui.Controls.PointerGestureRecognizer> self, Func<PropertySettersContext<object>, IPropertySettersBuilder<object>> configure)
         {
-            var context = new PropertySettersContext<System.Windows.Input.ICommand>(self.XamlSetters, Microsoft.Maui.Controls.PointerGestureRecognizer.PointerEnteredCommandParameterProperty);
+            var context = new PropertySettersContext<object>(self.XamlSetters, Microsoft.Maui.Controls.PointerGestureRecognizer.PointerEnteredCommandParameterProperty);
             configure(context).Build();
             return self;
         }
@@ -97,29 +97,29 @@ namespace Sharp.UI
         }
         
         public static Microsoft.Maui.Controls.PointerGestureRecognizer PointerExitedCommandParameter(this Microsoft.Maui.Controls.PointerGestureRecognizer self,
-            System.Windows.Input.ICommand pointerExitedCommandParameter)
+            object pointerExitedCommandParameter)
         {
             self.SetValue(Microsoft.Maui.Controls.PointerGestureRecognizer.PointerExitedCommandParameterProperty, pointerExitedCommandParameter);
             return self;
         }
         
-        public static Microsoft.Maui.Controls.PointerGestureRecognizer PointerExitedCommandParameter(this Microsoft.Maui.Controls.PointerGestureRecognizer self, Func<PropertyContext<System.Windows.Input.ICommand>, IPropertyBuilder<System.Windows.Input.ICommand>> configure)
+        public static Microsoft.Maui.Controls.PointerGestureRecognizer PointerExitedCommandParameter(this Microsoft.Maui.Controls.PointerGestureRecognizer self, Func<PropertyContext<object>, IPropertyBuilder<object>> configure)
         {
-            var context = new PropertyContext<System.Windows.Input.ICommand>(self, Microsoft.Maui.Controls.PointerGestureRecognizer.PointerExitedCommandParameterProperty);
+            var context = new PropertyContext<object>(self, Microsoft.Maui.Controls.PointerGestureRecognizer.PointerExitedCommandParameterProperty);
             configure(context).Build();
             return self;
         }
         
         public static SettersContext<Microsoft.Maui.Controls.PointerGestureRecognizer> PointerExitedCommandParameter(this SettersContext<Microsoft.Maui.Controls.PointerGestureRecognizer> self,
-            System.Windows.Input.ICommand pointerExitedCommandParameter)
+            object pointerExitedCommandParameter)
         {
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.PointerGestureRecognizer.PointerExitedCommandParameterProperty, Value = pointerExitedCommandParameter });
             return self;
         }
         
-        public static SettersContext<Microsoft.Maui.Controls.PointerGestureRecognizer> PointerExitedCommandParameter(this SettersContext<Microsoft.Maui.Controls.PointerGestureRecognizer> self, Func<PropertySettersContext<System.Windows.Input.ICommand>, IPropertySettersBuilder<System.Windows.Input.ICommand>> configure)
+        public static SettersContext<Microsoft.Maui.Controls.PointerGestureRecognizer> PointerExitedCommandParameter(this SettersContext<Microsoft.Maui.Controls.PointerGestureRecognizer> self, Func<PropertySettersContext<object>, IPropertySettersBuilder<object>> configure)
         {
-            var context = new PropertySettersContext<System.Windows.Input.ICommand>(self.XamlSetters, Microsoft.Maui.Controls.PointerGestureRecognizer.PointerExitedCommandParameterProperty);
+            var context = new PropertySettersContext<object>(self.XamlSetters, Microsoft.Maui.Controls.PointerGestureRecognizer.PointerExitedCommandParameterProperty);
             configure(context).Build();
             return self;
         }
@@ -153,29 +153,141 @@ namespace Sharp.UI
         }
         
         public static Microsoft.Maui.Controls.PointerGestureRecognizer PointerMovedCommandParameter(this Microsoft.Maui.Controls.PointerGestureRecognizer self,
-            System.Windows.Input.ICommand pointerMovedCommandParameter)
+            object pointerMovedCommandParameter)
         {
             self.SetValue(Microsoft.Maui.Controls.PointerGestureRecognizer.PointerMovedCommandParameterProperty, pointerMovedCommandParameter);
             return self;
         }
         
-        public static Microsoft.Maui.Controls.PointerGestureRecognizer PointerMovedCommandParameter(this Microsoft.Maui.Controls.PointerGestureRecognizer self, Func<PropertyContext<System.Windows.Input.ICommand>, IPropertyBuilder<System.Windows.Input.ICommand>> configure)
+        public static Microsoft.Maui.Controls.PointerGestureRecognizer PointerMovedCommandParameter(this Microsoft.Maui.Controls.PointerGestureRecognizer self, Func<PropertyContext<object>, IPropertyBuilder<object>> configure)
         {
-            var context = new PropertyContext<System.Windows.Input.ICommand>(self, Microsoft.Maui.Controls.PointerGestureRecognizer.PointerMovedCommandParameterProperty);
+            var context = new PropertyContext<object>(self, Microsoft.Maui.Controls.PointerGestureRecognizer.PointerMovedCommandParameterProperty);
             configure(context).Build();
             return self;
         }
         
         public static SettersContext<Microsoft.Maui.Controls.PointerGestureRecognizer> PointerMovedCommandParameter(this SettersContext<Microsoft.Maui.Controls.PointerGestureRecognizer> self,
-            System.Windows.Input.ICommand pointerMovedCommandParameter)
+            object pointerMovedCommandParameter)
         {
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.PointerGestureRecognizer.PointerMovedCommandParameterProperty, Value = pointerMovedCommandParameter });
             return self;
         }
         
-        public static SettersContext<Microsoft.Maui.Controls.PointerGestureRecognizer> PointerMovedCommandParameter(this SettersContext<Microsoft.Maui.Controls.PointerGestureRecognizer> self, Func<PropertySettersContext<System.Windows.Input.ICommand>, IPropertySettersBuilder<System.Windows.Input.ICommand>> configure)
+        public static SettersContext<Microsoft.Maui.Controls.PointerGestureRecognizer> PointerMovedCommandParameter(this SettersContext<Microsoft.Maui.Controls.PointerGestureRecognizer> self, Func<PropertySettersContext<object>, IPropertySettersBuilder<object>> configure)
         {
-            var context = new PropertySettersContext<System.Windows.Input.ICommand>(self.XamlSetters, Microsoft.Maui.Controls.PointerGestureRecognizer.PointerMovedCommandParameterProperty);
+            var context = new PropertySettersContext<object>(self.XamlSetters, Microsoft.Maui.Controls.PointerGestureRecognizer.PointerMovedCommandParameterProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static Microsoft.Maui.Controls.PointerGestureRecognizer PointerPressedCommand(this Microsoft.Maui.Controls.PointerGestureRecognizer self,
+            System.Windows.Input.ICommand pointerPressedCommand)
+        {
+            self.SetValue(Microsoft.Maui.Controls.PointerGestureRecognizer.PointerPressedCommandProperty, pointerPressedCommand);
+            return self;
+        }
+        
+        public static Microsoft.Maui.Controls.PointerGestureRecognizer PointerPressedCommand(this Microsoft.Maui.Controls.PointerGestureRecognizer self, Func<PropertyContext<System.Windows.Input.ICommand>, IPropertyBuilder<System.Windows.Input.ICommand>> configure)
+        {
+            var context = new PropertyContext<System.Windows.Input.ICommand>(self, Microsoft.Maui.Controls.PointerGestureRecognizer.PointerPressedCommandProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.PointerGestureRecognizer> PointerPressedCommand(this SettersContext<Microsoft.Maui.Controls.PointerGestureRecognizer> self,
+            System.Windows.Input.ICommand pointerPressedCommand)
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.PointerGestureRecognizer.PointerPressedCommandProperty, Value = pointerPressedCommand });
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.PointerGestureRecognizer> PointerPressedCommand(this SettersContext<Microsoft.Maui.Controls.PointerGestureRecognizer> self, Func<PropertySettersContext<System.Windows.Input.ICommand>, IPropertySettersBuilder<System.Windows.Input.ICommand>> configure)
+        {
+            var context = new PropertySettersContext<System.Windows.Input.ICommand>(self.XamlSetters, Microsoft.Maui.Controls.PointerGestureRecognizer.PointerPressedCommandProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static Microsoft.Maui.Controls.PointerGestureRecognizer PointerPressedCommandParameter(this Microsoft.Maui.Controls.PointerGestureRecognizer self,
+            object pointerPressedCommandParameter)
+        {
+            self.SetValue(Microsoft.Maui.Controls.PointerGestureRecognizer.PointerPressedCommandParameterProperty, pointerPressedCommandParameter);
+            return self;
+        }
+        
+        public static Microsoft.Maui.Controls.PointerGestureRecognizer PointerPressedCommandParameter(this Microsoft.Maui.Controls.PointerGestureRecognizer self, Func<PropertyContext<object>, IPropertyBuilder<object>> configure)
+        {
+            var context = new PropertyContext<object>(self, Microsoft.Maui.Controls.PointerGestureRecognizer.PointerPressedCommandParameterProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.PointerGestureRecognizer> PointerPressedCommandParameter(this SettersContext<Microsoft.Maui.Controls.PointerGestureRecognizer> self,
+            object pointerPressedCommandParameter)
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.PointerGestureRecognizer.PointerPressedCommandParameterProperty, Value = pointerPressedCommandParameter });
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.PointerGestureRecognizer> PointerPressedCommandParameter(this SettersContext<Microsoft.Maui.Controls.PointerGestureRecognizer> self, Func<PropertySettersContext<object>, IPropertySettersBuilder<object>> configure)
+        {
+            var context = new PropertySettersContext<object>(self.XamlSetters, Microsoft.Maui.Controls.PointerGestureRecognizer.PointerPressedCommandParameterProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static Microsoft.Maui.Controls.PointerGestureRecognizer PointerReleasedCommand(this Microsoft.Maui.Controls.PointerGestureRecognizer self,
+            System.Windows.Input.ICommand pointerReleasedCommand)
+        {
+            self.SetValue(Microsoft.Maui.Controls.PointerGestureRecognizer.PointerReleasedCommandProperty, pointerReleasedCommand);
+            return self;
+        }
+        
+        public static Microsoft.Maui.Controls.PointerGestureRecognizer PointerReleasedCommand(this Microsoft.Maui.Controls.PointerGestureRecognizer self, Func<PropertyContext<System.Windows.Input.ICommand>, IPropertyBuilder<System.Windows.Input.ICommand>> configure)
+        {
+            var context = new PropertyContext<System.Windows.Input.ICommand>(self, Microsoft.Maui.Controls.PointerGestureRecognizer.PointerReleasedCommandProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.PointerGestureRecognizer> PointerReleasedCommand(this SettersContext<Microsoft.Maui.Controls.PointerGestureRecognizer> self,
+            System.Windows.Input.ICommand pointerReleasedCommand)
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.PointerGestureRecognizer.PointerReleasedCommandProperty, Value = pointerReleasedCommand });
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.PointerGestureRecognizer> PointerReleasedCommand(this SettersContext<Microsoft.Maui.Controls.PointerGestureRecognizer> self, Func<PropertySettersContext<System.Windows.Input.ICommand>, IPropertySettersBuilder<System.Windows.Input.ICommand>> configure)
+        {
+            var context = new PropertySettersContext<System.Windows.Input.ICommand>(self.XamlSetters, Microsoft.Maui.Controls.PointerGestureRecognizer.PointerReleasedCommandProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static Microsoft.Maui.Controls.PointerGestureRecognizer PointerReleasedCommandParameter(this Microsoft.Maui.Controls.PointerGestureRecognizer self,
+            object pointerReleasedCommandParameter)
+        {
+            self.SetValue(Microsoft.Maui.Controls.PointerGestureRecognizer.PointerReleasedCommandParameterProperty, pointerReleasedCommandParameter);
+            return self;
+        }
+        
+        public static Microsoft.Maui.Controls.PointerGestureRecognizer PointerReleasedCommandParameter(this Microsoft.Maui.Controls.PointerGestureRecognizer self, Func<PropertyContext<object>, IPropertyBuilder<object>> configure)
+        {
+            var context = new PropertyContext<object>(self, Microsoft.Maui.Controls.PointerGestureRecognizer.PointerReleasedCommandParameterProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.PointerGestureRecognizer> PointerReleasedCommandParameter(this SettersContext<Microsoft.Maui.Controls.PointerGestureRecognizer> self,
+            object pointerReleasedCommandParameter)
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.PointerGestureRecognizer.PointerReleasedCommandParameterProperty, Value = pointerReleasedCommandParameter });
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.PointerGestureRecognizer> PointerReleasedCommandParameter(this SettersContext<Microsoft.Maui.Controls.PointerGestureRecognizer> self, Func<PropertySettersContext<object>, IPropertySettersBuilder<object>> configure)
+        {
+            var context = new PropertySettersContext<object>(self.XamlSetters, Microsoft.Maui.Controls.PointerGestureRecognizer.PointerReleasedCommandParameterProperty);
             configure(context).Build();
             return self;
         }
@@ -213,6 +325,30 @@ namespace Sharp.UI
         public static Microsoft.Maui.Controls.PointerGestureRecognizer OnPointerMoved(this Microsoft.Maui.Controls.PointerGestureRecognizer self, System.Action<Microsoft.Maui.Controls.PointerGestureRecognizer> action)
         {
             self.PointerMoved += (o, arg) => action(self);
+            return self;
+        }
+        
+        public static Microsoft.Maui.Controls.PointerGestureRecognizer OnPointerPressed(this Microsoft.Maui.Controls.PointerGestureRecognizer self, System.EventHandler<Microsoft.Maui.Controls.PointerEventArgs>? handler)
+        {
+            self.PointerPressed += handler;
+            return self;
+        }
+        
+        public static Microsoft.Maui.Controls.PointerGestureRecognizer OnPointerPressed(this Microsoft.Maui.Controls.PointerGestureRecognizer self, System.Action<Microsoft.Maui.Controls.PointerGestureRecognizer> action)
+        {
+            self.PointerPressed += (o, arg) => action(self);
+            return self;
+        }
+        
+        public static Microsoft.Maui.Controls.PointerGestureRecognizer OnPointerReleased(this Microsoft.Maui.Controls.PointerGestureRecognizer self, System.EventHandler<Microsoft.Maui.Controls.PointerEventArgs>? handler)
+        {
+            self.PointerReleased += handler;
+            return self;
+        }
+        
+        public static Microsoft.Maui.Controls.PointerGestureRecognizer OnPointerReleased(this Microsoft.Maui.Controls.PointerGestureRecognizer self, System.Action<Microsoft.Maui.Controls.PointerGestureRecognizer> action)
+        {
+            self.PointerReleased += (o, arg) => action(self);
             return self;
         }
         
