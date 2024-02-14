@@ -99,7 +99,7 @@ namespace ExampleApp
 
 A vanilla sample project using nuget package
 
-[https://github.com/idexus/Sharp.UI-Maui-Template](https://github.com/idexus/Sharp.UI-Maui-Template)
+[https://github.com/idexus/Sharp.UI-Template](https://github.com/idexus/Sharp.UI-Template)
 
 # Hot Reload
 
