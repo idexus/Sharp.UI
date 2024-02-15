@@ -25,7 +25,7 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 
 		<PackageId>Sharp.UI</PackageId>
-		<Version>8.0.0-beta.1</Version>
+		<Version>8.0.0-beta.2</Version>
 		<Authors>Pawel Krzywdzinski</Authors>
 		<Copyright>Pawel Krzywdzinski</Copyright>
 		<PackageDescription>C# Code Markup Library for .NET MAUI: Code-Only UI Development with Fluent Methods and Hot Reload</PackageDescription>
@@ -43,13 +43,11 @@
 	
 	<ItemGroup>
 		<ProjectReference Include="..\..\..\libs\HotReloadKit\src\HotReloadKit\HotReloadKit.csproj" />
-		<ProjectReference Include="..\..\generators\Sharp.UI.Generator.Classes\Sharp.UI.Generator.Classes.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
-		<ProjectReference Include="..\..\generators\Sharp.UI.Generator.Extensions\Sharp.UI.Generator.Extensions.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+		<ProjectReference Include="..\Sharp.UI.Generator\Sharp.UI.Generator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Include="..\..\generators\Sharp.UI.Generator.Classes\bin\$(Configuration)\netstandard2.0\Sharp.UI.Generator.Classes.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
-		<None Include="..\..\generators\Sharp.UI.Generator.Extensions\bin\$(Configuration)\netstandard2.0\Sharp.UI.Generator.Extensions.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+		<None Include="..\Sharp.UI.Generator\bin\$(Configuration)\netstandard2.0\Sharp.UI.Generator.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
 	</ItemGroup>
 
 	<PropertyGroup>
@@ -59,9 +57,9 @@
 	<ItemGroup>
 		<Compile Remove="$(CompilerGeneratedFilesOutputPath)/**/*.cs" />
 		<Compile Remove="Platforms\**" />
-	    <None Include="$(CompilerGeneratedFilesOutputPath)/Sharp.UI.Generator.Classes/**/*.cs" />
-	    <None Include="$(CompilerGeneratedFilesOutputPath)/Sharp.UI.Generator.Extensions/**/*.cs" />
+	    <None Include="$(CompilerGeneratedFilesOutputPath)/Sharp.UI.Generator/**/*.cs" />
 	</ItemGroup>
+
 	<ItemGroup>
 	  <EmbeddedResource Remove="Platforms\**" />
 	  <MauiCss Remove="Platforms\**" />

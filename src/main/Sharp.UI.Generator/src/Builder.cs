@@ -6,8 +6,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.CodeAnalysis;
+using Sharp.UI.Generator.Classes;
+using Sharp.UI.Generator.Extensions;
 
-namespace Sharp.UI.Generator.Extensions
+namespace Sharp.UI.Generator
 {
     [Generator]
     public class Builder : ISourceGenerator
@@ -18,6 +20,24 @@ namespace Sharp.UI.Generator.Extensions
         {
             // Helpers.WaitForDebugger(context.CancellationToken);
 
+            BuildClasses(context);
+            BuildExtensions(context);
+        }
+
+        void BuildClasses(GeneratorExecutionContext context)
+        {
+            var sharpObjectSymbols = context.Compilation.GetSymbolsWithName((s) => true, filter: SymbolFilter.Type)
+                .Where(e => !e.IsStatic && e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Equals(Shared.SharpObjectAttributeString)) != null)
+                .Select(e => e as INamedTypeSymbol);
+
+            foreach (var symbol in sharpObjectSymbols)
+            {
+                new ClassGenerator(context, symbol).Build();
+            }
+        }
+
+        void BuildExtensions(GeneratorExecutionContext context)
+        {
             // .Net MAUI symbols
 
             var mauiSymbolsType = context.Compilation.GetSymbolsWithName(s => true, filter: SymbolFilter.Type)

@@ -8,8 +8,7 @@ Add the following code to your `.csproj` file:
 ```xml
 <ItemGroup>
 	<ProjectReference Include="..\Sharp.UI\src\main\Sharp.UI\Sharp.UI.csproj" />
-	<ProjectReference Include="..\Sharp.UI\src\generators\Sharp.UI.Generator.Extensions\Sharp.UI.Generator.Extensions.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
-	<ProjectReference Include="..\Sharp.UI\src\generators\Sharp.UI.Generator.Classes\Sharp.UI.Generator.Classes.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+	<ProjectReference Include="..\Sharp.UI\src\main\Sharp.UI.Generator\Sharp.UI.Generator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
 	<ProjectReference Include="..\Sharp.UI\libs\HotReloadKit\src\HotReloadKit.Generator\HotReloadKit.Generator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
 </ItemGroup> 
 ```

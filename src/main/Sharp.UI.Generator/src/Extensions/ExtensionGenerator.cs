@@ -54,10 +54,7 @@ namespace Sharp.UI.Generator.Extensions
 
             if (isExtensionMethodsGenerated)
             {
-                var tail = 
-                    (attachedInterfacesAttribute != null ? ".attached" : "") +
-                    (mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microsoft.Maui") ? "" : ".extension");
-
+                var tail = (attachedInterfacesAttribute != null ? ".attached" : "") + ".extension";                    
                 context.AddSource($"{mainSymbol.ContainingNamespace.ToDisplayString()}.{Helpers.GetNormalizedFileName(mainSymbol)}{tail}.g.cs", builder.ToString());
             }
         }
