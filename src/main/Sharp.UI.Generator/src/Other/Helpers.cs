@@ -17,6 +17,8 @@ namespace Sharp.UI.Generator
     public static class Helpers
     {
         static readonly string[] keywords = { "class", "switch", "event" };
+        public static string[] NotGenerateList = { "this[]", "Handler", "LogicalChildren" };
+
 
         public static void WaitForDebugger(CancellationToken cancellationToken)
         {
@@ -57,36 +59,16 @@ namespace Sharp.UI.Generator
             }
 
             ITypeSymbol _elementType = null;
-            LoopDownToObject(namedTypeSymbol, type =>
-            {
-                foreach (var inter in type.AllInterfaces)
-                    if (inter.Name.Equals("IList", StringComparison.Ordinal) && inter.IsGenericType)
-                    {
+            foreach (var inter in namedTypeSymbol.AllInterfaces)
+                if (inter.Name.Equals("IList", StringComparison.Ordinal) && inter.IsGenericType)
+                {
 
-                        _elementType = inter.TypeArguments.First();
-                        return true;
-                    }
-                return false;
-            });
+                    _elementType = inter.TypeArguments.First();
+                    break;
+                }
 
             elementType = _elementType;
             return _elementType != null;
-        }
-
-        public static bool IsIEnumerable(INamedTypeSymbol symbol)
-        {
-            //bool isIEnumerable = false;
-            //LoopDownToObject(symbol, type =>
-            //{
-                foreach (var inter in symbol.AllInterfaces)
-                    if (inter.Name.Equals("IEnumerable", StringComparison.Ordinal) && !inter.IsGenericType)
-                    {
-                        //isIEnumerable = true;
-                        return true;
-                    }
-                return false;
-            //});
-            //return isIEnumerable;
         }
 
         public static bool IsVisualElement(INamedTypeSymbol symbol)
@@ -149,6 +131,19 @@ namespace Sharp.UI.Generator
                     return true;
             }
             return false;
+        }
+
+
+
+        public static IPropertySymbol FindInBasePropertySymbolWithName(INamedTypeSymbol symbol, string propertyName)
+        {
+            IPropertySymbol propertySymbol = null;
+            Helpers.LoopDownToObject(symbol.BaseType, type =>
+            {
+                propertySymbol = (IPropertySymbol)(type.GetMembers(propertyName).FirstOrDefault());
+                return propertySymbol != null;
+            });
+            return propertySymbol;
         }
     }
 }

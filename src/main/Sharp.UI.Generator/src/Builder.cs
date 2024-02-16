@@ -30,7 +30,7 @@ namespace Sharp.UI.Generator
         void BuildClasses(GeneratorExecutionContext context)
         {
             var sharpObjectSymbols = context.Compilation.GetSymbolsWithName((s) => true, filter: SymbolFilter.Type)
-                .Where(e => !e.IsStatic && e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Equals(Shared.SharpObjectAttributeString)) != null)
+                .Where(e => !e.IsStatic && e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Equals(SharpAttributes.SharpObjectAttributeString)) != null)
                 .Select(e => e as INamedTypeSymbol);
 
             foreach (var symbol in sharpObjectSymbols)
@@ -76,7 +76,7 @@ namespace Sharp.UI.Generator
             // [SharpObject] symbols
 
             var SharpObjectSymbols = context.Compilation.GetSymbolsWithName((s) => true, filter: SymbolFilter.Type)
-                .Where(e => !e.ContainingNamespace.ToDisplayString().Equals("Sharp.UI") && !e.IsStatic && e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Equals(Shared.SharpObjectAttributeString)) != null)
+                .Where(e => !e.ContainingNamespace.ToDisplayString().Equals("Sharp.UI") && !e.IsStatic && e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Equals(SharpAttributes.SharpObjectAttributeString)) != null)
                 .Select(e => e as INamedTypeSymbol);
 
             foreach (var symbol in SharpObjectSymbols)
@@ -88,7 +88,7 @@ namespace Sharp.UI.Generator
             // [AttachedInterfaces] symbols
 
             var staticWithAttachedSymbols = context.Compilation.GetSymbolsWithName((s) => true, filter: SymbolFilter.Type)
-                .Where(e => e.IsStatic && e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Equals(Shared.AttachedInterfacesAttributeString)) != null)
+                .Where(e => e.IsStatic && e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Equals(SharpAttributes.AttachedInterfacesAttributeString)) != null)
                 .Select(e => e as INamedTypeSymbol);
 
             foreach (var symbol in staticWithAttachedSymbols)

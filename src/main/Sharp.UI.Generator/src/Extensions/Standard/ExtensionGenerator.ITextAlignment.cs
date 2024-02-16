@@ -1,4 +1,8 @@
-﻿using System;
+﻿//
+// MIT License
+// Copyright Pawel Krzywdzinski
+//
+
 using Microsoft.CodeAnalysis;
 
 namespace Sharp.UI.Generator.Extensions

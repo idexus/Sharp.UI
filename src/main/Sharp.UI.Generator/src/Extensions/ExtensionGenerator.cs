@@ -26,7 +26,7 @@ namespace Sharp.UI.Generator.Extensions
         public ExtensionGenerator(GeneratorExecutionContext context, INamedTypeSymbol symbol)
         {
             this.context = context;
-            this.attachedInterfacesAttribute = Shared.GetAttachedInterfacesAttributeData(symbol);
+            this.attachedInterfacesAttribute = SharpAttributes.GetAttachedInterfacesAttributeData(symbol);
             this.mainSymbol = attachedInterfacesAttribute == null ? symbol : attachedInterfacesAttribute.ConstructorArguments[0].Value as INamedTypeSymbol;
             this.isBindableObject = Helpers.IsBindableObject(mainSymbol);
             this.isVisualElement = Helpers.IsVisualElement(mainSymbol);
@@ -89,11 +89,9 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
 }}");
         }
 
-        List<string> bindablePropertyNames;
-
         void GenerateClassExtensionBody()
         {
-            bindablePropertyNames = new List<string>();
+            var bindablePropertyNames = new List<string>();
             var bindableProperties = mainSymbol
                     .GetMembers()
                     .Where(e => e.IsStatic && e.Name.EndsWith("Property") && e.DeclaredAccessibility == Accessibility.Public).ToList();
@@ -114,7 +112,7 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
                 .Where(e => e.Kind == SymbolKind.Event && e.DeclaredAccessibility == Accessibility.Public && !e.IsStatic && !Helpers.IsSymbolDeprecated(e));
 
             foreach (var prop in properties)
-                GenerateExtensionMethod(prop as IPropertySymbol);
+                GenerateExtensionMethod(prop as IPropertySymbol, bindablePropertyNames);
 
             foreach (var @event in events)
                 GenerateEventMethod(@event);
@@ -123,54 +121,6 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
                 GenerateExtensionMethods_ITextAlignment(mainSymbol);
 
             GenerateBindablePropertyExtensionsFromInterface();
-        }
-
-
-        class PropertyInfo
-        {
-            public INamedTypeSymbol MainSymbol { get; set; }
-            public IPropertySymbol PropertySymbol { get; set; }
-            public List<string> BindableProperties { get; set; }
-            public bool IsBindableObject { get; set; }
-            public bool IsBindableProperty { get; set; }
-            public string BindablePropertyName { get; set; }
-
-            public string propertyName;
-            public string accessedWith;
-            public string propertyTypeName;
-            public string camelCaseName;
-            public string symbolTypeName;
-            public string valueAssignmentString;
-            public string dataTemplateAssignmentString;
-
-            public void Build()
-            {
-                symbolTypeName = $"{MainSymbol.ToDisplayString()}";
-
-                propertyName = PropertySymbol.Name.Split(new[] { "." }, StringSplitOptions.None).Last();
-                propertyName = propertyName.Equals("class", StringComparison.Ordinal) ? "@class" : propertyName;
-
-                if (BindablePropertyName == null)
-                {
-                    if (BindableProperties != null) IsBindableProperty = BindableProperties.Contains(propertyName);
-                    accessedWith = PropertySymbol.IsStatic ? $"{MainSymbol.ToDisplayString()}" : "self";
-                    BindablePropertyName = $"{MainSymbol.ToDisplayString()}.{propertyName}Property";
-                }
-                else
-                    IsBindableObject = true;
-                
-                propertyTypeName = PropertySymbol.Type.ToDisplayString();
-                camelCaseName = Helpers.CamelCase(propertyName);
-
-                valueAssignmentString = IsBindableProperty  ?
-                    $@"self.SetValue({BindablePropertyName}, {camelCaseName});" :
-                    $"{accessedWith}.{propertyName} = {camelCaseName};";
-
-                dataTemplateAssignmentString = IsBindableProperty ?
-                    $@"self.SetValue({BindablePropertyName}, new DataTemplate(loadTemplate));" :
-                    $@"{accessedWith}.{propertyName} = new DataTemplate(loadTemplate);";
-
-            }
         }
 
         bool ExistInBaseClasses(string propertyName, bool getterAndSetter)
@@ -205,18 +155,18 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
                 {
                     interfaces.AddRange(attachedInterfacesAttribute.ConstructorArguments[1].Values
                         .Select(e => (INamedTypeSymbol)e.Value)
-                        .Where(e => e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Equals(Shared.AttachedPropertiesAttributeString)) != null)
+                        .Where(e => e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Equals(SharpAttributes.AttachedPropertiesAttributeString)) != null)
                         .ToList());
                 }
 
                 interfaces.AddRange(
                     mainSymbol
                         .Interfaces
-                        .Where(e => e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Equals(Shared.AttachedPropertiesAttributeString)) != null));
+                        .Where(e => e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Equals(SharpAttributes.AttachedPropertiesAttributeString)) != null));
 
                 foreach (var inter in interfaces)
                 {
-                    var attribute = inter.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Equals(Shared.AttachedPropertiesAttributeString));
+                    var attribute = inter.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Equals(SharpAttributes.AttachedPropertiesAttributeString));
                     if (attribute != null)
                     {
                         var attachedType = attribute.ConstructorArguments[0].Value as INamedTypeSymbol;
@@ -230,7 +180,7 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
                             foreach (var prop in properties)
                             {
                                 var propertySymbol = (IPropertySymbol)prop;
-                                var attachedName = Shared.GetAttachedPropertyName(propertySymbol);
+                                var attachedName = SharpAttributes.GetAttachedPropertyName(propertySymbol);
                                 var fullPropertyName = $"{attachedType.ToDisplayString()}.{attachedName}";
                                 GenerateExtensionMethodForBindableFromInterface(propertySymbol, fullPropertyName);
                             }
@@ -249,7 +199,7 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
             // generate using bindable interface
             var interfaces = mainSymbol
                 .Interfaces
-                .Where(e => e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Equals(Shared.BindablePropertiesAttributeString, StringComparison.Ordinal)) != null);
+                .Where(e => e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Equals(SharpAttributes.BindablePropertiesAttributeString, StringComparison.Ordinal)) != null);
 
             foreach (var inter in interfaces)
             {
@@ -282,7 +232,7 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
             };
             info.Build();
 
-            if (!Shared.NotGenerateList.Contains(info.propertyName))
+            if (!Helpers.NotGenerateList.Contains(info.propertyName))
             {
                 GenerateExtensionMethod_Value(info);
                 GenerateExtensionMethod_BindablePropertyBuilder(info);
@@ -301,7 +251,7 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
         // ----- property fluent methods -----    
         // -----------------------------------
 
-        void GenerateExtensionMethod(IPropertySymbol property)
+        void GenerateExtensionMethod(IPropertySymbol property, List<string> bindablePropertyNames)
         {
             var info = new PropertyInfo
             {
@@ -315,7 +265,7 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
             var propertyType = info.PropertySymbol.Type as INamedTypeSymbol;
             var isGenericIList = Helpers.IsGenericIList(propertyType, out var elementType);
 
-            if (!Shared.NotGenerateList.Contains(info.propertyName))
+            if (!Helpers.NotGenerateList.Contains(info.propertyName))
             {
                 if (!isGenericIList &&
                     info.PropertySymbol.SetMethod != null &&
@@ -354,391 +304,5 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
                 }
             }
         }
-
-        void GenerateExtensionMethod_Setters(PropertyInfo info)
-        {
-            if (mainSymbol.IsSealed)
-                GenerateExtensionMethod_Setters_Sealed(info);
-            else
-                GenerateExtensionMethod_Setters_Normal(info);
-        }
-
-        void GenerateExtensionMethod_Setters_Sealed(PropertyInfo info)
-        {
-            isExtensionMethodsGenerated = true;
-            builder.Append($@"
-        public static SettersContext<{info.symbolTypeName}> {info.propertyName}(this SettersContext<{info.symbolTypeName}> self,
-            {info.propertyTypeName} {info.camelCaseName})
-        {{
-            self.XamlSetters.Add(new Setter {{ Property = {info.BindablePropertyName}, Value = {info.camelCaseName} }});
-            return self;
-        }}
-        ");
-        }
-
-        void GenerateExtensionMethod_Setters_Normal(PropertyInfo info)
-        {
-            isExtensionMethodsGenerated = true;
-            builder.Append($@"
-        public static SettersContext<T> {info.propertyName}<T>(this SettersContext<T> self,
-            {info.propertyTypeName} {info.camelCaseName})
-            where T : {info.symbolTypeName}
-        {{
-            self.XamlSetters.Add(new Setter {{ Property = {info.BindablePropertyName}, Value = {info.camelCaseName} }});
-            return self;
-        }}
-        ");
-        }
-
-        // value
-
-        void GenerateExtensionMethod_Value(PropertyInfo info)
-        {
-            if (mainSymbol.IsSealed)
-                GenerateExtensionMethod_Value_Sealed(info);
-            else
-                GenerateExtensionMethod_Value_Normal(info);
-        }
-
-        void GenerateExtensionMethod_Value_Sealed(PropertyInfo info)
-        {
-            isExtensionMethodsGenerated = true;
-            builder.Append($@"
-        public static {info.symbolTypeName} {info.propertyName}(this {info.symbolTypeName} self,
-            {info.propertyTypeName} {info.camelCaseName})
-        {{
-            {info.valueAssignmentString}
-            return self;
-        }}
-        ");
-        }
-
-        void GenerateExtensionMethod_Value_Normal(PropertyInfo info)
-        {
-            isExtensionMethodsGenerated = true;
-            builder.Append($@"
-        public static T {info.propertyName}<T>(this T self,
-            {info.propertyTypeName} {info.camelCaseName})
-            where T : {info.symbolTypeName}
-        {{
-            {info.valueAssignmentString}
-            return self;
-        }}
-        ");
-        }
-
-        void GenerateExtensionMethod_GetValue(PropertyInfo info)
-        {
-            if (mainSymbol.IsSealed)
-                GenerateExtensionMethod_GetValue_Sealed(info);
-            else
-                GenerateExtensionMethod_GetValue_Normal(info);
-        }
-
-        void GenerateExtensionMethod_GetValue_Sealed(PropertyInfo info)
-        {
-            isExtensionMethodsGenerated = true;
-            builder.Append($@"
-        public static {info.propertyTypeName} Get{info.propertyName}Value<T>(this {info.symbolTypeName} self)
-        {{
-            return ({info.propertyTypeName})self.GetValue({info.BindablePropertyName});
-        }}
-        ");
-        }
-
-        void GenerateExtensionMethod_GetValue_Normal(PropertyInfo info)
-        {
-            isExtensionMethodsGenerated = true;
-            builder.Append($@"
-        public static {info.propertyTypeName} Get{info.propertyName}Value<T>(this T self)
-            where T : {info.symbolTypeName}
-        {{
-            return ({info.propertyTypeName})self.GetValue({info.BindablePropertyName});
-        }}
-        ");
-        }
-
-        // Animate To
-
-        void GenerateExtensionMethod_AnimateTo(PropertyInfo info, string transformationName)
-        {
-            isExtensionMethodsGenerated = true;
-
-            if (mainSymbol.IsSealed)
-                builder.Append($@"
-        public static Task<bool> Animate{info.propertyName}To(this {info.symbolTypeName} self, {info.propertyTypeName} value, uint length = 250, Easing? easing = null)");
-            else
-                builder.Append($@"
-        public static Task<bool> Animate{info.propertyName}To<T>(this T self, {info.propertyTypeName} value, uint length = 250, Easing? easing = null)
-            where T : {info.symbolTypeName}");
-
-
-            builder.Append($@"
-        {{
-            {info.propertyTypeName} fromValue = self.{info.propertyName};
-            var transform = (double t) => Transformations.{transformationName}(fromValue, value, t);
-            var callback = ({info.propertyTypeName} actValue) => {{ self.{info.propertyName} = actValue; }};
-            return Transformations.AnimateAsync<{info.propertyTypeName}>(self, ""Animate{info.propertyName}To"", transform, callback, length, easing);
-        }}
-        ");
-        }
-
-        // binding builder
-
-        void GenerateExtensionMethod_BindablePropertyBuilder(PropertyInfo info)
-        {
-            if (mainSymbol.IsSealed)
-                GenerateExtensionMethod_BindablePropertyBuilder_Sealed(info);
-            else
-                GenerateExtensionMethod_BindablePropertyBuilder_Normal(info);
-        }
-
-        void GenerateExtensionMethod_BindablePropertyBuilder_Sealed(PropertyInfo info)
-        {
-            isExtensionMethodsGenerated = true;
-            builder.Append($@"
-        public static {info.symbolTypeName} {info.propertyName}(this {info.symbolTypeName} self, Func<PropertyContext<{info.propertyTypeName}>, IPropertyBuilder<{info.propertyTypeName}>> configure)
-        {{
-            var context = new PropertyContext<{info.propertyTypeName}>(self, {info.BindablePropertyName});
-            configure(context).Build();
-            return self;
-        }}
-        ");
-        }
-
-        void GenerateExtensionMethod_BindablePropertyBuilder_Normal(PropertyInfo info)
-        {
-            isExtensionMethodsGenerated = true;
-            builder.Append($@"
-        public static T {info.propertyName}<T>(this T self, Func<PropertyContext<{info.propertyTypeName}>, IPropertyBuilder<{info.propertyTypeName}>> configure)
-            where T : {info.symbolTypeName}
-        {{
-            var context = new PropertyContext<{info.propertyTypeName}>(self, {info.BindablePropertyName});
-            configure(context).Build();
-            return self;
-        }}
-        ");
-        }
-
-        // binding builder (Setters)
-
-        void GenerateExtensionMethod_SettersBuilder(PropertyInfo info)
-        {
-            if (mainSymbol.IsSealed)
-                GenerateExtensionMethod_SettersBuilder_Sealed(info);
-            else
-                GenerateExtensionMethod_SettersBuilder_Normal(info);
-        }
-
-        void GenerateExtensionMethod_SettersBuilder_Sealed(PropertyInfo info)
-        {
-            isExtensionMethodsGenerated = true;
-            builder.Append($@"
-        public static SettersContext<{info.symbolTypeName}> {info.propertyName}(this SettersContext<{info.symbolTypeName}> self, Func<PropertySettersContext<{info.propertyTypeName}>, IPropertySettersBuilder<{info.propertyTypeName}>> configure)
-        {{
-            var context = new PropertySettersContext<{info.propertyTypeName}>(self.XamlSetters, {info.BindablePropertyName});
-            configure(context).Build();
-            return self;
-        }}
-        ");
-        }
-
-        void GenerateExtensionMethod_SettersBuilder_Normal(PropertyInfo info)
-        {
-            isExtensionMethodsGenerated = true;
-            builder.Append($@"
-        public static SettersContext<T> {info.propertyName}<T>(this SettersContext<T> self, Func<PropertySettersContext<{info.propertyTypeName}>, IPropertySettersBuilder<{info.propertyTypeName}>> configure)
-            where T : {info.symbolTypeName}
-        {{
-            var context = new PropertySettersContext<{info.propertyTypeName}>(self.XamlSetters, {info.BindablePropertyName});
-            configure(context).Build();
-            return self;
-        }}
-        ");
-        }
-
-
-
-        void GenerateExtensionMethod_DataTemplate(PropertyInfo info)
-        {
-            if (mainSymbol.IsSealed)
-                GenerateExtensionMethod_DataTemplate_Sealed(info);
-            else
-                GenerateExtensionMethod_DataTemplate_Normal(info);
-        }
-
-        void GenerateExtensionMethod_DataTemplate_Sealed(PropertyInfo info)
-        {
-            isExtensionMethodsGenerated = true;
-            builder.Append($@"
-        public static {info.symbolTypeName} {info.propertyName}<T>(this {info.symbolTypeName} self, System.Func<object> loadTemplate)
-        {{
-            {info.dataTemplateAssignmentString}
-            return self;
-        }}
-        ");
-        }
-
-        void GenerateExtensionMethod_DataTemplate_Normal(PropertyInfo info)
-        {
-            isExtensionMethodsGenerated = true;
-            builder.Append($@"
-        public static T {info.propertyName}<T>(this T self, System.Func<object> loadTemplate)
-            where T : {info.symbolTypeName}
-        {{
-            {info.dataTemplateAssignmentString}
-            return self;
-        }}
-        ");
-        }
-
-        // -------------------------------
-        // ----- list fluent methods -----    
-        // -------------------------------
-
-        void GenerateExtensionMethod_List(PropertyInfo info, string elementTypeName)
-        {
-            if (mainSymbol.IsSealed)
-                GenerateExtensionMethod_List_Sealed(info, elementTypeName);
-            else
-                GenerateExtensionMethod_List_Normal(info, elementTypeName);
-        }
-
-        void GenerateExtensionMethod_List_Sealed(PropertyInfo info, string elementTypeName)
-        {
-            isExtensionMethodsGenerated = true;
-            var tail = info.propertyTypeName.EndsWith("?") ? "?" : "";
-            builder.Append($@"
-        public static {info.symbolTypeName} {info.propertyName}(this {info.symbolTypeName} self,
-            IList<{elementTypeName}> {info.camelCaseName})
-        {{
-            foreach (var item in {info.camelCaseName})
-                {info.accessedWith}.{info.propertyName}{tail}.Add(item);
-            return self;
-        }}
-
-        public static {info.symbolTypeName} {info.propertyName}(this {info.symbolTypeName} self,
-            params {elementTypeName}[] {info.camelCaseName})
-        {{
-            foreach (var item in {info.camelCaseName})
-                {info.accessedWith}.{info.propertyName}{tail}.Add(item);
-            return self;
-        }}
-        ");
-        }
-
-        void GenerateExtensionMethod_List_Normal(PropertyInfo info, string elementTypeName)
-        {
-            isExtensionMethodsGenerated = true;
-            var tail = info.propertyTypeName.EndsWith("?") ? "?" : "";
-            builder.Append($@"
-        public static T {info.propertyName}<T>(this T self,
-            IList<{elementTypeName}> {info.camelCaseName})
-            where T : {info.symbolTypeName}
-        {{
-            foreach (var item in {info.camelCaseName})
-                {info.accessedWith}.{info.propertyName}{tail}.Add(item);
-            return self;
-        }}
-
-        public static T {info.propertyName}<T>(this T self,
-            params {elementTypeName}[] {info.camelCaseName})
-            where T : {info.symbolTypeName}
-        {{
-            foreach (var item in {info.camelCaseName})
-                {info.accessedWith}.{info.propertyName}{tail}.Add(item);
-            return self;
-        }}
-        ");
-        }
-
-        // --------------------------------
-        // ----- event fluent methods -----    
-        // --------------------------------
-
-        void GenerateEventMethod(ISymbol @event)
-        {
-            var eventSymbol = (IEventSymbol)@event;
-            var eventHandler = eventSymbol.AddMethod.Parameters.First();
-            var eventHandlerType = ((INamedTypeSymbol)eventHandler.Type);
-
-            var existInBases = false;
-            Helpers.LoopDownToObject(mainSymbol.BaseType, type =>
-            {
-                existInBases = (type
-                    .GetMembers()
-                    .FirstOrDefault(e =>
-                        e.Kind == SymbolKind.Event &&
-                        e.DeclaredAccessibility == Accessibility.Public &&
-                        e.Name.Equals(eventSymbol.Name, StringComparison.Ordinal)) != null);
-
-                return existInBases;
-            });
-
-            if (!existInBases && !Shared.NotGenerateList.Contains(eventSymbol.Name))
-            {
-                if (mainSymbol.IsSealed)
-                {
-                    GenerateEventMethodHandler_Sealed(eventSymbol, eventHandlerType);
-                    GenerateEventMethodNoArgs_Sealed(eventSymbol);
-                }
-                else
-                {
-                    GenerateEventMethodHandler_Normal(eventSymbol, eventHandlerType);
-                    GenerateEventMethodNoArgs_Normal(eventSymbol);
-                }
-            }
-        }
-
-        void GenerateEventMethodHandler_Sealed(IEventSymbol eventSymbol, INamedTypeSymbol namedType)
-        {
-            isExtensionMethodsGenerated = true;
-            builder.Append($@"
-        public static {mainSymbol.ToDisplayString()} On{eventSymbol.Name}(this {mainSymbol.ToDisplayString()} self, {namedType.ToDisplayString()} handler)
-        {{
-            self.{eventSymbol.Name} += handler;
-            return self;
-        }}
-        ");
-        }
-
-        void GenerateEventMethodHandler_Normal(IEventSymbol eventSymbol, INamedTypeSymbol namedType)
-        {
-            isExtensionMethodsGenerated = true;
-            builder.Append($@"
-        public static T On{eventSymbol.Name}<T>(this T self, {namedType.ToDisplayString()} handler)
-            where T : {mainSymbol.ToDisplayString()}
-        {{
-            self.{eventSymbol.Name} += handler;
-            return self;
-        }}
-        ");
-        }
-
-        void GenerateEventMethodNoArgs_Sealed(IEventSymbol eventSymbol)
-        {
-            isExtensionMethodsGenerated = true;
-            builder.Append($@"
-        public static {mainSymbol.ToDisplayString()} On{eventSymbol.Name}(this {mainSymbol.ToDisplayString()} self, System.Action<{mainSymbol.ToDisplayString()}> action)
-        {{
-            self.{eventSymbol.Name} += (o, arg) => action(self);
-            return self;
-        }}
-        ");
-        }
-
-        void GenerateEventMethodNoArgs_Normal(IEventSymbol eventSymbol)
-        {
-            isExtensionMethodsGenerated = true;
-            builder.Append($@"
-        public static T On{eventSymbol.Name}<T>(this T self, System.Action<T> action)
-            where T : {mainSymbol.ToDisplayString()}
-        {{
-            self.{eventSymbol.Name} += (o, arg) => action(self);
-            return self;
-        }}
-        ");
-        }
     }
 }
-
