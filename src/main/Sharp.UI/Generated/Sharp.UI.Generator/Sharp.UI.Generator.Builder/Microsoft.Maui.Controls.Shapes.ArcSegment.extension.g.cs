@@ -10,7 +10,7 @@ namespace Sharp.UI
 {
     using Sharp.UI.Internal;
     
-    public static partial class ArcSegmentExtension
+    public static partial class ShapesArcSegmentExtension
     {
         public static T Point<T>(this T self,
             Microsoft.Maui.Graphics.Point point)

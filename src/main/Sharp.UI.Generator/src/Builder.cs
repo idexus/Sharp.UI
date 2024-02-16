@@ -18,11 +18,14 @@ namespace Sharp.UI.Generator
 
         public void Execute(GeneratorExecutionContext context)
         {
-            // Helpers.WaitForDebugger(context.CancellationToken);
+            // before debugging: pkill -f VBCSCompiler.dll
+
+            //Helpers.WaitForDebugger(context.CancellationToken);
 
             BuildClasses(context);
             BuildExtensions(context);
         }
+
 
         void BuildClasses(GeneratorExecutionContext context)
         {
@@ -93,5 +96,6 @@ namespace Sharp.UI.Generator
                 new ExtensionGenerator(context, symbol).Build();
             }
         }
+        
     }
 }

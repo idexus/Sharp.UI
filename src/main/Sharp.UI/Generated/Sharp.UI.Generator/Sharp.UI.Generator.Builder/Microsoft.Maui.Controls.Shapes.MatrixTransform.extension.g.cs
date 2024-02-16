@@ -10,7 +10,7 @@ namespace Sharp.UI
 {
     using Sharp.UI.Internal;
     
-    public static partial class MatrixTransformExtension
+    public static partial class ShapesMatrixTransformExtension
     {
         public static T Matrix<T>(this T self,
             Microsoft.Maui.Controls.Shapes.Matrix matrix)

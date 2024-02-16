@@ -10,7 +10,7 @@ namespace Sharp.UI
 {
     using Sharp.UI.Internal;
     
-    public static partial class RoundRectangleGeometryExtension
+    public static partial class ShapesRoundRectangleGeometryExtension
     {
         public static T Rect<T>(this T self,
             Microsoft.Maui.Graphics.Rect rect)

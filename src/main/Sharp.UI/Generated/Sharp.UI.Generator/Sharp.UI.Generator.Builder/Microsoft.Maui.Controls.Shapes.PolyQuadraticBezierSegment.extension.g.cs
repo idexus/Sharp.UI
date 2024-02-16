@@ -10,7 +10,7 @@ namespace Sharp.UI
 {
     using Sharp.UI.Internal;
     
-    public static partial class PolyQuadraticBezierSegmentExtension
+    public static partial class ShapesPolyQuadraticBezierSegmentExtension
     {
         public static T Points<T>(this T self,
             IList<Microsoft.Maui.Graphics.Point> points)

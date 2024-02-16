@@ -10,7 +10,7 @@ namespace Sharp.UI
 {
     using Sharp.UI.Internal;
     
-    public static partial class CompositeTransformExtension
+    public static partial class ShapesCompositeTransformExtension
     {
         public static Microsoft.Maui.Controls.Shapes.CompositeTransform CenterX(this Microsoft.Maui.Controls.Shapes.CompositeTransform self,
             double centerX)

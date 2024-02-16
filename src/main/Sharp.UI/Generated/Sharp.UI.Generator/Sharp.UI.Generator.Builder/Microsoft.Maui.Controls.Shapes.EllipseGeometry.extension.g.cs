@@ -10,7 +10,7 @@ namespace Sharp.UI
 {
     using Sharp.UI.Internal;
     
-    public static partial class EllipseGeometryExtension
+    public static partial class ShapesEllipseGeometryExtension
     {
         public static T Center<T>(this T self,
             Microsoft.Maui.Graphics.Point center)

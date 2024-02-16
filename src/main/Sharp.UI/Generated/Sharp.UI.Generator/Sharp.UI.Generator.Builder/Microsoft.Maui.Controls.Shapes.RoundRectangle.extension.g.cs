@@ -10,7 +10,7 @@ namespace Sharp.UI
 {
     using Sharp.UI.Internal;
     
-    public static partial class RoundRectangleExtension
+    public static partial class ShapesRoundRectangleExtension
     {
         public static Microsoft.Maui.Controls.Shapes.RoundRectangle CornerRadius(this Microsoft.Maui.Controls.Shapes.RoundRectangle self,
             Microsoft.Maui.CornerRadius cornerRadius)

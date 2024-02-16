@@ -10,7 +10,7 @@ namespace Sharp.UI
 {
     using Sharp.UI.Internal;
     
-    public static partial class LineExtension
+    public static partial class ShapesLineExtension
     {
         public static Microsoft.Maui.Controls.Shapes.Line X1(this Microsoft.Maui.Controls.Shapes.Line self,
             double x1)

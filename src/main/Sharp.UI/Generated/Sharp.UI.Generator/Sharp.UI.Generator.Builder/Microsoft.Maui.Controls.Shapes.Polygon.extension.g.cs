@@ -10,7 +10,7 @@ namespace Sharp.UI
 {
     using Sharp.UI.Internal;
     
-    public static partial class PolygonExtension
+    public static partial class ShapesPolygonExtension
     {
         public static Microsoft.Maui.Controls.Shapes.Polygon Points(this Microsoft.Maui.Controls.Shapes.Polygon self,
             IList<Microsoft.Maui.Graphics.Point> points)

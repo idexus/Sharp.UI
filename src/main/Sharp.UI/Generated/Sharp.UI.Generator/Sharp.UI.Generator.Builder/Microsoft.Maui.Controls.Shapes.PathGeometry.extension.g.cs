@@ -10,7 +10,7 @@ namespace Sharp.UI
 {
     using Sharp.UI.Internal;
     
-    public static partial class PathGeometryExtension
+    public static partial class ShapesPathGeometryExtension
     {
         public static Microsoft.Maui.Controls.Shapes.PathGeometry Figures(this Microsoft.Maui.Controls.Shapes.PathGeometry self,
             IList<Microsoft.Maui.Controls.Shapes.PathFigure> figures)

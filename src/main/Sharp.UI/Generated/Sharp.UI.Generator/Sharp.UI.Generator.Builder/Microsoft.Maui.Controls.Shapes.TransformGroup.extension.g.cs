@@ -10,7 +10,7 @@ namespace Sharp.UI
 {
     using Sharp.UI.Internal;
     
-    public static partial class TransformGroupExtension
+    public static partial class ShapesTransformGroupExtension
     {
         public static Microsoft.Maui.Controls.Shapes.TransformGroup Children(this Microsoft.Maui.Controls.Shapes.TransformGroup self,
             IList<Microsoft.Maui.Controls.Shapes.Transform> children)

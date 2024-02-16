@@ -10,7 +10,7 @@ namespace Sharp.UI
 {
     using Sharp.UI.Internal;
     
-    public static partial class ShapeExtension
+    public static partial class ShapesShapeExtension
     {
         public static T Fill<T>(this T self,
             Microsoft.Maui.Controls.Brush fill)

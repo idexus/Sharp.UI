@@ -10,7 +10,7 @@ namespace Sharp.UI
 {
     using Sharp.UI.Internal;
     
-    public static partial class PathExtension
+    public static partial class ShapesPathExtension
     {
         public static Microsoft.Maui.Controls.Shapes.Path Data(this Microsoft.Maui.Controls.Shapes.Path self,
             Microsoft.Maui.Controls.Shapes.Geometry data)

@@ -10,7 +10,7 @@ namespace Sharp.UI
 {
     using Sharp.UI.Internal;
     
-    public static partial class TranslateTransformExtension
+    public static partial class ShapesTranslateTransformExtension
     {
         public static T X<T>(this T self,
             double x)

@@ -22,7 +22,7 @@ namespace Sharp.UI.Generator
         {
 #if DEBUG
             while (!Debugger.IsAttached && !cancellationToken.IsCancellationRequested)
-                Task.Delay(1000).Wait(cancellationToken);
+                Task.Delay(10).Wait(cancellationToken);
 #endif
         }
 
@@ -75,18 +75,18 @@ namespace Sharp.UI.Generator
 
         public static bool IsIEnumerable(INamedTypeSymbol symbol)
         {
-            bool isIEnumerable = false;
-            LoopDownToObject(symbol, type =>
-            {
-                foreach (var inter in type.AllInterfaces)
+            //bool isIEnumerable = false;
+            //LoopDownToObject(symbol, type =>
+            //{
+                foreach (var inter in symbol.AllInterfaces)
                     if (inter.Name.Equals("IEnumerable", StringComparison.Ordinal) && !inter.IsGenericType)
                     {
-                        isIEnumerable = true;
+                        //isIEnumerable = true;
                         return true;
                     }
                 return false;
-            });
-            return isIEnumerable;
+            //});
+            //return isIEnumerable;
         }
 
         public static bool IsVisualElement(INamedTypeSymbol symbol)
@@ -95,7 +95,7 @@ namespace Sharp.UI.Generator
 
             LoopDownToObject(symbol, type =>
             {
-                if (type.ToDisplayString().Equals("Microsoft.Maui.Controls.VisualElement", StringComparison.Ordinal)) isNavigableElement = true;
+                if (type.ToDisplayString().Equals("Microsoft.Maui.Controls.VisualElement")) isNavigableElement = true;
                 return isNavigableElement;
             });
 
@@ -124,7 +124,7 @@ namespace Sharp.UI.Generator
         {
             var tail = type.IsGenericType ? $"Of{type.TypeArguments.FirstOrDefault().Name}" : "";
             var prefix = type.ToDisplayString().Contains(".Shapes.") ? "Shapes" : "";
-            prefix = type.ToDisplayString().Contains(".Compatibility.") ? "Compatibility" : "";
+            prefix += type.ToDisplayString().Contains(".Compatibility.") ? "Compatibility" : "";
             return $"{prefix}{type.Name}{tail}";
         }
 
@@ -145,10 +145,8 @@ namespace Sharp.UI.Generator
         {
             foreach (var attribute in symbol.GetAttributes())
             {
-                if (attribute.AttributeClass.ToDisplayString().Contains("Obsolete"))
-                {
+                if (attribute.AttributeClass.Name == "ObsoleteAttribute" || attribute.AttributeClass.Name == "Obsolete")
                     return true;
-                }
             }
             return false;
         }

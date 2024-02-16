@@ -10,7 +10,7 @@ namespace Sharp.UI
 {
     using Sharp.UI.Internal;
     
-    public static partial class PolyLineSegmentExtension
+    public static partial class ShapesPolyLineSegmentExtension
     {
         public static T Points<T>(this T self,
             IList<Microsoft.Maui.Graphics.Point> points)

@@ -10,7 +10,7 @@ namespace Sharp.UI
 {
     using Sharp.UI.Internal;
     
-    public static partial class PolylineExtension
+    public static partial class ShapesPolylineExtension
     {
         public static Microsoft.Maui.Controls.Shapes.Polyline Points(this Microsoft.Maui.Controls.Shapes.Polyline self,
             IList<Microsoft.Maui.Graphics.Point> points)
