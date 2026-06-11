@@ -76,6 +76,38 @@ namespace Sharp.UI
             return self;
         }
         
+        public static T SafeAreaEdges<T>(this T self,
+            Microsoft.Maui.SafeAreaEdges safeAreaEdges)
+            where T : Microsoft.Maui.Controls.ContentPage
+        {
+            self.SetValue(Microsoft.Maui.Controls.ContentPage.SafeAreaEdgesProperty, safeAreaEdges);
+            return self;
+        }
+        
+        public static T SafeAreaEdges<T>(this T self, Func<PropertyContext<Microsoft.Maui.SafeAreaEdges>, IPropertyBuilder<Microsoft.Maui.SafeAreaEdges>> configure)
+            where T : Microsoft.Maui.Controls.ContentPage
+        {
+            var context = new PropertyContext<Microsoft.Maui.SafeAreaEdges>(self, Microsoft.Maui.Controls.ContentPage.SafeAreaEdgesProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> SafeAreaEdges<T>(this SettersContext<T> self,
+            Microsoft.Maui.SafeAreaEdges safeAreaEdges)
+            where T : Microsoft.Maui.Controls.ContentPage
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ContentPage.SafeAreaEdgesProperty, Value = safeAreaEdges });
+            return self;
+        }
+        
+        public static SettersContext<T> SafeAreaEdges<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.SafeAreaEdges>, IPropertySettersBuilder<Microsoft.Maui.SafeAreaEdges>> configure)
+            where T : Microsoft.Maui.Controls.ContentPage
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.SafeAreaEdges>(self.XamlSetters, Microsoft.Maui.Controls.ContentPage.SafeAreaEdgesProperty);
+            configure(context).Build();
+            return self;
+        }
+        
     }
 }
 

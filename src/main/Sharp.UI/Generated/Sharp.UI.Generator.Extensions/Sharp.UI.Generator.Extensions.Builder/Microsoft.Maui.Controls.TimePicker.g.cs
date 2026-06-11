@@ -127,33 +127,33 @@ namespace Sharp.UI
         }
         
         public static T Time<T>(this T self,
-            System.TimeSpan time)
+            System.TimeSpan? time)
             where T : Microsoft.Maui.Controls.TimePicker
         {
             self.SetValue(Microsoft.Maui.Controls.TimePicker.TimeProperty, time);
             return self;
         }
         
-        public static T Time<T>(this T self, Func<PropertyContext<System.TimeSpan>, IPropertyBuilder<System.TimeSpan>> configure)
+        public static T Time<T>(this T self, Func<PropertyContext<System.TimeSpan?>, IPropertyBuilder<System.TimeSpan?>> configure)
             where T : Microsoft.Maui.Controls.TimePicker
         {
-            var context = new PropertyContext<System.TimeSpan>(self, Microsoft.Maui.Controls.TimePicker.TimeProperty);
+            var context = new PropertyContext<System.TimeSpan?>(self, Microsoft.Maui.Controls.TimePicker.TimeProperty);
             configure(context).Build();
             return self;
         }
         
         public static SettersContext<T> Time<T>(this SettersContext<T> self,
-            System.TimeSpan time)
+            System.TimeSpan? time)
             where T : Microsoft.Maui.Controls.TimePicker
         {
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.TimePicker.TimeProperty, Value = time });
             return self;
         }
         
-        public static SettersContext<T> Time<T>(this SettersContext<T> self, Func<PropertySettersContext<System.TimeSpan>, IPropertySettersBuilder<System.TimeSpan>> configure)
+        public static SettersContext<T> Time<T>(this SettersContext<T> self, Func<PropertySettersContext<System.TimeSpan?>, IPropertySettersBuilder<System.TimeSpan?>> configure)
             where T : Microsoft.Maui.Controls.TimePicker
         {
-            var context = new PropertySettersContext<System.TimeSpan>(self.XamlSetters, Microsoft.Maui.Controls.TimePicker.TimeProperty);
+            var context = new PropertySettersContext<System.TimeSpan?>(self.XamlSetters, Microsoft.Maui.Controls.TimePicker.TimeProperty);
             configure(context).Build();
             return self;
         }
@@ -292,6 +292,80 @@ namespace Sharp.UI
         {
             var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.TimePicker.FontAutoScalingEnabledProperty);
             configure(context).Build();
+            return self;
+        }
+        
+        public static T IsOpen<T>(this T self,
+            bool isOpen)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            self.SetValue(Microsoft.Maui.Controls.TimePicker.IsOpenProperty, isOpen);
+            return self;
+        }
+        
+        public static T IsOpen<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.TimePicker.IsOpenProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> IsOpen<T>(this SettersContext<T> self,
+            bool isOpen)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.TimePicker.IsOpenProperty, Value = isOpen });
+            return self;
+        }
+        
+        public static SettersContext<T> IsOpen<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.TimePicker.IsOpenProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static T OnTimeSelected<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.TimeChangedEventArgs> handler)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            self.TimeSelected += handler;
+            return self;
+        }
+        
+        public static T OnTimeSelected<T>(this T self, System.Action<T> action)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            self.TimeSelected += (o, arg) => action(self);
+            return self;
+        }
+        
+        public static T OnOpened<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.TimePickerOpenedEventArgs> handler)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            self.Opened += handler;
+            return self;
+        }
+        
+        public static T OnOpened<T>(this T self, System.Action<T> action)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            self.Opened += (o, arg) => action(self);
+            return self;
+        }
+        
+        public static T OnClosed<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.TimePickerClosedEventArgs> handler)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            self.Closed += handler;
+            return self;
+        }
+        
+        public static T OnClosed<T>(this T self, System.Action<T> action)
+            where T : Microsoft.Maui.Controls.TimePicker
+        {
+            self.Closed += (o, arg) => action(self);
             return self;
         }
         

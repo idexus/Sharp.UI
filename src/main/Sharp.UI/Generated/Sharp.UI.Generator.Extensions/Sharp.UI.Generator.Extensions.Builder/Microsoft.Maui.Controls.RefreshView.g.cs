@@ -149,6 +149,38 @@ namespace Sharp.UI
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateRefreshColorTo", transform, callback, length, easing);
         }
         
+        public static T IsRefreshEnabled<T>(this T self,
+            bool isRefreshEnabled)
+            where T : Microsoft.Maui.Controls.RefreshView
+        {
+            self.SetValue(Microsoft.Maui.Controls.RefreshView.IsRefreshEnabledProperty, isRefreshEnabled);
+            return self;
+        }
+        
+        public static T IsRefreshEnabled<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.RefreshView
+        {
+            var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.RefreshView.IsRefreshEnabledProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> IsRefreshEnabled<T>(this SettersContext<T> self,
+            bool isRefreshEnabled)
+            where T : Microsoft.Maui.Controls.RefreshView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.RefreshView.IsRefreshEnabledProperty, Value = isRefreshEnabled });
+            return self;
+        }
+        
+        public static SettersContext<T> IsRefreshEnabled<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.RefreshView
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.RefreshView.IsRefreshEnabledProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T OnRefreshing<T>(this T self, System.EventHandler handler)
             where T : Microsoft.Maui.Controls.RefreshView
         {

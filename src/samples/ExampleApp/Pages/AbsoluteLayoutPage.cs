@@ -60,8 +60,8 @@ public class AbsoluteLayoutPage : ContentPage
                 await Task.Delay(300);
                 while (animate)
                 {
-                    await border.TranslateTo(-border.X, 0, 1000);
-                    await border.TranslateTo(this.Width - border.Width - border.X, 0, 1000);
+                    await border.TranslateToAsync(-border.X, 0, 1000);
+                    await border.TranslateToAsync(this.Width - border.Width - border.X, 0, 1000);
                 }
             });
         }
@@ -74,7 +74,7 @@ public class AbsoluteLayoutPage : ContentPage
                 while (animate)
                 {
                     await grid.TranslateTo(-grid.X, 0, 700);
-                    await grid.TranslateTo(this.Width - grid.Width - grid.X, 0, 700);
+                    await grid.TranslateToAsync(this.Width - grid.Width - grid.X, 0, 700);
                 }
             });
         }

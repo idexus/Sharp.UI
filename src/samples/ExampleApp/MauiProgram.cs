@@ -18,11 +18,9 @@ namespace ExampleApp
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
-            builder.Services.AddSingleton<ListViewPageViewModel>();
             builder.Services.AddSingleton<SecondPageViewModel>();
             builder.Services.AddSingleton<KeypadViewModel>();
 
-            builder.Services.AddSingleton<ListViewPage>(); 
             builder.Services.AddSingleton<SecondPage>();
             builder.Services.AddSingleton<KeypadPage>();
 

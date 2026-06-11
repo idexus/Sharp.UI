@@ -490,6 +490,38 @@ namespace Sharp.UI
             return self;
         }
         
+        public static T IsOpen<T>(this T self,
+            bool isOpen)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            self.SetValue(Microsoft.Maui.Controls.Picker.IsOpenProperty, isOpen);
+            return self;
+        }
+        
+        public static T IsOpen<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.Picker.IsOpenProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> IsOpen<T>(this SettersContext<T> self,
+            bool isOpen)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Picker.IsOpenProperty, Value = isOpen });
+            return self;
+        }
+        
+        public static SettersContext<T> IsOpen<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.Picker.IsOpenProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T OnSelectedIndexChanged<T>(this T self, System.EventHandler handler)
             where T : Microsoft.Maui.Controls.Picker
         {
@@ -501,6 +533,34 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Picker
         {
             self.SelectedIndexChanged += (o, arg) => action(self);
+            return self;
+        }
+        
+        public static T OnOpened<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.PickerOpenedEventArgs> handler)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            self.Opened += handler;
+            return self;
+        }
+        
+        public static T OnOpened<T>(this T self, System.Action<T> action)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            self.Opened += (o, arg) => action(self);
+            return self;
+        }
+        
+        public static T OnClosed<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.PickerClosedEventArgs> handler)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            self.Closed += handler;
+            return self;
+        }
+        
+        public static T OnClosed<T>(this T self, System.Action<T> action)
+            where T : Microsoft.Maui.Controls.Picker
+        {
+            self.Closed += (o, arg) => action(self);
             return self;
         }
         

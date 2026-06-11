@@ -36,13 +36,13 @@ namespace Sharp.UI
         public static List<IHotReloadHandler> Handlers { get; } = new List<IHotReloadHandler>();
         public static bool IsEnabled { get; private set; } = false;
 
-        public static void UpdateApplication(Type[] types)
+        public static void UpdateApplication(HotReloadTypeData[] typeDatas)
         {
             if (IsEnabled)
                 MainThread.BeginInvokeOnMainThread(() =>
                 {
-                    foreach (var type in types)
-                        ReplacedTypesDict[type.FullName] = type;
+                    foreach (var typeData in typeDatas)
+                        ReplacedTypesDict[typeData.Type.FullName] = typeData.Type;
                     InvokeHotReload();
                 });
         }

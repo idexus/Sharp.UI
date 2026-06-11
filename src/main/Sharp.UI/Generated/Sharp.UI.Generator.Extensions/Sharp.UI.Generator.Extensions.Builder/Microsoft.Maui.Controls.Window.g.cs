@@ -332,6 +332,38 @@ namespace Sharp.UI
             return self;
         }
         
+        public static T TitleBar<T>(this T self,
+            Microsoft.Maui.ITitleBar? titleBar)
+            where T : Microsoft.Maui.Controls.Window
+        {
+            self.SetValue(Microsoft.Maui.Controls.Window.TitleBarProperty, titleBar);
+            return self;
+        }
+        
+        public static T TitleBar<T>(this T self, Func<PropertyContext<Microsoft.Maui.ITitleBar?>, IPropertyBuilder<Microsoft.Maui.ITitleBar?>> configure)
+            where T : Microsoft.Maui.Controls.Window
+        {
+            var context = new PropertyContext<Microsoft.Maui.ITitleBar?>(self, Microsoft.Maui.Controls.Window.TitleBarProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> TitleBar<T>(this SettersContext<T> self,
+            Microsoft.Maui.ITitleBar? titleBar)
+            where T : Microsoft.Maui.Controls.Window
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Window.TitleBarProperty, Value = titleBar });
+            return self;
+        }
+        
+        public static SettersContext<T> TitleBar<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.ITitleBar?>, IPropertySettersBuilder<Microsoft.Maui.ITitleBar?>> configure)
+            where T : Microsoft.Maui.Controls.Window
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.ITitleBar?>(self.XamlSetters, Microsoft.Maui.Controls.Window.TitleBarProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T FlowDirection<T>(this T self,
             Microsoft.Maui.FlowDirection flowDirection)
             where T : Microsoft.Maui.Controls.Window
@@ -360,6 +392,70 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.Window
         {
             var context = new PropertySettersContext<Microsoft.Maui.FlowDirection>(self.XamlSetters, Microsoft.Maui.Controls.Window.FlowDirectionProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static T IsMinimizable<T>(this T self,
+            bool isMinimizable)
+            where T : Microsoft.Maui.Controls.Window
+        {
+            self.SetValue(Microsoft.Maui.Controls.Window.IsMinimizableProperty, isMinimizable);
+            return self;
+        }
+        
+        public static T IsMinimizable<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.Window
+        {
+            var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.Window.IsMinimizableProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> IsMinimizable<T>(this SettersContext<T> self,
+            bool isMinimizable)
+            where T : Microsoft.Maui.Controls.Window
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Window.IsMinimizableProperty, Value = isMinimizable });
+            return self;
+        }
+        
+        public static SettersContext<T> IsMinimizable<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.Window
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.Window.IsMinimizableProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static T IsMaximizable<T>(this T self,
+            bool isMaximizable)
+            where T : Microsoft.Maui.Controls.Window
+        {
+            self.SetValue(Microsoft.Maui.Controls.Window.IsMaximizableProperty, isMaximizable);
+            return self;
+        }
+        
+        public static T IsMaximizable<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.Window
+        {
+            var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.Window.IsMaximizableProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> IsMaximizable<T>(this SettersContext<T> self,
+            bool isMaximizable)
+            where T : Microsoft.Maui.Controls.Window
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Window.IsMaximizableProperty, Value = isMaximizable });
+            return self;
+        }
+        
+        public static SettersContext<T> IsMaximizable<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.Window
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.Window.IsMaximizableProperty);
             configure(context).Build();
             return self;
         }

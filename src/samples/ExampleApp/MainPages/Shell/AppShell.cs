@@ -31,9 +31,7 @@ public class AppShell : Shell
 
             new Tab("Table/List")
             {
-                new ShellContent<TableViewPage>("TableView"),
                 new ShellContent<ScrollPage>("ScrollPage"),
-                new ShellContent<ListViewPage>("ListView"),
                 new ShellContent<CollectionPage>("Collection"),
                 new ShellContent<AlternateCollectionPage>("Alternate"),
                 new ShellContent<AlternativeBackroundPage>("Background"),

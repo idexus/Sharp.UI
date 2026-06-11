@@ -292,6 +292,34 @@ namespace Sharp.UI
             return self;
         }
         
+        public static Microsoft.Maui.Controls.PointerGestureRecognizer Buttons(this Microsoft.Maui.Controls.PointerGestureRecognizer self,
+            Microsoft.Maui.Controls.ButtonsMask buttons)
+        {
+            self.SetValue(Microsoft.Maui.Controls.PointerGestureRecognizer.ButtonsProperty, buttons);
+            return self;
+        }
+        
+        public static Microsoft.Maui.Controls.PointerGestureRecognizer Buttons(this Microsoft.Maui.Controls.PointerGestureRecognizer self, Func<PropertyContext<Microsoft.Maui.Controls.ButtonsMask>, IPropertyBuilder<Microsoft.Maui.Controls.ButtonsMask>> configure)
+        {
+            var context = new PropertyContext<Microsoft.Maui.Controls.ButtonsMask>(self, Microsoft.Maui.Controls.PointerGestureRecognizer.ButtonsProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.PointerGestureRecognizer> Buttons(this SettersContext<Microsoft.Maui.Controls.PointerGestureRecognizer> self,
+            Microsoft.Maui.Controls.ButtonsMask buttons)
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.PointerGestureRecognizer.ButtonsProperty, Value = buttons });
+            return self;
+        }
+        
+        public static SettersContext<Microsoft.Maui.Controls.PointerGestureRecognizer> Buttons(this SettersContext<Microsoft.Maui.Controls.PointerGestureRecognizer> self, Func<PropertySettersContext<Microsoft.Maui.Controls.ButtonsMask>, IPropertySettersBuilder<Microsoft.Maui.Controls.ButtonsMask>> configure)
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Controls.ButtonsMask>(self.XamlSetters, Microsoft.Maui.Controls.PointerGestureRecognizer.ButtonsProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static Microsoft.Maui.Controls.PointerGestureRecognizer OnPointerEntered(this Microsoft.Maui.Controls.PointerGestureRecognizer self, System.EventHandler<Microsoft.Maui.Controls.PointerEventArgs>? handler)
         {
             self.PointerEntered += handler;

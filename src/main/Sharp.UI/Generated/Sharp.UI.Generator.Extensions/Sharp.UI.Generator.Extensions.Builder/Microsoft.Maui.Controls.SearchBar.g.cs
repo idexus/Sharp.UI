@@ -12,6 +12,38 @@ namespace Sharp.UI
     
     public static partial class SearchBarExtension
     {
+        public static T ReturnType<T>(this T self,
+            Microsoft.Maui.ReturnType returnType)
+            where T : Microsoft.Maui.Controls.SearchBar
+        {
+            self.SetValue(Microsoft.Maui.Controls.SearchBar.ReturnTypeProperty, returnType);
+            return self;
+        }
+        
+        public static T ReturnType<T>(this T self, Func<PropertyContext<Microsoft.Maui.ReturnType>, IPropertyBuilder<Microsoft.Maui.ReturnType>> configure)
+            where T : Microsoft.Maui.Controls.SearchBar
+        {
+            var context = new PropertyContext<Microsoft.Maui.ReturnType>(self, Microsoft.Maui.Controls.SearchBar.ReturnTypeProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> ReturnType<T>(this SettersContext<T> self,
+            Microsoft.Maui.ReturnType returnType)
+            where T : Microsoft.Maui.Controls.SearchBar
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchBar.ReturnTypeProperty, Value = returnType });
+            return self;
+        }
+        
+        public static SettersContext<T> ReturnType<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.ReturnType>, IPropertySettersBuilder<Microsoft.Maui.ReturnType>> configure)
+            where T : Microsoft.Maui.Controls.SearchBar
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.ReturnType>(self.XamlSetters, Microsoft.Maui.Controls.SearchBar.ReturnTypeProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T CancelButtonColor<T>(this T self,
             Microsoft.Maui.Graphics.Color cancelButtonColor)
             where T : Microsoft.Maui.Controls.SearchBar
@@ -51,6 +83,47 @@ namespace Sharp.UI
             var transform = (double t) => Transformations.ColorTransform(fromValue, value, t);
             var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.CancelButtonColor = actValue; };
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateCancelButtonColorTo", transform, callback, length, easing);
+        }
+        
+        public static T SearchIconColor<T>(this T self,
+            Microsoft.Maui.Graphics.Color searchIconColor)
+            where T : Microsoft.Maui.Controls.SearchBar
+        {
+            self.SetValue(Microsoft.Maui.Controls.SearchBar.SearchIconColorProperty, searchIconColor);
+            return self;
+        }
+        
+        public static T SearchIconColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
+            where T : Microsoft.Maui.Controls.SearchBar
+        {
+            var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.SearchBar.SearchIconColorProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> SearchIconColor<T>(this SettersContext<T> self,
+            Microsoft.Maui.Graphics.Color searchIconColor)
+            where T : Microsoft.Maui.Controls.SearchBar
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchBar.SearchIconColorProperty, Value = searchIconColor });
+            return self;
+        }
+        
+        public static SettersContext<T> SearchIconColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
+            where T : Microsoft.Maui.Controls.SearchBar
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.Color>(self.XamlSetters, Microsoft.Maui.Controls.SearchBar.SearchIconColorProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static Task<bool> AnimateSearchIconColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.SearchBar
+        {
+            Microsoft.Maui.Graphics.Color fromValue = self.SearchIconColor;
+            var transform = (double t) => Transformations.ColorTransform(fromValue, value, t);
+            var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.SearchIconColor = actValue; };
+            return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateSearchIconColorTo", transform, callback, length, easing);
         }
         
         public static T HorizontalTextAlignment<T>(this T self,

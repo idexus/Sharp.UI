@@ -844,38 +844,6 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T DisplayMemberName<T>(this T self,
-            string displayMemberName)
-            where T : Microsoft.Maui.Controls.SearchHandler
-        {
-            self.SetValue(Microsoft.Maui.Controls.SearchHandler.DisplayMemberNameProperty, displayMemberName);
-            return self;
-        }
-        
-        public static T DisplayMemberName<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
-            where T : Microsoft.Maui.Controls.SearchHandler
-        {
-            var context = new PropertyContext<string>(self, Microsoft.Maui.Controls.SearchHandler.DisplayMemberNameProperty);
-            configure(context).Build();
-            return self;
-        }
-        
-        public static SettersContext<T> DisplayMemberName<T>(this SettersContext<T> self,
-            string displayMemberName)
-            where T : Microsoft.Maui.Controls.SearchHandler
-        {
-            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.DisplayMemberNameProperty, Value = displayMemberName });
-            return self;
-        }
-        
-        public static SettersContext<T> DisplayMemberName<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
-            where T : Microsoft.Maui.Controls.SearchHandler
-        {
-            var context = new PropertySettersContext<string>(self.XamlSetters, Microsoft.Maui.Controls.SearchHandler.DisplayMemberNameProperty);
-            configure(context).Build();
-            return self;
-        }
-        
         public static T IsSearchEnabled<T>(this T self,
             bool isSearchEnabled)
             where T : Microsoft.Maui.Controls.SearchHandler

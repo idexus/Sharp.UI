@@ -8,7 +8,7 @@ namespace ExampleApp
     {
         public RadioButtonTemplate()
         {
-            Content = new Frame
+            Content = new Border
             {
                 new Grid {
                     new Grid()
@@ -38,9 +38,7 @@ namespace ExampleApp
                 .Margin(4)
                 .WidthRequest(100)
             }
-            .BorderColor(AppColors.Gray900)
             .BackgroundColor(AppColors.Gray900)
-            .HasShadow(false)
             .SizeRequest(100, 100)
             .VerticalOptions(LayoutOptions.Start)
             .HorizontalOptions(LayoutOptions.Start)

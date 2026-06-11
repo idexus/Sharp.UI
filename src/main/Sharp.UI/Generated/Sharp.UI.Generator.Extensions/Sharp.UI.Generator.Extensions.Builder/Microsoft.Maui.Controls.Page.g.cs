@@ -76,38 +76,6 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T IsBusy<T>(this T self,
-            bool isBusy)
-            where T : Microsoft.Maui.Controls.Page
-        {
-            self.SetValue(Microsoft.Maui.Controls.Page.IsBusyProperty, isBusy);
-            return self;
-        }
-        
-        public static T IsBusy<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
-            where T : Microsoft.Maui.Controls.Page
-        {
-            var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.Page.IsBusyProperty);
-            configure(context).Build();
-            return self;
-        }
-        
-        public static SettersContext<T> IsBusy<T>(this SettersContext<T> self,
-            bool isBusy)
-            where T : Microsoft.Maui.Controls.Page
-        {
-            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Page.IsBusyProperty, Value = isBusy });
-            return self;
-        }
-        
-        public static SettersContext<T> IsBusy<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
-            where T : Microsoft.Maui.Controls.Page
-        {
-            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.Page.IsBusyProperty);
-            configure(context).Build();
-            return self;
-        }
-        
         public static T Padding<T>(this T self,
             Microsoft.Maui.Thickness padding)
             where T : Microsoft.Maui.Controls.Page
@@ -208,14 +176,6 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T ContainerArea<T>(this T self,
-            Microsoft.Maui.Graphics.Rect containerArea)
-            where T : Microsoft.Maui.Controls.Page
-        {
-            self.ContainerArea = containerArea;
-            return self;
-        }
-        
         public static T IgnoresContainerArea<T>(this T self,
             bool ignoresContainerArea)
             where T : Microsoft.Maui.Controls.Page
@@ -239,20 +199,6 @@ namespace Sharp.UI
         {
             foreach (var item in internalChildren)
                 self.InternalChildren.Add(item);
-            return self;
-        }
-        
-        public static T OnLayoutChanged<T>(this T self, System.EventHandler handler)
-            where T : Microsoft.Maui.Controls.Page
-        {
-            self.LayoutChanged += handler;
-            return self;
-        }
-        
-        public static T OnLayoutChanged<T>(this T self, System.Action<T> action)
-            where T : Microsoft.Maui.Controls.Page
-        {
-            self.LayoutChanged += (o, arg) => action(self);
             return self;
         }
         

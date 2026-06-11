@@ -56,9 +56,6 @@ namespace Sharp.UI
         }
     }
 
-    [SharpObject] 
-    public partial class Frame : Microsoft.Maui.Controls.Frame { }
-
     [SharpObject]
     public partial class GraphicsView : Microsoft.Maui.Controls.GraphicsView
     {
@@ -96,12 +93,6 @@ namespace Sharp.UI
         {
             this.Text = text;
         }
-    }
-
-    [SharpObject]
-    public partial class ListView : Microsoft.Maui.Controls.ListView
-    {
-        public void Add(Func<Cell> loadTemplate) => this.ItemTemplate = new DataTemplate(loadTemplate);
     }
 
     [SharpObject] 
@@ -169,15 +160,6 @@ namespace Sharp.UI
 
     [SharpObject] 
     public partial class Switch : Microsoft.Maui.Controls.Switch { }
-
-    [SharpObject] 
-    public partial class TableView : Microsoft.Maui.Controls.TableView
-    {
-        public TableView()
-        {
-            this.Root = new Microsoft.Maui.Controls.TableRoot();
-        }
-    }
 
     [SharpObject] 
     public partial class TimePicker : Microsoft.Maui.Controls.TimePicker { }

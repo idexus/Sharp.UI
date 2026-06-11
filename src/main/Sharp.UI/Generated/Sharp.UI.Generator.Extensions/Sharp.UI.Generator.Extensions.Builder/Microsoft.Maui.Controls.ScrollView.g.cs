@@ -12,14 +12,6 @@ namespace Sharp.UI
     
     public static partial class ScrollViewExtension
     {
-        public static T LayoutAreaOverride<T>(this T self,
-            Microsoft.Maui.Graphics.Rect layoutAreaOverride)
-            where T : Microsoft.Maui.Controls.ScrollView
-        {
-            self.LayoutAreaOverride = layoutAreaOverride;
-            return self;
-        }
-        
         public static T Content<T>(this T self,
             Microsoft.Maui.Controls.View content)
             where T : Microsoft.Maui.Controls.ScrollView
@@ -120,6 +112,38 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.ScrollView
         {
             var context = new PropertySettersContext<Microsoft.Maui.ScrollBarVisibility>(self.XamlSetters, Microsoft.Maui.Controls.ScrollView.VerticalScrollBarVisibilityProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static T SafeAreaEdges<T>(this T self,
+            Microsoft.Maui.SafeAreaEdges safeAreaEdges)
+            where T : Microsoft.Maui.Controls.ScrollView
+        {
+            self.SetValue(Microsoft.Maui.Controls.ScrollView.SafeAreaEdgesProperty, safeAreaEdges);
+            return self;
+        }
+        
+        public static T SafeAreaEdges<T>(this T self, Func<PropertyContext<Microsoft.Maui.SafeAreaEdges>, IPropertyBuilder<Microsoft.Maui.SafeAreaEdges>> configure)
+            where T : Microsoft.Maui.Controls.ScrollView
+        {
+            var context = new PropertyContext<Microsoft.Maui.SafeAreaEdges>(self, Microsoft.Maui.Controls.ScrollView.SafeAreaEdgesProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> SafeAreaEdges<T>(this SettersContext<T> self,
+            Microsoft.Maui.SafeAreaEdges safeAreaEdges)
+            where T : Microsoft.Maui.Controls.ScrollView
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ScrollView.SafeAreaEdgesProperty, Value = safeAreaEdges });
+            return self;
+        }
+        
+        public static SettersContext<T> SafeAreaEdges<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.SafeAreaEdges>, IPropertySettersBuilder<Microsoft.Maui.SafeAreaEdges>> configure)
+            where T : Microsoft.Maui.Controls.ScrollView
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.SafeAreaEdges>(self.XamlSetters, Microsoft.Maui.Controls.ScrollView.SafeAreaEdgesProperty);
             configure(context).Build();
             return self;
         }

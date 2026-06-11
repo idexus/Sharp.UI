@@ -204,42 +204,6 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T StyleClass<T>(this T self,
-            IList<string> styleClass)
-            where T : Microsoft.Maui.Controls.MenuItem
-        {
-            foreach (var item in styleClass)
-                self.StyleClass.Add(item);
-            return self;
-        }
-
-        public static T StyleClass<T>(this T self,
-            params string[] styleClass)
-            where T : Microsoft.Maui.Controls.MenuItem
-        {
-            foreach (var item in styleClass)
-                self.StyleClass.Add(item);
-            return self;
-        }
-        
-        public static T @class<T>(this T self,
-            IList<string> @class)
-            where T : Microsoft.Maui.Controls.MenuItem
-        {
-            foreach (var item in @class)
-                self.@class.Add(item);
-            return self;
-        }
-
-        public static T @class<T>(this T self,
-            params string[] @class)
-            where T : Microsoft.Maui.Controls.MenuItem
-        {
-            foreach (var item in @class)
-                self.@class.Add(item);
-            return self;
-        }
-        
         public static T OnClicked<T>(this T self, System.EventHandler handler)
             where T : Microsoft.Maui.Controls.MenuItem
         {

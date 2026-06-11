@@ -13,33 +13,33 @@ namespace Sharp.UI
     public static partial class DatePickerExtension
     {
         public static T Date<T>(this T self,
-            System.DateTime date)
+            System.DateTime? date)
             where T : Microsoft.Maui.Controls.DatePicker
         {
             self.SetValue(Microsoft.Maui.Controls.DatePicker.DateProperty, date);
             return self;
         }
         
-        public static T Date<T>(this T self, Func<PropertyContext<System.DateTime>, IPropertyBuilder<System.DateTime>> configure)
+        public static T Date<T>(this T self, Func<PropertyContext<System.DateTime?>, IPropertyBuilder<System.DateTime?>> configure)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            var context = new PropertyContext<System.DateTime>(self, Microsoft.Maui.Controls.DatePicker.DateProperty);
+            var context = new PropertyContext<System.DateTime?>(self, Microsoft.Maui.Controls.DatePicker.DateProperty);
             configure(context).Build();
             return self;
         }
         
         public static SettersContext<T> Date<T>(this SettersContext<T> self,
-            System.DateTime date)
+            System.DateTime? date)
             where T : Microsoft.Maui.Controls.DatePicker
         {
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.DatePicker.DateProperty, Value = date });
             return self;
         }
         
-        public static SettersContext<T> Date<T>(this SettersContext<T> self, Func<PropertySettersContext<System.DateTime>, IPropertySettersBuilder<System.DateTime>> configure)
+        public static SettersContext<T> Date<T>(this SettersContext<T> self, Func<PropertySettersContext<System.DateTime?>, IPropertySettersBuilder<System.DateTime?>> configure)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            var context = new PropertySettersContext<System.DateTime>(self.XamlSetters, Microsoft.Maui.Controls.DatePicker.DateProperty);
+            var context = new PropertySettersContext<System.DateTime?>(self.XamlSetters, Microsoft.Maui.Controls.DatePicker.DateProperty);
             configure(context).Build();
             return self;
         }
@@ -77,65 +77,65 @@ namespace Sharp.UI
         }
         
         public static T MaximumDate<T>(this T self,
-            System.DateTime maximumDate)
+            System.DateTime? maximumDate)
             where T : Microsoft.Maui.Controls.DatePicker
         {
             self.SetValue(Microsoft.Maui.Controls.DatePicker.MaximumDateProperty, maximumDate);
             return self;
         }
         
-        public static T MaximumDate<T>(this T self, Func<PropertyContext<System.DateTime>, IPropertyBuilder<System.DateTime>> configure)
+        public static T MaximumDate<T>(this T self, Func<PropertyContext<System.DateTime?>, IPropertyBuilder<System.DateTime?>> configure)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            var context = new PropertyContext<System.DateTime>(self, Microsoft.Maui.Controls.DatePicker.MaximumDateProperty);
+            var context = new PropertyContext<System.DateTime?>(self, Microsoft.Maui.Controls.DatePicker.MaximumDateProperty);
             configure(context).Build();
             return self;
         }
         
         public static SettersContext<T> MaximumDate<T>(this SettersContext<T> self,
-            System.DateTime maximumDate)
+            System.DateTime? maximumDate)
             where T : Microsoft.Maui.Controls.DatePicker
         {
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.DatePicker.MaximumDateProperty, Value = maximumDate });
             return self;
         }
         
-        public static SettersContext<T> MaximumDate<T>(this SettersContext<T> self, Func<PropertySettersContext<System.DateTime>, IPropertySettersBuilder<System.DateTime>> configure)
+        public static SettersContext<T> MaximumDate<T>(this SettersContext<T> self, Func<PropertySettersContext<System.DateTime?>, IPropertySettersBuilder<System.DateTime?>> configure)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            var context = new PropertySettersContext<System.DateTime>(self.XamlSetters, Microsoft.Maui.Controls.DatePicker.MaximumDateProperty);
+            var context = new PropertySettersContext<System.DateTime?>(self.XamlSetters, Microsoft.Maui.Controls.DatePicker.MaximumDateProperty);
             configure(context).Build();
             return self;
         }
         
         public static T MinimumDate<T>(this T self,
-            System.DateTime minimumDate)
+            System.DateTime? minimumDate)
             where T : Microsoft.Maui.Controls.DatePicker
         {
             self.SetValue(Microsoft.Maui.Controls.DatePicker.MinimumDateProperty, minimumDate);
             return self;
         }
         
-        public static T MinimumDate<T>(this T self, Func<PropertyContext<System.DateTime>, IPropertyBuilder<System.DateTime>> configure)
+        public static T MinimumDate<T>(this T self, Func<PropertyContext<System.DateTime?>, IPropertyBuilder<System.DateTime?>> configure)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            var context = new PropertyContext<System.DateTime>(self, Microsoft.Maui.Controls.DatePicker.MinimumDateProperty);
+            var context = new PropertyContext<System.DateTime?>(self, Microsoft.Maui.Controls.DatePicker.MinimumDateProperty);
             configure(context).Build();
             return self;
         }
         
         public static SettersContext<T> MinimumDate<T>(this SettersContext<T> self,
-            System.DateTime minimumDate)
+            System.DateTime? minimumDate)
             where T : Microsoft.Maui.Controls.DatePicker
         {
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.DatePicker.MinimumDateProperty, Value = minimumDate });
             return self;
         }
         
-        public static SettersContext<T> MinimumDate<T>(this SettersContext<T> self, Func<PropertySettersContext<System.DateTime>, IPropertySettersBuilder<System.DateTime>> configure)
+        public static SettersContext<T> MinimumDate<T>(this SettersContext<T> self, Func<PropertySettersContext<System.DateTime?>, IPropertySettersBuilder<System.DateTime?>> configure)
             where T : Microsoft.Maui.Controls.DatePicker
         {
-            var context = new PropertySettersContext<System.DateTime>(self.XamlSetters, Microsoft.Maui.Controls.DatePicker.MinimumDateProperty);
+            var context = new PropertySettersContext<System.DateTime?>(self.XamlSetters, Microsoft.Maui.Controls.DatePicker.MinimumDateProperty);
             configure(context).Build();
             return self;
         }
@@ -359,6 +359,38 @@ namespace Sharp.UI
             return self;
         }
         
+        public static T IsOpen<T>(this T self,
+            bool isOpen)
+            where T : Microsoft.Maui.Controls.DatePicker
+        {
+            self.SetValue(Microsoft.Maui.Controls.DatePicker.IsOpenProperty, isOpen);
+            return self;
+        }
+        
+        public static T IsOpen<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.DatePicker
+        {
+            var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.DatePicker.IsOpenProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> IsOpen<T>(this SettersContext<T> self,
+            bool isOpen)
+            where T : Microsoft.Maui.Controls.DatePicker
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.DatePicker.IsOpenProperty, Value = isOpen });
+            return self;
+        }
+        
+        public static SettersContext<T> IsOpen<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.DatePicker
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.DatePicker.IsOpenProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T OnDateSelected<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.DateChangedEventArgs> handler)
             where T : Microsoft.Maui.Controls.DatePicker
         {
@@ -370,6 +402,34 @@ namespace Sharp.UI
             where T : Microsoft.Maui.Controls.DatePicker
         {
             self.DateSelected += (o, arg) => action(self);
+            return self;
+        }
+        
+        public static T OnOpened<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.DatePickerOpenedEventArgs> handler)
+            where T : Microsoft.Maui.Controls.DatePicker
+        {
+            self.Opened += handler;
+            return self;
+        }
+        
+        public static T OnOpened<T>(this T self, System.Action<T> action)
+            where T : Microsoft.Maui.Controls.DatePicker
+        {
+            self.Opened += (o, arg) => action(self);
+            return self;
+        }
+        
+        public static T OnClosed<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.DatePickerClosedEventArgs> handler)
+            where T : Microsoft.Maui.Controls.DatePicker
+        {
+            self.Closed += handler;
+            return self;
+        }
+        
+        public static T OnClosed<T>(this T self, System.Action<T> action)
+            where T : Microsoft.Maui.Controls.DatePicker
+        {
+            self.Closed += (o, arg) => action(self);
             return self;
         }
         

@@ -12,6 +12,70 @@ namespace Sharp.UI
     
     public static partial class CheckBoxExtension
     {
+        public static T Command<T>(this T self,
+            System.Windows.Input.ICommand command)
+            where T : Microsoft.Maui.Controls.CheckBox
+        {
+            self.SetValue(Microsoft.Maui.Controls.CheckBox.CommandProperty, command);
+            return self;
+        }
+        
+        public static T Command<T>(this T self, Func<PropertyContext<System.Windows.Input.ICommand>, IPropertyBuilder<System.Windows.Input.ICommand>> configure)
+            where T : Microsoft.Maui.Controls.CheckBox
+        {
+            var context = new PropertyContext<System.Windows.Input.ICommand>(self, Microsoft.Maui.Controls.CheckBox.CommandProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> Command<T>(this SettersContext<T> self,
+            System.Windows.Input.ICommand command)
+            where T : Microsoft.Maui.Controls.CheckBox
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.CheckBox.CommandProperty, Value = command });
+            return self;
+        }
+        
+        public static SettersContext<T> Command<T>(this SettersContext<T> self, Func<PropertySettersContext<System.Windows.Input.ICommand>, IPropertySettersBuilder<System.Windows.Input.ICommand>> configure)
+            where T : Microsoft.Maui.Controls.CheckBox
+        {
+            var context = new PropertySettersContext<System.Windows.Input.ICommand>(self.XamlSetters, Microsoft.Maui.Controls.CheckBox.CommandProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static T CommandParameter<T>(this T self,
+            object commandParameter)
+            where T : Microsoft.Maui.Controls.CheckBox
+        {
+            self.SetValue(Microsoft.Maui.Controls.CheckBox.CommandParameterProperty, commandParameter);
+            return self;
+        }
+        
+        public static T CommandParameter<T>(this T self, Func<PropertyContext<object>, IPropertyBuilder<object>> configure)
+            where T : Microsoft.Maui.Controls.CheckBox
+        {
+            var context = new PropertyContext<object>(self, Microsoft.Maui.Controls.CheckBox.CommandParameterProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> CommandParameter<T>(this SettersContext<T> self,
+            object commandParameter)
+            where T : Microsoft.Maui.Controls.CheckBox
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.CheckBox.CommandParameterProperty, Value = commandParameter });
+            return self;
+        }
+        
+        public static SettersContext<T> CommandParameter<T>(this SettersContext<T> self, Func<PropertySettersContext<object>, IPropertySettersBuilder<object>> configure)
+            where T : Microsoft.Maui.Controls.CheckBox
+        {
+            var context = new PropertySettersContext<object>(self.XamlSetters, Microsoft.Maui.Controls.CheckBox.CommandParameterProperty);
+            configure(context).Build();
+            return self;
+        }
+        
         public static T Color<T>(this T self,
             Microsoft.Maui.Graphics.Color color)
             where T : Microsoft.Maui.Controls.CheckBox

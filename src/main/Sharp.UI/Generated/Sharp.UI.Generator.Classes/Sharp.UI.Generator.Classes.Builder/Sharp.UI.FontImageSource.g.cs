@@ -5,11 +5,16 @@
 #nullable enable
 
 
+using System.Collections;
+using System.Collections.ObjectModel;
+using System.Collections.Generic;
+
+
 namespace Sharp.UI
 {
 	using Sharp.UI;
 
-    public partial class FontImageSource
+    public partial class FontImageSource : IEnumerable
 	{
 
         // ----- constructors -----
@@ -21,10 +26,37 @@ namespace Sharp.UI
             fontImageSource = this;
         }
 
+        public FontImageSource(System.Func<FontImageSource, FontImageSource> configure) 
+        {
+            configure(this);
+        }
+
+        public FontImageSource(out FontImageSource fontImageSource, System.Func<FontImageSource, FontImageSource> configure) 
+        {
+            fontImageSource = this;
+            configure(this);
+        }
+
         public FontImageSource(string glyph, string fontFamily, out FontImageSource fontImageSource) : this(glyph, fontFamily)
         {
             fontImageSource = this;
         }
+
+        public FontImageSource(string glyph, string fontFamily, System.Func<FontImageSource, FontImageSource> configure) : this(glyph, fontFamily)
+        {
+            configure(this);
+        }
+
+        public FontImageSource(string glyph, string fontFamily, out FontImageSource fontImageSource, System.Func<FontImageSource, FontImageSource> configure) : this(glyph, fontFamily)
+        {
+            fontImageSource = this;
+            configure(this);
+        }
+
+        // ----- single item container -----
+
+        IEnumerator IEnumerable.GetEnumerator() { yield return this.Glyph; }
+        public void Add(string glyph) => this.Glyph = glyph;
 
     }
 }

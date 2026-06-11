@@ -184,7 +184,31 @@ namespace Sharp.UI
             bool flyoutItemIsVisible)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
-            self.FlyoutItemIsVisible = flyoutItemIsVisible;
+            self.SetValue(Microsoft.Maui.Controls.BaseShellItem.FlyoutItemIsVisibleProperty, flyoutItemIsVisible);
+            return self;
+        }
+        
+        public static T FlyoutItemIsVisible<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.BaseShellItem
+        {
+            var context = new PropertyContext<bool>(self, Microsoft.Maui.Controls.BaseShellItem.FlyoutItemIsVisibleProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> FlyoutItemIsVisible<T>(this SettersContext<T> self,
+            bool flyoutItemIsVisible)
+            where T : Microsoft.Maui.Controls.BaseShellItem
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.BaseShellItem.FlyoutItemIsVisibleProperty, Value = flyoutItemIsVisible });
+            return self;
+        }
+        
+        public static SettersContext<T> FlyoutItemIsVisible<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
+            where T : Microsoft.Maui.Controls.BaseShellItem
+        {
+            var context = new PropertySettersContext<bool>(self.XamlSetters, Microsoft.Maui.Controls.BaseShellItem.FlyoutItemIsVisibleProperty);
+            configure(context).Build();
             return self;
         }
         

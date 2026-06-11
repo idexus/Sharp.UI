@@ -108,20 +108,6 @@ namespace Sharp.UI
             return self;
         }
         
-        public static T OnLayoutChanged<T>(this T self, System.EventHandler handler)
-            where T : Microsoft.Maui.Controls.Compatibility.Layout
-        {
-            self.LayoutChanged += handler;
-            return self;
-        }
-        
-        public static T OnLayoutChanged<T>(this T self, System.Action<T> action)
-            where T : Microsoft.Maui.Controls.Compatibility.Layout
-        {
-            self.LayoutChanged += (o, arg) => action(self);
-            return self;
-        }
-        
     }
 }
 

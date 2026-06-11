@@ -106,17 +106,6 @@ namespace ExampleApp
 
                     new Entry("Enter text", out var entry),
 
-                    new Frame()
-                    {
-                        new Label("TEST")
-                            .FontSize(50)
-                            .CenterHorizontally()
-                    }
-                    .BorderColor(Colors.Blue)
-                    .CornerRadius(20)
-                    .Margin(20)
-                    .SizeRequest(400,100),
-
                     new Label().Text(e => e.Path("Text").Source(entry)),
 
                     new GraphicsView(new GraphicsDrawable())

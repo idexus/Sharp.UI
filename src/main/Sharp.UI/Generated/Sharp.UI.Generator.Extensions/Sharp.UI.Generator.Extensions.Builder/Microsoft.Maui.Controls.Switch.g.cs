@@ -53,6 +53,47 @@ namespace Sharp.UI
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateOnColorTo", transform, callback, length, easing);
         }
         
+        public static T OffColor<T>(this T self,
+            Microsoft.Maui.Graphics.Color offColor)
+            where T : Microsoft.Maui.Controls.Switch
+        {
+            self.SetValue(Microsoft.Maui.Controls.Switch.OffColorProperty, offColor);
+            return self;
+        }
+        
+        public static T OffColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
+            where T : Microsoft.Maui.Controls.Switch
+        {
+            var context = new PropertyContext<Microsoft.Maui.Graphics.Color>(self, Microsoft.Maui.Controls.Switch.OffColorProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static SettersContext<T> OffColor<T>(this SettersContext<T> self,
+            Microsoft.Maui.Graphics.Color offColor)
+            where T : Microsoft.Maui.Controls.Switch
+        {
+            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Switch.OffColorProperty, Value = offColor });
+            return self;
+        }
+        
+        public static SettersContext<T> OffColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
+            where T : Microsoft.Maui.Controls.Switch
+        {
+            var context = new PropertySettersContext<Microsoft.Maui.Graphics.Color>(self.XamlSetters, Microsoft.Maui.Controls.Switch.OffColorProperty);
+            configure(context).Build();
+            return self;
+        }
+        
+        public static Task<bool> AnimateOffColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
+            where T : Microsoft.Maui.Controls.Switch
+        {
+            Microsoft.Maui.Graphics.Color fromValue = self.OffColor;
+            var transform = (double t) => Transformations.ColorTransform(fromValue, value, t);
+            var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.OffColor = actValue; };
+            return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateOffColorTo", transform, callback, length, easing);
+        }
+        
         public static T ThumbColor<T>(this T self,
             Microsoft.Maui.Graphics.Color thumbColor)
             where T : Microsoft.Maui.Controls.Switch

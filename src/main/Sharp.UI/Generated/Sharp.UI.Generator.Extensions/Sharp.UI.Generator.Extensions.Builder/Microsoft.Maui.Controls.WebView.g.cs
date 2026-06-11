@@ -136,6 +136,20 @@ namespace Sharp.UI
             return self;
         }
         
+        public static T OnProcessTerminated<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.WebViewProcessTerminatedEventArgs> handler)
+            where T : Microsoft.Maui.Controls.WebView
+        {
+            self.ProcessTerminated += handler;
+            return self;
+        }
+        
+        public static T OnProcessTerminated<T>(this T self, System.Action<T> action)
+            where T : Microsoft.Maui.Controls.WebView
+        {
+            self.ProcessTerminated += (o, arg) => action(self);
+            return self;
+        }
+        
     }
 }
 
