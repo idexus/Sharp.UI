@@ -41,21 +41,23 @@ public partial class TestPage : ContentPage
                     {
                         new Label()
                             .Text(e => e.Path("Value").Source(slider).StringFormat("Value : {0:F1}"))
-                            .FontSize(40),
+                            .FontSize(20)
+                            .Margin(5),
 
-                        new Image().Source("dotnet_bot.png").Row(1).HeightRequest(40),
+                        new Image().Source("dotnet_bot.png").Row(1).HeightRequest(60),
 
                         new Label()
                             .Text("Hello, World!")
                             .Row(2)
-                            .FontSize(20)
+                            .FontSize(15)
                             .TextColor(Colors.DarkGray),
 
                         new Switch(out testSwitch).Row(3)
                             .Center()
+                            .Margin(5)
                     },
                 }
-                .SizeRequest(250, 400)
+                .SizeRequest(200, 200)
                 .BackgroundColor(AppColors.Gray950)
                 .StrokeShape(new RoundRectangle().CornerRadius(40))
                 .VisualStateGroups(new VisualStateGroupList
