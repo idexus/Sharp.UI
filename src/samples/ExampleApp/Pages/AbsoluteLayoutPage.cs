@@ -73,7 +73,7 @@ public class AbsoluteLayoutPage : ContentPage
                 await Task.Delay(300);
                 while (animate)
                 {
-                    await grid.TranslateTo(-grid.X, 0, 700);
+                    await grid.TranslateToAsync(-grid.X, 0, 700);
                     await grid.TranslateToAsync(this.Width - grid.Width - grid.X, 0, 700);
                 }
             });

@@ -14,8 +14,13 @@ public partial class TestPage : ContentPage
     public TestPage()
     {
         Resources = localResources;
+        Build();
+    }
+    
+    void Build()
+    {
         Content = new Grid(e => e.BackgroundColor(Colors.Black))
-        {            
+        {
             new VerticalStackLayout(out var vStack, e => e.VerticalOptions(LayoutOptions.Center))
             {
                 new Label(out var label)
@@ -26,7 +31,7 @@ public partial class TestPage : ContentPage
                 new Label("for .NET Maui")
                     .FontSize(30)
                     .TextColor(Colors.Red),
-                    
+
                 new Slider(out var slider)
                     .Minimum(1).Maximum(30)
                     .WidthRequest(300)
@@ -62,7 +67,7 @@ public partial class TestPage : ContentPage
                     new VisualState<Border> {
                         async border => {
                             await border.AnimateBackgroundColorTo(Colors.Red, 500);
-                            await label.RotateXTo(360, 400);
+                            await label.RotateXToAsync(360, 400);
                         },
                         new StateTrigger().IsActive(e => e.Path("IsToggled").Source(testSwitch))
                     },
@@ -70,7 +75,7 @@ public partial class TestPage : ContentPage
                     new VisualState<Border> {
                         async border => {
                             await border.AnimateBackgroundColorTo(AppColors.Gray950, 500);
-                            await label.RotateXTo(0, 400);
+                            await label.RotateXToAsync(0, 400);
                         },
                         new StateTrigger().IsActive(e => e.Path("IsToggled").Source(testSwitch).Negate())
                     }
@@ -86,8 +91,8 @@ public partial class TestPage : ContentPage
                         b.Text = $"Clicked {count} ";
                         b.Text += count == 1 ? "time" : "times";
 
-                        await vStack.RotateYTo(((count % 4) switch { 0 => 0, 1 => 20, 2 => 0, _ => -20 }));
-                        await label.RotateTo(360 * (count % 2), 300);
+                        await vStack.RotateYToAsync(((count % 4) switch { 0 => 0, 1 => 20, 2 => 0, _ => -20 }));
+                        await label.RotateToAsync(360 * (count % 2), 300);
                     })
             }
         };

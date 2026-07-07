@@ -62,7 +62,7 @@ namespace Sharp.UI.Generator.Extensions
             }
         }
 
-        public  string GetUsingString()
+        public string GetUsingString()
         {
             if (!mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microsoft.Maui"))
                 return $@"using Sharp.UI;
@@ -264,6 +264,7 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
                 {
                     var propertySymbol = (IPropertySymbol)prop;
                     var fullPropertyName = $"{mainSymbol.ToDisplayString()}.{prop.Name}";
+
                     GenerateExtensionMethodForBindableFromInterface(propertySymbol);
                 }
             }
@@ -305,7 +306,7 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
         // -----------------------------------
 
         void GenerateExtensionMethod(IPropertySymbol property)
-        {
+        {            
             var info = new PropertyInfo
             {
                 MainSymbol = mainSymbol,
@@ -314,6 +315,8 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
                 IsBindableObject = isBindableObject
             };
             info.Build();
+
+            if (info.propertyName == "MainPage") return; // skip MainPage property for Shell, as it is not a bindable property and has no setter
 
             var propertyType = info.PropertySymbol.Type as INamedTypeSymbol;
             var isGenericIList = Helpers.IsGenericIList(propertyType, out var elementType);

@@ -12,6 +12,14 @@ namespace Sharp.UI
     
     public static partial class TabbedPageExtension
     {
+        public static T TabbedPageManager<T>(this T self,
+            Microsoft.Maui.Controls.Handlers.TabbedPageManager tabbedPageManager)
+            where T : Microsoft.Maui.Controls.TabbedPage
+        {
+            self.TabbedPageManager = tabbedPageManager;
+            return self;
+        }
+        
         public static T BarBackgroundColor<T>(this T self,
             Microsoft.Maui.Graphics.Color barBackgroundColor)
             where T : Microsoft.Maui.Controls.TabbedPage

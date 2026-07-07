@@ -12,14 +12,6 @@ namespace Sharp.UI
     
     public static partial class ApplicationExtension
     {
-        public static T MainPage<T>(this T self,
-            Microsoft.Maui.Controls.Page? mainPage)
-            where T : Microsoft.Maui.Controls.Application
-        {
-            self.MainPage = mainPage;
-            return self;
-        }
-        
         public static T Resources<T>(this T self,
             Microsoft.Maui.Controls.ResourceDictionary resources)
             where T : Microsoft.Maui.Controls.Application

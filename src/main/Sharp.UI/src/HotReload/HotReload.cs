@@ -99,7 +99,7 @@ namespace Sharp.UI
             Handlers.Add(new SinglePageHotReloadHandler());
             Handlers.Add(new FlyoutPageHotReloadHandler());
         }
-        
+
         internal static void InitHotReloadKit<T>(IPAddress[] IdeIPs)
         {
             var platformName = DeviceInfo.Platform switch
@@ -143,7 +143,7 @@ namespace Sharp.UI
                                         replaced = handler.ReplaceVisualElement(oldVisualElement, newVisualElement);
                                         if (replaced) break;
                                     }
-                                    
+
                                     if (replaced)
                                     {
                                         RegisterActive(newVisualElement);

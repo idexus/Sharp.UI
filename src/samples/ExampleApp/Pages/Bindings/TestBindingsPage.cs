@@ -38,13 +38,13 @@ namespace ExampleApp
 					{
 						if (rect.Rotation < 180)
 						{
-							rect.RotateTo(360, 2000);
-							ellipse.RotateTo(360, 1000);
+							rect.RotateToAsync(360, 2000);
+							ellipse.RotateToAsync(360, 1000);
 						}
 						else
 						{
-							ellipse.RotateTo(0, 1000);
-							rect.RotateTo(0, 2000);
+							ellipse.RotateToAsync(0, 1000);
+							rect.RotateToAsync(0, 2000);
 						}
 					})
 			}

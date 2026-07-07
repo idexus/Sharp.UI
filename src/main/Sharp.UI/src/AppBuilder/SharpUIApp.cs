@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Net;
+using System.Reflection.Metadata;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Maui.HotReload;
 
 namespace Sharp.UI
 {
     public static partial class SharpUIAppExtension
-	{
-        public static MauiAppBuilder SharpUIApp<T>(this MauiAppBuilder builder, 
+    {
+        public static MauiAppBuilder SharpUIApp<T>(this MauiAppBuilder builder,
             //HotReloadType HotReloadType = HotReloadType.None,
             IPAddress[] IdeIPs = null)
             where T : Application
@@ -21,7 +22,7 @@ namespace Sharp.UI
         {
             public HotReloadType HotReloadType;
             public IPAddress[] IdeIPs;
-            
+
             public void Initialize(IServiceProvider services)
             {
                 Application.Services = services;
@@ -37,7 +38,7 @@ namespace Sharp.UI
                     case HotReloadType.UserDefined:
                         HotReload.InitHotReload();
                         break;
-                }                
+                }
             }
         }
     }
