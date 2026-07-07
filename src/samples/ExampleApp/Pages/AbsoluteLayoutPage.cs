@@ -10,9 +10,9 @@ public class AbsoluteLayoutPage : ContentPage
     private Border border;
     private Grid grid;
 
-    public AbsoluteLayoutPage()
-	{
-		Content = new AbsoluteLayout
+    protected override View Build()
+    {
+        return new AbsoluteLayout
 		{
             new Grid(out grid)
             {

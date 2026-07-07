@@ -7,11 +7,13 @@ public class KeypadPage : ContentPage
 {
 	string[] labels = new[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "*", "0", "#" };
 
-	public KeypadPage(KeypadViewModel vm)
-	{		
-		BindingContext = vm;
+	KeypadViewModel vm = new KeypadViewModel();
 
-		Content = new Grid
+    protected override View Build()
+    {
+        BindingContext = vm;
+
+		return new Grid
 		{
 			// ---- properties ----
 

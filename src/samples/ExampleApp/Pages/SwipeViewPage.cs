@@ -4,9 +4,9 @@ using Sharp.UI;
 
 public class SwipeViewPage : ContentPage
 {
-	public SwipeViewPage()
-	{
-		Content = new VStack
+    protected override View Build()
+    {
+        return new VStack
 		{
 			new SwipeView
 			{

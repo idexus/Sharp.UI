@@ -10,9 +10,9 @@ namespace ExampleApp
         private List<int> _nubmers = Enumerable.Range(1,100).ToList();
         public List<int> Numbers => _nubmers;
 
-        public AlternativeBackroundPage()
+        protected override View Build()
         {
-            Content = new CollectionView()
+            return new CollectionView()
                 .Margin(new Thickness(0, 30, 0, 0))
                 .ItemsSource(Numbers)
                 .ItemTemplate(() =>

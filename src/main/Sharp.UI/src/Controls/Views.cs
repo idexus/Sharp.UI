@@ -33,7 +33,22 @@ namespace Sharp.UI
     }
 
     [SharpObject]
-    public partial class ContentView : Microsoft.Maui.Controls.ContentView { }
+    public partial class ContentView : Microsoft.Maui.Controls.ContentView, ISharpUIContent {
+        public ContentView()
+        {
+            HotReloader.Register(this);
+            this.Rebuild();
+        }
+
+        protected virtual View Build() { return new Microsoft.Maui.Controls.ContentView(); }
+
+        internal void Rebuild() { this.Content = Build(); }
+
+        void ISharpUIContent.Rebuild()
+        {
+            Rebuild();
+        }
+    }
 
     [SharpObject] 
     public partial class DatePicker : Microsoft.Maui.Controls.DatePicker { }

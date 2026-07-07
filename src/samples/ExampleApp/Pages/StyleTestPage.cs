@@ -7,9 +7,11 @@ namespace ExampleApp
 
     public partial class StyleTestPage : ContentPage
     {
-        public StyleTestPage()
+        protected override View Build()
         {
-            Content = new VStack()
+            this.Resources = localResources;
+
+            return new VStack()
             {
                 new HStack
                 {
@@ -19,7 +21,6 @@ namespace ExampleApp
                 },              
             };
 
-            Content.Resources = localResources;
         }
     }
 }

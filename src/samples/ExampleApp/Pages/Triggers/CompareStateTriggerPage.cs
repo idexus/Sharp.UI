@@ -6,9 +6,9 @@ public class CompareStateTriggerPage : ContentPage
 {
     private Switch testSwitch;
 
-    public CompareStateTriggerPage()
-	{
-        Content = new Grid
+    protected override View Build()
+    {
+        return new Grid
         {
             new Switch(out testSwitch)
                 .CenterVertically()

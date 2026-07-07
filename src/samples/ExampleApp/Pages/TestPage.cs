@@ -10,14 +10,11 @@ public partial class TestPage : ContentPage
 
     Button button;
     Switch testSwitch;
-
-    public TestPage()
-    {
-        Resources = localResources;
-    }
     
     protected override View Build()
     {
+        Resources = localResources;
+
         return new Grid(e => e.BackgroundColor(Colors.Black))
         {
             new VerticalStackLayout(out var vStack, e => e.VerticalOptions(LayoutOptions.Center))

@@ -6,9 +6,9 @@ public class PanGesturePage : ContentPage
 {
     double x, y;
 
-    public PanGesturePage()
-	{
-		Content = new Grid
+    protected override View Build()
+    {
+        return new Grid
 		{
 			new Image("dotnet_bot.png", out var image)
 				.SizeRequest(150,150)

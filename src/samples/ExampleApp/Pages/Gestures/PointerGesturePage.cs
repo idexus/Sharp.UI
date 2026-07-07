@@ -4,9 +4,9 @@ using Sharp.UI;
 
 public class PointerGesturePage : ContentPage
 {
-    public PointerGesturePage()
+    protected override View Build()
     {
-        Content = new VStack
+        return new VStack
         {
             new Label(out var label).FontSize(20),
             new Label(out var enterExitLabel).FontSize(20).TextColor(Colors.Blue),

@@ -4,8 +4,8 @@ using Sharp.UI;
 
 public class PropertyTriggerPage : ContentPage
 {
-    public PropertyTriggerPage()
-	{
+    protected override View Build()
+    {
 		Resources = new ResourceDictionary
 		{
 			new Style<Entry>(e => e
@@ -23,7 +23,7 @@ public class PropertyTriggerPage : ContentPage
 			}
 		};
 
-		Content = new VStack
+		return new VStack
 		{
 			new Entry("Enter name"),
 			new Entry("Enter password"),

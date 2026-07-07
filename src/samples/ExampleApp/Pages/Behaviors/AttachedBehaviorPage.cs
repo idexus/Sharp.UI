@@ -26,8 +26,8 @@ public class NumericValidationStyleBehavior : AttachedBehavior<Entry, NumericVal
 
 public class AttachedBehaviorPage : ContentPage
 {
-	public AttachedBehaviorPage()
-	{
+    protected override View Build()
+    {
         Resources = new ResourceDictionary
         {
             new Style<Entry>
@@ -36,7 +36,7 @@ public class AttachedBehaviorPage : ContentPage
             }
         };
 
-		Content = new VStack(e => e.CenterVertically())
+		return new VStack(e => e.CenterVertically())
 		{
             new Entry("Enter text...", out var entry).Text("")
 		};

@@ -11,10 +11,10 @@ namespace ExampleApp
 			new Style<Ellipse>(e => e.Fill(Colors.Red))
 		};
 
-		public TestBindingsPage()
-		{
-			Resources = localResources;
-			Content = new VStack
+        protected override View Build()
+        {
+            Resources = localResources;
+			return new VStack
 			{
 				new Rectangle()
 					.SizeRequest(200,200)

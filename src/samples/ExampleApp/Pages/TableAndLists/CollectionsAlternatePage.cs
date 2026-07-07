@@ -15,12 +15,12 @@ namespace ExampleApp
             public Style GridStyle => new Style<Grid>(e => e.Background(Id % 2 == 0 ? Colors.LightGray : Colors.DarkSlateGray));
         }
 
-        public AlternateCollectionPage()
+        protected override View Build()
         {
             var itemSource = DataModel.SimpleData
                 .Select((e, i) => new AlternateRowModel { DataModel = e, Id = i });
 
-            Content = new Grid(e => e.Margin(new Thickness(0, 30, 0, 0)))
+            return new Grid(e => e.Margin(new Thickness(0, 30, 0, 0)))
             {
                 new VStack
                 {

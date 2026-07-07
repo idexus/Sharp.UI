@@ -3,7 +3,7 @@
 namespace Sharp.UI
 {
     [SharpObject] 
-    public partial class ContentPage : Microsoft.Maui.Controls.ContentPage
+    public partial class ContentPage : Microsoft.Maui.Controls.ContentPage, ISharpUIContent
     {
         public ContentPage()
         {
@@ -14,10 +14,17 @@ namespace Sharp.UI
         protected virtual View Build() { throw new NotImplementedException(); }
 
         internal void Rebuild() {  this.Content = Build(); }
+
+        void ISharpUIContent.Rebuild()
+        {
+            Rebuild();
+        }
     }
 
     [SharpObject] 
-    public partial class FlyoutPage : Microsoft.Maui.Controls.FlyoutPage { }
+    public partial class FlyoutPage : Microsoft.Maui.Controls.FlyoutPage
+    {
+    }
 
     [SharpObject] 
     public partial class NavigationPage : Microsoft.Maui.Controls.NavigationPage, IEnumerable

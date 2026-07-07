@@ -6,9 +6,26 @@ namespace ExampleApp
 
     public class RadioButtonTemplate : ContentView
     {
-        public RadioButtonTemplate()
+        protected override View Build()
         {
-            Content = new Border
+            this.VisualStateGroups(new VisualStateGroupList
+            {
+                new VisualState()
+                    .Name(VisualStates.RadioButton.Checked)
+                    .Setters(
+                        new Setters<VisualElement>(e => e.BackgroundColor(Colors.Red)),
+                        new Setters<Ellipse>(e => e.Fill(Colors.Red)).TargetName("Check")
+                    ),
+
+                new VisualState()
+                    .Name(VisualStates.RadioButton.Unchecked)
+                    .Setters(
+                        new Setters<VisualElement>(e => e.BackgroundColor(Colors.Blue)),
+                        new Setters<Ellipse>(e => e.Fill(Colors.Yellow)).TargetName("Check")
+                    )
+            });
+
+            return new Border
             {
                 new Grid {
                     new Grid()
@@ -44,23 +61,6 @@ namespace ExampleApp
             .HorizontalOptions(LayoutOptions.Start)
             .Padding(0)
             .Margin(5);
-
-            this.VisualStateGroups(new VisualStateGroupList
-            {
-                new VisualState()
-                    .Name(VisualStates.RadioButton.Checked)
-                    .Setters(
-                        new Setters<VisualElement>(e => e.BackgroundColor(Colors.Red)),
-                        new Setters<Ellipse>(e => e.Fill(Colors.Red)).TargetName("Check")
-                    ),
-
-                new VisualState()
-                    .Name(VisualStates.RadioButton.Unchecked)
-                    .Setters(
-                        new Setters<VisualElement>(e => e.BackgroundColor(Colors.Blue)),
-                        new Setters<Ellipse>(e => e.Fill(Colors.Yellow)).TargetName("Check")
-                    )
-            });
         }
     }
 }

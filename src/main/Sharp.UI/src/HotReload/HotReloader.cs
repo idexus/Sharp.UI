@@ -11,29 +11,34 @@ using Microsoft.Maui.Graphics;
 
 namespace Sharp.UI
 {
+    public interface ISharpUIContent
+    {
+        void Rebuild();
+    }
+
     public static class HotReloader
     {
-        private static readonly List<WeakReference<Sharp.UI.ContentPage>> _pages = new();
+        private static readonly List<WeakReference<ISharpUIContent>> _content = new();
         private static readonly object _lock = new();
 
-        public static void Register(Sharp.UI.ContentPage page)
+        public static void Register(ISharpUIContent content)
         {
             lock (_lock)
             {
-                _pages.RemoveAll(w => !w.TryGetTarget(out _));
-                _pages.Add(new WeakReference<Sharp.UI.ContentPage>(page));
+                _content.RemoveAll(w => !w.TryGetTarget(out _));
+                _content.Add(new WeakReference<ISharpUIContent>(content));
             }
         }
 
         public static void RebuildAll(Type[] updatedTypes)
         {
-            List<Sharp.UI.ContentPage> alive;
+            List<ISharpUIContent> alive;
             lock (_lock)
             {
-                alive = _pages
+                alive = _content
                     .Select(w => w.TryGetTarget(out var p) ? p : null)
                     .Where(p => p is not null)
-                    .Cast<Sharp.UI.ContentPage>()
+                    .Cast<ISharpUIContent>()
                     .ToList();
             }
 

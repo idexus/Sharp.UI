@@ -4,9 +4,9 @@ using Sharp.UI;
 
 public class FlyoutHeaderTemplate : ContentView
 {
-	public FlyoutHeaderTemplate()
-	{
-		Content = new Grid
+    protected override View Build()
+    {
+        return new Grid
         {
             e => e
 				.RowDefinitions(e => e.Absolute(150).Auto())

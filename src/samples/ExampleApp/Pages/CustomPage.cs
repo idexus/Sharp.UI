@@ -24,14 +24,14 @@ namespace ExampleApp
             "paul", "julian", "luciano"
         };
 
-        private readonly Label label2;
-        private readonly Label label3;
+        private Label label2;
+        private Label label3;
 
-        public CustomPage()
-        {
+        protected override View Build()
+        {            
             Title = "Test Page";
 
-            Content =  new ScrollView 
+            return new ScrollView 
             {
                 new VStack(out var vstack)                        
                 {

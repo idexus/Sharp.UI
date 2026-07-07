@@ -9,7 +9,7 @@ public class ExamplePage : ContentPage
 {
     private int counter;
 
-    public ExamplePage()
+    protected override View Build()
     {
         Resources = new ResourceDictionary {
             new Style<Label>(e => e
@@ -19,26 +19,25 @@ public class ExamplePage : ContentPage
                 .Padding(e => e.OniOS(20)))            
         };
 
-        Content =
-            new ScrollView
+        return new ScrollView
+        {
+            new VStack
             {
-                new VStack
-                {
-                    new Label("Counter :", out var label1)
-                        .FontSize(28),                    
+                new Label("Counter :", out var label1)
+                    .FontSize(28),                    
 
-                    new Button("Count")
-                        .CenterHorizontally()
-                        .SizeRequest(100,50)
-                        .OnClicked(o =>
-                        {
-                            counter++;
-                            label1.Text = $"Counter : {counter}";
-                        }),
+                new Button("Count")
+                    .CenterHorizontally()
+                    .SizeRequest(100,50)
+                    .OnClicked(o =>
+                    {
+                        counter++;
+                        label1.Text = $"Counter : {counter}";
+                    }),
 
-                    Enumerable.Range(1, 100).Select(e => new Label($"Label id: {e}").FontSize(20))
-                }
+                Enumerable.Range(1, 100).Select(e => new Label($"Label id: {e}").FontSize(20))
             }
-            .Margin(new Thickness(0, 50, 0, 0));
+        }
+        .Margin(new Thickness(0, 50, 0, 0));
     }
 }
