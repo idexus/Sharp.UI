@@ -18,11 +18,9 @@ public partial class HelloWorldPage : ContentPage
 {
     int count = 0; 
 
-    public HelloWorldPage()
+    protected override View Build()
     {
-        Content =
-
-        new VStack(e => e
+        return new VStack(e => e
             .Spacing(25)
             .Padding(30, 0)
             .CenterVertically())
@@ -49,12 +47,6 @@ public partial class HelloWorldPage : ContentPage
 }
 ```
 # Using __Sharp.UI__
-
-## Nuget Package
-
-To add __Sharp.UI__ to your project, along with all its functionality, you can use:
-
-- [https://www.nuget.org/packages/Sharp.UI](https://www.nuget.org/packages/Sharp.UI)
   
 ## Repository
 
@@ -74,7 +66,7 @@ git submodule update --recursive
 
 ## Project Reference
 
-You can also add the library to your project by adding a project reference to the Sharp.UI library. For more information, see the [Adding the Library by VS Project Reference](./doc/projectref.md) document.
+You can add the library to your project by adding a project reference to the Sharp.UI library. For more information, see the [Adding the Library by VS Project Reference](./doc/projectref.md) document.
 
 ## In Your Project
 
@@ -103,22 +95,22 @@ A vanilla sample project using nuget package
 
 # Hot Reload
 
-The hot reload feature allows you to see changes to your UI in real-time without having to rebuild the entire application. To use hot reload in __Sharp.UI__, you will need to use the [HotReloadKit](https://github.com/idexus/HotReloadKit.git) library and add `SharpUIApp<App>(HotReloadSupport.IdeIPs)` extension method in your `MauiApp` builder.
+The hot reload feature allows you to see changes to your UI in real-time without having to rebuild the entire application.
 
 ```cs
-public static MauiApp CreateMauiApp()
-{
-    var builder = MauiApp.CreateBuilder();
-    builder
-        .SharpUIApp<App>(HotReloadSupport.IdeIPs)   // to enable Hot Reload
-        .UseMauiApp<App>()
-        ...
+namespace ExampleApp;
+using Sharp.UI;
 
-    return builder.Build();
+public partial class HelloWorldPage : ContentPage 
+{
+    int count = 0; 
+
+    protected override View Build()
+    {
+        // Your hot reloaded UI code here
+    }
 }
 ```
-
-Visual Studio Code and Visual Studio 2022 extensions for both Windows and Mac are available for download from the [HotReloadKit releases page](https://github.com/idexus/HotReloadKit/releases). Please note that this is a proof of concept and there is no official support. Use it at your own risk.
 
 # Examples
 
@@ -276,9 +268,7 @@ new Button()
         button.Text = $"Clicked {count} ";
         button.Text += count == 1 ? "time" : "times";
 
-        _ = button.AnimateBackgroundColorTo(count % 1 == 0 ? Colors.Red : Colors.Blue, 500);
-        await button.AnimateFontSizeTo(count % 1 == 0 ? Colors.Red : Colors.Blue);
-        await button.RotateTo(360 * (count % 2), 300);
+        await button.RotateToAsync(360 * (count % 2), 300);
     })
 ```
 
@@ -312,12 +302,12 @@ And, in the __view__, the code will be:
 ```cs
 public class ViewPage : ContentPage
 {
-    ViewModel viewModel => BindingContext as ViewModel;
+    ViewModel viewModel = new ViewModel();
 
-    public ViewPage(ViewModel viewModel)
-    {
+    protected override View Build()
+    { 
         BindingContext = viewModel;
-        Content = new VStack
+        return new VStack
         {
             new Label().Text(e => e.Path("Author"))
             new Label().Text(e => e.Path("Title"))

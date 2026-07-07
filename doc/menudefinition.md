@@ -34,7 +34,7 @@ Here is an example of creating a menu bar for a `ContentPage`. The menu bar has 
 ```cs
 public class MenuPage : ContentPage
 {
-    public MenuPage()
+    protected override View Build()
     {
         this.MenuBarItems(new MenuBarItem[]
         {

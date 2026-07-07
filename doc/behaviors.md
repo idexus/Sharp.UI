@@ -69,7 +69,7 @@ You can then apply the attached behavior using a style in your `ContentPage`:
 ```cs
 public class AttachedBehaviorPage : ContentPage
 {
-    public AttachedBehaviorPage()
+    protected override View Build()
     {
         Resources = new ResourceDictionary
         {
@@ -79,7 +79,7 @@ public class AttachedBehaviorPage : ContentPage
             }
         };
 
-        Content = new VStack
+        return new VStack
         {
             new Entry("Enter text...", out var entry).Text("")
         }

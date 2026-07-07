@@ -15,9 +15,9 @@ using Sharp.UI;
 public class HelloWorldPage : ContentPage
 {
     int count = 0;
-    public HelloWorldPage()
+    protected override View Build()
     {
-        Content = new VStack
+        return new VStack
         {
             ...
             new Button("Click me")

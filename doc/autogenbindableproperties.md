@@ -29,11 +29,11 @@ public partial class CardView : ContentView, ICardViewProperties
 ```cs
 public class TemplatedParentPage : ContentPage
 {    
-    public TemplatedParentPage()
-    {
+    protected override View Build()
+    { 
         var controlTemplate = new ControlTemplate(typeof(CardViewTemplateView));
         
-        this.Content = new VStack
+        return new VStack
         {
             e => e.CenterVertically(),
 

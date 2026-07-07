@@ -13,9 +13,9 @@ using Sharp.UI;
 
 public class PropertyTriggerPage : ContentPage
 {
-    public PropertyTriggerPage()
+    protected override View Build()
     {
-        Resources = new ResourceDictionary
+        return  new ResourceDictionary
         {
             new Style<Entry>
             {
@@ -50,7 +50,7 @@ A data trigger sets a property in response to a change in the value of a data so
 Here is an example of using a data trigger to disable a button if the text length of an `Entry` element is zero:
 
 ```cs
-Content = new VStack
+return new VStack
 {
     new Entry("Enter text...", out var entry).Text(""),
     new Button("Save")
@@ -70,7 +70,7 @@ An event trigger sets a property in response to an event.
 Here is an example of using an event trigger to validate the input of an `Entry` element as a number:
 
 ```cs
-Content = new VStack
+return new VStack
 {
     new Entry("Enter text...", out var entry).Text("")
         .Triggers(
