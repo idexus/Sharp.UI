@@ -39,7 +39,6 @@ namespace Sharp.UI.Internal
         Microsoft.Maui.Controls.DropGestureRecognizer dropGestureRecognizer;
         Microsoft.Maui.Controls.Editor editor;
         Microsoft.Maui.Controls.Entry entry;
-        Microsoft.Maui.Controls.EntryCell entryCell;
         Microsoft.Maui.Controls.EventTrigger eventTrigger;
         Microsoft.Maui.Controls.FileImageSource fileImageSource;
         Microsoft.Maui.Controls.FlexLayout flexLayout;
@@ -47,7 +46,6 @@ namespace Sharp.UI.Internal
         Microsoft.Maui.Controls.FlyoutPage flyoutPage;
         Microsoft.Maui.Controls.FontImageSource fontImageSource;
         Microsoft.Maui.Controls.FormattedString formattedString;
-        Microsoft.Maui.Controls.Frame frame;
         Microsoft.Maui.Controls.GradientStop gradientStop;
         Microsoft.Maui.Controls.GraphicsView graphicsView;
         Microsoft.Maui.Controls.Grid grid;
@@ -56,12 +54,10 @@ namespace Sharp.UI.Internal
         Microsoft.Maui.Controls.HtmlWebViewSource htmlWebViewSource;
         Microsoft.Maui.Controls.Image image;
         Microsoft.Maui.Controls.ImageButton imageButton;
-        Microsoft.Maui.Controls.ImageCell imageCell;
         Microsoft.Maui.Controls.IndicatorView indicatorView;
         Microsoft.Maui.Controls.Label label;
         Microsoft.Maui.Controls.LinearGradientBrush linearGradientBrush;
         Microsoft.Maui.Controls.LinearItemsLayout linearItemsLayout;
-        Microsoft.Maui.Controls.ListView listView;
         Microsoft.Maui.Controls.MenuBar menuBar;
         Microsoft.Maui.Controls.MenuBarItem menuBarItem;
         Microsoft.Maui.Controls.MenuFlyout menuFlyout;
@@ -97,13 +93,11 @@ namespace Sharp.UI.Internal
         Microsoft.Maui.Controls.SwipeItemView swipeItemView;
         Microsoft.Maui.Controls.SwipeView swipeView;
         Microsoft.Maui.Controls.Switch @switch;
-        Microsoft.Maui.Controls.SwitchCell switchCell;
         Microsoft.Maui.Controls.Tab tab;
         Microsoft.Maui.Controls.TabBar tabBar;
         Microsoft.Maui.Controls.TabbedPage tabbedPage;
         Microsoft.Maui.Controls.TableRoot tableRoot;
         Microsoft.Maui.Controls.TableSection tableSection;
-        Microsoft.Maui.Controls.TableView tableView;
         Microsoft.Maui.Controls.TapGestureRecognizer tapGestureRecognizer;
         Microsoft.Maui.Controls.TimePicker timePicker;
         Microsoft.Maui.Controls.ToolbarItem toolbarItem;
@@ -111,7 +105,6 @@ namespace Sharp.UI.Internal
         Microsoft.Maui.Controls.UriImageSource uriImageSource;
         Microsoft.Maui.Controls.UrlWebViewSource urlWebViewSource;
         Microsoft.Maui.Controls.VerticalStackLayout verticalStackLayout;
-        Microsoft.Maui.Controls.ViewCell viewCell;
         Microsoft.Maui.Controls.WebView webView;
         Microsoft.Maui.Controls.Window window;
         Microsoft.Maui.Controls.Shapes.ArcSegment shapes_arcSegment;

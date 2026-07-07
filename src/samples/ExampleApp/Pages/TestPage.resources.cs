@@ -25,7 +25,7 @@ public partial class TestPage : ContentPage
                 .TextColor(AppColors.Gray200))
             {            
                 async button => {
-                    await button.RotateTo(0);   // create animations inside VisualState
+                    await button.RotateToAsync(0);   // create animations inside VisualState
                 }
             },
 
@@ -34,7 +34,7 @@ public partial class TestPage : ContentPage
                 .TextColor(AppColors.Gray600))
             {            
                 async button => {
-                    await button.RotateTo(180);
+                    await button.RotateToAsync(180);
                 }
             },
         }

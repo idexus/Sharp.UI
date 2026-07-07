@@ -4,9 +4,9 @@ using Sharp.UI;
 
 public class OrientationTriggerPage : ContentPage
 {
-	public OrientationTriggerPage()
-	{
-        Content = new VStack
+    protected override View Build()
+    {
+        return new VStack
         {
             new Label("Change orientation").FontSize(40)            
         }

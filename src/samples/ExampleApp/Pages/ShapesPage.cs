@@ -4,30 +4,31 @@ using Path = Microsoft.Maui.Controls.Shapes.Path;
 namespace ExampleApp
 {
 	using Sharp.UI;
-	
+
 	public class ShapesPage : ContentPage
 	{
-		public ShapesPage()
+		protected override View Build()
 		{
+
 			Resources = new ResourceDictionary
 			{
 				new Style<ContentView>(e => e
 					.CenterVertically()
-					.CenterHorizontally())				
+					.CenterHorizontally())
 			};
 
 			this.BackgroundColor(Colors.White);
 
-			Content =
+			return 
 				new Grid(e => e
-                    .BackgroundColor(Colors.Cyan)
-                    .Padding(50)
-                    .ColumnDefinitions(e => e.Star(count: 3))
-                    .RowDefinitions(e => e.Star(count: 2)))
+					.BackgroundColor(Colors.Cyan)
+					.Padding(50)
+					.ColumnDefinitions(e => e.Star(count: 3))
+					.RowDefinitions(e => e.Star(count: 2)))
 				{
-                    new ContentView
+					new ContentView
 					{
-						new Polygon()                        
+						new Polygon()
 							.Fill(Colors.AliceBlue)
 							.Stroke(Colors.Green)
 							.StrokeThickness(5)
@@ -37,10 +38,10 @@ namespace ExampleApp
 								new Point(10,50)
 							)
 					},
-					
+
 					new ContentView(e => e.Column(1))
 					{
-                        new Polygon()
+						new Polygon()
 							.Fill(Colors.Blue)
 							.Stroke(Colors.Red)
 							.StrokeThickness(3)
@@ -61,7 +62,7 @@ namespace ExampleApp
 
 					new ContentView(e => e.Column(2))
 					{
-                        new Polyline()
+						new Polyline()
 							.Stroke(Colors.Red)
 							.Points(
 								new Point(0,0),
@@ -79,7 +80,7 @@ namespace ExampleApp
 
 					new ContentView(e => e.Row(1))
 					{
-                        new Ellipse()
+						new Ellipse()
 							.SizeRequest(60,180)
 							.Fill(Colors.Yellow)
 							.Stroke(Colors.Green)
@@ -88,30 +89,30 @@ namespace ExampleApp
 
 					new ContentView(e => e.Row(1).Column(1))
 					{
-                        new Path()
-                            .Stroke(Colors.Blue)
-                            .Aspect(Stretch.Uniform)
-                            .HorizontalOptions(LayoutOptions.Start)
-                            .Data(new GeometryGroup
-                            {
-                                e => e.FillRule(FillRule.EvenOdd),
+						new Path()
+							.Stroke(Colors.Blue)
+							.Aspect(Stretch.Uniform)
+							.HorizontalOptions(LayoutOptions.Start)
+							.Data(new GeometryGroup
+							{
+								e => e.FillRule(FillRule.EvenOdd),
 
-                                new EllipseGeometry(50, 50, new Point(75,75)),
+								new EllipseGeometry(50, 50, new Point(75,75)),
 								new EllipseGeometry(70, 70, new Point(75,75)),
 								new EllipseGeometry(100, 100, new Point(75,75)),
 								new EllipseGeometry(120, 120, new Point(75,75)),
-							})										
+							})
 					},
 
 					new ContentView
 					{
-                        e => e.Row(1).Column(2),
+						e => e.Row(1).Column(2),
 
-                        new Path()
+						new Path()
 							.Stroke(Colors.Red)
-                            .StrokeThickness(12)
-                            .StrokeLineJoin(PenLineJoin.Round)
-                            .Scale(e => e.OnPhone(0.25).Default(0.7))
+							.StrokeThickness(12)
+							.StrokeLineJoin(PenLineJoin.Round)
+							.Scale(e => e.OnPhone(0.25).Default(0.7))
 							.Data(new PathGeometry()
 								.Figures(
 
@@ -159,10 +160,10 @@ namespace ExampleApp
 												.Size(new Size(25,50))
 												.Point(new Point(300, 49.9))
 												.IsLargeArc(true)
-										)								
+										)
 								)
-							)											
-					}					
+							)
+					}
 				};
 		}
 	}

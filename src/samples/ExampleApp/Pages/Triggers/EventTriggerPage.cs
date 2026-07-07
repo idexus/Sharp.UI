@@ -14,9 +14,9 @@ public class NumericValidationTriggerAction : TriggerAction<Entry>
 
 public class EventTriggerPage : ContentPage
 {
-	public EventTriggerPage()
-	{
-		Content = new VStack
+    protected override View Build()
+    {
+        return new VStack
 		{
 			new Entry("Enter text...", out var entry).Text("")
                 .Triggers(

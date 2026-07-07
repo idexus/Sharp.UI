@@ -4,9 +4,9 @@ using Sharp.UI;
 
 public class NavigationMainPage : ContentPage
 {
-	public NavigationMainPage()
-	{
-		Content = new VStack(e => e.Center())
+    protected override View Build()
+    {
+        return new VStack(e => e.Center())
 		{
 			new Label("Main Page")
 				.FontSize(60)

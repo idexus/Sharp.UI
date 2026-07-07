@@ -16,12 +16,11 @@ public class FlyoutMainPage : FlyoutPage
                 new HelloWorldPage().Title("Hello world"),
                 new GridPage().Title("Grid"),                
                 new NavigationMainPage().Title("Navigation"),
-                new TableViewPage().Title("Table"),
                 new CardViewPage().Title("Card View"),
             }
         };
 
-        Flyout = new ContentPage("Menu")
+        Flyout = new ContentPage()
         {
             new Button("Open test page")                
                 .FontSize(20)

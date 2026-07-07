@@ -5,11 +5,9 @@ namespace ExampleApp
 
     public class GridPage : ContentPage
     {
-        public GridPage()
+        protected override View Build()
         {
-            Content =
-
-            new Grid(out var grid, e => e
+            return new Grid(out var grid, e => e
                 .Margin(top: Shell.Current != null ? 30 : 0)
                 .RowSpacing(15)
                 .ColumnSpacing(15)

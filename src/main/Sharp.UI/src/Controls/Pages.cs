@@ -3,45 +3,28 @@
 namespace Sharp.UI
 {
     [SharpObject] 
-    public partial class ContentPage : Microsoft.Maui.Controls.ContentPage
+    public partial class ContentPage : Microsoft.Maui.Controls.ContentPage, ISharpUIContent
     {
         public ContentPage()
         {
-            if (HotReload.IsEnabled)
-            {
-                if (HotReload.BindingContext != null) BindingContext = HotReload.BindingContext;
-            }
+            HotReloader.Register(this);
+            this.Rebuild();
         }
 
-        public ContentPage(string title) : this()
-        {
-            this.Title = title;
-        }
+        protected virtual View Build() { throw new NotImplementedException(); }
 
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-            if (HotReload.IsEnabled)
-            {
-                HotReload.RegisterActive(this);
-            }
-        }
+        internal void Rebuild() {  this.Content = Build(); }
 
-        protected override void OnDisappearing()
+        void ISharpUIContent.Rebuild()
         {
-            base.OnDisappearing();
-            if (HotReload.IsEnabled)
-            {
-                if (Navigation.NavigationStack.Count > 1) 
-                {
-                    HotReload.UnregisterActive(this);
-                }
-            }
+            Rebuild();
         }
     }
 
     [SharpObject] 
-    public partial class FlyoutPage : Microsoft.Maui.Controls.FlyoutPage { }
+    public partial class FlyoutPage : Microsoft.Maui.Controls.FlyoutPage
+    {
+    }
 
     [SharpObject] 
     public partial class NavigationPage : Microsoft.Maui.Controls.NavigationPage, IEnumerable

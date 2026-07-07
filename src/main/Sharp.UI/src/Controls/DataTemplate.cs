@@ -13,14 +13,14 @@ namespace Sharp.UI
             else
             {
                 if (!type.IsAssignableTo(typeof(T))) throw new ArgumentException($"Type {type} is not assignable to {typeof(T)}");
-                if (HotReload.IsEnabled)
-                {
-                    var typeName = type.FullName;
-                    if (HotReload.ReplacedTypesDict.TryGetValue(typeName, out var replacedType))
-                    {
-                        type = replacedType;
-                    }
-                }
+                //if (HotReload.IsEnabled)
+                //{
+                //    var typeName = type.FullName;
+                //    if (HotReload.ReplacedTypesDict.TryGetValue(typeName, out var replacedType))
+                //    {
+                //        type = replacedType;
+                //    }
+                //}
             }
 
             return (T)ActivatorUtilities.CreateInstance(Application.Services, type);
@@ -29,14 +29,14 @@ namespace Sharp.UI
         object getValue(System.Func<object> loadValue)
         {
             object value = loadValue();
-            if (HotReload.IsEnabled)
-            {
-                var typeName = value.GetType().FullName;
-                if (HotReload.ReplacedTypesDict.TryGetValue(typeName, out var replacedType))
-                {
-                    value = ActivatorUtilities.CreateInstance(Application.Services, replacedType);
-                }
-            }
+            //if (HotReload.IsEnabled)
+            //{
+            //    var typeName = value.GetType().FullName;
+            //    if (HotReload.ReplacedTypesDict.TryGetValue(typeName, out var replacedType))
+            //    {
+            //        value = ActivatorUtilities.CreateInstance(Application.Services, replacedType);
+            //    }
+            //}
             return value;
         }
 

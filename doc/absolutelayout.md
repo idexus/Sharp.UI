@@ -13,9 +13,9 @@ using Sharp.UI;
 
 public class AbsoluteLayoutPage : ContentPage
 {
-    public AbsoluteLayoutPage()
+    protected override View Build()
     {
-        Content = new AbsoluteLayout
+        return new AbsoluteLayout
         {   
             new Grid
             {

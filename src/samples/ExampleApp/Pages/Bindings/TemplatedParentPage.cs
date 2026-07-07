@@ -20,9 +20,9 @@ public partial class EmptyCardView : ContentView, IEmptyCardViewProperties
 
 public class CardViewTemplateView : ContentView
 {
-    public CardViewTemplateView()
+    protected override View Build()
     {
-        Content = new Border
+        return new Border
         {
             new VStack
             {
@@ -45,12 +45,12 @@ public class CardViewTemplateView : ContentView
 }
 
 public class TemplatedParentPage : ContentPage
-{    
-    public TemplatedParentPage()
+{
+    protected override View Build()
     {
         var controlTemplate = new ControlTemplate(typeof(CardViewTemplateView));
 
-        this.Content = new ScrollView
+        return new ScrollView
         {
             //e => e.Margin(new Thickness(0,30,0,0)),
 

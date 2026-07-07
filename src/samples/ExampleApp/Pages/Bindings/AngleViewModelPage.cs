@@ -41,10 +41,10 @@ public class AngleViewModelPage : ContentPage
 {
     AngleViewModel viewModel = new AngleViewModel();
 
-    public AngleViewModelPage()
+    protected override View Build()
     {
         this.BindingContext = viewModel;
-        this.Content = new VStack
+        return new VStack
         {
             e => e.CenterVertically(),
 

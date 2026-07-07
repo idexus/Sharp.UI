@@ -44,7 +44,7 @@ namespace Sharp.UI.Generator.Extensions
                 var allSymbols = mauiSymbols.ToList();
                 allSymbols.AddRange(baseSymbols);
 
-                foreach (var symbol in allSymbols)
+                foreach (var symbol in allSymbols.Where(s => !Helpers.IsSymbolDeprecated(s)))
                 {
                     new ExtensionGenerator(context, symbol).Build();
                 }

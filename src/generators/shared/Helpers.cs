@@ -140,7 +140,7 @@ namespace Sharp.UI.Generator
 
             return isBindable;
         }
-
+            
         public static bool IsSymbolDeprecated(ISymbol symbol)
         {
             foreach (var attribute in symbol.GetAttributes())

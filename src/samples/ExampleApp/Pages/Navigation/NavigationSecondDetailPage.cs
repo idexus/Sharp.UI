@@ -4,9 +4,9 @@ using Sharp.UI;
 
 public class NavigationSecondDetailPage : ContentPage
 {
-	public NavigationSecondDetailPage()
-	{
-		Content = new VStack(e => e.Center())
+    protected override View Build()
+    {
+        return new VStack(e => e.Center())
 		{
 			new Label("Second Page").FontSize(70)
 		};

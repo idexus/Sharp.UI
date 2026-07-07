@@ -24,9 +24,9 @@ public class FadeTriggerAction : TriggerAction<VisualElement>
 
 public class EnterExitActionsPage : ContentPage
 {
-	public EnterExitActionsPage()
-	{
-        Content = new VStack
+    protected override View Build()
+    {
+        return new VStack
         {
             new Entry("Enter text...", out var entry)
                 .Text("")

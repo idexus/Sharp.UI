@@ -33,7 +33,22 @@ namespace Sharp.UI
     }
 
     [SharpObject]
-    public partial class ContentView : Microsoft.Maui.Controls.ContentView { }
+    public partial class ContentView : Microsoft.Maui.Controls.ContentView, ISharpUIContent {
+        public ContentView()
+        {
+            HotReloader.Register(this);
+            this.Rebuild();
+        }
+
+        protected virtual View Build() { return new Microsoft.Maui.Controls.ContentView(); }
+
+        internal void Rebuild() { this.Content = Build(); }
+
+        void ISharpUIContent.Rebuild()
+        {
+            Rebuild();
+        }
+    }
 
     [SharpObject] 
     public partial class DatePicker : Microsoft.Maui.Controls.DatePicker { }
@@ -55,9 +70,6 @@ namespace Sharp.UI
             this.Placeholder = placeholder;
         }
     }
-
-    [SharpObject] 
-    public partial class Frame : Microsoft.Maui.Controls.Frame { }
 
     [SharpObject]
     public partial class GraphicsView : Microsoft.Maui.Controls.GraphicsView
@@ -96,12 +108,6 @@ namespace Sharp.UI
         {
             this.Text = text;
         }
-    }
-
-    [SharpObject]
-    public partial class ListView : Microsoft.Maui.Controls.ListView
-    {
-        public void Add(Func<Cell> loadTemplate) => this.ItemTemplate = new DataTemplate(loadTemplate);
     }
 
     [SharpObject] 
@@ -169,15 +175,6 @@ namespace Sharp.UI
 
     [SharpObject] 
     public partial class Switch : Microsoft.Maui.Controls.Switch { }
-
-    [SharpObject] 
-    public partial class TableView : Microsoft.Maui.Controls.TableView
-    {
-        public TableView()
-        {
-            this.Root = new Microsoft.Maui.Controls.TableRoot();
-        }
-    }
 
     [SharpObject] 
     public partial class TimePicker : Microsoft.Maui.Controls.TimePicker { }

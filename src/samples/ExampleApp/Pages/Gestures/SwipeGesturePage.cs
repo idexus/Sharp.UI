@@ -4,9 +4,9 @@ using Sharp.UI;
 
 public class SwipeGesturePage : ContentPage
 {
-    public SwipeGesturePage()
+    protected override View Build()
     {
-        Content = new VStack
+        return new VStack
         {
             new Label("Swipe image right"),
             new Label(out var label).FontSize(20).TextColor(Colors.Blue),

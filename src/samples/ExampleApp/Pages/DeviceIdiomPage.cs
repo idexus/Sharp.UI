@@ -5,7 +5,6 @@ using Sharp.UI;
 
 public class DeviceIdiomPage : ContentPage
 {
-
     ResourceDictionary pageResources => new ResourceDictionary
     {
         new Style<Label>(e => e
@@ -24,9 +23,9 @@ public class DeviceIdiomPage : ContentPage
             .Margin(new Thickness(0,30,0,0)))        
     };
 
-    public DeviceIdiomPage()
-	{        
-        Content = new ContentView(out var contentView)
+    protected override View Build()
+    {
+        return new ContentView
         {
             (Info.CurrentIdiom switch 
             {

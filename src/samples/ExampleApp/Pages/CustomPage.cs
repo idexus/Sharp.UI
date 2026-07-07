@@ -24,14 +24,14 @@ namespace ExampleApp
             "paul", "julian", "luciano"
         };
 
-        private readonly Label label2;
-        private readonly Label label3;
+        private Label label2;
+        private Label label3;
 
-        public CustomPage()
-        {
+        protected override View Build()
+        {            
             Title = "Test Page";
 
-            Content =  new ScrollView 
+            return new ScrollView 
             {
                 new VStack(out var vstack)                        
                 {
@@ -105,17 +105,6 @@ namespace ExampleApp
                     },
 
                     new Entry("Enter text", out var entry),
-
-                    new Frame()
-                    {
-                        new Label("TEST")
-                            .FontSize(50)
-                            .CenterHorizontally()
-                    }
-                    .BorderColor(Colors.Blue)
-                    .CornerRadius(20)
-                    .Margin(20)
-                    .SizeRequest(400,100),
 
                     new Label().Text(e => e.Path("Text").Source(entry)),
 

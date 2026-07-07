@@ -26,9 +26,9 @@ public class NumericValidationBehavior : Behavior<Entry>
 
 public class BehaviorTestPage : ContentPage
 {
-    public BehaviorTestPage()
+    protected override View Build()
     {
-        Content = new VStack
+        return new VStack
         {
             new Entry("Enter text...", out var entry).Text("")
                 .Behaviors(new NumericValidationBehavior())

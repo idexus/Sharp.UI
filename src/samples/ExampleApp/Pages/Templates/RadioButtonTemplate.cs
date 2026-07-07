@@ -6,9 +6,26 @@ namespace ExampleApp
 
     public class RadioButtonTemplate : ContentView
     {
-        public RadioButtonTemplate()
+        protected override View Build()
         {
-            Content = new Frame
+            this.VisualStateGroups(new VisualStateGroupList
+            {
+                new VisualState()
+                    .Name(VisualStates.RadioButton.Checked)
+                    .Setters(
+                        new Setters<VisualElement>(e => e.BackgroundColor(Colors.Red)),
+                        new Setters<Ellipse>(e => e.Fill(Colors.Red)).TargetName("Check")
+                    ),
+
+                new VisualState()
+                    .Name(VisualStates.RadioButton.Unchecked)
+                    .Setters(
+                        new Setters<VisualElement>(e => e.BackgroundColor(Colors.Blue)),
+                        new Setters<Ellipse>(e => e.Fill(Colors.Yellow)).TargetName("Check")
+                    )
+            });
+
+            return new Border
             {
                 new Grid {
                     new Grid()
@@ -38,31 +55,12 @@ namespace ExampleApp
                 .Margin(4)
                 .WidthRequest(100)
             }
-            .BorderColor(AppColors.Gray900)
             .BackgroundColor(AppColors.Gray900)
-            .HasShadow(false)
             .SizeRequest(100, 100)
             .VerticalOptions(LayoutOptions.Start)
             .HorizontalOptions(LayoutOptions.Start)
             .Padding(0)
             .Margin(5);
-
-            this.VisualStateGroups(new VisualStateGroupList
-            {
-                new VisualState()
-                    .Name(VisualStates.RadioButton.Checked)
-                    .Setters(
-                        new Setters<VisualElement>(e => e.BackgroundColor(Colors.Red)),
-                        new Setters<Ellipse>(e => e.Fill(Colors.Red)).TargetName("Check")
-                    ),
-
-                new VisualState()
-                    .Name(VisualStates.RadioButton.Unchecked)
-                    .Setters(
-                        new Setters<VisualElement>(e => e.BackgroundColor(Colors.Blue)),
-                        new Setters<Ellipse>(e => e.Fill(Colors.Yellow)).TargetName("Check")
-                    )
-            });
         }
     }
 }

@@ -10,9 +10,9 @@ public class AlternativeBackroundPage : ContentPage
     private List<int> _nubmers = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
     public List<int> Numbers => _nubmers;
 
-    public AlternativeBackroundPage()
+    protected override View Build()
     {
-        Content = new VStack
+        return new VStack
         {
             new CollectionView()
                 .ItemsSource(Numbers)
