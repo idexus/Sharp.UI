@@ -11,7 +11,6 @@ Add the following code to your `.csproj` file:
 	<ProjectReference Include="..\Sharp.UI\src\generators\Sharp.UI.Generator.Extensions\Sharp.UI.Generator.Extensions.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
 	<ProjectReference Include="..\Sharp.UI\src\generators\Sharp.UI.Generator.Classes\Sharp.UI.Generator.Classes.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
 	<ProjectReference Include="..\Sharp.UI\src\generators\Sharp.UI.Generator.HotReload\Sharp.UI.Generator.HotReload.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
-	<ProjectReference Include="..\Sharp.UI\libs\HotReloadKit\src\HotReloadKit.Generator\HotReloadKit.Generator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
 </ItemGroup> 
 ```
 
