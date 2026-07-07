@@ -9,7 +9,7 @@ public partial class App : Application
 {
     protected override Window CreateWindow(IActivationState activationState)
     {
-        var window = new Window(new AppShell())
+        var window = new Window(new TestPage())
         {
             Title = "Moja Aplikacja",
             Width = 1200,

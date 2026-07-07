@@ -7,37 +7,13 @@ namespace Sharp.UI
     {
         public ContentPage()
         {
-            if (HotReload.IsEnabled)
-            {
-                if (HotReload.BindingContext != null) BindingContext = HotReload.BindingContext;
-            }
+            HotReloader.Register(this);
+            this.Rebuild();
         }
 
-        public ContentPage(string title) : this()
-        {
-            this.Title = title;
-        }
+        protected virtual View Build() { throw new NotImplementedException(); }
 
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-            if (HotReload.IsEnabled)
-            {
-                HotReload.RegisterActive(this);
-            }
-        }
-
-        protected override void OnDisappearing()
-        {
-            base.OnDisappearing();
-            if (HotReload.IsEnabled)
-            {
-                if (Navigation.NavigationStack.Count > 1) 
-                {
-                    HotReload.UnregisterActive(this);
-                }
-            }
-        }
+        internal void Rebuild() {  this.Content = Build(); }
     }
 
     [SharpObject] 

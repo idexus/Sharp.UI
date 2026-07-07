@@ -24,7 +24,7 @@ namespace ExampleApp
                 .FontSize(e => e.OnPhone(16).Default(30))
                 .CenterHorizontally(),
 
-            new Button("Click me")
+            new Button("Click me") 
                 .FontSize(20)
                 .CenterHorizontally()
                 .OnClicked(button =>

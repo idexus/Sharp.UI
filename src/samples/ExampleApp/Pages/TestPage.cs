@@ -14,12 +14,11 @@ public partial class TestPage : ContentPage
     public TestPage()
     {
         Resources = localResources;
-        Build();
     }
     
-    void Build()
+    protected override View Build()
     {
-        Content = new Grid(e => e.BackgroundColor(Colors.Black))
+        return new Grid(e => e.BackgroundColor(Colors.Black))
         {
             new VerticalStackLayout(out var vStack, e => e.VerticalOptions(LayoutOptions.Center))
             {
@@ -47,12 +46,12 @@ public partial class TestPage : ContentPage
                             .Text(e => e.Path("Value").Source(slider).StringFormat("Value : {0:F1}"))
                             .FontSize(40),
 
-                        new Image().Source("dotnet_bot.png").Row(1),
+                        new Image().Source("dotnet_bot.png").Row(1).HeightRequest(40),
 
                         new Label()
                             .Text("Hello, World!")
                             .Row(2)
-                            .FontSize(30)
+                            .FontSize(20)
                             .TextColor(Colors.DarkGray),
 
                         new Switch(out testSwitch).Row(3)

@@ -20,7 +20,7 @@ public class FlyoutMainPage : FlyoutPage
             }
         };
 
-        Flyout = new ContentPage("Menu")
+        Flyout = new ContentPage()
         {
             new Button("Open test page")                
                 .FontSize(20)
