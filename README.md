@@ -67,12 +67,6 @@ namespace ExampleApp
 }
 ```
 
-# Sharp.UI Template Project
-
-A vanilla sample project using nuget package
-
-[https://github.com/idexus/Sharp.UI-Template](https://github.com/idexus/Sharp.UI-Template)
-
 # Hot Reload
 
 The hot reload feature allows you to see changes to your UI in real-time without having to rebuild the entire application.
