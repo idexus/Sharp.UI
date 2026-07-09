@@ -44,22 +44,6 @@ public partial class HelloWorldPage : ContentPage
 ```
 # Using __Sharp.UI__
   
-## Repository
-
-This project uses submodules, which means that it depends on other external projects to function properly. To ensure that these dependencies are properly included, you'll need to initialize the submodules when you first clone the repository.
-
-To do this, use the following command:
-
-```
-git submodule update --init --recursive
-```
-
-If you ever update your clone of the repository, you may need to update the submodules as well to ensure that you have the latest version of all dependencies. To do this, you can use the following command:
-
-```
-git submodule update --recursive
-```
-
 ## Project Reference
 
 You can add the library to your project by adding a project reference to the Sharp.UI library. For more information, see the [Adding the Library by VS Project Reference](./doc/projectref.md) document.
@@ -82,12 +66,6 @@ namespace ExampleApp
     ...
 }
 ```
-
-# Sharp.UI Template Project
-
-A vanilla sample project using nuget package
-
-[https://github.com/idexus/Sharp.UI-Template](https://github.com/idexus/Sharp.UI-Template)
 
 # Hot Reload
 
