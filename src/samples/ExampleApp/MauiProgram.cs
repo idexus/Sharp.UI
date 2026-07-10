@@ -45,8 +45,7 @@ namespace ExampleApp
                 .UseMauiApp<App>()
                 .ConfigureFonts(fonts =>
                 {
-                    fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-                    fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                    fonts.AddFont("JetBrainsMono-Regular.ttf", "CodeFont");
                 });
 
             builder.Services.AddSingleton<SecondPageViewModel>();

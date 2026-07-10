@@ -66,7 +66,8 @@
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
-	</ItemGroup>
+    <PackageReference Include="ColorCode.Core" Version="2.0.15" />
+  </ItemGroup>
 	
 	<ItemGroup>
 		<ProjectReference Include="..\..\generators\Sharp.UI.Generator.Extensions\Sharp.UI.Generator.Extensions.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
@@ -109,5 +110,9 @@
 	  <None Update="Platforms\Windows\Package.appxmanifest">
 	    <SubType>Designer</SubType>
 	  </None>
+	</ItemGroup>
+	<ItemGroup>
+	  <MauiFont Include="Resources\Fonts\ofl\AUTHORS.txt" />
+	  <MauiFont Include="Resources\Fonts\ofl\OFL.txt" />
 	</ItemGroup>
 </Project>

@@ -16,9 +16,13 @@ public class AppShell : Shell
         {
             e => e.Route("top"),
 
-            new Tab("Main")
+            new Tab("Fundamentals")
             {
                 e => e.Route("main"),
+
+                new ShellContent<HelloWorldExample>("Hello Page"),
+                new ShellContent<FluentMethodsExamples>("Fluent Methods"),
+                new ShellContent<ContainerExamples>("Containers"),
 
                 new ShellContent<TestPage>("TestPage"),
                 new ShellContent<HelloWorldPage>("Hello Page"),
