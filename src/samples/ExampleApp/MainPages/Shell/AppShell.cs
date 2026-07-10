@@ -24,13 +24,16 @@ public class AppShell : Shell
                 new ShellContent<FluentMethodsExamples>("Fluent Methods"),
                 new ShellContent<ContainerExamples>("Containers"),
 
+                new ShellContent<GridPage>("Grid").Route("grid"),
+                
+                /*
                 new ShellContent<TestPage>("TestPage"),
                 new ShellContent<HelloWorldPage>("Hello Page"),
-                new ShellContent<GridPage>("Grid").Route("grid"),
                 new ShellContent<KeypadPage>("Keypad"),
                 new ShellContent<AbsoluteLayoutPage>("Absolute layout"),
                 new ShellContent<ShapesPage>("Shapes"),
                 new ShellContent<NavigationMainPage>("Navigation")
+                */
             },
 
             new Tab("Table/List")
