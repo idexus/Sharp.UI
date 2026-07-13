@@ -11,16 +11,18 @@ public class CollectionWithGridExample : ContentPage
     string mySourceCode = """
 new CollectionView()
     .ItemsSource(MyData.Source)
-    .Margin(new Thickness(0, 50, 0, 0))
+    .Margin(new Thickness(0, 20, 0, 0))              
     .ItemTemplate(() =>
         new Grid
         {
-            e => e.ColumnDefinitions(e => e.Auto().Star()),
+            e => e
+                .ColumnDefinitions(e => e.Auto().Star())
+                .Padding(10),
 
             new Label()
                 .Text(e => e.Path("Id"))
-                .Padding(20)
                 .FontSize(50)
+                .Margin(right: 20)
                 .TextColor(Colors.Blue)
                 .BackgroundColor(Colors.Transparent), // has to be set (MAUI bug workaround)
 
@@ -28,7 +30,6 @@ new CollectionView()
                 .Column(1)
                 .FontSize(20)
                 .Text(e => e.Path("Text"))
-                .HeightRequest(200)
                 .BackgroundColor(Colors.Transparent), // has to be set (MAUI bug workaround)
         })
 """;
@@ -43,16 +44,18 @@ new CollectionView()
             {
                 new CollectionView()
                     .ItemsSource(MyData.Source)
-                    .Margin(new Thickness(0, 50, 0, 0))
+                    .Margin(new Thickness(0, 20, 0, 0))              
                     .ItemTemplate(() =>
                         new Grid
                         {
-                            e => e.ColumnDefinitions(e => e.Auto().Star()),
+                            e => e
+                                .ColumnDefinitions(e => e.Auto().Star())
+                                .Padding(10),
 
                             new Label()
                                 .Text(e => e.Path("Id"))
-                                .Padding(20)
                                 .FontSize(50)
+                                .Margin(right: 20)
                                 .TextColor(Colors.Blue)
                                 .BackgroundColor(Colors.Transparent), // has to be set (MAUI bug workaround)
 
@@ -60,12 +63,11 @@ new CollectionView()
                                 .Column(1)
                                 .FontSize(20)
                                 .Text(e => e.Path("Text"))
-                                .HeightRequest(200)
                                 .BackgroundColor(Colors.Transparent), // has to be set (MAUI bug workaround)
                         })
             }
             .IsExpanded(true)
-            .Title("Hello World Example")
+            .Title("CollectionView with Grid example")
             .SourceText(mySourceCode)
         };
     }

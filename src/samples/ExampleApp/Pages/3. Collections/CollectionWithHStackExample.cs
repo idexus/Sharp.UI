@@ -44,7 +44,7 @@ new VStack(e => e.Margin(bottom: 30).BackgroundColor(Colors.Black))
             {
                 new Example
                 {
-                    new VStack(e => e.Margin(bottom: 30).BackgroundColor(Colors.Black))
+                    new VStack(e => e.BackgroundColor(Colors.Black))
                     {
                         new Label("CollectionView")
                             .FontSize(40)
@@ -74,7 +74,7 @@ new VStack(e => e.Margin(bottom: 30).BackgroundColor(Colors.Black))
                     }
                 }
                 .IsExpanded(true)
-                .Title("Hello World Example")
+                .Title("CollectionView with HStack example")
                 .SourceText(mySourceCode)
             };
         }

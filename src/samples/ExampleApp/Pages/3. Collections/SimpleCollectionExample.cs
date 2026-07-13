@@ -13,13 +13,12 @@ public static List<int> Numbers = Enumerable.Range(1, 10).ToList();
 // CollectionView with a simple list of numbers
 
 new CollectionView()
-.Margin(new Thickness(0, 30, 0, 0))
-.ItemsSource(Numbers)
-.ItemTemplate(() =>
-    new Label()
-        .FontSize(30)
-        .Text(e => e.Path("."))
-        .BackgroundColor(Colors.Transparent)) // has to be set (MAUI bug workaround)
+    .ItemsSource(Numbers)
+    .ItemTemplate(() =>
+        new Label()
+            .FontSize(30)
+            .Text(e => e.Path("."))
+            .BackgroundColor(Colors.Transparent)) // has to be set (MAUI bug workaround)
 """;
 
         public static List<int> Numbers = Enumerable.Range(1, 10).ToList();
@@ -31,7 +30,6 @@ new CollectionView()
                 new Example
                 {
                     new CollectionView()
-                        .Margin(new Thickness(0, 30, 0, 0))
                         .ItemsSource(Numbers)
                         .ItemTemplate(() =>
                             new Label()
@@ -40,7 +38,7 @@ new CollectionView()
                                 .BackgroundColor(Colors.Transparent)) // has to be set (MAUI bug workaround)
                 }
                 .IsExpanded(true)
-                .Title("Hello World Example")
+                .Title("Simple CollectionView example")
                 .SourceText(mySourceCode)
             };
         }

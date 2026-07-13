@@ -96,7 +96,7 @@ new VStack
                     }
                 }
                 .IsExpanded(true)
-                .Title("Hello World Example")
+                .Title("Alternate colors example")
                 .SourceText(mySourceCode)
             };
         }
