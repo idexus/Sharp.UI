@@ -52,7 +52,7 @@ To add __Sharp.UI__ to your project, along with all its functionality, you can u
 
 - [https://www.nuget.org/packages/Sharp.UI](https://www.nuget.org/packages/Sharp.UI)
 
-# Sharp.UI Template Project
+## Sharp.UI Template Project
 
 A vanilla sample project using nuget package
 
