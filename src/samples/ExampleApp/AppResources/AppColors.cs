@@ -12,6 +12,7 @@ public static class AppColors
     public static readonly Color Gray400 = Color.FromArgb("919191");
     public static readonly Color Gray500 = Color.FromArgb("6E6E6E");
     public static readonly Color Gray600 = Color.FromArgb("404040");
+    public static readonly Color Gray800 = Color.FromArgb("333333");
     public static readonly Color Gray900 = Color.FromArgb("212121");
     public static readonly Color Gray950 = Color.FromArgb("141414");
 }

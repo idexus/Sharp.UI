@@ -2,6 +2,8 @@
 
 __Sharp.UI__ is a library for the .NET Multi-platform App User Interface (MAUI) and .NET 10 framework that enables you to build user interfaces declaratively in C# code using fluent methods. With __Sharp.UI__, you can create interfaces without needing to use XAML. Additionally, the library includes hot reload support to make the development process faster and more efficient.
 
+<img src="https://github.com/idexus/Sharp.UI/blob/net10/doc/assets/gallery.jpg?raw=true" width="800" border="0" />
+
 # Hello, World! Example
 
 Here is an example of how you could create a simple "Hello, World!" page in __Sharp.UI__:
@@ -323,7 +325,7 @@ public class ViewPage : ContentPage
 
 # Disclaimer
 
-__Sharp.UI__ is a proof of concept. There is no official support. Use at your own risk.
+There is no official support. Use at your own risk.
 
 # License 
 

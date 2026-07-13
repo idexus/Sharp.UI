@@ -16,26 +16,40 @@ public class AppShell : Shell
         {
             e => e.Route("top"),
 
+       
             new Tab("Main")
             {
                 e => e.Route("main"),
 
-                new ShellContent<TestPage>("TestPage"),
-                new ShellContent<HelloWorldPage>("Hello Page"),
-                new ShellContent<GridPage>("Grid").Route("grid"),
+                //new ShellContent<HelloWorldPage>("Hello Page"),
+                
+                new ShellContent<HelloWorldExample>("Hello Page"),
+                new ShellContent<FluentMethodsExamples>("Fluent Methods"),
+                new ShellContent<ContainerExamples>("Containers"),
+                new ShellContent<GridExample>("Grid").Route("grid"),
+                                
                 new ShellContent<KeypadPage>("Keypad"),
-                new ShellContent<AbsoluteLayoutPage>("Absolute layout"),
                 new ShellContent<ShapesPage>("Shapes"),
                 new ShellContent<NavigationMainPage>("Navigation")
+              
+            },
+            
+            new Tab("Animations")
+            {
+                new ShellContent<AbsoluteLayoutPage>("Absolute layout"),
+                new ShellContent<TestPage>("TestPage"),
+            },
+            
+            new Tab("Collections")
+            {
+                new ShellContent<SimpleCollectionExample>("Simple Collection"),
+                new ShellContent<CollectionWithGridExample>("With Grid"),
+                new ShellContent<CollectionWithHStackExample>("With HStack"),
+                new ShellContent<AlternateCollectionPage>("Alternate color"),
             },
 
-            new Tab("Table/List")
-            {
-                new ShellContent<ScrollPage>("ScrollPage"),
-                new ShellContent<CollectionPage>("Collection"),
-                new ShellContent<AlternateCollectionPage>("Alternate"),
-                new ShellContent<AlternativeBackroundPage>("Background"),
-            },
+            // TODO:
+
             new Tab("Triggers")
             {
                 new ShellContent<PropertyTriggerPage>("Property trigger"),
@@ -59,15 +73,15 @@ public class AppShell : Shell
                 new ShellContent<SwipeGesturePage>("Swipe"),
             },
 
-            new Tab("Bindings")
-            {
-                new ShellContent<SecondPage>("View Model"),
-                new ShellContent<AngleViewModelPage>("Angle View"),
-                new ShellContent<TestBindingsPage>("Bindings"),
-                new ShellContent<SimpleBindings>("Simple bindings"),
-                new ShellContent<TemplatedParentPage>("Templated CardView"),
-                new ShellContent<CardViewPage>("CardView")
-            },
+            //new Tab("Bindings")
+            //{
+            //    new ShellContent<SecondPage>("View Model"),
+            //    new ShellContent<AngleViewModelPage>("Angle View"),
+            //    new ShellContent<TestBindingsPage>("Bindings"),
+            //    new ShellContent<SimpleBindings>("Simple bindings"),
+            //    new ShellContent<TemplatedParentPage>("Templated CardView"),
+            //    new ShellContent<CardViewPage>("CardView")
+            //},
 
             new Tab("Other")
             {
