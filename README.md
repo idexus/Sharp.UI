@@ -1,8 +1,14 @@
+
 # Overview
 
-__Sharp.UI__ is a library for the .NET Multi-platform App User Interface (MAUI) and .NET 10 framework that enables you to build user interfaces declaratively in C# code using fluent methods. With __Sharp.UI__, you can create interfaces without needing to use XAML. Additionally, the library includes hot reload support to make the development process faster and more efficient.
+__Sharp.UI__ is a fluent API library for .NET MAUI that lets you describe your UI declaratively, directly in C# code. Instead of writing XML markup and switching between two languages, you stay in a single environment — with full IntelliSense support, refactoring, and static type checking at every stage of building your interface. __Sharp.UI__ doesn't try to replace MAUI, it just changes how you use it. This means you still use native controls, the layout mechanism, Shell, and the entire MAUI ecosystem, but you get a much more consistent and ergonomic API. With __Sharp.UI__, you can create interfaces without needing to use XAML. Additionally, the library includes hot reload support to make the development process faster and more efficient.
 
 <img src="https://github.com/idexus/Sharp.UI/blob/net10/doc/assets/gallery.jpg?raw=true" width="800" border="0" />
+
+## Project status
+
+__Sharp.UI__ has been actively used in real production deployments since 2023. As with any open source project, it's worth testing in your own environment before a large-scale rollout — but this isn't an experiment looking for its first user. It's a library that keeps running systems operational every day.
+What matters to me most is convincing the MAUI community to build UI purely in C# instead of XML — that's exactly why I made this library available to the community, one that I use in my own projects every day.
 
 # Hello, World! Example
 
@@ -45,7 +51,7 @@ public partial class HelloWorldPage : ContentPage
 }
 ```
 # Using __Sharp.UI__
-  
+
 ## Nuget Package
 
 To add __Sharp.UI__ to your project, along with all its functionality, you can use:
