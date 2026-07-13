@@ -74,7 +74,9 @@ new Grid(out var grid, e => e
                             grid.BackgroundColor = Colors.DarkRed;
                         })
                 }
+                .Padding(16)
             }
+            .ContentPadding(0)
             .IsExpanded(true)
             .Title("Hello World Example")
             .SourceText(mySourceCode)

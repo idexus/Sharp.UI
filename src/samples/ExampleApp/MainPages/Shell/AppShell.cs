@@ -73,15 +73,15 @@ public class AppShell : Shell
                 new ShellContent<SwipeGesturePage>("Swipe"),
             },
 
-            new Tab("Bindings")
-            {
-                new ShellContent<SecondPage>("View Model"),
-                new ShellContent<AngleViewModelPage>("Angle View"),
-                new ShellContent<TestBindingsPage>("Bindings"),
-                new ShellContent<SimpleBindings>("Simple bindings"),
-                new ShellContent<TemplatedParentPage>("Templated CardView"),
-                new ShellContent<CardViewPage>("CardView")
-            },
+            //new Tab("Bindings")
+            //{
+            //    new ShellContent<SecondPage>("View Model"),
+            //    new ShellContent<AngleViewModelPage>("Angle View"),
+            //    new ShellContent<TestBindingsPage>("Bindings"),
+            //    new ShellContent<SimpleBindings>("Simple bindings"),
+            //    new ShellContent<TemplatedParentPage>("Templated CardView"),
+            //    new ShellContent<CardViewPage>("CardView")
+            //},
 
             new Tab("Other")
             {
