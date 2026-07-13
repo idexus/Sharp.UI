@@ -14,7 +14,7 @@ public class FlyoutMainPage : FlyoutPage
             new TabbedPage
             {
                 new HelloWorldPage().Title("Hello world"),
-                new GridPage().Title("Grid"),                
+                new GridExample().Title("Grid"),                
                 new NavigationMainPage().Title("Navigation"),
                 new CardViewPage().Title("Card View"),
             }

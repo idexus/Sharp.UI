@@ -39,7 +39,7 @@ namespace ExampleApp
                     {
                         new ContentView().Content(e => e.Path(nameof(ContentView)).Source(this)),
                     }
-                    .Padding(20)
+                    .Padding(16)
                     .BackgroundColor(e => e.OnLight(Colors.LightBlue).OnDark(Colors.MidnightBlue)),
 
                     new Grid(e => e
