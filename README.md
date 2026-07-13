@@ -20,14 +20,14 @@ public partial class HelloWorldPage : ContentPage
     {
         return new VStack(e => e
             .Spacing(25)
-            .Padding(30, 0)
+            .Padding(30)
             .CenterVertically())
         {
             new Image("dotnet_bot.png", out var image)        
                 .HeightRequest(280) 
                 .CenterHorizontally(),
 
-            new Label("Welcome to .NET Multi-platform App UI")
+            new Label("Welcome to Sharp.UI fo .NET MAUI")
                 .FontSize(e => e.OnPhone(16).Default(30))
                 .CenterHorizontally(),
 
@@ -46,6 +46,18 @@ public partial class HelloWorldPage : ContentPage
 ```
 # Using __Sharp.UI__
   
+## Nuget Package
+
+To add __Sharp.UI__ to your project, along with all its functionality, you can use:
+
+- [https://www.nuget.org/packages/Sharp.UI](https://www.nuget.org/packages/Sharp.UI)
+
+## Sharp.UI Template Project
+
+A vanilla sample project using nuget package
+
+[https://github.com/idexus/Sharp.UI-Template](https://github.com/idexus/Sharp.UI-Template)
+
 ## Project Reference
 
 You can add the library to your project by adding a project reference to the Sharp.UI library. For more information, see the [Adding the Library by VS Project Reference](./doc/projectref.md) document.
