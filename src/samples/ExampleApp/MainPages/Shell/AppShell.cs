@@ -36,16 +36,16 @@ public class AppShell : Shell
             
             new Tab("Animations")
             {
-                new ShellContent<TestPage>("TestPage"),
                 new ShellContent<AbsoluteLayoutPage>("Absolute layout"),
+                new ShellContent<TestPage>("TestPage"),
             },
             
-            new Tab("Table/List")
+            new Tab("Collections")
             {
-                new ShellContent<ScrollPage>("ScrollPage"),
-                new ShellContent<CollectionPage>("Collection"),
-                new ShellContent<AlternateCollectionPage>("Alternate"),
-                new ShellContent<AlternativeBackroundPage>("Background"),
+                new ShellContent<SimpleCollectionExample>("Simple Collection"),
+                new ShellContent<CollectionWithGridExample>("With Grid"),
+                new ShellContent<CollectionWithHStackExample>("With HStack"),
+                new ShellContent<AlternateCollectionPage>("Alternate color"),
             }
 
             //new Tab("Triggers")

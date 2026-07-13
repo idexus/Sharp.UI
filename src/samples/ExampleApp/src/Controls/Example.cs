@@ -12,6 +12,9 @@ namespace ExampleApp
         public string Title { get; set; }
         public bool IsExpanded { get; set; }
 
+        [DefaultValue(16.0)]
+        public float ContentPadding { get; set; }
+
         public View ContentView { get; set; }
 
         [PropertyCallbacks(nameof(Example.SourceTextChanged))]
@@ -39,7 +42,7 @@ namespace ExampleApp
                     {
                         new ContentView().Content(e => e.Path(nameof(ContentView)).Source(this)),
                     }
-                    .Padding(16)
+                    .Padding(e => e.Path(nameof(ContentPadding)).Source(this))
                     .BackgroundColor(e => e.OnLight(Colors.LightBlue).OnDark(Colors.MidnightBlue)),
 
                     new Grid(e => e
