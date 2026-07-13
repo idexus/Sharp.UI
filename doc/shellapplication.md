@@ -1,15 +1,14 @@
-# Shell Application
+#  Application Shell
 
 Here's an example of a simple shell-based application:
 
 ```cs
-using Sharp.UI;
 
 public partial class App : Application
 {
-    public App()
+    protected override Window CreateWindow(IActivationState activationState)
     {
-        MainPage = new Shell
+        var shell = new Shell
         {
             e => e
                 .ItemTemplate(() => new ShellItemTemplate())
@@ -27,6 +26,19 @@ public partial class App : Application
                 ...
             }
         };
+
+        var window = new Window(shell)
+        {
+            Title = "Moja Aplikacja",
+            Width = 1200,
+            Height = 800,
+            MinimumWidth = 600,
+            MinimumHeight = 400,
+            X = 100,  // pozycja od lewej
+            Y = 100   // pozycja od góry
+        };
+
+        return window;
     }
 }
 ```
