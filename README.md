@@ -325,7 +325,7 @@ public class ViewPage : ContentPage
 
 # Disclaimer
 
-__Sharp.UI__ is a proof of concept. There is no official support. Use at your own risk.
+There is no official support. Use at your own risk.
 
 # License 
 
