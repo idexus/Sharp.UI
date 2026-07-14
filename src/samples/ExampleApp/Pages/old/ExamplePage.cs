@@ -5,7 +5,7 @@ namespace ExampleApp;
 
 using Sharp.UI;
 
-public class ExamplePage : ContentPage
+public partial class ExamplePage : ContentPage
 {
     private int counter;
 

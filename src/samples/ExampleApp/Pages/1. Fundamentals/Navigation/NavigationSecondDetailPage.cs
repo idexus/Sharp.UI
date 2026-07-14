@@ -2,7 +2,7 @@ namespace ExampleApp;
 
 using Sharp.UI;
 
-public class NavigationSecondDetailPage : ContentPage
+public partial class NavigationSecondDetailPage : ContentPage
 {
     protected override View Build()
     {

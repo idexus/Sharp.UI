@@ -34,10 +34,12 @@ namespace Sharp.UI
 
     [SharpObject]
     public partial class ContentView : Microsoft.Maui.Controls.ContentView, ISharpUIContent {
-        public ContentView()
+        public void InitializeSharpUIComponents()
         {
-            HotReloader.Register(this);
             this.Rebuild();
+#if DEBUG
+            HotReloader.Register(this);
+#endif
         }
 
         protected virtual View Build() { return new Microsoft.Maui.Controls.ContentView(); }

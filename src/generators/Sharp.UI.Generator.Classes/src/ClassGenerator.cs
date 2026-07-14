@@ -27,11 +27,15 @@ namespace Sharp.UI.Generator.Classes
         string containerOfTypeName = null;
         bool isNewPropertyContainer = false;
         bool isAlreadyContainerOfThis = false;
+        bool isContentSymbol = false;
+        bool isSharpObject = true;
 
         public ClassGenerator(GeneratorExecutionContext context, INamedTypeSymbol symbol)
         {
             this.context = context;
             this.mainSymbol = symbol;
+            this.isContentSymbol = symbol.BaseType != null && (symbol.BaseType.ToDisplayString() == Shared.ContentPageString || symbol.BaseType.ToDisplayString() == Shared.ContentViewString);
+            this.isSharpObject = symbol.GetAttributes().Any(e => e.AttributeClass.Name.Equals(Shared.SharpObjectAttributeString));
 
             this.fullSymbolName = symbol.ToDisplayString().Split('.').Last();
 
@@ -41,12 +45,7 @@ namespace Sharp.UI.Generator.Classes
         void SetupContainerIfNeeded()
         {
             this.contentPropertyName = GetContentPropertyNameFor(mainSymbol);
-            this.isNewPropertyContainer = IsNewPropertyContainer();
-
-            if (mainSymbol.Name.Equals("HelloWorldPage"))
-            {
-
-            }
+            this.isNewPropertyContainer = IsNewPropertyContainer();         
 
             this.isAlreadyContainerOfThis = Helpers.IsGenericIList(mainSymbol, out var containerOfType);
             if (contentPropertyName != null && isAlreadyContainerOfThis) throw new ArgumentException($"Type {mainSymbol.ToDisplayString()} defines IList interface, you can not use ContentProperty attribute");
@@ -200,10 +199,16 @@ using System.Collections.Generic;
 
         void GenerateClassBody()
         {
-            GenerateConstructors();
-            GenerateSingleItemContainer();
-            GenerateCollectionContainer();
-            GenerateBindableProperties();
+            if (isContentSymbol)
+                GenerateNoParamContentConstructor();
+            else
+                GenerateConstructors();
+            if (isSharpObject)
+            {
+                GenerateSingleItemContainer();
+                GenerateCollectionContainer();
+                GenerateBindableProperties();
+            }
         }
 
         // ---------------------------------
@@ -261,9 +266,41 @@ using System.Collections.Generic;
 
         // no params constructor
 
+        void GenerateNoParamContentConstructor()
+        {
+            var camelCaseName = Helpers.CamelCase(mainSymbol.Name);
+
+            var isExplicitlyDeclared = mainSymbol.Constructors.FirstOrDefault(e => e.DeclaredAccessibility == Accessibility.Public && !e.IsImplicitlyDeclared) != null;
+            var isImplicitlyDeclared = mainSymbol.Constructors.FirstOrDefault(e => e.DeclaredAccessibility == Accessibility.Public && e.Parameters.Count() == 0 && e.IsImplicitlyDeclared) != null;
+
+            // this() constructor
+            if (isImplicitlyDeclared && !isExplicitlyDeclared)
+            {
+                builder.AppendLine($@"
+        public {mainSymbol.Name}() 
+        {{ 
+            InitializeSharpUIComponents();
+        }}");
+
+                builder.AppendLine($@"
+        public {mainSymbol.Name}(System.Func<{mainSymbol.Name}, {mainSymbol.Name}> configure)
+        {{
+            configure(this);
+            InitializeSharpUIComponents();
+        }}
+
+        public {mainSymbol.Name}(out {mainSymbol.Name} {camelCaseName}, System.Func<{mainSymbol.Name}, {mainSymbol.Name}> configure)
+        {{
+            {Helpers.CamelCase(mainSymbol.Name)} = this;
+            configure(this);
+            InitializeSharpUIComponents();
+        }}");
+            }
+        }
+
         void GenerateNoParamConstructor()
         {
-            builder.AppendLine($@"
+                builder.AppendLine($@"
         public {mainSymbol.Name}() {{ }}");
         }
 
@@ -276,7 +313,7 @@ using System.Collections.Generic;
             var thisTail = ": this()";
             var objectTail = "";
             var camelCaseName = Helpers.CamelCase(mainSymbol.Name);
-
+           
             var buildAdditionalConstructor = () =>
             {
                 builder.AppendLine($@"

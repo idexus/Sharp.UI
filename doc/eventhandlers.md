@@ -12,7 +12,7 @@ Here's an example of how you can use the fluent helper method `OnClicked` to han
 ```cs
 using Sharp.UI;
 
-public class HelloWorldPage : ContentPage
+public partial class HelloWorldPage : ContentPage
 {
     int count = 0;
     protected override View Build()

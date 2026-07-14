@@ -11,7 +11,7 @@ Here is an example of using a property trigger to change the background color an
 ```cs
 using Sharp.UI;
 
-public class PropertyTriggerPage : ContentPage
+public partial class PropertyTriggerPage : ContentPage
 {
     protected override View Build()
     {

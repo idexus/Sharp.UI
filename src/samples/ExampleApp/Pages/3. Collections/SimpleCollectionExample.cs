@@ -5,7 +5,7 @@ namespace ExampleApp
 {
     using Sharp.UI;
 
-    public class SimpleCollectionExample : ContentPage
+    public partial class SimpleCollectionExample : ContentPage
     {
         string mySourceCode = """
 public static List<int> Numbers = Enumerable.Range(1, 10).ToList();

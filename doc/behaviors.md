@@ -67,7 +67,7 @@ public class NumericValidationStyleBehavior : AttachedBehavior<Entry, NumericVal
 You can then apply the attached behavior using a style in your `ContentPage`:
 
 ```cs
-public class AttachedBehaviorPage : ContentPage
+public partial class AttachedBehaviorPage : ContentPage
 {
     protected override View Build()
     {

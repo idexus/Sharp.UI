@@ -24,7 +24,7 @@ public class NumericValidationStyleBehavior : AttachedBehavior<Entry, NumericVal
     }
 }
 
-public class AttachedBehaviorPage : ContentPage
+public partial class AttachedBehaviorPage : ContentPage
 {
     protected override View Build()
     {

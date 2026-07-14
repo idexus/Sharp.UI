@@ -12,7 +12,7 @@ public class NumericValidationTriggerAction : TriggerAction<Entry>
     }
 }
 
-public class EventTriggerPage : ContentPage
+public partial class EventTriggerPage : ContentPage
 {
     protected override View Build()
     {

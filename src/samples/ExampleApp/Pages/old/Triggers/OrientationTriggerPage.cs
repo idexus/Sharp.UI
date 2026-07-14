@@ -2,7 +2,7 @@
 
 using Sharp.UI;
 
-public class OrientationTriggerPage : ContentPage
+public partial class OrientationTriggerPage : ContentPage
 {
     protected override View Build()
     {

@@ -2,7 +2,7 @@
 
 using Sharp.UI;
 
-public class SwipeGesturePage : ContentPage
+public partial class SwipeGesturePage : ContentPage
 {
     protected override View Build()
     {

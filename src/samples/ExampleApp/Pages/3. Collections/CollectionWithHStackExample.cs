@@ -5,7 +5,7 @@ namespace ExampleApp
 {
     using Sharp.UI;
 
-    public class CollectionWithHStackExample : ContentPage
+    public partial class CollectionWithHStackExample : ContentPage
     {
         string mySourceCode = """
 new VStack(e => e.Margin(bottom: 30).BackgroundColor(Colors.Black))
