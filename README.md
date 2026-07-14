@@ -142,7 +142,9 @@ public partial class HelloWorldPage : ContentPage
 {
     public HelloWorldPage()
     {
-        InitializeSharpUIComponents(); // if you create custom constructors, call this method to initialize Sharp.UI components
+        // if you create custom constructors, call this method 
+        // to initialize Sharp.UI components
+        InitializeSharpUIComponents();
     }
 
     protected override View Build()
