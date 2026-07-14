@@ -140,6 +140,11 @@ using Sharp.UI;
 
 public partial class HelloWorldPage : ContentPage
 {
+    public HelloWorldPage()
+    {
+        InitializeSharpUIComponents(); // if you create custom constructors, call this method to initialize Sharp.UI components
+    }
+
     protected override View Build()
     {
         return new Label("Edit me and use Hot Reload");
