@@ -11,7 +11,7 @@ Here's an example of how you can use the `AbsoluteLayoutBounds` method to define
 ```cs
 using Sharp.UI;
 
-public class AbsoluteLayoutPage : ContentPage
+public partial class AbsoluteLayoutPage : ContentPage
 {
     protected override View Build()
     {

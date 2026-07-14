@@ -131,7 +131,7 @@ namespace ExampleApp
 
 ## Hot Reload
 
-Override `Build()` in a partial page or view:
+Override `Build()` in a `ContentPage` or `ContentView`. If you create a custom constructor, you must call `InitializeSharpUIComponents()` yourself to initialize Sharp.UI components. Otherwise, your class must be declared as `partial`, since the source generator adds this call for you automatically.
 
 ```cs
 namespace ExampleApp;
@@ -140,6 +140,11 @@ using Sharp.UI;
 
 public partial class HelloWorldPage : ContentPage
 {
+    public HelloWorldPage()
+    {
+        InitializeSharpUIComponents();
+    }
+
     protected override View Build()
     {
         return new Label("Edit me and use Hot Reload");
@@ -148,7 +153,6 @@ public partial class HelloWorldPage : ContentPage
 ```
 
 Changes to the UI can be applied without rebuilding the entire application.
-
 # Feature overview
 
 ## Properties and fluent methods

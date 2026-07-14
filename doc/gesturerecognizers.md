@@ -37,7 +37,7 @@ The `PanGestureRecognizer` class is used to detect pan gestures on a view. You c
 Here's an example of using the `PanGestureRecognizer` to move an image on the screen:
 
 ```cs
-public class PanGesturePage : ContentPage
+public partial class PanGesturePage : ContentPage
 {
     double x, y;
 
@@ -78,11 +78,11 @@ The `PointerGestureRecognizer` class is used to detect pointer events such as en
 Here's an example of using the `PointerGestureRecognizer` to display the position of a pointer on an image:
 
 ```cs
-public class PointerGesturePage : ContentPage
+public partial class PointerGesturePage : ContentPage
 {
-    public PointerGesturePage()
+    protected override View Build()
     {
-        Content = new VStack(e => e.Center())
+        return new VStack(e => e.Center())
         {
             new Label(out var label).FontSize(20),
             new Label(out var enterExitLabel).FontSize(20).TextColor(Colors.Blue),

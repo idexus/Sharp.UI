@@ -5,10 +5,12 @@ namespace Sharp.UI
     [SharpObject] 
     public partial class ContentPage : Microsoft.Maui.Controls.ContentPage, ISharpUIContent
     {
-        public ContentPage()
+        public void InitializeSharpUIComponents()
         {
-            HotReloader.Register(this);
             this.Rebuild();
+#if DEBUG
+            HotReloader.Register(this);
+#endif
         }
 
         protected virtual View Build() { throw new NotImplementedException(); }

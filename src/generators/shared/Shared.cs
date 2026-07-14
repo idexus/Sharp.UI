@@ -8,6 +8,11 @@ namespace Sharp.UI.Generator
 	{
         public static string[] NotGenerateList = { "this[]", "Handler", "LogicalChildren" };
 
+        public const string SharpUIString = "Sharp.UI";
+
+        public const string ContentPageString = "Sharp.UI.ContentPage";
+        public const string ContentViewString = "Sharp.UI.ContentView";
+
         public const string ContentPropertyAttributeString = "ContentPropertyAttribute";
         public const string BindablePropertiesAttributeString = "BindablePropertiesAttribute";
         public const string SharpObjectAttributeString = "SharpObjectAttribute";

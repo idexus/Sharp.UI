@@ -27,7 +27,7 @@ public partial class CardView : ContentView, ICardViewProperties
 ### Consume
 
 ```cs
-public class TemplatedParentPage : ContentPage
+public partial class TemplatedParentPage : ContentPage
 {    
     protected override View Build()
     { 

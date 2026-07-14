@@ -4,6 +4,7 @@
 //
 
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Linq;
 using Microsoft.CodeAnalysis;
 
@@ -16,13 +17,14 @@ namespace Sharp.UI.Generator.Classes
 
         public void Execute(GeneratorExecutionContext context)
         {
-            // Helpers.WaitForDebugger(context.CancellationToken);
+            //Helpers.WaitForDebugger(context.CancellationToken);
 
-            var sharpObjectSymbols = context.Compilation.GetSymbolsWithName((s) => true, filter: SymbolFilter.Type)
-                .Where(e => !e.IsStatic && e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Equals(Shared.SharpObjectAttributeString)) != null)
-                .Select(e => e as INamedTypeSymbol);            
+            var objectSymbols = context.Compilation.GetSymbolsWithName((s) => true, filter: SymbolFilter.Type)
+                .Select(e => e as INamedTypeSymbol)
+                .Where(e => !e.IsStatic &&
+                    (e.GetAttributes().Any(e => e.AttributeClass.Name.Equals(Shared.SharpObjectAttributeString)) || (e.BaseType != null && (e.BaseType.ToDisplayString() == Shared.ContentPageString || e.BaseType.ToDisplayString() == Shared.ContentViewString))));
 
-            foreach (var symbol in sharpObjectSymbols)
+            foreach (var symbol in objectSymbols)
             {
                 new ClassGenerator(context, symbol).Build();
             }

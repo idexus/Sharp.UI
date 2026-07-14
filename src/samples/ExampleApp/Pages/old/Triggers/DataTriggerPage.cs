@@ -2,7 +2,7 @@
 
 using Sharp.UI;
 
-public class DataTriggerPage : ContentPage
+public partial class DataTriggerPage : ContentPage
 {
     protected override View Build()
     {

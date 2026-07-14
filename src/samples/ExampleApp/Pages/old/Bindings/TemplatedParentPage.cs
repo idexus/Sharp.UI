@@ -18,7 +18,7 @@ public partial class EmptyCardView : ContentView, IEmptyCardViewProperties
 {
 }
 
-public class CardViewTemplateView : ContentView
+public partial class CardViewTemplateView : ContentView
 {
     protected override View Build()
     {
@@ -44,7 +44,7 @@ public class CardViewTemplateView : ContentView
     }
 }
 
-public class TemplatedParentPage : ContentPage
+public partial class TemplatedParentPage : ContentPage
 {
     protected override View Build()
     {

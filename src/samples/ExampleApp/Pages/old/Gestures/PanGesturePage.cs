@@ -2,7 +2,7 @@
 
 using Sharp.UI;
 
-public class PanGesturePage : ContentPage
+public partial class PanGesturePage : ContentPage
 {
     double x, y;
 

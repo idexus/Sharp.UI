@@ -5,7 +5,7 @@ namespace ExampleApp
 {
     using Sharp.UI;
 
-    public class AlternateCollectionPage : ContentPage
+    public partial class AlternateCollectionPage : ContentPage
     {
         string mySourceCode = """
 

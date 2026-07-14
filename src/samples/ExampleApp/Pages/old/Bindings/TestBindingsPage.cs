@@ -4,7 +4,7 @@ namespace ExampleApp
 {
 	using Sharp.UI;
 
-	public class TestBindingsPage : ContentPage
+    public partial class TestBindingsPage : ContentPage
 	{
 		ResourceDictionary localResources => new ResourceDictionary
 		{
