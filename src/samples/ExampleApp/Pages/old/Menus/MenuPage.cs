@@ -2,7 +2,7 @@
 
 using Sharp.UI;
 
-public partial class MenuPage : ContentPage
+public sealed partial class MenuPage : ContentPage
 {
     protected override View Build()
     {

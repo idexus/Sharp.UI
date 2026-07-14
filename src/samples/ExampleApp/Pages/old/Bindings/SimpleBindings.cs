@@ -2,7 +2,7 @@
 
 using Sharp.UI;
 
-public partial class SimpleBindings : ContentPage
+public sealed partial class SimpleBindings : ContentPage
 {
     protected override View Build()
     {

@@ -4,7 +4,7 @@ namespace ExampleApp;
 using Microsoft.Maui.Controls.Shapes;
 using Sharp.UI;
 
-public partial class TestPage : ContentPage
+public sealed partial class TestPage : ContentPage
 {
     readonly ResourceDictionary localResources = new()  {
 

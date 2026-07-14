@@ -14,11 +14,11 @@ public interface IEmptyCardViewProperties
 }
 
 [SharpObject]
-public partial class EmptyCardView : ContentView, IEmptyCardViewProperties
+public sealed partial class EmptyCardView : ContentView, IEmptyCardViewProperties
 {
 }
 
-public partial class CardViewTemplateView : ContentView
+public sealed partial class CardViewTemplateView : ContentView
 {
     protected override View Build()
     {
@@ -44,7 +44,7 @@ public partial class CardViewTemplateView : ContentView
     }
 }
 
-public partial class TemplatedParentPage : ContentPage
+public sealed partial class TemplatedParentPage : ContentPage
 {
     protected override View Build()
     {

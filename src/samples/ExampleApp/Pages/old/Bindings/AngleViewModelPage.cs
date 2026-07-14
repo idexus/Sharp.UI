@@ -37,7 +37,7 @@ public partial class AngleViewModel : BindableObject, IAngleViewModelProperties
     }
 }
 
-public partial class AngleViewModelPage : ContentPage
+public sealed partial class AngleViewModelPage : ContentPage
 {
     AngleViewModel viewModel = new AngleViewModel();
 

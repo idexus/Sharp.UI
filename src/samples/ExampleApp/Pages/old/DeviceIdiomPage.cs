@@ -3,7 +3,7 @@
 using System.Linq.Expressions;
 using Sharp.UI;
 
-public partial class DeviceIdiomPage : ContentPage
+public sealed partial class DeviceIdiomPage : ContentPage
 {
     ResourceDictionary pageResources => new ResourceDictionary
     {

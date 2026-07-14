@@ -6,7 +6,7 @@ namespace ExampleApp
 {
     using Sharp.UI;
 
-    public partial class CustomPage : ContentPage
+    public sealed partial class CustomPage : ContentPage
     {
         public class GraphicsDrawable : IDrawable
         {

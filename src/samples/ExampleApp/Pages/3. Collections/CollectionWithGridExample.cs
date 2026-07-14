@@ -6,7 +6,7 @@ namespace ExampleApp;
 using System.Data.Common;
 using Sharp.UI;
 
-public partial class CollectionWithGridExample : ContentPage
+public sealed partial class CollectionWithGridExample : ContentPage
 {
     string mySourceCode = """
 new CollectionView()

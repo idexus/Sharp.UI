@@ -2,7 +2,7 @@ namespace ExampleApp;
 
 using Sharp.UI;
 
-public partial class NavigationMainPage : ContentPage
+public sealed partial class NavigationMainPage : ContentPage
 {
 	string mySourceCode = """
 new VStack(e => e.Center())

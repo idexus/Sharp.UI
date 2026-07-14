@@ -2,7 +2,7 @@
 
 using Sharp.UI;
 
-public partial class FlyoutHeaderTemplate : ContentView
+public sealed partial class FlyoutHeaderTemplate : ContentView
 {
     protected override View Build()
     {

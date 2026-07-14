@@ -58,7 +58,7 @@ namespace ExampleApp;
 
 using Sharp.UI;
 
-public partial class HelloWorldPage : ContentPage
+public sealed partial class HelloWorldPage : ContentPage
 {
     private int count;
 
@@ -131,20 +131,36 @@ namespace ExampleApp
 
 ## Hot Reload
 
-Override `Build()` in a `ContentPage` or `ContentView`. If you create a custom constructor, you must call `InitializeSharpUI()` yourself to initialize Sharp.UI component. Otherwise, your class must be declared as `partial`, since the source generator adds this call for you automatically.
+Override `Build()` in a `ContentPage` or `ContentView`. If you create a custom constructor, you must call `InitializeSharpUI()` yourself to initialize Sharp.UI component.
 
 ```cs
 namespace ExampleApp;
 
 using Sharp.UI;
 
-public partial class HelloWorldPage : ContentPage
+public class HelloWorldPage : ContentPage
 {
     public HelloWorldPage()
     {
         InitializeSharpUI();
     }
 
+    protected override View Build()
+    {
+        return new Label("Edit me and use Hot Reload");
+    }
+}
+```
+
+Otherwise, your class must be declared as `sealed partial`, since the source generator adds this call for you automatically.
+
+```cs
+namespace ExampleApp;
+
+using Sharp.UI;
+
+public sealed partial class HelloWorldPage : ContentPage
+{
     protected override View Build()
     {
         return new Label("Edit me and use Hot Reload");

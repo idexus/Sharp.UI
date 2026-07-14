@@ -24,7 +24,7 @@ public class NumericValidationBehavior : Behavior<Entry>
     }
 }
 
-public partial class BehaviorTestPage : ContentPage
+public sealed partial class BehaviorTestPage : ContentPage
 {
     protected override View Build()
     {

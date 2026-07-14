@@ -2,7 +2,7 @@
 
 using Sharp.UI;
 
-public partial class TapGesturePage : ContentPage
+public sealed partial class TapGesturePage : ContentPage
 {
     protected override View Build()
     {

@@ -2,7 +2,7 @@
 
 using Sharp.UI;
 
-public partial class MultiTriggerPage : ContentPage
+public sealed partial class MultiTriggerPage : ContentPage
 {
     protected override View Build()
     {

@@ -2,7 +2,7 @@
 
 using Sharp.UI;
 
-public partial class ContainerExamples : ContentPage
+public sealed partial class ContainerExamples : ContentPage
 {
 
     string[] mySourceCode = [
