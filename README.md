@@ -131,7 +131,7 @@ namespace ExampleApp
 
 ## Hot Reload
 
-Override `Build()` in a `ContentPage` or `ContentView`. If you create a custom constructor, you must call `InitializeSharpUI()` yourself to initialize Sharp.UI components. Otherwise, your class must be declared as `partial`, since the source generator adds this call for you automatically.
+Override `Build()` in a `ContentPage` or `ContentView`. If you create a custom constructor, you must call `InitializeSharpUI()` yourself to initialize Sharp.UI component. Otherwise, your class must be declared as `partial`, since the source generator adds this call for you automatically.
 
 ```cs
 namespace ExampleApp;
