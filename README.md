@@ -133,7 +133,7 @@ namespace ExampleApp
 
 Override `Build()` in a `ContentPage` or `ContentView`. If you create a custom constructor, you must call `InitializeSharpUIComponents()` yourself to initialize Sharp.UI components. Otherwise, your class must be declared as `partial`, since the source generator adds this call for you automatically.
 
-\```cs
+```cs
 namespace ExampleApp;
 
 using Sharp.UI;
@@ -150,7 +150,7 @@ public partial class HelloWorldPage : ContentPage
         return new Label("Edit me and use Hot Reload");
     }
 }
-\```
+```
 
 Changes to the UI can be applied without rebuilding the entire application.
 # Feature overview
