@@ -4,7 +4,7 @@ namespace ExampleApp;
 
 using Sharp.UI;
 
-public partial class AbsoluteLayoutPage : ContentPage
+public sealed partial class AbsoluteLayoutPage : ContentPage
 {
     string mySourceCode = """
 new AbsoluteLayout

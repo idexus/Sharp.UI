@@ -2,7 +2,7 @@
 
 using Sharp.UI;
 
-public partial class FluentMethodsExamples : ContentPage
+public sealed partial class FluentMethodsExamples : ContentPage
 {
 
     string[] mySourceCode = [

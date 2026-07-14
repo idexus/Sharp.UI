@@ -22,7 +22,7 @@ public class FadeTriggerAction : TriggerAction<VisualElement>
     }
 }
 
-public partial class EnterExitActionsPage : ContentPage
+public sealed partial class EnterExitActionsPage : ContentPage
 {
     protected override View Build()
     {

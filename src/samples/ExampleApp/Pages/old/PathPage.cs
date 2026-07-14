@@ -5,7 +5,7 @@ namespace ExampleApp
 {
     using Sharp.UI;
 
-    public partial class PathPage : ContentPage
+    public sealed partial class PathPage : ContentPage
     {
         protected override View Build()
         {

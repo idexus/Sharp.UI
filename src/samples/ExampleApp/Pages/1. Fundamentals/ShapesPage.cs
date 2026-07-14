@@ -5,7 +5,7 @@ namespace ExampleApp
 {
 	using Sharp.UI;
 
-    public partial class ShapesPage : ContentPage
+    public sealed partial class ShapesPage : ContentPage
 	{
         string mySourceCode = """
 new Grid(e => e

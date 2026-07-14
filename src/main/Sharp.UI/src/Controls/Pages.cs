@@ -13,9 +13,13 @@ namespace Sharp.UI
 #endif
         }
 
-        protected virtual View Build() { throw new NotImplementedException(); }
+        protected virtual View Build() { return null; }
 
-        internal void Rebuild() {  this.Content = Build(); }
+        internal void Rebuild() {
+            var build = this.Build();
+            if (build != null)
+            this.Content = build;         
+        }
 
         void ISharpUIContent.Rebuild()
         {

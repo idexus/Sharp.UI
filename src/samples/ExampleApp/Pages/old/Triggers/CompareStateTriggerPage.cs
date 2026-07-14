@@ -2,7 +2,7 @@
 
 using Sharp.UI;
 
-public partial class CompareStateTriggerPage : ContentPage
+public sealed partial class CompareStateTriggerPage : ContentPage
 {
     private Switch testSwitch;
 

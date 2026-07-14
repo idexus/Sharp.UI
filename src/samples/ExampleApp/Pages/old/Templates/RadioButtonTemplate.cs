@@ -4,7 +4,7 @@ namespace ExampleApp
 {
     using Sharp.UI;
 
-    public partial class RadioButtonTemplate : ContentView
+    public sealed partial class RadioButtonTemplate : ContentView
     {
         protected override View Build()
         {

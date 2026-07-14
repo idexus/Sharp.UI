@@ -2,7 +2,7 @@
 
 using Sharp.UI;
 
-public partial class PointerGesturePage : ContentPage
+public sealed partial class PointerGesturePage : ContentPage
 {
     protected override View Build()
     {

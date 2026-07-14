@@ -18,7 +18,7 @@ public interface ICardViewProperties
 
 [SharpObject]
 [ContentProperty(nameof(ContentView))]
-public partial class CardView : ContentView, ICardViewProperties
+public sealed partial class CardView : ContentView, ICardViewProperties
 {
     public event EventHandler Clicked;
 

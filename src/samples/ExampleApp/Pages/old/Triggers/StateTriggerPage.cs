@@ -4,7 +4,7 @@ namespace ExampleApp;
 
 using Sharp.UI;
 
-public partial class StateTriggerPage : ContentPage
+public sealed partial class StateTriggerPage : ContentPage
 {
     private Switch testSwitch;
 

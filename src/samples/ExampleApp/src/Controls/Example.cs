@@ -23,7 +23,7 @@ namespace ExampleApp
 
     [SharpObject]
     [ContentProperty(nameof(ContentView))]
-    public partial class Example : ContentView, IExample
+    public sealed partial class Example : ContentView, IExample
     {
         private Label codeLabel;
         private FormattedString formattedText;

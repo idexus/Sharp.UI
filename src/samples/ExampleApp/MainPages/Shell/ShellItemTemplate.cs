@@ -2,7 +2,7 @@
 
 using Sharp.UI;
 
-public partial class ShellItemTemplate : ContentView
+public sealed partial class ShellItemTemplate : ContentView
 {
     protected override View Build()
     {

@@ -2,7 +2,7 @@
 
 using Sharp.UI;
 
-public partial class CardViewPage : ContentPage
+public sealed partial class CardViewPage : ContentPage
 {
     private Label label;
 

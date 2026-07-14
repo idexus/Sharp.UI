@@ -3,7 +3,7 @@ namespace ExampleApp;
 
 using Sharp.UI;
 
-public partial class KeypadPage : ContentPage
+public sealed partial class KeypadPage : ContentPage
 {
     string mySourceCode = """
 string[] labels = new[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "*", "0", "#" };
