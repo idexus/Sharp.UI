@@ -3,7 +3,7 @@ namespace ExampleApp;
 
 using Sharp.UI;
 
-public class HelloWorldPage : ContentPage
+public sealed partial class HelloWorldPage : ContentPage
 {
     int count = 0;
 
