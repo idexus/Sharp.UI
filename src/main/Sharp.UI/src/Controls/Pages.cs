@@ -8,9 +8,7 @@ namespace Sharp.UI
         public void InitializeSharpUI()
         {
             this.Rebuild();
-#if DEBUG
             HotReloader.Register(this);
-#endif
         }
 
         protected virtual View Build() { return null; }
