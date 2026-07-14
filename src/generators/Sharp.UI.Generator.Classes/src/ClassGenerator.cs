@@ -27,14 +27,16 @@ namespace Sharp.UI.Generator.Classes
         string containerOfTypeName = null;
         bool isNewPropertyContainer = false;
         bool isAlreadyContainerOfThis = false;
-        bool isContentSymbol = false;
+        bool isContentPageSymbol = false;
+        bool isContentViewSymbol = false;
         bool isSharpObject = true;
 
         public ClassGenerator(GeneratorExecutionContext context, INamedTypeSymbol symbol)
         {
             this.context = context;
             this.mainSymbol = symbol;
-            this.isContentSymbol = symbol.BaseType != null && (symbol.BaseType.ToDisplayString() == Shared.ContentPageString || symbol.BaseType.ToDisplayString() == Shared.ContentViewString);
+            this.isContentViewSymbol = symbol.BaseType != null && symbol.BaseType.ToDisplayString() == Shared.ContentViewString;
+            this.isContentPageSymbol = symbol.BaseType != null && symbol.BaseType.ToDisplayString() == Shared.ContentPageString;
             this.isSharpObject = symbol.GetAttributes().Any(e => e.AttributeClass.Name.Equals(Shared.SharpObjectAttributeString));
 
             this.fullSymbolName = symbol.ToDisplayString().Split('.').Last();
@@ -45,7 +47,7 @@ namespace Sharp.UI.Generator.Classes
         void SetupContainerIfNeeded()
         {
             this.contentPropertyName = GetContentPropertyNameFor(mainSymbol);
-            this.isNewPropertyContainer = IsNewPropertyContainer();         
+            this.isNewPropertyContainer = IsNewPropertyContainer();
 
             this.isAlreadyContainerOfThis = Helpers.IsGenericIList(mainSymbol, out var containerOfType);
             if (contentPropertyName != null && isAlreadyContainerOfThis) throw new ArgumentException($"Type {mainSymbol.ToDisplayString()} defines IList interface, you can not use ContentProperty attribute");
@@ -64,7 +66,7 @@ namespace Sharp.UI.Generator.Classes
                 }
 
                 if (!string.IsNullOrEmpty(this.contentPropertyName))
-                { 
+                {
                     IPropertySymbol contentPropertySymbol = FindPropertySymbolWithName(this.contentPropertyName);
                     if (contentPropertySymbol == null) throw new Exception($"No content property for: {mainSymbol.ToDisplayString()}");
 
@@ -145,13 +147,16 @@ namespace Sharp.UI.Generator.Classes
             builder.AppendLine();
             builder.AppendLine("#nullable restore");
 
+            if ((isContentPageSymbol || isContentViewSymbol) && !generatedContentConstructor && !isSharpObject)
+                return;
+
             context.AddSource($"{mainSymbol.ContainingNamespace.ToDisplayString()}.{Helpers.GetNormalizedFileName(mainSymbol)}.g.cs", builder.ToString());
         }
 
         public string GetUsingString()
         {
             if (mainSymbol.ContainingNamespace.ToDisplayString().Equals("Sharp.UI"))
-                return  $@"using Sharp.UI;
+                return $@"using Sharp.UI;
 
     ";
             return "";
@@ -199,7 +204,7 @@ using System.Collections.Generic;
 
         void GenerateClassBody()
         {
-            if (isContentSymbol)
+            if (isContentViewSymbol || isContentPageSymbol)
                 GenerateNoParamContentConstructor();
             else
                 GenerateConstructors();
@@ -266,6 +271,8 @@ using System.Collections.Generic;
 
         // no params constructor
 
+        bool generatedContentConstructor = false;
+
         void GenerateNoParamContentConstructor()
         {
             var camelCaseName = Helpers.CamelCase(mainSymbol.Name);
@@ -276,13 +283,17 @@ using System.Collections.Generic;
             // this() constructor
             if (isImplicitlyDeclared && !isExplicitlyDeclared)
             {
+                generatedContentConstructor = true;
+
                 builder.AppendLine($@"
         public {mainSymbol.Name}() 
         {{ 
             InitializeSharpUIComponents();
         }}");
 
-                builder.AppendLine($@"
+                if (isContentViewSymbol)
+                {
+                    builder.AppendLine($@"
         public {mainSymbol.Name}(System.Func<{mainSymbol.Name}, {mainSymbol.Name}> configure)
         {{
             configure(this);
@@ -295,6 +306,7 @@ using System.Collections.Generic;
             configure(this);
             InitializeSharpUIComponents();
         }}");
+                }
             }
         }
 
