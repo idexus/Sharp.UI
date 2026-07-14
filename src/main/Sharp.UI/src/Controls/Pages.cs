@@ -5,7 +5,7 @@ namespace Sharp.UI
     [SharpObject] 
     public partial class ContentPage : Microsoft.Maui.Controls.ContentPage, ISharpUIContent
     {
-        public void InitializeSharpUIComponents()
+        public void InitializeSharpUI()
         {
             this.Rebuild();
 #if DEBUG
