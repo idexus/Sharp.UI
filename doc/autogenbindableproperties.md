@@ -21,7 +21,6 @@ public interface ICardViewProperties
 [SharpObject]
 public partial class CardView : ContentView, ICardViewProperties
 {
-
 }
 ```
 

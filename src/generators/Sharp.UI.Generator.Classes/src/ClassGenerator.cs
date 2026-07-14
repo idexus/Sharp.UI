@@ -288,7 +288,7 @@ using System.Collections.Generic;
                 builder.AppendLine($@"
         public {mainSymbol.Name}() 
         {{ 
-            InitializeSharpUIComponent();
+            InitializeSharpUI();
         }}");
 
                 if (isContentViewSymbol)
@@ -297,14 +297,14 @@ using System.Collections.Generic;
         public {mainSymbol.Name}(System.Func<{mainSymbol.Name}, {mainSymbol.Name}> configure)
         {{
             configure(this);
-            InitializeSharpUIComponent();
+            InitializeSharpUI();
         }}
 
         public {mainSymbol.Name}(out {mainSymbol.Name} {camelCaseName}, System.Func<{mainSymbol.Name}, {mainSymbol.Name}> configure)
         {{
             {Helpers.CamelCase(mainSymbol.Name)} = this;
             configure(this);
-            InitializeSharpUIComponent();
+            InitializeSharpUI();
         }}");
                 }
             }
