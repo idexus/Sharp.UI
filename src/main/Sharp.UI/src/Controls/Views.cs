@@ -34,7 +34,7 @@ namespace Sharp.UI
 
     [SharpObject]
     public partial class ContentView : Microsoft.Maui.Controls.ContentView, ISharpUIContent {
-        public void InitializeSharpUIComponents()
+        public void InitializeSharpUIComponent()
         {
             this.Rebuild();
 #if DEBUG
