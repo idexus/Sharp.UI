@@ -4,9 +4,9 @@ namespace ExampleApp
 {
     using Sharp.UI;
 
-    public sealed partial class RadioButtonTemplate : ContentView
+    public partial class RadioButtonTemplate : ContentView
     {
-        protected override View Build()
+        public RadioButtonTemplate()
         {
             this.VisualStateGroups(new VisualStateGroupList
             {
@@ -25,7 +25,7 @@ namespace ExampleApp
                     )
             });
 
-            return new Border
+            Content = new Border
             {
                 new Grid {
                     new Grid()

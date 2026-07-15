@@ -20,9 +20,9 @@ public sealed partial class EmptyCardView : ContentView, IEmptyCardViewPropertie
 
 public sealed partial class CardViewTemplateView : ContentView
 {
-    protected override View Build()
+    public CardViewTemplateView()
     {
-        return new Border
+        Content = new Border
         {
             new VStack
             {

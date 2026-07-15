@@ -11,44 +11,64 @@ using Microsoft.Maui.Graphics;
 
 namespace Sharp.UI
 {
-    public interface ISharpUIContent
-    {
-        void Rebuild();
-    }
-
     public static class HotReloader
     {
-        private static readonly List<WeakReference<ISharpUIContent>> _content = new();
+        private static readonly List<WeakReference<Element>> _elements = new();
         private static readonly object _lock = new();
 
-        public static void Register(ISharpUIContent content)
+        public static void Register(Element content)
         {
             lock (_lock)
             {
-                _content.RemoveAll(w => !w.TryGetTarget(out _));
-                _content.Add(new WeakReference<ISharpUIContent>(content));
+                _elements.RemoveAll(w => !w.TryGetTarget(out _));
+                _elements.Add(new WeakReference<Element>(content));
             }
+        }
+
+        private static ContentPage FindContentPage(Element element)
+        {
+            if (element == null)
+                return null;
+
+            if (element is ContentPage)
+                return element as ContentPage;
+
+            return FindContentPage(element.Parent);
         }
 
         public static void RebuildAll(Type[] updatedTypes)
         {
-            List<ISharpUIContent> alive;
+            if (updatedTypes is null || updatedTypes.Length == 0)
+            {
+                System.Diagnostics.Debug.WriteLine("Hot reload rebuild: no updated types provided.");
+                return;
+            }
+
+            List<Element> alive;
             lock (_lock)
             {
-                alive = _content
-                    .Select(w => w.TryGetTarget(out var p) ? p : null)
-                    .Where(p => p is not null)
-                    .Cast<ISharpUIContent>()
+                alive = _elements
+                    .Select(w => w.TryGetTarget(out var v) ? v : null)
+                    .Where(v => v is not null)
+                    .Cast<Element>()
                     .ToList();
             }
 
-            foreach (var page in alive)
+            HashSet<ContentPage> affectedPages = new();
+
+            foreach (var view in alive)
             {
-                var affected = updatedTypes is null
-                    || updatedTypes.Any(t => t.IsInstanceOfType(page));
+                var affected = updatedTypes.Any(t => t.IsInstanceOfType(view));
+                if (affected)
+                {
+                    var page = FindContentPage(view);
+                    if (page is not null)
+                        affectedPages.Add(page);
+                }
+            }
 
-                if (!affected) continue;
-
+            foreach (var page in affectedPages)
+            {
                 try
                 {
                     page.Rebuild();

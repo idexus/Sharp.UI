@@ -3,7 +3,7 @@
 namespace Sharp.UI
 {
     [SharpObject] 
-    public partial class ContentPage : Microsoft.Maui.Controls.ContentPage, ISharpUIContent
+    public partial class ContentPage : Microsoft.Maui.Controls.ContentPage
     {
         public void InitializeSharpUI()
         {
@@ -17,11 +17,6 @@ namespace Sharp.UI
             var build = this.Build();
             if (build != null)
             this.Content = build;         
-        }
-
-        void ISharpUIContent.Rebuild()
-        {
-            Rebuild();
         }
     }
 
