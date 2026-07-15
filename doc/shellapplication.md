@@ -50,9 +50,9 @@ Here's an example of defining the appearance of a `FlyoutItem`:
 ```cs
 public class ShellItemTemplate : ContentView
 {
-    protected override View Build()
+    public ShellItemTemplate()
     {
-        return new Grid(e => e.ColumnDefinitions(e => e.Star(0.2).Star(0.8)))
+        Content = new Grid(e => e.ColumnDefinitions(e => e.Star(0.2).Star(0.8)))
         {
             new Image()
                 .Source(e => e.Path("FlyoutIcon"))

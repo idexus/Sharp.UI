@@ -22,11 +22,11 @@ public sealed partial class CardView : ContentView, ICardViewProperties
 {
     public event EventHandler Clicked;
 
-    protected override View Build()
+    public CardView()
     {
         BindingContext = this; 
 
-        return new Border(e => e
+        Content = new Border(e => e
                 .StrokeShape(new RoundRectangle().CornerRadius(20))
                 .Stroke(e => e.Path(nameof(BorderColor)))
                 .BackgroundColor(e => e.Path(nameof(CardColor)))

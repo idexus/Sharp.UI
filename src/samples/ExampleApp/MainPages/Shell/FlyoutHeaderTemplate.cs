@@ -2,11 +2,11 @@
 
 using Sharp.UI;
 
-public sealed partial class FlyoutHeaderTemplate : ContentView
+public partial class FlyoutHeaderTemplate : ContentView
 {
-    protected override View Build()
+    public FlyoutHeaderTemplate()
     {
-        return new Grid
+        this.Content = new Grid
         {
             e => e
 				.RowDefinitions(e => e.Absolute(150).Auto())

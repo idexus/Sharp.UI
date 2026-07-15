@@ -28,14 +28,12 @@ namespace Sharp.UI.Generator.Classes
         bool isNewPropertyContainer = false;
         bool isAlreadyContainerOfThis = false;
         bool isContentPageSymbol = false;
-        bool isContentViewSymbol = false;
         bool isSharpObject = true;
 
         public ClassGenerator(GeneratorExecutionContext context, INamedTypeSymbol symbol)
         {
             this.context = context;
             this.mainSymbol = symbol;
-            this.isContentViewSymbol = symbol.BaseType != null && symbol.BaseType.ToDisplayString() == Shared.ContentViewString;
             this.isContentPageSymbol = symbol.BaseType != null && symbol.BaseType.ToDisplayString() == Shared.ContentPageString;
             this.isSharpObject = symbol.GetAttributes().Any(e => e.AttributeClass.Name.Equals(Shared.SharpObjectAttributeString));
 
@@ -147,7 +145,7 @@ namespace Sharp.UI.Generator.Classes
             builder.AppendLine();
             builder.AppendLine("#nullable restore");
 
-            if ((isContentPageSymbol || isContentViewSymbol) && !generatedContentConstructor && !isSharpObject)
+            if (isContentPageSymbol && !generatedContentConstructor && !isSharpObject)
                 return;
 
             context.AddSource($"{mainSymbol.ContainingNamespace.ToDisplayString()}.{Helpers.GetNormalizedFileName(mainSymbol)}.g.cs", builder.ToString());
@@ -176,7 +174,7 @@ namespace Sharp.UI.Generator.Classes
         {
             var isExplicitlyDeclared = mainSymbol.Constructors.FirstOrDefault(e => e.DeclaredAccessibility == Accessibility.Public && !e.IsImplicitlyDeclared) != null;
             var isImplicitlyDeclared = mainSymbol.Constructors.FirstOrDefault(e => e.DeclaredAccessibility == Accessibility.Public && e.Parameters.Count() == 0 && e.IsImplicitlyDeclared) != null;             
-            var sealedString = isImplicitlyDeclared && !isExplicitlyDeclared && (isContentPageSymbol || isContentViewSymbol) ? "sealed " : "";
+            var sealedString = isImplicitlyDeclared && !isExplicitlyDeclared && isContentPageSymbol ? "sealed " : "";
 
             if (sealedString.Count() > 0 && !mainSymbol.IsSealed)
             {
@@ -231,7 +229,7 @@ using System.Collections.Generic;
 
         void GenerateClassBody()
         {
-            if (isContentViewSymbol || isContentPageSymbol)
+            if (isContentPageSymbol)
                 GenerateNoParamContentConstructor();
             else
                 GenerateConstructors();
@@ -317,23 +315,6 @@ using System.Collections.Generic;
         {{ 
             InitializeSharpUI();
         }}");
-
-                if (isContentViewSymbol)
-                {
-                    builder.AppendLine($@"
-        public {mainSymbol.Name}(System.Func<{mainSymbol.Name}, {mainSymbol.Name}> configure)
-        {{
-            configure(this);
-            InitializeSharpUI();
-        }}
-
-        public {mainSymbol.Name}(out {mainSymbol.Name} {camelCaseName}, System.Func<{mainSymbol.Name}, {mainSymbol.Name}> configure)
-        {{
-            {Helpers.CamelCase(mainSymbol.Name)} = this;
-            configure(this);
-            InitializeSharpUI();
-        }}");
-                }
             }
         }
 

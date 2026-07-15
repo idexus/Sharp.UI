@@ -4,9 +4,9 @@ using Sharp.UI;
 
 public sealed partial class ShellItemTemplate : ContentView
 {
-    protected override View Build()
+    public ShellItemTemplate()
     {
-        return new Grid
+        Content = new Grid
 		{
 			new Image()
 				.Source(e => e.Path("FlyoutIcon"))
