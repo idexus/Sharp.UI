@@ -22,7 +22,7 @@ namespace Sharp.UI.Generator.Classes
             var objectSymbols = context.Compilation.GetSymbolsWithName((s) => true, filter: SymbolFilter.Type)
                 .Select(e => e as INamedTypeSymbol)
                 .Where(e => !e.IsStatic &&
-                    (e.GetAttributes().Any(e => e.AttributeClass.Name.Equals(Shared.SharpObjectAttributeString)) || (e.BaseType != null && (e.BaseType.ToDisplayString() == Shared.ContentPageString))));
+                    (e.GetAttributes().Any(e => e.AttributeClass.Name.Equals(Shared.SharpObjectAttributeString)) || (e.IsSealed && Helpers.IsContentPage(e))));
 
             foreach (var symbol in objectSymbols)
             {

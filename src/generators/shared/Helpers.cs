@@ -107,6 +107,19 @@ namespace Sharp.UI.Generator
             return isNavigableElement;
         }
 
+        public static bool IsContentPage(INamedTypeSymbol symbol)
+        {
+            var isContentPage = false;
+
+            LoopDownToObject(symbol, type =>
+            {
+                if (type.ToDisplayString().Equals(Shared.ContentPageString, StringComparison.Ordinal)) isContentPage = true;
+                return isContentPage;
+            });
+
+            return isContentPage;
+        }
+
         public static bool IsBaseImplementationOfInterface(INamedTypeSymbol symbol, string name)
         {
             var count = 0;

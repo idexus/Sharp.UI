@@ -2,7 +2,7 @@ namespace ExampleApp;
 
 using Sharp.UI;
 
-public class AppShell : Shell
+public partial class AppShell : Shell
 {
     public AppShell()
     {
