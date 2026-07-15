@@ -28,7 +28,7 @@
 		<Version>10.0.0-beta.4</Version>
 		<Authors>Pawel Krzywdzinski</Authors>
 		<Copyright>Pawel Krzywdzinski</Copyright>
-		<PackageDescription>C# Code Markup Library for .NET MAUI: Code-Only UI Development with Fluent Methods and Hot Reload</PackageDescription>
+		<PackageDescription>Declarative C# UI for .NET MAUI — native controls, fluent APIs, hot reload, and no XAML required.</PackageDescription>
 		<Company></Company>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
