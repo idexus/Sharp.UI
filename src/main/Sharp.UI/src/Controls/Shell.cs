@@ -30,6 +30,17 @@ namespace Sharp.UI
         {
             this.FlyoutDisplayOptions = displayOptions;
         }
+
+        public FlyoutItem(string title)
+        {
+            this.Title = title;
+        }
+
+        public FlyoutItem(string title, FlyoutDisplayOptions displayOptions)
+        {
+            this.Title = title;
+            this.FlyoutDisplayOptions = displayOptions;
+        }
     }
 
     [SharpObject]
