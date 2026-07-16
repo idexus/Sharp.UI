@@ -262,7 +262,13 @@ using System.Collections.Generic;
         public bool Remove({containerOfTypeName} item) => {prefix}.Remove(item);
         public void RemoveAt(int index) => {prefix}.RemoveAt(index);
         IEnumerator IEnumerable.GetEnumerator() => {prefix}.GetEnumerator();
-        public void Add({containerOfTypeName} item) => {prefix}.Add(item);");
+        public void Add({containerOfTypeName} item) => {prefix}.Add(item);                
+        public void SetItems(params {containerOfTypeName}[] items)
+        {{
+            this.Clear();
+            foreach (var item in items) {{ this.Add(item); }}
+        }}
+");
 
             }
         }

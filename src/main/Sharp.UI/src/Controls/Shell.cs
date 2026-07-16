@@ -1,4 +1,6 @@
-﻿namespace Sharp.UI
+﻿using System.Collections;
+
+namespace Sharp.UI
 {
     [SharpObject]
     public partial class Shell : Microsoft.Maui.Controls.Shell
@@ -26,6 +28,17 @@
     {
         public FlyoutItem(FlyoutDisplayOptions displayOptions)
         {
+            this.FlyoutDisplayOptions = displayOptions;
+        }
+
+        public FlyoutItem(string title)
+        {
+            this.Title = title;
+        }
+
+        public FlyoutItem(string title, FlyoutDisplayOptions displayOptions)
+        {
+            this.Title = title;
             this.FlyoutDisplayOptions = displayOptions;
         }
     }

@@ -66,7 +66,7 @@ public sealed partial class HelloWorldPage : ContentPage
                         .OnClicked(button =>
                         {
                             count++;
-                            button.Text = $"Clicked n {count} ";
+                            button.Text = $"Clicked {count} ";
                             button.Text += count == 1 ? "time" : "times";
                         })
                 }

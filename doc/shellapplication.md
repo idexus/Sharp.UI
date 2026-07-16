@@ -4,16 +4,17 @@ Here's an example of a simple shell-based application:
 
 ```cs
 
-public partial class App : Application
+public sealed partial class AppShell : Shell
 {
-    protected override Window CreateWindow(IActivationState activationState)
+    protected override void Build()
     {
-        var shell = new Shell
-        {
-            e => e
-                .ItemTemplate(() => new ShellItemTemplate())
-                .Resources(AppResources.Default),
+        this
+            .ItemTemplate(() => new ShellItemTemplate())
+            .FlyoutHeaderTemplate(() => new FlyoutHeaderTemplate())
+            .Resources(AppResources.Default)
+            .FlyoutBackgroundColor(AppColors.Gray950);
 
+        SetItems(
             new FlyoutItem(FlyoutDisplayOptions.AsMultipleItems)
             {
                 new Tab("Main")
@@ -21,13 +22,18 @@ public partial class App : Application
                     new ShellContent<HelloWorldPage>("Hello Page"),
                     new ShellContent<ExamplePage>("ExamplePage"),
                 },
-
-                new ShellContent<GridPage>("Grid"),
                 ...
-            }
-        };
+            },
+            ...
+        );
+    }
+}
 
-        var window = new Window(shell)
+public partial class App : Application
+{
+    protected override Window CreateWindow(IActivationState activationState)
+    {
+        var window = new Window(new AppShell())
         {
             Title = "Moja Aplikacja",
             Width = 1200,
