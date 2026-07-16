@@ -36,6 +36,17 @@ namespace Sharp.UI
             return FindContentPage(element.Parent);
         }
 
+        private static bool AnyShell(Element element)
+        {
+            if (element == null)
+                return false;
+
+            if (element is Shell)
+                return true;
+
+            return AnyShell(element.Parent);
+        }
+
         public static void RebuildAll(Type[] updatedTypes)
         {
             if (updatedTypes is null || updatedTypes.Length == 0)
@@ -56,14 +67,20 @@ namespace Sharp.UI
 
             HashSet<ContentPage> affectedPages = new();
 
-            foreach (var view in alive)
+            var affectedShell = false;
+
+            foreach (var element in alive)
             {
-                var affected = updatedTypes.Any(t => t.IsInstanceOfType(view));
+                var affected = updatedTypes.Any(t => t.IsInstanceOfType(element));
                 if (affected)
                 {
-                    var page = FindContentPage(view);
+                    var page = FindContentPage(element);
                     if (page is not null)
                         affectedPages.Add(page);
+                    if (!affectedShell && AnyShell(element))
+                    {
+                        affectedShell = true;
+                    }
                 }
             }
 
@@ -76,6 +93,14 @@ namespace Sharp.UI
                 catch (Exception ex)
                 {
                     System.Diagnostics.Debug.WriteLine($"Hot reload rebuild failed: {ex}");
+                }
+            }
+
+            if (affectedShell)
+            {
+                if (Shell.Current is Shell)
+                {
+                    ((Shell)Shell.Current).Rebuild();
                 }
             }
         }
