@@ -1,4 +1,6 @@
-﻿namespace Sharp.UI
+﻿using System.Collections;
+
+namespace Sharp.UI
 {
     [SharpObject]
     public partial class Shell : Microsoft.Maui.Controls.Shell
