@@ -27,14 +27,16 @@ namespace Sharp.UI.Generator.Classes
         string containerOfTypeName = null;
         bool isNewPropertyContainer = false;
         bool isAlreadyContainerOfThis = false;
-        bool isContentPageSymbol = false;
+        bool isTopContentSymbol = false;
         bool isSharpObject = true;
+        bool isShell = false;
 
         public ClassGenerator(GeneratorExecutionContext context, INamedTypeSymbol symbol)
         {
             this.context = context;
             this.mainSymbol = symbol;
-            this.isContentPageSymbol = symbol.IsSealed && Helpers.IsContentPage(symbol);
+            this.isShell = Helpers.IsShell(symbol);
+            this.isTopContentSymbol = symbol.IsSealed && (Helpers.IsContentPage(symbol) || isShell);
             this.isSharpObject = symbol.GetAttributes().Any(e => e.AttributeClass.Name.Equals(Shared.SharpObjectAttributeString));
 
             this.fullSymbolName = symbol.ToDisplayString().Split('.').Last();
@@ -145,7 +147,7 @@ namespace Sharp.UI.Generator.Classes
             builder.AppendLine();
             builder.AppendLine("#nullable restore");
 
-            if (isContentPageSymbol && !generatedContentConstructor && !isSharpObject)
+            if (isTopContentSymbol && !generatedTopContentConstructor && !isSharpObject)
                 return;
 
             context.AddSource($"{mainSymbol.ContainingNamespace.ToDisplayString()}.{Helpers.GetNormalizedFileName(mainSymbol)}.g.cs", builder.ToString());
@@ -165,7 +167,7 @@ namespace Sharp.UI.Generator.Classes
             var sealedStr = mainSymbol.IsSealed ? "sealed " : "";
 
             this.GenerateContainerUsingsIfNeeded();
-            builder.AppendLine($@"
+            builder.Append($@"
 namespace {mainSymbol.ContainingNamespace.ToDisplayString()}
 {{
 	{GetUsingString()}public {sealedStr}partial class {fullSymbolName}{BaseString()}
@@ -204,8 +206,8 @@ using System.Collections.Generic;
 
         void GenerateClassBody()
         {
-            if (isContentPageSymbol)
-                GenerateNoParamContentConstructor();
+            if (isTopContentSymbol)
+                GenerateNoParamTopContentConstructor();
             else
                 GenerateConstructors();
             if (isSharpObject)
@@ -271,9 +273,9 @@ using System.Collections.Generic;
 
         // no params constructor
 
-        bool generatedContentConstructor = false;
+        bool generatedTopContentConstructor = false;
 
-        void GenerateNoParamContentConstructor()
+        void GenerateNoParamTopContentConstructor()
         {
             var camelCaseName = Helpers.CamelCase(mainSymbol.Name);
 
@@ -283,8 +285,12 @@ using System.Collections.Generic;
             // this() constructor
             if (isImplicitlyDeclared && !isExplicitlyDeclared)
             {
-                generatedContentConstructor = true;
-
+                generatedTopContentConstructor = true;
+                if (isShell)
+                {
+                    builder.AppendLine($@"
+        public new static {mainSymbol.Name} Current => ({mainSymbol.Name})Shell.Current;");
+                }
                 builder.AppendLine($@"
         public {mainSymbol.Name}() 
         {{ 

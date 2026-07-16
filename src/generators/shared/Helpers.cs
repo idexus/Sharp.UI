@@ -120,6 +120,19 @@ namespace Sharp.UI.Generator
             return isContentPage;
         }
 
+        public static bool IsShell(INamedTypeSymbol symbol)
+        {
+            var IsShell = false;
+
+            LoopDownToObject(symbol, type =>
+            {
+                if (type.ToDisplayString().Equals(Shared.ShellString, StringComparison.Ordinal)) IsShell = true;
+                return IsShell;
+            });
+
+            return IsShell;
+        }
+
         public static bool IsBaseImplementationOfInterface(INamedTypeSymbol symbol, string name)
         {
             var count = 0;
