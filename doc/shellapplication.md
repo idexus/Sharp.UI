@@ -22,10 +22,8 @@ public sealed partial class AppShell : Shell
                     new ShellContent<HelloWorldPage>("Hello Page"),
                     new ShellContent<ExamplePage>("ExamplePage"),
                 },
-
-                new ShellContent<GridPage>("Grid"),
                 ...
-            }
+            },
             ...
         );
     }
