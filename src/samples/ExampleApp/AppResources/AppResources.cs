@@ -287,14 +287,15 @@ public class AppResources
 
             new Style<Page>(applyToDerivedTypes: true, e => e
                 .Padding(0)
-                .BackgroundColor(e => e.OnLight(Colors.White).OnDark(Colors.Black))),
+                .BackgroundColor(e => e.OnLight(AppColors.Gray100).OnDark(Colors.Black))),
             
             // "Shell"
 
             new Style<Shell>(applyToDerivedTypes: true, e => e
                 .ShellNavBarHasShadow(false)
+                .FlyoutBackground(e => e.OnLight(AppColors.Gray100).OnDark(AppColors.Gray950))
                 .ShellBackgroundColor(e => e.OnLight(AppColors.Primary).OnDark(AppColors.Gray950))
-                .ShellForegroundColor(e => e.OnLight(AppColors.Primary).OnDark(Colors.White))
+                .ShellForegroundColor(e => e.OnLight(Colors.White).OnDark(Colors.White))
                 .ShellTitleColor(e => e.OnLight(Colors.White).OnDark(Colors.White))
                 .ShellDisabledColor(e => e.OnLight(AppColors.Gray200).OnDark(AppColors.Gray950))
                 .ShellUnselectedColor(e => e.OnLight(AppColors.Gray200).OnDark(AppColors.Gray200))

@@ -27,14 +27,16 @@ namespace Sharp.UI.Generator.Classes
         string containerOfTypeName = null;
         bool isNewPropertyContainer = false;
         bool isAlreadyContainerOfThis = false;
-        bool isContentPageSymbol = false;
+        bool isTopContentSymbol = false;
         bool isSharpObject = true;
+        bool isShell = false;
 
         public ClassGenerator(GeneratorExecutionContext context, INamedTypeSymbol symbol)
         {
             this.context = context;
             this.mainSymbol = symbol;
-            this.isContentPageSymbol = symbol.BaseType != null && symbol.BaseType.ToDisplayString() == Shared.ContentPageString;
+            this.isShell = Helpers.IsShell(symbol);
+            this.isTopContentSymbol = symbol.IsSealed && (Helpers.IsContentPage(symbol) || isShell);
             this.isSharpObject = symbol.GetAttributes().Any(e => e.AttributeClass.Name.Equals(Shared.SharpObjectAttributeString));
 
             this.fullSymbolName = symbol.ToDisplayString().Split('.').Last();
@@ -145,7 +147,7 @@ namespace Sharp.UI.Generator.Classes
             builder.AppendLine();
             builder.AppendLine("#nullable restore");
 
-            if (isContentPageSymbol && !generatedContentConstructor && !isSharpObject)
+            if (isTopContentSymbol && !generatedTopContentConstructor && !isSharpObject)
                 return;
 
             context.AddSource($"{mainSymbol.ContainingNamespace.ToDisplayString()}.{Helpers.GetNormalizedFileName(mainSymbol)}.g.cs", builder.ToString());
@@ -160,40 +162,15 @@ namespace Sharp.UI.Generator.Classes
             return "";
         }
 
-        private static readonly DiagnosticDescriptor TypeMustBeSealed =
-            new DiagnosticDescriptor(
-                id: "SHARPUI001",
-                title: "Sharp.UI component must be sealed",
-                messageFormat: "Type '{0}' must be declared sealed because its constructor initializes a virtual Build() method",
-                category: "Sharp.UI.Usage",
-                defaultSeverity: DiagnosticSeverity.Error,
-                isEnabledByDefault: true,
-                description: "Sharp.UI pages and views initialized from their constructor must be sealed.");
-
         void GenerateClassNamespace()
-        {
-            var isExplicitlyDeclared = mainSymbol.Constructors.FirstOrDefault(e => e.DeclaredAccessibility == Accessibility.Public && !e.IsImplicitlyDeclared) != null;
-            var isImplicitlyDeclared = mainSymbol.Constructors.FirstOrDefault(e => e.DeclaredAccessibility == Accessibility.Public && e.Parameters.Count() == 0 && e.IsImplicitlyDeclared) != null;             
-            var sealedString = isImplicitlyDeclared && !isExplicitlyDeclared && isContentPageSymbol ? "sealed " : "";
-
-            if (sealedString.Count() > 0 && !mainSymbol.IsSealed)
-            {
-                var location = mainSymbol.Locations
-                    .FirstOrDefault(location => location.IsInSource)
-                    ?? Location.None;
-
-                context.ReportDiagnostic(
-                    Diagnostic.Create(
-                        TypeMustBeSealed,
-                        location,
-                        mainSymbol.ToDisplayString()));
-            }
+        {           
+            var sealedStr = mainSymbol.IsSealed ? "sealed " : "";
 
             this.GenerateContainerUsingsIfNeeded();
-            builder.AppendLine($@"
+            builder.Append($@"
 namespace {mainSymbol.ContainingNamespace.ToDisplayString()}
 {{
-	{GetUsingString()}public {sealedString}partial class {fullSymbolName}{BaseString()}
+	{GetUsingString()}public {sealedStr}partial class {fullSymbolName}{BaseString()}
 	{{");
             GenerateClassBody();
             builder.AppendLine($@"
@@ -229,8 +206,8 @@ using System.Collections.Generic;
 
         void GenerateClassBody()
         {
-            if (isContentPageSymbol)
-                GenerateNoParamContentConstructor();
+            if (isTopContentSymbol)
+                GenerateNoParamTopContentConstructor();
             else
                 GenerateConstructors();
             if (isSharpObject)
@@ -296,9 +273,9 @@ using System.Collections.Generic;
 
         // no params constructor
 
-        bool generatedContentConstructor = false;
+        bool generatedTopContentConstructor = false;
 
-        void GenerateNoParamContentConstructor()
+        void GenerateNoParamTopContentConstructor()
         {
             var camelCaseName = Helpers.CamelCase(mainSymbol.Name);
 
@@ -308,8 +285,12 @@ using System.Collections.Generic;
             // this() constructor
             if (isImplicitlyDeclared && !isExplicitlyDeclared)
             {
-                generatedContentConstructor = true;
-
+                generatedTopContentConstructor = true;
+                if (isShell)
+                {
+                    builder.AppendLine($@"
+        public new static {mainSymbol.Name} Current => ({mainSymbol.Name})Shell.Current;");
+                }
                 builder.AppendLine($@"
         public {mainSymbol.Name}() 
         {{ 

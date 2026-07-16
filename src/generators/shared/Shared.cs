@@ -11,6 +11,7 @@ namespace Sharp.UI.Generator
         public const string SharpUIString = "Sharp.UI";
 
         public const string ContentPageString = "Sharp.UI.ContentPage";
+        public const string ShellString = "Sharp.UI.Shell";
 
         public const string ContentPropertyAttributeString = "ContentPropertyAttribute";
         public const string BindablePropertiesAttributeString = "BindablePropertiesAttribute";

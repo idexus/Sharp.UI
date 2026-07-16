@@ -1,7 +1,22 @@
 ﻿namespace Sharp.UI
 {
     [SharpObject]
-    public partial class Shell : Microsoft.Maui.Controls.Shell { }
+    public partial class Shell : Microsoft.Maui.Controls.Shell
+    {
+        public void InitializeSharpUI()
+        {
+            this.Rebuild();
+            HotReloader.Register(this);
+        }
+
+        protected virtual void Build() { return; }
+
+        internal void Rebuild()
+        {
+            this.Clear();
+            this.Build();
+        }
+    }
 
     [SharpObject]
     public partial class TabBar : Microsoft.Maui.Controls.TabBar { }

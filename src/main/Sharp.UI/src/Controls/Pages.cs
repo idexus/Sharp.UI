@@ -18,6 +18,31 @@ namespace Sharp.UI
             if (build != null)
             this.Content = build;         
         }
+
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            Unfocus(this);
+        }
+
+        private static void Unfocus(IEnumerable element)
+        {
+            foreach (var child in element)
+            {
+                if (child is Entry)
+                {
+                    (child as Entry).Unfocus();
+                }
+                else if (child is Editor)
+                {
+                    (child as Editor).Unfocus();
+                }
+                else if (child is IEnumerable)
+                {
+                    Unfocus(child as IEnumerable);
+                }
+            }
+        }
     }
 
     [SharpObject] 

@@ -2,9 +2,9 @@ namespace ExampleApp;
 
 using Sharp.UI;
 
-public class AppShell : Shell
+public sealed partial class AppShell : Shell
 {
-    public AppShell()
+    protected override void Build()
     {
         this
             .ItemTemplate(() => new ShellItemTemplate())
