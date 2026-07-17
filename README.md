@@ -402,6 +402,61 @@ public class ViewPage : ContentPage
 }
 ```
 
+## BindableProperties with QueryProperties usage
+
+An error page that receives message and route as Shell navigation parameters (via [QueryProperty]), automatically mapped to bindable properties thanks to Sharp.UI's generators, with the entire UI (icon + error text + close button) built purely in C# instead of XAML, and the text label bound directly to the Message property.
+
+```cs
+namespace Example;
+
+using Sharp.UI;
+
+[BindableProperties]
+interface IErrorMessagePage
+{
+    string Message { get; set; }
+    string LastRoute { get; set; }
+}
+
+[SharpObject]
+[QueryProperty(nameof(Message), "message")]
+[QueryProperty(nameof(LastRoute), "route")]
+public sealed partial class ErrorMessagePage : ContentPage, IErrorMessagePage
+{
+    protected override View Build()
+    {
+        this.BindingContext = this;
+        this.Title = "Error";
+
+        return new VStack(e => e
+            .Spacing(40)
+            .Margin(bottom: 30)
+            .CenterVertically())
+        {
+            new VStack(e => e.Spacing(5))
+            {
+                new Image("attention.png")
+                    .CenterHorizontally()
+                    .SizeRequest(100,100),
+
+                new Label()
+                    
+                    .Text(e => e.Path(nameof(Message)))
+                    .CenterHorizontally(),
+            },
+
+            new Button("Close")
+                .SizeRequest(100,50)
+                .CenterHorizontally()
+                .OnClicked(async e =>
+                {
+                    await AppShell.Current.GoCzytnikPaczek();
+                }),
+        };
+    }
+}
+```
+
 # Documentation
 
 ## Getting started
