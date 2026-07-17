@@ -108,6 +108,60 @@ The example uses regular MAUI controls such as `Image`, `Label`, and `Button`. S
 
 Sharp.UI is intended for developers who prefer C# as the primary language for both interface definition and application logic.
 
+### BindableProperties with QueryPropertie usage
+
+An error page that receives message and route as Shell navigation parameters (via [QueryProperty]), automatically mapped to bindable properties thanks to Sharp.UI's generators, with the entire UI (icon + error text + close button) built purely in C# instead of XAML, and the text label bound directly to the Message property.
+
+```cs
+namespace Example;
+
+using Sharp.UI;
+
+[BindableProperties]
+interface IErrorMessagePage
+{
+    string Message { get; set; }
+    string BackRoute { get; set; }
+}
+
+[SharpObject]
+[QueryProperty(nameof(Message), "message")]
+[QueryProperty(nameof(BackRoute), "route")]
+public sealed partial class ErrorMessagePage : ContentPage, IErrorMessagePage
+{
+    protected override View Build()
+    {
+        this.BindingContext = this;
+        this.Title = "Error";
+
+        return new VStack(e => e
+            .Spacing(40)
+            .Margin(bottom: 30)
+            .CenterVertically())
+        {
+            new VStack(e => e.Spacing(5))
+            {
+                new Image("attention.png")
+                    .CenterHorizontally()
+                    .SizeRequest(100,100),
+
+                new Label()
+                    
+                    .Text(e => e.Path(nameof(Message)))
+                    .CenterHorizontally(),
+            },
+
+            new Button("Close")
+                .SizeRequest(100,50)
+                .CenterHorizontally()
+                .OnClicked(async e =>
+                {
+                    await Shell.Current.GoToAsync(BackRoute);
+                }),
+        };
+    }
+}
+```
 ## Using Sharp.UI
 
 Include the namespace in your project:
@@ -397,61 +451,6 @@ public class ViewPage : ContentPage
             new Button("Click me")
                 .FontSize(100)
                 .OnClicked(viewModel.SetAuthor)
-        };
-    }
-}
-```
-
-## BindableProperties with QueryProperties usage
-
-An error page that receives message and route as Shell navigation parameters (via [QueryProperty]), automatically mapped to bindable properties thanks to Sharp.UI's generators, with the entire UI (icon + error text + close button) built purely in C# instead of XAML, and the text label bound directly to the Message property.
-
-```cs
-namespace Example;
-
-using Sharp.UI;
-
-[BindableProperties]
-interface IErrorMessagePage
-{
-    string Message { get; set; }
-    string BackRoute { get; set; }
-}
-
-[SharpObject]
-[QueryProperty(nameof(Message), "message")]
-[QueryProperty(nameof(BackRoute), "route")]
-public sealed partial class ErrorMessagePage : ContentPage, IErrorMessagePage
-{
-    protected override View Build()
-    {
-        this.BindingContext = this;
-        this.Title = "Error";
-
-        return new VStack(e => e
-            .Spacing(40)
-            .Margin(bottom: 30)
-            .CenterVertically())
-        {
-            new VStack(e => e.Spacing(5))
-            {
-                new Image("attention.png")
-                    .CenterHorizontally()
-                    .SizeRequest(100,100),
-
-                new Label()
-                    
-                    .Text(e => e.Path(nameof(Message)))
-                    .CenterHorizontally(),
-            },
-
-            new Button("Close")
-                .SizeRequest(100,50)
-                .CenterHorizontally()
-                .OnClicked(async e =>
-                {
-                    await AppShell.Current.GoToAsync(BackRoute);
-                }),
         };
     }
 }
