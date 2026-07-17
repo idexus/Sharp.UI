@@ -91,7 +91,6 @@ public sealed partial class ErrorMessagePage : ContentPage, IErrorMessagePage
                     .SizeRequest(100,100),
 
                 new Label()
-                    
                     .Text(e => e.Path(nameof(Message)))
                     .CenterHorizontally(),
             },
