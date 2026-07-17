@@ -33,52 +33,6 @@ namespace Sharp.UI
             return self;
         }
 
-        // --- Padding
-
-        public static T Padding<T>(this T self, double horizontalSize, double verticalSize)
-            where T : Microsoft.Maui.Controls.Border
-        {
-            self.SetValue(Microsoft.Maui.Controls.Border.PaddingProperty, new Thickness(horizontalSize, verticalSize));
-            return self;
-        }
-
-        public static T Padding<T>(this T self, double left, double top, double right, double bottom)
-            where T : Microsoft.Maui.Controls.Border
-        {
-            self.SetValue(Microsoft.Maui.Controls.Border.PaddingProperty, new Thickness(left, top, right, bottom));
-            return self;
-        }
-
-        public static T Padding<T>(this T self, object _ = null, double left = 0, double top = 0, double right = 0, double bottom = 0)
-        where T : Microsoft.Maui.Controls.Border
-        {
-            self.SetValue(Microsoft.Maui.Controls.Border.PaddingProperty, new Thickness(left, top, right, bottom));
-            return self;
-        }
-
-        // --- Margin
-
-        public static T Margin<T>(this T self, double horizontalSize, double verticalSize)
-            where T : Microsoft.Maui.Controls.View
-        {
-            self.SetValue(Microsoft.Maui.Controls.View.MarginProperty, new Thickness(horizontalSize, verticalSize));
-            return self;
-        }
-
-        public static T Margin<T>(this T self, double left, double top, double right, double bottom)
-            where T : Microsoft.Maui.Controls.View
-        {
-            self.SetValue(Microsoft.Maui.Controls.View.MarginProperty, new Thickness(left, top, right, bottom));
-            return self;
-        }
-
-        public static T Margin<T>(this T self, object _ = null, double left = 0, double top = 0, double right = 0, double bottom = 0)
-            where T : Microsoft.Maui.Controls.View
-        {
-            self.SetValue(Microsoft.Maui.Controls.View.MarginProperty, new Thickness(left, top, right, bottom));
-            return self;
-        }
-
         // --- AbsoluteLayout
 
         public static T AbsoluteLayoutBounds<T>(this T self, double x, double y, double width, double height)
@@ -200,52 +154,6 @@ namespace Sharp.UI
         {
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Grid.ColumnSpanProperty, Value = column });
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Grid.RowSpanProperty, Value = row });
-            return self;
-        }
-
-        // --- Padding
-
-        public static SettersContext<T> Padding<T>(this SettersContext<T> self, double horizontalSize, double verticalSize)
-            where T : Microsoft.Maui.Controls.Border
-        {
-            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Border.PaddingProperty, Value = new Thickness(horizontalSize, verticalSize) });
-            return self;
-        }
-
-        public static SettersContext<T> Padding<T>(this SettersContext<T> self, double left, double top, double right, double bottom)
-            where T : Microsoft.Maui.Controls.Border
-        {
-            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Border.PaddingProperty, Value = new Thickness(left, top, right, bottom) });
-            return self;
-        }
-
-        public static SettersContext<T> Padding<T>(this SettersContext<T> self, object _ = null, double left = 0, double top = 0, double right = 0, double bottom = 0)
-        where T : Microsoft.Maui.Controls.Border
-        {
-            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Border.PaddingProperty, Value = new Thickness(left, top, right, bottom) });
-            return self;
-        }
-
-        // --- Margin
-
-        public static SettersContext<T> Margin<T>(this SettersContext<T> self, double horizontalSize, double verticalSize)
-            where T : Microsoft.Maui.Controls.View
-        {
-            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.View.MarginProperty, Value = new Thickness(horizontalSize, verticalSize) });
-            return self;
-        }
-
-        public static SettersContext<T> Margin<T>(this SettersContext<T> self, double left, double top, double right, double bottom)
-            where T : Microsoft.Maui.Controls.View
-        {
-            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.View.MarginProperty, Value = new Thickness(left, top, right, bottom) });
-            return self;
-        }
-
-        public static SettersContext<T> Margin<T>(this SettersContext<T> self, object _ = null, double left = 0, double top = 0, double right = 0, double bottom = 0)
-            where T : Microsoft.Maui.Controls.View
-        {
-            self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.View.MarginProperty, Value = new Thickness(left, top, right, bottom) });
             return self;
         }
 
