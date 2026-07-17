@@ -51,66 +51,11 @@ You can also reference the Sharp.UI source project directly.
 
 See [Adding the library by Visual Studio project reference](./doc/projectref.md).
 
-## Hello, World!
+## Example
 
-```cs
-namespace ExampleApp;
+The example uses standard MAUI controls such as Image, Label, and Button. Sharp.UI adds constructors, fluent configuration methods, and the declarative `Build()` workflow around them, replacing XAML with plain C#.
 
-using Sharp.UI;
-
-public sealed partial class HelloWorldPage : ContentPage
-{
-    private int count;
-
-    protected override View Build()
-    {
-        return new VStack(e => e
-            .Spacing(25)
-            .Padding(30)
-            .CenterVertically())
-        {
-            new Image("dotnet_bot.png")
-                .HeightRequest(280)
-                .CenterHorizontally(),
-
-            new Label("Welcome to Sharp.UI for .NET MAUI")
-                .FontSize(e => e
-                    .OnPhone(16)
-                    .Default(30))
-                .CenterHorizontally(),
-
-            new Button("Click me")
-                .FontSize(20)
-                .CenterHorizontally()
-                .OnClicked(button =>
-                {
-                    count++;
-                    button.Text = $"Clicked {count} ";
-                    button.Text += count == 1 ? "time" : "times";
-                })
-        };
-    }
-}
-```
-
-The example uses regular MAUI controls such as `Image`, `Label`, and `Button`. Sharp.UI adds constructors, fluent methods, declarative configuration, and the `Build()` workflow around them.
-
-## Sharp.UI and XAML
-
-| XAML-based MAUI | Sharp.UI |
-|---|---|
-| UI in XML, behavior in C# | UI and behavior in C# |
-| Frequent switching between files and languages | One language and one toolchain |
-| Markup extensions and XML syntax | Fluent methods and C# lambdas |
-| XAML-specific tooling | Standard C# IntelliSense and refactoring |
-| Native MAUI controls | Native MAUI controls |
-| MAUI resources, bindings, styles, Shell | The same MAUI concepts expressed in C# |
-
-Sharp.UI is intended for developers who prefer C# as the primary language for both interface definition and application logic.
-
-### BindableProperties with QueryPropertie usage
-
-An error page that receives message and route as Shell navigation parameters (via [QueryProperty]), automatically mapped to bindable properties thanks to Sharp.UI's generators, with the entire UI (icon + error text + close button) built purely in C# instead of XAML, and the text label bound directly to the Message property.
+An error page receives `message` and `route` as Shell navigation parameters via `[QueryProperty]` — MAUI's built-in mechanism for injecting query parameters into page properties. These properties are generated as full `BindableProperty`s by Sharp.UI's `[BindableProperties]` attribute, so the page can bind to them declaratively. The UI itself (an icon, an error label, and a close button) is composed entirely in C#: the label binds its text directly to the `Message` property, and clicking the close button navigates back to whatever route was passed in via `BackRoute`.
 
 ```cs
 namespace Example;
@@ -162,6 +107,20 @@ public sealed partial class ErrorMessagePage : ContentPage, IErrorMessagePage
     }
 }
 ```
+
+## Sharp.UI and XAML
+
+| XAML-based MAUI | Sharp.UI |
+|---|---|
+| UI in XML, behavior in C# | UI and behavior in C# |
+| Frequent switching between files and languages | One language and one toolchain |
+| Markup extensions and XML syntax | Fluent methods and C# lambdas |
+| XAML-specific tooling | Standard C# IntelliSense and refactoring |
+| Native MAUI controls | Native MAUI controls |
+| MAUI resources, bindings, styles, Shell | The same MAUI concepts expressed in C# |
+
+Sharp.UI is intended for developers who prefer C# as the primary language for both interface definition and application logic.
+
 ## Using Sharp.UI
 
 Include the namespace in your project:
