@@ -415,12 +415,12 @@ using Sharp.UI;
 interface IErrorMessagePage
 {
     string Message { get; set; }
-    string LastRoute { get; set; }
+    string BackRoute { get; set; }
 }
 
 [SharpObject]
 [QueryProperty(nameof(Message), "message")]
-[QueryProperty(nameof(LastRoute), "route")]
+[QueryProperty(nameof(BackRoute), "route")]
 public sealed partial class ErrorMessagePage : ContentPage, IErrorMessagePage
 {
     protected override View Build()
@@ -450,7 +450,7 @@ public sealed partial class ErrorMessagePage : ContentPage, IErrorMessagePage
                 .CenterHorizontally()
                 .OnClicked(async e =>
                 {
-                    await AppShell.Current.GoToAsync($"//main");
+                    await AppShell.Current.GoToAsync(BackRoute);
                 }),
         };
     }
