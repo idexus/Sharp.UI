@@ -54,7 +54,7 @@ namespace Sharp.UI.Generator.Extensions
 
             if (isExtensionMethodsGenerated)
             {
-                var tail = 
+                var tail =
                     (attachedInterfacesAttribute != null ? ".attached" : "") +
                     (mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microsoft.Maui") ? "" : ".extension");
 
@@ -81,7 +81,7 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
     {GetUsingString()}
     public static partial class {className}
     {{");
-            
+
             if (attachedInterfacesAttribute != null)
                 GenerateAttachedPropertiesExtension();
             else
@@ -161,11 +161,11 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
                 }
                 else
                     IsBindableObject = true;
-                
+
                 propertyTypeName = PropertySymbol.Type.ToDisplayString();
                 camelCaseName = Helpers.CamelCase(propertyName);
 
-                valueAssignmentString = IsBindableProperty  ?
+                valueAssignmentString = IsBindableProperty ?
                     $@"self.SetValue({BindablePropertyName}, {camelCaseName});" :
                     $"{accessedWith}.{propertyName} = {camelCaseName};";
 
@@ -289,8 +289,10 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
             if (!Shared.NotGenerateList.Contains(info.propertyName))
             {
                 GenerateExtensionMethod_Value(info);
+                GenerateExtensionMethods_Thickness(info);
                 GenerateExtensionMethod_BindablePropertyBuilder(info);
                 GenerateExtensionMethod_Setters(info);
+                GenerateExtensionMethod_Setters_Thickness(info);
                 GenerateExtensionMethod_SettersBuilder(info);
 
                 if (info.propertyTypeName.Contains("DataTemplate"))
@@ -306,7 +308,7 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
         // -----------------------------------
 
         void GenerateExtensionMethod(IPropertySymbol property)
-        {            
+        {
             var info = new PropertyInfo
             {
                 MainSymbol = mainSymbol,
@@ -329,11 +331,13 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
                     !ExistInBaseClasses(info.propertyName, getterAndSetter: true))
                 {
                     GenerateExtensionMethod_Value(info);
+                    GenerateExtensionMethods_Thickness(info);
 
                     if (info.IsBindableProperty)
                     {
                         GenerateExtensionMethod_BindablePropertyBuilder(info);
                         GenerateExtensionMethod_Setters(info);
+                        GenerateExtensionMethod_Setters_Thickness(info);
                         GenerateExtensionMethod_SettersBuilder(info);
                     }
 
@@ -396,6 +400,72 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
         ");
         }
 
+        void GenerateExtensionMethod_Setters_Thickness(PropertyInfo info)
+        {
+            if ((info.propertyName.Equals("Margin") || info.propertyName.Equals("Padding")) && info.propertyTypeName.EndsWith(".Thickness"))
+            {
+                if (mainSymbol.IsSealed)
+                    GenerateExtensionMethod_Setters_Thickness_Sealed(info);
+                else
+                    GenerateExtensionMethod_Setters_Thickness_Normal(info);
+            }
+        }
+
+        void GenerateExtensionMethod_Setters_Thickness_Sealed(PropertyInfo info)
+        {
+            isExtensionMethodsGenerated = true;
+            builder.Append($@"
+        public static SettersContext<{info.symbolTypeName}> {info.propertyName}(this SettersContext<{info.symbolTypeName}> self, double horizontalSize, double verticalSize)
+        {{
+            self.XamlSetters.Add(new Setter {{ Property = {info.BindablePropertyName}, Value = new Thickness(horizontalSize, verticalSize) }});
+            return self;
+        }}
+
+        public static SettersContext<{info.symbolTypeName}> {info.propertyName}(this SettersContext<{info.symbolTypeName}> self, double left, double top, double right, double bottom)
+        {{
+            self.XamlSetters.Add(new Setter {{ Property = {info.BindablePropertyName}, Value = new Thickness(left, top, right, bottom) }});
+            return self;
+        }}
+
+        #nullable disable
+        public static SettersContext<{info.symbolTypeName}> {info.propertyName}(this SettersContext<{info.symbolTypeName}> self, object _ = default, double left = 0, double top = 0, double right = 0, double bottom = 0)
+        {{
+            self.XamlSetters.Add(new Setter {{ Property = {info.BindablePropertyName}, Value = new Thickness(left, top, right, bottom) }});
+            return self;
+        }}
+        #nullable enable
+        ");
+        }
+
+        void GenerateExtensionMethod_Setters_Thickness_Normal(PropertyInfo info)
+        {
+            isExtensionMethodsGenerated = true;
+            builder.Append($@"
+        public static SettersContext<T> {info.propertyName}<T>(this SettersContext<T> self, double horizontalSize, double verticalSize)
+            where T : {info.symbolTypeName}
+        {{
+            self.XamlSetters.Add(new Setter {{ Property = {info.BindablePropertyName}, Value = new Thickness(horizontalSize, verticalSize) }});
+            return self;
+        }}
+
+        public static SettersContext<T> {info.propertyName}<T>(this SettersContext<T> self, double left, double top, double right, double bottom)
+            where T : {info.symbolTypeName}
+        {{
+            self.XamlSetters.Add(new Setter {{ Property = {info.BindablePropertyName}, Value = new Thickness(left, top, right, bottom) }});
+            return self;
+        }}
+
+        #nullable disable
+        public static SettersContext<T> {info.propertyName}<T>(this SettersContext<T> self, object _ = default, double left = 0, double top = 0, double right = 0, double bottom = 0)
+            where T : {info.symbolTypeName}
+        {{
+            self.XamlSetters.Add(new Setter {{ Property = {info.BindablePropertyName}, Value = new Thickness(left, top, right, bottom) }});
+            return self;
+        }}
+        #nullable enable
+        ");
+        }
+
         // value
 
         void GenerateExtensionMethod_Value(PropertyInfo info)
@@ -432,6 +502,77 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
         }}
         ");
         }
+
+        // margin
+
+        void GenerateExtensionMethods_Thickness(PropertyInfo info)
+        {
+            if ((info.propertyName.Equals("Margin") || info.propertyName.Equals("Padding")) && info.propertyTypeName.EndsWith(".Thickness"))
+            {
+                if (mainSymbol.IsSealed)
+                    GenerateExtensionMethods_Thickness_Sealed(info);
+                else
+                    GenerateExtensionMethods_Thickness_Normal(info);
+            }
+        }
+
+        void GenerateExtensionMethods_Thickness_Sealed(PropertyInfo info)
+        {
+            isExtensionMethodsGenerated = true;
+            builder.Append($@"
+        public static {info.symbolTypeName} {info.propertyName}(this {info.symbolTypeName} self, double horizontalSize, double verticalSize)
+        {{
+            self.SetValue({info.symbolTypeName}.{info.propertyName}Property, new Thickness(horizontalSize, verticalSize));
+            return self;
+        }}
+
+        public static {info.symbolTypeName} {info.propertyName}(this {info.symbolTypeName} self, double left, double top, double right, double bottom)
+        {{
+            self.SetValue({info.symbolTypeName}.{info.propertyName}Property, new Thickness(left, top, right, bottom));
+            return self;
+        }}
+
+        #nullable disable
+        public static {info.symbolTypeName} {info.propertyName}(this {info.symbolTypeName} self, object _ = null, double left = 0, double top = 0, double right = 0, double bottom = 0)
+        {{
+            self.SetValue({info.symbolTypeName}.{info.propertyName}Property, new Thickness(left, top, right, bottom));
+            return self;
+        }}
+        #nullable enable
+        ");
+        }
+
+        void GenerateExtensionMethods_Thickness_Normal(PropertyInfo info)
+        {
+            isExtensionMethodsGenerated = true;
+            builder.Append($@"       
+        public static T {info.propertyName}<T>(this T self, double horizontalSize, double verticalSize)
+            where T : {info.symbolTypeName}
+        {{
+            self.SetValue({info.symbolTypeName}.{info.propertyName}Property, new Thickness(horizontalSize, verticalSize));
+            return self;
+        }}
+
+        public static T {info.propertyName}<T>(this T self, double left, double top, double right, double bottom)
+            where T : {info.symbolTypeName}
+        {{
+            self.SetValue({info.symbolTypeName}.{info.propertyName}Property, new Thickness(left, top, right, bottom));
+            return self;
+        }}
+
+        #nullable disable
+        public static T {info.propertyName}<T>(this T self, object _ = null, double left = 0, double top = 0, double right = 0, double bottom = 0)
+            where T : {info.symbolTypeName}
+        {{
+            self.SetValue({info.symbolTypeName}.{info.propertyName}Property, new Thickness(left, top, right, bottom));
+            return self;
+        }}
+        #nullable enable
+        ");
+        }
+
+
+        // get value
 
         void GenerateExtensionMethod_GetValue(PropertyInfo info)
         {
@@ -562,8 +703,6 @@ namespace {(mainSymbol.ContainingNamespace.ToDisplayString().StartsWith("Microso
         }}
         ");
         }
-
-
 
         void GenerateExtensionMethod_DataTemplate(PropertyInfo info)
         {
