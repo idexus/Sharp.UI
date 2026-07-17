@@ -450,7 +450,7 @@ public sealed partial class ErrorMessagePage : ContentPage, IErrorMessagePage
                 .CenterHorizontally()
                 .OnClicked(async e =>
                 {
-                    await AppShell.Current.GoCzytnikPaczek();
+                    await AppShell.Current.GoToAsync($"//main");
                 }),
         };
     }
