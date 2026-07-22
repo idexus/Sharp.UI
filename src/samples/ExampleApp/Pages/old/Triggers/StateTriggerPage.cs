@@ -8,9 +8,9 @@ public sealed partial class StateTriggerPage : ContentPage
 {
     private Switch testSwitch;
 
-    protected override View Build()
+    protected override void Build()
     {
-        return new Grid
+        Content = new Grid
         {
             new Switch(out testSwitch)
                 .CenterVertically()

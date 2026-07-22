@@ -12,12 +12,12 @@ Here's an example of how you can use the fluent helper method `OnClicked` to han
 ```cs
 using Sharp.UI;
 
-public partial class HelloWorldPage : ContentPage
+public sealed partial class HelloWorldPage : ContentPage
 {
     int count = 0;
-    protected override View Build()
+    protected override void Build()
     {
-        return new VStack
+        Content = new VStack
         {
             ...
             new Button("Click me")

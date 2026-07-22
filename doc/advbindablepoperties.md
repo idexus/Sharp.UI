@@ -62,14 +62,14 @@ public partial class AngleViewModel : BindableObject, IAngleViewModelProperties
 Usage
 
 ```cs
-public partial class AngleViewModelPage : ContentPage
+public sealed partial class AngleViewModelPage : ContentPage
 {
     AngleViewModel viewModel = new AngleViewModel();
 
-    protected override View Build()
+    protected override void Build()
     { 
-        this.BindingContext = viewModel;
-        return new VStack
+        BindingContext = viewModel;
+        Content = new VStack
         {
             e => e.VerticalOptions(LayoutOptions.Center),
 

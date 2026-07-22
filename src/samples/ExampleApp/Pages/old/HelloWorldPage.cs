@@ -7,9 +7,9 @@ public sealed partial class HelloWorldPage : ContentPage
 {
     int count = 0;
 
-    protected override View Build()
+    protected override void Build()
     {
-        return new VStack(e => e
+        Content = new VStack(e => e
             .Spacing(25)
             .Padding(new Thickness(30, 0))
             .CenterVertically())

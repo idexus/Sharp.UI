@@ -60,9 +60,9 @@ new VStack
         static List<AlternateRowModel> itemSource = DataModel.SimpleData
                 .Select((e, i) => new AlternateRowModel { DataModel = e, Id = i }).ToList();
 
-        protected override View Build()
+        protected override void Build()
         {
-            return new ScrollView(e => e.Orientation(ScrollOrientation.Vertical))
+            Content = new ScrollView(e => e.Orientation(ScrollOrientation.Vertical))
             {
                 new Example
                 {

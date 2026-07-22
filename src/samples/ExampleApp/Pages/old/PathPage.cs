@@ -7,9 +7,9 @@ namespace ExampleApp
 
     public sealed partial class PathPage : ContentPage
     {
-        protected override View Build()
+        protected override void Build()
         {
-            return new ScrollView
+            Content = new ScrollView
             {
                 e => e.Margin(new Thickness(0, 30, 0, 0)),
 

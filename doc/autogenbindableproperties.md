@@ -27,13 +27,13 @@ public partial class CardView : ContentView, ICardViewProperties
 ### Consume
 
 ```cs
-public partial class TemplatedParentPage : ContentPage
+public sealed partial class TemplatedParentPage : ContentPage
 {    
-    protected override View Build()
+    protected override void Build()
     { 
         var controlTemplate = new ControlTemplate(typeof(CardViewTemplateView));
         
-        return new VStack
+        Content = new VStack
         {
             e => e.CenterVertically(),
 

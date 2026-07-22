@@ -22,7 +22,10 @@ namespace Sharp.UI.Generator.HotReload
 
             var assemblyName = context.Compilation.AssemblyName;
 
-            context.AddSource($"{assemblyName}.HotReload.g.cs", hotReloader);
+            if (assemblyName != "Sharp.UI")
+            {
+                context.AddSource($"{assemblyName}.HotReload.g.cs", hotReloader);
+            }
         }
 
         string hotReloader = @"

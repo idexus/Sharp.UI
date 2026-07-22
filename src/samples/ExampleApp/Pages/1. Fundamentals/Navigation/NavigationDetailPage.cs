@@ -4,9 +4,9 @@ using Sharp.UI;
 
 public sealed partial class NavigationDetailPage : ContentPage
 {
-    protected override View Build()
+    protected override void Build()
     {
-        return new VStack(e => e.Center())
+        Content = new VStack(e => e.Center())
 		{
 			new Label("Detail Page").FontSize(70),
 

@@ -6,11 +6,11 @@ public sealed partial class CardViewPage : ContentPage
 {
     private Label label;
 
-    protected override View Build()
-    {
+    protected override void Build()
+    {        
         var labelStyle = new Style<Label>(e => e.TextColor(AppColors.Gray300).FontSize(21));
 
-        return new ScrollView(e => e
+        Content = new ScrollView(e => e
             .Margin(top: Shell.Current != null ? 30 : 0)
             .BackgroundColor(Colors.Black)) 
         {

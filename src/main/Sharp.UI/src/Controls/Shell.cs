@@ -3,20 +3,19 @@
 namespace Sharp.UI
 {
     [SharpObject]
-    public partial class Shell : Microsoft.Maui.Controls.Shell
+    public partial class Shell : Microsoft.Maui.Controls.Shell, IHotReloadable
     {
-        public void InitializeSharpUI()
-        {
-            this.Rebuild();
-            HotReloader.Register(this);
-        }
-
         protected virtual void Build() { return; }
 
-        internal void Rebuild()
+        void IHotReloadable.Reload()
         {
             this.Clear();
             this.Build();
+        }
+
+        protected void InitializeSharpUI()
+        {
+            (this as IHotReloadable).InitializeSharpUI();
         }
     }
 

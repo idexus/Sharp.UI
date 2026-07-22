@@ -4,9 +4,9 @@ using Sharp.UI;
 
 public sealed partial class SimpleBindings : ContentPage
 {
-    protected override View Build()
+    protected override void Build()
     {
-        return new VStack
+        Content = new VStack
         {
             new Slider(out var slider)
                 .Minimum(1)

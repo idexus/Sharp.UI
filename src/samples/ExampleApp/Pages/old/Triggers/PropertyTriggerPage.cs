@@ -4,9 +4,9 @@ using Sharp.UI;
 
 public sealed partial class PropertyTriggerPage : ContentPage
 {
-    protected override View Build()
+    protected override void Build()
     {
-		Resources = new ResourceDictionary
+        Resources = new ResourceDictionary
 		{
 			new Style<Entry>(e => e
 				.BackgroundColor(Colors.Black)
@@ -23,7 +23,7 @@ public sealed partial class PropertyTriggerPage : ContentPage
 			}
 		};
 
-		return new VStack
+        Content = new VStack
 		{
 			new Entry("Enter name"),
 			new Entry("Enter password"),

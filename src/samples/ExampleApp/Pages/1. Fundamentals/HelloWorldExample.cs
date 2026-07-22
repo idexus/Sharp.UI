@@ -16,9 +16,9 @@ public sealed partial class HelloWorldPage : ContentPage
 {
     int count = 0;
 
-    protected override View Build()
+    protected override void Build()
     {
-        return new VStack()
+        Content =  new VStack()
         {
             new Label("Hello, World!")
                 .FontSize(e => e.OnPhone(40).Default(60))
@@ -43,9 +43,9 @@ public sealed partial class HelloWorldPage : ContentPage
 }
 """;
 
-    protected override View Build()
+    protected override void Build()
     {
-        return new ScrollView(e => e.Orientation(ScrollOrientation.Vertical))
+        Content = new ScrollView(e => e.Orientation(ScrollOrientation.Vertical))
         {
             new Example
             {

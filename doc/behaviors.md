@@ -67,9 +67,9 @@ public class NumericValidationStyleBehavior : AttachedBehavior<Entry, NumericVal
 You can then apply the attached behavior using a style in your `ContentPage`:
 
 ```cs
-public partial class AttachedBehaviorPage : ContentPage
+public sealed partial class AttachedBehaviorPage : ContentPage
 {
-    protected override View Build()
+    protected override void Build()
     {
         Resources = new ResourceDictionary
         {
@@ -79,7 +79,7 @@ public partial class AttachedBehaviorPage : ContentPage
             }
         };
 
-        return new VStack
+        Content = new VStack
         {
             new Entry("Enter text...", out var entry).Text("")
         }

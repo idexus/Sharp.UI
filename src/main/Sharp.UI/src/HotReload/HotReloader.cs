@@ -11,6 +11,17 @@ using Microsoft.Maui.Graphics;
 
 namespace Sharp.UI
 {
+    public interface IHotReloadable
+    {
+        public void Reload();
+
+        public void InitializeSharpUI()
+        {
+            this.Reload();
+            if (this is Element) HotReloader.Register(this as Element);
+        }
+    }
+
     public static class HotReloader
     {
         private static readonly List<WeakReference<Element>> _elements = new();
@@ -25,26 +36,15 @@ namespace Sharp.UI
             }
         }
 
-        private static ContentPage FindContentPage(Element element)
+        private static IHotReloadable FindHotReloadable(Element element)
         {
             if (element == null)
                 return null;
 
-            if (element is ContentPage)
-                return element as ContentPage;
+            if (element is IHotReloadable)
+                return element as IHotReloadable;
 
-            return FindContentPage(element.Parent);
-        }
-
-        private static bool AnyShell(Element element)
-        {
-            if (element == null)
-                return false;
-
-            if (element is Shell)
-                return true;
-
-            return AnyShell(element.Parent);
+            return FindHotReloadable(element.Parent);
         }
 
         public static void RebuildAll(Type[] updatedTypes)
@@ -65,42 +65,28 @@ namespace Sharp.UI
                     .ToList();
             }
 
-            HashSet<ContentPage> affectedPages = new();
-
-            var affectedShell = false;
+            HashSet<IHotReloadable> affectedSet = new();
 
             foreach (var element in alive)
             {
-                var affected = updatedTypes.Any(t => t.IsInstanceOfType(element));
-                if (affected)
+                var isAffected = updatedTypes.Any(t => t.IsInstanceOfType(element));
+                if (isAffected)
                 {
-                    var page = FindContentPage(element);
-                    if (page is not null)
-                        affectedPages.Add(page);
-                    if (!affectedShell && AnyShell(element))
-                    {
-                        affectedShell = true;
-                    }
+                    var hotReloadable = FindHotReloadable(element);
+                    if (hotReloadable is not null)
+                        affectedSet.Add(hotReloadable);
                 }
             }
 
-            foreach (var page in affectedPages)
+            foreach (var affected in affectedSet)
             {
                 try
                 {
-                    page.Rebuild();
+                    affected.Reload();
                 }
                 catch (Exception ex)
                 {
                     System.Diagnostics.Debug.WriteLine($"Hot reload rebuild failed: {ex}");
-                }
-            }
-
-            if (affectedShell)
-            {
-                if (Shell.Current is Shell)
-                {
-                    ((Shell)Shell.Current).Rebuild();
                 }
             }
         }

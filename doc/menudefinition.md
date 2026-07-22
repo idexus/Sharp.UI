@@ -32,9 +32,9 @@ new Grid(out var grid)
 Here is an example of creating a menu bar for a `ContentPage`. The menu bar has three options: My Menu, Edit, and Theme.
 
 ```cs
-public partial class MenuPage : ContentPage
+public sealed partial class MenuPage : ContentPage
 {
-    protected override View Build()
+    protected override void Build()
     {
         this.MenuBarItems(new MenuBarItem[]
         {

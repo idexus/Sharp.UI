@@ -41,10 +41,10 @@ public sealed partial class AngleViewModelPage : ContentPage
 {
     AngleViewModel viewModel = new AngleViewModel();
 
-    protected override View Build()
-    {
-        this.BindingContext = viewModel;
-        return new VStack
+    protected override void Build()
+    {        
+        BindingContext = viewModel;
+        Content = new VStack
         {
             e => e.CenterVertically(),
 
