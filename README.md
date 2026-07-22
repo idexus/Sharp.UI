@@ -6,7 +6,7 @@
 
 You stay in one language and one toolchain, with IntelliSense, refactoring, and static type checking while building the interface. Sharp.UI does not replace .NET MAUI — it replaces the need to write XAML. You still use native MAUI controls, layouts, Shell, resources, bindings, styles, behaviors, triggers, and the rest of the MAUI ecosystem.
 
-<img src="https://github.com/idexus/Sharp.UI/blob/net10/doc/assets/screen.jpg?raw=true" width="800" border="0" alt="Sharp.UI gallery" />
+<img src="https://github.com/idexus/Sharp.UI/blob/main/doc/assets/screen.jpg?raw=true" width="800" border="0" alt="Sharp.UI gallery" />
 
 ## Why Sharp.UI?
 
@@ -74,12 +74,12 @@ interface IErrorMessagePage
 [QueryProperty(nameof(BackRoute), "route")]
 public sealed partial class ErrorMessagePage : ContentPage, IErrorMessagePage
 {
-    protected override View Build()
+    protected void View Build()
     {
         this.BindingContext = this;
         this.Title = "Error";
 
-        return new VStack(e => e
+        Content = new VStack(e => e
             .Spacing(40)
             .Margin(bottom: 30)
             .CenterVertically())
@@ -157,9 +157,9 @@ public class HelloWorldPage : ContentPage
         InitializeSharpUI();
     }
 
-    protected override View Build()
+    protected override void Build()
     {
-        return new Label("Edit me and use Hot Reload");
+        Content = new Label("Edit me and use Hot Reload");
     }
 }
 ```
@@ -173,9 +173,9 @@ using Sharp.UI;
 
 public sealed partial class HelloWorldPage : ContentPage
 {
-    protected override View Build()
+    protected override void Build()
     {
-        return new Label("Edit me and use Hot Reload");
+        Content = new Label("Edit me and use Hot Reload");
     }
 }
 ```
@@ -394,11 +394,10 @@ public class ViewPage : ContentPage
 {
     private readonly ViewModel viewModel = new();
 
-    protected override View Build()
+    protected override void Build()
     {
         BindingContext = viewModel;
-
-        return new VStack
+        Content = new VStack
         {
             new Label()
                 .Text(e => e.Path("Author")),

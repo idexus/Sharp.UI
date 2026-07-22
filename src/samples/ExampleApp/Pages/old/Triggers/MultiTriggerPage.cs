@@ -4,9 +4,9 @@ using Sharp.UI;
 
 public sealed partial class MultiTriggerPage : ContentPage
 {
-    protected override View Build()
+    protected override void Build()
     {
-        return new VStack
+        Content = new VStack
         {
             new Entry("email", out var email).Text(""),
             new Entry("phone", out var phone).Text(""),

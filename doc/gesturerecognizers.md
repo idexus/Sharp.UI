@@ -37,13 +37,13 @@ The `PanGestureRecognizer` class is used to detect pan gestures on a view. You c
 Here's an example of using the `PanGestureRecognizer` to move an image on the screen:
 
 ```cs
-public partial class PanGesturePage : ContentPage
+public sealed partial class PanGesturePage : ContentPage
 {
     double x, y;
 
-    protected override View Build()
+    protected override void Build()
     {
-        return new Grid
+        Content = new Grid
         {
             new Image("dotnet_bot.png", out var image)
                 .SizeRequest(100,100)

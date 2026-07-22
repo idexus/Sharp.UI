@@ -23,9 +23,9 @@ public sealed partial class DeviceIdiomPage : ContentPage
             .Margin(new Thickness(0,30,0,0)))        
     };
 
-    protected override View Build()
+    protected override void Build()
     {
-        return new ContentView
+        Content = new ContentView
         {
             (Info.CurrentIdiom switch 
             {

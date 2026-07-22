@@ -18,7 +18,7 @@ public sealed partial class AppShell : Shell
                 e => e.Route("top"),
 
 
-                new Tab("Main")
+                new Tab("Basics")
                 {
                     e => e.Route("main"),
 

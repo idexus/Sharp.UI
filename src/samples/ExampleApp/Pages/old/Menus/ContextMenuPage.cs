@@ -4,9 +4,9 @@ using Sharp.UI;
 
 public sealed partial class ContextMenuPage : ContentPage
 {
-    protected override View Build()
+    protected override void Build()
     {
-        return new Grid(out var grid)
+        Content = new Grid(out var grid)
         {
             new Image("dotnet_bot.png")
                 .ContextFlyout(new MenuFlyout

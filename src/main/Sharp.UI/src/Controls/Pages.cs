@@ -3,20 +3,18 @@
 namespace Sharp.UI
 {
     [SharpObject] 
-    public partial class ContentPage : Microsoft.Maui.Controls.ContentPage
+    public partial class ContentPage : Microsoft.Maui.Controls.ContentPage, IHotReloadable
     {
-        public void InitializeSharpUI()
+        protected virtual void Build() { return; }
+
+        void IHotReloadable.Reload()
         {
-            this.Rebuild();
-            HotReloader.Register(this);
+            this.Build();
         }
 
-        protected virtual View Build() { return null; }
-
-        internal void Rebuild() {
-            var build = this.Build();
-            if (build != null)
-            this.Content = build;         
+        protected void InitializeSharpUI()
+        {
+            (this as IHotReloadable).InitializeSharpUI();
         }
 
         protected override void OnDisappearing()

@@ -33,9 +33,9 @@ new Label("Assigning via fluent method")
 new Label("Assigning via contructor", out var button)
 """];
 
-    protected override View Build()
+    protected override void Build()
     {
-        return new ScrollView(e => e.Orientation(ScrollOrientation.Vertical))
+        Content = new ScrollView(e => e.Orientation(ScrollOrientation.Vertical))
         {
             new VStack {
                 new Example

@@ -4,9 +4,9 @@ using Sharp.UI;
 
 public sealed partial class TapGesturePage : ContentPage
 {
-    protected override View Build()
+    protected override void Build()
     {
-        return new VStack
+        Content = new VStack
         {
             new Label("Tap 2 times on the image", out var label).FontSize(20),
             new Image("dotnet_bot.png", out var image)

@@ -46,11 +46,11 @@ public sealed partial class CardViewTemplateView : ContentView
 
 public sealed partial class TemplatedParentPage : ContentPage
 {
-    protected override View Build()
-    {
+    protected override void Build()
+    {        
         var controlTemplate = new ControlTemplate(typeof(CardViewTemplateView));
 
-        return new ScrollView
+        Content = new ScrollView
         {
             //e => e.Margin(new Thickness(0,30,0,0)),
 

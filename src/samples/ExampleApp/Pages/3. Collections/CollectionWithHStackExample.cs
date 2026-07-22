@@ -38,9 +38,9 @@ new VStack(e => e.Margin(bottom: 30).BackgroundColor(Colors.Black))
 }
 """;
 
-        protected override View Build()
+        protected override void Build()
         {
-            return new ScrollView(e => e.Orientation(ScrollOrientation.Vertical))
+            Content = new ScrollView(e => e.Orientation(ScrollOrientation.Vertical))
             {
                 new Example
                 {

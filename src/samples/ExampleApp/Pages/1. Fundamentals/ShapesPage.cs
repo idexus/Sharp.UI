@@ -153,17 +153,16 @@ new Grid(e => e
 	}
 }
 """;
-        protected override View Build()
-		{
-
-			Resources = new ResourceDictionary
-			{
-				new Style<ContentView>(e => e
-					.CenterVertically()
-					.CenterHorizontally())
-			};
-
-            return new ScrollView(e => e.Orientation(ScrollOrientation.Vertical))
+        protected override void Build()
+        {
+            Resources = new ResourceDictionary
+            {
+                new Style<ContentView>(e => e
+                    .CenterVertically()
+                    .CenterHorizontally())
+            };
+			
+			Content = new ScrollView(e => e.Orientation(ScrollOrientation.Vertical))
 			{
 				new Example
 				{

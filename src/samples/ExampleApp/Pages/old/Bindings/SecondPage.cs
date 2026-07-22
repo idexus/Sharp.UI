@@ -7,8 +7,8 @@ public partial class SecondPage : ContentPage
 {
     SecondPageViewModel viewModel => BindingContext as SecondPageViewModel;
 
-    public SecondPage(SecondPageViewModel viewModel)
-    {
+    protected override void Build()
+    {        
         BindingContext = viewModel;
         this.Title = "View-Model";
         this.Resources = pageResources;

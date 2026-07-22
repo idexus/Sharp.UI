@@ -11,11 +11,11 @@ Here's an example of how you can use the `AbsoluteLayoutBounds` method to define
 ```cs
 using Sharp.UI;
 
-public partial class AbsoluteLayoutPage : ContentPage
+public sealed partial class AbsoluteLayoutPage : ContentPage
 {
-    protected override View Build()
+    protected override void Build()
     {
-        return new AbsoluteLayout
+        Content = new AbsoluteLayout
         {   
             new Grid
             {

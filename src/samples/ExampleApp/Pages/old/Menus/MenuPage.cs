@@ -4,8 +4,8 @@ using Sharp.UI;
 
 public sealed partial class MenuPage : ContentPage
 {
-    protected override View Build()
-    {
+    protected override void Build()
+    {        
         this.MenuBarItems(new MenuBarItem[]
         {
             new MenuBarItem("My Menu")
@@ -31,7 +31,7 @@ public sealed partial class MenuPage : ContentPage
             }
         });
 
-        return new Grid(out var grid)
+        Content = new Grid(out var grid)
         {
             new Label("Menubar test").FontSize(50)
         }

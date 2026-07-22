@@ -27,11 +27,11 @@ namespace ExampleApp
         private Label label2;
         private Label label3;
 
-        protected override View Build()
+        protected override void Build()
         {            
             Title = "Test Page";
 
-            return new ScrollView 
+            Content = new ScrollView 
             {
                 new VStack(out var vstack)                        
                 {

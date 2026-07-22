@@ -14,7 +14,8 @@ public partial class FlyoutHeaderTemplate : ContentView
 
             new Image("dotnet_bot.png")
 				.Opacity(0.6)
-				.Aspect(Aspect.AspectFit),
+				.Aspect(Aspect.AspectFit)
+				.Margin(20),
 
 			new Label(".NET Bot Menu")
 				.Row(1)

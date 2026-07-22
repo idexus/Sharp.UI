@@ -9,8 +9,8 @@ public sealed partial class ExamplePage : ContentPage
 {
     private int counter;
 
-    protected override View Build()
-    {
+    protected override void Build()
+    {        
         Resources = new ResourceDictionary {
             new Style<Label>(e => e
                 .TextColor(e => e.OnDark(Colors.LightCyan))
@@ -19,7 +19,7 @@ public sealed partial class ExamplePage : ContentPage
                 .Padding(e => e.OniOS(20)))            
         };
 
-        return new ScrollView
+        Content = new ScrollView
         {
             new VStack
             {

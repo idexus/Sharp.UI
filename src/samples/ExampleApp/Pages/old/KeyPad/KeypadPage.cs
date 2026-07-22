@@ -10,9 +10,9 @@ string[] labels = new[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "*", "0",
 
 KeypadViewModel vm = new KeypadViewModel();
 
-protected override View Build()
+protected override void Build()
 {
-    return new Grid
+    Content = new Grid
     {
 	    // ---- properties ----
 
@@ -51,9 +51,9 @@ protected override View Build()
 
     KeypadViewModel vm = new KeypadViewModel();
 
-    protected override View Build()
+    protected override void Build()
     {
-        return new ScrollView(e => e.Orientation(ScrollOrientation.Vertical))
+        Content = new ScrollView(e => e.Orientation(ScrollOrientation.Vertical))
         {
             new Example
             {

@@ -11,10 +11,10 @@ namespace ExampleApp
 			new Style<Ellipse>(e => e.Fill(Colors.Red))
 		};
 
-        protected override View Build()
-        {
+        protected override void Build()
+        {            
             Resources = localResources;
-			return new VStack
+            Content = new VStack
 			{
 				new Rectangle()
 					.SizeRequest(200,200)

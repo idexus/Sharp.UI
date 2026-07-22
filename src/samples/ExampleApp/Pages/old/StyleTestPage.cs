@@ -7,11 +7,10 @@ namespace ExampleApp
 
     public sealed partial class StyleTestPage : ContentPage
     {
-        protected override View Build()
-        {
+        protected override void Build()
+        {            
             this.Resources = localResources;
-
-            return new VStack()
+            Content = new VStack()
             {
                 new HStack
                 {
