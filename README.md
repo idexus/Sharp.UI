@@ -74,7 +74,7 @@ interface IErrorMessagePage
 [QueryProperty(nameof(BackRoute), "route")]
 public sealed partial class ErrorMessagePage : ContentPage, IErrorMessagePage
 {
-    protected void View Build()
+    protected override void Build()
     {
         this.BindingContext = this;
         this.Title = "Error";
