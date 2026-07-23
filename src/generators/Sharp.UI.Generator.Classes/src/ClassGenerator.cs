@@ -1,136 +1,34 @@
-﻿//
+//
 // MIT License
 // Copyright Pawel Krzywdzinski
 //
-
 using System;
-using Microsoft.CodeAnalysis;
-using System.Text;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Microsoft.CodeAnalysis;
 
 namespace Sharp.UI.Generator.Classes
 {
-    public class ClassGenerator
+    /// <summary>
+    /// Pure emitter: takes a ClassModel and produces text.
+    /// No access to ISymbol / Compilation at all, which means this step
+    /// does not have to run when the model has not changed.
+    /// </summary>
+    internal sealed class ClassGenerator
     {
-        public const string DefaultValueAttributeString = "DefaultValueAttribute";
-        public const string PropertyCallbackAttributeString = "PropertyCallbacksAttribute";
-
-        GeneratorExecutionContext context;
-        INamedTypeSymbol mainSymbol;
-
+        readonly ClassModel model;
         StringBuilder builder;
+        bool generatedTopContentConstructor = false;
 
-        string fullSymbolName = null;
-        string contentPropertyName = null;
-        bool isSingleItemContainer = false;
-        string containerOfTypeName = null;
-        bool isNewPropertyContainer = false;
-        bool isAlreadyContainerOfThis = false;
-        bool isTopContentSymbol = false;
-        bool isSharpObject = true;
-        bool isShell = false;
-
-        public ClassGenerator(GeneratorExecutionContext context, INamedTypeSymbol symbol)
+        public ClassGenerator(ClassModel model)
         {
-            this.context = context;
-            this.mainSymbol = symbol;
-            this.isShell = Helpers.IsShell(symbol);
-            this.isTopContentSymbol = symbol.IsSealed && (Helpers.IsContentPage(symbol) || isShell);
-            this.isSharpObject = symbol.GetAttributes().Any(e => e.AttributeClass.Name.Equals(Shared.SharpObjectAttributeString));
-
-            this.fullSymbolName = symbol.ToDisplayString().Split('.').Last();
-
-            SetupContainerIfNeeded();
+            this.model = model;
         }
 
-        void SetupContainerIfNeeded()
-        {
-            this.contentPropertyName = GetContentPropertyNameFor(mainSymbol);
-            this.isNewPropertyContainer = IsNewPropertyContainer();
+        // -----------------------------------------------------------------
 
-            this.isAlreadyContainerOfThis = Helpers.IsGenericIList(mainSymbol, out var containerOfType);
-            if (contentPropertyName != null && isAlreadyContainerOfThis) throw new ArgumentException($"Type {mainSymbol.ToDisplayString()} defines IList interface, you can not use ContentProperty attribute");
-
-            if (isAlreadyContainerOfThis)
-            {
-                this.containerOfTypeName = containerOfType.ToDisplayString();
-                this.contentPropertyName = "this";
-                this.isSingleItemContainer = false;
-            }
-            else
-            {
-                if (!isNewPropertyContainer && mainSymbol.ContainingNamespace.ToDisplayString().Equals("Sharp.UI"))
-                {
-                    this.contentPropertyName = FindContentPropertyName();
-                }
-
-                if (!string.IsNullOrEmpty(this.contentPropertyName))
-                {
-                    IPropertySymbol contentPropertySymbol = FindPropertySymbolWithName(this.contentPropertyName);
-                    if (contentPropertySymbol == null) throw new Exception($"No content property for: {mainSymbol.ToDisplayString()}");
-
-                    var contentPropertyType = (INamedTypeSymbol)((contentPropertySymbol).Type);
-                    if (Helpers.IsGenericIList(contentPropertyType, out var ofType))
-                    {
-                        this.containerOfTypeName = ofType.ToDisplayString();
-                        this.isSingleItemContainer = false;
-                    }
-                    else
-                    {
-                        this.containerOfTypeName = contentPropertyType.ToDisplayString();
-                        this.isSingleItemContainer = true;
-                    }
-                }
-            }
-        }
-
-        bool IsNewPropertyContainer()
-        {
-            if (mainSymbol.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Equals(Shared.ContentPropertyAttributeString)) == null)
-                return false;
-
-            bool isNewContainer = false;
-            Helpers.LoopDownToObject(mainSymbol.BaseType, type =>
-            {
-                isNewContainer = type.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Equals(Shared.ContentPropertyAttributeString)) != null;
-                return isNewContainer;
-            });
-            return isNewContainer;
-        }
-
-        string GetContentPropertyNameFor(INamedTypeSymbol symbol)
-        {
-            var attributeData = symbol.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Equals(Shared.ContentPropertyAttributeString));
-            return attributeData != null ? (string)attributeData.ConstructorArguments[0].Value : null;
-        }
-
-        string FindContentPropertyName()
-        {
-            string name = null;
-            Helpers.LoopDownToObject(mainSymbol, type =>
-            {
-                name = GetContentPropertyNameFor(type);
-                return name != null;
-            });
-            return name;
-        }
-
-        IPropertySymbol FindPropertySymbolWithName(string propertyName)
-        {
-            IPropertySymbol propertySymbol = GetPropertyFromInterface(propertyName);
-            if (propertySymbol == null)
-            {
-                Helpers.LoopDownToObject(mainSymbol, type =>
-                {
-                    propertySymbol = (IPropertySymbol)(type.GetMembers(propertyName).FirstOrDefault());
-                    return propertySymbol != null;
-                });
-            }
-            return propertySymbol;
-        }
-
-        public void Build()
+        public void Build(SourceProductionContext context)
         {
             builder = new StringBuilder();
 
@@ -138,7 +36,6 @@ namespace Sharp.UI.Generator.Classes
             builder.AppendLine("// <auto-generated> Sharp.UI.Generator.Classes.Builder");
             builder.AppendLine("//");
             builder.AppendLine();
-
             builder.AppendLine("#nullable enable");
             builder.AppendLine();
 
@@ -147,32 +44,31 @@ namespace Sharp.UI.Generator.Classes
             builder.AppendLine();
             builder.AppendLine("#nullable restore");
 
-            if (isTopContentSymbol && !generatedTopContentConstructor && !isSharpObject)
+            if (model.IsTopContentSymbol && !generatedTopContentConstructor && !model.IsSharpObject)
                 return;
 
-            context.AddSource($"{mainSymbol.ContainingNamespace.ToDisplayString()}.{Helpers.GetNormalizedFileName(mainSymbol)}.g.cs", builder.ToString());
+            context.AddSource($"{model.Namespace}.{model.FileName}.g.cs", builder.ToString());
         }
 
-        public string GetUsingString()
-        {
-            if (mainSymbol.ContainingNamespace.ToDisplayString().Equals("Sharp.UI"))
-                return $@"using Sharp.UI;
-
-    ";
-            return "";
-        }
+        string GetUsingString()
+            => model.Namespace.Equals("Sharp.UI", StringComparison.Ordinal)
+                ? "using Sharp.UI;\n\n"
+                : "";
 
         void GenerateClassNamespace()
-        {           
-            var sealedStr = mainSymbol.IsSealed ? "sealed " : "";
+        {
+            var sealedStr = model.IsSealed ? "sealed " : "";
 
-            this.GenerateContainerUsingsIfNeeded();
+            GenerateContainerUsingsIfNeeded();
+
             builder.Append($@"
-namespace {mainSymbol.ContainingNamespace.ToDisplayString()}
+namespace {model.Namespace}
 {{
-	{GetUsingString()}public {sealedStr}partial class {fullSymbolName}{BaseString()}
-	{{");
+    {GetUsingString()}public {sealedStr}partial class {model.FullSymbolName}{BaseString()}
+    {{");
+
             GenerateClassBody();
+
             builder.AppendLine($@"
     }}
 }}");
@@ -182,8 +78,8 @@ namespace {mainSymbol.ContainingNamespace.ToDisplayString()}
 
         void GenerateContainerUsingsIfNeeded()
         {
-            if (containerOfTypeName != null)
-                builder.AppendLine($@"
+            if (model.ContainerOfTypeName != null)
+                builder.AppendLine(@"
 using System.Collections;
 using System.Collections.ObjectModel;
 using System.Collections.Generic;
@@ -194,23 +90,22 @@ using System.Collections.Generic;
 
         string BaseString()
         {
-            if (containerOfTypeName != null)
-            {
-                if (isSingleItemContainer)
-                    return $" : IEnumerable";
-                else
-                    return $" : IList<{containerOfTypeName}>";
-            }
+            if (model.ContainerOfTypeName != null)
+                return model.IsSingleItemContainer
+                    ? " : IEnumerable"
+                    : $" : IList<{model.ContainerOfTypeName}>";
+
             return "";
         }
 
         void GenerateClassBody()
         {
-            if (isTopContentSymbol)
+            if (model.IsTopContentSymbol)
                 GenerateNoParamTopContentConstructor();
             else
                 GenerateConstructors();
-            if (isSharpObject)
+
+            if (model.IsSharpObject)
             {
                 GenerateSingleItemContainer();
                 GenerateCollectionContainer();
@@ -224,302 +119,199 @@ using System.Collections.Generic;
 
         void GenerateSingleItemContainer()
         {
-            if (containerOfTypeName != null && isSingleItemContainer == true)
-            {
-                var newPrefix = isNewPropertyContainer ? " new" : "";
+            if (model.ContainerOfTypeName == null || !model.IsSingleItemContainer)
+                return;
 
-                builder.AppendLine($@"
+            var newPrefix = model.IsNewPropertyContainer ? " new" : "";
+            var argName = model.ContentPropertyName.ToLower();
+
+            builder.AppendLine($@"
         // ----- single item container -----
 
-        IEnumerator IEnumerable.GetEnumerator() {{ yield return this.{contentPropertyName}; }}
-        public{newPrefix} void Add({containerOfTypeName} {contentPropertyName.ToLower()}) => this.{contentPropertyName} = {contentPropertyName.ToLower()};");
-            }
+        IEnumerator IEnumerable.GetEnumerator() {{ yield return this.{model.ContentPropertyName}; }}
+        public{newPrefix} void Add({model.ContainerOfTypeName} {argName}) => this.{model.ContentPropertyName} = {argName};");
         }
 
         // --------------------------------
-        // ----- collection container -----    
+        // ----- collection container -----
         // --------------------------------
 
         void GenerateCollectionContainer()
         {
+            if (model.ContainerOfTypeName == null || model.IsSingleItemContainer || model.IsAlreadyContainerOfThis)
+                return;
 
-            if (containerOfTypeName != null && isSingleItemContainer == false && !isAlreadyContainerOfThis)
-            {
-                var prefix = $"this.{contentPropertyName}";
+            var prefix = $"this.{model.ContentPropertyName}";
+            var type = model.ContainerOfTypeName;
 
-                builder.AppendLine($@"
+            builder.AppendLine($@"
         // ----- collection container -----
 
         public int Count => {prefix}.Count;
-        public {containerOfTypeName} this[int index] {{ get => {prefix}[index]; set => {prefix}[index] = value; }}
+        public {type} this[int index] {{ get => {prefix}[index]; set => {prefix}[index] = value; }}
         public bool IsReadOnly => false;
         public void Clear() => {prefix}.Clear();
-        public bool Contains({containerOfTypeName} item) => {prefix}.Contains(item);
-        public void CopyTo({containerOfTypeName}[] array, int arrayIndex) => {prefix}.CopyTo(array, arrayIndex);
-        public IEnumerator<{containerOfTypeName}> GetEnumerator() => {prefix}.GetEnumerator();
-        public int IndexOf({containerOfTypeName} item) => {prefix}.IndexOf(item);
-        public void Insert(int index, {containerOfTypeName} item) => {prefix}.Insert(index, item);
-        public bool Remove({containerOfTypeName} item) => {prefix}.Remove(item);
+        public bool Contains({type} item) => {prefix}.Contains(item);
+        public void CopyTo({type}[] array, int arrayIndex) => {prefix}.CopyTo(array, arrayIndex);
+        public IEnumerator<{type}> GetEnumerator() => {prefix}.GetEnumerator();
+        public int IndexOf({type} item) => {prefix}.IndexOf(item);
+        public void Insert(int index, {type} item) => {prefix}.Insert(index, item);
+        public bool Remove({type} item) => {prefix}.Remove(item);
         public void RemoveAt(int index) => {prefix}.RemoveAt(index);
         IEnumerator IEnumerable.GetEnumerator() => {prefix}.GetEnumerator();
-        public void Add({containerOfTypeName} item) => {prefix}.Add(item);                
-        public void SetItems(params {containerOfTypeName}[] items)
+        public void Add({type} item) => {prefix}.Add(item);
+
+        public void SetItems(params {type}[] items)
         {{
             this.Clear();
             foreach (var item in items) {{ this.Add(item); }}
         }}
 ");
-
-            }
         }
 
         // ------------------------
         // ----- constructors -----
         // ------------------------
 
-        // no params constructor
-
-        bool generatedTopContentConstructor = false;
-
         void GenerateNoParamTopContentConstructor()
         {
-            var camelCaseName = Helpers.CamelCase(mainSymbol.Name);
+            // equivalent of: isImplicitlyDeclared && !isExplicitlyDeclared
+            if (!model.HasImplicitParameterlessCtor || model.HasAnyExplicitPublicCtor)
+                return;
 
-            var isExplicitlyDeclared = mainSymbol.Constructors.FirstOrDefault(e => e.DeclaredAccessibility == Accessibility.Public && !e.IsImplicitlyDeclared) != null;
-            var isImplicitlyDeclared = mainSymbol.Constructors.FirstOrDefault(e => e.DeclaredAccessibility == Accessibility.Public && e.Parameters.Count() == 0 && e.IsImplicitlyDeclared) != null;
+            generatedTopContentConstructor = true;
 
-            // this() constructor
-            if (isImplicitlyDeclared && !isExplicitlyDeclared)
-            {
-                generatedTopContentConstructor = true;
-                if (isShell)
-                {
-                    builder.AppendLine($@"
-        public new static {mainSymbol.Name} Current => ({mainSymbol.Name})Shell.Current;");
-                }
+            if (model.IsShell)
                 builder.AppendLine($@"
-        public {mainSymbol.Name}() 
-        {{ 
+        public new static {model.ClassName} Current => ({model.ClassName})Shell.Current;");
+
+            builder.AppendLine($@"
+        public {model.ClassName}()
+        {{
             InitializeSharpUI();
         }}");
-            }
         }
 
         void GenerateNoParamConstructor()
         {
-                builder.AppendLine($@"
-        public {mainSymbol.Name}() {{ }}");
+            builder.AppendLine($@"
+        public {model.ClassName}() {{ }}");
         }
-
-        // additional constructors
 
         void GenerateConstructors()
         {
-            var argsString = "";
-            var baseArgsString = "";
-            var thisTail = ": this()";
-            var objectTail = "";
-            var camelCaseName = Helpers.CamelCase(mainSymbol.Name);
-           
-            var buildAdditionalConstructor = () =>
-            {
-                builder.AppendLine($@"
-        public {mainSymbol.Name}({argsString}out {fullSymbolName} {camelCaseName}{objectTail}) {thisTail}
-        {{
-            {camelCaseName}{objectTail} = this;
-        }}");
+            var camelCaseName = Helpers.CamelCase(model.ClassName);
 
-                if (containerOfTypeName != null || isAlreadyContainerOfThis)
-                    builder.AppendLine($@"
-        public {mainSymbol.Name}({argsString}System.Func<{mainSymbol.Name}, {mainSymbol.Name}> configure) {thisTail}
-        {{
-            configure(this);
-        }}
-
-        public {mainSymbol.Name}({argsString}out {mainSymbol.Name} {camelCaseName}, System.Func<{mainSymbol.Name}, {mainSymbol.Name}> configure) {thisTail}
-        {{
-            {Helpers.CamelCase(mainSymbol.Name)} = this;
-            configure(this);
-        }}");
-            };
-
-            builder.AppendLine($@"
+            builder.AppendLine(@"
         // ----- constructors -----");
 
-            var isNoParamInParent = mainSymbol.BaseType.Constructors.FirstOrDefault(e => e.DeclaredAccessibility == Accessibility.Public && e.Parameters.Count() == 0) != null;
-
-            var isExplicitlyDeclared = mainSymbol.Constructors.FirstOrDefault(e => e.DeclaredAccessibility == Accessibility.Public && e.Parameters.Count() == 0 && !e.IsImplicitlyDeclared) != null;
-            var isImplicitlyDeclared = mainSymbol.Constructors.FirstOrDefault(e => e.DeclaredAccessibility == Accessibility.Public && e.Parameters.Count() == 0 && e.IsImplicitlyDeclared) != null;
+            var thisTail = ": this()";
 
             // this() constructor
-            if (isImplicitlyDeclared || (isNoParamInParent && !isExplicitlyDeclared))
+            if (model.HasImplicitParameterlessCtor ||
+                (model.BaseHasParameterlessCtor && !model.HasExplicitParameterlessCtor))
             {
                 GenerateNoParamConstructor();
                 thisTail = "";
             }
-            if (isImplicitlyDeclared || isExplicitlyDeclared || (isNoParamInParent && !isExplicitlyDeclared))
-                buildAdditionalConstructor();
+
+            if (model.HasImplicitParameterlessCtor ||
+                model.HasExplicitParameterlessCtor ||
+                (model.BaseHasParameterlessCtor && !model.HasExplicitParameterlessCtor))
+            {
+                BuildAdditionalConstructor(argsString: "", objectTail: "", thisTail: thisTail, camelCaseName: camelCaseName);
+            }
 
             // this(...) constructors
-            var constructors = mainSymbol.Constructors.Where(e => e.DeclaredAccessibility == Accessibility.Public && e.Parameters.Count() > 0 && !e.IsImplicitlyDeclared);
-            foreach (var constructor in constructors)
+            foreach (var ctor in model.Constructors)
             {
-                argsString = "";
-                baseArgsString = "";
-
+                var argsString = "";
+                var baseArgsString = "";
                 var argsList = new List<string>();
-                foreach (var argument in constructor.Parameters)
-                {
-                    var camelCaseArgName = Helpers.CamelCase(argument.Name);
-                    argsList.Add(camelCaseArgName);
 
-                    argsString += $"{argument.Type.ToDisplayString()} {camelCaseArgName}, ";
+                foreach (var argument in ctor.Parameters)
+                {
+                    argsList.Add(argument.CamelCaseName);
+                    argsString += $"{argument.TypeName} {argument.CamelCaseName}, ";
 
                     if (!string.IsNullOrEmpty(baseArgsString))
                         baseArgsString += ", ";
-                    baseArgsString += $"{camelCaseArgName}";
+                    baseArgsString += argument.CamelCaseName;
                 }
 
-                thisTail = $": this({baseArgsString})";
-                objectTail = argsList.Contains(camelCaseName, StringComparer.Ordinal) ? "Object" : "";
-                buildAdditionalConstructor();
+                var objectTail = argsList.Contains(camelCaseName, StringComparer.Ordinal) ? "Object" : "";
+
+                BuildAdditionalConstructor(argsString, objectTail, $": this({baseArgsString})", camelCaseName);
             }
+        }
+
+        void BuildAdditionalConstructor(string argsString, string objectTail, string thisTail, string camelCaseName)
+        {
+            builder.AppendLine($@"
+        public {model.ClassName}({argsString}out {model.FullSymbolName} {camelCaseName}{objectTail}) {thisTail}
+        {{
+            {camelCaseName}{objectTail} = this;
+        }}");
+
+            if (model.ContainerOfTypeName != null || model.IsAlreadyContainerOfThis)
+                builder.AppendLine($@"
+        public {model.ClassName}({argsString}System.Func<{model.ClassName}, {model.ClassName}> configure) {thisTail}
+        {{
+            configure(this);
+        }}
+
+        public {model.ClassName}({argsString}out {model.ClassName} {camelCaseName}, System.Func<{model.ClassName}, {model.ClassName}> configure) {thisTail}
+        {{
+            {camelCaseName} = this;
+            configure(this);
+        }}");
         }
 
         // --------------------------------------
         // ---- generate bindable properties ----
         // --------------------------------------
 
-        Dictionary<string, string> GetPropertyCallbacks(ISymbol symbol)
-        {
-            var data = new Dictionary<string, string>();
-            var attributes = symbol.GetAttributes();
-            var attributeData = attributes.FirstOrDefault(e => e.AttributeClass.Name.Equals(PropertyCallbackAttributeString, StringComparison.Ordinal));
-            if (attributeData != null)
-            {
-                var arguments = attributeData.ConstructorArguments;
-                if (arguments[0].Value != null)
-                    data["propertyChanged"] = (string)arguments[0].Value;
-                if (arguments[1].Value != null)
-                    data["propertyChanging"] = (string)arguments[1].Value;
-                if (arguments[2].Value != null)
-                    data["validateValue"] = (string)arguments[2].Value;
-                if (arguments[3].Value != null)
-                    data["coerceValue"] = (string)arguments[3].Value;
-                if (arguments[4].Value != null)
-                    data["defaultValueCreator"] = (string)arguments[4].Value;
-                if (data.Count() == 0)
-                    throw new ArgumentException($"PropertyCallback attribute must have minmium one attribute defined, symbol: {symbol.ToDisplayString()}");
-            }
-            return data;
-        }
-
-        string GetDefaultValueString(ISymbol symbol, string typeName)
-        {
-            var attributes = symbol.GetAttributes();
-            var attributeData = attributes.FirstOrDefault(e => e.AttributeClass.Name.Equals(DefaultValueAttributeString, StringComparison.Ordinal));
-            if (attributeData != null)
-            {
-
-                var value = attributeData.ConstructorArguments[0].Value.ToString();
-                if (typeName.Equals("string", StringComparison.Ordinal))
-                    value = $"\"{value}\"";
-                if (typeName.Equals("double", StringComparison.Ordinal) || typeName.Equals("float", StringComparison.Ordinal))
-                    value = value.Replace(",", ".");
-                return value;
-            }
-            return null;
-        }
-
-        IPropertySymbol GetPropertyFromInterface(string name)
-        {
-            if (Helpers.IsBindableObject(mainSymbol))
-            {
-                var bindableInterfaces = mainSymbol
-                    .Interfaces
-                    .Where(e => e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Equals(Shared.BindablePropertiesAttributeString, StringComparison.Ordinal)) != null);
-
-                if (bindableInterfaces.Count() > 0)
-
-                    foreach (var inter in bindableInterfaces)
-                    {
-                        var properties = inter
-                            .GetMembers()
-                            .Where(e => e.Kind == SymbolKind.Property);
-
-                        foreach (var prop in properties)
-                            if (prop.Name.Equals(name, StringComparison.Ordinal))
-                                return (IPropertySymbol)prop;
-                    }
-            }
-            return null;
-        }
-
         void GenerateBindableProperties()
         {
-            if (Helpers.IsBindableObject(mainSymbol))
-            {
-                var bindableInterfaces = mainSymbol
-                    .Interfaces
-                    .Where(e => e.GetAttributes().FirstOrDefault(e => e.AttributeClass.Name.Equals(Shared.BindablePropertiesAttributeString, StringComparison.Ordinal)) != null);
+            if (model.BindableProperties.Count == 0)
+                return;
 
-                if (bindableInterfaces.Count() > 0)
-                    builder.AppendLine($@"
+            builder.AppendLine(@"
         // ----- bindable properties -----");
 
-                foreach (var inter in bindableInterfaces)
-                {
-                    var properties = inter
-                        .GetMembers()
-                        .Where(e => e.Kind == SymbolKind.Property);
-
-                    foreach (var prop in properties)
-                        GeneratePropertyForField((IPropertySymbol)prop);
-                }
-            }
+            foreach (var property in model.BindableProperties)
+                GeneratePropertyForField(property);
         }
 
-        IPropertySymbol FindInBasePropertySymbolWithName(string propertyName)
+        void GeneratePropertyForField(BindablePropertyModel property)
         {
-            IPropertySymbol propertySymbol = null;
-            Helpers.LoopDownToObject(mainSymbol.BaseType, type =>
-            {
-                propertySymbol = (IPropertySymbol)(type.GetMembers(propertyName).FirstOrDefault());
-                return propertySymbol != null;
-            });
-            return propertySymbol;
-        }
+            var name = property.Name;
+            var typeName = property.TypeName;
+            var newKeyword = property.IsNew ? " new" : "";
 
-        void GeneratePropertyForField(IPropertySymbol propertySymbol)
-        {
-            var name = propertySymbol.Name;
-            var typeName = propertySymbol.Type.ToDisplayString();
-            var callbacks = GetPropertyCallbacks(propertySymbol);
-            var defaultValueString = GetDefaultValueString(propertySymbol, typeName);
             var callbacksString = "";
-
-            var newKeyword = FindInBasePropertySymbolWithName(name) != null ? " new" : "" ;
-
-            foreach (var callback in callbacks)
-            {
-                callbacksString = $@",
+            foreach (var callback in property.Callbacks)
+                callbacksString += $@",
                 {callback.Key}: {callback.Value}";
-            }
+
+            var defaultValue = property.DefaultValueString != null
+                ? $"({typeName}){property.DefaultValueString}"
+                : $"default({typeName})";
 
             builder.Append($@"
         public static{newKeyword} readonly Microsoft.Maui.Controls.BindableProperty {name}Property =
             Microsoft.Maui.Controls.BindableProperty.Create(
                 nameof({name}),
                 typeof({typeName}),
-                typeof({mainSymbol.ToDisplayString()}),
-                {(defaultValueString != null ? $"({typeName}){defaultValueString}" : $"default({typeName})")}{callbacksString});
+                typeof({model.FullyQualifiedName}),
+                {defaultValue}{callbacksString});
 
         public{newKeyword} {typeName} {name}
         {{
             get => ({typeName})GetValue({name}Property);
             set => SetValue({name}Property, value);
         }}
-        ");
+");
         }
     }
 }
