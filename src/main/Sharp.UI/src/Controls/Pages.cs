@@ -20,7 +20,8 @@ namespace Sharp.UI
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
-            Unfocus(this);
+            if (this is IEnumerable enumerable)
+            Unfocus(enumerable);
         }
 
         private static void Unfocus(IEnumerable element)

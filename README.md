@@ -336,10 +336,10 @@ Resources = new ResourceDictionary
 
 ## Animations
 
-Sharp.UI provides generated asynchronous methods following the `Animate{PropertyName}To` naming convention for supported `double` and `Color` bindable properties.
+Sharp.UI provides generated asynchronous methods following the `Animate{PropertyName}ToAsync` naming convention for supported `double` and `Color` bindable properties (besides standard Maui animation methods like `RotateToAsync`).
 
 ```cs
-await border.AnimateBackgroundColorTo(Colors.Red, 500);
+await border.AnimateBackgroundColorToAsync(Colors.Red, 500);
 ```
 
 Animations can be used directly inside event handlers:
@@ -353,7 +353,8 @@ new Button("Click me")
         button.Text += count == 1 ? "time" : "times";
 
         await button.RotateToAsync(360 * (count % 2), 300);
-    })
+        await button.AnimateBackgroundColorToAsync(Colors.Red, 500);
+    });
 ```
 
 Visual states can also define animations. See [styles and visual states](./doc/styledefinition.md).

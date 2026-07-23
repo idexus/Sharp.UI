@@ -15,7 +15,7 @@ namespace Sharp.UI.Internal
         Microsoft.Maui.Controls.VisualState visualState;
 
         // Count 125
-
+        
         Microsoft.Maui.Controls.AbsoluteLayout absoluteLayout;
         Microsoft.Maui.Controls.ActivityIndicator activityIndicator;
         Microsoft.Maui.Controls.AdaptiveTrigger adaptiveTrigger;

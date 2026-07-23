@@ -16,43 +16,10 @@ public partial class App : Application
             Height = 800,
             MinimumWidth = 600,
             MinimumHeight = 400,
-            X = 100,  // pozycja od lewej
-            Y = 100   // pozycja od góry
+            X = 100,  
+            Y = 100  
         };
 
         return window;
     }
-
-    // public App()
-    // {
-    //     MainPage = new ContentPage(e => e.Resources(AppResources.Default))
-    //     {
-    //         new VStack(e => e.CenterVertically())
-    //         {
-    //             new Button("Single Page")
-    //                 .Margin(10)
-    //                 .WidthRequest(200)
-    //                 .OnClicked(b =>
-    //                 {
-    //                     MainPage = ActivatorUtilities.GetServiceOrCreateInstance<TestPage>(Application.Services);
-    //                 }),
-
-    //             new Button("Flyout Application")
-    //                 .Margin(10)
-    //                 .WidthRequest(200)
-    //                 .OnClicked(b =>
-    //                 {
-    //                     MainPage = ActivatorUtilities.GetServiceOrCreateInstance<FlyoutMainPage>(Application.Services);
-    //                 }),
-
-    //             new Button("Shell Application")
-    //                 .Margin(10)
-    //                 .WidthRequest(200)
-    //                 .OnClicked(b =>
-    //                 {
-    //                     MainPage = new AppShell();
-    //                 }),
-    //         }
-    //     };
-    // }
 }

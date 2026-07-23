@@ -34,7 +34,6 @@ namespace Sharp.UI
 
     [SharpObject]
     public partial class ContentView : Microsoft.Maui.Controls.ContentView {
-
         public ContentView()
         {
             HotReloader.Register(this);

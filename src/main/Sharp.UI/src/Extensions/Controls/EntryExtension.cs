@@ -16,12 +16,11 @@ namespace Sharp.UI
             }
             else
             {
-                entry.OnLoaded(tb =>
-                {
+                entry.Loaded += (o, arg) => {
                     entry?.Focus();
                     entry?.CursorPosition = 0;
                     entry?.SelectionLength = 100;
-                });
+                };
             }
 
             return entry;

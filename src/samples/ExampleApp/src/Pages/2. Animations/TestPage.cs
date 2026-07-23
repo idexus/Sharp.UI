@@ -93,7 +93,7 @@ new VStack(out var vStack)
     {
         new VisualState<Border> {
             async border => {
-                await border.AnimateBackgroundColorTo(Colors.Red, 500);
+                await border.AnimateBackgroundColorToAsync(Colors.Red, 500);
                 await label.RotateXToAsync(360, 400);
             },
             new StateTrigger().IsActive(e => e.Path("IsToggled").Source(testSwitch))
@@ -101,7 +101,7 @@ new VStack(out var vStack)
 
         new VisualState<Border> {
             async border => {
-                await border.AnimateBackgroundColorTo(AppColors.Gray950, 500);
+                await border.AnimateBackgroundColorToAsync(AppColors.Gray950, 500);
                 await label.RotateXToAsync(0, 400);
             },
             new StateTrigger().IsActive(e => e.Path("IsToggled").Source(testSwitch).Negate())
@@ -171,7 +171,7 @@ new VStack(out var vStack)
                     {
                         new VisualState<Border> {
                             async border => {
-                                await border.AnimateBackgroundColorTo(Colors.Red, 500);
+                                await border.AnimateBackgroundColorToAsync(Colors.Red, 500);
                                 await label.RotateXToAsync(360, 400);
                             },
                             new StateTrigger().IsActive(e => e.Path("IsToggled").Source(testSwitch))
@@ -179,7 +179,7 @@ new VStack(out var vStack)
 
                         new VisualState<Border> {
                             async border => {
-                                await border.AnimateBackgroundColorTo(AppColors.Gray950, 500);
+                                await border.AnimateBackgroundColorToAsync(AppColors.Gray950, 500);
                                 await label.RotateXToAsync(0, 400);
                             },
                             new StateTrigger().IsActive(e => e.Path("IsToggled").Source(testSwitch).Negate())

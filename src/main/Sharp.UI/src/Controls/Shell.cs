@@ -9,7 +9,7 @@ namespace Sharp.UI
 
         void IHotReloadable.Reload()
         {
-            this.Clear();
+            this.Items.Clear();
             this.Build();
         }
 
