@@ -60,25 +60,25 @@
 
   <PropertyGroup>
     <GeneratedFilesRoot>$(MSBuildProjectDirectory)\Generated</GeneratedFilesRoot>
+    <CompilerGeneratedFilesOutputPath>$(GeneratedFilesRoot)\$(TargetFramework)</CompilerGeneratedFilesOutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
     <!-- Visual Studio ma zawsze uruchamiać MSBuild po wybraniu Build -->
-    <!--<DisableFastUpToDateCheck>true</DisableFastUpToDateCheck> -->
-
+    <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
     <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
-
-    <CompilerGeneratedFilesOutputPath>
-      $(GeneratedFilesRoot)\$(TargetFramework)
-    </CompilerGeneratedFilesOutputPath>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="$(GeneratedFilesRoot)/**/*.cs" />
+    <None Include="$(GeneratedFilesRoot)/**/*.cs" />
+  </ItemGroup>
+
   <Target Name="CleanGeneratedForCurrentTarget"
-          BeforeTargets="CoreCompile"
-          Condition="'$(Configuration)' == 'Debug'
+        BeforeTargets="CoreCompile"
+        Condition="'$(Configuration)' == 'Debug'
                    and '$(TargetFramework)' != ''
                    and '$(DesignTimeBuild)' != 'true'">
-
     <PropertyGroup>
       <_GeneratedTargetDirectory>$(GeneratedFilesRoot)\$(TargetFramework)</_GeneratedTargetDirectory>
     </PropertyGroup>

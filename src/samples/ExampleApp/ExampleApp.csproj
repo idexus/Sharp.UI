@@ -81,9 +81,15 @@
     <ProjectReference Include="..\..\main\Sharp.UI\Sharp.UI.csproj" />
 	</ItemGroup>
 
-  <PropertyGroup Condition="'$(Configuration)' == 'Debug' and '$(TargetFramework)' != ''">
-    <EmitCompilerGeneratedFiles>false</EmitCompilerGeneratedFiles>
-    <CompilerGeneratedFilesOutputPath>$(GeneratedFilesRoot)/$(TargetFramework)</CompilerGeneratedFilesOutputPath>
+  <PropertyGroup>
+    <GeneratedFilesRoot>$(MSBuildProjectDirectory)\Generated</GeneratedFilesRoot>
+    <CompilerGeneratedFilesOutputPath>$(GeneratedFilesRoot)\$(TargetFramework)</CompilerGeneratedFilesOutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <!-- Visual Studio ma zawsze uruchamiać MSBuild po wybraniu Build -->
+    <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
+    <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
   </PropertyGroup>
 
   <ItemGroup>
@@ -91,20 +97,18 @@
     <None Include="$(GeneratedFilesRoot)/**/*.cs" />
   </ItemGroup>
 
-  <Target Name="CleanGeneratedForCurrentTarget"
-        BeforeTargets="CoreCompile">
+  <Target Name="CleanGeneratedForCurrentTarget" BeforeTargets="CoreCompile" Condition="'$(Configuration)' == 'Debug'&#xD;&#xA;                   and '$(TargetFramework)' != ''&#xD;&#xA;                   and '$(DesignTimeBuild)' != 'true'">
+    <PropertyGroup>
+      <_GeneratedTargetDirectory>$(GeneratedFilesRoot)\$(TargetFramework)</_GeneratedTargetDirectory>
+    </PropertyGroup>
 
-    <Message
-        Text="Cleaning $(GeneratedFilesRoot)/$(TargetFramework)"
-        Importance="high" />
+    <Message Text="Cleaning: $(_GeneratedTargetDirectory); Configuration=$(Configuration); TargetFramework=$(TargetFramework)" Importance="high" />
 
-    <!-- To naprawdę usuwa katalog i jego zawartość z dysku -->
-    <RemoveDir
-        Directories="$(GeneratedFilesRoot)/$(TargetFramework)"
-        Condition="Exists('$(GeneratedFilesRoot)/$(TargetFramework)')" />
+    <RemoveDir Directories="$(_GeneratedTargetDirectory)" Condition="Exists('$(_GeneratedTargetDirectory)')" />
   </Target>
-  
-	<ItemGroup>
+
+
+  <ItemGroup>
 	  <Page Remove="Platforms\Windows\App.xaml" />
 	</ItemGroup>
 	<ItemGroup>
