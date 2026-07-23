@@ -31,6 +31,12 @@
     <Compile Include="..\shared\EquatableArray.cs">
       <Link>shared\EquatableArray.cs</Link>
     </Compile>
+    <Compile Include="..\shared\Helpers.cs">
+      <Link>shared\Helpers.cs</Link>
+    </Compile>
+    <Compile Include="..\shared\Shared.cs">
+      <Link>shared\Shared.cs</Link>
+    </Compile>
   </ItemGroup>
 
 </Project>
