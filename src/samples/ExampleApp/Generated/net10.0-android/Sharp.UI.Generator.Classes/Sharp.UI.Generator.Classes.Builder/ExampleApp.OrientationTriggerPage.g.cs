@@ -7,10 +7,10 @@
 
 namespace ExampleApp
 {
-	public sealed partial class OrientationTriggerPage
-	{
-        public OrientationTriggerPage() 
-        { 
+    public sealed partial class OrientationTriggerPage
+    {
+        public OrientationTriggerPage()
+        {
             InitializeSharpUI();
         }
 

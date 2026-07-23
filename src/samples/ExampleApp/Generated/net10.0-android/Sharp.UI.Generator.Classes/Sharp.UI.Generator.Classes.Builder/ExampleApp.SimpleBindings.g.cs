@@ -7,10 +7,10 @@
 
 namespace ExampleApp
 {
-	public sealed partial class SimpleBindings
-	{
-        public SimpleBindings() 
-        { 
+    public sealed partial class SimpleBindings
+    {
+        public SimpleBindings()
+        {
             InitializeSharpUI();
         }
 

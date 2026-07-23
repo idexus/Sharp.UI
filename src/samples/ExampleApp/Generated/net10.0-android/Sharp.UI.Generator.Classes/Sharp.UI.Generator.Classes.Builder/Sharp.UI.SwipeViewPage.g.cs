@@ -12,12 +12,12 @@ using System.Collections.Generic;
 
 namespace Sharp.UI
 {
-	using Sharp.UI;
+    using Sharp.UI;
 
     public sealed partial class SwipeViewPage : IEnumerable
-	{
-        public SwipeViewPage() 
-        { 
+    {
+        public SwipeViewPage()
+        {
             InitializeSharpUI();
         }
 

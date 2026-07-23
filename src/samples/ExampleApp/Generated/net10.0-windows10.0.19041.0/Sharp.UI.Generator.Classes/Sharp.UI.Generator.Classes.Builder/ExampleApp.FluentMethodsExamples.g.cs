@@ -7,10 +7,10 @@
 
 namespace ExampleApp
 {
-	public sealed partial class FluentMethodsExamples
-	{
-        public FluentMethodsExamples() 
-        { 
+    public sealed partial class FluentMethodsExamples
+    {
+        public FluentMethodsExamples()
+        {
             InitializeSharpUI();
         }
 

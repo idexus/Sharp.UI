@@ -12,10 +12,10 @@ using System.Collections.Generic;
 
 namespace Sharp.UI
 {
-	using Sharp.UI;
+    using Sharp.UI;
 
     public partial class VStack : IList<Microsoft.Maui.IView>
-	{
+    {
         // ----- constructors -----
 
         public VStack() { }

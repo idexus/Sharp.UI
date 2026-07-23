@@ -7,10 +7,10 @@
 
 namespace ExampleApp
 {
-	public sealed partial class AlternateCollectionPage
-	{
-        public AlternateCollectionPage() 
-        { 
+    public sealed partial class AlternateCollectionPage
+    {
+        public AlternateCollectionPage()
+        {
             InitializeSharpUI();
         }
 

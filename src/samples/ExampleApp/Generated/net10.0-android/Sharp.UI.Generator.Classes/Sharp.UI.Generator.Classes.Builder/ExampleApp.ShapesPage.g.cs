@@ -7,10 +7,10 @@
 
 namespace ExampleApp
 {
-	public sealed partial class ShapesPage
-	{
-        public ShapesPage() 
-        { 
+    public sealed partial class ShapesPage
+    {
+        public ShapesPage()
+        {
             InitializeSharpUI();
         }
 

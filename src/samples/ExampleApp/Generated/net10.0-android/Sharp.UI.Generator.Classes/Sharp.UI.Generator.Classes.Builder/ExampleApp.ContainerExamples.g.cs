@@ -7,10 +7,10 @@
 
 namespace ExampleApp
 {
-	public sealed partial class ContainerExamples
-	{
-        public ContainerExamples() 
-        { 
+    public sealed partial class ContainerExamples
+    {
+        public ContainerExamples()
+        {
             InitializeSharpUI();
         }
 

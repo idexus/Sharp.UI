@@ -7,8 +7,8 @@
 
 namespace ExampleApp
 {
-	public partial class SecondPageViewModel
-	{
+    public partial class SecondPageViewModel
+    {
         // ----- constructors -----
 
         public SecondPageViewModel() { }
@@ -32,7 +32,7 @@ namespace ExampleApp
             get => (string)GetValue(TitleProperty);
             set => SetValue(TitleProperty, value);
         }
-        
+
         public static readonly Microsoft.Maui.Controls.BindableProperty AuthorProperty =
             Microsoft.Maui.Controls.BindableProperty.Create(
                 nameof(Author),
@@ -45,7 +45,7 @@ namespace ExampleApp
             get => (string)GetValue(AuthorProperty);
             set => SetValue(AuthorProperty, value);
         }
-        
+
     }
 }
 

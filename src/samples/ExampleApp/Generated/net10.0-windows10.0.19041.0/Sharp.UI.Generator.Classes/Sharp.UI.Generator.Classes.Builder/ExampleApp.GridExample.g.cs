@@ -7,10 +7,10 @@
 
 namespace ExampleApp
 {
-	public sealed partial class GridExample
-	{
-        public GridExample() 
-        { 
+    public sealed partial class GridExample
+    {
+        public GridExample()
+        {
             InitializeSharpUI();
         }
 

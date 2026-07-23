@@ -7,10 +7,10 @@
 
 namespace ExampleApp
 {
-	public sealed partial class CustomPage
-	{
-        public CustomPage() 
-        { 
+    public sealed partial class CustomPage
+    {
+        public CustomPage()
+        {
             InitializeSharpUI();
         }
 

@@ -12,10 +12,10 @@ using System.Collections.Generic;
 
 namespace Sharp.UI
 {
-	using Sharp.UI;
+    using Sharp.UI;
 
     public partial class LinearGradientBrush : IList<Microsoft.Maui.Controls.GradientStop>
-	{
+    {
         // ----- constructors -----
 
         public LinearGradientBrush() { }
@@ -66,7 +66,8 @@ namespace Sharp.UI
         public bool Remove(Microsoft.Maui.Controls.GradientStop item) => this.GradientStops.Remove(item);
         public void RemoveAt(int index) => this.GradientStops.RemoveAt(index);
         IEnumerator IEnumerable.GetEnumerator() => this.GradientStops.GetEnumerator();
-        public void Add(Microsoft.Maui.Controls.GradientStop item) => this.GradientStops.Add(item);                
+        public void Add(Microsoft.Maui.Controls.GradientStop item) => this.GradientStops.Add(item);
+
         public void SetItems(params Microsoft.Maui.Controls.GradientStop[] items)
         {
             this.Clear();

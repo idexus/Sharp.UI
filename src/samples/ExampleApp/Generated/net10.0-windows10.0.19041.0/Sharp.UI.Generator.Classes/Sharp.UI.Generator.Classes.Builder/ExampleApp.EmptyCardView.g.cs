@@ -7,8 +7,8 @@
 
 namespace ExampleApp
 {
-	public sealed partial class EmptyCardView
-	{
+    public sealed partial class EmptyCardView
+    {
         // ----- constructors -----
 
         public EmptyCardView() { }
@@ -32,7 +32,7 @@ namespace ExampleApp
             get => (string)GetValue(CardTitleProperty);
             set => SetValue(CardTitleProperty, value);
         }
-        
+
         public static readonly Microsoft.Maui.Controls.BindableProperty CardDescriptionProperty =
             Microsoft.Maui.Controls.BindableProperty.Create(
                 nameof(CardDescription),
@@ -45,7 +45,7 @@ namespace ExampleApp
             get => (string)GetValue(CardDescriptionProperty);
             set => SetValue(CardDescriptionProperty, value);
         }
-        
+
         public static readonly Microsoft.Maui.Controls.BindableProperty CardColorProperty =
             Microsoft.Maui.Controls.BindableProperty.Create(
                 nameof(CardColor),
@@ -58,7 +58,7 @@ namespace ExampleApp
             get => (Microsoft.Maui.Graphics.Color)GetValue(CardColorProperty);
             set => SetValue(CardColorProperty, value);
         }
-        
+
         public static readonly Microsoft.Maui.Controls.BindableProperty BorderColorProperty =
             Microsoft.Maui.Controls.BindableProperty.Create(
                 nameof(BorderColor),
@@ -71,7 +71,7 @@ namespace ExampleApp
             get => (Microsoft.Maui.Graphics.Color)GetValue(BorderColorProperty);
             set => SetValue(BorderColorProperty, value);
         }
-        
+
     }
 }
 

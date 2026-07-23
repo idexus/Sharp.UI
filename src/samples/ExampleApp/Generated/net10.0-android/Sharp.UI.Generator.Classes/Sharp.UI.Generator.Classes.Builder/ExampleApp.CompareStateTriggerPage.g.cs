@@ -7,10 +7,10 @@
 
 namespace ExampleApp
 {
-	public sealed partial class CompareStateTriggerPage
-	{
-        public CompareStateTriggerPage() 
-        { 
+    public sealed partial class CompareStateTriggerPage
+    {
+        public CompareStateTriggerPage()
+        {
             InitializeSharpUI();
         }
 

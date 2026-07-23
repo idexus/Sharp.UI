@@ -7,10 +7,10 @@
 
 namespace ExampleApp
 {
-	public sealed partial class ContextMenuPage
-	{
-        public ContextMenuPage() 
-        { 
+    public sealed partial class ContextMenuPage
+    {
+        public ContextMenuPage()
+        {
             InitializeSharpUI();
         }
 

@@ -7,10 +7,10 @@
 
 namespace ExampleApp
 {
-	public sealed partial class DataTriggerPage
-	{
-        public DataTriggerPage() 
-        { 
+    public sealed partial class DataTriggerPage
+    {
+        public DataTriggerPage()
+        {
             InitializeSharpUI();
         }
 

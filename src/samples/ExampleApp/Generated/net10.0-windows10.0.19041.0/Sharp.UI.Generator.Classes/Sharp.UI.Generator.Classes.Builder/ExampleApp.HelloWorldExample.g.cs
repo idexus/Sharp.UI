@@ -7,10 +7,10 @@
 
 namespace ExampleApp
 {
-	public sealed partial class HelloWorldExample
-	{
-        public HelloWorldExample() 
-        { 
+    public sealed partial class HelloWorldExample
+    {
+        public HelloWorldExample()
+        {
             InitializeSharpUI();
         }
 

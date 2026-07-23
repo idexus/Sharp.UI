@@ -7,10 +7,10 @@
 
 namespace ExampleApp
 {
-	public sealed partial class PropertyTriggerPage
-	{
-        public PropertyTriggerPage() 
-        { 
+    public sealed partial class PropertyTriggerPage
+    {
+        public PropertyTriggerPage()
+        {
             InitializeSharpUI();
         }
 

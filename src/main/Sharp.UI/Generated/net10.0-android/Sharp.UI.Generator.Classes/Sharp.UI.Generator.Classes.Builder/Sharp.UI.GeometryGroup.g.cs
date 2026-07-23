@@ -12,10 +12,10 @@ using System.Collections.Generic;
 
 namespace Sharp.UI
 {
-	using Sharp.UI;
+    using Sharp.UI;
 
     public partial class GeometryGroup : IList<Microsoft.Maui.Controls.Shapes.Geometry>
-	{
+    {
         // ----- constructors -----
 
         public GeometryGroup() { }
@@ -50,7 +50,8 @@ namespace Sharp.UI
         public bool Remove(Microsoft.Maui.Controls.Shapes.Geometry item) => this.Children.Remove(item);
         public void RemoveAt(int index) => this.Children.RemoveAt(index);
         IEnumerator IEnumerable.GetEnumerator() => this.Children.GetEnumerator();
-        public void Add(Microsoft.Maui.Controls.Shapes.Geometry item) => this.Children.Add(item);                
+        public void Add(Microsoft.Maui.Controls.Shapes.Geometry item) => this.Children.Add(item);
+
         public void SetItems(params Microsoft.Maui.Controls.Shapes.Geometry[] items)
         {
             this.Clear();

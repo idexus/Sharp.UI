@@ -7,10 +7,10 @@
 
 namespace ExampleApp
 {
-	public sealed partial class AngleViewModelPage
-	{
-        public AngleViewModelPage() 
-        { 
+    public sealed partial class AngleViewModelPage
+    {
+        public AngleViewModelPage()
+        {
             InitializeSharpUI();
         }
 

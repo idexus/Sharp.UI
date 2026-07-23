@@ -12,8 +12,8 @@ using System.Collections.Generic;
 
 namespace ExampleApp
 {
-	public sealed partial class CardView : IEnumerable
-	{
+    public sealed partial class CardView : IEnumerable
+    {
         // ----- constructors -----
 
         public CardView(out CardView cardView) : this()
@@ -51,7 +51,7 @@ namespace ExampleApp
             get => (string)GetValue(CardTitleProperty);
             set => SetValue(CardTitleProperty, value);
         }
-        
+
         public static readonly Microsoft.Maui.Controls.BindableProperty CardDescriptionProperty =
             Microsoft.Maui.Controls.BindableProperty.Create(
                 nameof(CardDescription),
@@ -64,7 +64,7 @@ namespace ExampleApp
             get => (string)GetValue(CardDescriptionProperty);
             set => SetValue(CardDescriptionProperty, value);
         }
-        
+
         public static readonly Microsoft.Maui.Controls.BindableProperty CardColorProperty =
             Microsoft.Maui.Controls.BindableProperty.Create(
                 nameof(CardColor),
@@ -77,7 +77,7 @@ namespace ExampleApp
             get => (Microsoft.Maui.Graphics.Color)GetValue(CardColorProperty);
             set => SetValue(CardColorProperty, value);
         }
-        
+
         public static readonly Microsoft.Maui.Controls.BindableProperty BorderColorProperty =
             Microsoft.Maui.Controls.BindableProperty.Create(
                 nameof(BorderColor),
@@ -90,7 +90,7 @@ namespace ExampleApp
             get => (Microsoft.Maui.Graphics.Color)GetValue(BorderColorProperty);
             set => SetValue(BorderColorProperty, value);
         }
-        
+
         public static readonly Microsoft.Maui.Controls.BindableProperty DescriptionStyleProperty =
             Microsoft.Maui.Controls.BindableProperty.Create(
                 nameof(DescriptionStyle),
@@ -103,7 +103,7 @@ namespace ExampleApp
             get => (Microsoft.Maui.Controls.Style)GetValue(DescriptionStyleProperty);
             set => SetValue(DescriptionStyleProperty, value);
         }
-        
+
         public static readonly Microsoft.Maui.Controls.BindableProperty ContentViewProperty =
             Microsoft.Maui.Controls.BindableProperty.Create(
                 nameof(ContentView),
@@ -116,7 +116,7 @@ namespace ExampleApp
             get => (Microsoft.Maui.Controls.View)GetValue(ContentViewProperty);
             set => SetValue(ContentViewProperty, value);
         }
-        
+
         public static readonly Microsoft.Maui.Controls.BindableProperty ButtonTitleProperty =
             Microsoft.Maui.Controls.BindableProperty.Create(
                 nameof(ButtonTitle),
@@ -129,7 +129,7 @@ namespace ExampleApp
             get => (string)GetValue(ButtonTitleProperty);
             set => SetValue(ButtonTitleProperty, value);
         }
-        
+
     }
 }
 

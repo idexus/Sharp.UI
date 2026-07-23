@@ -7,10 +7,10 @@
 
 namespace ExampleApp
 {
-	public sealed partial class StateTriggerPage
-	{
-        public StateTriggerPage() 
-        { 
+    public sealed partial class StateTriggerPage
+    {
+        public StateTriggerPage()
+        {
             InitializeSharpUI();
         }
 

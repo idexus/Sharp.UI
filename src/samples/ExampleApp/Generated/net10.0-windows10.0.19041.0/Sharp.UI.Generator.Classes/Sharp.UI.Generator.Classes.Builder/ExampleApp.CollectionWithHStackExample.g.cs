@@ -7,10 +7,10 @@
 
 namespace ExampleApp
 {
-	public sealed partial class CollectionWithHStackExample
-	{
-        public CollectionWithHStackExample() 
-        { 
+    public sealed partial class CollectionWithHStackExample
+    {
+        public CollectionWithHStackExample()
+        {
             InitializeSharpUI();
         }
 

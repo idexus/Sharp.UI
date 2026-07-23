@@ -7,8 +7,8 @@
 
 namespace ExampleApp
 {
-	public partial class DataModel
-	{
+    public partial class DataModel
+    {
         // ----- constructors -----
 
         public DataModel() { }
@@ -37,7 +37,7 @@ namespace ExampleApp
             get => (int)GetValue(IdProperty);
             set => SetValue(IdProperty, value);
         }
-        
+
         public static readonly Microsoft.Maui.Controls.BindableProperty NameProperty =
             Microsoft.Maui.Controls.BindableProperty.Create(
                 nameof(Name),
@@ -50,7 +50,7 @@ namespace ExampleApp
             get => (string)GetValue(NameProperty);
             set => SetValue(NameProperty, value);
         }
-        
+
         public static readonly Microsoft.Maui.Controls.BindableProperty AdminProperty =
             Microsoft.Maui.Controls.BindableProperty.Create(
                 nameof(Admin),
@@ -63,7 +63,7 @@ namespace ExampleApp
             get => (bool)GetValue(AdminProperty);
             set => SetValue(AdminProperty, value);
         }
-        
+
     }
 }
 

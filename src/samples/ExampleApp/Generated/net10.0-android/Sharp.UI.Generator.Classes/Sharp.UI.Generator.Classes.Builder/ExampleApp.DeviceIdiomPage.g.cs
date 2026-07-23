@@ -7,10 +7,10 @@
 
 namespace ExampleApp
 {
-	public sealed partial class DeviceIdiomPage
-	{
-        public DeviceIdiomPage() 
-        { 
+    public sealed partial class DeviceIdiomPage
+    {
+        public DeviceIdiomPage()
+        {
             InitializeSharpUI();
         }
 

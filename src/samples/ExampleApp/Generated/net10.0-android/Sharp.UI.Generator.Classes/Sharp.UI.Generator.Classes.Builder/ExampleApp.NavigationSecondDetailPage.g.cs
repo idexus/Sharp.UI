@@ -7,10 +7,10 @@
 
 namespace ExampleApp
 {
-	public sealed partial class NavigationSecondDetailPage
-	{
-        public NavigationSecondDetailPage() 
-        { 
+    public sealed partial class NavigationSecondDetailPage
+    {
+        public NavigationSecondDetailPage()
+        {
             InitializeSharpUI();
         }
 

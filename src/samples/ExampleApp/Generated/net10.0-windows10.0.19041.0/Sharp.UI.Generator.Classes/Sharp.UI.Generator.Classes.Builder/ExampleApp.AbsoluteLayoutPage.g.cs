@@ -7,10 +7,10 @@
 
 namespace ExampleApp
 {
-	public sealed partial class AbsoluteLayoutPage
-	{
-        public AbsoluteLayoutPage() 
-        { 
+    public sealed partial class AbsoluteLayoutPage
+    {
+        public AbsoluteLayoutPage()
+        {
             InitializeSharpUI();
         }
 

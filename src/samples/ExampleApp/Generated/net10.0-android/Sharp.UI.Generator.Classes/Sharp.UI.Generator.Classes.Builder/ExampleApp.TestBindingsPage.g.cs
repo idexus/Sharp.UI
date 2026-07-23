@@ -7,10 +7,10 @@
 
 namespace ExampleApp
 {
-	public sealed partial class TestBindingsPage
-	{
-        public TestBindingsPage() 
-        { 
+    public sealed partial class TestBindingsPage
+    {
+        public TestBindingsPage()
+        {
             InitializeSharpUI();
         }
 

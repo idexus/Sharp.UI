@@ -7,10 +7,10 @@
 
 namespace Sharp.UI
 {
-	using Sharp.UI;
+    using Sharp.UI;
 
     public partial class RectangleGeometry
-	{
+    {
         // ----- constructors -----
 
         public RectangleGeometry() { }

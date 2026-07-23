@@ -7,10 +7,10 @@
 
 namespace ExampleApp
 {
-	public sealed partial class EventTriggerPage
-	{
-        public EventTriggerPage() 
-        { 
+    public sealed partial class EventTriggerPage
+    {
+        public EventTriggerPage()
+        {
             InitializeSharpUI();
         }
 

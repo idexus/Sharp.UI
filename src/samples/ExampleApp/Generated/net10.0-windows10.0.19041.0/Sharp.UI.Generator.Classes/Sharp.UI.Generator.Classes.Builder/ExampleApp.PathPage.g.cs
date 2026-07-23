@@ -7,10 +7,10 @@
 
 namespace ExampleApp
 {
-	public sealed partial class PathPage
-	{
-        public PathPage() 
-        { 
+    public sealed partial class PathPage
+    {
+        public PathPage()
+        {
             InitializeSharpUI();
         }
 

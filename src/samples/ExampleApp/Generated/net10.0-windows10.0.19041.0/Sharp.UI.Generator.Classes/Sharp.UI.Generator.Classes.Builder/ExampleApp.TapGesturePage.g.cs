@@ -7,10 +7,10 @@
 
 namespace ExampleApp
 {
-	public sealed partial class TapGesturePage
-	{
-        public TapGesturePage() 
-        { 
+    public sealed partial class TapGesturePage
+    {
+        public TapGesturePage()
+        {
             InitializeSharpUI();
         }
 

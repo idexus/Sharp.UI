@@ -7,10 +7,10 @@
 
 namespace ExampleApp
 {
-	public sealed partial class PointerGesturePage
-	{
-        public PointerGesturePage() 
-        { 
+    public sealed partial class PointerGesturePage
+    {
+        public PointerGesturePage()
+        {
             InitializeSharpUI();
         }
 

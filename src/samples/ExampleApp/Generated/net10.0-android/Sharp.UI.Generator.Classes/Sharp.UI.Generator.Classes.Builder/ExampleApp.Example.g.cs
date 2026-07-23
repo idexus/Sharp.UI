@@ -12,8 +12,8 @@ using System.Collections.Generic;
 
 namespace ExampleApp
 {
-	public partial class Example : IEnumerable
-	{
+    public partial class Example : IEnumerable
+    {
         // ----- constructors -----
 
         public Example(out Example example) : this()
@@ -51,7 +51,7 @@ namespace ExampleApp
             get => (string)GetValue(TitleProperty);
             set => SetValue(TitleProperty, value);
         }
-        
+
         public static readonly Microsoft.Maui.Controls.BindableProperty IsExpandedProperty =
             Microsoft.Maui.Controls.BindableProperty.Create(
                 nameof(IsExpanded),
@@ -64,7 +64,7 @@ namespace ExampleApp
             get => (bool)GetValue(IsExpandedProperty);
             set => SetValue(IsExpandedProperty, value);
         }
-        
+
         public static readonly Microsoft.Maui.Controls.BindableProperty ContentPaddingProperty =
             Microsoft.Maui.Controls.BindableProperty.Create(
                 nameof(ContentPadding),
@@ -77,7 +77,7 @@ namespace ExampleApp
             get => (float)GetValue(ContentPaddingProperty);
             set => SetValue(ContentPaddingProperty, value);
         }
-        
+
         public static readonly Microsoft.Maui.Controls.BindableProperty ContentViewProperty =
             Microsoft.Maui.Controls.BindableProperty.Create(
                 nameof(ContentView),
@@ -90,7 +90,7 @@ namespace ExampleApp
             get => (Microsoft.Maui.Controls.View)GetValue(ContentViewProperty);
             set => SetValue(ContentViewProperty, value);
         }
-        
+
         public static readonly Microsoft.Maui.Controls.BindableProperty SourceTextProperty =
             Microsoft.Maui.Controls.BindableProperty.Create(
                 nameof(SourceText),
@@ -104,7 +104,7 @@ namespace ExampleApp
             get => (string)GetValue(SourceTextProperty);
             set => SetValue(SourceTextProperty, value);
         }
-        
+
     }
 }
 

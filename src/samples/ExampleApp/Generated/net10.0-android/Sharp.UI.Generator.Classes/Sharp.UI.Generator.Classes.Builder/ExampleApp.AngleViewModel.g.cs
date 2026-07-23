@@ -7,8 +7,8 @@
 
 namespace ExampleApp
 {
-	public partial class AngleViewModel
-	{
+    public partial class AngleViewModel
+    {
         // ----- constructors -----
 
         public AngleViewModel() { }
@@ -33,7 +33,7 @@ namespace ExampleApp
             get => (double)GetValue(RawAngleProperty);
             set => SetValue(RawAngleProperty, value);
         }
-        
+
         public static readonly Microsoft.Maui.Controls.BindableProperty AngleProperty =
             Microsoft.Maui.Controls.BindableProperty.Create(
                 nameof(Angle),
@@ -47,7 +47,7 @@ namespace ExampleApp
             get => (double)GetValue(AngleProperty);
             set => SetValue(AngleProperty, value);
         }
-        
+
         public static readonly Microsoft.Maui.Controls.BindableProperty MaximumAngleProperty =
             Microsoft.Maui.Controls.BindableProperty.Create(
                 nameof(MaximumAngle),
@@ -60,7 +60,7 @@ namespace ExampleApp
             get => (double)GetValue(MaximumAngleProperty);
             set => SetValue(MaximumAngleProperty, value);
         }
-        
+
     }
 }
 

@@ -12,10 +12,10 @@ using System.Collections.Generic;
 
 namespace Sharp.UI
 {
-	using Sharp.UI;
+    using Sharp.UI;
 
     public partial class Tab : IList<Microsoft.Maui.Controls.ShellContent>
-	{
+    {
         // ----- constructors -----
 
         public Tab() { }
@@ -66,7 +66,8 @@ namespace Sharp.UI
         public bool Remove(Microsoft.Maui.Controls.ShellContent item) => this.Items.Remove(item);
         public void RemoveAt(int index) => this.Items.RemoveAt(index);
         IEnumerator IEnumerable.GetEnumerator() => this.Items.GetEnumerator();
-        public void Add(Microsoft.Maui.Controls.ShellContent item) => this.Items.Add(item);                
+        public void Add(Microsoft.Maui.Controls.ShellContent item) => this.Items.Add(item);
+
         public void SetItems(params Microsoft.Maui.Controls.ShellContent[] items)
         {
             this.Clear();

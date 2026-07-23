@@ -12,12 +12,12 @@ using System.Collections.Generic;
 
 namespace ExampleApp
 {
-	public sealed partial class AppShell : IList<Microsoft.Maui.Controls.ShellItem>
-	{
+    public sealed partial class AppShell : IList<Microsoft.Maui.Controls.ShellItem>
+    {
         public new static AppShell Current => (AppShell)Shell.Current;
 
-        public AppShell() 
-        { 
+        public AppShell()
+        {
             InitializeSharpUI();
         }
 

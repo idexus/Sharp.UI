@@ -7,10 +7,10 @@
 
 namespace ExampleApp
 {
-	public sealed partial class EnterExitActionsPage
-	{
-        public EnterExitActionsPage() 
-        { 
+    public sealed partial class EnterExitActionsPage
+    {
+        public EnterExitActionsPage()
+        {
             InitializeSharpUI();
         }
 

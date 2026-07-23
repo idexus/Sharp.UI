@@ -7,10 +7,10 @@
 
 namespace ExampleApp
 {
-	public sealed partial class MultiTriggerPage
-	{
-        public MultiTriggerPage() 
-        { 
+    public sealed partial class MultiTriggerPage
+    {
+        public MultiTriggerPage()
+        {
             InitializeSharpUI();
         }
 

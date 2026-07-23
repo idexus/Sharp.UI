@@ -7,10 +7,10 @@
 
 namespace ExampleApp
 {
-	public sealed partial class KeypadPage
-	{
-        public KeypadPage() 
-        { 
+    public sealed partial class KeypadPage
+    {
+        public KeypadPage()
+        {
             InitializeSharpUI();
         }
 
