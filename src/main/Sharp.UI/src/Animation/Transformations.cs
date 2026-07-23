@@ -25,7 +25,7 @@ namespace Sharp.UI
         {
             easing = easing ?? Easing.Linear;
             var taskCompletionSource = new TaskCompletionSource<bool>();
-            element.Animate<T>(name, transform, callback, 16, length, easing, (value, c) => taskCompletionSource.SetResult(c));
+            element.Animate<T>($"{name}_{new Guid()}", transform, callback, 16, length, easing, (value, c) => taskCompletionSource.SetResult(c));
             return taskCompletionSource.Task;
         }
     }

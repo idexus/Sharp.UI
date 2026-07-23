@@ -18,7 +18,7 @@ public sealed partial class HelloWorldPage : ContentPage
 
     protected override void Build()
     {
-        Content =  new VStack()
+        Content = new VStack()
         {
             new Label("Hello, World!")
                 .FontSize(e => e.OnPhone(40).Default(60))

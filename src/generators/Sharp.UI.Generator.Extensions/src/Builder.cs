@@ -35,10 +35,10 @@ namespace Sharp.UI.Generator.Extensions
             //    of models) is stable, so the expensive emission of hundreds of
             //    files gets skipped.
             // -------------------------------------------------------------
-
+            
             var mauiModels = context.CompilationProvider
-                .Select(static (compilation, ct) => BuildMauiModels(compilation, ct))
-                .SelectMany(static (models, ct) => models);
+                    .Select(static (compilation, ct) => BuildMauiModels(compilation, ct))
+                    .SelectMany(static (models, ct) => models);
 
             // -------------------------------------------------------------
             // 2) User types marked with [SharpObject] (outside the Sharp.UI namespace)
@@ -92,6 +92,9 @@ namespace Sharp.UI.Generator.Extensions
 
         static EquatableArray<ExtensionModel> BuildMauiModels(Compilation compilation, CancellationToken ct)
         {
+            if (compilation.AssemblyName != "Sharp.UI")
+                return EquatableArray<ExtensionModel>.Empty;
+
             // GetTypeByMetadataName instead of scanning every type in the compilation
             var mauiSymbolsType = compilation.GetTypeByMetadataName("Sharp.UI.Internal.MauiSymbols");
             if (mauiSymbolsType == null)

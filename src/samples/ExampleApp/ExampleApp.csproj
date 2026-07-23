@@ -41,8 +41,6 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
-
-    <GeneratedFilesRoot>Generated</GeneratedFilesRoot>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)' == 'Debug'">
@@ -89,7 +87,7 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
     <!-- Visual Studio ma zawsze uruchamiać MSBuild po wybraniu Build -->
     <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
-    <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+    <EmitCompilerGeneratedFiles>false</EmitCompilerGeneratedFiles>
   </PropertyGroup>
 
   <ItemGroup>
@@ -97,14 +95,22 @@
     <None Include="$(GeneratedFilesRoot)/**/*.cs" />
   </ItemGroup>
 
-  <Target Name="CleanGeneratedForCurrentTarget" BeforeTargets="CoreCompile" Condition="'$(Configuration)' == 'Debug'&#xD;&#xA;                   and '$(TargetFramework)' != ''&#xD;&#xA;                   and '$(DesignTimeBuild)' != 'true'">
+  <Target Name="CleanGeneratedForCurrentTarget"
+       BeforeTargets="CoreCompile"
+       Condition="'$(Configuration)' == 'Debug'
+                   and '$(TargetFramework)' != ''
+                   and '$(DesignTimeBuild)' != 'true'">
     <PropertyGroup>
       <_GeneratedTargetDirectory>$(GeneratedFilesRoot)\$(TargetFramework)</_GeneratedTargetDirectory>
     </PropertyGroup>
 
-    <Message Text="Cleaning: $(_GeneratedTargetDirectory); Configuration=$(Configuration); TargetFramework=$(TargetFramework)" Importance="high" />
+    <Message
+        Text="Cleaning: $(_GeneratedTargetDirectory); Configuration=$(Configuration); TargetFramework=$(TargetFramework)"
+        Importance="high" />
 
-    <RemoveDir Directories="$(_GeneratedTargetDirectory)" Condition="Exists('$(_GeneratedTargetDirectory)')" />
+    <RemoveDir
+        Directories="$(_GeneratedTargetDirectory)"
+        Condition="Exists('$(_GeneratedTargetDirectory)')" />
   </Target>
 
 

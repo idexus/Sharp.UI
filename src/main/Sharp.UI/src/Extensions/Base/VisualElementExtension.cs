@@ -61,14 +61,14 @@ namespace Sharp.UI
             return self;
         }
 
-        public static Task<bool> AnimateSizeRequestTo<T>(this T self, double width, double height, uint length = 250, Easing easing = null)
+        public static Task<bool> AnimateSizeRequestToAsync<T>(this T self, double width, double height, uint length = 250, Easing easing = null)
             where T : VisualElement
         {
             Size from = new Size(self.WidthRequest, self.HeightRequest);
             Size to = new Size(width, height);
             var transform = (double t) => Transformations.SizeTransform(from, to, t);
             var callback = (Size value) => { self.SizeRequest(value.Width, value.Height); };
-            return Transformations.AnimateAsync<Size>(self, "AnimateSizeRequestTo", transform, callback, length, easing);
+            return Transformations.AnimateAsync<Size>(self, "AnimateSizeRequestToAsync", transform, callback, length, easing);
         }
     }
 }

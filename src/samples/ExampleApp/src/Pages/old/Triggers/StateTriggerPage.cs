@@ -22,7 +22,7 @@ public sealed partial class StateTriggerPage : ContentPage
                 new VisualState<Grid>
                 {
                     async e => {
-                        await e.AnimateBackgroundColorTo(Colors.Blue, 1000);
+                        await e.AnimateBackgroundColorToAsync(Colors.Blue, 1000);
                     },
 
                     new StateTrigger()
@@ -33,7 +33,7 @@ public sealed partial class StateTriggerPage : ContentPage
                 new VisualState<Grid>
                 {
                     async e => {
-                        await e.AnimateBackgroundColorTo(Colors.Yellow, 300);
+                        await e.AnimateBackgroundColorToAsync(Colors.Yellow, 300);
                     },
 
                     new StateTrigger()

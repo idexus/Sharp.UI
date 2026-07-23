@@ -46,16 +46,14 @@ namespace Sharp.UI.Generator.Extensions
             context.AddSource(model.HintName, builder.ToString());
         }
 
-        string GetUsingString() => model.IncludeSharpUIUsing ? "using Sharp.UI;\n" : "";
+        string GetUsingString() => model.IncludeSharpUIUsing ? "using Sharp.UI;\n\n    " : "";
 
         void GenerateExtensionNameSpace()
         {
             builder.Append($@"
 namespace {model.TargetNamespace}
 {{
-    using Sharp.UI.Internal;
-    {GetUsingString()}
-    public static partial class {model.ExtensionClassName}
+    {GetUsingString()}public static partial class {model.ExtensionClassName}
     {{");
 
             foreach (var property in model.Properties)
@@ -90,7 +88,7 @@ namespace {model.TargetNamespace}
             if (p.EmitSettersBuilder) GenerateExtensionMethod_SettersBuilder(p);
             if (p.EmitDataTemplate) GenerateExtensionMethod_DataTemplate(p);
             if (p.EmitGetValue) GenerateExtensionMethod_GetValue(p);
-            if (p.AnimateTransformName != null) GenerateExtensionMethod_AnimateTo(p, p.AnimateTransformName);
+            if (p.AnimateTransformName != null) GenerateExtensionMethod_AnimateToAsync(p, p.AnimateTransformName);
         }
 
         // -----------------------------------
@@ -282,14 +280,14 @@ namespace {model.TargetNamespace}
         // ----- animate to -----
         // -----------------------------------
 
-        void GenerateExtensionMethod_AnimateTo(PropertyModel p, string transformationName)
+        void GenerateExtensionMethod_AnimateToAsync(PropertyModel p, string transformationName)
         {
             if (model.IsSealed)
                 builder.Append($@"
-        public static Task<bool> Animate{p.PropertyName}To(this {model.SymbolTypeName} self, {p.PropertyTypeName} value, uint length = 250, Easing? easing = null)");
+        public static Task<bool> Animate{p.PropertyName}ToAsync(this {model.SymbolTypeName} self, {p.PropertyTypeName} value, uint length = 250, Easing? easing = null)");
             else
                 builder.Append($@"
-        public static Task<bool> Animate{p.PropertyName}To<T>(this T self, {p.PropertyTypeName} value, uint length = 250, Easing? easing = null)
+        public static Task<bool> Animate{p.PropertyName}ToAsync<T>(this T self, {p.PropertyTypeName} value, uint length = 250, Easing? easing = null)
             where T : {model.SymbolTypeName}");
 
             builder.Append($@"
@@ -297,7 +295,7 @@ namespace {model.TargetNamespace}
             {p.PropertyTypeName} fromValue = self.{p.PropertyName};
             var transform = (double t) => Transformations.{transformationName}(fromValue, value, t);
             var callback = ({p.PropertyTypeName} actValue) => {{ self.{p.PropertyName} = actValue; }};
-            return Transformations.AnimateAsync<{p.PropertyTypeName}>(self, ""Animate{p.PropertyName}To"", transform, callback, length, easing);
+            return Transformations.AnimateAsync<{p.PropertyTypeName}>(self, ""Animate{p.PropertyName}ToAsync"", transform, callback, length, easing);
         }}
 ");
         }
@@ -390,6 +388,7 @@ namespace {model.TargetNamespace}
         public static {model.SymbolTypeName} {p.PropertyName}(this {model.SymbolTypeName} self,
             IList<{elementTypeName}> {p.CamelCaseName})
         {{
+            {p.AccessedWith}.{p.PropertyName}{tail}.Clear();
             foreach (var item in {p.CamelCaseName})
                 {p.AccessedWith}.{p.PropertyName}{tail}.Add(item);
             return self;
@@ -398,6 +397,7 @@ namespace {model.TargetNamespace}
         public static {model.SymbolTypeName} {p.PropertyName}(this {model.SymbolTypeName} self,
             params {elementTypeName}[] {p.CamelCaseName})
         {{
+            {p.AccessedWith}.{p.PropertyName}{tail}.Clear();
             foreach (var item in {p.CamelCaseName})
                 {p.AccessedWith}.{p.PropertyName}{tail}.Add(item);
             return self;
@@ -409,6 +409,7 @@ namespace {model.TargetNamespace}
             IList<{elementTypeName}> {p.CamelCaseName})
             where T : {model.SymbolTypeName}
         {{
+            {p.AccessedWith}.{p.PropertyName}{tail}.Clear();
             foreach (var item in {p.CamelCaseName})
                 {p.AccessedWith}.{p.PropertyName}{tail}.Add(item);
             return self;
@@ -418,6 +419,7 @@ namespace {model.TargetNamespace}
             params {elementTypeName}[] {p.CamelCaseName})
             where T : {model.SymbolTypeName}
         {{
+            {p.AccessedWith}.{p.PropertyName}{tail}.Clear();
             foreach (var item in {p.CamelCaseName})
                 {p.AccessedWith}.{p.PropertyName}{tail}.Add(item);
             return self;

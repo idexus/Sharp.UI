@@ -12,7 +12,7 @@ namespace Sharp.UI.Generator.Extensions
 
     /// <summary>
     /// Equivalent of the former ExtensionGenerator.PropertyInfo class plus the
-    /// "what to generate for this property" decisions (previously scattered across if-statements).
+    /// "what to generate for this property" decisions.
     /// </summary>
     internal sealed record PropertyModel(
         // --- data ---
