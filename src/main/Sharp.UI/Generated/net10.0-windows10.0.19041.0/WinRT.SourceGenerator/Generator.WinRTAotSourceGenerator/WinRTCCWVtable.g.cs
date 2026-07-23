@@ -1,6 +1,6 @@
 ﻿namespace WinRT.Sharp_UIVtableClasses
 {
-internal sealed class Sharp_UI_BezierSegmentWinRTTypeDetails : global::WinRT.IWinRTExposedTypeDetails
+internal sealed class Sharp_UI_IndicatorViewWinRTTypeDetails : global::WinRT.IWinRTExposedTypeDetails
 {
     public global::System.Runtime.InteropServices.ComWrappers.ComInterfaceEntry[] GetExposedInterfaces()
     {
@@ -37,7 +37,7 @@ internal sealed class Sharp_UI_StackLayoutWinRTTypeDetails : global::WinRT.IWinR
         }
     }
 
-internal sealed class Sharp_UI_DataTemplateWinRTTypeDetails : global::WinRT.IWinRTExposedTypeDetails
+internal sealed class Sharp_UI_Style_T_WinRTTypeDetails : global::WinRT.IWinRTExposedTypeDetails
 {
     public global::System.Runtime.InteropServices.ComWrappers.ComInterfaceEntry[] GetExposedInterfaces()
     {
