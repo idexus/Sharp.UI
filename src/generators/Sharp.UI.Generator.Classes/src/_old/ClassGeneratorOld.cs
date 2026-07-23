@@ -16,7 +16,7 @@ namespace Sharp.UI.Generator.Classes
         public const string DefaultValueAttributeString = "DefaultValueAttribute";
         public const string PropertyCallbackAttributeString = "PropertyCallbacksAttribute";
 
-        //GeneratorExecutionContext context;
+        GeneratorExecutionContext context;
         INamedTypeSymbol mainSymbol;
 
         StringBuilder builder;
@@ -32,10 +32,10 @@ namespace Sharp.UI.Generator.Classes
         bool isShell = false;
 
         public ClassGeneratorOld(
-            //GeneratorExecutionContext context, 
+            GeneratorExecutionContext context,
             INamedTypeSymbol symbol)
         {
-            //this.context = context;
+            this.context = context;
             this.mainSymbol = symbol;
             this.isShell = Helpers.IsShell(symbol);
             this.isTopContentSymbol = symbol.IsSealed && (Helpers.IsContentPage(symbol) || isShell);
@@ -152,7 +152,7 @@ namespace Sharp.UI.Generator.Classes
             if (isTopContentSymbol && !generatedTopContentConstructor && !isSharpObject)
                 return;
 
-            //context.AddSource($"{mainSymbol.ContainingNamespace.ToDisplayString()}.{Helpers.GetNormalizedFileName(mainSymbol)}.g.cs", builder.ToString());
+            context.AddSource($"{mainSymbol.ContainingNamespace.ToDisplayString()}.{Helpers.GetNormalizedFileName(mainSymbol)}.g.cs", builder.ToString());
         }
 
         public string GetUsingString()

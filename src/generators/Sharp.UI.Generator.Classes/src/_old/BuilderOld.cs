@@ -2,7 +2,7 @@
 // MIT License
 // Copyright Pawel Krzywdzinski
 //
-/*
+
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
@@ -26,9 +26,8 @@ namespace Sharp.UI.Generator.Classes
 
             foreach (var symbol in objectSymbols)
             {
-                new ClassGenerator(context, symbol).Build();
+                new ClassGeneratorOld(context, symbol).Build();
             }
         }
     }
 }
-*/
