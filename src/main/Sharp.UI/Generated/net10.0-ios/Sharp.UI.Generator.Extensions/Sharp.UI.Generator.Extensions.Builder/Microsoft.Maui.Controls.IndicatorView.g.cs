@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.IndicatorView.IndicatorsShapeProperty, indicatorsShape);
             return self;
         }
-        
+
         public static T IndicatorsShape<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.IndicatorShape>, IPropertyBuilder<Microsoft.Maui.Controls.IndicatorShape>> configure)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> IndicatorsShape<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.IndicatorShape indicatorsShape)
             where T : Microsoft.Maui.Controls.IndicatorView
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.IndicatorView.IndicatorsShapeProperty, Value = indicatorsShape });
             return self;
         }
-        
+
         public static SettersContext<T> IndicatorsShape<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.IndicatorShape>, IPropertySettersBuilder<Microsoft.Maui.Controls.IndicatorShape>> configure)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
@@ -43,7 +43,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T IndicatorLayout<T>(this T self,
             Microsoft.Maui.Controls.IBindableLayout indicatorLayout)
             where T : Microsoft.Maui.Controls.IndicatorView
@@ -51,7 +51,7 @@ namespace Sharp.UI
             self.IndicatorLayout = indicatorLayout;
             return self;
         }
-        
+
         public static T Position<T>(this T self,
             int position)
             where T : Microsoft.Maui.Controls.IndicatorView
@@ -59,7 +59,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.IndicatorView.PositionProperty, position);
             return self;
         }
-        
+
         public static T Position<T>(this T self, Func<PropertyContext<int>, IPropertyBuilder<int>> configure)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
@@ -67,7 +67,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Position<T>(this SettersContext<T> self,
             int position)
             where T : Microsoft.Maui.Controls.IndicatorView
@@ -75,7 +75,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.IndicatorView.PositionProperty, Value = position });
             return self;
         }
-        
+
         public static SettersContext<T> Position<T>(this SettersContext<T> self, Func<PropertySettersContext<int>, IPropertySettersBuilder<int>> configure)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
@@ -83,7 +83,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T Count<T>(this T self,
             int count)
             where T : Microsoft.Maui.Controls.IndicatorView
@@ -91,7 +91,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.IndicatorView.CountProperty, count);
             return self;
         }
-        
+
         public static T Count<T>(this T self, Func<PropertyContext<int>, IPropertyBuilder<int>> configure)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
@@ -99,7 +99,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Count<T>(this SettersContext<T> self,
             int count)
             where T : Microsoft.Maui.Controls.IndicatorView
@@ -107,7 +107,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.IndicatorView.CountProperty, Value = count });
             return self;
         }
-        
+
         public static SettersContext<T> Count<T>(this SettersContext<T> self, Func<PropertySettersContext<int>, IPropertySettersBuilder<int>> configure)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
@@ -115,7 +115,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T MaximumVisible<T>(this T self,
             int maximumVisible)
             where T : Microsoft.Maui.Controls.IndicatorView
@@ -123,7 +123,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.IndicatorView.MaximumVisibleProperty, maximumVisible);
             return self;
         }
-        
+
         public static T MaximumVisible<T>(this T self, Func<PropertyContext<int>, IPropertyBuilder<int>> configure)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
@@ -131,7 +131,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> MaximumVisible<T>(this SettersContext<T> self,
             int maximumVisible)
             where T : Microsoft.Maui.Controls.IndicatorView
@@ -139,7 +139,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.IndicatorView.MaximumVisibleProperty, Value = maximumVisible });
             return self;
         }
-        
+
         public static SettersContext<T> MaximumVisible<T>(this SettersContext<T> self, Func<PropertySettersContext<int>, IPropertySettersBuilder<int>> configure)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
@@ -147,7 +147,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T IndicatorTemplate<T>(this T self,
             Microsoft.Maui.Controls.DataTemplate indicatorTemplate)
             where T : Microsoft.Maui.Controls.IndicatorView
@@ -155,7 +155,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.IndicatorView.IndicatorTemplateProperty, indicatorTemplate);
             return self;
         }
-        
+
         public static T IndicatorTemplate<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.DataTemplate>, IPropertyBuilder<Microsoft.Maui.Controls.DataTemplate>> configure)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
@@ -163,7 +163,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> IndicatorTemplate<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.DataTemplate indicatorTemplate)
             where T : Microsoft.Maui.Controls.IndicatorView
@@ -171,7 +171,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.IndicatorView.IndicatorTemplateProperty, Value = indicatorTemplate });
             return self;
         }
-        
+
         public static SettersContext<T> IndicatorTemplate<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.DataTemplate>, IPropertySettersBuilder<Microsoft.Maui.Controls.DataTemplate>> configure)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
@@ -179,14 +179,14 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T IndicatorTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
             self.SetValue(Microsoft.Maui.Controls.IndicatorView.IndicatorTemplateProperty, new DataTemplate(loadTemplate));
             return self;
         }
-        
+
         public static T HideSingle<T>(this T self,
             bool hideSingle)
             where T : Microsoft.Maui.Controls.IndicatorView
@@ -194,7 +194,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.IndicatorView.HideSingleProperty, hideSingle);
             return self;
         }
-        
+
         public static T HideSingle<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
@@ -202,7 +202,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> HideSingle<T>(this SettersContext<T> self,
             bool hideSingle)
             where T : Microsoft.Maui.Controls.IndicatorView
@@ -210,7 +210,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.IndicatorView.HideSingleProperty, Value = hideSingle });
             return self;
         }
-        
+
         public static SettersContext<T> HideSingle<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
@@ -218,7 +218,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T IndicatorColor<T>(this T self,
             Microsoft.Maui.Graphics.Color indicatorColor)
             where T : Microsoft.Maui.Controls.IndicatorView
@@ -226,7 +226,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.IndicatorView.IndicatorColorProperty, indicatorColor);
             return self;
         }
-        
+
         public static T IndicatorColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
@@ -234,7 +234,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> IndicatorColor<T>(this SettersContext<T> self,
             Microsoft.Maui.Graphics.Color indicatorColor)
             where T : Microsoft.Maui.Controls.IndicatorView
@@ -242,7 +242,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.IndicatorView.IndicatorColorProperty, Value = indicatorColor });
             return self;
         }
-        
+
         public static SettersContext<T> IndicatorColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
@@ -250,7 +250,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateIndicatorColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
@@ -259,7 +259,7 @@ namespace Sharp.UI
             var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.IndicatorColor = actValue; };
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateIndicatorColorTo", transform, callback, length, easing);
         }
-        
+
         public static T SelectedIndicatorColor<T>(this T self,
             Microsoft.Maui.Graphics.Color selectedIndicatorColor)
             where T : Microsoft.Maui.Controls.IndicatorView
@@ -267,7 +267,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.IndicatorView.SelectedIndicatorColorProperty, selectedIndicatorColor);
             return self;
         }
-        
+
         public static T SelectedIndicatorColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
@@ -275,7 +275,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> SelectedIndicatorColor<T>(this SettersContext<T> self,
             Microsoft.Maui.Graphics.Color selectedIndicatorColor)
             where T : Microsoft.Maui.Controls.IndicatorView
@@ -283,7 +283,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.IndicatorView.SelectedIndicatorColorProperty, Value = selectedIndicatorColor });
             return self;
         }
-        
+
         public static SettersContext<T> SelectedIndicatorColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
@@ -291,7 +291,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateSelectedIndicatorColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
@@ -300,7 +300,7 @@ namespace Sharp.UI
             var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.SelectedIndicatorColor = actValue; };
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateSelectedIndicatorColorTo", transform, callback, length, easing);
         }
-        
+
         public static T IndicatorSize<T>(this T self,
             double indicatorSize)
             where T : Microsoft.Maui.Controls.IndicatorView
@@ -308,7 +308,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.IndicatorView.IndicatorSizeProperty, indicatorSize);
             return self;
         }
-        
+
         public static T IndicatorSize<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
@@ -316,7 +316,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> IndicatorSize<T>(this SettersContext<T> self,
             double indicatorSize)
             where T : Microsoft.Maui.Controls.IndicatorView
@@ -324,7 +324,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.IndicatorView.IndicatorSizeProperty, Value = indicatorSize });
             return self;
         }
-        
+
         public static SettersContext<T> IndicatorSize<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
@@ -332,7 +332,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateIndicatorSizeTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
@@ -341,7 +341,7 @@ namespace Sharp.UI
             var callback = (double actValue) => { self.IndicatorSize = actValue; };
             return Transformations.AnimateAsync<double>(self, "AnimateIndicatorSizeTo", transform, callback, length, easing);
         }
-        
+
         public static T ItemsSource<T>(this T self,
             System.Collections.IEnumerable itemsSource)
             where T : Microsoft.Maui.Controls.IndicatorView
@@ -349,7 +349,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.IndicatorView.ItemsSourceProperty, itemsSource);
             return self;
         }
-        
+
         public static T ItemsSource<T>(this T self, Func<PropertyContext<System.Collections.IEnumerable>, IPropertyBuilder<System.Collections.IEnumerable>> configure)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
@@ -357,7 +357,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> ItemsSource<T>(this SettersContext<T> self,
             System.Collections.IEnumerable itemsSource)
             where T : Microsoft.Maui.Controls.IndicatorView
@@ -365,7 +365,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.IndicatorView.ItemsSourceProperty, Value = itemsSource });
             return self;
         }
-        
+
         public static SettersContext<T> ItemsSource<T>(this SettersContext<T> self, Func<PropertySettersContext<System.Collections.IEnumerable>, IPropertySettersBuilder<System.Collections.IEnumerable>> configure)
             where T : Microsoft.Maui.Controls.IndicatorView
         {
@@ -373,7 +373,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
     }
 }
 

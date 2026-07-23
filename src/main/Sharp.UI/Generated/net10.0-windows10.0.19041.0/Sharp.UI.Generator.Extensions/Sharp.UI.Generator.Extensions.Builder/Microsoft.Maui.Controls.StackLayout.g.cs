@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.StackLayout.OrientationProperty, orientation);
             return self;
         }
-        
+
         public static T Orientation<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.StackOrientation>, IPropertyBuilder<Microsoft.Maui.Controls.StackOrientation>> configure)
             where T : Microsoft.Maui.Controls.StackLayout
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Orientation<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.StackOrientation orientation)
             where T : Microsoft.Maui.Controls.StackLayout
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.StackLayout.OrientationProperty, Value = orientation });
             return self;
         }
-        
+
         public static SettersContext<T> Orientation<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.StackOrientation>, IPropertySettersBuilder<Microsoft.Maui.Controls.StackOrientation>> configure)
             where T : Microsoft.Maui.Controls.StackLayout
         {
@@ -43,7 +43,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
     }
 }
 

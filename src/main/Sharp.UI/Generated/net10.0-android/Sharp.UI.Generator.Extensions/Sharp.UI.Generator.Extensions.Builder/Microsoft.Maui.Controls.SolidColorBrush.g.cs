@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.SolidColorBrush.ColorProperty, color);
             return self;
         }
-        
+
         public static T Color<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.SolidColorBrush
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Color<T>(this SettersContext<T> self,
             Microsoft.Maui.Graphics.Color color)
             where T : Microsoft.Maui.Controls.SolidColorBrush
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SolidColorBrush.ColorProperty, Value = color });
             return self;
         }
-        
+
         public static SettersContext<T> Color<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.SolidColorBrush
         {
@@ -43,7 +43,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
     }
 }
 

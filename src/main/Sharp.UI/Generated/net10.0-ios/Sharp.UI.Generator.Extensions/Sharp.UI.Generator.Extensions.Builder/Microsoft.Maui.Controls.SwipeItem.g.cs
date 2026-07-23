@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.SwipeItem.BackgroundColorProperty, backgroundColor);
             return self;
         }
-        
+
         public static T BackgroundColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.SwipeItem
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> BackgroundColor<T>(this SettersContext<T> self,
             Microsoft.Maui.Graphics.Color backgroundColor)
             where T : Microsoft.Maui.Controls.SwipeItem
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SwipeItem.BackgroundColorProperty, Value = backgroundColor });
             return self;
         }
-        
+
         public static SettersContext<T> BackgroundColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.SwipeItem
         {
@@ -43,7 +43,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T IsVisible<T>(this T self,
             bool isVisible)
             where T : Microsoft.Maui.Controls.SwipeItem
@@ -51,7 +51,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.SwipeItem.IsVisibleProperty, isVisible);
             return self;
         }
-        
+
         public static T IsVisible<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.SwipeItem
         {
@@ -59,7 +59,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> IsVisible<T>(this SettersContext<T> self,
             bool isVisible)
             where T : Microsoft.Maui.Controls.SwipeItem
@@ -67,7 +67,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SwipeItem.IsVisibleProperty, Value = isVisible });
             return self;
         }
-        
+
         public static SettersContext<T> IsVisible<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.SwipeItem
         {
@@ -75,21 +75,21 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T OnInvoked<T>(this T self, System.EventHandler<System.EventArgs> handler)
             where T : Microsoft.Maui.Controls.SwipeItem
         {
             self.Invoked += handler;
             return self;
         }
-        
+
         public static T OnInvoked<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.SwipeItem
         {
             self.Invoked += (o, arg) => action(self);
             return self;
         }
-        
+
     }
 }
 

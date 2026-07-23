@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment.Point1Property, point1);
             return self;
         }
-        
+
         public static T Point1<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Point>, IPropertyBuilder<Microsoft.Maui.Graphics.Point>> configure)
             where T : Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Point1<T>(this SettersContext<T> self,
             Microsoft.Maui.Graphics.Point point1)
             where T : Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment.Point1Property, Value = point1 });
             return self;
         }
-        
+
         public static SettersContext<T> Point1<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Point>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Point>> configure)
             where T : Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment
         {
@@ -43,7 +43,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T Point2<T>(this T self,
             Microsoft.Maui.Graphics.Point point2)
             where T : Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment
@@ -51,7 +51,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment.Point2Property, point2);
             return self;
         }
-        
+
         public static T Point2<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Point>, IPropertyBuilder<Microsoft.Maui.Graphics.Point>> configure)
             where T : Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment
         {
@@ -59,7 +59,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Point2<T>(this SettersContext<T> self,
             Microsoft.Maui.Graphics.Point point2)
             where T : Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment
@@ -67,7 +67,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment.Point2Property, Value = point2 });
             return self;
         }
-        
+
         public static SettersContext<T> Point2<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Point>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Point>> configure)
             where T : Microsoft.Maui.Controls.Shapes.QuadraticBezierSegment
         {
@@ -75,7 +75,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
     }
 }
 

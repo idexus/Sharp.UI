@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.ImageButton.BorderColorProperty, borderColor);
             return self;
         }
-        
+
         public static T BorderColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.ImageButton
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> BorderColor<T>(this SettersContext<T> self,
             Microsoft.Maui.Graphics.Color borderColor)
             where T : Microsoft.Maui.Controls.ImageButton
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ImageButton.BorderColorProperty, Value = borderColor });
             return self;
         }
-        
+
         public static SettersContext<T> BorderColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.ImageButton
         {
@@ -43,7 +43,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateBorderColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.ImageButton
         {
@@ -52,7 +52,7 @@ namespace Sharp.UI
             var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.BorderColor = actValue; };
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateBorderColorTo", transform, callback, length, easing);
         }
-        
+
         public static T CornerRadius<T>(this T self,
             int cornerRadius)
             where T : Microsoft.Maui.Controls.ImageButton
@@ -60,7 +60,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.ImageButton.CornerRadiusProperty, cornerRadius);
             return self;
         }
-        
+
         public static T CornerRadius<T>(this T self, Func<PropertyContext<int>, IPropertyBuilder<int>> configure)
             where T : Microsoft.Maui.Controls.ImageButton
         {
@@ -68,7 +68,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> CornerRadius<T>(this SettersContext<T> self,
             int cornerRadius)
             where T : Microsoft.Maui.Controls.ImageButton
@@ -76,7 +76,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ImageButton.CornerRadiusProperty, Value = cornerRadius });
             return self;
         }
-        
+
         public static SettersContext<T> CornerRadius<T>(this SettersContext<T> self, Func<PropertySettersContext<int>, IPropertySettersBuilder<int>> configure)
             where T : Microsoft.Maui.Controls.ImageButton
         {
@@ -84,7 +84,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T BorderWidth<T>(this T self,
             double borderWidth)
             where T : Microsoft.Maui.Controls.ImageButton
@@ -92,7 +92,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.ImageButton.BorderWidthProperty, borderWidth);
             return self;
         }
-        
+
         public static T BorderWidth<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.ImageButton
         {
@@ -100,7 +100,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> BorderWidth<T>(this SettersContext<T> self,
             double borderWidth)
             where T : Microsoft.Maui.Controls.ImageButton
@@ -108,7 +108,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ImageButton.BorderWidthProperty, Value = borderWidth });
             return self;
         }
-        
+
         public static SettersContext<T> BorderWidth<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.ImageButton
         {
@@ -116,7 +116,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateBorderWidthTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.ImageButton
         {
@@ -125,7 +125,7 @@ namespace Sharp.UI
             var callback = (double actValue) => { self.BorderWidth = actValue; };
             return Transformations.AnimateAsync<double>(self, "AnimateBorderWidthTo", transform, callback, length, easing);
         }
-        
+
         public static T Aspect<T>(this T self,
             Microsoft.Maui.Aspect aspect)
             where T : Microsoft.Maui.Controls.ImageButton
@@ -133,7 +133,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.ImageButton.AspectProperty, aspect);
             return self;
         }
-        
+
         public static T Aspect<T>(this T self, Func<PropertyContext<Microsoft.Maui.Aspect>, IPropertyBuilder<Microsoft.Maui.Aspect>> configure)
             where T : Microsoft.Maui.Controls.ImageButton
         {
@@ -141,7 +141,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Aspect<T>(this SettersContext<T> self,
             Microsoft.Maui.Aspect aspect)
             where T : Microsoft.Maui.Controls.ImageButton
@@ -149,7 +149,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ImageButton.AspectProperty, Value = aspect });
             return self;
         }
-        
+
         public static SettersContext<T> Aspect<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Aspect>, IPropertySettersBuilder<Microsoft.Maui.Aspect>> configure)
             where T : Microsoft.Maui.Controls.ImageButton
         {
@@ -157,7 +157,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T IsOpaque<T>(this T self,
             bool isOpaque)
             where T : Microsoft.Maui.Controls.ImageButton
@@ -165,7 +165,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.ImageButton.IsOpaqueProperty, isOpaque);
             return self;
         }
-        
+
         public static T IsOpaque<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.ImageButton
         {
@@ -173,7 +173,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> IsOpaque<T>(this SettersContext<T> self,
             bool isOpaque)
             where T : Microsoft.Maui.Controls.ImageButton
@@ -181,7 +181,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ImageButton.IsOpaqueProperty, Value = isOpaque });
             return self;
         }
-        
+
         public static SettersContext<T> IsOpaque<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.ImageButton
         {
@@ -189,7 +189,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T Command<T>(this T self,
             System.Windows.Input.ICommand command)
             where T : Microsoft.Maui.Controls.ImageButton
@@ -197,7 +197,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.ImageButton.CommandProperty, command);
             return self;
         }
-        
+
         public static T Command<T>(this T self, Func<PropertyContext<System.Windows.Input.ICommand>, IPropertyBuilder<System.Windows.Input.ICommand>> configure)
             where T : Microsoft.Maui.Controls.ImageButton
         {
@@ -205,7 +205,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Command<T>(this SettersContext<T> self,
             System.Windows.Input.ICommand command)
             where T : Microsoft.Maui.Controls.ImageButton
@@ -213,7 +213,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ImageButton.CommandProperty, Value = command });
             return self;
         }
-        
+
         public static SettersContext<T> Command<T>(this SettersContext<T> self, Func<PropertySettersContext<System.Windows.Input.ICommand>, IPropertySettersBuilder<System.Windows.Input.ICommand>> configure)
             where T : Microsoft.Maui.Controls.ImageButton
         {
@@ -221,7 +221,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T CommandParameter<T>(this T self,
             object commandParameter)
             where T : Microsoft.Maui.Controls.ImageButton
@@ -229,7 +229,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.ImageButton.CommandParameterProperty, commandParameter);
             return self;
         }
-        
+
         public static T CommandParameter<T>(this T self, Func<PropertyContext<object>, IPropertyBuilder<object>> configure)
             where T : Microsoft.Maui.Controls.ImageButton
         {
@@ -237,7 +237,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> CommandParameter<T>(this SettersContext<T> self,
             object commandParameter)
             where T : Microsoft.Maui.Controls.ImageButton
@@ -245,7 +245,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ImageButton.CommandParameterProperty, Value = commandParameter });
             return self;
         }
-        
+
         public static SettersContext<T> CommandParameter<T>(this SettersContext<T> self, Func<PropertySettersContext<object>, IPropertySettersBuilder<object>> configure)
             where T : Microsoft.Maui.Controls.ImageButton
         {
@@ -253,7 +253,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T Source<T>(this T self,
             Microsoft.Maui.Controls.ImageSource source)
             where T : Microsoft.Maui.Controls.ImageButton
@@ -261,7 +261,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.ImageButton.SourceProperty, source);
             return self;
         }
-        
+
         public static T Source<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.ImageSource>, IPropertyBuilder<Microsoft.Maui.Controls.ImageSource>> configure)
             where T : Microsoft.Maui.Controls.ImageButton
         {
@@ -269,7 +269,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Source<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.ImageSource source)
             where T : Microsoft.Maui.Controls.ImageButton
@@ -277,7 +277,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ImageButton.SourceProperty, Value = source });
             return self;
         }
-        
+
         public static SettersContext<T> Source<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.ImageSource>, IPropertySettersBuilder<Microsoft.Maui.Controls.ImageSource>> configure)
             where T : Microsoft.Maui.Controls.ImageButton
         {
@@ -285,7 +285,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T Padding<T>(this T self,
             Microsoft.Maui.Thickness padding)
             where T : Microsoft.Maui.Controls.ImageButton
@@ -293,7 +293,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.ImageButton.PaddingProperty, padding);
             return self;
         }
-               
+
         public static T Padding<T>(this T self, double horizontalSize, double verticalSize)
             where T : Microsoft.Maui.Controls.ImageButton
         {
@@ -308,15 +308,15 @@ namespace Sharp.UI
             return self;
         }
 
-        #nullable disable
+#nullable disable
         public static T Padding<T>(this T self, object _ = null, double left = 0, double top = 0, double right = 0, double bottom = 0)
             where T : Microsoft.Maui.Controls.ImageButton
         {
             self.SetValue(Microsoft.Maui.Controls.ImageButton.PaddingProperty, new Thickness(left, top, right, bottom));
             return self;
         }
-        #nullable enable
-        
+#nullable enable
+
         public static T Padding<T>(this T self, Func<PropertyContext<Microsoft.Maui.Thickness>, IPropertyBuilder<Microsoft.Maui.Thickness>> configure)
             where T : Microsoft.Maui.Controls.ImageButton
         {
@@ -324,7 +324,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Padding<T>(this SettersContext<T> self,
             Microsoft.Maui.Thickness padding)
             where T : Microsoft.Maui.Controls.ImageButton
@@ -332,7 +332,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ImageButton.PaddingProperty, Value = padding });
             return self;
         }
-        
+
         public static SettersContext<T> Padding<T>(this SettersContext<T> self, double horizontalSize, double verticalSize)
             where T : Microsoft.Maui.Controls.ImageButton
         {
@@ -347,15 +347,15 @@ namespace Sharp.UI
             return self;
         }
 
-        #nullable disable
+#nullable disable
         public static SettersContext<T> Padding<T>(this SettersContext<T> self, object _ = default, double left = 0, double top = 0, double right = 0, double bottom = 0)
             where T : Microsoft.Maui.Controls.ImageButton
         {
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ImageButton.PaddingProperty, Value = new Thickness(left, top, right, bottom) });
             return self;
         }
-        #nullable enable
-        
+#nullable enable
+
         public static SettersContext<T> Padding<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Thickness>, IPropertySettersBuilder<Microsoft.Maui.Thickness>> configure)
             where T : Microsoft.Maui.Controls.ImageButton
         {
@@ -363,49 +363,49 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T OnClicked<T>(this T self, System.EventHandler handler)
             where T : Microsoft.Maui.Controls.ImageButton
         {
             self.Clicked += handler;
             return self;
         }
-        
+
         public static T OnClicked<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.ImageButton
         {
             self.Clicked += (o, arg) => action(self);
             return self;
         }
-        
+
         public static T OnPressed<T>(this T self, System.EventHandler handler)
             where T : Microsoft.Maui.Controls.ImageButton
         {
             self.Pressed += handler;
             return self;
         }
-        
+
         public static T OnPressed<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.ImageButton
         {
             self.Pressed += (o, arg) => action(self);
             return self;
         }
-        
+
         public static T OnReleased<T>(this T self, System.EventHandler handler)
             where T : Microsoft.Maui.Controls.ImageButton
         {
             self.Released += handler;
             return self;
         }
-        
+
         public static T OnReleased<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.ImageButton
         {
             self.Released += (o, arg) => action(self);
             return self;
         }
-        
+
     }
 }
 

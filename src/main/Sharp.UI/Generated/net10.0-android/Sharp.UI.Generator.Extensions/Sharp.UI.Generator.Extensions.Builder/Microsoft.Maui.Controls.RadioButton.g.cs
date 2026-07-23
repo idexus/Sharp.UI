@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.RadioButton.ContentProperty, content);
             return self;
         }
-        
+
         public static T Content<T>(this T self, Func<PropertyContext<object>, IPropertyBuilder<object>> configure)
             where T : Microsoft.Maui.Controls.RadioButton
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Content<T>(this SettersContext<T> self,
             object content)
             where T : Microsoft.Maui.Controls.RadioButton
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.RadioButton.ContentProperty, Value = content });
             return self;
         }
-        
+
         public static SettersContext<T> Content<T>(this SettersContext<T> self, Func<PropertySettersContext<object>, IPropertySettersBuilder<object>> configure)
             where T : Microsoft.Maui.Controls.RadioButton
         {
@@ -43,7 +43,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T Value<T>(this T self,
             object value)
             where T : Microsoft.Maui.Controls.RadioButton
@@ -51,7 +51,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.RadioButton.ValueProperty, value);
             return self;
         }
-        
+
         public static T Value<T>(this T self, Func<PropertyContext<object>, IPropertyBuilder<object>> configure)
             where T : Microsoft.Maui.Controls.RadioButton
         {
@@ -59,7 +59,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Value<T>(this SettersContext<T> self,
             object value)
             where T : Microsoft.Maui.Controls.RadioButton
@@ -67,7 +67,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.RadioButton.ValueProperty, Value = value });
             return self;
         }
-        
+
         public static SettersContext<T> Value<T>(this SettersContext<T> self, Func<PropertySettersContext<object>, IPropertySettersBuilder<object>> configure)
             where T : Microsoft.Maui.Controls.RadioButton
         {
@@ -75,7 +75,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T IsChecked<T>(this T self,
             bool isChecked)
             where T : Microsoft.Maui.Controls.RadioButton
@@ -83,7 +83,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.RadioButton.IsCheckedProperty, isChecked);
             return self;
         }
-        
+
         public static T IsChecked<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.RadioButton
         {
@@ -91,7 +91,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> IsChecked<T>(this SettersContext<T> self,
             bool isChecked)
             where T : Microsoft.Maui.Controls.RadioButton
@@ -99,7 +99,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.RadioButton.IsCheckedProperty, Value = isChecked });
             return self;
         }
-        
+
         public static SettersContext<T> IsChecked<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.RadioButton
         {
@@ -107,7 +107,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T GroupName<T>(this T self,
             string groupName)
             where T : Microsoft.Maui.Controls.RadioButton
@@ -115,7 +115,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.RadioButton.GroupNameProperty, groupName);
             return self;
         }
-        
+
         public static T GroupName<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.RadioButton
         {
@@ -123,7 +123,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> GroupName<T>(this SettersContext<T> self,
             string groupName)
             where T : Microsoft.Maui.Controls.RadioButton
@@ -131,7 +131,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.RadioButton.GroupNameProperty, Value = groupName });
             return self;
         }
-        
+
         public static SettersContext<T> GroupName<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.RadioButton
         {
@@ -139,7 +139,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T TextColor<T>(this T self,
             Microsoft.Maui.Graphics.Color textColor)
             where T : Microsoft.Maui.Controls.RadioButton
@@ -147,7 +147,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.RadioButton.TextColorProperty, textColor);
             return self;
         }
-        
+
         public static T TextColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.RadioButton
         {
@@ -155,7 +155,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> TextColor<T>(this SettersContext<T> self,
             Microsoft.Maui.Graphics.Color textColor)
             where T : Microsoft.Maui.Controls.RadioButton
@@ -163,7 +163,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.RadioButton.TextColorProperty, Value = textColor });
             return self;
         }
-        
+
         public static SettersContext<T> TextColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.RadioButton
         {
@@ -171,7 +171,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateTextColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.RadioButton
         {
@@ -180,7 +180,7 @@ namespace Sharp.UI
             var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.TextColor = actValue; };
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateTextColorTo", transform, callback, length, easing);
         }
-        
+
         public static T CharacterSpacing<T>(this T self,
             double characterSpacing)
             where T : Microsoft.Maui.Controls.RadioButton
@@ -188,7 +188,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.RadioButton.CharacterSpacingProperty, characterSpacing);
             return self;
         }
-        
+
         public static T CharacterSpacing<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.RadioButton
         {
@@ -196,7 +196,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> CharacterSpacing<T>(this SettersContext<T> self,
             double characterSpacing)
             where T : Microsoft.Maui.Controls.RadioButton
@@ -204,7 +204,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.RadioButton.CharacterSpacingProperty, Value = characterSpacing });
             return self;
         }
-        
+
         public static SettersContext<T> CharacterSpacing<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.RadioButton
         {
@@ -212,7 +212,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateCharacterSpacingTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.RadioButton
         {
@@ -221,7 +221,7 @@ namespace Sharp.UI
             var callback = (double actValue) => { self.CharacterSpacing = actValue; };
             return Transformations.AnimateAsync<double>(self, "AnimateCharacterSpacingTo", transform, callback, length, easing);
         }
-        
+
         public static T TextTransform<T>(this T self,
             Microsoft.Maui.TextTransform textTransform)
             where T : Microsoft.Maui.Controls.RadioButton
@@ -229,7 +229,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.RadioButton.TextTransformProperty, textTransform);
             return self;
         }
-        
+
         public static T TextTransform<T>(this T self, Func<PropertyContext<Microsoft.Maui.TextTransform>, IPropertyBuilder<Microsoft.Maui.TextTransform>> configure)
             where T : Microsoft.Maui.Controls.RadioButton
         {
@@ -237,7 +237,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> TextTransform<T>(this SettersContext<T> self,
             Microsoft.Maui.TextTransform textTransform)
             where T : Microsoft.Maui.Controls.RadioButton
@@ -245,7 +245,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.RadioButton.TextTransformProperty, Value = textTransform });
             return self;
         }
-        
+
         public static SettersContext<T> TextTransform<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.TextTransform>, IPropertySettersBuilder<Microsoft.Maui.TextTransform>> configure)
             where T : Microsoft.Maui.Controls.RadioButton
         {
@@ -253,7 +253,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T FontAttributes<T>(this T self,
             Microsoft.Maui.Controls.FontAttributes fontAttributes)
             where T : Microsoft.Maui.Controls.RadioButton
@@ -261,7 +261,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.RadioButton.FontAttributesProperty, fontAttributes);
             return self;
         }
-        
+
         public static T FontAttributes<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.FontAttributes>, IPropertyBuilder<Microsoft.Maui.Controls.FontAttributes>> configure)
             where T : Microsoft.Maui.Controls.RadioButton
         {
@@ -269,7 +269,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> FontAttributes<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.FontAttributes fontAttributes)
             where T : Microsoft.Maui.Controls.RadioButton
@@ -277,7 +277,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.RadioButton.FontAttributesProperty, Value = fontAttributes });
             return self;
         }
-        
+
         public static SettersContext<T> FontAttributes<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.FontAttributes>, IPropertySettersBuilder<Microsoft.Maui.Controls.FontAttributes>> configure)
             where T : Microsoft.Maui.Controls.RadioButton
         {
@@ -285,7 +285,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T FontFamily<T>(this T self,
             string fontFamily)
             where T : Microsoft.Maui.Controls.RadioButton
@@ -293,7 +293,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.RadioButton.FontFamilyProperty, fontFamily);
             return self;
         }
-        
+
         public static T FontFamily<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.RadioButton
         {
@@ -301,7 +301,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> FontFamily<T>(this SettersContext<T> self,
             string fontFamily)
             where T : Microsoft.Maui.Controls.RadioButton
@@ -309,7 +309,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.RadioButton.FontFamilyProperty, Value = fontFamily });
             return self;
         }
-        
+
         public static SettersContext<T> FontFamily<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.RadioButton
         {
@@ -317,7 +317,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T FontSize<T>(this T self,
             double fontSize)
             where T : Microsoft.Maui.Controls.RadioButton
@@ -325,7 +325,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.RadioButton.FontSizeProperty, fontSize);
             return self;
         }
-        
+
         public static T FontSize<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.RadioButton
         {
@@ -333,7 +333,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> FontSize<T>(this SettersContext<T> self,
             double fontSize)
             where T : Microsoft.Maui.Controls.RadioButton
@@ -341,7 +341,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.RadioButton.FontSizeProperty, Value = fontSize });
             return self;
         }
-        
+
         public static SettersContext<T> FontSize<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.RadioButton
         {
@@ -349,7 +349,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateFontSizeTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.RadioButton
         {
@@ -358,7 +358,7 @@ namespace Sharp.UI
             var callback = (double actValue) => { self.FontSize = actValue; };
             return Transformations.AnimateAsync<double>(self, "AnimateFontSizeTo", transform, callback, length, easing);
         }
-        
+
         public static T FontAutoScalingEnabled<T>(this T self,
             bool fontAutoScalingEnabled)
             where T : Microsoft.Maui.Controls.RadioButton
@@ -366,7 +366,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.RadioButton.FontAutoScalingEnabledProperty, fontAutoScalingEnabled);
             return self;
         }
-        
+
         public static T FontAutoScalingEnabled<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.RadioButton
         {
@@ -374,7 +374,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> FontAutoScalingEnabled<T>(this SettersContext<T> self,
             bool fontAutoScalingEnabled)
             where T : Microsoft.Maui.Controls.RadioButton
@@ -382,7 +382,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.RadioButton.FontAutoScalingEnabledProperty, Value = fontAutoScalingEnabled });
             return self;
         }
-        
+
         public static SettersContext<T> FontAutoScalingEnabled<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.RadioButton
         {
@@ -390,7 +390,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T BorderWidth<T>(this T self,
             double borderWidth)
             where T : Microsoft.Maui.Controls.RadioButton
@@ -398,7 +398,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.RadioButton.BorderWidthProperty, borderWidth);
             return self;
         }
-        
+
         public static T BorderWidth<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.RadioButton
         {
@@ -406,7 +406,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> BorderWidth<T>(this SettersContext<T> self,
             double borderWidth)
             where T : Microsoft.Maui.Controls.RadioButton
@@ -414,7 +414,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.RadioButton.BorderWidthProperty, Value = borderWidth });
             return self;
         }
-        
+
         public static SettersContext<T> BorderWidth<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.RadioButton
         {
@@ -422,7 +422,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateBorderWidthTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.RadioButton
         {
@@ -431,7 +431,7 @@ namespace Sharp.UI
             var callback = (double actValue) => { self.BorderWidth = actValue; };
             return Transformations.AnimateAsync<double>(self, "AnimateBorderWidthTo", transform, callback, length, easing);
         }
-        
+
         public static T BorderColor<T>(this T self,
             Microsoft.Maui.Graphics.Color borderColor)
             where T : Microsoft.Maui.Controls.RadioButton
@@ -439,7 +439,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.RadioButton.BorderColorProperty, borderColor);
             return self;
         }
-        
+
         public static T BorderColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.RadioButton
         {
@@ -447,7 +447,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> BorderColor<T>(this SettersContext<T> self,
             Microsoft.Maui.Graphics.Color borderColor)
             where T : Microsoft.Maui.Controls.RadioButton
@@ -455,7 +455,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.RadioButton.BorderColorProperty, Value = borderColor });
             return self;
         }
-        
+
         public static SettersContext<T> BorderColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.RadioButton
         {
@@ -463,7 +463,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateBorderColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.RadioButton
         {
@@ -472,7 +472,7 @@ namespace Sharp.UI
             var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.BorderColor = actValue; };
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateBorderColorTo", transform, callback, length, easing);
         }
-        
+
         public static T CornerRadius<T>(this T self,
             int cornerRadius)
             where T : Microsoft.Maui.Controls.RadioButton
@@ -480,7 +480,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.RadioButton.CornerRadiusProperty, cornerRadius);
             return self;
         }
-        
+
         public static T CornerRadius<T>(this T self, Func<PropertyContext<int>, IPropertyBuilder<int>> configure)
             where T : Microsoft.Maui.Controls.RadioButton
         {
@@ -488,7 +488,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> CornerRadius<T>(this SettersContext<T> self,
             int cornerRadius)
             where T : Microsoft.Maui.Controls.RadioButton
@@ -496,7 +496,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.RadioButton.CornerRadiusProperty, Value = cornerRadius });
             return self;
         }
-        
+
         public static SettersContext<T> CornerRadius<T>(this SettersContext<T> self, Func<PropertySettersContext<int>, IPropertySettersBuilder<int>> configure)
             where T : Microsoft.Maui.Controls.RadioButton
         {
@@ -504,21 +504,21 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T OnCheckedChanged<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.CheckedChangedEventArgs> handler)
             where T : Microsoft.Maui.Controls.RadioButton
         {
             self.CheckedChanged += handler;
             return self;
         }
-        
+
         public static T OnCheckedChanged<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.RadioButton
         {
             self.CheckedChanged += (o, arg) => action(self);
             return self;
         }
-        
+
     }
 }
 

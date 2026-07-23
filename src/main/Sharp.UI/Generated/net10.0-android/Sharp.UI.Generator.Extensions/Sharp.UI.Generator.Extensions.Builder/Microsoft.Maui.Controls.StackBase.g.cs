@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.StackBase.SpacingProperty, spacing);
             return self;
         }
-        
+
         public static T Spacing<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.StackBase
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Spacing<T>(this SettersContext<T> self,
             double spacing)
             where T : Microsoft.Maui.Controls.StackBase
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.StackBase.SpacingProperty, Value = spacing });
             return self;
         }
-        
+
         public static SettersContext<T> Spacing<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.StackBase
         {
@@ -43,7 +43,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateSpacingTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.StackBase
         {
@@ -52,7 +52,7 @@ namespace Sharp.UI
             var callback = (double actValue) => { self.Spacing = actValue; };
             return Transformations.AnimateAsync<double>(self, "AnimateSpacingTo", transform, callback, length, easing);
         }
-        
+
     }
 }
 

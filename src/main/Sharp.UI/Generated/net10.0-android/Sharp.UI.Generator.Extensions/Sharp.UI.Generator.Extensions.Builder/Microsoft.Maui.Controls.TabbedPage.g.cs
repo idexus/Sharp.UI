@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.TabbedPageManager = tabbedPageManager;
             return self;
         }
-        
+
         public static T BarBackgroundColor<T>(this T self,
             Microsoft.Maui.Graphics.Color barBackgroundColor)
             where T : Microsoft.Maui.Controls.TabbedPage
@@ -27,7 +27,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.TabbedPage.BarBackgroundColorProperty, barBackgroundColor);
             return self;
         }
-        
+
         public static T BarBackgroundColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.TabbedPage
         {
@@ -35,7 +35,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> BarBackgroundColor<T>(this SettersContext<T> self,
             Microsoft.Maui.Graphics.Color barBackgroundColor)
             where T : Microsoft.Maui.Controls.TabbedPage
@@ -43,7 +43,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.TabbedPage.BarBackgroundColorProperty, Value = barBackgroundColor });
             return self;
         }
-        
+
         public static SettersContext<T> BarBackgroundColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.TabbedPage
         {
@@ -51,7 +51,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateBarBackgroundColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.TabbedPage
         {
@@ -60,7 +60,7 @@ namespace Sharp.UI
             var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.BarBackgroundColor = actValue; };
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateBarBackgroundColorTo", transform, callback, length, easing);
         }
-        
+
         public static T BarBackground<T>(this T self,
             Microsoft.Maui.Controls.Brush barBackground)
             where T : Microsoft.Maui.Controls.TabbedPage
@@ -68,7 +68,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.TabbedPage.BarBackgroundProperty, barBackground);
             return self;
         }
-        
+
         public static T BarBackground<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.Brush>, IPropertyBuilder<Microsoft.Maui.Controls.Brush>> configure)
             where T : Microsoft.Maui.Controls.TabbedPage
         {
@@ -76,7 +76,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> BarBackground<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.Brush barBackground)
             where T : Microsoft.Maui.Controls.TabbedPage
@@ -84,7 +84,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.TabbedPage.BarBackgroundProperty, Value = barBackground });
             return self;
         }
-        
+
         public static SettersContext<T> BarBackground<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.Brush>, IPropertySettersBuilder<Microsoft.Maui.Controls.Brush>> configure)
             where T : Microsoft.Maui.Controls.TabbedPage
         {
@@ -92,7 +92,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T BarTextColor<T>(this T self,
             Microsoft.Maui.Graphics.Color barTextColor)
             where T : Microsoft.Maui.Controls.TabbedPage
@@ -100,7 +100,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.TabbedPage.BarTextColorProperty, barTextColor);
             return self;
         }
-        
+
         public static T BarTextColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.TabbedPage
         {
@@ -108,7 +108,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> BarTextColor<T>(this SettersContext<T> self,
             Microsoft.Maui.Graphics.Color barTextColor)
             where T : Microsoft.Maui.Controls.TabbedPage
@@ -116,7 +116,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.TabbedPage.BarTextColorProperty, Value = barTextColor });
             return self;
         }
-        
+
         public static SettersContext<T> BarTextColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.TabbedPage
         {
@@ -124,7 +124,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateBarTextColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.TabbedPage
         {
@@ -133,7 +133,7 @@ namespace Sharp.UI
             var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.BarTextColor = actValue; };
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateBarTextColorTo", transform, callback, length, easing);
         }
-        
+
         public static T UnselectedTabColor<T>(this T self,
             Microsoft.Maui.Graphics.Color unselectedTabColor)
             where T : Microsoft.Maui.Controls.TabbedPage
@@ -141,7 +141,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.TabbedPage.UnselectedTabColorProperty, unselectedTabColor);
             return self;
         }
-        
+
         public static T UnselectedTabColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.TabbedPage
         {
@@ -149,7 +149,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> UnselectedTabColor<T>(this SettersContext<T> self,
             Microsoft.Maui.Graphics.Color unselectedTabColor)
             where T : Microsoft.Maui.Controls.TabbedPage
@@ -157,7 +157,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.TabbedPage.UnselectedTabColorProperty, Value = unselectedTabColor });
             return self;
         }
-        
+
         public static SettersContext<T> UnselectedTabColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.TabbedPage
         {
@@ -165,7 +165,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateUnselectedTabColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.TabbedPage
         {
@@ -174,7 +174,7 @@ namespace Sharp.UI
             var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.UnselectedTabColor = actValue; };
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateUnselectedTabColorTo", transform, callback, length, easing);
         }
-        
+
         public static T SelectedTabColor<T>(this T self,
             Microsoft.Maui.Graphics.Color selectedTabColor)
             where T : Microsoft.Maui.Controls.TabbedPage
@@ -182,7 +182,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.TabbedPage.SelectedTabColorProperty, selectedTabColor);
             return self;
         }
-        
+
         public static T SelectedTabColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.TabbedPage
         {
@@ -190,7 +190,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> SelectedTabColor<T>(this SettersContext<T> self,
             Microsoft.Maui.Graphics.Color selectedTabColor)
             where T : Microsoft.Maui.Controls.TabbedPage
@@ -198,7 +198,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.TabbedPage.SelectedTabColorProperty, Value = selectedTabColor });
             return self;
         }
-        
+
         public static SettersContext<T> SelectedTabColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.TabbedPage
         {
@@ -206,7 +206,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateSelectedTabColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.TabbedPage
         {
@@ -215,7 +215,7 @@ namespace Sharp.UI
             var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.SelectedTabColor = actValue; };
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateSelectedTabColorTo", transform, callback, length, easing);
         }
-        
+
     }
 }
 

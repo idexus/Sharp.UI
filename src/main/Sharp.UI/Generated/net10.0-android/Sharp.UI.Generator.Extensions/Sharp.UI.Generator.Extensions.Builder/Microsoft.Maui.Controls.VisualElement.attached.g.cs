@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.VisualStateManager.VisualStateGroupsProperty, visualStateGroups);
             return self;
         }
-        
+
         public static T VisualStateGroups<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.VisualStateGroupList>, IPropertyBuilder<Microsoft.Maui.Controls.VisualStateGroupList>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> VisualStateGroups<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.VisualStateGroupList visualStateGroups)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualStateManager.VisualStateGroupsProperty, Value = visualStateGroups });
             return self;
         }
-        
+
         public static SettersContext<T> VisualStateGroups<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.VisualStateGroupList>, IPropertySettersBuilder<Microsoft.Maui.Controls.VisualStateGroupList>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -43,13 +43,13 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Microsoft.Maui.Controls.VisualStateGroupList GetVisualStateGroupsValue<T>(this T self)
             where T : Microsoft.Maui.Controls.VisualElement
         {
             return (Microsoft.Maui.Controls.VisualStateGroupList)self.GetValue(Microsoft.Maui.Controls.VisualStateManager.VisualStateGroupsProperty);
         }
-        
+
         public static T AutomationExcludedWithChildren<T>(this T self,
             bool? automationExcludedWithChildren)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -57,7 +57,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.AutomationProperties.ExcludedWithChildrenProperty, automationExcludedWithChildren);
             return self;
         }
-        
+
         public static T AutomationExcludedWithChildren<T>(this T self, Func<PropertyContext<bool?>, IPropertyBuilder<bool?>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -65,7 +65,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> AutomationExcludedWithChildren<T>(this SettersContext<T> self,
             bool? automationExcludedWithChildren)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -73,7 +73,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.AutomationProperties.ExcludedWithChildrenProperty, Value = automationExcludedWithChildren });
             return self;
         }
-        
+
         public static SettersContext<T> AutomationExcludedWithChildren<T>(this SettersContext<T> self, Func<PropertySettersContext<bool?>, IPropertySettersBuilder<bool?>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -81,13 +81,13 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static bool? GetAutomationExcludedWithChildrenValue<T>(this T self)
             where T : Microsoft.Maui.Controls.VisualElement
         {
             return (bool?)self.GetValue(Microsoft.Maui.Controls.AutomationProperties.ExcludedWithChildrenProperty);
         }
-        
+
         public static T AutomationIsInAccessibleTree<T>(this T self,
             bool? automationIsInAccessibleTree)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -95,7 +95,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.AutomationProperties.IsInAccessibleTreeProperty, automationIsInAccessibleTree);
             return self;
         }
-        
+
         public static T AutomationIsInAccessibleTree<T>(this T self, Func<PropertyContext<bool?>, IPropertyBuilder<bool?>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -103,7 +103,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> AutomationIsInAccessibleTree<T>(this SettersContext<T> self,
             bool? automationIsInAccessibleTree)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -111,7 +111,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.AutomationProperties.IsInAccessibleTreeProperty, Value = automationIsInAccessibleTree });
             return self;
         }
-        
+
         public static SettersContext<T> AutomationIsInAccessibleTree<T>(this SettersContext<T> self, Func<PropertySettersContext<bool?>, IPropertySettersBuilder<bool?>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -119,13 +119,13 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static bool? GetAutomationIsInAccessibleTreeValue<T>(this T self)
             where T : Microsoft.Maui.Controls.VisualElement
         {
             return (bool?)self.GetValue(Microsoft.Maui.Controls.AutomationProperties.IsInAccessibleTreeProperty);
         }
-        
+
         public static T SemanticHint<T>(this T self,
             string semanticHint)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -133,7 +133,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.SemanticProperties.HintProperty, semanticHint);
             return self;
         }
-        
+
         public static T SemanticHint<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -141,7 +141,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> SemanticHint<T>(this SettersContext<T> self,
             string semanticHint)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -149,7 +149,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SemanticProperties.HintProperty, Value = semanticHint });
             return self;
         }
-        
+
         public static SettersContext<T> SemanticHint<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -157,13 +157,13 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static string GetSemanticHintValue<T>(this T self)
             where T : Microsoft.Maui.Controls.VisualElement
         {
             return (string)self.GetValue(Microsoft.Maui.Controls.SemanticProperties.HintProperty);
         }
-        
+
         public static T SemanticDescription<T>(this T self,
             string semanticDescription)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -171,7 +171,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.SemanticProperties.DescriptionProperty, semanticDescription);
             return self;
         }
-        
+
         public static T SemanticDescription<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -179,7 +179,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> SemanticDescription<T>(this SettersContext<T> self,
             string semanticDescription)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -187,7 +187,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SemanticProperties.DescriptionProperty, Value = semanticDescription });
             return self;
         }
-        
+
         public static SettersContext<T> SemanticDescription<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -195,13 +195,13 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static string GetSemanticDescriptionValue<T>(this T self)
             where T : Microsoft.Maui.Controls.VisualElement
         {
             return (string)self.GetValue(Microsoft.Maui.Controls.SemanticProperties.DescriptionProperty);
         }
-        
+
         public static T SemanticHeadingLevel<T>(this T self,
             Microsoft.Maui.SemanticHeadingLevel semanticHeadingLevel)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -209,7 +209,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.SemanticProperties.HeadingLevelProperty, semanticHeadingLevel);
             return self;
         }
-        
+
         public static T SemanticHeadingLevel<T>(this T self, Func<PropertyContext<Microsoft.Maui.SemanticHeadingLevel>, IPropertyBuilder<Microsoft.Maui.SemanticHeadingLevel>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -217,7 +217,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> SemanticHeadingLevel<T>(this SettersContext<T> self,
             Microsoft.Maui.SemanticHeadingLevel semanticHeadingLevel)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -225,7 +225,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SemanticProperties.HeadingLevelProperty, Value = semanticHeadingLevel });
             return self;
         }
-        
+
         public static SettersContext<T> SemanticHeadingLevel<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.SemanticHeadingLevel>, IPropertySettersBuilder<Microsoft.Maui.SemanticHeadingLevel>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -233,13 +233,13 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Microsoft.Maui.SemanticHeadingLevel GetSemanticHeadingLevelValue<T>(this T self)
             where T : Microsoft.Maui.Controls.VisualElement
         {
             return (Microsoft.Maui.SemanticHeadingLevel)self.GetValue(Microsoft.Maui.Controls.SemanticProperties.HeadingLevelProperty);
         }
-        
+
     }
 }
 

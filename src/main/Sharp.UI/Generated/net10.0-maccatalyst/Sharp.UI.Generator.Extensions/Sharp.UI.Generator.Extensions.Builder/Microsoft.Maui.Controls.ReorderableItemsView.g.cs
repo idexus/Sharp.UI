@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.ReorderableItemsView.CanMixGroupsProperty, canMixGroups);
             return self;
         }
-        
+
         public static T CanMixGroups<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.ReorderableItemsView
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> CanMixGroups<T>(this SettersContext<T> self,
             bool canMixGroups)
             where T : Microsoft.Maui.Controls.ReorderableItemsView
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ReorderableItemsView.CanMixGroupsProperty, Value = canMixGroups });
             return self;
         }
-        
+
         public static SettersContext<T> CanMixGroups<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.ReorderableItemsView
         {
@@ -43,7 +43,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T CanReorderItems<T>(this T self,
             bool canReorderItems)
             where T : Microsoft.Maui.Controls.ReorderableItemsView
@@ -51,7 +51,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.ReorderableItemsView.CanReorderItemsProperty, canReorderItems);
             return self;
         }
-        
+
         public static T CanReorderItems<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.ReorderableItemsView
         {
@@ -59,7 +59,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> CanReorderItems<T>(this SettersContext<T> self,
             bool canReorderItems)
             where T : Microsoft.Maui.Controls.ReorderableItemsView
@@ -67,7 +67,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ReorderableItemsView.CanReorderItemsProperty, Value = canReorderItems });
             return self;
         }
-        
+
         public static SettersContext<T> CanReorderItems<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.ReorderableItemsView
         {
@@ -75,21 +75,21 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T OnReorderCompleted<T>(this T self, System.EventHandler handler)
             where T : Microsoft.Maui.Controls.ReorderableItemsView
         {
             self.ReorderCompleted += handler;
             return self;
         }
-        
+
         public static T OnReorderCompleted<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.ReorderableItemsView
         {
             self.ReorderCompleted += (o, arg) => action(self);
             return self;
         }
-        
+
     }
 }
 

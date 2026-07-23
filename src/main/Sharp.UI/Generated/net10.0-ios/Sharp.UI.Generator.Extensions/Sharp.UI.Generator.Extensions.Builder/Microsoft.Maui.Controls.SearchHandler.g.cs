@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.SearchHandler.KeyboardProperty, keyboard);
             return self;
         }
-        
+
         public static T Keyboard<T>(this T self, Func<PropertyContext<Microsoft.Maui.Keyboard>, IPropertyBuilder<Microsoft.Maui.Keyboard>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Keyboard<T>(this SettersContext<T> self,
             Microsoft.Maui.Keyboard keyboard)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.KeyboardProperty, Value = keyboard });
             return self;
         }
-        
+
         public static SettersContext<T> Keyboard<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Keyboard>, IPropertySettersBuilder<Microsoft.Maui.Keyboard>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -43,7 +43,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T HorizontalTextAlignment<T>(this T self,
             Microsoft.Maui.TextAlignment horizontalTextAlignment)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -51,7 +51,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.SearchHandler.HorizontalTextAlignmentProperty, horizontalTextAlignment);
             return self;
         }
-        
+
         public static T HorizontalTextAlignment<T>(this T self, Func<PropertyContext<Microsoft.Maui.TextAlignment>, IPropertyBuilder<Microsoft.Maui.TextAlignment>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -59,7 +59,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> HorizontalTextAlignment<T>(this SettersContext<T> self,
             Microsoft.Maui.TextAlignment horizontalTextAlignment)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -67,7 +67,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.HorizontalTextAlignmentProperty, Value = horizontalTextAlignment });
             return self;
         }
-        
+
         public static SettersContext<T> HorizontalTextAlignment<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.TextAlignment>, IPropertySettersBuilder<Microsoft.Maui.TextAlignment>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -75,7 +75,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T VerticalTextAlignment<T>(this T self,
             Microsoft.Maui.TextAlignment verticalTextAlignment)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -83,7 +83,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.SearchHandler.VerticalTextAlignmentProperty, verticalTextAlignment);
             return self;
         }
-        
+
         public static T VerticalTextAlignment<T>(this T self, Func<PropertyContext<Microsoft.Maui.TextAlignment>, IPropertyBuilder<Microsoft.Maui.TextAlignment>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -91,7 +91,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> VerticalTextAlignment<T>(this SettersContext<T> self,
             Microsoft.Maui.TextAlignment verticalTextAlignment)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -99,7 +99,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.VerticalTextAlignmentProperty, Value = verticalTextAlignment });
             return self;
         }
-        
+
         public static SettersContext<T> VerticalTextAlignment<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.TextAlignment>, IPropertySettersBuilder<Microsoft.Maui.TextAlignment>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -107,7 +107,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T TextColor<T>(this T self,
             Microsoft.Maui.Graphics.Color textColor)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -115,7 +115,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.SearchHandler.TextColorProperty, textColor);
             return self;
         }
-        
+
         public static T TextColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -123,7 +123,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> TextColor<T>(this SettersContext<T> self,
             Microsoft.Maui.Graphics.Color textColor)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -131,7 +131,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.TextColorProperty, Value = textColor });
             return self;
         }
-        
+
         public static SettersContext<T> TextColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -139,7 +139,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T TextTransform<T>(this T self,
             Microsoft.Maui.TextTransform textTransform)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -147,7 +147,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.SearchHandler.TextTransformProperty, textTransform);
             return self;
         }
-        
+
         public static T TextTransform<T>(this T self, Func<PropertyContext<Microsoft.Maui.TextTransform>, IPropertyBuilder<Microsoft.Maui.TextTransform>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -155,7 +155,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> TextTransform<T>(this SettersContext<T> self,
             Microsoft.Maui.TextTransform textTransform)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -163,7 +163,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.TextTransformProperty, Value = textTransform });
             return self;
         }
-        
+
         public static SettersContext<T> TextTransform<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.TextTransform>, IPropertySettersBuilder<Microsoft.Maui.TextTransform>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -171,7 +171,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T CancelButtonColor<T>(this T self,
             Microsoft.Maui.Graphics.Color cancelButtonColor)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -179,7 +179,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.SearchHandler.CancelButtonColorProperty, cancelButtonColor);
             return self;
         }
-        
+
         public static T CancelButtonColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -187,7 +187,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> CancelButtonColor<T>(this SettersContext<T> self,
             Microsoft.Maui.Graphics.Color cancelButtonColor)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -195,7 +195,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.CancelButtonColorProperty, Value = cancelButtonColor });
             return self;
         }
-        
+
         public static SettersContext<T> CancelButtonColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -203,7 +203,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T FontAttributes<T>(this T self,
             Microsoft.Maui.Controls.FontAttributes fontAttributes)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -211,7 +211,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.SearchHandler.FontAttributesProperty, fontAttributes);
             return self;
         }
-        
+
         public static T FontAttributes<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.FontAttributes>, IPropertyBuilder<Microsoft.Maui.Controls.FontAttributes>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -219,7 +219,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> FontAttributes<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.FontAttributes fontAttributes)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -227,7 +227,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.FontAttributesProperty, Value = fontAttributes });
             return self;
         }
-        
+
         public static SettersContext<T> FontAttributes<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.FontAttributes>, IPropertySettersBuilder<Microsoft.Maui.Controls.FontAttributes>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -235,7 +235,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T FontFamily<T>(this T self,
             string fontFamily)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -243,7 +243,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.SearchHandler.FontFamilyProperty, fontFamily);
             return self;
         }
-        
+
         public static T FontFamily<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -251,7 +251,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> FontFamily<T>(this SettersContext<T> self,
             string fontFamily)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -259,7 +259,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.FontFamilyProperty, Value = fontFamily });
             return self;
         }
-        
+
         public static SettersContext<T> FontFamily<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -267,7 +267,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T CharacterSpacing<T>(this T self,
             double characterSpacing)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -275,7 +275,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.SearchHandler.CharacterSpacingProperty, characterSpacing);
             return self;
         }
-        
+
         public static T CharacterSpacing<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -283,7 +283,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> CharacterSpacing<T>(this SettersContext<T> self,
             double characterSpacing)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -291,7 +291,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.CharacterSpacingProperty, Value = characterSpacing });
             return self;
         }
-        
+
         public static SettersContext<T> CharacterSpacing<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -299,7 +299,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T FontSize<T>(this T self,
             double fontSize)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -307,7 +307,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.SearchHandler.FontSizeProperty, fontSize);
             return self;
         }
-        
+
         public static T FontSize<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -315,7 +315,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> FontSize<T>(this SettersContext<T> self,
             double fontSize)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -323,7 +323,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.FontSizeProperty, Value = fontSize });
             return self;
         }
-        
+
         public static SettersContext<T> FontSize<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -331,7 +331,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T FontAutoScalingEnabled<T>(this T self,
             bool fontAutoScalingEnabled)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -339,7 +339,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.SearchHandler.FontAutoScalingEnabledProperty, fontAutoScalingEnabled);
             return self;
         }
-        
+
         public static T FontAutoScalingEnabled<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -347,7 +347,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> FontAutoScalingEnabled<T>(this SettersContext<T> self,
             bool fontAutoScalingEnabled)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -355,7 +355,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.FontAutoScalingEnabledProperty, Value = fontAutoScalingEnabled });
             return self;
         }
-        
+
         public static SettersContext<T> FontAutoScalingEnabled<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -363,7 +363,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T PlaceholderColor<T>(this T self,
             Microsoft.Maui.Graphics.Color placeholderColor)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -371,7 +371,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.SearchHandler.PlaceholderColorProperty, placeholderColor);
             return self;
         }
-        
+
         public static T PlaceholderColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -379,7 +379,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> PlaceholderColor<T>(this SettersContext<T> self,
             Microsoft.Maui.Graphics.Color placeholderColor)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -387,7 +387,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.PlaceholderColorProperty, Value = placeholderColor });
             return self;
         }
-        
+
         public static SettersContext<T> PlaceholderColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -395,7 +395,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T Placeholder<T>(this T self,
             string placeholder)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -403,7 +403,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.SearchHandler.PlaceholderProperty, placeholder);
             return self;
         }
-        
+
         public static T Placeholder<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -411,7 +411,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Placeholder<T>(this SettersContext<T> self,
             string placeholder)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -419,7 +419,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.PlaceholderProperty, Value = placeholder });
             return self;
         }
-        
+
         public static SettersContext<T> Placeholder<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -427,7 +427,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T BackgroundColor<T>(this T self,
             Microsoft.Maui.Graphics.Color backgroundColor)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -435,7 +435,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.SearchHandler.BackgroundColorProperty, backgroundColor);
             return self;
         }
-        
+
         public static T BackgroundColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -443,7 +443,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> BackgroundColor<T>(this SettersContext<T> self,
             Microsoft.Maui.Graphics.Color backgroundColor)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -451,7 +451,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.BackgroundColorProperty, Value = backgroundColor });
             return self;
         }
-        
+
         public static SettersContext<T> BackgroundColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -459,7 +459,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T AutomationId<T>(this T self,
             string automationId)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -467,7 +467,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.SearchHandler.AutomationIdProperty, automationId);
             return self;
         }
-        
+
         public static T AutomationId<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -475,7 +475,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> AutomationId<T>(this SettersContext<T> self,
             string automationId)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -483,7 +483,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.AutomationIdProperty, Value = automationId });
             return self;
         }
-        
+
         public static SettersContext<T> AutomationId<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -491,7 +491,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T ClearIcon<T>(this T self,
             Microsoft.Maui.Controls.ImageSource clearIcon)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -499,7 +499,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.SearchHandler.ClearIconProperty, clearIcon);
             return self;
         }
-        
+
         public static T ClearIcon<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.ImageSource>, IPropertyBuilder<Microsoft.Maui.Controls.ImageSource>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -507,7 +507,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> ClearIcon<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.ImageSource clearIcon)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -515,7 +515,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.ClearIconProperty, Value = clearIcon });
             return self;
         }
-        
+
         public static SettersContext<T> ClearIcon<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.ImageSource>, IPropertySettersBuilder<Microsoft.Maui.Controls.ImageSource>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -523,7 +523,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T ClearIconHelpText<T>(this T self,
             string clearIconHelpText)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -531,7 +531,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.SearchHandler.ClearIconHelpTextProperty, clearIconHelpText);
             return self;
         }
-        
+
         public static T ClearIconHelpText<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -539,7 +539,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> ClearIconHelpText<T>(this SettersContext<T> self,
             string clearIconHelpText)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -547,7 +547,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.ClearIconHelpTextProperty, Value = clearIconHelpText });
             return self;
         }
-        
+
         public static SettersContext<T> ClearIconHelpText<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -555,7 +555,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T ClearIconName<T>(this T self,
             string clearIconName)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -563,7 +563,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.SearchHandler.ClearIconNameProperty, clearIconName);
             return self;
         }
-        
+
         public static T ClearIconName<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -571,7 +571,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> ClearIconName<T>(this SettersContext<T> self,
             string clearIconName)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -579,7 +579,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.ClearIconNameProperty, Value = clearIconName });
             return self;
         }
-        
+
         public static SettersContext<T> ClearIconName<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -587,7 +587,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T ClearPlaceholderCommand<T>(this T self,
             System.Windows.Input.ICommand clearPlaceholderCommand)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -595,7 +595,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderCommandProperty, clearPlaceholderCommand);
             return self;
         }
-        
+
         public static T ClearPlaceholderCommand<T>(this T self, Func<PropertyContext<System.Windows.Input.ICommand>, IPropertyBuilder<System.Windows.Input.ICommand>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -603,7 +603,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> ClearPlaceholderCommand<T>(this SettersContext<T> self,
             System.Windows.Input.ICommand clearPlaceholderCommand)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -611,7 +611,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderCommandProperty, Value = clearPlaceholderCommand });
             return self;
         }
-        
+
         public static SettersContext<T> ClearPlaceholderCommand<T>(this SettersContext<T> self, Func<PropertySettersContext<System.Windows.Input.ICommand>, IPropertySettersBuilder<System.Windows.Input.ICommand>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -619,7 +619,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T ClearPlaceholderCommandParameter<T>(this T self,
             object clearPlaceholderCommandParameter)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -627,7 +627,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderCommandParameterProperty, clearPlaceholderCommandParameter);
             return self;
         }
-        
+
         public static T ClearPlaceholderCommandParameter<T>(this T self, Func<PropertyContext<object>, IPropertyBuilder<object>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -635,7 +635,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> ClearPlaceholderCommandParameter<T>(this SettersContext<T> self,
             object clearPlaceholderCommandParameter)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -643,7 +643,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderCommandParameterProperty, Value = clearPlaceholderCommandParameter });
             return self;
         }
-        
+
         public static SettersContext<T> ClearPlaceholderCommandParameter<T>(this SettersContext<T> self, Func<PropertySettersContext<object>, IPropertySettersBuilder<object>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -651,7 +651,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T ClearPlaceholderEnabled<T>(this T self,
             bool clearPlaceholderEnabled)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -659,7 +659,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderEnabledProperty, clearPlaceholderEnabled);
             return self;
         }
-        
+
         public static T ClearPlaceholderEnabled<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -667,7 +667,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> ClearPlaceholderEnabled<T>(this SettersContext<T> self,
             bool clearPlaceholderEnabled)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -675,7 +675,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderEnabledProperty, Value = clearPlaceholderEnabled });
             return self;
         }
-        
+
         public static SettersContext<T> ClearPlaceholderEnabled<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -683,7 +683,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T ClearPlaceholderHelpText<T>(this T self,
             string clearPlaceholderHelpText)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -691,7 +691,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderHelpTextProperty, clearPlaceholderHelpText);
             return self;
         }
-        
+
         public static T ClearPlaceholderHelpText<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -699,7 +699,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> ClearPlaceholderHelpText<T>(this SettersContext<T> self,
             string clearPlaceholderHelpText)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -707,7 +707,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderHelpTextProperty, Value = clearPlaceholderHelpText });
             return self;
         }
-        
+
         public static SettersContext<T> ClearPlaceholderHelpText<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -715,7 +715,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T ClearPlaceholderIcon<T>(this T self,
             Microsoft.Maui.Controls.ImageSource clearPlaceholderIcon)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -723,7 +723,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderIconProperty, clearPlaceholderIcon);
             return self;
         }
-        
+
         public static T ClearPlaceholderIcon<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.ImageSource>, IPropertyBuilder<Microsoft.Maui.Controls.ImageSource>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -731,7 +731,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> ClearPlaceholderIcon<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.ImageSource clearPlaceholderIcon)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -739,7 +739,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderIconProperty, Value = clearPlaceholderIcon });
             return self;
         }
-        
+
         public static SettersContext<T> ClearPlaceholderIcon<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.ImageSource>, IPropertySettersBuilder<Microsoft.Maui.Controls.ImageSource>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -747,7 +747,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T ClearPlaceholderName<T>(this T self,
             string clearPlaceholderName)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -755,7 +755,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderNameProperty, clearPlaceholderName);
             return self;
         }
-        
+
         public static T ClearPlaceholderName<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -763,7 +763,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> ClearPlaceholderName<T>(this SettersContext<T> self,
             string clearPlaceholderName)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -771,7 +771,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.ClearPlaceholderNameProperty, Value = clearPlaceholderName });
             return self;
         }
-        
+
         public static SettersContext<T> ClearPlaceholderName<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -779,7 +779,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T Command<T>(this T self,
             System.Windows.Input.ICommand command)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -787,7 +787,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.SearchHandler.CommandProperty, command);
             return self;
         }
-        
+
         public static T Command<T>(this T self, Func<PropertyContext<System.Windows.Input.ICommand>, IPropertyBuilder<System.Windows.Input.ICommand>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -795,7 +795,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Command<T>(this SettersContext<T> self,
             System.Windows.Input.ICommand command)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -803,7 +803,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.CommandProperty, Value = command });
             return self;
         }
-        
+
         public static SettersContext<T> Command<T>(this SettersContext<T> self, Func<PropertySettersContext<System.Windows.Input.ICommand>, IPropertySettersBuilder<System.Windows.Input.ICommand>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -811,7 +811,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T CommandParameter<T>(this T self,
             object commandParameter)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -819,7 +819,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.SearchHandler.CommandParameterProperty, commandParameter);
             return self;
         }
-        
+
         public static T CommandParameter<T>(this T self, Func<PropertyContext<object>, IPropertyBuilder<object>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -827,7 +827,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> CommandParameter<T>(this SettersContext<T> self,
             object commandParameter)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -835,7 +835,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.CommandParameterProperty, Value = commandParameter });
             return self;
         }
-        
+
         public static SettersContext<T> CommandParameter<T>(this SettersContext<T> self, Func<PropertySettersContext<object>, IPropertySettersBuilder<object>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -843,7 +843,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T IsSearchEnabled<T>(this T self,
             bool isSearchEnabled)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -851,7 +851,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.SearchHandler.IsSearchEnabledProperty, isSearchEnabled);
             return self;
         }
-        
+
         public static T IsSearchEnabled<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -859,7 +859,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> IsSearchEnabled<T>(this SettersContext<T> self,
             bool isSearchEnabled)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -867,7 +867,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.IsSearchEnabledProperty, Value = isSearchEnabled });
             return self;
         }
-        
+
         public static SettersContext<T> IsSearchEnabled<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -875,7 +875,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T ItemsSource<T>(this T self,
             System.Collections.IEnumerable itemsSource)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -883,7 +883,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.SearchHandler.ItemsSourceProperty, itemsSource);
             return self;
         }
-        
+
         public static T ItemsSource<T>(this T self, Func<PropertyContext<System.Collections.IEnumerable>, IPropertyBuilder<System.Collections.IEnumerable>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -891,7 +891,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> ItemsSource<T>(this SettersContext<T> self,
             System.Collections.IEnumerable itemsSource)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -899,7 +899,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.ItemsSourceProperty, Value = itemsSource });
             return self;
         }
-        
+
         public static SettersContext<T> ItemsSource<T>(this SettersContext<T> self, Func<PropertySettersContext<System.Collections.IEnumerable>, IPropertySettersBuilder<System.Collections.IEnumerable>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -907,7 +907,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T ItemTemplate<T>(this T self,
             Microsoft.Maui.Controls.DataTemplate itemTemplate)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -915,7 +915,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.SearchHandler.ItemTemplateProperty, itemTemplate);
             return self;
         }
-        
+
         public static T ItemTemplate<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.DataTemplate>, IPropertyBuilder<Microsoft.Maui.Controls.DataTemplate>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -923,7 +923,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> ItemTemplate<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.DataTemplate itemTemplate)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -931,7 +931,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.ItemTemplateProperty, Value = itemTemplate });
             return self;
         }
-        
+
         public static SettersContext<T> ItemTemplate<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.DataTemplate>, IPropertySettersBuilder<Microsoft.Maui.Controls.DataTemplate>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -939,14 +939,14 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T ItemTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
             self.SetValue(Microsoft.Maui.Controls.SearchHandler.ItemTemplateProperty, new DataTemplate(loadTemplate));
             return self;
         }
-        
+
         public static T Query<T>(this T self,
             string query)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -954,7 +954,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.SearchHandler.QueryProperty, query);
             return self;
         }
-        
+
         public static T Query<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -962,7 +962,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Query<T>(this SettersContext<T> self,
             string query)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -970,7 +970,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.QueryProperty, Value = query });
             return self;
         }
-        
+
         public static SettersContext<T> Query<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -978,7 +978,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T QueryIcon<T>(this T self,
             Microsoft.Maui.Controls.ImageSource queryIcon)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -986,7 +986,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.SearchHandler.QueryIconProperty, queryIcon);
             return self;
         }
-        
+
         public static T QueryIcon<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.ImageSource>, IPropertyBuilder<Microsoft.Maui.Controls.ImageSource>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -994,7 +994,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> QueryIcon<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.ImageSource queryIcon)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -1002,7 +1002,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.QueryIconProperty, Value = queryIcon });
             return self;
         }
-        
+
         public static SettersContext<T> QueryIcon<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.ImageSource>, IPropertySettersBuilder<Microsoft.Maui.Controls.ImageSource>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -1010,7 +1010,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T QueryIconHelpText<T>(this T self,
             string queryIconHelpText)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -1018,7 +1018,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.SearchHandler.QueryIconHelpTextProperty, queryIconHelpText);
             return self;
         }
-        
+
         public static T QueryIconHelpText<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -1026,7 +1026,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> QueryIconHelpText<T>(this SettersContext<T> self,
             string queryIconHelpText)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -1034,7 +1034,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.QueryIconHelpTextProperty, Value = queryIconHelpText });
             return self;
         }
-        
+
         public static SettersContext<T> QueryIconHelpText<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -1042,7 +1042,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T QueryIconName<T>(this T self,
             string queryIconName)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -1050,7 +1050,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.SearchHandler.QueryIconNameProperty, queryIconName);
             return self;
         }
-        
+
         public static T QueryIconName<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -1058,7 +1058,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> QueryIconName<T>(this SettersContext<T> self,
             string queryIconName)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -1066,7 +1066,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.QueryIconNameProperty, Value = queryIconName });
             return self;
         }
-        
+
         public static SettersContext<T> QueryIconName<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -1074,7 +1074,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T SearchBoxVisibility<T>(this T self,
             Microsoft.Maui.Controls.SearchBoxVisibility searchBoxVisibility)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -1082,7 +1082,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.SearchHandler.SearchBoxVisibilityProperty, searchBoxVisibility);
             return self;
         }
-        
+
         public static T SearchBoxVisibility<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.SearchBoxVisibility>, IPropertyBuilder<Microsoft.Maui.Controls.SearchBoxVisibility>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -1090,7 +1090,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> SearchBoxVisibility<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.SearchBoxVisibility searchBoxVisibility)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -1098,7 +1098,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.SearchBoxVisibilityProperty, Value = searchBoxVisibility });
             return self;
         }
-        
+
         public static SettersContext<T> SearchBoxVisibility<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.SearchBoxVisibility>, IPropertySettersBuilder<Microsoft.Maui.Controls.SearchBoxVisibility>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -1106,7 +1106,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T ShowsResults<T>(this T self,
             bool showsResults)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -1114,7 +1114,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.SearchHandler.ShowsResultsProperty, showsResults);
             return self;
         }
-        
+
         public static T ShowsResults<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -1122,7 +1122,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> ShowsResults<T>(this SettersContext<T> self,
             bool showsResults)
             where T : Microsoft.Maui.Controls.SearchHandler
@@ -1130,7 +1130,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SearchHandler.ShowsResultsProperty, Value = showsResults });
             return self;
         }
-        
+
         public static SettersContext<T> ShowsResults<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
@@ -1138,49 +1138,49 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T OnFocused<T>(this T self, System.EventHandler<System.EventArgs> handler)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
             self.Focused += handler;
             return self;
         }
-        
+
         public static T OnFocused<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
             self.Focused += (o, arg) => action(self);
             return self;
         }
-        
+
         public static T OnUnfocused<T>(this T self, System.EventHandler<System.EventArgs> handler)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
             self.Unfocused += handler;
             return self;
         }
-        
+
         public static T OnUnfocused<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
             self.Unfocused += (o, arg) => action(self);
             return self;
         }
-        
+
         public static T OnFocusChangeRequested<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.VisualElement.FocusRequestArgs> handler)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
             self.FocusChangeRequested += handler;
             return self;
         }
-        
+
         public static T OnFocusChangeRequested<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.SearchHandler
         {
             self.FocusChangeRequested += (o, arg) => action(self);
             return self;
         }
-        
+
     }
 }
 

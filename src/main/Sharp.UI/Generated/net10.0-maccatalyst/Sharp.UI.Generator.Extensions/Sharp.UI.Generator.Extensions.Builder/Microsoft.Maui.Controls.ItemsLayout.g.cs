@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.ItemsLayout.SnapPointsAlignmentProperty, snapPointsAlignment);
             return self;
         }
-        
+
         public static T SnapPointsAlignment<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.SnapPointsAlignment>, IPropertyBuilder<Microsoft.Maui.Controls.SnapPointsAlignment>> configure)
             where T : Microsoft.Maui.Controls.ItemsLayout
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> SnapPointsAlignment<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.SnapPointsAlignment snapPointsAlignment)
             where T : Microsoft.Maui.Controls.ItemsLayout
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ItemsLayout.SnapPointsAlignmentProperty, Value = snapPointsAlignment });
             return self;
         }
-        
+
         public static SettersContext<T> SnapPointsAlignment<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.SnapPointsAlignment>, IPropertySettersBuilder<Microsoft.Maui.Controls.SnapPointsAlignment>> configure)
             where T : Microsoft.Maui.Controls.ItemsLayout
         {
@@ -43,7 +43,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T SnapPointsType<T>(this T self,
             Microsoft.Maui.Controls.SnapPointsType snapPointsType)
             where T : Microsoft.Maui.Controls.ItemsLayout
@@ -51,7 +51,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.ItemsLayout.SnapPointsTypeProperty, snapPointsType);
             return self;
         }
-        
+
         public static T SnapPointsType<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.SnapPointsType>, IPropertyBuilder<Microsoft.Maui.Controls.SnapPointsType>> configure)
             where T : Microsoft.Maui.Controls.ItemsLayout
         {
@@ -59,7 +59,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> SnapPointsType<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.SnapPointsType snapPointsType)
             where T : Microsoft.Maui.Controls.ItemsLayout
@@ -67,7 +67,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ItemsLayout.SnapPointsTypeProperty, Value = snapPointsType });
             return self;
         }
-        
+
         public static SettersContext<T> SnapPointsType<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.SnapPointsType>, IPropertySettersBuilder<Microsoft.Maui.Controls.SnapPointsType>> configure)
             where T : Microsoft.Maui.Controls.ItemsLayout
         {
@@ -75,7 +75,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
     }
 }
 

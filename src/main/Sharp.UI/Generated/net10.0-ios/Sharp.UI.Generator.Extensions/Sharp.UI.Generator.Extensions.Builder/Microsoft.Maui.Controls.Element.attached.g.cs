@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.FlyoutBase.ContextFlyoutProperty, contextFlyout);
             return self;
         }
-        
+
         public static T ContextFlyout<T>(this T self, Func<PropertyContext<Sharp.UI.MenuFlyout>, IPropertyBuilder<Sharp.UI.MenuFlyout>> configure)
             where T : Microsoft.Maui.Controls.Element
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> ContextFlyout<T>(this SettersContext<T> self,
             Sharp.UI.MenuFlyout contextFlyout)
             where T : Microsoft.Maui.Controls.Element
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.FlyoutBase.ContextFlyoutProperty, Value = contextFlyout });
             return self;
         }
-        
+
         public static SettersContext<T> ContextFlyout<T>(this SettersContext<T> self, Func<PropertySettersContext<Sharp.UI.MenuFlyout>, IPropertySettersBuilder<Sharp.UI.MenuFlyout>> configure)
             where T : Microsoft.Maui.Controls.Element
         {
@@ -43,13 +43,13 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Sharp.UI.MenuFlyout GetContextFlyoutValue<T>(this T self)
             where T : Microsoft.Maui.Controls.Element
         {
             return (Sharp.UI.MenuFlyout)self.GetValue(Microsoft.Maui.Controls.FlyoutBase.ContextFlyoutProperty);
         }
-        
+
     }
 }
 

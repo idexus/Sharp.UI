@@ -29,7 +29,7 @@ namespace Sharp.UI
                 self.Children.Add(item);
             return self;
         }
-        
+
         public static T IsClippedToBounds<T>(this T self,
             bool isClippedToBounds)
             where T : Microsoft.Maui.Controls.Layout
@@ -37,7 +37,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Layout.IsClippedToBoundsProperty, isClippedToBounds);
             return self;
         }
-        
+
         public static T IsClippedToBounds<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.Layout
         {
@@ -45,7 +45,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> IsClippedToBounds<T>(this SettersContext<T> self,
             bool isClippedToBounds)
             where T : Microsoft.Maui.Controls.Layout
@@ -53,7 +53,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Layout.IsClippedToBoundsProperty, Value = isClippedToBounds });
             return self;
         }
-        
+
         public static SettersContext<T> IsClippedToBounds<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.Layout
         {
@@ -61,7 +61,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T Padding<T>(this T self,
             Microsoft.Maui.Thickness padding)
             where T : Microsoft.Maui.Controls.Layout
@@ -69,7 +69,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Layout.PaddingProperty, padding);
             return self;
         }
-               
+
         public static T Padding<T>(this T self, double horizontalSize, double verticalSize)
             where T : Microsoft.Maui.Controls.Layout
         {
@@ -84,15 +84,15 @@ namespace Sharp.UI
             return self;
         }
 
-        #nullable disable
+#nullable disable
         public static T Padding<T>(this T self, object _ = null, double left = 0, double top = 0, double right = 0, double bottom = 0)
             where T : Microsoft.Maui.Controls.Layout
         {
             self.SetValue(Microsoft.Maui.Controls.Layout.PaddingProperty, new Thickness(left, top, right, bottom));
             return self;
         }
-        #nullable enable
-        
+#nullable enable
+
         public static T Padding<T>(this T self, Func<PropertyContext<Microsoft.Maui.Thickness>, IPropertyBuilder<Microsoft.Maui.Thickness>> configure)
             where T : Microsoft.Maui.Controls.Layout
         {
@@ -100,7 +100,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Padding<T>(this SettersContext<T> self,
             Microsoft.Maui.Thickness padding)
             where T : Microsoft.Maui.Controls.Layout
@@ -108,7 +108,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Layout.PaddingProperty, Value = padding });
             return self;
         }
-        
+
         public static SettersContext<T> Padding<T>(this SettersContext<T> self, double horizontalSize, double verticalSize)
             where T : Microsoft.Maui.Controls.Layout
         {
@@ -123,15 +123,15 @@ namespace Sharp.UI
             return self;
         }
 
-        #nullable disable
+#nullable disable
         public static SettersContext<T> Padding<T>(this SettersContext<T> self, object _ = default, double left = 0, double top = 0, double right = 0, double bottom = 0)
             where T : Microsoft.Maui.Controls.Layout
         {
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Layout.PaddingProperty, Value = new Thickness(left, top, right, bottom) });
             return self;
         }
-        #nullable enable
-        
+#nullable enable
+
         public static SettersContext<T> Padding<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Thickness>, IPropertySettersBuilder<Microsoft.Maui.Thickness>> configure)
             where T : Microsoft.Maui.Controls.Layout
         {
@@ -139,7 +139,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T SafeAreaEdges<T>(this T self,
             Microsoft.Maui.SafeAreaEdges safeAreaEdges)
             where T : Microsoft.Maui.Controls.Layout
@@ -147,7 +147,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Layout.SafeAreaEdgesProperty, safeAreaEdges);
             return self;
         }
-        
+
         public static T SafeAreaEdges<T>(this T self, Func<PropertyContext<Microsoft.Maui.SafeAreaEdges>, IPropertyBuilder<Microsoft.Maui.SafeAreaEdges>> configure)
             where T : Microsoft.Maui.Controls.Layout
         {
@@ -155,7 +155,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> SafeAreaEdges<T>(this SettersContext<T> self,
             Microsoft.Maui.SafeAreaEdges safeAreaEdges)
             where T : Microsoft.Maui.Controls.Layout
@@ -163,7 +163,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Layout.SafeAreaEdgesProperty, Value = safeAreaEdges });
             return self;
         }
-        
+
         public static SettersContext<T> SafeAreaEdges<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.SafeAreaEdges>, IPropertySettersBuilder<Microsoft.Maui.SafeAreaEdges>> configure)
             where T : Microsoft.Maui.Controls.Layout
         {
@@ -171,7 +171,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T CascadeInputTransparent<T>(this T self,
             bool cascadeInputTransparent)
             where T : Microsoft.Maui.Controls.Layout
@@ -179,7 +179,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Layout.CascadeInputTransparentProperty, cascadeInputTransparent);
             return self;
         }
-        
+
         public static T CascadeInputTransparent<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.Layout
         {
@@ -187,7 +187,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> CascadeInputTransparent<T>(this SettersContext<T> self,
             bool cascadeInputTransparent)
             where T : Microsoft.Maui.Controls.Layout
@@ -195,7 +195,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Layout.CascadeInputTransparentProperty, Value = cascadeInputTransparent });
             return self;
         }
-        
+
         public static SettersContext<T> CascadeInputTransparent<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.Layout
         {
@@ -203,7 +203,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
     }
 }
 

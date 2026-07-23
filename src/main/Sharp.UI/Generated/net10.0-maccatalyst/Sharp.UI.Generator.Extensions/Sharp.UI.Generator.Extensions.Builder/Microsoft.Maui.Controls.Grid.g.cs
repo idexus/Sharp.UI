@@ -29,7 +29,7 @@ namespace Sharp.UI
                 self.ColumnDefinitions.Add(item);
             return self;
         }
-        
+
         public static T ColumnDefinitions<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.ColumnDefinitionCollection>, IPropertyBuilder<Microsoft.Maui.Controls.ColumnDefinitionCollection>> configure)
             where T : Microsoft.Maui.Controls.Grid
         {
@@ -37,7 +37,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T RowDefinitions<T>(this T self,
             IList<Microsoft.Maui.Controls.RowDefinition> rowDefinitions)
             where T : Microsoft.Maui.Controls.Grid
@@ -55,7 +55,7 @@ namespace Sharp.UI
                 self.RowDefinitions.Add(item);
             return self;
         }
-        
+
         public static T RowDefinitions<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.RowDefinitionCollection>, IPropertyBuilder<Microsoft.Maui.Controls.RowDefinitionCollection>> configure)
             where T : Microsoft.Maui.Controls.Grid
         {
@@ -63,7 +63,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T RowSpacing<T>(this T self,
             double rowSpacing)
             where T : Microsoft.Maui.Controls.Grid
@@ -71,7 +71,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Grid.RowSpacingProperty, rowSpacing);
             return self;
         }
-        
+
         public static T RowSpacing<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Grid
         {
@@ -79,7 +79,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> RowSpacing<T>(this SettersContext<T> self,
             double rowSpacing)
             where T : Microsoft.Maui.Controls.Grid
@@ -87,7 +87,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Grid.RowSpacingProperty, Value = rowSpacing });
             return self;
         }
-        
+
         public static SettersContext<T> RowSpacing<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Grid
         {
@@ -95,7 +95,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateRowSpacingTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.Grid
         {
@@ -104,7 +104,7 @@ namespace Sharp.UI
             var callback = (double actValue) => { self.RowSpacing = actValue; };
             return Transformations.AnimateAsync<double>(self, "AnimateRowSpacingTo", transform, callback, length, easing);
         }
-        
+
         public static T ColumnSpacing<T>(this T self,
             double columnSpacing)
             where T : Microsoft.Maui.Controls.Grid
@@ -112,7 +112,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Grid.ColumnSpacingProperty, columnSpacing);
             return self;
         }
-        
+
         public static T ColumnSpacing<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Grid
         {
@@ -120,7 +120,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> ColumnSpacing<T>(this SettersContext<T> self,
             double columnSpacing)
             where T : Microsoft.Maui.Controls.Grid
@@ -128,7 +128,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Grid.ColumnSpacingProperty, Value = columnSpacing });
             return self;
         }
-        
+
         public static SettersContext<T> ColumnSpacing<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Grid
         {
@@ -136,7 +136,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateColumnSpacingTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.Grid
         {
@@ -145,7 +145,7 @@ namespace Sharp.UI
             var callback = (double actValue) => { self.ColumnSpacing = actValue; };
             return Transformations.AnimateAsync<double>(self, "AnimateColumnSpacingTo", transform, callback, length, easing);
         }
-        
+
     }
 }
 

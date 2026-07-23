@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.GridItemsLayout.SpanProperty, span);
             return self;
         }
-        
+
         public static T Span<T>(this T self, Func<PropertyContext<int>, IPropertyBuilder<int>> configure)
             where T : Microsoft.Maui.Controls.GridItemsLayout
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Span<T>(this SettersContext<T> self,
             int span)
             where T : Microsoft.Maui.Controls.GridItemsLayout
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.GridItemsLayout.SpanProperty, Value = span });
             return self;
         }
-        
+
         public static SettersContext<T> Span<T>(this SettersContext<T> self, Func<PropertySettersContext<int>, IPropertySettersBuilder<int>> configure)
             where T : Microsoft.Maui.Controls.GridItemsLayout
         {
@@ -43,7 +43,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T VerticalItemSpacing<T>(this T self,
             double verticalItemSpacing)
             where T : Microsoft.Maui.Controls.GridItemsLayout
@@ -51,7 +51,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.GridItemsLayout.VerticalItemSpacingProperty, verticalItemSpacing);
             return self;
         }
-        
+
         public static T VerticalItemSpacing<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.GridItemsLayout
         {
@@ -59,7 +59,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> VerticalItemSpacing<T>(this SettersContext<T> self,
             double verticalItemSpacing)
             where T : Microsoft.Maui.Controls.GridItemsLayout
@@ -67,7 +67,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.GridItemsLayout.VerticalItemSpacingProperty, Value = verticalItemSpacing });
             return self;
         }
-        
+
         public static SettersContext<T> VerticalItemSpacing<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.GridItemsLayout
         {
@@ -75,7 +75,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T HorizontalItemSpacing<T>(this T self,
             double horizontalItemSpacing)
             where T : Microsoft.Maui.Controls.GridItemsLayout
@@ -83,7 +83,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.GridItemsLayout.HorizontalItemSpacingProperty, horizontalItemSpacing);
             return self;
         }
-        
+
         public static T HorizontalItemSpacing<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.GridItemsLayout
         {
@@ -91,7 +91,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> HorizontalItemSpacing<T>(this SettersContext<T> self,
             double horizontalItemSpacing)
             where T : Microsoft.Maui.Controls.GridItemsLayout
@@ -99,7 +99,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.GridItemsLayout.HorizontalItemSpacingProperty, Value = horizontalItemSpacing });
             return self;
         }
-        
+
         public static SettersContext<T> HorizontalItemSpacing<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.GridItemsLayout
         {
@@ -107,7 +107,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
     }
 }
 

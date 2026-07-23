@@ -10,7 +10,7 @@ namespace ExampleApp
 {
     using Sharp.UI.Internal;
     using Sharp.UI;
-    
+
     public static partial class AngleViewModelExtension
     {
         public static T RawAngle<T>(this T self,
@@ -20,7 +20,7 @@ namespace ExampleApp
             self.SetValue(ExampleApp.AngleViewModel.RawAngleProperty, rawAngle);
             return self;
         }
-        
+
         public static T RawAngle<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : ExampleApp.AngleViewModel
         {
@@ -28,7 +28,7 @@ namespace ExampleApp
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> RawAngle<T>(this SettersContext<T> self,
             double rawAngle)
             where T : ExampleApp.AngleViewModel
@@ -36,7 +36,7 @@ namespace ExampleApp
             self.XamlSetters.Add(new Setter { Property = ExampleApp.AngleViewModel.RawAngleProperty, Value = rawAngle });
             return self;
         }
-        
+
         public static SettersContext<T> RawAngle<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : ExampleApp.AngleViewModel
         {
@@ -44,7 +44,7 @@ namespace ExampleApp
             configure(context).Build();
             return self;
         }
-        
+
         public static T Angle<T>(this T self,
             double angle)
             where T : ExampleApp.AngleViewModel
@@ -52,7 +52,7 @@ namespace ExampleApp
             self.SetValue(ExampleApp.AngleViewModel.AngleProperty, angle);
             return self;
         }
-        
+
         public static T Angle<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : ExampleApp.AngleViewModel
         {
@@ -60,7 +60,7 @@ namespace ExampleApp
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Angle<T>(this SettersContext<T> self,
             double angle)
             where T : ExampleApp.AngleViewModel
@@ -68,7 +68,7 @@ namespace ExampleApp
             self.XamlSetters.Add(new Setter { Property = ExampleApp.AngleViewModel.AngleProperty, Value = angle });
             return self;
         }
-        
+
         public static SettersContext<T> Angle<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : ExampleApp.AngleViewModel
         {
@@ -76,7 +76,7 @@ namespace ExampleApp
             configure(context).Build();
             return self;
         }
-        
+
         public static T MaximumAngle<T>(this T self,
             double maximumAngle)
             where T : ExampleApp.AngleViewModel
@@ -84,7 +84,7 @@ namespace ExampleApp
             self.SetValue(ExampleApp.AngleViewModel.MaximumAngleProperty, maximumAngle);
             return self;
         }
-        
+
         public static T MaximumAngle<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : ExampleApp.AngleViewModel
         {
@@ -92,7 +92,7 @@ namespace ExampleApp
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> MaximumAngle<T>(this SettersContext<T> self,
             double maximumAngle)
             where T : ExampleApp.AngleViewModel
@@ -100,7 +100,7 @@ namespace ExampleApp
             self.XamlSetters.Add(new Setter { Property = ExampleApp.AngleViewModel.MaximumAngleProperty, Value = maximumAngle });
             return self;
         }
-        
+
         public static SettersContext<T> MaximumAngle<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : ExampleApp.AngleViewModel
         {
@@ -108,7 +108,7 @@ namespace ExampleApp
             configure(context).Build();
             return self;
         }
-        
+
     }
 }
 

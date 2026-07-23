@@ -29,7 +29,7 @@ namespace Sharp.UI
                 self.GestureRecognizers.Add(item);
             return self;
         }
-        
+
         public static T HorizontalOptions<T>(this T self,
             Microsoft.Maui.Controls.LayoutOptions horizontalOptions)
             where T : Microsoft.Maui.Controls.View
@@ -37,7 +37,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.View.HorizontalOptionsProperty, horizontalOptions);
             return self;
         }
-        
+
         public static T HorizontalOptions<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.LayoutOptions>, IPropertyBuilder<Microsoft.Maui.Controls.LayoutOptions>> configure)
             where T : Microsoft.Maui.Controls.View
         {
@@ -45,7 +45,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> HorizontalOptions<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.LayoutOptions horizontalOptions)
             where T : Microsoft.Maui.Controls.View
@@ -53,7 +53,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.View.HorizontalOptionsProperty, Value = horizontalOptions });
             return self;
         }
-        
+
         public static SettersContext<T> HorizontalOptions<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.LayoutOptions>, IPropertySettersBuilder<Microsoft.Maui.Controls.LayoutOptions>> configure)
             where T : Microsoft.Maui.Controls.View
         {
@@ -61,7 +61,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T Margin<T>(this T self,
             Microsoft.Maui.Thickness margin)
             where T : Microsoft.Maui.Controls.View
@@ -69,7 +69,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.View.MarginProperty, margin);
             return self;
         }
-               
+
         public static T Margin<T>(this T self, double horizontalSize, double verticalSize)
             where T : Microsoft.Maui.Controls.View
         {
@@ -84,15 +84,15 @@ namespace Sharp.UI
             return self;
         }
 
-        #nullable disable
+#nullable disable
         public static T Margin<T>(this T self, object _ = null, double left = 0, double top = 0, double right = 0, double bottom = 0)
             where T : Microsoft.Maui.Controls.View
         {
             self.SetValue(Microsoft.Maui.Controls.View.MarginProperty, new Thickness(left, top, right, bottom));
             return self;
         }
-        #nullable enable
-        
+#nullable enable
+
         public static T Margin<T>(this T self, Func<PropertyContext<Microsoft.Maui.Thickness>, IPropertyBuilder<Microsoft.Maui.Thickness>> configure)
             where T : Microsoft.Maui.Controls.View
         {
@@ -100,7 +100,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Margin<T>(this SettersContext<T> self,
             Microsoft.Maui.Thickness margin)
             where T : Microsoft.Maui.Controls.View
@@ -108,7 +108,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.View.MarginProperty, Value = margin });
             return self;
         }
-        
+
         public static SettersContext<T> Margin<T>(this SettersContext<T> self, double horizontalSize, double verticalSize)
             where T : Microsoft.Maui.Controls.View
         {
@@ -123,15 +123,15 @@ namespace Sharp.UI
             return self;
         }
 
-        #nullable disable
+#nullable disable
         public static SettersContext<T> Margin<T>(this SettersContext<T> self, object _ = default, double left = 0, double top = 0, double right = 0, double bottom = 0)
             where T : Microsoft.Maui.Controls.View
         {
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.View.MarginProperty, Value = new Thickness(left, top, right, bottom) });
             return self;
         }
-        #nullable enable
-        
+#nullable enable
+
         public static SettersContext<T> Margin<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Thickness>, IPropertySettersBuilder<Microsoft.Maui.Thickness>> configure)
             where T : Microsoft.Maui.Controls.View
         {
@@ -139,7 +139,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T VerticalOptions<T>(this T self,
             Microsoft.Maui.Controls.LayoutOptions verticalOptions)
             where T : Microsoft.Maui.Controls.View
@@ -147,7 +147,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.View.VerticalOptionsProperty, verticalOptions);
             return self;
         }
-        
+
         public static T VerticalOptions<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.LayoutOptions>, IPropertyBuilder<Microsoft.Maui.Controls.LayoutOptions>> configure)
             where T : Microsoft.Maui.Controls.View
         {
@@ -155,7 +155,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> VerticalOptions<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.LayoutOptions verticalOptions)
             where T : Microsoft.Maui.Controls.View
@@ -163,7 +163,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.View.VerticalOptionsProperty, Value = verticalOptions });
             return self;
         }
-        
+
         public static SettersContext<T> VerticalOptions<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.LayoutOptions>, IPropertySettersBuilder<Microsoft.Maui.Controls.LayoutOptions>> configure)
             where T : Microsoft.Maui.Controls.View
         {
@@ -171,7 +171,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
     }
 }
 

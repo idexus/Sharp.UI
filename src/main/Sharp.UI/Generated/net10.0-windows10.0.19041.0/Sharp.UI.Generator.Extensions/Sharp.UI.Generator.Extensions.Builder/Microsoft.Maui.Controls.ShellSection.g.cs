@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.ShellSection.CurrentItemProperty, currentItem);
             return self;
         }
-        
+
         public static T CurrentItem<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.ShellContent>, IPropertyBuilder<Microsoft.Maui.Controls.ShellContent>> configure)
             where T : Microsoft.Maui.Controls.ShellSection
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> CurrentItem<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.ShellContent currentItem)
             where T : Microsoft.Maui.Controls.ShellSection
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ShellSection.CurrentItemProperty, Value = currentItem });
             return self;
         }
-        
+
         public static SettersContext<T> CurrentItem<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.ShellContent>, IPropertySettersBuilder<Microsoft.Maui.Controls.ShellContent>> configure)
             where T : Microsoft.Maui.Controls.ShellSection
         {
@@ -43,7 +43,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T Items<T>(this T self,
             IList<Microsoft.Maui.Controls.ShellContent> items)
             where T : Microsoft.Maui.Controls.ShellSection
@@ -61,7 +61,7 @@ namespace Sharp.UI
                 self.Items.Add(item);
             return self;
         }
-        
+
         public static T Items<T>(this T self, Func<PropertyContext<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellContent>>, IPropertyBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellContent>>> configure)
             where T : Microsoft.Maui.Controls.ShellSection
         {
@@ -69,7 +69,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
     }
 }
 

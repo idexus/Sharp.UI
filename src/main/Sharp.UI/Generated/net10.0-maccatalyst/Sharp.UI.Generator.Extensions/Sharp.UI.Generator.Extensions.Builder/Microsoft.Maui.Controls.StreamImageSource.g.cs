@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.StreamImageSource.StreamProperty, stream);
             return self;
         }
-        
+
         public static T Stream<T>(this T self, Func<PropertyContext<System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<System.IO.Stream>>>, IPropertyBuilder<System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<System.IO.Stream>>>> configure)
             where T : Microsoft.Maui.Controls.StreamImageSource
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Stream<T>(this SettersContext<T> self,
             System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<System.IO.Stream>> stream)
             where T : Microsoft.Maui.Controls.StreamImageSource
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.StreamImageSource.StreamProperty, Value = stream });
             return self;
         }
-        
+
         public static SettersContext<T> Stream<T>(this SettersContext<T> self, Func<PropertySettersContext<System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<System.IO.Stream>>>, IPropertySettersBuilder<System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<System.IO.Stream>>>> configure)
             where T : Microsoft.Maui.Controls.StreamImageSource
         {
@@ -43,7 +43,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
     }
 }
 

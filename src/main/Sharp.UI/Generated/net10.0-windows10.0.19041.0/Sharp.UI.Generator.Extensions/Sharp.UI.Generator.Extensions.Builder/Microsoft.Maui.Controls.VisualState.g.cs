@@ -18,7 +18,7 @@ namespace Sharp.UI
             self.Name = name;
             return self;
         }
-        
+
         public static Microsoft.Maui.Controls.VisualState Setters(this Microsoft.Maui.Controls.VisualState self,
             IList<Microsoft.Maui.Controls.Setter> setters)
         {
@@ -34,7 +34,7 @@ namespace Sharp.UI
                 self.Setters.Add(item);
             return self;
         }
-        
+
         public static Microsoft.Maui.Controls.VisualState StateTriggers(this Microsoft.Maui.Controls.VisualState self,
             IList<Microsoft.Maui.Controls.StateTriggerBase> stateTriggers)
         {
@@ -50,14 +50,14 @@ namespace Sharp.UI
                 self.StateTriggers.Add(item);
             return self;
         }
-        
+
         public static Microsoft.Maui.Controls.VisualState TargetType(this Microsoft.Maui.Controls.VisualState self,
             System.Type targetType)
         {
             self.TargetType = targetType;
             return self;
         }
-        
+
     }
 }
 

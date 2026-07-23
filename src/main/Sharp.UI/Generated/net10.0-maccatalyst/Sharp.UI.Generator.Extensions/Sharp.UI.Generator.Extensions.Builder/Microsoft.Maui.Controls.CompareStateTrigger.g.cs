@@ -18,56 +18,56 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.CompareStateTrigger.PropertyProperty, property);
             return self;
         }
-        
+
         public static Microsoft.Maui.Controls.CompareStateTrigger Property(this Microsoft.Maui.Controls.CompareStateTrigger self, Func<PropertyContext<object>, IPropertyBuilder<object>> configure)
         {
             var context = new PropertyContext<object>(self, Microsoft.Maui.Controls.CompareStateTrigger.PropertyProperty);
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<Microsoft.Maui.Controls.CompareStateTrigger> Property(this SettersContext<Microsoft.Maui.Controls.CompareStateTrigger> self,
             object property)
         {
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.CompareStateTrigger.PropertyProperty, Value = property });
             return self;
         }
-        
+
         public static SettersContext<Microsoft.Maui.Controls.CompareStateTrigger> Property(this SettersContext<Microsoft.Maui.Controls.CompareStateTrigger> self, Func<PropertySettersContext<object>, IPropertySettersBuilder<object>> configure)
         {
             var context = new PropertySettersContext<object>(self.XamlSetters, Microsoft.Maui.Controls.CompareStateTrigger.PropertyProperty);
             configure(context).Build();
             return self;
         }
-        
+
         public static Microsoft.Maui.Controls.CompareStateTrigger Value(this Microsoft.Maui.Controls.CompareStateTrigger self,
             object value)
         {
             self.SetValue(Microsoft.Maui.Controls.CompareStateTrigger.ValueProperty, value);
             return self;
         }
-        
+
         public static Microsoft.Maui.Controls.CompareStateTrigger Value(this Microsoft.Maui.Controls.CompareStateTrigger self, Func<PropertyContext<object>, IPropertyBuilder<object>> configure)
         {
             var context = new PropertyContext<object>(self, Microsoft.Maui.Controls.CompareStateTrigger.ValueProperty);
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<Microsoft.Maui.Controls.CompareStateTrigger> Value(this SettersContext<Microsoft.Maui.Controls.CompareStateTrigger> self,
             object value)
         {
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.CompareStateTrigger.ValueProperty, Value = value });
             return self;
         }
-        
+
         public static SettersContext<Microsoft.Maui.Controls.CompareStateTrigger> Value(this SettersContext<Microsoft.Maui.Controls.CompareStateTrigger> self, Func<PropertySettersContext<object>, IPropertySettersBuilder<object>> configure)
         {
             var context = new PropertySettersContext<object>(self.XamlSetters, Microsoft.Maui.Controls.CompareStateTrigger.ValueProperty);
             configure(context).Build();
             return self;
         }
-        
+
     }
 }
 

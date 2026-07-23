@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.ItemsView.EmptyViewProperty, emptyView);
             return self;
         }
-        
+
         public static T EmptyView<T>(this T self, Func<PropertyContext<object>, IPropertyBuilder<object>> configure)
             where T : Microsoft.Maui.Controls.ItemsView
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> EmptyView<T>(this SettersContext<T> self,
             object emptyView)
             where T : Microsoft.Maui.Controls.ItemsView
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ItemsView.EmptyViewProperty, Value = emptyView });
             return self;
         }
-        
+
         public static SettersContext<T> EmptyView<T>(this SettersContext<T> self, Func<PropertySettersContext<object>, IPropertySettersBuilder<object>> configure)
             where T : Microsoft.Maui.Controls.ItemsView
         {
@@ -43,7 +43,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T EmptyViewTemplate<T>(this T self,
             Microsoft.Maui.Controls.DataTemplate emptyViewTemplate)
             where T : Microsoft.Maui.Controls.ItemsView
@@ -51,7 +51,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.ItemsView.EmptyViewTemplateProperty, emptyViewTemplate);
             return self;
         }
-        
+
         public static T EmptyViewTemplate<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.DataTemplate>, IPropertyBuilder<Microsoft.Maui.Controls.DataTemplate>> configure)
             where T : Microsoft.Maui.Controls.ItemsView
         {
@@ -59,7 +59,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> EmptyViewTemplate<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.DataTemplate emptyViewTemplate)
             where T : Microsoft.Maui.Controls.ItemsView
@@ -67,7 +67,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ItemsView.EmptyViewTemplateProperty, Value = emptyViewTemplate });
             return self;
         }
-        
+
         public static SettersContext<T> EmptyViewTemplate<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.DataTemplate>, IPropertySettersBuilder<Microsoft.Maui.Controls.DataTemplate>> configure)
             where T : Microsoft.Maui.Controls.ItemsView
         {
@@ -75,14 +75,14 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T EmptyViewTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.ItemsView
         {
             self.SetValue(Microsoft.Maui.Controls.ItemsView.EmptyViewTemplateProperty, new DataTemplate(loadTemplate));
             return self;
         }
-        
+
         public static T ItemsSource<T>(this T self,
             System.Collections.IEnumerable itemsSource)
             where T : Microsoft.Maui.Controls.ItemsView
@@ -90,7 +90,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.ItemsView.ItemsSourceProperty, itemsSource);
             return self;
         }
-        
+
         public static T ItemsSource<T>(this T self, Func<PropertyContext<System.Collections.IEnumerable>, IPropertyBuilder<System.Collections.IEnumerable>> configure)
             where T : Microsoft.Maui.Controls.ItemsView
         {
@@ -98,7 +98,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> ItemsSource<T>(this SettersContext<T> self,
             System.Collections.IEnumerable itemsSource)
             where T : Microsoft.Maui.Controls.ItemsView
@@ -106,7 +106,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ItemsView.ItemsSourceProperty, Value = itemsSource });
             return self;
         }
-        
+
         public static SettersContext<T> ItemsSource<T>(this SettersContext<T> self, Func<PropertySettersContext<System.Collections.IEnumerable>, IPropertySettersBuilder<System.Collections.IEnumerable>> configure)
             where T : Microsoft.Maui.Controls.ItemsView
         {
@@ -114,7 +114,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T RemainingItemsThresholdReachedCommand<T>(this T self,
             System.Windows.Input.ICommand remainingItemsThresholdReachedCommand)
             where T : Microsoft.Maui.Controls.ItemsView
@@ -122,7 +122,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.ItemsView.RemainingItemsThresholdReachedCommandProperty, remainingItemsThresholdReachedCommand);
             return self;
         }
-        
+
         public static T RemainingItemsThresholdReachedCommand<T>(this T self, Func<PropertyContext<System.Windows.Input.ICommand>, IPropertyBuilder<System.Windows.Input.ICommand>> configure)
             where T : Microsoft.Maui.Controls.ItemsView
         {
@@ -130,7 +130,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> RemainingItemsThresholdReachedCommand<T>(this SettersContext<T> self,
             System.Windows.Input.ICommand remainingItemsThresholdReachedCommand)
             where T : Microsoft.Maui.Controls.ItemsView
@@ -138,7 +138,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ItemsView.RemainingItemsThresholdReachedCommandProperty, Value = remainingItemsThresholdReachedCommand });
             return self;
         }
-        
+
         public static SettersContext<T> RemainingItemsThresholdReachedCommand<T>(this SettersContext<T> self, Func<PropertySettersContext<System.Windows.Input.ICommand>, IPropertySettersBuilder<System.Windows.Input.ICommand>> configure)
             where T : Microsoft.Maui.Controls.ItemsView
         {
@@ -146,7 +146,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T RemainingItemsThresholdReachedCommandParameter<T>(this T self,
             object remainingItemsThresholdReachedCommandParameter)
             where T : Microsoft.Maui.Controls.ItemsView
@@ -154,7 +154,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.ItemsView.RemainingItemsThresholdReachedCommandParameterProperty, remainingItemsThresholdReachedCommandParameter);
             return self;
         }
-        
+
         public static T RemainingItemsThresholdReachedCommandParameter<T>(this T self, Func<PropertyContext<object>, IPropertyBuilder<object>> configure)
             where T : Microsoft.Maui.Controls.ItemsView
         {
@@ -162,7 +162,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> RemainingItemsThresholdReachedCommandParameter<T>(this SettersContext<T> self,
             object remainingItemsThresholdReachedCommandParameter)
             where T : Microsoft.Maui.Controls.ItemsView
@@ -170,7 +170,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ItemsView.RemainingItemsThresholdReachedCommandParameterProperty, Value = remainingItemsThresholdReachedCommandParameter });
             return self;
         }
-        
+
         public static SettersContext<T> RemainingItemsThresholdReachedCommandParameter<T>(this SettersContext<T> self, Func<PropertySettersContext<object>, IPropertySettersBuilder<object>> configure)
             where T : Microsoft.Maui.Controls.ItemsView
         {
@@ -178,7 +178,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T HorizontalScrollBarVisibility<T>(this T self,
             Microsoft.Maui.ScrollBarVisibility horizontalScrollBarVisibility)
             where T : Microsoft.Maui.Controls.ItemsView
@@ -186,7 +186,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.ItemsView.HorizontalScrollBarVisibilityProperty, horizontalScrollBarVisibility);
             return self;
         }
-        
+
         public static T HorizontalScrollBarVisibility<T>(this T self, Func<PropertyContext<Microsoft.Maui.ScrollBarVisibility>, IPropertyBuilder<Microsoft.Maui.ScrollBarVisibility>> configure)
             where T : Microsoft.Maui.Controls.ItemsView
         {
@@ -194,7 +194,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> HorizontalScrollBarVisibility<T>(this SettersContext<T> self,
             Microsoft.Maui.ScrollBarVisibility horizontalScrollBarVisibility)
             where T : Microsoft.Maui.Controls.ItemsView
@@ -202,7 +202,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ItemsView.HorizontalScrollBarVisibilityProperty, Value = horizontalScrollBarVisibility });
             return self;
         }
-        
+
         public static SettersContext<T> HorizontalScrollBarVisibility<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.ScrollBarVisibility>, IPropertySettersBuilder<Microsoft.Maui.ScrollBarVisibility>> configure)
             where T : Microsoft.Maui.Controls.ItemsView
         {
@@ -210,7 +210,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T VerticalScrollBarVisibility<T>(this T self,
             Microsoft.Maui.ScrollBarVisibility verticalScrollBarVisibility)
             where T : Microsoft.Maui.Controls.ItemsView
@@ -218,7 +218,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.ItemsView.VerticalScrollBarVisibilityProperty, verticalScrollBarVisibility);
             return self;
         }
-        
+
         public static T VerticalScrollBarVisibility<T>(this T self, Func<PropertyContext<Microsoft.Maui.ScrollBarVisibility>, IPropertyBuilder<Microsoft.Maui.ScrollBarVisibility>> configure)
             where T : Microsoft.Maui.Controls.ItemsView
         {
@@ -226,7 +226,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> VerticalScrollBarVisibility<T>(this SettersContext<T> self,
             Microsoft.Maui.ScrollBarVisibility verticalScrollBarVisibility)
             where T : Microsoft.Maui.Controls.ItemsView
@@ -234,7 +234,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ItemsView.VerticalScrollBarVisibilityProperty, Value = verticalScrollBarVisibility });
             return self;
         }
-        
+
         public static SettersContext<T> VerticalScrollBarVisibility<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.ScrollBarVisibility>, IPropertySettersBuilder<Microsoft.Maui.ScrollBarVisibility>> configure)
             where T : Microsoft.Maui.Controls.ItemsView
         {
@@ -242,7 +242,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T RemainingItemsThreshold<T>(this T self,
             int remainingItemsThreshold)
             where T : Microsoft.Maui.Controls.ItemsView
@@ -250,7 +250,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.ItemsView.RemainingItemsThresholdProperty, remainingItemsThreshold);
             return self;
         }
-        
+
         public static T RemainingItemsThreshold<T>(this T self, Func<PropertyContext<int>, IPropertyBuilder<int>> configure)
             where T : Microsoft.Maui.Controls.ItemsView
         {
@@ -258,7 +258,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> RemainingItemsThreshold<T>(this SettersContext<T> self,
             int remainingItemsThreshold)
             where T : Microsoft.Maui.Controls.ItemsView
@@ -266,7 +266,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ItemsView.RemainingItemsThresholdProperty, Value = remainingItemsThreshold });
             return self;
         }
-        
+
         public static SettersContext<T> RemainingItemsThreshold<T>(this SettersContext<T> self, Func<PropertySettersContext<int>, IPropertySettersBuilder<int>> configure)
             where T : Microsoft.Maui.Controls.ItemsView
         {
@@ -274,7 +274,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T ItemTemplate<T>(this T self,
             Microsoft.Maui.Controls.DataTemplate itemTemplate)
             where T : Microsoft.Maui.Controls.ItemsView
@@ -282,7 +282,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.ItemsView.ItemTemplateProperty, itemTemplate);
             return self;
         }
-        
+
         public static T ItemTemplate<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.DataTemplate>, IPropertyBuilder<Microsoft.Maui.Controls.DataTemplate>> configure)
             where T : Microsoft.Maui.Controls.ItemsView
         {
@@ -290,7 +290,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> ItemTemplate<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.DataTemplate itemTemplate)
             where T : Microsoft.Maui.Controls.ItemsView
@@ -298,7 +298,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ItemsView.ItemTemplateProperty, Value = itemTemplate });
             return self;
         }
-        
+
         public static SettersContext<T> ItemTemplate<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.DataTemplate>, IPropertySettersBuilder<Microsoft.Maui.Controls.DataTemplate>> configure)
             where T : Microsoft.Maui.Controls.ItemsView
         {
@@ -306,14 +306,14 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T ItemTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.ItemsView
         {
             self.SetValue(Microsoft.Maui.Controls.ItemsView.ItemTemplateProperty, new DataTemplate(loadTemplate));
             return self;
         }
-        
+
         public static T ItemsUpdatingScrollMode<T>(this T self,
             Microsoft.Maui.Controls.ItemsUpdatingScrollMode itemsUpdatingScrollMode)
             where T : Microsoft.Maui.Controls.ItemsView
@@ -321,7 +321,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.ItemsView.ItemsUpdatingScrollModeProperty, itemsUpdatingScrollMode);
             return self;
         }
-        
+
         public static T ItemsUpdatingScrollMode<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.ItemsUpdatingScrollMode>, IPropertyBuilder<Microsoft.Maui.Controls.ItemsUpdatingScrollMode>> configure)
             where T : Microsoft.Maui.Controls.ItemsView
         {
@@ -329,7 +329,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> ItemsUpdatingScrollMode<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.ItemsUpdatingScrollMode itemsUpdatingScrollMode)
             where T : Microsoft.Maui.Controls.ItemsView
@@ -337,7 +337,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ItemsView.ItemsUpdatingScrollModeProperty, Value = itemsUpdatingScrollMode });
             return self;
         }
-        
+
         public static SettersContext<T> ItemsUpdatingScrollMode<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.ItemsUpdatingScrollMode>, IPropertySettersBuilder<Microsoft.Maui.Controls.ItemsUpdatingScrollMode>> configure)
             where T : Microsoft.Maui.Controls.ItemsView
         {
@@ -345,49 +345,49 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T OnScrollToRequested<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.ScrollToRequestEventArgs> handler)
             where T : Microsoft.Maui.Controls.ItemsView
         {
             self.ScrollToRequested += handler;
             return self;
         }
-        
+
         public static T OnScrollToRequested<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.ItemsView
         {
             self.ScrollToRequested += (o, arg) => action(self);
             return self;
         }
-        
+
         public static T OnScrolled<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.ItemsViewScrolledEventArgs> handler)
             where T : Microsoft.Maui.Controls.ItemsView
         {
             self.Scrolled += handler;
             return self;
         }
-        
+
         public static T OnScrolled<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.ItemsView
         {
             self.Scrolled += (o, arg) => action(self);
             return self;
         }
-        
+
         public static T OnRemainingItemsThresholdReached<T>(this T self, System.EventHandler handler)
             where T : Microsoft.Maui.Controls.ItemsView
         {
             self.RemainingItemsThresholdReached += handler;
             return self;
         }
-        
+
         public static T OnRemainingItemsThresholdReached<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.ItemsView
         {
             self.RemainingItemsThresholdReached += (o, arg) => action(self);
             return self;
         }
-        
+
     }
 }
 

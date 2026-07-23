@@ -18,7 +18,7 @@ namespace Sharp.UI
             self.Property = property;
             return self;
         }
-        
+
         public static Microsoft.Maui.Controls.Trigger Setters(this Microsoft.Maui.Controls.Trigger self,
             IList<Microsoft.Maui.Controls.Setter> setters)
         {
@@ -34,14 +34,14 @@ namespace Sharp.UI
                 self.Setters.Add(item);
             return self;
         }
-        
+
         public static Microsoft.Maui.Controls.Trigger Value(this Microsoft.Maui.Controls.Trigger self,
             object value)
         {
             self.Value = value;
             return self;
         }
-        
+
     }
 }
 

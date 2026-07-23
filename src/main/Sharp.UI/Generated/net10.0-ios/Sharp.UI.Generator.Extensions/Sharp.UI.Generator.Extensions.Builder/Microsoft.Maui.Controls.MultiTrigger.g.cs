@@ -27,7 +27,7 @@ namespace Sharp.UI
                 self.Conditions.Add(item);
             return self;
         }
-        
+
         public static Microsoft.Maui.Controls.MultiTrigger Setters(this Microsoft.Maui.Controls.MultiTrigger self,
             IList<Microsoft.Maui.Controls.Setter> setters)
         {
@@ -43,7 +43,7 @@ namespace Sharp.UI
                 self.Setters.Add(item);
             return self;
         }
-        
+
     }
 }
 

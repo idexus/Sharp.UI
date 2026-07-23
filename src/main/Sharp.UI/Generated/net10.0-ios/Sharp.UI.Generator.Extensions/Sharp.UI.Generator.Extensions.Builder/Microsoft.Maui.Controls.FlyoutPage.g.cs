@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.Detail = detail;
             return self;
         }
-        
+
         public static T IsGestureEnabled<T>(this T self,
             bool isGestureEnabled)
             where T : Microsoft.Maui.Controls.FlyoutPage
@@ -27,7 +27,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.FlyoutPage.IsGestureEnabledProperty, isGestureEnabled);
             return self;
         }
-        
+
         public static T IsGestureEnabled<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.FlyoutPage
         {
@@ -35,7 +35,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> IsGestureEnabled<T>(this SettersContext<T> self,
             bool isGestureEnabled)
             where T : Microsoft.Maui.Controls.FlyoutPage
@@ -43,7 +43,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.FlyoutPage.IsGestureEnabledProperty, Value = isGestureEnabled });
             return self;
         }
-        
+
         public static SettersContext<T> IsGestureEnabled<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.FlyoutPage
         {
@@ -51,7 +51,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T IsPresented<T>(this T self,
             bool isPresented)
             where T : Microsoft.Maui.Controls.FlyoutPage
@@ -59,7 +59,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.FlyoutPage.IsPresentedProperty, isPresented);
             return self;
         }
-        
+
         public static T IsPresented<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.FlyoutPage
         {
@@ -67,7 +67,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> IsPresented<T>(this SettersContext<T> self,
             bool isPresented)
             where T : Microsoft.Maui.Controls.FlyoutPage
@@ -75,7 +75,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.FlyoutPage.IsPresentedProperty, Value = isPresented });
             return self;
         }
-        
+
         public static SettersContext<T> IsPresented<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.FlyoutPage
         {
@@ -83,7 +83,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T Flyout<T>(this T self,
             Microsoft.Maui.Controls.Page flyout)
             where T : Microsoft.Maui.Controls.FlyoutPage
@@ -91,7 +91,7 @@ namespace Sharp.UI
             self.Flyout = flyout;
             return self;
         }
-        
+
         public static T FlyoutLayoutBehavior<T>(this T self,
             Microsoft.Maui.Controls.FlyoutLayoutBehavior flyoutLayoutBehavior)
             where T : Microsoft.Maui.Controls.FlyoutPage
@@ -99,7 +99,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.FlyoutPage.FlyoutLayoutBehaviorProperty, flyoutLayoutBehavior);
             return self;
         }
-        
+
         public static T FlyoutLayoutBehavior<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.FlyoutLayoutBehavior>, IPropertyBuilder<Microsoft.Maui.Controls.FlyoutLayoutBehavior>> configure)
             where T : Microsoft.Maui.Controls.FlyoutPage
         {
@@ -107,7 +107,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> FlyoutLayoutBehavior<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.FlyoutLayoutBehavior flyoutLayoutBehavior)
             where T : Microsoft.Maui.Controls.FlyoutPage
@@ -115,7 +115,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.FlyoutPage.FlyoutLayoutBehaviorProperty, Value = flyoutLayoutBehavior });
             return self;
         }
-        
+
         public static SettersContext<T> FlyoutLayoutBehavior<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.FlyoutLayoutBehavior>, IPropertySettersBuilder<Microsoft.Maui.Controls.FlyoutLayoutBehavior>> configure)
             where T : Microsoft.Maui.Controls.FlyoutPage
         {
@@ -123,35 +123,35 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T OnIsPresentedChanged<T>(this T self, System.EventHandler handler)
             where T : Microsoft.Maui.Controls.FlyoutPage
         {
             self.IsPresentedChanged += handler;
             return self;
         }
-        
+
         public static T OnIsPresentedChanged<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.FlyoutPage
         {
             self.IsPresentedChanged += (o, arg) => action(self);
             return self;
         }
-        
+
         public static T OnBackButtonPressed<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.BackButtonPressedEventArgs> handler)
             where T : Microsoft.Maui.Controls.FlyoutPage
         {
             self.BackButtonPressed += handler;
             return self;
         }
-        
+
         public static T OnBackButtonPressed<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.FlyoutPage
         {
             self.BackButtonPressed += (o, arg) => action(self);
             return self;
         }
-        
+
     }
 }
 

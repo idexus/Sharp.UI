@@ -18,35 +18,35 @@ namespace Sharp.UI
             self.Converter = converter;
             return self;
         }
-        
+
         public static Microsoft.Maui.Controls.Binding ConverterParameter(this Microsoft.Maui.Controls.Binding self,
             object converterParameter)
         {
             self.ConverterParameter = converterParameter;
             return self;
         }
-        
+
         public static Microsoft.Maui.Controls.Binding Path(this Microsoft.Maui.Controls.Binding self,
             string path)
         {
             self.Path = path;
             return self;
         }
-        
+
         public static Microsoft.Maui.Controls.Binding Source(this Microsoft.Maui.Controls.Binding self,
             object source)
         {
             self.Source = source;
             return self;
         }
-        
+
         public static Microsoft.Maui.Controls.Binding UpdateSourceEventName(this Microsoft.Maui.Controls.Binding self,
             string updateSourceEventName)
         {
             self.UpdateSourceEventName = updateSourceEventName;
             return self;
         }
-        
+
     }
 }
 

@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.GroupableItemsView.IsGroupedProperty, isGrouped);
             return self;
         }
-        
+
         public static T IsGrouped<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.GroupableItemsView
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> IsGrouped<T>(this SettersContext<T> self,
             bool isGrouped)
             where T : Microsoft.Maui.Controls.GroupableItemsView
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.GroupableItemsView.IsGroupedProperty, Value = isGrouped });
             return self;
         }
-        
+
         public static SettersContext<T> IsGrouped<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.GroupableItemsView
         {
@@ -43,7 +43,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T GroupHeaderTemplate<T>(this T self,
             Microsoft.Maui.Controls.DataTemplate groupHeaderTemplate)
             where T : Microsoft.Maui.Controls.GroupableItemsView
@@ -51,7 +51,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.GroupableItemsView.GroupHeaderTemplateProperty, groupHeaderTemplate);
             return self;
         }
-        
+
         public static T GroupHeaderTemplate<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.DataTemplate>, IPropertyBuilder<Microsoft.Maui.Controls.DataTemplate>> configure)
             where T : Microsoft.Maui.Controls.GroupableItemsView
         {
@@ -59,7 +59,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> GroupHeaderTemplate<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.DataTemplate groupHeaderTemplate)
             where T : Microsoft.Maui.Controls.GroupableItemsView
@@ -67,7 +67,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.GroupableItemsView.GroupHeaderTemplateProperty, Value = groupHeaderTemplate });
             return self;
         }
-        
+
         public static SettersContext<T> GroupHeaderTemplate<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.DataTemplate>, IPropertySettersBuilder<Microsoft.Maui.Controls.DataTemplate>> configure)
             where T : Microsoft.Maui.Controls.GroupableItemsView
         {
@@ -75,14 +75,14 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T GroupHeaderTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.GroupableItemsView
         {
             self.SetValue(Microsoft.Maui.Controls.GroupableItemsView.GroupHeaderTemplateProperty, new DataTemplate(loadTemplate));
             return self;
         }
-        
+
         public static T GroupFooterTemplate<T>(this T self,
             Microsoft.Maui.Controls.DataTemplate groupFooterTemplate)
             where T : Microsoft.Maui.Controls.GroupableItemsView
@@ -90,7 +90,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.GroupableItemsView.GroupFooterTemplateProperty, groupFooterTemplate);
             return self;
         }
-        
+
         public static T GroupFooterTemplate<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.DataTemplate>, IPropertyBuilder<Microsoft.Maui.Controls.DataTemplate>> configure)
             where T : Microsoft.Maui.Controls.GroupableItemsView
         {
@@ -98,7 +98,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> GroupFooterTemplate<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.DataTemplate groupFooterTemplate)
             where T : Microsoft.Maui.Controls.GroupableItemsView
@@ -106,7 +106,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.GroupableItemsView.GroupFooterTemplateProperty, Value = groupFooterTemplate });
             return self;
         }
-        
+
         public static SettersContext<T> GroupFooterTemplate<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.DataTemplate>, IPropertySettersBuilder<Microsoft.Maui.Controls.DataTemplate>> configure)
             where T : Microsoft.Maui.Controls.GroupableItemsView
         {
@@ -114,14 +114,14 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T GroupFooterTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.GroupableItemsView
         {
             self.SetValue(Microsoft.Maui.Controls.GroupableItemsView.GroupFooterTemplateProperty, new DataTemplate(loadTemplate));
             return self;
         }
-        
+
     }
 }
 

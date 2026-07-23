@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Shadow.RadiusProperty, radius);
             return self;
         }
-        
+
         public static T Radius<T>(this T self, Func<PropertyContext<float>, IPropertyBuilder<float>> configure)
             where T : Microsoft.Maui.Controls.Shadow
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Radius<T>(this SettersContext<T> self,
             float radius)
             where T : Microsoft.Maui.Controls.Shadow
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shadow.RadiusProperty, Value = radius });
             return self;
         }
-        
+
         public static SettersContext<T> Radius<T>(this SettersContext<T> self, Func<PropertySettersContext<float>, IPropertySettersBuilder<float>> configure)
             where T : Microsoft.Maui.Controls.Shadow
         {
@@ -43,7 +43,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T Opacity<T>(this T self,
             float opacity)
             where T : Microsoft.Maui.Controls.Shadow
@@ -51,7 +51,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Shadow.OpacityProperty, opacity);
             return self;
         }
-        
+
         public static T Opacity<T>(this T self, Func<PropertyContext<float>, IPropertyBuilder<float>> configure)
             where T : Microsoft.Maui.Controls.Shadow
         {
@@ -59,7 +59,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Opacity<T>(this SettersContext<T> self,
             float opacity)
             where T : Microsoft.Maui.Controls.Shadow
@@ -67,7 +67,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shadow.OpacityProperty, Value = opacity });
             return self;
         }
-        
+
         public static SettersContext<T> Opacity<T>(this SettersContext<T> self, Func<PropertySettersContext<float>, IPropertySettersBuilder<float>> configure)
             where T : Microsoft.Maui.Controls.Shadow
         {
@@ -75,7 +75,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T Brush<T>(this T self,
             Microsoft.Maui.Controls.Brush brush)
             where T : Microsoft.Maui.Controls.Shadow
@@ -83,7 +83,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Shadow.BrushProperty, brush);
             return self;
         }
-        
+
         public static T Brush<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.Brush>, IPropertyBuilder<Microsoft.Maui.Controls.Brush>> configure)
             where T : Microsoft.Maui.Controls.Shadow
         {
@@ -91,7 +91,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Brush<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.Brush brush)
             where T : Microsoft.Maui.Controls.Shadow
@@ -99,7 +99,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shadow.BrushProperty, Value = brush });
             return self;
         }
-        
+
         public static SettersContext<T> Brush<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.Brush>, IPropertySettersBuilder<Microsoft.Maui.Controls.Brush>> configure)
             where T : Microsoft.Maui.Controls.Shadow
         {
@@ -107,7 +107,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T Offset<T>(this T self,
             Microsoft.Maui.Graphics.Point offset)
             where T : Microsoft.Maui.Controls.Shadow
@@ -115,7 +115,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Shadow.OffsetProperty, offset);
             return self;
         }
-        
+
         public static T Offset<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Point>, IPropertyBuilder<Microsoft.Maui.Graphics.Point>> configure)
             where T : Microsoft.Maui.Controls.Shadow
         {
@@ -123,7 +123,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Offset<T>(this SettersContext<T> self,
             Microsoft.Maui.Graphics.Point offset)
             where T : Microsoft.Maui.Controls.Shadow
@@ -131,7 +131,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shadow.OffsetProperty, Value = offset });
             return self;
         }
-        
+
         public static SettersContext<T> Offset<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Point>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Point>> configure)
             where T : Microsoft.Maui.Controls.Shadow
         {
@@ -139,7 +139,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
     }
 }
 

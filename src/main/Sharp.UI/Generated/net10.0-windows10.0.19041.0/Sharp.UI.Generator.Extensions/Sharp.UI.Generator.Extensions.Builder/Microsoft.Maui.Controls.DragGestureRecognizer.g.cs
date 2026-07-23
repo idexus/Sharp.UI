@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.DragGestureRecognizer.CanDragProperty, canDrag);
             return self;
         }
-        
+
         public static T CanDrag<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> CanDrag<T>(this SettersContext<T> self,
             bool canDrag)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.DragGestureRecognizer.CanDragProperty, Value = canDrag });
             return self;
         }
-        
+
         public static SettersContext<T> CanDrag<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
         {
@@ -43,7 +43,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T DropCompletedCommand<T>(this T self,
             System.Windows.Input.ICommand dropCompletedCommand)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
@@ -51,7 +51,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.DragGestureRecognizer.DropCompletedCommandProperty, dropCompletedCommand);
             return self;
         }
-        
+
         public static T DropCompletedCommand<T>(this T self, Func<PropertyContext<System.Windows.Input.ICommand>, IPropertyBuilder<System.Windows.Input.ICommand>> configure)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
         {
@@ -59,7 +59,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> DropCompletedCommand<T>(this SettersContext<T> self,
             System.Windows.Input.ICommand dropCompletedCommand)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
@@ -67,7 +67,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.DragGestureRecognizer.DropCompletedCommandProperty, Value = dropCompletedCommand });
             return self;
         }
-        
+
         public static SettersContext<T> DropCompletedCommand<T>(this SettersContext<T> self, Func<PropertySettersContext<System.Windows.Input.ICommand>, IPropertySettersBuilder<System.Windows.Input.ICommand>> configure)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
         {
@@ -75,7 +75,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T DropCompletedCommandParameter<T>(this T self,
             object dropCompletedCommandParameter)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
@@ -83,7 +83,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.DragGestureRecognizer.DropCompletedCommandParameterProperty, dropCompletedCommandParameter);
             return self;
         }
-        
+
         public static T DropCompletedCommandParameter<T>(this T self, Func<PropertyContext<object>, IPropertyBuilder<object>> configure)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
         {
@@ -91,7 +91,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> DropCompletedCommandParameter<T>(this SettersContext<T> self,
             object dropCompletedCommandParameter)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
@@ -99,7 +99,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.DragGestureRecognizer.DropCompletedCommandParameterProperty, Value = dropCompletedCommandParameter });
             return self;
         }
-        
+
         public static SettersContext<T> DropCompletedCommandParameter<T>(this SettersContext<T> self, Func<PropertySettersContext<object>, IPropertySettersBuilder<object>> configure)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
         {
@@ -107,7 +107,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T DragStartingCommand<T>(this T self,
             System.Windows.Input.ICommand dragStartingCommand)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
@@ -115,7 +115,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.DragGestureRecognizer.DragStartingCommandProperty, dragStartingCommand);
             return self;
         }
-        
+
         public static T DragStartingCommand<T>(this T self, Func<PropertyContext<System.Windows.Input.ICommand>, IPropertyBuilder<System.Windows.Input.ICommand>> configure)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
         {
@@ -123,7 +123,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> DragStartingCommand<T>(this SettersContext<T> self,
             System.Windows.Input.ICommand dragStartingCommand)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
@@ -131,7 +131,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.DragGestureRecognizer.DragStartingCommandProperty, Value = dragStartingCommand });
             return self;
         }
-        
+
         public static SettersContext<T> DragStartingCommand<T>(this SettersContext<T> self, Func<PropertySettersContext<System.Windows.Input.ICommand>, IPropertySettersBuilder<System.Windows.Input.ICommand>> configure)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
         {
@@ -139,7 +139,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T DragStartingCommandParameter<T>(this T self,
             object dragStartingCommandParameter)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
@@ -147,7 +147,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.DragGestureRecognizer.DragStartingCommandParameterProperty, dragStartingCommandParameter);
             return self;
         }
-        
+
         public static T DragStartingCommandParameter<T>(this T self, Func<PropertyContext<object>, IPropertyBuilder<object>> configure)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
         {
@@ -155,7 +155,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> DragStartingCommandParameter<T>(this SettersContext<T> self,
             object dragStartingCommandParameter)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
@@ -163,7 +163,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.DragGestureRecognizer.DragStartingCommandParameterProperty, Value = dragStartingCommandParameter });
             return self;
         }
-        
+
         public static SettersContext<T> DragStartingCommandParameter<T>(this SettersContext<T> self, Func<PropertySettersContext<object>, IPropertySettersBuilder<object>> configure)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
         {
@@ -171,35 +171,35 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T OnDropCompleted<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.DropCompletedEventArgs>? handler)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
         {
             self.DropCompleted += handler;
             return self;
         }
-        
+
         public static T OnDropCompleted<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
         {
             self.DropCompleted += (o, arg) => action(self);
             return self;
         }
-        
+
         public static T OnDragStarting<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.DragStartingEventArgs>? handler)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
         {
             self.DragStarting += handler;
             return self;
         }
-        
+
         public static T OnDragStarting<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.DragGestureRecognizer
         {
             self.DragStarting += (o, arg) => action(self);
             return self;
         }
-        
+
     }
 }
 

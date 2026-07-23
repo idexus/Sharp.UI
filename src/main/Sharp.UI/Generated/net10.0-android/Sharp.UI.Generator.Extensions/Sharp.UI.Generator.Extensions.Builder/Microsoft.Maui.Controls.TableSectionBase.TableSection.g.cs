@@ -18,14 +18,14 @@ namespace Sharp.UI
             self.CollectionChanged += handler;
             return self;
         }
-        
+
         public static T OnCollectionChanged<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.TableSectionBase<Microsoft.Maui.Controls.TableSection>
         {
             self.CollectionChanged += (o, arg) => action(self);
             return self;
         }
-        
+
     }
 }
 

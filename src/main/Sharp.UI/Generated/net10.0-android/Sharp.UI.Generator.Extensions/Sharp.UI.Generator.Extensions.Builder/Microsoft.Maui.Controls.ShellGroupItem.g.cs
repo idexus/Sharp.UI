@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.ShellGroupItem.FlyoutDisplayOptionsProperty, flyoutDisplayOptions);
             return self;
         }
-        
+
         public static T FlyoutDisplayOptions<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.FlyoutDisplayOptions>, IPropertyBuilder<Microsoft.Maui.Controls.FlyoutDisplayOptions>> configure)
             where T : Microsoft.Maui.Controls.ShellGroupItem
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> FlyoutDisplayOptions<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.FlyoutDisplayOptions flyoutDisplayOptions)
             where T : Microsoft.Maui.Controls.ShellGroupItem
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ShellGroupItem.FlyoutDisplayOptionsProperty, Value = flyoutDisplayOptions });
             return self;
         }
-        
+
         public static SettersContext<T> FlyoutDisplayOptions<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.FlyoutDisplayOptions>, IPropertySettersBuilder<Microsoft.Maui.Controls.FlyoutDisplayOptions>> configure)
             where T : Microsoft.Maui.Controls.ShellGroupItem
         {
@@ -43,7 +43,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
     }
 }
 

@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.Mode = mode;
             return self;
         }
-        
+
         public static T StringFormat<T>(this T self,
             string stringFormat)
             where T : Microsoft.Maui.Controls.BindingBase
@@ -27,7 +27,7 @@ namespace Sharp.UI
             self.StringFormat = stringFormat;
             return self;
         }
-        
+
         public static T TargetNullValue<T>(this T self,
             object targetNullValue)
             where T : Microsoft.Maui.Controls.BindingBase
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.TargetNullValue = targetNullValue;
             return self;
         }
-        
+
         public static T FallbackValue<T>(this T self,
             object fallbackValue)
             where T : Microsoft.Maui.Controls.BindingBase
@@ -43,7 +43,7 @@ namespace Sharp.UI
             self.FallbackValue = fallbackValue;
             return self;
         }
-        
+
     }
 }
 

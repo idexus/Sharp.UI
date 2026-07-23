@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Page.BackgroundImageSourceProperty, backgroundImageSource);
             return self;
         }
-        
+
         public static T BackgroundImageSource<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.ImageSource>, IPropertyBuilder<Microsoft.Maui.Controls.ImageSource>> configure)
             where T : Microsoft.Maui.Controls.Page
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> BackgroundImageSource<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.ImageSource backgroundImageSource)
             where T : Microsoft.Maui.Controls.Page
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Page.BackgroundImageSourceProperty, Value = backgroundImageSource });
             return self;
         }
-        
+
         public static SettersContext<T> BackgroundImageSource<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.ImageSource>, IPropertySettersBuilder<Microsoft.Maui.Controls.ImageSource>> configure)
             where T : Microsoft.Maui.Controls.Page
         {
@@ -43,7 +43,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T IconImageSource<T>(this T self,
             Microsoft.Maui.Controls.ImageSource iconImageSource)
             where T : Microsoft.Maui.Controls.Page
@@ -51,7 +51,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Page.IconImageSourceProperty, iconImageSource);
             return self;
         }
-        
+
         public static T IconImageSource<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.ImageSource>, IPropertyBuilder<Microsoft.Maui.Controls.ImageSource>> configure)
             where T : Microsoft.Maui.Controls.Page
         {
@@ -59,7 +59,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> IconImageSource<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.ImageSource iconImageSource)
             where T : Microsoft.Maui.Controls.Page
@@ -67,7 +67,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Page.IconImageSourceProperty, Value = iconImageSource });
             return self;
         }
-        
+
         public static SettersContext<T> IconImageSource<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.ImageSource>, IPropertySettersBuilder<Microsoft.Maui.Controls.ImageSource>> configure)
             where T : Microsoft.Maui.Controls.Page
         {
@@ -75,7 +75,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T Padding<T>(this T self,
             Microsoft.Maui.Thickness padding)
             where T : Microsoft.Maui.Controls.Page
@@ -83,7 +83,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Page.PaddingProperty, padding);
             return self;
         }
-               
+
         public static T Padding<T>(this T self, double horizontalSize, double verticalSize)
             where T : Microsoft.Maui.Controls.Page
         {
@@ -98,15 +98,15 @@ namespace Sharp.UI
             return self;
         }
 
-        #nullable disable
+#nullable disable
         public static T Padding<T>(this T self, object _ = null, double left = 0, double top = 0, double right = 0, double bottom = 0)
             where T : Microsoft.Maui.Controls.Page
         {
             self.SetValue(Microsoft.Maui.Controls.Page.PaddingProperty, new Thickness(left, top, right, bottom));
             return self;
         }
-        #nullable enable
-        
+#nullable enable
+
         public static T Padding<T>(this T self, Func<PropertyContext<Microsoft.Maui.Thickness>, IPropertyBuilder<Microsoft.Maui.Thickness>> configure)
             where T : Microsoft.Maui.Controls.Page
         {
@@ -114,7 +114,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Padding<T>(this SettersContext<T> self,
             Microsoft.Maui.Thickness padding)
             where T : Microsoft.Maui.Controls.Page
@@ -122,7 +122,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Page.PaddingProperty, Value = padding });
             return self;
         }
-        
+
         public static SettersContext<T> Padding<T>(this SettersContext<T> self, double horizontalSize, double verticalSize)
             where T : Microsoft.Maui.Controls.Page
         {
@@ -137,15 +137,15 @@ namespace Sharp.UI
             return self;
         }
 
-        #nullable disable
+#nullable disable
         public static SettersContext<T> Padding<T>(this SettersContext<T> self, object _ = default, double left = 0, double top = 0, double right = 0, double bottom = 0)
             where T : Microsoft.Maui.Controls.Page
         {
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Page.PaddingProperty, Value = new Thickness(left, top, right, bottom) });
             return self;
         }
-        #nullable enable
-        
+#nullable enable
+
         public static SettersContext<T> Padding<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Thickness>, IPropertySettersBuilder<Microsoft.Maui.Thickness>> configure)
             where T : Microsoft.Maui.Controls.Page
         {
@@ -153,7 +153,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T Title<T>(this T self,
             string title)
             where T : Microsoft.Maui.Controls.Page
@@ -161,7 +161,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Page.TitleProperty, title);
             return self;
         }
-        
+
         public static T Title<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.Page
         {
@@ -169,7 +169,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Title<T>(this SettersContext<T> self,
             string title)
             where T : Microsoft.Maui.Controls.Page
@@ -177,7 +177,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Page.TitleProperty, Value = title });
             return self;
         }
-        
+
         public static SettersContext<T> Title<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.Page
         {
@@ -185,7 +185,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T ToolbarItems<T>(this T self,
             IList<Microsoft.Maui.Controls.ToolbarItem> toolbarItems)
             where T : Microsoft.Maui.Controls.Page
@@ -203,7 +203,7 @@ namespace Sharp.UI
                 self.ToolbarItems.Add(item);
             return self;
         }
-        
+
         public static T MenuBarItems<T>(this T self,
             IList<Microsoft.Maui.Controls.MenuBarItem> menuBarItems)
             where T : Microsoft.Maui.Controls.Page
@@ -221,7 +221,7 @@ namespace Sharp.UI
                 self.MenuBarItems.Add(item);
             return self;
         }
-        
+
         public static T IgnoresContainerArea<T>(this T self,
             bool ignoresContainerArea)
             where T : Microsoft.Maui.Controls.Page
@@ -229,7 +229,7 @@ namespace Sharp.UI
             self.IgnoresContainerArea = ignoresContainerArea;
             return self;
         }
-        
+
         public static T InternalChildren<T>(this T self,
             IList<Microsoft.Maui.Controls.Element> internalChildren)
             where T : Microsoft.Maui.Controls.Page
@@ -247,77 +247,77 @@ namespace Sharp.UI
                 self.InternalChildren.Add(item);
             return self;
         }
-        
+
         public static T OnAppearing<T>(this T self, System.EventHandler handler)
             where T : Microsoft.Maui.Controls.Page
         {
             self.Appearing += handler;
             return self;
         }
-        
+
         public static T OnAppearing<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Page
         {
             self.Appearing += (o, arg) => action(self);
             return self;
         }
-        
+
         public static T OnDisappearing<T>(this T self, System.EventHandler handler)
             where T : Microsoft.Maui.Controls.Page
         {
             self.Disappearing += handler;
             return self;
         }
-        
+
         public static T OnDisappearing<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Page
         {
             self.Disappearing += (o, arg) => action(self);
             return self;
         }
-        
+
         public static T OnNavigatedTo<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.NavigatedToEventArgs> handler)
             where T : Microsoft.Maui.Controls.Page
         {
             self.NavigatedTo += handler;
             return self;
         }
-        
+
         public static T OnNavigatedTo<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Page
         {
             self.NavigatedTo += (o, arg) => action(self);
             return self;
         }
-        
+
         public static T OnNavigatingFrom<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.NavigatingFromEventArgs> handler)
             where T : Microsoft.Maui.Controls.Page
         {
             self.NavigatingFrom += handler;
             return self;
         }
-        
+
         public static T OnNavigatingFrom<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Page
         {
             self.NavigatingFrom += (o, arg) => action(self);
             return self;
         }
-        
+
         public static T OnNavigatedFrom<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.NavigatedFromEventArgs> handler)
             where T : Microsoft.Maui.Controls.Page
         {
             self.NavigatedFrom += handler;
             return self;
         }
-        
+
         public static T OnNavigatedFrom<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Page
         {
             self.NavigatedFrom += (o, arg) => action(self);
             return self;
         }
-        
+
     }
 }
 

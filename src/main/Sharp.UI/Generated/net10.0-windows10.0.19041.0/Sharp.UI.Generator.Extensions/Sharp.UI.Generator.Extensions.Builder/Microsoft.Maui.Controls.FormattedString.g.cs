@@ -29,7 +29,7 @@ namespace Sharp.UI
                 self.Spans.Add(item);
             return self;
         }
-        
+
     }
 }
 

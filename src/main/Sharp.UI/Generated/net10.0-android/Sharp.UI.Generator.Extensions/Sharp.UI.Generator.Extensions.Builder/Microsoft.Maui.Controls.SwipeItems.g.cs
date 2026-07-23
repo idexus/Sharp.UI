@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.SwipeItems.ModeProperty, mode);
             return self;
         }
-        
+
         public static T Mode<T>(this T self, Func<PropertyContext<Microsoft.Maui.SwipeMode>, IPropertyBuilder<Microsoft.Maui.SwipeMode>> configure)
             where T : Microsoft.Maui.Controls.SwipeItems
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Mode<T>(this SettersContext<T> self,
             Microsoft.Maui.SwipeMode mode)
             where T : Microsoft.Maui.Controls.SwipeItems
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SwipeItems.ModeProperty, Value = mode });
             return self;
         }
-        
+
         public static SettersContext<T> Mode<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.SwipeMode>, IPropertySettersBuilder<Microsoft.Maui.SwipeMode>> configure)
             where T : Microsoft.Maui.Controls.SwipeItems
         {
@@ -43,7 +43,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T SwipeBehaviorOnInvoked<T>(this T self,
             Microsoft.Maui.SwipeBehaviorOnInvoked swipeBehaviorOnInvoked)
             where T : Microsoft.Maui.Controls.SwipeItems
@@ -51,7 +51,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.SwipeItems.SwipeBehaviorOnInvokedProperty, swipeBehaviorOnInvoked);
             return self;
         }
-        
+
         public static T SwipeBehaviorOnInvoked<T>(this T self, Func<PropertyContext<Microsoft.Maui.SwipeBehaviorOnInvoked>, IPropertyBuilder<Microsoft.Maui.SwipeBehaviorOnInvoked>> configure)
             where T : Microsoft.Maui.Controls.SwipeItems
         {
@@ -59,7 +59,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> SwipeBehaviorOnInvoked<T>(this SettersContext<T> self,
             Microsoft.Maui.SwipeBehaviorOnInvoked swipeBehaviorOnInvoked)
             where T : Microsoft.Maui.Controls.SwipeItems
@@ -67,7 +67,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SwipeItems.SwipeBehaviorOnInvokedProperty, Value = swipeBehaviorOnInvoked });
             return self;
         }
-        
+
         public static SettersContext<T> SwipeBehaviorOnInvoked<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.SwipeBehaviorOnInvoked>, IPropertySettersBuilder<Microsoft.Maui.SwipeBehaviorOnInvoked>> configure)
             where T : Microsoft.Maui.Controls.SwipeItems
         {
@@ -75,21 +75,21 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T OnCollectionChanged<T>(this T self, System.Collections.Specialized.NotifyCollectionChangedEventHandler handler)
             where T : Microsoft.Maui.Controls.SwipeItems
         {
             self.CollectionChanged += handler;
             return self;
         }
-        
+
         public static T OnCollectionChanged<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.SwipeItems
         {
             self.CollectionChanged += (o, arg) => action(self);
             return self;
         }
-        
+
     }
 }
 

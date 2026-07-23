@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.ContentView.ContentProperty, content);
             return self;
         }
-        
+
         public static T Content<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.View>, IPropertyBuilder<Microsoft.Maui.Controls.View>> configure)
             where T : Microsoft.Maui.Controls.ContentView
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Content<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.View content)
             where T : Microsoft.Maui.Controls.ContentView
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ContentView.ContentProperty, Value = content });
             return self;
         }
-        
+
         public static SettersContext<T> Content<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.View>, IPropertySettersBuilder<Microsoft.Maui.Controls.View>> configure)
             where T : Microsoft.Maui.Controls.ContentView
         {
@@ -43,7 +43,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T SafeAreaEdges<T>(this T self,
             Microsoft.Maui.SafeAreaEdges safeAreaEdges)
             where T : Microsoft.Maui.Controls.ContentView
@@ -51,7 +51,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.ContentView.SafeAreaEdgesProperty, safeAreaEdges);
             return self;
         }
-        
+
         public static T SafeAreaEdges<T>(this T self, Func<PropertyContext<Microsoft.Maui.SafeAreaEdges>, IPropertyBuilder<Microsoft.Maui.SafeAreaEdges>> configure)
             where T : Microsoft.Maui.Controls.ContentView
         {
@@ -59,7 +59,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> SafeAreaEdges<T>(this SettersContext<T> self,
             Microsoft.Maui.SafeAreaEdges safeAreaEdges)
             where T : Microsoft.Maui.Controls.ContentView
@@ -67,7 +67,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ContentView.SafeAreaEdgesProperty, Value = safeAreaEdges });
             return self;
         }
-        
+
         public static SettersContext<T> SafeAreaEdges<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.SafeAreaEdges>, IPropertySettersBuilder<Microsoft.Maui.SafeAreaEdges>> configure)
             where T : Microsoft.Maui.Controls.ContentView
         {
@@ -75,7 +75,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
     }
 }
 

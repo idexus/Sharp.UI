@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.StructuredItemsView.HeaderProperty, header);
             return self;
         }
-        
+
         public static T Header<T>(this T self, Func<PropertyContext<object>, IPropertyBuilder<object>> configure)
             where T : Microsoft.Maui.Controls.StructuredItemsView
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Header<T>(this SettersContext<T> self,
             object header)
             where T : Microsoft.Maui.Controls.StructuredItemsView
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.StructuredItemsView.HeaderProperty, Value = header });
             return self;
         }
-        
+
         public static SettersContext<T> Header<T>(this SettersContext<T> self, Func<PropertySettersContext<object>, IPropertySettersBuilder<object>> configure)
             where T : Microsoft.Maui.Controls.StructuredItemsView
         {
@@ -43,7 +43,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T HeaderTemplate<T>(this T self,
             Microsoft.Maui.Controls.DataTemplate headerTemplate)
             where T : Microsoft.Maui.Controls.StructuredItemsView
@@ -51,7 +51,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.StructuredItemsView.HeaderTemplateProperty, headerTemplate);
             return self;
         }
-        
+
         public static T HeaderTemplate<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.DataTemplate>, IPropertyBuilder<Microsoft.Maui.Controls.DataTemplate>> configure)
             where T : Microsoft.Maui.Controls.StructuredItemsView
         {
@@ -59,7 +59,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> HeaderTemplate<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.DataTemplate headerTemplate)
             where T : Microsoft.Maui.Controls.StructuredItemsView
@@ -67,7 +67,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.StructuredItemsView.HeaderTemplateProperty, Value = headerTemplate });
             return self;
         }
-        
+
         public static SettersContext<T> HeaderTemplate<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.DataTemplate>, IPropertySettersBuilder<Microsoft.Maui.Controls.DataTemplate>> configure)
             where T : Microsoft.Maui.Controls.StructuredItemsView
         {
@@ -75,14 +75,14 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T HeaderTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.StructuredItemsView
         {
             self.SetValue(Microsoft.Maui.Controls.StructuredItemsView.HeaderTemplateProperty, new DataTemplate(loadTemplate));
             return self;
         }
-        
+
         public static T Footer<T>(this T self,
             object footer)
             where T : Microsoft.Maui.Controls.StructuredItemsView
@@ -90,7 +90,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.StructuredItemsView.FooterProperty, footer);
             return self;
         }
-        
+
         public static T Footer<T>(this T self, Func<PropertyContext<object>, IPropertyBuilder<object>> configure)
             where T : Microsoft.Maui.Controls.StructuredItemsView
         {
@@ -98,7 +98,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Footer<T>(this SettersContext<T> self,
             object footer)
             where T : Microsoft.Maui.Controls.StructuredItemsView
@@ -106,7 +106,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.StructuredItemsView.FooterProperty, Value = footer });
             return self;
         }
-        
+
         public static SettersContext<T> Footer<T>(this SettersContext<T> self, Func<PropertySettersContext<object>, IPropertySettersBuilder<object>> configure)
             where T : Microsoft.Maui.Controls.StructuredItemsView
         {
@@ -114,7 +114,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T FooterTemplate<T>(this T self,
             Microsoft.Maui.Controls.DataTemplate footerTemplate)
             where T : Microsoft.Maui.Controls.StructuredItemsView
@@ -122,7 +122,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.StructuredItemsView.FooterTemplateProperty, footerTemplate);
             return self;
         }
-        
+
         public static T FooterTemplate<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.DataTemplate>, IPropertyBuilder<Microsoft.Maui.Controls.DataTemplate>> configure)
             where T : Microsoft.Maui.Controls.StructuredItemsView
         {
@@ -130,7 +130,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> FooterTemplate<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.DataTemplate footerTemplate)
             where T : Microsoft.Maui.Controls.StructuredItemsView
@@ -138,7 +138,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.StructuredItemsView.FooterTemplateProperty, Value = footerTemplate });
             return self;
         }
-        
+
         public static SettersContext<T> FooterTemplate<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.DataTemplate>, IPropertySettersBuilder<Microsoft.Maui.Controls.DataTemplate>> configure)
             where T : Microsoft.Maui.Controls.StructuredItemsView
         {
@@ -146,14 +146,14 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T FooterTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.StructuredItemsView
         {
             self.SetValue(Microsoft.Maui.Controls.StructuredItemsView.FooterTemplateProperty, new DataTemplate(loadTemplate));
             return self;
         }
-        
+
         public static T ItemsLayout<T>(this T self,
             Microsoft.Maui.Controls.IItemsLayout itemsLayout)
             where T : Microsoft.Maui.Controls.StructuredItemsView
@@ -161,7 +161,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.StructuredItemsView.ItemsLayoutProperty, itemsLayout);
             return self;
         }
-        
+
         public static T ItemsLayout<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.IItemsLayout>, IPropertyBuilder<Microsoft.Maui.Controls.IItemsLayout>> configure)
             where T : Microsoft.Maui.Controls.StructuredItemsView
         {
@@ -169,7 +169,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> ItemsLayout<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.IItemsLayout itemsLayout)
             where T : Microsoft.Maui.Controls.StructuredItemsView
@@ -177,7 +177,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.StructuredItemsView.ItemsLayoutProperty, Value = itemsLayout });
             return self;
         }
-        
+
         public static SettersContext<T> ItemsLayout<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.IItemsLayout>, IPropertySettersBuilder<Microsoft.Maui.Controls.IItemsLayout>> configure)
             where T : Microsoft.Maui.Controls.StructuredItemsView
         {
@@ -185,7 +185,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T ItemSizingStrategy<T>(this T self,
             Microsoft.Maui.Controls.ItemSizingStrategy itemSizingStrategy)
             where T : Microsoft.Maui.Controls.StructuredItemsView
@@ -193,7 +193,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.StructuredItemsView.ItemSizingStrategyProperty, itemSizingStrategy);
             return self;
         }
-        
+
         public static T ItemSizingStrategy<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.ItemSizingStrategy>, IPropertyBuilder<Microsoft.Maui.Controls.ItemSizingStrategy>> configure)
             where T : Microsoft.Maui.Controls.StructuredItemsView
         {
@@ -201,7 +201,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> ItemSizingStrategy<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.ItemSizingStrategy itemSizingStrategy)
             where T : Microsoft.Maui.Controls.StructuredItemsView
@@ -209,7 +209,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.StructuredItemsView.ItemSizingStrategyProperty, Value = itemSizingStrategy });
             return self;
         }
-        
+
         public static SettersContext<T> ItemSizingStrategy<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.ItemSizingStrategy>, IPropertySettersBuilder<Microsoft.Maui.Controls.ItemSizingStrategy>> configure)
             where T : Microsoft.Maui.Controls.StructuredItemsView
         {
@@ -217,7 +217,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
     }
 }
 

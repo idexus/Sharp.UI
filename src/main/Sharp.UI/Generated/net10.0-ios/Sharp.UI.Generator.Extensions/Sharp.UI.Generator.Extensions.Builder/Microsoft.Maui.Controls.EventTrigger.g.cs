@@ -27,14 +27,14 @@ namespace Sharp.UI
                 self.Actions.Add(item);
             return self;
         }
-        
+
         public static Microsoft.Maui.Controls.EventTrigger Event(this Microsoft.Maui.Controls.EventTrigger self,
             string @event)
         {
             self.Event = @event;
             return self;
         }
-        
+
     }
 }
 

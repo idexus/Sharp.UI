@@ -18,14 +18,14 @@ namespace Sharp.UI
             self.IsActiveChanged += handler;
             return self;
         }
-        
+
         public static T OnIsActiveChanged<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.StateTriggerBase
         {
             self.IsActiveChanged += (o, arg) => action(self);
             return self;
         }
-        
+
     }
 }
 

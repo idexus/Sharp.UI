@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.StyleableElement.StyleProperty, style);
             return self;
         }
-        
+
         public static T Style<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.Style?>, IPropertyBuilder<Microsoft.Maui.Controls.Style?>> configure)
             where T : Microsoft.Maui.Controls.StyleableElement
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Style<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.Style? style)
             where T : Microsoft.Maui.Controls.StyleableElement
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.StyleableElement.StyleProperty, Value = style });
             return self;
         }
-        
+
         public static SettersContext<T> Style<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.Style?>, IPropertySettersBuilder<Microsoft.Maui.Controls.Style?>> configure)
             where T : Microsoft.Maui.Controls.StyleableElement
         {
@@ -43,7 +43,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T StyleClass<T>(this T self,
             IList<string> styleClass)
             where T : Microsoft.Maui.Controls.StyleableElement
@@ -61,7 +61,7 @@ namespace Sharp.UI
                 self.StyleClass.Add(item);
             return self;
         }
-        
+
         public static T @class<T>(this T self,
             IList<string> @class)
             where T : Microsoft.Maui.Controls.StyleableElement
@@ -79,7 +79,7 @@ namespace Sharp.UI
                 self.@class.Add(item);
             return self;
         }
-        
+
     }
 }
 

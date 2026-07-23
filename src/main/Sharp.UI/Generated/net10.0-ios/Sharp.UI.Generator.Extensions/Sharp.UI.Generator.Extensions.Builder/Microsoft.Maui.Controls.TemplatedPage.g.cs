@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.TemplatedPage.ControlTemplateProperty, controlTemplate);
             return self;
         }
-        
+
         public static T ControlTemplate<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.ControlTemplate>, IPropertyBuilder<Microsoft.Maui.Controls.ControlTemplate>> configure)
             where T : Microsoft.Maui.Controls.TemplatedPage
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> ControlTemplate<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.ControlTemplate controlTemplate)
             where T : Microsoft.Maui.Controls.TemplatedPage
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.TemplatedPage.ControlTemplateProperty, Value = controlTemplate });
             return self;
         }
-        
+
         public static SettersContext<T> ControlTemplate<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.ControlTemplate>, IPropertySettersBuilder<Microsoft.Maui.Controls.ControlTemplate>> configure)
             where T : Microsoft.Maui.Controls.TemplatedPage
         {
@@ -43,7 +43,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
     }
 }
 

@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Shell.PresentationModeProperty, shellPresentationMode);
             return self;
         }
-        
+
         public static T ShellPresentationMode<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.PresentationMode>, IPropertyBuilder<Microsoft.Maui.Controls.PresentationMode>> configure)
             where T : Microsoft.Maui.Controls.Page
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> ShellPresentationMode<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.PresentationMode shellPresentationMode)
             where T : Microsoft.Maui.Controls.Page
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shell.PresentationModeProperty, Value = shellPresentationMode });
             return self;
         }
-        
+
         public static SettersContext<T> ShellPresentationMode<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.PresentationMode>, IPropertySettersBuilder<Microsoft.Maui.Controls.PresentationMode>> configure)
             where T : Microsoft.Maui.Controls.Page
         {
@@ -43,13 +43,13 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Microsoft.Maui.Controls.PresentationMode GetShellPresentationModeValue<T>(this T self)
             where T : Microsoft.Maui.Controls.Page
         {
             return (Microsoft.Maui.Controls.PresentationMode)self.GetValue(Microsoft.Maui.Controls.Shell.PresentationModeProperty);
         }
-        
+
         public static T ShellBackgroundColor<T>(this T self,
             Microsoft.Maui.Graphics.Color shellBackgroundColor)
             where T : Microsoft.Maui.Controls.Page
@@ -57,7 +57,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Shell.BackgroundColorProperty, shellBackgroundColor);
             return self;
         }
-        
+
         public static T ShellBackgroundColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.Page
         {
@@ -65,7 +65,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> ShellBackgroundColor<T>(this SettersContext<T> self,
             Microsoft.Maui.Graphics.Color shellBackgroundColor)
             where T : Microsoft.Maui.Controls.Page
@@ -73,7 +73,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shell.BackgroundColorProperty, Value = shellBackgroundColor });
             return self;
         }
-        
+
         public static SettersContext<T> ShellBackgroundColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.Page
         {
@@ -81,13 +81,13 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Microsoft.Maui.Graphics.Color GetShellBackgroundColorValue<T>(this T self)
             where T : Microsoft.Maui.Controls.Page
         {
             return (Microsoft.Maui.Graphics.Color)self.GetValue(Microsoft.Maui.Controls.Shell.BackgroundColorProperty);
         }
-        
+
         public static T ShellForegroundColor<T>(this T self,
             Microsoft.Maui.Graphics.Color shellForegroundColor)
             where T : Microsoft.Maui.Controls.Page
@@ -95,7 +95,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Shell.ForegroundColorProperty, shellForegroundColor);
             return self;
         }
-        
+
         public static T ShellForegroundColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.Page
         {
@@ -103,7 +103,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> ShellForegroundColor<T>(this SettersContext<T> self,
             Microsoft.Maui.Graphics.Color shellForegroundColor)
             where T : Microsoft.Maui.Controls.Page
@@ -111,7 +111,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shell.ForegroundColorProperty, Value = shellForegroundColor });
             return self;
         }
-        
+
         public static SettersContext<T> ShellForegroundColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.Page
         {
@@ -119,13 +119,13 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Microsoft.Maui.Graphics.Color GetShellForegroundColorValue<T>(this T self)
             where T : Microsoft.Maui.Controls.Page
         {
             return (Microsoft.Maui.Graphics.Color)self.GetValue(Microsoft.Maui.Controls.Shell.ForegroundColorProperty);
         }
-        
+
         public static T ShellTitleColor<T>(this T self,
             Microsoft.Maui.Graphics.Color shellTitleColor)
             where T : Microsoft.Maui.Controls.Page
@@ -133,7 +133,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Shell.TitleColorProperty, shellTitleColor);
             return self;
         }
-        
+
         public static T ShellTitleColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.Page
         {
@@ -141,7 +141,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> ShellTitleColor<T>(this SettersContext<T> self,
             Microsoft.Maui.Graphics.Color shellTitleColor)
             where T : Microsoft.Maui.Controls.Page
@@ -149,7 +149,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shell.TitleColorProperty, Value = shellTitleColor });
             return self;
         }
-        
+
         public static SettersContext<T> ShellTitleColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.Page
         {
@@ -157,13 +157,13 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Microsoft.Maui.Graphics.Color GetShellTitleColorValue<T>(this T self)
             where T : Microsoft.Maui.Controls.Page
         {
             return (Microsoft.Maui.Graphics.Color)self.GetValue(Microsoft.Maui.Controls.Shell.TitleColorProperty);
         }
-        
+
         public static T ShellDisabledColor<T>(this T self,
             Microsoft.Maui.Graphics.Color shellDisabledColor)
             where T : Microsoft.Maui.Controls.Page
@@ -171,7 +171,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Shell.DisabledColorProperty, shellDisabledColor);
             return self;
         }
-        
+
         public static T ShellDisabledColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.Page
         {
@@ -179,7 +179,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> ShellDisabledColor<T>(this SettersContext<T> self,
             Microsoft.Maui.Graphics.Color shellDisabledColor)
             where T : Microsoft.Maui.Controls.Page
@@ -187,7 +187,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shell.DisabledColorProperty, Value = shellDisabledColor });
             return self;
         }
-        
+
         public static SettersContext<T> ShellDisabledColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.Page
         {
@@ -195,13 +195,13 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Microsoft.Maui.Graphics.Color GetShellDisabledColorValue<T>(this T self)
             where T : Microsoft.Maui.Controls.Page
         {
             return (Microsoft.Maui.Graphics.Color)self.GetValue(Microsoft.Maui.Controls.Shell.DisabledColorProperty);
         }
-        
+
         public static T ShellUnselectedColor<T>(this T self,
             Microsoft.Maui.Graphics.Color shellUnselectedColor)
             where T : Microsoft.Maui.Controls.Page
@@ -209,7 +209,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Shell.UnselectedColorProperty, shellUnselectedColor);
             return self;
         }
-        
+
         public static T ShellUnselectedColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.Page
         {
@@ -217,7 +217,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> ShellUnselectedColor<T>(this SettersContext<T> self,
             Microsoft.Maui.Graphics.Color shellUnselectedColor)
             where T : Microsoft.Maui.Controls.Page
@@ -225,7 +225,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shell.UnselectedColorProperty, Value = shellUnselectedColor });
             return self;
         }
-        
+
         public static SettersContext<T> ShellUnselectedColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.Page
         {
@@ -233,13 +233,13 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Microsoft.Maui.Graphics.Color GetShellUnselectedColorValue<T>(this T self)
             where T : Microsoft.Maui.Controls.Page
         {
             return (Microsoft.Maui.Graphics.Color)self.GetValue(Microsoft.Maui.Controls.Shell.UnselectedColorProperty);
         }
-        
+
         public static T ShellNavBarHasShadow<T>(this T self,
             bool shellNavBarHasShadow)
             where T : Microsoft.Maui.Controls.Page
@@ -247,7 +247,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Shell.NavBarHasShadowProperty, shellNavBarHasShadow);
             return self;
         }
-        
+
         public static T ShellNavBarHasShadow<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.Page
         {
@@ -255,7 +255,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> ShellNavBarHasShadow<T>(this SettersContext<T> self,
             bool shellNavBarHasShadow)
             where T : Microsoft.Maui.Controls.Page
@@ -263,7 +263,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shell.NavBarHasShadowProperty, Value = shellNavBarHasShadow });
             return self;
         }
-        
+
         public static SettersContext<T> ShellNavBarHasShadow<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.Page
         {
@@ -271,13 +271,13 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static bool GetShellNavBarHasShadowValue<T>(this T self)
             where T : Microsoft.Maui.Controls.Page
         {
             return (bool)self.GetValue(Microsoft.Maui.Controls.Shell.NavBarHasShadowProperty);
         }
-        
+
         public static T ShellNavBarIsVisible<T>(this T self,
             bool shellNavBarIsVisible)
             where T : Microsoft.Maui.Controls.Page
@@ -285,7 +285,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Shell.NavBarIsVisibleProperty, shellNavBarIsVisible);
             return self;
         }
-        
+
         public static T ShellNavBarIsVisible<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.Page
         {
@@ -293,7 +293,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> ShellNavBarIsVisible<T>(this SettersContext<T> self,
             bool shellNavBarIsVisible)
             where T : Microsoft.Maui.Controls.Page
@@ -301,7 +301,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shell.NavBarIsVisibleProperty, Value = shellNavBarIsVisible });
             return self;
         }
-        
+
         public static SettersContext<T> ShellNavBarIsVisible<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.Page
         {
@@ -309,13 +309,13 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static bool GetShellNavBarIsVisibleValue<T>(this T self)
             where T : Microsoft.Maui.Controls.Page
         {
             return (bool)self.GetValue(Microsoft.Maui.Controls.Shell.NavBarIsVisibleProperty);
         }
-        
+
         public static T ShellTabBarBackgroundColor<T>(this T self,
             Microsoft.Maui.Graphics.Color shellTabBarBackgroundColor)
             where T : Microsoft.Maui.Controls.Page
@@ -323,7 +323,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Shell.TabBarBackgroundColorProperty, shellTabBarBackgroundColor);
             return self;
         }
-        
+
         public static T ShellTabBarBackgroundColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.Page
         {
@@ -331,7 +331,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> ShellTabBarBackgroundColor<T>(this SettersContext<T> self,
             Microsoft.Maui.Graphics.Color shellTabBarBackgroundColor)
             where T : Microsoft.Maui.Controls.Page
@@ -339,7 +339,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shell.TabBarBackgroundColorProperty, Value = shellTabBarBackgroundColor });
             return self;
         }
-        
+
         public static SettersContext<T> ShellTabBarBackgroundColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.Page
         {
@@ -347,13 +347,13 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Microsoft.Maui.Graphics.Color GetShellTabBarBackgroundColorValue<T>(this T self)
             where T : Microsoft.Maui.Controls.Page
         {
             return (Microsoft.Maui.Graphics.Color)self.GetValue(Microsoft.Maui.Controls.Shell.TabBarBackgroundColorProperty);
         }
-        
+
         public static T ShellTabBarForegroundColor<T>(this T self,
             Microsoft.Maui.Graphics.Color shellTabBarForegroundColor)
             where T : Microsoft.Maui.Controls.Page
@@ -361,7 +361,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Shell.TabBarForegroundColorProperty, shellTabBarForegroundColor);
             return self;
         }
-        
+
         public static T ShellTabBarForegroundColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.Page
         {
@@ -369,7 +369,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> ShellTabBarForegroundColor<T>(this SettersContext<T> self,
             Microsoft.Maui.Graphics.Color shellTabBarForegroundColor)
             where T : Microsoft.Maui.Controls.Page
@@ -377,7 +377,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shell.TabBarForegroundColorProperty, Value = shellTabBarForegroundColor });
             return self;
         }
-        
+
         public static SettersContext<T> ShellTabBarForegroundColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.Page
         {
@@ -385,13 +385,13 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Microsoft.Maui.Graphics.Color GetShellTabBarForegroundColorValue<T>(this T self)
             where T : Microsoft.Maui.Controls.Page
         {
             return (Microsoft.Maui.Graphics.Color)self.GetValue(Microsoft.Maui.Controls.Shell.TabBarForegroundColorProperty);
         }
-        
+
         public static T ShellTabBarTitleColor<T>(this T self,
             Microsoft.Maui.Graphics.Color shellTabBarTitleColor)
             where T : Microsoft.Maui.Controls.Page
@@ -399,7 +399,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Shell.TabBarTitleColorProperty, shellTabBarTitleColor);
             return self;
         }
-        
+
         public static T ShellTabBarTitleColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.Page
         {
@@ -407,7 +407,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> ShellTabBarTitleColor<T>(this SettersContext<T> self,
             Microsoft.Maui.Graphics.Color shellTabBarTitleColor)
             where T : Microsoft.Maui.Controls.Page
@@ -415,7 +415,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shell.TabBarTitleColorProperty, Value = shellTabBarTitleColor });
             return self;
         }
-        
+
         public static SettersContext<T> ShellTabBarTitleColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.Page
         {
@@ -423,13 +423,13 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Microsoft.Maui.Graphics.Color GetShellTabBarTitleColorValue<T>(this T self)
             where T : Microsoft.Maui.Controls.Page
         {
             return (Microsoft.Maui.Graphics.Color)self.GetValue(Microsoft.Maui.Controls.Shell.TabBarTitleColorProperty);
         }
-        
+
         public static T ShellTabBarDisabledColor<T>(this T self,
             Microsoft.Maui.Graphics.Color shellTabBarDisabledColor)
             where T : Microsoft.Maui.Controls.Page
@@ -437,7 +437,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Shell.TabBarDisabledColorProperty, shellTabBarDisabledColor);
             return self;
         }
-        
+
         public static T ShellTabBarDisabledColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.Page
         {
@@ -445,7 +445,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> ShellTabBarDisabledColor<T>(this SettersContext<T> self,
             Microsoft.Maui.Graphics.Color shellTabBarDisabledColor)
             where T : Microsoft.Maui.Controls.Page
@@ -453,7 +453,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shell.TabBarDisabledColorProperty, Value = shellTabBarDisabledColor });
             return self;
         }
-        
+
         public static SettersContext<T> ShellTabBarDisabledColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.Page
         {
@@ -461,13 +461,13 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Microsoft.Maui.Graphics.Color GetShellTabBarDisabledColorValue<T>(this T self)
             where T : Microsoft.Maui.Controls.Page
         {
             return (Microsoft.Maui.Graphics.Color)self.GetValue(Microsoft.Maui.Controls.Shell.TabBarDisabledColorProperty);
         }
-        
+
         public static T ShellTabBarUnselectedColor<T>(this T self,
             Microsoft.Maui.Graphics.Color shellTabBarUnselectedColor)
             where T : Microsoft.Maui.Controls.Page
@@ -475,7 +475,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Shell.TabBarUnselectedColorProperty, shellTabBarUnselectedColor);
             return self;
         }
-        
+
         public static T ShellTabBarUnselectedColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.Page
         {
@@ -483,7 +483,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> ShellTabBarUnselectedColor<T>(this SettersContext<T> self,
             Microsoft.Maui.Graphics.Color shellTabBarUnselectedColor)
             where T : Microsoft.Maui.Controls.Page
@@ -491,7 +491,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shell.TabBarUnselectedColorProperty, Value = shellTabBarUnselectedColor });
             return self;
         }
-        
+
         public static SettersContext<T> ShellTabBarUnselectedColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.Page
         {
@@ -499,13 +499,13 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Microsoft.Maui.Graphics.Color GetShellTabBarUnselectedColorValue<T>(this T self)
             where T : Microsoft.Maui.Controls.Page
         {
             return (Microsoft.Maui.Graphics.Color)self.GetValue(Microsoft.Maui.Controls.Shell.TabBarUnselectedColorProperty);
         }
-        
+
     }
 }
 

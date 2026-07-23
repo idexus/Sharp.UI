@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Window.TitleProperty, title);
             return self;
         }
-        
+
         public static T Title<T>(this T self, Func<PropertyContext<string?>, IPropertyBuilder<string?>> configure)
             where T : Microsoft.Maui.Controls.Window
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Title<T>(this SettersContext<T> self,
             string? title)
             where T : Microsoft.Maui.Controls.Window
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Window.TitleProperty, Value = title });
             return self;
         }
-        
+
         public static SettersContext<T> Title<T>(this SettersContext<T> self, Func<PropertySettersContext<string?>, IPropertySettersBuilder<string?>> configure)
             where T : Microsoft.Maui.Controls.Window
         {
@@ -43,7 +43,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T Page<T>(this T self,
             Microsoft.Maui.Controls.Page? page)
             where T : Microsoft.Maui.Controls.Window
@@ -51,7 +51,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Window.PageProperty, page);
             return self;
         }
-        
+
         public static T Page<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.Page?>, IPropertyBuilder<Microsoft.Maui.Controls.Page?>> configure)
             where T : Microsoft.Maui.Controls.Window
         {
@@ -59,7 +59,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Page<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.Page? page)
             where T : Microsoft.Maui.Controls.Window
@@ -67,7 +67,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Window.PageProperty, Value = page });
             return self;
         }
-        
+
         public static SettersContext<T> Page<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.Page?>, IPropertySettersBuilder<Microsoft.Maui.Controls.Page?>> configure)
             where T : Microsoft.Maui.Controls.Window
         {
@@ -75,7 +75,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T X<T>(this T self,
             double x)
             where T : Microsoft.Maui.Controls.Window
@@ -83,7 +83,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Window.XProperty, x);
             return self;
         }
-        
+
         public static T X<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Window
         {
@@ -91,7 +91,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> X<T>(this SettersContext<T> self,
             double x)
             where T : Microsoft.Maui.Controls.Window
@@ -99,7 +99,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Window.XProperty, Value = x });
             return self;
         }
-        
+
         public static SettersContext<T> X<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Window
         {
@@ -107,7 +107,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T Y<T>(this T self,
             double y)
             where T : Microsoft.Maui.Controls.Window
@@ -115,7 +115,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Window.YProperty, y);
             return self;
         }
-        
+
         public static T Y<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Window
         {
@@ -123,7 +123,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Y<T>(this SettersContext<T> self,
             double y)
             where T : Microsoft.Maui.Controls.Window
@@ -131,7 +131,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Window.YProperty, Value = y });
             return self;
         }
-        
+
         public static SettersContext<T> Y<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Window
         {
@@ -139,7 +139,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T Width<T>(this T self,
             double width)
             where T : Microsoft.Maui.Controls.Window
@@ -147,7 +147,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Window.WidthProperty, width);
             return self;
         }
-        
+
         public static T Width<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Window
         {
@@ -155,7 +155,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Width<T>(this SettersContext<T> self,
             double width)
             where T : Microsoft.Maui.Controls.Window
@@ -163,7 +163,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Window.WidthProperty, Value = width });
             return self;
         }
-        
+
         public static SettersContext<T> Width<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Window
         {
@@ -171,7 +171,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T Height<T>(this T self,
             double height)
             where T : Microsoft.Maui.Controls.Window
@@ -179,7 +179,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Window.HeightProperty, height);
             return self;
         }
-        
+
         public static T Height<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Window
         {
@@ -187,7 +187,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Height<T>(this SettersContext<T> self,
             double height)
             where T : Microsoft.Maui.Controls.Window
@@ -195,7 +195,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Window.HeightProperty, Value = height });
             return self;
         }
-        
+
         public static SettersContext<T> Height<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Window
         {
@@ -203,7 +203,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T MaximumWidth<T>(this T self,
             double maximumWidth)
             where T : Microsoft.Maui.Controls.Window
@@ -211,7 +211,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Window.MaximumWidthProperty, maximumWidth);
             return self;
         }
-        
+
         public static T MaximumWidth<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Window
         {
@@ -219,7 +219,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> MaximumWidth<T>(this SettersContext<T> self,
             double maximumWidth)
             where T : Microsoft.Maui.Controls.Window
@@ -227,7 +227,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Window.MaximumWidthProperty, Value = maximumWidth });
             return self;
         }
-        
+
         public static SettersContext<T> MaximumWidth<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Window
         {
@@ -235,7 +235,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T MaximumHeight<T>(this T self,
             double maximumHeight)
             where T : Microsoft.Maui.Controls.Window
@@ -243,7 +243,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Window.MaximumHeightProperty, maximumHeight);
             return self;
         }
-        
+
         public static T MaximumHeight<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Window
         {
@@ -251,7 +251,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> MaximumHeight<T>(this SettersContext<T> self,
             double maximumHeight)
             where T : Microsoft.Maui.Controls.Window
@@ -259,7 +259,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Window.MaximumHeightProperty, Value = maximumHeight });
             return self;
         }
-        
+
         public static SettersContext<T> MaximumHeight<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Window
         {
@@ -267,7 +267,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T MinimumWidth<T>(this T self,
             double minimumWidth)
             where T : Microsoft.Maui.Controls.Window
@@ -275,7 +275,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Window.MinimumWidthProperty, minimumWidth);
             return self;
         }
-        
+
         public static T MinimumWidth<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Window
         {
@@ -283,7 +283,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> MinimumWidth<T>(this SettersContext<T> self,
             double minimumWidth)
             where T : Microsoft.Maui.Controls.Window
@@ -291,7 +291,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Window.MinimumWidthProperty, Value = minimumWidth });
             return self;
         }
-        
+
         public static SettersContext<T> MinimumWidth<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Window
         {
@@ -299,7 +299,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T MinimumHeight<T>(this T self,
             double minimumHeight)
             where T : Microsoft.Maui.Controls.Window
@@ -307,7 +307,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Window.MinimumHeightProperty, minimumHeight);
             return self;
         }
-        
+
         public static T MinimumHeight<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Window
         {
@@ -315,7 +315,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> MinimumHeight<T>(this SettersContext<T> self,
             double minimumHeight)
             where T : Microsoft.Maui.Controls.Window
@@ -323,7 +323,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Window.MinimumHeightProperty, Value = minimumHeight });
             return self;
         }
-        
+
         public static SettersContext<T> MinimumHeight<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Window
         {
@@ -331,7 +331,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T TitleBar<T>(this T self,
             Microsoft.Maui.ITitleBar? titleBar)
             where T : Microsoft.Maui.Controls.Window
@@ -339,7 +339,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Window.TitleBarProperty, titleBar);
             return self;
         }
-        
+
         public static T TitleBar<T>(this T self, Func<PropertyContext<Microsoft.Maui.ITitleBar?>, IPropertyBuilder<Microsoft.Maui.ITitleBar?>> configure)
             where T : Microsoft.Maui.Controls.Window
         {
@@ -347,7 +347,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> TitleBar<T>(this SettersContext<T> self,
             Microsoft.Maui.ITitleBar? titleBar)
             where T : Microsoft.Maui.Controls.Window
@@ -355,7 +355,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Window.TitleBarProperty, Value = titleBar });
             return self;
         }
-        
+
         public static SettersContext<T> TitleBar<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.ITitleBar?>, IPropertySettersBuilder<Microsoft.Maui.ITitleBar?>> configure)
             where T : Microsoft.Maui.Controls.Window
         {
@@ -363,7 +363,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T FlowDirection<T>(this T self,
             Microsoft.Maui.FlowDirection flowDirection)
             where T : Microsoft.Maui.Controls.Window
@@ -371,7 +371,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Window.FlowDirectionProperty, flowDirection);
             return self;
         }
-        
+
         public static T FlowDirection<T>(this T self, Func<PropertyContext<Microsoft.Maui.FlowDirection>, IPropertyBuilder<Microsoft.Maui.FlowDirection>> configure)
             where T : Microsoft.Maui.Controls.Window
         {
@@ -379,7 +379,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> FlowDirection<T>(this SettersContext<T> self,
             Microsoft.Maui.FlowDirection flowDirection)
             where T : Microsoft.Maui.Controls.Window
@@ -387,7 +387,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Window.FlowDirectionProperty, Value = flowDirection });
             return self;
         }
-        
+
         public static SettersContext<T> FlowDirection<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.FlowDirection>, IPropertySettersBuilder<Microsoft.Maui.FlowDirection>> configure)
             where T : Microsoft.Maui.Controls.Window
         {
@@ -395,7 +395,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T IsMinimizable<T>(this T self,
             bool isMinimizable)
             where T : Microsoft.Maui.Controls.Window
@@ -403,7 +403,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Window.IsMinimizableProperty, isMinimizable);
             return self;
         }
-        
+
         public static T IsMinimizable<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.Window
         {
@@ -411,7 +411,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> IsMinimizable<T>(this SettersContext<T> self,
             bool isMinimizable)
             where T : Microsoft.Maui.Controls.Window
@@ -419,7 +419,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Window.IsMinimizableProperty, Value = isMinimizable });
             return self;
         }
-        
+
         public static SettersContext<T> IsMinimizable<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.Window
         {
@@ -427,7 +427,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T IsMaximizable<T>(this T self,
             bool isMaximizable)
             where T : Microsoft.Maui.Controls.Window
@@ -435,7 +435,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Window.IsMaximizableProperty, isMaximizable);
             return self;
         }
-        
+
         public static T IsMaximizable<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.Window
         {
@@ -443,7 +443,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> IsMaximizable<T>(this SettersContext<T> self,
             bool isMaximizable)
             where T : Microsoft.Maui.Controls.Window
@@ -451,7 +451,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Window.IsMaximizableProperty, Value = isMaximizable });
             return self;
         }
-        
+
         public static SettersContext<T> IsMaximizable<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.Window
         {
@@ -459,203 +459,203 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T OnSizeChanged<T>(this T self, System.EventHandler? handler)
             where T : Microsoft.Maui.Controls.Window
         {
             self.SizeChanged += handler;
             return self;
         }
-        
+
         public static T OnSizeChanged<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Window
         {
             self.SizeChanged += (o, arg) => action(self);
             return self;
         }
-        
+
         public static T OnModalPopped<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.ModalPoppedEventArgs>? handler)
             where T : Microsoft.Maui.Controls.Window
         {
             self.ModalPopped += handler;
             return self;
         }
-        
+
         public static T OnModalPopped<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Window
         {
             self.ModalPopped += (o, arg) => action(self);
             return self;
         }
-        
+
         public static T OnModalPopping<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.ModalPoppingEventArgs>? handler)
             where T : Microsoft.Maui.Controls.Window
         {
             self.ModalPopping += handler;
             return self;
         }
-        
+
         public static T OnModalPopping<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Window
         {
             self.ModalPopping += (o, arg) => action(self);
             return self;
         }
-        
+
         public static T OnModalPushed<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.ModalPushedEventArgs>? handler)
             where T : Microsoft.Maui.Controls.Window
         {
             self.ModalPushed += handler;
             return self;
         }
-        
+
         public static T OnModalPushed<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Window
         {
             self.ModalPushed += (o, arg) => action(self);
             return self;
         }
-        
+
         public static T OnModalPushing<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.ModalPushingEventArgs>? handler)
             where T : Microsoft.Maui.Controls.Window
         {
             self.ModalPushing += handler;
             return self;
         }
-        
+
         public static T OnModalPushing<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Window
         {
             self.ModalPushing += (o, arg) => action(self);
             return self;
         }
-        
+
         public static T OnPopCanceled<T>(this T self, System.EventHandler? handler)
             where T : Microsoft.Maui.Controls.Window
         {
             self.PopCanceled += handler;
             return self;
         }
-        
+
         public static T OnPopCanceled<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Window
         {
             self.PopCanceled += (o, arg) => action(self);
             return self;
         }
-        
+
         public static T OnCreated<T>(this T self, System.EventHandler? handler)
             where T : Microsoft.Maui.Controls.Window
         {
             self.Created += handler;
             return self;
         }
-        
+
         public static T OnCreated<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Window
         {
             self.Created += (o, arg) => action(self);
             return self;
         }
-        
+
         public static T OnResumed<T>(this T self, System.EventHandler? handler)
             where T : Microsoft.Maui.Controls.Window
         {
             self.Resumed += handler;
             return self;
         }
-        
+
         public static T OnResumed<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Window
         {
             self.Resumed += (o, arg) => action(self);
             return self;
         }
-        
+
         public static T OnActivated<T>(this T self, System.EventHandler? handler)
             where T : Microsoft.Maui.Controls.Window
         {
             self.Activated += handler;
             return self;
         }
-        
+
         public static T OnActivated<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Window
         {
             self.Activated += (o, arg) => action(self);
             return self;
         }
-        
+
         public static T OnDeactivated<T>(this T self, System.EventHandler? handler)
             where T : Microsoft.Maui.Controls.Window
         {
             self.Deactivated += handler;
             return self;
         }
-        
+
         public static T OnDeactivated<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Window
         {
             self.Deactivated += (o, arg) => action(self);
             return self;
         }
-        
+
         public static T OnStopped<T>(this T self, System.EventHandler? handler)
             where T : Microsoft.Maui.Controls.Window
         {
             self.Stopped += handler;
             return self;
         }
-        
+
         public static T OnStopped<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Window
         {
             self.Stopped += (o, arg) => action(self);
             return self;
         }
-        
+
         public static T OnDestroying<T>(this T self, System.EventHandler? handler)
             where T : Microsoft.Maui.Controls.Window
         {
             self.Destroying += handler;
             return self;
         }
-        
+
         public static T OnDestroying<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Window
         {
             self.Destroying += (o, arg) => action(self);
             return self;
         }
-        
+
         public static T OnBackgrounding<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.BackgroundingEventArgs>? handler)
             where T : Microsoft.Maui.Controls.Window
         {
             self.Backgrounding += handler;
             return self;
         }
-        
+
         public static T OnBackgrounding<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Window
         {
             self.Backgrounding += (o, arg) => action(self);
             return self;
         }
-        
+
         public static T OnDisplayDensityChanged<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.DisplayDensityChangedEventArgs>? handler)
             where T : Microsoft.Maui.Controls.Window
         {
             self.DisplayDensityChanged += handler;
             return self;
         }
-        
+
         public static T OnDisplayDensityChanged<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Window
         {
             self.DisplayDensityChanged += (o, arg) => action(self);
             return self;
         }
-        
+
     }
 }
 

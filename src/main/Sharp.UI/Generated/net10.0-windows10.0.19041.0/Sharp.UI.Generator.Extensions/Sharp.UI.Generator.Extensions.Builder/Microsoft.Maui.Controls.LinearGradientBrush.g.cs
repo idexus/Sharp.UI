@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.LinearGradientBrush.StartPointProperty, startPoint);
             return self;
         }
-        
+
         public static T StartPoint<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Point>, IPropertyBuilder<Microsoft.Maui.Graphics.Point>> configure)
             where T : Microsoft.Maui.Controls.LinearGradientBrush
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> StartPoint<T>(this SettersContext<T> self,
             Microsoft.Maui.Graphics.Point startPoint)
             where T : Microsoft.Maui.Controls.LinearGradientBrush
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.LinearGradientBrush.StartPointProperty, Value = startPoint });
             return self;
         }
-        
+
         public static SettersContext<T> StartPoint<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Point>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Point>> configure)
             where T : Microsoft.Maui.Controls.LinearGradientBrush
         {
@@ -43,7 +43,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T EndPoint<T>(this T self,
             Microsoft.Maui.Graphics.Point endPoint)
             where T : Microsoft.Maui.Controls.LinearGradientBrush
@@ -51,7 +51,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.LinearGradientBrush.EndPointProperty, endPoint);
             return self;
         }
-        
+
         public static T EndPoint<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Point>, IPropertyBuilder<Microsoft.Maui.Graphics.Point>> configure)
             where T : Microsoft.Maui.Controls.LinearGradientBrush
         {
@@ -59,7 +59,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> EndPoint<T>(this SettersContext<T> self,
             Microsoft.Maui.Graphics.Point endPoint)
             where T : Microsoft.Maui.Controls.LinearGradientBrush
@@ -67,7 +67,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.LinearGradientBrush.EndPointProperty, Value = endPoint });
             return self;
         }
-        
+
         public static SettersContext<T> EndPoint<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Point>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Point>> configure)
             where T : Microsoft.Maui.Controls.LinearGradientBrush
         {
@@ -75,7 +75,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
     }
 }
 

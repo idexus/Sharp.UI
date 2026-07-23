@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.ProgressBar.ProgressColorProperty, progressColor);
             return self;
         }
-        
+
         public static T ProgressColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.ProgressBar
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> ProgressColor<T>(this SettersContext<T> self,
             Microsoft.Maui.Graphics.Color progressColor)
             where T : Microsoft.Maui.Controls.ProgressBar
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ProgressBar.ProgressColorProperty, Value = progressColor });
             return self;
         }
-        
+
         public static SettersContext<T> ProgressColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.ProgressBar
         {
@@ -43,7 +43,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateProgressColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.ProgressBar
         {
@@ -52,7 +52,7 @@ namespace Sharp.UI
             var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.ProgressColor = actValue; };
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateProgressColorTo", transform, callback, length, easing);
         }
-        
+
         public static T Progress<T>(this T self,
             double progress)
             where T : Microsoft.Maui.Controls.ProgressBar
@@ -60,7 +60,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.ProgressBar.ProgressProperty, progress);
             return self;
         }
-        
+
         public static T Progress<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.ProgressBar
         {
@@ -68,7 +68,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Progress<T>(this SettersContext<T> self,
             double progress)
             where T : Microsoft.Maui.Controls.ProgressBar
@@ -76,7 +76,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.ProgressBar.ProgressProperty, Value = progress });
             return self;
         }
-        
+
         public static SettersContext<T> Progress<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.ProgressBar
         {
@@ -84,7 +84,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateProgressTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.ProgressBar
         {
@@ -93,7 +93,7 @@ namespace Sharp.UI
             var callback = (double actValue) => { self.Progress = actValue; };
             return Transformations.AnimateAsync<double>(self, "AnimateProgressTo", transform, callback, length, easing);
         }
-        
+
     }
 }
 

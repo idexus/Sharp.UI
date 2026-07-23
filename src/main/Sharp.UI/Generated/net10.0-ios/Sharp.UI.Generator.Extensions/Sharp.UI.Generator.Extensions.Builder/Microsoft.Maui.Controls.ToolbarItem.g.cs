@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.Order = order;
             return self;
         }
-        
+
         public static T Priority<T>(this T self,
             int priority)
             where T : Microsoft.Maui.Controls.ToolbarItem
@@ -27,7 +27,7 @@ namespace Sharp.UI
             self.Priority = priority;
             return self;
         }
-        
+
     }
 }
 

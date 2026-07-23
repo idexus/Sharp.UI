@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Editor.AutoSizeProperty, autoSize);
             return self;
         }
-        
+
         public static T AutoSize<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.EditorAutoSizeOption>, IPropertyBuilder<Microsoft.Maui.Controls.EditorAutoSizeOption>> configure)
             where T : Microsoft.Maui.Controls.Editor
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> AutoSize<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.EditorAutoSizeOption autoSize)
             where T : Microsoft.Maui.Controls.Editor
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Editor.AutoSizeProperty, Value = autoSize });
             return self;
         }
-        
+
         public static SettersContext<T> AutoSize<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.EditorAutoSizeOption>, IPropertySettersBuilder<Microsoft.Maui.Controls.EditorAutoSizeOption>> configure)
             where T : Microsoft.Maui.Controls.Editor
         {
@@ -43,7 +43,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T HorizontalTextAlignment<T>(this T self,
             Microsoft.Maui.TextAlignment horizontalTextAlignment)
             where T : Microsoft.Maui.Controls.Editor
@@ -51,7 +51,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Editor.HorizontalTextAlignmentProperty, horizontalTextAlignment);
             return self;
         }
-        
+
         public static T HorizontalTextAlignment<T>(this T self, Func<PropertyContext<Microsoft.Maui.TextAlignment>, IPropertyBuilder<Microsoft.Maui.TextAlignment>> configure)
             where T : Microsoft.Maui.Controls.Editor
         {
@@ -59,7 +59,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> HorizontalTextAlignment<T>(this SettersContext<T> self,
             Microsoft.Maui.TextAlignment horizontalTextAlignment)
             where T : Microsoft.Maui.Controls.Editor
@@ -67,7 +67,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Editor.HorizontalTextAlignmentProperty, Value = horizontalTextAlignment });
             return self;
         }
-        
+
         public static SettersContext<T> HorizontalTextAlignment<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.TextAlignment>, IPropertySettersBuilder<Microsoft.Maui.TextAlignment>> configure)
             where T : Microsoft.Maui.Controls.Editor
         {
@@ -75,7 +75,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T VerticalTextAlignment<T>(this T self,
             Microsoft.Maui.TextAlignment verticalTextAlignment)
             where T : Microsoft.Maui.Controls.Editor
@@ -83,7 +83,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Editor.VerticalTextAlignmentProperty, verticalTextAlignment);
             return self;
         }
-        
+
         public static T VerticalTextAlignment<T>(this T self, Func<PropertyContext<Microsoft.Maui.TextAlignment>, IPropertyBuilder<Microsoft.Maui.TextAlignment>> configure)
             where T : Microsoft.Maui.Controls.Editor
         {
@@ -91,7 +91,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> VerticalTextAlignment<T>(this SettersContext<T> self,
             Microsoft.Maui.TextAlignment verticalTextAlignment)
             where T : Microsoft.Maui.Controls.Editor
@@ -99,7 +99,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Editor.VerticalTextAlignmentProperty, Value = verticalTextAlignment });
             return self;
         }
-        
+
         public static SettersContext<T> VerticalTextAlignment<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.TextAlignment>, IPropertySettersBuilder<Microsoft.Maui.TextAlignment>> configure)
             where T : Microsoft.Maui.Controls.Editor
         {
@@ -107,21 +107,20 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T OnCompleted<T>(this T self, System.EventHandler handler)
             where T : Microsoft.Maui.Controls.Editor
         {
             self.Completed += handler;
             return self;
         }
-        
+
         public static T OnCompleted<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Editor
         {
             self.Completed += (o, arg) => action(self);
             return self;
         }
-        
 
         public static T TextCenterHorizontal<T>(this T self)
             where T : Microsoft.Maui.Controls.Editor
@@ -205,7 +204,6 @@ namespace Sharp.UI
             return self;
         }
 
-        
     }
 }
 

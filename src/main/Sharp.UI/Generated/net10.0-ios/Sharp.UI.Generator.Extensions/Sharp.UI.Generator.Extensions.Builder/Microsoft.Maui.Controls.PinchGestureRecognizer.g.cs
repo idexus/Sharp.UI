@@ -17,13 +17,13 @@ namespace Sharp.UI
             self.PinchUpdated += handler;
             return self;
         }
-        
+
         public static Microsoft.Maui.Controls.PinchGestureRecognizer OnPinchUpdated(this Microsoft.Maui.Controls.PinchGestureRecognizer self, System.Action<Microsoft.Maui.Controls.PinchGestureRecognizer> action)
         {
             self.PinchUpdated += (o, arg) => action(self);
             return self;
         }
-        
+
     }
 }
 

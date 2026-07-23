@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.PanGestureRecognizer.TouchPointsProperty, touchPoints);
             return self;
         }
-        
+
         public static T TouchPoints<T>(this T self, Func<PropertyContext<int>, IPropertyBuilder<int>> configure)
             where T : Microsoft.Maui.Controls.PanGestureRecognizer
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> TouchPoints<T>(this SettersContext<T> self,
             int touchPoints)
             where T : Microsoft.Maui.Controls.PanGestureRecognizer
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.PanGestureRecognizer.TouchPointsProperty, Value = touchPoints });
             return self;
         }
-        
+
         public static SettersContext<T> TouchPoints<T>(this SettersContext<T> self, Func<PropertySettersContext<int>, IPropertySettersBuilder<int>> configure)
             where T : Microsoft.Maui.Controls.PanGestureRecognizer
         {
@@ -43,21 +43,21 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T OnPanUpdated<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.PanUpdatedEventArgs> handler)
             where T : Microsoft.Maui.Controls.PanGestureRecognizer
         {
             self.PanUpdated += handler;
             return self;
         }
-        
+
         public static T OnPanUpdated<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.PanGestureRecognizer
         {
             self.PanUpdated += (o, arg) => action(self);
             return self;
         }
-        
+
     }
 }
 

@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.GradientStop.ColorProperty, color);
             return self;
         }
-        
+
         public static T Color<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.GradientStop
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Color<T>(this SettersContext<T> self,
             Microsoft.Maui.Graphics.Color color)
             where T : Microsoft.Maui.Controls.GradientStop
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.GradientStop.ColorProperty, Value = color });
             return self;
         }
-        
+
         public static SettersContext<T> Color<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.GradientStop
         {
@@ -43,7 +43,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T Offset<T>(this T self,
             float offset)
             where T : Microsoft.Maui.Controls.GradientStop
@@ -51,7 +51,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.GradientStop.OffsetProperty, offset);
             return self;
         }
-        
+
         public static T Offset<T>(this T self, Func<PropertyContext<float>, IPropertyBuilder<float>> configure)
             where T : Microsoft.Maui.Controls.GradientStop
         {
@@ -59,7 +59,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Offset<T>(this SettersContext<T> self,
             float offset)
             where T : Microsoft.Maui.Controls.GradientStop
@@ -67,7 +67,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.GradientStop.OffsetProperty, Value = offset });
             return self;
         }
-        
+
         public static SettersContext<T> Offset<T>(this SettersContext<T> self, Func<PropertySettersContext<float>, IPropertySettersBuilder<float>> configure)
             where T : Microsoft.Maui.Controls.GradientStop
         {
@@ -75,7 +75,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
     }
 }
 

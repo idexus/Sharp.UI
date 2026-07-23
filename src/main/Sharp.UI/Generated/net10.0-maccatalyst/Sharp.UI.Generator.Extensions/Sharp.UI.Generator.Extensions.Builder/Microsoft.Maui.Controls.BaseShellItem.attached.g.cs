@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Shell.ItemTemplateProperty, shellItemTemplate);
             return self;
         }
-        
+
         public static T ShellItemTemplate<T>(this T self, Func<PropertyContext<Sharp.UI.DataTemplate>, IPropertyBuilder<Sharp.UI.DataTemplate>> configure)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> ShellItemTemplate<T>(this SettersContext<T> self,
             Sharp.UI.DataTemplate shellItemTemplate)
             where T : Microsoft.Maui.Controls.BaseShellItem
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shell.ItemTemplateProperty, Value = shellItemTemplate });
             return self;
         }
-        
+
         public static SettersContext<T> ShellItemTemplate<T>(this SettersContext<T> self, Func<PropertySettersContext<Sharp.UI.DataTemplate>, IPropertySettersBuilder<Sharp.UI.DataTemplate>> configure)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
@@ -43,20 +43,20 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T ShellItemTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
             self.SetValue(Microsoft.Maui.Controls.Shell.ItemTemplateProperty, new DataTemplate(loadTemplate));
             return self;
         }
-        
+
         public static Sharp.UI.DataTemplate GetShellItemTemplateValue<T>(this T self)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
             return (Sharp.UI.DataTemplate)self.GetValue(Microsoft.Maui.Controls.Shell.ItemTemplateProperty);
         }
-        
+
     }
 }
 

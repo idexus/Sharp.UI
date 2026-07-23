@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.VisualElement.VisualProperty, visual);
             return self;
         }
-        
+
         public static T Visual<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.IVisual>, IPropertyBuilder<Microsoft.Maui.Controls.IVisual>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Visual<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.IVisual visual)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.VisualProperty, Value = visual });
             return self;
         }
-        
+
         public static SettersContext<T> Visual<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.IVisual>, IPropertySettersBuilder<Microsoft.Maui.Controls.IVisual>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -43,7 +43,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T FlowDirection<T>(this T self,
             Microsoft.Maui.FlowDirection flowDirection)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -51,7 +51,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.VisualElement.FlowDirectionProperty, flowDirection);
             return self;
         }
-        
+
         public static T FlowDirection<T>(this T self, Func<PropertyContext<Microsoft.Maui.FlowDirection>, IPropertyBuilder<Microsoft.Maui.FlowDirection>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -59,7 +59,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> FlowDirection<T>(this SettersContext<T> self,
             Microsoft.Maui.FlowDirection flowDirection)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -67,7 +67,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.FlowDirectionProperty, Value = flowDirection });
             return self;
         }
-        
+
         public static SettersContext<T> FlowDirection<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.FlowDirection>, IPropertySettersBuilder<Microsoft.Maui.FlowDirection>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -75,7 +75,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T AnchorX<T>(this T self,
             double anchorX)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -83,7 +83,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.VisualElement.AnchorXProperty, anchorX);
             return self;
         }
-        
+
         public static T AnchorX<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -91,7 +91,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> AnchorX<T>(this SettersContext<T> self,
             double anchorX)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -99,7 +99,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.AnchorXProperty, Value = anchorX });
             return self;
         }
-        
+
         public static SettersContext<T> AnchorX<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -107,7 +107,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateAnchorXTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -116,7 +116,7 @@ namespace Sharp.UI
             var callback = (double actValue) => { self.AnchorX = actValue; };
             return Transformations.AnimateAsync<double>(self, "AnimateAnchorXTo", transform, callback, length, easing);
         }
-        
+
         public static T AnchorY<T>(this T self,
             double anchorY)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -124,7 +124,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.VisualElement.AnchorYProperty, anchorY);
             return self;
         }
-        
+
         public static T AnchorY<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -132,7 +132,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> AnchorY<T>(this SettersContext<T> self,
             double anchorY)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -140,7 +140,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.AnchorYProperty, Value = anchorY });
             return self;
         }
-        
+
         public static SettersContext<T> AnchorY<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -148,7 +148,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateAnchorYTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -157,7 +157,7 @@ namespace Sharp.UI
             var callback = (double actValue) => { self.AnchorY = actValue; };
             return Transformations.AnimateAsync<double>(self, "AnimateAnchorYTo", transform, callback, length, easing);
         }
-        
+
         public static T BackgroundColor<T>(this T self,
             Microsoft.Maui.Graphics.Color backgroundColor)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -165,7 +165,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.VisualElement.BackgroundColorProperty, backgroundColor);
             return self;
         }
-        
+
         public static T BackgroundColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -173,7 +173,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> BackgroundColor<T>(this SettersContext<T> self,
             Microsoft.Maui.Graphics.Color backgroundColor)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -181,7 +181,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.BackgroundColorProperty, Value = backgroundColor });
             return self;
         }
-        
+
         public static SettersContext<T> BackgroundColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -189,7 +189,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateBackgroundColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -198,7 +198,7 @@ namespace Sharp.UI
             var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.BackgroundColor = actValue; };
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateBackgroundColorTo", transform, callback, length, easing);
         }
-        
+
         public static T Background<T>(this T self,
             Microsoft.Maui.Controls.Brush background)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -206,7 +206,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.VisualElement.BackgroundProperty, background);
             return self;
         }
-        
+
         public static T Background<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.Brush>, IPropertyBuilder<Microsoft.Maui.Controls.Brush>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -214,7 +214,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Background<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.Brush background)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -222,7 +222,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.BackgroundProperty, Value = background });
             return self;
         }
-        
+
         public static SettersContext<T> Background<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.Brush>, IPropertySettersBuilder<Microsoft.Maui.Controls.Brush>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -230,7 +230,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T Behaviors<T>(this T self,
             IList<Microsoft.Maui.Controls.Behavior> behaviors)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -248,7 +248,7 @@ namespace Sharp.UI
                 self.Behaviors.Add(item);
             return self;
         }
-        
+
         public static T Behaviors<T>(this T self, Func<PropertyContext<System.Collections.Generic.IList<Microsoft.Maui.Controls.Behavior>>, IPropertyBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.Behavior>>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -256,7 +256,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T HeightRequest<T>(this T self,
             double heightRequest)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -264,7 +264,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.VisualElement.HeightRequestProperty, heightRequest);
             return self;
         }
-        
+
         public static T HeightRequest<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -272,7 +272,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> HeightRequest<T>(this SettersContext<T> self,
             double heightRequest)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -280,7 +280,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.HeightRequestProperty, Value = heightRequest });
             return self;
         }
-        
+
         public static SettersContext<T> HeightRequest<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -288,7 +288,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateHeightRequestTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -297,7 +297,7 @@ namespace Sharp.UI
             var callback = (double actValue) => { self.HeightRequest = actValue; };
             return Transformations.AnimateAsync<double>(self, "AnimateHeightRequestTo", transform, callback, length, easing);
         }
-        
+
         public static T InputTransparent<T>(this T self,
             bool inputTransparent)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -305,7 +305,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.VisualElement.InputTransparentProperty, inputTransparent);
             return self;
         }
-        
+
         public static T InputTransparent<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -313,7 +313,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> InputTransparent<T>(this SettersContext<T> self,
             bool inputTransparent)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -321,7 +321,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.InputTransparentProperty, Value = inputTransparent });
             return self;
         }
-        
+
         public static SettersContext<T> InputTransparent<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -329,7 +329,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T IsEnabled<T>(this T self,
             bool isEnabled)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -337,7 +337,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.VisualElement.IsEnabledProperty, isEnabled);
             return self;
         }
-        
+
         public static T IsEnabled<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -345,7 +345,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> IsEnabled<T>(this SettersContext<T> self,
             bool isEnabled)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -353,7 +353,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.IsEnabledProperty, Value = isEnabled });
             return self;
         }
-        
+
         public static SettersContext<T> IsEnabled<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -361,7 +361,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T IsVisible<T>(this T self,
             bool isVisible)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -369,7 +369,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.VisualElement.IsVisibleProperty, isVisible);
             return self;
         }
-        
+
         public static T IsVisible<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -377,7 +377,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> IsVisible<T>(this SettersContext<T> self,
             bool isVisible)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -385,7 +385,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.IsVisibleProperty, Value = isVisible });
             return self;
         }
-        
+
         public static SettersContext<T> IsVisible<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -393,7 +393,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T MinimumHeightRequest<T>(this T self,
             double minimumHeightRequest)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -401,7 +401,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.VisualElement.MinimumHeightRequestProperty, minimumHeightRequest);
             return self;
         }
-        
+
         public static T MinimumHeightRequest<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -409,7 +409,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> MinimumHeightRequest<T>(this SettersContext<T> self,
             double minimumHeightRequest)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -417,7 +417,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.MinimumHeightRequestProperty, Value = minimumHeightRequest });
             return self;
         }
-        
+
         public static SettersContext<T> MinimumHeightRequest<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -425,7 +425,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateMinimumHeightRequestTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -434,7 +434,7 @@ namespace Sharp.UI
             var callback = (double actValue) => { self.MinimumHeightRequest = actValue; };
             return Transformations.AnimateAsync<double>(self, "AnimateMinimumHeightRequestTo", transform, callback, length, easing);
         }
-        
+
         public static T MinimumWidthRequest<T>(this T self,
             double minimumWidthRequest)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -442,7 +442,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.VisualElement.MinimumWidthRequestProperty, minimumWidthRequest);
             return self;
         }
-        
+
         public static T MinimumWidthRequest<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -450,7 +450,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> MinimumWidthRequest<T>(this SettersContext<T> self,
             double minimumWidthRequest)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -458,7 +458,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.MinimumWidthRequestProperty, Value = minimumWidthRequest });
             return self;
         }
-        
+
         public static SettersContext<T> MinimumWidthRequest<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -466,7 +466,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateMinimumWidthRequestTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -475,7 +475,7 @@ namespace Sharp.UI
             var callback = (double actValue) => { self.MinimumWidthRequest = actValue; };
             return Transformations.AnimateAsync<double>(self, "AnimateMinimumWidthRequestTo", transform, callback, length, easing);
         }
-        
+
         public static T MaximumHeightRequest<T>(this T self,
             double maximumHeightRequest)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -483,7 +483,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.VisualElement.MaximumHeightRequestProperty, maximumHeightRequest);
             return self;
         }
-        
+
         public static T MaximumHeightRequest<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -491,7 +491,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> MaximumHeightRequest<T>(this SettersContext<T> self,
             double maximumHeightRequest)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -499,7 +499,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.MaximumHeightRequestProperty, Value = maximumHeightRequest });
             return self;
         }
-        
+
         public static SettersContext<T> MaximumHeightRequest<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -507,7 +507,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateMaximumHeightRequestTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -516,7 +516,7 @@ namespace Sharp.UI
             var callback = (double actValue) => { self.MaximumHeightRequest = actValue; };
             return Transformations.AnimateAsync<double>(self, "AnimateMaximumHeightRequestTo", transform, callback, length, easing);
         }
-        
+
         public static T MaximumWidthRequest<T>(this T self,
             double maximumWidthRequest)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -524,7 +524,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.VisualElement.MaximumWidthRequestProperty, maximumWidthRequest);
             return self;
         }
-        
+
         public static T MaximumWidthRequest<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -532,7 +532,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> MaximumWidthRequest<T>(this SettersContext<T> self,
             double maximumWidthRequest)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -540,7 +540,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.MaximumWidthRequestProperty, Value = maximumWidthRequest });
             return self;
         }
-        
+
         public static SettersContext<T> MaximumWidthRequest<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -548,7 +548,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateMaximumWidthRequestTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -557,7 +557,7 @@ namespace Sharp.UI
             var callback = (double actValue) => { self.MaximumWidthRequest = actValue; };
             return Transformations.AnimateAsync<double>(self, "AnimateMaximumWidthRequestTo", transform, callback, length, easing);
         }
-        
+
         public static T Opacity<T>(this T self,
             double opacity)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -565,7 +565,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.VisualElement.OpacityProperty, opacity);
             return self;
         }
-        
+
         public static T Opacity<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -573,7 +573,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Opacity<T>(this SettersContext<T> self,
             double opacity)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -581,7 +581,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.OpacityProperty, Value = opacity });
             return self;
         }
-        
+
         public static SettersContext<T> Opacity<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -589,7 +589,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateOpacityTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -598,7 +598,7 @@ namespace Sharp.UI
             var callback = (double actValue) => { self.Opacity = actValue; };
             return Transformations.AnimateAsync<double>(self, "AnimateOpacityTo", transform, callback, length, easing);
         }
-        
+
         public static T Rotation<T>(this T self,
             double rotation)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -606,7 +606,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.VisualElement.RotationProperty, rotation);
             return self;
         }
-        
+
         public static T Rotation<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -614,7 +614,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Rotation<T>(this SettersContext<T> self,
             double rotation)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -622,7 +622,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.RotationProperty, Value = rotation });
             return self;
         }
-        
+
         public static SettersContext<T> Rotation<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -630,7 +630,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateRotationTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -639,7 +639,7 @@ namespace Sharp.UI
             var callback = (double actValue) => { self.Rotation = actValue; };
             return Transformations.AnimateAsync<double>(self, "AnimateRotationTo", transform, callback, length, easing);
         }
-        
+
         public static T RotationX<T>(this T self,
             double rotationX)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -647,7 +647,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.VisualElement.RotationXProperty, rotationX);
             return self;
         }
-        
+
         public static T RotationX<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -655,7 +655,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> RotationX<T>(this SettersContext<T> self,
             double rotationX)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -663,7 +663,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.RotationXProperty, Value = rotationX });
             return self;
         }
-        
+
         public static SettersContext<T> RotationX<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -671,7 +671,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateRotationXTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -680,7 +680,7 @@ namespace Sharp.UI
             var callback = (double actValue) => { self.RotationX = actValue; };
             return Transformations.AnimateAsync<double>(self, "AnimateRotationXTo", transform, callback, length, easing);
         }
-        
+
         public static T RotationY<T>(this T self,
             double rotationY)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -688,7 +688,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.VisualElement.RotationYProperty, rotationY);
             return self;
         }
-        
+
         public static T RotationY<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -696,7 +696,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> RotationY<T>(this SettersContext<T> self,
             double rotationY)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -704,7 +704,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.RotationYProperty, Value = rotationY });
             return self;
         }
-        
+
         public static SettersContext<T> RotationY<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -712,7 +712,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateRotationYTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -721,7 +721,7 @@ namespace Sharp.UI
             var callback = (double actValue) => { self.RotationY = actValue; };
             return Transformations.AnimateAsync<double>(self, "AnimateRotationYTo", transform, callback, length, easing);
         }
-        
+
         public static T Scale<T>(this T self,
             double scale)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -729,7 +729,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.VisualElement.ScaleProperty, scale);
             return self;
         }
-        
+
         public static T Scale<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -737,7 +737,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Scale<T>(this SettersContext<T> self,
             double scale)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -745,7 +745,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.ScaleProperty, Value = scale });
             return self;
         }
-        
+
         public static SettersContext<T> Scale<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -753,7 +753,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateScaleTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -762,7 +762,7 @@ namespace Sharp.UI
             var callback = (double actValue) => { self.Scale = actValue; };
             return Transformations.AnimateAsync<double>(self, "AnimateScaleTo", transform, callback, length, easing);
         }
-        
+
         public static T ScaleX<T>(this T self,
             double scaleX)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -770,7 +770,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.VisualElement.ScaleXProperty, scaleX);
             return self;
         }
-        
+
         public static T ScaleX<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -778,7 +778,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> ScaleX<T>(this SettersContext<T> self,
             double scaleX)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -786,7 +786,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.ScaleXProperty, Value = scaleX });
             return self;
         }
-        
+
         public static SettersContext<T> ScaleX<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -794,7 +794,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateScaleXTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -803,7 +803,7 @@ namespace Sharp.UI
             var callback = (double actValue) => { self.ScaleX = actValue; };
             return Transformations.AnimateAsync<double>(self, "AnimateScaleXTo", transform, callback, length, easing);
         }
-        
+
         public static T ScaleY<T>(this T self,
             double scaleY)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -811,7 +811,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.VisualElement.ScaleYProperty, scaleY);
             return self;
         }
-        
+
         public static T ScaleY<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -819,7 +819,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> ScaleY<T>(this SettersContext<T> self,
             double scaleY)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -827,7 +827,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.ScaleYProperty, Value = scaleY });
             return self;
         }
-        
+
         public static SettersContext<T> ScaleY<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -835,7 +835,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateScaleYTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -844,7 +844,7 @@ namespace Sharp.UI
             var callback = (double actValue) => { self.ScaleY = actValue; };
             return Transformations.AnimateAsync<double>(self, "AnimateScaleYTo", transform, callback, length, easing);
         }
-        
+
         public static T TranslationX<T>(this T self,
             double translationX)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -852,7 +852,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.VisualElement.TranslationXProperty, translationX);
             return self;
         }
-        
+
         public static T TranslationX<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -860,7 +860,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> TranslationX<T>(this SettersContext<T> self,
             double translationX)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -868,7 +868,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.TranslationXProperty, Value = translationX });
             return self;
         }
-        
+
         public static SettersContext<T> TranslationX<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -876,7 +876,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateTranslationXTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -885,7 +885,7 @@ namespace Sharp.UI
             var callback = (double actValue) => { self.TranslationX = actValue; };
             return Transformations.AnimateAsync<double>(self, "AnimateTranslationXTo", transform, callback, length, easing);
         }
-        
+
         public static T TranslationY<T>(this T self,
             double translationY)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -893,7 +893,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.VisualElement.TranslationYProperty, translationY);
             return self;
         }
-        
+
         public static T TranslationY<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -901,7 +901,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> TranslationY<T>(this SettersContext<T> self,
             double translationY)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -909,7 +909,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.TranslationYProperty, Value = translationY });
             return self;
         }
-        
+
         public static SettersContext<T> TranslationY<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -917,7 +917,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateTranslationYTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -926,7 +926,7 @@ namespace Sharp.UI
             var callback = (double actValue) => { self.TranslationY = actValue; };
             return Transformations.AnimateAsync<double>(self, "AnimateTranslationYTo", transform, callback, length, easing);
         }
-        
+
         public static T Triggers<T>(this T self,
             IList<Microsoft.Maui.Controls.TriggerBase> triggers)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -944,7 +944,7 @@ namespace Sharp.UI
                 self.Triggers.Add(item);
             return self;
         }
-        
+
         public static T Triggers<T>(this T self, Func<PropertyContext<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerBase>>, IPropertyBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.TriggerBase>>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -952,7 +952,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T WidthRequest<T>(this T self,
             double widthRequest)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -960,7 +960,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.VisualElement.WidthRequestProperty, widthRequest);
             return self;
         }
-        
+
         public static T WidthRequest<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -968,7 +968,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> WidthRequest<T>(this SettersContext<T> self,
             double widthRequest)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -976,7 +976,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.WidthRequestProperty, Value = widthRequest });
             return self;
         }
-        
+
         public static SettersContext<T> WidthRequest<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -984,7 +984,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateWidthRequestTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -993,7 +993,7 @@ namespace Sharp.UI
             var callback = (double actValue) => { self.WidthRequest = actValue; };
             return Transformations.AnimateAsync<double>(self, "AnimateWidthRequestTo", transform, callback, length, easing);
         }
-        
+
         public static T Clip<T>(this T self,
             Microsoft.Maui.Controls.Shapes.Geometry clip)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -1001,7 +1001,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.VisualElement.ClipProperty, clip);
             return self;
         }
-        
+
         public static T Clip<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.Shapes.Geometry>, IPropertyBuilder<Microsoft.Maui.Controls.Shapes.Geometry>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -1009,7 +1009,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Clip<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.Shapes.Geometry clip)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -1017,7 +1017,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.ClipProperty, Value = clip });
             return self;
         }
-        
+
         public static SettersContext<T> Clip<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.Shapes.Geometry>, IPropertySettersBuilder<Microsoft.Maui.Controls.Shapes.Geometry>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -1025,7 +1025,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T DisableLayout<T>(this T self,
             bool disableLayout)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -1033,7 +1033,7 @@ namespace Sharp.UI
             self.DisableLayout = disableLayout;
             return self;
         }
-        
+
         public static T IsInPlatformLayout<T>(this T self,
             bool isInPlatformLayout)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -1041,7 +1041,7 @@ namespace Sharp.UI
             self.IsInPlatformLayout = isInPlatformLayout;
             return self;
         }
-        
+
         public static T IsPlatformStateConsistent<T>(this T self,
             bool isPlatformStateConsistent)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -1049,7 +1049,7 @@ namespace Sharp.UI
             self.IsPlatformStateConsistent = isPlatformStateConsistent;
             return self;
         }
-        
+
         public static T IsPlatformEnabled<T>(this T self,
             bool isPlatformEnabled)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -1057,7 +1057,7 @@ namespace Sharp.UI
             self.IsPlatformEnabled = isPlatformEnabled;
             return self;
         }
-        
+
         public static T Resources<T>(this T self,
             Microsoft.Maui.Controls.ResourceDictionary resources)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -1065,7 +1065,7 @@ namespace Sharp.UI
             self.Resources = resources;
             return self;
         }
-        
+
         public static T Frame<T>(this T self,
             Microsoft.Maui.Graphics.Rect frame)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -1073,7 +1073,7 @@ namespace Sharp.UI
             self.Frame = frame;
             return self;
         }
-        
+
         public static T Shadow<T>(this T self,
             Microsoft.Maui.Controls.Shadow shadow)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -1081,7 +1081,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.VisualElement.ShadowProperty, shadow);
             return self;
         }
-        
+
         public static T Shadow<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.Shadow>, IPropertyBuilder<Microsoft.Maui.Controls.Shadow>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -1089,7 +1089,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Shadow<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.Shadow shadow)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -1097,7 +1097,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.ShadowProperty, Value = shadow });
             return self;
         }
-        
+
         public static SettersContext<T> Shadow<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.Shadow>, IPropertySettersBuilder<Microsoft.Maui.Controls.Shadow>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -1105,7 +1105,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T ZIndex<T>(this T self,
             int zIndex)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -1113,7 +1113,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.VisualElement.ZIndexProperty, zIndex);
             return self;
         }
-        
+
         public static T ZIndex<T>(this T self, Func<PropertyContext<int>, IPropertyBuilder<int>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -1121,7 +1121,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> ZIndex<T>(this SettersContext<T> self,
             int zIndex)
             where T : Microsoft.Maui.Controls.VisualElement
@@ -1129,7 +1129,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.VisualElement.ZIndexProperty, Value = zIndex });
             return self;
         }
-        
+
         public static SettersContext<T> ZIndex<T>(this SettersContext<T> self, Func<PropertySettersContext<int>, IPropertySettersBuilder<int>> configure)
             where T : Microsoft.Maui.Controls.VisualElement
         {
@@ -1137,119 +1137,119 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T OnChildrenReordered<T>(this T self, System.EventHandler handler)
             where T : Microsoft.Maui.Controls.VisualElement
         {
             self.ChildrenReordered += handler;
             return self;
         }
-        
+
         public static T OnChildrenReordered<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.VisualElement
         {
             self.ChildrenReordered += (o, arg) => action(self);
             return self;
         }
-        
+
         public static T OnFocused<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.FocusEventArgs> handler)
             where T : Microsoft.Maui.Controls.VisualElement
         {
             self.Focused += handler;
             return self;
         }
-        
+
         public static T OnFocused<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.VisualElement
         {
             self.Focused += (o, arg) => action(self);
             return self;
         }
-        
+
         public static T OnMeasureInvalidated<T>(this T self, System.EventHandler handler)
             where T : Microsoft.Maui.Controls.VisualElement
         {
             self.MeasureInvalidated += handler;
             return self;
         }
-        
+
         public static T OnMeasureInvalidated<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.VisualElement
         {
             self.MeasureInvalidated += (o, arg) => action(self);
             return self;
         }
-        
+
         public static T OnSizeChanged<T>(this T self, System.EventHandler handler)
             where T : Microsoft.Maui.Controls.VisualElement
         {
             self.SizeChanged += handler;
             return self;
         }
-        
+
         public static T OnSizeChanged<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.VisualElement
         {
             self.SizeChanged += (o, arg) => action(self);
             return self;
         }
-        
+
         public static T OnUnfocused<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.FocusEventArgs> handler)
             where T : Microsoft.Maui.Controls.VisualElement
         {
             self.Unfocused += handler;
             return self;
         }
-        
+
         public static T OnUnfocused<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.VisualElement
         {
             self.Unfocused += (o, arg) => action(self);
             return self;
         }
-        
+
         public static T OnBatchCommitted<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.Internals.EventArg<Microsoft.Maui.Controls.VisualElement>> handler)
             where T : Microsoft.Maui.Controls.VisualElement
         {
             self.BatchCommitted += handler;
             return self;
         }
-        
+
         public static T OnBatchCommitted<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.VisualElement
         {
             self.BatchCommitted += (o, arg) => action(self);
             return self;
         }
-        
+
         public static T OnLoaded<T>(this T self, System.EventHandler? handler)
             where T : Microsoft.Maui.Controls.VisualElement
         {
             self.Loaded += handler;
             return self;
         }
-        
+
         public static T OnLoaded<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.VisualElement
         {
             self.Loaded += (o, arg) => action(self);
             return self;
         }
-        
+
         public static T OnUnloaded<T>(this T self, System.EventHandler? handler)
             where T : Microsoft.Maui.Controls.VisualElement
         {
             self.Unloaded += handler;
             return self;
         }
-        
+
         public static T OnUnloaded<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.VisualElement
         {
             self.Unloaded += (o, arg) => action(self);
             return self;
         }
-        
+
     }
 }
 

@@ -29,7 +29,7 @@ namespace Sharp.UI
                 self.EnterActions.Add(item);
             return self;
         }
-        
+
         public static T ExitActions<T>(this T self,
             IList<Microsoft.Maui.Controls.TriggerAction> exitActions)
             where T : Microsoft.Maui.Controls.TriggerBase
@@ -47,7 +47,7 @@ namespace Sharp.UI
                 self.ExitActions.Add(item);
             return self;
         }
-        
+
     }
 }
 

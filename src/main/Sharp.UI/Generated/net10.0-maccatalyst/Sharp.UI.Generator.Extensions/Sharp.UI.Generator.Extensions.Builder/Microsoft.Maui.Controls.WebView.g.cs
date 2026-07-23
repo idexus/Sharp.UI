@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.WebView.UserAgentProperty, userAgent);
             return self;
         }
-        
+
         public static T UserAgent<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.WebView
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> UserAgent<T>(this SettersContext<T> self,
             string userAgent)
             where T : Microsoft.Maui.Controls.WebView
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.WebView.UserAgentProperty, Value = userAgent });
             return self;
         }
-        
+
         public static SettersContext<T> UserAgent<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.WebView
         {
@@ -43,7 +43,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T Cookies<T>(this T self,
             System.Net.CookieContainer cookies)
             where T : Microsoft.Maui.Controls.WebView
@@ -51,7 +51,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.WebView.CookiesProperty, cookies);
             return self;
         }
-        
+
         public static T Cookies<T>(this T self, Func<PropertyContext<System.Net.CookieContainer>, IPropertyBuilder<System.Net.CookieContainer>> configure)
             where T : Microsoft.Maui.Controls.WebView
         {
@@ -59,7 +59,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Cookies<T>(this SettersContext<T> self,
             System.Net.CookieContainer cookies)
             where T : Microsoft.Maui.Controls.WebView
@@ -67,7 +67,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.WebView.CookiesProperty, Value = cookies });
             return self;
         }
-        
+
         public static SettersContext<T> Cookies<T>(this SettersContext<T> self, Func<PropertySettersContext<System.Net.CookieContainer>, IPropertySettersBuilder<System.Net.CookieContainer>> configure)
             where T : Microsoft.Maui.Controls.WebView
         {
@@ -75,7 +75,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T Source<T>(this T self,
             Microsoft.Maui.Controls.WebViewSource source)
             where T : Microsoft.Maui.Controls.WebView
@@ -83,7 +83,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.WebView.SourceProperty, source);
             return self;
         }
-        
+
         public static T Source<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.WebViewSource>, IPropertyBuilder<Microsoft.Maui.Controls.WebViewSource>> configure)
             where T : Microsoft.Maui.Controls.WebView
         {
@@ -91,7 +91,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Source<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.WebViewSource source)
             where T : Microsoft.Maui.Controls.WebView
@@ -99,7 +99,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.WebView.SourceProperty, Value = source });
             return self;
         }
-        
+
         public static SettersContext<T> Source<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.WebViewSource>, IPropertySettersBuilder<Microsoft.Maui.Controls.WebViewSource>> configure)
             where T : Microsoft.Maui.Controls.WebView
         {
@@ -107,49 +107,49 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T OnNavigated<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.WebNavigatedEventArgs> handler)
             where T : Microsoft.Maui.Controls.WebView
         {
             self.Navigated += handler;
             return self;
         }
-        
+
         public static T OnNavigated<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.WebView
         {
             self.Navigated += (o, arg) => action(self);
             return self;
         }
-        
+
         public static T OnNavigating<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.WebNavigatingEventArgs> handler)
             where T : Microsoft.Maui.Controls.WebView
         {
             self.Navigating += handler;
             return self;
         }
-        
+
         public static T OnNavigating<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.WebView
         {
             self.Navigating += (o, arg) => action(self);
             return self;
         }
-        
+
         public static T OnProcessTerminated<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.WebViewProcessTerminatedEventArgs> handler)
             where T : Microsoft.Maui.Controls.WebView
         {
             self.ProcessTerminated += handler;
             return self;
         }
-        
+
         public static T OnProcessTerminated<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.WebView
         {
             self.ProcessTerminated += (o, arg) => action(self);
             return self;
         }
-        
+
     }
 }
 

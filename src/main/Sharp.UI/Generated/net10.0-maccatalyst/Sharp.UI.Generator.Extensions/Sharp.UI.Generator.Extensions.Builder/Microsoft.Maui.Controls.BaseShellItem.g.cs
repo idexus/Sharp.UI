@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.BaseShellItem.FlyoutIconProperty, flyoutIcon);
             return self;
         }
-        
+
         public static T FlyoutIcon<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.ImageSource>, IPropertyBuilder<Microsoft.Maui.Controls.ImageSource>> configure)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> FlyoutIcon<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.ImageSource flyoutIcon)
             where T : Microsoft.Maui.Controls.BaseShellItem
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.BaseShellItem.FlyoutIconProperty, Value = flyoutIcon });
             return self;
         }
-        
+
         public static SettersContext<T> FlyoutIcon<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.ImageSource>, IPropertySettersBuilder<Microsoft.Maui.Controls.ImageSource>> configure)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
@@ -43,7 +43,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T Icon<T>(this T self,
             Microsoft.Maui.Controls.ImageSource icon)
             where T : Microsoft.Maui.Controls.BaseShellItem
@@ -51,7 +51,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.BaseShellItem.IconProperty, icon);
             return self;
         }
-        
+
         public static T Icon<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.ImageSource>, IPropertyBuilder<Microsoft.Maui.Controls.ImageSource>> configure)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
@@ -59,7 +59,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Icon<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.ImageSource icon)
             where T : Microsoft.Maui.Controls.BaseShellItem
@@ -67,7 +67,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.BaseShellItem.IconProperty, Value = icon });
             return self;
         }
-        
+
         public static SettersContext<T> Icon<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.ImageSource>, IPropertySettersBuilder<Microsoft.Maui.Controls.ImageSource>> configure)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
@@ -75,7 +75,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T IsEnabled<T>(this T self,
             bool isEnabled)
             where T : Microsoft.Maui.Controls.BaseShellItem
@@ -83,7 +83,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.BaseShellItem.IsEnabledProperty, isEnabled);
             return self;
         }
-        
+
         public static T IsEnabled<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
@@ -91,7 +91,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> IsEnabled<T>(this SettersContext<T> self,
             bool isEnabled)
             where T : Microsoft.Maui.Controls.BaseShellItem
@@ -99,7 +99,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.BaseShellItem.IsEnabledProperty, Value = isEnabled });
             return self;
         }
-        
+
         public static SettersContext<T> IsEnabled<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
@@ -107,7 +107,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T Route<T>(this T self,
             string route)
             where T : Microsoft.Maui.Controls.BaseShellItem
@@ -115,7 +115,7 @@ namespace Sharp.UI
             self.Route = route;
             return self;
         }
-        
+
         public static T Title<T>(this T self,
             string title)
             where T : Microsoft.Maui.Controls.BaseShellItem
@@ -123,7 +123,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.BaseShellItem.TitleProperty, title);
             return self;
         }
-        
+
         public static T Title<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
@@ -131,7 +131,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Title<T>(this SettersContext<T> self,
             string title)
             where T : Microsoft.Maui.Controls.BaseShellItem
@@ -139,7 +139,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.BaseShellItem.TitleProperty, Value = title });
             return self;
         }
-        
+
         public static SettersContext<T> Title<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
@@ -147,7 +147,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T IsVisible<T>(this T self,
             bool isVisible)
             where T : Microsoft.Maui.Controls.BaseShellItem
@@ -155,7 +155,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.BaseShellItem.IsVisibleProperty, isVisible);
             return self;
         }
-        
+
         public static T IsVisible<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
@@ -163,7 +163,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> IsVisible<T>(this SettersContext<T> self,
             bool isVisible)
             where T : Microsoft.Maui.Controls.BaseShellItem
@@ -171,7 +171,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.BaseShellItem.IsVisibleProperty, Value = isVisible });
             return self;
         }
-        
+
         public static SettersContext<T> IsVisible<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
@@ -179,7 +179,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T FlyoutItemIsVisible<T>(this T self,
             bool flyoutItemIsVisible)
             where T : Microsoft.Maui.Controls.BaseShellItem
@@ -187,7 +187,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.BaseShellItem.FlyoutItemIsVisibleProperty, flyoutItemIsVisible);
             return self;
         }
-        
+
         public static T FlyoutItemIsVisible<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
@@ -195,7 +195,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> FlyoutItemIsVisible<T>(this SettersContext<T> self,
             bool flyoutItemIsVisible)
             where T : Microsoft.Maui.Controls.BaseShellItem
@@ -203,7 +203,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.BaseShellItem.FlyoutItemIsVisibleProperty, Value = flyoutItemIsVisible });
             return self;
         }
-        
+
         public static SettersContext<T> FlyoutItemIsVisible<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
@@ -211,35 +211,35 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T OnAppearing<T>(this T self, System.EventHandler handler)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
             self.Appearing += handler;
             return self;
         }
-        
+
         public static T OnAppearing<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
             self.Appearing += (o, arg) => action(self);
             return self;
         }
-        
+
         public static T OnDisappearing<T>(this T self, System.EventHandler handler)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
             self.Disappearing += handler;
             return self;
         }
-        
+
         public static T OnDisappearing<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.BaseShellItem
         {
             self.Disappearing += (o, arg) => action(self);
             return self;
         }
-        
+
     }
 }
 

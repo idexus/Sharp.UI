@@ -29,7 +29,7 @@ namespace Sharp.UI
                 self.GradientStops.Add(item);
             return self;
         }
-        
+
         public static T GradientStops<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.GradientStopCollection>, IPropertyBuilder<Microsoft.Maui.Controls.GradientStopCollection>> configure)
             where T : Microsoft.Maui.Controls.GradientBrush
         {
@@ -37,21 +37,21 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T OnInvalidateGradientBrushRequested<T>(this T self, System.EventHandler handler)
             where T : Microsoft.Maui.Controls.GradientBrush
         {
             self.InvalidateGradientBrushRequested += handler;
             return self;
         }
-        
+
         public static T OnInvalidateGradientBrushRequested<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.GradientBrush
         {
             self.InvalidateGradientBrushRequested += (o, arg) => action(self);
             return self;
         }
-        
+
     }
 }
 

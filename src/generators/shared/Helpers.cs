@@ -21,9 +21,6 @@ namespace Sharp.UI.Generator
         public static void WaitForDebugger(CancellationToken cancellationToken)
         {
 #if DEBUG
-            //while (!Debugger.IsAttached && !cancellationToken.IsCancellationRequested)
-            //    Task.Delay(1000).Wait(cancellationToken);
-
             if (!Debugger.IsAttached)
             {
                 Debugger.Launch();
@@ -76,22 +73,6 @@ namespace Sharp.UI.Generator
 
             elementType = _elementType;
             return _elementType != null;
-        }
-
-        public static bool IsIEnumerable(INamedTypeSymbol symbol)
-        {
-            bool isIEnumerable = false;
-            LoopDownToObject(symbol, type =>
-            {
-                foreach (var inter in type.AllInterfaces)
-                    if (inter.Name.Equals("IEnumerable", StringComparison.Ordinal) && !inter.IsGenericType)
-                    {
-                        isIEnumerable = true;
-                        return true;
-                    }
-                return false;
-            });
-            return isIEnumerable;
         }
 
         public static bool IsVisualElement(INamedTypeSymbol symbol)

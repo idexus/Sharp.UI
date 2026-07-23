@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Shapes.Transform.ValueProperty, value);
             return self;
         }
-        
+
         public static T Value<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.Shapes.Matrix>, IPropertyBuilder<Microsoft.Maui.Controls.Shapes.Matrix>> configure)
             where T : Microsoft.Maui.Controls.Shapes.Transform
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Value<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.Shapes.Matrix value)
             where T : Microsoft.Maui.Controls.Shapes.Transform
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shapes.Transform.ValueProperty, Value = value });
             return self;
         }
-        
+
         public static SettersContext<T> Value<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.Shapes.Matrix>, IPropertySettersBuilder<Microsoft.Maui.Controls.Shapes.Matrix>> configure)
             where T : Microsoft.Maui.Controls.Shapes.Transform
         {
@@ -43,7 +43,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
     }
 }
 

@@ -29,7 +29,7 @@ namespace Sharp.UI
                 self.GestureRecognizers.Add(item);
             return self;
         }
-        
+
     }
 }
 

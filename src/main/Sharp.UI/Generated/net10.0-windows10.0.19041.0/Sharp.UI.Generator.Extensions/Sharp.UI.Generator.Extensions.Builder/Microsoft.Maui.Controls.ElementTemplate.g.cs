@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.LoadTemplate = loadTemplate;
             return self;
         }
-        
+
     }
 }
 

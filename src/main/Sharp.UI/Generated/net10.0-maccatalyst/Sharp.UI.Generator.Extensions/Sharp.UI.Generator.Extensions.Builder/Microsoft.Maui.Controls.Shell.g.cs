@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Shell.FlyoutVerticalScrollModeProperty, flyoutVerticalScrollMode);
             return self;
         }
-        
+
         public static T FlyoutVerticalScrollMode<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.ScrollMode>, IPropertyBuilder<Microsoft.Maui.Controls.ScrollMode>> configure)
             where T : Microsoft.Maui.Controls.Shell
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> FlyoutVerticalScrollMode<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.ScrollMode flyoutVerticalScrollMode)
             where T : Microsoft.Maui.Controls.Shell
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shell.FlyoutVerticalScrollModeProperty, Value = flyoutVerticalScrollMode });
             return self;
         }
-        
+
         public static SettersContext<T> FlyoutVerticalScrollMode<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.ScrollMode>, IPropertySettersBuilder<Microsoft.Maui.Controls.ScrollMode>> configure)
             where T : Microsoft.Maui.Controls.Shell
         {
@@ -43,7 +43,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T FlyoutIcon<T>(this T self,
             Microsoft.Maui.Controls.ImageSource flyoutIcon)
             where T : Microsoft.Maui.Controls.Shell
@@ -51,7 +51,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Shell.FlyoutIconProperty, flyoutIcon);
             return self;
         }
-        
+
         public static T FlyoutIcon<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.ImageSource>, IPropertyBuilder<Microsoft.Maui.Controls.ImageSource>> configure)
             where T : Microsoft.Maui.Controls.Shell
         {
@@ -59,7 +59,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> FlyoutIcon<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.ImageSource flyoutIcon)
             where T : Microsoft.Maui.Controls.Shell
@@ -67,7 +67,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shell.FlyoutIconProperty, Value = flyoutIcon });
             return self;
         }
-        
+
         public static SettersContext<T> FlyoutIcon<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.ImageSource>, IPropertySettersBuilder<Microsoft.Maui.Controls.ImageSource>> configure)
             where T : Microsoft.Maui.Controls.Shell
         {
@@ -75,7 +75,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T CurrentItem<T>(this T self,
             Microsoft.Maui.Controls.ShellItem currentItem)
             where T : Microsoft.Maui.Controls.Shell
@@ -83,7 +83,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Shell.CurrentItemProperty, currentItem);
             return self;
         }
-        
+
         public static T CurrentItem<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.ShellItem>, IPropertyBuilder<Microsoft.Maui.Controls.ShellItem>> configure)
             where T : Microsoft.Maui.Controls.Shell
         {
@@ -91,7 +91,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> CurrentItem<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.ShellItem currentItem)
             where T : Microsoft.Maui.Controls.Shell
@@ -99,7 +99,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shell.CurrentItemProperty, Value = currentItem });
             return self;
         }
-        
+
         public static SettersContext<T> CurrentItem<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.ShellItem>, IPropertySettersBuilder<Microsoft.Maui.Controls.ShellItem>> configure)
             where T : Microsoft.Maui.Controls.Shell
         {
@@ -107,7 +107,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T FlyoutBackgroundImage<T>(this T self,
             Microsoft.Maui.Controls.ImageSource flyoutBackgroundImage)
             where T : Microsoft.Maui.Controls.Shell
@@ -115,7 +115,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Shell.FlyoutBackgroundImageProperty, flyoutBackgroundImage);
             return self;
         }
-        
+
         public static T FlyoutBackgroundImage<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.ImageSource>, IPropertyBuilder<Microsoft.Maui.Controls.ImageSource>> configure)
             where T : Microsoft.Maui.Controls.Shell
         {
@@ -123,7 +123,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> FlyoutBackgroundImage<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.ImageSource flyoutBackgroundImage)
             where T : Microsoft.Maui.Controls.Shell
@@ -131,7 +131,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shell.FlyoutBackgroundImageProperty, Value = flyoutBackgroundImage });
             return self;
         }
-        
+
         public static SettersContext<T> FlyoutBackgroundImage<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.ImageSource>, IPropertySettersBuilder<Microsoft.Maui.Controls.ImageSource>> configure)
             where T : Microsoft.Maui.Controls.Shell
         {
@@ -139,7 +139,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T FlyoutBackgroundImageAspect<T>(this T self,
             Microsoft.Maui.Aspect flyoutBackgroundImageAspect)
             where T : Microsoft.Maui.Controls.Shell
@@ -147,7 +147,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Shell.FlyoutBackgroundImageAspectProperty, flyoutBackgroundImageAspect);
             return self;
         }
-        
+
         public static T FlyoutBackgroundImageAspect<T>(this T self, Func<PropertyContext<Microsoft.Maui.Aspect>, IPropertyBuilder<Microsoft.Maui.Aspect>> configure)
             where T : Microsoft.Maui.Controls.Shell
         {
@@ -155,7 +155,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> FlyoutBackgroundImageAspect<T>(this SettersContext<T> self,
             Microsoft.Maui.Aspect flyoutBackgroundImageAspect)
             where T : Microsoft.Maui.Controls.Shell
@@ -163,7 +163,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shell.FlyoutBackgroundImageAspectProperty, Value = flyoutBackgroundImageAspect });
             return self;
         }
-        
+
         public static SettersContext<T> FlyoutBackgroundImageAspect<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Aspect>, IPropertySettersBuilder<Microsoft.Maui.Aspect>> configure)
             where T : Microsoft.Maui.Controls.Shell
         {
@@ -171,7 +171,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T FlyoutBackgroundColor<T>(this T self,
             Microsoft.Maui.Graphics.Color flyoutBackgroundColor)
             where T : Microsoft.Maui.Controls.Shell
@@ -179,7 +179,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Shell.FlyoutBackgroundColorProperty, flyoutBackgroundColor);
             return self;
         }
-        
+
         public static T FlyoutBackgroundColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.Shell
         {
@@ -187,7 +187,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> FlyoutBackgroundColor<T>(this SettersContext<T> self,
             Microsoft.Maui.Graphics.Color flyoutBackgroundColor)
             where T : Microsoft.Maui.Controls.Shell
@@ -195,7 +195,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shell.FlyoutBackgroundColorProperty, Value = flyoutBackgroundColor });
             return self;
         }
-        
+
         public static SettersContext<T> FlyoutBackgroundColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.Shell
         {
@@ -203,7 +203,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateFlyoutBackgroundColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.Shell
         {
@@ -212,7 +212,7 @@ namespace Sharp.UI
             var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.FlyoutBackgroundColor = actValue; };
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateFlyoutBackgroundColorTo", transform, callback, length, easing);
         }
-        
+
         public static T FlyoutBackground<T>(this T self,
             Microsoft.Maui.Controls.Brush flyoutBackground)
             where T : Microsoft.Maui.Controls.Shell
@@ -220,7 +220,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Shell.FlyoutBackgroundProperty, flyoutBackground);
             return self;
         }
-        
+
         public static T FlyoutBackground<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.Brush>, IPropertyBuilder<Microsoft.Maui.Controls.Brush>> configure)
             where T : Microsoft.Maui.Controls.Shell
         {
@@ -228,7 +228,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> FlyoutBackground<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.Brush flyoutBackground)
             where T : Microsoft.Maui.Controls.Shell
@@ -236,7 +236,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shell.FlyoutBackgroundProperty, Value = flyoutBackground });
             return self;
         }
-        
+
         public static SettersContext<T> FlyoutBackground<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.Brush>, IPropertySettersBuilder<Microsoft.Maui.Controls.Brush>> configure)
             where T : Microsoft.Maui.Controls.Shell
         {
@@ -244,7 +244,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T FlyoutBackdrop<T>(this T self,
             Microsoft.Maui.Controls.Brush flyoutBackdrop)
             where T : Microsoft.Maui.Controls.Shell
@@ -252,7 +252,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Shell.FlyoutBackdropProperty, flyoutBackdrop);
             return self;
         }
-        
+
         public static T FlyoutBackdrop<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.Brush>, IPropertyBuilder<Microsoft.Maui.Controls.Brush>> configure)
             where T : Microsoft.Maui.Controls.Shell
         {
@@ -260,7 +260,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> FlyoutBackdrop<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.Brush flyoutBackdrop)
             where T : Microsoft.Maui.Controls.Shell
@@ -268,7 +268,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shell.FlyoutBackdropProperty, Value = flyoutBackdrop });
             return self;
         }
-        
+
         public static SettersContext<T> FlyoutBackdrop<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.Brush>, IPropertySettersBuilder<Microsoft.Maui.Controls.Brush>> configure)
             where T : Microsoft.Maui.Controls.Shell
         {
@@ -276,7 +276,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T FlyoutWidth<T>(this T self,
             double flyoutWidth)
             where T : Microsoft.Maui.Controls.Shell
@@ -284,7 +284,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Shell.FlyoutWidthProperty, flyoutWidth);
             return self;
         }
-        
+
         public static T FlyoutWidth<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Shell
         {
@@ -292,7 +292,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> FlyoutWidth<T>(this SettersContext<T> self,
             double flyoutWidth)
             where T : Microsoft.Maui.Controls.Shell
@@ -300,7 +300,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shell.FlyoutWidthProperty, Value = flyoutWidth });
             return self;
         }
-        
+
         public static SettersContext<T> FlyoutWidth<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Shell
         {
@@ -308,7 +308,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateFlyoutWidthTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.Shell
         {
@@ -317,7 +317,7 @@ namespace Sharp.UI
             var callback = (double actValue) => { self.FlyoutWidth = actValue; };
             return Transformations.AnimateAsync<double>(self, "AnimateFlyoutWidthTo", transform, callback, length, easing);
         }
-        
+
         public static T FlyoutHeight<T>(this T self,
             double flyoutHeight)
             where T : Microsoft.Maui.Controls.Shell
@@ -325,7 +325,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Shell.FlyoutHeightProperty, flyoutHeight);
             return self;
         }
-        
+
         public static T FlyoutHeight<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Shell
         {
@@ -333,7 +333,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> FlyoutHeight<T>(this SettersContext<T> self,
             double flyoutHeight)
             where T : Microsoft.Maui.Controls.Shell
@@ -341,7 +341,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shell.FlyoutHeightProperty, Value = flyoutHeight });
             return self;
         }
-        
+
         public static SettersContext<T> FlyoutHeight<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Shell
         {
@@ -349,7 +349,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateFlyoutHeightTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.Shell
         {
@@ -358,7 +358,7 @@ namespace Sharp.UI
             var callback = (double actValue) => { self.FlyoutHeight = actValue; };
             return Transformations.AnimateAsync<double>(self, "AnimateFlyoutHeightTo", transform, callback, length, easing);
         }
-        
+
         public static T FlyoutBehavior<T>(this T self,
             Microsoft.Maui.FlyoutBehavior flyoutBehavior)
             where T : Microsoft.Maui.Controls.Shell
@@ -366,7 +366,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Shell.FlyoutBehaviorProperty, flyoutBehavior);
             return self;
         }
-        
+
         public static T FlyoutBehavior<T>(this T self, Func<PropertyContext<Microsoft.Maui.FlyoutBehavior>, IPropertyBuilder<Microsoft.Maui.FlyoutBehavior>> configure)
             where T : Microsoft.Maui.Controls.Shell
         {
@@ -374,7 +374,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> FlyoutBehavior<T>(this SettersContext<T> self,
             Microsoft.Maui.FlyoutBehavior flyoutBehavior)
             where T : Microsoft.Maui.Controls.Shell
@@ -382,7 +382,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shell.FlyoutBehaviorProperty, Value = flyoutBehavior });
             return self;
         }
-        
+
         public static SettersContext<T> FlyoutBehavior<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.FlyoutBehavior>, IPropertySettersBuilder<Microsoft.Maui.FlyoutBehavior>> configure)
             where T : Microsoft.Maui.Controls.Shell
         {
@@ -390,7 +390,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T FlyoutHeader<T>(this T self,
             object flyoutHeader)
             where T : Microsoft.Maui.Controls.Shell
@@ -398,7 +398,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Shell.FlyoutHeaderProperty, flyoutHeader);
             return self;
         }
-        
+
         public static T FlyoutHeader<T>(this T self, Func<PropertyContext<object>, IPropertyBuilder<object>> configure)
             where T : Microsoft.Maui.Controls.Shell
         {
@@ -406,7 +406,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> FlyoutHeader<T>(this SettersContext<T> self,
             object flyoutHeader)
             where T : Microsoft.Maui.Controls.Shell
@@ -414,7 +414,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shell.FlyoutHeaderProperty, Value = flyoutHeader });
             return self;
         }
-        
+
         public static SettersContext<T> FlyoutHeader<T>(this SettersContext<T> self, Func<PropertySettersContext<object>, IPropertySettersBuilder<object>> configure)
             where T : Microsoft.Maui.Controls.Shell
         {
@@ -422,7 +422,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T FlyoutFooter<T>(this T self,
             object flyoutFooter)
             where T : Microsoft.Maui.Controls.Shell
@@ -430,7 +430,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Shell.FlyoutFooterProperty, flyoutFooter);
             return self;
         }
-        
+
         public static T FlyoutFooter<T>(this T self, Func<PropertyContext<object>, IPropertyBuilder<object>> configure)
             where T : Microsoft.Maui.Controls.Shell
         {
@@ -438,7 +438,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> FlyoutFooter<T>(this SettersContext<T> self,
             object flyoutFooter)
             where T : Microsoft.Maui.Controls.Shell
@@ -446,7 +446,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shell.FlyoutFooterProperty, Value = flyoutFooter });
             return self;
         }
-        
+
         public static SettersContext<T> FlyoutFooter<T>(this SettersContext<T> self, Func<PropertySettersContext<object>, IPropertySettersBuilder<object>> configure)
             where T : Microsoft.Maui.Controls.Shell
         {
@@ -454,7 +454,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T FlyoutHeaderBehavior<T>(this T self,
             Microsoft.Maui.Controls.FlyoutHeaderBehavior flyoutHeaderBehavior)
             where T : Microsoft.Maui.Controls.Shell
@@ -462,7 +462,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Shell.FlyoutHeaderBehaviorProperty, flyoutHeaderBehavior);
             return self;
         }
-        
+
         public static T FlyoutHeaderBehavior<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.FlyoutHeaderBehavior>, IPropertyBuilder<Microsoft.Maui.Controls.FlyoutHeaderBehavior>> configure)
             where T : Microsoft.Maui.Controls.Shell
         {
@@ -470,7 +470,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> FlyoutHeaderBehavior<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.FlyoutHeaderBehavior flyoutHeaderBehavior)
             where T : Microsoft.Maui.Controls.Shell
@@ -478,7 +478,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shell.FlyoutHeaderBehaviorProperty, Value = flyoutHeaderBehavior });
             return self;
         }
-        
+
         public static SettersContext<T> FlyoutHeaderBehavior<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.FlyoutHeaderBehavior>, IPropertySettersBuilder<Microsoft.Maui.Controls.FlyoutHeaderBehavior>> configure)
             where T : Microsoft.Maui.Controls.Shell
         {
@@ -486,7 +486,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T FlyoutHeaderTemplate<T>(this T self,
             Microsoft.Maui.Controls.DataTemplate flyoutHeaderTemplate)
             where T : Microsoft.Maui.Controls.Shell
@@ -494,7 +494,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Shell.FlyoutHeaderTemplateProperty, flyoutHeaderTemplate);
             return self;
         }
-        
+
         public static T FlyoutHeaderTemplate<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.DataTemplate>, IPropertyBuilder<Microsoft.Maui.Controls.DataTemplate>> configure)
             where T : Microsoft.Maui.Controls.Shell
         {
@@ -502,7 +502,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> FlyoutHeaderTemplate<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.DataTemplate flyoutHeaderTemplate)
             where T : Microsoft.Maui.Controls.Shell
@@ -510,7 +510,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shell.FlyoutHeaderTemplateProperty, Value = flyoutHeaderTemplate });
             return self;
         }
-        
+
         public static SettersContext<T> FlyoutHeaderTemplate<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.DataTemplate>, IPropertySettersBuilder<Microsoft.Maui.Controls.DataTemplate>> configure)
             where T : Microsoft.Maui.Controls.Shell
         {
@@ -518,14 +518,14 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T FlyoutHeaderTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.Shell
         {
             self.SetValue(Microsoft.Maui.Controls.Shell.FlyoutHeaderTemplateProperty, new DataTemplate(loadTemplate));
             return self;
         }
-        
+
         public static T FlyoutFooterTemplate<T>(this T self,
             Microsoft.Maui.Controls.DataTemplate flyoutFooterTemplate)
             where T : Microsoft.Maui.Controls.Shell
@@ -533,7 +533,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Shell.FlyoutFooterTemplateProperty, flyoutFooterTemplate);
             return self;
         }
-        
+
         public static T FlyoutFooterTemplate<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.DataTemplate>, IPropertyBuilder<Microsoft.Maui.Controls.DataTemplate>> configure)
             where T : Microsoft.Maui.Controls.Shell
         {
@@ -541,7 +541,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> FlyoutFooterTemplate<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.DataTemplate flyoutFooterTemplate)
             where T : Microsoft.Maui.Controls.Shell
@@ -549,7 +549,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shell.FlyoutFooterTemplateProperty, Value = flyoutFooterTemplate });
             return self;
         }
-        
+
         public static SettersContext<T> FlyoutFooterTemplate<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.DataTemplate>, IPropertySettersBuilder<Microsoft.Maui.Controls.DataTemplate>> configure)
             where T : Microsoft.Maui.Controls.Shell
         {
@@ -557,14 +557,14 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T FlyoutFooterTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.Shell
         {
             self.SetValue(Microsoft.Maui.Controls.Shell.FlyoutFooterTemplateProperty, new DataTemplate(loadTemplate));
             return self;
         }
-        
+
         public static T FlyoutIsPresented<T>(this T self,
             bool flyoutIsPresented)
             where T : Microsoft.Maui.Controls.Shell
@@ -572,7 +572,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Shell.FlyoutIsPresentedProperty, flyoutIsPresented);
             return self;
         }
-        
+
         public static T FlyoutIsPresented<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.Shell
         {
@@ -580,7 +580,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> FlyoutIsPresented<T>(this SettersContext<T> self,
             bool flyoutIsPresented)
             where T : Microsoft.Maui.Controls.Shell
@@ -588,7 +588,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shell.FlyoutIsPresentedProperty, Value = flyoutIsPresented });
             return self;
         }
-        
+
         public static SettersContext<T> FlyoutIsPresented<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.Shell
         {
@@ -596,7 +596,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T Items<T>(this T self,
             IList<Microsoft.Maui.Controls.ShellItem> items)
             where T : Microsoft.Maui.Controls.Shell
@@ -614,7 +614,7 @@ namespace Sharp.UI
                 self.Items.Add(item);
             return self;
         }
-        
+
         public static T Items<T>(this T self, Func<PropertyContext<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellItem>>, IPropertyBuilder<System.Collections.Generic.IList<Microsoft.Maui.Controls.ShellItem>>> configure)
             where T : Microsoft.Maui.Controls.Shell
         {
@@ -622,7 +622,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T ItemTemplate<T>(this T self,
             Microsoft.Maui.Controls.DataTemplate itemTemplate)
             where T : Microsoft.Maui.Controls.Shell
@@ -630,7 +630,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Shell.ItemTemplateProperty, itemTemplate);
             return self;
         }
-        
+
         public static T ItemTemplate<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.DataTemplate>, IPropertyBuilder<Microsoft.Maui.Controls.DataTemplate>> configure)
             where T : Microsoft.Maui.Controls.Shell
         {
@@ -638,7 +638,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> ItemTemplate<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.DataTemplate itemTemplate)
             where T : Microsoft.Maui.Controls.Shell
@@ -646,7 +646,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shell.ItemTemplateProperty, Value = itemTemplate });
             return self;
         }
-        
+
         public static SettersContext<T> ItemTemplate<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.DataTemplate>, IPropertySettersBuilder<Microsoft.Maui.Controls.DataTemplate>> configure)
             where T : Microsoft.Maui.Controls.Shell
         {
@@ -654,14 +654,14 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T ItemTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.Shell
         {
             self.SetValue(Microsoft.Maui.Controls.Shell.ItemTemplateProperty, new DataTemplate(loadTemplate));
             return self;
         }
-        
+
         public static T MenuItemTemplate<T>(this T self,
             Microsoft.Maui.Controls.DataTemplate menuItemTemplate)
             where T : Microsoft.Maui.Controls.Shell
@@ -669,7 +669,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Shell.MenuItemTemplateProperty, menuItemTemplate);
             return self;
         }
-        
+
         public static T MenuItemTemplate<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.DataTemplate>, IPropertyBuilder<Microsoft.Maui.Controls.DataTemplate>> configure)
             where T : Microsoft.Maui.Controls.Shell
         {
@@ -677,7 +677,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> MenuItemTemplate<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.DataTemplate menuItemTemplate)
             where T : Microsoft.Maui.Controls.Shell
@@ -685,7 +685,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shell.MenuItemTemplateProperty, Value = menuItemTemplate });
             return self;
         }
-        
+
         public static SettersContext<T> MenuItemTemplate<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.DataTemplate>, IPropertySettersBuilder<Microsoft.Maui.Controls.DataTemplate>> configure)
             where T : Microsoft.Maui.Controls.Shell
         {
@@ -693,14 +693,14 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T MenuItemTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.Shell
         {
             self.SetValue(Microsoft.Maui.Controls.Shell.MenuItemTemplateProperty, new DataTemplate(loadTemplate));
             return self;
         }
-        
+
         public static T FlyoutContent<T>(this T self,
             object flyoutContent)
             where T : Microsoft.Maui.Controls.Shell
@@ -708,7 +708,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Shell.FlyoutContentProperty, flyoutContent);
             return self;
         }
-        
+
         public static T FlyoutContent<T>(this T self, Func<PropertyContext<object>, IPropertyBuilder<object>> configure)
             where T : Microsoft.Maui.Controls.Shell
         {
@@ -716,7 +716,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> FlyoutContent<T>(this SettersContext<T> self,
             object flyoutContent)
             where T : Microsoft.Maui.Controls.Shell
@@ -724,7 +724,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shell.FlyoutContentProperty, Value = flyoutContent });
             return self;
         }
-        
+
         public static SettersContext<T> FlyoutContent<T>(this SettersContext<T> self, Func<PropertySettersContext<object>, IPropertySettersBuilder<object>> configure)
             where T : Microsoft.Maui.Controls.Shell
         {
@@ -732,7 +732,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T FlyoutContentTemplate<T>(this T self,
             Microsoft.Maui.Controls.DataTemplate flyoutContentTemplate)
             where T : Microsoft.Maui.Controls.Shell
@@ -740,7 +740,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Shell.FlyoutContentTemplateProperty, flyoutContentTemplate);
             return self;
         }
-        
+
         public static T FlyoutContentTemplate<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.DataTemplate>, IPropertyBuilder<Microsoft.Maui.Controls.DataTemplate>> configure)
             where T : Microsoft.Maui.Controls.Shell
         {
@@ -748,7 +748,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> FlyoutContentTemplate<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.DataTemplate flyoutContentTemplate)
             where T : Microsoft.Maui.Controls.Shell
@@ -756,7 +756,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shell.FlyoutContentTemplateProperty, Value = flyoutContentTemplate });
             return self;
         }
-        
+
         public static SettersContext<T> FlyoutContentTemplate<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.DataTemplate>, IPropertySettersBuilder<Microsoft.Maui.Controls.DataTemplate>> configure)
             where T : Microsoft.Maui.Controls.Shell
         {
@@ -764,42 +764,42 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T FlyoutContentTemplate<T>(this T self, System.Func<object> loadTemplate)
             where T : Microsoft.Maui.Controls.Shell
         {
             self.SetValue(Microsoft.Maui.Controls.Shell.FlyoutContentTemplateProperty, new DataTemplate(loadTemplate));
             return self;
         }
-        
+
         public static T OnNavigated<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.ShellNavigatedEventArgs> handler)
             where T : Microsoft.Maui.Controls.Shell
         {
             self.Navigated += handler;
             return self;
         }
-        
+
         public static T OnNavigated<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Shell
         {
             self.Navigated += (o, arg) => action(self);
             return self;
         }
-        
+
         public static T OnNavigating<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.ShellNavigatingEventArgs> handler)
             where T : Microsoft.Maui.Controls.Shell
         {
             self.Navigating += handler;
             return self;
         }
-        
+
         public static T OnNavigating<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.Shell
         {
             self.Navigating += (o, arg) => action(self);
             return self;
         }
-        
+
     }
 }
 

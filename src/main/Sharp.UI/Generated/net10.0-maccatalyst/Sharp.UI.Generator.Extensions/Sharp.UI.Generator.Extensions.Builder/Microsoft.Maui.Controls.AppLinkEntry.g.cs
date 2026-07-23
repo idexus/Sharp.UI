@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.AppLinkEntry.AppLinkUriProperty, appLinkUri);
             return self;
         }
-        
+
         public static T AppLinkUri<T>(this T self, Func<PropertyContext<System.Uri>, IPropertyBuilder<System.Uri>> configure)
             where T : Microsoft.Maui.Controls.AppLinkEntry
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> AppLinkUri<T>(this SettersContext<T> self,
             System.Uri appLinkUri)
             where T : Microsoft.Maui.Controls.AppLinkEntry
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.AppLinkEntry.AppLinkUriProperty, Value = appLinkUri });
             return self;
         }
-        
+
         public static SettersContext<T> AppLinkUri<T>(this SettersContext<T> self, Func<PropertySettersContext<System.Uri>, IPropertySettersBuilder<System.Uri>> configure)
             where T : Microsoft.Maui.Controls.AppLinkEntry
         {
@@ -43,7 +43,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T Description<T>(this T self,
             string description)
             where T : Microsoft.Maui.Controls.AppLinkEntry
@@ -51,7 +51,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.AppLinkEntry.DescriptionProperty, description);
             return self;
         }
-        
+
         public static T Description<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.AppLinkEntry
         {
@@ -59,7 +59,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Description<T>(this SettersContext<T> self,
             string description)
             where T : Microsoft.Maui.Controls.AppLinkEntry
@@ -67,7 +67,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.AppLinkEntry.DescriptionProperty, Value = description });
             return self;
         }
-        
+
         public static SettersContext<T> Description<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.AppLinkEntry
         {
@@ -75,7 +75,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T IsLinkActive<T>(this T self,
             bool isLinkActive)
             where T : Microsoft.Maui.Controls.AppLinkEntry
@@ -83,7 +83,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.AppLinkEntry.IsLinkActiveProperty, isLinkActive);
             return self;
         }
-        
+
         public static T IsLinkActive<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.AppLinkEntry
         {
@@ -91,7 +91,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> IsLinkActive<T>(this SettersContext<T> self,
             bool isLinkActive)
             where T : Microsoft.Maui.Controls.AppLinkEntry
@@ -99,7 +99,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.AppLinkEntry.IsLinkActiveProperty, Value = isLinkActive });
             return self;
         }
-        
+
         public static SettersContext<T> IsLinkActive<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.AppLinkEntry
         {
@@ -107,7 +107,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T Thumbnail<T>(this T self,
             Microsoft.Maui.Controls.ImageSource thumbnail)
             where T : Microsoft.Maui.Controls.AppLinkEntry
@@ -115,7 +115,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.AppLinkEntry.ThumbnailProperty, thumbnail);
             return self;
         }
-        
+
         public static T Thumbnail<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.ImageSource>, IPropertyBuilder<Microsoft.Maui.Controls.ImageSource>> configure)
             where T : Microsoft.Maui.Controls.AppLinkEntry
         {
@@ -123,7 +123,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Thumbnail<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.ImageSource thumbnail)
             where T : Microsoft.Maui.Controls.AppLinkEntry
@@ -131,7 +131,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.AppLinkEntry.ThumbnailProperty, Value = thumbnail });
             return self;
         }
-        
+
         public static SettersContext<T> Thumbnail<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.ImageSource>, IPropertySettersBuilder<Microsoft.Maui.Controls.ImageSource>> configure)
             where T : Microsoft.Maui.Controls.AppLinkEntry
         {
@@ -139,7 +139,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T Title<T>(this T self,
             string title)
             where T : Microsoft.Maui.Controls.AppLinkEntry
@@ -147,7 +147,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.AppLinkEntry.TitleProperty, title);
             return self;
         }
-        
+
         public static T Title<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.AppLinkEntry
         {
@@ -155,7 +155,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Title<T>(this SettersContext<T> self,
             string title)
             where T : Microsoft.Maui.Controls.AppLinkEntry
@@ -163,7 +163,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.AppLinkEntry.TitleProperty, Value = title });
             return self;
         }
-        
+
         public static SettersContext<T> Title<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.AppLinkEntry
         {
@@ -171,7 +171,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
     }
 }
 

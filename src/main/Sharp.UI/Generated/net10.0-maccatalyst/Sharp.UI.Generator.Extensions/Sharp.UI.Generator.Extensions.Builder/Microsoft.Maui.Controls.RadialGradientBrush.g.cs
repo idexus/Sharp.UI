@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.RadialGradientBrush.CenterProperty, center);
             return self;
         }
-        
+
         public static T Center<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Point>, IPropertyBuilder<Microsoft.Maui.Graphics.Point>> configure)
             where T : Microsoft.Maui.Controls.RadialGradientBrush
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Center<T>(this SettersContext<T> self,
             Microsoft.Maui.Graphics.Point center)
             where T : Microsoft.Maui.Controls.RadialGradientBrush
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.RadialGradientBrush.CenterProperty, Value = center });
             return self;
         }
-        
+
         public static SettersContext<T> Center<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Point>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Point>> configure)
             where T : Microsoft.Maui.Controls.RadialGradientBrush
         {
@@ -43,7 +43,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T Radius<T>(this T self,
             double radius)
             where T : Microsoft.Maui.Controls.RadialGradientBrush
@@ -51,7 +51,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.RadialGradientBrush.RadiusProperty, radius);
             return self;
         }
-        
+
         public static T Radius<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.RadialGradientBrush
         {
@@ -59,7 +59,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Radius<T>(this SettersContext<T> self,
             double radius)
             where T : Microsoft.Maui.Controls.RadialGradientBrush
@@ -67,7 +67,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.RadialGradientBrush.RadiusProperty, Value = radius });
             return self;
         }
-        
+
         public static SettersContext<T> Radius<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.RadialGradientBrush
         {
@@ -75,7 +75,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
     }
 }
 

@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Shapes.RotateTransform.AngleProperty, angle);
             return self;
         }
-        
+
         public static T Angle<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Shapes.RotateTransform
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Angle<T>(this SettersContext<T> self,
             double angle)
             where T : Microsoft.Maui.Controls.Shapes.RotateTransform
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shapes.RotateTransform.AngleProperty, Value = angle });
             return self;
         }
-        
+
         public static SettersContext<T> Angle<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Shapes.RotateTransform
         {
@@ -43,7 +43,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T CenterX<T>(this T self,
             double centerX)
             where T : Microsoft.Maui.Controls.Shapes.RotateTransform
@@ -51,7 +51,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Shapes.RotateTransform.CenterXProperty, centerX);
             return self;
         }
-        
+
         public static T CenterX<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Shapes.RotateTransform
         {
@@ -59,7 +59,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> CenterX<T>(this SettersContext<T> self,
             double centerX)
             where T : Microsoft.Maui.Controls.Shapes.RotateTransform
@@ -67,7 +67,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shapes.RotateTransform.CenterXProperty, Value = centerX });
             return self;
         }
-        
+
         public static SettersContext<T> CenterX<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Shapes.RotateTransform
         {
@@ -75,7 +75,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T CenterY<T>(this T self,
             double centerY)
             where T : Microsoft.Maui.Controls.Shapes.RotateTransform
@@ -83,7 +83,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Shapes.RotateTransform.CenterYProperty, centerY);
             return self;
         }
-        
+
         public static T CenterY<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Shapes.RotateTransform
         {
@@ -91,7 +91,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> CenterY<T>(this SettersContext<T> self,
             double centerY)
             where T : Microsoft.Maui.Controls.Shapes.RotateTransform
@@ -99,7 +99,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shapes.RotateTransform.CenterYProperty, Value = centerY });
             return self;
         }
-        
+
         public static SettersContext<T> CenterY<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Shapes.RotateTransform
         {
@@ -107,7 +107,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
     }
 }
 

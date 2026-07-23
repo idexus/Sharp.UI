@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.SwipeView.ThresholdProperty, threshold);
             return self;
         }
-        
+
         public static T Threshold<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.SwipeView
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Threshold<T>(this SettersContext<T> self,
             double threshold)
             where T : Microsoft.Maui.Controls.SwipeView
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SwipeView.ThresholdProperty, Value = threshold });
             return self;
         }
-        
+
         public static SettersContext<T> Threshold<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.SwipeView
         {
@@ -43,7 +43,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateThresholdTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.SwipeView
         {
@@ -52,7 +52,7 @@ namespace Sharp.UI
             var callback = (double actValue) => { self.Threshold = actValue; };
             return Transformations.AnimateAsync<double>(self, "AnimateThresholdTo", transform, callback, length, easing);
         }
-        
+
         public static T LeftItems<T>(this T self,
             IList<Microsoft.Maui.Controls.ISwipeItem> leftItems)
             where T : Microsoft.Maui.Controls.SwipeView
@@ -70,7 +70,7 @@ namespace Sharp.UI
                 self.LeftItems.Add(item);
             return self;
         }
-        
+
         public static T LeftItems<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.SwipeItems>, IPropertyBuilder<Microsoft.Maui.Controls.SwipeItems>> configure)
             where T : Microsoft.Maui.Controls.SwipeView
         {
@@ -78,7 +78,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T RightItems<T>(this T self,
             IList<Microsoft.Maui.Controls.ISwipeItem> rightItems)
             where T : Microsoft.Maui.Controls.SwipeView
@@ -96,7 +96,7 @@ namespace Sharp.UI
                 self.RightItems.Add(item);
             return self;
         }
-        
+
         public static T RightItems<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.SwipeItems>, IPropertyBuilder<Microsoft.Maui.Controls.SwipeItems>> configure)
             where T : Microsoft.Maui.Controls.SwipeView
         {
@@ -104,7 +104,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T TopItems<T>(this T self,
             IList<Microsoft.Maui.Controls.ISwipeItem> topItems)
             where T : Microsoft.Maui.Controls.SwipeView
@@ -122,7 +122,7 @@ namespace Sharp.UI
                 self.TopItems.Add(item);
             return self;
         }
-        
+
         public static T TopItems<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.SwipeItems>, IPropertyBuilder<Microsoft.Maui.Controls.SwipeItems>> configure)
             where T : Microsoft.Maui.Controls.SwipeView
         {
@@ -130,7 +130,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T BottomItems<T>(this T self,
             IList<Microsoft.Maui.Controls.ISwipeItem> bottomItems)
             where T : Microsoft.Maui.Controls.SwipeView
@@ -148,7 +148,7 @@ namespace Sharp.UI
                 self.BottomItems.Add(item);
             return self;
         }
-        
+
         public static T BottomItems<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.SwipeItems>, IPropertyBuilder<Microsoft.Maui.Controls.SwipeItems>> configure)
             where T : Microsoft.Maui.Controls.SwipeView
         {
@@ -156,77 +156,77 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T OnSwipeStarted<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.SwipeStartedEventArgs> handler)
             where T : Microsoft.Maui.Controls.SwipeView
         {
             self.SwipeStarted += handler;
             return self;
         }
-        
+
         public static T OnSwipeStarted<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.SwipeView
         {
             self.SwipeStarted += (o, arg) => action(self);
             return self;
         }
-        
+
         public static T OnSwipeChanging<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.SwipeChangingEventArgs> handler)
             where T : Microsoft.Maui.Controls.SwipeView
         {
             self.SwipeChanging += handler;
             return self;
         }
-        
+
         public static T OnSwipeChanging<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.SwipeView
         {
             self.SwipeChanging += (o, arg) => action(self);
             return self;
         }
-        
+
         public static T OnSwipeEnded<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.SwipeEndedEventArgs> handler)
             where T : Microsoft.Maui.Controls.SwipeView
         {
             self.SwipeEnded += handler;
             return self;
         }
-        
+
         public static T OnSwipeEnded<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.SwipeView
         {
             self.SwipeEnded += (o, arg) => action(self);
             return self;
         }
-        
+
         public static T OnOpenRequested<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.OpenRequestedEventArgs> handler)
             where T : Microsoft.Maui.Controls.SwipeView
         {
             self.OpenRequested += handler;
             return self;
         }
-        
+
         public static T OnOpenRequested<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.SwipeView
         {
             self.OpenRequested += (o, arg) => action(self);
             return self;
         }
-        
+
         public static T OnCloseRequested<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.CloseRequestedEventArgs> handler)
             where T : Microsoft.Maui.Controls.SwipeView
         {
             self.CloseRequested += handler;
             return self;
         }
-        
+
         public static T OnCloseRequested<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.SwipeView
         {
             self.CloseRequested += (o, arg) => action(self);
             return self;
         }
-        
+
     }
 }
 

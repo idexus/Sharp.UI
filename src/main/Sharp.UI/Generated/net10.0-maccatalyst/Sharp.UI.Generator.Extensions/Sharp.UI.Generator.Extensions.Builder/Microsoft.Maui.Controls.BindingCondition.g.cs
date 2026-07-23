@@ -18,14 +18,14 @@ namespace Sharp.UI
             self.Binding = binding;
             return self;
         }
-        
+
         public static Microsoft.Maui.Controls.BindingCondition Value(this Microsoft.Maui.Controls.BindingCondition self,
             object value)
         {
             self.Value = value;
             return self;
         }
-        
+
     }
 }
 

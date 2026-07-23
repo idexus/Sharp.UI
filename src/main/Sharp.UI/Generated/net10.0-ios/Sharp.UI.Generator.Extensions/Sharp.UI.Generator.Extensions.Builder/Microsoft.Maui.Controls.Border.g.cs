@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Border.ContentProperty, content);
             return self;
         }
-        
+
         public static T Content<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.View?>, IPropertyBuilder<Microsoft.Maui.Controls.View?>> configure)
             where T : Microsoft.Maui.Controls.Border
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Content<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.View? content)
             where T : Microsoft.Maui.Controls.Border
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Border.ContentProperty, Value = content });
             return self;
         }
-        
+
         public static SettersContext<T> Content<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.View?>, IPropertySettersBuilder<Microsoft.Maui.Controls.View?>> configure)
             where T : Microsoft.Maui.Controls.Border
         {
@@ -43,7 +43,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T Padding<T>(this T self,
             Microsoft.Maui.Thickness padding)
             where T : Microsoft.Maui.Controls.Border
@@ -51,7 +51,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Border.PaddingProperty, padding);
             return self;
         }
-               
+
         public static T Padding<T>(this T self, double horizontalSize, double verticalSize)
             where T : Microsoft.Maui.Controls.Border
         {
@@ -66,15 +66,15 @@ namespace Sharp.UI
             return self;
         }
 
-        #nullable disable
+#nullable disable
         public static T Padding<T>(this T self, object _ = null, double left = 0, double top = 0, double right = 0, double bottom = 0)
             where T : Microsoft.Maui.Controls.Border
         {
             self.SetValue(Microsoft.Maui.Controls.Border.PaddingProperty, new Thickness(left, top, right, bottom));
             return self;
         }
-        #nullable enable
-        
+#nullable enable
+
         public static T Padding<T>(this T self, Func<PropertyContext<Microsoft.Maui.Thickness>, IPropertyBuilder<Microsoft.Maui.Thickness>> configure)
             where T : Microsoft.Maui.Controls.Border
         {
@@ -82,7 +82,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Padding<T>(this SettersContext<T> self,
             Microsoft.Maui.Thickness padding)
             where T : Microsoft.Maui.Controls.Border
@@ -90,7 +90,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Border.PaddingProperty, Value = padding });
             return self;
         }
-        
+
         public static SettersContext<T> Padding<T>(this SettersContext<T> self, double horizontalSize, double verticalSize)
             where T : Microsoft.Maui.Controls.Border
         {
@@ -105,15 +105,15 @@ namespace Sharp.UI
             return self;
         }
 
-        #nullable disable
+#nullable disable
         public static SettersContext<T> Padding<T>(this SettersContext<T> self, object _ = default, double left = 0, double top = 0, double right = 0, double bottom = 0)
             where T : Microsoft.Maui.Controls.Border
         {
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Border.PaddingProperty, Value = new Thickness(left, top, right, bottom) });
             return self;
         }
-        #nullable enable
-        
+#nullable enable
+
         public static SettersContext<T> Padding<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Thickness>, IPropertySettersBuilder<Microsoft.Maui.Thickness>> configure)
             where T : Microsoft.Maui.Controls.Border
         {
@@ -121,7 +121,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T SafeAreaEdges<T>(this T self,
             Microsoft.Maui.SafeAreaEdges safeAreaEdges)
             where T : Microsoft.Maui.Controls.Border
@@ -129,7 +129,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Border.SafeAreaEdgesProperty, safeAreaEdges);
             return self;
         }
-        
+
         public static T SafeAreaEdges<T>(this T self, Func<PropertyContext<Microsoft.Maui.SafeAreaEdges>, IPropertyBuilder<Microsoft.Maui.SafeAreaEdges>> configure)
             where T : Microsoft.Maui.Controls.Border
         {
@@ -137,7 +137,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> SafeAreaEdges<T>(this SettersContext<T> self,
             Microsoft.Maui.SafeAreaEdges safeAreaEdges)
             where T : Microsoft.Maui.Controls.Border
@@ -145,7 +145,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Border.SafeAreaEdgesProperty, Value = safeAreaEdges });
             return self;
         }
-        
+
         public static SettersContext<T> SafeAreaEdges<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.SafeAreaEdges>, IPropertySettersBuilder<Microsoft.Maui.SafeAreaEdges>> configure)
             where T : Microsoft.Maui.Controls.Border
         {
@@ -153,7 +153,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T StrokeShape<T>(this T self,
             Microsoft.Maui.Graphics.IShape? strokeShape)
             where T : Microsoft.Maui.Controls.Border
@@ -161,7 +161,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Border.StrokeShapeProperty, strokeShape);
             return self;
         }
-        
+
         public static T StrokeShape<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.IShape?>, IPropertyBuilder<Microsoft.Maui.Graphics.IShape?>> configure)
             where T : Microsoft.Maui.Controls.Border
         {
@@ -169,7 +169,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> StrokeShape<T>(this SettersContext<T> self,
             Microsoft.Maui.Graphics.IShape? strokeShape)
             where T : Microsoft.Maui.Controls.Border
@@ -177,7 +177,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Border.StrokeShapeProperty, Value = strokeShape });
             return self;
         }
-        
+
         public static SettersContext<T> StrokeShape<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.IShape?>, IPropertySettersBuilder<Microsoft.Maui.Graphics.IShape?>> configure)
             where T : Microsoft.Maui.Controls.Border
         {
@@ -185,7 +185,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T Stroke<T>(this T self,
             Microsoft.Maui.Controls.Brush? stroke)
             where T : Microsoft.Maui.Controls.Border
@@ -193,7 +193,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Border.StrokeProperty, stroke);
             return self;
         }
-        
+
         public static T Stroke<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.Brush?>, IPropertyBuilder<Microsoft.Maui.Controls.Brush?>> configure)
             where T : Microsoft.Maui.Controls.Border
         {
@@ -201,7 +201,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Stroke<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.Brush? stroke)
             where T : Microsoft.Maui.Controls.Border
@@ -209,7 +209,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Border.StrokeProperty, Value = stroke });
             return self;
         }
-        
+
         public static SettersContext<T> Stroke<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.Brush?>, IPropertySettersBuilder<Microsoft.Maui.Controls.Brush?>> configure)
             where T : Microsoft.Maui.Controls.Border
         {
@@ -217,7 +217,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T StrokeThickness<T>(this T self,
             double strokeThickness)
             where T : Microsoft.Maui.Controls.Border
@@ -225,7 +225,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Border.StrokeThicknessProperty, strokeThickness);
             return self;
         }
-        
+
         public static T StrokeThickness<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Border
         {
@@ -233,7 +233,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> StrokeThickness<T>(this SettersContext<T> self,
             double strokeThickness)
             where T : Microsoft.Maui.Controls.Border
@@ -241,7 +241,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Border.StrokeThicknessProperty, Value = strokeThickness });
             return self;
         }
-        
+
         public static SettersContext<T> StrokeThickness<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Border
         {
@@ -249,7 +249,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateStrokeThicknessTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.Border
         {
@@ -258,7 +258,7 @@ namespace Sharp.UI
             var callback = (double actValue) => { self.StrokeThickness = actValue; };
             return Transformations.AnimateAsync<double>(self, "AnimateStrokeThicknessTo", transform, callback, length, easing);
         }
-        
+
         public static T StrokeDashArray<T>(this T self,
             IList<double> strokeDashArray)
             where T : Microsoft.Maui.Controls.Border
@@ -276,7 +276,7 @@ namespace Sharp.UI
                 self.StrokeDashArray?.Add(item);
             return self;
         }
-        
+
         public static T StrokeDashArray<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.DoubleCollection?>, IPropertyBuilder<Microsoft.Maui.Controls.DoubleCollection?>> configure)
             where T : Microsoft.Maui.Controls.Border
         {
@@ -284,7 +284,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T StrokeDashOffset<T>(this T self,
             double strokeDashOffset)
             where T : Microsoft.Maui.Controls.Border
@@ -292,7 +292,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Border.StrokeDashOffsetProperty, strokeDashOffset);
             return self;
         }
-        
+
         public static T StrokeDashOffset<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Border
         {
@@ -300,7 +300,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> StrokeDashOffset<T>(this SettersContext<T> self,
             double strokeDashOffset)
             where T : Microsoft.Maui.Controls.Border
@@ -308,7 +308,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Border.StrokeDashOffsetProperty, Value = strokeDashOffset });
             return self;
         }
-        
+
         public static SettersContext<T> StrokeDashOffset<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Border
         {
@@ -316,7 +316,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateStrokeDashOffsetTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.Border
         {
@@ -325,7 +325,7 @@ namespace Sharp.UI
             var callback = (double actValue) => { self.StrokeDashOffset = actValue; };
             return Transformations.AnimateAsync<double>(self, "AnimateStrokeDashOffsetTo", transform, callback, length, easing);
         }
-        
+
         public static T StrokeLineCap<T>(this T self,
             Microsoft.Maui.Controls.Shapes.PenLineCap strokeLineCap)
             where T : Microsoft.Maui.Controls.Border
@@ -333,7 +333,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Border.StrokeLineCapProperty, strokeLineCap);
             return self;
         }
-        
+
         public static T StrokeLineCap<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.Shapes.PenLineCap>, IPropertyBuilder<Microsoft.Maui.Controls.Shapes.PenLineCap>> configure)
             where T : Microsoft.Maui.Controls.Border
         {
@@ -341,7 +341,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> StrokeLineCap<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.Shapes.PenLineCap strokeLineCap)
             where T : Microsoft.Maui.Controls.Border
@@ -349,7 +349,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Border.StrokeLineCapProperty, Value = strokeLineCap });
             return self;
         }
-        
+
         public static SettersContext<T> StrokeLineCap<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.Shapes.PenLineCap>, IPropertySettersBuilder<Microsoft.Maui.Controls.Shapes.PenLineCap>> configure)
             where T : Microsoft.Maui.Controls.Border
         {
@@ -357,7 +357,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T StrokeLineJoin<T>(this T self,
             Microsoft.Maui.Controls.Shapes.PenLineJoin strokeLineJoin)
             where T : Microsoft.Maui.Controls.Border
@@ -365,7 +365,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Border.StrokeLineJoinProperty, strokeLineJoin);
             return self;
         }
-        
+
         public static T StrokeLineJoin<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.Shapes.PenLineJoin>, IPropertyBuilder<Microsoft.Maui.Controls.Shapes.PenLineJoin>> configure)
             where T : Microsoft.Maui.Controls.Border
         {
@@ -373,7 +373,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> StrokeLineJoin<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.Shapes.PenLineJoin strokeLineJoin)
             where T : Microsoft.Maui.Controls.Border
@@ -381,7 +381,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Border.StrokeLineJoinProperty, Value = strokeLineJoin });
             return self;
         }
-        
+
         public static SettersContext<T> StrokeLineJoin<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.Shapes.PenLineJoin>, IPropertySettersBuilder<Microsoft.Maui.Controls.Shapes.PenLineJoin>> configure)
             where T : Microsoft.Maui.Controls.Border
         {
@@ -389,7 +389,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T StrokeMiterLimit<T>(this T self,
             double strokeMiterLimit)
             where T : Microsoft.Maui.Controls.Border
@@ -397,7 +397,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Border.StrokeMiterLimitProperty, strokeMiterLimit);
             return self;
         }
-        
+
         public static T StrokeMiterLimit<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Border
         {
@@ -405,7 +405,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> StrokeMiterLimit<T>(this SettersContext<T> self,
             double strokeMiterLimit)
             where T : Microsoft.Maui.Controls.Border
@@ -413,7 +413,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Border.StrokeMiterLimitProperty, Value = strokeMiterLimit });
             return self;
         }
-        
+
         public static SettersContext<T> StrokeMiterLimit<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.Border
         {
@@ -421,7 +421,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateStrokeMiterLimitTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.Border
         {
@@ -430,7 +430,7 @@ namespace Sharp.UI
             var callback = (double actValue) => { self.StrokeMiterLimit = actValue; };
             return Transformations.AnimateAsync<double>(self, "AnimateStrokeMiterLimitTo", transform, callback, length, easing);
         }
-        
+
     }
 }
 

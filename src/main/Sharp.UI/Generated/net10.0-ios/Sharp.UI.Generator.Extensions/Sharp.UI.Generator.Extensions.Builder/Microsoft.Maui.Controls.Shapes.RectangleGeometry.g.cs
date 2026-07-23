@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.Shapes.RectangleGeometry.RectProperty, rect);
             return self;
         }
-        
+
         public static T Rect<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Rect>, IPropertyBuilder<Microsoft.Maui.Graphics.Rect>> configure)
             where T : Microsoft.Maui.Controls.Shapes.RectangleGeometry
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Rect<T>(this SettersContext<T> self,
             Microsoft.Maui.Graphics.Rect rect)
             where T : Microsoft.Maui.Controls.Shapes.RectangleGeometry
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.Shapes.RectangleGeometry.RectProperty, Value = rect });
             return self;
         }
-        
+
         public static SettersContext<T> Rect<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Rect>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Rect>> configure)
             where T : Microsoft.Maui.Controls.Shapes.RectangleGeometry
         {
@@ -43,7 +43,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
     }
 }
 

@@ -10,7 +10,7 @@ namespace ExampleApp
 {
     using Sharp.UI.Internal;
     using Sharp.UI;
-    
+
     public static partial class ExampleExtension
     {
         public static T Title<T>(this T self,
@@ -20,7 +20,7 @@ namespace ExampleApp
             self.SetValue(ExampleApp.Example.TitleProperty, title);
             return self;
         }
-        
+
         public static T Title<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : ExampleApp.Example
         {
@@ -28,7 +28,7 @@ namespace ExampleApp
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Title<T>(this SettersContext<T> self,
             string title)
             where T : ExampleApp.Example
@@ -36,7 +36,7 @@ namespace ExampleApp
             self.XamlSetters.Add(new Setter { Property = ExampleApp.Example.TitleProperty, Value = title });
             return self;
         }
-        
+
         public static SettersContext<T> Title<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
             where T : ExampleApp.Example
         {
@@ -44,7 +44,7 @@ namespace ExampleApp
             configure(context).Build();
             return self;
         }
-        
+
         public static T IsExpanded<T>(this T self,
             bool isExpanded)
             where T : ExampleApp.Example
@@ -52,7 +52,7 @@ namespace ExampleApp
             self.SetValue(ExampleApp.Example.IsExpandedProperty, isExpanded);
             return self;
         }
-        
+
         public static T IsExpanded<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : ExampleApp.Example
         {
@@ -60,7 +60,7 @@ namespace ExampleApp
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> IsExpanded<T>(this SettersContext<T> self,
             bool isExpanded)
             where T : ExampleApp.Example
@@ -68,7 +68,7 @@ namespace ExampleApp
             self.XamlSetters.Add(new Setter { Property = ExampleApp.Example.IsExpandedProperty, Value = isExpanded });
             return self;
         }
-        
+
         public static SettersContext<T> IsExpanded<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
             where T : ExampleApp.Example
         {
@@ -76,7 +76,7 @@ namespace ExampleApp
             configure(context).Build();
             return self;
         }
-        
+
         public static T ContentPadding<T>(this T self,
             float contentPadding)
             where T : ExampleApp.Example
@@ -84,7 +84,7 @@ namespace ExampleApp
             self.SetValue(ExampleApp.Example.ContentPaddingProperty, contentPadding);
             return self;
         }
-        
+
         public static T ContentPadding<T>(this T self, Func<PropertyContext<float>, IPropertyBuilder<float>> configure)
             where T : ExampleApp.Example
         {
@@ -92,7 +92,7 @@ namespace ExampleApp
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> ContentPadding<T>(this SettersContext<T> self,
             float contentPadding)
             where T : ExampleApp.Example
@@ -100,7 +100,7 @@ namespace ExampleApp
             self.XamlSetters.Add(new Setter { Property = ExampleApp.Example.ContentPaddingProperty, Value = contentPadding });
             return self;
         }
-        
+
         public static SettersContext<T> ContentPadding<T>(this SettersContext<T> self, Func<PropertySettersContext<float>, IPropertySettersBuilder<float>> configure)
             where T : ExampleApp.Example
         {
@@ -108,7 +108,7 @@ namespace ExampleApp
             configure(context).Build();
             return self;
         }
-        
+
         public static T ContentView<T>(this T self,
             Microsoft.Maui.Controls.View contentView)
             where T : ExampleApp.Example
@@ -116,7 +116,7 @@ namespace ExampleApp
             self.SetValue(ExampleApp.Example.ContentViewProperty, contentView);
             return self;
         }
-        
+
         public static T ContentView<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.View>, IPropertyBuilder<Microsoft.Maui.Controls.View>> configure)
             where T : ExampleApp.Example
         {
@@ -124,7 +124,7 @@ namespace ExampleApp
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> ContentView<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.View contentView)
             where T : ExampleApp.Example
@@ -132,7 +132,7 @@ namespace ExampleApp
             self.XamlSetters.Add(new Setter { Property = ExampleApp.Example.ContentViewProperty, Value = contentView });
             return self;
         }
-        
+
         public static SettersContext<T> ContentView<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.View>, IPropertySettersBuilder<Microsoft.Maui.Controls.View>> configure)
             where T : ExampleApp.Example
         {
@@ -140,7 +140,7 @@ namespace ExampleApp
             configure(context).Build();
             return self;
         }
-        
+
         public static T SourceText<T>(this T self,
             string sourceText)
             where T : ExampleApp.Example
@@ -148,7 +148,7 @@ namespace ExampleApp
             self.SetValue(ExampleApp.Example.SourceTextProperty, sourceText);
             return self;
         }
-        
+
         public static T SourceText<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : ExampleApp.Example
         {
@@ -156,7 +156,7 @@ namespace ExampleApp
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> SourceText<T>(this SettersContext<T> self,
             string sourceText)
             where T : ExampleApp.Example
@@ -164,7 +164,7 @@ namespace ExampleApp
             self.XamlSetters.Add(new Setter { Property = ExampleApp.Example.SourceTextProperty, Value = sourceText });
             return self;
         }
-        
+
         public static SettersContext<T> SourceText<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
             where T : ExampleApp.Example
         {
@@ -172,7 +172,7 @@ namespace ExampleApp
             configure(context).Build();
             return self;
         }
-        
+
     }
 }
 

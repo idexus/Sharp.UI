@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.InputView.MaxLengthProperty, maxLength);
             return self;
         }
-        
+
         public static T MaxLength<T>(this T self, Func<PropertyContext<int>, IPropertyBuilder<int>> configure)
             where T : Microsoft.Maui.Controls.InputView
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> MaxLength<T>(this SettersContext<T> self,
             int maxLength)
             where T : Microsoft.Maui.Controls.InputView
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.InputView.MaxLengthProperty, Value = maxLength });
             return self;
         }
-        
+
         public static SettersContext<T> MaxLength<T>(this SettersContext<T> self, Func<PropertySettersContext<int>, IPropertySettersBuilder<int>> configure)
             where T : Microsoft.Maui.Controls.InputView
         {
@@ -43,7 +43,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T Text<T>(this T self,
             string text)
             where T : Microsoft.Maui.Controls.InputView
@@ -51,7 +51,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.InputView.TextProperty, text);
             return self;
         }
-        
+
         public static T Text<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.InputView
         {
@@ -59,7 +59,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Text<T>(this SettersContext<T> self,
             string text)
             where T : Microsoft.Maui.Controls.InputView
@@ -67,7 +67,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.InputView.TextProperty, Value = text });
             return self;
         }
-        
+
         public static SettersContext<T> Text<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.InputView
         {
@@ -75,7 +75,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T Keyboard<T>(this T self,
             Microsoft.Maui.Keyboard keyboard)
             where T : Microsoft.Maui.Controls.InputView
@@ -83,7 +83,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.InputView.KeyboardProperty, keyboard);
             return self;
         }
-        
+
         public static T Keyboard<T>(this T self, Func<PropertyContext<Microsoft.Maui.Keyboard>, IPropertyBuilder<Microsoft.Maui.Keyboard>> configure)
             where T : Microsoft.Maui.Controls.InputView
         {
@@ -91,7 +91,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Keyboard<T>(this SettersContext<T> self,
             Microsoft.Maui.Keyboard keyboard)
             where T : Microsoft.Maui.Controls.InputView
@@ -99,7 +99,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.InputView.KeyboardProperty, Value = keyboard });
             return self;
         }
-        
+
         public static SettersContext<T> Keyboard<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Keyboard>, IPropertySettersBuilder<Microsoft.Maui.Keyboard>> configure)
             where T : Microsoft.Maui.Controls.InputView
         {
@@ -107,7 +107,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T IsSpellCheckEnabled<T>(this T self,
             bool isSpellCheckEnabled)
             where T : Microsoft.Maui.Controls.InputView
@@ -115,7 +115,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.InputView.IsSpellCheckEnabledProperty, isSpellCheckEnabled);
             return self;
         }
-        
+
         public static T IsSpellCheckEnabled<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.InputView
         {
@@ -123,7 +123,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> IsSpellCheckEnabled<T>(this SettersContext<T> self,
             bool isSpellCheckEnabled)
             where T : Microsoft.Maui.Controls.InputView
@@ -131,7 +131,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.InputView.IsSpellCheckEnabledProperty, Value = isSpellCheckEnabled });
             return self;
         }
-        
+
         public static SettersContext<T> IsSpellCheckEnabled<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.InputView
         {
@@ -139,7 +139,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T IsTextPredictionEnabled<T>(this T self,
             bool isTextPredictionEnabled)
             where T : Microsoft.Maui.Controls.InputView
@@ -147,7 +147,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.InputView.IsTextPredictionEnabledProperty, isTextPredictionEnabled);
             return self;
         }
-        
+
         public static T IsTextPredictionEnabled<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.InputView
         {
@@ -155,7 +155,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> IsTextPredictionEnabled<T>(this SettersContext<T> self,
             bool isTextPredictionEnabled)
             where T : Microsoft.Maui.Controls.InputView
@@ -163,7 +163,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.InputView.IsTextPredictionEnabledProperty, Value = isTextPredictionEnabled });
             return self;
         }
-        
+
         public static SettersContext<T> IsTextPredictionEnabled<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.InputView
         {
@@ -171,7 +171,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T IsReadOnly<T>(this T self,
             bool isReadOnly)
             where T : Microsoft.Maui.Controls.InputView
@@ -179,7 +179,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.InputView.IsReadOnlyProperty, isReadOnly);
             return self;
         }
-        
+
         public static T IsReadOnly<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.InputView
         {
@@ -187,7 +187,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> IsReadOnly<T>(this SettersContext<T> self,
             bool isReadOnly)
             where T : Microsoft.Maui.Controls.InputView
@@ -195,7 +195,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.InputView.IsReadOnlyProperty, Value = isReadOnly });
             return self;
         }
-        
+
         public static SettersContext<T> IsReadOnly<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.InputView
         {
@@ -203,7 +203,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T Placeholder<T>(this T self,
             string placeholder)
             where T : Microsoft.Maui.Controls.InputView
@@ -211,7 +211,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.InputView.PlaceholderProperty, placeholder);
             return self;
         }
-        
+
         public static T Placeholder<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.InputView
         {
@@ -219,7 +219,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Placeholder<T>(this SettersContext<T> self,
             string placeholder)
             where T : Microsoft.Maui.Controls.InputView
@@ -227,7 +227,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.InputView.PlaceholderProperty, Value = placeholder });
             return self;
         }
-        
+
         public static SettersContext<T> Placeholder<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.InputView
         {
@@ -235,7 +235,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T PlaceholderColor<T>(this T self,
             Microsoft.Maui.Graphics.Color placeholderColor)
             where T : Microsoft.Maui.Controls.InputView
@@ -243,7 +243,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.InputView.PlaceholderColorProperty, placeholderColor);
             return self;
         }
-        
+
         public static T PlaceholderColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.InputView
         {
@@ -251,7 +251,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> PlaceholderColor<T>(this SettersContext<T> self,
             Microsoft.Maui.Graphics.Color placeholderColor)
             where T : Microsoft.Maui.Controls.InputView
@@ -259,7 +259,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.InputView.PlaceholderColorProperty, Value = placeholderColor });
             return self;
         }
-        
+
         public static SettersContext<T> PlaceholderColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.InputView
         {
@@ -267,7 +267,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimatePlaceholderColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.InputView
         {
@@ -276,7 +276,7 @@ namespace Sharp.UI
             var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.PlaceholderColor = actValue; };
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimatePlaceholderColorTo", transform, callback, length, easing);
         }
-        
+
         public static T TextColor<T>(this T self,
             Microsoft.Maui.Graphics.Color textColor)
             where T : Microsoft.Maui.Controls.InputView
@@ -284,7 +284,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.InputView.TextColorProperty, textColor);
             return self;
         }
-        
+
         public static T TextColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.InputView
         {
@@ -292,7 +292,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> TextColor<T>(this SettersContext<T> self,
             Microsoft.Maui.Graphics.Color textColor)
             where T : Microsoft.Maui.Controls.InputView
@@ -300,7 +300,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.InputView.TextColorProperty, Value = textColor });
             return self;
         }
-        
+
         public static SettersContext<T> TextColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.InputView
         {
@@ -308,7 +308,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateTextColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.InputView
         {
@@ -317,7 +317,7 @@ namespace Sharp.UI
             var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.TextColor = actValue; };
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateTextColorTo", transform, callback, length, easing);
         }
-        
+
         public static T CharacterSpacing<T>(this T self,
             double characterSpacing)
             where T : Microsoft.Maui.Controls.InputView
@@ -325,7 +325,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.InputView.CharacterSpacingProperty, characterSpacing);
             return self;
         }
-        
+
         public static T CharacterSpacing<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.InputView
         {
@@ -333,7 +333,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> CharacterSpacing<T>(this SettersContext<T> self,
             double characterSpacing)
             where T : Microsoft.Maui.Controls.InputView
@@ -341,7 +341,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.InputView.CharacterSpacingProperty, Value = characterSpacing });
             return self;
         }
-        
+
         public static SettersContext<T> CharacterSpacing<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.InputView
         {
@@ -349,7 +349,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateCharacterSpacingTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.InputView
         {
@@ -358,7 +358,7 @@ namespace Sharp.UI
             var callback = (double actValue) => { self.CharacterSpacing = actValue; };
             return Transformations.AnimateAsync<double>(self, "AnimateCharacterSpacingTo", transform, callback, length, easing);
         }
-        
+
         public static T TextTransform<T>(this T self,
             Microsoft.Maui.TextTransform textTransform)
             where T : Microsoft.Maui.Controls.InputView
@@ -366,7 +366,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.InputView.TextTransformProperty, textTransform);
             return self;
         }
-        
+
         public static T TextTransform<T>(this T self, Func<PropertyContext<Microsoft.Maui.TextTransform>, IPropertyBuilder<Microsoft.Maui.TextTransform>> configure)
             where T : Microsoft.Maui.Controls.InputView
         {
@@ -374,7 +374,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> TextTransform<T>(this SettersContext<T> self,
             Microsoft.Maui.TextTransform textTransform)
             where T : Microsoft.Maui.Controls.InputView
@@ -382,7 +382,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.InputView.TextTransformProperty, Value = textTransform });
             return self;
         }
-        
+
         public static SettersContext<T> TextTransform<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.TextTransform>, IPropertySettersBuilder<Microsoft.Maui.TextTransform>> configure)
             where T : Microsoft.Maui.Controls.InputView
         {
@@ -390,7 +390,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T CursorPosition<T>(this T self,
             int cursorPosition)
             where T : Microsoft.Maui.Controls.InputView
@@ -398,7 +398,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.InputView.CursorPositionProperty, cursorPosition);
             return self;
         }
-        
+
         public static T CursorPosition<T>(this T self, Func<PropertyContext<int>, IPropertyBuilder<int>> configure)
             where T : Microsoft.Maui.Controls.InputView
         {
@@ -406,7 +406,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> CursorPosition<T>(this SettersContext<T> self,
             int cursorPosition)
             where T : Microsoft.Maui.Controls.InputView
@@ -414,7 +414,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.InputView.CursorPositionProperty, Value = cursorPosition });
             return self;
         }
-        
+
         public static SettersContext<T> CursorPosition<T>(this SettersContext<T> self, Func<PropertySettersContext<int>, IPropertySettersBuilder<int>> configure)
             where T : Microsoft.Maui.Controls.InputView
         {
@@ -422,7 +422,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T SelectionLength<T>(this T self,
             int selectionLength)
             where T : Microsoft.Maui.Controls.InputView
@@ -430,7 +430,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.InputView.SelectionLengthProperty, selectionLength);
             return self;
         }
-        
+
         public static T SelectionLength<T>(this T self, Func<PropertyContext<int>, IPropertyBuilder<int>> configure)
             where T : Microsoft.Maui.Controls.InputView
         {
@@ -438,7 +438,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> SelectionLength<T>(this SettersContext<T> self,
             int selectionLength)
             where T : Microsoft.Maui.Controls.InputView
@@ -446,7 +446,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.InputView.SelectionLengthProperty, Value = selectionLength });
             return self;
         }
-        
+
         public static SettersContext<T> SelectionLength<T>(this SettersContext<T> self, Func<PropertySettersContext<int>, IPropertySettersBuilder<int>> configure)
             where T : Microsoft.Maui.Controls.InputView
         {
@@ -454,7 +454,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T FontAttributes<T>(this T self,
             Microsoft.Maui.Controls.FontAttributes fontAttributes)
             where T : Microsoft.Maui.Controls.InputView
@@ -462,7 +462,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.InputView.FontAttributesProperty, fontAttributes);
             return self;
         }
-        
+
         public static T FontAttributes<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.FontAttributes>, IPropertyBuilder<Microsoft.Maui.Controls.FontAttributes>> configure)
             where T : Microsoft.Maui.Controls.InputView
         {
@@ -470,7 +470,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> FontAttributes<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.FontAttributes fontAttributes)
             where T : Microsoft.Maui.Controls.InputView
@@ -478,7 +478,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.InputView.FontAttributesProperty, Value = fontAttributes });
             return self;
         }
-        
+
         public static SettersContext<T> FontAttributes<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.FontAttributes>, IPropertySettersBuilder<Microsoft.Maui.Controls.FontAttributes>> configure)
             where T : Microsoft.Maui.Controls.InputView
         {
@@ -486,7 +486,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T FontFamily<T>(this T self,
             string fontFamily)
             where T : Microsoft.Maui.Controls.InputView
@@ -494,7 +494,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.InputView.FontFamilyProperty, fontFamily);
             return self;
         }
-        
+
         public static T FontFamily<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.InputView
         {
@@ -502,7 +502,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> FontFamily<T>(this SettersContext<T> self,
             string fontFamily)
             where T : Microsoft.Maui.Controls.InputView
@@ -510,7 +510,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.InputView.FontFamilyProperty, Value = fontFamily });
             return self;
         }
-        
+
         public static SettersContext<T> FontFamily<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.InputView
         {
@@ -518,7 +518,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T FontSize<T>(this T self,
             double fontSize)
             where T : Microsoft.Maui.Controls.InputView
@@ -526,7 +526,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.InputView.FontSizeProperty, fontSize);
             return self;
         }
-        
+
         public static T FontSize<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.InputView
         {
@@ -534,7 +534,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> FontSize<T>(this SettersContext<T> self,
             double fontSize)
             where T : Microsoft.Maui.Controls.InputView
@@ -542,7 +542,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.InputView.FontSizeProperty, Value = fontSize });
             return self;
         }
-        
+
         public static SettersContext<T> FontSize<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.InputView
         {
@@ -550,7 +550,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateFontSizeTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.InputView
         {
@@ -559,7 +559,7 @@ namespace Sharp.UI
             var callback = (double actValue) => { self.FontSize = actValue; };
             return Transformations.AnimateAsync<double>(self, "AnimateFontSizeTo", transform, callback, length, easing);
         }
-        
+
         public static T FontAutoScalingEnabled<T>(this T self,
             bool fontAutoScalingEnabled)
             where T : Microsoft.Maui.Controls.InputView
@@ -567,7 +567,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.InputView.FontAutoScalingEnabledProperty, fontAutoScalingEnabled);
             return self;
         }
-        
+
         public static T FontAutoScalingEnabled<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.InputView
         {
@@ -575,7 +575,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> FontAutoScalingEnabled<T>(this SettersContext<T> self,
             bool fontAutoScalingEnabled)
             where T : Microsoft.Maui.Controls.InputView
@@ -583,7 +583,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.InputView.FontAutoScalingEnabledProperty, Value = fontAutoScalingEnabled });
             return self;
         }
-        
+
         public static SettersContext<T> FontAutoScalingEnabled<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.InputView
         {
@@ -591,21 +591,21 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T OnTextChanged<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.TextChangedEventArgs> handler)
             where T : Microsoft.Maui.Controls.InputView
         {
             self.TextChanged += handler;
             return self;
         }
-        
+
         public static T OnTextChanged<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.InputView
         {
             self.TextChanged += (o, arg) => action(self);
             return self;
         }
-        
+
     }
 }
 

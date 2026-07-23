@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.DatePicker.DateProperty, date);
             return self;
         }
-        
+
         public static T Date<T>(this T self, Func<PropertyContext<System.DateTime?>, IPropertyBuilder<System.DateTime?>> configure)
             where T : Microsoft.Maui.Controls.DatePicker
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Date<T>(this SettersContext<T> self,
             System.DateTime? date)
             where T : Microsoft.Maui.Controls.DatePicker
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.DatePicker.DateProperty, Value = date });
             return self;
         }
-        
+
         public static SettersContext<T> Date<T>(this SettersContext<T> self, Func<PropertySettersContext<System.DateTime?>, IPropertySettersBuilder<System.DateTime?>> configure)
             where T : Microsoft.Maui.Controls.DatePicker
         {
@@ -43,7 +43,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T Format<T>(this T self,
             string format)
             where T : Microsoft.Maui.Controls.DatePicker
@@ -51,7 +51,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.DatePicker.FormatProperty, format);
             return self;
         }
-        
+
         public static T Format<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.DatePicker
         {
@@ -59,7 +59,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Format<T>(this SettersContext<T> self,
             string format)
             where T : Microsoft.Maui.Controls.DatePicker
@@ -67,7 +67,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.DatePicker.FormatProperty, Value = format });
             return self;
         }
-        
+
         public static SettersContext<T> Format<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.DatePicker
         {
@@ -75,7 +75,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T MaximumDate<T>(this T self,
             System.DateTime? maximumDate)
             where T : Microsoft.Maui.Controls.DatePicker
@@ -83,7 +83,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.DatePicker.MaximumDateProperty, maximumDate);
             return self;
         }
-        
+
         public static T MaximumDate<T>(this T self, Func<PropertyContext<System.DateTime?>, IPropertyBuilder<System.DateTime?>> configure)
             where T : Microsoft.Maui.Controls.DatePicker
         {
@@ -91,7 +91,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> MaximumDate<T>(this SettersContext<T> self,
             System.DateTime? maximumDate)
             where T : Microsoft.Maui.Controls.DatePicker
@@ -99,7 +99,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.DatePicker.MaximumDateProperty, Value = maximumDate });
             return self;
         }
-        
+
         public static SettersContext<T> MaximumDate<T>(this SettersContext<T> self, Func<PropertySettersContext<System.DateTime?>, IPropertySettersBuilder<System.DateTime?>> configure)
             where T : Microsoft.Maui.Controls.DatePicker
         {
@@ -107,7 +107,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T MinimumDate<T>(this T self,
             System.DateTime? minimumDate)
             where T : Microsoft.Maui.Controls.DatePicker
@@ -115,7 +115,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.DatePicker.MinimumDateProperty, minimumDate);
             return self;
         }
-        
+
         public static T MinimumDate<T>(this T self, Func<PropertyContext<System.DateTime?>, IPropertyBuilder<System.DateTime?>> configure)
             where T : Microsoft.Maui.Controls.DatePicker
         {
@@ -123,7 +123,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> MinimumDate<T>(this SettersContext<T> self,
             System.DateTime? minimumDate)
             where T : Microsoft.Maui.Controls.DatePicker
@@ -131,7 +131,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.DatePicker.MinimumDateProperty, Value = minimumDate });
             return self;
         }
-        
+
         public static SettersContext<T> MinimumDate<T>(this SettersContext<T> self, Func<PropertySettersContext<System.DateTime?>, IPropertySettersBuilder<System.DateTime?>> configure)
             where T : Microsoft.Maui.Controls.DatePicker
         {
@@ -139,7 +139,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T TextColor<T>(this T self,
             Microsoft.Maui.Graphics.Color textColor)
             where T : Microsoft.Maui.Controls.DatePicker
@@ -147,7 +147,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.DatePicker.TextColorProperty, textColor);
             return self;
         }
-        
+
         public static T TextColor<T>(this T self, Func<PropertyContext<Microsoft.Maui.Graphics.Color>, IPropertyBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.DatePicker
         {
@@ -155,7 +155,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> TextColor<T>(this SettersContext<T> self,
             Microsoft.Maui.Graphics.Color textColor)
             where T : Microsoft.Maui.Controls.DatePicker
@@ -163,7 +163,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.DatePicker.TextColorProperty, Value = textColor });
             return self;
         }
-        
+
         public static SettersContext<T> TextColor<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Graphics.Color>, IPropertySettersBuilder<Microsoft.Maui.Graphics.Color>> configure)
             where T : Microsoft.Maui.Controls.DatePicker
         {
@@ -171,7 +171,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateTextColorTo<T>(this T self, Microsoft.Maui.Graphics.Color value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.DatePicker
         {
@@ -180,7 +180,7 @@ namespace Sharp.UI
             var callback = (Microsoft.Maui.Graphics.Color actValue) => { self.TextColor = actValue; };
             return Transformations.AnimateAsync<Microsoft.Maui.Graphics.Color>(self, "AnimateTextColorTo", transform, callback, length, easing);
         }
-        
+
         public static T CharacterSpacing<T>(this T self,
             double characterSpacing)
             where T : Microsoft.Maui.Controls.DatePicker
@@ -188,7 +188,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.DatePicker.CharacterSpacingProperty, characterSpacing);
             return self;
         }
-        
+
         public static T CharacterSpacing<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.DatePicker
         {
@@ -196,7 +196,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> CharacterSpacing<T>(this SettersContext<T> self,
             double characterSpacing)
             where T : Microsoft.Maui.Controls.DatePicker
@@ -204,7 +204,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.DatePicker.CharacterSpacingProperty, Value = characterSpacing });
             return self;
         }
-        
+
         public static SettersContext<T> CharacterSpacing<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.DatePicker
         {
@@ -212,7 +212,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateCharacterSpacingTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.DatePicker
         {
@@ -221,7 +221,7 @@ namespace Sharp.UI
             var callback = (double actValue) => { self.CharacterSpacing = actValue; };
             return Transformations.AnimateAsync<double>(self, "AnimateCharacterSpacingTo", transform, callback, length, easing);
         }
-        
+
         public static T FontAttributes<T>(this T self,
             Microsoft.Maui.Controls.FontAttributes fontAttributes)
             where T : Microsoft.Maui.Controls.DatePicker
@@ -229,7 +229,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.DatePicker.FontAttributesProperty, fontAttributes);
             return self;
         }
-        
+
         public static T FontAttributes<T>(this T self, Func<PropertyContext<Microsoft.Maui.Controls.FontAttributes>, IPropertyBuilder<Microsoft.Maui.Controls.FontAttributes>> configure)
             where T : Microsoft.Maui.Controls.DatePicker
         {
@@ -237,7 +237,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> FontAttributes<T>(this SettersContext<T> self,
             Microsoft.Maui.Controls.FontAttributes fontAttributes)
             where T : Microsoft.Maui.Controls.DatePicker
@@ -245,7 +245,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.DatePicker.FontAttributesProperty, Value = fontAttributes });
             return self;
         }
-        
+
         public static SettersContext<T> FontAttributes<T>(this SettersContext<T> self, Func<PropertySettersContext<Microsoft.Maui.Controls.FontAttributes>, IPropertySettersBuilder<Microsoft.Maui.Controls.FontAttributes>> configure)
             where T : Microsoft.Maui.Controls.DatePicker
         {
@@ -253,7 +253,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T FontFamily<T>(this T self,
             string fontFamily)
             where T : Microsoft.Maui.Controls.DatePicker
@@ -261,7 +261,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.DatePicker.FontFamilyProperty, fontFamily);
             return self;
         }
-        
+
         public static T FontFamily<T>(this T self, Func<PropertyContext<string>, IPropertyBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.DatePicker
         {
@@ -269,7 +269,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> FontFamily<T>(this SettersContext<T> self,
             string fontFamily)
             where T : Microsoft.Maui.Controls.DatePicker
@@ -277,7 +277,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.DatePicker.FontFamilyProperty, Value = fontFamily });
             return self;
         }
-        
+
         public static SettersContext<T> FontFamily<T>(this SettersContext<T> self, Func<PropertySettersContext<string>, IPropertySettersBuilder<string>> configure)
             where T : Microsoft.Maui.Controls.DatePicker
         {
@@ -285,7 +285,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T FontSize<T>(this T self,
             double fontSize)
             where T : Microsoft.Maui.Controls.DatePicker
@@ -293,7 +293,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.DatePicker.FontSizeProperty, fontSize);
             return self;
         }
-        
+
         public static T FontSize<T>(this T self, Func<PropertyContext<double>, IPropertyBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.DatePicker
         {
@@ -301,7 +301,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> FontSize<T>(this SettersContext<T> self,
             double fontSize)
             where T : Microsoft.Maui.Controls.DatePicker
@@ -309,7 +309,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.DatePicker.FontSizeProperty, Value = fontSize });
             return self;
         }
-        
+
         public static SettersContext<T> FontSize<T>(this SettersContext<T> self, Func<PropertySettersContext<double>, IPropertySettersBuilder<double>> configure)
             where T : Microsoft.Maui.Controls.DatePicker
         {
@@ -317,7 +317,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static Task<bool> AnimateFontSizeTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
             where T : Microsoft.Maui.Controls.DatePicker
         {
@@ -326,7 +326,7 @@ namespace Sharp.UI
             var callback = (double actValue) => { self.FontSize = actValue; };
             return Transformations.AnimateAsync<double>(self, "AnimateFontSizeTo", transform, callback, length, easing);
         }
-        
+
         public static T FontAutoScalingEnabled<T>(this T self,
             bool fontAutoScalingEnabled)
             where T : Microsoft.Maui.Controls.DatePicker
@@ -334,7 +334,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.DatePicker.FontAutoScalingEnabledProperty, fontAutoScalingEnabled);
             return self;
         }
-        
+
         public static T FontAutoScalingEnabled<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.DatePicker
         {
@@ -342,7 +342,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> FontAutoScalingEnabled<T>(this SettersContext<T> self,
             bool fontAutoScalingEnabled)
             where T : Microsoft.Maui.Controls.DatePicker
@@ -350,7 +350,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.DatePicker.FontAutoScalingEnabledProperty, Value = fontAutoScalingEnabled });
             return self;
         }
-        
+
         public static SettersContext<T> FontAutoScalingEnabled<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.DatePicker
         {
@@ -358,7 +358,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T IsOpen<T>(this T self,
             bool isOpen)
             where T : Microsoft.Maui.Controls.DatePicker
@@ -366,7 +366,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.DatePicker.IsOpenProperty, isOpen);
             return self;
         }
-        
+
         public static T IsOpen<T>(this T self, Func<PropertyContext<bool>, IPropertyBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.DatePicker
         {
@@ -374,7 +374,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> IsOpen<T>(this SettersContext<T> self,
             bool isOpen)
             where T : Microsoft.Maui.Controls.DatePicker
@@ -382,7 +382,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.DatePicker.IsOpenProperty, Value = isOpen });
             return self;
         }
-        
+
         public static SettersContext<T> IsOpen<T>(this SettersContext<T> self, Func<PropertySettersContext<bool>, IPropertySettersBuilder<bool>> configure)
             where T : Microsoft.Maui.Controls.DatePicker
         {
@@ -390,49 +390,49 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T OnDateSelected<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.DateChangedEventArgs> handler)
             where T : Microsoft.Maui.Controls.DatePicker
         {
             self.DateSelected += handler;
             return self;
         }
-        
+
         public static T OnDateSelected<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.DatePicker
         {
             self.DateSelected += (o, arg) => action(self);
             return self;
         }
-        
+
         public static T OnOpened<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.DatePickerOpenedEventArgs> handler)
             where T : Microsoft.Maui.Controls.DatePicker
         {
             self.Opened += handler;
             return self;
         }
-        
+
         public static T OnOpened<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.DatePicker
         {
             self.Opened += (o, arg) => action(self);
             return self;
         }
-        
+
         public static T OnClosed<T>(this T self, System.EventHandler<Microsoft.Maui.Controls.DatePickerClosedEventArgs> handler)
             where T : Microsoft.Maui.Controls.DatePicker
         {
             self.Closed += handler;
             return self;
         }
-        
+
         public static T OnClosed<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.DatePicker
         {
             self.Closed += (o, arg) => action(self);
             return self;
         }
-        
+
     }
 }
 

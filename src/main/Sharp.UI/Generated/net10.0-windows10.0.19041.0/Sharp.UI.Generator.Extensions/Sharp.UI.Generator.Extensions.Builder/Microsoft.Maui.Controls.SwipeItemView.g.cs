@@ -19,7 +19,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.SwipeItemView.CommandProperty, command);
             return self;
         }
-        
+
         public static T Command<T>(this T self, Func<PropertyContext<System.Windows.Input.ICommand>, IPropertyBuilder<System.Windows.Input.ICommand>> configure)
             where T : Microsoft.Maui.Controls.SwipeItemView
         {
@@ -27,7 +27,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> Command<T>(this SettersContext<T> self,
             System.Windows.Input.ICommand command)
             where T : Microsoft.Maui.Controls.SwipeItemView
@@ -35,7 +35,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SwipeItemView.CommandProperty, Value = command });
             return self;
         }
-        
+
         public static SettersContext<T> Command<T>(this SettersContext<T> self, Func<PropertySettersContext<System.Windows.Input.ICommand>, IPropertySettersBuilder<System.Windows.Input.ICommand>> configure)
             where T : Microsoft.Maui.Controls.SwipeItemView
         {
@@ -43,7 +43,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T CommandParameter<T>(this T self,
             object commandParameter)
             where T : Microsoft.Maui.Controls.SwipeItemView
@@ -51,7 +51,7 @@ namespace Sharp.UI
             self.SetValue(Microsoft.Maui.Controls.SwipeItemView.CommandParameterProperty, commandParameter);
             return self;
         }
-        
+
         public static T CommandParameter<T>(this T self, Func<PropertyContext<object>, IPropertyBuilder<object>> configure)
             where T : Microsoft.Maui.Controls.SwipeItemView
         {
@@ -59,7 +59,7 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static SettersContext<T> CommandParameter<T>(this SettersContext<T> self,
             object commandParameter)
             where T : Microsoft.Maui.Controls.SwipeItemView
@@ -67,7 +67,7 @@ namespace Sharp.UI
             self.XamlSetters.Add(new Setter { Property = Microsoft.Maui.Controls.SwipeItemView.CommandParameterProperty, Value = commandParameter });
             return self;
         }
-        
+
         public static SettersContext<T> CommandParameter<T>(this SettersContext<T> self, Func<PropertySettersContext<object>, IPropertySettersBuilder<object>> configure)
             where T : Microsoft.Maui.Controls.SwipeItemView
         {
@@ -75,21 +75,21 @@ namespace Sharp.UI
             configure(context).Build();
             return self;
         }
-        
+
         public static T OnInvoked<T>(this T self, System.EventHandler<System.EventArgs> handler)
             where T : Microsoft.Maui.Controls.SwipeItemView
         {
             self.Invoked += handler;
             return self;
         }
-        
+
         public static T OnInvoked<T>(this T self, System.Action<T> action)
             where T : Microsoft.Maui.Controls.SwipeItemView
         {
             self.Invoked += (o, arg) => action(self);
             return self;
         }
-        
+
     }
 }
 
