@@ -200,7 +200,7 @@ using System.Collections.Generic;
 
         void GenerateConstructors()
         {
-            var camelCaseName = Helpers.CamelCase(model.ClassName);
+            var camelCaseName = Shared.CamelCase(model.ClassName);
 
             builder.AppendLine(@"
         // ----- constructors -----");

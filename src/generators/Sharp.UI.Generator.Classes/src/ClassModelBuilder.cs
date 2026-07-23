@@ -75,8 +75,8 @@ namespace Sharp.UI.Generator.Classes
         {
             ct.ThrowIfCancellationRequested();
 
-            var isShell = Helpers.IsShell(symbol);
-            var isTopContentSymbol = symbol.IsSealed && (Helpers.IsContentPage(symbol) || isShell);
+            var isShell = Shared.IsShell(symbol);
+            var isTopContentSymbol = symbol.IsSealed && (Shared.IsContentPage(symbol) || isShell);
             var isSharpObject = symbol.GetAttributes()
                 .Any(e => e.AttributeClass != null && e.AttributeClass.Name.Equals(Shared.SharpObjectAttributeString));
 
@@ -84,7 +84,7 @@ namespace Sharp.UI.Generator.Classes
 
             var contentPropertyName = GetContentPropertyNameFor(symbol);
             var isNewPropertyContainer = IsNewPropertyContainer(symbol);
-            var isAlreadyContainerOfThis = Helpers.IsGenericIList(symbol, out var containerOfType);
+            var isAlreadyContainerOfThis = Shared.IsGenericIList(symbol, out var containerOfType);
 
             string containerOfTypeName = null;
             var isSingleItemContainer = false;
@@ -111,7 +111,7 @@ namespace Sharp.UI.Generator.Classes
 
                     var contentPropertyType = contentPropertySymbol.Type as INamedTypeSymbol;
 
-                    if (Helpers.IsGenericIList(contentPropertyType, out var ofType))
+                    if (Shared.IsGenericIList(contentPropertyType, out var ofType))
                     {
                         containerOfTypeName = ofType.ToDisplayString();
                         isSingleItemContainer = false;
@@ -143,7 +143,7 @@ namespace Sharp.UI.Generator.Classes
                 .Where(e => e.Parameters.Length > 0 && !e.IsImplicitlyDeclared)
                 .Select(e => new ConstructorModel(new EquatableArray<ParameterModel>(
                     e.Parameters
-                        .Select(p => new ParameterModel(p.Type.ToDisplayString(), Helpers.CamelCase(p.Name)))
+                        .Select(p => new ParameterModel(p.Type.ToDisplayString(), Shared.CamelCase(p.Name)))
                         .ToArray())))
                 .ToArray();
 
@@ -161,7 +161,7 @@ namespace Sharp.UI.Generator.Classes
                 ClassName: symbol.Name,
                 FullSymbolName: symbol.ToDisplayString().Split('.').Last(),
                 FullyQualifiedName: symbol.ToDisplayString(),
-                FileName: Helpers.GetNormalizedFileName(symbol),
+                FileName: Shared.GetNormalizedFileName(symbol),
                 IsSealed: symbol.IsSealed,
                 IsSharpObject: isSharpObject,
                 IsShell: isShell,
@@ -188,7 +188,7 @@ namespace Sharp.UI.Generator.Classes
         static EquatableArray<BindablePropertyModel> BuildBindableProperties(
             INamedTypeSymbol symbol, List<DiagnosticInfo> diagnostics, CancellationToken ct)
         {
-            if (!Helpers.IsBindableObject(symbol))
+            if (!Shared.IsBindableObject(symbol))
                 return EquatableArray<BindablePropertyModel>.Empty;
 
             var bindableInterfaces = symbol.Interfaces
@@ -292,7 +292,7 @@ namespace Sharp.UI.Generator.Classes
                 return false;
 
             var isNewContainer = false;
-            Helpers.LoopDownToObject(symbol.BaseType, type =>
+            Shared.LoopDownToObject(symbol.BaseType, type =>
             {
                 isNewContainer = type.GetAttributes().Any(e => e.AttributeClass != null &&
                     e.AttributeClass.Name.Equals(Shared.ContentPropertyAttributeString));
@@ -305,7 +305,7 @@ namespace Sharp.UI.Generator.Classes
         static string FindContentPropertyName(INamedTypeSymbol symbol)
         {
             string name = null;
-            Helpers.LoopDownToObject(symbol, type =>
+            Shared.LoopDownToObject(symbol, type =>
             {
                 name = GetContentPropertyNameFor(type);
                 return name != null;
@@ -319,7 +319,7 @@ namespace Sharp.UI.Generator.Classes
 
             if (propertySymbol == null)
             {
-                Helpers.LoopDownToObject(symbol, type =>
+                Shared.LoopDownToObject(symbol, type =>
                 {
                     propertySymbol = type.GetMembers(propertyName).OfType<IPropertySymbol>().FirstOrDefault();
                     return propertySymbol != null;
@@ -331,7 +331,7 @@ namespace Sharp.UI.Generator.Classes
 
         static IPropertySymbol GetPropertyFromInterface(INamedTypeSymbol symbol, string name)
         {
-            if (!Helpers.IsBindableObject(symbol))
+            if (!Shared.IsBindableObject(symbol))
                 return null;
 
             var bindableInterfaces = symbol.Interfaces
@@ -349,7 +349,7 @@ namespace Sharp.UI.Generator.Classes
         static IPropertySymbol FindInBasePropertySymbolWithName(INamedTypeSymbol symbol, string propertyName)
         {
             IPropertySymbol propertySymbol = null;
-            Helpers.LoopDownToObject(symbol.BaseType, type =>
+            Shared.LoopDownToObject(symbol.BaseType, type =>
             {
                 propertySymbol = type.GetMembers(propertyName).OfType<IPropertySymbol>().FirstOrDefault();
                 return propertySymbol != null;

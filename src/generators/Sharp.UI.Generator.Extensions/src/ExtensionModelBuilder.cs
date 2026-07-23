@@ -45,8 +45,8 @@ namespace Sharp.UI.Generator.Extensions
             if (mainSymbol == null)
                 return null;
 
-            var isVisualElement = Helpers.IsVisualElement(mainSymbol);
-            var isBindableObject = Helpers.IsBindableObject(mainSymbol);
+            var isVisualElement = Shared.IsVisualElement(mainSymbol);
+            var isBindableObject = Shared.IsBindableObject(mainSymbol);
 
             var containingNamespace = mainSymbol.ContainingNamespace.ToDisplayString();
             var isMauiNamespace = containingNamespace.StartsWith("Microsoft.Maui", StringComparison.Ordinal);
@@ -67,14 +67,14 @@ namespace Sharp.UI.Generator.Extensions
             else
             {
                 CollectClassMembers(mainSymbol, isBindableObject, isVisualElement, properties, events, ct);
-                emitTextAlignment = Helpers.IsBaseImplementationOfInterface(mainSymbol, "ITextAlignment");
+                emitTextAlignment = Shared.IsBaseImplementationOfInterface(mainSymbol, "ITextAlignment");
                 CollectBindableInterfaceProperties(mainSymbol, interfaceProperties, ct);
             }
 
             return new ExtensionModel(
-                HintName: $"{containingNamespace}.{Helpers.GetNormalizedFileName(mainSymbol)}{tail}.g.cs",
+                HintName: $"{containingNamespace}.{Shared.GetNormalizedFileName(mainSymbol)}{tail}.g.cs",
                 TargetNamespace: isMauiNamespace ? "Sharp.UI" : containingNamespace,
-                ExtensionClassName: $"{Helpers.GetNormalizedClassName(mainSymbol)}Extension",
+                ExtensionClassName: $"{Shared.GetNormalizedClassName(mainSymbol)}Extension",
                 SymbolTypeName: mainSymbol.ToDisplayString(),
                 IncludeSharpUIUsing: !isMauiNamespace,
                 IsSealed: mainSymbol.IsSealed,
@@ -107,7 +107,7 @@ namespace Sharp.UI.Generator.Extensions
             foreach (var member in members.Where(e => e.Kind == SymbolKind.Property &&
                                                       e.DeclaredAccessibility == Accessibility.Public &&
                                                       !e.IsStatic &&
-                                                      !Helpers.IsSymbolDeprecated(e)))
+                                                      !Shared.IsSymbolDeprecated(e)))
             {
                 ct.ThrowIfCancellationRequested();
 
@@ -121,7 +121,7 @@ namespace Sharp.UI.Generator.Extensions
             foreach (var member in members.Where(e => e.Kind == SymbolKind.Event &&
                                                       e.DeclaredAccessibility == Accessibility.Public &&
                                                       !e.IsStatic &&
-                                                      !Helpers.IsSymbolDeprecated(e)))
+                                                      !Shared.IsSymbolDeprecated(e)))
             {
                 ct.ThrowIfCancellationRequested();
 
@@ -151,9 +151,9 @@ namespace Sharp.UI.Generator.Extensions
             var accessedWith = property.IsStatic ? symbolTypeName : "self";
             var bindablePropertyName = $"{symbolTypeName}.{propertyName}Property";
             var propertyTypeName = property.Type.ToDisplayString();
-            var camelCaseName = Helpers.CamelCase(propertyName);
+            var camelCaseName = Shared.CamelCase(propertyName);
 
-            var isGenericIList = Helpers.IsGenericIList(property.Type as INamedTypeSymbol, out var elementType);
+            var isGenericIList = Shared.IsGenericIList(property.Type as INamedTypeSymbol, out var elementType);
 
             var isThickness = (propertyName.Equals("Margin", StringComparison.Ordinal) ||
                                propertyName.Equals("Padding", StringComparison.Ordinal)) &&
@@ -241,7 +241,7 @@ namespace Sharp.UI.Generator.Extensions
                 return null;
 
             var existsInBases = false;
-            Helpers.LoopDownToObject(mainSymbol.BaseType, type =>
+            Shared.LoopDownToObject(mainSymbol.BaseType, type =>
             {
                 existsInBases = type.GetMembers().Any(e =>
                     e.Kind == SymbolKind.Event &&
@@ -261,7 +261,7 @@ namespace Sharp.UI.Generator.Extensions
         static bool ExistsInBaseClasses(INamedTypeSymbol mainSymbol, string propertyName, bool getterAndSetter)
         {
             var exists = false;
-            Helpers.LoopDownToObject(mainSymbol.BaseType, type =>
+            Shared.LoopDownToObject(mainSymbol.BaseType, type =>
             {
                 exists = type.GetMembers().Any(e =>
                     e.Kind == SymbolKind.Property &&
@@ -289,7 +289,7 @@ namespace Sharp.UI.Generator.Extensions
                 ct.ThrowIfCancellationRequested();
 
                 foreach (var prop in inter.GetMembers()
-                    .Where(e => e.Kind == SymbolKind.Property && !Helpers.IsSymbolDeprecated(e)))
+                    .Where(e => e.Kind == SymbolKind.Property && !Shared.IsSymbolDeprecated(e)))
                 {
                     var model = BuildInterfacePropertyModel(
                         mainSymbol, (IPropertySymbol)prop, bindablePropertyName: null, isAttached: false);
@@ -335,7 +335,7 @@ namespace Sharp.UI.Generator.Extensions
                     continue;
 
                 foreach (var prop in inter.GetMembers()
-                    .Where(e => e.Kind == SymbolKind.Property && !Helpers.IsSymbolDeprecated(e)))
+                    .Where(e => e.Kind == SymbolKind.Property && !Shared.IsSymbolDeprecated(e)))
                 {
                     var propertySymbol = (IPropertySymbol)prop;
                     var attachedName = Shared.GetAttachedPropertyName(propertySymbol);
@@ -372,7 +372,7 @@ namespace Sharp.UI.Generator.Extensions
                 bindablePropertyName = $"{symbolTypeName}.{propertyName}Property";
 
             var propertyTypeName = propertySymbol.Type.ToDisplayString();
-            var camelCaseName = Helpers.CamelCase(propertyName);
+            var camelCaseName = Shared.CamelCase(propertyName);
 
             var isThickness = (propertyName.Equals("Margin", StringComparison.Ordinal) ||
                                propertyName.Equals("Padding", StringComparison.Ordinal)) &&

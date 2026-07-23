@@ -72,7 +72,7 @@ namespace Sharp.UI.Generator.Classes
                           e.AttributeClass.Name.Equals(Shared.SharpObjectAttributeString));
 
             var isTopContentSymbol = symbol.IsSealed &&
-                (Helpers.IsContentPage(symbol) || Helpers.IsShell(symbol));
+                (Shared.IsContentPage(symbol) || Shared.IsShell(symbol));
 
             if (!hasSharpObjectAttribute && !isTopContentSymbol)
                 return null;

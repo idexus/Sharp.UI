@@ -38,7 +38,7 @@ namespace Sharp.UI.Generator.Classes
         string ClassName,               // symbol.Name
         string FullSymbolName,          // symbol.ToDisplayString().Split('.').Last()
         string FullyQualifiedName,      // symbol.ToDisplayString()
-        string FileName,                // Helpers.GetNormalizedFileName(symbol)
+        string FileName,                // Shared.GetNormalizedFileName(symbol)
 
         // --- kind ---
         bool IsSealed,

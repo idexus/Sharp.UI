@@ -111,7 +111,7 @@ namespace Sharp.UI.Generator.Extensions
             {
                 ct.ThrowIfCancellationRequested();
 
-                Helpers.LoopDownToObject(symbol.BaseType, type =>
+                Shared.LoopDownToObject(symbol.BaseType, type =>
                 {
                     if (known.Add(type)) allSymbols.Add(type);
                     return false;
@@ -124,7 +124,7 @@ namespace Sharp.UI.Generator.Extensions
             {
                 ct.ThrowIfCancellationRequested();
 
-                if (Helpers.IsSymbolDeprecated(symbol)) continue;
+                if (Shared.IsSymbolDeprecated(symbol)) continue;
 
                 var result = ExtensionModelBuilder.Build(symbol, ct);
                 if (result.Model != null) models.Add(result.Model);
