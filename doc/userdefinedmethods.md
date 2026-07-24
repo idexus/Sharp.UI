@@ -37,13 +37,13 @@ public static SettersContext<T> FontSize<T>(this SettersContext<T> self, Func<Pr
     return self;
 }
         
-public static Task<bool> AnimateFontSizeTo<T>(this T self, double value, uint length = 250, Easing? easing = null)
+public static Task<bool> AnimateFontSizeToAsync<T>(this T self, double value, uint length = 250, Easing? easing = null)
     where T : Microsoft.Maui.Controls.Label
 {
     double fromValue = self.FontSize;
     var transform = (double t) => Transformations.DoubleTransform(fromValue, value, t);
     var callback = (double actValue) => { self.FontSize = actValue; };
-    return Transformations.AnimateAsync<double>(self, "AnimateFontSizeTo", transform, callback, length, easing);
+    return Transformations.AnimateAsync<double>(self, "AnimateFontSizeToAsync", transform, callback, length, easing);
 }
 ```
 
