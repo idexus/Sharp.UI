@@ -11,7 +11,7 @@ public partial class App : Application
     {
         var window = new Window(new AppShell())
         {
-            Title = "Moja Aplikacja",
+            Title = "ExampleApp",
             Width = 1200,
             Height = 800,
             MinimumWidth = 600,
