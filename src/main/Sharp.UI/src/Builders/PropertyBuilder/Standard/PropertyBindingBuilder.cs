@@ -210,6 +210,46 @@ namespace Sharp.UI
             return this;
         }
 
+        public PropertyBindingBuilder<T> Convert<Q1, Q2, Q3, Q4, Q5>(Func<Q1, Q2, Q3, Q4, Q5, T> convert)
+        {
+            multiConverter = new MultiValueConverter { ConvertFunction = v => convert((Q1)v[0], (Q2)v[1], (Q3)v[2], (Q4)v[3], (Q5)v[4]) };
+            multiArity = 5;
+            arityIsDynamic = false;
+            return this;
+        }
+
+        public PropertyBindingBuilder<T> Convert<Q1, Q2, Q3, Q4, Q5, Q6>(Func<Q1, Q2, Q3, Q4, Q5, Q6, T> convert)
+        {
+            multiConverter = new MultiValueConverter { ConvertFunction = v => convert((Q1)v[0], (Q2)v[1], (Q3)v[2], (Q4)v[3], (Q5)v[4], (Q6)v[5]) };
+            multiArity = 6;
+            arityIsDynamic = false;
+            return this;
+        }
+
+        public PropertyBindingBuilder<T> Convert<Q1, Q2, Q3, Q4, Q5, Q6, Q7>(Func<Q1, Q2, Q3, Q4, Q5, Q6, Q7, T> convert)
+        {
+            multiConverter = new MultiValueConverter { ConvertFunction = v => convert((Q1)v[0], (Q2)v[1], (Q3)v[2], (Q4)v[3], (Q5)v[4], (Q6)v[5], (Q7)v[6]) };
+            multiArity = 7;
+            arityIsDynamic = false;
+            return this;
+        }
+
+        public PropertyBindingBuilder<T> Convert<Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8>(Func<Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, T> convert)
+        {
+            multiConverter = new MultiValueConverter { ConvertFunction = v => convert((Q1)v[0], (Q2)v[1], (Q3)v[2], (Q4)v[3], (Q5)v[4], (Q6)v[5], (Q7)v[6], (Q8)v[7]) };
+            multiArity = 8;
+            arityIsDynamic = false;
+            return this;
+        }
+
+        public PropertyBindingBuilder<T> Convert<Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9>(Func<Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9, T> convert)
+        {
+            multiConverter = new MultiValueConverter { ConvertFunction = v => convert((Q1)v[0], (Q2)v[1], (Q3)v[2], (Q4)v[3], (Q5)v[4], (Q6)v[5], (Q7)v[6], (Q8)v[7], (Q9)v[8]) };
+            multiArity = 9;
+            arityIsDynamic = false;
+            return this;
+        }
+
         // ================ Fixed-arity multi binding: backward ================
 
         public PropertyBindingBuilder<T> ConvertBack<Q1, Q2>(Func<T, (Q1, Q2)> convertBack)
@@ -241,6 +281,61 @@ namespace Sharp.UI
             {
                 var (q1, q2, q3, q4) = convertBack(value);
                 return new object[] { q1, q2, q3, q4 };
+            };
+            return this;
+        }
+
+        public PropertyBindingBuilder<T> ConvertBack<Q1, Q2, Q3, Q4, Q5>(Func<T, (Q1, Q2, Q3, Q4, Q5)> convertBack)
+        {
+            var mc = RequireMultiConverter(5);
+            mc.ConvertBackFunction = value =>
+            {
+                var (q1, q2, q3, q4, q5) = convertBack(value);
+                return new object[] { q1, q2, q3, q4, q5 };
+            };
+            return this;
+        }
+
+        public PropertyBindingBuilder<T> ConvertBack<Q1, Q2, Q3, Q4, Q5, Q6>(Func<T, (Q1, Q2, Q3, Q4, Q5, Q6)> convertBack)
+        {
+            var mc = RequireMultiConverter(6);
+            mc.ConvertBackFunction = value =>
+            {
+                var (q1, q2, q3, q4, q5, q6) = convertBack(value);
+                return new object[] { q1, q2, q3, q4, q5, q6 };
+            };
+            return this;
+        }
+
+        public PropertyBindingBuilder<T> ConvertBack<Q1, Q2, Q3, Q4, Q5, Q6, Q7>(Func<T, (Q1, Q2, Q3, Q4, Q5, Q6, Q7)> convertBack)
+        {
+            var mc = RequireMultiConverter(7);
+            mc.ConvertBackFunction = value =>
+            {
+                var (q1, q2, q3, q4, q5, q6, q7) = convertBack(value);
+                return new object[] { q1, q2, q3, q4, q5, q6, q7 };
+            };
+            return this;
+        }
+
+        public PropertyBindingBuilder<T> ConvertBack<Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8>(Func<T, (Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8)> convertBack)
+        {
+            var mc = RequireMultiConverter(8);
+            mc.ConvertBackFunction = value =>
+            {
+                var (q1, q2, q3, q4, q5, q6, q7, q8) = convertBack(value);
+                return new object[] { q1, q2, q3, q4, q5, q6, q7, q8 };
+            };
+            return this;
+        }
+
+        public PropertyBindingBuilder<T> ConvertBack<Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9>(Func<T, (Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9)> convertBack)
+        {
+            var mc = RequireMultiConverter(9);
+            mc.ConvertBackFunction = value =>
+            {
+                var (q1, q2, q3, q4, q5, q6, q7, q8, q9) = convertBack(value);
+                return new object[] { q1, q2, q3, q4, q5, q6, q7, q8, q9 };
             };
             return this;
         }
