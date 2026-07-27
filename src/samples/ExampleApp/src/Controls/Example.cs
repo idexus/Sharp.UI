@@ -49,12 +49,12 @@ namespace ExampleApp
                     .CenterVertically())
                 {
                     new Label()
-                        .Text(e => e.Path(nameof(IsExpanded)).Convert<bool>(e => (e ? "Code" : "Show Code")).Source(this))
+                        .Text(e => e.Path(nameof(IsExpanded)).Convert((bool e) => (e ? "Code" : "Show Code")).Source(this))
                         .Column(0)
                         .FontSize(16),
 
                     new Label()
-                        .Text(e => e.Path(nameof(IsExpanded)).Convert<bool>(e => (e ? "^" : "˅")).Source(this))
+                        .Text(e => e.Path(nameof(IsExpanded)).Convert((bool e) => (e ? "^" : "˅")).Source(this))
                         .Column(2)
                         .FontSize(16).Margin(left: 5),
                 }
