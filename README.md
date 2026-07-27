@@ -241,7 +241,7 @@ new Label()
 
 The first example binds `FontSize` to the `MyFontSize` property of the page's `BindingContext`. The second binds `Text` directly to the `Value` property of a specific `slider` element, formatted as `"Value: {0:F1}"`.
 
-### Multi-Bindings
+## Multi-Bindings
 
 Sometimes a target property needs to combine values from more than one source. Call `.Path()` more than once inside the same builder — each call opens a new sub-binding, and `Source()` / `StringFormat()` / `BindingMode()` apply to whichever `Path()` was opened last. A trailing typed `Convert()` combines all collected values into the final result, matching the number and order of the `Path()` calls.
 

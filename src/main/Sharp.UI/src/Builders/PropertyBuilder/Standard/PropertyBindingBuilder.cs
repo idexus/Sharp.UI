@@ -36,8 +36,8 @@ namespace Sharp.UI
         // Converter for a single binding (Path() called once).
         public class ValueConverter : IValueConverter
         {
-            internal Func<object, T> ConvertFunction = null;
-            internal Func<T, object> ConvertBackFunction = null;
+            internal Func<object, object> ConvertFunction = null;
+            internal Func<object, object> ConvertBackFunction = null;
 
             public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
             {
@@ -168,17 +168,18 @@ namespace Sharp.UI
 
         // ===================== Single binding (unchanged) =====================
 
-        public PropertyBindingBuilder<T> Convert<Q>(Func<Q, T> convert)
+        public PropertyBindingBuilder<T> Convert<Q, R>(Func<Q, R> convert)
         {
-            var vc = new ValueConverter { ConvertFunction = e => convert((Q)e) };
+            var vc = RequireCurrent().Converter as ValueConverter ?? new ValueConverter();
+            vc.ConvertFunction = e => convert((Q)e);
             RequireCurrent().Converter = vc;
             return this;
         }
 
-        public PropertyBindingBuilder<T> ConvertBack<Q>(Func<T, Q> convert)
+        public PropertyBindingBuilder<T> ConvertBack<Q, R>(Func<Q, R> convertBack)
         {
             var vc = RequireCurrent().Converter as ValueConverter ?? new ValueConverter();
-            vc.ConvertBackFunction = e => convert((T)e);
+            vc.ConvertBackFunction = e => convertBack((Q)e);
             RequireCurrent().Converter = vc;
             return this;
         }
