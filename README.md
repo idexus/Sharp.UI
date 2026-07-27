@@ -243,7 +243,7 @@ The first example binds `FontSize` to the `MyFontSize` property of the page's `B
 
 ## Multi-Bindings
 
-Sometimes a target property needs to combine values from more than one source. Call `.Path()` more than once inside the same builder — each call opens a new sub-binding, and `Source()` / `StringFormat()` / `BindingMode()` apply to whichever `Path()` was opened last. A trailing typed `Convert()` combines all collected values into the final result, matching the number and order of the `Path()` calls.
+Sometimes a target property needs to combine values from more than one source. Call `.Path()` more than once inside the same builder — each call opens a new sub-binding, and `Source()` / `StringFormat()` / `BindingMode()` apply to whichever `Path()` was opened last. Each sub-binding can also have its own single-value `Convert()`, which transforms that source's raw value before it reaches the final combining step — as with `slider1` below, whose raw `double` is converted to a `bool` first. A trailing typed `Convert()` combines all collected values into the final result; its parameter types and count must match the values produced by each `Path()`, in order — either the source's raw type, or the output type of that `Path()`'s own `Convert()` if one was set.
 
 ```cs
 new VStack
@@ -262,20 +262,21 @@ new VStack
 
     new Label()
         .Text(e => e
-            .Path(nameof(Slider.Value)).Source(slider1)
+            .Path(nameof(Slider.Value)).Source(slider1).Convert((double e) => (e > 10 ? true : false))
             .Path(nameof(Slider.Value)).Source(slider2)
             .Path(nameof(Slider.Value)).Source(slider3)
             .Path(nameof(Slider.Value)).Source(slider4)
-            .Convert((double v1, double v2, double v3, double v4) =>
+            .Convert((bool v1, double v2, double v3, double v4) =>
             {
-                return $"{v1:F2}, {v2:F2}, {v3:F2}, {v4:F2}";
+                return $"{v1}, {v2:F2}, {v3:F2}, {v4:F2}";
             }))
 }
 ```
 
-Here, the `Label`'s text is recomputed automatically whenever any of the four sliders changes, since each `Path()` creates its own binding to that slider's `Value` property.
+Here, the `Label`'s text is recomputed automatically whenever any of the four sliders changes, since each `Path()` creates its own binding to that slider's `Value` property. `slider1`'s value is first converted to a `bool` via its own `Convert()`, so the final `Convert()` receives it as `v1: bool` while `v2`–`v4` arrive as the raw `double` values from their sliders.
 
 For two-way scenarios, use `ConvertBack` with a matching arity, returning a tuple in the same order as the `Path()` calls. For a variable number of bindings (unknown arity), use `ConvertRaw` instead of `Convert`.
+
 
 ### Device idiom, platform, and theme
 
