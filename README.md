@@ -222,11 +222,11 @@ new VStack
 
 See [layout option helpers](./doc/layoutoptions.md).
 
-## Inline bindable-property configuration
-
-Bindable properties can be configured inline through a consistent C# API.
+## Property Bindings
 
 ### Bindings
+
+Bind a bindable property to a source by calling its fluent setter (e.g. `Text()`, `FontSize()`) with a lambda, then use `Path()` inside that lambda to point to the source property. Add `Source()` to bind to a specific object instead of the current `BindingContext`, and `StringFormat()` to format the displayed value.
 
 ```cs
 new Label()
@@ -238,6 +238,44 @@ new Label()
         .Source(slider)
         .StringFormat("Value: {0:F1}"))
 ```
+
+The first example binds `FontSize` to the `MyFontSize` property of the page's `BindingContext`. The second binds `Text` directly to the `Value` property of a specific `slider` element, formatted as `"Value: {0:F1}"`.
+
+### Multi-Bindings
+
+Sometimes a target property needs to combine values from more than one source. Call `.Path()` more than once inside the same builder — each call opens a new sub-binding, and `Source()` / `StringFormat()` / `BindingMode()` apply to whichever `Path()` was opened last. A trailing typed `Convert()` combines all collected values into the final result, matching the number and order of the `Path()` calls.
+
+```cs
+new VStack
+{
+    new Slider(out var slider1)
+        .Minimum(1).Maximum(30),
+
+    new Slider(out var slider2)
+        .Minimum(1).Maximum(30),
+
+    new Slider(out var slider3)
+        .Minimum(1).Maximum(30),
+
+    new Slider(out var slider4)
+        .Minimum(1).Maximum(30),
+
+    new Label()
+        .Text(e => e
+            .Path(nameof(Slider.Value)).Source(slider1)
+            .Path(nameof(Slider.Value)).Source(slider2)
+            .Path(nameof(Slider.Value)).Source(slider3)
+            .Path(nameof(Slider.Value)).Source(slider4)
+            .Convert((double v1, double v2, double v3, double v4) =>
+            {
+                return $"{v1:F2}, {v2:F2}, {v3:F2}, {v4:F2}";
+            }))
+}
+```
+
+Here, the `Label`'s text is recomputed automatically whenever any of the four sliders changes, since each `Path()` creates its own binding to that slider's `Value` property.
+
+For two-way scenarios, use `ConvertBack` with a matching arity, returning a tuple in the same order as the `Path()` calls. For a variable number of bindings (unknown arity), use `ConvertRaw` instead of `Convert`.
 
 ### Device idiom, platform, and theme
 
