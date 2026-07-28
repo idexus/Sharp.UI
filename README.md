@@ -277,6 +277,8 @@ Here, the `Label`'s text is recomputed automatically whenever any of the four sl
 
 For two-way scenarios, use `ConvertBackAll()` with a matching arity, returning a tuple in the same order as the `Path()` calls. Each element of that tuple then passes through the `ConvertBack()` of its own `Path()`, if one was declared — so a path whose `Convert()` changes the value type needs a matching `ConvertBack()` to be writable. For a variable number of bindings (unknown arity), use `ConvertRaw()` instead of `Convert()`.
 
+## Device idiom, platform, and theme
+
 ```cs
 new Label()
     .FontSize(e => e
