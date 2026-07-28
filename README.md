@@ -273,9 +273,27 @@ new VStack
 }
 ```
 
-Here, the `Label`'s text is recomputed automatically whenever any of the four sliders changes, since each `Path()` creates its own binding to that slider's `Value` property. `slider1`'s value is first converted to a `bool` by the `Convert()` attached to its own `Path()`, so the final `Convert()` receives it as `v1: bool` while `v2`–`v4` arrive as the raw `double` values from their sliders. Which of the two roles a `Convert()` plays is decided by its arity: a one-argument delegate belongs to the `Path()` it follows, a multi-argument one closes the whole builder.
+Here, the `Label`'s text is recomputed automatically whenever any of the four sliders changes, since each `Path()` creates its own binding to that slider's `Value` property. `slider1`'s value is first converted to a `bool` by the `Convert()` attached to its own `Path()`, so the final `Convert()` receives it as `v1: bool` while `v2`–`v4` arrive as the raw `double` values from their sliders.
 
-For two-way scenarios, use `ConvertBackAll()` with a matching arity, returning a tuple in the same order as the `Path()` calls. Each element of that tuple then passes through the `ConvertBack()` of its own `Path()`, if one was declared — so a path whose `Convert()` changes the value type needs a matching `ConvertBack()` to be writable. For a variable number of bindings (unknown arity), use `ConvertRaw()` instead of `Convert()`.
+Both roles share the same name, and which one you get is decided by the shape of the delegate: a one-argument lambda belongs to the `Path()` it follows, a multi-argument one closes the whole builder. You never have to pick a different method name.
+
+For two-way scenarios, use `ConvertBack()` with a matching arity, returning a tuple in the same order as the `Path()` calls. Each element of that tuple then passes through the `ConvertBack()` of its own `Path()`, if one was declared — so a path whose `Convert()` changes the value type needs a matching `ConvertBack()` to be writable.
+
+```cs
+new Entry()
+    .Text(e => e
+        .Path("Width").Source(rect)
+        .Path("Height").Source(rect)
+        .MultiMode(BindingMode.TwoWay)
+        .Convert((double w, double h) => $"{w} x {h}")
+        .ConvertBack((string s) =>
+        {
+            var parts = s.Split('x');
+            return (double.Parse(parts[0]), double.Parse(parts[1]));
+        }))
+```
+
+For a variable number of bindings (unknown arity), use `ConvertRaw()` instead of `Convert()`. It takes the raw value array in `Path()` order and an optional inverse, and skips the arity check — this is the hook the aggregate helpers such as `ConvertAll()` and `ConvertAny()` are built on.
 
 ### Device idiom, platform, and theme
 
