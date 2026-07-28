@@ -239,7 +239,7 @@ new Label()
 
 The first example binds `FontSize` to the `MyFontSize` property of the page's `BindingContext`. The second binds `Text` directly to the `Value` property of a specific `slider` element, formatted as `"Value: {0:F1}"`.
 
-- [Multi-Bindings](./doc/multibindings.md)
+See [Multi-Bindings](./doc/multibindings.md)
 
 ## Device idiom, platform, and theme
 
