@@ -224,8 +224,6 @@ See [layout option helpers](./doc/layoutoptions.md).
 
 ## Property Bindings
 
-### Bindings
-
 Bind a bindable property to a source by calling its fluent setter (e.g. `Text()`, `FontSize()`) with a lambda, then use `Path()` inside that lambda to point to the source property. Add `Source()` to bind to a specific object instead of the current `BindingContext`, and `StringFormat()` to format the displayed value.
 
 ```cs
@@ -241,61 +239,9 @@ new Label()
 
 The first example binds `FontSize` to the `MyFontSize` property of the page's `BindingContext`. The second binds `Text` directly to the `Value` property of a specific `slider` element, formatted as `"Value: {0:F1}"`.
 
-### Multi-Bindings
+See [Multi-Bindings](./doc/multibindings.md)
 
-Sometimes a target property needs to combine values from more than one source. Call `.Path()` more than once inside the same builder — each call opens a new sub-binding, and `Source()` / `StringFormat()` / `BindingMode()` / `Convert()` apply to whichever `Path()` was opened last. Each sub-binding can therefore have its own single-value `Convert()`, which transforms that source's raw value before it reaches the final combining step — as with `slider1` below, whose raw `double` is converted to a `bool` first. A trailing typed `Convert()` combines all collected values into the final result; its parameter types and count must match the values produced by each `Path()`, in order — either the source's raw type, or the result type of that `Path()`'s own `Convert()` if one was set. Its return type is the type of the target property.
-
-```cs
-new VStack
-{
-    new Slider(out var slider1)
-        .Minimum(1).Maximum(30),
-
-    new Slider(out var slider2)
-        .Minimum(1).Maximum(30),
-
-    new Slider(out var slider3)
-        .Minimum(1).Maximum(30),
-
-    new Slider(out var slider4)
-        .Minimum(1).Maximum(30),
-
-    new Label()
-        .Text(e => e
-            .Path(nameof(Slider.Value)).Source(slider1).Convert((double v) => v > 10)
-            .Path(nameof(Slider.Value)).Source(slider2)
-            .Path(nameof(Slider.Value)).Source(slider3)
-            .Path(nameof(Slider.Value)).Source(slider4)
-            .Convert((bool v1, double v2, double v3, double v4) =>
-            {
-                return $"{v1}, {v2:F2}, {v3:F2}, {v4:F2}";
-            }))
-}
-```
-
-Here, the `Label`'s text is recomputed automatically whenever any of the four sliders changes, since each `Path()` creates its own binding to that slider's `Value` property. `slider1`'s value is first converted to a `bool` by the `Convert()` attached to its own `Path()`, so the final `Convert()` receives it as `v1: bool` while `v2`–`v4` arrive as the raw `double` values from their sliders.
-
-Both roles share the same name, and which one you get is decided by the shape of the delegate: a one-argument lambda belongs to the `Path()` it follows, a multi-argument one closes the whole builder. You never have to pick a different method name.
-
-For two-way scenarios, use `ConvertBack()` with a matching arity, returning a tuple in the same order as the `Path()` calls. Each element of that tuple then passes through the `ConvertBack()` of its own `Path()`, if one was declared — so a path whose `Convert()` changes the value type needs a matching `ConvertBack()` to be writable.
-
-```cs
-new Entry()
-    .Text(e => e
-        .Path("Width").Source(rect)
-        .Path("Height").Source(rect)
-        .MultiMode(BindingMode.TwoWay)
-        .Convert((double w, double h) => $"{w} x {h}")
-        .ConvertBack((string s) =>
-        {
-            var parts = s.Split('x');
-            return (double.Parse(parts[0]), double.Parse(parts[1]));
-        }))
-```
-
-For a variable number of bindings (unknown arity), use `ConvertRaw()` instead of `Convert()`. It takes the raw value array in `Path()` order and an optional inverse, and skips the arity check — this is the hook the aggregate helpers such as `ConvertAll()` and `ConvertAny()` are built on.
-
-### Device idiom, platform, and theme
+## Device idiom, platform, and theme
 
 ```cs
 new Label()
@@ -327,7 +273,7 @@ new Label()
         .OnDark(Colors.Black))
 ```
 
-### Dynamic resources
+## Dynamic resources
 
 ```cs
 Resources = new ResourceDictionary
@@ -481,6 +427,7 @@ public class ViewPage : ContentPage
 - [Layout option extension methods](./doc/layoutoptions.md)
 - [Text alignment extension methods](./doc/itextalignment.md)
 - [Binding converters](./doc/bindingconverters.md)
+- [Multi-Bindings](./doc/multibindings.md)
 - [Event handlers](./doc/eventhandlers.md)
 - [Grid definition](./doc/griddefinition.md)
 - [Absolute layout](./doc/absolutelayout.md)

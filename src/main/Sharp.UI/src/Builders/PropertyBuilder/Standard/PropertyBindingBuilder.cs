@@ -22,7 +22,7 @@ namespace Sharp.UI
 
     /// <summary>
     /// Thrown when a fluent converter receives a value that does not match the type declared by
-    /// the caller (the Q / R type arguments of Convert and ConvertBack).
+    /// the caller (the Q / R type arguments of Convert, ConvertBack and MultiConvert).
     ///
     /// The binding infrastructure does not catch converter exceptions, so this surfaces as an
     /// unhandled exception with a stack trace pointing into Microsoft.Maui.Controls - the
@@ -96,8 +96,8 @@ namespace Sharp.UI
             // The hint may only suggest changing something the caller actually controls,
             // which is the type argument of this very step.
             var hint = stage == ConverterStage.Convert
-                ? "Declare the Convert parameter with the type the source property actually exposes."
-                : "Declare the ConvertBack parameter with the type of the bound target property.";
+                ? "Declare the parameter with the type the source property actually exposes."
+                : "Declare the parameter with the type of the bound target property.";
 
             return
                 $"Sharp.UI: the {stage} delegate bound to {target}{where}{slot} expects " +
@@ -154,9 +154,9 @@ namespace Sharp.UI
             var declared = propertyType is null ? "unknown" : propertyType.FullName;
 
             return
-                $"Sharp.UI: cannot hand the value of {target} to the multi-value ConvertBack. The builder " +
-                $"is typed as '{builderType.FullName}' (CLR property type), the registered BindableProperty " +
-                $"returns '{declared}', and the value is '{actual}'. These have to agree - this is a " +
+                $"Sharp.UI: cannot hand the value of {target} to MultiConvertBack. The builder is typed as " +
+                $"'{builderType.FullName}' (CLR property type), the registered BindableProperty returns " +
+                $"'{declared}', and the value is '{actual}'. These have to agree - this is a " +
                 "property/BindableProperty registration mismatch, not a problem with the delegate signature.";
         }
     }
@@ -168,12 +168,9 @@ namespace Sharp.UI
     /// BindingMode, Parameter, Converter, Convert, ConvertBack) applies to the most recently
     /// opened one.
     ///
-    /// A single Path() produces a plain Binding and its Convert() result is the target property
+    /// One Path() produces a plain Binding, and its Convert() result is the target property
     /// value. Several Path() calls produce a MultiBinding: each path may convert its own raw
-    /// value first, and a trailing multi-value Convert() combines them into the final result.
-    ///
-    /// Both roles share the name Convert / ConvertBack; overload resolution separates them by
-    /// delegate shape, so no extra naming is needed.
+    /// value first, and a trailing MultiConvert() combines them into the final result.
     /// </summary>
     public sealed class PropertyBindingBuilder<T> : IPropertyBuilder<T>
     {
@@ -243,8 +240,8 @@ namespace Sharp.UI
         }
 
         // Converter for a MultiBinding: N raw values <-> T.
-        // Used both by the generic Convert<Q1,Q2,...> overloads (fixed arity)
-        // and by ConvertRaw (arbitrary, dynamic arity).
+        // Used both by the generic MultiConvert<Q1,Q2,...> overloads (fixed arity)
+        // and by MultiConvertRaw (arbitrary, dynamic arity).
         sealed class MultiValueConverter : IMultiValueConverter
         {
             internal Func<object[], Type, T> ConvertFunction;
@@ -314,17 +311,19 @@ namespace Sharp.UI
 
             if (multiConverter is null)
                 throw new InvalidOperationException(
-                    $"Path() was called {entries.Count} times without a multi-value Convert() or ConvertRaw(). " +
-                    "Calling Path() more than once requires Convert<Q1,Q2,...>(...) or ConvertRaw(...).");
+                    $"Path() was called {entries.Count} times, but no multi-value converter was set. " +
+                    $"Use MultiConvert(...) with {entries.Count} parameters, or MultiConvertRaw(...) " +
+                    "for a dynamic number of bindings.");
 
-            // With fixed arity (Convert<Q1,Q2,...>) the number of Path() calls must match.
-            // With ConvertRaw the arity is intentionally dynamic and this check is skipped.
+            // With fixed arity (MultiConvert<Q1,Q2,...>) the number of Path() calls must match.
+            // With MultiConvertRaw the arity is intentionally dynamic and this check is skipped.
             if (!arityIsDynamic && multiArity != entries.Count)
                 throw new InvalidOperationException(
-                    $"The number of Path() calls ({entries.Count}) does not match the Convert arity ({multiArity}).");
+                    $"The number of Path() calls ({entries.Count}) does not match the " +
+                    $"MultiConvert arity ({multiArity}).");
 
             // Paths are known only once every Path() has been opened, so the multi-binding
-            // diagnostics are completed here rather than in the Convert<...> overload.
+            // diagnostics are completed here rather than in the MultiConvert<...> overload.
             if (multiConverter.Site is not null)
                 multiConverter.Site.Paths = entries.Select(e => e.Path).ToArray();
 
@@ -382,18 +381,16 @@ namespace Sharp.UI
         {
             if (multiConverter is null)
                 throw new InvalidOperationException(
-                    "The multi-value ConvertBack requires a preceding call to Convert<Q1,Q2,...>, which " +
-                    "defines the forward direction and the number of bindings. " +
-                    "If you meant a single-value ConvertBack whose result happens to be a tuple, note that " +
-                    "the multi-value overload wins overload resolution - return a named type instead, or " +
-                    "supply your own IValueConverter through Converter(...).");
+                    "MultiConvertBack requires a preceding call to MultiConvert<Q1,Q2,...>, which " +
+                    "defines the forward direction and the number of bindings.");
             if (arityIsDynamic)
                 throw new InvalidOperationException(
-                    "This builder uses ConvertRaw (dynamic arity) - pass convertBack directly as the " +
-                    "second argument of ConvertRaw(...) instead of calling ConvertBack<Q1,Q2,...>.");
+                    "This builder uses MultiConvertRaw (dynamic arity) - pass convertBack directly as " +
+                    "the second argument of MultiConvertRaw(...) instead of calling MultiConvertBack.");
             if (multiArity != arity)
                 throw new InvalidOperationException(
-                    $"The ConvertBack arity ({arity}) does not match the previously called Convert arity ({multiArity}).");
+                    $"The MultiConvertBack arity ({arity}) does not match the previously called " +
+                    $"MultiConvert arity ({multiArity}).");
             return multiConverter;
         }
 
@@ -492,7 +489,7 @@ namespace Sharp.UI
         // With one Path() the result is the target property value; MAUI still applies the
         // property's own TypeConverter afterwards, so returning e.g. a string for a Brush
         // property keeps working. With several Path() calls the result is the value handed to
-        // the multi-value Convert() for this particular path.
+        // MultiConvert() for this particular path.
         // =====================================================================
 
         public PropertyBindingBuilder<T> Convert<Q, R>(Func<Q, R> convert)
@@ -532,7 +529,7 @@ namespace Sharp.UI
         // The result type is pinned to T.
         // =====================================================================
 
-        public PropertyBindingBuilder<T> Convert<Q1, Q2>(Func<Q1, Q2, T> convert)
+        public PropertyBindingBuilder<T> MultiConvert<Q1, Q2>(Func<Q1, Q2, T> convert)
         {
             var site = MultiSite();
 
@@ -548,7 +545,7 @@ namespace Sharp.UI
             return this;
         }
 
-        public PropertyBindingBuilder<T> Convert<Q1, Q2, Q3>(Func<Q1, Q2, Q3, T> convert)
+        public PropertyBindingBuilder<T> MultiConvert<Q1, Q2, Q3>(Func<Q1, Q2, Q3, T> convert)
         {
             var site = MultiSite();
 
@@ -565,7 +562,7 @@ namespace Sharp.UI
             return this;
         }
 
-        public PropertyBindingBuilder<T> Convert<Q1, Q2, Q3, Q4>(Func<Q1, Q2, Q3, Q4, T> convert)
+        public PropertyBindingBuilder<T> MultiConvert<Q1, Q2, Q3, Q4>(Func<Q1, Q2, Q3, Q4, T> convert)
         {
             var site = MultiSite();
 
@@ -583,7 +580,7 @@ namespace Sharp.UI
             return this;
         }
 
-        public PropertyBindingBuilder<T> Convert<Q1, Q2, Q3, Q4, Q5>(Func<Q1, Q2, Q3, Q4, Q5, T> convert)
+        public PropertyBindingBuilder<T> MultiConvert<Q1, Q2, Q3, Q4, Q5>(Func<Q1, Q2, Q3, Q4, Q5, T> convert)
         {
             var site = MultiSite();
 
@@ -602,7 +599,7 @@ namespace Sharp.UI
             return this;
         }
 
-        public PropertyBindingBuilder<T> Convert<Q1, Q2, Q3, Q4, Q5, Q6>(Func<Q1, Q2, Q3, Q4, Q5, Q6, T> convert)
+        public PropertyBindingBuilder<T> MultiConvert<Q1, Q2, Q3, Q4, Q5, Q6>(Func<Q1, Q2, Q3, Q4, Q5, Q6, T> convert)
         {
             var site = MultiSite();
 
@@ -622,7 +619,7 @@ namespace Sharp.UI
             return this;
         }
 
-        public PropertyBindingBuilder<T> Convert<Q1, Q2, Q3, Q4, Q5, Q6, Q7>(Func<Q1, Q2, Q3, Q4, Q5, Q6, Q7, T> convert)
+        public PropertyBindingBuilder<T> MultiConvert<Q1, Q2, Q3, Q4, Q5, Q6, Q7>(Func<Q1, Q2, Q3, Q4, Q5, Q6, Q7, T> convert)
         {
             var site = MultiSite();
 
@@ -643,7 +640,7 @@ namespace Sharp.UI
             return this;
         }
 
-        public PropertyBindingBuilder<T> Convert<Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8>(Func<Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, T> convert)
+        public PropertyBindingBuilder<T> MultiConvert<Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8>(Func<Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, T> convert)
         {
             var site = MultiSite();
 
@@ -665,7 +662,7 @@ namespace Sharp.UI
             return this;
         }
 
-        public PropertyBindingBuilder<T> Convert<Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9>(Func<Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9, T> convert)
+        public PropertyBindingBuilder<T> MultiConvert<Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9>(Func<Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9, T> convert)
         {
             var site = MultiSite();
 
@@ -691,16 +688,11 @@ namespace Sharp.UI
         // =====================================================================
         // Multi binding - backward
         //
-        // These share the ConvertBack name with the single-value overload. Overload resolution
-        // prefers them because Func<T, (Q1, Q2)> is more specific than Func<R, Q>: after the
-        // class type argument is substituted, T is a concrete type and the tuple is a
-        // constructed type, while R and Q are bare method type parameters.
-        //
         // The returned tuple is written back in Path() order. Each element then passes through
         // that path's own ConvertBack(), if one was declared.
         // =====================================================================
 
-        public PropertyBindingBuilder<T> ConvertBack<Q1, Q2>(Func<T, (Q1, Q2)> convertBack)
+        public PropertyBindingBuilder<T> MultiConvertBack<Q1, Q2>(Func<T, (Q1, Q2)> convertBack)
         {
             var mc = RequireMultiConverter(2);
             mc.ConvertBackFunction = value =>
@@ -711,7 +703,7 @@ namespace Sharp.UI
             return this;
         }
 
-        public PropertyBindingBuilder<T> ConvertBack<Q1, Q2, Q3>(Func<T, (Q1, Q2, Q3)> convertBack)
+        public PropertyBindingBuilder<T> MultiConvertBack<Q1, Q2, Q3>(Func<T, (Q1, Q2, Q3)> convertBack)
         {
             var mc = RequireMultiConverter(3);
             mc.ConvertBackFunction = value =>
@@ -722,7 +714,7 @@ namespace Sharp.UI
             return this;
         }
 
-        public PropertyBindingBuilder<T> ConvertBack<Q1, Q2, Q3, Q4>(Func<T, (Q1, Q2, Q3, Q4)> convertBack)
+        public PropertyBindingBuilder<T> MultiConvertBack<Q1, Q2, Q3, Q4>(Func<T, (Q1, Q2, Q3, Q4)> convertBack)
         {
             var mc = RequireMultiConverter(4);
             mc.ConvertBackFunction = value =>
@@ -733,7 +725,7 @@ namespace Sharp.UI
             return this;
         }
 
-        public PropertyBindingBuilder<T> ConvertBack<Q1, Q2, Q3, Q4, Q5>(Func<T, (Q1, Q2, Q3, Q4, Q5)> convertBack)
+        public PropertyBindingBuilder<T> MultiConvertBack<Q1, Q2, Q3, Q4, Q5>(Func<T, (Q1, Q2, Q3, Q4, Q5)> convertBack)
         {
             var mc = RequireMultiConverter(5);
             mc.ConvertBackFunction = value =>
@@ -744,7 +736,7 @@ namespace Sharp.UI
             return this;
         }
 
-        public PropertyBindingBuilder<T> ConvertBack<Q1, Q2, Q3, Q4, Q5, Q6>(Func<T, (Q1, Q2, Q3, Q4, Q5, Q6)> convertBack)
+        public PropertyBindingBuilder<T> MultiConvertBack<Q1, Q2, Q3, Q4, Q5, Q6>(Func<T, (Q1, Q2, Q3, Q4, Q5, Q6)> convertBack)
         {
             var mc = RequireMultiConverter(6);
             mc.ConvertBackFunction = value =>
@@ -755,7 +747,7 @@ namespace Sharp.UI
             return this;
         }
 
-        public PropertyBindingBuilder<T> ConvertBack<Q1, Q2, Q3, Q4, Q5, Q6, Q7>(Func<T, (Q1, Q2, Q3, Q4, Q5, Q6, Q7)> convertBack)
+        public PropertyBindingBuilder<T> MultiConvertBack<Q1, Q2, Q3, Q4, Q5, Q6, Q7>(Func<T, (Q1, Q2, Q3, Q4, Q5, Q6, Q7)> convertBack)
         {
             var mc = RequireMultiConverter(7);
             mc.ConvertBackFunction = value =>
@@ -766,7 +758,7 @@ namespace Sharp.UI
             return this;
         }
 
-        public PropertyBindingBuilder<T> ConvertBack<Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8>(Func<T, (Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8)> convertBack)
+        public PropertyBindingBuilder<T> MultiConvertBack<Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8>(Func<T, (Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8)> convertBack)
         {
             var mc = RequireMultiConverter(8);
             mc.ConvertBackFunction = value =>
@@ -777,7 +769,7 @@ namespace Sharp.UI
             return this;
         }
 
-        public PropertyBindingBuilder<T> ConvertBack<Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9>(Func<T, (Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9)> convertBack)
+        public PropertyBindingBuilder<T> MultiConvertBack<Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9>(Func<T, (Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9)> convertBack)
         {
             var mc = RequireMultiConverter(9);
             mc.ConvertBackFunction = value =>
@@ -795,18 +787,42 @@ namespace Sharp.UI
         /// <summary>
         /// Low-level multi-binding entry point for an arbitrary, not-known-in-advance number of
         /// Path() calls (e.g. aggregate converters: ConvertAll, ConvertAny, ConvertAtLeast).
-        /// Unlike the generic Convert&lt;Q1,Q2,...&gt; overloads, the number of Path() calls is NOT
-        /// validated against a fixed arity in Build(), and the values are not unboxed for you -
-        /// convert receives the raw value array in the order Path() was called. convertBack
+        /// Unlike the generic MultiConvert&lt;Q1,Q2,...&gt; overloads, the number of Path() calls is
+        /// NOT validated against a fixed arity in Build(), and the values are not unboxed for you
+        /// - convert receives the raw value array in the order Path() was called. convertBack
         /// (optional) must return an array of the same length and order.
         /// </summary>
-        public PropertyBindingBuilder<T> ConvertRaw(Func<object[], T> convert, Func<T, object[]> convertBack = null)
+        public PropertyBindingBuilder<T> MultiConvertRaw(Func<object[], T> convert, Func<T, object[]> convertBack = null)
         {
             multiConverter = new MultiValueConverter
             {
                 Site = MultiSite(),
                 ConvertFunction = (v, _) => convert(v),
                 ConvertBackFunction = convertBack
+            };
+            arityIsDynamic = true;
+            return this;
+        }
+
+        /// <summary>
+        /// Dynamic-arity multi-binding over values of a single known type. Each value is unboxed to Q
+        /// with the same diagnostics as MultiConvert, so aggregate helpers built on top of this do not
+        /// have to cast raw objects themselves.
+        /// </summary>
+        public PropertyBindingBuilder<T> MultiConvertRaw<Q>(Func<IReadOnlyList<Q>, T> convert)
+        {
+            var site = MultiSite();
+
+            multiConverter = new MultiValueConverter
+            {
+                Site = site,
+                ConvertFunction = (v, requested) =>
+                {
+                    var typed = new Q[v.Length];
+                    for (var i = 0; i < v.Length; i++)
+                        typed[i] = Unbox<Q>(v[i], site, requested, ConverterStage.Convert, i);
+                    return convert(typed);
+                }
             };
             arityIsDynamic = true;
             return this;
