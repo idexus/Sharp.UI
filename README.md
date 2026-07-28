@@ -243,7 +243,7 @@ The first example binds `FontSize` to the `MyFontSize` property of the page's `B
 
 ## Multi-Bindings
 
-Sometimes a target property needs to combine values from more than one source. Call `.Path()` more than once inside the same builder — each call opens a new sub-binding, and `Source()` / `StringFormat()` / `BindingMode()` / `Map()` apply to whichever `Path()` was opened last. Each sub-binding can also have its own `Map()`, which transforms that source's raw value before it reaches the final combining step — as with `slider1` below, whose raw `double` is mapped to a `bool` first. A trailing typed `Convert()` combines all collected values into the final result; its parameter types and count must match the values produced by each `Path()`, in order — either the source's raw type, or the output type of that `Path()`'s own `Map()` if one was set. Its return type is the type of the target property.
+Sometimes a target property needs to combine values from more than one source. Call `.Path()` more than once inside the same builder — each call opens a new sub-binding, and `Source()` / `StringFormat()` / `BindingMode()` / `Convert()` apply to whichever `Path()` was opened last. Each sub-binding can therefore have its own single-value `Convert()`, which transforms that source's raw value before it reaches the final combining step — as with `slider1` below, whose raw `double` is converted to a `bool` first. A trailing typed `Convert()` combines all collected values into the final result; its parameter types and count must match the values produced by each `Path()`, in order — either the source's raw type, or the result type of that `Path()`'s own `Convert()` if one was set. Its return type is the type of the target property.
 
 ```cs
 new VStack
@@ -262,7 +262,7 @@ new VStack
 
     new Label()
         .Text(e => e
-            .Path(nameof(Slider.Value)).Source(slider1).Map((double v) => v > 10)
+            .Path(nameof(Slider.Value)).Source(slider1).Convert((double v) => v > 10)
             .Path(nameof(Slider.Value)).Source(slider2)
             .Path(nameof(Slider.Value)).Source(slider3)
             .Path(nameof(Slider.Value)).Source(slider4)
@@ -273,10 +273,9 @@ new VStack
 }
 ```
 
-Here, the `Label`'s text is recomputed automatically whenever any of the four sliders changes, since each `Path()` creates its own binding to that slider's `Value` property. `slider1`'s value is first mapped to a `bool` via its own `Map()`, so the final `Convert()` receives it as `v1: bool` while `v2`–`v4` arrive as the raw `double` values from their sliders.
+Here, the `Label`'s text is recomputed automatically whenever any of the four sliders changes, since each `Path()` creates its own binding to that slider's `Value` property. `slider1`'s value is first converted to a `bool` by the `Convert()` attached to its own `Path()`, so the final `Convert()` receives it as `v1: bool` while `v2`–`v4` arrive as the raw `double` values from their sliders. Which of the two roles a `Convert()` plays is decided by its arity: a one-argument delegate belongs to the `Path()` it follows, a multi-argument one closes the whole builder.
 
-For two-way scenarios, use `ConvertBack()` with a matching arity, returning a tuple in the same order as the `Path()` calls. If a `Path()` uses `Map()`, add a `MapBack()` on that same path so the value written back can be turned into the source type again. For a variable number of bindings (unknown arity), use `ConvertRaw()` instead of `Convert()`.
-### Device idiom, platform, and theme
+For two-way scenarios, use `ConvertBackAll()` with a matching arity, returning a tuple in the same order as the `Path()` calls. Each element of that tuple then passes through the `ConvertBack()` of its own `Path()`, if one was declared — so a path whose `Convert()` changes the value type needs a matching `ConvertBack()` to be writable. For a variable number of bindings (unknown arity), use `ConvertRaw()` instead of `Convert()`.
 
 ```cs
 new Label()
