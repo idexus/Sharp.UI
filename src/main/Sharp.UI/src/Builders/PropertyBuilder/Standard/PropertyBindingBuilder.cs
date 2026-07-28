@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Sharp.UI
 {
     /// <summary>
-    /// Identifies which fluent step raised a <see cref="SharpUIConverterException"/>.
+    /// Identifies which fluent step of a binding pipeline raised an exception.
     /// </summary>
     public enum ConverterStage
     {
@@ -27,26 +27,39 @@ namespace Sharp.UI
     }
 
     /// <summary>
-    /// Thrown when a fluent converter step receives a value it cannot accept.
-    /// The binding infrastructure does not catch converter exceptions, so this
-    /// surfaces as an unhandled exception - the message must be self-explanatory.
+    /// Thrown when a fluent converter step receives a value that does not match the type
+    /// declared by the caller (the Q / R type arguments of Map, MapBack or Convert).
+    ///
+    /// The binding infrastructure does not catch converter exceptions, so this surfaces as
+    /// an unhandled exception with a stack trace pointing into Microsoft.Maui.Controls -
+    /// the message therefore has to be self-explanatory on its own.
     /// </summary>
     public sealed class SharpUIConverterException : InvalidOperationException
     {
-        /// <summary>Type of the object owning the bound property.</summary>
-        public Type TargetType { get; }
+        /// <summary>Type of the object that owns the bound property, e.g. Label.</summary>
+        public Type OwnerType { get; }
 
-        /// <summary>Name of the bound target property.</summary>
+        /// <summary>Name of the bound target property, e.g. "Text".</summary>
         public string TargetProperty { get; }
+
+        /// <summary>ReturnType of the bound BindableProperty.</summary>
+        public Type PropertyType { get; }
 
         /// <summary>Binding path of the failing sub-binding, when known.</summary>
         public string BindingPath { get; }
 
-        /// <summary>Type the delegate parameter was declared with.</summary>
+        /// <summary>Type the caller declared on the delegate parameter.</summary>
         public Type ExpectedType { get; }
 
         /// <summary>Runtime type the binding actually supplied, or null.</summary>
         public Type ActualType { get; }
+
+        /// <summary>
+        /// The type MAUI asked the converter to produce in this call. Its meaning depends on
+        /// direction: the target property type when converting forward, the source property
+        /// type when converting back.
+        /// </summary>
+        public Type RequestedType { get; }
 
         /// <summary>The fluent step that failed.</summary>
         public ConverterStage Stage { get; }
@@ -55,41 +68,51 @@ namespace Sharp.UI
         public int? ValueIndex { get; }
 
         internal SharpUIConverterException(
-            Type targetType,
+            Type ownerType,
             string targetProperty,
+            Type propertyType,
             string bindingPath,
             Type expectedType,
             Type actualType,
+            Type requestedType,
             ConverterStage stage,
-            int? valueIndex = null)
-            : base(BuildMessage(targetType, targetProperty, bindingPath, expectedType, actualType, stage, valueIndex))
+            int? valueIndex)
+            : base(BuildMessage(ownerType, targetProperty, bindingPath, expectedType, actualType, stage, valueIndex))
         {
-            TargetType = targetType;
+            OwnerType = ownerType;
             TargetProperty = targetProperty;
+            PropertyType = propertyType;
             BindingPath = bindingPath;
             ExpectedType = expectedType;
             ActualType = actualType;
+            RequestedType = requestedType;
             Stage = stage;
             ValueIndex = valueIndex;
         }
 
         static string BuildMessage(
-            Type targetType, string targetProperty, string bindingPath,
+            Type ownerType, string targetProperty, string bindingPath,
             Type expectedType, Type actualType, ConverterStage stage, int? valueIndex)
         {
-            var target = targetType is null ? targetProperty : $"{targetType.Name}.{targetProperty}";
+            var target = ownerType is null ? targetProperty : $"{ownerType.Name}.{targetProperty}";
             var where = bindingPath is null ? string.Empty : $" (Path=\"{bindingPath}\")";
             var slot = valueIndex is null ? string.Empty : $", value #{valueIndex}";
             var actual = actualType is null ? "null" : actualType.FullName;
 
+            // The hint has to stay actionable: it may only suggest changing something the
+            // caller actually controls, which is the type argument of this very step.
             var hint = stage switch
             {
-                ConverterStage.Map or ConverterStage.Convert =>
-                    "Declare the delegate parameter with the actual source type, " +
-                    $"or insert a Map(...) step that produces '{expectedType.FullName}'.",
+                ConverterStage.Map =>
+                    "Declare the Map parameter with the type that reaches this step - the raw source " +
+                    "type for the first Map, or the result type of the preceding Map.",
+                ConverterStage.Convert =>
+                    "Declare the Convert parameter with the type that reaches this step - the raw source " +
+                    $"type, or insert a Map(...) step producing '{expectedType.FullName}'.",
+                ConverterStage.MapBack =>
+                    "Declare the MapBack parameter with the result type of the Map(...) step it inverts.",
                 _ =>
-                    "Declare the delegate parameter with the actual target property type, " +
-                    "or insert a MapBack(...) step in front of it.",
+                    "Declare the parameter with the type actually supplied by the binding.",
             };
 
             return
@@ -99,23 +122,97 @@ namespace Sharp.UI
     }
 
     /// <summary>
+    /// Thrown when the value of a bound property cannot be represented as T, the generic
+    /// argument of the builder.
+    ///
+    /// T is not chosen by the caller: it is emitted by the generated fluent extension method
+    /// from the CLR property type, while the binding value comes from the registered
+    /// BindableProperty. When the two disagree there is nothing the caller can fix in a
+    /// delegate signature, so this is reported separately from
+    /// <see cref="SharpUIConverterException"/>.
+    /// </summary>
+    public sealed class SharpUIBindingTypeMismatchException : InvalidOperationException
+    {
+        /// <summary>Type of the object that owns the bound property.</summary>
+        public Type OwnerType { get; }
+
+        /// <summary>Name of the bound target property.</summary>
+        public string TargetProperty { get; }
+
+        /// <summary>Binding path of the failing sub-binding, when known.</summary>
+        public string BindingPath { get; }
+
+        /// <summary>The builder's T - the CLR property type seen by the generator.</summary>
+        public Type BuilderType { get; }
+
+        /// <summary>ReturnType of the registered BindableProperty.</summary>
+        public Type PropertyType { get; }
+
+        /// <summary>Runtime type of the value that could not be unboxed, or null.</summary>
+        public Type ActualType { get; }
+
+        /// <summary>The fluent step that failed.</summary>
+        public ConverterStage Stage { get; }
+
+        internal SharpUIBindingTypeMismatchException(
+            Type ownerType,
+            string targetProperty,
+            string bindingPath,
+            Type builderType,
+            Type propertyType,
+            Type actualType,
+            ConverterStage stage)
+            : base(BuildMessage(ownerType, targetProperty, bindingPath, builderType, propertyType, actualType, stage))
+        {
+            OwnerType = ownerType;
+            TargetProperty = targetProperty;
+            BindingPath = bindingPath;
+            BuilderType = builderType;
+            PropertyType = propertyType;
+            ActualType = actualType;
+            Stage = stage;
+        }
+
+        static string BuildMessage(
+            Type ownerType, string targetProperty, string bindingPath,
+            Type builderType, Type propertyType, Type actualType, ConverterStage stage)
+        {
+            var target = ownerType is null ? targetProperty : $"{ownerType.Name}.{targetProperty}";
+            var where = bindingPath is null ? string.Empty : $" (Path=\"{bindingPath}\")";
+            var actual = actualType is null ? "null" : actualType.FullName;
+            var declared = propertyType is null ? "unknown" : propertyType.FullName;
+
+            return
+                $"Sharp.UI: cannot hand the value of {target}{where} to the {stage} delegate. " +
+                $"The builder is typed as '{builderType.FullName}' (CLR property type), the registered " +
+                $"BindableProperty returns '{declared}', and the value is '{actual}'. " +
+                "These have to agree - this is a property/BindableProperty registration mismatch, " +
+                "not a problem with the delegate signature.";
+        }
+    }
+
+    /// <summary>
     /// Fluent binding builder.
     ///
-    /// The chain is a pipeline with two kinds of steps:
+    /// The chain is a pipeline built from two kinds of steps:
     ///
-    ///   Map / MapBack      - intermediate, attached to the most recently opened Path().
-    ///                        The result type is free, because the value travels further
-    ///                        down the pipeline. Several Map steps can be stacked.
+    ///   Map / MapBack         - intermediate, attached to the most recently opened Path().
+    ///                           The result type is free, because the value travels further
+    ///                           down the pipeline. Several Map steps can be stacked.
     ///
     ///   Convert / ConvertBack - terminal, produces the value of the target property.
-    ///                        The result type is pinned to T, so a mismatch is a
-    ///                        compile-time error rather than a runtime surprise.
+    ///                           The result type is pinned to T, so a mismatch is a
+    ///                           compile-time error rather than a runtime surprise.
     ///
     /// A single Path() plus a terminal step produces a plain Binding.
     /// Several Path() calls plus a multi-value terminal step produce a MultiBinding.
     /// </summary>
     public sealed class PropertyBindingBuilder<T> : IPropertyBuilder<T>
     {
+        // =====================================================================
+        // Internal model
+        // =====================================================================
+
         // A single sub-binding opened by Path().
         // Each call to Path() always creates a new entry; modifiers
         // (Source, StringFormat, BindingMode, Parameter, Converter, Map, MapBack)
@@ -139,24 +236,46 @@ namespace Sharp.UI
                     source: Source);
         }
 
+        // Everything a converter lambda needs for diagnostics, snapshotted at build time.
+        // Deliberately a separate object: capturing 'this' or 'Context' in a converter lambda
+        // would keep the builder and its entry list alive for as long as the binding lives.
+        sealed class BindingSite
+        {
+            public Type OwnerType;
+            public string PropertyName;
+            public Type PropertyType;   // BindableProperty.ReturnType
+            public string Path;         // single binding
+            public string[] Paths;      // multi binding, in Path() order
+
+            public string PathAt(int? index)
+            {
+                if (index is null) return Path;
+                if (Paths is null || index.Value < 0 || index.Value >= Paths.Length) return null;
+                return Paths[index.Value];
+            }
+        }
+
         /// <summary>
-        /// Converter of a single sub-binding. Holds an ordered pipeline of Map stages
-        /// followed by an optional terminal stage. A MAUI Binding exposes only one
-        /// Converter slot, so the steps are composed here rather than chained by MAUI.
+        /// Converter of a single sub-binding. Holds an ordered pipeline of Map stages followed
+        /// by an optional terminal stage. A MAUI Binding exposes only one Converter slot, so
+        /// the steps are composed here rather than chained by MAUI.
         ///
-        /// Forward:  value -> map[0] -> map[1] -> ... -> terminal -> target property
+        /// Forward:  source value -> map[0] -> map[1] -> ... -> terminal -> target property
         /// Backward: target property -> terminal -> ... -> map[1] -> map[0] -> source
         ///
-        /// A stage without a function in a given direction is an identity step, so
-        /// declaring only ConvertBack (write-side normalisation) is valid and does
-        /// not break the read direction.
+        /// A stage without a function in a given direction is an identity step, so declaring
+        /// only ConvertBack (write-side normalisation) is valid and does not break reading.
+        ///
+        /// Stage delegates receive the Type that MAUI asked for in this call. Its meaning
+        /// differs by direction - target property type when converting forward, source property
+        /// type when converting back - and it is used for diagnostics only.
         /// </summary>
         public sealed class ValueConverter : IValueConverter
         {
             internal sealed class Stage
             {
-                public Func<object, object> Forward;
-                public Func<object, object> Backward;
+                public Func<object, Type, object> Forward;
+                public Func<object, Type, object> Backward;
             }
 
             readonly List<Stage> mapStages = new();
@@ -180,10 +299,10 @@ namespace Sharp.UI
             {
                 for (var i = 0; i < mapStages.Count; i++)
                     if (mapStages[i].Forward is not null)
-                        value = mapStages[i].Forward(value);
+                        value = mapStages[i].Forward(value, targetType);
 
                 if (terminal?.Forward is not null)
-                    value = terminal.Forward(value);
+                    value = terminal.Forward(value, targetType);
 
                 return value;
             }
@@ -191,11 +310,11 @@ namespace Sharp.UI
             public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
             {
                 if (terminal?.Backward is not null)
-                    value = terminal.Backward(value);
+                    value = terminal.Backward(value, targetType);
 
                 for (var i = mapStages.Count - 1; i >= 0; i--)
                     if (mapStages[i].Backward is not null)
-                        value = mapStages[i].Backward(value);
+                        value = mapStages[i].Backward(value, targetType);
 
                 return value;
             }
@@ -206,22 +325,23 @@ namespace Sharp.UI
         // and by ConvertRaw (arbitrary, dynamic arity).
         sealed class MultiValueConverter : IMultiValueConverter
         {
-            internal Func<object[], T> ConvertFunction;
+            internal Func<object[], Type, T> ConvertFunction;
             internal Func<T, object[]> ConvertBackFunction;
+            internal BindingSite Site;
 
             public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
             {
                 if (values is null || ConvertFunction is null)
                     return Binding.DoNothing;
 
-                // MultiBinding proxies start out as null, so the converter is invoked
-                // before every sub-binding has resolved. DoNothing leaves the target
-                // untouched; returning null would wipe it instead.
+                // MultiBinding proxies start out as null, so this runs before every
+                // sub-binding has resolved. DoNothing leaves the target untouched;
+                // returning null would wipe it instead.
                 foreach (var value in values)
                     if (value is null || ReferenceEquals(value, BindableProperty.UnsetValue))
                         return Binding.DoNothing;
 
-                return ConvertFunction(values);
+                return ConvertFunction(values, targetType);
             }
 
             public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
@@ -229,14 +349,18 @@ namespace Sharp.UI
                 if (ConvertBackFunction is null)
                     return null;
 
-                // Returning null signals "converter failed" and MultiBinding skips the write.
-                // A transient null on the target is not a programming error, so no exception here.
                 if (!TryUnbox<T>(value, out var typed))
-                    return null;
+                    throw new SharpUIBindingTypeMismatchException(
+                        Site?.OwnerType, Site?.PropertyName, null,
+                        typeof(T), Site?.PropertyType, value?.GetType(), ConverterStage.ConvertBack);
 
                 return ConvertBackFunction(typed);
             }
         }
+
+        // =====================================================================
+        // State
+        // =====================================================================
 
         public PropertyContext<T> Context { get; set; }
 
@@ -266,8 +390,8 @@ namespace Sharp.UI
             {
                 if (entries[0].Converter is ValueConverter single && single.HasMapStages && !single.HasTerminal)
                     throw new InvalidOperationException(
-                        "Map() was used without a terminal Convert(). Map() only transforms the value " +
-                        "on its way through the pipeline; add Convert(...) to produce the target property value.");
+                        "Map() was used without a terminal Convert(). Map() only transforms the value on its " +
+                        "way through the pipeline; add Convert(...) to produce the target property value.");
 
                 Context.BindableObject.SetBinding(Context.Property, entries[0].ToBinding());
                 return true;
@@ -283,6 +407,11 @@ namespace Sharp.UI
             if (!arityIsDynamic && multiArity != entries.Count)
                 throw new InvalidOperationException(
                     $"The number of Path() calls ({entries.Count}) does not match the Convert arity ({multiArity}).");
+
+            // Paths are known only once every Path() has been opened, so the multi-binding
+            // diagnostics are completed here rather than in the Convert<...> overload.
+            if (multiConverter.Site is not null)
+                multiConverter.Site.Paths = entries.Select(e => e.Path).ToArray();
 
             var multiBinding = new Microsoft.Maui.Controls.MultiBinding
             {
@@ -342,13 +471,29 @@ namespace Sharp.UI
                     "which defines the forward direction and the number of bindings.");
             if (arityIsDynamic)
                 throw new InvalidOperationException(
-                    "This builder uses ConvertRaw (dynamic arity) - pass convertBack " +
-                    "directly as the second argument of ConvertRaw(...) instead of calling ConvertBack<Q1,Q2,...>.");
+                    "This builder uses ConvertRaw (dynamic arity) - pass convertBack directly as the " +
+                    "second argument of ConvertRaw(...) instead of calling ConvertBack<Q1,Q2,...>.");
             if (multiArity != arity)
                 throw new InvalidOperationException(
                     $"The ConvertBack arity ({arity}) does not match the previously called Convert arity ({multiArity}).");
             return multiConverter;
         }
+
+        BindingSite SiteFor(Entry entry) => new BindingSite
+        {
+            OwnerType = Context.BindableObject?.GetType(),
+            PropertyName = Context.Property?.PropertyName,
+            PropertyType = Context.Property?.ReturnType,
+            Path = entry.Path,
+        };
+
+        BindingSite MultiSite() => new BindingSite
+        {
+            OwnerType = Context.BindableObject?.GetType(),
+            PropertyName = Context.Property?.PropertyName,
+            PropertyType = Context.Property?.ReturnType,
+            // Paths are filled in by Build(), once all of them are known.
+        };
 
         public PropertyBindingBuilder<T> StringFormat(string stringFormat) { RequireCurrent().StringFormat = stringFormat; return this; }
 
@@ -381,12 +526,11 @@ namespace Sharp.UI
         // =====================================================================
         // Value unboxing
         //
-        // Binding values arrive boxed as object. A direct (Q)v cast fails for any
-        // numeric mismatch (int source, double parameter) and the binding pipeline
-        // does not catch converter exceptions, so the failure would surface as an
-        // unhandled crash with a stack trace pointing into Microsoft.Maui.Controls.
-        // The IConvertible path absorbs the common, clearly intended widenings;
-        // everything else is reported through SharpUIConverterException.
+        // Binding values arrive boxed as object. A direct (Q)v cast fails for any numeric
+        // mismatch (int source, double parameter) and the binding pipeline does not catch
+        // converter exceptions, so the failure would surface as an unhandled crash with a
+        // stack trace pointing into Microsoft.Maui.Controls. The IConvertible path absorbs
+        // the common, clearly intended widenings; everything else is reported explicitly.
         // =====================================================================
 
         static bool TryUnbox<TValue>(object value, out TValue result)
@@ -413,14 +557,27 @@ namespace Sharp.UI
             return false;
         }
 
-        static TValue Unbox<TValue>(
-            object value, Type targetType, string propertyName, string path, ConverterStage stage, int? valueIndex = null)
+        // For types the caller declared (the Q / R arguments of Map, MapBack, Convert).
+        static TValue UnboxDeclared<TValue>(
+            object value, BindingSite site, Type requestedType, ConverterStage stage, int? valueIndex = null)
         {
             if (TryUnbox<TValue>(value, out var result))
                 return result;
 
             throw new SharpUIConverterException(
-                targetType, propertyName, path, typeof(TValue), value?.GetType(), stage, valueIndex);
+                site?.OwnerType, site?.PropertyName, site?.PropertyType, site?.PathAt(valueIndex),
+                typeof(TValue), value?.GetType(), requestedType, stage, valueIndex);
+        }
+
+        // For T, which the caller does not choose - it comes from the generated extension method.
+        static T UnboxTargetValue(object value, BindingSite site, ConverterStage stage)
+        {
+            if (TryUnbox<T>(value, out var result))
+                return result;
+
+            throw new SharpUIBindingTypeMismatchException(
+                site?.OwnerType, site?.PropertyName, site?.Path,
+                typeof(T), site?.PropertyType, value?.GetType(), stage);
         }
 
         // =====================================================================
@@ -436,37 +593,31 @@ namespace Sharp.UI
         public PropertyBindingBuilder<T> Map<Q, R>(Func<Q, R> map)
         {
             var entry = RequireCurrent();
-            var pipeline = RequirePipeline(entry);
-            var stage = pipeline.AddMapStage();
+            var stage = RequirePipeline(entry).AddMapStage();
+            var site = SiteFor(entry);
 
-            // Captured once at build time. Never capture 'this' or 'Context' here:
-            // the converter outlives this builder and would keep it (and its entry list) alive.
-            var targetType = Context.BindableObject?.GetType();
-            var propertyName = Context.Property?.PropertyName;
-            var path = entry.Path;
+            stage.Forward = (v, requested) =>
+                map(UnboxDeclared<Q>(v, site, requested, ConverterStage.Map));
 
-            stage.Forward = v => map(Unbox<Q>(v, targetType, propertyName, path, ConverterStage.Map));
             return this;
         }
 
         /// <summary>
-        /// Inverse of the most recently declared Map() on the current Path().
-        /// Required for two-way bindings whose path uses Map(); without it the
-        /// mapped path is effectively read-only.
+        /// Inverse of the most recently declared Map() on the current Path(). Required for
+        /// two-way bindings whose path uses Map(); without it the mapped path is effectively
+        /// read-only.
         /// </summary>
         public PropertyBindingBuilder<T> MapBack<R, Q>(Func<R, Q> mapBack)
         {
             var entry = RequireCurrent();
-            var pipeline = RequirePipeline(entry);
-            var stage = pipeline.LastMapStage
+            var stage = RequirePipeline(entry).LastMapStage
                 ?? throw new InvalidOperationException(
                     "MapBack() requires a preceding Map() on the same Path(), which defines the step being inverted.");
+            var site = SiteFor(entry);
 
-            var targetType = Context.BindableObject?.GetType();
-            var propertyName = Context.Property?.PropertyName;
-            var path = entry.Path;
+            stage.Backward = (v, requested) =>
+                mapBack(UnboxDeclared<R>(v, site, requested, ConverterStage.MapBack));
 
-            stage.Backward = v => mapBack(Unbox<R>(v, targetType, propertyName, path, ConverterStage.MapBack));
             return this;
         }
 
@@ -482,30 +633,28 @@ namespace Sharp.UI
         {
             var entry = RequireCurrent();
             var stage = RequirePipeline(entry).Terminal;
+            var site = SiteFor(entry);
 
-            var targetType = Context.BindableObject?.GetType();
-            var propertyName = Context.Property?.PropertyName;
-            var path = entry.Path;
+            stage.Forward = (v, requested) =>
+                convert(UnboxDeclared<Q>(v, site, requested, ConverterStage.Convert));
 
-            stage.Forward = v => convert(Unbox<Q>(v, targetType, propertyName, path, ConverterStage.Convert));
             return this;
         }
 
         /// <summary>
-        /// Produces the source value from the target property value.
-        /// Valid on its own, without a preceding Convert(), for write-side
-        /// normalisation of a value that needs no conversion when read.
+        /// Produces the source value from the target property value. Valid on its own, without
+        /// a preceding Convert(), for write-side normalisation of a value that needs no
+        /// conversion when read.
         /// </summary>
         public PropertyBindingBuilder<T> ConvertBack<Q>(Func<T, Q> convertBack)
         {
             var entry = RequireCurrent();
             var stage = RequirePipeline(entry).Terminal;
+            var site = SiteFor(entry);
 
-            var targetType = Context.BindableObject?.GetType();
-            var propertyName = Context.Property?.PropertyName;
-            var path = entry.Path;
+            stage.Backward = (v, _) =>
+                convertBack(UnboxTargetValue(v, site, ConverterStage.ConvertBack));
 
-            stage.Backward = v => convertBack(Unbox<T>(v, targetType, propertyName, path, ConverterStage.ConvertBack));
             return this;
         }
 
@@ -515,14 +664,14 @@ namespace Sharp.UI
 
         public PropertyBindingBuilder<T> Convert<Q1, Q2>(Func<Q1, Q2, T> convert)
         {
-            var targetType = Context.BindableObject?.GetType();
-            var propertyName = Context.Property?.PropertyName;
+            var site = MultiSite();
 
             multiConverter = new MultiValueConverter
             {
-                ConvertFunction = v => convert(
-                    Unbox<Q1>(v[0], targetType, propertyName, null, ConverterStage.Convert, 0),
-                    Unbox<Q2>(v[1], targetType, propertyName, null, ConverterStage.Convert, 1))
+                Site = site,
+                ConvertFunction = (v, requested) => convert(
+                    UnboxDeclared<Q1>(v[0], site, requested, ConverterStage.Convert, 0),
+                    UnboxDeclared<Q2>(v[1], site, requested, ConverterStage.Convert, 1))
             };
             multiArity = 2;
             arityIsDynamic = false;
@@ -531,15 +680,15 @@ namespace Sharp.UI
 
         public PropertyBindingBuilder<T> Convert<Q1, Q2, Q3>(Func<Q1, Q2, Q3, T> convert)
         {
-            var targetType = Context.BindableObject?.GetType();
-            var propertyName = Context.Property?.PropertyName;
+            var site = MultiSite();
 
             multiConverter = new MultiValueConverter
             {
-                ConvertFunction = v => convert(
-                    Unbox<Q1>(v[0], targetType, propertyName, null, ConverterStage.Convert, 0),
-                    Unbox<Q2>(v[1], targetType, propertyName, null, ConverterStage.Convert, 1),
-                    Unbox<Q3>(v[2], targetType, propertyName, null, ConverterStage.Convert, 2))
+                Site = site,
+                ConvertFunction = (v, requested) => convert(
+                    UnboxDeclared<Q1>(v[0], site, requested, ConverterStage.Convert, 0),
+                    UnboxDeclared<Q2>(v[1], site, requested, ConverterStage.Convert, 1),
+                    UnboxDeclared<Q3>(v[2], site, requested, ConverterStage.Convert, 2))
             };
             multiArity = 3;
             arityIsDynamic = false;
@@ -548,16 +697,16 @@ namespace Sharp.UI
 
         public PropertyBindingBuilder<T> Convert<Q1, Q2, Q3, Q4>(Func<Q1, Q2, Q3, Q4, T> convert)
         {
-            var targetType = Context.BindableObject?.GetType();
-            var propertyName = Context.Property?.PropertyName;
+            var site = MultiSite();
 
             multiConverter = new MultiValueConverter
             {
-                ConvertFunction = v => convert(
-                    Unbox<Q1>(v[0], targetType, propertyName, null, ConverterStage.Convert, 0),
-                    Unbox<Q2>(v[1], targetType, propertyName, null, ConverterStage.Convert, 1),
-                    Unbox<Q3>(v[2], targetType, propertyName, null, ConverterStage.Convert, 2),
-                    Unbox<Q4>(v[3], targetType, propertyName, null, ConverterStage.Convert, 3))
+                Site = site,
+                ConvertFunction = (v, requested) => convert(
+                    UnboxDeclared<Q1>(v[0], site, requested, ConverterStage.Convert, 0),
+                    UnboxDeclared<Q2>(v[1], site, requested, ConverterStage.Convert, 1),
+                    UnboxDeclared<Q3>(v[2], site, requested, ConverterStage.Convert, 2),
+                    UnboxDeclared<Q4>(v[3], site, requested, ConverterStage.Convert, 3))
             };
             multiArity = 4;
             arityIsDynamic = false;
@@ -566,17 +715,17 @@ namespace Sharp.UI
 
         public PropertyBindingBuilder<T> Convert<Q1, Q2, Q3, Q4, Q5>(Func<Q1, Q2, Q3, Q4, Q5, T> convert)
         {
-            var targetType = Context.BindableObject?.GetType();
-            var propertyName = Context.Property?.PropertyName;
+            var site = MultiSite();
 
             multiConverter = new MultiValueConverter
             {
-                ConvertFunction = v => convert(
-                    Unbox<Q1>(v[0], targetType, propertyName, null, ConverterStage.Convert, 0),
-                    Unbox<Q2>(v[1], targetType, propertyName, null, ConverterStage.Convert, 1),
-                    Unbox<Q3>(v[2], targetType, propertyName, null, ConverterStage.Convert, 2),
-                    Unbox<Q4>(v[3], targetType, propertyName, null, ConverterStage.Convert, 3),
-                    Unbox<Q5>(v[4], targetType, propertyName, null, ConverterStage.Convert, 4))
+                Site = site,
+                ConvertFunction = (v, requested) => convert(
+                    UnboxDeclared<Q1>(v[0], site, requested, ConverterStage.Convert, 0),
+                    UnboxDeclared<Q2>(v[1], site, requested, ConverterStage.Convert, 1),
+                    UnboxDeclared<Q3>(v[2], site, requested, ConverterStage.Convert, 2),
+                    UnboxDeclared<Q4>(v[3], site, requested, ConverterStage.Convert, 3),
+                    UnboxDeclared<Q5>(v[4], site, requested, ConverterStage.Convert, 4))
             };
             multiArity = 5;
             arityIsDynamic = false;
@@ -585,18 +734,18 @@ namespace Sharp.UI
 
         public PropertyBindingBuilder<T> Convert<Q1, Q2, Q3, Q4, Q5, Q6>(Func<Q1, Q2, Q3, Q4, Q5, Q6, T> convert)
         {
-            var targetType = Context.BindableObject?.GetType();
-            var propertyName = Context.Property?.PropertyName;
+            var site = MultiSite();
 
             multiConverter = new MultiValueConverter
             {
-                ConvertFunction = v => convert(
-                    Unbox<Q1>(v[0], targetType, propertyName, null, ConverterStage.Convert, 0),
-                    Unbox<Q2>(v[1], targetType, propertyName, null, ConverterStage.Convert, 1),
-                    Unbox<Q3>(v[2], targetType, propertyName, null, ConverterStage.Convert, 2),
-                    Unbox<Q4>(v[3], targetType, propertyName, null, ConverterStage.Convert, 3),
-                    Unbox<Q5>(v[4], targetType, propertyName, null, ConverterStage.Convert, 4),
-                    Unbox<Q6>(v[5], targetType, propertyName, null, ConverterStage.Convert, 5))
+                Site = site,
+                ConvertFunction = (v, requested) => convert(
+                    UnboxDeclared<Q1>(v[0], site, requested, ConverterStage.Convert, 0),
+                    UnboxDeclared<Q2>(v[1], site, requested, ConverterStage.Convert, 1),
+                    UnboxDeclared<Q3>(v[2], site, requested, ConverterStage.Convert, 2),
+                    UnboxDeclared<Q4>(v[3], site, requested, ConverterStage.Convert, 3),
+                    UnboxDeclared<Q5>(v[4], site, requested, ConverterStage.Convert, 4),
+                    UnboxDeclared<Q6>(v[5], site, requested, ConverterStage.Convert, 5))
             };
             multiArity = 6;
             arityIsDynamic = false;
@@ -605,19 +754,19 @@ namespace Sharp.UI
 
         public PropertyBindingBuilder<T> Convert<Q1, Q2, Q3, Q4, Q5, Q6, Q7>(Func<Q1, Q2, Q3, Q4, Q5, Q6, Q7, T> convert)
         {
-            var targetType = Context.BindableObject?.GetType();
-            var propertyName = Context.Property?.PropertyName;
+            var site = MultiSite();
 
             multiConverter = new MultiValueConverter
             {
-                ConvertFunction = v => convert(
-                    Unbox<Q1>(v[0], targetType, propertyName, null, ConverterStage.Convert, 0),
-                    Unbox<Q2>(v[1], targetType, propertyName, null, ConverterStage.Convert, 1),
-                    Unbox<Q3>(v[2], targetType, propertyName, null, ConverterStage.Convert, 2),
-                    Unbox<Q4>(v[3], targetType, propertyName, null, ConverterStage.Convert, 3),
-                    Unbox<Q5>(v[4], targetType, propertyName, null, ConverterStage.Convert, 4),
-                    Unbox<Q6>(v[5], targetType, propertyName, null, ConverterStage.Convert, 5),
-                    Unbox<Q7>(v[6], targetType, propertyName, null, ConverterStage.Convert, 6))
+                Site = site,
+                ConvertFunction = (v, requested) => convert(
+                    UnboxDeclared<Q1>(v[0], site, requested, ConverterStage.Convert, 0),
+                    UnboxDeclared<Q2>(v[1], site, requested, ConverterStage.Convert, 1),
+                    UnboxDeclared<Q3>(v[2], site, requested, ConverterStage.Convert, 2),
+                    UnboxDeclared<Q4>(v[3], site, requested, ConverterStage.Convert, 3),
+                    UnboxDeclared<Q5>(v[4], site, requested, ConverterStage.Convert, 4),
+                    UnboxDeclared<Q6>(v[5], site, requested, ConverterStage.Convert, 5),
+                    UnboxDeclared<Q7>(v[6], site, requested, ConverterStage.Convert, 6))
             };
             multiArity = 7;
             arityIsDynamic = false;
@@ -626,20 +775,20 @@ namespace Sharp.UI
 
         public PropertyBindingBuilder<T> Convert<Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8>(Func<Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, T> convert)
         {
-            var targetType = Context.BindableObject?.GetType();
-            var propertyName = Context.Property?.PropertyName;
+            var site = MultiSite();
 
             multiConverter = new MultiValueConverter
             {
-                ConvertFunction = v => convert(
-                    Unbox<Q1>(v[0], targetType, propertyName, null, ConverterStage.Convert, 0),
-                    Unbox<Q2>(v[1], targetType, propertyName, null, ConverterStage.Convert, 1),
-                    Unbox<Q3>(v[2], targetType, propertyName, null, ConverterStage.Convert, 2),
-                    Unbox<Q4>(v[3], targetType, propertyName, null, ConverterStage.Convert, 3),
-                    Unbox<Q5>(v[4], targetType, propertyName, null, ConverterStage.Convert, 4),
-                    Unbox<Q6>(v[5], targetType, propertyName, null, ConverterStage.Convert, 5),
-                    Unbox<Q7>(v[6], targetType, propertyName, null, ConverterStage.Convert, 6),
-                    Unbox<Q8>(v[7], targetType, propertyName, null, ConverterStage.Convert, 7))
+                Site = site,
+                ConvertFunction = (v, requested) => convert(
+                    UnboxDeclared<Q1>(v[0], site, requested, ConverterStage.Convert, 0),
+                    UnboxDeclared<Q2>(v[1], site, requested, ConverterStage.Convert, 1),
+                    UnboxDeclared<Q3>(v[2], site, requested, ConverterStage.Convert, 2),
+                    UnboxDeclared<Q4>(v[3], site, requested, ConverterStage.Convert, 3),
+                    UnboxDeclared<Q5>(v[4], site, requested, ConverterStage.Convert, 4),
+                    UnboxDeclared<Q6>(v[5], site, requested, ConverterStage.Convert, 5),
+                    UnboxDeclared<Q7>(v[6], site, requested, ConverterStage.Convert, 6),
+                    UnboxDeclared<Q8>(v[7], site, requested, ConverterStage.Convert, 7))
             };
             multiArity = 8;
             arityIsDynamic = false;
@@ -648,21 +797,21 @@ namespace Sharp.UI
 
         public PropertyBindingBuilder<T> Convert<Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9>(Func<Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9, T> convert)
         {
-            var targetType = Context.BindableObject?.GetType();
-            var propertyName = Context.Property?.PropertyName;
+            var site = MultiSite();
 
             multiConverter = new MultiValueConverter
             {
-                ConvertFunction = v => convert(
-                    Unbox<Q1>(v[0], targetType, propertyName, null, ConverterStage.Convert, 0),
-                    Unbox<Q2>(v[1], targetType, propertyName, null, ConverterStage.Convert, 1),
-                    Unbox<Q3>(v[2], targetType, propertyName, null, ConverterStage.Convert, 2),
-                    Unbox<Q4>(v[3], targetType, propertyName, null, ConverterStage.Convert, 3),
-                    Unbox<Q5>(v[4], targetType, propertyName, null, ConverterStage.Convert, 4),
-                    Unbox<Q6>(v[5], targetType, propertyName, null, ConverterStage.Convert, 5),
-                    Unbox<Q7>(v[6], targetType, propertyName, null, ConverterStage.Convert, 6),
-                    Unbox<Q8>(v[7], targetType, propertyName, null, ConverterStage.Convert, 7),
-                    Unbox<Q9>(v[8], targetType, propertyName, null, ConverterStage.Convert, 8))
+                Site = site,
+                ConvertFunction = (v, requested) => convert(
+                    UnboxDeclared<Q1>(v[0], site, requested, ConverterStage.Convert, 0),
+                    UnboxDeclared<Q2>(v[1], site, requested, ConverterStage.Convert, 1),
+                    UnboxDeclared<Q3>(v[2], site, requested, ConverterStage.Convert, 2),
+                    UnboxDeclared<Q4>(v[3], site, requested, ConverterStage.Convert, 3),
+                    UnboxDeclared<Q5>(v[4], site, requested, ConverterStage.Convert, 4),
+                    UnboxDeclared<Q6>(v[5], site, requested, ConverterStage.Convert, 5),
+                    UnboxDeclared<Q7>(v[6], site, requested, ConverterStage.Convert, 6),
+                    UnboxDeclared<Q8>(v[7], site, requested, ConverterStage.Convert, 7),
+                    UnboxDeclared<Q9>(v[8], site, requested, ConverterStage.Convert, 8))
             };
             multiArity = 9;
             arityIsDynamic = false;
@@ -769,18 +918,21 @@ namespace Sharp.UI
         // =====================================================================
 
         /// <summary>
-        /// Low-level terminal step for a multi-binding with an arbitrary,
-        /// not-known-in-advance number of Path() calls (e.g. aggregate converters:
-        /// ConvertAll, ConvertAny, ConvertAtLeast). Unlike the generic
-        /// Convert&lt;Q1,Q2,...&gt; overloads, the number of Path() calls is NOT
-        /// validated against a fixed arity in Build(), and the values are not
-        /// unboxed for you - convert receives the raw value array in the order
-        /// Path() was called. convertBack (optional) must return an array of the
-        /// same length and order.
+        /// Low-level terminal step for a multi-binding with an arbitrary, not-known-in-advance
+        /// number of Path() calls (e.g. aggregate converters: ConvertAll, ConvertAny,
+        /// ConvertAtLeast). Unlike the generic Convert&lt;Q1,Q2,...&gt; overloads, the number of
+        /// Path() calls is NOT validated against a fixed arity in Build(), and the values are
+        /// not unboxed for you - convert receives the raw value array in the order Path() was
+        /// called. convertBack (optional) must return an array of the same length and order.
         /// </summary>
         public PropertyBindingBuilder<T> ConvertRaw(Func<object[], T> convert, Func<T, object[]> convertBack = null)
         {
-            multiConverter = new MultiValueConverter { ConvertFunction = convert, ConvertBackFunction = convertBack };
+            multiConverter = new MultiValueConverter
+            {
+                Site = MultiSite(),
+                ConvertFunction = (v, _) => convert(v),
+                ConvertBackFunction = convertBack
+            };
             arityIsDynamic = true;
             return this;
         }
