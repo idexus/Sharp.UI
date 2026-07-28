@@ -241,7 +241,7 @@ new Label()
 
 The first example binds `FontSize` to the `MyFontSize` property of the page's `BindingContext`. The second binds `Text` directly to the `Value` property of a specific `slider` element, formatted as `"Value: {0:F1}"`.
 
-## Multi-Bindings
+### Multi-Bindings
 
 Sometimes a target property needs to combine values from more than one source. Call `.Path()` more than once inside the same builder — each call opens a new sub-binding, and `Source()` / `StringFormat()` / `BindingMode()` / `Convert()` apply to whichever `Path()` was opened last. Each sub-binding can therefore have its own single-value `Convert()`, which transforms that source's raw value before it reaches the final combining step — as with `slider1` below, whose raw `double` is converted to a `bool` first. A trailing typed `Convert()` combines all collected values into the final result; its parameter types and count must match the values produced by each `Path()`, in order — either the source's raw type, or the result type of that `Path()`'s own `Convert()` if one was set. Its return type is the type of the target property.
 
@@ -277,7 +277,7 @@ Here, the `Label`'s text is recomputed automatically whenever any of the four sl
 
 For two-way scenarios, use `ConvertBackAll()` with a matching arity, returning a tuple in the same order as the `Path()` calls. Each element of that tuple then passes through the `ConvertBack()` of its own `Path()`, if one was declared — so a path whose `Convert()` changes the value type needs a matching `ConvertBack()` to be writable. For a variable number of bindings (unknown arity), use `ConvertRaw()` instead of `Convert()`.
 
-## Device idiom, platform, and theme
+### Device idiom, platform, and theme
 
 ```cs
 new Label()
