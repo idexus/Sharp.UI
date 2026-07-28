@@ -49,6 +49,19 @@ public sealed partial class AppShell : Shell
                     new ShellContent<AlternateCollectionPage>("Alternate color"),
                 },
 
+                new Tab("Bindings")
+                {
+                //    new ShellContent<SecondPage>("View Model"),
+                //    new ShellContent<AngleViewModelPage>("Angle View"),
+                //    new ShellContent<TestBindingsPage>("Bindings"),
+
+                    new ShellContent<SimpleBindings>("Simple bindings"),
+                    new ShellContent<MultiBindingPage>("Multi bindings"),
+
+                //    new ShellContent<TemplatedParentPage>("Templated CardView"),
+                //    new ShellContent<CardViewPage>("CardView")
+                },
+
                 // TODO:
 
                 new Tab("Triggers")
@@ -72,20 +85,7 @@ public sealed partial class AppShell : Shell
                     new ShellContent<TapGesturePage>("Tap"),
                     new ShellContent<PointerGesturePage>("Pointer"),
                     new ShellContent<SwipeGesturePage>("Swipe"),
-                },
-
-                new Tab("Bindings")
-                {
-                //    new ShellContent<SecondPage>("View Model"),
-                //    new ShellContent<AngleViewModelPage>("Angle View"),
-                //    new ShellContent<TestBindingsPage>("Bindings"),
-
-                    new ShellContent<SimpleBindings>("Simple bindings"),
-                    new ShellContent<MultiBindingPage>("Multi bindings"),
-
-                //    new ShellContent<TemplatedParentPage>("Templated CardView"),
-                //    new ShellContent<CardViewPage>("CardView")
-                },
+                },                
 
                 new Tab("Other")
                 {

@@ -49,7 +49,7 @@ new VStack
         }
             }
             .IsExpanded(true)
-            .Title("Styling and animation example")
+            .Title("Simple binding example")
             .SourceText(mySourceCode)
         };
     }
