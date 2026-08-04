@@ -1,4 +1,14 @@
-﻿using ColorCode;
+﻿//
+// Adapted from the HTML formatter in ColorCode-Universal
+// https://github.com/CommunityToolkit/ColorCode-Universal
+//
+// Copyright (c) .NET Foundation and Contributors. All rights reserved.
+// Licensed under the MIT License.
+//
+// Emits a MAUI FormattedString instead of HTML markup.
+// See THIRD-PARTY-NOTICES.txt in the repository root.
+//
+using ColorCode;
 using ColorCode.Common;
 using ColorCode.Parsing;
 using ColorCode.Styling;
