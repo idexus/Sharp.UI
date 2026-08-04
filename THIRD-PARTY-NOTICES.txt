@@ -1,0 +1,255 @@
+THIRD-PARTY NOTICES
+===================
+
+Sharp.UI
+Copyright (c) Pawel Krzywdzinski
+Licensed under the MIT License. See License.txt for the full text.
+
+Sharp.UI is built on .NET MAUI, which is also MIT licensed and belongs to the
+.NET Foundation and Microsoft.
+
+This file lists third-party software that is referenced by, redistributed with,
+or adapted into this repository, together with the applicable copyright notices
+and license terms. It does not modify the license of Sharp.UI itself.
+
+Contents:
+
+  1. Referenced packages (NuGet)
+  2. Files redistributed in this repository
+  3. Full license texts
+       A. MIT License
+       B. SIL Open Font License, Version 1.1
+
+
+-------------------------------------------------------------------------------
+1. REFERENCED PACKAGES (NuGet)
+-------------------------------------------------------------------------------
+
+The following packages are not redistributed in source form in this repository;
+they are restored from NuGet at build time. They are listed here for
+completeness of attribution.
+
+--- Microsoft.Maui.Controls -------------------------------------------------
+    .NET MAUI
+    Copyright (c) Microsoft Corporation. All rights reserved.
+    Copyright (c) .NET Foundation and Contributors.
+    License: MIT (see section 3.A)
+    Project: https://github.com/dotnet/maui
+    Used by: src/main/Sharp.UI, src/samples/ExampleApp
+
+--- Microsoft.Extensions.Logging.Debug --------------------------------------
+    Copyright (c) Microsoft Corporation. All rights reserved.
+    Copyright (c) .NET Foundation and Contributors.
+    License: MIT (see section 3.A)
+    Project: https://github.com/dotnet/runtime
+    Used by: src/main/Sharp.UI, src/samples/ExampleApp
+
+--- Microsoft.CodeAnalysis.CSharp -------------------------------------------
+--- Microsoft.CodeAnalysis.Analyzers ----------------------------------------
+    .NET Compiler Platform ("Roslyn")
+    Copyright (c) Microsoft Corporation. All rights reserved.
+    Copyright (c) .NET Foundation and Contributors.
+    License: MIT (see section 3.A)
+    Project: https://github.com/dotnet/roslyn
+    Used by: src/generators/Sharp.UI.Generator.Classes,
+             src/generators/Sharp.UI.Generator.Extensions,
+             src/generators/Sharp.UI.Generator.HotReload
+    Note: build-time only (PrivateAssets="all"). These assemblies are not
+          shipped inside the Sharp.UI NuGet package.
+
+--- ColorCode.Core (ColorCode-Universal) ------------------------------------
+    Copyright (c) .NET Foundation and Contributors. All rights reserved.
+    License: MIT (see section 3.A)
+    Project: https://github.com/CommunityToolkit/ColorCode-Universal
+    Used by: src/samples/ExampleApp (sample application only; not a dependency
+             of the Sharp.UI library or its NuGet package)
+
+
+-------------------------------------------------------------------------------
+2. FILES REDISTRIBUTED IN THIS REPOSITORY
+-------------------------------------------------------------------------------
+
+--- JetBrains Mono ----------------------------------------------------------
+    Copyright 2020 The JetBrains Mono Project Authors
+    (https://github.com/JetBrains/JetBrainsMono)
+
+    Authors:
+        JetBrains <>
+        Philipp Nurullin <philipp.nurullin@jetbrains.com>
+        Konstantin Bulenkov <kb@jetbrains.com>
+
+    License: SIL Open Font License, Version 1.1 (see section 3.B)
+    Reserved Font Name: "JetBrains Mono"
+
+    Files:
+        src/samples/ExampleApp/Resources/Fonts/JetBrainsMono-Regular.ttf
+        src/samples/ExampleApp/Resources/Fonts/ofl/OFL.txt
+        src/samples/ExampleApp/Resources/Fonts/ofl/AUTHORS.txt
+
+    The font is redistributed unmodified together with its original license
+    and authors files.
+
+--- .NET MAUI project template files ----------------------------------------
+    Copyright (c) Microsoft Corporation. All rights reserved.
+    Copyright (c) .NET Foundation and Contributors.
+    License: MIT (see section 3.A)
+    Project: https://github.com/dotnet/maui
+
+    The sample application was created from the standard .NET MAUI project
+    template. The following files originate from that template, in unmodified
+    or lightly modified form:
+
+        src/samples/ExampleApp/Platforms/**
+        src/samples/ExampleApp/Resources/AppIcon/appicon.svg
+        src/samples/ExampleApp/Resources/AppIcon/appiconfg.svg
+        src/samples/ExampleApp/Resources/Splash/splash.svg
+        src/samples/ExampleApp/Resources/Images/dotnet_bot.svg
+        src/samples/ExampleApp/Resources/Raw/AboutAssets.txt
+
+    The .NET Bot image (dotnet_bot.svg) and the .NET logo are trademarks of
+    the .NET Foundation and Microsoft, used here only as unmodified sample
+    application assets.
+
+--- ColorCode-Universal (adapted source) ------------------------------------
+    Copyright (c) .NET Foundation and Contributors. All rights reserved.
+    License: MIT (see section 3.A)
+    Project: https://github.com/CommunityToolkit/ColorCode-Universal
+
+    File:
+        src/samples/ExampleApp/src/Controls/Helpers/MauiFormattedStringFormatter.cs
+
+    This file is a .NET MAUI adaptation of the HTML formatter shipped with
+    ColorCode-Universal. It derives from ColorCode's CodeColorizerBase and
+    follows the structure of the original formatter, emitting a MAUI
+    FormattedString instead of HTML markup.
+
+
+-------------------------------------------------------------------------------
+3. FULL LICENSE TEXTS
+-------------------------------------------------------------------------------
+
+3.A  MIT LICENSE
+-----------------
+
+The following license applies to every component listed above as "MIT", each
+under its own copyright notice as stated in sections 1 and 2.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+
+3.B  SIL OPEN FONT LICENSE, VERSION 1.1
+----------------------------------------
+
+The following license applies to the JetBrains Mono font files listed in
+section 2.
+
+Copyright 2020 The JetBrains Mono Project Authors
+(https://github.com/JetBrains/JetBrainsMono)
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+https://scripts.sil.org/OFL
+
+
+-----------------------------------------------------------
+SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
+-----------------------------------------------------------
+
+PREAMBLE
+The goals of the Open Font License (OFL) are to stimulate worldwide
+development of collaborative font projects, to support the font creation
+efforts of academic and linguistic communities, and to provide a free and
+open framework in which fonts may be shared and improved in partnership
+with others.
+
+The OFL allows the licensed fonts to be used, studied, modified and
+redistributed freely as long as they are not sold by themselves. The
+fonts, including any derivative works, can be bundled, embedded,
+redistributed and/or sold with any software provided that any reserved
+names are not used by derivative works. The fonts and derivatives,
+however, cannot be released under any other type of license. The
+requirement for fonts to remain under this license does not apply
+to any document created using the fonts or their derivatives.
+
+DEFINITIONS
+"Font Software" refers to the set of files released by the Copyright
+Holder(s) under this license and clearly marked as such. This may
+include source files, build scripts and documentation.
+
+"Reserved Font Name" refers to any names specified as such after the
+copyright statement(s).
+
+"Original Version" refers to the collection of Font Software components as
+distributed by the Copyright Holder(s).
+
+"Modified Version" refers to any derivative made by adding to, deleting,
+or substituting -- in part or in whole -- any of the components of the
+Original Version, by changing formats or by porting the Font Software to a
+new environment.
+
+"Author" refers to any designer, engineer, programmer, technical
+writer or other person who contributed to the Font Software.
+
+PERMISSION & CONDITIONS
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of the Font Software, to use, study, copy, merge, embed, modify,
+redistribute, and sell modified and unmodified copies of the Font
+Software, subject to the following conditions:
+
+1) Neither the Font Software nor any of its individual components,
+in Original or Modified Versions, may be sold by itself.
+
+2) Original or Modified Versions of the Font Software may be bundled,
+redistributed and/or sold with any software, provided that each copy
+contains the above copyright notice and this license. These can be
+included either as stand-alone text files, human-readable headers or
+in the appropriate machine-readable metadata fields within text or
+binary files as long as those fields can be easily viewed by the user.
+
+3) No Modified Version of the Font Software may use the Reserved Font
+Name(s) unless explicit written permission is granted by the corresponding
+Copyright Holder. This restriction only applies to the primary font name as
+presented to the users.
+
+4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font
+Software shall not be used to promote, endorse or advertise any
+Modified Version, except to acknowledge the contribution(s) of the
+Copyright Holder(s) and the Author(s) or with their explicit written
+permission.
+
+5) The Font Software, modified or unmodified, in part or in whole,
+must be distributed entirely under this license, and must not be
+distributed under any other license. The requirement for fonts to
+remain under this license does not apply to any document created
+using the Font Software.
+
+TERMINATION
+This license becomes null and void if any of the above conditions are
+not met.
+
+DISCLAIMER
+THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT
+OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE
+COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
+DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
+OTHER DEALINGS IN THE FONT SOFTWARE.
