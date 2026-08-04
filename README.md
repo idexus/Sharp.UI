@@ -457,3 +457,7 @@ Sharp.UI is maintained as an open-source project by its author. Community feedba
 # License
 
 [MIT License](License.txt) — Copyright © 2022 Pawel Krzywdzinski
+
+It is built on .NET MAUI, which is MIT too and belongs to the .NET Foundation and Microsoft.
+
+Third-party components referenced by or redistributed with this repository — including .NET MAUI, Roslyn, ColorCode-Universal, the .NET MAUI project template assets, and the JetBrains Mono font — are listed with their copyright notices and license terms in [THIRD-PARTY-NOTICES.txt](THIRD-PARTY-NOTICES.txt).
